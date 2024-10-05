@@ -1,5 +1,5 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "https://korczis.github.com"
+base_url = "https://korczis.github.io"
 
 # The site title and description; used in feeds by default.
 title = "korczis.github.com"
@@ -10,7 +10,7 @@ author = "korczis"
 
 # The default language; used in feeds.
 default_language = "en"
-  `
+
 # When set to "true", a feed is automatically generated.
 generate_feeds = true
 
