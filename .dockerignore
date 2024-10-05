@@ -1,0 +1,8 @@
+# flyctl launch added from .gitignore
+node_modules
+public
+
+# flyctl launch added from themes/after-dark/.gitignore
+themes/after-dark/**/.idea
+themes/after-dark/**/public
+fly.toml

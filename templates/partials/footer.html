@@ -1,26 +1,45 @@
-<footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
-  <div class="mr-auto basis-full lg:basis-1/2">
-    {% set current_year = now() | date(format="%Y") | int %}
-    &copy; {% if config.extra.footer.since and config.extra.footer.since != current_year %}
-    {{ config.extra.footer.since }} - {{ current_year }}
-    {% else %}{{ current_year }}{% endif %}
-    <a class="link" href="{{ get_url(path=``) }}"
-      >{{ config.author | default(value=config.title) }}</a
-    >
-    {% if config.extra.footer.license %} |<!---->
-    {% if config.extra.footer.license_url %}<!---->
-    <a class="link" href="{{ config.extra.footer.license_url }}" rel="noopener" target="_blank">
-      {{ config.extra.footer.license }}
-    </a>
-    {% else %}<!---->
-    {{ config.extra.footer.license }}<!---->
-    {% endif %}<!---->
-    {% endif %}
-  </div>
-  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
-    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
-      >Powered by Zola</a
-    >
-    <a class="link" href="https://korczis.github.io/kita" rel="noopener" target="_blank">✎ Kita</a>
-  </div>
+<footer class="relative bg-gray-800 text-white py-4 overflow-hidden">
+    <div class="absolute inset-0 z-[-1]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full">
+            <style>
+                .wave {
+                    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+                    transform-origin: center bottom;
+                }
+                @keyframes wave {
+                    0% { transform: scaleY(1); }
+                    25% { transform: scaleY(0.75); }
+                    50% { transform: scaleY(0.5); }
+                    75% { transform: scaleY(0.75); }
+                    100% { transform: scaleY(1); }
+                }
+            </style>
+            <path class="wave" fill="#3b82f6" fill-opacity="0.1" d="M0,160L48,165.3C96,171,192,181,288,170.7C384,160,480,128,576,117.3C672,107,768,117,864,144C960,171,1056,213,1152,208C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    <div class="mx-auto flex max-w-3xl flex-wrap items-center px-8 text-sm opacity-90 relative z-10">
+        <div class="mr-auto basis-full lg:basis-1/2">
+            {% set current_year = now() | date(format="%Y") | int %}
+            <span class="font-thin text-black">
+                &copy; {% if config.extra.footer.since and config.extra.footer.since != current_year %}
+                {{ config.extra.footer.since }} - {{ current_year }}
+                {% else %}{{ current_year }}{% endif %}
+            </span>
+            <span class="font-thin text-black">
+                <a class="link" href="{{ get_url(path=``) }}">{{ config.author | default(value=config.title) }}</a>
+            </span>
+            {% if config.extra.footer.license %} | {% endif %}
+            {% if config.extra.footer.license_url %}
+                <span class="font-thin text-black">
+                    <a class="link" href="{{ config.extra.footer.license_url }}" rel="noopener" target="_blank">
+                        {{ config.extra.footer.license }}
+                    </a>
+                </span>
+            {% else %}
+                <span class="font-thin text-black">
+                    {{ config.extra.footer.license }}
+                </span>
+            {% endif %}
+        </div>
+    </div>
 </footer>

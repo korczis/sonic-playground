@@ -1,8 +1,8 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "https://korczis.github.io/"
+base_url = "https://korczis.fly.dev"
 
 # The site title and description; used in feeds by default.
-title = "korczis.github.io"
+title = "korczis.fly.io"
 description = "Kita is a clean, elegant and simple blog theme for Zola."
 
 # The default site author.
@@ -97,10 +97,15 @@ social_image = "icons/github.svg"
 #url = "$BASE_URL/atom.xml"
 
 # The top menu.
-#[[extra.menu]]
-#name = "Projects"
-#url = "$BASE_URL/projects"
-#
+
+[[extra.menu]]
+name = "Welcome"
+url = "$BASE_URL/welcome"
+
+[[extra.menu]]
+name = "Author"
+url = "$BASE_URL/author"
+
 [[extra.menu]]
 name = "Archive"
 url = "$BASE_URL/archive"

@@ -10,10 +10,43 @@
     >
       {% block main %}
 
+      <section class="manifesto bg-gray-100 dark:bg-gray-800 rounded-lg border-2 border-gray-400 p-8 mb-12 mx-auto max-w-4xl text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight mb-6">
+          Curated Chaos, Just for You
+        </h1>
+        <p class="text-xl text-gray-700 dark:text-gray-300 mb-4">
+          In a world of auto-generated content, this place stands for something different:
+          <span class="font-semibold text-indigo-600">Authenticity. Emotion. Story.</span>
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+          Each song here is hand-picked, carefully selected to reflect every corner of the human experience—
+          from the <span class="font-semibold">brightest moments of joy</span> to the
+          <span class="font-semibold">darkest, rawest edges of melancholy</span>.
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+          And it’s not just music. These songs have history,
+          <span class="font-semibold text-indigo-600">iconic stories</span> that shaped them into more than just a tune.
+          <span class="font-semibold">Cultural game-changers</span>,
+          <span class="font-semibold">underground classics</span>, and pieces that might surprise you with their depth.
+        </p>
+
+        <div class="flex justify-center gap-4 mt-8">
+          <a href="/welcome"
+             class="px-6 py-3 text-lg font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            Explore the Sonic Playground
+          </a>
+          <a href="/author"
+             class="px-6 py-3 text-lg font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            Meet the Author
+          </a>
+        </div>
+      </section>
+
       <!-- Profile -->
       {% if paginator is undefined or paginator.current_index == 1 %}<!---->
       {% include "partials/profile.html" %}<!---->
       {% endif %}<!---->
+
 
       {% include "partials/page_list.html" %}<!---->
       {% endblock main %}
