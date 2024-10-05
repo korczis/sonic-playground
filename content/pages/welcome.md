@@ -14,7 +14,7 @@ hand-crafted music has become both a **treasure hunt** and a **thrilling adventu
 Why settle for the bland recommendations that serve up the same old tunes wrapped 
 in a cozy social bubble?
 
----
+![A serene and peaceful sketched illustration](/images/colors_1.png)
 
 Here, we dive headfirst into a **kaleidoscope of sound**, where genres collide, 
 and the eclectic spirit thrives. We’re talking about a musical journey that isn’t 
@@ -23,13 +23,13 @@ happy anthems to the brooding depths of melancholic ballads. This is a space
 for the **audacious**, where your playlists can be as moody and multifaceted 
 as your human experience.
 
----
 
 Forget about the cookie-cutter playlists designed to **please the masses**—_this is where the magic happens_!
 
 
 **Every track is meticulously selected**, capturing the **soul** of our shared human experience. **And more than that**, each song has its own **backstory**. Many of these pieces are **iconic milestones**, game changers, or even **winners of audiovisual awards**. Whether it's the **first of its kind**, a **cultural revolution**, or simply **deeper than it appears**, we **dive into the stories behind the music**, giving you the full **context and significance** of each track.
 
+![A serene and peaceful sketched illustration](/images/girl_1.png)
 
 ### What Do You Want to Feel?
 

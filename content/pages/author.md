@@ -14,7 +14,7 @@ music to the raw energy of Eminem, Guano Apes, Offspring, and Nirvana. That boy
 was me, and little did I know that this forced piano practice was the first 
 step in a lifelong love affair with music.
 
-![A serene and peaceful sketched illustration](/images/serene_illustration_1.webp)
+![A serene and peaceful sketched illustration](/images/man_1.png)
 
 As time passed, my musical palate expanded exponentially. I dove headfirst 
 into the mosh pits of heavy metal, crowdsurfed through punk shows, headbanged 
@@ -35,13 +35,13 @@ fortune) crafting sounds, tweaking parameters, and creating music that
 resonates with my soul. While I've dabbled with guitar, bass, and harmonica, 
 synths in all their glorious shapes and sizes remain my true love.
 
+![A serene and peaceful sketched illustration](/images/combo_1.png)
+
 As a person who appreciates the finer things in life – from the flowing lines 
 of calligraphy to the bold structures of architecture – I find beauty in the 
 unconventional. My background as a programmer and hacker, combined with my 
 experiences traveling the world, has cultivated a taste for the darker, more 
 ironic, and less harmonious corners of the musical universe.
-
-![A serene and peaceful sketched illustration](/images/serene_illustration_2.webp)
 
 This blog is my sanctuary, a place to share the hidden gems I've discovered 
 throughout my musical journey. Here, you'll find a curated selection of 
