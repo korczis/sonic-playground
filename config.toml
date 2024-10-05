@@ -2,7 +2,7 @@
 base_url = "https://st1020.github.io/kita"
 
 # The site title and description; used in feeds by default.
-title = "korczis.github.com"
+title = "korczis.github.io"
 description = "Kita is a clean, elegant and simple blog theme for Zola."
 
 # The default site author.
