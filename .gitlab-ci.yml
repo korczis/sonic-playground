@@ -7,8 +7,6 @@ default:
     # Add Flyctl to the PATH
     - export FLYCTL_INSTALL="$HOME/.fly"
     - export PATH="$FLYCTL_INSTALL/bin:$PATH"
-    # Verify Flyctl installation
-    - flyctl --version
     # Install Zola
     - cargo install zola
     # Verify Zola installation
