@@ -1,0 +1,327 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    Author - sonic-playground.fly.io
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!---->
+  <meta name="description" content="Author" />
+  <meta name="author" content="korczis" />
+
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Author" />
+  <meta property="og:site_name" content="sonic-playground.fly.io" />
+  <meta property="og:description" content="Explore an eclectic, hand-picked collection of tracks that capture the full spectrum of human emotion—happy, angry, melancholy, and everything in between." />
+  <meta property="og:url" content="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;author&#x2F;" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Curated Chaos: A Human Journey Through Music" />
+  <meta name="twitter:description" content="Discover music that moves you, not algorithmic noise. Hand-picked, authentic, and sometimes messy, just like life." />
+  <meta name="twitter:image" content="https://sonic-playground.fly.io/images/wall.jpeg" />
+  <meta name="twitter:site" content="@korczis" />
+  <meta name="twitter:creator" content="@korczis" />
+
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://sonic-playground.fly.dev/images/wall.jpeg" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://sonic-playground.fly.dev/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://sonic-playground.fly.dev/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://sonic-playground.fly.dev/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://sonic-playground.fly.dev/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://sonic-playground.fly.dev/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;author&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://sonic-playground.fly.dev">sonic-playground.fly.io</a>
+        <!-- div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div -->
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      /*
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+      //*/
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/welcome"
+            >Welcome</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/author"
+            >Author</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/genre"
+            >Genre</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/sentiment"
+            >Sentiment</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+
+  <!-- link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" -->
+  <!-- link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.1/flowbite.min.css" rel="stylesheet" -->
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Author</h1>
+  </header>
+
+  <section><h2 id="from-reluctant-pianist-to-synth-enthusiast-my-musical-odyssey">From Reluctant Pianist to Synth Enthusiast: My Musical Odyssey</h2>
+<p>Picture a small suburban village, where a young boy from a middle-class family
+begrudgingly sits at a piano, his fingers itching to change the classical sheet
+music to the raw energy of Eminem, Guano Apes, Offspring, and Nirvana. That boy
+was me, and little did I know that this forced piano practice was the first
+step in a lifelong love affair with music.</p>
+<p><img src="/images/man_1.png" alt="A serene and peaceful sketched illustration" /></p>
+<p>As time passed, my musical palate expanded exponentially. I dove headfirst
+into the mosh pits of heavy metal, crowdsurfed through punk shows, headbanged
+to rock anthems, and found solace in classical compositions. Jazz improvisation
+captivated me, techno beats moved me, R&amp;B grooves soothed me, pop choruses
+stuck in my head, and folk melodies transported me to distant lands.</p>
+<p>But it was the allure of synthesizers that truly captured my heart. The warm,
+pulsating sounds of 80s synths, the infectious rhythms of house music, the
+electrifying energy of French house, the edgy attitude of electroclash, and
+the nostalgic charm of synth-pop – these genres reignited my passion for the
+keyboard. Suddenly, that piano I once despised became a gateway to a world
+of electronic music production.</p>
+<p>My obsession with synths led me down a rabbit hole of vintage gear, modern
+hardware, and software emulations. I've spent countless hours (and a small
+fortune) crafting sounds, tweaking parameters, and creating music that
+resonates with my soul. While I've dabbled with guitar, bass, and harmonica,
+synths in all their glorious shapes and sizes remain my true love.</p>
+<p><img src="/images/combo_1.png" alt="A serene and peaceful sketched illustration" /></p>
+<p>As a person who appreciates the finer things in life – from the flowing lines
+of calligraphy to the bold structures of architecture – I find beauty in the
+unconventional. My background as a programmer and hacker, combined with my
+experiences traveling the world, has cultivated a taste for the darker, more
+ironic, and less harmonious corners of the musical universe.</p>
+<p>This blog is my sanctuary, a place to share the hidden gems I've discovered
+throughout my musical journey. Here, you'll find a curated selection of
+tracks that push boundaries, challenge norms, and ignite the imagination.
+While you might encounter a few familiar names, expect to discover a
+treasure trove of artists operating outside the mainstream.</p>
+<p>Join me as we explore the fringes of electronic music, unearth forgotten
+classics, and celebrate the artists who dare to be different. Whether you're
+a seasoned audiophile or a curious newcomer, there's something here for
+everyone who appreciates the power of sound to move, inspire, and transform.</p>
+<p><strong>Welcome to my world of sonic exploration. Let's embark on this adventure
+together.</strong></p>
+</section>
+</article>
+
+    </main>
+
+    <footer class="relative bg-gray-800 text-white py-4 overflow-hidden">
+    <div class="absolute inset-0 z-[-1]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full">
+            <style>
+                .wave {
+                    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+                    transform-origin: center bottom;
+                }
+                @keyframes wave {
+                    0% { transform: scaleY(1); }
+                    25% { transform: scaleY(0.75); }
+                    50% { transform: scaleY(0.5); }
+                    75% { transform: scaleY(0.75); }
+                    100% { transform: scaleY(1); }
+                }
+            </style>
+            <path class="wave" fill="#3b82f6" fill-opacity="0.1" d="M0,160L48,165.3C96,171,192,181,288,170.7C384,160,480,128,576,117.3C672,107,768,117,864,144C960,171,1056,213,1152,208C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    <div class="mx-auto flex max-w-3xl flex-wrap items-center px-8 text-sm opacity-90 relative z-10">
+        <div class="mr-auto basis-full lg:basis-1/2">
+            
+            <span class="font-thin text-black">
+                &copy; 2024
+            </span>
+            <span class="font-thin text-black">
+                <a class="link" href="https://sonic-playground.fly.dev">korczis</a>
+            </span>
+             | 
+            
+                <span class="font-thin text-black">
+                    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+                        CC BY-SA 4.0
+                    </a>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+  </body>
+</html>
