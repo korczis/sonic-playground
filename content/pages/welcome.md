@@ -41,7 +41,7 @@ Forget about the cookie-cutter playlists designed to **please the masses**—_th
   
 - **Just want to be with your inner self?** This is it.
 
----
+![A serene and peaceful sketched illustration](/images/car_1.png)
 
 Here, you have the power to filter your listening journey by **sentiment, genre, or year**. 
 Want to bask in nostalgia? Craving something that makes you want to scream into the void? The choice is yours! 

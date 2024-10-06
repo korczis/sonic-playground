@@ -4,41 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5099d5-235c-4d4b-bc1c-e8a94fe2816f" name="Changes" comment="!">
-      <change afterPath="$PROJECT_DIR$/content/cardi-b-wap-feat-megan-thee-stallion.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/waldeck-zeebee-midsummer-night-blues.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/colors_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/combo_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/girl_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/man_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/DALL·E 2024-10-05 17.03.41 - A dark, abandoned hacker's room hidden in an old building, lit only by dim neon lights. The space is cluttered with vintage hacker equipment like old .webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/DALL·E 2024-10-05 17.04.33 - A dark, abandoned hacker's room hidden in an old building, lit only by dim neon lights. The space is cluttered with vintage hacker equipment like old .webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/DALL·E 2024-10-05 22.56.57 - A sketched illustration capturing a serene and peaceful mood. The scene features a tranquil landscape with rolling hills, a calm lake reflecting the s.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/DALL·E 2024-10-05 22.59.08 - A sketched illustration capturing a serene and peaceful mood. The scene features a tranquil landscape with rolling hills, a calm lake reflecting the s.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/DALL·E 2024-10-05 22.59.17 - A sketched illustration of a peaceful seaside scene during sunset. The foreground features gentle waves lapping at a sandy beach, with a few seashells.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_Generate_also_dark_counter_parts_Add_some_anger_Add_s_2a012a6e-aecf-44c1-a9fd-f000579b38e5_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_Generate_also_dark_counter_parts_Add_some_anger_Add_s_2a012a6e-aecf-44c1-a9fd-f000579b38e5_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_Generate_also_dark_counter_parts_Add_some_anger_Add_s_2a012a6e-aecf-44c1-a9fd-f000579b38e5_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_Generate_also_dark_counter_parts_Add_some_anger_Add_s_2a012a6e-aecf-44c1-a9fd-f000579b38e5_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_Generate_also_dark_counter_parts_Add_some_anger__I_me_54ab1f20-8525-4218-a319-6be280ed095a_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_Generate_also_dark_counter_parts_Add_some_anger__I_me_54ab1f20-8525-4218-a319-6be280ed095a_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_Generate_also_dark_counter_parts_Add_some_anger__I_me_54ab1f20-8525-4218-a319-6be280ed095a_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_Generate_also_dark_counter_parts_Add_some_anger__I_me_54ab1f20-8525-4218-a319-6be280ed095a_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_2e379eef-278c-4999-b0a6-be5b19acd30c_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_2e379eef-278c-4999-b0a6-be5b19acd30c_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_2e379eef-278c-4999-b0a6-be5b19acd30c_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_38859ecf-f771-47b4-8bbb-70beb59c838a_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_38859ecf-f771-47b4-8bbb-70beb59c838a_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_9a8fba43-1f5a-4f76-924a-58dd5a6942ed_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_9a8fba43-1f5a-4f76-924a-58dd5a6942ed_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_c954883b-6885-4d18-9907-079372bbfa0b_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_c954883b-6885-4d18-9907-079372bbfa0b_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_c954883b-6885-4d18-9907-079372bbfa0b_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_c954883b-6885-4d18-9907-079372bbfa0b_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_d2e60d78-d2f0-4599-8a80-192e96ba741d_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/pages/author.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/author.md" afterDir="false" />
+    <list default="true" id="ea5099d5-235c-4d4b-bc1c-e8a94fe2816f" name="Changes" comment="!new content">
+      <change afterPath="$PROJECT_DIR$/content/alt-j-breezeblocks.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/caravan-palace-lone-digger.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/clawfinger-biggest-the-best.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/fatboy-slim-bird-of-pray.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/feist-my-man-my-mood.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/fernanda-porto-sambassim.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/funky-fat-and-digitaria-you-bring-me-down.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/hrdvision-nsd-discolight.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/luca-malina-fckrz.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/michelle-gurevich-party-girl.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/nancy-sinatra-bang-bang.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/nina-simone-felix-da-housecat-sinnerman.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/pomplamoose-harder-better-faster-stronger.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/portugal-the-man-feel-it-still.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/roisin-murphy-primitive.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/roseaux-walking-on-the-moon.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/the-horroris-one-night-in-nyc.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/pages/welcome.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/welcome.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly.toml" beforeDir="false" afterPath="$PROJECT_DIR$/fly.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/head.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_c954883b-6885-4d18-9907-079372bbfa0b_2 (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/car_1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +60,8 @@
       <recent name="$PROJECT_DIR$/static/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/images" />
+      <recent name="$PROJECT_DIR$/tmp/for-review" />
       <recent name="$PROJECT_DIR$/content/pages" />
       <recent name="$PROJECT_DIR$/content" />
     </key>
@@ -114,11 +106,20 @@
       <option name="project" value="LOCAL" />
       <updated>1728157196488</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="!new content">
+      <option name="closed" value="true" />
+      <created>1728171385575</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728171385575</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="!" />
-    <option name="LAST_COMMIT_MESSAGE" value="!" />
+    <MESSAGE value="!new content" />
+    <option name="LAST_COMMIT_MESSAGE" value="!new content" />
   </component>
 </project>

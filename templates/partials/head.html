@@ -27,15 +27,27 @@
   {% set author = config.author | default(value=config.title) %}
   <!---->
   {% endif %}
+
   <!---->
   <meta name="description" content="{{ description }}" />
   <meta name="author" content="{{ author }}" />
+
   <!-- The Open Graph protocol -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ page_title }}" />
   <meta property="og:site_name" content="{{ config.title }}" />
-  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:description" content="Explore an eclectic, hand-picked collection of tracks that capture the full spectrum of human emotion—happy, angry, melancholy, and everything in between." />
   <meta property="og:url" content="{{ page.permalink }}" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Curated Chaos: A Human Journey Through Music" />
+  <meta name="twitter:description" content="Discover music that moves you, not algorithmic noise. Hand-picked, authentic, and sometimes messy, just like life." />
+  <meta name="twitter:image" content="https://korczis.fly.io/images/wall.jpeg" />
+  <meta name="twitter:site" content="@korczis" />
+  <meta name="twitter:creator" content="@korczis" />
+
   {% if page.extra.cover_image %}
   <!---->
   {% set image = page.extra.cover_image %}

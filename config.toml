@@ -3,7 +3,7 @@ base_url = "https://korczis.fly.dev"
 
 # The site title and description; used in feeds by default.
 title = "korczis.fly.io"
-description = "Kita is a clean, elegant and simple blog theme for Zola."
+description = "Explore an eclectic, hand-picked collection of tracks that capture the full spectrum of human emotion—happy, angry, melancholy, and everything in between."
 
 # The default site author.
 author = "korczis"
@@ -55,7 +55,7 @@ mermaid = false
 # Enable comment support globally.
 comment = false
 # The URL of social image.
-social_image = "icons/github.svg"
+social_image = "/images/wall.jpeg"
 
 [extra.style]
 # The custom background color.
@@ -84,13 +84,17 @@ social_image = "icons/github.svg"
 
 # The social icons below the profile on the home page.
 # The `name` should be the file name of static/icons/*.svg or the icon name of https://simpleicons.org/
-#[[extra.profile.social]]
-#name = "github"
-#url = "https://github.com/st1020/kita"
-#
-#[[extra.profile.social]]
-#name = "twitter"
-#url = "https://github.com/st1020/kita"
+[[extra.profile.social]]
+name = "gitlab"
+url = "https://gitlab.com/korczis/sonic-playground"
+
+[[extra.profile.social]]
+name = "github"
+url = "https://github.com/korczis/sonic-playground"
+
+[[extra.profile.social]]
+name = "twitter"
+url = "https://x.com/korczis"
 #
 #[[extra.profile.social]]
 #name = "rss"

@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for korczis on 2024-10-05T21:50:42+02:00
+# fly.toml app configuration file generated for korczis on 2024-10-06T03:15:28+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'korczis'
-primary_region = 'cdg'
+primary_region = 'ams'
 
 [build]
 
@@ -17,6 +17,4 @@ primary_region = 'cdg'
   processes = ['app']
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
-  cpus = 1
+  size = 'shared-cpu-1x'
