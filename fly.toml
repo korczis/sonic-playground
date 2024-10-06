@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for korczis on 2024-10-06T03:15:28+02:00
+# fly.toml app configuration file generated for sonic-playground on 2024-10-06T14:10:53+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'korczis'
+app = 'sonic-playground'
 primary_region = 'ams'
 
 [build]

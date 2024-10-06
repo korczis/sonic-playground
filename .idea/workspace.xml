@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea5099d5-235c-4d4b-bc1c-e8a94fe2816f" name="Changes" comment="!new content">
-      <change afterPath="$PROJECT_DIR$/content/alt-j-breezeblocks.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/caravan-palace-lone-digger.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/clawfinger-biggest-the-best.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/fatboy-slim-bird-of-pray.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/feist-my-man-my-mood.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/fernanda-porto-sambassim.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/funky-fat-and-digitaria-you-bring-me-down.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/hrdvision-nsd-discolight.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/luca-malina-fckrz.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/michelle-gurevich-party-girl.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/nancy-sinatra-bang-bang.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/nina-simone-felix-da-housecat-sinnerman.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/pomplamoose-harder-better-faster-stronger.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/portugal-the-man-feel-it-still.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/roisin-murphy-primitive.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/roseaux-walking-on-the-moon.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/the-horroris-one-night-in-nyc.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/pages/welcome.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/pages/welcome.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly.toml" beforeDir="false" afterPath="$PROJECT_DIR$/fly.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/for-review/korczis_I_need_generate_high_res_images_for_og_and_twitter_ta_c954883b-6885-4d18-9907-079372bbfa0b_2 (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/car_1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +28,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/tomas.korcak/dev/korczis/tmp/for-review"
+    "last_opened_file_path": "/Users/tomas.korcak/dev/sonic-playground"
   }
 }]]></component>
   <component name="RecentsManager">

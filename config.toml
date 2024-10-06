@@ -1,5 +1,5 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "https://korczis.fly.dev"
+base_url = "https://sonic-playground.fly.dev"
 
 # The site title and description; used in feeds by default.
 title = "korczis.fly.io"
@@ -132,7 +132,7 @@ url = "$BASE_URL/sentiment"
 
 # The page footer options.
 [extra.footer]
-since = 2020
+since = 2024
 license = "CC BY-SA 4.0"
 license_url = "https://creativecommons.org/licenses/by-sa/4.0/deed"
 
