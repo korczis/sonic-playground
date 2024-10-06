@@ -8,7 +8,7 @@ default:
     - export FLYCTL_INSTALL="$HOME/.fly"
     - export PATH="$FLYCTL_INSTALL/bin:$PATH"
     # Install Zola
-    - cargo install zola
+    - cargo install --path . --locked
     # Verify Zola installation
     - zola --version
 
