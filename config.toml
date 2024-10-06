@@ -2,7 +2,7 @@
 base_url = "https://sonic-playground.fly.dev"
 
 # The site title and description; used in feeds by default.
-title = "korczis.fly.io"
+title = "sonic-playground.fly.io"
 description = "Explore an eclectic, hand-picked collection of tracks that capture the full spectrum of human emotion—happy, angry, melancholy, and everything in between."
 
 # The default site author.
