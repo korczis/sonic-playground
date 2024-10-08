@@ -9,7 +9,7 @@ sentiment = ["energetic", "nostalgic", "celebratory"]
 
 [extra]
 cover_image = "/img/thumbnails/acraze_do_it_to_it_thumbnail.jpg"
-youtube = "https://www.youtube.com/embed/cBSYJqv0Fjc"
+youtube = "https://www.youtube.com/embed/6wwuEXlIniU"
 +++
 
 ## Genre and Mood
