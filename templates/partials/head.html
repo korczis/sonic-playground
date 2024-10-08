@@ -44,7 +44,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Curated Chaos: A Human Journey Through Music" />
   <meta name="twitter:description" content="Discover music that moves you, not algorithmic noise. Hand-picked, authentic, and sometimes messy, just like life." />
-  <meta name="twitter:image" content="https://sonic-playground.fly.dev/images/wall.jpeg" />
+  <meta name="twitter:image" content="{{ get_url(path=`images/wall.jpeg`) }}" />
   <meta name="twitter:site" content="@korczis" />
   <meta name="twitter:creator" content="@korczis" />
 
@@ -127,8 +127,9 @@
   <!---->
 
   <!-- Favicon -->
-  <link rel="icon" href="{{ get_url(path=`favicon.ico`) }}" />
-  <link rel="apple-touch-icon" href="{{ get_url(path=`apple-touch-icon.png`) }}" />
+  <link rel="icon" href="{{ get_url(path=`favicon.ico`) }}" sizes="any" />
+  <link rel="icon" href="{{ get_url(path=`icon.svg`) }}" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="{{ get_url(path=`icon.png`) }}" />
 
   <!-- Feeds -->
   {% if config.generate_feed %}
