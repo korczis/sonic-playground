@@ -2,8 +2,11 @@
 base_url = "https://sonic-playground.fly.dev"
 
 # The site title and description; used in feeds by default.
-title = "sonic-playground.fly.dev"
-description = "Explore an eclectic, hand-picked collection of tracks that capture the full spectrum of human emotion—happy, angry, melancholy, and everything in between."
+title = "Sonic Playground"
+# subtitle = "A Human Journey Through Music"
+description = "Discover music that moves you, not algorithmic noise. Hand-picked, authentic, and sometimes messy, just like life."
+# description = "Sonic Playground: A Human Journey Through Music"
+# description = "Explore an eclectic, hand-picked collection of tracks that capture the full spectrum of human emotion—happy, angry, melancholy, and everything in between."
 
 # The default site author.
 author = "korczis"
