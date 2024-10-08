@@ -368,6 +368,9 @@
         <loc>https://sonic-playground.fly.dev/genre/electronic/page/5/</loc>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/genre/electronic/page/6/</loc>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/genre/electropop/</loc>
     </url>
     <url>
@@ -757,6 +760,10 @@
         <lastmod>2024-10-08</lastmod>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/marbert-rocel-hush-now/</loc>
+        <lastmod>2024-10-09</lastmod>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/marcu-rares-camimosa/</loc>
         <lastmod>2024-10-01</lastmod>
     </url>
@@ -890,6 +897,12 @@
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/sentiment/bold/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/calm/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/calm/page/1/</loc>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/sentiment/carefree/</loc>
@@ -1288,6 +1301,12 @@
         <loc>https://sonic-playground.fly.dev/sentiment/sensual/page/1/</loc>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/soothing/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/soothing/page/1/</loc>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/sentiment/soulful/</loc>
     </url>
     <url>
@@ -1403,6 +1422,10 @@
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/welcome/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/whilk-and-miskey-darklands/</loc>
+        <lastmod>2024-10-03</lastmod>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/zwicker-oddity/</loc>
