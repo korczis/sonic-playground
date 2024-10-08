@@ -209,6 +209,12 @@
         <loc>https://sonic-playground.fly.dev/genre/chillout/page/1/</loc>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/genre/classic-rock/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/classic-rock/page/1/</loc>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/genre/contemporary/</loc>
     </url>
     <url>
@@ -504,6 +510,12 @@
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/genre/rap/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/reggae/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/reggae/page/1/</loc>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/genre/remix/</loc>
@@ -1202,6 +1214,10 @@
     <url>
         <loc>https://sonic-playground.fly.dev/the-horroris-one-night-in-nyc/</loc>
         <lastmod>2024-10-06</lastmod>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/the-police-roxanne/</loc>
+        <lastmod>2024-10-08</lastmod>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/the-xx-crystalised/</loc>
