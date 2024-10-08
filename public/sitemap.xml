@@ -98,6 +98,10 @@
         <lastmod>2024-10-06</lastmod>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/fischerspooner-emerge/</loc>
+        <lastmod>2024-10-09</lastmod>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/fort-minor-remember-the-name/</loc>
         <lastmod>2024-10-08</lastmod>
     </url>
@@ -1300,6 +1304,12 @@
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/sentiment/tense/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/theatrical/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/theatrical/page/1/</loc>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/sentiment/transformative/</loc>
