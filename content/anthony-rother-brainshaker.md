@@ -112,6 +112,53 @@ emotional rollercoaster that invites listeners to lose themselves in its
 pulsating rhythm and haunting atmosphere, resonating long after the last 
 beat has faded.
 
+## Lyrics
+
+```
+(Chorus)
+Brainshaker, take me higher,
+In the rhythm, I feel the fire.
+Mechanical heart, pounding loud,
+Lost in the beat, I’m part of the crowd.
+
+(Verse 1)
+Synthetic dreams in a neon haze,
+Futuristic visions through a digital maze.
+With every pulse, I’m alive and free,
+This electric world is calling me.
+
+(Chorus)
+Brainshaker, take me higher,
+In the rhythm, I feel the fire.
+Mechanical heart, pounding loud,
+Lost in the beat, I’m part of the crowd.
+
+(Verse 2)
+Through the chaos, I find my place,
+Dancing shadows, a neon embrace.
+Wires and circuits, they guide my way,
+In this dystopia, I’m here to stay.
+
+(Chorus)
+Brainshaker, take me higher,
+In the rhythm, I feel the fire.
+Mechanical heart, pounding loud,
+Lost in the beat, I’m part of the crowd.
+
+(Bridge)
+In the silence, I hear the sound,
+Of the future echoing all around.
+No retreat, no backing down,
+In this brainshaker, I wear the crown.
+
+(Chorus)
+Brainshaker, take me higher,
+In the rhythm, I feel the fire.
+Mechanical heart, pounding loud,
+Lost in the beat, I’m part of the crowd.
+
+```
+
 ## Conclusion
 
 In "Brainshaker," Anthony Rother delivers an electrifying sound experience 
