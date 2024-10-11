@@ -8,7 +8,6 @@ genre = ["pop", "world", "afrobeat"]
 sentiment = ["empowering", "energetic", "uplifting"]
 
 [extra]
-cover_image = "/img/thumbnails/makeba_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/59Q_lhgGANc"
 +++
 

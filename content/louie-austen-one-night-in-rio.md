@@ -8,7 +8,6 @@ genre = ["jazz", "seductive", "bossa nova"]
 sentiment = ["bittersweet"]
 
 [extra]
-cover_image = "/img/thumbnails/louie_austen_one_night_in_rio_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/8cKkBcmm2cE"
 +++
 

@@ -8,7 +8,6 @@ genre = ["electronic", "house", "disco"]
 sentiment = ["vibrant", "energetic", "immersive"]
 
 [extra]
-cover_image = "/img/thumbnails/discolight_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/uE9HBMnHpb4"
 +++
 

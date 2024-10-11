@@ -8,7 +8,6 @@ genre = ["indie pop", "singer-songwriter", "dream pop"]
 sentiment = ["reflective", "melancholic", "nostalgic"]
 
 [extra]
-cover_image = "/img/thumbnails/party_girl_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/ANmL7LvNzdw"
 +++
 

@@ -8,7 +8,6 @@ genre = ["funk", "jazz", "electronic"]
 sentiment = ["eclectic", "cosmic", "uplifting"]
 
 [extra]
-cover_image = "/img/thumbnails/inner_galactic_lovers_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/AplRmndCK5A"
 +++
 

@@ -8,7 +8,6 @@ genre = ["rock", "reggae", "classic rock"]
 sentiment = ["longing", "intense", "emotional"]
 
 [extra]
-cover_image = "/img/thumbnails/the_police_roxanne_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/3T1c7GkzRQQ"
 +++
 

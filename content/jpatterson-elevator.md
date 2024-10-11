@@ -8,7 +8,6 @@ genre = ["dub", "reggae", "electronic"]
 sentiment = ["relaxed", "groovy", "uplifting"]
 
 [extra]
-cover_image = "/img/thumbnails/jpattersson_elevator_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/zvf2J2Jh5aw"
 +++
 

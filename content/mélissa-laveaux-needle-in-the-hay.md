@@ -8,7 +8,6 @@ genre = ["indie folk", "singer-songwriter", "alternative"]
 sentiment = ["melancholic", "introspective", "haunting"]
 
 [extra]
-cover_image = "/img/thumbnails/melissa_laveaux_needle_in_the_hay_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/L_qJ8LSTdzc"
 +++
 

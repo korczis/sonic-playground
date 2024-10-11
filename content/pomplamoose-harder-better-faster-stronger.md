@@ -8,7 +8,6 @@ genre = ["electronic", "pop", "funk"]
 sentiment = ["energetic", "playful", "innovative"]
 
 [extra]
-cover_image = "/img/thumbnails/harder_better_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/fUpdfpOPf4Y"
 +++
 

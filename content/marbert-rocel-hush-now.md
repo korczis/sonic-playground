@@ -8,7 +8,6 @@ genre = ["downtempo", "electronic", "soul"]
 sentiment = ["calm", "reflective", "soothing"]
 
 [extra]
-cover_image = "/img/thumbnails/marbert_rocel_hush_now_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/amQBPD3dSkk"
 +++
 

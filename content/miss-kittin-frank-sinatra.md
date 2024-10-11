@@ -8,7 +8,6 @@ genre = ["electroclash", "dance", "electronic"]
 sentiment = ["satirical", "playful", "provocative"]
 
 [extra]
-cover_image = "/img/thumbnails/miss_kittin_frank_sinatra_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/ouWAymYiUn8"
 +++
 

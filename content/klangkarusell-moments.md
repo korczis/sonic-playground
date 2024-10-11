@@ -8,7 +8,6 @@ genre = ["deep house", "electronic", "dance"]
 sentiment = ["euphoric", "nostalgic", "joyful"]
 
 [extra]
-cover_image = "/img/thumbnails/moments_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/ZbDQ8SVqHZw"
 +++
 

@@ -8,7 +8,6 @@ genre = ["electronic", "introspective"]
 sentiment = ["nostalgic", "emotive", "reflective"]
 
 [extra]
-cover_image = "/img/thumbnails/lekota_i_used_to_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/G0T9tdZI4Yk"
 +++
 

@@ -8,7 +8,6 @@ genre = ["techno", "electronic", "industrial"]
 sentiment = ["intense", "energetic", "urban"]
 
 [extra]
-cover_image = "/img/thumbnails/one_night_in_new_york_city_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/oVgjC5Gw8y0"
 +++
 

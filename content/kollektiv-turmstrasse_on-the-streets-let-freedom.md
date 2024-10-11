@@ -8,7 +8,6 @@ genre = ["electronic", "atmospheric"]
 sentiment = ["liberating", "uplifting", "introspective"]
 
 [extra]
-cover_image = "/img/thumbnails/kollektiv_turmstrasse_on_the_streets_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/aiMseVNHd5I"
 +++
 

@@ -8,7 +8,6 @@ genre = ["progressive house", "techno", "electronic"]
 sentiment = ["hypnotic", "intense", "energetic"]
 
 [extra]
-cover_image = "/img/thumbnails/shifter_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/jICyqacTGBM"
 +++
 

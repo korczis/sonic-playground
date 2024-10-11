@@ -8,7 +8,6 @@ genre = ["electronic", "dance", "minimal"]
 sentiment = ["catchy", "innovative", "groovy"]
 
 [extra]
-cover_image = "/img/thumbnails/naiive_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/20cJMLr7ueE"
 +++
 

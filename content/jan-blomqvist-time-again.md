@@ -8,7 +8,6 @@ genre = ["deep house", "minimal techno", "electronic"]
 sentiment = ["melancholic", "hypnotic", "emotive"]
 
 [extra]
-cover_image = "/img/thumbnails/time_again_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/7l1nijTC_yM"
 +++
 

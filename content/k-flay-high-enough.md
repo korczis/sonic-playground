@@ -8,7 +8,6 @@ genre = ["alternative rock", "electronic", "indie"]
 sentiment = ["empowering", "reflective", "uplifting"]
 
 [extra]
-cover_image = "/img/thumbnails/high_enough_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/j04JKdcXjkU"
 +++
 

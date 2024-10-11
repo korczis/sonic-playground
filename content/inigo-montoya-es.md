@@ -8,7 +8,6 @@ genre = ["techno", "melodic", "progressive"]
 sentiment = ["reflective", "emotional", "uplifting"]
 
 [extra]
-cover_image = "/img/thumbnails/inigo_montoya_es_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/cK54zeNP-ZU"
 +++
 

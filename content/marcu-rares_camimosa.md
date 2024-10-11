@@ -8,7 +8,6 @@ genre = ["deep house", "ambient electronica", "chillout"]
 sentiment = ["uplifting", "dreamy", "introspective"]
 
 [extra]
-cover_image = "/img/thumbnails/marcu_rares_camimosa_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/MmIWve5bUpU"
 +++
 

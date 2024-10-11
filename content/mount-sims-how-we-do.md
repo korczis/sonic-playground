@@ -8,7 +8,6 @@ genre = ["electronic", "underground", "experimental"]
 sentiment = ["rebellious", "defiant", "empowering"]
 
 [extra]
-cover_image = "/img/thumbnails/mount_sims_how_we_do_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/YrhxWcivUT4"
 +++
 

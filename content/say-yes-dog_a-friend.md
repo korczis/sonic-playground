@@ -8,7 +8,6 @@ genre = ["synth-pop", "indie", "dance"]
 sentiment = ["catchy", "heartfelt"]
 
 [extra]
-cover_image = "/img/thumbnails/example_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/FtITR_42Zes"
 +++
 

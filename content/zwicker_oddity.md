@@ -8,7 +8,6 @@ genre = ["electronic", "dance"]
 sentiment = ["hypnotic", "sultry"]
 
 [extra]
-cover_image = "/img/thumbnails/zwicker_oddity_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/LZDpFXfW3jU"
 +++
 

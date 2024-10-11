@@ -8,7 +8,6 @@ genre = ["pop", "rock", "ballad"]
 sentiment = ["haunting", "melancholic", "nostalgic"]
 
 [extra]
-cover_image = "/img/thumbnails/bang_bang_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/0rcLYnQfedI"
 +++
 

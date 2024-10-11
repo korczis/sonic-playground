@@ -8,7 +8,6 @@ genre = ["electro-pop", "indie", "dance"]
 sentiment = ["playful", "reflective", "uplifting"]
 
 [extra]
-cover_image = "/img/thumbnails/ultraista_smalltalk_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/1bMR83ZI7m8"
 +++
 

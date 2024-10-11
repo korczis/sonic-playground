@@ -8,7 +8,6 @@ genre = ["house", "electronic", "soul"]
 sentiment = ["vibrant", "introspective", "energetic"]
 
 [extra]
-cover_image = "/img/thumbnails/sinnerman_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/0hcEiEyylEA"  # Replace with the actual video link
 +++
 

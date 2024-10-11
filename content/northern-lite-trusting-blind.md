@@ -8,7 +8,6 @@ genre = ["psychedelic", "dark techno", "minimal"]
 sentiment = ["introspective", "spiritual", "trance-like"]
 
 [extra]
-cover_image = "/images/thumbnails/northern-lite-trusting-blind.jpg"
 youtube = "https://www.youtube.com/embed/2dmRpoG2hao"
 +++
 

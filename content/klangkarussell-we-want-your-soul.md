@@ -8,7 +8,6 @@ genre = ["electronic", "house", "progressive"]
 sentiment = ["energetic", "provocative", "hypnotic"]
 
 [extra]
-cover_image = "/img/thumbnails/we_want_your_soul_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/4rYEigiNoPc"
 +++
 

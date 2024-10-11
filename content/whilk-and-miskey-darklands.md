@@ -8,7 +8,6 @@ genre = ["electronic", "indie", "alternative"]
 sentiment = ["melancholic", "atmospheric", "introspective"]
 
 [extra]
-cover_image = "/img/thumbnails/whilk_misky_darklands_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/fk3WPgcJWsQ"
 +++
 

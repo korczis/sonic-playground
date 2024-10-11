@@ -8,7 +8,6 @@ genre = ["indie pop", "electronic", "dance"]
 sentiment = ["upbeat", "reflective", "adventurous"]
 
 [extra]
-cover_image = "/img/thumbnails/paddling_out_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/WCNQ2mc_Zzc"
 +++
 

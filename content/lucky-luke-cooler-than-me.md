@@ -8,7 +8,6 @@ genre = ["deep house", "electronic", "remix"]
 sentiment = ["chill", "playful", "confident"]
 
 [extra]
-cover_image = "/img/thumbnails/lucky_luke_cooler_than_me_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/A3pJB4m713M"
 +++
 

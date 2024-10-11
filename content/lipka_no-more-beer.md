@@ -8,7 +8,6 @@ genre = ["folk punk", "indie rock", "alternative folk"]
 sentiment = ["bittersweet"]
 
 [extra]
-cover_image = "/img/thumbnails/lipka_no_more_bier_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/9Ihx9Wm5bN4"
 +++
 

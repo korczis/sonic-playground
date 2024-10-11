@@ -8,7 +8,6 @@ genre = ["electronic", "house", "indie dance"]
 sentiment = ["melancholic", "introspective", "euphoric"]
 
 [extra]
-cover_image = "/img/thumbnails/garden_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/G-1HNnxb0WE"
 +++
 

@@ -8,7 +8,6 @@ genre = ["bossa nova", "new wave", "alternative"]
 sentiment = ["playful", "ironic", "chill"]
 
 [extra]
-cover_image = "/img/thumbnails/too_drunk_to_fuck_nouvelle_vague_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/0wpuCypVneA"
 +++
 

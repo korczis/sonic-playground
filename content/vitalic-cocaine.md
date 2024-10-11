@@ -8,7 +8,6 @@ genre = ["electro", "dance", "techno"]
 sentiment = ["intense", "energetic", "hypnotic"]
 
 [extra]
-cover_image = "/img/thumbnails/vitalic_cocaine_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/9os5uvNq6v8"
 +++
 

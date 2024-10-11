@@ -8,7 +8,6 @@ genre = ["jazz", "soul", "electronic"]
 sentiment = ["vibrant", "evocative", "melodic"]
 
 [extra]
-cover_image = "/img/thumbnails/midsummer_night_blues_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/dUgzGxYmCwg"
 +++
 

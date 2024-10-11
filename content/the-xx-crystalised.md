@@ -8,7 +8,6 @@ genre = ["indie pop", "electronic", "dream pop"]
 sentiment = ["intimate", "tense", "melancholic"]
 
 [extra]
-cover_image = "/img/thumbnails/crystalised_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/Pib8eYDSFEI"
 +++
 

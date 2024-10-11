@@ -8,7 +8,6 @@ genre = ["post-punk", "electronic", "spoken word"]
 sentiment = ["angry", "gritty", "rebellious"]
 
 [extra]
-cover_image = "/img/thumbnails/tweet_tweet_tweet_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/V2zNGy0NFEQ"
 +++
 

@@ -8,7 +8,6 @@ genre = ["electronic", "dance", "pop"]
 sentiment = ["provocative", "indulgent", "hypnotic"]
 
 [extra]
-cover_image = "/img/thumbnails/paul_oakenfold_sex_n_money_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/E2aoCju-_NQ"
 +++
 

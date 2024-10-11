@@ -8,7 +8,6 @@ genre = ["deep house", "melodic techno", "electronic"]
 sentiment = ["nostalgic", "reflective", "emotive"]
 
 [extra]
-cover_image = "/img/thumbnails/epoque_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/r13IcwcS7Mo"
 +++
 

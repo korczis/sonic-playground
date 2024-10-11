@@ -8,7 +8,6 @@ genre = ["deep house", "electronic", "melodic house"]
 sentiment = ["melancholic", "hypnotic", "reflective"]
 
 [extra]
-cover_image = "/img/thumbnails/tinush_sandburg_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/-TH0tfRjxwg"
 +++
 

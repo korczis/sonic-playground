@@ -8,7 +8,6 @@ genre = ["alternative rock", "indie pop", "funk"]
 sentiment = ["upbeat", "playful", "liberating"]
 
 [extra]
-cover_image = "/img/thumbnails/feel_it_still_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/pBkHHoOIIn8"
 +++
 

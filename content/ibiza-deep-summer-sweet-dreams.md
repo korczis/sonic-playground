@@ -8,7 +8,6 @@ genre = ["deep house", "electronic", "remix"]
 sentiment = ["uplifting", "nostalgic", "chill"]
 
 [extra]
-cover_image = "/img/thumbnails/eurythmics_sweet_dreams_remix_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/p9j8RGTqju0"
 +++
 

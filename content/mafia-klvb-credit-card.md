@@ -8,7 +8,6 @@ genre = ["hip-hop", "trap", "underground"]
 sentiment = ["edgy", "gritty", "provocative"]
 
 [extra]
-cover_image = "/img/thumbnails/mafia_kvlb_credit_card_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/zrCrEje1lz4"
 +++
 

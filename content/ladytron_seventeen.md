@@ -8,7 +8,6 @@ genre = ["synth-pop", "electro-pop", "dance"]
 sentiment = ["nostalgic", "uplifting", "dreamy"]
 
 [extra]
-cover_image = "images/markdown-syntax.png"
 youtube = "https://www.youtube.com/embed/s6jaYJx7yeI"
 +++
 

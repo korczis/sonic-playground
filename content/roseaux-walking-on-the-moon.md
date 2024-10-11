@@ -8,7 +8,6 @@ genre = ["electronic", "indie", "dream pop"]
 sentiment = ["dreamy", "ethereal", "introspective"]
 
 [extra]
-cover_image = "/img/thumbnails/walking_on_the_moon_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/tsEYgJ3tQcQ"
 +++
 

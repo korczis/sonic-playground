@@ -8,7 +8,6 @@ genre = ["cumbia", "electronic", "dance"]
 sentiment = ["energetic", "vibrant"]
 
 [extra]
-cover_image = "/img/thumbnails/example_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/Ol992v9ukOM"
 +++
 

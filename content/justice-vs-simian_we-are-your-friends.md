@@ -8,7 +8,6 @@ genre = ["electro", "house", "dance"]
 sentiment = ["iconic", "infectious"]
 
 [extra]
-cover_image = "/img/thumbnails/example_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/L0TvnWRSyr4"
 +++
 

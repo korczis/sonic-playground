@@ -8,7 +8,6 @@ genre = ["electronic", "pop", "dance"]
 sentiment = ["bold", "introspective", "liberating"]
 
 [extra]
-cover_image = "/img/thumbnails/primitive_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/3d9nrrQGxzA"
 +++
 

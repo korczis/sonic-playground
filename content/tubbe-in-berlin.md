@@ -8,7 +8,6 @@ genre = ["synth-pop", "electropop", "indie electronic"]
 sentiment = ["energetic", "nostalgic", "euphoric"]
 
 [extra]
-cover_image = "/img/thumbnails/in_berlin_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/cijlDnHQXU"
 +++
 

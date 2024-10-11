@@ -8,7 +8,6 @@ genre = ["electronic", "techno", "experimental"]
 sentiment = ["energetic", "futuristic", "hypnotic"]
 
 [extra]
-cover_image = "/img/thumbnails/tum_rakak_deluxe_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/Oq7gVPRjlfQ"
 +++
 

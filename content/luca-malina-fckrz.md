@@ -8,7 +8,6 @@ genre = ["electronic", "deep house"]
 sentiment = ["energetic", "vibrant", "immersive"]
 
 [extra]
-cover_image = "/img/thumbnails/fckrz_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/66NvXac9kWo"
 +++
 

@@ -8,7 +8,6 @@ genre = ["house", "electronic", "dance"]
 sentiment = ["uplifting", "energizing"]
 
 [extra]
-cover_image = "/img/thumbnails/ryan_blyth_once_twice_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/EpdxpOyL2vg"
 +++
 

@@ -8,7 +8,6 @@ genre = ["brazilian", "samba", "funk", "soul"]
 sentiment = ["laid-back", "uplifting", "carefree"]
 
 [extra]
-cover_image = "/img/thumbnails/jorge_ben_take_it_easy_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/BjhMp-FlBEk"
 +++
 
