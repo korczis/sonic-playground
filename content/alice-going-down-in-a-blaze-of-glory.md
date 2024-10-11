@@ -1,5 +1,5 @@
 +++
-title = "Alic - Ectoplasm"
+title = "Alic - Going Down In A Blaze Of Glory"
 date = "2024-10-11"
 description = "A deep dive into the haunting realms of dark psychedelic techno, blending hypnotic rhythms with ghostly atmospheres."
 
