@@ -8,7 +8,7 @@ genre = ["psychedelic", "dark techno", "minimal"]
 sentiment = ["eerie", "haunting", "immersive"]
 
 [extra]
-cover_image = "/img/thumbnails/alic_ectoplasm_thumbnail.jpg"
+cover_image = "/images/thumbnails/alice-going-down-in-a-blaze-of-glory.jpg"
 youtube = "https://www.youtube.com/embed/ICj67BEAt6k"
 +++
 
