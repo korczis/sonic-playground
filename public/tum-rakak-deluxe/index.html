@@ -1,0 +1,582 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    Tum Rakak - Deluxe - Sonic Playground
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!---->
+  <meta name="description" content="&#x27;Deluxe&#x27; by Tum Rakak is an energetic electronic dance track that blends elements of techno, house, and experimental electronic music. The song showcases innovative sound design and pulsating rhythms, creating an immersive sonic experience." />
+  <meta name="author" content="korczis" />
+
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tum Rakak - Deluxe" />
+  <meta property="og:site_name" content="Sonic Playground" />
+  <meta property="og:description" content="&#x27;Deluxe&#x27; by Tum Rakak is an energetic electronic dance track that blends elements of techno, house, and experimental electronic music. The song showcases innovative sound design and pulsating rhythms, creating an immersive sonic experience." />
+  <meta property="og:url" content="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;tum-rakak-deluxe&#x2F;" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tum Rakak - Deluxe" />
+  <meta name="twitter:description" content="&#x27;Deluxe&#x27; by Tum Rakak is an energetic electronic dance track that blends elements of techno, house, and experimental electronic music. The song showcases innovative sound design and pulsating rhythms, creating an immersive sonic experience." />
+  <meta name="twitter:image" content="https://sonic-playground.fly.dev/images/wall.jpeg" />
+  <meta name="twitter:site" content="@korczis" />
+  <meta name="twitter:creator" content="@korczis" />
+
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://sonic-playground.fly.dev/img/thumbnails/tum_rakak_deluxe_thumbnail.jpg" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://sonic-playground.fly.dev/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://sonic-playground.fly.dev/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://sonic-playground.fly.dev/favicon.ico" sizes="any" />
+  <link rel="icon" href="https://sonic-playground.fly.dev/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="https://sonic-playground.fly.dev/icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://sonic-playground.fly.dev/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;tum-rakak-deluxe&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://sonic-playground.fly.dev">Sonic Playground</a>
+        <!-- div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div -->
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      /*
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+      //*/
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/welcome"
+            >Welcome</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/author"
+            >Author</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/genre"
+            >Genre</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/sentiment"
+            >Sentiment</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+
+  <!-- link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" -->
+  <!-- link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.1/flowbite.min.css" rel="stylesheet" -->
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Tum Rakak - Deluxe</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2024-10-03</time>
+  <span class="mx-1">&middot;</span>
+  <span>3min</span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>korczis</span>
+  
+</div>
+
+  </header>
+
+  
+  <figure class="mb-12 mt-0">
+    <iframe width="640" height="360" src="https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Oq7gVPRjlfQ" frameborder="0" allowfullscreen class="w-full h-64"></iframe>
+  </figure>
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#artist-background"
+            >Artist Background</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#genre-and-mood"
+            >Genre and Mood</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#song-structure-and-sound-design"
+            >Song Structure and Sound Design</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#introduction"
+                >Introduction</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#build-up"
+                >Build-up</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#main-section"
+                >Main Section</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#breakdown"
+                >Breakdown</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#climax"
+                >Climax</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#outro"
+                >Outro</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#production-techniques"
+            >Production Techniques</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#thematic-interpretation"
+            >Thematic Interpretation</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#cultural-context"
+            >Cultural Context</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#potential-impact-and-reception"
+            >Potential Impact and Reception</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/tum-rakak-deluxe/#live-performance-potential"
+            >Live Performance Potential</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><h2 id="artist-background">Artist Background</h2>
+<p>Tum Rakak is known for pushing the boundaries of electronic music, often
+blending various subgenres to create unique and captivating soundscapes.
+Their work typically features intricate sound design and innovative
+production techniques.</p>
+<h2 id="genre-and-mood">Genre and Mood</h2>
+<p>"Deluxe" falls primarily within the realm of experimental electronic music,
+with strong influences from techno and house. The track likely creates a
+futuristic and energetic atmosphere, inviting listeners into a world of
+cutting-edge sound.</p>
+<h2 id="song-structure-and-sound-design">Song Structure and Sound Design</h2>
+<h3 id="introduction">Introduction</h3>
+<p>The track probably opens with an attention-grabbing sequence of synthesized sounds,
+immediately establishing its experimental nature. Expect unconventional
+tones and textures that set the stage for the journey ahead.</p>
+<h3 id="build-up">Build-up</h3>
+<p>As the track progresses, layers of rhythmic elements are likely introduced.
+These might include both traditional percussion sounds and more abstract,
+synthesized rhythmic textures. The build-up phase would gradually increase
+tension and energy.</p>
+<h3 id="main-section">Main Section</h3>
+<p>The core of the track likely features a pulsating, techno-inspired beat
+combined with intricate, evolving synth patterns. "Deluxe" in the title
+suggests a rich, full sound, so expect a dense mix with multiple layers of s
+ound interacting and evolving.</p>
+<h3 id="breakdown">Breakdown</h3>
+<p>A breakdown section might strip back some elements, possibly focusing on
+more abstract or ambient sounds. This could provide a moment of contrast
+and build anticipation for the track's climax.</p>
+<h3 id="climax">Climax</h3>
+<p>The peak of the track would likely bring all elements together in a
+high-energy crescendo. This might include the most complex and layered
+part of the sound design, showcasing the "deluxe" nature of the production.</p>
+<h3 id="outro">Outro</h3>
+<p>The conclusion may gradually deconstruct the track's elements,
+potentially leaving listeners with echoes of the main themes or
+introducing new, thought-provoking sounds to close the experience.</p>
+<h2 id="production-techniques">Production Techniques</h2>
+<p>Given Tum Rakak's reputation for innovative sound design, "Deluxe" likely features:</p>
+<ol>
+<li>Advanced synthesis techniques, possibly including modular or granular synthesis</li>
+<li>Creative use of effects, potentially including unconventional routing or real-time manipulation</li>
+<li>Meticulous sound sculpting, creating unique timbres and textures</li>
+<li>Precise and dynamic mix engineering to balance the complex array of sounds</li>
+<li>Possible incorporation of found sounds or field recordings, processed beyond recognition</li>
+</ol>
+<h2 id="thematic-interpretation">Thematic Interpretation</h2>
+<p>The title "Deluxe" suggests a focus on quality, luxury, or abundance.
+In the context of this track, this might translate to:</p>
+<ol>
+<li>A particularly rich and full sound design</li>
+<li>An exploration of "deluxe" or premium sonic textures</li>
+<li>A commentary on excess or opulence through sound</li>
+<li>An attempt to create a sonically luxurious experience for the listener</li>
+</ol>
+<h2 id="cultural-context">Cultural Context</h2>
+<p>This track sits within the tradition of forward-thinking electronic
+music that pushes the boundaries of sound design and composition. It
+likely appeals to listeners who appreciate both the technical aspects of
+production and the immersive, transportive potential of electronic music.</p>
+<h2 id="potential-impact-and-reception">Potential Impact and Reception</h2>
+<p>Tracks like "Deluxe" often find appreciation among fans of cutting-edge
+electronic music and fellow producers who admire technical innovation. Its
+experimental nature might make it more suited for focused listening or
+specialized dance environments rather than mainstream clubs. The track
+could potentially influence other producers in terms of sound design
+techniques and the fusion of different electronic subgenres.</p>
+<h2 id="live-performance-potential">Live Performance Potential</h2>
+<p>In a live setting, "Deluxe" could be a standout moment in a
+Tum Rakak set. The complex sound design might lend itself to an
+engaging visual accompaniment, and there could be opportunities for
+real-time manipulation of the track's elements, creating a unique experience
+for each performance.</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Genre </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/genre/electronic/"
+      >electronic</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/genre/techno/"
+      >techno</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/genre/experimental/"
+      >experimental</a
+    >
+    
+  </div>
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Sentiment </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/sentiment/energetic/"
+      >energetic</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/sentiment/futuristic/"
+      >futuristic</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/sentiment/hypnotic/"
+      >hypnotic</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;vitalic-cocaine&#x2F;"
+    ><span class="mr-1.5">←</span><span>Vitalic - You Prefer Cocaine</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;tubbe-in-berlin&#x2F;"
+    ><span>Tubbe - In Berlin</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  
+</article>
+
+    </main>
+
+    <footer class="relative bg-gray-800 text-white py-4 overflow-hidden">
+    <div class="absolute inset-0 z-[-1]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full">
+            <style>
+                .wave {
+                    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+                    transform-origin: center bottom;
+                }
+                @keyframes wave {
+                    0% { transform: scaleY(1); }
+                    25% { transform: scaleY(0.75); }
+                    50% { transform: scaleY(0.5); }
+                    75% { transform: scaleY(0.75); }
+                    100% { transform: scaleY(1); }
+                }
+            </style>
+            <path class="wave" fill="#3b82f6" fill-opacity="0.1" d="M0,160L48,165.3C96,171,192,181,288,170.7C384,160,480,128,576,117.3C672,107,768,117,864,144C960,171,1056,213,1152,208C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    <div class="mx-auto flex max-w-3xl flex-wrap items-center px-8 text-sm opacity-90 relative z-10">
+        <div class="mr-auto basis-full lg:basis-1/2">
+            
+            <span class="font-thin text-black">
+                &copy; 2024
+            </span>
+            <span class="font-thin text-black">
+                <a class="link" href="https://sonic-playground.fly.dev">korczis</a>
+            </span>
+             | 
+            
+                <span class="font-thin text-black">
+                    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+                        CC BY-SA 4.0
+                    </a>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+  </body>
+</html>
