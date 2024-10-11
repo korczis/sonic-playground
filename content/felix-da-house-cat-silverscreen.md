@@ -8,7 +8,6 @@ genre = ["electro-house", "dance", "electronic"]
 sentiment = ["sensual", "mysterious", "energetic"]
 
 [extra]
-cover_image = "/img/thumbnails/felix_da_housecat_silver_screen_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/fJvatGfD9Pg"
 +++
 

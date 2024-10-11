@@ -8,7 +8,6 @@ genre = ["house", "breakbeat", "dub"]
 sentiment = ["energetic", "uplifting", "celebratory"]
 
 [extra]
-cover_image = "/img/thumbnails/superstylin_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/YrJDpEpw64E"
 +++
 

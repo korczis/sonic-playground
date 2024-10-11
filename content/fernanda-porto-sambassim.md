@@ -8,7 +8,6 @@ genre = ["samba", "electronic", "brazilian"]
 sentiment = ["vibrant", "energetic", "celebratory"]
 
 [extra]
-cover_image = "/img/thumbnails/sambassim_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/hlVJ7cBAqRQ"
 +++
 

@@ -8,7 +8,6 @@ genre = ["jazz", "soul", "blues"]
 sentiment = ["uplifting", "inspirational", "resilient"]
 
 [extra]
-cover_image = "/img/thumbnails/do_not_lose_your_steam_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/EEZyB4Bxrxg"
 +++
 

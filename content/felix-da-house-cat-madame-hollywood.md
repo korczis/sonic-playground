@@ -8,7 +8,6 @@ genre = ["electro-house", "dance", "electronic"]
 sentiment = ["edgy", "glamorous", "energetic"]
 
 [extra]
-cover_image = "/img/thumbnails/felix_da_housecat_madame_hollywood_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/tYjKDEnYTyI"
 +++
 

@@ -8,7 +8,6 @@ genre = ["indie rock", "alternative", "art rock"]
 sentiment = ["quirky", "energetic", "intriguing"]
 
 [extra]
-cover_image = "/img/thumbnails/breezeblocks_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/rVeMiVU77wo"
 +++
 

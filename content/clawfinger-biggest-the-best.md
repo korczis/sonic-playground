@@ -8,7 +8,6 @@ genre = ["rap metal", "industrial", "alternative rock"]
 sentiment = ["aggressive", "defiant", "provocative"]
 
 [extra]
-cover_image = "/img/thumbnails/biggest_and_best_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/4yG0QE9ce3U"
 +++
 

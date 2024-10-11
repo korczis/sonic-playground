@@ -8,7 +8,6 @@ genre = ["indie pop", "folk", "singer-songwriter"]
 sentiment = ["introspective", "romantic", "melancholic"]
 
 [extra]
-cover_image = "/img/thumbnails/my_moon_my_man_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/ltYq-jalYm0ltYq-jalYm0"  # Replace with the actual video link
 +++
 

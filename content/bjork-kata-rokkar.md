@@ -8,7 +8,6 @@ genre = ["electronic", "experimental", "art pop"]
 sentiment = ["emotive", "introspective", "immersive"]
 
 [extra]
-cover_image = "/img/thumbnails/kata_rokkar_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/oJWXJEnHGgI"
 +++
 

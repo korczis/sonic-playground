@@ -8,7 +8,6 @@ genre = ["punk rock", "hardcore punk", "alternative"]
 sentiment = ["irreverent", "satirical", "energetic"]
 
 [extra]
-cover_image = "/img/thumbnails/too_drunk_to_fuck_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/0LDsBVBEdpk"
 +++
 

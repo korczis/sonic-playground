@@ -8,7 +8,6 @@ genre = ["big beat", "electronic", "dance"]
 sentiment = ["uplifting", "reflective", "escapist"]
 
 [extra]
-cover_image = "/img/thumbnails/bird_of_pray_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/zKEWdRPRf3I"
 +++
 

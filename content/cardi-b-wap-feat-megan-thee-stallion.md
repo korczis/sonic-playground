@@ -8,7 +8,6 @@ genre = ["hip-hop", "rap"]
 sentiment = ["bold", "provocative", "empowering"]
 
 [extra]
-cover_image = "/img/thumbnails/wap_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/hsm4poTWjMs"
 +++
 

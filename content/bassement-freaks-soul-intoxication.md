@@ -8,7 +8,6 @@ genre = ["electronic", "dub", "house", "ambient"]
 sentiment = ["introspective", "hypnotic", "cleansing"]
 
 [extra]
-cover_image = "/img/thumbnails/soul_intoxication_thumbnail.jpg"
 +++
 
 ## Genre and Mood

@@ -8,7 +8,6 @@ genre = ["downtempo", "electronic", "nu-jazz"]
 sentiment = ["nostalgic", "introspective", "atmospheric"]
 
 [extra]
-cover_image = "/img/thumbnails/forgotten_places_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/Hs86ddB4sYA"
 +++
 

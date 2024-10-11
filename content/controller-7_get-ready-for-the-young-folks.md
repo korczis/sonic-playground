@@ -8,7 +8,6 @@ genre = ["electronic", "hip-hop", "playful"]
 sentiment = ["energetic", "nostalgic", "adventurous"]
 
 [extra]
-cover_image = "/img/thumbnails/controller_7_get_ready_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/WAXZNEa5kBs"
 +++
 

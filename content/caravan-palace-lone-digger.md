@@ -8,7 +8,6 @@ genre = ["electro-swing", "jazz", "electronic"]
 sentiment = ["vibrant", "playful", "energetic"]
 
 [extra]
-cover_image = "/img/thumbnails/lone_digger_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/UbQgXeY_zi4"
 +++
 

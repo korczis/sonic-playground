@@ -8,7 +8,6 @@ genre = ["hip-hop", "rap", "alternative"]
 sentiment = ["motivational", "empowering", "determined"]
 
 [extra]
-cover_image = "/img/thumbnails/fort_minor_remember_the_name_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/VDvr08sCPOc"
 +++
 

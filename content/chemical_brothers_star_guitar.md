@@ -8,7 +8,6 @@ genre = ["electronic", "big beat", "house"]
 sentiment = ["hypnotic", "mesmerizing"]
 
 [extra]
-cover_image = "/img/thumbnails/star_guitar_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/0S43IwBF0uM"
 +++
 

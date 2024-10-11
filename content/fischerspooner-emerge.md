@@ -8,7 +8,6 @@ genre = ["electro-pop", "dance", "art pop"]
 sentiment = ["bold", "liberating", "theatrical"]
 
 [extra]
-cover_image = "/img/thumbnails/fischerspooner_emerge_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/HHbAtxSTXo0"
 +++
 

@@ -8,7 +8,6 @@ genre = ["electro", "techno", "industrial"]
 sentiment = ["dark", "futuristic", "intense"]
 
 [extra]
-cover_image = "/img/thumbnails/anthony_rother_brainshaker_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/-QoU2oclkXY"
 +++
 

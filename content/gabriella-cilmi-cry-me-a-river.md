@@ -8,7 +8,6 @@ genre = ["jazz", "soul", "vocal jazz", "cover"]
 sentiment = ["heartbroken", "vindictive", "emotional"]
 
 [extra]
-cover_image = "/img/thumbnails/gabriella_cilmi_cry_me_a_river_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/iO66qZmGoEA" 
 +++
 

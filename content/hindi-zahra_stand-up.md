@@ -8,7 +8,6 @@ genre = ["soul", "jazz", "folk", "world"]
 sentiment = ["empowering", "rebellious", "uplifting"]
 
 [extra]
-cover_image = "/img/thumbnails/hindi_zahra_stand_up_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/YI2XuIOW3gM"
 +++
 

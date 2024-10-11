@@ -8,7 +8,6 @@ genre = ["electronic", "house", "funk"]
 sentiment = ["energetic", "emotional", "groovy"]
 
 [extra]
-cover_image = "/img/thumbnails/you_bring_me_down_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/mxAc6fLKf-Y"
 +++
 

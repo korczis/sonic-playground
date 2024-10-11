@@ -8,7 +8,6 @@ genre = ["dark electronic", "electrifying", "intense"]
 sentiment = ["intense", "emotional", "transformative"]
 
 [extra]
-cover_image = "/img/thumbnails/gabriel_vitel_burn_it_down_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/2MfQSruV7B0"
 +++
 

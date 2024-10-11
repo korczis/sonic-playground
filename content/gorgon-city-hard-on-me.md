@@ -8,7 +8,6 @@ genre = ["deep house", "electronic", "house"]
 sentiment = ["emotional", "introspective", "groovy"]
 
 [extra]
-cover_image = "/img/thumbnails/gorgon_city_hard_on_me_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/45KMkkl6hIY"
 +++
 

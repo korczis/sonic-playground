@@ -8,7 +8,6 @@ genre = ["electro-rap", "party", "dance"]
 sentiment = ["exuberant", "joyful", "festive"]
 
 [extra]
-cover_image = "/img/thumbnails/amanda_blank_dj_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/EtdqpubMkj8"
 +++
 

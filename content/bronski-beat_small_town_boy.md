@@ -8,7 +8,6 @@ genre = ["synth-pop", "electronic", "80s"]
 sentiment = ["nostalgic", "empowering", "reflective"]
 
 [extra]
-cover_image = "/img/thumbnails/bronski_beat_small_town_boy_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/88sARuFu-tc"
 +++
 

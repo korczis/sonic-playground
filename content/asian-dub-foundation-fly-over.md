@@ -8,7 +8,6 @@ genre = ["dub", "punk", "electronic"]
 sentiment = ["rebellious", "intense", "political"]
 
 [extra]
-cover_image = "/img/thumbnails/flyover_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/6m3z3IAtlzk"
 +++
 

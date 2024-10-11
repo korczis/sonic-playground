@@ -8,7 +8,6 @@ genre = ["electronic", "urban", "bassline"]
 sentiment = ["empowering", "uplifting", "authentic"]
 
 [extra]
-cover_image = "/img/thumbnails/example_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/uNWXwgYuKL8"
 +++
 

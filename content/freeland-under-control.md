@@ -8,7 +8,6 @@ genre = ["electronic", "breakbeat", "rock"]
 sentiment = ["rebellious", "intense", "gritty"]
 
 [extra]
-cover_image = "/img/thumbnails/under_control_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/AZkT2Rn9zCg"
 +++
 

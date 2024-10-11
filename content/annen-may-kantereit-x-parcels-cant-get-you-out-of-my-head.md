@@ -8,7 +8,6 @@ genre = ["acoustic", "indie", "cover"]
 sentiment = ["melancholic", "soulful", "nostalgic"]
 
 [extra]
-cover_image = "/img/thumbnails/annenmaykantereit_parcels_cover_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/RacxNskxySo"
 +++
 

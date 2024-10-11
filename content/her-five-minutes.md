@@ -8,7 +8,6 @@ genre = ["R&B", "soul", "contemporary"]
 sentiment = ["longing", "emotional", "introspective"]
 
 [extra]
-cover_image = "/img/thumbnails/five_minutes_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/sqM3APrfijU" 
 +++
 

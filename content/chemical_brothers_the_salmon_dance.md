@@ -8,7 +8,6 @@ genre = ["electronic", "big beat", "hip-hop"]
 sentiment = ["quirky", "playful", "humorous"]
 
 [extra]
-cover_image = "/img/thumbnails/salmon_dance_thumbnail.jpg"
 youtube = "https://www.youtube.com/embed/dDj7DuHVV9E"
 +++
 
