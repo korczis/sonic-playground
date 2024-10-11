@@ -18,6 +18,22 @@ youtube = "https://www.youtube.com/embed/-QoU2oclkXY"
 heavy industrial beats with dystopian soundscapes. The track exudes a **dark** and **futuristic** 
 atmosphere, making it ideal for those who appreciate **intense** and high-energy electronic music.
 
+## About the Artist
+
+**Anthony Rother** is a pioneer in the electronic music scene, particularly 
+known for his work in the electro and techno genres. With a career spanning 
+over two decades, Rother has established himself as one of the most innovative
+and influential figures in electronic music, pushing the boundaries of sound 
+design and production. His music often explores themes of technology, dystopia, 
+and human interaction with machines, crafting immersive soundscapes that feel 
+both mechanical and deeply emotional. Influenced by the likes of Kraftwerk and 
+early techno movements, Rother has created a signature style that blends 
+retro-futuristic elements with cutting-edge production techniques. Beyond his solo 
+work, he is also known for his collaborations with other electronic music 
+luminaries and his own record label, *Datapunk*, which has become a hub for 
+experimental and genre-defying music.
+
+
 ## Song Summary
 
 "Brainshaker" is driven by a thumping bassline that syncs with intricate synth 
