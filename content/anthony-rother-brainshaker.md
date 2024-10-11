@@ -46,8 +46,8 @@ electronic music, pushing the boundaries of sound design and production. His mus
 explores themes of technology, dystopia, and human interaction with machines, crafting 
 immersive soundscapes that feel both mechanical and deeply emotional.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" alt="Anthony Rother in studio 3" style="width: 100%; height: auto;">
+<a href="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
 </a>
 
 Influenced by the likes of Kraftwerk and early techno movements, Rother has created a 
@@ -71,6 +71,11 @@ sound brings together robotic rhythms and gritty textures that keep listeners
 locked in a state of constant tension and thrill. The fusion of **techno** and **electro** 
 elements adds to the track’s futuristic, almost cinematic quality, transporting listeners 
 to a world of neon-lit dystopia.
+
+<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" alt="Anthony Rother in studio 3" style="width: 100%; height: auto;">
+</a>
+
 
 ## Sound Breakdown
 
