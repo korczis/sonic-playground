@@ -1,4 +1,4 @@
 +++
 sort_by = "date"
-paginate_by = 15
+paginate_by = 25
 +++
