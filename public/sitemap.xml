@@ -498,6 +498,12 @@
         <loc>https://sonic-playground.fly.dev/genre/melodic-techno/page/1/</loc>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/genre/melodic/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/melodic/page/1/</loc>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/genre/minimal-techno/</loc>
     </url>
     <url>
@@ -648,6 +654,12 @@
         <loc>https://sonic-playground.fly.dev/genre/techno/page/1/</loc>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/genre/trap/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/trap/page/1/</loc>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/genre/underground/</loc>
     </url>
     <url>
@@ -698,6 +710,10 @@
     <url>
         <loc>https://sonic-playground.fly.dev/ibiza-deep-summer-sweet-dreams/</loc>
         <lastmod>2024-10-08</lastmod>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/inigo-montoya-es/</loc>
+        <lastmod>2024-10-11</lastmod>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/jain-makeba/</loc>
@@ -766,6 +782,10 @@
     <url>
         <loc>https://sonic-playground.fly.dev/lucky-luke-cooler-than-me/</loc>
         <lastmod>2024-10-08</lastmod>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/mafia-klvb-credit-card/</loc>
+        <lastmod>2024-10-11</lastmod>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/marbert-rocel-hush-now/</loc>
@@ -1289,6 +1309,9 @@
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/sentiment/reflective/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/reflective/page/2/</loc>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/sentiment/relaxed/</loc>
