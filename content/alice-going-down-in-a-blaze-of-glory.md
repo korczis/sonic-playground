@@ -89,7 +89,7 @@ reflect the explosion of energy that the phrase suggests. As the song crescendos
 though the listener is confronting something massive, but fully immersed and embracing the 
 intensity of the moment.
 
-**Ectoplasm**, on the other hand, crafts a mood that is **eerie**, **haunting**, 
+**Ectoplasm**, on the other hand, crafts a mood that is **eerie (strange and frightening)**, **haunting**, 
 and deeply **immersive**. Alic transports listeners into a shadowy, supernatural world. 
 The title, “Ectoplasm,” refers to a supernatural substance or spiritual energy, often associated 
 with ghost sightings, adding to the track's mysterious, otherworldly atmosphere.
