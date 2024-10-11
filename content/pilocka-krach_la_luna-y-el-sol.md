@@ -8,6 +8,7 @@ genre = ["cumbia", "electronic", "dance"]
 sentiment = ["energetic", "vibrant"]
 
 [extra]
+cover_image = "/images/thumbnails/pilocka-krach_la_luna-y-el-sol.jpg"
 youtube = "https://www.youtube.com/embed/Ol992v9ukOM"
 +++
 
