@@ -39,10 +39,6 @@ atmosphere, making it ideal for those who appreciate **intense** and high-energy
 
 ## About the Artist
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-wall.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-wall.jpg" alt="Anthony Rother" style="width: 100%; height: auto;">
-</a>
-
 **Anthony Rother**  is a pioneer in the electronic music scene, particularly known 
 for his work in the electro and techno genres. With a career spanning over two decades, 
 Rother has established himself as one of the most innovative and influential figures in 
@@ -50,8 +46,8 @@ electronic music, pushing the boundaries of sound design and production. His mus
 explores themes of technology, dystopia, and human interaction with machines, crafting 
 immersive soundscapes that feel both mechanical and deeply emotional.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-pose-1.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-pose-1.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
+<a href="/images/thumbnails/anthony-rother/anthony-rother-wall.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-wall.jpg" alt="Anthony Rother" style="width: 100%; height: auto;">
 </a>
 
 Influenced by the likes of Kraftwerk and early techno movements, Rother has created a 
