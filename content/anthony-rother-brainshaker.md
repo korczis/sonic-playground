@@ -20,8 +20,8 @@ youtube = "https://www.youtube.com/embed/-QoU2oclkXY"
 > where the listener is propelled into a whirlwind of sound, 
 > navigating the complexities of a dystopian landscape. 
  
-<a href="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
+<a href="/images/thumbnails/anthony-rother/anthony-rother-pose-1.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-pose-1.jpg" alt="Anthony Rother" style="width: 100%; height: auto;">
 </a>
 
 The track symbolizes the clash between humanity and 
