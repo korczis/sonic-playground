@@ -27,8 +27,8 @@ emerged from the late 1990s and early 2000s. Psychedelic techno itself is a fusi
 traditional techno's driving beats and the more exploratory, mind-bending qualities of 
 psychedelic trance (psytrance). While techno roots can be traced back to Detroit in the
 1980s, with artists like Juan Atkins, Kevin Saunderson, and Derrick May pioneering the 
-genre, **psychedelic techno** evolved from a more European underground rave scene, p
-articularly in countries like Germany, the UK, and Sweden.
+genre, **psychedelic techno** evolved from a more European underground rave scene, 
+particularly in countries like Germany, the UK, and Sweden.
 
 Where traditional techno focused on minimalism and repetition, **psychedelic techno** 
 introduced richer soundscapes, intricate patterns, and evolving textures meant to alter 
