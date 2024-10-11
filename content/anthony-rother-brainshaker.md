@@ -41,6 +41,10 @@ to surrender to the pulsating drive and lose themselves in the moment.
 heavy industrial beats with dystopian soundscapes. The track exudes a **dark** and **futuristic** 
 atmosphere, making it ideal for those who appreciate **intense** and high-energy electronic music.
 
+<a href="/images/thumbnails/anthony-rother/anthony-rother-dark.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-dark.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
+</a>
+
 ## About the Artist
 
 **Anthony Rother**  is a pioneer in the electronic music scene, particularly known 
@@ -147,10 +151,6 @@ but to feel, move, and ultimately surrender to the rhythm. Whether in a club
 or through headphones, Rother's artistry leaves a lasting impression, making 
 "Brainshaker" an essential listen for anyone seeking the darker edges of 
 electronic music.
-
-<a href="/images/thumbnails/anthony-rother/anthony-rother-dark.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-dark.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
-</a>
 
 ## References
 
