@@ -9,7 +9,7 @@ sentiment = ["eerie", "haunting", "immersive"]
 
 [extra]
 cover_image = "/img/thumbnails/alic_ectoplasm_thumbnail.jpg"
-youtube = "https://www.youtube.com/embed/bD4vllDrhZ8"
+youtube = "https://www.youtube.com/embed/ICj67BEAt6k"
 +++
 
 ## Genre and History
@@ -121,3 +121,7 @@ just a track. Alic masterfully blends deep, minimalistic grooves with unsettling
 atmospheres, creating a piece of music that feels both grounded in the techno tradition and 
 otherworldly in its execution. Perfect for fans of introspective, late-night techno, **Ectoplasm** 
 will resonate long after the last ghostly note fades away.
+
+## Reference 
+
+- [VA - Ektoplazms Greatest Tips](https://www.youtube.com/watch?v=bD4vllDrhZ8&list=PL_NG3abIJd17f3fIgQgYsyOTja6OI4N20&index=4)

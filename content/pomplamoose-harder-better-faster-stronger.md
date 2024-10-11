@@ -79,8 +79,3 @@ resonated with fans of both Daft Punk and contemporary pop music.
 Their playful approach highlights the timelessness of the original while
 introducing it to a new audience, solidifying their place within the 
 ever-evolving landscape of modern music.
-
-
-## Reference 
-
-- [VA - Ektoplazms Greatest Tips](https://www.youtube.com/watch?v=bD4vllDrhZ8&list=PL_NG3abIJd17f3fIgQgYsyOTja6OI4N20&index=4)
