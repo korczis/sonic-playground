@@ -72,6 +72,10 @@ locked in a state of constant tension and thrill. The fusion of **techno** and *
 elements adds to the track’s futuristic, almost cinematic quality, transporting listeners 
 to a world of neon-lit dystopia.
 
+<a href="/images/thumbnails/anthony-rother/anthony-rother-stairs.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-stairs.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
+</a>
+
 ## Sound Breakdown
 
 ### Intro: Building the Anticipation
