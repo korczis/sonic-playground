@@ -42,6 +42,10 @@ electronic music, pushing the boundaries of sound design and production. His mus
 explores themes of technology, dystopia, and human interaction with machines, crafting 
 immersive soundscapes that feel both mechanical and deeply emotional.
 
+<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-1.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-1.jpg" alt="Anthony Rother in studio 1" style="width: 100%; height: auto;">
+</a>
+
 Influenced by the likes of Kraftwerk and early techno movements, Rother has created a 
 signature style that blends retro-futuristic elements with cutting-edge production techniques. 
 His deep understanding of rhythm and melody allows him to construct tracks that are not only 
@@ -124,6 +128,9 @@ or through headphones, Rother's artistry leaves a lasting impression, making
 "Brainshaker" an essential listen for anyone seeking the darker edges of 
 electronic music.
 
+## References
+
+- [Interview by Thomas Lundberg](https://music.somasynths.com/interview/anthonyrother)
 
 ## Full Lyrics
 
