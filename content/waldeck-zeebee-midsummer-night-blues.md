@@ -12,7 +12,7 @@ cover_image = "/images/thumbnails/waldeck-zeebee-midsummer-night-blues.jpg"
 youtube = "https://www.youtube.com/embed/dUgzGxYmCwg"
 +++
 
-> "Midsummer Night Blues" captures the essence of fleeting moments under the 
+> Midsummer Night Blues captures the essence of fleeting moments under the 
 > glow of summer nights. Its soothing blend of **jazz**, **soul**, and **electronic** 
 > elements invites listeners into an introspective yet celebratory journey through 
 > sound, guided by Zeebee’s soulful vocals.
