@@ -20,8 +20,8 @@ youtube = "https://www.youtube.com/embed/-QoU2oclkXY"
 > where the listener is propelled into a whirlwind of sound, 
 > navigating the complexities of a dystopian landscape. 
  
-<a href="/images/thumbnails/anthony-rother/anthony-rother-pose-1.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-pose-1.jpg" alt="Anthony Rother" style="width: 100%; height: auto;">
+<a href="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
 </a>
 
 The track symbolizes the clash between humanity and 
@@ -46,8 +46,8 @@ electronic music, pushing the boundaries of sound design and production. His mus
 explores themes of technology, dystopia, and human interaction with machines, crafting 
 immersive soundscapes that feel both mechanical and deeply emotional.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
+<a href="/images/thumbnails/anthony-rother/anthony-rother-pose-1.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-pose-1.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
 </a>
 
 Influenced by the likes of Kraftwerk and early techno movements, Rother has created a 
