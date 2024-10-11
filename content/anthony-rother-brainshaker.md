@@ -39,6 +39,10 @@ atmosphere, making it ideal for those who appreciate **intense** and high-energy
 
 ## About the Artist
 
+<a href="/images/thumbnails/anthony-rother/anthony-rother-wall.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-wall.jpg" alt="Anthony Rother" style="width: 100%; height: auto;">
+</a>
+
 **Anthony Rother**  is a pioneer in the electronic music scene, particularly known 
 for his work in the electro and techno genres. With a career spanning over two decades, 
 Rother has established himself as one of the most innovative and influential figures in 
@@ -71,11 +75,6 @@ sound brings together robotic rhythms and gritty textures that keep listeners
 locked in a state of constant tension and thrill. The fusion of **techno** and **electro** 
 elements adds to the track’s futuristic, almost cinematic quality, transporting listeners 
 to a world of neon-lit dystopia.
-
-<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" alt="Anthony Rother in studio 3" style="width: 100%; height: auto;">
-</a>
-
 
 ## Sound Breakdown
 
