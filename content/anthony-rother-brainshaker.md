@@ -20,6 +20,10 @@ youtube = "https://www.youtube.com/embed/-QoU2oclkXY"
 > where the listener is propelled into a whirlwind of sound, 
 > navigating the complexities of a dystopian landscape. 
  
+<a href="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
+</a>
+
 The track symbolizes the clash between humanity and 
 technology, echoing themes of resilience and defiance in the
 face of mechanized chaos. With its raw intensity and futuristic 
@@ -42,8 +46,8 @@ electronic music, pushing the boundaries of sound design and production. His mus
 explores themes of technology, dystopia, and human interaction with machines, crafting 
 immersive soundscapes that feel both mechanical and deeply emotional.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-1.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-1.jpg" alt="Anthony Rother in studio 1" style="width: 100%; height: auto;">
+<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" alt="Anthony Rother in studio 3" style="width: 100%; height: auto;">
 </a>
 
 Influenced by the likes of Kraftwerk and early techno movements, Rother has created a 
@@ -54,6 +58,10 @@ collaborations with other electronic music luminaries and his own record label, 
 which has become a hub for experimental and genre-defying music. Rother's commitment to 
 innovation and artistic integrity has earned him a loyal following and solidified his 
 status as a true visionary in the electronic realm.
+
+<a href="/images/thumbnails/anthony-rother/anthony-rother-production.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-production.jpg" alt="Anthony Rother Production" style="width: 100%; height: auto;">
+</a>
 
 ## Song Summary
 
