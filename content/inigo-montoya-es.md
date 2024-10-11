@@ -9,7 +9,7 @@ sentiment = ["mysterious", "hypnotic", "reflective"]
 
 [extra]
 cover_image = "/images/thumbnails/inigo-montoya-es.jpg"
-youtube = "https://www.youtube.com/embed/xxxxxx"
+youtube = "https://www.youtube.com/embed/cK54zeNP-ZU"
 +++
 
 > **"Inigo Montoya - .E.S"** draws listeners into a captivating world of introspection, blending electronic experimentation with a haunting atmosphere that leaves a lasting impression.
