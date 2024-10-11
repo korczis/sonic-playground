@@ -72,8 +72,8 @@ locked in a state of constant tension and thrill. The fusion of **techno** and *
 elements adds to the track’s futuristic, almost cinematic quality, transporting listeners 
 to a world of neon-lit dystopia.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-stairs.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-stairs.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
+<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
 </a>
 
 ## Sound Breakdown
@@ -85,6 +85,10 @@ the start. As the beats gradually build, tension mounts, immersing the listener
 in a soundscape of impending energy. The subtle layers of sound introduce the 
 listener to the mood, evoking images of a darkened cityscape illuminated by 
 flickering lights.
+
+<a href="/images/thumbnails/anthony-rother/anthony-rothen-stairs.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rothen-stairs.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
+</a>
 
 ### First Drop: The Shaker Begins
 
