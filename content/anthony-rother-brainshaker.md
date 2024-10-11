@@ -19,13 +19,13 @@ youtube = "https://www.youtube.com/embed/-QoU2oclkXY"
 > energy. It captures the essence of a musical confrontation, 
 > where the listener is propelled into a whirlwind of sound, 
 > navigating the complexities of a dystopian landscape. 
-> 
-> The track symbolizes the clash between humanity and 
-> technology, echoing themes of resilience and defiance in the
-> face of mechanized chaos. With its raw intensity and futuristic 
-> vibe, "Brainshaker" resonates as an anthem for those who embrace the 
-> darker, more powerful aspects of electronic music, inviting listeners 
-> to surrender to the pulsating drive and lose themselves in the moment.
+ 
+The track symbolizes the clash between humanity and 
+technology, echoing themes of resilience and defiance in the
+face of mechanized chaos. With its raw intensity and futuristic 
+vibe, "Brainshaker" resonates as an anthem for those who embrace the 
+darker, more powerful aspects of electronic music, inviting listeners 
+to surrender to the pulsating drive and lose themselves in the moment.
 
 ## Genre and Mood
 
