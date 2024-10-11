@@ -144,6 +144,10 @@ or through headphones, Rother's artistry leaves a lasting impression, making
 "Brainshaker" an essential listen for anyone seeking the darker edges of 
 electronic music.
 
+<a href="/images/thumbnails/anthony-rother/anthony-rother-dark.jpg" target="_blank">
+  <img src="/images/thumbnails/anthony-rother/anthony-rother-dark.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
+</a>
+
 ## References
 
 - [Interview by Thomas Lundberg](https://music.somasynths.com/interview/anthonyrother)
