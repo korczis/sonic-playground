@@ -1,0 +1,612 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    Inigo Montoya - .E.S - Sonic Playground
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!---->
+  <meta name="description" content="&#x27;Inigo Montoya - .E.S&#x27; is a hypnotic fusion of electronic beats and introspective melodies, creating a dreamlike atmosphere that invites listeners into a reflective journey. The track&#x27;s mysterious soundscape makes it both haunting and deeply engaging." />
+  <meta name="author" content="korczis" />
+
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Inigo Montoya - .E.S" />
+  <meta property="og:site_name" content="Sonic Playground" />
+  <meta property="og:description" content="&#x27;Inigo Montoya - .E.S&#x27; is a hypnotic fusion of electronic beats and introspective melodies, creating a dreamlike atmosphere that invites listeners into a reflective journey. The track&#x27;s mysterious soundscape makes it both haunting and deeply engaging." />
+  <meta property="og:url" content="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;inigo-montoya-es&#x2F;" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Inigo Montoya - .E.S" />
+  <meta name="twitter:description" content="&#x27;Inigo Montoya - .E.S&#x27; is a hypnotic fusion of electronic beats and introspective melodies, creating a dreamlike atmosphere that invites listeners into a reflective journey. The track&#x27;s mysterious soundscape makes it both haunting and deeply engaging." />
+  <meta name="twitter:image" content="https://sonic-playground.fly.dev/images/wall.jpeg" />
+  <meta name="twitter:site" content="@korczis" />
+  <meta name="twitter:creator" content="@korczis" />
+
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://sonic-playground.fly.dev/images/thumbnails/inigo-montoya-es.jpg" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://sonic-playground.fly.dev/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://sonic-playground.fly.dev/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://sonic-playground.fly.dev/favicon.ico" sizes="any" />
+  <link rel="icon" href="https://sonic-playground.fly.dev/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="https://sonic-playground.fly.dev/icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://sonic-playground.fly.dev/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;inigo-montoya-es&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://sonic-playground.fly.dev">Sonic Playground</a>
+        <!-- div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div -->
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      /*
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+      //*/
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/welcome"
+            >Welcome</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/author"
+            >Author</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/genre"
+            >Genre</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://sonic-playground.fly.dev/sentiment"
+            >Sentiment</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+
+  <!-- link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" -->
+  <!-- link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.1/flowbite.min.css" rel="stylesheet" -->
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Inigo Montoya - .E.S</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2024-10-11</time>
+  <span class="mx-1">&middot;</span>
+  <span>5min</span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>korczis</span>
+  
+</div>
+
+  </header>
+
+  
+  <figure class="mb-12 mt-0">
+    <iframe width="640" height="360" src="https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;cK54zeNP-ZU" frameborder="0" allowfullscreen class="w-full h-64"></iframe>
+  </figure>
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#artist-background"
+            >Artist Background</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#about-the-track-e-s"
+            >About the Track: &quot;.E.S&quot;</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#mood-and-atmosphere"
+                >Mood and Atmosphere</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#song-summary"
+            >Song Summary</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#musical-composition"
+            >Musical Composition</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#intro-entering-the-dream"
+                >Intro: Entering the Dream</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#verse-1-layered-textures"
+                >Verse 1: Layered Textures</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#chorus-hypnotic-flow"
+                >Chorus: Hypnotic Flow</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#bridge-a-moment-of-reflection"
+                >Bridge: A Moment of Reflection</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#climax-emotional-expansion"
+                >Climax: Emotional Expansion</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#outro-gentle-fade-into-silence"
+                >Outro: Gentle Fade into Silence</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#artistic-context"
+            >Artistic Context</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#impact-and-reception"
+            >Impact and Reception</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://sonic-playground.fly.dev/inigo-montoya-es/#conclusion"
+            >Conclusion</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><blockquote>
+<p><strong>"Inigo Montoya - .E.S"</strong> draws listeners into a captivating world of
+introspection, blending electronic experimentation with a haunting
+atmosphere that leaves a lasting impression.</p>
+</blockquote>
+<h2 id="artist-background">Artist Background</h2>
+<p><strong>Inigo Montoya</strong> is known for his distinct approach to <strong>electronic</strong> and <strong>ambient music</strong>,
+where he fuses elements of experimental soundscapes with hypnotic rhythms. A French artist
+with a flair for creating deeply atmospheric tracks, Inigo Montoya often explores themes of
+identity, consciousness, and emotion through his music. His ability to craft immersive sonic
+environments has earned him a reputation as an innovative figure in the <strong>ambient</strong> and <strong>experimental</strong>
+electronic scenes.</p>
+<p><strong>".E.S"</strong> is a continuation of Montoya's artistic exploration into sound as a medium for
+reflection and emotional depth, building on his previous work that delves into layered,
+atmospheric experiences.</p>
+<h2 id="about-the-track-e-s">About the Track: ".E.S"</h2>
+<p><strong>".E.S"</strong> feels like a journey through the subconscious mind. With its <strong>ambient textures</strong>
+and <strong>electronic pulses</strong>, the song unfolds gradually, creating a sense of mystery and unease,
+yet pulling listeners in with its hypnotic rhythm. It mirrors the way fleeting thoughts come
+and go, allowing the music to act as a soundtrack for internal reflection.</p>
+<h3 id="mood-and-atmosphere">Mood and Atmosphere</h3>
+<p>The track exudes a <strong>mysterious</strong> and <strong>hypnotic</strong> quality, where layers of electronic
+elements combine to form an ethereal, dreamlike atmosphere. The rhythm is steady but
+not forceful, which gives the track a meditative feel. Its <strong>ambient</strong> nature evokes a
+sense of wandering through unknown territory, where every sound reveals a new layer of
+thought or emotion.</p>
+<p><strong>".E.S"</strong> captures the feeling of deep contemplation, a reflection on moments of
+ambiguity in life. The delicate balance between repetition and progression in the
+track's structure enhances this feeling of being suspended in time—caught between
+the familiar and the unknown.</p>
+<h2 id="song-summary">Song Summary</h2>
+<p><strong>".E.S"</strong> stands out with its intricate composition and emotional undertones.
+Montoya's use of minimalist beats and atmospheric sounds results in a track that
+encourages introspection without overwhelming the listener. The layers of <strong>synths</strong>
+and <strong>modulated tones</strong> create a fluid soundscape that ebbs and flows, guiding the
+listener through a meditative experience.</p>
+<p>The interplay of contrasting elements—delicate <strong>melodies</strong> and more unsettling
+<strong>ambient effects</strong>—reflects the tension between tranquility and unease, much like
+the complexities of human thought and emotion. Montoya's subtle shifts in tone and
+texture within the track keep it evolving, ensuring the listener remains engaged
+throughout the journey.</p>
+<h2 id="musical-composition">Musical Composition</h2>
+<h3 id="intro-entering-the-dream">Intro: Entering the Dream</h3>
+<p>The song begins with sparse <strong>electronic notes</strong> and distant <strong>synth pads</strong>, setting the
+tone for a reflective experience. The sound is minimalistic, yet enveloping, creating a
+space for listeners to immerse themselves from the very start. The atmosphere is one of
+mystery, hinting at the introspective journey to come.</p>
+<h3 id="verse-1-layered-textures">Verse 1: Layered Textures</h3>
+<p>As the song progresses, more layers of <strong>electronic beats</strong> and <strong>ambient sounds</strong> begin
+to merge, adding complexity to the initial simplicity. Each sound seems to emerge from
+the background, creating a sense of depth and immersion. Montoya’s use of <strong>sound design</strong>
+here is key—each element contributes to an overarching feeling of being suspended in a
+vast, sonic landscape.</p>
+<h3 id="chorus-hypnotic-flow">Chorus: Hypnotic Flow</h3>
+<p>In the chorus, the track reaches its most <strong>hypnotic</strong> state. Repeating rhythmic motifs
+become more pronounced, pulling the listener deeper into the soundscape. The progression
+is subtle but noticeable, as Montoya builds the intensity gradually while maintaining
+the track’s meditative quality.</p>
+<h3 id="bridge-a-moment-of-reflection">Bridge: A Moment of Reflection</h3>
+<p>Midway through, the track shifts into a more introspective, quieter section. The
+rhythm slows, and more ambient elements take the forefront. This pause feels like a
+moment of contemplation—a space to reflect before the track resumes its journey. It
+is here that Montoya’s talent for creating emotional depth through minimalism shines,
+as the absence of complexity allows for a more personal connection to the music.</p>
+<h3 id="climax-emotional-expansion">Climax: Emotional Expansion</h3>
+<p>Toward the end of the track, <strong>".E.S"</strong> builds to a quiet but powerful emotional
+climax. Montoya introduces more intricate <strong>synth patterns</strong>, with the rhythm becoming
+more dynamic yet maintaining the track’s contemplative mood. This gradual expansion of
+sound mirrors the emotional journey of introspection—starting from simplicity and
+growing into something more profound and complex.</p>
+<h3 id="outro-gentle-fade-into-silence">Outro: Gentle Fade into Silence</h3>
+<p>As the track closes, the layers begin to fade out, returning the listener to the
+initial calm. The music recedes gently, much like a memory or thought fading
+into the background. This closure mirrors the way the track began, offering a
+sense of peace and resolution after the emotional and sonic journey.</p>
+<h2 id="artistic-context">Artistic Context</h2>
+<p>Inigo Montoya’s music often delves into the exploration of
+<strong>emotion</strong> and <strong>identity</strong>, and <strong>".E.S"</strong> is no exception. His ability
+to blend genres such as <strong>ambient</strong>, <strong>electronic</strong>, and <strong>experimental</strong>
+into a cohesive sonic experience showcases his talent for pushing the boundaries
+of traditional electronic music. <strong>".E.S"</strong> is part of Montoya's ongoing evolution
+as an artist, reflecting his penchant for creating reflective and immersive music
+that transcends conventional genre definitions.</p>
+<h2 id="impact-and-reception">Impact and Reception</h2>
+<p>While <strong>".E.S"</strong> may not have achieved mainstream popularity, it has
+resonated deeply with fans of <strong>ambient</strong> and <strong>experimental music</strong>.
+Its unique ability to evoke deep emotional responses through minimalist
+compositions has earned it a place among the more introspective corners
+of the electronic music community. Listeners praise the track for its
+ability to create a mood that is at once calming and thought-provoking,
+with many noting how the track offers a perfect backdrop for moments of
+personal reflection.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p><strong>".E.S"</strong> by <strong>Inigo Montoya</strong> is an immersive and emotionally
+rich track that takes listeners on a reflective journey. Through
+its blend of <strong>ambient</strong> textures, <strong>electronic beats</strong>, and subtle
+sonic layering, the song invites introspection while providing a
+hypnotic and contemplative experience. It is a perfect example of how
+Montoya’s music blends experimental elements with emotional depth,
+offering a space for reflection on life’s fleeting moments.</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Genre </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/genre/electronic/"
+      >electronic</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/genre/ambient/"
+      >ambient</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/genre/experimental/"
+      >experimental</a
+    >
+    
+  </div>
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Sentiment </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/sentiment/mysterious/"
+      >mysterious</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/sentiment/hypnotic/"
+      >hypnotic</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://sonic-playground.fly.dev/sentiment/reflective/"
+      >reflective</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;jpatterson-elevator&#x2F;"
+    ><span class="mr-1.5">←</span><span>JPattersson - Elevator</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex min-w-[50%] grow items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;sonic-playground.fly.dev&#x2F;anthony-rother-brainshaker&#x2F;"
+    ><span>Anthony Rother - Brainshaker</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  
+</article>
+
+    </main>
+
+    <footer class="relative bg-gray-800 text-white py-4 overflow-hidden">
+    <div class="absolute inset-0 z-[-1]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full">
+            <style>
+                .wave {
+                    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+                    transform-origin: center bottom;
+                }
+                @keyframes wave {
+                    0% { transform: scaleY(1); }
+                    25% { transform: scaleY(0.75); }
+                    50% { transform: scaleY(0.5); }
+                    75% { transform: scaleY(0.75); }
+                    100% { transform: scaleY(1); }
+                }
+            </style>
+            <path class="wave" fill="#3b82f6" fill-opacity="0.1" d="M0,160L48,165.3C96,171,192,181,288,170.7C384,160,480,128,576,117.3C672,107,768,117,864,144C960,171,1056,213,1152,208C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+    <div class="mx-auto flex max-w-3xl flex-wrap items-center px-8 text-sm opacity-90 relative z-10">
+        <div class="mr-auto basis-full lg:basis-1/2">
+            
+            <span class="font-thin text-black">
+                &copy; 2024
+            </span>
+            <span class="font-thin text-black">
+                <a class="link" href="https://sonic-playground.fly.dev">korczis</a>
+            </span>
+             | 
+            
+                <span class="font-thin text-black">
+                    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+                        CC BY-SA 4.0
+                    </a>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+  </body>
+</html>
