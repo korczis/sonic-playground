@@ -17,13 +17,6 @@ youtube = "https://www.youtube.com/embed/rJyyP8lkneg"
 > creates a vibrant soundscape that is both uplifting and introspective, making it a 
 > standout piece in their respective discographies.
 
-**Official video**
-
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/DEF45678901" 
-    frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
-
 "Not Today" explores themes of resilience and self-empowerment, with lyrics that 
 encourage listeners to face challenges head-on. The dynamic arrangement showcases 
 both artists' strengths, resulting in a rich, multi-layered experience.
@@ -96,3 +89,78 @@ wrapped in an engaging soundscape. The track's combination of theatricality,
 electronic beats, and introspective lyrics makes it a compelling addition to 
 both artists' repertoires. Whether you're looking for an energizing anthem or a 
 moment of reflection, "Not Today" promises to resonate with a wide audience.
+
+## Lyrics
+
+```
+Who put the name of a villain
+On the ballot box?
+Who watched overdose poor souls
+Slaving down in the docks?
+
+I was there on the lifeboats
+All shattered on the rocks
+And sometimes I think that death itself
+Is kind of unorthodox
+
+And now you want me to save you?
+And now you say you're a believer?
+Where have you been when I gave you
+Life?
+Many small town politicians
+Put their fate in my hands
+But I witnessed the governor
+Selling off all the native land, yeah
+
+I must admit it kind of pissed me off
+I bet now you couldn't tell
+I'll be your next wave pandemic
+House party in your cells
+
+And now you want me to save you?
+Oh, now you say you're a believer?
+Where have you been when I gave you
+Life?
+
+Ain't gonna please you, please you
+Not today
+No, no
+I hate to break it, break it to you
+Not today
+No, no, no
+
+I'll be your shadow in your conscience
+But I don't make no new friends
+Snack on my popcorn and I stick around
+Let's start it off for a happy end
+
+And now you want me to save you?
+Now you say you're a believer?
+Where have you been when I gave you
+Life?
+
+And now you want me to save you?
+Oh, now you say you're a believer?
+Where have you been when I gave you
+Life? Ay
+
+Ain't gonna please you, please you
+Not today
+No, no
+I hate to break it, break it to you
+Not today
+No, no, no
+
+Ain't gonna please you, please you
+Not today
+No, no
+I hate to break it, break it to you
+Not today
+
+Not today
+No, no, no
+Not today
+Not today
+
+Not today
+```
