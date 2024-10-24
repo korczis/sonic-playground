@@ -1,6 +1,6 @@
 +++
 title = "Aloe Blacc - I Need a Dollar (Live)"
-date = "2024-10-19"
+date = "2024-10-22"
 description = "A soulful anthem that blends heartfelt lyrics with a smooth, rhythmic performance, reflecting on the struggles and triumphs of daily life."
 
 [taxonomies]
