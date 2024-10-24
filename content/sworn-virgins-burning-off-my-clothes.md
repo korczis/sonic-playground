@@ -12,14 +12,11 @@ cover_image = "/images/thumbnails/sworn-virgins-burning-off-my-clothes.jpeg"
 youtube = "https://www.youtube.com/embed/oAkNT7b2nGs"
 +++
 
-> **Sworn Virgins**' "Burning of My Clothes" is a raw, pulsating track that blends the urgency of electro-punk with a rebellious lyrical theme. The song's relentless energy reflects a cathartic release, symbolizing the act of shedding old identities and embracing chaos as a form of liberation.
+> **Sworn Virgins**' "Burning of My Clothes" is a raw, pulsating track that blends the 
+> urgency of electro-punk with a rebellious lyrical theme. The song's relentless
+> energy reflects a cathartic release, symbolizing the act of shedding old
+> identities and embracing chaos as a form of liberation.
 
-**Official video**
-
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/MH2HE6Gp3JQ" 
-    frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
 
 "Burning of My Clothes" is driven by gritty synths, throbbing basslines, 
 and a sense of reckless abandon that draws listeners into its chaotic energy. 

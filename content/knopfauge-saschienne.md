@@ -14,13 +14,6 @@ youtube = "https://www.youtube.com/embed/0d2Cz2C8Fj0"
 
 > **Knopfauge**'s "Saschienne" is an entrancing track that marries electronic and experimental elements, resulting in a soundscape that is both intricate and haunting. The combination of driving rhythms and ethereal melodies invites listeners into a captivating auditory journey.
 
-**Official video**
-
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/ABC12345678" 
-    frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
-
 The track unfolds gradually, with layers of sound building to create a rich 
 tapestry of audio textures. "Saschienne" exemplifies **Knopfauge**'s knack for 
 crafting immersive soundscapes that blend the boundaries of electronic music 

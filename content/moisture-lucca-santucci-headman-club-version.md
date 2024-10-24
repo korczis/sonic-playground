@@ -18,13 +18,6 @@ youtube = "https://www.youtube.com/embed/XZRJeOvT2xI"
 > track stands as a refined entry into the electronic club scene, 
 > capturing the essence of late-night dance floors.
 
-**Official video**
-
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/XYZ12345678" 
-    frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
-
 Driven by rhythmic precision and lush textures, "Headman (Club Version)" 
 takes listeners on a hypnotic journey. The track’s deep basslines and ambient 
 melodies provide the perfect backdrop for **Lucca Santucci**’s captivating 
