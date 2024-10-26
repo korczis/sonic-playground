@@ -87,3 +87,53 @@ With "Faster You Fall," **Eli** delivers a track that explores love's
 complicated depths with raw honesty and powerful production. This song 
 invites listeners to confront their own experiences with vulnerability and 
 strength, making it a moving journey through the complexities of the heart.
+
+## Lyrics
+
+```
+The faster you run from me
+The faster you fall
+I know you getting faster
+But I catch them all
+
+The faster you run from me
+The faster you fall
+I know you getting faster
+But I catch them all
+
+Now you're running girl, 'cause
+You don't have a chance
+'Cause I gotta away with words and
+I'm good with my hands
+
+Now you're running girl, 'cause
+You don't have a chance
+'Cause I gotta away with words and
+I'm good with my hands
+
+The faster you run from me
+The faster you fall
+I know you getting faster
+But I catch them all
+
+The faster you run from me
+The faster you fall
+I know you getting faster
+But I catch them all
+
+Now you're running girl, 'cause
+You don't have a chance
+'Cause I gotta away with words and
+I'm good with my hands
+
+Now you're running girl, 'cause
+You don't have a chance
+'Cause I gotta away with words and
+I'm good with my hands
+
+The faster you run from me
+The faster you fall
+I know you getting faster
+But I catch them all
+
+```
