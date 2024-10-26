@@ -1,6 +1,6 @@
 +++
 title = "Mickey Avalon, Eli - Ultra-Violence"
-date = "2024-10-25"
+date = "2024-10-26"
 description = "A gritty collaboration from Mickey Avalon and Eli, 'Ultra-Violence' combines raw lyrics with dark beats, diving into themes of chaos, rebellion, and survival."
 
 [taxonomies]
