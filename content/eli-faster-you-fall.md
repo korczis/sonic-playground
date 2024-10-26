@@ -17,7 +17,7 @@ youtube = "https://www.youtube.com/embed/lJwarj6LErI"
 > punch, combining introspective lyrics with dynamic production that explores 
 > vulnerability and resilience.
 
-"Faster You Fall" highlights the emotional duality of relationships, where the 
+"Faster You Fall" highlights the emotional duality of relationships, where the  
 pain of heartbreak contrasts with the strength it builds. Eli’s expressive 
 vocals and the pulsating rhythms bring a powerful energy to the track, making 
 it a compelling journey through love’s complexities.
