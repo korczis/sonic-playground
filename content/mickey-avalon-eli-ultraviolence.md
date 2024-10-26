@@ -88,3 +88,123 @@ With "Ultra-Violence," **Mickey Avalon** and **Eli** deliver a striking explorat
 of conflict and resilience. This track is a sonic experience that merges gritty 
 vocals, heavy beats, and powerful lyrics, leaving a lasting impression on 
 listeners who aren’t afraid to delve into life’s shadows.
+
+## Lyrics 
+
+```
+Nothin' in this world is free
+Nothin' in this world is free
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+
+I smell just like gasoline
+The captain of the losin' team
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+My landlord won't let me be
+I can't find no place to breathe
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+
+A couple young clowns
+In an old slow town
+Just didn't have nothin' to do
+But grab a big long shovel
+And click on the double
+That's the trouble they could get into
+Old Pete was the leader
+So he fired up the Vita
+And Jimmy jumped in on his side
+Left food on the pedal
+Say a prayer to the devil
+Oh, that boy sure could drive
+
+It's all just passin' you by
+(It's all just passin' you by)
+Feelin' like you're barely alive
+(Feelin' like you're barely alive)
+Starin' at your cellular form
+(Starin' at your cellular form)
+Pretendin' that you ain't all alone
+(Pretendin' that you ain't all alone)
+
+I smell just like gasoline
+The captain of the losin' team
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+My landlord won't let me be
+I can't find no place to breathe
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+
+Straight through the light
+They passed that pipe
+These boys ain't slept days
+So when they seen their market
+Old Pete just parked it
+And Jimmy just got out in a haste
+Runnin' amok
+Got the shovel out the truck
+But not so they could dig
+And they don't know science
+But ultra-violence
+Make a little man sure feel big
+
+Another notch in the belt
+(Another notch in the belt)
+Wishin' you were somebody else
+(Wishin' you were somebody else)
+Starin' at your cellular form
+(Starin' at your cellular form)
+Pretendin' that you ain't all alone
+(Pretendin' that you ain't all alone)
+
+I smell just like gasoline
+The captain of the losin' team
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+My landlord won't let me be
+I can't find no place to breathe
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+
+Forty eight bucks richer
+And a postcard picture
+Of a place they wish they was
+Now Pete say, "Jimmy,
+Stop talkin' silly
+You ruinin' my buzz"
+Then his rearview mirror
+Got crystal clear
+Johnny Law pulled up for the bust
+But Old Pete could drive
+Like no man alive
+Left that pig in a cloud of dust
+
+We're all just goin' to hell
+(We're all just goin' to hell)
+And ain't got nobody to tell
+(And ain't got nobody to tell)
+Starin' at your cellular form
+(Starin' at your cellular form)
+Pretendin' that you ain't all alone
+(Pretendin' that you ain't all alone)
+
+I smell just like gasoline
+The captain of the losin' team
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+My landlord won't let me be
+I can't find no place to breathe
+Nothin' in this world is free
+You gotta take it
+You gotta take it
+```
