@@ -1,6 +1,6 @@
 +++
 title = "Lulu's Theme (feat. Trentemøller)"
-date = "2024-10-18"
+date = "2024-11-02"
 description = "An immersive, downtempo track that blends atmospheric beats and haunting melodies, capturing a sense of mystery and depth."
 
 [taxonomies]
