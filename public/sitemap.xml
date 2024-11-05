@@ -50,6 +50,10 @@
         <loc>https://sonic-playground.fly.dev/author/</loc>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/bakermat-the-river/</loc>
+        <lastmod>2024-11-05</lastmod>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/bassement-freaks-soul-intoxication/</loc>
         <lastmod>2024-10-03</lastmod>
     </url>
@@ -347,6 +351,9 @@
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/genre/deep-house/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/deep-house/page/2/</loc>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/genre/disco/</loc>
@@ -707,6 +714,12 @@
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/genre/soul/page/2/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/soulful/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/soulful/page/1/</loc>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/genre/spoken-word/</loc>
