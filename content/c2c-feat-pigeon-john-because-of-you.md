@@ -2,14 +2,36 @@
 title = "C2C feat. Pigeon John - Because of You"
 date = "2024-11-05"
 description = "'Because of You' by C2C featuring Pigeon John is a vibrant blend of hip-hop, electronic, and soul. The track combines smooth grooves with uplifting lyrics, celebrating gratitude and the impact others have on our lives."
+draft = false  # Set to true if you don't want this post to be published yet
 
 [taxonomies]
 genre = ["hip-hop", "electronic", "soul"]
 sentiment = ["uplifting", "feel-good", "grateful"]
+mood = ["positive", "reflective"]
 
 [extra]
-cover_image = "/images/thumbnails/c2c-feat-pigeon-john-because-of-you.jpeg"
-youtube = "https://www.youtube.com/embed/Jx0lRaW5VCw"
+cover_image = "/images/thumbnails/c2c-feat-pigeon-john-because-of-you.jpeg"  # Path to the cover image displayed on the post
+youtube = "https://www.youtube.com/embed/Jx0lRaW5VCw"  # Embedded YouTube video
+og_title = "Because of You - C2C feat. Pigeon John"  # Title for Open Graph (Facebook, LinkedIn, etc.)
+og_description = "'Because of You' combines hip-hop, electronic, and soul in a celebration of gratitude and connection."  # Description for Open Graph
+og_image = "https://yourwebsite.com/images/thumbnails/c2c-feat-pigeon-john-because-of-you.jpeg"  # Full URL for Open Graph image
+twitter_card = "summary_large_image"  # Twitter Card type
+twitter_title = "Because of You - C2C feat. Pigeon John"  # Twitter title
+twitter_description = "A joyful blend of hip-hop and soul, celebrating the people who inspire us."  # Twitter description
+twitter_image = "https://sonic-playground.fly.dev/images/thumbnails/c2c-feat-pigeon-john-because-of-you.jpeg"  # Twitter image URL
+video_duration = "3:42"  # Duration of the video in minutes:seconds
+release_year = "2012"  # Release year of the song
+
+# Optional SEO tags
+schema_org_type = "MusicRecording"  # Defines this post as a music recording for schema.org
+artist = "C2C, Pigeon John"  # Artists featured in the song
+album = "Tetra"  # Album name
+publisher = "Universal Music Group"  # Record label or publisher
+music_genre = "Hip-Hop, Soul, Electronic"  # Music genres as schema tags
+
+# Open Graph Audio tags (if applicable)
+og_audio = "https://example.com/audio/c2c-because-of-you.mp3"  # Optional audio file for Open Graph
+og_audio_type = "audio/mpeg"  # File type of audio for Open Graph
 +++
 
 ## Genre and Mood
@@ -58,4 +80,3 @@ emotional layer to this reflective moment.
 The final chorus returns with renewed energy, celebrating connection and gratitude with full intensity. The track’s 
 spirited finish leaves listeners feeling uplifted, as the message of gratitude and joy resonates long after the song 
 ends.
-
