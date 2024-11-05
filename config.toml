@@ -33,6 +33,7 @@ feed_filenames = ["atom.xml"]
 #
 taxonomies = [
     { name = "genre", rss = true, paginate_by = 10 },
+    { name = "mood", rss = true, paginate_by = 10 },
     { name = "sentiment", rss = true, paginate_by = 10 },
     { name = "tags", rss = true, paginate_by = 10 }
 ]
