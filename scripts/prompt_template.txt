@@ -1,0 +1,26 @@
+Write a music blog post in markdown format for '$artist - $song' following this structure:
++++
+title = "$artist - $song"
+date = "$(date +%Y-%m-%d)"
+description = "A music review of '$song' by $artist."
+
+[taxonomies]
+genre = ["hip-hop", "electronic", "soul"]
+sentiment = ["uplifting", "feel-good", "grateful"]
+
+[extra]
+cover_image = "/images/thumbnails/${title}.jpeg"
+youtube = "https://www.youtube.com/embed/example_id"
++++
+
+## Genre and Mood
+
+[Insert summary here]
+
+## Song Summary
+
+[Insert song summary here]
+
+## Lyrics Breakdown
+
+[Insert lyrics breakdown here]
