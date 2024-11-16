@@ -8,17 +8,11 @@ genre = ["ambient", "neoclassical", "minimal"]
 sentiment = ["serene", "introspective", "elegant"]
 
 [extra]
-cover_image = "/images/thumbnails/hania-rani-kexp.jpg"
+cover_image = "/images/thumbnails/hania-rani-full-performance-kexp-2.png"
 youtube = "https://www.youtube.com/embed/_3EuiU1qdpE"
 +++
 
 > The title *"Hania Rani - Full Performance (Live on KEXP)"* captures the essence of stillness and introspection. In this session, Hania’s music creates a sanctuary of sound, blending minimalist piano, ambient textures, and her ethereal voice into a deeply moving experience.
-
-[//]: # (<a href="/images/thumbnails/hania-rani/hania-rani-wall.jpg" target="_blank">)
-
-[//]: # (  <img src="/images/thumbnails/hania-rani/hania-rani-wall.jpg" alt="Hania Rani KEXP Performance" style="width: 100%; height: auto;">)
-
-[//]: # (</a>)
 
 Hania’s live performance is more than music—it’s an invitation to pause, reflect, and immerse yourself in a moment of calm. With every note, she transports her audience into a world of emotional resonance and timeless beauty.
 
@@ -30,11 +24,11 @@ Hania Rani’s KEXP session beautifully bridges **ambient**, **neoclassical**, a
 
 > *Minimalism,* a cornerstone of Hania’s style, emphasizes space and simplicity, allowing each note to breathe. This approach mirrors the contemplative themes of her compositions, creating room for profound emotional impact.
 
-[//]: # (<a href="/images/thumbnails/hania-rani/hania-rani-intense.jpg" target="_blank">)
+<a href="/images/thumbnails/hania-rani-full-performance-kexp-8.png" target="_blank">
 
-[//]: # (  <img src="/images/thumbnails/hania-rani/hania-rani-intense.jpg" alt="Hania Rani Playing Piano" style="width: 100%; height: auto;">)
+  <img src="/images/thumbnails/hania-rani-full-performance-kexp-8.png" alt="Hania Rani Playing Piano" style="width: 100%; height: auto;">
 
-[//]: # (</a>)
+</a>
 
 ---
 
@@ -44,11 +38,11 @@ Hania Rani’s KEXP session beautifully bridges **ambient**, **neoclassical**, a
 
 Hania’s compositions often explore themes of nature, emotion, and the passage of time. Her live performances, such as this KEXP session, are celebrated for their ability to captivate audiences with their quiet intensity and profound beauty.
 
-[//]: # (<a href="/images/thumbnails/hania-rani/hania-rani-portrait.jpg" target="_blank">)
+<a href="/images/thumbnails/hania-rani-full-performance-kexp-10.png" target="_blank">
 
-[//]: # (  <img src="/images/thumbnails/hania-rani/hania-rani-portrait.jpg" alt="Hania Rani Portrait" style="width: 100%; height: auto;">)
+  <img src="/images/thumbnails/hania-rani-full-performance-kexp-10.png" alt="Hania Rani Portrait" style="width: 100%; height: auto;">
 
-[//]: # (</a>)
+</a>
 
 ---
 
