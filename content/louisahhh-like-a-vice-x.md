@@ -40,7 +40,9 @@ From this point on, Louisahhh’s haunting vocal delivery leads the listener thr
 > As the song progresses, its architecture becomes deliberately claustrophobic, enveloping the listener in a maze of sound that is both suffocating and freeing. The industrial walls of techno press inward, heightening the tension, yet paradoxically expand outward, offering fleeting glimpses of freedom within confinement. This interplay of constriction and release mirrors the emotional depth and intensity that defines the track. Each moment builds upon the last, creating a dynamic tension that propels the listener forward, as if there’s no turning back now. The song is not just heard; it is felt in the body, in the pulse, in the space between control and surrender.
 
 As *Like A Vice* fades out, the song leaves the listener suspended, as if they’ve just crossed a threshold but are unsure whether they’ve emerged unscathed or transformed. The abruptness of the ending echoes the song's themes, creating an unresolved tension that lingers long after the music stops.
-> 
+
+By the end, the listener is left suspended, utterly alone in the void. The abrupt conclusion—where pounding basslines and haunting vocals vanish in an instant—leaves the listener feeling exposed and introspective, as if the song has stripped away all pretense. It's a confrontation with vulnerability, creating an unresolved tension that lingers long after the music stops.
+
 ### About the Album: *A Trap I've Built*
 
 The track *Like A Vice* is part of Louisahhh’s gripping album, *A Trap I’ve Built*, which stands as one of her most uncompromising works to date. Available as part of a curated set on [SoundCloud](https://soundcloud.com/louisahhh/sets/a-trap-ive-built-raar008)
