@@ -12,6 +12,12 @@ cover_image = "/images/thumbnails/lousiahh-like-a-vice-x.jpg"
 youtube = "https://www.youtube.com/embed/ipXnX43YkQ0"
 +++
 
+### Words from the Artist
+
+*"A Trap I’ve Built is an intentionally brutal body of work. Wading through murky themes of rape culture, addiction, masochism, and deprivation, whatever isn't explicitly lyricized bleeds through in a sonic ambush. It is my intention that listening to these songs, or DJing them, should be an experience that leaves the audience a little shaken up—something they can feel in their teeth. I hope that *A Trap I’ve Built* is delighted in because (not in spite) of the fact that it is upsetting."*
+
+– Louisahhh
+
 ### About the Artist
 
 **Louisahhh**, a Los Angeles-born, Paris-based producer, has carved a niche in the underground techno scene with her signature blend of raw intensity and poetic depth. 
