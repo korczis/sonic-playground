@@ -617,6 +617,12 @@
         <loc>https://sonic-playground.fly.dev/genre/minimal/page/1/</loc>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/genre/neoclassical/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/genre/neoclassical/page/1/</loc>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/genre/new-wave/</loc>
     </url>
     <url>
@@ -828,6 +834,10 @@
     <url>
         <loc>https://sonic-playground.fly.dev/groove-armada-superstylin/</loc>
         <lastmod>2024-10-08</lastmod>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/hania-rani-full-performance-kexp/</loc>
+        <lastmod>2024-11-16</lastmod>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/her-five-minutes/</loc>
@@ -1229,6 +1239,12 @@
         <loc>https://sonic-playground.fly.dev/sentiment/eerie/page/1/</loc>
     </url>
     <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/elegant/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/elegant/page/1/</loc>
+    </url>
+    <url>
         <loc>https://sonic-playground.fly.dev/sentiment/emotional/</loc>
     </url>
     <url>
@@ -1602,6 +1618,12 @@
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/sentiment/sensual/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/serene/</loc>
+    </url>
+    <url>
+        <loc>https://sonic-playground.fly.dev/sentiment/serene/page/1/</loc>
     </url>
     <url>
         <loc>https://sonic-playground.fly.dev/sentiment/soothing/</loc>
