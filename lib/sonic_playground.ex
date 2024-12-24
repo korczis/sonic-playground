@@ -1,6 +1,6 @@
-defmodule SonicPlayground do
+defmodule BlogKorczisCom do
   @moduledoc """
-  SonicPlayground keeps the contexts that define your domain
+  BlogKorczisCom keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

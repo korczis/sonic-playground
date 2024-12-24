@@ -1,5 +1,5 @@
-defmodule SonicPlayground.Repo do
+defmodule BlogKorczisCom.Repo do
   use Ecto.Repo,
-    otp_app: :sonic_playground,
+    otp_app: :blog_korczis_com,
     adapter: Ecto.Adapters.SQLite3
 end

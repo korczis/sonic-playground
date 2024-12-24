@@ -1,4 +1,4 @@
-defmodule SonicPlaygroundWeb.PageControllerTest do
+defmodule BlogKorczisComWeb.PageControllerTest do
   use SonicPlaygroundWeb.ConnCase
 
   test "GET /", %{conn: conn} do

@@ -1,5 +1,5 @@
-defmodule SonicPlaygroundWeb.PageController do
-  use SonicPlaygroundWeb, :controller
+defmodule BlogKorczisComWeb.PageController do
+  use BlogKorczisComWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

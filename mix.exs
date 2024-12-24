@@ -1,9 +1,9 @@
-defmodule SonicPlayground.MixProject do
+defmodule BlogKorczisCom.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :sonic_playground,
+      app: :blog_korczis_com,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule SonicPlayground.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {SonicPlayground.Application, []},
+      mod: {BlogKorczisCom.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -79,10 +79,10 @@ defmodule SonicPlayground.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind sonic_playground", "esbuild sonic_playground"],
+      "assets.build": ["tailwind blog_korczis_com", "esbuild blog_korczis_com"],
       "assets.deploy": [
-        "tailwind sonic_playground --minify",
-        "esbuild sonic_playground --minify",
+        "tailwind blog_korczis_com --minify",
+        "esbuild blog_korczis_com --minify",
         "phx.digest"
       ]
     ]

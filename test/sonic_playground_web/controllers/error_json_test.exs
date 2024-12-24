@@ -1,12 +1,12 @@
-defmodule SonicPlaygroundWeb.ErrorJSONTest do
-  use SonicPlaygroundWeb.ConnCase, async: true
+defmodule BlogKorczisComWeb.ErrorJSONTest do
+  use BlogKorczisComWeb.ConnCase, async: true
 
   test "renders 404" do
-    assert SonicPlaygroundWeb.ErrorJSON.render("404.json", %{}) == %{errors: %{detail: "Not Found"}}
+    assert BlogKorczisComWeb.ErrorJSON.render("404.json", %{}) == %{errors: %{detail: "Not Found"}}
   end
 
   test "renders 500" do
-    assert SonicPlaygroundWeb.ErrorJSON.render("500.json", %{}) ==
+    assert BlogKorczisComWeb.ErrorJSON.render("500.json", %{}) ==
              %{errors: %{detail: "Internal Server Error"}}
   end
 end

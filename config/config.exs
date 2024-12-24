@@ -7,19 +7,19 @@
 # General application configuration
 import Config
 
-config :sonic_playground,
-  ecto_repos: [SonicPlayground.Repo],
+config :blog_korczis_com,
+  ecto_repos: [BlogKorczisCom.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :sonic_playground, SonicPlaygroundWeb.Endpoint,
+config :blog_korczis_com, BlogKorczisComWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: SonicPlaygroundWeb.ErrorHTML, json: SonicPlaygroundWeb.ErrorJSON],
+    formats: [html: BlogKorczisComWeb.ErrorHTML, json: BlogKorczisComWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: SonicPlayground.PubSub,
+  pubsub_server: BlogKorczisCom.PubSub,
   live_view: [signing_salt: "Cioi3AoG"]
 
 # Configures the mailer
@@ -29,12 +29,12 @@ config :sonic_playground, SonicPlaygroundWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :sonic_playground, SonicPlayground.Mailer, adapter: Swoosh.Adapters.Local
+config :blog_korczis_com, BlogKorczisCom.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  sonic_playground: [
+  blog_korczis_com: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -44,7 +44,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.3",
-  sonic_playground: [
+  blog_korczis_com: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

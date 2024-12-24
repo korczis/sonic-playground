@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d9c92fd-4a6b-41de-8c96-ac26782f1a28" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PROMPT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/content/codec-n-flexor-time-has-changed-northern-lite-remix.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/archive/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/archive/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/atom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/atom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/genre/electro/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/genre/electro/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/genre/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/genre/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/genre/minimal/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/genre/minimal/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/genre/techno/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/genre/techno/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/page/4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/4/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/page/5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/page/5/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sentiment/ethereal/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sentiment/ethereal/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sentiment/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sentiment/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sentiment/melancholic/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sentiment/melancholic/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sentiment/melancholic/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sentiment/melancholic/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sentiment/uplifting/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sentiment/uplifting/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sentiment/uplifting/page/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sentiment/uplifting/page/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sentiment/uplifting/page/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sentiment/uplifting/page/3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,22 +15,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPENED",
-    "assignee": {
-      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-      "username": "tomas.korcak4",
-      "fullname": "Tomáš Korčák"
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;tomas.korcak4&quot;,
+      &quot;fullname&quot;: &quot;Tomáš Korčák&quot;
     }
   }
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "first": "git@gitlab.com:korczis/sonic-playground.git",
-    "second": "1b6cffd5-50c1-4a34-8bc1-181a46de8733"
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;git@gitlab.com:korczis/sonic-playground.git&quot;,
+    &quot;second&quot;: &quot;1b6cffd5-50c1-4a34-8bc1-181a46de8733&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="mhvay8ma" />
   </component>
@@ -62,21 +42,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/korczis/dev/sonic-playground/static/images/thumbnails&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "NIXITCH_NIXPKGS_CONFIG": "",
+    "NIXITCH_NIX_CONF_DIR": "",
+    "NIXITCH_NIX_OTHER_STORES": "",
+    "NIXITCH_NIX_PATH": "",
+    "NIXITCH_NIX_PROFILES": "",
+    "NIXITCH_NIX_REMOTE": "",
+    "NIXITCH_NIX_USER_PROFILE_DIR": "",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/korczis/dev/sonic-playground/static/images/thumbnails",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "settings.editor.selected.configurable": "language.elixir.sdks.erlang",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static/images/thumbnails" />
@@ -94,7 +82,9 @@
       <workItem from="1731726042800" duration="2331000" />
       <workItem from="1731755422798" duration="6389000" />
       <workItem from="1733503295413" duration="1377000" />
-      <workItem from="1733506326148" duration="598000" />
+      <workItem from="1733506326148" duration="1200000" />
+      <workItem from="1733944464975" duration="598000" />
+      <workItem from="1733979975995" duration="635000" />
     </task>
     <servers />
   </component>

@@ -1,12 +1,12 @@
-defmodule SonicPlaygroundWeb do
+defmodule BlogKorczisComWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use SonicPlaygroundWeb, :controller
-      use SonicPlaygroundWeb, :html
+      use BlogKorczisComWeb, :controller
+      use BlogKorczisComWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule SonicPlaygroundWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: SonicPlaygroundWeb.Layouts]
+        layouts: [html: BlogKorczisComWeb.Layouts]
 
       import Plug.Conn
-      import SonicPlaygroundWeb.Gettext
+      import BlogKorczisComWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule SonicPlaygroundWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {SonicPlaygroundWeb.Layouts, :app}
+        layout: {BlogKorczisComWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule SonicPlaygroundWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import SonicPlaygroundWeb.CoreComponents
-      import SonicPlaygroundWeb.Gettext
+      import BlogKorczisComWeb.CoreComponents
+      import BlogKorczisComWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule SonicPlaygroundWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: SonicPlaygroundWeb.Endpoint,
-        router: SonicPlaygroundWeb.Router,
-        statics: SonicPlaygroundWeb.static_paths()
+        endpoint: BlogKorczisComWeb.Endpoint,
+        router: BlogKorczisComWeb.Router,
+        statics: BlogKorczisComWeb.static_paths()
     end
   end
 

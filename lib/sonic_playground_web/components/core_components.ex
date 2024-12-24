@@ -1,4 +1,4 @@
-defmodule SonicPlaygroundWeb.CoreComponents do
+defmodule BlogKorczisComWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -17,7 +17,7 @@ defmodule SonicPlaygroundWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import SonicPlaygroundWeb.Gettext
+  import BlogKorczisComWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -661,9 +661,9 @@ defmodule SonicPlaygroundWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(SonicPlaygroundWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(BlogKorczisComWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(SonicPlaygroundWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(BlogKorczisComWeb.Gettext, "errors", msg, opts)
     end
   end
 

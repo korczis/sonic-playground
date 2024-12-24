@@ -1,4 +1,4 @@
-# NIF for Elixir.SonicPlayground.Native
+# NIF for Elixir.BlogKorczisCom.Native
 
 ## To build the NIF module:
 
@@ -8,7 +8,7 @@
 
 ```elixir
 defmodule SonicPlayground.Native do
-  use Rustler, otp_app: :sonic_playground, crate: "sonic_playground_native"
+  use Rustler, otp_app: :blog_korczis_com, crate: "blog_korczis_com_native"
 
   # When your NIF is loaded, it will override this function.
   def add(_a, _b), do: :erlang.nif_error(:nif_not_loaded)

@@ -1,4 +1,4 @@
-defmodule SonicPlayground.Parser do
+defmodule BlogKorczisCom.Parser do
   @doc """
   Parses a Zola markdown file, splitting the TOML front matter and the markdown body.
   Returns a tuple {toml_map, body}.

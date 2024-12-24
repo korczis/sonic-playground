@@ -20,4 +20,4 @@ fn encode_toml(term: Term) -> NifResult<String> {
     }
 }
 
-rustler::init!("Elixir.SonicPlayground.Native");
+rustler::init!("Elixir.BlogKorczisCom.Native");

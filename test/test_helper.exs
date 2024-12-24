@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(SonicPlayground.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(BlogKorczisCom.Repo, :manual)

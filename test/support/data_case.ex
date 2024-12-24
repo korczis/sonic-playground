@@ -1,4 +1,4 @@
-defmodule SonicPlayground.DataCase do
+defmodule BlogKorczisCom.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule SonicPlayground.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use SonicPlayground.DataCase, async: true`, although
+  by setting `use BlogKorczisCom.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,12 +18,12 @@ defmodule SonicPlayground.DataCase do
 
   using do
     quote do
-      alias SonicPlayground.Repo
+      alias BlogKorczisCom.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import SonicPlayground.DataCase
+      import BlogKorczisCom.DataCase
     end
   end
 

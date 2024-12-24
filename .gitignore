@@ -24,7 +24,7 @@ erl_crash.dump
 /tmp/
 
 # Ignore package tarball (built via "mix hex.build").
-sonic_playground-*.tar
+blog_korczis_com-*.tar
 
 # Ignore assets that are produced by build tools.
 /priv/static/assets/

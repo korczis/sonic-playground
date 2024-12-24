@@ -1,8 +1,8 @@
 import Config
 
 # Configure your database
-config :sonic_playground, SonicPlayground.Repo,
-  database: Path.expand("../sonic_playground_dev.db", __DIR__),
+config :blog_korczis_com, BlogKorczisCom.Repo,
+  database: Path.expand("../blog_korczis_com_dev.db", __DIR__),
   pool_size: 5,
   stacktrace: true,
   show_sensitive_data_on_connection_error: true
@@ -13,7 +13,7 @@ config :sonic_playground, SonicPlayground.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :sonic_playground, SonicPlaygroundWeb.Endpoint,
+config :blog_korczis_com, BlogKorczisComWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -22,8 +22,8 @@ config :sonic_playground, SonicPlaygroundWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "9JhsxSr4zkffvLuqz+qZ41lXMad9PPqf0RjOuBdAMEoYfTFeBeL5PYEjAIC/SNWe",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:sonic_playground, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:sonic_playground, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:blog_korczis_com, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:blog_korczis_com, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -50,17 +50,17 @@ config :sonic_playground, SonicPlaygroundWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :sonic_playground, SonicPlaygroundWeb.Endpoint,
+config :blog_korczis_com, BlogKorczisComWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/sonic_playground_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/blog_korczis_com_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :sonic_playground, dev_routes: true
+config :blog_korczis_com, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

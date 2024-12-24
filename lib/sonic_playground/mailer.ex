@@ -1,3 +1,3 @@
-defmodule SonicPlayground.Mailer do
-  use Swoosh.Mailer, otp_app: :sonic_playground
+defmodule BlogKorczisCom.Mailer do
+  use Swoosh.Mailer, otp_app: :blog_korczis_com
 end

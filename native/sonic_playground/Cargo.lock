@@ -186,7 +186,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "sonic_playground"
+name = "blog_korczis_com"
 version = "0.1.0"
 dependencies = [
  "rustler",

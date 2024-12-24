@@ -5,8 +5,8 @@ archive:Lists installed archives
 archive.build:Archives this project into a .ez file
 archive.install:Installs an archive locally
 archive.uninstall:Uninstalls archives
-assets.build:Alias for tailwind sonic_playground, esbuild sonic_playground
-assets.deploy:Alias for tailwind sonic_playground --minify, esbuild sonic_playground --minify, phx.digest
+assets.build:Alias for tailwind blog_korczis_com, esbuild blog_korczis_com
+assets.deploy:Alias for tailwind blog_korczis_com --minify, esbuild blog_korczis_com --minify, phx.digest
 assets.setup:Alias for tailwind.install --if-missing, esbuild.install --if-missing
 clean:Deletes generated application files
 cmd:Executes the given command

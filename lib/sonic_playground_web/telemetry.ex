@@ -1,4 +1,4 @@
-defmodule SonicPlaygroundWeb.Telemetry do
+defmodule BlogKorczisComWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -52,23 +52,23 @@ defmodule SonicPlaygroundWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("sonic_playground.repo.query.total_time",
+      summary("blog_korczis_com.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("sonic_playground.repo.query.decode_time",
+      summary("blog_korczis_com.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("sonic_playground.repo.query.query_time",
+      summary("blog_korczis_com.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("sonic_playground.repo.query.queue_time",
+      summary("blog_korczis_com.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("sonic_playground.repo.query.idle_time",
+      summary("blog_korczis_com.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -86,7 +86,7 @@ defmodule SonicPlaygroundWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {SonicPlaygroundWeb, :count_users, []}
+      # {BlogKorczisComWeb, :count_users, []}
     ]
   end
 end

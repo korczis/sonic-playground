@@ -1,17 +1,17 @@
-defmodule SonicPlaygroundWeb.ErrorHTML do
+defmodule BlogKorczisComWeb.ErrorHTML do
   @moduledoc """
   This module is invoked by your endpoint in case of errors on HTML requests.
 
   See config/config.exs.
   """
-  use SonicPlaygroundWeb, :html
+  use BlogKorczisComWeb, :html
 
   # If you want to customize your error pages,
   # uncomment the embed_templates/1 call below
   # and add pages to the error directory:
   #
-  #   * lib/sonic_playground_web/controllers/error_html/404.html.heex
-  #   * lib/sonic_playground_web/controllers/error_html/500.html.heex
+  #   * lib/blog_korczis_com_web/controllers/error_html/404.html.heex
+  #   * lib/blog_korczis_com_web/controllers/error_html/500.html.heex
   #
   # embed_templates "error_html/*"
 

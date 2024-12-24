@@ -1,12 +1,12 @@
-defmodule SonicPlaygroundWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :sonic_playground
+defmodule BlogKorczisComWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :blog_korczis_com
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_sonic_playground_key",
+    key: "_blog_korczis_com_key",
     signing_salt: "N4bY8XCE",
     same_site: "Lax"
   ]
@@ -21,9 +21,9 @@ defmodule SonicPlaygroundWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :sonic_playground,
+    from: :blog_korczis_com,
     gzip: false,
-    only: SonicPlaygroundWeb.static_paths()
+    only: BlogKorczisComWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -31,7 +31,7 @@ defmodule SonicPlaygroundWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :sonic_playground
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :blog_korczis_com
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -49,5 +49,5 @@ defmodule SonicPlaygroundWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug SonicPlaygroundWeb.Router
+  plug BlogKorczisComWeb.Router
 end
