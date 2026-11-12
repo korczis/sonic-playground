@@ -148,6 +148,19 @@ class Contract(unittest.TestCase):
                                     'questions = ["What changes in the middle?", "Why does it end abruptly?"]\n')
         self.assertTrue(any("listen_for[0] needs a part" in e for e in errors))
 
+    def test_a_review_file_name_is_ascii(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "mélissa-x.md"
+            path.write_text(GOOD, encoding="utf-8")
+            errors = []
+            old = catalog.CONTENT
+            catalog.CONTENT = Path(d)
+            try:
+                catalog.load_track(path, errors)
+            finally:
+                catalog.CONTENT = old
+            self.assertTrue(any("must be ASCII" in e and "melissa-x.md" in e for e in errors), errors)
+
     def test_a_cliche_is_refused(self):
         self.assertTrue(any("would fit any track" in e for e in self._append("\nA sonic journey.\n")))
 

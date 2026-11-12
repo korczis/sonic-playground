@@ -1,0 +1,38 @@
+# The CI model of this repository: the validation gates .github/workflows/ci.yml runs, the job
+# that runs each, and the command a worker runs to report one (`majordomus evidence --gate <id>
+# --exit <status> --command "<runs>"`). ci.yml runs every gate on every push and pull request, so
+# every gate is `always`; the workflow is the executor and this file the model Majordomus plans
+# and judges from. A gate added to ci.yml without a line here, or the reverse, is a defect of
+# both (test/cases/60_ci_model.sh).
+version: 1
+
+gates:
+  - id: commits
+    job: commits
+    always: true
+    runs: scripts/lint-commits.sh main..HEAD
+    summary: every commit subject since main is a conventional commit
+
+  - id: supervision
+    job: supervision
+    always: true
+    runs: majordomus doctor && majordomus skills check && majordomus skills verify && majordomus adr check && majordomus knowledge validate && majordomus shell check
+    summary: the Majordomus layer is healthy; every skill, decision and knowledge record is valid and every skill a proven capability
+
+  - id: site
+    job: site
+    always: true
+    runs: bash scripts/verify.sh
+    summary: the content contract and catalogue, the locales, unit tests, the skill cases (test/run.sh), types, assets, the zola build, the built-site check and the browser smoke test with its sitemap sweep
+
+classes:
+  # the pipeline itself: a change here can only be validated by running everything
+  - id: ci
+    paths: [.github/workflows/**, .github/actions/**, .ai/repo/ci/**, scripts/verify.sh, test/run.sh]
+    gates: full
+
+  # the skills and the agents that serve them: verified by `skills verify` (supervision) and
+  # proven by their cases (site, through test/run.sh)
+  - id: skills
+    paths: [.ai/repo/skills/**, .claude/**]
+    gates: [supervision, site]

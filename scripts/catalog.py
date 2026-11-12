@@ -414,6 +414,10 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
         KNOWN_CONCEPTS.update(load_concepts([]))
     rel = path.relative_to(CONTENT).as_posix()
     text = path.read_text(encoding="utf-8")
+    if not rel.isascii():
+        # The URL is the transliterated slug either way; an accented file name only breaks the
+        # tools that hash git's quoted paths (the Majordomus gate recorder among them).
+        errors.append(f"{rel}: the file name must be ASCII (scripts/track.py names it {slugify(path.stem)}.md)")
     try:
         raw, body = split_front_matter(text, rel)
         meta = tomllib.loads(raw)

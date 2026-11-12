@@ -38,9 +38,7 @@ step "unit tests"
 python3 -m unittest discover -s test -p 'test_*.py'
 
 step "skill cases (test/cases)"
-for case in test/cases/*.sh; do
-  bash "$case"
-done
+bash test/run.sh
 
 if [ -d node_modules ]; then
   step "types: browser code (tsc --checkJs) and Python (pyright)"
