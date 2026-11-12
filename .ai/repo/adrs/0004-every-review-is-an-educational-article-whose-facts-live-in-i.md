@@ -62,3 +62,10 @@ to the ideas it shows or to open data.
   write the layer for every new review, and the existing corpus is enriched in batches.
 - A new concept is a new file with every locale's definition, or the contract refuses it.
 - `edu_required` is switched on only when `catalog.education.complete` equals the track count.
+
+## Acceptance
+
+Accepted by the owner on 2026-11-12. The question was "ADRs 0001-0005 (static serverless site,
+derived catalogue, router + social cards, educational layer, yearbooks) are still marked proposed.
+Accept them?", and the answer was "Accept all five" (session
+7e1d03a3-52cc-40aa-a61a-4f9713c27f2a). The record is knowledge `owner-answers-2026-11-12`.
