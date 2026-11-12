@@ -39,6 +39,12 @@ provenance:
   small (default, and always on a phone) or large, minimise to a corner pill, close. State flags
   on `<html>`: `data-player-state`, `-view-state`, `-video-state`, `-queue-state`
   (knowledge html-state-flags-never-collide).
+- Destructive actions (clear, remove, close, Play all or Radio over a queue) offer Undo in the
+  toast for six seconds; the toast is a live region that is always rendered. A playing track's
+  card shows pause; Space or K, Shift+N, Shift+P and Q drive the player; a thin line on the
+  bar's top edge shows progress where no seek bar fits. The saved position resumes only the
+  track it was saved for; a track chosen while the IFrame API loads is the one that plays.
+  These came from an independent review of the first redesign (2026-11-12).
 - Better than a bare embed: removed or non-embeddable videos are skipped (`onError` → next),
   never requested at all when `data/videos.json` knows they are gone; the queue, position and
   time survive a reload (localStorage; nothing third-party loads until play is pressed again);
