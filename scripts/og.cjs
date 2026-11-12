@@ -1,14 +1,15 @@
 // Social preview images (Open Graph / X cards), one per page, generated at build time.
 //
-//   node scripts/og.cjs <public dir>
+//   node scripts/og.cjs <public dir> [<key>...]
 //
 // For every page of <public dir>/sitemap.xml (and the 404 page) it renders a 1200x630 card in a
 // headless browser and writes <public dir>/og/<key>.png, where <key> is the page path slugified
 // ("home" for the root) — the same key templates/base.html derives for og:image. A track's card
 // shows its still, artist, track and genres; any other page shows its title, its description and
-// a mosaic of the newest stills. Everything comes from the built page's own meta tags and the
+// a mosaic of the newest stills; the home page, the one most shared, gets the pitch (seo.home_title
+// of the default locale) over a tilted wall of stills. Everything comes from the built page's own meta tags and the
 // derived catalogue; nothing is written here but the layout. Exit 0 ok, 1 failure, 3 skipped
-// (playwright-core not installed).
+// (playwright-core not installed). Keys after the directory render only those cards (a quick look).
 'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
@@ -33,6 +34,9 @@ const site = 'Sonic Playground';
 const s = catalog.stats;
 const stats = `${s.tracks} tracks · ${s.artists} artists · ${s.genre_terms} genres`;
 const host = new URL(base).host + prefix.replace(/\/$/, '');
+const i18n = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'));
+const strings = i18n.locales[i18n.default].strings;
+const only = new Set(process.argv.slice(3));
 const icon = 'data:image/svg+xml;base64,' + fs.readFileSync(path.join(root, 'favicon.svg')).toString('base64');
 
 function key(pagePath) {
@@ -77,6 +81,24 @@ p{margin-top:20px;font-size:26px;line-height:1.35;color:#d1d5db;display:-webkit-
 .mosaic div:nth-child(2),.mosaic div:nth-child(5){transform:translateY(22px)}
 .eq{position:absolute;left:0;right:0;bottom:0;height:120px;display:flex;align-items:flex-end;justify-content:center;gap:6px;opacity:.25}
 .eq span{width:10px;border-radius:4px 4px 0 0;background:linear-gradient(#f472b6,#8b5cf6)}
+.home .wrap{display:block;padding:72px 64px}
+.home .text{width:640px}
+.home .badge{display:inline-flex;align-items:center;gap:12px;font-size:24px;font-weight:700;padding:8px 18px 8px 8px;
+  border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+.home .badge img{width:40px;height:40px}
+.home h1{margin-top:34px;font-size:80px;line-height:1.02;-webkit-line-clamp:4}
+.home h1 em{font-style:normal;display:block;background:linear-gradient(90deg,#c4b5fd,#f9a8d4,#fde68a);
+  -webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:6px}
+.home .chips{margin-top:30px}
+.home .chip{font-size:22px;padding:8px 16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
+.home .chip b{color:#f9a8d4}
+.wall{position:absolute;top:-120px;right:-150px;width:640px;display:grid;grid-template-columns:repeat(3,196px);gap:16px;
+  transform:rotate(-10deg)}
+.wall div{height:196px;border-radius:22px;background:#111 center/cover;border:2px solid rgba(255,255,255,.12);
+  box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.wall div:nth-child(3n+2){transform:translateY(60px)}
+.fade{position:absolute;inset:0;background:linear-gradient(90deg,#030712 38%,rgba(3,7,18,.55) 62%,rgba(3,7,18,0) 82%)}
+.home .host{color:#d1d5db}
 `;
 
 function eq() {
@@ -107,6 +129,21 @@ function pageCard(title, description) {
   <div class="brand"><img src="${icon}">${site}</div><div class="host">${esc(host)}</div>`;
 }
 
+function homeCard() {
+  const [lead, accent] = (strings['seo.home_title'] || site).split(/,\s*/, 2);
+  const tiles = catalog.tracks.filter((t) => t.youtube).slice(0, 15)
+    .map((t) => `<div style="background-image:url('https://i.ytimg.com/vi/${t.youtube}/mqdefault.jpg')"></div>`).join('');
+  const chips = [[s.tracks, 'tracks'], [s.artists, 'artists'], [s.genre_terms, 'genres'], [catalog.concepts.length, 'concepts']]
+    .map(([n, what]) => `<span class="chip"><b>${n}</b> ${what}</span>`).join('');
+  return `<div class="home"><div class="bg"></div><div class="wall">${tiles}</div><div class="fade"></div>${eq()}
+  <div class="wrap"><div class="text">
+    <div class="badge"><img src="${icon}">${site}</div>
+    <h1>${esc(lead)}${accent ? `,<em>${esc(accent)}</em>` : ''}</h1>
+    <div class="chips">${chips}</div>
+  </div></div>
+  <div class="host" style="left:64px;right:auto">${esc(host)}</div></div>`;
+}
+
 (async () => {
   const out = path.join(root, 'og');
   fs.mkdirSync(out, { recursive: true });
@@ -121,11 +158,12 @@ function pageCard(title, description) {
     while (next < pages.length) {
       const p = pages[next++];
       const k = p === prefix + '404' ? '404' : key(p);
+      if (only.size && !only.has(k)) continue;
       const file = p === prefix + '404' ? path.join(root, '404.html') : path.join(root, p.slice(prefix.length), 'index.html');
       if (!fs.existsSync(file)) continue;
       const html = fs.readFileSync(file, 'utf8');
       const t = bySlug[p.slice(prefix.length).replace(/\/$/, '')];
-      const body = t ? trackCard(t) : pageCard(meta(html, 'og:title') || site, meta(html, 'og:description'));
+      const body = k === 'home' ? homeCard() : t ? trackCard(t) : pageCard(meta(html, 'og:title') || site, meta(html, 'og:description'));
       await page.setContent(`<!doctype html><meta charset="utf-8"><style>${STYLE}</style><body>${body}</body>`, { waitUntil: 'load' });
       await page.screenshot({ path: path.join(out, k + '.png'), type: 'png' });
       written += 1;

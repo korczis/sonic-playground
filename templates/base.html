@@ -15,6 +15,14 @@
 {%- endif -%}
 {%- if ctx.description %}{% set_global description = ctx.description %}{% else %}{% set_global description = config.description %}{% endif -%}
 {%- if current_path is defined -%}{%- set_global cur = current_path -%}{%- else -%}{%- set_global cur = "/404/" -%}{%- endif -%}
+{#- The home page is the one most shared: its title and description are the pitch (seo.home_*),
+    filled with the catalogue's counts. -#}
+{%- set_global share_title = ctx.title | default(value=config.title) -%}
+{%- if cur == "/" -%}
+{%- set_global share_title = config.title ~ " · " ~ l["seo.home_title"] -%}
+{%- set_global description = l["seo.home_description"] | replace(from="{tracks}", to=catalog.stats.tracks ~ "") | replace(from="{artists}", to=catalog.stats.artists ~ "") -%}
+{%- endif -%}
+{%- set_global i18n_bundle = load_data(path="static/data/i18n.json") -%}
 {%- set_global track = false -%}
 {%- if page is defined and page.relative_path in catalog.lookup -%}{%- set_global track = catalog.tracks[catalog.lookup[page.relative_path]] -%}{%- endif -%}
 {#- The social card of this page, rendered by scripts/og.cjs at build time under the same key:
@@ -26,7 +34,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if ctx.title and ctx.title != config.title %}{{ ctx.title }} · {% endif %}{{ config.title }}</title>
+<title>{% if cur == "/" %}{{ share_title }}{% else %}{% if ctx.title and ctx.title != config.title %}{{ ctx.title }} · {% endif %}{{ config.title }}{% endif %}</title>
 <meta name="description" content="{{ description }}">
 <meta name="author" content="{{ config.author }}">
 <meta name="color-scheme" content="light dark">
@@ -36,21 +44,51 @@
 <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
 <meta property="og:type" content="{% if track %}music.song{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ config.title }}">
-<meta property="og:title" content="{{ ctx.title | default(value=config.title) }}">
+<meta property="og:title" content="{{ share_title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ ctx.permalink }}">
 <meta property="og:locale" content="{{ l["seo.locale"] }}">
+{%- for code, loc in i18n_bundle.locales %}{% if code != config.default_language %}
+<meta property="og:locale:alternate" content="{{ loc.strings["seo.locale"] }}">
+{%- endif %}{% endfor %}
 <meta property="og:image" content="{{ og_image }}">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="{% if track %}{{ track.artist }} – {{ track.track }}{% else %}{{ ctx.title | default(value=config.title) }}{% endif %} · {{ config.title }}">
+{%- if track %}{% set image_alt = track.artist ~ " – " ~ track.track ~ " · " ~ config.title %}{% elif cur == "/" %}{% set image_alt = share_title %}{% else %}{% set image_alt = ctx.title | default(value=config.title) ~ " · " ~ config.title %}{% endif %}
+<meta property="og:image:secure_url" content="{{ og_image }}">
+<meta property="og:image:alt" content="{{ image_alt }}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ ctx.title | default(value=config.title) }}">
+<meta name="twitter:title" content="{{ share_title }}">
 <meta name="twitter:description" content="{{ description }}">
 <meta name="twitter:image" content="{{ og_image }}">
+<meta name="twitter:image:alt" content="{{ image_alt }}">
 {%- if config.extra.x_handle %}
 <meta name="twitter:site" content="{{ config.extra.x_handle }}">
+<meta name="twitter:creator" content="{{ config.extra.x_handle }}">
+{%- endif %}
+{%- for soc in config.extra.social %}
+<link rel="me" href="{{ soc.url }}">
+{%- endfor %}
+{%- if cur == "/" %}
+{#- The site itself (schema.org WebSite): name, pitch, languages, author and the explorer's text
+    search (?q=), so search engines and link previews know what the playground is. -#}
+{%- set site_ld = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": config.title,
+  "alternateName": l["seo.home_title"],
+  "url": config.base_url ~ "/",
+  "description": description,
+  "image": og_image,
+  "inLanguage": i18n_bundle.locales | keys,
+  "author": {"@type": "Person", "name": config.extra.author, "url": get_url(path="@/pages/author.md")},
+  "license": config.extra.license_url,
+  "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": config.base_url ~ "/?q={search_term_string}"}, "query-input": "required name=search_term_string"},
+} %}
+<script type="application/ld+json">
+{{ site_ld | json_encode | replace(from="<", to="\\u003c") | safe }}
+</script>
 {%- endif %}
 {%- if track %}
 <script type="application/ld+json">

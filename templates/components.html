@@ -305,8 +305,18 @@
 </header>
 {% endcomponent track_hero %}
 
-{#- Share buttons (Publisher article share row): copy the link (static/js/site.js) and post to X.
-    No third-party script is loaded. -#}
+{#- Brand glyphs of the networks a page can be shared to (24x24, currentColor). -#}
+{% component brand_icon(name, cls="h-5 w-5") %}
+{%- set paths = {
+  "x": "M13.8 10.5 20.6 3h-1.6l-5.9 6.5L8.4 3H3l7.1 10.1L3 21h1.6l6.2-6.9 5 6.9H21l-7.2-10.5Zm-2.2 2.4-.7-1L5.2 4.2h2.5l4.6 6.4.7 1 6 8.3h-2.5l-4.9-7Z",
+  "linkedin": "M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z",
+  "facebook": "M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07Z",
+} -%}
+<svg class="{{ cls }}" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="{{ paths[name] }}"/></svg>
+{% endcomponent brand_icon %}
+
+{#- Share buttons (Publisher article share row): copy the link (static/js/site.js) and post to
+    LinkedIn, X or Facebook through their share URLs. No third-party script is loaded. -#}
 {% component share(url, text, l) %}
 {%- set btn = "inline-flex items-center rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-600" -%}
 <div class="not-format flex items-center gap-1">
@@ -314,12 +324,40 @@
     <span data-copy-idle>{{ <icon name="copy" /> }}</span><span data-copy-done hidden class="text-green-600 dark:text-green-400">{{ <icon name="check" /> }}</span>
     <span class="sr-only" data-copy-label data-i18n="share.copy">{{ l["share.copy"] }}</span>
   </button>
-  <a class="{{ btn }}" href="https://x.com/intent/post?url={{ url | urlencode }}&text={{ text | urlencode }}" target="_blank" rel="noopener noreferrer" title="{{ l["share.x"] }}" data-i18n-title="share.x">
-    <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M13.8 10.5 20.6 3h-1.6l-5.9 6.5L8.4 3H3l7.1 10.1L3 21h1.6l6.2-6.9 5 6.9H21l-7.2-10.5Zm-2.2 2.4-.7-1L5.2 4.2h2.5l4.6 6.4.7 1 6 8.3h-2.5l-4.9-7Z"/></svg>
-    <span class="sr-only" data-i18n="share.x">{{ l["share.x"] }}</span>
+  {%- for net in ["linkedin", "x", "facebook"] %}
+  <a class="{{ btn }}" href="{{ <share_href net={net} url={url} text={text} /> }}" target="_blank" rel="noopener noreferrer" title="{{ l["share." ~ net] }}" data-i18n-title="share.{{ net }}">
+    {{ <brand_icon name={net} /> }}
+    <span class="sr-only" data-i18n="share.{{ net }}">{{ l["share." ~ net] }}</span>
   </a>
+  {%- endfor %}
 </div>
 {% endcomponent share %}
+
+{#- The share URL of a network for a page (LinkedIn and Facebook read the page's Open Graph tags;
+    X takes the text too). -#}
+{% component share_href(net, url, text) %}{% if net == "linkedin" %}https://www.linkedin.com/sharing/share-offsite/?url={{ url | urlencode }}{% elif net == "facebook" %}https://www.facebook.com/sharer/sharer.php?u={{ url | urlencode }}{% else %}https://x.com/intent/post?url={{ url | urlencode }}&amp;text={{ text | urlencode }}{% endif %}{% endcomponent share_href %}
+
+{#- Home call to share (Flowbite marketing CTA section, dark): why to pass it on, then a labelled
+    button per network in its brand colour and a copy-link button (static/js/site.js). -#}
+{% component share_cta(url, text, l, vars) %}
+{%- set btn = "inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-sm font-semibold focus:outline-none focus:ring-4" -%}
+<section aria-labelledby="home-share" class="relative isolate overflow-hidden rounded-lg bg-gray-950 p-6 shadow-sm sm:p-10" data-share-cta>
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,var(--color-primary-700),transparent_60%),radial-gradient(ellipse_at_bottom_left,var(--color-pink-800),transparent_55%)] opacity-70" aria-hidden="true"></div>
+  <div class="grid items-center gap-8 lg:grid-cols-5">
+    <div class="lg:col-span-3">
+      <p class="mb-2 inline-flex items-center text-sm font-semibold uppercase tracking-wide text-primary-300">{{ <icon name="share" cls="mr-2 h-4 w-4" /> }}{{ <tx key="home.share_kicker" l={l} /> }}</p>
+      <h2 id="home-share" class="mb-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">{{ <tx key="home.share_title" l={l} /> }}</h2>
+      <p class="max-w-2xl text-base text-gray-300 sm:text-lg">{{ <tx key="home.share_text" l={l} vars={vars} /> }}</p>
+    </div>
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-2">
+      <a href="{{ <share_href net="linkedin" url={url} text={text} /> }}" target="_blank" rel="noopener noreferrer" class="{{ btn }} bg-[#0A66C2] text-white hover:bg-[#0A66C2]/90 focus:ring-[#0A66C2]/50">{{ <brand_icon name="linkedin" cls="mr-2 h-4 w-4" /> }}{{ <tx key="share.linkedin" l={l} /> }}</a>
+      <a href="{{ <share_href net="x" url={url} text={text} /> }}" target="_blank" rel="noopener noreferrer" class="{{ btn }} bg-white text-gray-900 hover:bg-gray-100 focus:ring-gray-500">{{ <brand_icon name="x" cls="mr-2 h-4 w-4" /> }}{{ <tx key="share.x" l={l} /> }}</a>
+      <a href="{{ <share_href net="facebook" url={url} text={text} /> }}" target="_blank" rel="noopener noreferrer" class="{{ btn }} bg-[#1877F2] text-white hover:bg-[#1877F2]/90 focus:ring-[#1877F2]/50">{{ <brand_icon name="facebook" cls="mr-2 h-4 w-4" /> }}{{ <tx key="share.facebook" l={l} /> }}</a>
+      <button type="button" data-copy-link="{{ url }}" class="{{ btn }} border border-white/30 text-white hover:bg-white/10 focus:ring-gray-700"><span data-copy-idle>{{ <icon name="copy" cls="mr-2 h-4 w-4" /> }}</span><span data-copy-done hidden class="text-green-400">{{ <icon name="check" cls="mr-2 h-4 w-4" /> }}</span><span data-copy-label data-i18n="share.copy">{{ l["share.copy"] }}</span></button>
+    </div>
+  </div>
+</section>
+{% endcomponent share_cta %}
 
 {#- Related track (Publisher "related articles, horizontal cards"): still with play, title,
     artist and the terms the two tracks share, which is why the catalogue relates them. -#}
@@ -346,31 +384,39 @@
     to action (play the newest tracks now; explore), an equaliser that moves only for readers who
     allow motion, and a mosaic of the newest stills that play on a click. Nothing is written here:
     every value is a prop from the catalogue or an interface string. -#}
-{% component site_hero(l, kicker_vars, title, lead, primary_href, secondary_href, tracks) %}
+{% component site_hero(l, kicker_vars, lead_vars, learn_vars, primary_href, secondary_href, tracks) %}
 <header class="relative isolate overflow-hidden bg-gray-950">
   <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,var(--color-primary-700),transparent_55%),radial-gradient(ellipse_at_bottom_right,var(--color-pink-800),transparent_50%)] opacity-80" aria-hidden="true"></div>
+  <div class="absolute -right-24 -top-32 -z-10 h-96 w-96 rounded-full bg-pink-500/20 blur-3xl" aria-hidden="true"></div>
+  <div class="absolute -bottom-40 left-1/3 -z-10 h-96 w-96 rounded-full bg-primary-500/20 blur-3xl" aria-hidden="true"></div>
   <div class="absolute inset-x-0 bottom-0 -z-10 flex h-40 items-end justify-center gap-1 px-4 opacity-30" aria-hidden="true">
     {%- for i in range(end=48) %}<span class="eq-bar w-1.5 rounded-t bg-gradient-to-t from-primary-500 to-pink-400 sm:w-2" style="--i: {{ i }}"></span>{% endfor %}
   </div>
   <div class="grid items-center gap-10 px-4 pb-28 pt-10 sm:pt-16 lg:grid-cols-12 lg:pb-32 xl:px-8">
     <div class="lg:col-span-7">
-      <p class="mb-5 inline-flex flex-wrap items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-primary-100 ring-1 ring-inset ring-white/20">{{ <icon name="sparkles" cls="mr-2 h-4 w-4" /> }}{{ <tx key="home.kicker" l={l} vars={kicker_vars} /> }}</p>
-      <h1 class="mb-5 bg-gradient-to-r from-white via-primary-100 to-pink-200 bg-clip-text text-5xl font-extrabold leading-[1.05] tracking-tight text-transparent sm:text-6xl xl:text-7xl">{{ title }}</h1>
-      <p class="mb-8 max-w-2xl text-lg font-normal text-gray-300 sm:text-xl">{{ lead }}</p>
+      <p class="mb-6 inline-flex flex-wrap items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-primary-100 ring-1 ring-inset ring-white/20 backdrop-blur">{{ <icon name="sparkles" cls="mr-2 h-4 w-4" /> }}{{ <tx key="home.kicker" l={l} vars={kicker_vars} /> }}</p>
+      <h1 class="mb-6 text-5xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-6xl xl:text-7xl"><span class="block">{{ <tx key="home.headline" l={l} /> }}</span><span class="block bg-gradient-to-r from-primary-300 via-pink-300 to-amber-200 bg-clip-text pb-1 text-transparent">{{ <tx key="home.headline_accent" l={l} /> }}</span></h1>
+      <p class="mb-8 max-w-2xl text-lg font-normal text-gray-300 sm:text-xl">{{ <tx key="home.lead" l={l} vars={lead_vars} /> }}</p>
       <div class="flex flex-col gap-3 sm:flex-row">
         <button type="button" data-play-all="hero-mosaic" class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3.5 text-center text-base font-semibold text-white shadow-lg shadow-primary-900/40 hover:bg-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-5 w-5" /> }}{{ <tx key="home.cta_play" l={l} /> }}</button>
         <a href="{{ primary_href }}" class="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-center text-base font-medium text-white hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-gray-700">{{ <tx key="home.cta_explore" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-5 w-5" /> }}</a>
         <a href="{{ secondary_href }}" class="inline-flex items-center justify-center px-2 py-3.5 text-center text-base font-medium text-gray-300 underline-offset-4 hover:text-white hover:underline">{{ <tx key="home.cta_why" l={l} /> }}</a>
       </div>
+      <ul class="mt-8 flex flex-col gap-3 text-sm font-medium text-gray-200 sm:flex-row sm:flex-wrap sm:gap-x-6">
+        <li class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-500/20 text-primary-300 ring-1 ring-inset ring-primary-400/30">{{ <icon name="check" cls="h-3.5 w-3.5" /> }}</span>{{ <tx key="home.perk_reviewed" l={l} /> }}</li>
+        <li class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-500/20 text-primary-300 ring-1 ring-inset ring-primary-400/30">{{ <icon name="check" cls="h-3.5 w-3.5" /> }}</span>{{ <tx key="home.perk_learn" l={l} vars={learn_vars} /> }}</li>
+        <li class="flex items-center gap-2"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-500/20 text-primary-300 ring-1 ring-inset ring-primary-400/30">{{ <icon name="check" cls="h-3.5 w-3.5" /> }}</span>{{ <tx key="home.perk_free" l={l} /> }}</li>
+      </ul>
     </div>
-    <div class="lg:col-span-5">
+    <div class="relative lg:col-span-5">
+      <div class="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-primary-600/30 via-transparent to-pink-600/30 blur-2xl" aria-hidden="true"></div>
       <div id="hero-mosaic" data-playlist class="grid grid-cols-3 gap-2 sm:gap-3">
         {%- set_global shown = 0 %}
         {%- for t in tracks %}
         {%- if t.youtube and shown < 6 %}
         {%- set_global shown = shown + 1 %}
         {%- set label = t.artist ~ " – " ~ t.track %}
-        <button type="button" data-track data-source="{{ t.source }}" data-play="{{ t.source }}" class="group relative aspect-square overflow-hidden rounded-xl ring-1 ring-white/10 focus:outline-none focus:ring-4 focus:ring-primary-500{% if shown == 2 or shown == 5 %} translate-y-4{% endif %}" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">
+        <button type="button" data-track data-source="{{ t.source }}" data-play="{{ t.source }}" class="group relative aspect-square overflow-hidden rounded-xl shadow-xl shadow-black/40 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:ring-white/40 focus:outline-none focus:ring-4 focus:ring-primary-500{% if shown == 2 or shown == 5 %} translate-y-4 hover:translate-y-3{% endif %}" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">
           <img src="https://i.ytimg.com/vi/{{ t.youtube }}/mqdefault.jpg" alt="" data-thumb loading="lazy" width="320" height="180" class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
           <span class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent"></span>
           <span class="absolute bottom-1.5 left-1.5 right-1.5 truncate text-left text-[11px] font-semibold text-white sm:text-xs">{{ t.artist }}</span>
