@@ -9,7 +9,7 @@
 {%- set_global c = "" %}
 {%- for x in catalog.concepts %}{% if x.slug == slug %}{% set_global c = x %}{% endif %}{% endfor %}
 {%- set name_key = "tax.name.concept" %}
-{{ <page_header title={term.name} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], get_url(path=lp ~ "concept", trailing_slash=true), name_key], [term.name, "", ""]]} kicker={l["concept.category." ~ c.category]} lead={l["tax.count"] | replace(from="{n}", to=term.page_count ~ "")} /> }}
+{{ <page_header title={term.name} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], get_url(path=lp ~ "concept", trailing_slash=true), name_key], [term.name, "", ""]]} kicker={l["concept.category." ~ c.category]} lead_key="tax.count" lead_vars={ {"n": term.page_count} } l={l} /> }}
 <div class="space-y-6 px-4 pt-6 xl:px-8">
   <section class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800" aria-labelledby="concept-what">
     <h2 id="concept-what" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="concept.what" l={l} /> }}</h2>
@@ -29,7 +29,7 @@
   <section aria-labelledby="concept-tracks" class="space-y-4">
     <div class="flex flex-wrap items-end justify-between gap-3">
       <h2 id="concept-tracks" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="concept.hear_it" l={l} /> }}</h2>
-      {{ <play_all target="term-grid" l={l} label={l["tax.play"] | replace(from="{term}", to=term.name)} lkey="tax.play" vars={ {"term": term.name} } /> }}
+      {{ <play_all target="term-grid" l={l} lkey="tax.play" vars={ {"term": term.name} } /> }}
     </div>
     {{ <term_grid pages={pages} catalog={catalog} l={l} heading="h3" /> }}
   </section>

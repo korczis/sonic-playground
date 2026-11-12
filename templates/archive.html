@@ -3,8 +3,7 @@
 {%- block content %}
 {%- set s = catalog.stats %}
 {%- set lead_vars = {"n": s.tracks, "first": s.first, "last": s.last} %}
-{%- set_global lead = l["archive.lead"] %}{% for k, v in lead_vars %}{% set_global lead = lead | replace(from="{" ~ k ~ "}", to=v ~ "") %}{% endfor %}
-{{ <page_header title={l["menu.archive"]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["menu.archive"], "", "menu.archive"]]} lead={lead} /> }}
+{{ <page_header title={l["menu.archive"]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["menu.archive"], "", "menu.archive"]]} lead_key="archive.lead" lead_vars={lead_vars} l={l} /> }}
 <div class="space-y-4 px-4 pt-6 xl:px-8">
   {%- for m in catalog.months | reverse %}
   <section aria-labelledby="m-{{ m.month }}" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
@@ -12,7 +11,7 @@
       <h2 id="m-{{ m.month }}" class="text-lg font-semibold text-gray-900 dark:text-white">{{ m.month }}</h2>
       <div class="flex items-center gap-3">
         <span class="rounded-md bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">{{ <tx key="archive.count" l={l} vars={ {"n": m.count} } /> }}</span>
-        {{ <play_all target={"list-" ~ m.month} l={l} label={l["archive.play"]} lkey="archive.play" /> }}
+        {{ <play_all target={"list-" ~ m.month} l={l} lkey="archive.play" /> }}
       </div>
     </div>
     <ul id="list-{{ m.month }}" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">

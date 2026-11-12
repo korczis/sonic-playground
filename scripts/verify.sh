@@ -6,7 +6,7 @@
 #   3. vendored Flowbite and CSS     static/vendor/ and static/css/app.css are current
 #   4. zola build                    production base_url; internal links are errors
 #   5. scripts/check-built.py        every same-origin src/href resolves under the site path,
-#                                    no raw iframe
+#                                    no raw iframe, every <img> sized, no image over budget
 #   6. test/e2e/smoke.cjs            the artefact in a real browser, served as production
 #                                    (--artifact <dir> --as <base_url>), desktop and phone
 #
@@ -33,6 +33,9 @@ python3 scripts/catalog.py --check
 
 step "interface strings: every locale complete, every used key defined, bundle current"
 python3 scripts/i18n.py --check
+
+step "images: every shown image has current derived variants within the budget"
+python3 scripts/images.py --check
 
 step "unit tests"
 python3 -m unittest discover -s test -p 'test_*.py'

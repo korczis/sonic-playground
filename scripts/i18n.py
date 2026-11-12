@@ -4,6 +4,12 @@
   - every locale has exactly the keys of the default locale (config.toml default_language);
   - no value is empty unless it is empty in the default too, and every value uses exactly the
     placeholders ({name}) the default's value uses;
+  - plurals: every locale declares its plural rule for integer counts, "locale.plural" (CLDR
+    category -> the integers it takes, every other integer "other"; test/test_i18n.py proves it
+    equal to Intl.PluralRules). A string with the count {n} is a table of exactly the locale's
+    forms ({ one = "{n} track", other = "{n} tracks" }), chosen for n by templates/components.html
+    `tr` and static/js/i18n.js alike; a number with no noun to agree with is {total}, and a
+    hedge such as "track(s)" is refused;
   - every key the templates and the browser code use exists: l["key"] and data-i18n*="key" in
     templates/, t('key') in static/js/; a key nothing uses is reported (a dead string);
   - static/data/i18n.json (sonic-i18n/v1) bundles every locale for static/js/i18n.js and for the
@@ -68,7 +74,7 @@ def default_locale() -> str:
     return tomllib.loads((ROOT / "config.toml").read_text(encoding="utf-8"))["default_language"]
 
 
-def load() -> dict[str, dict[str, str]]:
+def load() -> dict[str, dict]:
     return {p.stem: tomllib.loads(p.read_text(encoding="utf-8")) for p in sorted(LOCALES.glob("*.toml"))}
 
 
@@ -109,7 +115,50 @@ def derived(code: str, default: str, errors: list[str]) -> dict[str, str]:
     return out
 
 
-COMPONENT_KEY = re.compile(r'\b(key|lkey|tkey|xkey|ckey)="([a-z0-9_.]+)"')
+COMPONENT_KEY = re.compile(r'\b(key|lkey|tkey|xkey|ckey|lead_key)="([a-z0-9_.]+)"')
+
+# Plurals (CLDR categories). A locale declares its rule for integer counts as "locale.plural":
+# category -> the integers it takes, every other integer is "other" ({ one = [1], few = [2, 3, 4] }
+# for Czech). templates/components.html `tr` and static/js/i18n.js read that one table;
+# test/test_i18n.py proves it equal to Intl.PluralRules (CLDR) for every count the site can show.
+PLURAL = "locale.plural"
+CATEGORIES = ("zero", "one", "two", "few", "many")
+# "track(s)", "skladba(y)": a plural written as a hedge instead of its forms.
+HEDGE = re.compile(r"\w\((?:s|es|ies|y|ů|ek|a|i|e|ch)\)")
+
+
+def placeholders(value: object) -> set[str]:
+    texts = value.values() if isinstance(value, dict) else [value]
+    return {name for text in texts if isinstance(text, str) for name in PLACEHOLDER.findall(text)}
+
+
+def rule_problems(rule: object) -> list[str]:
+    if not isinstance(rule, dict):
+        return [f"{PLURAL} is missing: the table category -> integers of the locale's plural rule"]
+    out = []
+    for cat, numbers in rule.items():
+        if cat not in CATEGORIES:
+            out.append(f"{PLURAL}: '{cat}' is not a CLDR category {CATEGORIES} ('other' is implied)")
+        if not isinstance(numbers, list) or not all(isinstance(n, int) and n >= 0 for n in numbers):
+            out.append(f"{PLURAL}: '{cat}' must list non-negative integers")
+    taken = [n for numbers in rule.values() if isinstance(numbers, list) for n in numbers]
+    if len(taken) != len(set(taken)):
+        out.append(f"{PLURAL}: an integer is in two categories")
+    return out
+
+
+def plural_forms(rule: object) -> set[str]:
+    return (set(rule) if isinstance(rule, dict) else set()) | {"other"}
+
+
+def plural(value: object, n: int, rule: dict[str, list[int]]) -> str:
+    """The form of a count string for n: the Python twin of `tr` and Sonic.t (for tests and tools)."""
+    if not isinstance(value, dict):
+        return str(value)
+    for cat, numbers in rule.items():
+        if n in numbers and cat in value:
+            return value[cat]
+    return value["other"]
 
 
 def used_keys() -> dict[str, list[str]]:
@@ -134,25 +183,47 @@ def used_keys() -> dict[str, list[str]]:
     return found
 
 
-def check(locales: dict[str, dict[str, str]], default: str) -> tuple[list[str], list[str]]:
+def check(locales: dict[str, dict], default: str) -> tuple[list[str], list[str]]:
     errors, notices = [], []
     if default not in locales:
         return [f"data/i18n/{default}.toml is missing (config.toml default_language)"], notices
     base = locales[default]
     for code, strings in locales.items():
+        errors += [f"{code}: {e}" for e in rule_problems(strings.get(PLURAL))]
+        forms = plural_forms(strings.get(PLURAL))
         for key in sorted(set(base) - set(strings)):
             errors.append(f"{code}: missing key {key}")
         for key in sorted(set(strings) - set(base)):
             errors.append(f"{code}: key {key} is not in {default}")
-        for key in sorted(set(base) & set(strings)):
-            if not isinstance(strings[key], str):
-                errors.append(f"{code}: {key} is not a string")
+        for key in sorted((set(base) & set(strings)) - {PLURAL}):
+            value, want = strings[key], placeholders(base[key])
+            texts = value.values() if isinstance(value, dict) else [value]
+            if isinstance(value, dict):
+                if set(value) != forms:
+                    errors.append(f"{code}: {key} has the plural forms {sorted(value)}, the locale's rule "
+                                  f"({PLURAL}) has {sorted(forms)}")
+                if "n" not in want:
+                    errors.append(f"{code}: {key} is a plural table without the count {{n}}")
+            elif not isinstance(value, str):
+                errors.append(f"{code}: {key} is neither a string nor a table of plural forms")
                 continue
-            if not strings[key] and base[key]:
-                errors.append(f"{code}: {key} is empty")
-            if set(PLACEHOLDER.findall(strings[key])) != set(PLACEHOLDER.findall(base[key])):
-                errors.append(f"{code}: {key} has placeholders {sorted(set(PLACEHOLDER.findall(strings[key])))}, "
-                              f"{default} has {sorted(set(PLACEHOLDER.findall(base[key])))}")
+            elif "n" in want:
+                errors.append(f"{code}: {key} counts {{n}} in one fixed form; a count string is a table "
+                              f"of the plural forms {sorted(forms)} (a number with no noun to agree with "
+                              f"is {{total}})")
+            for text in texts:
+                if not isinstance(text, str):
+                    errors.append(f"{code}: {key} has a plural form that is not a string")
+                    continue
+                if not text and any(base[key].values() if isinstance(base[key], dict) else [base[key]]):
+                    errors.append(f"{code}: {key} is empty")
+                if set(PLACEHOLDER.findall(text)) != want:
+                    errors.append(f"{code}: {key} has placeholders {sorted(set(PLACEHOLDER.findall(text)))}, "
+                                  f"{default} has {sorted(want)}")
+                hedge = HEDGE.search(text)
+                if hedge:
+                    errors.append(f"{code}: {key} hedges a plural ({hedge.group(0)}); write "
+                                  f"the forms out as a plural table")
     used = used_keys()
     for key, where in sorted(used.items()):
         if key not in base and key != "lang":
@@ -163,7 +234,7 @@ def check(locales: dict[str, dict[str, str]], default: str) -> tuple[list[str], 
     return errors, notices
 
 
-def render(locales: dict[str, dict[str, str]], default: str, errors: list[str] | None = None) -> str:
+def render(locales: dict[str, dict], default: str, errors: list[str] | None = None) -> str:
     errors = [] if errors is None else errors
     return json.dumps({
         "schema": "sonic-i18n/v1", "generated_by": "scripts/i18n.py", "default": default,

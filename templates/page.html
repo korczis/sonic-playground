@@ -26,7 +26,8 @@
           <span class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-gray-500" aria-hidden="true"></span>
           {{ <tx key="track.min_read" l={l} vars={ {"n": page.reading_time} } /> }}
         </div>
-        {{ <share url={page.permalink} text={l["share.text"] | replace(from="{label}", to=track.artist ~ " – " ~ track.track) | replace(from="{site}", to=config.title)} l={l} /> }}
+        {%- set share_text %}{{ <tr key="share.text" l={l} vars={ {"label": track.artist ~ " – " ~ track.track, "site": config.title} } /> }}{% endset %}
+        {{ <share url={page.permalink} text={share_text} l={l} /> }}
       </div>
       <h2 id="review-title" class="sr-only">{{ <tx key="track.review" l={l} /> }}</h2>
       {%- if track.youtube %}
@@ -82,7 +83,7 @@
           <p class="text-sm text-gray-500 dark:text-gray-400">{{ <tx key="track.more_like_caption" l={l} /> }}</p>
         </div>
         {%- if track.youtube %}
-        {{ <play_all target="related-list" l={l} label={l["track.play_related"] | replace(from="{n}", to=(track.related | length) ~ "")} lkey="track.play_related" vars={ {"n": track.related | length} } /> }}
+        {{ <play_all target="related-list" l={l} lkey="track.play_related" vars={ {"n": track.related | length} } /> }}
         {%- endif %}
       </div>
       <div id="related-list" data-playlist class="grid gap-6 md:grid-cols-2">

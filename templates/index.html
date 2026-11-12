@@ -25,7 +25,7 @@
       <h2 id="home-recent" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="home.recent" l={l} /> }}</h2>
       <div class="flex items-center gap-3">
         <a href="{{ get_url(path='@/pages/archive.md', lang=lang) }}" class="text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="home.recent_all" l={l} /> }}</a>
-        {{ <play_all target="home-recent-grid" l={l} label={l["home.recent_play"]} lkey="home.recent_play" /> }}
+        {{ <play_all target="home-recent-grid" l={l} lkey="home.recent_play" /> }}
       </div>
     </div>
     <div id="home-recent-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -47,7 +47,7 @@
   <section aria-labelledby="home-recurring" class="space-y-3">
     <div class="flex flex-wrap items-end justify-between gap-3">
       <h2 id="home-recurring" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="home.recurring" l={l} vars={ {"n": catalog.recurring | length} } /> }}</h2>
-      {{ <play_all target="home-recurring-grid" l={l} label={l["home.recurring_play"]} lkey="home.recurring_play" /> }}
+      {{ <play_all target="home-recurring-grid" l={l} lkey="home.recurring_play" /> }}
     </div>
     <div id="home-recurring-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {%- set_global shown = 0 %}
@@ -73,7 +73,8 @@
   </section>
 
   {#- Pass it on: the home page's own share links (its Open Graph card is og/home.png). -#}
-  {{ <share_cta url={section.permalink} text={l["home.share_post"] | replace(from="{tracks}", to=s.tracks ~ "")} l={l} vars={share_vars} /> }}
+  {%- set share_post %}{{ <tr key="home.share_post" l={l} vars={ {"tracks": s.tracks} } /> }}{% endset %}
+  {{ <share_cta url={section.permalink} text={share_post} l={l} vars={share_vars} /> }}
 
   {#- Explore by sound: the most used terms of every facet with enough terms to browse. -#}
   <section aria-labelledby="home-sound" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
@@ -102,8 +103,8 @@
     <div class="mb-4 flex flex-wrap items-center justify-between gap-2">
       <h2 id="explorer-title" class="text-lg font-semibold text-gray-900 dark:text-white" data-i18n="explorer.title">{{ l["explorer.title"] }}</h2>
       <div class="flex items-center gap-3">
-        <p class="text-sm text-gray-500 dark:text-gray-400" data-explorer-status aria-live="polite">{{ l["explorer.status_all"] | replace(from="{n}", to=s.tracks ~ "") }}</p>
-        {{ <play_all target="explorer-grid" l={l} label={l["explorer.play"]} lkey="explorer.play" /> }}
+        <p class="text-sm text-gray-500 dark:text-gray-400" data-explorer-status aria-live="polite">{{ <tr key="explorer.status_all" l={l} vars={ {"n": s.tracks} } /> }}</p>
+        {{ <play_all target="explorer-grid" l={l} lkey="explorer.play" /> }}
       </div>
     </div>
     <form data-explorer class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6" action="{{ get_url(path='@/_index.md', lang=lang) }}" method="get">

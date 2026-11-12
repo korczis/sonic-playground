@@ -6,7 +6,9 @@
   - every component a template or a review calls exists;
   - no markup is duplicated between templates: a line of 100+ characters (an element with its
     classes) that appears in two different template files is a component waiting to be
-    extracted; the same line twice in one file is reported too.
+    extracted; the same line twice in one file is reported too;
+  - one formatter: no template fills an interface string's {placeholders} itself
+    (replace(from="{…")); the `tr` component does, plural forms included.
 
     python3 scripts/check-components.py     exit 1 on any finding
 """
@@ -24,6 +26,8 @@ CALL = re.compile(r"\{\{\s*<([a-z_]+)[\s/]")
 MIN_LINE = 100
 # Lines that are layout plumbing rather than a component (closing tags, Tera control lines).
 IGNORE = re.compile(r"^\s*(\{%|\{#|</|<!--|\{\{\s*<)")  # a component call is reuse, not duplication
+FORMAT = re.compile(r'replace\(from="\{')
+TR_DEFINITION = re.compile(r"\{%\s*component\s+tr\(")
 
 
 def main() -> int:
@@ -54,6 +58,14 @@ def main() -> int:
     for text, where in sorted(seen.items(), key=lambda kv: kv[1]):
         if len(where) > 1:
             problems.append(f"duplicated markup ({len(where)}x: {', '.join(where)}): {text[:90]}…")
+
+    # One formatter: an interface string's {placeholders} and plural form are filled only by the
+    # `tr` component (and Sonic.t in the browser), never by a template's own replace().
+    for path in sorted(TEMPLATES.rglob("*.html")):
+        for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+            if FORMAT.search(line) and not TR_DEFINITION.search(line):
+                problems.append(f"{path.relative_to(ROOT).as_posix()}:{number} formats an interface string "
+                                f"by hand (replace(from=\"{{…\")); use {{{{ <tr key=… l={{l}} vars=… /> }}}}")
 
     for p in problems:
         print(f"check-components: {p}", file=sys.stderr)

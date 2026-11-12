@@ -46,7 +46,7 @@
           {%- for f in catalog.facets[kind][:8] %}
           <li><a href="{% if l.lang in catalog.lang_terms and f.term not in catalog.lang_terms[l.lang][kind] %}{{ get_taxonomy_url(kind=kind, term=f.term, lang=catalog.languages | first) }}{% else %}{{ get_taxonomy_url(kind=kind, term=f.term, lang=l.lang) }}{% endif %}" class="{{ sub }}">{% set k = "term." ~ kind ~ "." ~ f.term %}<span class="min-w-0 flex-1 truncate">{% if k in l %}{{ l[k] }}{% else %}{{ f.term }}{% endif %}</span><span class="{{ badge }}">{{ f.count }}</span></a></li>
           {%- endfor %}
-          <li><a href="{{ get_url(path=lp ~ kind, trailing_slash=true) }}" class="{{ sub }} font-medium text-primary-700 dark:text-primary-400" data-i18n="side.all.{{ kind }}" data-i18n-vars="{{ {"n": catalog.facets[kind] | length} | json_encode }}">{{ l["side.all." ~ kind] | replace(from="{n}", to=catalog.facets[kind] | length ~ "") }}</a></li>
+          <li><a href="{{ get_url(path=lp ~ kind, trailing_slash=true) }}" class="{{ sub }} font-medium text-primary-700 dark:text-primary-400">{{ <tx key={"side.all." ~ kind} l={l} vars={ {"n": catalog.facets[kind] | length} } /> }}</a></li>
         </ul>
         {%- endfor %}
       </div>

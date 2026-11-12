@@ -4,7 +4,7 @@
 {% extends "base.html" %}
 {%- block content %}
 {%- set s = catalog.stats %}
-{{ <page_header title={l["menu.insights"]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["menu.insights"], "", "menu.insights"]]} lead={l["insights.lead"]} lead_key="insights.lead" /> }}
+{{ <page_header title={l["menu.insights"]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["menu.insights"], "", "menu.insights"]]} lead_key="insights.lead" l={l} /> }}
 <div class="space-y-4 px-4 pt-6 xl:px-8">
   <section aria-label="Totals" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
     {{ <stat_card value={s.tracks} label={l["stat.tracks"]} lkey="stat.tracks" icon_name="music" href={get_url(path="@/pages/archive.md", lang=lang)} /> }}

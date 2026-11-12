@@ -7,6 +7,7 @@
 "locale.name" = "English"
 "locale.short" = "EN"
 "locale.switch" = "Language"
+"locale.plural" = { one = [1] }
 
 "site.skip" = "Skip to content"
 "site.home" = "Home"
@@ -25,8 +26,8 @@
 "side.search_placeholder" = "Search tracks…"
 "side.genre" = "Genres"
 "side.sentiment" = "Feelings"
-"side.all.genre" = "All {n} genres →"
-"side.all.sentiment" = "All {n} feelings →"
+"side.all.genre" = { one = "{n} genre →", other = "All {n} genres →" }
+"side.all.sentiment" = { one = "{n} feeling →", other = "All {n} feelings →" }
 
 "menu.welcome" = "Welcome"
 "menu.author" = "Author"
@@ -35,25 +36,25 @@
 "menu.concepts" = "Concepts"
 "menu.yearbooks" = "Yearbooks"
 
-"footer.note" = "{n} tracks, hand-picked; the catalogue is derived at build time, the site is static."
+"footer.note" = { one = "{n} track, hand-picked; the catalogue is derived at build time, the site is static.", other = "{n} tracks, hand-picked; the catalogue is derived at build time, the site is static." }
 
 "home.cta_play" = "Play the newest"
 "home.cta_explore" = "Explore the tracks"
 "home.cta_why" = "Why this playground"
 "home.latest" = "Latest track"
-"home.words" = "{n} words"
+"home.words" = { one = "{n} word", other = "{n} words" }
 "home.read" = "Read the review"
-"home.all_yearbooks" = "All {n} yearbooks →"
+"home.all_yearbooks" = { one = "{n} yearbook →", other = "All {n} yearbooks →" }
 "home.learn_title" = "Learn while you listen"
-"home.learn_text" = "{n} concepts of rhythm, harmony, sound and production, explained and heard in the tracks; {t} reviews come with a listening guide."
+"home.learn_text" = { one = "{n} concept of rhythm, harmony, sound or production, explained and heard in the tracks; reviews with a listening guide: {t}.", other = "{n} concepts of rhythm, harmony, sound and production, explained and heard in the tracks; reviews with a listening guide: {t}." }
 "home.learn_cta" = "Open the glossary"
 "home.recent" = "Recently published"
 "home.recent_all" = "The whole archive →"
 "home.recent_play" = "Play these"
-"home.recurring" = "Back year after year: {n} songs"
+"home.recurring" = { one = "Back year after year: {n} song", other = "Back year after year: {n} songs" }
 "home.recurring_play" = "Play them"
 "home.sound" = "Explore by sound"
-"home.sound_all" = "All {n} →"
+"home.sound_all" = { one = "{n} →", other = "All {n} →" }
 "home.headline" = "Skip the algorithm."
 "home.headline_accent" = "Keep the music."
 "home.lead" = "Every track here is one that wouldn't let me go. {tracks} of them so far, each with a review, a listening guide and the story behind it. Press play: the music keeps going while you read."
@@ -63,7 +64,7 @@
 "home.stat_concepts" = "concepts explained"
 "home.stat_zero" = "algorithms, ads or sign-ups"
 "home.deepest" = "The deepest dive"
-"home.deepest_meta" = "{n} words on one song"
+"home.deepest_meta" = { one = "{n} word on one song", other = "{n} words on one song" }
 "home.share_kicker" = "Pass it on"
 "home.share_title" = "Know someone tired of the same ten songs?"
 "home.share_text" = "Send them {tracks} tracks from {artists} artists that no algorithm would have picked."
@@ -97,8 +98,8 @@
 "explorer.apply" = "Apply"
 "explorer.reset" = "Reset"
 "explorer.play" = "Play all shown"
-"explorer.status_all" = "{n} tracks"
-"explorer.status_some" = "{shown} of {n} tracks"
+"explorer.status_all" = { one = "{n} track", other = "{n} tracks" }
+"explorer.status_some" = { one = "{shown} of {n} track", other = "{shown} of {n} tracks" }
 "explorer.more" = "Show {page} more ({left} left)"
 "explorer.empty_title" = "No track matches"
 "explorer.empty_text" = "Loosen a filter or search for fewer words."
@@ -122,7 +123,7 @@
 
 "track.published_in" = "Published in"
 "track.by" = "By"
-"track.min_read" = "{n} min read"
+"track.min_read" = { one = "{n} min read", other = "{n} min read" }
 "track.review" = "Review"
 "track.video_gone" = "The video this review was written to has been removed from YouTube."
 "track.video_search" = "Search YouTube for {track}"
@@ -141,12 +142,12 @@
 "track.release_year" = "Released"
 "track.publisher" = "Label"
 "track.video_duration" = "Duration"
-"track.words" = "{n} words"
+"track.words" = { one = "{n} word", other = "{n} words" }
 "track.inferred" = "Artist and track inferred from the {rule}."
 "track.shares" = "Shares {terms} · {pct} % alike"
 "track.neighbourhood_chart.title" = "Neighbourhood"
 "track.neighbourhood_chart.caption" = "This track, the tracks most like it and theirs. Drag, zoom, hover; a dot opens the track."
-"track.play_related" = "Play all {n}"
+"track.play_related" = { one = "Play {n}", other = "Play all {n}" }
 "track.country" = "Country"
 "track.bpm" = "Tempo (BPM)"
 "track.key" = "Key"
@@ -162,7 +163,7 @@
 
 "insights.lead" = "Derived from the front matter of every review at build time: no database, no server, no hand-kept numbers. Click any bar, cell or dot to open what it counts."
 "insights.artists" = "Artists"
-"insights.artists_caption" = "{n} artists, inferred from the titles and file names (see each track's note). An artist opens the explorer."
+"insights.artists_caption" = { one = "{n} artist, inferred from the titles and file names (see each track's note). An artist opens the explorer.", other = "{n} artists, inferred from the titles and file names (see each track's note). An artist opens the explorer." }
 
 "chart.months.title" = "Reviews per month"
 "chart.months.caption" = "When the reviews were published. A bar opens that month in the archive."
@@ -180,7 +181,7 @@
 "chart.browse_feelings.caption" = "A bar filters the tracks below."
 "chart.table" = "Show as table"
 "chart.tracks" = "Tracks"
-"chart.track_count" = "{n} track(s)"
+"chart.track_count" = { one = "{n} track", other = "{n} tracks" }
 "chart.alike" = "{pct} % alike"
 "chart.other" = "other genres"
 "chart.col.month" = "Month"
@@ -190,8 +191,8 @@
 "chart.col.related" = "Related tracks shown"
 "chart.col.cross" = "Genre \\ feeling"
 
-"archive.lead" = "{n} tracks published between {first} and {last}."
-"archive.count" = "{n} tracks"
+"archive.lead" = { one = "{n} track published between {first} and {last}.", other = "{n} tracks published between {first} and {last}." }
+"archive.count" = { one = "{n} track", other = "{n} tracks" }
 "archive.play" = "Play month"
 
 "tax.name.genre" = "Genres"
@@ -200,14 +201,14 @@
 "tax.one.genre" = "Genre"
 "tax.one.sentiment" = "Feeling"
 "tax.one.mood" = "Mood"
-"tax.list_lead" = "{n} terms, most used first."
+"tax.list_lead" = { one = "{n} term.", other = "{n} terms, most used first." }
 "tax.combine" = "Combine in the explorer"
 "tax.feed" = "Feed"
 "tax.play" = "Play {term}"
-"tax.count" = "{n} track(s)."
+"tax.count" = { one = "{n} track.", other = "{n} tracks." }
 "tax.prev" = "← Previous"
 "tax.next" = "Next →"
-"tax.page" = "Page {i} of {n}"
+"tax.page" = "Page {i} of {total}"
 "tax.empty_title" = "Nothing here yet"
 "tax.empty_text" = "Terms appear here as soon as a review uses them."
 "tax.name.concept" = "Concepts"
@@ -237,9 +238,9 @@
 "player.shuffle" = "Shuffle"
 "player.clear" = "Clear queue"
 "player.now" = "Now playing"
-"player.up_next" = "Up next ({n})"
+"player.up_next" = "Up next ({total})"
 "player.up_next_empty" = "Nothing queued. Add tracks with the queue button on any track."
-"player.played" = "Played ({n})"
+"player.played" = "Played ({total})"
 "player.jump" = "Play {track}"
 "player.move_up" = "Move {track} up"
 "player.move_down" = "Move {track} down"
@@ -252,7 +253,7 @@
 "player.toast_removed" = "Removed from the queue: {track}"
 "player.toast_next" = "Plays next: {track}"
 "player.toast_playing" = "Playing now: {track}"
-"player.toast_list" = "Queue replaced: {n} tracks"
+"player.toast_list" = { one = "Queue replaced: {n} track", other = "Queue replaced: {n} tracks" }
 "player.toast_cleared" = "Queue cleared"
 "player.toast_shuffled" = "Up next shuffled"
 "player.undo" = "Undo"
@@ -265,8 +266,8 @@
 "player.toast_autoplay" = "Autoplay: {artist} – {track}"
 
 "seo.locale" = "en_US"
-"seo.term" = "{n} hand-picked tracks filed under the {kind} {term}: reviews, videos and the tracks that sound alike."
-"seo.taxonomy" = "All {n} {kind} of the playground, most used first."
+"seo.term" = { one = "{n} hand-picked track filed under the {kind} {term}: its review, its video and the tracks that sound alike.", other = "{n} hand-picked tracks filed under the {kind} {term}: reviews, videos and the tracks that sound alike." }
+"seo.taxonomy" = { one = "The playground's {kind}: {n}.", other = "All {n} {kind} of the playground, most used first." }
 "seo.home_title" = "Skip the algorithm. Keep the music."
 "seo.home_description" = "{tracks} tracks from {artists} artists, hand-picked by a person and each one explained: a review, a listening guide and the story behind it. Free, no sign-up, no ads."
 "action.play" = "Play"
@@ -305,8 +306,8 @@
 "learn.kind.video" = "Video"
 "learn.kind.label" = "Label"
 "learn.kind.artist" = "Artist"
-"concept.list_lead" = "{n} concepts the reviews teach, each with the tracks that demonstrate it."
-"concept.tracks" = "{n} track(s)"
+"concept.list_lead" = { one = "{n} concept the reviews teach, with the tracks that demonstrate it.", other = "{n} concepts the reviews teach, each with the tracks that demonstrate it." }
+"concept.tracks" = { one = "{n} track", other = "{n} tracks" }
 "concept.what" = "What it is"
 "concept.read_more" = "Read more on Wikipedia"
 "concept.related" = "Related concepts"
@@ -322,11 +323,11 @@
 "concept.category.genre-history" = "Genre history"
 "concept.category.culture" = "Culture"
 "yearbook.title" = "Yearbooks"
-"yearbook.lead" = "{n} years of the owner's most played songs on Spotify; {r} songs recur across years."
+"yearbook.lead" = { one = "{n} year of the owner's most played songs on Spotify; songs that recur across years: {r}.", other = "{n} years of the owner's most played songs on Spotify; songs that recur across years: {r}." }
 "yearbook.one" = "Top songs of {year}"
 "yearbook.page_title" = "Yearbooks"
 "yearbook.page_description" = "The owner's most played songs of {year}: {items} recordings, {songs} with a review on Sonic Playground."
-"yearbook.count" = "{n} recordings, {s} with a review"
+"yearbook.count" = { one = "{n} recording, {s} with a review", other = "{n} recordings, {s} with a review" }
 "yearbook.list" = "In the playlist's order"
 "yearbook.play" = "Play {year}"
 "yearbook.about" = "About this yearbook"

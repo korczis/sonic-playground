@@ -24,8 +24,9 @@ English at the root and in Czech under `/cs/`; the language switch opens a page'
 | the educational front matter of a review | templates, `scripts/catalog.py` | the learning guide (seeking the player), references, connections, credits; `data/derived/jsonld.json` (Article + LearningResource + MusicRecording) |
 | MusicBrainz | `scripts/track.py enrich` | recording, artist and release ids, ISRC, country, missing years in `[extra]` |
 | `data/videos.json` (written by `scripts/probe-videos.py`) | `scripts/catalog.py` | videos gone from YouTube: no still, no player, the derived artwork |
-| `data/i18n/<locale>.toml`, `data/i18n/terms/<locale>.toml` | `scripts/i18n.py` | `static/data/i18n.json`: every interface key in every locale and every use, and `term.<facet>.<term>`, every term in use labelled |
+| `data/i18n/<locale>.toml`, `data/i18n/terms/<locale>.toml` | `scripts/i18n.py` | `static/data/i18n.json`: every interface key in every locale and every use, and `term.<facet>.<term>`, every term in use labelled; a count string is a table of the locale's CLDR plural forms (`locale.plural`), filled by one formatter (`tr`, `Sonic.t`) |
 | `content/<name>.cs.md` (the Czech translation beside each page) | `scripts/catalog.py` through `scripts/translation.py` | each review's `langs` and Czech `i18n` layer in the catalogue, `search.cs.json`, Czech JSON-LD; a translation stale, structurally different or not Czech is refused |
+| every local image the content shows (`figure`, `extra.cover_image`) and `data/media.toml` | `scripts/images.py` | `static/images/derived/` AVIF and WebP at each width, `static/data/images.json`; figures render a sized `<picture>`, cards the smallest variant (rule `project.media-budget`) |
 | every built page | `scripts/og.cjs` (Playwright) | `og/<slug>.png`, the 1200x630 card its Open Graph / X tags name |
 | `package.json` pins | `scripts/vendor.mjs`, `npm run css` | self-hosted Flowbite JS and ECharts, `static/css/app.css` |
 | `templates/components.html` | Zola 0.23 (Tera 2) | every page: explorer, track, archive, insights, taxonomies, 404 |

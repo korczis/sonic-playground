@@ -30,11 +30,21 @@
   function strings(code) {
     return bundle && bundle.locales[code] ? bundle.locales[code].strings : {};
   }
+  /** The plural form of a count string ({one, few, …, other}) for vars.n by the locale's rule
+   *  ("locale.plural": category -> the integers it takes; any other integer is "other"): the
+   *  table the templates' `tr` component reads, proven equal to CLDR by test/test_i18n.py. */
+  function form(text, vars, rule) {
+    if (!text || typeof text !== 'object') return text;
+    var n = Number(vars && vars.n);
+    for (var cat in rule || {}) if (rule[cat].indexOf(n) >= 0 && cat in text) return text[cat];
+    return text.other;
+  }
   Sonic.t = function (key, vars) {
     var own = strings(locale);
     var fallback = strings(bundle && bundle.default);
-    var text = key in own ? own[key] : (key in fallback ? fallback[key] : key);
-    return format(text, vars);
+    var src = key in own ? own : (key in fallback ? fallback : null);
+    if (!src) return key;
+    return format(form(src[key], vars, src['locale.plural']), vars);
   };
   Sonic.locale = function () { return locale; };
   /** The label of a taxonomy term in the current language (term.<facet>.<term>). */
