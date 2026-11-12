@@ -1,15 +1,19 @@
-{#- Home: the landing hero (headline, perks, a mosaic that plays), the newest track, the catalogue at a glance, charts that filter, and
+{#- Home: the landing hero (headline, the catalogue in numbers, a mosaic that plays, the deepest
+    dive), the newest track, the catalogue at a glance, charts that filter, and
     the explorer. Every card is rendered here from the catalogue, so the page is complete without
     JavaScript; static/js/explorer.js adds faceted filtering, text search, sorting, paging and URL
     state (?q=&genre=&sentiment=&mood=&sort=) on top of the same cards. Strings: data/i18n/. -#}
 {% extends "base.html" %}
 {%- block content %}
 {%- set s = catalog.stats %}
-{%- set kicker_vars = {"tracks": s.tracks, "artists": s.artists, "genres": s.genre_terms} %}
+{%- set eyebrow_vars = {"since": config.extra.since} %}
 {%- set lead_vars = {"tracks": s.tracks} %}
-{%- set learn_vars = {"n": catalog.concepts | length} %}
 {%- set share_vars = {"tracks": s.tracks, "artists": s.artists} %}
-{{ <site_hero l={l} kicker_vars={kicker_vars} lead_vars={lead_vars} learn_vars={learn_vars} primary_href="#explorer-title" secondary_href={get_url(path="@/pages/welcome.md", lang=lang)} tracks={catalog.tracks} /> }}
+{%- set hero_stats = {"tracks": s.tracks, "artists": s.artists, "concepts": catalog.concepts | length} %}
+{#- The longest review with a video: the hero's "deepest dive". -#}
+{%- set_global deep = false %}
+{%- for t in catalog.tracks %}{% if t.youtube and (not deep or t.words > deep.words) %}{% set_global deep = t %}{% endif %}{% endfor %}
+{{ <site_hero l={l} eyebrow_vars={eyebrow_vars} lead_vars={lead_vars} stats={hero_stats} primary_href="#explorer-title" secondary_href={get_url(path="@/pages/welcome.md", lang=lang)} tracks={catalog.tracks} deep={deep} /> }}
 <div class="relative z-10 -mt-16 space-y-4 px-4 xl:px-8">
   {#- The newest track with a picture leads; the catalogue is newest first. -#}
   {%- set_global featured = catalog.tracks | first %}

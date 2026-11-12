@@ -6,10 +6,11 @@
 // headless browser and writes <public dir>/og/<key>.png, where <key> is the page path slugified
 // ("home" for the root) — the same key templates/base.html derives for og:image. A track's card
 // shows its still, artist, track and genres; any other page shows its title, its description and
-// a mosaic of the newest stills; the home page, the one most shared, gets the pitch (seo.home_title
-// of the default locale) over a tilted wall of stills. Everything comes from the built page's own meta tags and the
-// derived catalogue; nothing is written here but the layout. Exit 0 ok, 1 failure, 3 skipped
-// (playwright-core not installed). Keys after the directory render only those cards (a quick look).
+// a mosaic of the newest stills; the home page of each language, the one most shared, gets its
+// pitch (seo.home_title) over a tilted wall of stills. Everything comes from the built page's own
+// meta tags, the derived catalogue and the interface strings; nothing is written here but the
+// layout. Exit 0 ok, 1 failure, 3 skipped (playwright-core not installed). Keys after the
+// directory render only those cards (a quick look).
 'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
@@ -81,16 +82,16 @@ p{margin-top:20px;font-size:26px;line-height:1.35;color:#d1d5db;display:-webkit-
 .mosaic div:nth-child(2),.mosaic div:nth-child(5){transform:translateY(22px)}
 .eq{position:absolute;left:0;right:0;bottom:0;height:120px;display:flex;align-items:flex-end;justify-content:center;gap:6px;opacity:.25}
 .eq span{width:10px;border-radius:4px 4px 0 0;background:linear-gradient(#f472b6,#8b5cf6)}
-.home .wrap{display:block;padding:72px 64px}
-.home .text{width:640px}
+.home .wrap{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:40px 64px 96px}
+.home .text{width:720px}
 .home .badge{display:inline-flex;align-items:center;gap:12px;font-size:24px;font-weight:700;padding:8px 18px 8px 8px;
   border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
 .home .badge img{width:40px;height:40px}
-.home h1{margin-top:34px;font-size:80px;line-height:1.02;-webkit-line-clamp:4}
+.home h1{margin-top:34px;font-size:78px;line-height:1.02;-webkit-line-clamp:4;max-width:640px}
 .home h1 em{font-style:normal;display:block;background:linear-gradient(90deg,#c4b5fd,#f9a8d4,#fde68a);
   -webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:6px}
-.home .chips{margin-top:30px}
-.home .chip{font-size:22px;padding:8px 16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
+.home .chips{margin-top:30px;flex-wrap:nowrap}
+.home .chip{font-size:20px;padding:7px 14px;white-space:nowrap;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
 .home .chip b{color:#f9a8d4}
 .wall{position:absolute;top:-120px;right:-150px;width:640px;display:grid;grid-template-columns:repeat(3,196px);gap:16px;
   transform:rotate(-10deg)}
@@ -129,19 +130,21 @@ function pageCard(title, description) {
   <div class="brand"><img src="${icon}">${site}</div><div class="host">${esc(host)}</div>`;
 }
 
-function homeCard() {
-  const [lead, accent] = (strings['seo.home_title'] || site).split(/,\s*/, 2);
+function homeCard(code) {
+  const str = i18n.locales[code].strings;
+  // The pitch in two beats: its first sentence (or clause) plain, the rest in the accent.
+  const [lead, accent] = (str['seo.home_title'] || site).split(/(?<=[.,])\s+/, 2);
   const tiles = catalog.tracks.filter((t) => t.youtube).slice(0, 15)
     .map((t) => `<div style="background-image:url('https://i.ytimg.com/vi/${t.youtube}/mqdefault.jpg')"></div>`).join('');
-  const chips = [[s.tracks, 'tracks'], [s.artists, 'artists'], [s.genre_terms, 'genres'], [catalog.concepts.length, 'concepts']]
-    .map(([n, what]) => `<span class="chip"><b>${n}</b> ${what}</span>`).join('');
+  const chips = [[s.tracks, 'home.stat_tracks'], [s.artists, 'home.stat_artists'], [catalog.concepts.length, 'home.stat_concepts']]
+    .map(([n, k]) => `<span class="chip"><b>${n}</b> ${esc(str[k])}</span>`).join('');
   return `<div class="home"><div class="bg"></div><div class="wall">${tiles}</div><div class="fade"></div>${eq()}
   <div class="wrap"><div class="text">
     <div class="badge"><img src="${icon}">${site}</div>
-    <h1>${esc(lead)}${accent ? `,<em>${esc(accent)}</em>` : ''}</h1>
+    <h1>${esc(lead)}${accent ? `<em>${esc(accent)}</em>` : ''}</h1>
     <div class="chips">${chips}</div>
   </div></div>
-  <div class="host" style="left:64px;right:auto">${esc(host)}</div></div>`;
+  <div class="host" style="left:64px;right:auto">${esc(host)}${code === i18n.default ? '' : '/' + code}</div></div>`;
 }
 
 (async () => {
@@ -163,8 +166,20 @@ function homeCard() {
       if (!fs.existsSync(file)) continue;
       const html = fs.readFileSync(file, 'utf8');
       const t = bySlug[p.slice(prefix.length).replace(/\/$/, '')];
-      const body = k === 'home' ? homeCard() : t ? trackCard(t) : pageCard(meta(html, 'og:title') || site, meta(html, 'og:description'));
+      const homeOf = k === 'home' ? i18n.default : (k in i18n.locales && k !== i18n.default ? k : null);
+      const body = homeOf ? homeCard(homeOf) : t ? trackCard(t) : pageCard(meta(html, 'og:title') || site, meta(html, 'og:description'));
       await page.setContent(`<!doctype html><meta charset="utf-8"><style>${STYLE}</style><body>${body}</body>`, { waitUntil: 'load' });
+      // The pitch keeps to three lines whatever font the machine has: shrink it until it does.
+      if (homeOf) {
+        await page.evaluate(() => {
+          const h1 = document.querySelector('.home h1');
+          let size = parseFloat(getComputedStyle(h1).fontSize);
+          while (h1.scrollHeight > size * 1.02 * 3 + 4 && size > 48) {
+            size -= 2;
+            h1.style.fontSize = size + 'px';
+          }
+        });
+      }
       await page.screenshot({ path: path.join(out, k + '.png'), type: 'png' });
       written += 1;
     }

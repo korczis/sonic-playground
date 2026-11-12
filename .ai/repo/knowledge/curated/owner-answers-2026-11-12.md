@@ -3,8 +3,8 @@ schema: knowledge/v1
 id: owner-answers-2026-11-12
 kind: knowledge
 class: fact
-title: "The owner's answers of 2026-11-12: the Spotify source, ADRs 0001-0005, the stale master branches, the Majordomus path-hashing bug"
-description: "Before importing a yearbook, changing an ADR's status, recreating a master branch, or working around the Majordomus gate recorder's non-ASCII path bug."
+title: "The owner's answers of 2026-11-12: the Spotify source, ADRs 0001-0005, the stale master branches, the Majordomus path-hashing bug, the landing page's second round"
+description: "Before importing a yearbook, changing an ADR's status, recreating a master branch, working around the Majordomus gate recorder's non-ASCII path bug, or changing the home page's hero, pitch or social card."
 status: verified
 epistemics: observed
 date: 2026-11-12
@@ -13,6 +13,7 @@ tags:
   - spotify
   - adr
   - git
+  - landing-page
 provenance:
   origin: authored
 ---
@@ -62,3 +63,23 @@ about 2026-11-12T16:10Z. Each question and answer is quoted as given.
 - Consequence: filed as https://github.com/korczis/prismatic-majordomus/issues/3014. This
   repository already avoids the bug: `scripts/catalog.py` refuses a review whose file name is
   not ASCII.
+
+## The landing page, second round
+
+Asked by Claude Code in session `e290e809-a468-45bf-91be-e27d9cc26bab` at about
+2026-11-12T19:20Z, after the first round (hero, share metadata, home card; commit 915cb3c) was
+deployed and the owner sent the same request again ("vymazli landing page - at je sexy, pridej
+og:tags, social tags, previews, text, promo, at to muzu rovnou vrznout na linkedin").
+
+- Question: "The landing page has already been redone and deployed (new hero, Open Graph/X/LinkedIn
+  tags, a LinkedIn-ready preview card, share buttons, post text). The same request arrived again —
+  what should the next round change?"
+- Answer (several chosen): "Fix the preview card, Bolder hero design, Different copy/tone". The
+  options' descriptions were: the card's numbers wrap onto two lines, make them fit on one; a more
+  striking hero (bigger visual, animated equaliser, a "now playing" card, more marketing feel);
+  rewrite the headline, lead and LinkedIn post text (more personal, more punchy, English-first).
+- Consequence: the home card keeps its numbers on one line and fits its pitch to three lines
+  whatever font the build machine has, one card per language; the hero gains the catalogue in
+  numbers, a floating card for the longest review, a wider tilted mosaic and motion that stops
+  under reduced motion; the pitch became "Skip the algorithm. Keep the music." (cs "Vypněte
+  algoritmus. Hudba zůstane."), in the first person.

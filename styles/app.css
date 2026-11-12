@@ -202,8 +202,33 @@ html[data-player-view-state="mini"] #player-panel {
   100% { transform: scaleY(0.35); }
 }
 
+/* Home hero: two gradient blobs drifting, a pulsing dot in the eyebrow (off with reduced motion). */
+.hero-blob {
+  animation: hero-drift 18s ease-in-out infinite alternate;
+}
+
+.hero-blob-alt {
+  animation-duration: 24s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes hero-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-6rem, 3rem) scale(1.15); }
+}
+
+.hero-ping {
+  animation: hero-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes hero-ping {
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .eq-bar {
+  .eq-bar,
+  .hero-blob,
+  .hero-ping {
     animation: none;
   }
 }
