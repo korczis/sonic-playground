@@ -74,3 +74,10 @@ page musi mit og tags, social tags, social preview, image preview, this must be 
 - The build renders one card per page in a browser (`scripts/og.cjs`), which the gate and CI
   run; a page without a card does not deploy (rule `project.social-preview`).
 - Background playback on a locked phone remains the YouTube app's (Premium) or another app's.
+
+## Acceptance
+
+Accepted by the owner on 2026-11-12. The question was "ADRs 0001-0005 (static serverless site,
+derived catalogue, router + social cards, educational layer, yearbooks) are still marked proposed.
+Accept them?", and the answer was "Accept all five" (session
+7e1d03a3-52cc-40aa-a61a-4f9713c27f2a). The record is knowledge `owner-answers-2026-11-12`.

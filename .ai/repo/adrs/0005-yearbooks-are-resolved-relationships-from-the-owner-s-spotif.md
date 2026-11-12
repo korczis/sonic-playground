@@ -55,3 +55,10 @@ public site must never talk to Spotify.
 - Rule `project.yearbook-integrity` binds it. A missing song is created through add-song; an
   ambiguous item gets `review=` or `skip=` from the owner, never a guess.
 - The yearbook pages and the menu entry exist only once a yearbook does.
+
+## Acceptance
+
+Accepted by the owner on 2026-11-12. The question was "ADRs 0001-0005 (static serverless site,
+derived catalogue, router + social cards, educational layer, yearbooks) are still marked proposed.
+Accept them?", and the answer was "Accept all five" (session
+7e1d03a3-52cc-40aa-a61a-4f9713c27f2a). The record is knowledge `owner-answers-2026-11-12`.

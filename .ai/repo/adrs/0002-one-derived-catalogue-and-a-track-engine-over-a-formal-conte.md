@@ -64,3 +64,10 @@ vytvor engine, sablony, tooling".
   `data/review.toml` only adds guidance for it.
 - `static/data/catalog.json` is committed and must be regenerated (`npm run derive`) with every
   content change; the pre-commit hook and CI refuse a stale one.
+
+## Acceptance
+
+Accepted by the owner on 2026-11-12. The question was "ADRs 0001-0005 (static serverless site,
+derived catalogue, router + social cards, educational layer, yearbooks) are still marked proposed.
+Accept them?", and the answer was "Accept all five" (session
+7e1d03a3-52cc-40aa-a61a-4f9713c27f2a). The record is knowledge `owner-answers-2026-11-12`.
