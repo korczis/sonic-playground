@@ -1,0 +1,6 @@
+{
+  "$comment": "The ECharts modules the site ships: scripts/vendor.mjs builds static/vendor/echarts-<version>.custom.min.js from exactly these (rule project.media-budget's sibling for code: no library ships what the site does not use). scripts/vendor.mjs --check refuses a series type, option or renderer static/js/charts.js uses whose module is missing here, and a module listed here that charts.js does not use.",
+  "charts": ["BarChart", "GraphChart", "HeatmapChart"],
+  "components": ["AriaComponent", "AxisPointerComponent", "GridComponent", "LegendComponent", "TooltipComponent", "VisualMapComponent"],
+  "renderers": ["CanvasRenderer"]
+}

@@ -7,7 +7,7 @@
     },
     "echarts": {
       "version": "6.1.0",
-      "js": "vendor/echarts-6.1.0.min.js"
+      "js": "vendor/echarts-6.1.0.custom.min.js"
     }
   }
 }

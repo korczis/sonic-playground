@@ -28,6 +28,7 @@
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
     "echarts": "6.1.0",
+    "esbuild": "0.28.2",
     "flowbite": "4.0.2",
     "flowbite-typography": "1.0.5",
     "playwright-core": "1.63.0",
