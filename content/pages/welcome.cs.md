@@ -7,9 +7,9 @@ template = "pages.html"
 [extra]
 
 [extra.translation]
-of = "78396f693172"
+of = "8594e68ad40b"
 +++
-# Vstupte na své zvukové hřiště!
+## Vstupte na své zvukové hřiště!
 
 Ve světě zaplaveném **playlisty generovanými umělou inteligencí** a **algoritmickými doporučeními**,
 kde obsah přibývá rychleji, než stihnete stisknout „přeskočit“, se hledání opravdové,
