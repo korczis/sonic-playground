@@ -31,7 +31,7 @@
       <h2 id="explorer-title" class="text-lg font-semibold text-gray-900 dark:text-white" data-i18n="explorer.title">{{ l["explorer.title"] }}</h2>
       <div class="flex items-center gap-3">
         <p class="text-sm text-gray-500 dark:text-gray-400" data-explorer-status aria-live="polite">{{ l["explorer.status_all"] | replace(from="{n}", to=s.tracks ~ "") }}</p>
-        {{ <play_all target="explorer-grid" label={l["explorer.play"]} lkey="explorer.play" /> }}
+        {{ <play_all target="explorer-grid" l={l} label={l["explorer.play"]} lkey="explorer.play" /> }}
       </div>
     </div>
     <form data-explorer class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6" action="{{ get_url(path='@/_index.md') }}" method="get">

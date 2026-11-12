@@ -12,7 +12,7 @@
       <h2 id="m-{{ m.month }}" class="text-lg font-semibold text-gray-900 dark:text-white">{{ m.month }}</h2>
       <div class="flex items-center gap-3">
         <span class="rounded-md bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">{{ <tx key="archive.count" l={l} vars={ {"n": m.count} } /> }}</span>
-        {{ <play_all target={"list-" ~ m.month} label={l["archive.play"]} lkey="archive.play" /> }}
+        {{ <play_all target={"list-" ~ m.month} l={l} label={l["archive.play"]} lkey="archive.play" /> }}
       </div>
     </div>
     <ul id="list-{{ m.month }}" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">

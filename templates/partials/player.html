@@ -1,7 +1,11 @@
 {#- The bottom-bar player (static/js/player.js), outside #main-content so the router never swaps
-    it: a docked video (YouTube requires it visible while it plays), the bar with the track,
-    transport, progress and the queue, and the queue panel. Hidden until something plays. -#}
-{%- set btn = "inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700" -%}
+    it: a docked video (YouTube requires it visible while it plays; it can be made small, never
+    hidden), the bar (track, transport, repeat, progress, queue, video size, minimise, close), the
+    queue panel and a toast that confirms each action. Hidden until something plays. Minimised
+    (html[data-player-view-state="mini"], styles/app.css) the bar is a pill with the
+    [data-player-mini] controls only; [data-player-full] controls show in the full bar only. -#}
+{%- set btn = "h-10 w-10 items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 disabled:cursor-not-allowed disabled:opacity-40 aria-pressed:text-primary-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 dark:aria-pressed:text-primary-400" -%}
+{%- set tool = "inline-flex items-center gap-1.5 rounded-lg border border-gray-200 px-2.5 py-1.5 text-xs font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-600 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700" -%}
 <div id="player-panel" hidden class="fixed bottom-[5.5rem] right-0 z-40 w-full p-2 sm:right-4 sm:w-[22.25rem] sm:p-0">
   <div class="overflow-hidden rounded-lg bg-black shadow-2xl ring-1 ring-black/10">
     <div class="aspect-video w-full"><div id="player-video" class="h-full w-full"></div></div>
@@ -9,49 +13,72 @@
 </div>
 <div id="player-queue" hidden class="fixed bottom-[5.5rem] left-0 z-40 w-full p-2 sm:left-auto sm:right-[23.5rem] sm:w-96 sm:p-0">
   <div class="rounded-lg border border-gray-200 bg-white shadow-xl dark:border-gray-700 dark:bg-gray-800">
-    <div class="flex items-center justify-between border-b border-gray-200 px-4 py-3 dark:border-gray-700">
-      <div>
-        <h2 class="text-sm font-semibold text-gray-900 dark:text-white" data-i18n="player.queue">{{ l["player.queue"] }}</h2>
-        <span class="text-xs text-gray-500 dark:text-gray-400" data-i18n="player.queue_note">{{ l["player.queue_note"] }}</span>
+    <div class="border-b border-gray-200 px-4 py-3 dark:border-gray-700">
+      <h2 class="text-sm font-semibold text-gray-900 dark:text-white" data-i18n="player.queue">{{ l["player.queue"] }}</h2>
+      <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="player.queue_note">{{ l["player.queue_note"] }}</p>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <button type="button" data-player-shuffle class="{{ tool }}">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4h4v4M4 20 20 4M20 16v4h-4M14 14l6 6M4 4l5 5"/></svg><span data-i18n="player.shuffle">{{ l["player.shuffle"] }}</span>
+        </button>
+        <button type="button" data-player-clear class="{{ tool }}">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/></svg><span data-i18n="player.clear">{{ l["player.clear"] }}</span>
+        </button>
+        {#- A browser stops an embedded video when the phone locks; the YouTube app does not (with
+            YouTube Premium). This opens the queue from the current track as a YouTube playlist. -#}
+        <a data-player-export href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="{{ tool }}" data-i18n="player.export">{{ l["player.export"] }}</a>
       </div>
-      {#- A browser stops an embedded video when the phone locks; the YouTube app does not (with
-          YouTube Premium). This opens the queue from the current track as a YouTube playlist. -#}
-      <a data-player-export href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:text-white dark:hover:bg-gray-700" data-i18n="player.export">{{ l["player.export"] }}</a>
     </div>
-    <ol data-player-list class="max-h-80 space-y-1 overflow-y-auto p-2"></ol>
+    <ol data-player-list class="max-h-[min(20rem,50vh)] overflow-y-auto p-2"></ol>
   </div>
 </div>
-<div id="player" hidden role="region" aria-label="{{ l["player.region"] }}" data-i18n-aria-label="player.region" class="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-white/95 backdrop-blur dark:border-gray-700 dark:bg-gray-800/95">
-  <div class="flex h-[5.5rem] items-center gap-3 px-3 sm:gap-4 sm:px-4 lg:pl-[17rem]">
-    <img data-player-thumb src="data:," alt="" width="96" height="54" class="hidden h-12 w-[5.33rem] shrink-0 rounded object-cover sm:block">
+<div id="player-toast" hidden role="status" aria-live="polite" class="fixed top-20 left-1/2 z-[60] sm:top-auto sm:bottom-24 flex w-max max-w-[calc(100%-2rem)] -translate-x-1/2 items-center gap-2 rounded-lg bg-gray-900 px-4 py-2.5 text-sm text-white shadow-lg dark:bg-gray-700">
+  <svg class="h-4 w-4 shrink-0 text-primary-300" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12 4 4L19 6"/></svg>
+  <span data-player-toast-text></span>
+</div>
+<div id="player" hidden role="region" aria-label="{{ l["player.region"] }}" data-i18n-aria-label="player.region" class="fixed inset-x-0 bottom-0 z-50 border-t border-gray-200 bg-white/95 shadow-lg backdrop-blur dark:border-gray-700 dark:bg-gray-800/95">
+  <div data-player-row class="flex h-[5.5rem] items-center gap-2 px-3 sm:gap-4 sm:px-4 lg:pl-[17rem]">
+    <img data-player-thumb data-player-full src="data:," alt="" width="96" height="54" class="hidden h-12 w-[5.33rem] shrink-0 rounded object-cover sm:block">
     <div class="min-w-0 flex-1 sm:max-w-xs">
       <a data-player-title href="#" class="block truncate text-sm font-semibold text-gray-900 hover:underline dark:text-white"></a>
       <p data-player-artist class="truncate text-xs text-gray-500 dark:text-gray-400"></p>
     </div>
-    <div class="flex shrink-0 items-center gap-1">
-      <button type="button" data-player-prev class="{{ btn }} hidden sm:inline-flex" aria-label="{{ l["player.prev"] }}" data-i18n-aria-label="player.prev">
+    <div class="flex shrink-0 items-center gap-0.5 sm:gap-1">
+      <button type="button" data-player-prev data-player-full class="{{ btn }} hidden sm:inline-flex" aria-label="{{ l["player.prev"] }}" title="{{ l["player.prev"] }}" data-i18n-aria-label="player.prev" data-i18n-title="player.prev">
         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6h2v12H7zm3.5 6 8.5 6V6z"/></svg>
       </button>
       <button type="button" data-player-toggle aria-label="{{ l["player.play"] }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
         <svg data-icon-play class="ml-0.5 h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         <svg data-icon-pause hidden class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
       </button>
-      <button type="button" data-player-next class="{{ btn }}" aria-label="{{ l["player.next"] }}" data-i18n-aria-label="player.next">
+      <button type="button" data-player-next class="{{ btn }} inline-flex" aria-label="{{ l["player.next"] }}" title="{{ l["player.next"] }}" data-i18n-aria-label="player.next" data-i18n-title="player.next">
         <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6h2v12h-2zM5 6l8.5 6L5 18z"/></svg>
       </button>
+      <button type="button" data-player-repeat data-player-full aria-pressed="false" class="{{ btn }} relative hidden sm:inline-flex" aria-label="{{ l["player.repeat_off"] }}">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 2l3 3-3 3M4 11V9a4 4 0 0 1 4-4h12M7 22l-3-3 3-3m13-3v2a4 4 0 0 1-4 4H4"/></svg>
+        <span data-icon-repeat-one hidden class="absolute right-1 top-1 text-[10px] font-bold leading-none">1</span>
+      </button>
     </div>
-    <div class="hidden flex-1 items-center gap-2 md:flex">
+    <div data-player-full class="hidden flex-1 items-center gap-2 md:flex">
       <span data-player-time class="w-10 text-right text-xs tabular-nums text-gray-500 dark:text-gray-400">0:00</span>
       <label class="sr-only" for="player-seek" data-i18n="player.position">{{ l["player.position"] }}</label>
       <input id="player-seek" data-player-seek type="range" min="0" max="0" value="0" class="h-1.5 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-primary-700 dark:bg-gray-700">
       <span data-player-duration class="w-10 text-xs tabular-nums text-gray-500 dark:text-gray-400">0:00</span>
     </div>
-    <div class="flex shrink-0 items-center gap-1">
-      <button type="button" data-player-queue aria-controls="player-queue" aria-expanded="false" aria-label="{{ l["player.queue"] }}" data-i18n-aria-label="player.queue" class="{{ btn }} relative">
+    <div class="flex shrink-0 items-center gap-0.5 sm:gap-1">
+      <button type="button" data-player-queue data-player-full aria-controls="player-queue" aria-expanded="false" aria-label="{{ l["player.queue"] }}" title="{{ l["player.queue"] }}" data-i18n-aria-label="player.queue" data-i18n-title="player.queue" class="{{ btn }} relative inline-flex">
         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4 6h12M4 12h12M4 18h8m8-3v6l-4-3z"/></svg>
-        <span data-player-count class="absolute -right-0.5 -top-0.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-primary-700 px-1 text-[10px] font-semibold text-white">0</span>
+        <span data-player-count hidden class="absolute -right-0.5 -top-0.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-primary-700 px-1 text-[10px] font-semibold text-white">0</span>
       </button>
-      <button type="button" data-player-close class="{{ btn }}" aria-label="{{ l["player.close"] }}" data-i18n-aria-label="player.close">
+      <button type="button" data-player-size data-player-full aria-pressed="false" class="{{ btn }} hidden sm:inline-flex" aria-label="{{ l["player.video_small"] }}">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h18v14H3zM13 12h6v5h-6z"/></svg>
+      </button>
+      <button type="button" data-player-minimise data-player-full class="{{ btn }} inline-flex" aria-label="{{ l["player.minimise"] }}" title="{{ l["player.minimise"] }}" data-i18n-aria-label="player.minimise" data-i18n-title="player.minimise">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/></svg>
+      </button>
+      <button type="button" data-player-expand data-player-mini class="{{ btn }} inline-flex" aria-label="{{ l["player.expand"] }}" title="{{ l["player.expand"] }}" data-i18n-aria-label="player.expand" data-i18n-title="player.expand">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/></svg>
+      </button>
+      <button type="button" data-player-close class="{{ btn }} inline-flex" aria-label="{{ l["player.close"] }}" title="{{ l["player.close"] }}" data-i18n-aria-label="player.close" data-i18n-title="player.close">
         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/></svg>
       </button>
     </div>

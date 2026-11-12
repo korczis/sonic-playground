@@ -54,13 +54,20 @@ interface Window {
   Sonic: SonicApi;
   SonicRouter: { go(href: string): void };
   SonicPlayer: {
-    play(tracks: unknown[], start?: number): void;
-    enqueue(track: unknown): void;
+    playNow(track: unknown): void;
+    playNext(track: unknown): void;
+    toggleQueued(track: unknown): void;
+    playList(tracks: unknown[], start?: number): void;
+    remove(index: number): void;
+    move(index: number, by: number): void;
+    clear(): void;
+    shuffle(): void;
     next(): void;
     prev(): void;
     toggle(): void;
     stop(): void;
-    state(): { queue: SonicQueueItem[]; index: number; time: number };
+    jump(index: number): void;
+    state(): { queue: SonicQueueItem[]; index: number; time: number; repeat: string; view: string; video: string };
   };
   echarts: any;
   YT: any;

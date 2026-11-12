@@ -26,6 +26,9 @@
   "share": "M7.9 10.9 16 6.6m-8.1 6.5 8.1 4.3M9 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm12-6.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm0 13a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z",
   "copy": "M9 8V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-3M5 9h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z",
   "check": "m5 12 4.5 4.5L19 7",
+  "play-next": "M4 6h11M4 11h11M4 16h6m5-2v6l5-3-5-3Z",
+  "queue-add": "M4 6h11M4 11h11M4 16h7m6-4v8m-4-4h8",
+  "radio": "M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 13v7m-3 0h6",
 } -%}
 {%- if name in paths -%}
 <svg class="{{ cls }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ paths[name] }}"/></svg>
@@ -79,7 +82,7 @@
       {%- endif %}
     </a>
     {%- if t.youtube %}
-    {{ <play_controls source={t.source} label={t.artist ~ " – " ~ t.track} l={l} /> }}
+    {{ <track_actions source={t.source} label={t.artist ~ " – " ~ t.track} l={l} /> }}
     {%- endif %}
   </div>
   <div class="flex flex-1 flex-col p-4">
@@ -116,26 +119,55 @@
     </span>
     <time datetime="{{ t.date }}" class="hidden shrink-0 text-xs text-gray-500 sm:block dark:text-gray-400">{{ t.date }}</time>
   </a>
+  {%- if t.youtube %}{{ <track_actions source={t.source} label={label} l={l} variant="row" /> }}{% endif %}
 </li>
 {% endcomponent track_row %}
 
-{#- Play and queue buttons over a track's picture (player.js). Play starts the track and then the
-    rest of the [data-playlist] it sits in, in the order shown. -#}
-{% component play_controls(source, label, l) %}
+{#- The controls of one track (static/js/player.js), one effect each, never a hidden playlist
+    (owner finding 2026-11-12):
+      play        play this track now (the queue after it stays as it is)
+      play next   play it after the current track
+      queue       a toggle: add it to the end of the queue, or take it out (aria-pressed)
+      radio       replace the queue with this track and similar ones (variant "bar" only)
+    variant: "overlay" over a picture (play left, icon buttons right), "row" icon buttons at the
+    end of a list row (its play button is the row's own), "bar" labelled buttons (track page,
+    featured track). Icon-only buttons carry a localised aria-label and title. -#}
+{% component track_actions(source, label, l, variant="overlay") %}
 {%- set vars = {"label": label} -%}
-<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between">
-  <button type="button" data-play="{{ source }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition hover:scale-105 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ vars | json_encode }}">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</button>
-  <button type="button" data-queue="{{ source }}" class="inline-flex h-9 items-center rounded-full bg-gray-900/75 px-3 text-xs font-medium text-white backdrop-blur hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300" aria-label="{{ l["card.queue_label"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.queue_label" data-i18n-vars="{{ vars | json_encode }}">{{ <tx key="card.queue" l={l} /> }}</button>
+{%- set ivars = vars | json_encode -%}
+{%- if variant == "bar" -%}
+{%- set alt = "inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 aria-pressed:border-primary-600 aria-pressed:text-primary-700 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:aria-pressed:text-primary-400" -%}
+<div class="flex flex-wrap gap-2" data-track-actions>
+  <button type="button" data-play="{{ source }}" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}{{ <tx key="action.play" l={l} /> }}</button>
+  <button type="button" data-play-next="{{ source }}" class="{{ alt }}">{{ <icon name="play-next" cls="mr-2 h-4 w-4" /> }}{{ <tx key="action.play_next" l={l} /> }}</button>
+  <button type="button" data-queue="{{ source }}" aria-pressed="false" class="group {{ alt }}"><span class="inline-flex items-center group-aria-pressed:hidden">{{ <icon name="queue-add" cls="mr-2 h-4 w-4" /> }}{{ <tx key="action.queue" l={l} /> }}</span><span class="hidden items-center group-aria-pressed:inline-flex">{{ <icon name="check" cls="mr-2 h-4 w-4" /> }}{{ <tx key="action.queued" l={l} /> }}</span></button>
+  <button type="button" data-play-radio="{{ source }}" class="{{ alt }}" title="{{ l["action.radio_hint"] }}" data-i18n-title="action.radio_hint">{{ <icon name="radio" cls="mr-2 h-4 w-4" /> }}{{ <tx key="action.radio" l={l} /> }}</button>
 </div>
-{% endcomponent play_controls %}
+{%- else -%}
+{%- if variant == "overlay" -%}
+{%- set ibtn = "inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-900/75 text-white backdrop-blur hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 aria-pressed:bg-primary-700" -%}
+{%- else -%}
+{%- set ibtn = "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200 aria-pressed:text-primary-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 dark:aria-pressed:text-primary-400" -%}
+{%- endif -%}
+<div class="{% if variant == "overlay" %}absolute bottom-2 left-2 right-2 flex items-center justify-between{% else %}flex shrink-0 items-center{% endif %}" data-track-actions>
+  {%- if variant == "overlay" %}
+  <button type="button" data-play="{{ source }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition hover:scale-105 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" title="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-title="card.play" data-i18n-vars="{{ ivars }}">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</button>
+  {%- endif %}
+  <span class="flex items-center gap-1.5">
+    <button type="button" data-play-next="{{ source }}" class="{{ ibtn }}" aria-label="{{ l["card.play_next"] | replace(from="{label}", to=label) }}" title="{{ l["card.play_next"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play_next" data-i18n-title="card.play_next" data-i18n-vars="{{ ivars }}">{{ <icon name="play-next" cls="h-4 w-4" /> }}</button>
+    <button type="button" data-queue="{{ source }}" aria-pressed="false" class="group {{ ibtn }}" aria-label="{{ l["card.queue_label"] | replace(from="{label}", to=label) }}" title="{{ l["card.queue_label"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.queue_label" data-i18n-title="card.queue_label" data-i18n-vars="{{ ivars }}"><span class="group-aria-pressed:hidden">{{ <icon name="queue-add" cls="h-4 w-4" /> }}</span><span class="hidden group-aria-pressed:inline">{{ <icon name="check" cls="h-4 w-4" /> }}</span></button>
+  </span>
+</div>
+{%- endif -%}
+{% endcomponent track_actions %}
 
 {#- Privacy-friendly video: a still and a play button. Play sends it to the bottom-bar player
-    (static/js/player.js), which keeps playing while the reader browses: a catalogue track starts
-    its radio (the track, then its related tracks), any other video plays alone. Without
+    (static/js/player.js), which keeps playing while the reader browses: it plays this one video
+    now (the queue after it is kept); the radio and the queue are separate controls. Without
     JavaScript the link opens YouTube. Also used inside reviews: {{ <video id="…" title="…" /> }}. -#}
 {% component video(id, title, source="") %}
 <div class="relative aspect-video w-full overflow-hidden rounded-lg bg-gray-900" data-video="{{ id }}" data-video-title="{{ title }}">
-  <a href="https://www.youtube.com/watch?v={{ id }}" class="group absolute inset-0 flex items-center justify-center" {% if source %}data-play-radio="{{ source }}"{% else %}data-play-video="{{ id }}" data-play-title="{{ title }}"{% endif %} aria-label="{{ title }}">
+  <a href="https://www.youtube.com/watch?v={{ id }}" class="group absolute inset-0 flex items-center justify-center" {% if source %}data-play="{{ source }}"{% else %}data-play-video="{{ id }}" data-play-title="{{ title }}"{% endif %} aria-label="{{ title }}">
     <img src="https://i.ytimg.com/vi/{{ id }}/hqdefault.jpg" alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-80 transition group-hover:opacity-100" loading="lazy" width="480" height="360">
     <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition group-hover:scale-110 group-focus:ring-4 group-focus:ring-primary-300">{{ <icon name="play" cls="ml-1 h-8 w-8" /> }}</span>
   </a>
@@ -209,8 +241,8 @@
 {% endcomponent chart_card %}
 
 {#- "Play all" (Pro button): plays every matching track of the container, in the order shown. -#}
-{% component play_all(target, label, lkey="", vars={}) %}
-<button type="button" data-play-all="{{ target }}" class="inline-flex shrink-0 items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}<span{% if lkey %} data-i18n="{{ lkey }}"{% endif %}{% if vars %} data-i18n-vars="{{ vars | json_encode }}"{% endif %}>{{ label }}</span></button>
+{% component play_all(target, label, l, lkey="", vars={}) %}
+<button type="button" data-play-all="{{ target }}" title="{{ l["action.play_all_hint"] }}" data-i18n-title="action.play_all_hint" class="inline-flex shrink-0 items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}<span{% if lkey %} data-i18n="{{ lkey }}"{% endif %}{% if vars %} data-i18n-vars="{{ vars | json_encode }}"{% endif %}>{{ label }}</span></button>
 {% endcomponent play_all %}
 
 {#- Listen elsewhere: search links derived from the artist and the track for the apps that keep
@@ -290,7 +322,7 @@
     <a href="{{ href }}" class="block overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
       {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="352" height="198" class="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105">{% else %}<span class="flex aspect-video items-center justify-center bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" cls="h-8 w-8" /> }}</span>{% endif %}
     </a>
-    {%- if t.youtube %}<button type="button" data-play="{{ t.source }}" class="absolute bottom-2 left-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">{{ <icon name="play" cls="ml-0.5 h-4 w-4" /> }}</button>{% endif %}
+    {%- if t.youtube %}{{ <track_actions source={t.source} label={label} l={l} /> }}{% endif %}
   </div>
   <div class="flex min-w-0 flex-col justify-center">
     <p class="mb-1 truncate text-sm font-medium text-primary-700 dark:text-primary-400">{{ t.artist }}</p>
@@ -361,7 +393,7 @@
       <p class="mb-5 text-base text-gray-500 dark:text-gray-400">{{ t.description }}</p>
       <div class="mb-6 flex flex-wrap gap-2">{{ <facet_badges terms={t.facets.genre} kind="genre" limit={3} size="sm" /> }}{{ <facet_badges terms={t.facets.sentiment} kind="sentiment" limit={2} size="sm" /> }}</div>
       <div class="flex flex-wrap gap-3">
-        {%- if t.youtube %}<button type="button" data-play-radio="{{ t.source }}" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-5 w-5" /> }}{{ <tx key="track.radio" l={l} /> }}</button>{% endif %}
+        {%- if t.youtube %}{{ <track_actions source={t.source} label={t.artist ~ " – " ~ t.track} l={l} variant="bar" /> }}{% endif %}
         <a href="{{ href }}" class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">{{ <tx key="home.read" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-5 w-5" /> }}</a>
       </div>
     </div>
