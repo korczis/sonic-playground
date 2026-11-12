@@ -60,4 +60,5 @@ about 2026-11-12T16:10Z. Each question and answer is quoted as given.
   file makes every recorded gate run read back as stale. Shall I file it in prismatic-majordomus?"
 - Answer: "File an issue".
 - Consequence: filed as https://github.com/korczis/prismatic-majordomus/issues/3014. This
-  repository already avoids the bug: `scripts/catalog.py` refuses a review whose file name is not ASCII.
+  repository already avoids the bug: `scripts/catalog.py` refuses a review whose file name is
+  not ASCII.
