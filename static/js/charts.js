@@ -5,7 +5,9 @@
 //
 //   <div data-chart="months|genre|sentiment|heatmap|graph" data-limit="15" data-focus="<source>">
 // A page module (static/js/core.js): mounts where a [data-chart] exists, loads the vendored
-// ECharts only then (body[data-echarts]), and disposes its charts when the router leaves.
+// ECharts and the catalogue only when a chart comes within NEAR of the viewport (a track page's
+// graph sits below the review: a reader who never reaches it never pays ~380 kB gzip for it),
+// and disposes its charts when the router leaves.
 window.Sonic.module('charts', function mount() {
   'use strict';
   var holders = Array.prototype.slice.call(document.querySelectorAll('[data-chart]'));
@@ -247,33 +249,50 @@ window.Sonic.module('charts', function mount() {
 
   var stopTheme = null;
   var ro = null;
-  Promise.all([window.Sonic.script(body.getAttribute('data-echarts')), window.Sonic.catalog()])
-    .then(function (loaded) {
-      if (!alive || !window.echarts) return;
-      var catalog = loaded[1];
-      render(catalog);
-      stopTheme = window.Sonic.on('dark-mode', function () { render(catalog); });
-      var stopLocale = window.Sonic.on('sonic:locale', function () {
-        holders.forEach(function (h) {
-          var box = /** @type {HTMLElement | null} */ (document.querySelector('[data-chart-table="' + h.id + '"]'));
-          if (box) { box.replaceChildren(); delete box.dataset.filled; }
-        });
+  var near = null;
+  var NEAR = '600px';  // start loading this far before a chart scrolls into view
+  function start() {
+    Promise.all([window.Sonic.script(body.getAttribute('data-echarts')), window.Sonic.catalog()])
+      .then(function (loaded) {
+        if (!alive || !window.echarts) return;
+        var catalog = loaded[1];
         render(catalog);
+        stopTheme = window.Sonic.on('dark-mode', function () { render(catalog); });
+        var stopLocale = window.Sonic.on('sonic:locale', function () {
+          holders.forEach(function (h) {
+            var box = /** @type {HTMLElement | null} */ (document.querySelector('[data-chart-table="' + h.id + '"]'));
+            if (box) { box.replaceChildren(); delete box.dataset.filled; }
+          });
+          render(catalog);
+        });
+        var stopThemeOnly = stopTheme;
+        stopTheme = function () { stopThemeOnly(); stopLocale(); };
+        if (window.ResizeObserver) {
+          ro = new ResizeObserver(function () { charts.forEach(function (ch) { ch.instance.resize(); }); });
+          holders.forEach(function (h) { ro.observe(h); });
+        }
+      })
+      .catch(function (error) {
+        document.documentElement.dataset.chartsState = 'failed';
+        console.error('charts:', error.message);
       });
-      var stopThemeOnly = stopTheme;
-      stopTheme = function () { stopThemeOnly(); stopLocale(); };
-      if (window.ResizeObserver) {
-        ro = new ResizeObserver(function () { charts.forEach(function (ch) { ch.instance.resize(); }); });
-        holders.forEach(function (h) { ro.observe(h); });
-      }
-    })
-    .catch(function (error) {
-      document.documentElement.dataset.chartsState = 'failed';
-      console.error('charts:', error.message);
-    });
+  }
+  if (window.IntersectionObserver) {
+    document.documentElement.dataset.chartsState = 'waiting';
+    near = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (e) { return e.isIntersecting; })) return;
+      near.disconnect();
+      near = null;
+      start();
+    }, { rootMargin: NEAR });
+    holders.forEach(function (h) { near.observe(h); });
+  } else {
+    start();
+  }
 
   return function unmount() {
     alive = false;
+    if (near) near.disconnect();
     if (stopTheme) stopTheme();
     if (ro) ro.disconnect();
     charts.forEach(function (ch) { ch.instance.dispose(); });
