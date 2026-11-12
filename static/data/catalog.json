@@ -5,7 +5,7 @@
  "stats": {
   "tracks": 282,
   "artists": 226,
-  "videos": 270,
+  "videos": 271,
   "videos_gone": 6,
   "words": 130383,
   "median_words": 421,
@@ -7550,8 +7550,8 @@
     ],
     "mood": []
    },
-   "youtube": null,
-   "thumbnail": "",
+   "youtube": "LZLEFl1_eEI",
+   "thumbnail": "https://i.ytimg.com/vi/LZLEFl1_eEI/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 409,
    "extra": {

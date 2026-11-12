@@ -8,6 +8,7 @@ genre = ["house", "electronic", "club"]
 sentiment = ["hypnotic", "groovy", "energetic"]
 
 [extra]
+youtube = "https://www.youtube.com/embed/LZLEFl1_eEI"
 album = "Jam Master Jack"
 +++
 
@@ -49,4 +50,4 @@ Klangkuenstler is the alias of Michael Korb, a producer and DJ from Füssen in B
 
 ## Impact and Reception
 
-The track found its way into the sets of bigger DJs; Claptone, for one, played it at the Couleur Café festival in 2016. No official video upload exists, so this page carries no player, but the track is easy to find on streaming services. Listen to it as a reminder of where one of techno's current heavyweights started, and as six minutes of uncomplicated groove.
+The track found its way into the sets of bigger DJs; Claptone, for one, played it at the Couleur Café festival in 2016. The label, Smiley Fingers, put the original mix on its own YouTube channel, and that is the upload this page plays. Listen to it as a reminder of where one of techno's current heavyweights started, and as six minutes of uncomplicated groove.
