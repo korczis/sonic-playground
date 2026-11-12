@@ -7,9 +7,12 @@
   <section aria-labelledby="m-{{ m.month }}" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
     <div class="flex items-center justify-between">
       <h2 id="m-{{ m.month }}" class="text-lg font-semibold text-gray-900 dark:text-white">{{ m.month }}</h2>
-      <span class="rounded-md bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">{{ m.count }} tracks</span>
+      <div class="flex items-center gap-3">
+        <span class="rounded-md bg-primary-100 px-2.5 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">{{ m.count }} tracks</span>
+        {{ <play_all target={"list-" ~ m.month} label="Play month" /> }}
+      </div>
     </div>
-    <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+    <ul id="list-{{ m.month }}" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">
       {%- for t in catalog.tracks %}
       {%- if t.date is starting_with(pat=m.month) %}
       {{ <track_row t={t} note={t.facets.genre | join(sep=" · ")} /> }}

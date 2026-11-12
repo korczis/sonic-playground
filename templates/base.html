@@ -56,7 +56,7 @@
 </script>
 {% block head_extra %}{% endblock head_extra %}
 </head>
-<body class="bg-gray-50 antialiased dark:bg-gray-900" data-base-url="{{ config.base_url }}" data-catalog="{{ get_url(path='data/catalog.json', cachebust=true) }}" data-search="{{ get_url(path='data/search.json', cachebust=true) }}">
+<body class="bg-gray-50 antialiased dark:bg-gray-900" data-base-url="{{ config.base_url }}" data-catalog="{{ get_url(path='data/catalog.json', cachebust=true) }}" data-search="{{ get_url(path='data/search.json', cachebust=true) }}" data-echarts="{{ get_url(path=vendor.libs.echarts.js) }}">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-gray-900 focus:shadow">Skip to content</a>
 {% include "partials/nav.html" %}
 <div id="shell" class="flex overflow-hidden bg-gray-50 pt-16 dark:bg-gray-900">
@@ -68,8 +68,14 @@
     {% include "partials/footer.html" %}
   </div>
 </div>
+{% include "partials/player.html" %}
+<p id="route-announcer" class="sr-only" aria-live="polite"></p>
+{#- Every page loads the same scripts: the router swaps pages without reloading, so a page module
+    (core.js) must be present on any page the reader may navigate to. ECharts (1 MB) and the
+    YouTube API are loaded on demand only. -#}
 <script src="{{ get_url(path=vendor.libs.flowbite.js) }}" defer></script>
-<script src="{{ get_url(path='js/site.js', cachebust=true) }}" defer></script>
-{% block scripts %}{% endblock scripts %}
+{%- for script in ["core", "site", "router", "player", "explorer", "charts"] %}
+<script src="{{ get_url(path='js/' ~ script ~ '.js', cachebust=true) }}" defer></script>
+{%- endfor %}
 </body>
 </html>

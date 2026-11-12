@@ -60,16 +60,18 @@
   data-sentiment="{{ t.facets.sentiment | join(sep='|') }}"
   data-mood="{{ t.facets.mood | join(sep='|') }}"
   data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }} {{ t.facets.genre | join(sep=' ') }} {{ t.facets.sentiment | join(sep=' ') }} {{ t.facets.mood | join(sep=' ') }}">
+  <div class="relative">
   <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
     {%- if thumb %}
     <img src="{{ thumb }}" alt="" data-thumb loading="lazy" decoding="async" width="480" height="360" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">
     {%- else %}
     <span class="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-600 via-primary-800 to-pink-800 text-white/70">{{ <icon name="music" cls="h-10 w-10" /> }}</span>
     {%- endif %}
-    {%- if t.youtube %}
-    <span class="absolute bottom-2 right-2 inline-flex items-center rounded-md bg-gray-900/75 px-2 py-0.5 text-xs font-medium text-white">{{ <icon name="play" cls="mr-1 h-3 w-3" /> }}Video</span>
-    {%- endif %}
   </a>
+  {%- if t.youtube %}
+  {{ <play_controls source={t.source} label={t.artist ~ " – " ~ t.track} /> }}
+  {%- endif %}
+  </div>
   <div class="flex flex-1 flex-col p-4">
     <p class="mb-1 truncate text-sm font-medium text-primary-700 dark:text-primary-400">{{ t.artist }}</p>
     <{{ heading }} class="mb-2 line-clamp-2 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
@@ -86,8 +88,11 @@
 {% component track_row(t, note="") %}
 {%- set href = get_url(path="@/" ~ t.source) -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
-<li class="py-3 sm:py-4">
-  <a href="{{ href }}" class="flex items-center gap-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-800">
+<li class="flex items-center gap-2 py-3 sm:py-4" data-track data-source="{{ t.source }}">
+  {%- if t.youtube %}
+  <button type="button" data-play="{{ t.source }}" class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-primary-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:text-primary-400 dark:hover:bg-gray-700" aria-label="Play {{ t.artist }} – {{ t.track }}">{{ <icon name="play" cls="h-5 w-5" /> }}</button>
+  {%- else %}<span class="w-9 shrink-0"></span>{%- endif %}
+  <a href="{{ href }}" class="flex min-w-0 flex-1 items-center gap-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-800">
     {%- if thumb %}
     <img class="h-12 w-16 shrink-0 rounded object-cover" data-thumb src="{{ thumb }}" alt="" loading="lazy" width="64" height="48">
     {%- else %}
@@ -103,11 +108,22 @@
 </li>
 {% endcomponent track_row %}
 
-{#- Privacy-friendly video: a still and a play button; static/js/site.js swaps in the
-    youtube-nocookie player on click. Without JavaScript the link opens YouTube. -#}
-{% component video(id, title) %}
+{#- Play and queue buttons over a track's picture (player.js). Play starts the track and then the
+    rest of the [data-playlist] it sits in, in the order shown. -#}
+{% component play_controls(source, label) %}
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between">
+  <button type="button" data-play="{{ source }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition hover:scale-105 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" aria-label="Play {{ label }}">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</button>
+  <button type="button" data-queue="{{ source }}" class="inline-flex h-9 items-center rounded-full bg-gray-900/75 px-3 text-xs font-medium text-white backdrop-blur hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300" aria-label="Add {{ label }} to the queue">+ Queue</button>
+</div>
+{% endcomponent play_controls %}
+
+{#- Privacy-friendly video: a still and a play button. Play sends it to the bottom-bar player
+    (static/js/player.js), which keeps playing while the reader browses: a catalogue track starts
+    its radio (the track, then its related tracks), any other video plays alone. Without
+    JavaScript the link opens YouTube. -#}
+{% component video(id, title, source="") %}
 <div class="relative aspect-video w-full overflow-hidden rounded-lg bg-gray-900" data-video="{{ id }}" data-video-title="{{ title }}">
-  <a href="https://www.youtube.com/watch?v={{ id }}" class="group absolute inset-0 flex items-center justify-center" data-video-play>
+  <a href="https://www.youtube.com/watch?v={{ id }}" class="group absolute inset-0 flex items-center justify-center" {% if source %}data-play-radio="{{ source }}"{% else %}data-play-video="{{ id }}" data-play-title="{{ title }}"{% endif %}>
     <img src="https://i.ytimg.com/vi/{{ id }}/hqdefault.jpg" alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-80 transition group-hover:opacity-100" loading="lazy" width="480" height="360">
     <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition group-hover:scale-110 group-focus:ring-4 group-focus:ring-primary-300">
       {{ <icon name="play" cls="ml-1 h-8 w-8" /> }}
@@ -200,6 +216,25 @@
 </section>
 {% endcomponent chart_card %}
 
+{#- "Play all" (Pro button): plays every visible track of the container, in the order shown. -#}
+{% component play_all(target, label="Play all") %}
+<button type="button" data-play-all="{{ target }}" class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}{{ label }}</button>
+{% endcomponent play_all %}
+
+{#- Listen elsewhere: search links derived from the artist and the track for the apps that keep
+    playing in the background on a phone (an embedded video cannot). -#}
+{% component listen_links(artist, track, youtube="") %}
+{%- set q = (artist ~ " " ~ track) | urlencode -%}
+{%- set item = "flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" -%}
+<ul class="space-y-1">
+  {%- if youtube %}<li><a class="{{ item }}" href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank" rel="noopener noreferrer">YouTube<span aria-hidden="true">↗</span></a></li>{% endif %}
+  <li><a class="{{ item }}" href="https://music.youtube.com/search?q={{ q }}" target="_blank" rel="noopener noreferrer">YouTube Music<span aria-hidden="true">↗</span></a></li>
+  <li><a class="{{ item }}" href="https://open.spotify.com/search/{{ q }}" target="_blank" rel="noopener noreferrer">Spotify<span aria-hidden="true">↗</span></a></li>
+  <li><a class="{{ item }}" href="https://music.apple.com/search?term={{ q }}" target="_blank" rel="noopener noreferrer">Apple Music<span aria-hidden="true">↗</span></a></li>
+  <li><a class="{{ item }}" href="https://www.discogs.com/search/?q={{ q }}&amp;type=all" target="_blank" rel="noopener noreferrer">Discogs<span aria-hidden="true">↗</span></a></li>
+</ul>
+{% endcomponent listen_links %}
+
 {#- Pro empty state. -#}
 {% component empty_state(title, text="") %}
 <div class="flex flex-col items-center justify-center rounded-lg border border-dashed border-gray-300 bg-white px-6 py-12 text-center dark:border-gray-600 dark:bg-gray-800">
@@ -257,10 +292,13 @@
 {% component related_card(t, shared, score) %}
 {%- set href = get_url(path="@/" ~ t.source) -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
-<article class="flex flex-col gap-4 sm:flex-row">
-  <a href="{{ href }}" class="block shrink-0 overflow-hidden rounded-lg bg-gray-100 sm:w-44 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
+<article class="flex flex-col gap-4 sm:flex-row" data-track data-source="{{ t.source }}">
+  <div class="relative shrink-0 sm:w-44">
+  <a href="{{ href }}" class="block overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
     {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="352" height="198" class="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105">{% else %}<span class="flex aspect-video items-center justify-center text-gray-400">{{ <icon name="music" cls="h-8 w-8" /> }}</span>{% endif %}
   </a>
+  {%- if t.youtube %}<button type="button" data-play="{{ t.source }}" class="absolute bottom-2 left-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" aria-label="Play {{ t.artist }} – {{ t.track }}">{{ <icon name="play" cls="ml-0.5 h-4 w-4" /> }}</button>{% endif %}
+  </div>
   <div class="flex min-w-0 flex-col justify-center">
     <p class="mb-1 truncate text-sm font-medium text-primary-700 dark:text-primary-400">{{ t.artist }}</p>
     <h3 class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white"><a href="{{ href }}" class="hover:underline">{{ t.track }}</a></h3>

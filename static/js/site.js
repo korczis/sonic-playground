@@ -73,25 +73,14 @@
     syncSidebar();
   }
 
-  // --- Video: swap the still for the youtube-nocookie player on demand. -----------------------
-  document.addEventListener('click', function (event) {
-    var play = event.target.closest && event.target.closest('[data-video-play]');
-    if (!play) return;
-    var box = play.closest('[data-video]');
-    if (!box) return;
-    event.preventDefault();
-    var frame = document.createElement('iframe');
-    frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(box.dataset.video)
-      + '?autoplay=1&rel=0';
-    frame.title = box.dataset.videoTitle || 'Video';
-    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; '
-      + 'picture-in-picture; web-share';
-    frame.referrerPolicy = 'strict-origin-when-cross-origin';
-    frame.allowFullscreen = true;
-    box.replaceChildren(frame);
-    box.dataset.playing = 'true';
-    frame.focus();
-  });
+  // Videos play in the bottom-bar player (static/js/player.js), never inline: the still's link
+  // carries data-play-radio / data-play-video. The router closes the mobile drawer on navigation.
+  if (window.Sonic) {
+    window.Sonic.on('sonic:navigated', function () {
+      if (drawer && !desktop.matches && drawer.isVisible && drawer.isVisible()) drawer.hide();
+      syncSidebar();
+    });
+  }
 
   // --- Thumbnails: a still that fails (a video removed from YouTube) becomes the placeholder
   // tile instead of a broken image; the catalogue keeps the id, scripts/probe-videos.py names it.
@@ -109,9 +98,13 @@
     var el = event.target;
     if (el && el.tagName === 'IMG' && el.hasAttribute('data-thumb')) fallback(el);
   }, true);
-  document.querySelectorAll('img[data-thumb]').forEach(function (img) {
-    if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) fallback(img);
-  });
+  function checkThumbs() {
+    document.querySelectorAll('img[data-thumb]').forEach(function (img) {
+      if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) fallback(img);
+    });
+  }
+  checkThumbs();
+  if (window.Sonic) window.Sonic.on('sonic:page', checkThumbs);
 
   // --- Copy link (the share row): the clipboard, then a check mark for two seconds. ---------
   document.addEventListener('click', function (event) {
@@ -147,25 +140,22 @@
     }
   });
 
-  // --- Random track: pick from the catalogue the build derived. ------------------------------
+  // --- Random track: pick from the derived catalogue, open it without stopping the player. ---
   var random = document.querySelector('[data-random-track]');
-  var catalogUrl = body.getAttribute('data-catalog');
-  var base = (body.getAttribute('data-base-url') || '').replace(/\/$/, '');
-  if (random && catalogUrl && window.fetch) {
-    // The catalogue is fetched on the first click only, not on every page view.
+  if (random && window.Sonic) {
     random.disabled = false;
     random.classList.remove('hidden');
     random.addEventListener('click', function () {
       random.disabled = true;
-      fetch(catalogUrl).then(function (r) { return r.ok ? r.json() : null; }).then(function (c) {
+      window.Sonic.catalog().then(function (c) {
         random.disabled = false;
-        if (!c || !c.tracks || !c.tracks.length) return;
         var here = window.location.pathname;
         var pick;
         do {
           pick = c.tracks[Math.floor(Math.random() * c.tracks.length)];
         } while (c.tracks.length > 1 && here.endsWith('/' + pick.path));
-        window.location.href = base + '/' + pick.path;
+        var url = window.Sonic.base + '/' + pick.path;
+        if (window.SonicRouter) window.SonicRouter.go(url); else window.location.href = url;
       }).catch(function () { random.disabled = false; });
     });
   }

@@ -29,7 +29,7 @@
       </div>
       <h2 id="review-title" class="sr-only">Review</h2>
       {%- if track.youtube %}
-      <div class="mb-8">{{ <video id={track.youtube} title={track.artist ~ " – " ~ track.track} /> }}</div>
+      <div class="mb-8">{{ <video id={track.youtube} title={track.artist ~ " – " ~ track.track} source={track.source} /> }}</div>
       {%- elif track.video_gone %}
       <div class="mb-8 flex items-start gap-3 rounded-lg border border-yellow-300 bg-yellow-50 p-4 text-sm text-yellow-800 dark:border-yellow-800 dark:bg-gray-800 dark:text-yellow-300" role="note">
         {{ <icon name="info" cls="mt-0.5 h-4 w-4 shrink-0" /> }}
@@ -47,10 +47,15 @@
     {%- if track and track.related | length > 0 %}
     <section aria-labelledby="related-title" class="{{ card }} p-4 sm:p-6 xl:p-8">
       <div class="mb-6 flex flex-wrap items-end justify-between gap-2">
-        <h2 id="related-title" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">More like this</h2>
-        <p class="text-sm text-gray-500 dark:text-gray-400">Weighted overlap of genres, feelings and moods.</p>
+        <div>
+          <h2 id="related-title" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">More like this</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Weighted overlap of genres, feelings and moods.</p>
+        </div>
+        {%- if track.youtube %}
+        <button type="button" data-play-radio="{{ track.source }}" class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}Play this radio</button>
+        {%- endif %}
       </div>
-      <div class="grid gap-6 md:grid-cols-2">
+      <div id="related-list" data-playlist class="grid gap-6 md:grid-cols-2">
         {%- for r in track.related %}
         {%- set rt = catalog.tracks[catalog.lookup[r.source]] %}
         {%- set shared = r.shared | join(sep=", ") | replace(from="genre:", to="") | replace(from="sentiment:", to="") | replace(from="mood:", to="") %}
@@ -95,6 +100,12 @@
       <a href="{{ home }}?genre={{ track.facets.genre | first | urlencode }}" class="inline-flex items-center text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">Explore more {{ track.facets.genre | first }}{{ <icon name="arrow-right" cls="ml-1.5 h-4 w-4" /> }}</a>
     </div>
     <div class="{{ card }} p-4 sm:p-6">
+      <h2 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Listen</h2>
+      <p class="mb-3 text-sm text-gray-500 dark:text-gray-400">Here in the player, or in an app that keeps playing when your phone locks.</p>
+      {%- if track.youtube %}{% set yt = track.youtube %}{% else %}{% set yt = "" %}{% endif %}
+      {{ <listen_links artist={track.artist} track={track.track} youtube={yt} /> }}
+    </div>
+    <div class="{{ card }} p-4 sm:p-6">
       <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Details</h2>
       <dl class="divide-y divide-gray-200 text-sm dark:divide-gray-700">
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">Artist</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.artist }}</dd></div>
@@ -112,6 +123,3 @@
   {%- endif %}
 </div>
 {%- endblock content %}
-{%- block scripts %}
-{%- if track and track.related | length > 0 %}{% include "partials/chart_scripts.html" %}{% endif %}
-{%- endblock scripts %}
