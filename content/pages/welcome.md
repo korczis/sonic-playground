@@ -1,9 +1,8 @@
 +++
 title = "Welcome"
+description = "Why this playground exists: hand-picked music instead of algorithmic noise."
 path = "welcome"
 template = "pages.html"
-[extra]
-section = "_index.md"
 +++
 
 # Enter Your Sonic Playground!

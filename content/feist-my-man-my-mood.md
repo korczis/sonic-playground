@@ -8,7 +8,7 @@ genre = ["indie pop", "folk", "singer-songwriter"]
 sentiment = ["introspective", "romantic", "melancholic"]
 
 [extra]
-youtube = "https://www.youtube.com/embed/ltYq-jalYm0ltYq-jalYm0"  # Replace with the actual video link
+youtube = "https://www.youtube.com/embed/ltYq-jalYm0"  # Replace with the actual video link
 +++
 
 ## Genre and Mood

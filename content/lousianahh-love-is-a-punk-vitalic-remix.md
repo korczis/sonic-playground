@@ -8,7 +8,6 @@ genre = ["techno", "industrial", "punk"]
 sentiment = ["rebellious", "intense", "raw"]
 
 [extra]
-cover_image = "/images/thumbnails/louisahhh-love-is-a-punk-vitalic-remix.jpg"
 youtube = "https://www.youtube.com/embed/zAuh-u7VBaw"
 +++
 

@@ -8,6 +8,7 @@ genre = ["electronic", "downtempo", "ambient"]
 sentiment = ["mysterious", "hypnotic", "haunting"]
 
 [extra]
+artist = "Lulu Rouge"
 cover_image = "/images/thumbnails/lulus-theme.jpeg"
 youtube = "https://www.youtube.com/embed/k_k2Vmrvp70"
 +++

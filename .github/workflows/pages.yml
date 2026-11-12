@@ -1,0 +1,110 @@
+name: Pages
+
+# main: CI (the same gate as a merge) -> deploy to GitHub Pages -> verify production.
+# Each stage runs only if the previous one passed.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    name: CI
+    uses: ./.github/workflows/ci.yml
+    secrets: inherit
+    permissions:
+      contents: read
+
+  deploy:
+    name: Deploy
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v6
+      - name: Pages base URL matches config.toml
+        env:
+          PAGES_BASE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          expected="$(python3 -c 'import tomllib; print(tomllib.load(open("config.toml", "rb"))["base_url"])')"
+          echo "configure-pages: $PAGES_BASE_URL"
+          echo "config.toml:     $expected"
+          test "${PAGES_BASE_URL%/}" = "${expected%/}"
+      - name: Download the validated site
+        uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: site
+      - name: The artefact is this commit
+        run: test "$(cat site/revision.txt)" = "$GITHUB_SHA"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+          name: github-pages-1-${{ github.run_attempt }}
+      # Pages sometimes hangs in file sync; a retry over a freshly uploaded artefact succeeds
+      # where a retry over the same one does not (measured in kompendium-epistemicke-anihilace).
+      - name: Deploy
+        id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-1-${{ github.run_attempt }}
+          timeout: 600000
+          error_count: 30
+      - name: Upload Pages artifact (second attempt)
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+          name: github-pages-2-${{ github.run_attempt }}
+      - name: Deploy (second attempt)
+        id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-2-${{ github.run_attempt }}
+          timeout: 600000
+          error_count: 30
+
+  verify:
+    name: Verify production
+    needs: deploy
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ needs.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Production serves this commit
+        run: |
+          for attempt in $(seq 1 40); do
+            if curl -fsS "${BASE_URL}revision.txt?nocache=${GITHUB_SHA}" | grep -qx "$GITHUB_SHA"; then
+              echo "production serves $GITHUB_SHA (attempt $attempt)"
+              break
+            fi
+            [ "$attempt" = 40 ] && { echo "production does not serve $GITHUB_SHA after 10 minutes" >&2; exit 1; }
+            sleep 15
+          done
+      - uses: ./.github/actions/setup
+      - name: Browser smoke test against production
+        run: |
+          npx playwright-core install chromium
+          node test/e2e/smoke.cjs --url "$BASE_URL"

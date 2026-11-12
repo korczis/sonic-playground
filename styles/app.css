@@ -1,0 +1,91 @@
+/* Sonic Playground: Tailwind 4 + Flowbite 4 (Pro admin shell). Build:
+   npm run css  ->  static/css/app.css (committed; CI rebuilds it and refuses a difference). */
+@import 'tailwindcss' source(none);
+
+@source '../templates';
+@source '../static/js/site.js';
+@source '../static/js/explorer.js';
+@source '../node_modules/flowbite/lib/esm/components';
+
+@plugin 'flowbite/plugin';
+@plugin 'flowbite-typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* One primary accent (violet), in the Pro tailwind.config.js shape. */
+  --color-primary-50: #f5f3ff;
+  --color-primary-100: #ede9fe;
+  --color-primary-200: #ddd6fe;
+  --color-primary-300: #c4b5fd;
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed;
+  --color-primary-700: #6d28d9;
+  --color-primary-800: #5b21b6;
+  --color-primary-900: #4c1d95;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+/* The colour tokens Flowbite 4's plugin styles form controls with, mapped onto the Pro palette.
+   Only colours: the default Flowbite theme would also redefine the radius scale. */
+@theme {
+  --color-brand: var(--color-primary-700);
+  --color-body: var(--color-gray-600);
+  --color-heading: var(--color-gray-900);
+  --color-default: var(--color-gray-200);
+  --color-dark: var(--color-gray-800);
+  --color-light: var(--color-gray-100);
+  --color-neutral-secondary: var(--color-gray-50);
+  --color-neutral-secondary-medium: var(--color-gray-50);
+  --color-neutral-tertiary: var(--color-gray-100);
+  --color-neutral-tertiary-medium: var(--color-gray-100);
+  --color-neutral-quaternary: var(--color-gray-200);
+}
+
+.dark {
+  --color-brand: var(--color-primary-500);
+  --color-body: var(--color-gray-400);
+  --color-heading: var(--color-white);
+  --color-default: var(--color-gray-800);
+  --color-light: var(--color-gray-800);
+  --color-neutral-secondary: var(--color-gray-950);
+  --color-neutral-secondary-medium: var(--color-gray-800);
+  --color-neutral-tertiary: var(--color-gray-800);
+  --color-neutral-tertiary-medium: var(--color-gray-700);
+  --color-neutral-quaternary: var(--color-gray-700);
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}
+
+@layer components {
+  /* Video players that replace their still keep the 16:9 frame. */
+  [data-video] iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

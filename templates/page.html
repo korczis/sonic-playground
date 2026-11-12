@@ -1,34 +1,84 @@
-{% extends "index.html" %}<!---->
-{% block main %}
-<article>
-  <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">{{ page.title }}</h1>
-    {% include "partials/page_info.html" %}
-  </header>
+{#- A track: video, review, and a sidebar of what the catalogue derives about it (facets, inferred
+    artist, related tracks with the terms they share, neighbours in time). -#}
+{% extends "base.html" %}
+{%- block content %}
+{%- if page.description %}{% set lead = page.description %}{% else %}{% set lead = "" %}{% endif %}
+{%- set home = get_url(path="@/_index.md") %}
+{%- if track %}
+{{ <page_header title={track.track} crumbs={[["Home", home], [track.facets.genre | first, get_taxonomy_url(kind="genre", term=track.facets.genre | first)], [track.track, ""]]} kicker={track.artist} lead={page.description} /> }}
+{%- else %}
+{{ <page_header title={page.title} crumbs={[["Home", home], [page.title, ""]]} lead={lead} /> }}
+{%- endif %}
+{%- set body = page.content | replace(from='src="/images/', to='src="' ~ get_url(path="images", trailing_slash=true)) %}
+<div class="grid grid-cols-1 gap-4 px-4 pt-6 xl:grid-cols-3">
+  <div class="space-y-4 xl:col-span-2">
+    {%- if track and track.youtube %}
+    <div class="rounded-lg border border-gray-200 bg-white p-2 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+      {{ <video id={track.youtube} title={track.artist ~ " – " ~ track.track} /> }}
+    </div>
+    {%- endif %}
+    <article class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:p-8 dark:border-gray-700 dark:bg-gray-800">
+      <div class="format format-lg max-w-none dark:format-invert format-a:text-primary-700 dark:format-a:text-primary-400">
+        {{ body | safe }}
+      </div>
+    </article>
+    {%- if page.lower or page.higher %}
+    <nav aria-label="Neighbouring tracks" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {%- if page.higher %}
+      <a href="{{ page.higher.permalink }}" class="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <span class="text-gray-400">{{ <icon name="arrow-left" /> }}</span>
+        <span class="min-w-0"><span class="block text-xs text-gray-500 dark:text-gray-400">Newer</span><span class="block truncate text-sm font-semibold text-gray-900 dark:text-white">{{ page.higher.title }}</span></span>
+      </a>
+      {%- else %}<span></span>{%- endif %}
+      {%- if page.lower %}
+      <a href="{{ page.lower.permalink }}" class="flex items-center justify-end gap-3 rounded-lg border border-gray-200 bg-white p-4 text-right shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <span class="min-w-0"><span class="block text-xs text-gray-500 dark:text-gray-400">Older</span><span class="block truncate text-sm font-semibold text-gray-900 dark:text-white">{{ page.lower.title }}</span></span>
+        <span class="text-gray-400">{{ <icon name="arrow-right" /> }}</span>
+      </a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </div>
 
-  {% if page.extra.youtube %}
-  <figure class="mb-12 mt-0">
-    <iframe width="640" height="360" src="{{ page.extra.youtube }}" frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-  </figure>
-  {% endif %}
+  {%- if track %}
+  <aside class="space-y-4" aria-label="About this track">
+    <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+      <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Facets</h2>
+      {%- for facet in [["genre", "Genre"], ["sentiment", "Feeling"], ["mood", "Mood"], ["tags", "Tags"]] %}
+      {%- if track.facets[facet[0]] | length > 0 %}
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ facet[1] }}</p>
+      <div class="mb-4 flex flex-wrap gap-2">{{ <facet_badges terms={track.facets[facet[0]]} kind={facet[0]} size="sm" /> }}</div>
+      {%- endif %}
+      {%- endfor %}
+      <dl class="divide-y divide-gray-200 border-t border-gray-200 text-sm dark:divide-gray-700 dark:border-gray-700">
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">Artist</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.artist }}</dd></div>
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">Published</dt><dd class="font-medium text-gray-900 dark:text-white"><time datetime="{{ track.date }}">{{ track.date }}</time></dd></div>
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">Reading time</dt><dd class="font-medium text-gray-900 dark:text-white">{{ page.reading_time }} min · {{ track.words }} words</dd></div>
+        {%- for k in [["album", "Album"], ["release_year", "Released"], ["publisher", "Label"], ["video_duration", "Duration"]] %}
+        {%- if k[0] in track.extra %}
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ k[1] }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.extra[k[0]] }}</dd></div>
+        {%- endif %}
+        {%- endfor %}
+      </dl>
+      <p class="mt-3 flex items-start gap-1.5 text-xs text-gray-500 dark:text-gray-400">{{ <icon name="info" cls="mt-px h-3.5 w-3.5 shrink-0" /> }}<span>Artist and track inferred by <code>scripts/catalog.py</code> ({{ track.inferred }}).</span></p>
+    </div>
 
-  <!-- TOC -->
-  {% include "partials/toc.html" %}<!---->
-
-  <!-- Content -->
-  <section>{{ page.content | safe }}</section>
-
-  <hr />
-
-  <!-- Post Taxonomies -->
-  {% include "partials/post_taxonomies.html" %}<!---->
-
-  <!-- Post Nav -->
-  {% include "partials/post_navigation.html" %}<!---->
-
-  <!-- Comment -->
-  {% if page.extra.comment | default(value=config.extra.comment) %}<!---->
-  {% include "partials/comment.html" %}<!---->
-  {% endif %}
-</article>
-{% endblock main %}
+    <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+      <h2 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Related tracks</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400">Weighted overlap of genres, feelings and moods.</p>
+      {%- if track.related | length > 0 %}
+      <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+        {%- for r in track.related %}
+        {%- set rt = catalog.tracks[catalog.lookup[r.source]] %}
+        {%- set shared = r.shared | join(sep=", ") | replace(from="genre:", to="") | replace(from="sentiment:", to="") | replace(from="mood:", to="") | replace(from="tags:", to="") %}
+        {{ <track_row t={rt} note={"shares " ~ shared ~ " · " ~ (r.score * 100) | round | int ~ " %"} /> }}
+        {%- endfor %}
+      </ul>
+      {%- else %}
+      <p class="mt-3 text-sm text-gray-500 dark:text-gray-400">No other track shares a facet yet.</p>
+      {%- endif %}
+    </div>
+  </aside>
+  {%- endif %}
+</div>
+{%- endblock content %}

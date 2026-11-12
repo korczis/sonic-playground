@@ -8,7 +8,7 @@ genre = ["punk", "post-punk", "alternative"]
 sentiment = ["raw", "introspective", "empowering"]
 
 [extra]
-cover_image = "/images/thumbnails/idles-the-wheel.jpg "
+cover_image = "/images/thumbnails/idles-the-wheel.jpg"
 youtube = "https://www.youtube.com/embed/MH2HE6Gp3JQ"
 +++
 

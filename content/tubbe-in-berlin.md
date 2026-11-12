@@ -8,7 +8,8 @@ genre = ["synth-pop", "electropop", "indie electronic"]
 sentiment = ["energetic", "nostalgic", "euphoric"]
 
 [extra]
-youtube = "https://www.youtube.com/embed/cijlDnHQXU"
+# TODO(owner): the video id is truncated (10 of 11 characters: "cijlDnHQXU")
+# youtube = "https://www.youtube.com/embed/cijlDnHQXU"
 +++
 
 ## Genre and Mood

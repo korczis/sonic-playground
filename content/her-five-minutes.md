@@ -4,7 +4,7 @@ date = "2024-10-03"
 description = "'Five Minutes' by H.E.R. is a soulful R&B track that explores themes of longing and emotional vulnerability. With its smooth melodies and heartfelt lyrics, the song captures the essence of wanting to connect deeply with someone special."
 
 [taxonomies]
-genre = ["R&B", "soul", "contemporary"]
+genre = ["r&b", "soul", "contemporary"]
 sentiment = ["longing", "emotional", "introspective"]
 
 [extra]

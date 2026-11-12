@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korczis.github.io/sonic-playground/schema/track.v1.json",
+  "title": "sonic-playground track (front matter of content/<artist>-<track>.md)",
+  "description": "The one contract of a track review. scripts/catalog.py validates every article against it, scripts/track.py writes new ones from it, and the templates read only what it allows. The file name is the slug of 'artist track': the artist comes first, which is what artist inference relies on.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "date", "description", "taxonomies"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "'Artist - Track' (preferred) or 'Track | Artist'; scripts/catalog.py infers both parts from it."
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Publication date, YYYY-MM-DD."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 40,
+      "description": "One or two sentences: the vibe of the track. Used as lead, card text, meta and feed summary."
+    },
+    "draft": {
+      "type": "boolean",
+      "description": "true keeps the article out of the catalogue and the site."
+    },
+    "taxonomies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["genre", "sentiment"],
+      "properties": {
+        "genre": { "$ref": "#/$defs/terms", "minItems": 1, "description": "Genres, most specific last; reuse the existing vocabulary (scripts/track.py vocab)." },
+        "sentiment": { "$ref": "#/$defs/terms", "minItems": 1, "description": "Feelings the track carries." },
+        "mood": { "$ref": "#/$defs/terms", "description": "Optional moods." },
+        "tags": { "$ref": "#/$defs/terms", "description": "Optional free tags." }
+      }
+    },
+    "extra": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "youtube": {
+          "type": "string",
+          "pattern": "^https://www\\.youtube(-nocookie)?\\.com/embed/[A-Za-z0-9_-]{11}$",
+          "description": "The video as an embed URL; the site plays it through youtube-nocookie on demand."
+        },
+        "cover_image": {
+          "type": "string",
+          "pattern": "^/images/.+\\.(jpe?g|png|webp)$",
+          "description": "A local still under static/; without it the card uses the video's YouTube still."
+        },
+        "artist": { "type": "string", "minLength": 1, "description": "Overrides the inferred artist." },
+        "track": { "type": "string", "minLength": 1, "description": "Overrides the inferred track name." },
+        "album": { "type": "string" },
+        "publisher": { "type": "string", "description": "Record label." },
+        "release_year": { "type": "string", "pattern": "^\\d{4}$" },
+        "video_duration": { "type": "string", "pattern": "^\\d{1,2}:\\d{2}$" }
+      }
+    }
+  },
+  "$defs": {
+    "terms": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "pattern": "^[^A-Z]*$" }
+    }
+  },
+  "x-sonic": {
+    "placeholder_hosts": ["example.com", "yourwebsite.com"],
+    "unfinished_marker": "TODO(write)",
+    "facet_weights": { "genre": 2.0, "sentiment": 1.0, "mood": 1.0, "tags": 0.5 },
+    "related_limit": 4,
+    "outline_threshold": 0.3
+  }
+}

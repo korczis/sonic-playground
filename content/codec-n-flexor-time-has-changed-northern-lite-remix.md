@@ -8,8 +8,8 @@ genre = ["electro", "minimal", "techno"]
 sentiment = ["melancholic", "uplifting", "ethereal"]
 
 [extra]
-cover_image = "/images/thumbnails/time-has-changed.jpg"
-youtube = "https://www.youtube.com/embed/sample-video-id"
+# TODO(owner): the video id was a placeholder ("sample-video-id")
+# youtube = "https://www.youtube.com/embed/<id>"
 +++
 
 > The remix of "Time Has Changed" by Codec & Flexor delivers a profound sense of transformation, both in its lyrics and its sound. The Northern Lite rework heightens the original's melancholic themes while infusing it with a forward-driving, uplifting energy. It's a track that seems to embrace change, uncertainty, and the beauty of transition, wrapped in a sonically rich tapestry.

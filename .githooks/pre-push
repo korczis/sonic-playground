@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# A push must satisfy the active task's finish contract (policy enforcement finish-on-push) and
+# pass the local gate without the browser (CI runs the browser smoke test before every deploy).
+set -euo pipefail
+[ -t 0 ] || cat >/dev/null || true
+if ! command -v majordomus >/dev/null 2>&1; then
+  echo "pre-push: majordomus is required (https://majordomus.dev)" >&2
+  exit 1
+fi
+majordomus finish --check </dev/null || exit $?
+bash scripts/verify.sh --no-browser || exit $?

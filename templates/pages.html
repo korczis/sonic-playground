@@ -1,10 +1,14 @@
-{% extends "index.html" %}<!---->
-{% block main %}
-<article>
-  <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">{{ page.title }}</h1>
-  </header>
-
-  <section>{{ page.content | safe }}</section>
-</article>
-{% endblock main %}
+{#- A plain page (welcome, author): the Pro page header and one typography card. -#}
+{% extends "base.html" %}
+{%- block content %}
+{%- if page.description %}{% set lead = page.description %}{% else %}{% set lead = "" %}{% endif %}
+{{ <page_header title={page.title} crumbs={[["Home", get_url(path="@/_index.md")], [page.title, ""]]} lead={lead} /> }}
+{%- set body = page.content | replace(from='src="/images/', to='src="' ~ get_url(path="images", trailing_slash=true)) %}
+<div class="px-4 pt-6">
+  <article class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:p-8 dark:border-gray-700 dark:bg-gray-800">
+    <div class="format format-lg mx-auto max-w-3xl dark:format-invert format-a:text-primary-700 dark:format-a:text-primary-400 format-img:rounded-lg">
+      {{ body | safe }}
+    </div>
+  </article>
+</div>
+{%- endblock content %}

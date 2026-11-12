@@ -1,0 +1,9 @@
+{
+  "schema": "sonic-vendor/v1",
+  "libs": {
+    "flowbite": {
+      "version": "4.0.2",
+      "js": "vendor/flowbite-4.0.2.min.js"
+    }
+  }
+}

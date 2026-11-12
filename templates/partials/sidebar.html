@@ -1,0 +1,51 @@
+{#- Flowbite Pro admin sidebar (a drawer on mobile). The fixed pages come from config.toml
+    [[extra.menu]]; the facet groups and their counts come from the catalogue, so a new genre or
+    feeling appears here without a template change. -#}
+{%- set item = "group flex w-full items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-700" -%}
+{%- set icon_cls = "h-5 w-5 shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" -%}
+{%- set active = " bg-gray-100 font-medium dark:bg-gray-700" -%}
+{%- set badge = "ml-auto shrink-0 rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-700 dark:text-gray-300" -%}
+{%- set heading = "px-2 pb-1 pt-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" -%}
+{%- set sub = "flex items-center rounded-lg py-1.5 pl-3 pr-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" -%}
+<aside id="sidebar" class="fixed left-0 top-0 z-20 flex h-full w-64 shrink-0 -translate-x-full flex-col pt-16 transition-transform lg:translate-x-0" aria-label="Sidebar">
+  <div class="relative flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white pt-0 dark:border-gray-700 dark:bg-gray-800">
+    <nav class="flex flex-1 flex-col overflow-y-auto pb-6 pt-4" aria-label="Site">
+      <div class="flex-1 space-y-1 px-3">
+        <form class="mb-2 lg:hidden" role="search" action="{{ get_url(path='@/_index.md') }}" method="get">
+          <label for="mobile-search" class="sr-only">Search tracks</label>
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">{{ <icon name="search" /> }}</div>
+            <input type="search" id="mobile-search" name="q" data-search-input autocomplete="off" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:placeholder-gray-400" placeholder="Search tracks…">
+          </div>
+        </form>
+        <ul class="space-y-1">
+          {%- set on = cur == "/" %}
+          <li>
+            <a href="{{ get_url(path='@/_index.md') }}" class="{{ item }}{% if on %}{{ active }}{% endif %}"{% if on %} aria-current="page"{% endif %}>
+              {{ <icon name="music" cls={icon_cls} /> }}<span class="ml-3 flex-1">Explore tracks</span><span class="{{ badge }}">{{ catalog.stats.tracks }}</span>
+            </a>
+          </li>
+          {%- for m in config.extra.menu %}
+          {%- set url = get_url(path=m.path) %}
+          {%- set on = url == ctx.permalink %}
+          <li>
+            <a href="{{ url }}" class="{{ item }}{% if on %}{{ active }}{% endif %}"{% if on %} aria-current="page"{% endif %}>
+              {{ <icon name={m.icon} cls={icon_cls} /> }}<span class="ml-3 flex-1">{{ m.name }}</span>
+            </a>
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- for group in [["genre", "Genres", "tag"], ["sentiment", "Feelings", "heart"]] %}
+        {%- set kind = group[0] %}
+        <p class="{{ heading }}">{{ group[1] }}</p>
+        <ul class="space-y-0.5">
+          {%- for f in catalog.facets[kind][:8] %}
+          <li><a href="{{ get_taxonomy_url(kind=kind, term=f.term) }}" class="{{ sub }}"><span class="min-w-0 flex-1 truncate">{{ f.term }}</span><span class="{{ badge }}">{{ f.count }}</span></a></li>
+          {%- endfor %}
+          <li><a href="{{ get_url(path=kind, trailing_slash=true) }}" class="{{ sub }} font-medium text-primary-700 dark:text-primary-400">All {{ catalog.facets[kind] | length }} {{ group[1] | lower }} →</a></li>
+        </ul>
+        {%- endfor %}
+      </div>
+    </nav>
+  </div>
+</aside>

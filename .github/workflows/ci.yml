@@ -1,0 +1,87 @@
+name: CI
+
+# Runs on pull requests and non-main branches, and is called by pages.yml for main, so the gate
+# in front of a deployment is exactly the gate in front of a merge.
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  commits:
+    name: Conventional commits
+    runs-on: ubuntu-latest
+    env:
+      # The last commit before the convention was adopted; older subjects are history.
+      ADOPTION_BASE: e32d2caf84b8c82000bfc058d1b7b6c8a39d3731
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Lint commit subjects
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          head="${PR_HEAD:-$GITHUB_SHA}"
+          if [ -n "$PR_BASE" ]; then
+            range="$PR_BASE..$head"
+          elif [ -n "$PUSH_BEFORE" ] && git cat-file -e "$PUSH_BEFORE^{commit}" 2>/dev/null \
+              && git merge-base --is-ancestor "$ADOPTION_BASE" "$PUSH_BEFORE"; then
+            range="$PUSH_BEFORE..$head"
+          else
+            range="$ADOPTION_BASE..$head"
+          fi
+          scripts/lint-commits.sh "$range"
+
+  supervision:
+    name: Majordomus supervision
+    runs-on: ubuntu-latest
+    env:
+      MAJORDOMUS_VERSION: v1.0.1
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Install majordomus (pinned; the installer verifies the SHA-256 of the release)
+        run: |
+          curl -fsSL https://majordomus.dev/install.sh | sh -s -- --version "$MAJORDOMUS_VERSION"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: majordomus doctor
+        env:
+          # kit-evidence/v1 of the owner's Flowbite Pro licence: the never-publish gate refuses a
+          # licensed file in this public tree, and fails closed without the evidence.
+          MAJORDOMUS_KIT_EVIDENCE_FLOWBITE_PRO: ${{ secrets.MAJORDOMUS_KIT_EVIDENCE_FLOWBITE_PRO }}
+        run: |
+          git config core.hooksPath .githooks
+          majordomus version
+          majordomus doctor
+
+  site:
+    name: Validate, build and test in a browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - name: Browser for the smoke test (Playwright's chromium, no system packages)
+        run: npx playwright-core install chromium
+      - name: Gate (catalogue, unit tests, vendored assets and CSS, zola build, browser smoke)
+        env:
+          SMOKE_REQUIRED: '1'
+        run: bash scripts/verify.sh
+      - name: Build the site for GitHub Pages
+        run: |
+          zola build --force --output-dir public
+          printf '%s\n' "$GITHUB_SHA" > public/revision.txt
+      - uses: actions/upload-artifact@v7
+        with:
+          name: site
+          path: public
+          if-no-files-found: error
+          retention-days: 7

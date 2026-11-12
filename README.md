@@ -54,3 +54,7 @@ See the `extra` section in [config.toml](https://github.com/st1020/kita/blob/mai
 [MIT License](https://github.com/st1020/kita/blob/main/LICENSE)
 
 Copyright (c) 2023-present, st1020
+
+## AI agents
+
+This repository is supervised by Majordomus. An agent starts at [AGENTS.md](AGENTS.md).

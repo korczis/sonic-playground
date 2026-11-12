@@ -1,9 +1,8 @@
 +++
 title = "Author"
+description = "From reluctant pianist to synth enthusiast: who picks the tracks."
 path = "author"
 template = "pages.html"
-[extra]
-section = "_index.md"
 +++
 
 ## From Reluctant Pianist to Synth Enthusiast: My Musical Odyssey

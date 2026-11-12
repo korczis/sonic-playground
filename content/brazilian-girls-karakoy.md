@@ -8,7 +8,6 @@ genre = ["electronic", "lounge", "worldbeat"]
 sentiment = ["playful", "sophisticated", "vibrant"]
 
 [extra]
-cover_image = "/images/thumbnails/brazilian-girls-karakoy.jpg"
 youtube = "https://www.youtube.com/embed/gwqi9IoJGk4"
 +++
 

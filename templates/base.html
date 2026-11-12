@@ -1,0 +1,75 @@
+{#- Flowbite Pro admin shell (Admin Dashboard 1.1.1, adapted): fixed navbar, sidebar drawer of
+    derived facets, cards on gray-50 / gray-900, footer card. Every value comes from config.toml,
+    static/data/catalog.json (scripts/catalog.py) or the front matter. -#}
+{%- set_global catalog = load_data(path="static/data/catalog.json") -%}
+{%- set_global vendor = load_data(path="static/data/vendor.json") -%}
+{%- if page is defined -%}{%- set_global ctx = page -%}
+{%- elif section is defined -%}{%- set_global ctx = section -%}
+{%- elif term is defined -%}{%- set_global ctx = {"title": term.name ~ " · " ~ taxonomy.name, "description": config.description, "permalink": term.permalink} -%}
+{%- elif taxonomy is defined -%}{%- set_global ctx = {"title": taxonomy.name, "description": config.description, "permalink": config.base_url ~ "/" ~ taxonomy.name ~ "/"} -%}
+{%- else -%}{%- set_global ctx = {"title": "Page not found", "description": config.description, "permalink": config.base_url ~ "/404.html"} -%}
+{%- endif -%}
+{%- if current_path is defined -%}{%- set_global cur = current_path -%}{%- else -%}{%- set_global cur = "/404/" -%}{%- endif -%}
+{%- set_global track = false -%}
+{%- if page is defined and page.relative_path in catalog.lookup -%}{%- set_global track = catalog.tracks[catalog.lookup[page.relative_path]] -%}{%- endif -%}
+{%- set og_image = config.base_url ~ "/" ~ config.extra.social_image -%}
+{%- if track and track.thumbnail_local -%}{%- set og_image = get_url(path=track.thumbnail) -%}
+{%- elif track and track.thumbnail -%}{%- set og_image = track.thumbnail -%}{%- endif -%}
+<!doctype html>
+<html lang="{{ config.default_language }}" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if ctx.title and ctx.title != config.title %}{{ ctx.title }} · {% endif %}{{ config.title }}</title>
+<meta name="description" content="{{ ctx.description | default(value=config.description) }}">
+<meta name="author" content="{{ config.author }}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#6d28d9">
+<meta name="generator" content="Zola">
+<link rel="canonical" href="{{ ctx.permalink }}">
+<link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+<meta property="og:type" content="{% if track %}music.song{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ config.title }}">
+<meta property="og:title" content="{{ ctx.title | default(value=config.title) }}">
+<meta property="og:description" content="{{ ctx.description | default(value=config.description) }}">
+<meta property="og:url" content="{{ ctx.permalink }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta name="twitter:card" content="summary_large_image">
+{%- if track %}
+<script type="application/ld+json">
+{{ {"@context": "https://schema.org", "@type": "MusicRecording", "name": track.track, "byArtist": {"@type": "MusicGroup", "name": track.artist}, "genre": track.facets.genre, "description": track.description, "url": ctx.permalink, "datePublished": track.date, "isPartOf": {"@type": "WebSite", "name": config.title, "url": config.base_url ~ "/"} } | json_encode | safe }}
+</script>
+{%- endif %}
+<link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ get_url(path='css/app.css', cachebust=true) }}">
+<script>
+  // Flowbite Pro dark-mode contract: localStorage 'color-theme', the system preference when absent.
+  try {
+    var t = localStorage.getItem('color-theme');
+    if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  } catch (e) {}
+  document.documentElement.classList.remove('no-js');
+</script>
+{% block head_extra %}{% endblock head_extra %}
+</head>
+<body class="bg-gray-50 antialiased dark:bg-gray-900" data-base-url="{{ config.base_url }}" data-catalog="{{ get_url(path='data/catalog.json', cachebust=true) }}">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-gray-900 focus:shadow">Skip to content</a>
+{% include "partials/nav.html" %}
+<div class="flex overflow-hidden bg-gray-50 pt-16 dark:bg-gray-900">
+  {% include "partials/sidebar.html" %}
+  <div id="main-content" class="relative h-full w-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
+    <main id="main" tabindex="-1">
+      {% block content %}{% endblock content %}
+    </main>
+    {% include "partials/footer.html" %}
+  </div>
+</div>
+<script src="{{ get_url(path=vendor.libs.flowbite.js) }}" defer></script>
+<script src="{{ get_url(path='js/site.js', cachebust=true) }}" defer></script>
+{% block scripts %}{% endblock scripts %}
+</body>
+</html>

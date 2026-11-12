@@ -9,7 +9,8 @@ sentiment = ["intense", "dark", "rebellious"]
 
 [extra]
 cover_image = "/images/thumbnails/mickey-avalon-eli-ultra-violence.jpg"
-youtube = "https://www.youtube.com/embed/your-video-id"
+# TODO(owner): the video id was a placeholder ("your-video-id")
+# youtube = "https://www.youtube.com/embed/<id>"
 +++
 
 > **Mickey Avalon** and **Eli** join forces on "Ultra-Violence," crafting a dark, 

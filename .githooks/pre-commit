@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Majordomus supervision is mandatory in this repository: a commit requires a healthy, wired .ai/
+# layer (policy enforcement doctor-on-commit), a current catalogue and no whitespace errors.
+set -euo pipefail
+if ! command -v majordomus >/dev/null 2>&1; then
+  echo "pre-commit: majordomus is required (https://majordomus.dev)" >&2
+  exit 1
+fi
+majordomus worktree guard --quiet || exit $?
+git diff --cached --check || exit $?
+MAJORDOMUS_DOCTOR_CONTEXT=commit majordomus doctor || exit $?
+python3 scripts/catalog.py --check || exit $?
