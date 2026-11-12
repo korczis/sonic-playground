@@ -75,8 +75,10 @@
 "explorer.empty_text" = "Loosen a filter or search for fewer words."
 
 "card.play" = "Play {label}"
-"card.queue_label" = "Add {label} to the queue"
+"card.queue_label" = "Queue {label}"
 "card.play_next" = "Play {label} next"
+"card.queue_add_hint" = "Add to the queue"
+"card.queue_remove_hint" = "In the queue: click to take it out"
 
 "share.copy" = "Copy link"
 "share.copied" = "Link copied"
@@ -201,6 +203,10 @@
 "player.toast_list" = "Queue replaced: {n} tracks"
 "player.toast_cleared" = "Queue cleared"
 "player.toast_shuffled" = "Up next shuffled"
+"player.undo" = "Undo"
+"player.toast_undone" = "Restored"
+"player.toast_closed" = "Player closed"
+"player.close_short" = "Close player"
 
 "seo.locale" = "en_US"
 "seo.term" = "{n} hand-picked tracks filed under the {kind} {term}: reviews, videos and the tracks that sound alike."

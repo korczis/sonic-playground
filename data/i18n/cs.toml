@@ -71,8 +71,10 @@
 "explorer.empty_text" = "Uvolněte filtr nebo hledejte méně slov."
 
 "card.play" = "Přehrát {label}"
-"card.queue_label" = "Přidat {label} do fronty"
+"card.queue_label" = "Fronta: {label}"
 "card.play_next" = "Přehrát {label} jako další"
+"card.queue_add_hint" = "Přidat do fronty"
+"card.queue_remove_hint" = "Ve frontě: kliknutím odeberete"
 
 "share.copy" = "Kopírovat odkaz"
 "share.copied" = "Odkaz zkopírován"
@@ -197,6 +199,10 @@
 "player.toast_list" = "Fronta nahrazena: {n} skladeb"
 "player.toast_cleared" = "Fronta vyprázdněna"
 "player.toast_shuffled" = "Další na řadě zamíchány"
+"player.undo" = "Zpět"
+"player.toast_undone" = "Obnoveno"
+"player.toast_closed" = "Přehrávač zavřen"
+"player.close_short" = "Zavřít přehrávač"
 
 "seo.locale" = "cs_CZ"
 "seo.term" = "{n} ručně vybraných skladeb zařazených pod {kind} {term}: recenze, videa a skladby, které zní podobně."

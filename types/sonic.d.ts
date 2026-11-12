@@ -67,6 +67,7 @@ interface Window {
     toggle(): void;
     stop(): void;
     jump(index: number): void;
+    undo(): void;
     state(): { queue: SonicQueueItem[]; index: number; time: number; repeat: string; view: string; video: string };
   };
   echarts: any;

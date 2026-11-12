@@ -352,7 +352,7 @@ async function shot(page, name) {
     check(radio[0] === sample.source && playable.every((r) => radio.indexOf(r.source) > 0)
       && new Set(radio).size === radio.length,
       `track: Radio replaces the queue with the track and its related, each once (${radio.length})`);
-    check(await page.isVisible('#player-toast') && (await page.textContent('[data-player-toast-text]')).trim() !== '',
+    check((await page.getAttribute('#player-toast', 'data-shown')) === 'true' && (await page.textContent('[data-player-toast-text]')).trim() !== '',
       'track: replacing the queue is announced');
     await page.waitForTimeout(1500);
     check(errors.length === 0, `track: no console errors after the player loads${errors.length ? ' — ' + errors.join(' | ') : ''}`);
@@ -450,7 +450,7 @@ async function shot(page, name) {
     await card(1, '[data-queue]').click();
     await until({ q: [S[0], S[1]] }, 'player: the queue button adds the track at the end');
     check(await pressed(1) === 'true', 'player: the queue button shows the track is queued (aria-pressed)');
-    check(await page.isVisible('#player-toast'), 'player: adding to the queue is announced');
+    check((await page.getAttribute('#player-toast', 'data-shown')) === 'true', 'player: adding to the queue is announced');
     await card(1, '[data-queue]').click();
     await until({ q: [S[0]] }, 'player: the queue button again takes the track out (no duplicates)');
     check(await pressed(1) === 'false', 'player: the queue button shows the track is no longer queued');
@@ -479,6 +479,8 @@ async function shot(page, name) {
     await until({ q: [S[0], S[2], S[3], S[1], S[4]] }, 'player: queued while the panel is open');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-down]`);
     await until({ q: [S[0], S[2], S[3], S[4], S[1]] }, 'player: a queued track moves down');
+    check(await page.evaluate((src) => { const r = document.activeElement && document.activeElement.closest('[data-queue-row]');
+      return !!r && r.dataset.source === src; }, S[1]), 'player: keyboard focus stays on the moved track');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-up]`);
     await until({ q: [S[0], S[2], S[3], S[1], S[4]] }, 'player: and up');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[4]}"] [data-player-remove]`);
@@ -520,6 +522,29 @@ async function shot(page, name) {
     await until({ q: [S[0], S[2], S[1], S[3]], i: 2 }, 'player: play next on a played track moves it after the current one');
     await page.click('[data-player-clear]');
     await until({ q: [S[1]], i: 0 }, 'player: clear flushes the queue, the current track plays on');
+    check(await page.isVisible('[data-player-undo]'), 'player: clear offers undo');
+    await page.click('[data-player-undo]');
+    await until({ q: [S[0], S[2], S[1], S[3]], i: 2 }, 'player: undo brings the cleared queue back');
+    await page.click('[data-player-clear]');
+    await until({ q: [S[1]], i: 0 }, 'player: cleared again');
+
+    // The playing track's card shows pause and pauses; the keyboard drives the player.
+    const icon = (which) => card(1, `[data-play] [data-icon-${which}]`).evaluate((e) => getComputedStyle(e).display);
+    await page.evaluate(() => window.__yt.player.playVideo());
+    check(await icon('pause') !== 'none' && await icon('play') === 'none', 'player: the playing track\'s card shows pause');
+    await card(1, '[data-play]').click();
+    check(await page.evaluate(() => window.__yt.player._state) === 2 && await icon('play') !== 'none',
+      'player: pause on the card pauses, and the card shows play again');
+    await page.keyboard.press('k');
+    check(await page.evaluate(() => window.__yt.player._state) === 1, 'player: K plays');
+    await page.keyboard.press('k');
+    check(await page.evaluate(() => window.__yt.player._state) === 2, 'player: K pauses');
+    await page.evaluate(() => { window.__yt.player._time = 120; });
+    await page.waitForFunction(() => Math.abs(parseFloat(document.querySelector('[data-player-progress]').style.width) - 50) < 0.5, null, { timeout: 3000 })
+      .then(() => check(true, 'player: the progress line follows the track (phones have no seek bar)'))
+      .catch(() => check(false, 'player: the progress line follows the track (phones have no seek bar)'));
+    check(await page.evaluate(() => { const t = document.getElementById('player-toast');
+      return !!t && t.getAttribute('role') === 'status' && !t.hidden; }), 'player: the toast is a live region that is always present');
     check(await page.isHidden('[data-player-count]'), 'player: no badge when nothing is queued');
     check(await page.isVisible('#player-queue [data-queue-empty]'), 'player: the empty queue says how to add tracks');
     await page.keyboard.press('Escape');
@@ -564,14 +589,27 @@ async function shot(page, name) {
       .catch(() => check(false, `player: Play all replaces the queue with the ${visible} tracks shown`));
     await shot(page, 'player-home');
 
+    await page.evaluate(() => { window.__yt.player._time = 120; });
+    await page.waitForFunction(() => window.SonicPlayer.state().time >= 100, null, { timeout: 5000 }).catch(() => {});
     await page.reload({ waitUntil: 'load' });
     await page.waitForFunction(() => !document.getElementById('player').hidden, null, { timeout: 10000 }).catch(() => {});
     const resumed = await page.evaluate(() => ({ n: window.SonicPlayer.state().queue.length,
       panel: document.getElementById('player-panel').hidden, frame: !!document.querySelector('#player-panel iframe') }));
     check(resumed.n === visible && resumed.panel && !resumed.frame,
       'player: a reload keeps the queue, paused, with no third-party request until play');
+    const other = await page.evaluate(() => { const s = window.SonicPlayer.state(); return s.queue[s.index].source; });
+    const another = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') })
+      .filter({ hasNot: page.locator(`[data-source="${other}"]`) }).nth(4);
+    await page.locator(`#explorer-grid [data-track][data-source="${await another.getAttribute('data-source')}"] [data-play]`).click();
+    const src = await page.waitForSelector('#player-panel iframe', { timeout: 10000 }).then((e) => e.getAttribute('src')).catch(() => '');
+    check(/[?&]start=0(&|$)/.test(src), 'player: after a reload another track starts at 0, not at the saved time of the last one');
     await page.click('[data-player-close]');
     check(await page.isHidden('#player') && (await queue()).queue.length === 0, 'player: close stops and empties the player');
+    await page.click('[data-player-undo]');
+    await page.waitForFunction(() => window.SonicPlayer.state().queue.length > 0 && !document.getElementById('player').hidden, null, { timeout: 5000 })
+      .then(() => check(true, 'player: undo after close brings the player and its queue back'))
+      .catch(() => check(false, 'player: undo after close brings the player and its queue back'));
+    await page.click('[data-player-close]');
     check(errors.length === 0, `player and router: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }

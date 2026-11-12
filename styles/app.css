@@ -97,6 +97,38 @@
 body.has-player #main-content {
   padding-bottom: 6rem;
 }
+/* With the video docked, the end of every page stays above it, not under it. */
+html[data-player-panel-state="shown"] body.has-player #main-content {
+  padding-bottom: 13.5rem;
+}
+@media (min-width: 640px) {
+  html[data-player-panel-state="shown"][data-player-video-state="large"]:not([data-player-view-state="mini"]) body.has-player #main-content {
+    padding-bottom: 19.5rem;
+  }
+  /* The open queue sits at the right edge; the video moves beside it. */
+  html[data-player-queue-state="open"] #player-panel {
+    right: 26rem;
+  }
+}
+
+/* The toast is always in the accessibility tree (a live region that appears with its text is
+   often not announced); it is shown and hidden by opacity. */
+#player-toast {
+  transition: opacity 150ms ease-out;
+}
+#player-toast[data-shown="false"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* A card's play button is a pause button while its track plays. */
+[data-play] [data-icon-pause],
+html[data-player-state="playing"] [data-now-playing] [data-play] [data-icon-play] {
+  display: none;
+}
+html[data-player-state="playing"] [data-now-playing] [data-play] [data-icon-pause] {
+  display: inline;
+}
 
 /* Controls of one view only: the full bar, or the minimised pill. */
 html:not([data-player-view-state="mini"]) #player [data-player-mini],
