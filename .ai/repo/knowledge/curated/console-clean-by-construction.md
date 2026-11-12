@@ -27,6 +27,7 @@ provenance:
 | `GET https://i.ytimg.com/vi/<id>/hqdefault.jpg 404` (6 videos) | Videos removed from YouTube; their stills 404 on every list that shows them | `probe-videos.py --write` records them in `data/videos.json`; `catalog.py` then shows the derived artwork and a note, never requests the still; the weekly `Content health` run fails while the file is stale |
 | `GET /sonic-playground/tags/ 404` from `sitemap.xml` | A taxonomy declared in `config.toml` that no article uses: Zola lists it in the sitemap but renders no page | The `tags` taxonomy was removed; the sweep loads every sitemap URL, so any repeat fails the deploy gate |
 | Images `/images/...` 404 under `/sonic-playground/` | Root-absolute URLs in reviews and templates | `figure` component; the contract refuses root-absolute URLs in reviews |
+| `Unrecognized feature: 'web-share'` (CI's Linux Chromium only; local Chrome knows it) | The `allow` list of the YouTube iframe (ours, then the IFrame API's own) named a feature that browser does not implement; CI stopped the deploy of 08ae614 | The player builds the iframe itself with `allow="autoplay; encrypted-media; picture-in-picture; fullscreen"` and attaches the API to it; run the smoke test locally without `CHROME_PATH` to use the same Chromium as CI |
 
 Third-party noise the site cannot change (YouTube's player logging CORS errors for its own ad
 beacons inside its iframe, after a click) is reported as a notice, never hidden as a pass.

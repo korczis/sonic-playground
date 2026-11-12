@@ -145,10 +145,21 @@
     el.panel.hidden = false;
     api().then(function () {
       if (!yt) {
-        yt = new window.YT.Player(el.video, {
-          host: 'https://www.youtube-nocookie.com',
-          videoId: t.youtube,
-          playerVars: { autoplay: autoplay ? 1 : 0, rel: 0, playsinline: 1, start: Math.floor(pendingStart) },
+        // The frame is built here, not by the API: the API's own `allow` list names features
+        // (web-share) that some browsers do not know and warn about in the console
+        // (knowledge console-clean-by-construction). The API then attaches to this frame.
+        var frame = document.createElement('iframe');
+        var params = new URLSearchParams({ enablejsapi: '1', autoplay: autoplay ? '1' : '0', rel: '0',
+          playsinline: '1', start: String(Math.floor(pendingStart)), origin: location.origin });
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(t.youtube) + '?' + params;
+        frame.title = 'YouTube video player';
+        frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        frame.className = 'h-full w-full';
+        frame.id = 'player-video';
+        el.video.replaceWith(frame);
+        el.video = frame;
+        yt = new window.YT.Player(frame, {
           events: {
             onReady: function () { ready = true; if (autoplay) yt.playVideo(); paint(); },
             onStateChange: function (e) {
