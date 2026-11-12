@@ -7,7 +7,7 @@
   "artists": 109,
   "videos": 104,
   "videos_gone": 6,
-  "words": 59053,
+  "words": 59074,
   "median_words": 420,
   "first": "2024-10-01",
   "last": "2024-12-06",
@@ -1909,7 +1909,7 @@
    "youtube": null,
    "thumbnail": "",
    "thumbnail_local": false,
-   "words": 647,
+   "words": 668,
    "extra": {},
    "related": [
     {

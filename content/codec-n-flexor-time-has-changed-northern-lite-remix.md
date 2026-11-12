@@ -76,5 +76,5 @@ This remix is a testament to the transformative power of music. By blending mela
 
 ## References
 
-- [Official Northern Lite Remix](https://northernlite.com/remix)
-- [Codec & Flexor Discography](https://codecandflexor.com)
+- [Codec & Flexor – Time Has Changed on Discogs](https://www.discogs.com/search/?q=Codec+%26+Flexor+Time+Has+Changed&type=all)
+- [Northern Lite on Discogs](https://www.discogs.com/search/?q=Northern+Lite&type=artist)
