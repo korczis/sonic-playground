@@ -18387,6 +18387,96 @@
    }
   ]
  },
+ "melissa-laveaux-needle-in-the-hay.md": {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@id": "https://korczis.github.io/sonic-playground/melissa-laveaux-needle-in-the-hay/#recording",
+    "@type": "MusicRecording",
+    "byArtist": {
+     "@type": "MusicGroup",
+     "name": "Mélissa Laveaux",
+     "sameAs": "https://musicbrainz.org/artist/748336d9-5327-42d0-a502-d0945c4c0b71"
+    },
+    "datePublished": "2008",
+    "genre": [
+     "indie folk",
+     "singer-songwriter",
+     "alternative"
+    ],
+    "inAlbum": {
+     "@type": "MusicAlbum",
+     "name": "Camphor & Copper"
+    },
+    "isrcCode": "FR2W60800018",
+    "name": "Needle in the Hay",
+    "sameAs": [
+     "https://musicbrainz.org/recording/deb4d6e6-12d3-4602-bb27-99c0e4e6f122",
+     "https://www.youtube.com/watch?v=L_qJ8LSTdzc"
+    ]
+   },
+   {
+    "@id": "https://korczis.github.io/sonic-playground/melissa-laveaux-needle-in-the-hay/#review",
+    "@type": [
+     "Article",
+     "LearningResource"
+    ],
+    "about": {
+     "@id": "https://korczis.github.io/sonic-playground/melissa-laveaux-needle-in-the-hay/#recording"
+    },
+    "author": {
+     "@type": "Person",
+     "name": "korczis"
+    },
+    "citation": [
+     {
+      "@type": "CreativeWork",
+      "datePublished": "2008",
+      "name": "Camphor & Copper",
+      "publisher": "Bandcamp (Mélissa Laveaux)",
+      "url": "https://melissalaveaux.bandcamp.com/album/camphor-copper"
+     },
+     {
+      "@type": "CreativeWork",
+      "name": "Mélissa Laveaux",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/M%C3%A9lissa_Laveaux"
+     },
+     {
+      "@type": "CreativeWork",
+      "name": "Needle in the Hay",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Needle_in_the_Hay"
+     }
+    ],
+    "datePublished": "2024-10-09",
+    "description": "Mélissa Laveaux, a Montreal-born singer-songwriter of Haitian descent, recasts Elliott Smith's bleak 1995 song for percussive finger-style guitar, double bass, claps and drums on her 2008 album Camphor & Copper.",
+    "educationalLevel": "intermediate",
+    "headline": "Mélissa Laveaux - Needle in the Hay",
+    "inLanguage": "en",
+    "isPartOf": {
+     "@type": "WebSite",
+     "name": "Sonic Playground",
+     "url": "https://korczis.github.io/sonic-playground/"
+    },
+    "learningResourceType": "listening guide",
+    "teaches": [
+     {
+      "@type": "DefinedTerm",
+      "name": "cover version",
+      "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+     },
+     {
+      "@type": "DefinedTerm",
+      "name": "fingerstyle guitar",
+      "url": "https://korczis.github.io/sonic-playground/concept/fingerstyle-guitar/"
+     }
+    ],
+    "url": "https://korczis.github.io/sonic-playground/melissa-laveaux-needle-in-the-hay/",
+    "wordCount": 821
+   }
+  ]
+ },
  "metronomy-love-letters-soulwax-remix.md": {
   "@context": "https://schema.org",
   "@graph": [
@@ -20395,96 +20485,6 @@
     ],
     "url": "https://korczis.github.io/sonic-playground/mount-sims-together-alone/",
     "wordCount": 557
-   }
-  ]
- },
- "mélissa-laveaux-needle-in-the-hay.md": {
-  "@context": "https://schema.org",
-  "@graph": [
-   {
-    "@id": "https://korczis.github.io/sonic-playground/melissa-laveaux-needle-in-the-hay/#recording",
-    "@type": "MusicRecording",
-    "byArtist": {
-     "@type": "MusicGroup",
-     "name": "Mélissa Laveaux",
-     "sameAs": "https://musicbrainz.org/artist/748336d9-5327-42d0-a502-d0945c4c0b71"
-    },
-    "datePublished": "2008",
-    "genre": [
-     "indie folk",
-     "singer-songwriter",
-     "alternative"
-    ],
-    "inAlbum": {
-     "@type": "MusicAlbum",
-     "name": "Camphor & Copper"
-    },
-    "isrcCode": "FR2W60800018",
-    "name": "Needle in the Hay",
-    "sameAs": [
-     "https://musicbrainz.org/recording/deb4d6e6-12d3-4602-bb27-99c0e4e6f122",
-     "https://www.youtube.com/watch?v=L_qJ8LSTdzc"
-    ]
-   },
-   {
-    "@id": "https://korczis.github.io/sonic-playground/melissa-laveaux-needle-in-the-hay/#review",
-    "@type": [
-     "Article",
-     "LearningResource"
-    ],
-    "about": {
-     "@id": "https://korczis.github.io/sonic-playground/melissa-laveaux-needle-in-the-hay/#recording"
-    },
-    "author": {
-     "@type": "Person",
-     "name": "korczis"
-    },
-    "citation": [
-     {
-      "@type": "CreativeWork",
-      "datePublished": "2008",
-      "name": "Camphor & Copper",
-      "publisher": "Bandcamp (Mélissa Laveaux)",
-      "url": "https://melissalaveaux.bandcamp.com/album/camphor-copper"
-     },
-     {
-      "@type": "CreativeWork",
-      "name": "Mélissa Laveaux",
-      "publisher": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/M%C3%A9lissa_Laveaux"
-     },
-     {
-      "@type": "CreativeWork",
-      "name": "Needle in the Hay",
-      "publisher": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/Needle_in_the_Hay"
-     }
-    ],
-    "datePublished": "2024-10-09",
-    "description": "Mélissa Laveaux, a Montreal-born singer-songwriter of Haitian descent, recasts Elliott Smith's bleak 1995 song for percussive finger-style guitar, double bass, claps and drums on her 2008 album Camphor & Copper.",
-    "educationalLevel": "intermediate",
-    "headline": "Mélissa Laveaux - Needle in the Hay",
-    "inLanguage": "en",
-    "isPartOf": {
-     "@type": "WebSite",
-     "name": "Sonic Playground",
-     "url": "https://korczis.github.io/sonic-playground/"
-    },
-    "learningResourceType": "listening guide",
-    "teaches": [
-     {
-      "@type": "DefinedTerm",
-      "name": "cover version",
-      "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
-     },
-     {
-      "@type": "DefinedTerm",
-      "name": "fingerstyle guitar",
-      "url": "https://korczis.github.io/sonic-playground/concept/fingerstyle-guitar/"
-     }
-    ],
-    "url": "https://korczis.github.io/sonic-playground/melissa-laveaux-needle-in-the-hay/",
-    "wordCount": 821
    }
   ]
  },
