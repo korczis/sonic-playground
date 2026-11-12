@@ -402,6 +402,32 @@ async function shot(page, name) {
     }
   }
 
+  // Every page's social card is served as an image (Open Graph / X); checked on the home page and
+  // a track, here and against production (rule project.social-preview).
+  {
+    const { context, page } = await open(browser, at(''), desktop);
+    for (const rel of ['', sample.path]) {
+      await page.goto(at(rel), { waitUntil: 'domcontentloaded' });
+      const og = await page.getAttribute('meta[property="og:image"]', 'content');
+      const tw = await page.getAttribute('meta[name="twitter:image"]', 'content');
+      // The artefact is checked on disk (API requests bypass the route to it); production by HTTP.
+      let body = null;
+      let how = '';
+      if (root) {
+        const file = path.join(root, new URL(og).pathname.slice(new URL(base).pathname.length));
+        body = fs.existsSync(file) ? fs.readFileSync(file) : null;
+        how = body ? 'in the artefact' : 'missing from the artefact';
+      } else {
+        const res = await page.request.get(og + (revision ? '?v=' + revision : ''));
+        body = res.status() === 200 && (res.headers()['content-type'] || '').startsWith('image/png') ? await res.body() : null;
+        how = `HTTP ${res.status()}`;
+      }
+      const png = !!body && body.length > 10000 && body.slice(1, 4).toString() === 'PNG';
+      check(png && og === tw, `social card of /${rel}: ${og.split('/').pop()} is a PNG (${how})`);
+    }
+    await context.close();
+  }
+
   if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);
 
   await browser.close();

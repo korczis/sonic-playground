@@ -68,7 +68,22 @@ fi
 step "zola build ($base_url; internal links are errors)"
 zola build --force --output-dir "$public"
 
-step "built site: every local URL resolves under the site path"
+if [ "$browser" = 1 ]; then
+  step "social cards: one 1200x630 preview per page (scripts/og.cjs)"
+  set +e
+  node scripts/og.cjs "$public"
+  og=$?
+  set -e
+  if [ "$og" = 3 ] && [ "${SMOKE_REQUIRED:-0}" != 1 ]; then
+    export CHECK_OG_FILES=0
+  elif [ "$og" != 0 ]; then
+    exit "$og"
+  fi
+else
+  export CHECK_OG_FILES=0
+fi
+
+step "built site: every local URL resolves, every page has a complete social preview"
 python3 scripts/check-built.py "$public" "$base_url"
 
 if [ "$browser" = 1 ]; then

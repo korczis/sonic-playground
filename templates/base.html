@@ -8,23 +8,26 @@
 {%- set_global l = load_data(path="data/i18n/" ~ config.default_language ~ ".toml") -%}
 {%- if page is defined -%}{%- set_global ctx = page -%}
 {%- elif section is defined -%}{%- set_global ctx = section -%}
-{%- elif term is defined -%}{%- set_global ctx = {"title": term.name ~ " · " ~ taxonomy.name, "description": config.description, "permalink": term.permalink} -%}
-{%- elif taxonomy is defined -%}{%- set_global ctx = {"title": taxonomy.name, "description": config.description, "permalink": config.base_url ~ "/" ~ taxonomy.name ~ "/"} -%}
-{%- else -%}{%- set_global ctx = {"title": "Page not found", "description": config.description, "permalink": config.base_url ~ "/404.html"} -%}
+{#- Every page gets a title and a description derived from what it shows (data/i18n/ seo.*). -#}
+{%- elif term is defined -%}{%- set_global ctx = {"title": term.name ~ " · " ~ l["tax.one." ~ taxonomy.name], "description": l["seo.term"] | replace(from="{n}", to=term.page_count ~ "") | replace(from="{term}", to=term.name) | replace(from="{kind}", to=l["tax.one." ~ taxonomy.name] | lower), "permalink": term.permalink} -%}
+{%- elif taxonomy is defined -%}{%- set_global ctx = {"title": l["tax.name." ~ taxonomy.name], "description": l["seo.taxonomy"] | replace(from="{n}", to=terms | length ~ "") | replace(from="{kind}", to=l["tax.name." ~ taxonomy.name] | lower), "permalink": config.base_url ~ "/" ~ taxonomy.name ~ "/"} -%}
+{%- else -%}{%- set_global ctx = {"title": l["404.title"], "description": l["404.text"], "permalink": config.base_url ~ "/404.html"} -%}
 {%- endif -%}
+{%- if ctx.description %}{% set_global description = ctx.description %}{% else %}{% set_global description = config.description %}{% endif -%}
 {%- if current_path is defined -%}{%- set_global cur = current_path -%}{%- else -%}{%- set_global cur = "/404/" -%}{%- endif -%}
 {%- set_global track = false -%}
 {%- if page is defined and page.relative_path in catalog.lookup -%}{%- set_global track = catalog.tracks[catalog.lookup[page.relative_path]] -%}{%- endif -%}
-{%- set og_image = config.base_url ~ "/" ~ config.extra.social_image -%}
-{%- if track and track.thumbnail_local -%}{%- set og_image = get_url(path=track.thumbnail) -%}
-{%- elif track and track.thumbnail -%}{%- set og_image = track.thumbnail -%}{%- endif -%}
+{#- The social card of this page, rendered by scripts/og.cjs at build time under the same key:
+    the page path slugified, "home" for the root. -#}
+{%- set og_key = cur | slugify -%}{%- if og_key == "" %}{% set og_key = "home" %}{% endif -%}
+{%- set og_image = get_url(path="og/" ~ og_key ~ ".png") -%}
 <!doctype html>
 <html lang="{{ config.default_language }}" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if ctx.title and ctx.title != config.title %}{{ ctx.title }} · {% endif %}{{ config.title }}</title>
-<meta name="description" content="{{ ctx.description | default(value=config.description) }}">
+<meta name="description" content="{{ description }}">
 <meta name="author" content="{{ config.author }}">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#6d28d9">
@@ -34,10 +37,21 @@
 <meta property="og:type" content="{% if track %}music.song{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ config.title }}">
 <meta property="og:title" content="{{ ctx.title | default(value=config.title) }}">
-<meta property="og:description" content="{{ ctx.description | default(value=config.description) }}">
+<meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ ctx.permalink }}">
+<meta property="og:locale" content="{{ l["seo.locale"] }}">
 <meta property="og:image" content="{{ og_image }}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{% if track %}{{ track.artist }} – {{ track.track }}{% else %}{{ ctx.title | default(value=config.title) }}{% endif %} · {{ config.title }}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ ctx.title | default(value=config.title) }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ og_image }}">
+{%- if config.extra.x_handle %}
+<meta name="twitter:site" content="{{ config.extra.x_handle }}">
+{%- endif %}
 {%- if track %}
 <script type="application/ld+json">
 {{ {"@context": "https://schema.org", "@type": "MusicRecording", "name": track.track, "byArtist": {"@type": "MusicGroup", "name": track.artist}, "genre": track.facets.genre, "description": track.description, "url": ctx.permalink, "datePublished": track.date, "isPartOf": {"@type": "WebSite", "name": config.title, "url": config.base_url ~ "/"} } | json_encode | replace(from="<", to="\\u003c") | safe }}

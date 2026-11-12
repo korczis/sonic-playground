@@ -178,3 +178,7 @@
 "player.close" = "Stop and close the player"
 "player.remove" = "Remove {track} from the queue"
 "player.video" = "Video"
+
+"seo.locale" = "en_US"
+"seo.term" = "{n} hand-picked tracks filed under the {kind} {term}: reviews, videos and the tracks that sound alike."
+"seo.taxonomy" = "All {n} {kind} of the playground, most used first."
