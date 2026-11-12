@@ -3,13 +3,13 @@ schema: adr/v1
 id: adr-0004
 kind: adr
 title: Every review is an educational article whose facts live in its front matter
-status: proposed
+status: accepted
 date: 2026-11-12
 tags:
   - content
   - education
 provenance:
-  origin: extracted
+  origin: authored
   derived_from:
     - session:7e1d03a3-52cc-40aa-a61a-4f9713c27f2a
     - file:data/track.schema.json

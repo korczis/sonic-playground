@@ -3,13 +3,13 @@ schema: adr/v1
 id: adr-0003
 kind: adr
 title: A persistent bottom-bar player over a router, one control per effect, and derived social cards
-status: proposed
+status: accepted
 date: 2026-11-12
 tags:
   - player
   - ui
 provenance:
-  origin: extracted
+  origin: authored
   derived_from:
     - session:7e1d03a3-52cc-40aa-a61a-4f9713c27f2a
     - file:static/js/player.js
