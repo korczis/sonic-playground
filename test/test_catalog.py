@@ -109,6 +109,14 @@ class Contract(unittest.TestCase):
         catalog.load_track(path, errors)
         self.assertTrue(any("TODO(write)" in e for e in errors))
 
+    def test_word_split_across_lines_is_refused(self):
+        _, errors = self.load()
+        path = catalog.CONTENT / "bakermat-the-river.md"
+        path.write_text(path.read_text(encoding="utf-8") + "\nThe track draws t\nhe listener in.\n", encoding="utf-8")
+        errors = []
+        catalog.load_track(path, errors)
+        self.assertTrue(any("split across lines" in e for e in errors))
+
     def test_artist_override(self):
         track, errors = self.load(title="Lulu's Theme", extra='artist = "Lulu Rouge"\n', name="x.md")
         self.assertEqual(errors, [])

@@ -20,6 +20,11 @@ window.Sonic.module('explorer', function mount() {
   var sort = form.elements.sort;
   var facets = Array.prototype.slice.call(form.querySelectorAll('[data-facet]'));
   var KEYS = ['q', 'sort'].concat(facets.map(function (s) { return s.name; }));
+  // Matches beyond the first PAGE are rendered but folded ([data-overflow]) behind "Show more";
+  // they stay matches, so "Play these" still queues every one of them.
+  var PAGE = Number(grid.getAttribute('data-page') || 24);
+  var limit = PAGE;
+  var more = document.querySelector('[data-explorer-more]');
 
   var items = cards.map(function (el) {
     var d = el.dataset;
@@ -98,8 +103,13 @@ window.Sonic.module('explorer', function mount() {
       var ok = matches(it, s, null);
       it.el.hidden = !ok;
       if (ok) shown += 1;
+      it.el.toggleAttribute('data-overflow', ok && shown > limit);
       frag.appendChild(it.el);
     });
+    if (more) {
+      more.hidden = shown <= limit;
+      more.textContent = 'Show ' + Math.min(PAGE, shown - limit) + ' more (' + (shown - limit) + ' left)';
+    }
     grid.appendChild(frag);
 
     // Facet counts follow the other filters; a term that would give nothing is disabled.
@@ -140,6 +150,7 @@ window.Sonic.module('explorer', function mount() {
   }
 
   function load() {
+    limit = PAGE;
     var params = new URLSearchParams(window.location.search);
     query.value = params.get('q') || '';
     sort.value = params.get('sort') || 'new';
@@ -155,15 +166,22 @@ window.Sonic.module('explorer', function mount() {
   var timer = null;
   query.addEventListener('input', function () {
     clearTimeout(timer);
-    timer = setTimeout(function () { render(false); }, 120);
+    timer = setTimeout(function () { limit = PAGE; render(false); }, 120);
   });
-  form.addEventListener('change', function () { render(true); });
-  form.addEventListener('submit', function (event) { event.preventDefault(); render(true); });
+  form.addEventListener('change', function () { limit = PAGE; render(true); });
+  form.addEventListener('submit', function (event) { event.preventDefault(); limit = PAGE; render(true); });
+  if (more) {
+    more.addEventListener('click', function () {
+      limit += PAGE;
+      render(false);
+    });
+  }
   if (reset) {
     reset.addEventListener('click', function (event) {
       event.preventDefault();
       form.reset();
       sort.value = 'new';
+      limit = PAGE;
       render(true);
       query.focus();
     });

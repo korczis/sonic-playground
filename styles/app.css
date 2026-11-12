@@ -98,6 +98,11 @@ body.has-player #main-content {
   padding-bottom: 6rem;
 }
 
+/* Explorer matches folded behind "Show more" (static/js/explorer.js). */
+[data-overflow] {
+  display: none !important;
+}
+
 [data-track][data-now-playing] {
   outline: 2px solid var(--color-primary-600);
   outline-offset: 2px;

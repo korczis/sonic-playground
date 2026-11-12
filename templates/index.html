@@ -75,6 +75,9 @@
       {{ <track_card t={t} heading="h3" /> }}
       {%- endfor %}
     </div>
+    <div class="mt-6 flex justify-center">
+      <button type="button" data-explorer-more hidden class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Show more</button>
+    </div>
     <div data-explorer-empty hidden>
       {{ <empty_state title="No track matches" text="Loosen a filter or search for fewer words." /> }}
     </div>
