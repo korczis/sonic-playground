@@ -3,13 +3,13 @@ schema: adr/v1
 id: adr-0002
 kind: adr
 title: One derived catalogue and a track engine over a formal content contract
-status: proposed
+status: accepted
 date: 2026-11-12
 tags:
   - content
   - derived
 provenance:
-  origin: extracted
+  origin: authored
   derived_from:
     - file:data/track.schema.json
     - file:scripts/track.py

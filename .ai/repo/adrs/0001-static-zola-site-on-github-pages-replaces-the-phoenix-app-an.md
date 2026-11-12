@@ -3,13 +3,13 @@ schema: adr/v1
 id: adr-0001
 kind: adr
 title: Static Zola site on GitHub Pages replaces the Phoenix app and fly.io
-status: proposed
+status: accepted
 date: 2026-11-12
 tags:
   - architecture
   - deploy
 provenance:
-  origin: extracted
+  origin: authored
   derived_from:
     - commit:e32d2ca
     - file:.github/workflows/pages.yml

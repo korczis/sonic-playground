@@ -3,13 +3,13 @@ schema: adr/v1
 id: adr-0005
 kind: adr
 title: Yearbooks are resolved relationships from the owner's Spotify playlists, pages derived
-status: proposed
+status: accepted
 date: 2026-11-12
 tags:
   - yearbook
   - spotify
 provenance:
-  origin: extracted
+  origin: authored
   derived_from:
     - session:7e1d03a3-52cc-40aa-a61a-4f9713c27f2a
     - file:scripts/spotify.py
