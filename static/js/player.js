@@ -205,6 +205,7 @@
     up: 'M5 15l7-7 7 7',
     down: 'M19 9l-7 7-7-7',
     remove: 'M6 18 18 6M6 6l12 12',
+    grip: 'M9 5h.01M9 12h.01M9 19h.01M15 5h.01M15 12h.01M15 19h.01',
   };
   function iconButton(kind, i, label) {
     var b = document.createElement('button');
@@ -229,6 +230,16 @@
       + (kind === 'now' ? ' bg-primary-50 dark:bg-gray-700' : '');
     li.dataset.queueRow = kind;
     li.dataset.source = keyOf(t);
+    if (kind === 'next') {
+      // The grip drags the row (mouse and touch, pointer events); keyboard and screen readers
+      // reorder with the up and down buttons, so the grip is not a control of its own.
+      var grip = span('inline-flex h-10 w-6 shrink-0 cursor-grab touch-none items-center justify-center text-gray-400 active:cursor-grabbing dark:text-gray-500');
+      grip.dataset.playerGrip = String(i);
+      grip.setAttribute('aria-hidden', 'true');
+      grip.title = Sonic.t('player.drag');
+      grip.innerHTML = '<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="3" d="' + ICON.grip + '"/></svg>';
+      li.append(grip);
+    }
     var b = document.createElement('button');
     b.type = 'button';
     b.className = 'flex min-w-0 flex-1 items-center gap-3 rounded text-left focus:outline-none focus:ring-2 focus:ring-primary-300';
@@ -500,6 +511,13 @@
     state.queue[j] = t;
     save(); paint();
   }
+  /** Move an upcoming track to another upcoming position (a drag in the queue panel). */
+  function moveTo(from, to) {
+    var n = state.queue.length;
+    if (from === to || from <= state.index || to <= state.index || from >= n || to >= n) return;
+    state.queue.splice(to, 0, state.queue.splice(from, 1)[0]);
+    save(); paint();
+  }
   /** Flush the queue: everything but the current track goes. */
   function clear() {
     var t = current();
@@ -702,7 +720,51 @@
   Sonic.on('sonic:navigated', markCards);
   Sonic.on('sonic:locale', function () { if (current()) paint(); });
   if (current()) { pendingStart = state.time || 0; resumeFor = keyOf(current()); paint(); }
-  window.SonicPlayer = { playNow: playNow, playNext: playNext, toggleQueued: toggleQueued, playList: playList,
+  // Drag to reorder: the grip of an upcoming row follows the pointer (mouse, pen or touch), the
+  // rows reorder live and the drop commits one moveTo. A cancelled pointer (the page scrolled, a
+  // call came in) puts everything back as it was.
+  /** @type {{li: HTMLElement, from: number, id: number} | null} */
+  var drag = null;
+  function upcomingRows() {
+    return /** @type {HTMLElement[]} */ (Array.prototype.slice.call(el.queueList.querySelectorAll('[data-queue-row="next"]')));
+  }
+  function endDrag(commit) {
+    if (!drag) return;
+    var d = drag;
+    drag = null;
+    d.li.classList.remove('opacity-60', 'ring-2', 'ring-primary-300');
+    var to = state.index + 1 + upcomingRows().indexOf(d.li);
+    queueSig = ''; // the rows were moved by hand: paint them again from the state
+    if (commit && to !== d.from) moveTo(d.from, to); else paintQueue();
+  }
+  el.queueList.addEventListener('pointerdown', function (event) {
+    var grip = /** @type {HTMLElement | null} */ (/** @type {Element} */ (event.target).closest('[data-player-grip]'));
+    if (!grip || event.button > 0) return;
+    event.preventDefault();
+    grip.setPointerCapture(event.pointerId);
+    var li = /** @type {HTMLElement} */ (grip.closest('[data-queue-row]'));
+    drag = { li: li, from: Number(grip.dataset.playerGrip), id: event.pointerId };
+    li.classList.add('opacity-60', 'ring-2', 'ring-primary-300');
+  });
+  el.queueList.addEventListener('pointermove', function (event) {
+    if (!drag || event.pointerId !== drag.id) return;
+    var y = event.clientY;
+    var over = upcomingRows().filter(function (r) {
+      var b = r.getBoundingClientRect();
+      return r !== (drag && drag.li) && y >= b.top && y <= b.bottom;
+    })[0];
+    if (!over || !over.parentNode) return;
+    var box = over.getBoundingClientRect();
+    over.parentNode.insertBefore(drag.li, y < box.top + box.height / 2 ? over : over.nextSibling);
+  });
+  el.queueList.addEventListener('pointerup', function (event) {
+    if (drag && event.pointerId === drag.id) endDrag(true);
+  });
+  el.queueList.addEventListener('pointercancel', function (event) {
+    if (drag && event.pointerId === drag.id) endDrag(false);
+  });
+
+  window.SonicPlayer = { moveTo: moveTo, playNow: playNow, playNext: playNext, toggleQueued: toggleQueued, playList: playList,
     remove: remove, move: move, clear: clear, shuffle: shuffle, next: next, prev: prev, toggle: toggle,
     stop: stop, jump: jump, undo: restore, seek: seekTrack, notify: function (text) { toast(text); },
     state: function () { return JSON.parse(JSON.stringify(state)); } };

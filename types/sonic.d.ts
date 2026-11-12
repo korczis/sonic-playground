@@ -60,6 +60,7 @@ interface Window {
     playList(tracks: unknown[], start?: number): void;
     remove(index: number): void;
     move(index: number, by: number): void;
+    moveTo(from: number, to: number): void;
     clear(): void;
     shuffle(): void;
     next(): void;

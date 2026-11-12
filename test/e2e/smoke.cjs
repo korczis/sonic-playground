@@ -503,6 +503,20 @@ async function shot(page, name) {
       return !!r && r.dataset.source === src; }, S[1]), 'player: keyboard focus stays on the moved track');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-up]`);
     await until({ q: [S[0], S[2], S[3], S[1], S[4]] }, 'player: and up');
+    // Drag to reorder (pointer events, so mouse and touch alike): the grip of S[4] dropped on the
+    // upper half of S[1] puts S[4] first in up next.
+    const grip = page.locator(`#player-queue [data-queue-row="next"][data-source="${S[4]}"] [data-player-grip]`);
+    const onto = await page.locator(`#player-queue [data-queue-row="next"][data-source="${S[1]}"]`).boundingBox();
+    const from = await grip.boundingBox();
+    if (from && onto) {
+      await page.mouse.move(from.x + from.width / 2, from.y + from.height / 2);
+      await page.mouse.down();
+      await page.mouse.move(from.x + from.width / 2, onto.y + onto.height / 4, { steps: 8 });
+      await page.mouse.up();
+    }
+    await until({ q: [S[0], S[2], S[3], S[4], S[1]] }, 'player: dragging a queued track by its grip reorders up next');
+    check(await page.locator('#player-queue [data-player-grip]').first().getAttribute('aria-hidden') === 'true',
+      'player: the grip is pointer-only; keyboard users reorder with the up and down buttons');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[4]}"] [data-player-remove]`);
     await until({ q: [S[0], S[2], S[3], S[1]] }, 'player: a queued track is removed from the panel');
     check(await pressed(4) === 'false', 'player: the card follows a removal made in the panel');
