@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # majordomus-skill: fleet-flowbite-pro
-# The UI is the Flowbite Pro shell built from components: the shell landmarks exist in the
-# templates, Flowbite JS is self-hosted (no CDN), every page template composes components, and the
-# owner's verifier passes where it is installed.
+# The UI is the Flowbite Pro shell built from components: the shell landmarks exist, Flowbite JS is
+# self-hosted (no CDN), every page template composes components, no component is duplicated,
+# dead or undefined, no markup is duplicated between templates (scripts/check-components.py),
+# and the owner's verifier passes where it is installed.
 set -euo pipefail
 root=$(cd "$(dirname "$0")/../.." && pwd)
 cd "$root"
@@ -15,10 +16,8 @@ if grep -rqE 'cdn\.|unpkg\.com|jsdelivr' templates static/js; then fail "a CDN r
 for t in index page pages archive insights taxonomy_list taxonomy_single; do
   grep -q '{{ <' "templates/$t.html" || fail "templates/$t.html composes no component"
 done
-for c in track_card track_row facet_badges video stat_card page_header ranked_terms empty_state icon; do
-  grep -q "{% component $c(" templates/components.html || fail "component $c missing"
-done
+python3 scripts/check-components.py >/dev/null || { python3 scripts/check-components.py; fail "components"; }
 if [ -f "$HOME/.claude/skills/flowbite-pro/verify.mjs" ]; then
   node "$HOME/.claude/skills/flowbite-pro/verify.mjs" . >/dev/null || fail "flowbite-pro verify.mjs"
 fi
-echo "ok   ui: Pro shell, self-hosted Flowbite, every page composed of components"
+echo "ok   ui: Pro shell, self-hosted Flowbite, components unique, used and not duplicated"

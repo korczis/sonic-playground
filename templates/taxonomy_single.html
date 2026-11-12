@@ -1,28 +1,30 @@
-{#- One facet term: its tracks as cards, paginated by config.toml, with its own feed. -#}
+{#- One facet term: its tracks as cards, paginated by config.toml, playable as a playlist, with
+    its own feed and a link that combines it in the explorer. Strings: data/i18n/. -#}
 {% extends "base.html" %}
 {%- block content %}
-{%- set label = {"genre": "Genres", "sentiment": "Feelings", "mood": "Moods", "tags": "Tags"} %}
-{%- set name = label[taxonomy.name] | default(value=taxonomy.name) %}
+{%- set name_key = "tax.name." ~ taxonomy.name %}
+{%- set one_key = "tax.one." ~ taxonomy.name %}
 {%- if paginator %}{% set pages = paginator.pages %}{% else %}{% set pages = term.pages %}{% endif %}
-{{ <page_header title={term.name} crumbs={[["Home", get_url(path="@/_index.md")], [name, get_url(path=taxonomy.name, trailing_slash=true)], [term.name, ""]]} kicker={name | truncate(length=name | length - 1, end="")} lead={term.page_count ~ " track(s)."} /> }}
-<div class="space-y-4 px-4 pt-6">
+{%- set btn = "inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-700" %}
+{{ <page_header title={term.name} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l[name_key], get_url(path=taxonomy.name, trailing_slash=true), name_key], [term.name, "", ""]]} kicker={l[one_key]} lead={l["tax.count"] | replace(from="{n}", to=term.page_count ~ "")} /> }}
+<div class="space-y-4 px-4 pt-6 xl:px-8">
   <div class="flex flex-wrap gap-2">
-    {{ <play_all target="term-grid" label={"Play " ~ term.name} /> }}
-    <a href="{{ get_url(path='@/_index.md') }}?{{ taxonomy.name }}={{ term.name | urlencode }}" class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="search" cls="mr-2 h-4 w-4" /> }}Combine in the explorer</a>
-    <a href="{{ term.permalink }}atom.xml" class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700">{{ <icon name="rss" cls="mr-2 h-4 w-4" /> }}Feed</a>
+    {{ <play_all target="term-grid" label={l["tax.play"] | replace(from="{term}", to=term.name)} lkey="tax.play" vars={ {"term": term.name} } /> }}
+    <a href="{{ get_url(path='@/_index.md') }}?{{ taxonomy.name }}={{ term.name | urlencode }}" class="{{ btn }}">{{ <icon name="search" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.combine" l={l} /> }}</a>
+    <a href="{{ term.permalink }}atom.xml" class="{{ btn }}">{{ <icon name="rss" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.feed" l={l} /> }}</a>
   </div>
   <div id="term-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
     {%- for p in pages %}
     {%- if p.relative_path in catalog.lookup %}
-    {{ <track_card t={catalog.tracks[catalog.lookup[p.relative_path]]} heading="h2" /> }}
+    {{ <track_card t={catalog.tracks[catalog.lookup[p.relative_path]]} l={l} heading="h2" /> }}
     {%- endif %}
     {%- endfor %}
   </div>
   {%- if paginator and paginator.number_pagers > 1 %}
   <nav aria-label="Pages" class="flex items-center justify-between">
-    {%- if paginator.previous %}<a href="{{ paginator.previous }}" class="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700">← Previous</a>{% else %}<span></span>{% endif %}
-    <span class="text-sm text-gray-500 dark:text-gray-400">Page {{ paginator.current_index }} of {{ paginator.number_pagers }}</span>
-    {%- if paginator.next %}<a href="{{ paginator.next }}" class="inline-flex items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700">Next →</a>{% else %}<span></span>{% endif %}
+    {%- if paginator.previous %}<a href="{{ paginator.previous }}" class="{{ btn }}">{{ <tx key="tax.prev" l={l} /> }}</a>{% else %}<span></span>{% endif %}
+    <span class="text-sm text-gray-500 dark:text-gray-400">{{ <tx key="tax.page" l={l} vars={ {"i": paginator.current_index, "n": paginator.number_pagers} } /> }}</span>
+    {%- if paginator.next %}<a href="{{ paginator.next }}" class="{{ btn }}">{{ <tx key="tax.next" l={l} /> }}</a>{% else %}<span></span>{% endif %}
   </nav>
   {%- endif %}
 </div>

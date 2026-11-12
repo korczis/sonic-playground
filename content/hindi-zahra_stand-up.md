@@ -8,6 +8,8 @@ genre = ["soul", "jazz", "folk", "world"]
 sentiment = ["empowering", "rebellious", "uplifting"]
 
 [extra]
+release_year = "2010"
+album = "Handmade"
 youtube = "https://www.youtube.com/embed/YI2XuIOW3gM"
 +++
 

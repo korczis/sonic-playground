@@ -8,6 +8,8 @@ genre = ["electronic", "underground", "experimental"]
 sentiment = ["rebellious", "defiant", "empowering"]
 
 [extra]
+release_year = "2005"
+album = "Wild Light"
 youtube = "https://www.youtube.com/embed/YrhxWcivUT4"
 +++
 

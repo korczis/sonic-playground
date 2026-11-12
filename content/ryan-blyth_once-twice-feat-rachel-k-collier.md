@@ -8,6 +8,8 @@ genre = ["house", "electronic", "dance"]
 sentiment = ["uplifting", "energizing"]
 
 [extra]
+release_year = "2017"
+album = "Once Twice"
 youtube = "https://www.youtube.com/embed/EpdxpOyL2vg"
 +++
 

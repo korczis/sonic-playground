@@ -1,9 +1,9 @@
 {#- Flowbite Pro footer card. -#}
 <footer class="mx-4 my-6 rounded-lg bg-white p-4 shadow-sm md:flex md:items-center md:justify-between md:p-6 xl:p-8 dark:bg-gray-800">
-  <p class="mb-4 text-sm text-gray-500 md:mb-0 dark:text-gray-400">{%- set last_year = catalog.stats.last | truncate(length=4, end="") %}© {{ config.extra.since }}{% if last_year != config.extra.since ~ "" %}–{{ last_year }}{% endif %} {{ config.author }} · <a href="{{ config.extra.license_url }}" class="hover:underline">{{ config.extra.license }}</a> · {{ catalog.stats.tracks }} tracks, hand-picked; the catalogue is derived at build time, the site is static.</p>
+  <p class="mb-4 text-sm text-gray-500 md:mb-0 dark:text-gray-400">{%- set last_year = catalog.stats.last | truncate(length=4, end="") %}© {{ config.extra.since }}{% if last_year != config.extra.since ~ "" %}–{{ last_year }}{% endif %} {{ config.author }} · <a href="{{ config.extra.license_url }}" class="hover:underline">{{ config.extra.license }}</a> · <span data-i18n="footer.note" data-i18n-vars="{{ {"n": catalog.stats.tracks} | json_encode }}">{{ l["footer.note"] | replace(from="{n}", to=catalog.stats.tracks ~ "") }}</span></p>
   <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
     {%- for m in config.extra.menu %}
-    <li><a href="{{ get_url(path=m.path) }}" class="hover:underline">{{ m.name }}</a></li>
+    <li><a href="{{ get_url(path=m.path) }}" class="hover:underline" data-i18n="{{ m.key }}">{{ l[m.key] }}</a></li>
     {%- endfor %}
     {%- for s in config.extra.social %}
     <li><a href="{{ s.url }}" class="hover:underline">{{ s.name }}</a></li>

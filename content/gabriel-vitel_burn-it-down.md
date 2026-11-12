@@ -8,6 +8,8 @@ genre = ["dark electronic", "electrifying", "intense"]
 sentiment = ["intense", "emotional", "transformative"]
 
 [extra]
+release_year = "2016"
+album = "Burn It Down"
 youtube = "https://www.youtube.com/embed/2MfQSruV7B0"
 +++
 

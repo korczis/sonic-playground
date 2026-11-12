@@ -31,6 +31,9 @@ step() { printf '\n== %s\n' "$1"; }
 step "catalogue: content contract and currency"
 python3 scripts/catalog.py --check
 
+step "interface strings: every locale complete, every used key defined, bundle current"
+python3 scripts/i18n.py --check
+
 step "unit tests"
 python3 -m unittest discover -s test -p 'test_*.py'
 

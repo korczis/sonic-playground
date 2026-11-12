@@ -8,6 +8,8 @@ genre = ["electronic", "dance", "pop"]
 sentiment = ["provocative", "indulgent", "hypnotic"]
 
 [extra]
+release_year = "2006"
+album = "A Lively Mind"
 youtube = "https://www.youtube.com/embed/E2aoCju-_NQ"
 +++
 

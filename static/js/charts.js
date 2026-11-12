@@ -12,6 +12,7 @@ window.Sonic.module('charts', function mount() {
   if (!holders.length) return null;
   var body = document.body;
   var base = window.Sonic.base;
+  var t = function (key, vars) { return window.Sonic.t(key, vars); };
   var alive = true;
 
   // Validated palettes (dataviz validator, 2026-11-12): categorical first three slots pass
@@ -58,13 +59,13 @@ window.Sonic.module('charts', function mount() {
     months: function (c, p) {
       var months = c.months;
       return {
-        rows: [['Month', 'Tracks']].concat(months.map(function (m) { return [m.month, m.count]; })),
+        rows: [[t('chart.col.month'), t('chart.tracks')]].concat(months.map(function (m) { return [m.month, m.count]; })),
         option: {
           grid: { left: 40, right: 16, top: 16, bottom: 32 },
           tooltip: Object.assign(tooltip(p), { trigger: 'axis', axisPointer: { type: 'shadow' } }),
           xAxis: Object.assign({ type: 'category', data: months.map(function (m) { return m.month; }) }, axisStyle(p), { splitLine: { show: false } }),
           yAxis: Object.assign({ type: 'value', minInterval: 1 }, axisStyle(p)),
-          series: [{ type: 'bar', name: 'Tracks', data: months.map(function (m) { return m.count; }),
+          series: [{ type: 'bar', name: t('chart.tracks'), data: months.map(function (m) { return m.count; }),
             barMaxWidth: 48, itemStyle: { color: p.single, borderRadius: [4, 4, 0, 0] } }],
         },
         onClick: function (e) { go(base + '/archive/#m-' + months[e.dataIndex].month); },
@@ -75,13 +76,13 @@ window.Sonic.module('charts', function mount() {
         var limit = Number(el.getAttribute('data-limit') || 15);
         var items = c.facets[kind].slice(0, limit).reverse();
         return {
-          rows: [['Term', 'Tracks']].concat(items.slice().reverse().map(function (f) { return [f.term, f.count]; })),
+          rows: [[t('chart.col.term'), t('chart.tracks')]].concat(items.slice().reverse().map(function (f) { return [f.term, f.count]; })),
           option: {
             grid: { left: 8, right: 24, top: 8, bottom: 24, containLabel: true },
             tooltip: Object.assign(tooltip(p), { trigger: 'axis', axisPointer: { type: 'shadow' } }),
             xAxis: Object.assign({ type: 'value', minInterval: 1 }, axisStyle(p)),
             yAxis: Object.assign({ type: 'category', data: items.map(function (f) { return f.term; }) }, axisStyle(p), { splitLine: { show: false } }),
-            series: [{ type: 'bar', name: 'Tracks', data: items.map(function (f) { return f.count; }),
+            series: [{ type: 'bar', name: t('chart.tracks'), data: items.map(function (f) { return f.count; }),
               barMaxWidth: 18, itemStyle: { color: p.single, borderRadius: [0, 4, 4, 0] } }],
           },
           onClick: function (e) {
@@ -114,13 +115,13 @@ window.Sonic.module('charts', function mount() {
         });
       });
       return {
-        rows: [['Genre \\ feeling'].concat(feelings)].concat(genres.map(function (g, gi) {
+        rows: [[t('chart.col.cross')].concat(feelings)].concat(genres.map(function (g, gi) {
           return [g].concat(feelings.map(function (s, si) { return data[gi * feelings.length + si][2]; }));
         })),
         option: {
           grid: { left: 8, right: 8, top: 8, bottom: 64, containLabel: true },
           tooltip: Object.assign(tooltip(p), { formatter: function (e) {
-            return '<b>' + genres[e.value[1]] + '</b> × <b>' + feelings[e.value[0]] + '</b><br>' + e.value[2] + ' track(s)';
+            return '<b>' + genres[e.value[1]] + '</b> × <b>' + feelings[e.value[0]] + '</b><br>' + t('chart.track_count', { n: e.value[2] });
           } }),
           xAxis: Object.assign({ type: 'category', data: feelings }, axisStyle(p), { axisLabel: { color: p.muted, rotate: 35, fontSize: 12 }, splitLine: { show: false } }),
           yAxis: Object.assign({ type: 'category', data: genres, inverse: true }, axisStyle(p), { splitLine: { show: false } }),
@@ -154,7 +155,7 @@ window.Sonic.module('charts', function mount() {
       Object.keys(keep).forEach(function (s) { var g = bySource[s].facets.genre[0]; firsts[g] = (firsts[g] || 0) + 1; });
       var top = Object.keys(firsts).sort(function (a, b) { return firsts[b] - firsts[a] || a.localeCompare(b); }).slice(0, 3);
       var categories = top.map(function (g, i) { return { name: g, itemStyle: { color: p.categorical[i] } }; })
-        .concat([{ name: 'other genres', itemStyle: { color: p.other } }]);
+        .concat([{ name: t('chart.other'), itemStyle: { color: p.other } }]);
       var degree = {};
       var links = [];
       var seen = {};
@@ -180,12 +181,12 @@ window.Sonic.module('charts', function mount() {
           path: t.path, genre: t.facets.genre.join(', ') };
       });
       return {
-        rows: [['Track', 'Genres', 'Related tracks shown']].concat(nodes.map(function (n) {
+        rows: [[t('chart.col.track'), t('chart.col.genres'), t('chart.col.related')]].concat(nodes.map(function (n) {
           return [n.name, n.genre, degree[n.id] || 0];
         })),
         option: {
           tooltip: Object.assign(tooltip(p), { formatter: function (e) {
-            return e.dataType === 'edge' ? Math.round(e.data.value * 100) + ' % alike'
+            return e.dataType === 'edge' ? t('chart.alike', { pct: Math.round(e.data.value * 100) })
               : '<b>' + e.data.name + '</b><br>' + e.data.genre;
           } }),
           legend: [{ data: categories.map(function (k) { return k.name; }), textStyle: { color: p.ink }, top: 0, icon: 'circle' }],
@@ -242,7 +243,7 @@ window.Sonic.module('charts', function mount() {
       table(holder, built.rows);
       charts.push({ instance: instance });
     });
-    document.documentElement.dataset.charts = String(charts.length);
+    document.documentElement.dataset.chartsState = String(charts.length);
   }
 
   var stopTheme = null;
@@ -253,13 +254,22 @@ window.Sonic.module('charts', function mount() {
       var catalog = loaded[1];
       render(catalog);
       stopTheme = window.Sonic.on('dark-mode', function () { render(catalog); });
+      var stopLocale = window.Sonic.on('sonic:locale', function () {
+        holders.forEach(function (h) {
+          var box = document.querySelector('[data-chart-table="' + h.id + '"]');
+          if (box) { box.replaceChildren(); delete box.dataset.filled; }
+        });
+        render(catalog);
+      });
+      var stopThemeOnly = stopTheme;
+      stopTheme = function () { stopThemeOnly(); stopLocale(); };
       if (window.ResizeObserver) {
         ro = new ResizeObserver(function () { charts.forEach(function (ch) { ch.instance.resize(); }); });
         holders.forEach(function (h) { ro.observe(h); });
       }
     })
     .catch(function (error) {
-      document.documentElement.dataset.charts = 'failed';
+      document.documentElement.dataset.chartsState = 'failed';
       console.error('charts:', error.message);
     });
 
@@ -269,6 +279,6 @@ window.Sonic.module('charts', function mount() {
     if (ro) ro.disconnect();
     charts.forEach(function (ch) { ch.instance.dispose(); });
     charts = [];
-    document.documentElement.dataset.charts = '';
+    document.documentElement.dataset.chartsState = '';
   };
 });

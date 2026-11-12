@@ -50,7 +50,7 @@ window.Sonic.module('explorer', function mount() {
       if (!data || !data.tracks) { reviewIndex = 'failed'; return; }
       items.forEach(function (it) { it.review = data.tracks[it.source] || ''; });
       reviewIndex = 'ready';
-      document.documentElement.dataset.reviews = 'ready';
+      document.documentElement.dataset.reviewsState = 'ready';
       render(false);
     }).catch(function () { reviewIndex = 'failed'; });
   }
@@ -108,7 +108,7 @@ window.Sonic.module('explorer', function mount() {
     });
     if (more) {
       more.hidden = shown <= limit;
-      more.textContent = 'Show ' + Math.min(PAGE, shown - limit) + ' more (' + (shown - limit) + ' left)';
+      more.textContent = window.Sonic.t('explorer.more', { page: Math.min(PAGE, shown - limit), left: shown - limit });
     }
     grid.appendChild(frag);
 
@@ -129,8 +129,8 @@ window.Sonic.module('explorer', function mount() {
 
     if (status) {
       status.textContent = shown === items.length
-        ? items.length + ' tracks'
-        : shown + ' of ' + items.length + ' tracks';
+        ? window.Sonic.t('explorer.status_all', { n: items.length })
+        : window.Sonic.t('explorer.status_some', { shown: shown, n: items.length });
     }
     if (empty) empty.hidden = shown !== 0;
     grid.hidden = shown === 0;
@@ -211,11 +211,13 @@ window.Sonic.module('explorer', function mount() {
     });
   });
 
+  // The interface language can change under the explorer: re-render its own strings.
+  cleanup.push(window.Sonic.on('sonic:locale', function () { render(false); }));
   load();
-  document.documentElement.dataset.explorer = 'ready';
+  document.documentElement.dataset.explorerState = 'ready';
   return function unmount() {
     clearTimeout(timer);
     cleanup.forEach(function (fn) { fn(); });
-    document.documentElement.dataset.explorer = '';
+    document.documentElement.dataset.explorerState = '';
   };
 });

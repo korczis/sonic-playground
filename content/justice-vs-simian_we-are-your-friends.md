@@ -8,6 +8,8 @@ genre = ["electro", "house", "dance"]
 sentiment = ["iconic", "infectious"]
 
 [extra]
+release_year = "2006"
+album = "We Are Your Friends"
 youtube = "https://www.youtube.com/embed/L0TvnWRSyr4"
 +++
 

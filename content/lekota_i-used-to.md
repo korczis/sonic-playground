@@ -8,6 +8,8 @@ genre = ["electronic", "introspective"]
 sentiment = ["nostalgic", "emotive", "reflective"]
 
 [extra]
+release_year = "2017"
+album = "I Used To"
 youtube = "https://www.youtube.com/embed/G0T9tdZI4Yk"
 +++
 

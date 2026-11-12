@@ -8,6 +8,8 @@ genre = ["jazz", "seductive", "bossa nova"]
 sentiment = ["bittersweet"]
 
 [extra]
+release_year = "2010"
+album = "What a Comeback!"
 youtube = "https://www.youtube.com/embed/8cKkBcmm2cE"
 +++
 

@@ -8,6 +8,8 @@ genre = ["electronic", "big beat", "house"]
 sentiment = ["hypnotic", "mesmerizing"]
 
 [extra]
+release_year = "2002"
+album = "Come with Us"
 youtube = "https://www.youtube.com/embed/0S43IwBF0uM"
 +++
 

@@ -8,6 +8,8 @@ genre = ["electroclash", "dance", "electronic"]
 sentiment = ["satirical", "playful", "provocative"]
 
 [extra]
+release_year = "2001"
+album = "First Album"
 youtube = "https://www.youtube.com/embed/ouWAymYiUn8"
 +++
 

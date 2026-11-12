@@ -8,6 +8,8 @@ genre = ["downtempo", "electronic", "nu-jazz"]
 sentiment = ["nostalgic", "introspective", "atmospheric"]
 
 [extra]
+release_year = "2009"
+album = "Forgotten Places - EP"
 youtube = "https://www.youtube.com/embed/Hs86ddB4sYA"
 +++
 
