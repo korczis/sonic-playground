@@ -1,52 +1,54 @@
-{#- Home: the explorer. Every card is rendered here from the catalogue, so the page is complete
-    without JavaScript; static/js/explorer.js adds faceted filtering, text search, sorting and
-    URL state (?q=&genre=&sentiment=&mood=&sort=) on top of the same cards. -#}
+{#- Home: the landing hero, the newest track, the catalogue at a glance, charts that filter, and
+    the explorer. Every card is rendered here from the catalogue, so the page is complete without
+    JavaScript; static/js/explorer.js adds faceted filtering, text search, sorting, paging and URL
+    state (?q=&genre=&sentiment=&mood=&sort=) on top of the same cards. Strings: data/i18n/. -#}
 {% extends "base.html" %}
 {%- block content %}
 {%- set s = catalog.stats %}
-{{ <site_hero kicker={s.tracks ~ " hand-picked tracks · " ~ s.artists ~ " artists · " ~ s.genre_terms ~ " genres"} title={config.title} lead={config.description} primary_href="#explorer-title" primary_label="Explore the tracks" secondary_href={get_url(path="@/pages/welcome.md")} secondary_label="Why this playground" /> }}
+{%- set kicker_vars = {"tracks": s.tracks, "artists": s.artists, "genres": s.genre_terms} %}
+{{ <site_hero l={l} kicker_vars={kicker_vars} title={config.title} lead={config.description} primary_href="#explorer-title" secondary_href={get_url(path="@/pages/welcome.md")} tracks={catalog.tracks} /> }}
 <div class="relative z-10 -mt-16 space-y-4 px-4 xl:px-8">
   {#- The newest track with a picture leads; the catalogue is newest first. -#}
   {%- set_global featured = catalog.tracks | first %}
   {%- for t in catalog.tracks %}{% if t.thumbnail %}{% set_global featured = t %}{% break %}{% endif %}{% endfor %}
-  {{ <featured_track t={featured} /> }}
+  {{ <featured_track t={featured} l={l} /> }}
   <section aria-label="Catalogue at a glance" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
-    {{ <stat_card value={s.tracks} label="tracks" icon_name="music" href={get_url(path="@/pages/archive.md")} /> }}
-    {{ <stat_card value={s.artists} label="artists" icon_name="user" href={get_url(path="@/pages/insights.md")} /> }}
-    {{ <stat_card value={s.genre_terms} label="genres" icon_name="tag" href={get_url(path="genre", trailing_slash=true)} /> }}
-    {{ <stat_card value={s.sentiment_terms} label="feelings" icon_name="heart" href={get_url(path="sentiment", trailing_slash=true)} /> }}
+    {{ <stat_card value={s.tracks} label={l["stat.tracks"]} lkey="stat.tracks" icon_name="music" href={get_url(path="@/pages/archive.md")} /> }}
+    {{ <stat_card value={s.artists} label={l["stat.artists"]} lkey="stat.artists" icon_name="user" href={get_url(path="@/pages/insights.md")} /> }}
+    {{ <stat_card value={s.genre_terms} label={l["stat.genres"]} lkey="stat.genres" icon_name="tag" href={get_url(path="genre", trailing_slash=true)} /> }}
+    {{ <stat_card value={s.sentiment_terms} label={l["stat.feelings"]} lkey="stat.feelings" icon_name="heart" href={get_url(path="sentiment", trailing_slash=true)} /> }}
   </section>
 
   <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
-    {{ <chart_card id="home-genres" chart="genre" title="Browse by genre" caption="A bar filters the tracks below." height="h-72" limit={10} target="explorer" /> }}
-    {{ <chart_card id="home-feelings" chart="sentiment" title="Browse by feeling" caption="A bar filters the tracks below." height="h-72" limit={10} target="explorer" /> }}
+    {{ <chart_card id="home-genres" chart="genre" ckey="chart.browse_genres" l={l} height="h-72" limit={10} target="explorer" /> }}
+    {{ <chart_card id="home-feelings" chart="sentiment" ckey="chart.browse_feelings" l={l} height="h-72" limit={10} target="explorer" /> }}
   </div>
 
   {%- set field = "block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" %}
   {%- set lbl = "mb-2 block text-sm font-medium text-gray-900 dark:text-white" %}
-  <section aria-labelledby="explorer-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+  <section aria-labelledby="explorer-title" class="scroll-mt-20 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
     <div class="mb-4 flex flex-wrap items-center justify-between gap-2">
-      <h2 id="explorer-title" class="text-lg font-semibold text-gray-900 dark:text-white">Tracks</h2>
+      <h2 id="explorer-title" class="text-lg font-semibold text-gray-900 dark:text-white" data-i18n="explorer.title">{{ l["explorer.title"] }}</h2>
       <div class="flex items-center gap-3">
-        <p class="text-sm text-gray-500 dark:text-gray-400" data-explorer-status aria-live="polite">{{ s.tracks }} tracks</p>
-        {{ <play_all target="explorer-grid" label="Play these" /> }}
+        <p class="text-sm text-gray-500 dark:text-gray-400" data-explorer-status aria-live="polite">{{ l["explorer.status_all"] | replace(from="{n}", to=s.tracks ~ "") }}</p>
+        {{ <play_all target="explorer-grid" label={l["explorer.play"]} lkey="explorer.play" /> }}
       </div>
     </div>
     <form data-explorer class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6" action="{{ get_url(path='@/_index.md') }}" method="get">
       <div class="sm:col-span-2 lg:col-span-3 2xl:col-span-2">
-        <label for="explorer-q" class="{{ lbl }}">Search</label>
+        <label for="explorer-q" class="{{ lbl }}" data-i18n="explorer.search">{{ l["explorer.search"] }}</label>
         <div class="relative">
-          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-gray-400">{{ <icon name="search" /> }}</div>
-          <input type="search" id="explorer-q" name="q" class="{{ field }} pl-10" placeholder="Artist, track, words of the review…" autocomplete="off">
+          {{ <input_icon name="search" /> }}
+          <input type="search" id="explorer-q" name="q" class="{{ field }} pl-10" placeholder="{{ l["explorer.search_placeholder"] }}" data-i18n-placeholder="explorer.search_placeholder" autocomplete="off">
         </div>
       </div>
-      {%- for facet in [["genre", "Genre"], ["sentiment", "Feeling"], ["mood", "Mood"]] %}
-      {%- if catalog.facets[facet[0]] | length > 0 %}
+      {%- for kind in ["genre", "sentiment", "mood"] %}
+      {%- if catalog.facets[kind] | length > 0 %}
       <div>
-        <label for="explorer-{{ facet[0] }}" class="{{ lbl }}">{{ facet[1] }}</label>
-        <select id="explorer-{{ facet[0] }}" name="{{ facet[0] }}" data-facet="{{ facet[0] }}" class="{{ field }}">
-          <option value="">Any {{ facet[1] | lower }}</option>
-          {%- for f in catalog.facets[facet[0]] %}
+        <label for="explorer-{{ kind }}" class="{{ lbl }}" data-i18n="explorer.facet.{{ kind }}">{{ l["explorer.facet." ~ kind] }}</label>
+        <select id="explorer-{{ kind }}" name="{{ kind }}" data-facet="{{ kind }}" class="{{ field }}">
+          <option value="" data-i18n="explorer.any.{{ kind }}">{{ l["explorer.any." ~ kind] }}</option>
+          {%- for f in catalog.facets[kind] %}
           <option value="{{ f.term }}" data-count="{{ f.count }}">{{ f.term }} ({{ f.count }})</option>
           {%- endfor %}
         </select>
@@ -54,17 +56,16 @@
       {%- endif %}
       {%- endfor %}
       <div>
-        <label for="explorer-sort" class="{{ lbl }}">Sort</label>
+        <label for="explorer-sort" class="{{ lbl }}" data-i18n="explorer.sort">{{ l["explorer.sort"] }}</label>
         <select id="explorer-sort" name="sort" class="{{ field }}">
-          <option value="new">Newest first</option>
-          <option value="old">Oldest first</option>
-          <option value="artist">Artist A–Z</option>
-          <option value="title">Track A–Z</option>
+          {%- for order in ["new", "old", "artist", "title"] %}
+          <option value="{{ order }}" data-i18n="explorer.sort.{{ order }}">{{ l["explorer.sort." ~ order] }}</option>
+          {%- endfor %}
         </select>
       </div>
       <div class="flex items-end gap-2 sm:col-span-2 lg:col-span-3 2xl:col-span-6">
-        <button type="submit" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" data-explorer-submit>Apply</button>
-        <a href="{{ get_url(path='@/_index.md') }}" data-explorer-reset class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Reset</a>
+        <button type="submit" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" data-explorer-submit data-i18n="explorer.apply">{{ l["explorer.apply"] }}</button>
+        <a href="{{ get_url(path='@/_index.md') }}" data-explorer-reset class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700" data-i18n="explorer.reset">{{ l["explorer.reset"] }}</a>
       </div>
     </form>
   </section>
@@ -72,14 +73,14 @@
   <section aria-label="Track list">
     <div id="explorer-grid" data-explorer-grid data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
       {%- for t in catalog.tracks %}
-      {{ <track_card t={t} heading="h3" /> }}
+      {{ <track_card t={t} l={l} heading="h3" /> }}
       {%- endfor %}
     </div>
     <div class="mt-6 flex justify-center">
-      <button type="button" data-explorer-more hidden class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Show more</button>
+      <button type="button" data-explorer-more hidden class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"></button>
     </div>
     <div data-explorer-empty hidden>
-      {{ <empty_state title="No track matches" text="Loosen a filter or search for fewer words." /> }}
+      {{ <empty_state title={l["explorer.empty_title"]} text={l["explorer.empty_text"]} tkey="explorer.empty_title" xkey="explorer.empty_text" /> }}
     </div>
   </section>
 </div>

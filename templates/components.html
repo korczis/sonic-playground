@@ -32,22 +32,32 @@
 {%- endif -%}
 {% endcomponent icon %}
 
+{#- An interface string (data/i18n/): rendered in the default locale with its {placeholders}
+    filled, marked so static/js/i18n.js can switch it. Every visible interface text goes through
+    this or carries data-i18n itself; nothing is written in a template. -#}
+{% component tx(key, l, vars={}) %}{%- set_global s = l[key] -%}{%- for k, v in vars %}{%- set_global s = s | replace(from="{" ~ k ~ "}", to=v ~ "") -%}{%- endfor -%}<span data-i18n="{{ key }}"{% if vars %} data-i18n-vars="{{ vars | json_encode }}"{% endif %}>{{ s }}</span>{% endcomponent tx %}
+
+{#- The icon inside a Pro input (search fields): decorative, behind the text. -#}
+{% component input_icon(name) %}
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-gray-400">{{ <icon name={name} /> }}</div>
+{% endcomponent input_icon %}
+
 {#- Facet badges (Pro badge, linking to the taxonomy term). `kind` picks the tone. -#}
 {% component facet_badges(terms, kind, limit=12, size="xs") %}
 {%- set tones = {
   "genre": "bg-primary-100 text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300 dark:hover:bg-primary-800",
   "sentiment": "bg-pink-100 text-pink-800 hover:bg-pink-200 dark:bg-pink-900 dark:text-pink-300 dark:hover:bg-pink-800",
   "mood": "bg-teal-100 text-teal-800 hover:bg-teal-200 dark:bg-teal-900 dark:text-teal-300 dark:hover:bg-teal-800",
-  "tags": "bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600",
 } -%}
 {%- for term in terms[:limit] -%}
 <a href="{{ get_taxonomy_url(kind=kind, term=term) }}" class="inline-flex items-center rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tones[kind] }}">{{ term }}</a>
 {% endfor -%}
 {% endcomponent facet_badges %}
 
-{#- Track card (Pro product card): thumbnail, artist, track, date, genres. The data-* attributes
-    are what static/js/explorer.js filters and sorts on; they mirror the catalogue entry. -#}
-{% component track_card(t, heading="h3") %}
+{#- Track card (Pro product card): picture with play and queue, artist, track, date, genres. The
+    data-* attributes are what static/js/explorer.js filters and sorts on; they mirror the
+    catalogue entry. -#}
+{% component track_card(t, l, heading="h3") %}
 {%- set href = get_url(path="@/" ~ t.source) -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 <article class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
@@ -61,16 +71,16 @@
   data-mood="{{ t.facets.mood | join(sep='|') }}"
   data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }} {{ t.facets.genre | join(sep=' ') }} {{ t.facets.sentiment | join(sep=' ') }} {{ t.facets.mood | join(sep=' ') }}">
   <div class="relative">
-  <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
-    {%- if thumb %}
-    <img src="{{ thumb }}" alt="" data-thumb loading="lazy" decoding="async" width="480" height="360" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">
-    {%- else %}
-    <span class="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-600 via-primary-800 to-pink-800 text-white/70">{{ <icon name="music" cls="h-10 w-10" /> }}</span>
+    <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
+      {%- if thumb %}
+      <img src="{{ thumb }}" alt="" data-thumb loading="lazy" decoding="async" width="480" height="360" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">
+      {%- else %}
+      <span class="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-600 via-primary-800 to-pink-800 text-white/70">{{ <icon name="music" cls="h-10 w-10" /> }}</span>
+      {%- endif %}
+    </a>
+    {%- if t.youtube %}
+    {{ <play_controls source={t.source} label={t.artist ~ " – " ~ t.track} l={l} /> }}
     {%- endif %}
-  </a>
-  {%- if t.youtube %}
-  {{ <play_controls source={t.source} label={t.artist ~ " – " ~ t.track} /> }}
-  {%- endif %}
   </div>
   <div class="flex flex-1 flex-col p-4">
     <p class="mb-1 truncate text-sm font-medium text-primary-700 dark:text-primary-400">{{ t.artist }}</p>
@@ -84,19 +94,20 @@
 </article>
 {% endcomponent track_card %}
 
-{#- Compact track row (Pro list group item) for related tracks, archives and rankings. -#}
-{% component track_row(t, note="") %}
+{#- Compact track row (Pro list group item) for archives and lists: play, still, track, artist. -#}
+{% component track_row(t, l, note="") %}
 {%- set href = get_url(path="@/" ~ t.source) -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
+{%- set label = t.artist ~ " – " ~ t.track -%}
 <li class="flex items-center gap-2 py-3 sm:py-4" data-track data-source="{{ t.source }}">
   {%- if t.youtube %}
-  <button type="button" data-play="{{ t.source }}" class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-primary-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:text-primary-400 dark:hover:bg-gray-700" aria-label="Play {{ t.artist }} – {{ t.track }}">{{ <icon name="play" cls="h-5 w-5" /> }}</button>
-  {%- else %}<span class="w-9 shrink-0"></span>{%- endif %}
+  <button type="button" data-play="{{ t.source }}" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-primary-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:text-primary-400 dark:hover:bg-gray-700" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">{{ <icon name="play" cls="h-5 w-5" /> }}</button>
+  {%- else %}<span class="w-10 shrink-0"></span>{%- endif %}
   <a href="{{ href }}" class="flex min-w-0 flex-1 items-center gap-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-800">
     {%- if thumb %}
     <img class="h-12 w-16 shrink-0 rounded object-cover" data-thumb src="{{ thumb }}" alt="" loading="lazy" width="64" height="48">
     {%- else %}
-    <span class="flex h-12 w-16 shrink-0 items-center justify-center rounded bg-gray-100 text-gray-400 dark:bg-gray-700">{{ <icon name="music" /> }}</span>
+    <span class="flex h-12 w-16 shrink-0 items-center justify-center rounded bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" /> }}</span>
     {%- endif %}
     <span class="min-w-0 flex-1">
       <span class="block truncate text-sm font-semibold text-gray-900 hover:underline dark:text-white">{{ t.track }}</span>
@@ -110,25 +121,23 @@
 
 {#- Play and queue buttons over a track's picture (player.js). Play starts the track and then the
     rest of the [data-playlist] it sits in, in the order shown. -#}
-{% component play_controls(source, label) %}
+{% component play_controls(source, label, l) %}
+{%- set vars = {"label": label} -%}
 <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between">
-  <button type="button" data-play="{{ source }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition hover:scale-105 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" aria-label="Play {{ label }}">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</button>
-  <button type="button" data-queue="{{ source }}" class="inline-flex h-9 items-center rounded-full bg-gray-900/75 px-3 text-xs font-medium text-white backdrop-blur hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300" aria-label="Add {{ label }} to the queue">+ Queue</button>
+  <button type="button" data-play="{{ source }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition hover:scale-105 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ vars | json_encode }}">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</button>
+  <button type="button" data-queue="{{ source }}" class="inline-flex h-9 items-center rounded-full bg-gray-900/75 px-3 text-xs font-medium text-white backdrop-blur hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300" aria-label="{{ l["card.queue_label"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.queue_label" data-i18n-vars="{{ vars | json_encode }}">{{ <tx key="card.queue" l={l} /> }}</button>
 </div>
 {% endcomponent play_controls %}
 
 {#- Privacy-friendly video: a still and a play button. Play sends it to the bottom-bar player
     (static/js/player.js), which keeps playing while the reader browses: a catalogue track starts
     its radio (the track, then its related tracks), any other video plays alone. Without
-    JavaScript the link opens YouTube. -#}
+    JavaScript the link opens YouTube. Also used inside reviews: {{ <video id="…" title="…" /> }}. -#}
 {% component video(id, title, source="") %}
 <div class="relative aspect-video w-full overflow-hidden rounded-lg bg-gray-900" data-video="{{ id }}" data-video-title="{{ title }}">
-  <a href="https://www.youtube.com/watch?v={{ id }}" class="group absolute inset-0 flex items-center justify-center" {% if source %}data-play-radio="{{ source }}"{% else %}data-play-video="{{ id }}" data-play-title="{{ title }}"{% endif %}>
+  <a href="https://www.youtube.com/watch?v={{ id }}" class="group absolute inset-0 flex items-center justify-center" {% if source %}data-play-radio="{{ source }}"{% else %}data-play-video="{{ id }}" data-play-title="{{ title }}"{% endif %} aria-label="{{ title }}">
     <img src="https://i.ytimg.com/vi/{{ id }}/hqdefault.jpg" alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-80 transition group-hover:opacity-100" loading="lazy" width="480" height="360">
-    <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition group-hover:scale-110 group-focus:ring-4 group-focus:ring-primary-300">
-      {{ <icon name="play" cls="ml-1 h-8 w-8" /> }}
-      <span class="sr-only">Play {{ title }}</span>
-    </span>
+    <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition group-hover:scale-110 group-focus:ring-4 group-focus:ring-primary-300">{{ <icon name="play" cls="ml-1 h-8 w-8" /> }}</span>
   </a>
 </div>
 {% endcomponent video %}
@@ -145,84 +154,67 @@
 </figure>
 {% endcomponent figure %}
 
-{#- Pro stat card. -#}
-{% component stat_card(value, label, icon_name="music", href="") %}
+{#- Pro stat card: a derived number and its label (lkey: the label's interface string). -#}
+{% component stat_card(value, label, lkey="", icon_name="music", href="") %}
 <div class="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
-  <div>
+  <div class="min-w-0">
     <p class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ value }}</p>
     {%- if href %}
-    <a href="{{ href }}" class="mt-1 block text-sm font-normal text-gray-500 hover:underline dark:text-gray-400">{{ label }}</a>
+    <a href="{{ href }}" class="mt-1 block truncate text-sm font-normal text-gray-500 hover:underline dark:text-gray-400"{% if lkey %} data-i18n="{{ lkey }}"{% endif %}>{{ label }}</a>
     {%- else %}
-    <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">{{ label }}</p>
+    <p class="mt-1 truncate text-sm font-normal text-gray-500 dark:text-gray-400"{% if lkey %} data-i18n="{{ lkey }}"{% endif %}>{{ label }}</p>
     {%- endif %}
   </div>
   <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300">{{ <icon name={icon_name} cls="h-6 w-6" /> }}</span>
 </div>
 {% endcomponent stat_card %}
 
-{#- Pro page header: breadcrumb (a list of [label, url] pairs, the last one is the page) and
-    the title with an optional kicker and lead. -#}
-{% component page_header(title, crumbs=[], kicker="", lead="") %}
-<div class="border-b border-gray-200 bg-white px-4 py-5 dark:border-gray-700 dark:bg-gray-800">
+{#- Pro page header: breadcrumb (a list of [label, url, key] triples; the last is the page; key is
+    its interface string or "" for content such as a term) and the title, kicker and lead. -#}
+{% component page_header(title, crumbs=[], kicker="", lead="", lead_key="") %}
+<div class="border-b border-gray-200 bg-white px-4 py-5 xl:px-8 dark:border-gray-700 dark:bg-gray-800">
   <nav class="mb-3 flex" aria-label="Breadcrumb">
     <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 md:space-x-2">
       {%- for c in crumbs %}
       <li class="inline-flex items-center">
         {%- if not loop.first %}<svg class="mx-1 h-3 w-3 text-gray-400" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>{% endif %}
         {%- if loop.last %}
-        <span class="text-sm font-medium text-gray-500 dark:text-gray-400" aria-current="page">{{ c[0] }}</span>
+        <span class="text-sm font-medium text-gray-500 dark:text-gray-400" aria-current="page"{% if c[2] %} data-i18n="{{ c[2] }}"{% endif %}>{{ c[0] }}</span>
         {%- else %}
-        <a href="{{ c[1] }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-700 dark:text-gray-300 dark:hover:text-white">{% if loop.first %}{{ <icon name="home" cls="mr-1.5 h-4 w-4" /> }}{% endif %}{{ c[0] }}</a>
+        <a href="{{ c[1] }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-700 dark:text-gray-300 dark:hover:text-white">{% if loop.first %}{{ <icon name="home" cls="mr-1.5 h-4 w-4" /> }}{% endif %}<span{% if c[2] %} data-i18n="{{ c[2] }}"{% endif %}>{{ c[0] }}</span></a>
         {%- endif %}
       </li>
       {%- endfor %}
     </ol>
   </nav>
   {%- if kicker %}<p class="mb-1 text-sm font-medium text-primary-700 dark:text-primary-400">{{ kicker }}</p>{% endif %}
-  <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">{{ title }}</h1>
-  {%- if lead %}<p class="mt-2 max-w-3xl text-base text-gray-500 dark:text-gray-400">{{ lead }}</p>{% endif %}
+  <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl dark:text-white"{% if crumbs and (crumbs | last)[2] %} data-i18n="{{ (crumbs | last)[2] }}"{% endif %}>{{ title }}</h1>
+  {%- if lead %}<p class="mt-2 max-w-3xl text-base text-gray-500 dark:text-gray-400"{% if lead_key %} data-i18n="{{ lead_key }}"{% endif %}>{{ lead }}</p>{% endif %}
 </div>
 {% endcomponent page_header %}
 
-{#- Ranked facet terms with their counts (Pro list group); the bar is the share of the top term. -#}
-{% component ranked_terms(items, kind, limit=10, title="") %}
-<div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
-  {%- if title %}<h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">{{ title }}</h2>{% endif %}
-  <ol class="divide-y divide-gray-200 dark:divide-gray-700">
-    {%- set top = items | first %}
-    {%- for it in items[:limit] %}
-    <li class="flex items-center gap-3 py-2">
-      <span class="w-6 shrink-0 text-right font-mono text-xs text-gray-500">{{ loop.index }}</span>
-      <a href="{{ get_taxonomy_url(kind=kind, term=it.term) }}" class="min-w-0 flex-1 truncate text-sm font-medium text-gray-900 hover:underline dark:text-white">{{ it.term }}</a>
-      <span class="hidden h-1.5 w-24 overflow-hidden rounded-full bg-gray-100 sm:block dark:bg-gray-700" aria-hidden="true"><span class="block h-1.5 rounded-full bg-primary-600 dark:bg-primary-500" style="width: {{ (it.count * 100 / top.count) | round | int }}%"></span></span>
-      <span class="w-8 shrink-0 text-right text-sm font-semibold text-gray-700 dark:text-gray-300">{{ it.count }}</span>
-    </li>
-    {%- endfor %}
-  </ol>
-</div>
-{% endcomponent ranked_terms %}
-
 {#- Chart card (Pro chart card): an ECharts canvas filled by static/js/charts.js from the derived
-    catalogue, a caption saying what it shows and what a click does, and its table view. -#}
-{% component chart_card(id, chart, title, caption="", height="h-80", limit=0, focus="", target="") %}
+    catalogue, a caption saying what it shows and what a click does, and its table view. The
+    title and caption are the interface strings <ckey>.title and <ckey>.caption. -#}
+{% component chart_card(id, chart, ckey, l, height="h-80", limit=0, focus="", target="") %}
 <section aria-labelledby="{{ id }}-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
-  <h2 id="{{ id }}-title" class="text-lg font-semibold text-gray-900 dark:text-white">{{ title }}</h2>
-  {%- if caption %}<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ caption }}</p>{% endif %}
-  <div id="{{ id }}" data-chart="{{ chart }}" role="img" aria-label="{{ title }}"{% if limit %} data-limit="{{ limit }}"{% endif %}{% if focus %} data-focus="{{ focus }}"{% endif %}{% if target %} data-target="{{ target }}"{% endif %} class="mt-4 w-full {{ height }}"></div>
+  <h2 id="{{ id }}-title" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key={ckey ~ ".title"} l={l} /> }}</h2>
+  <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ <tx key={ckey ~ ".caption"} l={l} /> }}</p>
+  <div id="{{ id }}" data-chart="{{ chart }}" role="img" aria-label="{{ l[ckey ~ ".title"] }}" data-i18n-aria-label="{{ ckey }}.title"{% if limit %} data-limit="{{ limit }}"{% endif %}{% if focus %} data-focus="{{ focus }}"{% endif %}{% if target %} data-target="{{ target }}"{% endif %} class="mt-4 w-full {{ height }}"></div>
   <details class="mt-3 text-sm">
-    <summary class="cursor-pointer font-medium text-primary-700 hover:underline dark:text-primary-400">Show as table</summary>
+    <summary class="cursor-pointer font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="chart.table" l={l} /> }}</summary>
     <div class="mt-2 max-h-80 overflow-auto" data-chart-table="{{ id }}"></div>
   </details>
 </section>
 {% endcomponent chart_card %}
 
-{#- "Play all" (Pro button): plays every visible track of the container, in the order shown. -#}
-{% component play_all(target, label="Play all") %}
-<button type="button" data-play-all="{{ target }}" class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}{{ label }}</button>
+{#- "Play all" (Pro button): plays every matching track of the container, in the order shown. -#}
+{% component play_all(target, label, lkey="", vars={}) %}
+<button type="button" data-play-all="{{ target }}" class="inline-flex shrink-0 items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}<span{% if lkey %} data-i18n="{{ lkey }}"{% endif %}{% if vars %} data-i18n-vars="{{ vars | json_encode }}"{% endif %}>{{ label }}</span></button>
 {% endcomponent play_all %}
 
 {#- Listen elsewhere: search links derived from the artist and the track for the apps that keep
-    playing in the background on a phone (an embedded video cannot). -#}
+    playing in the background on a phone (an embedded video cannot). Brand names, not strings. -#}
 {% component listen_links(artist, track, youtube="") %}
 {%- set q = (artist ~ " " ~ track) | urlencode -%}
 {%- set item = "flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" -%}
@@ -236,18 +228,18 @@
 {% endcomponent listen_links %}
 
 {#- Pro empty state. -#}
-{% component empty_state(title, text="") %}
+{% component empty_state(title, text="", tkey="", xkey="") %}
 <div class="flex flex-col items-center justify-center rounded-lg border border-dashed border-gray-300 bg-white px-6 py-12 text-center dark:border-gray-600 dark:bg-gray-800">
   <span class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400">{{ <icon name="search" cls="h-6 w-6" /> }}</span>
-  <p class="text-base font-semibold text-gray-900 dark:text-white">{{ title }}</p>
-  {%- if text %}<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ text }}</p>{% endif %}
+  <p class="text-base font-semibold text-gray-900 dark:text-white"{% if tkey %} data-i18n="{{ tkey }}"{% endif %}>{{ title }}</p>
+  {%- if text %}<p class="mt-1 text-sm text-gray-500 dark:text-gray-400"{% if xkey %} data-i18n="{{ xkey }}"{% endif %}>{{ text }}</p>{% endif %}
 </div>
 {% endcomponent empty_state %}
 
 {#- Track hero (Publisher "background image" article header): the track's still, blurred and
     darkened, behind the breadcrumb, the genre it is published in, the artist and the title.
     The article card that follows overlaps it (-mt-24). -#}
-{% component track_hero(t, home, lead="") %}
+{% component track_hero(t, home, l, lead="") %}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 {%- set genre = t.facets.genre | first -%}
 <header class="relative isolate overflow-hidden bg-gray-900">
@@ -258,12 +250,12 @@
   <div class="px-4 pb-32 pt-6 sm:pt-10 lg:pb-36 xl:px-8">
     <nav class="mb-8 flex" aria-label="Breadcrumb">
       <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 text-sm md:space-x-2">
-        <li class="inline-flex items-center"><a href="{{ home }}" class="inline-flex items-center font-medium text-gray-300 hover:text-white">{{ <icon name="home" cls="mr-1.5 h-4 w-4" /> }}Home</a></li>
+        <li class="inline-flex items-center"><a href="{{ home }}" class="inline-flex items-center font-medium text-gray-300 hover:text-white">{{ <icon name="home" cls="mr-1.5 h-4 w-4" /> }}{{ <tx key="site.home" l={l} /> }}</a></li>
         <li class="inline-flex items-center text-gray-400"><svg class="mx-1 h-3 w-3" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg><a href="{{ get_taxonomy_url(kind='genre', term=genre) }}" class="font-medium text-gray-300 hover:text-white">{{ genre }}</a></li>
-        <li class="inline-flex items-center text-gray-400" aria-current="page"><svg class="mx-1 h-3 w-3" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg><span class="max-w-[14rem] truncate sm:max-w-none">{{ t.track }}</span></li>
+        <li class="inline-flex min-w-0 items-center text-gray-400" aria-current="page"><svg class="mx-1 h-3 w-3 shrink-0" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg><span class="max-w-[12rem] truncate sm:max-w-none">{{ t.track }}</span></li>
       </ol>
     </nav>
-    <span class="mb-3 block text-sm text-gray-300">Published in <a href="{{ get_taxonomy_url(kind='genre', term=genre) }}" class="font-semibold text-white hover:underline">{{ genre }}</a> · <time datetime="{{ t.date }}">{{ t.date }}</time></span>
+    <span class="mb-3 block text-sm text-gray-300">{{ <tx key="track.published_in" l={l} /> }} <a href="{{ get_taxonomy_url(kind='genre', term=genre) }}" class="font-semibold text-white hover:underline">{{ genre }}</a> · <time datetime="{{ t.date }}">{{ t.date }}</time></span>
     <p class="mb-2 text-lg font-semibold text-primary-300 sm:text-xl">{{ t.artist }}</p>
     <h1 class="mb-4 max-w-4xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">{{ t.track }}</h1>
     {%- if lead %}<p class="max-w-3xl text-base font-normal text-gray-300 sm:text-lg">{{ lead }}</p>{% endif %}
@@ -273,77 +265,105 @@
 
 {#- Share buttons (Publisher article share row): copy the link (static/js/site.js) and post to X.
     No third-party script is loaded. -#}
-{% component share(url, text) %}
+{% component share(url, text, l) %}
 {%- set btn = "inline-flex items-center rounded-lg p-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-600" -%}
-<div class="not-format flex items-center gap-1" aria-label="Share">
-  <button type="button" class="{{ btn }}" data-copy-link="{{ url }}" title="Copy link">
+<div class="not-format flex items-center gap-1">
+  <button type="button" class="{{ btn }}" data-copy-link="{{ url }}" title="{{ l["share.copy"] }}" data-i18n-title="share.copy">
     <span data-copy-idle>{{ <icon name="copy" /> }}</span><span data-copy-done hidden class="text-green-600 dark:text-green-400">{{ <icon name="check" /> }}</span>
-    <span class="sr-only" data-copy-label>Copy link</span>
+    <span class="sr-only" data-copy-label data-i18n="share.copy">{{ l["share.copy"] }}</span>
   </button>
-  <a class="{{ btn }}" href="https://x.com/intent/post?url={{ url | urlencode }}&text={{ text | urlencode }}" target="_blank" rel="noopener noreferrer" title="Share on X">
+  <a class="{{ btn }}" href="https://x.com/intent/post?url={{ url | urlencode }}&text={{ text | urlencode }}" target="_blank" rel="noopener noreferrer" title="{{ l["share.x"] }}" data-i18n-title="share.x">
     <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M13.8 10.5 20.6 3h-1.6l-5.9 6.5L8.4 3H3l7.1 10.1L3 21h1.6l6.2-6.9 5 6.9H21l-7.2-10.5Zm-2.2 2.4-.7-1L5.2 4.2h2.5l4.6 6.4.7 1 6 8.3h-2.5l-4.9-7Z"/></svg>
-    <span class="sr-only">Share on X</span>
+    <span class="sr-only" data-i18n="share.x">{{ l["share.x"] }}</span>
   </a>
 </div>
 {% endcomponent share %}
 
-{#- Related track (Publisher "related articles, horizontal cards"): still, title, artist and the
-    terms the two tracks share, which is why the catalogue relates them. -#}
-{% component related_card(t, shared, score) %}
+{#- Related track (Publisher "related articles, horizontal cards"): still with play, title,
+    artist and the terms the two tracks share, which is why the catalogue relates them. -#}
+{% component related_card(t, shared, score, l) %}
 {%- set href = get_url(path="@/" ~ t.source) -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
+{%- set label = t.artist ~ " – " ~ t.track -%}
 <article class="flex flex-col gap-4 sm:flex-row" data-track data-source="{{ t.source }}">
   <div class="relative shrink-0 sm:w-44">
-  <a href="{{ href }}" class="block overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
-    {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="352" height="198" class="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105">{% else %}<span class="flex aspect-video items-center justify-center text-gray-400">{{ <icon name="music" cls="h-8 w-8" /> }}</span>{% endif %}
-  </a>
-  {%- if t.youtube %}<button type="button" data-play="{{ t.source }}" class="absolute bottom-2 left-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" aria-label="Play {{ t.artist }} – {{ t.track }}">{{ <icon name="play" cls="ml-0.5 h-4 w-4" /> }}</button>{% endif %}
+    <a href="{{ href }}" class="block overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
+      {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="352" height="198" class="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105">{% else %}<span class="flex aspect-video items-center justify-center bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" cls="h-8 w-8" /> }}</span>{% endif %}
+    </a>
+    {%- if t.youtube %}<button type="button" data-play="{{ t.source }}" class="absolute bottom-2 left-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">{{ <icon name="play" cls="ml-0.5 h-4 w-4" /> }}</button>{% endif %}
   </div>
   <div class="flex min-w-0 flex-col justify-center">
     <p class="mb-1 truncate text-sm font-medium text-primary-700 dark:text-primary-400">{{ t.artist }}</p>
     <h3 class="mb-2 text-lg font-bold leading-tight text-gray-900 dark:text-white"><a href="{{ href }}" class="hover:underline">{{ t.track }}</a></h3>
-    <p class="text-sm text-gray-500 dark:text-gray-400">Shares {{ shared }} · {{ (score * 100) | round | int }} % alike</p>
+    <p class="text-sm text-gray-500 dark:text-gray-400">{{ <tx key="track.shares" l={l} vars={ {"terms": shared, "pct": (score * 100) | round | int} } /> }}</p>
   </div>
 </article>
 {% endcomponent related_card %}
 
-{#- Site hero (Pro marketing "heading with CTA", dark): the home page's opening. The waveform
-    is decorative SVG; no image is loaded. -#}
-{% component site_hero(title, kicker, lead, primary_href, primary_label, secondary_href, secondary_label) %}
-<header class="relative isolate overflow-hidden bg-gray-900">
-  <div class="absolute inset-0 -z-10 bg-gradient-to-br from-primary-900 via-gray-900 to-pink-950" aria-hidden="true"></div>
-  <svg class="absolute bottom-0 left-0 -z-10 h-40 w-full text-primary-500/20" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M0 80 Q 50 20 100 80 T 200 80 T 300 80 T 400 80 Q 450 0 500 80 T 600 80 T 700 80 Q 750 140 800 80 T 900 80 T 1000 80 Q 1050 10 1100 80 T 1200 80"/><path fill="none" stroke="currentColor" stroke-width="1" opacity=".6" d="M0 100 Q 60 60 120 100 T 240 100 T 360 100 Q 420 150 480 100 T 600 100 T 720 100 Q 780 40 840 100 T 960 100 T 1080 100 T 1200 100"/></svg>
-  <div class="px-4 pb-28 pt-12 sm:pt-16 lg:pb-32 xl:px-8">
-    <p class="mb-4 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-primary-200 ring-1 ring-inset ring-white/20">{{ <icon name="sparkles" cls="mr-2 h-4 w-4" /> }}{{ kicker }}</p>
-    <h1 class="mb-4 max-w-4xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">{{ title }}</h1>
-    <p class="mb-8 max-w-2xl text-lg font-normal text-gray-300 lg:text-xl">{{ lead }}</p>
-    <div class="flex flex-col gap-3 sm:flex-row">
-      <a href="{{ primary_href }}" class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-800">{{ primary_label }}{{ <icon name="arrow-right" cls="ml-2 h-5 w-5" /> }}</a>
-      <a href="{{ secondary_href }}" class="inline-flex items-center justify-center rounded-lg border border-white/30 px-5 py-3 text-center text-base font-medium text-white hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-gray-700">{{ secondary_label }}</a>
+{#- Landing hero (Pro marketing hero, dark): the derived counts, the name, the promise, two calls
+    to action (play the newest tracks now; explore), an equaliser that moves only for readers who
+    allow motion, and a mosaic of the newest stills that play on a click. Nothing is written here:
+    every value is a prop from the catalogue or an interface string. -#}
+{% component site_hero(l, kicker_vars, title, lead, primary_href, secondary_href, tracks) %}
+<header class="relative isolate overflow-hidden bg-gray-950">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_left,var(--color-primary-700),transparent_55%),radial-gradient(ellipse_at_bottom_right,var(--color-pink-800),transparent_50%)] opacity-80" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 flex h-40 items-end justify-center gap-1 px-4 opacity-30" aria-hidden="true">
+    {%- for i in range(end=48) %}<span class="eq-bar w-1.5 rounded-t bg-gradient-to-t from-primary-500 to-pink-400 sm:w-2" style="--i: {{ i }}"></span>{% endfor %}
+  </div>
+  <div class="grid items-center gap-10 px-4 pb-28 pt-10 sm:pt-16 lg:grid-cols-12 lg:pb-32 xl:px-8">
+    <div class="lg:col-span-7">
+      <p class="mb-5 inline-flex flex-wrap items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-primary-100 ring-1 ring-inset ring-white/20">{{ <icon name="sparkles" cls="mr-2 h-4 w-4" /> }}{{ <tx key="home.kicker" l={l} vars={kicker_vars} /> }}</p>
+      <h1 class="mb-5 bg-gradient-to-r from-white via-primary-100 to-pink-200 bg-clip-text text-5xl font-extrabold leading-[1.05] tracking-tight text-transparent sm:text-6xl xl:text-7xl">{{ title }}</h1>
+      <p class="mb-8 max-w-2xl text-lg font-normal text-gray-300 sm:text-xl">{{ lead }}</p>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <button type="button" data-play-all="hero-mosaic" class="inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3.5 text-center text-base font-semibold text-white shadow-lg shadow-primary-900/40 hover:bg-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-5 w-5" /> }}{{ <tx key="home.cta_play" l={l} /> }}</button>
+        <a href="{{ primary_href }}" class="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3.5 text-center text-base font-medium text-white hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-gray-700">{{ <tx key="home.cta_explore" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-5 w-5" /> }}</a>
+        <a href="{{ secondary_href }}" class="inline-flex items-center justify-center px-2 py-3.5 text-center text-base font-medium text-gray-300 underline-offset-4 hover:text-white hover:underline">{{ <tx key="home.cta_why" l={l} /> }}</a>
+      </div>
+    </div>
+    <div class="lg:col-span-5">
+      <div id="hero-mosaic" data-playlist class="grid grid-cols-3 gap-2 sm:gap-3">
+        {%- set_global shown = 0 %}
+        {%- for t in tracks %}
+        {%- if t.youtube and shown < 6 %}
+        {%- set_global shown = shown + 1 %}
+        {%- set label = t.artist ~ " – " ~ t.track %}
+        <button type="button" data-track data-source="{{ t.source }}" data-play="{{ t.source }}" class="group relative aspect-square overflow-hidden rounded-xl ring-1 ring-white/10 focus:outline-none focus:ring-4 focus:ring-primary-500{% if shown == 2 or shown == 5 %} translate-y-4{% endif %}" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">
+          <img src="https://i.ytimg.com/vi/{{ t.youtube }}/mqdefault.jpg" alt="" data-thumb loading="lazy" width="320" height="180" class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
+          <span class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent"></span>
+          <span class="absolute bottom-1.5 left-1.5 right-1.5 truncate text-left text-[11px] font-semibold text-white sm:text-xs">{{ t.artist }}</span>
+          <span class="absolute inset-0 flex items-center justify-center opacity-0 transition group-hover:opacity-100 group-focus:opacity-100"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span></span>
+        </button>
+        {%- endif %}
+        {%- endfor %}
+      </div>
     </div>
   </div>
 </header>
 {% endcomponent site_hero %}
 
-{#- Featured track (Publisher "featured post"): the newest review, large, on the home page. -#}
-{% component featured_track(t) %}
+{#- Featured track (Publisher "featured post"): the newest review with a picture, large. -#}
+{% component featured_track(t, l) %}
 {%- set href = get_url(path="@/" ~ t.source) -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
-<section aria-labelledby="featured-title" class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
-  <div class="grid lg:grid-cols-2">
+<section aria-labelledby="featured-title" class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" data-playlist id="featured">
+  <div class="grid lg:grid-cols-2" data-track data-source="{{ t.source }}">
     <a href="{{ href }}" class="group relative block aspect-video overflow-hidden bg-gray-900 lg:aspect-auto lg:min-h-80" tabindex="-1" aria-hidden="true">
       {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100">
       {%- else %}<span class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-700 via-primary-900 to-pink-900 text-white/70">{{ <icon name="music" cls="h-20 w-20" /> }}</span>{% endif %}
       <span class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></span>
-      <span class="absolute bottom-4 left-4 inline-flex items-center rounded-md bg-primary-700 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white">{{ <icon name="sparkles" cls="mr-1.5 h-3.5 w-3.5" /> }}Latest track</span>
+      <span class="absolute bottom-4 left-4 inline-flex items-center rounded-md bg-primary-700 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white">{{ <icon name="sparkles" cls="mr-1.5 h-3.5 w-3.5" /> }}{{ <tx key="home.latest" l={l} /> }}</span>
     </a>
     <div class="flex flex-col justify-center p-6 sm:p-8 xl:p-10">
-      <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><time datetime="{{ t.date }}">{{ t.date }}</time> · {{ t.words }} words</p>
+      <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><time datetime="{{ t.date }}">{{ t.date }}</time> · {{ <tx key="home.words" l={l} vars={ {"n": t.words} } /> }}</p>
       <p class="mb-1 text-lg font-semibold text-primary-700 dark:text-primary-400">{{ t.artist }}</p>
       <h2 id="featured-title" class="mb-4 text-2xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-3xl dark:text-white"><a href="{{ href }}" class="hover:underline">{{ t.track }}</a></h2>
       <p class="mb-5 text-base text-gray-500 dark:text-gray-400">{{ t.description }}</p>
       <div class="mb-6 flex flex-wrap gap-2">{{ <facet_badges terms={t.facets.genre} kind="genre" limit={3} size="sm" /> }}{{ <facet_badges terms={t.facets.sentiment} kind="sentiment" limit={2} size="sm" /> }}</div>
-      <div><a href="{{ href }}" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Read the review{{ <icon name="arrow-right" cls="ml-2 h-5 w-5" /> }}</a></div>
+      <div class="flex flex-wrap gap-3">
+        {%- if t.youtube %}<button type="button" data-play-radio="{{ t.source }}" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-5 w-5" /> }}{{ <tx key="track.radio" l={l} /> }}</button>{% endif %}
+        <a href="{{ href }}" class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">{{ <tx key="home.read" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-5 w-5" /> }}</a>
+      </div>
     </div>
   </div>
 </section>

@@ -98,6 +98,27 @@ body.has-player #main-content {
   padding-bottom: 6rem;
 }
 
+/* The landing hero's equaliser: decoration that moves only for readers who allow motion. */
+.eq-bar {
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0.35);
+  animation: eq 1.6s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * -0.137s);
+}
+
+@keyframes eq {
+  0% { transform: scaleY(0.15); }
+  50% { transform: scaleY(0.75); }
+  100% { transform: scaleY(0.35); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eq-bar {
+    animation: none;
+  }
+}
+
 /* Explorer matches folded behind "Show more" (static/js/explorer.js). */
 [data-overflow] {
   display: none !important;

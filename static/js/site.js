@@ -116,11 +116,11 @@
       var label = button.querySelector('[data-copy-label]');
       if (idle) idle.hidden = true;
       if (done) done.hidden = false;
-      if (label) label.textContent = 'Link copied';
+      if (label) label.textContent = window.Sonic ? window.Sonic.t('share.copied') : '';
       setTimeout(function () {
         if (idle) idle.hidden = false;
         if (done) done.hidden = true;
-        if (label) label.textContent = 'Copy link';
+        if (label) label.textContent = window.Sonic ? window.Sonic.t('share.copy') : '';
       }, 2000);
     }).catch(function () {});
   });

@@ -81,10 +81,10 @@
     el.exportLink.href = 'https://www.youtube.com/watch_videos?video_ids=' + state.queue
       .slice(state.index, state.index + 50).map(function (q) { return q.youtube; }).join(',');
     var playing = yt && ready && yt.getPlayerState && yt.getPlayerState() === 1;
-    el.toggle.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+    el.toggle.setAttribute('aria-label', Sonic.t(playing ? 'player.pause' : 'player.play'));
     el.toggle.querySelector('[data-icon-play]').hidden = playing;
     el.toggle.querySelector('[data-icon-pause]').hidden = !playing;
-    document.documentElement.dataset.player = playing ? 'playing' : 'paused';
+    document.documentElement.dataset.playerState = playing ? 'playing' : 'paused';
     markCards();
     paintQueue();
     if ('mediaSession' in navigator && window.MediaMetadata) {
@@ -115,7 +115,7 @@
       rm.type = 'button';
       rm.className = 'rounded p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white';
       rm.dataset.playerRemove = String(i);
-      rm.setAttribute('aria-label', 'Remove ' + t.track + ' from the queue');
+      rm.setAttribute('aria-label', Sonic.t('player.remove', { track: t.track }));
       rm.innerHTML = '<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/></svg>';
       li.append(b, rm);
       el.queueList.appendChild(li);
@@ -186,7 +186,7 @@
     var duration = yt.getDuration() || 0;
     // The state can change without an event (an ad, buffering): keep the toggle honest.
     var playing = yt.getPlayerState && yt.getPlayerState() === 1;
-    if ((document.documentElement.dataset.player === 'playing') !== playing) paint();
+    if ((document.documentElement.dataset.playerState === 'playing') !== playing) paint();
     el.time.textContent = fmt(time);
     el.duration.textContent = fmt(duration);
     if (document.activeElement !== el.seek) {
@@ -233,7 +233,7 @@
     el.panel.hidden = true;
     el.queuePanel.hidden = true;
     document.body.classList.remove('has-player');
-    document.documentElement.dataset.player = '';
+    document.documentElement.dataset.playerState = '';
     markCards();
   }
 
@@ -260,7 +260,7 @@
       return;
     }
     if (target.dataset.playVideo) {
-      play([{ youtube: target.dataset.playVideo, track: target.dataset.playTitle || 'Video', artist: '' }], 0);
+      play([{ youtube: target.dataset.playVideo, track: target.dataset.playTitle || Sonic.t('player.video'), artist: '' }], 0);
       return;
     }
     Sonic.catalog().then(function (c) {
@@ -312,6 +312,7 @@
   // request until the reader presses play).
   Sonic.on('sonic:page', markCards);
   Sonic.on('sonic:navigated', markCards);
+  Sonic.on('sonic:locale', function () { if (current()) paint(); });
   if (current()) { pendingStart = state.time || 0; paint(); }
   window.SonicPlayer = { play: play, enqueue: enqueue, next: next, prev: prev, toggle: toggle, stop: stop,
     state: function () { return JSON.parse(JSON.stringify(state)); } };

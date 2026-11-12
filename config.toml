@@ -49,22 +49,22 @@ social_image = "images/wall.jpeg"
 
 # Sidebar: the facets come from the catalogue; these are the fixed pages.
 [[extra.menu]]
-name = "Welcome"
+key = "menu.welcome"
 path = "@/pages/welcome.md"
 icon = "home"
 
 [[extra.menu]]
-name = "Author"
+key = "menu.author"
 path = "@/pages/author.md"
 icon = "user"
 
 [[extra.menu]]
-name = "Archive"
+key = "menu.archive"
 path = "@/pages/archive.md"
 icon = "archive"
 
 [[extra.menu]]
-name = "Insights"
+key = "menu.insights"
 path = "@/pages/insights.md"
 icon = "chart"
 

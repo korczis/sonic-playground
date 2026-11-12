@@ -214,9 +214,9 @@ async function shot(page, name) {
   // Explorer.
   {
     const { context, page, errors } = await open(browser, at(''), desktop);
-    await page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready');
-    const visible = () => page.locator('[data-track]:not([hidden])').count();
-    check((await page.locator('[data-track]').count()) === catalog.tracks.length, 'home renders one card per catalogue track');
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
+    const visible = () => page.locator('#explorer-grid [data-track]:not([hidden])').count();
+    check((await page.locator('#explorer-grid [data-track]').count()) === catalog.tracks.length, 'home renders one card per catalogue track');
     await shot(page, 'home-desktop-light');
     await page.selectOption('#explorer-genre', genre.term);
     check((await visible()) === genre.count, `genre filter "${genre.term}" leaves ${genre.count} cards`);
@@ -238,11 +238,11 @@ async function shot(page, name) {
     await page.click('[data-explorer-more]');
     check((await unfolded()) === Math.min(48, catalog.tracks.length), 'Show more unfolds the next page');
     await page.selectOption('#explorer-sort', 'old');
-    const first = await page.locator('[data-track]:not([hidden])').first().getAttribute('data-date');
+    const first = await page.locator('#explorer-grid [data-track]:not([hidden])').first().getAttribute('data-date');
     check(first === catalog.stats.first, `sort oldest first starts at ${catalog.stats.first}`);
     const deep = await open(browser, at(`?genre=${encodeURIComponent(genre.term)}&sort=artist`), desktop);
-    await deep.page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready');
-    check((await deep.page.locator('[data-track]:not([hidden])').count()) === genre.count, 'a filtered URL opens filtered');
+    await deep.page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
+    check((await deep.page.locator('#explorer-grid [data-track]:not([hidden])').count()) === genre.count, 'a filtered URL opens filtered');
     await deep.context.close();
     check(errors.length === 0, `explorer: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
 
@@ -316,11 +316,11 @@ async function shot(page, name) {
       : await (await fetch(at('data/search.json'))).text()).tracks)
       .filter(([, words]) => ['four', 'floor'].every((w) => words.split(' ').includes(w))).length;
     const { context, page } = await open(browser, at(''), desktop);
-    await page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready');
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     await page.fill('#explorer-q', term);
-    await page.waitForFunction(() => document.documentElement.dataset.reviews === 'ready');
+    await page.waitForFunction(() => document.documentElement.dataset.reviewsState === 'ready');
     await page.waitForTimeout(300);
-    const shown = await page.locator('[data-track]:not([hidden])').count();
+    const shown = await page.locator('#explorer-grid [data-track]:not([hidden])').count();
     check(expected > 0 && shown >= expected, `search "${term}" finds the reviews that say it (${shown} ≥ ${expected})`);
     await context.close();
   }
@@ -341,7 +341,7 @@ async function shot(page, name) {
   // bar and its YouTube frame survive, page modules (explorer, charts) remount, back works.
   {
     const { context, page, errors } = await open(browser, at(''), desktop);
-    await page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready');
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     await page.evaluate(() => { window.__noReload = true; });
     const first = await page.locator('#explorer-grid [data-track]:not([hidden]) [data-play]').first().getAttribute('data-play');
     await page.locator('#explorer-grid [data-play]').first().click();
@@ -354,13 +354,13 @@ async function shot(page, name) {
     check(frame, 'player: the YouTube player loads in the docked panel');
     await page.evaluate(() => { window.__frame = document.querySelector('#player-panel iframe'); });
     await page.locator('#sidebar a[href$="/insights/"]').click();
-    await page.waitForFunction(() => /Insights/.test(document.title) && Number(document.documentElement.dataset.charts) > 0, null, { timeout: 20000 });
+    await page.waitForFunction(() => /Insights/.test(document.title) && Number(document.documentElement.dataset.chartsState) > 0, null, { timeout: 20000 });
     const kept = await page.evaluate(() => window.__noReload === true && !document.getElementById('player').hidden
       && document.querySelector('#player-panel iframe') === window.__frame);
     check(kept, 'router: navigating keeps the page, the bar and the playing frame (no reload)');
     check(new URL(page.url()).pathname.endsWith('/insights/'), 'router: the URL follows the navigation');
     await page.goBack();
-    await page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready', null, { timeout: 15000 })
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready', null, { timeout: 15000 })
       .then(() => check(true, 'router: back remounts the explorer'))
       .catch(() => check(false, 'router: back remounts the explorer'));
     await page.locator('#explorer-grid [data-queue]').nth(3).click();
@@ -370,6 +370,36 @@ async function shot(page, name) {
     check(errors.length === 0, `player and router: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await shot(page, 'player-home');
     await context.close();
+  }
+
+  // The interface language switches without a reload, survives navigation and a reload, and
+  // drives the strings the browser code writes (data/i18n/, static/js/i18n.js).
+  {
+    const bundle = root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
+      : await (await fetch(at('data/i18n.json'))).json();
+    const other = Object.keys(bundle.locales).find((c) => c !== bundle.default);
+    if (other) {
+      const s = bundle.locales[other].strings;
+      const { context, page, errors } = await open(browser, at(''), desktop);
+      await page.waitForFunction(() => document.documentElement.dataset.i18nState === 'ready' && document.documentElement.dataset.explorerState === 'ready');
+      await page.selectOption('#locale-switch', other);
+      await page.waitForFunction((code) => document.documentElement.lang === code, other);
+      const ph = await page.getAttribute('#topbar-search', 'placeholder');
+      const status = await page.textContent('[data-explorer-status]');
+      check(ph === s['nav.search_placeholder'] && status === s['explorer.status_all'].replace('{n}', String(catalog.tracks.length)),
+        `i18n: switching to ${other} translates templates and browser-written strings`);
+      await page.locator('#sidebar a[href$="/insights/"]').click();
+      await page.waitForFunction((t) => document.querySelector('h1') && document.querySelector('h1').textContent.trim() === t, s['menu.insights'], { timeout: 15000 })
+        .then(() => check(true, `i18n: ${other} survives navigation`)).catch(() => check(false, `i18n: ${other} survives navigation`));
+      await page.reload({ waitUntil: 'load' });
+      await page.waitForFunction((code) => document.documentElement.lang === code, other, { timeout: 10000 })
+        .then(() => check(true, `i18n: ${other} survives a reload`)).catch(() => check(false, `i18n: ${other} survives a reload`));
+      const untranslated = await page.evaluate((def) => [...document.querySelectorAll('[data-i18n]')]
+        .filter((el) => el.offsetParent !== null && el.textContent.trim() === '' && def[el.dataset.i18n]).length, bundle.locales[bundle.default].strings);
+      check(untranslated === 0, `i18n: no interface string left empty (${untranslated})`);
+      check(errors.length === 0, `i18n: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+      await context.close();
+    }
   }
 
   if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);

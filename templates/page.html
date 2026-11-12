@@ -1,17 +1,18 @@
 {#- A track (Flowbite Pro Publisher "background image" article): the hero with the track's still,
     the article card overlapping it with the byline, share row, video and review, a sidebar of
-    what the catalogue derives (facets, details, how the artist was inferred), then the related
-    tracks with the terms they share (Publisher "related articles"), and the neighbours in time.
-    A page outside the catalogue falls back to the plain page header. -#}
+    what the catalogue derives (facets, listen, details, how the artist was inferred), then the
+    related tracks with the terms they share (Publisher "related articles"), its neighbourhood
+    graph, and the neighbours in time. A page outside the catalogue falls back to the plain page
+    header. Strings: data/i18n/. -#}
 {% extends "base.html" %}
 {%- block content %}
 {%- if page.description %}{% set lead = page.description %}{% else %}{% set lead = "" %}{% endif %}
 {%- set home = get_url(path="@/_index.md") %}
 {%- set card = "rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" %}
 {%- if track %}
-{{ <track_hero t={track} home={home} lead={lead} /> }}
+{{ <track_hero t={track} home={home} l={l} lead={lead} /> }}
 {%- else %}
-{{ <page_header title={page.title} crumbs={[["Home", home], [page.title, ""]]} lead={lead} /> }}
+{{ <page_header title={page.title} crumbs={[[l["site.home"], home, "site.home"], [page.title, "", ""]]} lead={lead} /> }}
 {%- endif %}
 <div class="relative z-10 grid grid-cols-1 gap-4 px-4 xl:grid-cols-3 xl:px-8{% if track %} -mt-24{% else %} pt-6{% endif %}">
   <div class="min-w-0 space-y-4 xl:col-span-2">
@@ -19,21 +20,22 @@
       {%- if track %}
       <div class="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 pb-4 dark:border-gray-700">
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-500 dark:text-gray-400">
-          <span>By <a href="{{ get_url(path='@/pages/author.md') }}" class="font-semibold text-gray-900 hover:underline dark:text-white">{{ config.author }}</a></span>
+          <span>{{ <tx key="track.by" l={l} /> }} <a href="{{ get_url(path='@/pages/author.md') }}" class="font-semibold text-gray-900 hover:underline dark:text-white">{{ config.author }}</a></span>
           <span class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-gray-500" aria-hidden="true"></span>
           <time datetime="{{ track.date }}">{{ track.date }}</time>
           <span class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-gray-500" aria-hidden="true"></span>
-          <span>{{ page.reading_time }} min read</span>
+          {{ <tx key="track.min_read" l={l} vars={ {"n": page.reading_time} } /> }}
         </div>
-        {{ <share url={page.permalink} text={track.artist ~ " – " ~ track.track ~ " on " ~ config.title} /> }}
+        {{ <share url={page.permalink} text={l["share.text"] | replace(from="{label}", to=track.artist ~ " – " ~ track.track) | replace(from="{site}", to=config.title)} l={l} /> }}
       </div>
-      <h2 id="review-title" class="sr-only">Review</h2>
+      <p data-locale-note hidden class="mb-4 rounded-lg bg-gray-50 px-3 py-2 text-sm text-gray-600 dark:bg-gray-700 dark:text-gray-300" data-i18n="locale.content_note">{{ l["locale.content_note"] }}</p>
+      <h2 id="review-title" class="sr-only">{{ <tx key="track.review" l={l} /> }}</h2>
       {%- if track.youtube %}
       <div class="mb-8">{{ <video id={track.youtube} title={track.artist ~ " – " ~ track.track} source={track.source} /> }}</div>
       {%- elif track.video_gone %}
       <div class="mb-8 flex items-start gap-3 rounded-lg border border-yellow-300 bg-yellow-50 p-4 text-sm text-yellow-800 dark:border-yellow-800 dark:bg-gray-800 dark:text-yellow-300" role="note">
         {{ <icon name="info" cls="mt-0.5 h-4 w-4 shrink-0" /> }}
-        <span>The video this review was written to has been removed from YouTube. <a class="font-medium underline hover:no-underline" href="https://www.youtube.com/results?search_query={{ (track.artist ~ ' ' ~ track.track) | urlencode }}" rel="noopener noreferrer">Search YouTube for {{ track.track }}</a>.</span>
+        <span>{{ <tx key="track.video_gone" l={l} /> }} <a class="font-medium underline hover:no-underline" href="https://www.youtube.com/results?search_query={{ (track.artist ~ ' ' ~ track.track) | urlencode }}" rel="noopener noreferrer">{{ <tx key="track.video_search" l={l} vars={ {"track": track.track} } /> }}</a>.</span>
       </div>
       {%- endif %}
       {%- else %}
@@ -46,27 +48,24 @@
 
     {%- if track and track.related | length > 0 %}
     <section aria-labelledby="related-title" class="{{ card }} p-4 sm:p-6 xl:p-8">
-      <div class="mb-6 flex flex-wrap items-end justify-between gap-2">
+      <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 id="related-title" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">More like this</h2>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Weighted overlap of genres, feelings and moods.</p>
+          <h2 id="related-title" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ <tx key="track.more_like" l={l} /> }}</h2>
+          <p class="text-sm text-gray-500 dark:text-gray-400">{{ <tx key="track.more_like_caption" l={l} /> }}</p>
         </div>
         {%- if track.youtube %}
-        <button type="button" data-play-radio="{{ track.source }}" class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}Play this radio</button>
+        <button type="button" data-play-radio="{{ track.source }}" class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}{{ <tx key="track.radio" l={l} /> }}</button>
         {%- endif %}
       </div>
       <div id="related-list" data-playlist class="grid gap-6 md:grid-cols-2">
         {%- for r in track.related %}
         {%- set rt = catalog.tracks[catalog.lookup[r.source]] %}
         {%- set shared = r.shared | join(sep=", ") | replace(from="genre:", to="") | replace(from="sentiment:", to="") | replace(from="mood:", to="") %}
-        {{ <related_card t={rt} shared={shared} score={r.score} /> }}
+        {{ <related_card t={rt} shared={shared} score={r.score} l={l} /> }}
         {%- endfor %}
       </div>
     </section>
-    {%- endif %}
-
-    {%- if track and track.related | length > 0 %}
-    {{ <chart_card id="chart-neighbourhood" chart="graph" title="Neighbourhood" caption="This track, the tracks most like it and theirs. Drag, zoom, hover; a dot opens the track." height="h-[28rem]" focus={track.source} /> }}
+    {{ <chart_card id="chart-neighbourhood" chart="graph" ckey="track.neighbourhood_chart" l={l} height="h-[28rem]" focus={track.source} /> }}
     {%- endif %}
 
     {%- if page.lower or page.higher %}
@@ -74,12 +73,12 @@
       {%- if page.higher %}
       <a href="{{ page.higher.permalink }}" class="{{ card }} group flex items-center gap-3 p-4 hover:bg-gray-50 dark:hover:bg-gray-700">
         <span class="text-gray-500 transition group-hover:-translate-x-1 dark:text-gray-400">{{ <icon name="arrow-left" /> }}</span>
-        <span class="min-w-0"><span class="block text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Newer</span><span class="block truncate text-sm font-semibold text-gray-900 dark:text-white">{{ page.higher.title }}</span></span>
+        <span class="min-w-0"><span class="block text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ <tx key="track.newer" l={l} /> }}</span><span class="block truncate text-sm font-semibold text-gray-900 dark:text-white">{{ page.higher.title }}</span></span>
       </a>
       {%- else %}<span></span>{%- endif %}
       {%- if page.lower %}
       <a href="{{ page.lower.permalink }}" class="{{ card }} group flex items-center justify-end gap-3 p-4 text-right hover:bg-gray-50 dark:hover:bg-gray-700">
-        <span class="min-w-0"><span class="block text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Older</span><span class="block truncate text-sm font-semibold text-gray-900 dark:text-white">{{ page.lower.title }}</span></span>
+        <span class="min-w-0"><span class="block text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ <tx key="track.older" l={l} /> }}</span><span class="block truncate text-sm font-semibold text-gray-900 dark:text-white">{{ page.lower.title }}</span></span>
         <span class="text-gray-500 transition group-hover:translate-x-1 dark:text-gray-400">{{ <icon name="arrow-right" /> }}</span>
       </a>
       {%- endif %}
@@ -90,34 +89,34 @@
   {%- if track %}
   <aside class="space-y-4 xl:sticky xl:top-20 xl:self-start" aria-label="About this track">
     <div class="{{ card }} p-4 sm:p-6">
-      <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Facets</h2>
-      {%- for facet in [["genre", "Genre"], ["sentiment", "Feeling"], ["mood", "Mood"]] %}
-      {%- if track.facets[facet[0]] | length > 0 %}
-      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ facet[1] }}</p>
-      <div class="mb-4 flex flex-wrap gap-2">{{ <facet_badges terms={track.facets[facet[0]]} kind={facet[0]} size="sm" /> }}</div>
+      <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="track.facets" l={l} /> }}</h2>
+      {%- for kind in ["genre", "sentiment", "mood"] %}
+      {%- if track.facets[kind] | length > 0 %}
+      <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ <tx key={"tax.one." ~ kind} l={l} /> }}</p>
+      <div class="mb-4 flex flex-wrap gap-2">{{ <facet_badges terms={track.facets[kind]} kind={kind} size="sm" /> }}</div>
       {%- endif %}
       {%- endfor %}
-      <a href="{{ home }}?genre={{ track.facets.genre | first | urlencode }}" class="inline-flex items-center text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">Explore more {{ track.facets.genre | first }}{{ <icon name="arrow-right" cls="ml-1.5 h-4 w-4" /> }}</a>
+      <a href="{{ home }}?genre={{ track.facets.genre | first | urlencode }}" class="inline-flex items-center text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="track.explore_more" l={l} vars={ {"genre": track.facets.genre | first} } /> }}{{ <icon name="arrow-right" cls="ml-1.5 h-4 w-4" /> }}</a>
     </div>
     <div class="{{ card }} p-4 sm:p-6">
-      <h2 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Listen</h2>
-      <p class="mb-3 text-sm text-gray-500 dark:text-gray-400">Here in the player, or in an app that keeps playing when your phone locks.</p>
+      <h2 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="track.listen" l={l} /> }}</h2>
+      <p class="mb-3 text-sm text-gray-500 dark:text-gray-400">{{ <tx key="track.listen_caption" l={l} /> }}</p>
       {%- if track.youtube %}{% set yt = track.youtube %}{% else %}{% set yt = "" %}{% endif %}
       {{ <listen_links artist={track.artist} track={track.track} youtube={yt} /> }}
     </div>
     <div class="{{ card }} p-4 sm:p-6">
-      <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Details</h2>
+      <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="track.details" l={l} /> }}</h2>
       <dl class="divide-y divide-gray-200 text-sm dark:divide-gray-700">
-        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">Artist</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.artist }}</dd></div>
-        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">Track</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.track }}</dd></div>
-        {%- for k in [["album", "Album"], ["release_year", "Released"], ["publisher", "Label"], ["video_duration", "Duration"]] %}
-        {%- if k[0] in track.extra %}
-        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ k[1] }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.extra[k[0]] }}</dd></div>
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.artist" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.artist }}</dd></div>
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.track" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.track }}</dd></div>
+        {%- for k in ["album", "release_year", "publisher", "video_duration"] %}
+        {%- if k in track.extra %}
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key={"track." ~ k} l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.extra[k] }}</dd></div>
         {%- endif %}
         {%- endfor %}
-        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">Review</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.words }} words</dd></div>
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.review" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ <tx key="track.words" l={l} vars={ {"n": track.words} } /> }}</dd></div>
       </dl>
-      <p class="mt-3 flex items-start gap-1.5 text-xs text-gray-500 dark:text-gray-400">{{ <icon name="info" cls="mt-px h-3.5 w-3.5 shrink-0" /> }}<span>Artist and track inferred from the {{ track.inferred }}.</span></p>
+      <p class="mt-3 flex items-start gap-1.5 text-xs text-gray-500 dark:text-gray-400">{{ <icon name="info" cls="mt-px h-3.5 w-3.5 shrink-0" /> }}{{ <tx key="track.inferred" l={l} vars={ {"rule": track.inferred} } /> }}</p>
     </div>
   </aside>
   {%- endif %}

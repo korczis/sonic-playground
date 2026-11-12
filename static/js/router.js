@@ -39,7 +39,7 @@
   }
 
   function go(url, push) {
-    document.documentElement.dataset.navigating = 'true';
+    document.documentElement.dataset.navigatingState = 'true';
     return fetch(url.href, { headers: { Accept: 'text/html' } }).then(function (r) {
       if (!r.ok && r.status !== 404) throw new Error('HTTP ' + r.status);
       return r.text();
@@ -54,13 +54,15 @@
       } else {
         window.scrollTo(0, 0);
       }
-      if (window.initFlowbite) window.initFlowbite();
+      // No initFlowbite(): it re-initialises every component of the document (the navbar's
+      // tooltips included) and Popper then measures detached elements. #main-content holds no
+      // Flowbite component; anything that needs one belongs outside it.
       Sonic.mountAll();
       var main = document.getElementById('main');
       if (main) main.focus({ preventScroll: true });
       var live = document.getElementById('route-announcer');
       if (live) live.textContent = document.title;
-      document.documentElement.dataset.navigating = '';
+      document.documentElement.dataset.navigatingState = '';
       Sonic.emit('sonic:navigated', { url: location.href });
     }).catch(function () {
       location.href = url.href; // anything unexpected: an ordinary page load

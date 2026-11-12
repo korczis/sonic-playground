@@ -216,6 +216,16 @@ enforcement:
     path: python3
     args: [scripts/catalog.py, --check]
     wired_by: git-hook:pre-commit
+  # project.ui-localised: every locale complete, every used interface key defined, bundle current.
+  - name: i18n-on-commit
+    path: python3
+    args: [scripts/i18n.py, --check]
+    wired_by: git-hook:pre-commit
+  # project.ui-components: no duplicated, dead or undefined component, no duplicated markup.
+  - name: components-on-commit
+    path: python3
+    args: [scripts/check-components.py]
+    wired_by: git-hook:pre-commit
   # project.deploy-gate: the local gate (catalogue, tests, vendored assets, zola build).
   - name: verify-on-push
     path: bash

@@ -1,10 +1,9 @@
-{#- All terms of one facet, most used first, with their counts. -#}
+{#- All terms of one facet, most used first, with their counts. Strings: data/i18n/. -#}
 {% extends "base.html" %}
 {%- block content %}
-{%- set label = {"genre": "Genres", "sentiment": "Feelings", "mood": "Moods", "tags": "Tags"} %}
-{%- set name = label[taxonomy.name] | default(value=taxonomy.name) %}
-{{ <page_header title={name} crumbs={[["Home", get_url(path="@/_index.md")], [name, ""]]} lead={terms | length ~ " " ~ name | lower ~ ", most used first."} /> }}
-<div class="px-4 pt-6">
+{%- set name_key = "tax.name." ~ taxonomy.name %}
+{{ <page_header title={l[name_key]} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l[name_key], "", name_key]]} lead={l["tax.list_lead"] | replace(from="{n}", to=terms | length ~ "")} /> }}
+<div class="px-4 pt-6 xl:px-8">
   {%- if terms | length > 0 %}
   <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
     {%- for t in terms | sort(attribute="page_count") | reverse %}
@@ -15,7 +14,7 @@
     {%- endfor %}
   </div>
   {%- else %}
-  {{ <empty_state title={"No " ~ name | lower ~ " yet"} text="Terms appear here as soon as a review uses them." /> }}
+  {{ <empty_state title={l["tax.empty_title"]} text={l["tax.empty_text"]} tkey="tax.empty_title" xkey="tax.empty_text" /> }}
   {%- endif %}
 </div>
 {%- endblock content %}
