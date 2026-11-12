@@ -47,6 +47,15 @@ if (flag('--artifact') && flag('--as')) {
 }
 const revision = !root && process.env.REVISION ? process.env.REVISION : '';
 
+// In the page: every chart holder with the number of series ECharts built for it. A series type
+// the custom build (data/echarts.json) lacks is dropped silently, so 0 means a missing module.
+function seriesBuilt() {
+  return [...document.querySelectorAll('[data-chart]')].map((el) => {
+    const chart = window.echarts && window.echarts.getInstanceByDom(el);
+    return { id: el.id, built: chart ? chart.getModel().getSeriesCount() : -1 };
+  }).filter((c) => c.built !== -1);
+}
+
 // A URL of the site, past the CDN cache when a revision is known (production only).
 function at(rel) {
   const url = new URL(rel, base);
@@ -364,6 +373,13 @@ async function shot(page, name) {
     check((await page.getAttribute('#player-toast', 'data-shown')) === 'true' && (await page.textContent('[data-player-toast-text]')).trim() !== '',
       'track: replacing the queue is announced');
     await page.waitForTimeout(1500);
+    // The neighbourhood graph draws with the custom ECharts build (data/echarts.json). A series
+    // whose module the build lacks is dropped in silence (no console error, the canvas still
+    // there), so the proof is the series ECharts actually built (seriesBuilt).
+    await page.locator('#chart-neighbourhood').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => Number(document.documentElement.dataset.chartsState) > 0, null, { timeout: 15000 }).catch(() => {});
+    const graph = await page.evaluate(seriesBuilt);
+    check(graph.length === 1 && graph[0].built > 0, `track: the neighbourhood graph is built (${JSON.stringify(graph)})`);
     check(errors.length === 0, `track: no console errors after the player loads${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
@@ -633,6 +649,9 @@ async function shot(page, name) {
     const kept = await page.evaluate(() => window.__noReload === true && !document.getElementById('player').hidden
       && document.querySelector('#player-panel iframe') === window.__frame);
     check(kept, 'router: navigating keeps the page, the bar and the playing frame (no reload)');
+    const insights = await page.evaluate(seriesBuilt);
+    check(insights.length > 0 && insights.every((c) => c.built > 0),
+      `insights: every chart's series is built by the shipped ECharts (${insights.map((c) => c.id + ':' + c.built).join(', ')})`);
     check(new URL(page.url()).pathname.endsWith('/insights/'), 'router: the URL follows the navigation');
     await page.goBack();
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready', null, { timeout: 15000 })
