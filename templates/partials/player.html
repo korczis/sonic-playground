@@ -71,6 +71,12 @@
     <div class="border-b border-gray-200 px-4 py-3 dark:border-gray-700">
       <h2 class="text-sm font-semibold text-gray-900 dark:text-white" data-i18n="player.queue">{{ l["player.queue"] }}</h2>
       <p class="text-xs text-gray-500 dark:text-gray-400" data-i18n="player.queue_note">{{ l["player.queue_note"] }}</p>
+      {#- Flowbite Pro toggle: autoplay a random track when the queue ends (on by default). -#}
+      <label class="mt-2 flex cursor-pointer items-center gap-3">
+        <input type="checkbox" data-player-autoplay class="peer sr-only" checked>
+        <span class="relative h-5 w-9 shrink-0 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus-visible:ring-4 peer-focus-visible:ring-primary-300 dark:bg-gray-600 dark:peer-focus-visible:ring-primary-800" aria-hidden="true"></span>
+        <span class="min-w-0"><span class="block text-sm font-medium text-gray-900 dark:text-white" data-i18n="player.autoplay">{{ l["player.autoplay"] }}</span><span class="block text-xs text-gray-500 dark:text-gray-400" data-i18n="player.autoplay_hint">{{ l["player.autoplay_hint"] }}</span></span>
+      </label>
       <div class="mt-2 flex flex-wrap gap-2">
         <button type="button" data-player-shuffle class="{{ tool }}">
           <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4h4v4M4 20 20 4M20 16v4h-4M14 14l6 6M4 4l5 5"/></svg><span data-i18n="player.shuffle">{{ l["player.shuffle"] }}</span>
@@ -85,5 +91,25 @@
       </div>
     </div>
     <ol data-player-list class="max-h-[min(20rem,50vh)] overflow-y-auto p-2"></ol>
+  </div>
+</div>
+{#- One track menu for every card (static/js/track-menu.js): labelled actions instead of a row of
+    icons, positioned beside its "⋯" trigger, a bottom sheet on a phone. It lives outside
+    #main-content, so the router never swaps it. Its items carry the player's data-play*
+    attributes, set when it opens, so player.js does what they say. -#}
+{%- set item = "flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none sm:py-2 dark:text-gray-200 dark:hover:bg-gray-600 dark:focus:bg-gray-600" -%}
+<div id="track-menu-backdrop" hidden class="fixed inset-0 z-[65] bg-gray-900/50 sm:bg-transparent"></div>
+<div id="track-menu" hidden role="menu" aria-labelledby="track-menu-title" class="fixed inset-x-0 bottom-0 z-[70] max-h-[80vh] overflow-y-auto rounded-t-2xl border border-gray-200 bg-white pb-[env(safe-area-inset-bottom)] shadow-2xl sm:inset-x-auto sm:bottom-auto sm:w-64 sm:rounded-lg sm:pb-0 dark:border-gray-600 dark:bg-gray-700">
+  <div class="mx-auto mt-2 h-1 w-10 rounded-full bg-gray-300 sm:hidden dark:bg-gray-500" aria-hidden="true"></div>
+  <p id="track-menu-title" data-track-menu-title class="truncate border-b border-gray-200 px-4 py-3 text-sm font-semibold text-gray-900 sm:py-2 dark:border-gray-600 dark:text-white"></p>
+  <div class="py-1">
+    <button type="button" role="menuitem" data-menu-item="play" class="{{ item }}">{{ <icon name="play" cls="h-4 w-4 shrink-0" /> }}<span data-i18n="trackmenu.play">{{ l["trackmenu.play"] }}</span></button>
+    <button type="button" role="menuitem" data-menu-item="next" class="{{ item }}">{{ <icon name="play-next" cls="h-4 w-4 shrink-0" /> }}<span data-i18n="trackmenu.play_next">{{ l["trackmenu.play_next"] }}</span></button>
+    <button type="button" role="menuitem" data-menu-item="queue" class="{{ item }}">{{ <icon name="queue-add" cls="h-4 w-4 shrink-0" /> }}<span data-menu-queue-label>{{ l["trackmenu.queue_add"] }}</span></button>
+    <button type="button" role="menuitem" data-menu-item="radio" class="{{ item }}">{{ <icon name="radio" cls="h-4 w-4 shrink-0" /> }}<span class="min-w-0"><span class="block" data-i18n="trackmenu.radio">{{ l["trackmenu.radio"] }}</span><span class="block text-xs text-gray-500 dark:text-gray-400" data-i18n="action.radio_hint">{{ l["action.radio_hint"] }}</span></span></button>
+  </div>
+  <div class="border-t border-gray-200 py-1 dark:border-gray-600">
+    <a role="menuitem" data-menu-item="open" href="#" class="{{ item }}">{{ <icon name="arrow-right" cls="h-4 w-4 shrink-0" /> }}<span data-i18n="trackmenu.open">{{ l["trackmenu.open"] }}</span></a>
+    <button type="button" role="menuitem" data-menu-item="copy" class="{{ item }}">{{ <icon name="link" cls="h-4 w-4 shrink-0" /> }}<span data-i18n="trackmenu.copy">{{ l["trackmenu.copy"] }}</span></button>
   </div>
 </div>

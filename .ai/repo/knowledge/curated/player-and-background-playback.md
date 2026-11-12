@@ -45,6 +45,12 @@ provenance:
   bar's top edge shows progress where no seek bar fits. The saved position resumes only the
   track it was saved for; a track chosen while the IFrame API loads is the one that plays.
   These came from an independent review of the first redesign (2026-11-12).
+- Autoplay is on by default (the owner's wish): when the queue runs out, a random track that has
+  not played in this queue follows, marked "Autoplay" in the queue and announced; a switch in
+  the queue panel turns it off and is remembered.
+- Cards show play, the queue toggle and "⋯": the track menu (`static/js/track-menu.js`, one
+  popover in `partials/player.html`, a bottom sheet on a phone) holds every action, labelled:
+  play now, play next, add to / remove from queue, radio, open the review, copy the link.
 - Better than a bare embed: removed or non-embeddable videos are skipped (`onError` → next),
   never requested at all when `data/videos.json` knows they are gone; the queue, position and
   time survive a reload (localStorage; nothing third-party loads until play is pressed again);

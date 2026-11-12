@@ -54,9 +54,10 @@
     toastText: $('[data-player-toast-text]'),
     undo: $('[data-player-undo]'),
     progress: $('[data-player-progress]'),
+    autoplay: /** @type {HTMLInputElement} */ ($('[data-player-autoplay]')),
   };
   var REPEAT = ['off', 'all', 'one'];
-  var state = { queue: [], index: -1, time: 0, repeat: 'off', view: 'full', video: 'small' };
+  var state = { queue: [], index: -1, time: 0, repeat: 'off', view: 'full', video: 'small', autoplay: true };
   var yt = null;
   var ready = false;
   var ticker = null;
@@ -73,6 +74,7 @@
 
   try { Object.assign(state, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
   if (REPEAT.indexOf(state.repeat) < 0) state.repeat = 'off';
+  if (typeof state.autoplay !== 'boolean') state.autoplay = true;
 
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
@@ -88,6 +90,7 @@
     for (var i = 0; i < state.queue.length; i++) if (keyOf(state.queue[i]) === key) return i;
     return -1;
   }
+  /** @returns {SonicQueueItem} */
   function item(t) {
     return { source: t.source || '', path: t.path || '', artist: t.artist || '', track: t.track || t.title || '',
       youtube: t.youtube, thumbnail: t.youtube ? 'https://i.ytimg.com/vi/' + t.youtube + '/mqdefault.jpg' : '' };
@@ -151,7 +154,8 @@
     el.thumb.src = t.thumbnail;
     el.thumb.alt = '';
     el.prev.disabled = false;
-    el.next.disabled = state.index >= state.queue.length - 1 && state.repeat === 'off';
+    el.next.disabled = state.index >= state.queue.length - 1 && state.repeat === 'off' && !state.autoplay;
+    el.autoplay.checked = state.autoplay;
     el.queueCount.textContent = String(upcoming());
     el.queueCount.hidden = upcoming() === 0;
     el.repeat.dataset.on = String(state.repeat !== 'off');
@@ -235,6 +239,10 @@
     var text = span('min-w-0');
     text.append(span('block truncate text-sm font-medium text-gray-900 dark:text-white', t.track),
       span('block truncate text-xs text-gray-500 dark:text-gray-400', t.artist));
+    if (t.auto) {
+      text.append(span('mt-0.5 inline-flex rounded bg-gray-100 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-gray-600 dark:bg-gray-600 dark:text-gray-200',
+        Sonic.t('player.autoplay_badge')));
+    }
     b.append(img, text);
     li.append(b);
     if (kind === 'next') {
@@ -501,7 +509,25 @@
     if (finished && state.repeat === 'one') { jump(state.index); return; }
     if (state.index < state.queue.length - 1) jump(state.index + 1);
     else if (state.repeat === 'all' && state.queue.length) jump(0);
+    else if (state.autoplay && errorStreak < 3) autoplayNext();
     else { ended = true; paint(); }
+  }
+  // Autoplay (on by default, the owner's wish of 2026-11-12): when the queue runs out, a random
+  // track that has not played yet in this queue follows, announced in a toast.
+  function autoplayNext() {
+    Sonic.catalog().then(function (c) {
+      var seen = {};
+      state.queue.forEach(function (q) { seen[keyOf(q)] = true; });
+      var pool = c.tracks.filter(function (t) { return t.youtube && !seen[t.source]; });
+      if (!pool.length) pool = c.tracks.filter(function (t) { return t.youtube; });
+      if (!pool.length) { ended = true; paint(); return; }
+      var t = pool[Math.floor(Math.random() * pool.length)];
+      var entry = item(t);
+      entry.auto = true;
+      state.queue.push(entry);
+      jump(state.queue.length - 1);
+      toast(Sonic.t('player.toast_autoplay', { track: t.track, artist: t.artist }));
+    });
   }
   function next() { advance(false); }
   function prev() {
@@ -608,6 +634,10 @@
   el.prev.addEventListener('click', prev);
   el.repeat.addEventListener('click', cycleRepeat);
   el.shuffle.addEventListener('click', shuffle);
+  el.autoplay.addEventListener('change', function () {
+    state.autoplay = el.autoplay.checked;
+    save(); paint();
+  });
   el.clear.addEventListener('click', clear);
   el.size.addEventListener('click', function () { setVideo(state.video === 'small' ? 'large' : 'small'); });
   el.minimise.addEventListener('click', function () { setView('mini'); });
@@ -657,6 +687,6 @@
   if (current()) { pendingStart = state.time || 0; resumeFor = keyOf(current()); paint(); }
   window.SonicPlayer = { playNow: playNow, playNext: playNext, toggleQueued: toggleQueued, playList: playList,
     remove: remove, move: move, clear: clear, shuffle: shuffle, next: next, prev: prev, toggle: toggle,
-    stop: stop, jump: jump, undo: restore,
+    stop: stop, jump: jump, undo: restore, notify: function (text) { toast(text); },
     state: function () { return JSON.parse(JSON.stringify(state)); } };
 })();
