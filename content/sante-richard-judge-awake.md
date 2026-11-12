@@ -6,6 +6,8 @@ description = "Santé lays a deep, rolling groove under J.U.D.G.E's grave, soulf
 [taxonomies]
 genre = ["deep house", "house", "techno"]
 sentiment = ["hypnotic", "soulful", "introspective"]
+concept = ["house groove", "featured artist", "remix"]
+instrument = ["vocals", "keyboard", "synthesizer", "drum machine"]
 
 [extra]
 country = "DE"
@@ -14,6 +16,62 @@ publisher = "Avotre"
 release_year = "2014"
 album = "Awake (feat. J.U.D.G.E)"
 youtube = "https://www.youtube.com/embed/_qVK8OLsqyY"
+connections = [
+  { source = "claptone-clap-your-hands-say-yeah-ghost.md", why = "German deep house of the same years built around a guest vocalist; Claptone was among the DJs who played Awake." },
+  { source = "gorgon-city-hard-on-me.md", why = "Another mid-2010s deep house track that sets a grave, soulful male voice against a steady, rolling groove." },
+]
+
+[extra.credits]
+producers = ["Santé"]
+featuring = ["J.U.D.G.E."]
+vocals = ["J.U.D.G.E."]
+remixers = ["Agoria", "Pablo Nouvelle"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Recognise the house groove under a slow, soulful vocal and explain how the two pull against each other.",
+  "Describe what a featured vocalist brings to a producer's club track.",
+  "Compare how two remixes of one track can aim at completely different moods.",
+]
+listen_for = [
+  { part = "the intro", what = "Kick, hats and a low bass throb set a serious, dark-room tone from the first bar." },
+  { part = "the build-up", what = "Percussion layers stack and a moody chord progression on hypnotic keys creeps in." },
+  { part = "the first verse", what = "J.U.D.G.E enters with a measured, melancholic delivery, sitting deep in the mix." },
+  { part = "the bridge", what = "The drums drop out and the chords and voice hang alone before the beat returns." },
+  { part = "the outro", what = "Elements are pulled back one by one until only the rhythm remains, ready for the next record." },
+]
+questions = [
+  "Santé flew to London specially to record with J.U.D.G.E. What does a producer gain from recording a singer in person rather than by file exchange?",
+  "Agoria made a progressive, synth-driven remix and Pablo Nouvelle a tender, downtempo one. Which direction suits the vocal better?",
+  "Why does a soulful voice make a dark techno-leaning track feel more human?",
+]
+
+[[extra.sources]]
+title = "Santé Shows Us Deeper Shades of House and Techno With Awake"
+url = "https://www.vice.com/en/article/jp4z44/sante-shows-us-deeper-shades-of-house-and-techno-with-awake"
+publisher = "Vice / Thump"
+kind = "article"
+year = "2014"
+
+[[extra.sources]]
+title = "Santé – Awake EP (AVOTRE 013)"
+url = "https://www.forcedexposure.com/Catalog/sante-awake-ep-12-/AVOTRE.013EP.html"
+publisher = "Forced Exposure"
+kind = "database"
+year = "2014"
+
+[[extra.sources]]
+title = "Eagles & Butterflies ft. J.U.D.G.E"
+url = "https://mixmag.net/read/eagles-butterflies-ft-j-u-d-g-e-music"
+publisher = "Mixmag"
+kind = "article"
+
+[[extra.sources]]
+title = "Santé | Judge – Awake"
+url = "https://www.soundshelter.net/vinyl/sante-judge-awake"
+publisher = "Sound Shelter"
+kind = "database"
 +++
 
 ## Genre and Mood
@@ -56,10 +114,18 @@ The beat slams back with the full chord stack and vocal on top, the track's most
 
 Elements are pulled back one by one until only the rhythm remains, ready for the next record.
 
+## Concepts in Focus
+
+Awake runs on a {{ <concept_link name="house groove" /> }}: kick on every beat, hi-hats between them, and a deep, rolling bass that keeps the body moving. Thump described it as an emotive, textured journey with hypnotic keys, melancholic vocals and rolling, groove-based percussion. The groove gives the track its dance-floor function, while the slowly changing chords give it its darkness.
+
+The human element comes from a {{ <concept_link name="featured artist" /> }}. Santé flew to London specially to work with the vocalist J.U.D.G.E. (Richard Judge), and Thump wrote that his voice added depth to the producer's darker studio persona. In club music a guest singer often turns a tool into a song: here the vocal phrases return like a mantra and give the arrangement the arc of a story.
+
+The EP also shows what a {{ <concept_link name="remix" /> }} package can do. The French techno producer Agoria made a progressive rework with a rousing synth pattern and crisp kick drums, and the Swiss producer Pablo Nouvelle a tender, downtempo version: one vocal, three very different nights. For another German deep house record built on a guest voice, listen to {{ <track_link source="claptone-clap-your-hands-say-yeah-ghost.md" /> }}.
+
 ## Artistic Context
 
-Santé is a German DJ and producer who runs his own label, Avotre, where Awake came out as the 12-inch AVOTRE 013 in late 2014. The EP paired the original with a remix by French techno heavyweight Agoria on the B-side; that Agoria version also travelled widely with an official video. Reviewers noted how the release showed the label boss reaching for deeper shades of house and techno with a strong vocal at its centre.
+Santé is a German DJ and producer who runs his own label, Avotre. Awake, recorded with J.U.D.G.E. in London, followed his debut album Current and came out on Avotre in late 2014 as the three-track Awake EP, catalogue number AVOTRE 013, with remixes by Agoria and Pablo Nouvelle; Thump, which premiered it, announced a release through Ultra Records in December 2014 as well. Reviewers noted how the release showed the label boss reaching for deeper shades of house and techno with a strong vocal at its centre, and Thump called it his most compelling club track yet.
 
 ## Impact and Reception
 
-Awake became one of Santé's best-known productions, a track that DJs could play both in peak hours and in more reflective moments, and it introduced many listeners to J.U.D.G.E's distinctive voice. It earns its place here for that rare balance of club power and soul. Play it as the night turns into morning.
+Awake became one of Santé's best-known productions: after Agoria's remix, Mixmag reported, it found its way into sets by Dixon, Claptone and others. It is a track DJs could play both in peak hours and in more reflective moments, and it introduced many listeners to J.U.D.G.E.'s voice. It earns its place here for that rare balance of club power and soul. Play it as the night turns into morning.

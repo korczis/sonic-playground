@@ -119,6 +119,34 @@ class Contract(unittest.TestCase):
         catalog.load_track(path, errors)
         self.assertTrue(any("split across lines" in e for e in errors))
 
+    def _append(self, text):
+        _, errors = self.load()
+        path = catalog.CONTENT / "bakermat-the-river.md"
+        path.write_text(path.read_text(encoding="utf-8") + text, encoding="utf-8")
+        errors = []
+        catalog.load_track(path, errors)
+        return errors
+
+    def test_reproduced_lyrics_are_refused_fenced_or_not(self):
+        # 2026-11-12: four reviews carried full lyrics, one inside a code fence
+        verse = "\n".join(f"line {i} of a sung verse" for i in range(10))
+        self.assertTrue(any("reproduced lyrics" in e for e in self._append("\n## Lyrics\n\n" + verse + "\n")))
+        self.assertTrue(any("reproduced lyrics" in e for e in self._append("\n```\n" + verse + "\n```\n")))
+        self.assertFalse(any("reproduced lyrics" in e for e in self._append("\n" + "- a short list item\n" * 10)))
+
+    def test_educational_references_are_checked(self):
+        errors = self._append('\nSee {{ <track_link source="no-such-review.md" /> }} and '
+                              '{{ <concept_link name="sidechain compression" /> }}.\n')
+        self.assertTrue(any("names no review" in e for e in errors))
+        self.assertTrue(any("not in taxonomies.concept" in e for e in errors))
+        self.assertTrue(any("not defined" in e for e in self._append('\n{{ <concept_link name="no such idea" /> }}\n')))
+
+    def test_listen_for_needs_a_part_or_a_time(self):
+        _, errors = self.load(extra='\n[extra.learning]\nlevel = "introductory"\nobjectives = ["Hear how a thing works in the song.", "Hear another thing that works there."]\n'
+                                    'listen_for = [{ what = "the drums come in hard" }, { part = "intro", what = "a quiet pad" }, { at = "1:00", what = "the drop arrives" }]\n'
+                                    'questions = ["What changes in the middle?", "Why does it end abruptly?"]\n')
+        self.assertTrue(any("listen_for[0] needs a part" in e for e in errors))
+
     def test_artist_override(self):
         track, errors = self.load(title="Lulu's Theme", extra='artist = "Lulu Rouge"\n', name="x.md")
         self.assertEqual(errors, [])

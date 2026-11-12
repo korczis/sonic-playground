@@ -1,0 +1,10 @@
+term = "tremolo"
+category = "timbre"
+wikipedia = "https://en.wikipedia.org/wiki/Tremolo"
+see_also = ["reverb", "delay"]
+
+[en]
+definition = "A trembling effect made by rapidly repeating a note or by making its volume pulse up and down. On electric guitar it usually comes from an amplifier or pedal circuit, giving a shimmering, wavering sound associated with surf music, spaghetti-western soundtracks and 1960s pop."
+
+[cs]
+definition = "Chvějivý efekt, který vzniká rychlým opakováním tónu nebo pravidelným kolísáním jeho hlasitosti. U elektrické kytary ho obvykle vytváří obvod v zesilovači nebo efektový pedál a dává zvuku třpytivé, rozechvělé zabarvení spojované se surf music, hudbou spaghetti westernů a popem šedesátých let."

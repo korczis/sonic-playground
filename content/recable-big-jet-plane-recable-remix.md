@@ -8,6 +8,7 @@ genre = ["deep house", "electronic", "remix"]
 sentiment = ["dreamy", "uplifting", "nostalgic"]
 
 [extra]
+edu_exempt = "No public source, video or MusicBrainz entry documents this remix beyond the owner's playlist, so nothing about its sound could be sourced."
 album = "Traffic (Recable Originals and Remixes)"
 +++
 

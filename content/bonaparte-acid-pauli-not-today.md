@@ -1,168 +1,127 @@
 +++
 title = "Bonaparte, Acid Pauli - Not Today"
 date = "2024-10-24"
-description = "A vibrant collaboration that melds Bonaparte's theatrical flair with Acid Pauli's eclectic sound, 'Not Today' delivers a captivating blend of electronic beats and lyrical introspection."
+description = "Berlin's dance-punk ringmaster Bonaparte and the electronic producer Acid Pauli, once of The Notwist, trade a sly, defiant refrain in a 2020 single that sings from the point of view of something humanity has wronged and now asks for rescue."
 
 [taxonomies]
 genre = ["electronic", "pop", "experimental"]
 sentiment = ["uplifting", "introspective", "energetic"]
+concept = ["verse-chorus form", "hook"]
+instrument = ["vocals", "synthesizer"]
 
 [extra]
 country = "DE"
-musicbrainz = { recording = "c932bc6e-13d6-4791-af8c-ab6e5cfc2e7f", artist = "ebeb557a-1360-4e75-9dc5-3739ef2d6a5f" }
+album = "Good Morning / Not Today"
+release_year = "2020"
+musicbrainz = { recording = "c932bc6e-13d6-4791-af8c-ab6e5cfc2e7f", artist = "ebeb557a-1360-4e75-9dc5-3739ef2d6a5f", release = "32d632e2-9ff3-4a7a-b9ee-1e2e28a21d52" }
 cover_image = "/images/thumbnails/bonaparte-acid-pauli-not-today.jpg"
 youtube = "https://www.youtube.com/embed/rJyyP8lkneg"
+connections = [
+  { source = "sleaford-mods-tweet-tweet-tweet.md", why = "Another sharp-tongued, socially critical vocal over spare electronic production, sung with more sneer than sweetness." },
+  { source = "chicks-on-speed-euro-trash-girl.md", why = "Electro and punk theatre from Munich, where Acid Pauli co-opened the club Rote Sonne, in which performance and attitude matter as much as the beat." },
+]
+
+[extra.credits]
+writers = ["Tobias Jundt", "Martin Gretschmann"]
+producers = ["Bonaparte", "Acid Pauli"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Map a song's verses, pre-chorus and refrain from its lyric and hear how each section has a different job.",
+  "Explain how a two-word refrain can work as a hook and as the song's whole argument.",
+  "Discuss how a lyric written from an unusual point of view changes the meaning of a familiar plea.",
+]
+listen_for = [
+  { part = "the intro", what = "The pulse Acid Pauli sets up before the voice arrives, the electronic frame for Bonaparte's performance." },
+  { part = "the first verse", what = "A string of accusing questions delivered by Tobias Jundt in a half-sung, half-declaimed voice." },
+  { part = "the pre-chorus", what = "The narrator throws the listener's sudden plea for rescue back at them, building tension for the refrain." },
+  { part = "the refrain", what = "The two words of the title, repeated with a shrug: a refusal that is also the catchiest line in the song." },
+]
+questions = [
+  "The narrator says it 'gave you life' and threatens a 'next wave pandemic'. Who or what do you think is speaking, and how does that change the refusal in the refrain?",
+  "The single came out in July 2020. How does the moment of release shape the way a listener hears a lyric like this?",
+  "Bonaparte is known for hedonistic, socially critical songs. Can a song be danceable and accusing at the same time, and does one undercut the other?",
+]
+
+[[extra.sources]]
+title = "Not Today (Bonaparte, Acid Pauli), release credits"
+url = "https://www.youtube.com/watch?v=rJyyP8lkneg"
+publisher = "YouTube (provided by Bonaparte)"
+kind = "label"
+year = "2020"
+
+[[extra.sources]]
+title = "Bonaparte (band)"
+url = "https://en.wikipedia.org/wiki/Bonaparte_(band)"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "Console (musician)"
+url = "https://en.wikipedia.org/wiki/Acid_Pauli"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "Not Today (recording)"
+url = "https://musicbrainz.org/recording/c932bc6e-13d6-4791-af8c-ab6e5cfc2e7f"
+publisher = "MusicBrainz"
+kind = "database"
 +++
 
-> **Bonaparte** and **Acid Pauli** come together in "Not Today," a track that 
-> combines theatrical storytelling with eclectic electronic beats. The collaboration 
-> creates a vibrant soundscape that is both uplifting and introspective, making it a 
-> standout piece in their respective discographies.
+> **Bonaparte** and **Acid Pauli** come together in "Not Today," a track that combines Bonaparte's theatrical, socially critical songwriting with Acid Pauli's electronic production. It is one half of a two-track single, Good Morning / Not Today, released on 17 July 2020.
 
-"Not Today" explores themes of resilience and self-empowerment, with lyrics that 
-encourage listeners to face challenges head-on. The dynamic arrangement showcases 
-both artists' strengths, resulting in a rich, multi-layered experience.
+"Not Today" is a song of refusal. Its narrator lists what it has watched humans do, from electing villains to selling off native land, and when the listener finally asks to be saved, the answer is the title.
 
 ## Genre and Mood
 
-The track fits seamlessly into the **electronic**, **pop**, and **experimental** 
-genres, characterized by its **uplifting** and **introspective** vibe. The energetic
-rhythms combined with reflective lyrics create a balanced listening experience 
-perfect for various settings.
+The track sits between **electronic**, **pop** and **experimental** music: a dance-ready pulse under a vocal that is closer to cabaret than to club diva. The mood is energetic and oddly uplifting for a lyric this bleak, because the refusal is delivered with a grin; underneath, the questions it asks are introspective ones.
 
 ## About the Artists
 
-**Bonaparte** is known for their theatrical performances and unique blend of styles,
-often infusing their music with a playful yet impactful narrative. **Acid Pauli**, 
-on the other hand, brings an eclectic approach to electronic music, known for his 
-ability to blend genres and create immersive soundscapes. Together, they create a 
-compelling synergy that resonates with fans of both artists.
+**Bonaparte** is the project of Tobias Jundt, a Berlin-based Swiss songwriter and producer, active since 2006 and known, in Wikipedia's words, for "socio-critical lyrics as well as its celebration of hedonism" and for expressive live shows that Der Tagesspiegel called "a trash circus unleashed". Albums such as Too Much (2008), My Horse Likes You (2010) and Was Mir Passiert (2019) mix dance-punk, electronic rock and indie rock. **Acid Pauli** is Martin Gretschmann, long the electronics programmer of The Notwist and the man behind the project Console, whose piece Crabcraft became Heirloom on Björk's Vespertine. He describes Acid Pauli as sitting "somewhere between ambient and techno".
 
 ## Song Summary
 
-The track begins with a pulsating beat that draws listeners in, setting the stage 
-for Bonaparte's captivating vocals. As the song progresses, Acid Pauli's signature 
-sound intertwines with the driving rhythm, creating a layered atmosphere that 
-enhances the lyrical message.
+The song is built in a classic pop shape around an unconventional narrator. The verses are lists of accusations; a pre-chorus turns on the listener who now wants rescue and claims to be a believer; and the refrain answers with two words, repeated. The credits split the work evenly: Tobias Jundt and Martin Gretschmann are both credited as composers and lyricists, and the production is credited to Bonaparte and Acid Pauli.
 
 ## Sound Breakdown
 
 ### Intro: Energetic Pulse
 
-"Not Today" opens with a vibrant pulse, establishing an energetic foundation. 
-The initial beats create an infectious groove that sets the tone for the track, 
-inviting listeners to engage.
+"Not Today" opens with Acid Pauli's electronic pulse, a groove that sets the tone before the voice enters.
 
 ### First Verse: Captivating Vocals
 
-In the first verse, Bonaparte's theatrical vocals deliver introspective lyrics, 
-weaving a narrative that explores themes of perseverance. The delivery is both 
-confident and reflective, perfectly complementing the rhythmic backdrop.
+Jundt delivers the first verse as a string of questions about who let the damage happen, half sung and half declaimed, confident and sardonic rather than mournful.
 
 ### Chorus: An Anthem of Resilience
 
-The chorus bursts forth with energetic instrumentation and uplifting melodies, 
-transforming the track into an anthem of resilience. The dynamic interplay 
-between vocals and instrumentation creates a captivating and empowering moment.
+After the pre-chorus throws the plea for rescue back at the listener, the refrain lands: the title, repeated, with a shrugging "no, no". It is a refusal sung like a party chant.
 
 ### Bridge: A Moment of Reflection
 
-The bridge introduces a softer, more introspective section, allowing listeners 
-to absorb the song's emotional weight. This reflective pause contrasts with the 
-earlier energy, providing depth to the overall experience.
+A short third verse changes the angle: the narrator promises to stay on as a shadow in the listener's conscience, watching, before the pre-chorus and refrain return.
 
 ### Final Chorus: A Joyful Climax
 
-The final chorus returns to the track's energetic roots, combining driving beats 
-with vibrant melodies. The climax encapsulates the uplifting essence of the song, 
-encouraging listeners to embrace the message of resilience and empowerment.
+The refrain is repeated several times at the end until the title is all that is left, the song's argument reduced to its two words.
+
+## Concepts in Focus
+
+Not Today is a clear example of {{ <concept_link name="verse-chorus form" /> }}, with one extra step. The verses carry the story, a different set of grievances each time; the pre-chorus, the same each time, turns from story to confrontation; and the refrain delivers the verdict. Reading the lyric's shape before listening makes the structure easy to follow, and shows how much of a pop song's force comes from the order in which its sections arrive.
+
+The refrain is also the song's {{ <concept_link name="hook" /> }}. A hook is the part a listener remembers, and here it is the shortest possible phrase, two words that are both catchy and the whole argument. Compare the deadpan, accusing vocal of {{ <track_link source="sleaford-mods-tweet-tweet-tweet.md" /> }}, where social criticism also comes over a spare beat with more sneer than melody.
 
 ## Overall Vibe
 
-"Not Today" embodies an **uplifting**, **introspective**, and **energetic** 
-energy that resonates deeply with listeners. The collaboration between Bonaparte 
-and Acid Pauli results in a vibrant and multifaceted track that invites exploration 
-and enjoyment.
+"Not Today" is uplifting, introspective and energetic at once: a song you can dance to that keeps asking uncomfortable questions. The collaboration works because each side keeps its character, Bonaparte's theatre and Acid Pauli's electronics.
 
 ## Conclusion
 
-With "Not Today," **Bonaparte** and **Acid Pauli** deliver a powerful message 
-wrapped in an engaging soundscape. The track's combination of theatricality, 
-electronic beats, and introspective lyrics makes it a compelling addition to 
-both artists' repertoires. Whether you're looking for an energizing anthem or a 
-moment of reflection, "Not Today" promises to resonate with a wide audience.
+With "Not Today," **Bonaparte** and **Acid Pauli** turn a plea for rescue on its head. The track's theatrical vocal, electronic pulse and a refrain built from a single refusal make it a sharp, catchy piece of social commentary from the summer of 2020.
 
 ## Lyrics
 
-```
-Who put the name of a villain
-On the ballot box?
-Who watched overdose poor souls
-Slaving down in the docks?
-
-I was there on the lifeboats
-All shattered on the rocks
-And sometimes I think that death itself
-Is kind of unorthodox
-
-And now you want me to save you?
-And now you say you're a believer?
-Where have you been when I gave you
-Life?
-Many small town politicians
-Put their fate in my hands
-But I witnessed the governor
-Selling off all the native land, yeah
-
-I must admit it kind of pissed me off
-I bet now you couldn't tell
-I'll be your next wave pandemic
-House party in your cells
-
-And now you want me to save you?
-Oh, now you say you're a believer?
-Where have you been when I gave you
-Life?
-
-Ain't gonna please you, please you
-Not today
-No, no
-I hate to break it, break it to you
-Not today
-No, no, no
-
-I'll be your shadow in your conscience
-But I don't make no new friends
-Snack on my popcorn and I stick around
-Let's start it off for a happy end
-
-And now you want me to save you?
-Now you say you're a believer?
-Where have you been when I gave you
-Life?
-
-And now you want me to save you?
-Oh, now you say you're a believer?
-Where have you been when I gave you
-Life? Ay
-
-Ain't gonna please you, please you
-Not today
-No, no
-I hate to break it, break it to you
-Not today
-No, no, no
-
-Ain't gonna please you, please you
-Not today
-No, no
-I hate to break it, break it to you
-Not today
-
-Not today
-No, no, no
-Not today
-Not today
-
-Not today
-```
+The lyric is written from the point of view of something that "gave you life" and has watched humanity misuse it: it recalls villains on the ballot, lifeboats on the rocks and a governor selling native land, threatens to become the "next wave pandemic", and answers every late plea for salvation with the title. The full text is available on licensed lyric services and with the release on streaming platforms.

@@ -1,197 +1,145 @@
 +++
 title = "Alic - Going Down In A Blaze Of Glory"
 date = "2024-10-11"
-description = "A deep dive into the haunting realms of dark psychedelic techno, blending hypnotic rhythms with ghostly atmospheres."
+description = "A seven-minute slab of psychedelic techno from the German duo Alic, released free on their own netlabel Digital Diamonds in 2012: punching drums under slowly shifting atmospheric layers."
 
 [taxonomies]
 genre = ["psychedelic", "dark techno", "minimal"]
 sentiment = ["eerie", "haunting", "immersive"]
+concept = ["four-on-the-floor", "build-up", "ambient texture"]
+instrument = ["drum machine", "synthesizer"]
 
 [extra]
+artist = "Alic"
+track = "Going Down In A Blaze Of Glory"
+album = "Going Down In A Blaze Of Glory EP"
+publisher = "Digital Diamonds"
 release_year = "2012"
 country = "DE"
 musicbrainz = { recording = "f83bf5a2-5238-4adb-bc76-25cc5506faf6", artist = "19d91e31-cbb4-41ac-879a-5d1517581778", release = "eb00738a-a033-426b-97e7-13e17ab90313" }
 cover_image = "/images/thumbnails/alice-going-down-in-a-blaze-of-glory.jpg"
 youtube = "https://www.youtube.com/embed/ICj67BEAt6k"
+connections = [
+  { source = "northern-lite-trusting-blind.md", why = "Another German electronic duo filed here under psychedelic, dark techno and minimal, built on hypnotic repetition rather than hooks." },
+  { source = "kolsch-bloodline-feat-tomas-hoffding.md", why = "Techno from a German label of the same decade that also lets a long track grow over a steady kick." },
+]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Recognise a four-on-the-floor kick as the fixed frame that lets a long techno track change everything else slowly.",
+  "Follow how a track almost seven minutes long builds intensity by adding and thickening layers instead of by changing tempo.",
+  "Describe how atmospheric pads and effects give an instrumental track a mood that its title can then name.",
+]
+listen_for = [
+  { part = "the intro", what = "Pads and faint effects come first; the beat is introduced as a frame rather than as a hook." },
+  { part = "the first build", what = "Once the kick and bass lock in, new synth layers arrive on top while the groove underneath stays the same." },
+  { part = "the bridge", what = "The beat steps back and the atmospheric layers move to the front: the track's quietest stretch." },
+  { part = "the final build", what = "Earlier elements return together and the texture thickens before the end, a climax made of density rather than speed." },
+]
+questions = [
+  "An instrumental track cannot tell the story its title names. Which sounds here make you hear 'going down in a blaze of glory', and would you hear them differently under another title?",
+  "Alic gave this EP away for free under a Creative Commons licence. How might a netlabel change who hears a track like this, and where?",
+  "Almost seven minutes on one steady beat: at what point does repetition stop feeling static and start feeling hypnotic?",
+]
+
+[[extra.sources]]
+title = "[DigitalDiamonds025] Alic - Going Down In A Blaze Of Glory EP"
+url = "https://archive.org/details/Alic-GoingDownInABlazeOfGloryEp"
+publisher = "Internet Archive (Digital Diamonds netlabel)"
+kind = "label"
+year = "2012"
+
+[[extra.sources]]
+title = "Alic"
+url = "https://www.discogs.com/artist/305727-Alic"
+publisher = "Discogs"
+kind = "database"
+
+[[extra.sources]]
+title = "Alic - Close Distance"
+url = "https://ektoplazm.com/free-music/alic-close-distance"
+publisher = "Ektoplazm"
+kind = "label"
+year = "2014"
+
+[[extra.sources]]
+title = "Going Down In A Blaze Of Glory (recording)"
+url = "https://musicbrainz.org/recording/f83bf5a2-5238-4adb-bc76-25cc5506faf6"
+publisher = "MusicBrainz"
+kind = "database"
 +++
 
-> The phrase "Going Down In A Blaze Of Glory" carries a strong symbolic meaning, 
-> often used to describe a moment of final defiance or an epic conclusion, typically 
-> in the face of overwhelming odds. It evokes imagery of a heroic or bold stand, 
-> where the individual faces their end (whether figurative or literal) with grandeur 
-> and dignity, often choosing to go out on their own terms rather than succumb quietly. 
-> This expression is filled with energy, power, and a sense of fiery determination, 
-> making it perfect for music that is intense and climactic.
+> The phrase "Going Down In A Blaze Of Glory" describes a final act of defiance: facing the end, literal or figurative, boldly and on your own terms rather than quietly. It is a phrase of energy and fiery determination, which suits music built to be intense and climactic.
 
 ## Genre and History
 
-**Ectoplasm** is a quintessential example of **dark psychedelic techno**, a subgenre that 
-emerged from the late 1990s and early 2000s. Psychedelic techno itself is a fusion of 
-traditional techno's driving beats and the more exploratory, mind-bending qualities of 
-psychedelic trance (psytrance). While techno roots can be traced back to Detroit in the
-1980s, with artists like Juan Atkins, Kevin Saunderson, and Derrick May pioneering the 
-genre, **psychedelic techno** evolved from a more European underground rave scene, 
-particularly in countries like Germany, the UK, and Sweden.
+**Alic** call what they make **psychedelic techno**: techno's steady, physical beat combined with the layered, mind-bending atmospheres of psychedelic trance. Discogs describes their style as merging techno with trance elements, and Ektoplazm, the free psytrance and techno portal that later presented their debut album, sums it up as "intelligent psychedelic techno for mind and body", with powerful techno beats, old-school acid and electro influences and refined psychedelic atmospheres.
 
-Where traditional techno focused on minimalism and repetition, **psychedelic techno** 
-introduced richer soundscapes, intricate patterns, and evolving textures meant to alter 
-the listener’s perception and induce a hypnotic, trance-like state. The darker variant, 
-like that explored in **Ectoplasm**, draws influence from the sinister, unsettling vibes 
-of genres like **dark ambient** and **industrial**, often incorporating eerie, unsettling 
-melodies and ominous atmospheres. These tracks, including **Ectoplasm**, aim not only to 
-make you dance but to immerse you in an otherworldly experience, evoking feelings of
-mystery, darkness, and even ghostly sensations.
+Techno itself goes back to Detroit in the 1980s, to Juan Atkins, Kevin Saunderson and Derrick May. The psychedelic strand grew in the European underground, Germany included, where producers took techno's repetition and dressed it in the evolving textures of trance. **Going Down In A Blaze Of Glory** sits on the darker side of that strand: the label tagged the EP techno, dub, techtrance and psychedelic techno, and its own note promised "a superdeep tour" into Alic's "well known world of punching and atmospheric layers of sound".
 
 ## Symbolism and Connection to the Track
 
-In the context of the track "Going Down In A Blaze Of Glory" by Alic, the title 
-can be interpreted in multiple ways. The track’s psychedelic techno vibe adds 
-layers of meaning to this phrase, capturing the intensity, the build-up, and 
-the release in a sonic form. The music feels like a journey that escalates 
-to a breaking point, mirroring the idea of going out in a spectacular or 
-unforgettable manner.
-
-In the song, the steady progression and intricate layering of sound evoke a 
-sense of tension—building toward a climax that feels both inevitable and 
-overwhelming. The beat pushes forward relentlessly, creating the feeling of 
-spiraling towards a massive conclusion, much like the phrase suggests. By the 
-time the track reaches its peak, it delivers a satisfying and intense release 
-of energy, as if the listener is truly "going down" in a powerful, unstoppable 
-wave of sound.
+The title is a promise the music has to keep without words. Over almost seven minutes the track does it the way techno usually does: the beat stays, and tension comes from layers arriving, thickening and pulling back. That steady accumulation is what makes the final stretch feel like an ending worth the title rather than just the point where the track stops.
 
 ## Influence of the Phrase in Music
 
-The phrase "Blaze of Glory" has appeared in music history multiple times, most 
-notably in Jon Bon Jovi’s 1990 hit single Blaze of Glory, where it’s used to 
-describe a protagonist who faces their fate head-on, unapologetically living 
-and dying by their own rules. Alic’s track, however, takes a more abstract, 
-instrumental approach. Instead of lyrics narrating the story, the music itself
-conveys the journey. This transformation from narrative to atmosphere creates a 
-psychedelic techno soundscape where the emotional weight of "going down in a blaze" 
-is expressed through intense rhythms, haunting effects, and hypnotic progression.
-
-In contrast to the classic rock interpretation of defiance and personal heroism, 
-Alic’s version through psychedelic techno is more internalized. It captures a 
-deeply personal, almost meditative confrontation with powerful forces—whether 
-that’s the final stages of a party or rave, a personal emotional reckoning, or a deep,
-introspective journey. It’s less about outward rebellion and more about the inner 
-confrontation of overwhelming energies.
+The phrase has a famous predecessor in Jon Bon Jovi's 1990 single Blaze of Glory, written for the film Young Guns II, where it belongs to an outlaw who lives and dies by his own rules. Alic's track takes the opposite route to the same idea: no lyric, no narrator, only rhythm and texture. What rock tells as a story, techno can only build as pressure.
 
 ## Mood and Atmosphere
 
-The mood of "Going Down In A Blaze Of Glory" is **dark yet energetic**, **intense yet liberating**. 
-It conveys a sense of finality, as if each sound element builds toward something explosive. 
-The track mirrors the emotional journey described by the phrase—starting with tension and intrigue, 
-escalating through persistence and complexity, and culminating in a dramatic climax. The listener is 
-pulled into a powerful wave of sound, heading toward an unavoidable yet triumphant end.
-
-Musically, the driving beats and evolving synths evoke the feeling of being drawn toward a 
-blaze of glory. The slow build-up mimics increasing tension, while the climactic moments 
-reflect the explosion of energy that the phrase suggests. As the song crescendos, it feels as 
-though the listener is confronting something massive, but fully immersed and embracing the 
-intensity of the moment.
-
-**Ectoplasm**, on the other hand, crafts a mood that is **eerie (strange and frightening)**, **haunting**, 
-and deeply **immersive**. Alic transports listeners into a shadowy, supernatural world. 
-The title, “Ectoplasm,” refers to a supernatural substance or spiritual energy, often associated 
-with ghost sightings, adding to the track's mysterious, otherworldly atmosphere.
+The mood is dark but driving. The kick keeps the body moving while the higher layers, pads and effects, carry the eerie and haunting side, so the track works both as dance music and as late-night listening. The immersion comes from length and patience: nothing is rushed, and the changes are small enough that you often notice them only once they have already happened.
 
 ## About the Track
 
-The track pulls the listener into a hypnotic trance where dark, swirling pads, deep basslines, 
-and ghostly sound effects converge to create a feeling of floating through an ethereal, 
-almost haunted space. It's not just a song you hear; it’s a psychological experience, 
-enveloping you in a soundscape that feels vast and endless, with the potential for something 
-unknown lurking in the distance.
-
-Fans of **dark minimalism** and **psychedelia** will find **Ectoplasm** to be a powerful, 
-mood-altering track, ideal for late-night listening or for underground rave environments 
-where the focus shifts from social interaction to personal, introspective experiences.
+Going Down In A Blaze Of Glory is the title track of the Going Down In A Blaze Of Glory EP, catalogue number DigitalDiamonds025, released for free on 13 April 2012 on Alic's own netlabel Digital Diamonds under a Creative Commons licence. The original mix runs 6:50. The EP also carries a remix by Brian Burger, which the label said "is knocking you down once more", a remix by Excizen that "helps to rise again", and a fourth track, Holy Clap, described as "a smooth groover to compensate the loss of your braincells".
 
 ## About the Artist
 
-Alic, a duo from Germany, is known for their experimental approach to electronic music, 
-blending elements of **psychedelic** and **techno** to create tracks that are both hypnotic 
-and immersive. They’ve become well-respected figures in the underground scene, not only for 
-their production skills but for their ability to merge **dark techno** and **psychedelic** 
-influences in a way that keeps listeners engaged both mentally and physically.
-
-Their music often features themes of introspection, surrealism, and the exploration of altered
-states of consciousness. Alic’s discography includes numerous releases that delve into the more 
-experimental sides of techno, and their tracks are often played in deep, immersive sets in 
-underground clubs and festivals across Europe.
+Alic are a German duo, Volker Jakubzik and Adam Zawadzki according to Discogs, and the founders of the free netlabel Digital Diamonds. Besides their netlabel output they have released on labels such as Horns And Hoofs Entertainment, Boshke Beats Records and Nachtstrom Schallplatten. Their debut album Close Distance came out on Digital Diamonds in 2014, and the EP series continued with titles such as In The Heat Of Delight, Sliders, Last Man Standing and Ostkreuz.
 
 ## Song Summary
 
-"Ectoplasm" is built around a steady, minimalistic techno framework, but it’s the evolving 
-atmospheric layers and ghostly effects that take center stage. The deep, pulsing bassline 
-provides a sense of constant forward motion, while the higher frequencies shift and twist, 
-creating an otherworldly feel. Throughout the track, eerie pads and spectral synths rise and fall, 
-giving the listener the sensation of being surrounded by ghostly figures or moving through a 
-haunted, fog-filled space.
-
-The beauty of **Ectoplasm** lies in its subtlety; rather than overwhelming the listener with 
-aggressive drops or massive shifts in energy, the track relies on gradual, hypnotic evolution.
-The progression is delicate and slow, but never stagnant, keeping the listener locked into its 
-eerie embrace for the duration.
+The track is built on a steady, minimal techno frame: kick and bass give constant forward motion while the upper register shifts, twists and swells. Its strength is restraint. Instead of big drops or sudden changes of energy, it relies on gradual evolution, never quite standing still, and keeps the listener locked in for its full length.
 
 ## Sound Breakdown
 
 ### Intro: The Haunting Begins
 
-The track opens with soft, otherworldly pads and faint, unsettling sound effects. The listener is 
-immediately drawn into a supernatural world, as if entering a dark forest or a mist-covered plain. 
-As the first few beats of the bassline emerge, the rhythm establishes itself, setting the stage 
-for the slow and steady descent into deeper, darker territory.
+The track opens with pads and faint, unsettling effects before the rhythm establishes itself. The beat arrives as the frame for everything that follows, not as a hook.
 
 ### First Build: Hypnotic Groove
 
-As the beats become more pronounced, **Ectoplasm** starts to develop a hypnotic groove. The bassline 
-remains deep and steady, while subtle layers of ghostly synths and ethereal echoes build on top. 
-This section gradually pulls the listener further into the eerie atmosphere without resorting to 
-dramatic changes, maintaining the track’s immersive, trance-like quality.
+Once kick and bass are steady, new synth layers and echoes are stacked on top. The groove underneath does not change; what changes is how much is happening above it.
 
 ### Midsection: Into the Darkness
 
-In the heart of the track, **Ectoplasm** reaches its most immersive point. The soundscapes grow 
-richer and more complex, with layers of spectral effects and haunting melodic fragments dancing
-around the core rhythm. Here, the listener feels fully enveloped in the track’s dark energy, as 
-though walking through a landscape where the line between reality and the supernatural has blurred.
+In the middle the textures are at their richest, with melodic fragments and effects circling the core rhythm. This is where the "atmospheric layers of sound" the label promised are most audible.
 
 ### Bridge: Supernatural Calm
 
-The bridge offers a brief moment of quiet—an ambient interlude where the beat fades into the 
-background, allowing ghostly pads and distant echoes to float in the foreground. This moment of 
-stillness enhances the eerie vibe, leaving the listener in a suspended state of contemplation 
-before the beat gradually returns.
+The beat steps back and the pads and echoes come forward for a while, a moment of suspension before the rhythm returns.
 
-### Final Build: Ectoplasmic Energy
+### Final Build
 
-As the track nears its conclusion, the intensity subtly increases. The beats become more driving, 
-and the spectral effects grow more prominent. The final build brings back all the elements from 
-earlier in the track but with heightened energy. The bassline feels heavier, the atmosphere thicker, 
-and the ghostly synths more insistent, leading to a dark yet satisfying conclusion.
+Towards the end the elements return together, the beat drives harder and the texture is at its densest, so the close lands as a release of everything the track has accumulated.
+
+## Concepts in Focus
+
+Like most techno, the track stands on a {{ <concept_link name="four-on-the-floor" /> }} kick: a bass drum on every beat of the bar. That fixed pulse is what makes a track of this length work. Because the body always knows where the beat is, the producers are free to change everything else slowly, and the listener follows the changes instead of having to find the rhythm again.
+
+The shape of the track is a long {{ <concept_link name="build-up" /> }}, or rather two: one at the start and one before the end, with a calmer stretch between them. Neither builds by speeding up. Layers are added and thickened, so intensity rises by density. Compare it with {{ <track_link source="kolsch-bloodline-feat-tomas-hoffding.md" /> }}, which also grows over a constant kick but reaches for melody where Alic reach for darkness.
+
+Most of the mood lives in the {{ <concept_link name="ambient texture" /> }}: the pads and effects that sit above the beat and change slowly. They carry no melody you could hum, yet they are what makes this "dark" and "psychedelic" techno rather than plain functional techno. Listen to the intro and the bridge, where the texture is heard with the least around it.
 
 ## Overall Vibe
 
-“Ectoplasm” is a dark, immersive journey into the realms of **psychedelic techno**.
-Its slow, hypnotic progression and eerie soundscapes make it an experience rather than 
-just a track. Alic masterfully blends deep, minimalistic grooves with unsettling, paranormal 
-atmospheres, creating a piece of music that feels both grounded in the techno tradition and 
-otherworldly in its execution. Perfect for fans of introspective, late-night techno, **Ectoplasm** 
-will resonate long after the last ghostly note fades away.
+Going Down In A Blaze Of Glory is psychedelic techno in Alic's own sense of the term: a physical, punching beat under layered, shifting atmospheres. Its slow progression makes it something to sink into rather than wait through, best heard loud, late and in one piece.
 
 ## Conclusion
 
-In "Going Down In A Blaze Of Glory", Alic delivers a piece of music that feels 
-both epic and introspective, making the phrase come alive through sound. The 
-track embodies the phrase’s essence, creating a sonic journey that’s charged 
-with energy, intensity, and finality. It’s not just a song to be heard, but an 
-experience of descent into an all-encompassing moment of release, fitting perfectly 
-with the symbolic meaning of the title. The listener is invited to surrender to the 
-rhythm and embrace the intensity, knowing that the end will come in a spectacular, 
-powerful form.
+Without a word of lyric, Alic make the title audible through structure: a beat that never gives way, layers that keep arriving, and an ending that gathers everything at once. That it came out as a free netlabel release makes it a good door into a scene that has long shared its music openly.
 
-## Reference 
+## Reference
 
 - [VA - Ektoplazms Greatest Tips](https://www.youtube.com/watch?v=bD4vllDrhZ8&list=PL_NG3abIJd17f3fIgQgYsyOTja6OI4N20&index=4)

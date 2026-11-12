@@ -6,6 +6,8 @@ description = "A strutting, paranoid electro-rock stomp where Joywave's Daniel A
 [taxonomies]
 genre = ["electronic", "alternative", "synth-pop"]
 sentiment = ["edgy", "energetic", "provocative"]
+concept = ["hook", "music video", "verse-chorus form", "featured artist"]
+instrument = ["vocals", "guitar", "bass", "handclaps"]
 
 [extra]
 country = "US"
@@ -13,7 +15,49 @@ isrc = "TCABQ1375535"
 musicbrainz = { recording = "72d81724-84ef-44e2-a228-b124916eda30", artist = "f3ae28b3-4d08-4b99-bd25-71d600a13916", release = "a24006f7-7859-4fab-9fa5-5d87e41a611e" }
 release_year = "2013"
 album = "2.0"
+publisher = "Wilcassettes"
 youtube = "https://www.youtube.com/embed/E8b4xYbEugo"
+connections = [
+  { source = "portugal-the-man-feel-it-still.md", why = "Another US alternative-radio number one that won the format with a dance groove and a falsetto-tinged hook rather than with loud guitars." },
+  { source = "awolnation-sail.md", why = "A contemporary crossover from electronic production to American rock radio, built on one menacing, repeatable hook." },
+]
+
+[extra.credits]
+writers = ["Daniel Armbruster", "Alan Wilkis"]
+producers = ["Alan Wilkis"]
+featuring = ["Joywave"]
+vocals = ["Daniel Armbruster"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Identify how a one-word hook can carry a whole song when it is repeated and rhythmically placed.",
+  "Describe how a producer-led project like Big Data uses a guest band and singer to front a track.",
+  "Explain how a satirical music video can sharpen a song's message about technology and consumer culture.",
+]
+listen_for = [
+  { part = "the intro", what = "Kick, claps and a scratchy funk guitar figure set up the strut before any vocal arrives." },
+  { part = "the first verse", what = "Daniel Armbruster's cool, half-detached delivery over a rubbery bassline; the arrangement leaves space so the groove can swagger." },
+  { part = "the chorus", what = "The title repeated until it becomes a chant: the hook is one word, placed on the beat." },
+  { part = "the final choruses", what = "Claps, guitar and vocal layers pile up, and the track stops abruptly instead of fading." },
+]
+questions = [
+  "The video sells a shoe that makes people violent. How does the parody of an advert change what the word in the chorus means?",
+  "Big Data is one producer, but the voice belongs to another band. Whose song is it, and does it matter?",
+  "Why might a song with a dance beat end up at number one on a rock radio chart?",
+]
+
+[[extra.sources]]
+title = "Dangerous (Big Data song)"
+url = "https://en.wikipedia.org/wiki/Dangerous_(Big_Data_song)"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "Big Data (band)"
+url = "https://en.wikipedia.org/wiki/Big_Data_(band)"
+publisher = "Wikipedia"
+kind = "encyclopedia"
 +++
 
 ## Genre and Mood
@@ -48,10 +92,20 @@ The bridge strips things back to beat and voice, a short breath of tension that 
 
 The final choruses pile up claps, guitar and vocal layers, then the track snaps shut rather than fading, leaving the beat ringing in your ears.
 
+## Concepts in Focus
+
+Dangerous is a lesson in how little a {{ <concept_link name="hook" /> }} needs. The chorus rests on a single word, repeated and placed squarely on the beat, so it works as a chant you can join on the first listen. Everything around it, the clipped guitar, the claps, the bass, is arranged to leave that word room.
+
+The song follows a lean {{ <concept_link name="verse-chorus form" /> }}: sparse, close-miked verses that hold back, choruses that open up, and a short stripped passage before the last choruses. The contrast between restraint and release, not any change of direction, is what drives it, much as the groove does in {{ <track_link source="portugal-the-man-feel-it-still.md" /> }}.
+
+The {{ <concept_link name="music video" /> }}, directed by Brandon LaGanke and John Carlucci of GHOST+COW from a concept developed with Alan Wilkis, is a mock advertisement for a shoe that makes its wearers commit violence. It turns the chorus into an advertising slogan and fits Big Data's running theme: the uneasy relationship between people, technology and the things they are sold.
+
+The credit itself teaches something: Big Data is a producer's project, and Joywave appear as the {{ <concept_link name="featured artist" /> }}, a guest band whose singer gives the track its voice and much of its personality. The billing says whose project it is; the sound says how much the guest brings.
+
 ## Artistic Context
 
-Big Data is the project of producer Alan Wilkis, built around a fascination with technology and the anxieties of a connected world. "Dangerous" first appeared in 2013 and later anchored the debut album *2.0*. Joywave, the Rochester band fronted by Daniel Armbruster, brought the vocal and much of the song's wry, knowing tone.
+Big Data is the project of the producer Alan Wilkis, built around a fascination with technology and the anxieties of a connected world. Dangerous, written by Wilkis and Daniel Armbruster and produced by Wilkis, was Big Data's debut single, released digitally on 1 October 2013 on Wilkis's own label Wilcassettes; it appeared on the debut EP *1.0* that year and later on the album *2.0* (2015). Joywave, the Rochester band fronted by Armbruster, brought the vocal and much of the song's wry, knowing tone.
 
 ## Impact and Reception
 
-"Dangerous" became Big Data's breakthrough, climbing to number one on Billboard's Alternative Songs chart and introducing both acts to a much wider audience. It earned its place here for that rare combination of a dance-floor beat and a rock band's sneer. Turn it up loud and let the claps do the rest.
+"Dangerous" became Big Data's breakthrough, climbing to number one on Billboard's Alternative Songs chart in August 2014, reaching number 8 on Hot Rock & Alternative Songs, and going platinum in the United States. It was used in the film *Earth to Echo*, and the Austrian rapper Left Boy sampled it for a 2016 track of the same name. It earned its place here for that rare combination of a dance-floor beat and a rock band's sneer. Turn it up loud and let the claps do the rest.

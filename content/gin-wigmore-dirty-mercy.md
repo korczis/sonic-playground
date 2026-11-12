@@ -6,6 +6,8 @@ description = "Swaggering and swampy, Dirty Mercy pairs Gin Wigmore's raspy snar
 [taxonomies]
 genre = ["alternative rock", "blues", "pop"]
 sentiment = ["defiant", "gritty", "provocative"]
+concept = ["hook", "verse-chorus form", "music video"]
+instrument = ["vocals", "electric guitar", "drums"]
 
 [extra]
 country = "NZ"
@@ -13,7 +15,49 @@ isrc = "AUUM71601071"
 musicbrainz = { recording = "d06a7964-9341-4fce-99db-415c3b4e76ee", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "b641c79b-c01c-49e2-94ef-e029141e6f84" }
 release_year = "2016"
 album = "Ivory"
+publisher = "Island Records Australia"
 youtube = "https://www.youtube.com/embed/4RY1f4QbbzA"
+connections = [
+  { source = "gin-wigmore-black-sheep.md", why = "The lead single of Gravel & Wine five years earlier: the same raspy voice in a more retro, rock-and-roll setting." },
+  { source = "gin-wigmore-man-like-that.md", why = "Another Wigmore song built on swagger and a blues growl, from the record that made her name abroad." },
+]
+
+[extra.credits]
+writers = ["Gin Wigmore", "Marc Orrell", "Steve Rusch"]
+producers = ["Gin Wigmore", "Steve Rusch"]
+vocals = ["Gin Wigmore"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Describe how a singer's vocal timbre, here a rasp and a growl, can carry a song's attitude as much as its words.",
+  "Follow a verse-chorus song that builds tension in the verses and releases it in a confrontational hook.",
+  "Explain how a lead single and its video announce a change of direction for an established artist.",
+]
+listen_for = [
+  { part = "the intro", what = "A heavy, stomping beat and a gritty guitar tone set a swampy, sinister mood." },
+  { part = "the first verse", what = "Wigmore low and close to the microphone, her rasp almost a purr, holding back." },
+  { part = "the chorus", what = "The title hook lands with a snap as her voice opens up to full power." },
+  { part = "the ending", what = "The groove cuts out sharply instead of fading, leaving the attitude hanging." },
+]
+questions = [
+  "Wigmore called the song 'a little trashy, kinda pissed off' while keeping 'a solid melody'. Where do you hear each half of that description?",
+  "What does the phrase 'dirty mercy' suggest about the relationship in the song?",
+  "How does a lead single prepare listeners for an album that, in this case, arrived a year and a half later?",
+]
+
+[[extra.sources]]
+title = "Gin Wigmore: A New Diva Has Emerged"
+url = "https://www.audiofuzz.com/2016/11/22/gin-wigmore-a-new-diva-has-emerged"
+publisher = "AudioFuzz"
+kind = "article"
+year = "2016"
+
+[[extra.sources]]
+title = "Gin Wigmore"
+url = "https://en.wikipedia.org/wiki/Gin_Wigmore"
+publisher = "Wikipedia"
+kind = "encyclopedia"
 +++
 
 ## Genre and Mood
@@ -56,9 +100,17 @@ The final chorus hits with everything at once, the drums stomping and her voice 
 
 The groove cuts out sharply, leaving the attitude hanging in the air.
 
+## Concepts in Focus
+
+The {{ <concept_link name="hook" /> }} of Dirty Mercy is its title, but what makes it stick is the voice delivering it. Wigmore's rasp is the song's signature sound; the same two words sung cleanly would lose most of their menace. Listen to how the chorus snaps shut on the phrase rather than stretching it out.
+
+The song follows a classic {{ <concept_link name="verse-chorus form" /> }} built on contrast: verses sung low and close, a build that tightens the arrangement, a chorus where the voice opens up, a stripped bridge, and a final chorus with everything at once. The structure is familiar; the tension comes from how long each verse holds back.
+
+As a lead single, the song arrived with a {{ <concept_link name="music video" /> }} that premiered through Billboard. It was directed by the New Zealand actor and director David de Lautour, his first music video, from a treatment Wigmore wrote herself. Compare the retro rock-and-roll of {{ <track_link source="gin-wigmore-black-sheep.md" /> }} to hear how far her sound had moved in five years.
+
 ## Artistic Context
 
-The New Zealand singer-songwriter released "Dirty Mercy" in October 2016 as the first single from her fourth album, Ivory, which followed in 2018. Written by Wigmore with Steve Rusch and Marc Orrell, and written and recorded in Los Angeles, it pointed to a sleeker, more modern sound while keeping the blues grit and growl that made her name on records like Gravel & Wine and Blood to Bone.
+The New Zealand singer-songwriter, born Virginia Wigmore in Auckland in 1986, released "Dirty Mercy" in late 2016 (Wikipedia gives 3 November) as the first single from her fourth album, Ivory, which followed on Island Records Australia in April 2018 and reached number 11 in New Zealand. Written by Wigmore with Steve Rusch and Marc Orrell of Dropkick Murphys, co-produced by Wigmore and Rusch, and written and recorded in Los Angeles, it was in her words a song "a little trashy, kinda pissed off, whilst still retaining my love for a solid melody". It pointed to a sleeker, more modern sound while keeping the blues grit and growl that made her name on records like Gravel & Wine and Blood to Bone.
 
 ## Impact and Reception
 

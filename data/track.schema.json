@@ -105,7 +105,7 @@
     "country": {
      "type": "string",
      "pattern": "^[A-Z]{2}$",
-     "description": "ISO 3166-1 alpha-2 code of the artist's home country."
+     "description": "ISO 3166-1 alpha-2 code of the country the artist comes from (origin, not residence; MusicBrainz's area when no source says otherwise). One artist has one country across all reviews (scripts/catalog.py checks it)."
     },
     "bpm": {
      "type": "integer",
@@ -368,6 +368,11 @@
      },
      "minItems": 2,
      "description": "The sources the review rests on, cited under References."
+    },
+    "edu_exempt": {
+     "type": "string",
+     "minLength": 30,
+     "description": "Why this review cannot carry the educational layer (no source describes the track, the recording cannot be verified). An explicit, reviewed exception to x-sonic.edu_required, never a silent gap."
     }
    }
   }
@@ -399,6 +404,11 @@
   "related_limit": 4,
   "outline_threshold": 0.3,
   "concepts_dir": "data/concepts",
-  "edu_required": false
+  "edu_required": true,
+  "edu_required_parts": [
+   "concept",
+   "learning",
+   "sources"
+  ]
  }
 }

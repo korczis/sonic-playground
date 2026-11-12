@@ -6,6 +6,8 @@ description = "A Skillz chops John Deacon's immortal bassline into a strutting b
 [taxonomies]
 genre = ["breakbeat", "funk", "rock", "remix"]
 sentiment = ["groovy", "energetic", "playful"]
+concept = ["bassline", "breakbeat", "remix"]
+instrument = ["bass guitar", "vocals", "piano", "guitar", "drums"]
 
 [extra]
 country = "GB"
@@ -13,6 +15,55 @@ musicbrainz = { recording = "0b0c029f-badb-4ddf-a6eb-b1234b862e62", artist = "03
 release_year = "2006"
 album = "Another One Bites The Dust"
 youtube = "https://www.youtube.com/embed/phLCxwkgo1Q"
+publisher = "Positiva"
+connections = [
+  { source = "daft-punk-pharrell-williams-nile-rodgers-get-lucky-radio-edit.md", why = "Nile Rodgers of Chic, whose Good Times inspired John Deacon's bassline, on the disco revival of the 2010s." },
+  { source = "fatboy-slim-bird-of-pray.md", why = "Another British dance producer building a club record around a famous rock voice, Jim Morrison's instead of Freddie Mercury's." },
+]
+
+[extra.credits]
+writers = ["John Deacon"]
+producers = ["Queen", "Mack"]
+remixers = ["A Skillz"]
+vocals = ["Freddie Mercury"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Explain why one bassline can carry a song through remixes in genre after genre.",
+  "Hear how a breakbeat remix replaces a rock song's drums while keeping its bass and vocal.",
+  "Describe how a remix package lets one single reach rock, house and breaks audiences at once.",
+]
+listen_for = [
+  { part = "the intro", what = "A crisp break and teasing fragments of the bassline, holding back the full riff." },
+  { part = "the first verse", what = "John Deacon's bass locks in with the breakbeat and Freddie Mercury's vocal enters over the new rhythm." },
+  { part = "the bridge", what = "The arrangement breaks down to bass and drums for a few bars before the next hook." },
+  { part = "the outro", what = "The break rides out with echoes of the riff, a clean exit for a DJ." },
+]
+questions = [
+  "Deacon's bassline was inspired by Chic's Good Times. Where is the line between inspiration and borrowing?",
+  "The bassline runs at close to 110 beats per minute, the pace doctors use for CPR training. Why might a tempo like that feel so natural to move to?",
+  "The 2006 single carried five different mixes. Why would a record company release one song in so many versions?",
+]
+
+[[extra.sources]]
+title = "Another One Bites the Dust"
+url = "https://en.wikipedia.org/wiki/Another_One_Bites_the_Dust"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "A Skillz"
+url = "https://en.wikipedia.org/wiki/A_Skillz"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "Another One Bites the Dust (A Skillz remix)"
+url = "https://musicbrainz.org/recording/0b0c029f-badb-4ddf-a6eb-b1234b862e62"
+publisher = "MusicBrainz"
+kind = "database"
+year = "2006"
 +++
 
 ## Genre and Mood
@@ -21,7 +72,7 @@ youtube = "https://www.youtube.com/embed/phLCxwkgo1Q"
 
 ## Song Summary
 
-The original is built on one of the most recognisable basslines ever recorded, John Deacon's tight, circular riff, and every version of the song lives or dies by it. A Skillz knows this. His remix keeps the bass and Freddie Mercury's sharp, swaggering vocal at the centre and rebuilds everything around them with chunky breakbeats, cut-up hits and the kind of builds and drops that make a crowd shout along. It is respectful and cheeky at once.
+The original is built on one of the most recognisable basslines ever recorded, John Deacon's tight, circular riff, inspired by Chic's "Good Times", and every version of the song lives or dies by it. Deacon wrote the song and played almost everything on the record, bass, piano, electric guitar and handclaps, over Roger Taylor's drum loop. A Skillz knows this. His remix keeps the bass and Freddie Mercury's sharp, swaggering vocal at the centre and rebuilds everything around them with chunky breakbeats, cut-up hits and the kind of builds and drops that make a crowd shout along. It is respectful and cheeky at once.
 
 ## Musical Breakdown
 
@@ -51,10 +102,18 @@ The drums and bass come back together at full force for the final run of hooks, 
 
 The break rides out with echoes of the riff, giving DJs a clean exit and leaving the bassline ringing in your ears.
 
+## Concepts in Focus
+
+The {{ <concept_link name="bassline" /> }} is the song. Deacon's riff is short, repeated and full of space, and its rhythm is so strong that the track hardly needs anything else; Chic's Bernard Edwards later said it came from Deacon hanging out at their studio. A remixer can strip away nearly all of the 1980 recording and the song is still recognisable, as long as the bass stays.
+
+A Skillz replaces Taylor's tight, dry drum loop with a {{ <concept_link name="breakbeat" /> }}: a syncopated, funk-derived drum pattern of the kind hip-hop and big beat were built on, where kick and snare land off the straight grid. The bass and vocal stay; the rhythm under them gets more swing and more weight. Listen in the bridge, where bass and break play alone, to how the two parts lock together.
+
+As a {{ <concept_link name="remix" /> }}, this version is one of five on the 2006 CD single, alongside Cedric Gervais & Second Sun's lead mixes, an Oliver Koletzki remix and a Soul Avengerz remix. Each takes the same recording parts to a different floor, and it was this package, not a new recording, that put the song back in the charts.
+
 ## Artistic Context
 
-Another One Bites The Dust was written by John Deacon and released by Queen in 1980 on The Game, becoming one of the band's biggest hits. In 2006 it was reissued as Queen vs The Miami Project, the production duo of Cedric Gervais and Second Sun, with a package of remixes that included this version by A Skillz, a British breakbeat DJ and producer known for funky, sample-heavy party music.
+Another One Bites The Dust was written by John Deacon and released by Queen in 1980 on The Game, produced by the band with Reinhold Mack at Musicland Studios in Munich; it became one of the band's biggest hits after Michael Jackson urged Freddie Mercury to release it as a single. In 2006 Positiva reissued it as Queen vs The Miami Project, with lead remixes by Cedric Gervais & Second Sun and a package that included this version by A Skillz, the English DJ and producer Adam Mills, known for mixing hip-hop, soul, funk and rock into breakbeat and for his album TrickaTechnology with Krafty Kuts.
 
 ## Impact and Reception
 
-The 2006 single reached number 31 on the UK Singles Chart and climbed into the top three of the UK dance chart, carried by club play of its remixes. The A Skillz version has outlasted the moment as a favourite of breaks and funk DJs. It belongs here because it proves a great bassline can survive any genre. Play it loud and try not to nod along.
+The 2006 single reached number 31 on the UK Singles Chart, number 3 in Finland and number 9 in Spain, carried by club play of its remixes. A Skillz went on to be named Best DJ at the Breakspoll International Breakbeat Awards in 2012. It belongs here because it proves a great bassline can survive any genre. Play it loud and try not to nod along.

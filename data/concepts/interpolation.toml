@@ -1,0 +1,10 @@
+term = "interpolation"
+category = "melody"
+wikipedia = "https://en.wikipedia.org/wiki/Interpolation_(popular_music)"
+see_also = ["sampling", "cover version", "hook"]
+
+[en]
+definition = "Re-recording a melody or lyric from an existing song inside a new one, instead of copying the original recording as a sample does. The borrowed tune is performed again by the new artist, and its writers are usually added to the credits."
+
+[cs]
+definition = "Převzetí melodie nebo části textu z existující písně do nové skladby tak, že se znovu nahraje, místo aby se kopírovala původní nahrávka jako u samplu. Vypůjčenou melodii hraje či zpívá nový interpret a její autoři bývají připsáni mezi autory nové písně."
