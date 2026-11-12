@@ -14,13 +14,13 @@ feed_filenames = ["atom.xml"]
 generate_sitemap = true
 generate_robots_txt = true
 
-# Every facet is a taxonomy with its own listing and feed; scripts/catalog.py refuses a
-# taxonomy that is not declared here.
+# Every facet is a taxonomy with its own listing and feed; data/track.schema.json declares the
+# same set (scripts/catalog.py refuses any other). A declared taxonomy no article uses would be
+# listed in sitemap.xml without a page (a 404): add one only with its first article.
 taxonomies = [
   { name = "genre", feed = true, paginate_by = 24 },
   { name = "sentiment", feed = true, paginate_by = 24 },
   { name = "mood", feed = true, paginate_by = 24 },
-  { name = "tags", feed = true, paginate_by = 24 },
 ]
 
 [markdown]

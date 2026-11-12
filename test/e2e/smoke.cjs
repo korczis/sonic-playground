@@ -83,28 +83,84 @@ function check(ok, what) {
   if (!ok) failures.push(what);
 }
 
-async function open(browser, url, viewport, colorScheme = 'light') {
-  const context = await browser.newContext({ viewport, colorScheme });
+async function open(browser, url, viewport, colorScheme = 'light', options = {}) {
+  const context = await browser.newContext({ viewport, colorScheme, ...options });
   if (root) await context.route(`${base}**`, fromArtifact);
   const page = await context.newPage();
+  const errors = watch(page);
+  const response = await page.goto(url, { waitUntil: 'load' });
+  return { context, page, errors, response };
+}
+
+function watch(page) {
   const errors = [];
   const origin = new URL(base).origin;
-  // A failed resource is judged by its URL below (same origin fails, third party is a notice);
-  // the browser's own 'Failed to load resource' line carries no URL, so it is not counted twice.
+  // Zero tolerance for what the site itself causes (knowledge: console-clean-by-construction):
+  //   - every console error AND warning of the page's own frame;
+  //   - every uncaught exception;
+  //   - every failed request of the site, and every failed YouTube still (i.ytimg.com), which the
+  //     site requests itself: a 404 there means data/videos.json is stale (probe-videos.py).
+  // Only what the YouTube player logs inside its own iframe after a click is a notice: the site
+  // cannot change it. The browser's 'Failed to load resource' line carries no URL; the request
+  // is judged by the response listener instead, so it is not counted twice.
+  const ownRequest = (u) => u.startsWith(origin) || u.startsWith('https://i.ytimg.com/');
   page.on('console', (m) => {
-    if (m.type() === 'error' && !m.text().startsWith('Failed to load resource')) errors.push(m.text());
+    if (m.type() !== 'error' && m.type() !== 'warning') return;
+    if (m.text().startsWith('Failed to load resource')) return;
+    const from = (m.location() && m.location().url) || '';
+    const own = !from || from.startsWith(origin);
+    (own ? errors : null)?.push(`console ${m.type()}: ${m.text()}`);
+    if (!own) notices.add(`third-party console ${m.type()} (${from}): ${m.text()}`);
   });
-  page.on('pageerror', (e) => errors.push(String(e)));
+  page.on('pageerror', (e) => errors.push(`uncaught: ${String(e)}`));
   page.on('requestfailed', (r) => {
-    if (r.url().startsWith(origin)) errors.push(`request failed: ${r.url()}`);
+    if (ownRequest(r.url())) errors.push(`request failed: ${r.url()} (${r.failure() && r.failure().errorText})`);
   });
   page.on('response', (r) => {
     if (r.status() < 400 || r.url().includes('/nope-')) return;
-    if (r.url().startsWith(origin)) errors.push(`HTTP ${r.status()}: ${r.url()}`);
+    if (ownRequest(r.url())) errors.push(`HTTP ${r.status()}: ${r.url()}`);
     else notices.add(`HTTP ${r.status()}: ${r.url()}`);
   });
-  const response = await page.goto(url, { waitUntil: 'load' });
-  return { context, page, errors, response };
+  return errors;
+}
+
+// Every page the site has (its sitemap), each loaded and scrolled to the end so lazy images load,
+// must produce zero errors. Six pages at a time, one context per worker.
+async function sweep(browser) {
+  const xml = root ? fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8')
+    : await (await fetch(at('sitemap.xml'))).text();
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const failed = [];
+  let next = 0;
+  async function worker() {
+    const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    while (next < urls.length) {
+      const loc = urls[next++];
+      const page = await context.newPage();
+      const errors = watch(page);
+      const rel = loc.startsWith(base) ? loc.slice(base.length) : loc;
+      try {
+        await page.goto(at(rel), { waitUntil: 'load' });
+        await page.evaluate(async () => {
+          for (let y = 0; y < document.body.scrollHeight; y += 800) {
+            window.scrollTo(0, y);
+            await new Promise((r) => setTimeout(r, 40));
+          }
+        });
+        await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
+      } catch (e) {
+        errors.push(`navigation: ${e.message}`);
+      }
+      if (errors.length) failed.push(`${rel || '/'}: ${errors.join(' | ')}`);
+      await page.close();
+    }
+    await context.close();
+  }
+  await Promise.all(Array.from({ length: 6 }, worker));
+  check(urls.length > 0 && failed.length === 0,
+    `sweep: ${urls.length} sitemap pages, every one free of console errors, warnings and failed requests` +
+    (failed.length ? `\n     ${failed.slice(0, 20).join('\n     ')}` : ''));
 }
 
 async function shot(page, name) {
@@ -192,12 +248,13 @@ async function shot(page, name) {
   // Track page: video and related tracks.
   {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);
-    check((await page.locator('aside[aria-label="About this track"] li').count()) === sample.related.length, `track: ${sample.related.length} related tracks listed`);
+    check((await page.locator('[aria-labelledby="related-title"] article').count()) === sample.related.length, `track: ${sample.related.length} related tracks listed`);
     await shot(page, 'track-desktop-light');
     await page.click('[data-video-play]');
     const src = await page.locator('[data-video] iframe').getAttribute('src');
     check(src && src.startsWith('https://www.youtube-nocookie.com/embed/' + sample.youtube), 'track: the still becomes a youtube-nocookie player');
-    check(errors.filter((e) => !/youtube|google|doubleclick|ytimg/.test(e)).length === 0, 'track: no console errors of our own');
+    await page.waitForTimeout(1500);
+    check(errors.length === 0, `track: no console errors after the player loads${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
 
@@ -212,12 +269,58 @@ async function shot(page, name) {
       await page.waitForTimeout(400);
       const open = await page.evaluate(() => !document.getElementById('sidebar').classList.contains('-translate-x-full'));
       check(open, 'home @390px: the sidebar drawer opens');
+      check(await page.evaluate(() => document.getElementById('main-content').hasAttribute('inert')),
+        'home @390px: the open drawer makes the page behind it inert');
       await shot(page, 'home-phone-drawer');
+      // review round 2: widening past 1024 px with the drawer open left the content inert
+      await page.setViewportSize(desktop);
+      await page.waitForTimeout(300);
+      check(!(await page.evaluate(() => document.getElementById('main-content').hasAttribute('inert'))),
+        'home: widening to desktop with the drawer open frees the content');
     } else {
       await shot(page, `${name}-phone`);
     }
     await context.close();
   }
+
+  // Without JavaScript the phone still reaches the navigation (review round 2).
+  {
+    const { context, page } = await open(browser, at(''), phone, 'light', { javaScriptEnabled: false });
+    const box = await page.locator('#sidebar').boundingBox();
+    check(box && box.x >= 0 && box.width > 300, `no-JS @390px: the sidebar is on screen (x=${box && box.x})`);
+    await context.close();
+  }
+
+  // Full-text search over the reviews uses the same tokens as the index (review round 2).
+  {
+    const term = 'four-on-the-floor';
+    const expected = Object.entries(JSON.parse(root
+      ? fs.readFileSync(path.join(root, 'data/search.json'), 'utf8')
+      : await (await fetch(at('data/search.json'))).text()).tracks)
+      .filter(([, words]) => ['four', 'floor'].every((w) => words.split(' ').includes(w))).length;
+    const { context, page } = await open(browser, at(''), desktop);
+    await page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready');
+    await page.fill('#explorer-q', term);
+    await page.waitForFunction(() => document.documentElement.dataset.reviews === 'ready');
+    await page.waitForTimeout(300);
+    const shown = await page.locator('[data-track]:not([hidden])').count();
+    check(expected > 0 && shown >= expected, `search "${term}" finds the reviews that say it (${shown} ≥ ${expected})`);
+    await context.close();
+  }
+
+  // A video YouTube removed (data/videos.json) shows a note, and its still is never requested.
+  {
+    const gone = catalog.tracks.find((t) => t.video_gone);
+    if (gone) {
+      const { context, page, errors } = await open(browser, at(gone.path), desktop);
+      check(await page.locator('[role="note"]').count() === 1 && await page.locator('[data-video]').count() === 0,
+        `gone video (${gone.source}): a note, no player`);
+      check(errors.length === 0, `gone video: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+      await context.close();
+    }
+  }
+
+  if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);
 
   await browser.close();
   for (const n of notices) console.log(`note third-party ${n}`);

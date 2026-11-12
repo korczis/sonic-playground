@@ -33,8 +33,7 @@
       "properties": {
         "genre": { "$ref": "#/$defs/terms", "minItems": 1, "description": "Genres, most specific last; reuse the existing vocabulary (scripts/track.py vocab)." },
         "sentiment": { "$ref": "#/$defs/terms", "minItems": 1, "description": "Feelings the track carries." },
-        "mood": { "$ref": "#/$defs/terms", "description": "Optional moods." },
-        "tags": { "$ref": "#/$defs/terms", "description": "Optional free tags." }
+        "mood": { "$ref": "#/$defs/terms", "description": "Optional moods." }
       }
     },
     "extra": {
@@ -70,7 +69,7 @@
   "x-sonic": {
     "placeholder_hosts": ["example.com", "yourwebsite.com"],
     "unfinished_marker": "TODO(write)",
-    "facet_weights": { "genre": 2.0, "sentiment": 1.0, "mood": 1.0, "tags": 0.5 },
+    "facet_weights": { "genre": 2.0, "sentiment": 1.0, "mood": 1.0 },
     "related_limit": 4,
     "outline_threshold": 0.3
   }

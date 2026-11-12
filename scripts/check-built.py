@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""Check the built site: every same-origin src/href in every page resolves to a built file, and no
-page embeds a raw third-party iframe (videos go through the video component).
+"""Check the built site: every same-origin URL any page or feed references (src, href, srcset,
+poster; any quoting; absolute, root-relative or relative, resolved against the page's deployed
+URL) is a file of the build under the site path, and no page embeds a raw iframe (videos go
+through the video component).
 
 Zola's link checker validates Markdown links to other pages; it does not see raw HTML in the
 reviews or attributes the templates compute. This reads what a browser would request.
@@ -10,13 +12,37 @@ reviews or attributes the templates compute. This reads what a browser would req
 from __future__ import annotations
 
 import html
-import re
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urljoin, urlsplit
 
-ATTR = re.compile(r'\b(?:src|href)="([^"#?]*)(?:[?#][^"]*)?"')
-IFRAME = re.compile(r"<iframe\b", re.I)
+URL_ATTRS = {"src", "href", "poster", "data-copy-link"}
+
+
+class Refs(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.urls: list[str] = []
+        self.iframes = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "iframe":
+            self.iframes += 1
+        for name, value in attrs:
+            if not value:
+                continue
+            if name in URL_ATTRS:
+                self.urls.append(value)
+            elif name == "srcset":
+                self.urls += [part.strip().split(" ")[0] for part in value.split(",") if part.strip()]
+
+
+def page_url(base: str, rel: str) -> str:
+    """The URL the page is served at: dir/index.html is dir/."""
+    if rel.endswith("index.html"):
+        rel = rel[: -len("index.html")]
+    return urljoin(base, rel)
 
 
 def main() -> int:
@@ -24,37 +50,40 @@ def main() -> int:
         print(__doc__.strip().splitlines()[-1], file=sys.stderr)
         return 2
     public = Path(sys.argv[1]).resolve()
-    base = urlsplit(sys.argv[2].rstrip("/") + "/")
-    prefix = base.path  # e.g. /sonic-playground/
-    origin = f"{base.scheme}://{base.netloc}"
+    base = sys.argv[2].rstrip("/") + "/"
+    site = urlsplit(base)
+    prefix = site.path  # e.g. /sonic-playground/
     problems: list[str] = []
-    # Pages and feeds; a feed carries its entries' HTML entity-escaped.
-    pages = sorted(public.rglob("*.html")) + sorted(public.rglob("*.xml"))
-    for page in pages:
-        text = page.read_text(encoding="utf-8", errors="replace")
-        if page.suffix == ".xml":
-            text = html.unescape(text)
-        rel = page.relative_to(public).as_posix()
-        if IFRAME.search(text):
+    files = sorted(public.rglob("*.html")) + sorted(public.rglob("*.xml"))
+    for file in files:
+        rel = file.relative_to(public).as_posix()
+        text = file.read_text(encoding="utf-8", errors="replace")
+        parser = Refs()
+        # A feed carries its entries' HTML escaped inside the XML: unescape it to parse it.
+        parser.feed(html.unescape(text) if file.suffix == ".xml" else text)
+        if parser.iframes and file.suffix == ".html":
             problems.append(f"{rel}: raw <iframe> (use the video component or a link)")
-        for url in set(ATTR.findall(text)):
-            if url.startswith(origin):
-                url = url[len(origin):]
-            if not url.startswith("/") or url.startswith("//"):
-                continue  # relative, external or protocol-relative: not ours to resolve here
-            if url == prefix.rstrip("/"):
-                url = prefix  # the site root without its slash (feeds link it that way)
-            if not url.startswith(prefix):
-                problems.append(f"{rel}: {url} is outside the site path {prefix}")
+        here = page_url(base, rel)
+        for raw in set(parser.urls):
+            if raw.startswith(("#", "mailto:", "tel:", "javascript:", "data:")):
                 continue
-            target = public / unquote(url[len(prefix):])
-            if url.endswith("/") or target.is_dir():
-                target = target / "index.html"
-            if not target.is_file():
-                problems.append(f"{rel}: {url} does not exist in the build")
+            target = urlsplit(urljoin(here, raw))
+            if (target.scheme, target.netloc) != (site.scheme, site.netloc):
+                continue  # a third party: not ours to resolve
+            path = target.path
+            if path == prefix.rstrip("/"):
+                path = prefix  # the site root without its slash (feeds link it that way)
+            if not path.startswith(prefix):
+                problems.append(f"{rel}: {raw} resolves outside the site path {prefix}")
+                continue
+            local = public / unquote(path[len(prefix):])
+            if path.endswith("/") or local.is_dir():
+                local = local / "index.html"
+            if not local.is_file():
+                problems.append(f"{rel}: {raw} does not exist in the build")
     for p in problems:
         print(f"check-built: {p}", file=sys.stderr)
-    print(f"check-built: {len(pages)} pages, {len(problems)} problem(s)")
+    print(f"check-built: {len(files)} pages and feeds, {len(problems)} problem(s)")
     return 1 if problems else 0
 
 

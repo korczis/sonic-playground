@@ -5,15 +5,15 @@
  "stats": {
   "tracks": 114,
   "artists": 109,
-  "videos": 110,
+  "videos": 104,
+  "videos_gone": 6,
   "words": 59053,
   "median_words": 420,
   "first": "2024-10-01",
   "last": "2024-12-06",
   "genre_terms": 103,
   "sentiment_terms": 99,
-  "mood_terms": 2,
-  "tags_terms": 0
+  "mood_terms": 2
  },
  "outline": [
   {
@@ -1082,8 +1082,7 @@
     "slug": "reflective",
     "count": 1
    }
-  ],
-  "tags": []
+  ]
  },
  "pairs": [
   {
@@ -1905,8 +1904,7 @@
      "uplifting",
      "ethereal"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": null,
    "thumbnail": "",
@@ -1945,7 +1943,8 @@
       "genre:electro"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "lousianahh-love-is-a-punk-vitalic-remix.md",
@@ -1967,8 +1966,7 @@
      "intense",
      "raw"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "zAuh-u7VBaw",
    "thumbnail": "https://i.ytimg.com/vi/zAuh-u7VBaw/hqdefault.jpg",
@@ -2013,7 +2011,8 @@
       "sentiment:rebellious"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "hania-rani-full-performance-kexp.md",
@@ -2035,8 +2034,7 @@
      "introspective",
      "elegant"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "_3EuiU1qdpE",
    "thumbnail": "images/thumbnails/hania-rani-full-performance-kexp-2.png",
@@ -2074,7 +2072,8 @@
       "genre:ambient"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "chicks-on-speed-euro-trash-girl.md",
@@ -2096,11 +2095,10 @@
      "ironic",
      "playful"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
-   "youtube": "M6j7TuBIJa0",
-   "thumbnail": "https://i.ytimg.com/vi/M6j7TuBIJa0/hqdefault.jpg",
+   "youtube": null,
+   "thumbnail": "",
    "thumbnail_local": false,
    "words": 942,
    "extra": {},
@@ -2136,7 +2134,8 @@
       "genre:punk"
      ]
     }
-   ]
+   ],
+   "video_gone": true
   },
   {
    "source": "louisahhh-like-a-vice-x.md",
@@ -2158,8 +2157,7 @@
      "raw",
      "empowering"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "ipXnX43YkQ0",
    "thumbnail": "images/thumbnails/lousiahh-like-a-vice-x.jpg",
@@ -2203,7 +2201,8 @@
       "sentiment:intense"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "brazilian-girls-karakoy.md",
@@ -2225,8 +2224,7 @@
      "sophisticated",
      "vibrant"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "gwqi9IoJGk4",
    "thumbnail": "https://i.ytimg.com/vi/gwqi9IoJGk4/hqdefault.jpg",
@@ -2267,7 +2265,8 @@
       "sentiment:vibrant"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "pigeon-the-bomb.md",
@@ -2289,8 +2288,7 @@
      "defiant",
      "bold"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "iFAFA3B3CWU",
    "thumbnail": "images/thumbnails/pigeon-the-bomb.jpeg",
@@ -2331,7 +2329,8 @@
       "sentiment:energetic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "electric-guest-this-head-i-hold.md",
@@ -2352,8 +2351,7 @@
      "uplifting",
      "soulful"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "nVSiwMVaKe4",
    "thumbnail": "images/thumbnails/electric-guest-this-head-hold.jpeg",
@@ -2395,7 +2393,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "c2c-feat-pigeon-john-because-of-you.md",
@@ -2420,8 +2419,7 @@
     "mood": [
      "positive",
      "reflective"
-    ],
-    "tags": []
+    ]
    },
    "youtube": "Jx0lRaW5VCw",
    "thumbnail": "images/thumbnails/c2c-feat-pigeon-john-because-of-you.jpeg",
@@ -2466,7 +2464,8 @@
       "genre:soul"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "bakermat-the-river.md",
@@ -2488,8 +2487,7 @@
      "reflective",
      "spiritual"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "8vyeiDEK62U",
    "thumbnail": "images/thumbnails/bakermat-the-river.jpeg",
@@ -2532,7 +2530,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "lulu-rouge-sweeter-than-sweet.md",
@@ -2554,8 +2553,7 @@
      "intimate",
      "alluring"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "cB4o8vGBCXI",
    "thumbnail": "images/thumbnails/sweeter-than-sweet.jpeg",
@@ -2596,7 +2594,8 @@
       "genre:soul"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "lulu-rouge-lulu-theme.md",
@@ -2618,8 +2617,7 @@
      "hypnotic",
      "haunting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "k_k2Vmrvp70",
    "thumbnail": "images/thumbnails/lulus-theme.jpeg",
@@ -2663,7 +2661,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "mickey-avalon-eli-ultraviolence.md",
@@ -2685,8 +2684,7 @@
      "dark",
      "rebellious"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": null,
    "thumbnail": "images/thumbnails/mickey-avalon-eli-ultra-violence.jpg",
@@ -2728,7 +2726,8 @@
       "sentiment:rebellious"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "kazy-lambist-doing-yoga.md",
@@ -2750,8 +2749,7 @@
      "uplifting",
      "dreamy"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "FxcKB-VowC0",
    "thumbnail": "images/thumbnails/kazy-lambist-doing-yoga.jpg",
@@ -2794,7 +2792,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "eli-faster-you-fall.md",
@@ -2816,8 +2815,7 @@
      "melancholic",
      "reflective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "lJwarj6LErI",
    "thumbnail": "images/thumbnails/eli-faster-you-fall.jpg",
@@ -2859,7 +2857,8 @@
       "genre:pop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "moisture-lucca-santucci-headman-club-version.md",
@@ -2881,8 +2880,7 @@
      "soulful",
      "dynamic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "XZRJeOvT2xI",
    "thumbnail": "images/thumbnails/moisture-headman.jpg",
@@ -2924,7 +2922,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "knopfauge-saschienne.md",
@@ -2946,8 +2945,7 @@
      "haunting",
      "intricate"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "0d2Cz2C8Fj0",
    "thumbnail": "images/thumbnails/knopfauge-saschienne.jpg",
@@ -2989,7 +2987,8 @@
       "genre:experimental"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "bonaparte-acid-pauli-not-today.md",
@@ -3011,8 +3010,7 @@
      "introspective",
      "energetic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "rJyyP8lkneg",
    "thumbnail": "images/thumbnails/bonaparte-acid-pauli-not-today.jpg",
@@ -3056,7 +3054,8 @@
       "sentiment:introspective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "sworn-virgins-burning-off-my-clothes.md",
@@ -3078,8 +3077,7 @@
      "raw",
      "cathartic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "oAkNT7b2nGs",
    "thumbnail": "images/thumbnails/sworn-virgins-burning-off-my-clothes.jpeg",
@@ -3117,7 +3115,8 @@
       "genre:alternative"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "aloe-blacc-i-need-dollar.md",
@@ -3139,8 +3138,7 @@
      "reflective",
      "uplifting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "_Zx-QNIGZ8Y",
    "thumbnail": "images/thumbnails/aloe-blacc-i-need-dollar.jpeg",
@@ -3182,7 +3180,8 @@
       "sentiment:reflective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "idles-full-wheel.md",
@@ -3204,8 +3203,7 @@
      "introspective",
      "empowering"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "MH2HE6Gp3JQ",
    "thumbnail": "images/thumbnails/idles-the-wheel.jpg",
@@ -3245,7 +3243,8 @@
       "sentiment:empowering"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "car-idle-eyes.md",
@@ -3267,8 +3266,7 @@
      "atmospheric",
      "ethereal"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "hcttROHKCNE",
    "thumbnail": "images/thumbnails/car-idle-eyes.jpg",
@@ -3308,7 +3306,8 @@
       "sentiment:hypnotic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "2raumwohnung-somebody-lonely-and-me-nacht.md",
@@ -3330,8 +3329,7 @@
      "dreamy",
      "poignant"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "87Lef7jLykc",
    "thumbnail": "images/thumbnails/2raumwohnung-somebody-lonely-and-me-nacht.jpeg",
@@ -3373,7 +3371,8 @@
       "genre:pop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "indiana-solo-dancing.md",
@@ -3395,8 +3394,7 @@
      "empowering",
      "mysterious"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "WSrktmE963I",
    "thumbnail": "images/thumbnails/indiana-solo-dancing.jpeg",
@@ -3435,7 +3433,8 @@
       "genre:indie"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "northern-lite-trusting-blind.md",
@@ -3457,8 +3456,7 @@
      "spiritual",
      "trance-like"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "2dmRpoG2hao",
    "thumbnail": "images/thumbnails/northern-lite-trusting-blind.jpg",
@@ -3497,7 +3495,8 @@
       "genre:minimal"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "mafia-klvb-credit-card.md",
@@ -3519,8 +3518,7 @@
      "gritty",
      "provocative"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "zrCrEje1lz4",
    "thumbnail": "https://i.ytimg.com/vi/zrCrEje1lz4/hqdefault.jpg",
@@ -3557,7 +3555,8 @@
       "genre:hip-hop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "jpatterson-elevator.md",
@@ -3579,8 +3578,7 @@
      "groovy",
      "uplifting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "zvf2J2Jh5aw",
    "thumbnail": "https://i.ytimg.com/vi/zvf2J2Jh5aw/hqdefault.jpg",
@@ -3621,7 +3619,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "inigo-montoya-es.md",
@@ -3643,10 +3642,9 @@
      "hypnotic",
      "reflective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
-   "youtube": "cK54zeNP-ZU",
+   "youtube": null,
    "thumbnail": "images/thumbnails/inigo-montoya-es.jpg",
    "thumbnail_local": true,
    "words": 974,
@@ -3689,7 +3687,8 @@
       "sentiment:hypnotic"
      ]
     }
-   ]
+   ],
+   "video_gone": true
   },
   {
    "source": "anthony-rother-brainshaker.md",
@@ -3711,8 +3710,7 @@
      "futuristic",
      "intense"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "-QoU2oclkXY",
    "thumbnail": "images/thumbnails/anthony-rother-brainshaker.jpg",
@@ -3756,7 +3754,8 @@
       "sentiment:intense"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "alice-going-down-in-a-blaze-of-glory.md",
@@ -3778,8 +3777,7 @@
      "haunting",
      "immersive"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "ICj67BEAt6k",
    "thumbnail": "images/thumbnails/alice-going-down-in-a-blaze-of-glory.jpg",
@@ -3817,7 +3815,8 @@
       "genre:minimal"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "ultraista-smalltalk.md",
@@ -3839,8 +3838,7 @@
      "reflective",
      "uplifting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "1bMR83ZI7m8",
    "thumbnail": "https://i.ytimg.com/vi/1bMR83ZI7m8/hqdefault.jpg",
@@ -3883,7 +3881,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "mélissa-laveaux-needle-in-the-hay.md",
@@ -3905,8 +3904,7 @@
      "introspective",
      "haunting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "L_qJ8LSTdzc",
    "thumbnail": "https://i.ytimg.com/vi/L_qJ8LSTdzc/hqdefault.jpg",
@@ -3948,7 +3946,8 @@
       "sentiment:melancholic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "marbert-rocel-hush-now.md",
@@ -3970,8 +3969,7 @@
      "reflective",
      "soothing"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "amQBPD3dSkk",
    "thumbnail": "https://i.ytimg.com/vi/amQBPD3dSkk/hqdefault.jpg",
@@ -4013,7 +4011,8 @@
       "genre:soul"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "fischerspooner-emerge.md",
@@ -4035,8 +4034,7 @@
      "liberating",
      "theatrical"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "HHbAtxSTXo0",
    "thumbnail": "https://i.ytimg.com/vi/HHbAtxSTXo0/hqdefault.jpg",
@@ -4076,7 +4074,8 @@
       "genre:dance"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "felix-da-house-cat-madame-hollywood.md",
@@ -4098,8 +4097,7 @@
      "glamorous",
      "energetic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "tYjKDEnYTyI",
    "thumbnail": "https://i.ytimg.com/vi/tYjKDEnYTyI/hqdefault.jpg",
@@ -4142,7 +4140,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "acraze-do-it-to-it.md",
@@ -4164,8 +4163,7 @@
      "nostalgic",
      "celebratory"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "cBSYJqv0Fjc",
    "thumbnail": "https://i.ytimg.com/vi/cBSYJqv0Fjc/hqdefault.jpg",
@@ -4209,7 +4207,8 @@
       "sentiment:energetic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "tinush-sandburg.md",
@@ -4231,8 +4230,7 @@
      "hypnotic",
      "reflective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "-TH0tfRjxwg",
    "thumbnail": "https://i.ytimg.com/vi/-TH0tfRjxwg/hqdefault.jpg",
@@ -4277,7 +4275,8 @@
       "sentiment:reflective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "the-xx-crystalised.md",
@@ -4299,8 +4298,7 @@
      "tense",
      "melancholic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "Pib8eYDSFEI",
    "thumbnail": "https://i.ytimg.com/vi/Pib8eYDSFEI/hqdefault.jpg",
@@ -4341,7 +4339,8 @@
       "sentiment:intimate"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "the-police-roxanne.md",
@@ -4363,8 +4362,7 @@
      "intense",
      "emotional"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "3T1c7GkzRQQ",
    "thumbnail": "https://i.ytimg.com/vi/3T1c7GkzRQQ/hqdefault.jpg",
@@ -4402,7 +4400,8 @@
       "sentiment:longing"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "lucky-luke-cooler-than-me.md",
@@ -4424,8 +4423,7 @@
      "playful",
      "confident"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "A3pJB4m713M",
    "thumbnail": "https://i.ytimg.com/vi/A3pJB4m713M/hqdefault.jpg",
@@ -4467,7 +4465,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "klangkarussell-we-want-your-soul.md",
@@ -4489,8 +4488,7 @@
      "provocative",
      "hypnotic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "4rYEigiNoPc",
    "thumbnail": "https://i.ytimg.com/vi/4rYEigiNoPc/hqdefault.jpg",
@@ -4534,7 +4532,8 @@
       "sentiment:energetic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "groove-armada-superstylin.md",
@@ -4556,8 +4555,7 @@
      "uplifting",
      "celebratory"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "YrJDpEpw64E",
    "thumbnail": "https://i.ytimg.com/vi/YrJDpEpw64E/hqdefault.jpg",
@@ -4598,7 +4596,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "gorgon-city-hard-on-me.md",
@@ -4620,8 +4619,7 @@
      "introspective",
      "groovy"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "45KMkkl6hIY",
    "thumbnail": "https://i.ytimg.com/vi/45KMkkl6hIY/hqdefault.jpg",
@@ -4665,7 +4663,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "gabriella-cilmi-cry-me-a-river.md",
@@ -4688,8 +4687,7 @@
      "vindictive",
      "emotional"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "iO66qZmGoEA",
    "thumbnail": "https://i.ytimg.com/vi/iO66qZmGoEA/hqdefault.jpg",
@@ -4729,7 +4727,8 @@
       "sentiment:emotional"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "freeland-under-control.md",
@@ -4751,11 +4750,10 @@
      "intense",
      "gritty"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
-   "youtube": "AZkT2Rn9zCg",
-   "thumbnail": "https://i.ytimg.com/vi/AZkT2Rn9zCg/hqdefault.jpg",
+   "youtube": null,
+   "thumbnail": "",
    "thumbnail_local": false,
    "words": 503,
    "extra": {},
@@ -4795,7 +4793,8 @@
       "sentiment:intense"
      ]
     }
-   ]
+   ],
+   "video_gone": true
   },
   {
    "source": "fort-minor-remember-the-name.md",
@@ -4817,8 +4816,7 @@
      "empowering",
      "determined"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "VDvr08sCPOc",
    "thumbnail": "https://i.ytimg.com/vi/VDvr08sCPOc/hqdefault.jpg",
@@ -4858,7 +4856,8 @@
       "genre:alternative"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "ibiza-deep-summer-sweet-dreams.md",
@@ -4880,8 +4879,7 @@
      "nostalgic",
      "chill"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "p9j8RGTqju0",
    "thumbnail": "https://i.ytimg.com/vi/p9j8RGTqju0/hqdefault.jpg",
@@ -4926,7 +4924,8 @@
       "sentiment:nostalgic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "annen-may-kantereit-x-parcels-cant-get-you-out-of-my-head.md",
@@ -4948,8 +4947,7 @@
      "soulful",
      "nostalgic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "RacxNskxySo",
    "thumbnail": "https://i.ytimg.com/vi/RacxNskxySo/hqdefault.jpg",
@@ -4987,7 +4985,8 @@
       "sentiment:nostalgic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "asian-dub-foundation-fly-over.md",
@@ -5009,8 +5008,7 @@
      "intense",
      "political"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "6m3z3IAtlzk",
    "thumbnail": "https://i.ytimg.com/vi/6m3z3IAtlzk/hqdefault.jpg",
@@ -5053,7 +5051,8 @@
       "sentiment:rebellious"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "funky-fat-and-digitaria-you-bring-me-down.md",
@@ -5075,8 +5074,7 @@
      "emotional",
      "groovy"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "mxAc6fLKf-Y",
    "thumbnail": "https://i.ytimg.com/vi/mxAc6fLKf-Y/hqdefault.jpg",
@@ -5121,7 +5119,8 @@
       "sentiment:energetic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "roseaux-walking-on-the-moon.md",
@@ -5143,8 +5142,7 @@
      "ethereal",
      "introspective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "tsEYgJ3tQcQ",
    "thumbnail": "https://i.ytimg.com/vi/tsEYgJ3tQcQ/hqdefault.jpg",
@@ -5185,7 +5183,8 @@
       "sentiment:introspective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "nina-simone-felix-da-housecat-sinnerman.md",
@@ -5207,8 +5206,7 @@
      "introspective",
      "energetic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "0hcEiEyylEA",
    "thumbnail": "https://i.ytimg.com/vi/0hcEiEyylEA/hqdefault.jpg",
@@ -5253,7 +5251,8 @@
       "sentiment:energetic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "fernanda-porto-sambassim.md",
@@ -5275,8 +5274,7 @@
      "energetic",
      "celebratory"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "hlVJ7cBAqRQ",
    "thumbnail": "https://i.ytimg.com/vi/hlVJ7cBAqRQ/hqdefault.jpg",
@@ -5320,7 +5318,8 @@
       "sentiment:vibrant"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "roisin-murphy-primitive.md",
@@ -5342,8 +5341,7 @@
      "introspective",
      "liberating"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "3d9nrrQGxzA",
    "thumbnail": "https://i.ytimg.com/vi/3d9nrrQGxzA/hqdefault.jpg",
@@ -5386,7 +5384,8 @@
       "sentiment:liberating"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "michelle-gurevich-party-girl.md",
@@ -5408,8 +5407,7 @@
      "melancholic",
      "nostalgic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "ANmL7LvNzdw",
    "thumbnail": "https://i.ytimg.com/vi/ANmL7LvNzdw/hqdefault.jpg",
@@ -5451,7 +5449,8 @@
       "sentiment:melancholic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "the-horroris-one-night-in-nyc.md",
@@ -5473,11 +5472,10 @@
      "energetic",
      "urban"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
-   "youtube": "oVgjC5Gw8y0",
-   "thumbnail": "https://i.ytimg.com/vi/oVgjC5Gw8y0/hqdefault.jpg",
+   "youtube": null,
+   "thumbnail": "",
    "thumbnail_local": false,
    "words": 431,
    "extra": {},
@@ -5519,7 +5517,8 @@
       "sentiment:intense"
      ]
     }
-   ]
+   ],
+   "video_gone": true
   },
   {
    "source": "nancy-sinatra-bang-bang.md",
@@ -5541,8 +5540,7 @@
      "melancholic",
      "nostalgic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "0rcLYnQfedI",
    "thumbnail": "https://i.ytimg.com/vi/0rcLYnQfedI/hqdefault.jpg",
@@ -5579,7 +5577,8 @@
       "genre:pop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "feist-my-man-my-mood.md",
@@ -5601,8 +5600,7 @@
      "romantic",
      "melancholic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "ltYq-jalYm0",
    "thumbnail": "https://i.ytimg.com/vi/ltYq-jalYm0/hqdefault.jpg",
@@ -5643,7 +5641,8 @@
       "genre:indie pop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "waldeck-zeebee-midsummer-night-blues.md",
@@ -5665,8 +5664,7 @@
      "evocative",
      "melodic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "dUgzGxYmCwg",
    "thumbnail": "images/thumbnails/waldeck-zeebee-midsummer-night-blues.jpg",
@@ -5708,7 +5706,8 @@
       "genre:soul"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "luca-malina-fckrz.md",
@@ -5729,8 +5728,7 @@
      "vibrant",
      "immersive"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "66NvXac9kWo",
    "thumbnail": "https://i.ytimg.com/vi/66NvXac9kWo/hqdefault.jpg",
@@ -5772,7 +5770,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "caravan-palace-lone-digger.md",
@@ -5794,8 +5793,7 @@
      "playful",
      "energetic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "UbQgXeY_zi4",
    "thumbnail": "https://i.ytimg.com/vi/UbQgXeY_zi4/hqdefault.jpg",
@@ -5839,7 +5837,8 @@
       "sentiment:vibrant"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "pomplamoose-harder-better-faster-stronger.md",
@@ -5861,8 +5860,7 @@
      "playful",
      "innovative"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "fUpdfpOPf4Y",
    "thumbnail": "https://i.ytimg.com/vi/fUpdfpOPf4Y/hqdefault.jpg",
@@ -5904,7 +5902,8 @@
       "genre:pop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "portugal-the-man-feel-it-still.md",
@@ -5926,8 +5925,7 @@
      "playful",
      "liberating"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "pBkHHoOIIn8",
    "thumbnail": "https://i.ytimg.com/vi/pBkHHoOIIn8/hqdefault.jpg",
@@ -5965,7 +5963,8 @@
       "genre:indie pop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "hrdvision-nsd-discolight.md",
@@ -5987,8 +5986,7 @@
      "energetic",
      "immersive"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "uE9HBMnHpb4",
    "thumbnail": "https://i.ytimg.com/vi/uE9HBMnHpb4/hqdefault.jpg",
@@ -6034,7 +6032,8 @@
       "sentiment:energetic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "cardi-b-wap-feat-megan-thee-stallion.md",
@@ -6055,8 +6054,7 @@
      "provocative",
      "empowering"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "hsm4poTWjMs",
    "thumbnail": "https://i.ytimg.com/vi/hsm4poTWjMs/hqdefault.jpg",
@@ -6095,7 +6093,8 @@
       "genre:hip-hop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "alt-j-breezeblocks.md",
@@ -6117,8 +6116,7 @@
      "energetic",
      "intriguing"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "rVeMiVU77wo",
    "thumbnail": "https://i.ytimg.com/vi/rVeMiVU77wo/hqdefault.jpg",
@@ -6157,7 +6155,8 @@
       "genre:indie rock"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "fatboy-slim-bird-of-pray.md",
@@ -6179,8 +6178,7 @@
      "reflective",
      "escapist"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "zKEWdRPRf3I",
    "thumbnail": "https://i.ytimg.com/vi/zKEWdRPRf3I/hqdefault.jpg",
@@ -6223,7 +6221,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "clawfinger-biggest-the-best.md",
@@ -6245,8 +6244,7 @@
      "defiant",
      "provocative"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "4yG0QE9ce3U",
    "thumbnail": "https://i.ytimg.com/vi/4yG0QE9ce3U/hqdefault.jpg",
@@ -6282,7 +6280,8 @@
       "genre:alternative rock"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "whilk-and-miskey-darklands.md",
@@ -6304,8 +6303,7 @@
      "atmospheric",
      "introspective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "fk3WPgcJWsQ",
    "thumbnail": "https://i.ytimg.com/vi/fk3WPgcJWsQ/hqdefault.jpg",
@@ -6347,7 +6345,8 @@
       "sentiment:melancholic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "vitalic-cocaine.md",
@@ -6369,11 +6368,10 @@
      "energetic",
      "hypnotic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
-   "youtube": "9os5uvNq6v8",
-   "thumbnail": "https://i.ytimg.com/vi/9os5uvNq6v8/hqdefault.jpg",
+   "youtube": null,
+   "thumbnail": "",
    "thumbnail_local": false,
    "words": 411,
    "extra": {},
@@ -6413,7 +6411,8 @@
       "genre:techno"
      ]
     }
-   ]
+   ],
+   "video_gone": true
   },
   {
    "source": "tum-rakak-deluxe.md",
@@ -6435,8 +6434,7 @@
      "futuristic",
      "hypnotic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "Oq7gVPRjlfQ",
    "thumbnail": "https://i.ytimg.com/vi/Oq7gVPRjlfQ/hqdefault.jpg",
@@ -6481,7 +6479,8 @@
       "sentiment:energetic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "tubbe-in-berlin.md",
@@ -6503,8 +6502,7 @@
      "nostalgic",
      "euphoric"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": null,
    "thumbnail": "",
@@ -6544,7 +6542,8 @@
       "sentiment:nostalgic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "totally-enormous-extinct-dinosaurs-garden.md",
@@ -6566,8 +6565,7 @@
      "introspective",
      "euphoric"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "G-1HNnxb0WE",
    "thumbnail": "https://i.ytimg.com/vi/G-1HNnxb0WE/hqdefault.jpg",
@@ -6610,7 +6608,8 @@
       "genre:house"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "timo-maas-shifter.md",
@@ -6632,11 +6631,10 @@
      "intense",
      "energetic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
-   "youtube": "jICyqacTGBM",
-   "thumbnail": "https://i.ytimg.com/vi/jICyqacTGBM/hqdefault.jpg",
+   "youtube": null,
+   "thumbnail": "",
    "thumbnail_local": false,
    "words": 358,
    "extra": {},
@@ -6680,7 +6678,8 @@
       "sentiment:hypnotic"
      ]
     }
-   ]
+   ],
+   "video_gone": true
   },
   {
    "source": "chemical_brothers_the_salmon_dance.md",
@@ -6702,8 +6701,7 @@
      "playful",
      "humorous"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "dDj7DuHVV9E",
    "thumbnail": "https://i.ytimg.com/vi/dDj7DuHVV9E/hqdefault.jpg",
@@ -6743,7 +6741,8 @@
       "genre:hip-hop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "chemical_brothers_star_guitar.md",
@@ -6764,8 +6763,7 @@
      "hypnotic",
      "mesmerizing"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "0S43IwBF0uM",
    "thumbnail": "https://i.ytimg.com/vi/0S43IwBF0uM/hqdefault.jpg",
@@ -6807,7 +6805,8 @@
       "genre:house"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "bassement-freaks-soul-intoxication.md",
@@ -6830,8 +6829,7 @@
      "hypnotic",
      "cleansing"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": null,
    "thumbnail": "",
@@ -6875,7 +6873,8 @@
       "sentiment:introspective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "sleaford-mods-tweet-tweet-tweet.md",
@@ -6897,8 +6896,7 @@
      "gritty",
      "rebellious"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "V2zNGy0NFEQ",
    "thumbnail": "https://i.ytimg.com/vi/V2zNGy0NFEQ/hqdefault.jpg",
@@ -6939,7 +6937,8 @@
       "sentiment:rebellious"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "nouvelle-vague-too-drunk-to-fuck.md",
@@ -6961,8 +6960,7 @@
      "ironic",
      "chill"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "0wpuCypVneA",
    "thumbnail": "https://i.ytimg.com/vi/0wpuCypVneA/hqdefault.jpg",
@@ -6999,7 +6997,8 @@
       "genre:alternative"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "mirwais-naiive-song.md",
@@ -7021,8 +7020,7 @@
      "innovative",
      "groovy"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "20cJMLr7ueE",
    "thumbnail": "https://i.ytimg.com/vi/20cJMLr7ueE/hqdefault.jpg",
@@ -7062,7 +7060,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "miike-snow-paddling-out.md",
@@ -7084,8 +7083,7 @@
      "reflective",
      "adventurous"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "WCNQ2mc_Zzc",
    "thumbnail": "https://i.ytimg.com/vi/WCNQ2mc_Zzc/hqdefault.jpg",
@@ -7126,7 +7124,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "kutiman-inner-galactic-lovers.md",
@@ -7148,8 +7147,7 @@
      "cosmic",
      "uplifting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "AplRmndCK5A",
    "thumbnail": "https://i.ytimg.com/vi/AplRmndCK5A/hqdefault.jpg",
@@ -7189,7 +7187,8 @@
       "genre:funk"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "klangkarusell-moments.md",
@@ -7211,8 +7210,7 @@
      "nostalgic",
      "joyful"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "ZbDQ8SVqHZw",
    "thumbnail": "https://i.ytimg.com/vi/ZbDQ8SVqHZw/hqdefault.jpg",
@@ -7255,7 +7253,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "k-flay-high-enough.md",
@@ -7277,8 +7276,7 @@
      "reflective",
      "uplifting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "j04JKdcXjkU",
    "thumbnail": "https://i.ytimg.com/vi/j04JKdcXjkU/hqdefault.jpg",
@@ -7321,7 +7319,8 @@
       "genre:indie"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "joris-delacroix-epoque.md",
@@ -7343,8 +7342,7 @@
      "reflective",
      "emotive"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "r13IcwcS7Mo",
    "thumbnail": "https://i.ytimg.com/vi/r13IcwcS7Mo/hqdefault.jpg",
@@ -7389,7 +7387,8 @@
       "sentiment:reflective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "jan-blomqvist-time-again.md",
@@ -7411,8 +7410,7 @@
      "hypnotic",
      "emotive"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "7l1nijTC_yM",
    "thumbnail": "https://i.ytimg.com/vi/7l1nijTC_yM/hqdefault.jpg",
@@ -7456,7 +7454,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "jain-makeba.md",
@@ -7478,8 +7477,7 @@
      "energetic",
      "uplifting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "59Q_lhgGANc",
    "thumbnail": "https://i.ytimg.com/vi/59Q_lhgGANc/hqdefault.jpg",
@@ -7521,7 +7519,8 @@
       "sentiment:energetic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "her-five-minutes.md",
@@ -7543,8 +7542,7 @@
      "emotional",
      "introspective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "sqM3APrfijU",
    "thumbnail": "https://i.ytimg.com/vi/sqM3APrfijU/hqdefault.jpg",
@@ -7583,7 +7581,8 @@
       "genre:soul"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "gregory-porter-do-not-lose-your-steam.md",
@@ -7605,8 +7604,7 @@
      "inspirational",
      "resilient"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "EEZyB4Bxrxg",
    "thumbnail": "https://i.ytimg.com/vi/EEZyB4Bxrxg/hqdefault.jpg",
@@ -7647,7 +7645,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "felix-da-house-cat-silverscreen.md",
@@ -7669,8 +7668,7 @@
      "mysterious",
      "energetic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "fJvatGfD9Pg",
    "thumbnail": "https://i.ytimg.com/vi/fJvatGfD9Pg/hqdefault.jpg",
@@ -7713,7 +7711,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "dead-kennedys-too-drunk-to-fuck.md",
@@ -7735,8 +7734,7 @@
      "satirical",
      "energetic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "0LDsBVBEdpk",
    "thumbnail": "https://i.ytimg.com/vi/0LDsBVBEdpk/hqdefault.jpg",
@@ -7774,7 +7772,8 @@
       "genre:alternative"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "bjork-kata-rokkar.md",
@@ -7796,8 +7795,7 @@
      "introspective",
      "immersive"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "oJWXJEnHGgI",
    "thumbnail": "https://i.ytimg.com/vi/oJWXJEnHGgI/hqdefault.jpg",
@@ -7838,7 +7836,8 @@
       "genre:experimental"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "alif-tree_forgotten-places.md",
@@ -7860,8 +7859,7 @@
      "introspective",
      "atmospheric"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "Hs86ddB4sYA",
    "thumbnail": "https://i.ytimg.com/vi/Hs86ddB4sYA/hqdefault.jpg",
@@ -7902,7 +7900,8 @@
       "sentiment:introspective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "zwicker_oddity.md",
@@ -7922,8 +7921,7 @@
      "hypnotic",
      "sultry"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "LZDpFXfW3jU",
    "thumbnail": "https://i.ytimg.com/vi/LZDpFXfW3jU/hqdefault.jpg",
@@ -7964,7 +7962,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "say-yes-dog_a-friend.md",
@@ -7986,8 +7985,7 @@
      "heartfelt",
      "uplifting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "FtITR_42Zes",
    "thumbnail": "images/thumbnails/say-yes-dog_a-friend.jpg",
@@ -8029,7 +8027,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "ryan-blyth_once-twice-feat-rachel-k-collier.md",
@@ -8050,8 +8049,7 @@
      "uplifting",
      "energizing"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "EpdxpOyL2vg",
    "thumbnail": "https://i.ytimg.com/vi/EpdxpOyL2vg/hqdefault.jpg",
@@ -8094,7 +8092,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "pilocka-krach_la_luna-y-el-sol.md",
@@ -8116,8 +8115,7 @@
      "uplifting",
      "celebratory"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "Ol992v9ukOM",
    "thumbnail": "images/thumbnails/pilocka-krach_la_luna-y-el-sol.jpg",
@@ -8160,7 +8158,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "paul_oakenfold_sex_n_money.md",
@@ -8182,8 +8181,7 @@
      "indulgent",
      "hypnotic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "E2aoCju-_NQ",
    "thumbnail": "https://i.ytimg.com/vi/E2aoCju-_NQ/hqdefault.jpg",
@@ -8226,7 +8224,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "mount-sims-how-we-do.md",
@@ -8248,8 +8247,7 @@
      "defiant",
      "empowering"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "YrhxWcivUT4",
    "thumbnail": "https://i.ytimg.com/vi/YrhxWcivUT4/hqdefault.jpg",
@@ -8289,7 +8287,8 @@
       "genre:experimental"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "miss-kittin-frank-sinatra.md",
@@ -8311,8 +8310,7 @@
      "playful",
      "provocative"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "ouWAymYiUn8",
    "thumbnail": "https://i.ytimg.com/vi/ouWAymYiUn8/hqdefault.jpg",
@@ -8353,7 +8351,8 @@
       "genre:electronic"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "louie-austen-one-night-in-rio.md",
@@ -8373,8 +8372,7 @@
     "sentiment": [
      "bittersweet"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "8cKkBcmm2cE",
    "thumbnail": "https://i.ytimg.com/vi/8cKkBcmm2cE/hqdefault.jpg",
@@ -8410,7 +8408,8 @@
       "genre:jazz"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "lekota_i-used-to.md",
@@ -8431,8 +8430,7 @@
      "emotive",
      "reflective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "G0T9tdZI4Yk",
    "thumbnail": "https://i.ytimg.com/vi/G0T9tdZI4Yk/hqdefault.jpg",
@@ -8475,7 +8473,8 @@
       "sentiment:reflective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "kollektiv-turmstrasse_on-the-streets-let-freedom.md",
@@ -8496,8 +8495,7 @@
      "uplifting",
      "introspective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "aiMseVNHd5I",
    "thumbnail": "https://i.ytimg.com/vi/aiMseVNHd5I/hqdefault.jpg",
@@ -8539,7 +8537,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "justice-vs-simian_we-are-your-friends.md",
@@ -8560,8 +8559,7 @@
      "iconic",
      "infectious"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "L0TvnWRSyr4",
    "thumbnail": "https://i.ytimg.com/vi/L0TvnWRSyr4/hqdefault.jpg",
@@ -8600,7 +8598,8 @@
       "genre:dance"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "jorge-ben-jr_take-it-easy-my-brother-charles.md",
@@ -8623,8 +8622,7 @@
      "uplifting",
      "carefree"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "BjhMp-FlBEk",
    "thumbnail": "https://i.ytimg.com/vi/BjhMp-FlBEk/hqdefault.jpg",
@@ -8664,7 +8662,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "hindi-zahra_stand-up.md",
@@ -8687,8 +8686,7 @@
      "rebellious",
      "uplifting"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "YI2XuIOW3gM",
    "thumbnail": "https://i.ytimg.com/vi/YI2XuIOW3gM/hqdefault.jpg",
@@ -8730,7 +8728,8 @@
       "genre:soul"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "gabriel-vitel_burn-it-down.md",
@@ -8752,8 +8751,7 @@
      "emotional",
      "transformative"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "2MfQSruV7B0",
    "thumbnail": "https://i.ytimg.com/vi/2MfQSruV7B0/hqdefault.jpg",
@@ -8790,7 +8788,8 @@
       "sentiment:intense"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "controller-7_get-ready-for-the-young-folks.md",
@@ -8812,8 +8811,7 @@
      "nostalgic",
      "adventurous"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "WAXZNEa5kBs",
    "thumbnail": "https://i.ytimg.com/vi/WAXZNEa5kBs/hqdefault.jpg",
@@ -8854,7 +8852,8 @@
       "genre:hip-hop"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "bronski-beat_small_town_boy.md",
@@ -8876,8 +8875,7 @@
      "empowering",
      "reflective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "88sARuFu-tc",
    "thumbnail": "https://i.ytimg.com/vi/88sARuFu-tc/hqdefault.jpg",
@@ -8920,7 +8918,8 @@
       "sentiment:reflective"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "amanda-blank_dj.md",
@@ -8942,8 +8941,7 @@
      "joyful",
      "festive"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "EtdqpubMkj8",
    "thumbnail": "https://i.ytimg.com/vi/EtdqpubMkj8/hqdefault.jpg",
@@ -8980,7 +8978,8 @@
       "genre:dance"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "marcu-rares_camimosa.md",
@@ -9002,8 +9001,7 @@
      "dreamy",
      "introspective"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "MmIWve5bUpU",
    "thumbnail": "https://i.ytimg.com/vi/MmIWve5bUpU/hqdefault.jpg",
@@ -9042,7 +9040,8 @@
       "genre:deep house"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "lipka_no-more-beer.md",
@@ -9062,8 +9061,7 @@
     "sentiment": [
      "bittersweet"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "9Ihx9Wm5bN4",
    "thumbnail": "https://i.ytimg.com/vi/9Ihx9Wm5bN4/hqdefault.jpg",
@@ -9092,7 +9090,8 @@
       "sentiment:bittersweet"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "ladytron_seventeen.md",
@@ -9114,8 +9113,7 @@
      "uplifting",
      "dreamy"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "s6jaYJx7yeI",
    "thumbnail": "https://i.ytimg.com/vi/s6jaYJx7yeI/hqdefault.jpg",
@@ -9157,7 +9155,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   },
   {
    "source": "chris-lorenzo-and-the-streets_take-me-as-i-am.md",
@@ -9179,8 +9178,7 @@
      "uplifting",
      "authentic"
     ],
-    "mood": [],
-    "tags": []
+    "mood": []
    },
    "youtube": "uNWXwgYuKL8",
    "thumbnail": "https://i.ytimg.com/vi/uNWXwgYuKL8/hqdefault.jpg",
@@ -9221,7 +9219,8 @@
       "sentiment:uplifting"
      ]
     }
-   ]
+   ],
+   "video_gone": false
   }
  ]
 }

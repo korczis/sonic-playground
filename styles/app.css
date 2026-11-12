@@ -67,21 +67,29 @@
   [hidden] {
     display: none !important;
   }
+}
 
-  /* Without JavaScript the mobile drawer cannot open: show the sidebar in the normal flow
-     above the content instead, and drop the toggle that would do nothing. */
-  @media (max-width: 1023px) {
-    .no-js #sidebar {
-      position: static;
-      transform: none;
-      width: 100%;
-      height: auto;
-      padding-top: 0;
-    }
+/* Without JavaScript the mobile drawer cannot open: the shell stacks, the sidebar sits in the
+   normal flow above the content, and the toggle that would do nothing is gone. Unlayered, so it
+   wins over the utility layer (Tailwind 4 positions with `translate`, not `transform`). */
+@media (max-width: 1023px) {
+  .no-js #shell {
+    flex-direction: column;
+  }
 
-    .no-js #toggleSidebarMobile {
-      display: none;
-    }
+  .no-js #sidebar {
+    position: static;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    translate: 0 0;
+    transform: none;
+    width: 100%;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .no-js #toggleSidebarMobile {
+    display: none;
   }
 }
 

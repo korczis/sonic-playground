@@ -30,6 +30,8 @@
       if (drawer && drawer.isVisible && drawer.isVisible()) drawer.hide();
       sidebar.removeAttribute('aria-hidden');
       sidebar.removeAttribute('inert');
+      var shell = document.getElementById('main-content');
+      if (shell) shell.removeAttribute('inert');
       return;
     }
     var closed = sidebar.classList.contains('-translate-x-full');
@@ -108,6 +110,25 @@
   }, true);
   document.querySelectorAll('img[data-thumb]').forEach(function (img) {
     if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) fallback(img);
+  });
+
+  // --- Copy link (the share row): the clipboard, then a check mark for two seconds. ---------
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest && event.target.closest('[data-copy-link]');
+    if (!button || !navigator.clipboard) return;
+    navigator.clipboard.writeText(button.getAttribute('data-copy-link')).then(function () {
+      var idle = button.querySelector('[data-copy-idle]');
+      var done = button.querySelector('[data-copy-done]');
+      var label = button.querySelector('[data-copy-label]');
+      if (idle) idle.hidden = true;
+      if (done) done.hidden = false;
+      if (label) label.textContent = 'Link copied';
+      setTimeout(function () {
+        if (idle) idle.hidden = false;
+        if (done) done.hidden = true;
+        if (label) label.textContent = 'Copy link';
+      }, 2000);
+    }).catch(function () {});
   });
 
   // --- "/" focuses the visible search field. -------------------------------------------------
