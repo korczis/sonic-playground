@@ -12,6 +12,15 @@
     {{ <stat_card value={(s.words / 1000) | round | int ~ "k"} label={l["stat.words"]} lkey="stat.words" icon_name="archive" /> }}
     {{ <stat_card value={s.artists} label={l["stat.artists"]} lkey="stat.artists" icon_name="user" /> }}
   </section>
+  {%- if s.yearbooks > 0 %}
+  {#- The yearbooks (ADR 0005): derived from data/backlog/, absent until one is imported. -#}
+  <section aria-label="Yearbooks" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
+    {{ <stat_card value={s.yearbooks} label={l["stat.yearbooks"]} lkey="stat.yearbooks" icon_name="calendar" href={get_url(path="@/yearbook/_index.md")} /> }}
+    {{ <stat_card value={s.recurring} label={l["stat.recurring"]} lkey="stat.recurring" icon_name="radio" /> }}
+    {{ <stat_card value={s.concept_terms} label={l["stat.concepts"]} lkey="stat.concepts" icon_name="book" href={get_url(path="concept", trailing_slash=true)} /> }}
+    {{ <stat_card value={s.instrument_terms} label={l["stat.instruments"]} lkey="stat.instruments" icon_name="music" href={get_url(path="instrument", trailing_slash=true)} /> }}
+  </section>
+  {%- endif %}
   {{ <chart_card id="chart-months" chart="months" ckey="chart.months" l={l} height="h-64" /> }}
   <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
     {{ <chart_card id="chart-genres" chart="genre" ckey="chart.genres" l={l} height="h-[28rem]" limit={15} /> }}

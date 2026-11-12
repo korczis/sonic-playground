@@ -102,8 +102,8 @@ growing into something more profound and complex.
 
 As the track closes, the layers begin to fade out, returning the listener to the
 initial calm. The music recedes gently, much like a memory or thought fading
-into the background. This closure mirrors the way the track began, offering a
-sense of peace and resolution after the emotional and sonic journey.
+into the background. The close returns to the sparse texture of the opening, so the
+track ends where it started rather than on a final peak.
 
 ## Artistic Context
 

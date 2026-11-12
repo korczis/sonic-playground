@@ -12,6 +12,20 @@
   {%- set_global featured = catalog.tracks | first %}
   {%- for t in catalog.tracks %}{% if t.thumbnail %}{% set_global featured = t %}{% break %}{% endif %}{% endfor %}
   {{ <featured_track t={featured} l={l} /> }}
+  {#- The newest reviews after the featured one, by publication date (the catalogue's order). -#}
+  <section aria-labelledby="home-recent" class="space-y-3">
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <h2 id="home-recent" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="home.recent" l={l} /> }}</h2>
+      <div class="flex items-center gap-3">
+        <a href="{{ get_url(path='@/pages/archive.md') }}" class="text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="home.recent_all" l={l} /> }}</a>
+        {{ <play_all target="home-recent-grid" l={l} label={l["home.recent_play"]} lkey="home.recent_play" /> }}
+      </div>
+    </div>
+    <div id="home-recent-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      {%- set_global shown = 0 %}
+      {%- for t in catalog.tracks %}{% if t.source != featured.source and shown < 4 %}{% set_global shown = shown + 1 %}{{ <track_card t={t} l={l} heading="h3" /> }}{% endif %}{% endfor %}
+    </div>
+  </section>
   {%- if catalog.yearbooks | length > 0 %}
   <section aria-labelledby="home-yearbooks" class="space-y-3">
     <div class="flex items-end justify-between gap-3">
@@ -19,6 +33,19 @@
       <a href="{{ get_url(path='@/yearbook/_index.md') }}" class="text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="home.all_yearbooks" l={l} vars={ {"n": catalog.yearbooks | length} } /> }}</a>
     </div>
     <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">{% for b in catalog.yearbooks[:4] %}{{ <yearbook_card b={b} catalog={catalog} l={l} /> }}{% endfor %}</div>
+  </section>
+  {%- endif %}
+  {%- if catalog.recurring | length > 0 %}
+  {#- Songs in more than one yearbook (derived from the memberships, ADR 0005). -#}
+  <section aria-labelledby="home-recurring" class="space-y-3">
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <h2 id="home-recurring" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="home.recurring" l={l} vars={ {"n": catalog.recurring | length} } /> }}</h2>
+      {{ <play_all target="home-recurring-grid" l={l} label={l["home.recurring_play"]} lkey="home.recurring_play" /> }}
+    </div>
+    <div id="home-recurring-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      {%- set_global shown = 0 %}
+      {%- for t in catalog.tracks %}{% if t.source in catalog.recurring and shown < 4 %}{% set_global shown = shown + 1 %}{{ <track_card t={t} l={l} heading="h3" /> }}{% endif %}{% endfor %}
+    </div>
   </section>
   {%- endif %}
   <section aria-label="Catalogue at a glance" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
@@ -36,6 +63,22 @@
       </div>
     </div>
     <a href="{{ get_url(path='concept', trailing_slash=true) }}" class="inline-flex shrink-0 items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <tx key="home.learn_cta" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-4 w-4" /> }}</a>
+  </section>
+
+  {#- Explore by sound: the most used terms of every facet with enough terms to browse. -#}
+  <section aria-labelledby="home-sound" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+    <h2 id="home-sound" class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="home.sound" l={l} /> }}</h2>
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+      {%- for kind in catalog.facet_names %}{% if catalog.facets[kind] | length > 2 %}
+      <div>
+        <div class="mb-2 flex items-baseline justify-between gap-2">
+          <h3 class="text-sm font-medium text-gray-900 dark:text-white" data-i18n="explorer.facet.{{ kind }}">{{ l["explorer.facet." ~ kind] }}</h3>
+          <a href="{{ get_url(path=kind, trailing_slash=true) }}" class="text-xs font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="home.sound_all" l={l} vars={ {"n": catalog.facets[kind] | length} } /> }}</a>
+        </div>
+        <div class="flex flex-wrap gap-2">{{ <facet_badges terms={[]} kind={kind} limit={10} ranked={catalog.facets[kind]} /> }}</div>
+      </div>
+      {%- endif %}{% endfor %}
+    </div>
   </section>
 
   <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">

@@ -293,6 +293,15 @@ async function shot(page, name) {
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     const visible = () => page.locator('#explorer-grid [data-track]:not([hidden])').count();
     check((await page.locator('#explorer-grid [data-track]').count()) === catalog.tracks.length, 'home renders one card per catalogue track');
+    // Landing sections derived from the catalogue: the newest reviews after the featured one, and
+    // the most used terms of every facet with more than two terms, each linking to its term page.
+    const recent = await page.locator('#home-recent-grid [data-track]').evaluateAll((els) => els.map((e) => e.dataset.source));
+    const featured = await page.locator('#featured').getAttribute('data-featured');
+    const expected = catalog.tracks.map((t) => t.source).filter((s) => s !== featured).slice(0, 4);
+    check(recent.join() === expected.join(), 'home lists the four newest reviews after the featured one');
+    const kinds = catalog.facet_names.filter((k) => catalog.facets[k].length > 2);
+    const sound = await page.locator('section[aria-labelledby="home-sound"] a[href]').count();
+    check(sound >= kinds.length * 2, `home explores by sound over ${kinds.join(', ')}`);
     await shot(page, 'home-desktop-light');
     await page.selectOption('#explorer-genre', genre.term);
     check((await visible()) === genre.count, `genre filter "${genre.term}" leaves ${genre.count} cards`);

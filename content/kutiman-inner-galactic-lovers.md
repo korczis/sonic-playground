@@ -12,8 +12,8 @@ instrument = ["drums", "bass", "guitar", "keyboards"]
 [extra]
 release_year = "2015"
 country = "IL"
-video_duration = "3:18"
-youtube = "https://www.youtube.com/embed/AplRmndCK5A"
+video_duration = "5:31"
+youtube = "https://www.youtube.com/embed/v1V5Oc3hMbc"
 connections = [
   { source = "pomplamoose-harder-better-faster-stronger.md", why = "Another product of YouTube-era music-making, where the video shows every musician actually playing the part you hear." },
 ]

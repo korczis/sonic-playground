@@ -100,7 +100,9 @@ python3 scripts/probe-videos.py   # which videos disappeared from YouTube (netwo
 python3 scripts/probe-links.py    # which external links stopped answering (network)
 ```
 
-`scripts/verify.sh` runs, in order: the content contract and catalogue currency, the locales,
+`scripts/verify.sh` runs, in order: the content contract (schema, references, one song one
+review, prose that names its recording, the minimum length, no stock phrases) and catalogue
+currency, the locales,
 unit tests, the skill cases (`test/cases/`), type checks, vendored assets and CSS, `zola build`
 (internal links are errors), the social cards, the built-site check (every local URL resolves,
 every page has complete social tags), and the browser smoke test (every page class, the

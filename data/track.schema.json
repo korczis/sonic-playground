@@ -394,6 +394,21 @@
    "yourwebsite.com"
   ],
   "unfinished_marker": "TODO(write)",
+  "cliches": [
+   "takes listeners on a journey",
+   "takes the listener on a journey",
+   "sonic journey",
+   "sonic tapestry",
+   "tapestry of sound",
+   "immersive atmosphere",
+   "masterful blend",
+   "resonates deeply",
+   "timeless masterpiece",
+   "rollercoaster of emotions",
+   "hypnotic beat",
+   "a testament to"
+  ],
+  "shared_paragraph_chars": 120,
   "facet_weights": {
    "genre": 2.0,
    "sentiment": 1.0,

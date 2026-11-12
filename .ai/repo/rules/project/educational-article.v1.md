@@ -35,6 +35,12 @@ nothing.
 - A review never reproduces lyrics: eight or more short lines in a row (fenced or not) are
   refused; describe the lyric and quote a few words at most.
 - One artist has one `country` (origin) across all reviews.
+- A written review is about its recording and says something specific (2026-11-12): its prose
+  names the artist (the credit's first name) and the track (without a bracketed version), has
+  at least `defaults.words_min` words of `data/review.toml` unless `extra.edu_exempt` says why
+  not, and uses none of the phrases in `x-sonic.cliches` of `data/track.schema.json` (wording
+  that would fit any track). Negative cases: `test/test_catalog.py` (`test_a_cliche_is_refused`,
+  `test_the_review_names_its_artist_and_track`, `test_a_short_review_is_refused_unless_exempt`).
 - `scripts/track.py new` writes the required section "Concepts in Focus" (data/review.toml);
   `scripts/track.py enrich` fills the identifiers MusicBrainz knows.
 - Structured data (`Article` + `LearningResource` + `MusicRecording`) is derived into

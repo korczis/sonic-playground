@@ -27,6 +27,13 @@ were typed by hand would drift from the playlists; resolved and derived they can
   is `ambiguous`, none is `missing` (the backlog of skill add-song, `scripts/backlog.py`).
 - The yearbook pages are derived stubs; `--check` refuses a stale or leftover one.
 - `scripts/spotify.py` writes only on change (idempotent) and keeps the owner's overrides.
+- One song, one review: no two reviews share an artist and song (folded, version suffixes
+  removed), an ISRC or a video, and no paragraph of 120 or more characters is copied between
+  reviews (`catalog.uniqueness`, refused by `--check`). Two recordings of one song in one year
+  are one membership, at the higher place. A remix or a live recording keeps its own identity.
+- The importer waits out a rate limit (Retry-After), retries a server error, refreshes an expired
+  token once, and names Spotify's policy when a playlist is refused; without authorisation it
+  says how to authorise. Tests: `test/test_spotify.py` (`Http`, `Identity`, `Derivation`).
 
 # Failure behaviour
 

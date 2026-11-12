@@ -54,6 +54,8 @@ title = "Moderat discography"
 url = "https://www.discogs.com/artist/1121428-Moderat"
 kind = "database"
 """
+# The written review names its recording and has the contract's length (data/review.toml).
+body += "\nModerat let A New Error grow from a single pulse. " + " ".join(f"detail{i}" for i in range(320)) + "\n"
 open(path, "w", encoding="utf-8").write("+++" + fm + "+++" + body)
 EOF2
 python3 scripts/track.py check "$file" >/dev/null

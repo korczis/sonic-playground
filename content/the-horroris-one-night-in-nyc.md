@@ -68,7 +68,7 @@ year = "1997"
 
 ## Genre and Mood
 
-**The Horrorist** delivers an intense experience with **One Night In New York City**, a track that turns the intensity of urban nightlife into something menacing. It combines driving techno beats with a dark, immersive atmosphere, and its voice tells a story instead of singing one.
+**The Horrorist** delivers an intense experience with **One Night In New York City**, a track that turns the intensity of urban nightlife into something menacing. It combines a driving techno beat with a cold, menacing mood, and its voice tells a story instead of singing one.
 
 ## Song Summary
 
