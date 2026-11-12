@@ -192,7 +192,7 @@ async function shot(page, name) {
   // Track page: video and related tracks.
   {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);
-    check((await page.locator('aside[aria-label="About this track"] li').count()) === sample.related.length, `track: ${sample.related.length} related tracks listed`);
+    check((await page.locator('[aria-labelledby="related-title"] article').count()) === sample.related.length, `track: ${sample.related.length} related tracks listed`);
     await shot(page, 'track-desktop-light');
     await page.click('[data-video-play]');
     const src = await page.locator('[data-video] iframe').getAttribute('src');

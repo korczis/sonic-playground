@@ -4,8 +4,12 @@
 {% extends "base.html" %}
 {%- block content %}
 {%- set s = catalog.stats %}
-{{ <page_header title="Explore the playground" crumbs={[["Home", ""]]} kicker={s.tracks ~ " hand-picked tracks"} lead={config.description} /> }}
-<div class="space-y-4 px-4 pt-6">
+{{ <site_hero kicker={s.tracks ~ " hand-picked tracks · " ~ s.artists ~ " artists · " ~ s.genre_terms ~ " genres"} title={config.title} lead={config.description} primary_href="#explorer-title" primary_label="Explore the tracks" secondary_href={get_url(path="@/pages/welcome.md")} secondary_label="Why this playground" /> }}
+<div class="relative z-10 -mt-16 space-y-4 px-4 xl:px-8">
+  {#- The newest track with a picture leads; the catalogue is newest first. -#}
+  {%- set_global featured = catalog.tracks | first %}
+  {%- for t in catalog.tracks %}{% if t.thumbnail %}{% set_global featured = t %}{% break %}{% endif %}{% endfor %}
+  {{ <featured_track t={featured} /> }}
   <section aria-label="Catalogue at a glance" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
     {{ <stat_card value={s.tracks} label="tracks" icon_name="music" href={get_url(path="@/pages/archive.md")} /> }}
     {{ <stat_card value={s.artists} label="artists" icon_name="user" href={get_url(path="@/pages/insights.md")} /> }}
