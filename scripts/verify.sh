@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # The local gate, in the order CI runs it (.github/workflows/ci.yml):
 #   1. scripts/catalog.py --check    content contract; static/data/catalog.json is current
-#   2. unit tests                    inference rules, contract, related tracks
+#   2. unit tests and skill cases    inference, contract, engine; add-song end to end, Pro shell
 #   3. vendored Flowbite and CSS     static/vendor/ and static/css/app.css are current
 #   4. zola build                    internal links are errors (config.toml [link_checker])
 #   5. test/e2e/smoke.cjs            every page class in a real browser, desktop and phone
@@ -28,6 +28,11 @@ python3 scripts/catalog.py --check
 
 step "unit tests"
 python3 -m unittest discover -s test -p 'test_*.py'
+
+step "skill cases (test/cases)"
+for case in test/cases/*.sh; do
+  bash "$case"
+done
 
 if [ -d node_modules ]; then
   step "vendored libraries and CSS are current"

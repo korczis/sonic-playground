@@ -61,6 +61,12 @@ jobs:
           git config core.hooksPath .githooks
           majordomus version
           majordomus doctor
+      - name: Skills, decisions and knowledge are valid
+        run: |
+          majordomus skills check
+          majordomus skills verify
+          majordomus adr check
+          majordomus knowledge validate
 
   site:
     name: Validate, build and test in a browser

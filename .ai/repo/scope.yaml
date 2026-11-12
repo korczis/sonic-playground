@@ -32,6 +32,9 @@ in:
   - static/data/**
   - config.toml
   - .zola-version
+  # the formal contract, the review archetype and its guidance
+  - data/**
+  - archetypes/**
   # tooling, gates and delivery
   - scripts/**
   - test/**
@@ -42,6 +45,9 @@ in:
   - .editorconfig
   - README.md
   - AGENTS.md
+  - CLAUDE.md
+  - GEMINI.md
+  - .claude/skills/**
 
 out:
   # never read, by path: version control, the local half of the layer, dependencies,

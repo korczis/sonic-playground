@@ -20,7 +20,9 @@
     "dev": "npm run --silent assets && npm run --silent derive && zola serve",
     "test": "python3 -m unittest discover -s test -p 'test_*.py'",
     "test:e2e": "node test/e2e/smoke.cjs",
-    "verify": "bash scripts/verify.sh"
+    "verify": "bash scripts/verify.sh",
+    "track": "python3 scripts/track.py",
+    "probe:videos": "python3 scripts/probe-videos.py"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",

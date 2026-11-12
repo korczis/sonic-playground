@@ -1,3 +1,4 @@
+// majordomus-skill: fleet-flowbite-pro
 // E2E smoke test of the built site in a real browser (scripts/verify.sh runs it after
 // `zola build`; CI runs it before every deploy and against production).
 //

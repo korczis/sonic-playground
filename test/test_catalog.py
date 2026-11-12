@@ -17,10 +17,10 @@ spec.loader.exec_module(catalog)
 GOOD = """+++
 title = "{title}"
 date = "2024-10-06"
-description = "A track."
+description = "A track with a long enough description to satisfy the contract."
 
 [taxonomies]
-genre = ["Electronic", "house"]
+genre = ["electronic", "house"]
 sentiment = ["uplifting"]
 
 [extra]
@@ -84,7 +84,7 @@ class Contract(unittest.TestCase):
 
     def test_unknown_extra_key(self):
         _, errors = self.load(extra='og_title = "x"\n')
-        self.assertTrue(any("unknown [extra] key 'og_title'" in e for e in errors))
+        self.assertTrue(any("unknown key 'og_title'" in e for e in errors))
 
     def test_placeholder_host(self):
         _, errors = self.load(extra='album = "https://example.com/x"\n')
@@ -93,6 +93,21 @@ class Contract(unittest.TestCase):
     def test_missing_cover_file(self):
         _, errors = self.load(extra='cover_image = "/images/nope.jpg"\n')
         self.assertTrue(any("cover_image" in e for e in errors))
+
+    def test_uppercase_term_is_refused(self):
+        tmp = GOOD.format(title="A - B", extra="").replace('genre = ["electronic", "house"]', 'genre = ["Electronic"]')
+        errors = catalog.validate(__import__("tomllib").loads(tmp.split("+++")[1]), catalog.TRACK_SCHEMA)
+        self.assertTrue(any("taxonomies.genre[0]" in e for e in errors))
+
+    def test_unfinished_section_is_refused(self):
+        _, errors = self.load(extra="")
+        self.assertEqual(errors, [])
+        track, errors = self.load(title="Bakermat - The River", extra="", name="unfinished.md")
+        path = catalog.CONTENT / "unfinished.md"
+        path.write_text(path.read_text(encoding="utf-8") + "\nTODO(write): more\n", encoding="utf-8")
+        errors = []
+        catalog.load_track(path, errors)
+        self.assertTrue(any("TODO(write)" in e for e in errors))
 
     def test_artist_override(self):
         track, errors = self.load(title="Lulu's Theme", extra='artist = "Lulu Rouge"\n', name="x.md")
