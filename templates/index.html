@@ -1,4 +1,4 @@
-{#- Home: the landing hero, the newest track, the catalogue at a glance, charts that filter, and
+{#- Home: the landing hero (headline, perks, a mosaic that plays), the newest track, the catalogue at a glance, charts that filter, and
     the explorer. Every card is rendered here from the catalogue, so the page is complete without
     JavaScript; static/js/explorer.js adds faceted filtering, text search, sorting, paging and URL
     state (?q=&genre=&sentiment=&mood=&sort=) on top of the same cards. Strings: data/i18n/. -#}
@@ -6,7 +6,10 @@
 {%- block content %}
 {%- set s = catalog.stats %}
 {%- set kicker_vars = {"tracks": s.tracks, "artists": s.artists, "genres": s.genre_terms} %}
-{{ <site_hero l={l} kicker_vars={kicker_vars} title={config.title} lead={config.description} primary_href="#explorer-title" secondary_href={get_url(path="@/pages/welcome.md")} tracks={catalog.tracks} /> }}
+{%- set lead_vars = {"tracks": s.tracks} %}
+{%- set learn_vars = {"n": catalog.concepts | length} %}
+{%- set share_vars = {"tracks": s.tracks, "artists": s.artists} %}
+{{ <site_hero l={l} kicker_vars={kicker_vars} lead_vars={lead_vars} learn_vars={learn_vars} primary_href="#explorer-title" secondary_href={get_url(path="@/pages/welcome.md")} tracks={catalog.tracks} /> }}
 <div class="relative z-10 -mt-16 space-y-4 px-4 xl:px-8">
   {#- The newest track with a picture leads; the catalogue is newest first. -#}
   {%- set_global featured = catalog.tracks | first %}
@@ -64,6 +67,9 @@
     </div>
     <a href="{{ get_url(path='concept', trailing_slash=true) }}" class="inline-flex shrink-0 items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <tx key="home.learn_cta" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-4 w-4" /> }}</a>
   </section>
+
+  {#- Pass it on: the home page's own share links (its Open Graph card is og/home.png). -#}
+  {{ <share_cta url={section.permalink} text={l["home.share_post"] | replace(from="{tracks}", to=s.tracks ~ "")} l={l} vars={share_vars} /> }}
 
   {#- Explore by sound: the most used terms of every facet with enough terms to browse. -#}
   <section aria-labelledby="home-sound" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
