@@ -8,6 +8,8 @@ genre = ["synth-pop", "indie", "dance"]
 sentiment = ["catchy", "heartfelt", "uplifting"]
 
 [extra]
+release_year = "2015"
+album = "Plastic Love"
 cover_image = "/images/thumbnails/say-yes-dog_a-friend.jpg"
 youtube = "https://www.youtube.com/embed/FtITR_42Zes"
 +++

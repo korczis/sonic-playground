@@ -8,6 +8,8 @@ genre = ["synth-pop", "electronic", "80s"]
 sentiment = ["nostalgic", "empowering", "reflective"]
 
 [extra]
+release_year = "1984"
+album = "The Age of Consent"
 youtube = "https://www.youtube.com/embed/88sARuFu-tc"
 +++
 

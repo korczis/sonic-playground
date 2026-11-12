@@ -8,6 +8,8 @@ genre = ["electronic", "urban", "bassline"]
 sentiment = ["empowering", "uplifting", "authentic"]
 
 [extra]
+release_year = "2019"
+album = "Take Me As I Am"
 youtube = "https://www.youtube.com/embed/uNWXwgYuKL8"
 +++
 

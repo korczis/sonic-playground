@@ -8,6 +8,8 @@ genre = ["synth-pop", "electro-pop", "dance"]
 sentiment = ["nostalgic", "uplifting", "dreamy"]
 
 [extra]
+release_year = "2002"
+album = "Light & Magic"
 youtube = "https://www.youtube.com/embed/s6jaYJx7yeI"
 +++
 

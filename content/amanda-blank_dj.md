@@ -8,6 +8,8 @@ genre = ["electro-rap", "party", "dance"]
 sentiment = ["exuberant", "joyful", "festive"]
 
 [extra]
+release_year = "2009"
+album = "I Love You"
 youtube = "https://www.youtube.com/embed/EtdqpubMkj8"
 +++
 

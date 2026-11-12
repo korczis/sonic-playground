@@ -8,6 +8,8 @@ genre = ["cumbia", "electronic", "dance"]
 sentiment = ["vibrant", "uplifting", "celebratory"]
 
 [extra]
+release_year = "2021"
+album = "Best of Pilocka Krach"
 cover_image = "/images/thumbnails/pilocka-krach_la_luna-y-el-sol.jpg"
 youtube = "https://www.youtube.com/embed/Ol992v9ukOM"
 +++

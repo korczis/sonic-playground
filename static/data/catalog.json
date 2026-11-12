@@ -6707,7 +6707,10 @@
    "thumbnail": "https://i.ytimg.com/vi/dDj7DuHVV9E/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 374,
-   "extra": {},
+   "extra": {
+    "album": "We Are the Night",
+    "release_year": "2007"
+   },
    "related": [
     {
      "source": "chemical_brothers_star_guitar.md",
@@ -6769,7 +6772,10 @@
    "thumbnail": "https://i.ytimg.com/vi/0S43IwBF0uM/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 360,
-   "extra": {},
+   "extra": {
+    "album": "Come with Us",
+    "release_year": "2002"
+   },
    "related": [
     {
      "source": "klangkarussell-we-want-your-soul.md",
@@ -7865,7 +7871,10 @@
    "thumbnail": "https://i.ytimg.com/vi/Hs86ddB4sYA/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 394,
-   "extra": {},
+   "extra": {
+    "album": "Forgotten Places - EP",
+    "release_year": "2009"
+   },
    "related": [
     {
      "source": "lulu-rouge-lulu-theme.md",
@@ -7927,7 +7936,10 @@
    "thumbnail": "https://i.ytimg.com/vi/LZDpFXfW3jU/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 284,
-   "extra": {},
+   "extra": {
+    "album": "Songs of Lucid Dreamers",
+    "release_year": "2012"
+   },
    "related": [
     {
      "source": "paul_oakenfold_sex_n_money.md",
@@ -7991,7 +8003,10 @@
    "thumbnail": "images/thumbnails/say-yes-dog_a-friend.jpg",
    "thumbnail_local": true,
    "words": 1185,
-   "extra": {},
+   "extra": {
+    "album": "Plastic Love",
+    "release_year": "2015"
+   },
    "related": [
     {
      "source": "ultraista-smalltalk.md",
@@ -8055,7 +8070,10 @@
    "thumbnail": "https://i.ytimg.com/vi/EpdxpOyL2vg/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 307,
-   "extra": {},
+   "extra": {
+    "album": "Once Twice",
+    "release_year": "2017"
+   },
    "related": [
     {
      "source": "acraze-do-it-to-it.md",
@@ -8121,7 +8139,10 @@
    "thumbnail": "images/thumbnails/pilocka-krach_la_luna-y-el-sol.jpg",
    "thumbnail_local": true,
    "words": 901,
-   "extra": {},
+   "extra": {
+    "album": "Best of Pilocka Krach",
+    "release_year": "2021"
+   },
    "related": [
     {
      "source": "ryan-blyth_once-twice-feat-rachel-k-collier.md",
@@ -8187,7 +8208,10 @@
    "thumbnail": "https://i.ytimg.com/vi/E2aoCju-_NQ/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 292,
-   "extra": {},
+   "extra": {
+    "album": "A Lively Mind",
+    "release_year": "2006"
+   },
    "related": [
     {
      "source": "roisin-murphy-primitive.md",
@@ -8253,7 +8277,10 @@
    "thumbnail": "https://i.ytimg.com/vi/YrhxWcivUT4/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 302,
-   "extra": {},
+   "extra": {
+    "album": "Wild Light",
+    "release_year": "2005"
+   },
    "related": [
     {
      "source": "bonaparte-acid-pauli-not-today.md",
@@ -8316,7 +8343,10 @@
    "thumbnail": "https://i.ytimg.com/vi/ouWAymYiUn8/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 466,
-   "extra": {},
+   "extra": {
+    "album": "First Album",
+    "release_year": "2001"
+   },
    "related": [
     {
      "source": "paul_oakenfold_sex_n_money.md",
@@ -8378,7 +8408,10 @@
    "thumbnail": "https://i.ytimg.com/vi/8cKkBcmm2cE/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 227,
-   "extra": {},
+   "extra": {
+    "album": "What a Comeback!",
+    "release_year": "2010"
+   },
    "related": [
     {
      "source": "caravan-palace-lone-digger.md",
@@ -8436,7 +8469,10 @@
    "thumbnail": "https://i.ytimg.com/vi/G0T9tdZI4Yk/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 269,
-   "extra": {},
+   "extra": {
+    "album": "I Used To",
+    "release_year": "2017"
+   },
    "related": [
     {
      "source": "joris-delacroix-epoque.md",
@@ -8501,7 +8537,10 @@
    "thumbnail": "https://i.ytimg.com/vi/aiMseVNHd5I/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 284,
-   "extra": {},
+   "extra": {
+    "album": "Rebellion der Träumer",
+    "release_year": "2010"
+   },
    "related": [
     {
      "source": "bonaparte-acid-pauli-not-today.md",
@@ -8565,7 +8604,10 @@
    "thumbnail": "https://i.ytimg.com/vi/L0TvnWRSyr4/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 451,
-   "extra": {},
+   "extra": {
+    "album": "We Are Your Friends",
+    "release_year": "2006"
+   },
    "related": [
     {
      "source": "ryan-blyth_once-twice-feat-rachel-k-collier.md",
@@ -8628,7 +8670,10 @@
    "thumbnail": "https://i.ytimg.com/vi/BjhMp-FlBEk/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 344,
-   "extra": {},
+   "extra": {
+    "album": "Jorge Ben",
+    "release_year": "1969"
+   },
    "related": [
     {
      "source": "fernanda-porto-sambassim.md",
@@ -8692,7 +8737,10 @@
    "thumbnail": "https://i.ytimg.com/vi/YI2XuIOW3gM/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 287,
-   "extra": {},
+   "extra": {
+    "album": "Handmade",
+    "release_year": "2010"
+   },
    "related": [
     {
      "source": "gregory-porter-do-not-lose-your-steam.md",
@@ -8757,7 +8805,10 @@
    "thumbnail": "https://i.ytimg.com/vi/2MfQSruV7B0/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 303,
-   "extra": {},
+   "extra": {
+    "album": "Burn It Down",
+    "release_year": "2016"
+   },
    "related": [
     {
      "source": "the-police-roxanne.md",
@@ -8817,7 +8868,10 @@
    "thumbnail": "https://i.ytimg.com/vi/WAXZNEa5kBs/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 368,
-   "extra": {},
+   "extra": {
+    "album": "Left Handed Straw",
+    "release_year": "2003"
+   },
    "related": [
     {
      "source": "mickey-avalon-eli-ultraviolence.md",
@@ -8881,7 +8935,10 @@
    "thumbnail": "https://i.ytimg.com/vi/88sARuFu-tc/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 505,
-   "extra": {},
+   "extra": {
+    "album": "The Age of Consent",
+    "release_year": "1984"
+   },
    "related": [
     {
      "source": "lekota_i-used-to.md",
@@ -8947,7 +9004,10 @@
    "thumbnail": "https://i.ytimg.com/vi/EtdqpubMkj8/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 415,
-   "extra": {},
+   "extra": {
+    "album": "I Love You",
+    "release_year": "2009"
+   },
    "related": [
     {
      "source": "klangkarusell-moments.md",
@@ -9007,7 +9067,10 @@
    "thumbnail": "https://i.ytimg.com/vi/MmIWve5bUpU/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 257,
-   "extra": {},
+   "extra": {
+    "album": "Camimosa",
+    "release_year": "2020"
+   },
    "related": [
     {
      "source": "bakermat-the-river.md",
@@ -9067,7 +9130,10 @@
    "thumbnail": "https://i.ytimg.com/vi/9Ihx9Wm5bN4/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 314,
-   "extra": {},
+   "extra": {
+    "album": "No More Bier",
+    "release_year": "2020"
+   },
    "related": [
     {
      "source": "pigeon-the-bomb.md",
@@ -9119,7 +9185,10 @@
    "thumbnail": "https://i.ytimg.com/vi/s6jaYJx7yeI/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 369,
-   "extra": {},
+   "extra": {
+    "album": "Light & Magic",
+    "release_year": "2002"
+   },
    "related": [
     {
      "source": "ultraista-smalltalk.md",
@@ -9184,7 +9253,10 @@
    "thumbnail": "https://i.ytimg.com/vi/uNWXwgYuKL8/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 256,
-   "extra": {},
+   "extra": {
+    "album": "Take Me As I Am",
+    "release_year": "2019"
+   },
    "related": [
     {
      "source": "k-flay-high-enough.md",

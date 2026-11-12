@@ -8,6 +8,8 @@ genre = ["electronic", "big beat", "hip-hop"]
 sentiment = ["quirky", "playful", "humorous"]
 
 [extra]
+release_year = "2007"
+album = "We Are the Night"
 youtube = "https://www.youtube.com/embed/dDj7DuHVV9E"
 +++
 

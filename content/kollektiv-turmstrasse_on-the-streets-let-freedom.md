@@ -8,6 +8,8 @@ genre = ["electronic", "atmospheric"]
 sentiment = ["liberating", "uplifting", "introspective"]
 
 [extra]
+release_year = "2010"
+album = "Rebellion der Träumer"
 youtube = "https://www.youtube.com/embed/aiMseVNHd5I"
 +++
 

@@ -8,6 +8,8 @@ genre = ["electronic", "hip-hop", "playful"]
 sentiment = ["energetic", "nostalgic", "adventurous"]
 
 [extra]
+release_year = "2003"
+album = "Left Handed Straw"
 youtube = "https://www.youtube.com/embed/WAXZNEa5kBs"
 +++
 

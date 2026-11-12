@@ -8,6 +8,8 @@ genre = ["electronic", "dance"]
 sentiment = ["hypnotic", "sultry"]
 
 [extra]
+release_year = "2012"
+album = "Songs of Lucid Dreamers"
 youtube = "https://www.youtube.com/embed/LZDpFXfW3jU"
 +++
 

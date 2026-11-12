@@ -8,6 +8,8 @@ genre = ["folk punk", "indie rock", "alternative folk"]
 sentiment = ["bittersweet"]
 
 [extra]
+release_year = "2020"
+album = "No More Bier"
 youtube = "https://www.youtube.com/embed/9Ihx9Wm5bN4"
 +++
 

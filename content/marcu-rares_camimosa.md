@@ -8,6 +8,8 @@ genre = ["deep house", "ambient electronica", "chillout"]
 sentiment = ["uplifting", "dreamy", "introspective"]
 
 [extra]
+release_year = "2020"
+album = "Camimosa"
 youtube = "https://www.youtube.com/embed/MmIWve5bUpU"
 +++
 
