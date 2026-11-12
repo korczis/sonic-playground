@@ -8,6 +8,9 @@ genre = ["electronic", "indie electronic", "remix"]
 sentiment = ["dreamy", "hypnotic", "playful"]
 
 [extra]
+country = "GB"
+isrc = "GB2DY1400002"
+musicbrainz = { recording = "f1849f05-4c26-44a2-9601-1697b38bc7e9", artist = "20395131-fbde-43ce-b141-b700cfdae99c", release = "696f38d3-6a62-4d00-afe5-326536cb6277" }
 release_year = "2014"
 album = "Remixes"
 youtube = "https://www.youtube.com/embed/culXLpfRQak"

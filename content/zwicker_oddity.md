@@ -8,6 +8,8 @@ genre = ["electronic", "dance"]
 sentiment = ["hypnotic", "sultry"]
 
 [extra]
+country = "CH"
+musicbrainz = { recording = "fab1aaf1-0adf-4f60-9dcc-f90c43787eb7", artist = "8b8b6cf4-87e8-4036-83e8-b1e4c2576f5d", release = "654d08b2-0838-432e-8cf8-84656dde3aa6" }
 release_year = "2012"
 album = "Songs of Lucid Dreamers"
 youtube = "https://www.youtube.com/embed/LZDpFXfW3jU"

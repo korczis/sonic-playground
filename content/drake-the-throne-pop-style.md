@@ -8,6 +8,9 @@ genre = ["hip-hop", "rap"]
 sentiment = ["confident", "bold", "hypnotic"]
 
 [extra]
+country = "CA"
+isrc = "USCM51600032"
+musicbrainz = { recording = "c47859a1-f576-471f-aad3-66e8660cad6b", artist = "9fff2f8a-21e6-47de-a2b8-7f449929d43f", release = "6a1489d8-15fc-4a4e-9b9d-dd283107e04e" }
 release_year = "2016"
 album = "Views"
 youtube = "https://www.youtube.com/embed/OJu4kkAbxHQ"

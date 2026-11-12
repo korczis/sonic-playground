@@ -8,6 +8,8 @@ genre = ["world", "folk", "acoustic"]
 sentiment = ["spiritual", "celebratory", "uplifting"]
 
 [extra]
+isrc = "FR11Y1700070"
+musicbrainz = { recording = "fb6aa1db-e29b-4c0d-a253-8c2943e3a23c", artist = "0bcdda16-a947-4b64-b48e-b2be4b13fd99", release = "f6cc9dd6-b5e1-45f6-9458-b303cc105c02" }
 release_year = "2017"
 album = "Lamomali"
 youtube = "https://www.youtube.com/embed/Qm89IEgEdxs"

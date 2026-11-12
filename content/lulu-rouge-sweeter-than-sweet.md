@@ -8,6 +8,10 @@ genre = ["electronic", "downtempo", "soul"]
 sentiment = ["romantic", "intimate", "alluring"]
 
 [extra]
+release_year = "2008"
+country = "DK"
+isrc = "DKAZ70842107"
+musicbrainz = { recording = "59c2a4fc-b28b-488d-850f-6ec045ccf372", artist = "d5d50cb7-3921-4de7-89d3-72b215b60693", release = "a8eef154-5c43-4b0e-9b9c-9cc57d211805" }
 cover_image = "/images/thumbnails/sweeter-than-sweet.jpeg"
 youtube = "https://www.youtube.com/embed/cB4o8vGBCXI"
 +++

@@ -1,0 +1,10 @@
+term = "analog synthesizer"
+category = "technology"
+wikipedia = "https://en.wikipedia.org/wiki/Analog_synthesizer"
+see_also = ["synthesizer"]
+
+[en]
+definition = "A synthesizer whose sound is made by analog circuits rather than computation. Their slight instability gives a warmth many producers seek, even emulated in software."
+
+[cs]
+definition = "Syntezátor, jehož zvuk vzniká v analogových obvodech, ne výpočtem. Jejich lehká nestabilita dává hřejivost, kterou mnoho producentů hledá, i v softwarových emulacích."

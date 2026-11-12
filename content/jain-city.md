@@ -8,6 +8,9 @@ genre = ["pop", "world", "electro-pop"]
 sentiment = ["playful", "vibrant", "introspective"]
 
 [extra]
+country = "FR"
+isrc = "FR9W11504989"
+musicbrainz = { recording = "7f1a6fa5-cb12-496e-9888-e3f6f5f76363", artist = "0e6dffeb-bda0-4eb1-9567-2ac9306a516d", release = "fb55db26-744c-40d7-ac88-771893fbe2f2" }
 release_year = "2015"
 album = "Hope - EP"
 youtube = "https://www.youtube.com/embed/-IoBt0_ueE0"

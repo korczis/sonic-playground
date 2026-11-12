@@ -8,6 +8,8 @@ genre = ["electronic", "world", "dance"]
 sentiment = ["vibrant", "bold", "celebratory"]
 
 [extra]
+country = "PT"
+musicbrainz = { recording = "63b995bd-801c-4afe-844e-20211984d08f", artist = "270c2116-a421-43e5-a6c6-3b285a1a71ba" }
 release_year = "2015"
 album = "ATLAS"
 youtube = "https://www.youtube.com/embed/HOzJg5TJqzc"

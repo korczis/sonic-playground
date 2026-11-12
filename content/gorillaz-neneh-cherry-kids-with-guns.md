@@ -8,6 +8,9 @@ genre = ["alternative", "electronic", "art pop"]
 sentiment = ["haunting", "dark", "provocative"]
 
 [extra]
+country = "GB"
+isrc = "GBAYE0500170"
+musicbrainz = { recording = "806d8ff3-d1d4-4178-a524-623b87ca0c62", artist = "e21857d5-3256-4547-afb3-4b6ded592596", release = "20b6eed6-383e-4caf-853c-d279e2dd7286" }
 release_year = "2005"
 album = "Demon Days"
 youtube = "https://www.youtube.com/embed/VCkFSe3voRc"

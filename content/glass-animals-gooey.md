@@ -8,6 +8,9 @@ genre = ["indie pop", "alternative", "psychedelic"]
 sentiment = ["dreamy", "playful", "intimate"]
 
 [extra]
+country = "GB"
+isrc = "GBUM71400655"
+musicbrainz = { recording = "52032938-7ee1-4375-9a6b-c349f0a6c1af", artist = "20395131-fbde-43ce-b141-b700cfdae99c", release = "75a5284d-9e9c-4522-8020-527218c2ec33" }
 release_year = "2014"
 album = "ZABA"
 youtube = "https://www.youtube.com/embed/IIA1XQnAv5s"

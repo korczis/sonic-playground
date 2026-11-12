@@ -1,0 +1,10 @@
+term = "vocal harmony"
+category = "melody"
+wikipedia = "https://en.wikipedia.org/wiki/Harmony#Vocal_harmony"
+see_also = ["call and response", "chord progression"]
+
+[en]
+definition = "Two or more voices singing different notes at the same time, so that together they sound a chord. Stacked harmonies make a chorus feel wider and warmer."
+
+[cs]
+definition = "Dva nebo více hlasů zpívajících zároveň různé tóny, které spolu znějí jako akord. Vrstvené harmonie dělají refrén širší a vřelejší."

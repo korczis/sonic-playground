@@ -8,6 +8,10 @@ genre = ["electro-swing", "jazz", "electronic"]
 sentiment = ["vibrant", "playful", "energetic"]
 
 [extra]
+release_year = "2015"
+country = "FR"
+isrc = "FR89R1500001"
+musicbrainz = { recording = "5f926e49-e0b8-4b45-8172-a1b9076d6b22", artist = "72eabb1a-4d2c-4de6-90f2-671b2cada42b", release = "295c97a3-7273-4e02-bb15-ab4c85b57761" }
 youtube = "https://www.youtube.com/embed/UbQgXeY_zi4"
 +++
 

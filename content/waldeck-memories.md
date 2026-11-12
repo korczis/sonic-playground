@@ -8,6 +8,9 @@ genre = ["electro-swing", "jazz", "downtempo"]
 sentiment = ["nostalgic", "romantic", "dreamy"]
 
 [extra]
+release_year = "2005"
+country = "AT"
+musicbrainz = { recording = "e6a83985-a884-49b1-94dc-0eacdaf145b6", artist = "8f389bf5-a950-4a2f-a962-daf08151ee33", release = "c3141dba-cacb-49ab-a76a-95f9fef05790" }
 album = "Ballroom Stories"
 youtube = "https://www.youtube.com/embed/sQ0jwAeqU5k"
 +++

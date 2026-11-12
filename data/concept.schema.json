@@ -1,0 +1,22 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://korczis.github.io/sonic-playground/schema/concept.v1.json",
+ "title": "sonic-playground concept (data/concepts/<slug>.toml)",
+ "description": "One concept the reviews teach: a musical, technical or cultural idea. The file name is the slug of the term; every locale of data/i18n/ has a definition (scripts/catalog.py checks both). A review names it in taxonomies.concept and links it in prose with {{ <concept_link name=\"...\" /> }}; its page (/concept/<slug>/) explains it and lists every track that demonstrates it.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["term", "category", "en", "cs"],
+ "properties": {
+  "term": {"type": "string", "minLength": 2, "pattern": "^[^A-Z]*$", "description": "Lowercase, as reviews write it in taxonomies.concept."},
+  "category": {"type": "string", "enum": ["rhythm", "harmony", "melody", "form", "timbre", "production", "technology", "performance", "genre-history", "culture"]},
+  "wikipedia": {"type": "string", "pattern": "^https://[a-z]{2}\\.wikipedia\\.org/wiki/"},
+  "see_also": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 2}},
+  "en": {"$ref": "#/$defs/text"},
+  "cs": {"$ref": "#/$defs/text"}
+ },
+ "$defs": {
+  "text": {"type": "object", "additionalProperties": false, "required": ["definition"], "properties": {
+   "definition": {"type": "string", "minLength": 60, "description": "Two or three sentences a curious listener understands without a dictionary."}
+  }}
+ }
+}

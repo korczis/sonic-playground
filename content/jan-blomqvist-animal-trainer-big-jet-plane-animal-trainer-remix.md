@@ -8,6 +8,9 @@ genre = ["deep house", "electronic", "remix"]
 sentiment = ["melancholic", "dreamy", "longing"]
 
 [extra]
+release_year = "2012"
+country = "DE"
+musicbrainz = { recording = "59b33976-f88d-4bba-9b25-d5e96216aff8", artist = "cccd1fad-a7bb-4a79-90d1-a2d7e1f8db17", release = "c8e88358-44c1-4625-bba6-3a74550e55ae" }
 album = "Faze #53: Animal Trainer"
 youtube = "https://www.youtube.com/embed/y42vB9S9SKQ"
 +++

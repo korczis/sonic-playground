@@ -24,26 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog as cat  # noqa: E402
 
 BACKLOG = cat.ROOT / "data" / "backlog"
-# Version suffixes that do not make another song; a remix, a mix of another artist, a live take of
-# a different arrangement stays a song of its own.
-VERSION = re.compile(
-    r"\s*(?:-\s*)?(?:\(|\[)?\b(?:remaster(?:ed)?(?: version)?(?: \d{4})?|radio edit|radio version|"
-    r"radio mix|original mix|extended version|album version|edit)\b(?:\)|\])?\s*$", re.I)
-FEAT = re.compile(r"\s*[\(\[]?\s*\b(?:feat\.?|featuring|ft\.)\s+[^\)\]]*[\)\]]?", re.I)
-
-
-def fold(text: str) -> str:
-    return "".join(cat.words(text))
-
-
-def song(title: str) -> str:
-    """The song a recording title names: without featured artists and version suffixes."""
-    base = FEAT.sub("", title)
-    previous = None
-    while previous != base:
-        previous = base
-        base = VERSION.sub("", base).strip(" -")
-    return base.strip()
+fold, song = cat.fold, cat.song  # one identity, shared with the catalogue
 
 
 def load() -> list[dict]:
@@ -72,19 +53,19 @@ def check(rows: list[dict]) -> list[str]:
 
 
 def pending(rows: list[dict]) -> list[dict]:
-    reviewed = set()
-    for t in json.loads(cat.OUTPUT.read_text(encoding="utf-8"))["tracks"]:
-        # A review by several artists (a cover, a collaboration) covers that recording only.
-        if "," not in t["artist"]:
-            reviewed.add((fold(t["artist"].split(" feat")[0]), fold(song(t["track"]))))
-        reviewed.add((fold(t["artist"]), fold(song(t["track"]))))
+    """The items no review covers yet, each once: the catalogue's own identity resolution
+    (scripts/catalog.py resolve_item: ISRC, then artist and song)."""
+    errors: list[str] = []
+    files = sorted(p for p in cat.CONTENT.glob("*.md") if p.name != "_index.md")
+    tracks = [t for t in (cat.load_track(p, errors) for p in files) if t]
+    index = cat.identity_index(tracks)
     seen = set()
     out = []
     for r in rows:
-        if r.get("uncertain"):
+        if cat.resolve_item(r, index)["status"] != "missing":
             continue
         key = (fold(r["artists"][0]), fold(song(r["title"])))
-        if key in reviewed or key in seen:
+        if key in seen:
             continue
         seen.add(key)
         artist = ", ".join(r["artists"])

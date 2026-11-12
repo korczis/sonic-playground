@@ -21,6 +21,8 @@ taxonomies = [
   { name = "genre", feed = true, paginate_by = 24 },
   { name = "sentiment", feed = true, paginate_by = 24 },
   { name = "mood", feed = true, paginate_by = 24 },
+  { name = "concept", feed = true, paginate_by = 24 },
+  { name = "instrument", feed = true, paginate_by = 24 },
 ]
 
 [markdown]
@@ -67,6 +69,17 @@ icon = "archive"
 key = "menu.insights"
 path = "@/pages/insights.md"
 icon = "chart"
+
+[[extra.menu]]
+key = "menu.yearbooks"
+path = "yearbook/"
+icon = "calendar"
+requires = "yearbooks"
+
+[[extra.menu]]
+key = "menu.concepts"
+path = "concept/"
+icon = "book"
 
 [[extra.social]]
 name = "GitHub"

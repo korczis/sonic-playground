@@ -8,6 +8,9 @@ genre = ["electro-house", "dance", "electronic"]
 sentiment = ["sensual", "mysterious", "energetic"]
 
 [extra]
+release_year = "2001"
+country = "US"
+musicbrainz = { recording = "1f2347f8-7a61-47a6-a7ca-c239ac55d9af", artist = "b004d3c7-5402-4034-be67-13eeccc7b1af", release = "bcaa4cb7-ff29-425f-ba63-f8c1a5121245" }
 youtube = "https://www.youtube.com/embed/fJvatGfD9Pg"
 +++
 

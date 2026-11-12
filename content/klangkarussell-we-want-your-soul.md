@@ -8,6 +8,10 @@ genre = ["electronic", "house", "progressive"]
 sentiment = ["energetic", "provocative", "hypnotic"]
 
 [extra]
+release_year = "2014"
+country = "AT"
+isrc = "DEUM71401890"
+musicbrainz = { recording = "18f85491-3cc5-4b1b-a0c4-4747ffd90b38", artist = "dbbd3f1f-1c25-4dd6-b6d0-5a1bc7a3acc1", release = "943f4c7f-7b79-43a1-90da-1a75de418933" }
 youtube = "https://www.youtube.com/embed/4rYEigiNoPc"
 +++
 

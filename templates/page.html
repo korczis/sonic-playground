@@ -49,6 +49,31 @@
       </div>
     </article>
 
+    {#- The educational article (ADR 0004): everything below comes from the front matter. -#}
+    {%- if track and page.extra.learning %}
+    {{ <learning_guide source={track.source} learning={page.extra.learning} playable={track.youtube} l={l} /> }}
+    {%- endif %}
+    {%- if track and page.taxonomies.concept %}
+    <section aria-labelledby="concepts-title" class="space-y-3">
+      <h2 id="concepts-title" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="learn.concepts" l={l} /> }}</h2>
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">{% for x in catalog.concepts %}{% if x.term in page.taxonomies.concept %}{{ <concept_card c={x} l={l} /> }}{% endif %}{% endfor %}</div>
+    </section>
+    {%- endif %}
+    {%- if track and page.extra.connections %}
+    <section aria-labelledby="connections-title" class="space-y-3">
+      <h2 id="connections-title" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="learn.connections" l={l} /> }}</h2>
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-2" id="connections-list" data-playlist>
+        {%- for c in page.extra.connections %}{% if c.source in catalog.lookup %}{{ <connection_card t={catalog.tracks[catalog.lookup[c.source]]} why={c.why} l={l} /> }}{% endif %}{% endfor %}
+      </div>
+    </section>
+    {%- endif %}
+    {%- if track and page.extra.learning and page.extra.learning.questions %}
+    {{ <discussion questions={page.extra.learning.questions} l={l} /> }}
+    {%- endif %}
+    {%- if track and page.extra.sources %}
+    {{ <references sources={page.extra.sources} l={l} /> }}
+    {%- endif %}
+
     {%- if track and track.related | length > 0 %}
     <section aria-labelledby="related-title" class="{{ card }} p-4 sm:p-6 xl:p-8">
       <div class="mb-6 flex flex-wrap items-end justify-between gap-3">
@@ -93,7 +118,7 @@
   <aside class="space-y-4 xl:sticky xl:top-20 xl:self-start" aria-label="About this track">
     <div class="{{ card }} p-4 sm:p-6">
       <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="track.facets" l={l} /> }}</h2>
-      {%- for kind in ["genre", "sentiment", "mood"] %}
+      {%- for kind in catalog.facet_names %}
       {%- if track.facets[kind] | length > 0 %}
       <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ <tx key={"tax.one." ~ kind} l={l} /> }}</p>
       <div class="mb-4 flex flex-wrap gap-2">{{ <facet_badges terms={track.facets[kind]} kind={kind} size="sm" /> }}</div>
@@ -112,11 +137,27 @@
       <dl class="divide-y divide-gray-200 text-sm dark:divide-gray-700">
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.artist" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.artist }}</dd></div>
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.track" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.track }}</dd></div>
-        {%- for k in ["album", "release_year", "publisher", "video_duration"] %}
-        {%- if k in track.extra %}
-        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key={"track." ~ k} l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.extra[k] }}</dd></div>
+        {%- for k in ["album", "release_year", "publisher", "video_duration", "country", "bpm", "key", "time_signature", "isrc"] %}
+        {%- if k in page.extra %}
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key={"track." ~ k} l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ page.extra[k] }}</dd></div>
         {%- endif %}
         {%- endfor %}
+        {%- if page.extra.credits %}
+        {%- for role, names in page.extra.credits %}
+        {%- if names | length > 0 %}
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key={"track.credits." ~ role} l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ names | join(sep=", ") }}</dd></div>
+        {%- endif %}
+        {%- endfor %}
+        {%- endif %}
+        {%- if page.extra.musicbrainz or page.extra.wikidata %}
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.open_data" l={l} /> }}</dt><dd class="flex flex-wrap justify-end gap-x-3 text-right font-medium">
+          {%- if page.extra.musicbrainz and page.extra.musicbrainz.recording %}<a class="text-primary-700 hover:underline dark:text-primary-400" href="https://musicbrainz.org/recording/{{ page.extra.musicbrainz.recording }}" target="_blank" rel="noopener noreferrer">MusicBrainz</a>{% endif %}
+          {%- if page.extra.wikidata %}<a class="text-primary-700 hover:underline dark:text-primary-400" href="https://www.wikidata.org/wiki/{{ page.extra.wikidata }}" target="_blank" rel="noopener noreferrer">Wikidata</a>{% endif %}
+        </dd></div>
+        {%- endif %}
+        {%- if track.yearbooks | length > 0 %}
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.yearbooks" l={l} /> }}</dt><dd class="flex flex-wrap justify-end gap-1.5">{% for m in track.yearbooks %}<a href="{{ get_url(path='@/yearbook/' ~ m.year ~ '.md') }}#n-{{ m.n }}" class="rounded bg-primary-100 px-2 py-0.5 text-xs font-semibold text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300">{{ m.year }} · #{{ m.n }}</a>{% endfor %}</dd></div>
+        {%- endif %}
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.review" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ <tx key="track.words" l={l} vars={ {"n": track.words} } /> }}</dd></div>
       </dl>
       <p class="mt-3 flex items-start gap-1.5 text-xs text-gray-500 dark:text-gray-400">{{ <icon name="info" cls="mt-px h-3.5 w-3.5 shrink-0" /> }}{{ <tx key="track.inferred" l={l} vars={ {"rule": track.inferred} } /> }}</p>

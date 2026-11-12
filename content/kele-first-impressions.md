@@ -8,6 +8,9 @@ genre = ["electronic", "house", "r&b"]
 sentiment = ["intimate", "hypnotic", "romantic"]
 
 [extra]
+country = "GB"
+isrc = "GBWWP1400474"
+musicbrainz = { recording = "293499b1-d575-4327-a43c-6b4dd9961cca", artist = "20b93f37-ab3c-4ed0-bf70-b61978f00e99", release = "59e7aaa6-ef29-407f-afbd-fbe2f8db2624" }
 release_year = "2014"
 album = "Trick"
 youtube = "https://www.youtube.com/embed/PcAFww0E0Pg"

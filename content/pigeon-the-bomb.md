@@ -8,6 +8,10 @@ genre = ["indie rock", "electronic", "alternative"]
 sentiment = ["energetic", "defiant", "bold"]
 
 [extra]
+release_year = "2010"
+country = "US"
+isrc = "USNNZ1000450"
+musicbrainz = { recording = "298ce8ef-b869-437a-8792-ead670c919cd", artist = "31824f36-753f-41a2-b191-8b38b7dca273", release = "7cd8339e-724c-4ac1-8f88-21e495c7128c" }
 cover_image = "/images/thumbnails/pigeon-the-bomb.jpeg"
 youtube = "https://www.youtube.com/embed/iFAFA3B3CWU"
 +++

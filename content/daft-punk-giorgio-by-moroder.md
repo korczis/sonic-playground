@@ -8,6 +8,9 @@ genre = ["electronic", "disco", "dance"]
 sentiment = ["nostalgic", "euphoric", "innovative"]
 
 [extra]
+country = "FR"
+isrc = "USQX91300103"
+musicbrainz = { recording = "cac27da9-20c5-4722-9a25-f2c26e2c04cf", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "158f94bf-d77f-4055-afa4-8fc7e0b2a004" }
 release_year = "2013"
 album = "Random Access Memories"
 youtube = "https://www.youtube.com/embed/zhl-Cs1-sG4"

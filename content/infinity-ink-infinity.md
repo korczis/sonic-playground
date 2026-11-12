@@ -8,6 +8,9 @@ genre = ["deep house", "house", "electronic"]
 sentiment = ["hypnotic", "groovy", "euphoric"]
 
 [extra]
+country = "GB"
+isrc = "GB7NR1295001"
+musicbrainz = { recording = "988cf999-118a-44be-80e8-adb67e7a315c", artist = "433adf92-9760-4d46-9d45-2a098abd4721", release = "5a3455a9-10e5-4b0b-aaa6-21cc3d4a20a8" }
 release_year = "2012"
 album = "Infinity"
 youtube = "https://www.youtube.com/embed/GOak9xDq_yA"

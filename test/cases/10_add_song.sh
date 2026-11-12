@@ -7,7 +7,7 @@ set -euo pipefail
 root=$(cd "$(dirname "$0")/../.." && pwd)
 work=$(mktemp -d "${TMPDIR:-/tmp}/add-song.XXXXXX")
 trap 'rm -rf "$work"' EXIT
-cp -R "$root/content" "$root/data" "$root/archetypes" "$root/scripts" "$work/"
+cp -R "$root/content" "$root/data" "$root/archetypes" "$root/scripts" "$root/config.toml" "$work/"
 mkdir -p "$work/static/data" && cp -R "$root/static/data/." "$work/static/data/"
 cp -R "$root/static/images" "$work/static/images"
 cd "$work"

@@ -8,6 +8,9 @@ genre = ["house", "dance", "electronic"]
 sentiment = ["playful", "euphoric", "cosmic"]
 
 [extra]
+country = "GB"
+isrc = "UK32S1400144"
+musicbrainz = { recording = "1101e8a6-3107-469d-af7e-8dd50a82d66c", artist = "28cbf94d-0700-4095-a188-37e373b069a7", release = "f226681d-a6bb-41fe-a71a-c410d93be6c6" }
 release_year = "2014"
 album = "Junto (Special Edition)"
 youtube = "https://www.youtube.com/embed/vJDw4tB78ug"

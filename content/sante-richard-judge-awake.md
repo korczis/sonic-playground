@@ -8,6 +8,8 @@ genre = ["deep house", "house", "techno"]
 sentiment = ["hypnotic", "soulful", "introspective"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "439448fe-44d9-4db6-b3e2-931d971027fa", artist = "a5f4c7b6-263e-4c66-b626-24a2f3114c84", release = "46e49219-bbd4-47f4-8dee-6417e52f87b8" }
 publisher = "Avotre"
 release_year = "2014"
 album = "Awake (feat. J.U.D.G.E)"

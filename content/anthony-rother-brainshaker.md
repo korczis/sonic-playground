@@ -8,6 +8,9 @@ genre = ["electro", "techno", "industrial"]
 sentiment = ["dark", "futuristic", "intense"]
 
 [extra]
+release_year = "2006"
+country = "DE"
+musicbrainz = { recording = "6eb33cf8-b27c-48da-8084-a9c27a72f5ba", artist = "2aadb587-524c-4b07-b712-0f700526730e", release = "252877b6-2188-4560-8a53-e6d8a1cc34c8" }
 cover_image = "/images/thumbnails/anthony-rother-brainshaker.jpg"
 youtube = "https://www.youtube.com/embed/-QoU2oclkXY"
 +++

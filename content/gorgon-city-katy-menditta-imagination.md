@@ -8,6 +8,8 @@ genre = ["house", "deep house", "electronic"]
 sentiment = ["euphoric", "uplifting", "dreamy"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "ce5f874c-dcf6-4a62-a3e0-82cdca27bcc4", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "b6317202-fb3b-4ebe-991a-22475d3e1fc9" }
 release_year = "2014"
 album = "Sirens"
 youtube = "https://www.youtube.com/embed/O48hUxxJxS8"

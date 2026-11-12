@@ -8,6 +8,8 @@ genre = ["pop", "funk", "r&b"]
 sentiment = ["iconic", "mysterious", "groovy"]
 
 [extra]
+country = "US"
+musicbrainz = { recording = "25d5fae1-b0fb-47ba-ad45-1b6ccadc412f", artist = "f27ec8db-af05-4f36-916e-3d57f91ecf5e", release = "9183f1e9-ddfc-48c0-9392-b31365f37d8e" }
 release_year = "1982"
 album = "HIStory - Past, Present and Future, Book I"
 youtube = "https://www.youtube.com/embed/Zi_XLOBDo_Y"

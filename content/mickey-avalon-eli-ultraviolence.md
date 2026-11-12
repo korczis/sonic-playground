@@ -8,6 +8,9 @@ genre = ["hip-hop", "electronic", "alternative"]
 sentiment = ["intense", "dark", "rebellious"]
 
 [extra]
+release_year = "2020"
+country = "US"
+musicbrainz = { recording = "dec94a3b-6b69-4c7b-9432-b592ef15108b", artist = "5879a47f-c54f-4ebe-8d63-cdc9c6310dd2", release = "3e46964f-0563-4529-8161-35c4d2f1fd28" }
 cover_image = "/images/thumbnails/mickey-avalon-eli-ultra-violence.jpg"
 # TODO(owner): the video id was a placeholder ("your-video-id")
 # youtube = "https://www.youtube.com/embed/<id>"

@@ -1,0 +1,10 @@
+term = "syncopation"
+category = "rhythm"
+wikipedia = "https://en.wikipedia.org/wiki/Syncopation"
+see_also = ["groove", "off-beat"]
+
+[en]
+definition = "Accents placed where the listener does not expect them: between the beats or on the weak ones. Syncopation creates tension against the steady pulse and is much of what makes a rhythm feel funky."
+
+[cs]
+definition = "Přízvuky tam, kde je posluchač nečeká: mezi dobami nebo na slabých dobách. Synkopa vytváří napětí proti pravidelnému pulsu a z velké části dělá rytmus „funky“."

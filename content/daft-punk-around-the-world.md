@@ -8,6 +8,8 @@ genre = ["french house", "house", "electronic"]
 sentiment = ["hypnotic", "groovy", "iconic"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "9fd18f61-fb6b-4297-b770-247c9dcc2c99", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "2fe2cfb6-da85-40ed-a16f-2b340971d3be" }
 release_year = "1997"
 album = "Homework"
 youtube = "https://www.youtube.com/embed/K0HSD_i2DvA"

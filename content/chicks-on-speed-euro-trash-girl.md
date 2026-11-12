@@ -8,6 +8,10 @@ genre = ["electroclash", "experimental pop", "punk"]
 sentiment = ["rebellious", "ironic", "playful"]
 
 [extra]
+release_year = "2000"
+country = "DE"
+isrc = "DEK590060113"
+musicbrainz = { recording = "b2c884f2-daf0-4899-bd61-cd4f4897e943", artist = "4da58f86-c7fb-4837-9ef5-423f122d2d15", release = "171937d4-708a-4c56-bca0-2fa456e56602" }
 youtube = "https://www.youtube.com/embed/M6j7TuBIJa0" 
 +++
 

@@ -8,6 +8,9 @@ genre = ["electro-house", "dance", "electronic"]
 sentiment = ["edgy", "glamorous", "energetic"]
 
 [extra]
+release_year = "2000"
+country = "US"
+musicbrainz = { recording = "4a47f6a3-d1a2-46dd-a8b5-b8b8f4c48bb2", artist = "b004d3c7-5402-4034-be67-13eeccc7b1af", release = "ad6aa380-097d-4f61-b459-b90473f90820" }
 youtube = "https://www.youtube.com/embed/tYjKDEnYTyI"
 +++
 

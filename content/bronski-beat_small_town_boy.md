@@ -8,6 +8,8 @@ genre = ["synth-pop", "electronic", "80s"]
 sentiment = ["nostalgic", "empowering", "reflective"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "ec2474cf-70e6-4777-bc8e-e317ad2feb68", artist = "27acebf2-5440-42a7-9db6-19ad2c9dea38", release = "4ff02fab-d2bb-407f-b797-593e648976a4" }
 release_year = "1984"
 album = "The Age of Consent"
 youtube = "https://www.youtube.com/embed/88sARuFu-tc"

@@ -8,6 +8,8 @@ genre = ["electronic", "soul", "r&b"]
 sentiment = ["intimate", "melancholic", "dreamy"]
 
 [extra]
+country = "NL"
+musicbrainz = { recording = "383369c8-097a-4e55-bd90-0a3a6c7f408d", artist = "0b58106c-e4e1-4b84-bf93-ee8364bff0a2", release = "ab2215a9-4c6d-4829-8362-1ffce944e96b" }
 release_year = "2015"
 album = "Klyne"
 youtube = "https://www.youtube.com/embed/umn2QNvlErI"

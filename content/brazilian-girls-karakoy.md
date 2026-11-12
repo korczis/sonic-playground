@@ -8,6 +8,10 @@ genre = ["electronic", "lounge", "worldbeat"]
 sentiment = ["playful", "sophisticated", "vibrant"]
 
 [extra]
+release_year = "2018"
+country = "US"
+isrc = "US6DR1702518"
+musicbrainz = { recording = "7febc001-ccfc-48e0-90ff-211ea6625a87", artist = "8b2350de-b682-4fe7-ad8f-4508d7b6c697", release = "fe63b875-05d5-4c19-aced-2964d483c2b9" }
 youtube = "https://www.youtube.com/embed/gwqi9IoJGk4"
 +++
 

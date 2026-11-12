@@ -8,6 +8,10 @@ genre = ["samba", "electronic", "brazilian"]
 sentiment = ["vibrant", "energetic", "celebratory"]
 
 [extra]
+release_year = "2002"
+country = "BR"
+isrc = "BRWMB0200783"
+musicbrainz = { recording = "bd9671bd-b531-4bd5-afb8-162dd83ec62e", artist = "1d5ff878-e2c6-493a-a7e4-51ee9f0663de", release = "98623dbe-ca97-400e-81c1-4c8a46a53f98" }
 youtube = "https://www.youtube.com/embed/hlVJ7cBAqRQ"
 +++
 

@@ -69,6 +69,7 @@ jobs:
           majordomus skills verify
           majordomus adr check
           majordomus knowledge validate
+          majordomus shell check
 
   site:
     name: Validate, build and test in a browser

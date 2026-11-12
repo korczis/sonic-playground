@@ -8,6 +8,10 @@ genre = ["synth-pop", "electropop", "indie electronic"]
 sentiment = ["energetic", "nostalgic", "euphoric"]
 
 [extra]
+release_year = "2015"
+country = "DE"
+isrc = "DEBT91500017"
+musicbrainz = { recording = "8517c46e-2fa5-400f-b13e-1caff68f3553", artist = "5c10e9ce-e1a2-476b-a857-f1753f7c3e06", release = "5b9afa73-59a4-4a70-8388-9fdb2c941d44" }
 # TODO(owner): the video id is truncated (10 of 11 characters: "cijlDnHQXU")
 # youtube = "https://www.youtube.com/embed/cijlDnHQXU"
 +++

@@ -8,6 +8,9 @@ genre = ["soul", "pop", "jazz"]
 sentiment = ["defiant", "heartbroken", "bold"]
 
 [extra]
+country = "AU"
+isrc = "UK3M71300014"
+musicbrainz = { recording = "55707e9a-54c3-48c4-ba79-8064e3c9eca5", artist = "72ae6caf-4f9f-407e-8c70-8cd195df955c", release = "b9df5425-4058-45f2-bbb9-04bb65da0887" }
 release_year = "2013"
 album = "The Sting"
 youtube = "https://www.youtube.com/embed/3BJxwrPQVik"

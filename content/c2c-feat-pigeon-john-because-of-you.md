@@ -10,6 +10,9 @@ sentiment = ["uplifting", "feel-good", "grateful"]
 mood = ["positive", "reflective"]
 
 [extra]
+country = "FR"
+isrc = "FR9T31200010"
+musicbrainz = { recording = "5c096f4c-bdc0-48cf-995f-7ad0cd83633a", artist = "b7b79181-af53-4496-be15-a7b7d7cbe71c", release = "553b0802-0e45-45fd-9454-9480baf8a3fd" }
 cover_image = "/images/thumbnails/c2c-feat-pigeon-john-because-of-you.jpeg"
 youtube = "https://www.youtube.com/embed/Jx0lRaW5VCw"
 video_duration = "3:42"

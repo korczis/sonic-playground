@@ -8,6 +8,8 @@ genre = ["electronic", "hip-hop", "playful"]
 sentiment = ["energetic", "nostalgic", "adventurous"]
 
 [extra]
+country = "US"
+musicbrainz = { recording = "1ef6b511-5514-4475-9cfa-caad29e78513", artist = "e1f115f2-9784-428f-a403-df0103a92de4", release = "40af5716-cb01-42a7-aaba-3f724136b5f0" }
 release_year = "2003"
 album = "Left Handed Straw"
 youtube = "https://www.youtube.com/embed/WAXZNEa5kBs"

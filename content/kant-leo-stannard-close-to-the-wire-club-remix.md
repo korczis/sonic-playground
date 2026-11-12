@@ -8,6 +8,9 @@ genre = ["deep house", "house", "electronic"]
 sentiment = ["melancholic", "hypnotic", "emotive"]
 
 [extra]
+country = "DK"
+isrc = "GBARL1600623"
+musicbrainz = { recording = "370491e8-33e8-4304-b46b-fd7b559569eb", artist = "c7ba050a-2a69-4715-a694-d148820bebb7", release = "d534e8aa-6449-4456-b56a-c4157451ec79" }
 release_year = "2016"
 album = "Close to the Wire - EP"
 youtube = "https://www.youtube.com/embed/Ct3YbWiJy0Q"

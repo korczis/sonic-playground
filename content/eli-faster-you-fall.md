@@ -8,6 +8,9 @@ genre = ["electronic", "soul", "pop"]
 sentiment = ["intense", "melancholic", "reflective"]
 
 [extra]
+release_year = "2012"
+country = "US"
+musicbrainz = { recording = "1fa780a4-abad-48c4-8425-b8d608754a5d", artist = "ff1908b6-8621-4cde-93a6-ee9e485622a4", release = "ad55edd1-5a60-45bd-ae2d-dec823a6cc54" }
 cover_image = "/images/thumbnails/eli-faster-you-fall.jpg"
 youtube = "https://www.youtube.com/embed/lJwarj6LErI"
 +++

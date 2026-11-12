@@ -8,6 +8,9 @@ genre = ["electronic", "breakbeat", "rock"]
 sentiment = ["rebellious", "intense", "gritty"]
 
 [extra]
+release_year = "2009"
+country = "GB"
+musicbrainz = { recording = "fb8e1a45-9298-4959-8604-3b03d55c807e", artist = "51af3ae9-3f39-4b2c-bec3-ded427708590", release = "b7f227aa-0ee8-4f03-8804-2667fa026f84" }
 youtube = "https://www.youtube.com/embed/AZkT2Rn9zCg"
 +++
 

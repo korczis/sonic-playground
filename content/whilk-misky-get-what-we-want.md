@@ -8,6 +8,8 @@ genre = ["electronic", "indie pop", "soul"]
 sentiment = ["uplifting", "groovy", "romantic"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "2035697c-a151-449e-a9cf-f6e4d8cb0764", artist = "f4139c2c-26ef-4e1f-99d5-6e8859ef6c56" }
 album = "My Round"
 youtube = "https://www.youtube.com/embed/qWqK3qQmEZw"
 +++

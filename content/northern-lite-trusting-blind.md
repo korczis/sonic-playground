@@ -8,6 +8,9 @@ genre = ["psychedelic", "dark techno", "minimal"]
 sentiment = ["introspective", "spiritual", "trance-like"]
 
 [extra]
+release_year = "2001"
+country = "DE"
+musicbrainz = { recording = "957629f2-7d7b-4828-9b8e-c6f9fdc1f5d7", artist = "a7d361b5-ff0b-48ab-b3e5-9d70bdd5d251", release = "5953228b-b1e0-4a17-b525-1acf85f3fbaf" }
 cover_image = "/images/thumbnails/northern-lite-trusting-blind.jpg"
 youtube = "https://www.youtube.com/embed/2dmRpoG2hao"
 +++

@@ -8,6 +8,8 @@ genre = ["tech house", "house", "dance"]
 sentiment = ["playful", "groovy", "energetic"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "f9e5b1d4-4501-44e0-bb3a-4f49413a7606", artist = "bc1255d4-fe1d-4928-81d7-82281d77e0d9", release = "66749155-02c2-4222-bb7e-724dcf1f817d" }
 release_year = "2015"
 album = "Chunky"
 youtube = "https://www.youtube.com/embed/vKiRgcbB6sQ"

@@ -8,6 +8,10 @@ genre = ["pop", "rock", "ballad"]
 sentiment = ["haunting", "melancholic", "nostalgic"]
 
 [extra]
+release_year = "1966"
+country = "US"
+isrc = "USASE0500026"
+musicbrainz = { recording = "ec73978f-5f34-4bce-87f8-c1f6438d7ee7", artist = "c2e36518-9c3b-4dcb-82ad-a3fc7fe99c67", release = "fd4c71e7-520b-4db3-b9bf-a3a6e9147992" }
 youtube = "https://www.youtube.com/embed/0rcLYnQfedI"
 +++
 

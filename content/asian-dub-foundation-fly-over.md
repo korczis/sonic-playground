@@ -8,6 +8,10 @@ genre = ["dub", "punk", "electronic"]
 sentiment = ["rebellious", "intense", "political"]
 
 [extra]
+release_year = "2005"
+country = "GB"
+isrc = "GBFEB0700016"
+musicbrainz = { recording = "b5cf39cc-272e-4515-aa40-380fca41a1f4", artist = "db612997-f11e-424d-8b41-cf410a433656", release = "8b51274d-c1ca-42b8-a815-d4a527f91689" }
 youtube = "https://www.youtube.com/embed/6m3z3IAtlzk"
 +++
 

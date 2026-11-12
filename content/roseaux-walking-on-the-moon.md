@@ -8,6 +8,9 @@ genre = ["electronic", "indie", "dream pop"]
 sentiment = ["dreamy", "ethereal", "introspective"]
 
 [extra]
+release_year = "2012"
+country = "FR"
+musicbrainz = { recording = "45bf5897-c919-4f0f-9657-b67d0d80fcb9", artist = "3676b4ed-e26f-4d79-98a6-7dd07711963c", release = "98e27320-91bc-4966-b769-fdfe0fed8c2f" }
 youtube = "https://www.youtube.com/embed/tsEYgJ3tQcQ"
 +++
 

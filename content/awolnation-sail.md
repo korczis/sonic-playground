@@ -8,6 +8,9 @@ genre = ["alternative", "electronic", "indie"]
 sentiment = ["intense", "haunting", "cathartic"]
 
 [extra]
+country = "US"
+isrc = "USP6L1000053"
+musicbrainz = { recording = "ce0009a9-7c7b-4e2f-9ed0-5533d434e75c", artist = "77b29df2-056e-409e-a1b2-5e2bbfe421c4", release = "d1e72cb3-5d35-4048-95e7-e2bd9160f4e1" }
 release_year = "2011"
 album = "Megalithic Symphony"
 youtube = "https://www.youtube.com/embed/tgIqecROs5M"

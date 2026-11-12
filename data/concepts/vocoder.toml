@@ -1,0 +1,10 @@
+term = "vocoder"
+category = "technology"
+wikipedia = "https://en.wikipedia.org/wiki/Vocoder"
+see_also = ["auto-tune", "synthesizer"]
+
+[en]
+definition = "A device that imposes the shape of a voice onto a synthesizer's sound, producing the robotic singing heard from Kraftwerk to Daft Punk."
+
+[cs]
+definition = "Zařízení, které otiskne tvar hlasu do zvuku syntezátoru; vzniká robotický zpěv, který zní od Kraftwerk po Daft Punk."

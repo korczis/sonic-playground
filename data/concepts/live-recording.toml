@@ -1,0 +1,10 @@
+term = "live recording"
+category = "performance"
+wikipedia = "https://en.wikipedia.org/wiki/Live_album"
+see_also = ["cover version"]
+
+[en]
+definition = "A recording made in front of an audience rather than built in a studio. It captures energy, improvisation and the sound of the room, and often differs from the studio version."
+
+[cs]
+definition = "Nahrávka pořízená před publikem, ne poskládaná ve studiu. Zachytí energii, improvizaci a zvuk prostoru a často se od studiové verze liší."

@@ -8,6 +8,8 @@ genre = ["soul", "indie", "funk"]
 sentiment = ["groovy", "romantic", "longing"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "016a291a-5f3d-439d-aeb5-dd0f9a46d927", artist = "f4139c2c-26ef-4e1f-99d5-6e8859ef6c56" }
 album = "I Want Your Lovin' (Edit)"
 youtube = "https://www.youtube.com/embed/XviTLW8ADbw"
 +++

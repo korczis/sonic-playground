@@ -8,6 +8,9 @@ genre = ["house", "dance", "electronic"]
 sentiment = ["euphoric", "uplifting", "romantic"]
 
 [extra]
+country = "SE"
+isrc = "GBKCF0700022"
+musicbrainz = { recording = "283a8bfe-1a44-4e7b-a6fb-5be13b43c3d6", artist = "4539050e-e355-4c39-bdfa-e74cb67ce365", release = "3e98683b-5a18-4938-80e0-751fc36933c3" }
 release_year = "2007"
 album = "I Found U"
 youtube = "https://www.youtube.com/embed/70CZCTtlkrU"

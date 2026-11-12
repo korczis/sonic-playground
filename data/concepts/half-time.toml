@@ -1,0 +1,10 @@
+term = "half-time"
+category = "rhythm"
+wikipedia = "https://en.wikipedia.org/wiki/Half-time_(music)"
+see_also = ["drop", "breakbeat"]
+
+[en]
+definition = "A feel in which the backbeat (the snare) comes half as often, so the music seems to move at half the speed while the tempo stays the same. Trap and dubstep use it to make a drop feel heavy."
+
+[cs]
+definition = "Pocit, kdy doba virblu přichází poloviční měrou, takže hudba působí poloviční rychlostí, i když tempo zůstává stejné. Trap a dubstep jím zatěžkávají drop."

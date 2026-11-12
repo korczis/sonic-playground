@@ -8,6 +8,9 @@ genre = ["soul", "r&b", "ballad"]
 sentiment = ["emotional", "soulful", "longing"]
 
 [extra]
+country = "US"
+isrc = "USJAY0100057"
+musicbrainz = { recording = "7276155b-a01b-42a9-9d31-eb0c317d07b8", artist = "8ef1df30-ae4f-4dbd-9351-1a32b208a01e", release = "72214fcf-9cf3-4875-9923-13aa400ea8d3" }
 release_year = "2001"
 album = "Songs In A Minor"
 youtube = "https://www.youtube.com/embed/Urdlvw0SSEc"

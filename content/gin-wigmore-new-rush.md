@@ -8,6 +8,9 @@ genre = ["alternative rock", "rock", "pop"]
 sentiment = ["energetic", "empowering", "bold"]
 
 [extra]
+country = "NZ"
+isrc = "AUUM71500267"
+musicbrainz = { recording = "d53334f0-afa4-47b7-ad01-fbda188fd673", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "3c60a0c8-c07b-463d-8c72-93908a0e80e3" }
 release_year = "2015"
 album = "Blood To Bone"
 youtube = "https://www.youtube.com/embed/jDNSQ7ccTGA"

@@ -8,6 +8,9 @@ genre = ["alternative rock", "electronic", "indie"]
 sentiment = ["empowering", "reflective", "uplifting"]
 
 [extra]
+release_year = "2017"
+country = "US"
+musicbrainz = { recording = "7561099f-b4ce-4fc9-b02c-a97b286c4127", artist = "d1fc999f-6184-41a6-bcb1-7c59bf74a6e1", release = "063cc686-b790-4cc0-bbe3-f8a3a5cd0b94" }
 youtube = "https://www.youtube.com/embed/j04JKdcXjkU"
 +++
 

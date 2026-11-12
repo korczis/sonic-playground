@@ -8,6 +8,8 @@ genre = ["electroclash", "electronic", "minimal"]
 sentiment = ["hypnotic", "dark", "intense"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "735c521d-397b-4162-bd97-586ddf2ec1e3", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "839cb588-924d-4d91-bf4a-dafb9100f213" }
 publisher = "International DeeJay Gigolo Records"
 release_year = "2005"
 album = "Wild Light"

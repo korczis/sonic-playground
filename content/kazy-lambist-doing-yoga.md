@@ -8,6 +8,9 @@ genre = ["electronic", "pop", "chillwave"]
 sentiment = ["relaxed", "uplifting", "dreamy"]
 
 [extra]
+release_year = "2015"
+country = "FR"
+musicbrainz = { recording = "6539a9f7-9cbe-40f6-a44e-07948b9a00dc", artist = "ffee216f-88ec-4aa3-9e1e-d589ba27a776", release = "eef54079-413f-484b-a3bc-257afddc2ae4" }
 cover_image = "/images/thumbnails/kazy-lambist-doing-yoga.jpg"
 youtube = "https://www.youtube.com/embed/FxcKB-VowC0"
 +++

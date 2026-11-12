@@ -8,6 +8,9 @@ genre = ["downtempo", "electronic", "soul"]
 sentiment = ["calm", "reflective", "soothing"]
 
 [extra]
+release_year = "2009"
+country = "DE"
+musicbrainz = { recording = "84deb2ba-3de1-448b-a266-2d508528a893", artist = "33092a25-bab6-401a-ac69-fa415a4958b0", release = "7c06bf31-0c50-4c7f-af16-0a0f938514f2" }
 youtube = "https://www.youtube.com/embed/amQBPD3dSkk"
 +++
 

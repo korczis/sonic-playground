@@ -8,6 +8,9 @@ genre = ["tech house", "house", "electronic"]
 sentiment = ["groovy", "soulful", "energetic"]
 
 [extra]
+country = "DE"
+isrc = "GB7B71600012"
+musicbrainz = { recording = "d8eccfae-2ceb-476b-9738-3a5a748ce4c9", artist = "dc60d275-d4d1-4bf2-b32c-4aa2332d7459", release = "7b9cc920-2726-4489-93c8-b4c944b48892" }
 release_year = "2016"
 album = "Jam Master Jack"
 youtube = "https://www.youtube.com/embed/89Ro5ycpAzA"

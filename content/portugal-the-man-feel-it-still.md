@@ -8,6 +8,9 @@ genre = ["alternative rock", "indie pop", "funk"]
 sentiment = ["upbeat", "playful", "liberating"]
 
 [extra]
+release_year = "2017"
+country = "US"
+musicbrainz = { recording = "f14136fc-4505-4426-986c-29233addd483", artist = "3599a39e-4e10-4cb5-90d4-c8a015ebc73b", release = "767af74d-4b50-4ab5-bf4b-c09fc7b02ced" }
 youtube = "https://www.youtube.com/embed/pBkHHoOIIn8"
 +++
 

@@ -8,6 +8,8 @@ genre = ["deep house", "dance", "pop"]
 sentiment = ["upbeat", "playful", "feel-good"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "82154a6e-eebc-4025-aef2-3c28f610e931", artist = "163218c2-9e0f-4d2d-aecb-ebbdef6aab70", release = "5bebca15-c8bc-43e1-91e7-1a6219ea54c9" }
 release_year = "2015"
 album = "Sugar"
 youtube = "https://www.youtube.com/embed/bvC_0foemLY"

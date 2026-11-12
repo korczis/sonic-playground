@@ -8,6 +8,9 @@ genre = ["pop", "soul", "funk"]
 sentiment = ["joyful", "uplifting", "feel-good"]
 
 [extra]
+country = "US"
+isrc = "USQ4E1300686"
+musicbrainz = { recording = "f367ad6e-efd5-4496-aba5-21a4edcd82c6", artist = "149f91ef-1287-46da-9a8e-87fee02f1471", release = "bf45bdf7-f9b0-48fb-ab22-93a5ccfe963f" }
 release_year = "2013"
 album = "G I R L"
 youtube = "https://www.youtube.com/embed/ZbZSe6N_BXs"

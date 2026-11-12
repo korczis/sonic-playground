@@ -8,6 +8,8 @@ genre = ["disco", "funk", "electronic"]
 sentiment = ["celebratory", "euphoric", "uplifting"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "4383e23d-59a3-4631-8727-0b3248061cf9", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "74fcd7f4-a2c8-4526-b350-558b157942bf" }
 release_year = "2013"
 album = "Random Access Memories"
 youtube = "https://www.youtube.com/embed/IluRBvnYMoY"

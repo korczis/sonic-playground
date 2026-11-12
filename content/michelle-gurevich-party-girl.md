@@ -8,6 +8,9 @@ genre = ["indie pop", "singer-songwriter", "dream pop"]
 sentiment = ["reflective", "melancholic", "nostalgic"]
 
 [extra]
+release_year = "2007"
+country = "CA"
+musicbrainz = { recording = "1d2b11aa-7a3e-430d-a35d-86b574a090fb", artist = "7413ccd4-a9e9-4965-8506-49e580dda6d5", release = "0104343c-3987-41e8-beb4-da5c2ec9dc70" }
 youtube = "https://www.youtube.com/embed/ANmL7LvNzdw"
 +++
 

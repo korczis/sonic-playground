@@ -8,6 +8,10 @@ genre = ["punk", "post-punk", "alternative"]
 sentiment = ["raw", "introspective", "empowering"]
 
 [extra]
+release_year = "2021"
+country = "GB"
+isrc = "USBQU2100062"
+musicbrainz = { recording = "eb18a4e4-7130-497d-b23d-98c8dae4ad60", artist = "be465d4f-c28d-4ba1-94ab-ebaada7db8af", release = "4bdeac0e-0586-4cd7-97e8-450685e348c4" }
 cover_image = "/images/thumbnails/idles-the-wheel.jpg"
 youtube = "https://www.youtube.com/embed/MH2HE6Gp3JQ"
 +++

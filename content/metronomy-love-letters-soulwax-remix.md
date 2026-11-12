@@ -8,6 +8,10 @@ genre = ["electronic", "disco", "remix"]
 sentiment = ["groovy", "hypnotic", "euphoric"]
 
 [extra]
+release_year = "2014"
+country = "GB"
+isrc = "GBMVH1400240"
+musicbrainz = { recording = "f7203b2e-9fbb-4dc3-88ba-c5ab11135f58", artist = "93eb7110-0bc9-4d3f-816b-4b52ef982ec8", release = "67b290a8-8632-4b21-8add-1a3c1436dbfa" }
 album = "Love Letters (Soulwax Remix)"
 youtube = "https://www.youtube.com/embed/WYCkEz8wg4c"
 +++

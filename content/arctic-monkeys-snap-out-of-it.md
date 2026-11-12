@@ -8,6 +8,9 @@ genre = ["indie rock", "alternative rock", "rock"]
 sentiment = ["longing", "catchy", "playful"]
 
 [extra]
+country = "GB"
+isrc = "GBCEL1300371"
+musicbrainz = { recording = "adadc047-e040-45d5-b020-0603db0d69dc", artist = "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a", release = "a28b19bc-ad93-455b-9fed-9ad008c88148" }
 release_year = "2013"
 album = "AM"
 youtube = "https://www.youtube.com/embed/H8tLS_NOWLs"

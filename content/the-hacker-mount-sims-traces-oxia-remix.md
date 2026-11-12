@@ -8,6 +8,8 @@ genre = ["techno", "electro", "minimal"]
 sentiment = ["hypnotic", "melancholic", "dark"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "4372725d-b4ea-44dc-ad02-9a9de74f41bc", artist = "e044fb9c-7c2e-48f7-81f6-ea2ae99d2ef0", release = "2cc8ceb5-f907-4f33-8ecc-9be697b56d44" }
 publisher = "Different"
 release_year = "2005"
 album = "Traces"

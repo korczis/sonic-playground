@@ -8,6 +8,9 @@ genre = ["house", "electronic", "club"]
 sentiment = ["hypnotic", "groovy", "energetic"]
 
 [extra]
+release_year = "2016"
+country = "DE"
+musicbrainz = { recording = "0ed35fc9-76ea-4747-bd31-1fb19e3dc0d1", artist = "dc60d275-d4d1-4bf2-b32c-4aa2332d7459", release = "299a695e-ac01-45ef-a41b-726a87d097f5" }
 youtube = "https://www.youtube.com/embed/LZLEFl1_eEI"
 album = "Jam Master Jack"
 +++

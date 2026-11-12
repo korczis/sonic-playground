@@ -8,6 +8,8 @@ genre = ["downtempo", "electronic", "nu-jazz"]
 sentiment = ["nostalgic", "introspective", "atmospheric"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "6e0bb16c-dd2d-4dec-803f-4afb5b8788c1", artist = "6f3d4a7b-45b2-4c08-9306-8d271e92cb4f", release = "3ff44574-9d73-416b-b6d8-32f30b645d12" }
 release_year = "2009"
 album = "Forgotten Places - EP"
 youtube = "https://www.youtube.com/embed/Hs86ddB4sYA"

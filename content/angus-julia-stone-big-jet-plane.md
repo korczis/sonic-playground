@@ -8,6 +8,9 @@ genre = ["indie folk", "folk", "acoustic"]
 sentiment = ["dreamy", "romantic", "nostalgic"]
 
 [extra]
+country = "AU"
+isrc = "AUAP10900011"
+musicbrainz = { recording = "4f20b0fd-b61f-4630-b4f1-7abc1c5c1ec9", artist = "69837400-8e31-4949-aac2-00b46b4df126", release = "aee08920-6612-4cda-92ef-fb4eb7d0151f" }
 release_year = "2010"
 album = "Down The Way"
 youtube = "https://www.youtube.com/embed/yFTvbcNhEgc"

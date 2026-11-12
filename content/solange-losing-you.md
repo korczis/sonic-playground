@@ -8,6 +8,9 @@ genre = ["r&b", "indie pop", "synth-pop"]
 sentiment = ["bittersweet", "groovy", "longing"]
 
 [extra]
+country = "US"
+isrc = "USME31201358"
+musicbrainz = { recording = "1a70b37f-729c-4e24-b73b-67774e5b34a5", artist = "410e7fd3-b865-4fa0-bb18-1b7fd53382ca", release = "f16280c2-ac7e-4408-9825-bc13389169a4" }
 release_year = "2012"
 album = "Losing You"
 youtube = "https://www.youtube.com/embed/Hy9W_mrY_Vk"

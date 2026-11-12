@@ -6,6 +6,8 @@
 //   data-i18n-placeholder / -aria-label / -title / -alt="key"        attributes
 //   Sonic.t('key', {n: 3})                                            browser code
 //   Sonic.on('sonic:locale', fn)                                      re-render on a switch
+//   <span data-locale-group><span data-locale-text="en">…</span><span data-locale-text="cs" hidden>…</span></span>
+//                                                                     localised data (concepts)
 (function () {
   'use strict';
   var Sonic = window.Sonic;
@@ -47,6 +49,15 @@
     });
     document.documentElement.lang = Sonic.locale();
     /** @type {NodeListOf<HTMLSelectElement>} */ (document.querySelectorAll('[data-locale-switch]')).forEach(function (select) { select.value = Sonic.locale(); });
+    // Localised data (a concept's definition in every locale): the one of the current locale
+    // shows, the default one when the current has none.
+    var code = Sonic.locale();
+    /** @type {NodeListOf<HTMLElement>} */ ((root || document.body).querySelectorAll('[data-locale-group]')).forEach(function (group) {
+      var parts = /** @type {HTMLElement[]} */ (Array.prototype.slice.call(group.querySelectorAll('[data-locale-text]')));
+      var has = parts.some(function (p) { return p.dataset.localeText === code; });
+      var show = has ? code : (bundle && bundle.default);
+      parts.forEach(function (p) { p.hidden = p.dataset.localeText !== show; });
+    });
     var note = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-locale-note]'));
     note.forEach(function (el) { el.hidden = !Sonic.t('locale.content_note'); });
   }

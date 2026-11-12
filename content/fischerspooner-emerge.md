@@ -8,6 +8,9 @@ genre = ["electro-pop", "dance", "art pop"]
 sentiment = ["bold", "liberating", "theatrical"]
 
 [extra]
+release_year = "2001"
+country = "US"
+musicbrainz = { recording = "f95bb37b-1f7f-4cc7-a140-5d0f2ce8493a", artist = "a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0", release = "1e9492ef-f406-4343-914a-8189ba5bdbd6" }
 youtube = "https://www.youtube.com/embed/HHbAtxSTXo0"
 +++
 

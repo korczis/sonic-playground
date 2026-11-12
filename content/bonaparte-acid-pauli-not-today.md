@@ -8,6 +8,8 @@ genre = ["electronic", "pop", "experimental"]
 sentiment = ["uplifting", "introspective", "energetic"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "c932bc6e-13d6-4791-af8c-ab6e5cfc2e7f", artist = "ebeb557a-1360-4e75-9dc5-3739ef2d6a5f" }
 cover_image = "/images/thumbnails/bonaparte-acid-pauli-not-today.jpg"
 youtube = "https://www.youtube.com/embed/rJyyP8lkneg"
 +++

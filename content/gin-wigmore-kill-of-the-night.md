@@ -8,6 +8,9 @@ genre = ["rock", "blues", "soul"]
 sentiment = ["bold", "defiant", "gritty"]
 
 [extra]
+country = "NZ"
+isrc = "AUUM71101239"
+musicbrainz = { recording = "bb2f7fa5-62a1-4c99-9c41-f2960f769943", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "f55ce63f-e4bb-4fb6-b1a3-9af21ec56049" }
 release_year = "2011"
 album = "Gravel & Wine"
 youtube = "https://www.youtube.com/embed/tK_NnGSTf0M"

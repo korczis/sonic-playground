@@ -8,6 +8,9 @@ genre = ["electro-rap", "party", "dance"]
 sentiment = ["exuberant", "joyful", "festive"]
 
 [extra]
+country = "US"
+isrc = "USCJ80900349"
+musicbrainz = { recording = "16c2033f-3282-4bfe-8cd0-ac4d88094cad", artist = "a6cf5c5c-7432-4ac7-801a-cef2b03e81bb", release = "4c09f1b3-db98-421c-a722-5643fa0c156e" }
 release_year = "2009"
 album = "I Love You"
 youtube = "https://www.youtube.com/embed/EtdqpubMkj8"

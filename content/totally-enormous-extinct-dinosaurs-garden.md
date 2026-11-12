@@ -8,6 +8,9 @@ genre = ["electronic", "house", "indie dance"]
 sentiment = ["melancholic", "introspective", "euphoric"]
 
 [extra]
+release_year = "2010"
+country = "GB"
+musicbrainz = { recording = "eee65136-f6f8-4464-9e7e-4b2c7ecdb4f6", artist = "bd075a82-b196-4752-a1bb-3d87be3236a0", release = "14f2a5e2-daf6-4ec2-8e39-901c659ad12d" }
 youtube = "https://www.youtube.com/embed/G-1HNnxb0WE"
 +++
 

@@ -8,6 +8,9 @@ genre = ["indie pop", "electronic", "dance"]
 sentiment = ["upbeat", "reflective", "adventurous"]
 
 [extra]
+release_year = "2012"
+country = "SE"
+musicbrainz = { recording = "acef882f-b5ab-4511-b787-a87641bec14c", artist = "753a1564-aaef-4d39-bc68-4a8d5e328cf7", release = "ce2c5425-e3f0-4ba2-9806-c22366be5b30" }
 youtube = "https://www.youtube.com/embed/WCNQ2mc_Zzc"
 +++
 

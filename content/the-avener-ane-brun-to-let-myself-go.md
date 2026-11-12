@@ -8,6 +8,9 @@ genre = ["deep house", "electronic", "folk"]
 sentiment = ["melancholic", "hypnotic", "liberating"]
 
 [extra]
+country = "FR"
+isrc = "FRV601400160"
+musicbrainz = { recording = "da80cda6-9385-4645-b495-9321673c3ee0", artist = "529c40b4-c57f-49e2-ad5a-201eb2fb4a5b", release = "8c475aa5-a62b-473d-b00a-2bba080c170b" }
 release_year = "2015"
 album = "The Wanderings Of The Avener"
 youtube = "https://www.youtube.com/embed/a0GLPMq8k5o"

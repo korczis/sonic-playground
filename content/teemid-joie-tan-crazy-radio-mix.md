@@ -8,6 +8,8 @@ genre = ["deep house", "cover", "electronic"]
 sentiment = ["melancholic", "dreamy", "hypnotic"]
 
 [extra]
+isrc = "DEA621400409"
+musicbrainz = { recording = "64934b22-18fa-44c4-a6e4-431efcfc070b", artist = "c8fe96ee-2195-4b27-adb0-525843822b6d", release = "13eaa3d9-239a-42cf-a2fa-8b461a817346" }
 release_year = "2014"
 album = "Crazy"
 youtube = "https://www.youtube.com/embed/T5mvFDey1U0"

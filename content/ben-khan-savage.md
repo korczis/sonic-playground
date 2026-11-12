@@ -8,6 +8,8 @@ genre = ["r&b", "electronic", "funk"]
 sentiment = ["hypnotic", "gritty", "alluring"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "d42fcc63-ae00-454f-a745-da0dd30ad23a", artist = "9dabeeb9-7766-468c-856b-e924058d69d6", release = "2c67b541-aec9-4fb2-bdb5-42312fdc9c7e" }
 publisher = "Dirty Hit"
 release_year = "2014"
 album = "1992 EP"

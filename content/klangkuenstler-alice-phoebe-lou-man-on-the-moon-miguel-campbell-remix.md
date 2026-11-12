@@ -8,6 +8,9 @@ genre = ["deep house", "indie dance", "house"]
 sentiment = ["dreamy", "groovy", "hypnotic"]
 
 [extra]
+country = "DE"
+isrc = "GBGNS1401241"
+musicbrainz = { recording = "fcdcad3b-cfa9-41ee-bfe3-b44fac480caa", artist = "dc60d275-d4d1-4bf2-b32c-4aa2332d7459", release = "7d7a3139-02e5-48da-89a7-109a9741e38e" }
 release_year = "2014"
 album = "Man on the Moon"
 youtube = "https://www.youtube.com/embed/rRbYxpr2e_k"

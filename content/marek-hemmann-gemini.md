@@ -8,6 +8,10 @@ genre = ["minimal", "techno", "deep house"]
 sentiment = ["hypnotic", "introspective", "atmospheric"]
 
 [extra]
+release_year = "2009"
+country = "DE"
+isrc = "DEDU60900008"
+musicbrainz = { recording = "e76beeda-bdab-49d9-b0aa-11b82ce956aa", artist = "a8704ddb-1ffe-4049-ae53-2d91fec2c143", release = "3745b087-ad32-456a-baa6-159834be72a4" }
 publisher = "Freude am Tanzen"
 album = "In Between"
 youtube = "https://www.youtube.com/embed/5syX_6jrvJ0"

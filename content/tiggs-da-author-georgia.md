@@ -8,6 +8,8 @@ genre = ["soul", "r&b", "pop"]
 sentiment = ["romantic", "joyful", "soulful"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "93953df1-aef8-4e2c-bbd0-4cae5b01da63", artist = "6ec2f527-c853-414c-b9f8-4acf4be4b235", release = "5a61ced6-677e-4b5e-88f7-7da556d0ca27" }
 release_year = "2015"
 album = "Georgia"
 youtube = "https://www.youtube.com/embed/rCRBofMzk8Y"

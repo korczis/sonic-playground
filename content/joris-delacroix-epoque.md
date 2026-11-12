@@ -8,6 +8,9 @@ genre = ["deep house", "melodic techno", "electronic"]
 sentiment = ["nostalgic", "reflective", "emotive"]
 
 [extra]
+release_year = "2018"
+country = "FR"
+musicbrainz = { recording = "ab645b5d-08ce-4f7d-b807-2ddc105ca31e", artist = "f2c454ec-69a2-49a7-a79c-eaabef25ba44", release = "230597bd-2ec8-40bc-bdeb-25181d3e81d3" }
 youtube = "https://www.youtube.com/embed/r13IcwcS7Mo"
 +++
 

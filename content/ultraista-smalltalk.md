@@ -8,6 +8,9 @@ genre = ["electro-pop", "indie", "dance"]
 sentiment = ["playful", "reflective", "uplifting"]
 
 [extra]
+release_year = "2012"
+country = "GB"
+musicbrainz = { recording = "5c21b4b7-bce4-41aa-911f-f5f928829f83", artist = "fe4a653a-dc81-4422-b3f0-60ecb9107eeb", release = "01a6fe83-2b2d-4044-8827-b5e20d4fb8dc" }
 youtube = "https://www.youtube.com/embed/1bMR83ZI7m8"
 +++
 

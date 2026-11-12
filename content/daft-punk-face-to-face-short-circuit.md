@@ -8,6 +8,9 @@ genre = ["electronic", "house", "dance"]
 sentiment = ["euphoric", "celebratory", "energetic"]
 
 [extra]
+country = "FR"
+isrc = "GBDUW0700007"
+musicbrainz = { recording = "44c72d3c-ff86-42cc-b02f-7ffd34ea1d62", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "7f95bdc9-8bfd-428c-b12a-24e5c6f2e396" }
 release_year = "2007"
 album = "Alive 2007"
 youtube = "https://www.youtube.com/embed/ZXhwXhv37Ps"

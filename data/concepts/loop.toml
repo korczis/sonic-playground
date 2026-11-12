@@ -1,0 +1,10 @@
+term = "loop"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Loop_(music)"
+see_also = ["sampling", "ostinato", "sequencer"]
+
+[en]
+definition = "A section of sound repeated seamlessly. Loops, from tape to software, are the building block of hip-hop, house and techno, where change comes from what is added or taken away."
+
+[cs]
+definition = "Úsek zvuku opakovaný bez švu. Smyčky, od pásky po software, jsou stavebním kamenem hip-hopu, house a techna, kde změnu přináší to, co se přidá nebo ubere."

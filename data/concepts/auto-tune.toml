@@ -1,0 +1,10 @@
+term = "auto-tune"
+category = "technology"
+wikipedia = "https://en.wikipedia.org/wiki/Auto-Tune"
+see_also = ["vocoder"]
+
+[en]
+definition = "Software that corrects the pitch of a voice. Set to act instantly, it becomes an audible effect, the stepped, glassy vocal of much pop and hip-hop since the late 1990s."
+
+[cs]
+definition = "Software, který koriguje výšku hlasu. Nastaven na okamžitou korekci se stává slyšitelným efektem, stupňovitým „skleněným“ zpěvem velké části popu a hip-hopu od konce 90. let."

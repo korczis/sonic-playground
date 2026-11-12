@@ -8,6 +8,9 @@ genre = ["post-punk", "electronic", "spoken word"]
 sentiment = ["angry", "gritty", "rebellious"]
 
 [extra]
+release_year = "2014"
+country = "GB"
+musicbrainz = { recording = "7b16af91-8e58-4f3c-abc7-e893126f4707", artist = "09d8290b-6ada-422f-8ce3-19349fb1c15d", release = "26659b4e-727a-460e-bb6c-533d1126fb49" }
 youtube = "https://www.youtube.com/embed/V2zNGy0NFEQ"
 +++
 

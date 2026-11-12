@@ -8,6 +8,9 @@ genre = ["electronic", "dance", "pop"]
 sentiment = ["provocative", "indulgent", "hypnotic"]
 
 [extra]
+country = "GB"
+isrc = "GBJGP0500048"
+musicbrainz = { recording = "bb254b1a-d0bc-42fd-9fc1-ad8c6c10a43e", artist = "7bf1f441-ccf1-4258-9797-07c8d16eb44c", release = "689f013e-f404-31a6-8c86-b01e1f8b3ca4" }
 release_year = "2006"
 album = "A Lively Mind"
 youtube = "https://www.youtube.com/embed/E2aoCju-_NQ"

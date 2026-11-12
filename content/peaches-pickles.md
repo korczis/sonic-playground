@@ -8,6 +8,9 @@ genre = ["electroclash", "electro", "rap"]
 sentiment = ["provocative", "playful", "bold"]
 
 [extra]
+country = "DE"
+isrc = "USQY51567439"
+musicbrainz = { recording = "b2dbcbe0-7cff-4cca-a496-9ed919ad6074", artist = "270acfee-1fbe-413e-a0a8-6a35a8b3b66c", release = "57de2dd6-eef6-4436-a126-12718364ee56" }
 release_year = "2015"
 album = "Rub"
 youtube = "https://www.youtube.com/embed/RVK0pqyA_Ns"

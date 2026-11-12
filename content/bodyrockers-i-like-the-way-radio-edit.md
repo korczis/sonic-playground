@@ -8,6 +8,8 @@ genre = ["dance", "electro", "rock"]
 sentiment = ["energetic", "bold", "playful"]
 
 [extra]
+country = "XW"
+musicbrainz = { recording = "1e8e3c79-460e-4939-bb4c-6e75f0997d69", artist = "fd0e3da0-5c32-4881-a7cc-7dfa58e265cf", release = "8c0a0e91-b13a-43a8-90ce-c7e49974a7af" }
 release_year = "2005"
 album = "Bodyrockers"
 youtube = "https://www.youtube.com/embed/jO90ullM3FQ"

@@ -1,0 +1,10 @@
+term = "bassline"
+category = "melody"
+wikipedia = "https://en.wikipedia.org/wiki/Bassline"
+see_also = ["groove", "synthesizer"]
+
+[en]
+definition = "The lowest melodic part of a track. In dance music it often carries the hook as much as the vocal does, and its rhythm against the kick drum defines the groove."
+
+[cs]
+definition = "Nejnižší melodická linka skladby. V taneční hudbě často nese hlavní motiv stejně jako zpěv a její rytmus proti basovému bubnu určuje groove."

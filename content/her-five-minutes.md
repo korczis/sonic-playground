@@ -8,6 +8,10 @@ genre = ["r&b", "soul", "contemporary"]
 sentiment = ["longing", "emotional", "introspective"]
 
 [extra]
+release_year = "2016"
+country = "FR"
+isrc = "FR9W11505356"
+musicbrainz = { recording = "4ed01be7-3eba-4d44-878e-8aa356b433b5", artist = "85002755-85e7-484e-a831-dc47c27af2b3", release = "12a7d932-4961-4030-bb45-e9daa6dc5ba3" }
 youtube = "https://www.youtube.com/embed/sqM3APrfijU" 
 +++
 

@@ -8,6 +8,8 @@ genre = ["breakbeat", "funk", "rock", "remix"]
 sentiment = ["groovy", "energetic", "playful"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "0b0c029f-badb-4ddf-a6eb-b1234b862e62", artist = "0383dadf-2a4e-4d10-a46a-e9e041da8eb3", release = "330c6965-4af6-4ab7-88cf-e16ad157e715" }
 release_year = "2006"
 album = "Another One Bites The Dust"
 youtube = "https://www.youtube.com/embed/phLCxwkgo1Q"

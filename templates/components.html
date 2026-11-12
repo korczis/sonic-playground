@@ -30,6 +30,7 @@
   "queue-add": "M4 6h11M4 11h11M4 16h7m6-4v8m-4-4h8",
   "radio": "M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 13v7m-3 0h6",
   "pause": "M9 6v12m6-12v12",
+  "book": "M12 6.5C10.5 5 8 4.5 5 5v13c3-.5 5.5 0 7 1.5m0-13c1.5-1.5 4-2 7-1.5v13c-3-.5-5.5 0-7 1.5m0-13v13",
   "dots": "M6.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm7 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm7 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z",
 } -%}
 {%- if name in paths -%}
@@ -53,9 +54,13 @@
   "genre": "bg-primary-100 text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300 dark:hover:bg-primary-800",
   "sentiment": "bg-pink-100 text-pink-800 hover:bg-pink-200 dark:bg-pink-900 dark:text-pink-300 dark:hover:bg-pink-800",
   "mood": "bg-teal-100 text-teal-800 hover:bg-teal-200 dark:bg-teal-900 dark:text-teal-300 dark:hover:bg-teal-800",
+  "concept": "bg-amber-100 text-amber-800 hover:bg-amber-200 dark:bg-amber-900 dark:text-amber-300 dark:hover:bg-amber-800",
+  "instrument": "bg-sky-100 text-sky-800 hover:bg-sky-200 dark:bg-sky-900 dark:text-sky-300 dark:hover:bg-sky-800",
 } -%}
+{#- A facet added to the contract later gets the neutral tone until it is given its own. -#}
+{%- if kind in tones %}{% set tone = tones[kind] %}{% else %}{% set tone = "bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600" %}{% endif -%}
 {%- for term in terms[:limit] -%}
-<a href="{{ get_taxonomy_url(kind=kind, term=term) }}" class="inline-flex items-center rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tones[kind] }}">{{ term }}</a>
+<a href="{{ get_taxonomy_url(kind=kind, term=term) }}" class="inline-flex items-center rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{{ term }}</a>
 {% endfor -%}
 {% endcomponent facet_badges %}
 
@@ -71,10 +76,8 @@
   data-title="{{ t.track }}"
   data-artist="{{ t.artist }}"
   data-date="{{ t.date }}"
-  data-genre="{{ t.facets.genre | join(sep='|') }}"
-  data-sentiment="{{ t.facets.sentiment | join(sep='|') }}"
-  data-mood="{{ t.facets.mood | join(sep='|') }}"
-  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }} {{ t.facets.genre | join(sep=' ') }} {{ t.facets.sentiment | join(sep=' ') }} {{ t.facets.mood | join(sep=' ') }}">
+  {%- for kind, terms in t.facets %} data-{{ kind }}="{{ terms | join(sep='|') }}"{% endfor %}
+  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }}{% for kind, terms in t.facets %} {{ terms | join(sep=' ') }}{% endfor %}">
   <div class="relative">
     <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
       {%- if thumb %}
@@ -206,7 +209,7 @@
 
 {#- Pro page header: breadcrumb (a list of [label, url, key] triples; the last is the page; key is
     its interface string or "" for content such as a term) and the title, kicker and lead. -#}
-{% component page_header(title, crumbs=[], kicker="", lead="", lead_key="") %}
+{% component page_header(title, crumbs=[], kicker="", lead="", lead_key="", lead_vars={}) %}
 <div class="border-b border-gray-200 bg-white px-4 py-5 xl:px-8 dark:border-gray-700 dark:bg-gray-800">
   <nav class="mb-3 flex" aria-label="Breadcrumb">
     <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 md:space-x-2">
@@ -224,7 +227,7 @@
   </nav>
   {%- if kicker %}<p class="mb-1 text-sm font-medium text-primary-700 dark:text-primary-400">{{ kicker }}</p>{% endif %}
   <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl dark:text-white"{% if crumbs and (crumbs | last)[2] %} data-i18n="{{ (crumbs | last)[2] }}"{% endif %}>{{ title }}</h1>
-  {%- if lead %}<p class="mt-2 max-w-3xl text-base text-gray-500 dark:text-gray-400"{% if lead_key %} data-i18n="{{ lead_key }}"{% endif %}>{{ lead }}</p>{% endif %}
+  {%- if lead %}<p class="mt-2 max-w-3xl text-base text-gray-500 dark:text-gray-400"{% if lead_key %} data-i18n="{{ lead_key }}"{% if lead_vars %} data-i18n-vars="{{ lead_vars | json_encode }}"{% endif %}{% endif %}>{{ lead }}</p>{% endif %}
 </div>
 {% endcomponent page_header %}
 
@@ -403,3 +406,138 @@
   </div>
 </section>
 {% endcomponent featured_track %}
+
+{#- A concept of the glossary (catalog.concepts): term, category, the definition in every
+    locale (static/js/i18n.js shows the current one), how many tracks demonstrate it. A concept
+    no review uses yet has no page, so its card links nowhere. -#}
+{% component concept_card(c, l) %}
+{%- set n = c.tracks | length -%}
+<article class="flex h-full flex-col rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800" data-concept-card="{{ c.slug }}">
+  <div class="mb-2 flex items-start justify-between gap-3">
+    <h3 class="text-base font-semibold text-gray-900 dark:text-white">{% if n > 0 %}<a href="{{ get_taxonomy_url(kind='concept', term=c.term) }}" class="hover:underline">{{ c.term }}</a>{% else %}{{ c.term }}{% endif %}</h3>
+    <span class="shrink-0 rounded-full bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">{{ <tx key="concept.tracks" l={l} vars={ {"n": n} } /> }}</span>
+  </div>
+  {{ <localised texts={c.definition} cls="text-sm text-gray-600 dark:text-gray-300" /> }}
+</article>
+{% endcomponent concept_card %}
+
+{#- Localised data: one text per locale, the default shown until static/js/i18n.js picks the
+    reader's. texts is {code: text}. -#}
+{% component localised(texts, cls="", default="en") %}
+<p class="{{ cls }}" data-locale-group>{% for code, text in texts %}<span data-locale-text="{{ code }}" lang="{{ code }}"{% if code != default %} hidden{% endif %}>{{ text }}</span>{% endfor %}</p>
+{% endcomponent localised %}
+
+{#- The didactic layer of a review (ADR 0004), from its front matter: the level, what the reader
+    learns, and a timed listening guide whose times seek the bottom-bar player (data-seek,
+    static/js/player.js; without a video the times are plain text). -#}
+{% component learning_guide(source, learning, playable, l) %}
+<section aria-labelledby="learn-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:p-8 dark:border-gray-700 dark:bg-gray-800">
+  <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+    <h2 id="learn-title" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ <tx key="learn.title" l={l} /> }}</h2>
+    <span class="rounded-md bg-primary-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-primary-800 dark:bg-primary-900 dark:text-primary-300" data-i18n="learn.level.{{ learning.level }}">{{ l["learn.level." ~ learning.level] }}</span>
+  </div>
+  <div class="grid gap-6 lg:grid-cols-2">
+    <div>
+      <h3 class="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ <tx key="learn.objectives" l={l} /> }}</h3>
+      <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+        {%- for o in learning.objectives %}<li class="flex gap-2">{{ <icon name="check" cls="mt-0.5 h-4 w-4 shrink-0 text-primary-600" /> }}<span>{{ o }}</span></li>{% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3 class="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ <tx key="learn.listen_for" l={l} /> }}</h3>
+      <ol class="space-y-1 text-sm text-gray-700 dark:text-gray-300" data-listening-guide>
+        {%- for m in learning.listen_for %}
+        <li class="flex items-start gap-3">
+          {%- if playable and m.at %}
+          <button type="button" data-seek="{{ source }}" data-seek-at="{{ m.at }}" class="inline-flex shrink-0 items-center gap-1 rounded-md bg-gray-100 px-2 py-1 font-mono text-xs font-semibold text-primary-700 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:bg-gray-700 dark:text-primary-300 dark:hover:bg-gray-600" aria-label="{{ l["learn.seek"] | replace(from="{at}", to=m.at) }}" data-i18n-aria-label="learn.seek" data-i18n-vars="{{ {"at": m.at} | json_encode }}">{{ <icon name="play" cls="h-3 w-3" /> }}{{ m.at }}</button>
+          {%- elif m.at %}
+          <span class="shrink-0 rounded-md bg-gray-100 px-2 py-1 font-mono text-xs font-semibold text-gray-600 dark:bg-gray-700 dark:text-gray-300">{{ m.at }}</span>
+          {%- else %}
+          <span class="shrink-0 rounded-md bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-700 dark:text-gray-200">{{ m.part }}</span>
+          {%- endif %}
+          <span class="pt-0.5">{{ m.what }}</span>
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
+{% endcomponent learning_guide %}
+
+{#- Questions for discussion or a class, from extra.learning.questions. -#}
+{% component discussion(questions, l) %}
+<section aria-labelledby="discuss-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+  <h2 id="discuss-title" class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="learn.questions" l={l} /> }}</h2>
+  <ol class="list-decimal space-y-2 pl-5 text-sm text-gray-700 marker:font-semibold marker:text-primary-700 dark:text-gray-300">
+    {%- for q in questions %}<li>{{ q }}</li>{% endfor %}
+  </ol>
+</section>
+{% endcomponent discussion %}
+
+{#- The sources a review rests on (extra.sources), as numbered references. -#}
+{% component references(sources, l) %}
+<section aria-labelledby="refs-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+  <h2 id="refs-title" class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="learn.references" l={l} /> }}</h2>
+  <ol class="list-decimal space-y-2 pl-5 text-sm text-gray-700 dark:text-gray-300">
+    {%- for r in sources %}
+    <li id="ref-{{ loop.index }}">{% if r.publisher %}{{ r.publisher }}. {% endif %}<a href="{{ r.url }}" target="_blank" rel="noopener noreferrer" class="font-medium text-primary-700 hover:underline dark:text-primary-400">{{ r.title }}</a>{% if r.year %} ({{ r.year }}){% endif %}. <span class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400" data-i18n="learn.kind.{{ r.kind }}">{{ l["learn.kind." ~ r.kind] }}</span></li>
+    {%- endfor %}
+  </ol>
+</section>
+{% endcomponent references %}
+
+{#- Curated links to other reviews (extra.connections), each with why; c is the catalogue
+    track, why the reason. -#}
+{% component connection_card(t, why, l) %}
+{%- set href = get_url(path="@/" ~ t.source) -%}
+<a href="{{ href }}" class="flex gap-3 rounded-lg border border-gray-200 bg-white p-3 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" data-track data-source="{{ t.source }}">
+  {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif %}
+  {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="96" height="54" class="h-14 w-24 shrink-0 rounded object-cover">{% else %}<span class="flex h-14 w-24 shrink-0 items-center justify-center rounded bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" /> }}</span>{% endif %}
+  <span class="min-w-0"><span class="block truncate text-sm font-semibold text-gray-900 dark:text-white">{{ t.artist }} – {{ t.track }}</span><span class="mt-0.5 block text-sm text-gray-600 dark:text-gray-300">{{ why }}</span></span>
+</a>
+{% endcomponent connection_card %}
+
+{#- A yearbook on the list and the landing page: the year, its counts, a mosaic of its first
+    reviewed tracks' stills. b is an entry of catalog.yearbooks. -#}
+{% component yearbook_card(b, catalog, l) %}
+<a href="{{ get_url(path='@/yearbook/' ~ b.year ~ '.md') }}" class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800" data-yearbook="{{ b.year }}">
+  <div class="grid aspect-[2/1] grid-cols-4 gap-0.5 bg-gray-100 dark:bg-gray-700">
+    {%- set_global shown = 0 %}
+    {%- for i in b.tracks %}{% if shown < 8 and i.source and i.source in catalog.lookup %}{% set t = catalog.tracks[catalog.lookup[i.source]] %}{% if t.thumbnail %}{% set_global shown = shown + 1 %}{% if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="160" height="90" class="h-full w-full object-cover">{% endif %}{% endif %}{% endfor %}
+  </div>
+  <div class="p-4">
+    <p class="text-3xl font-extrabold tracking-tight text-gray-900 group-hover:text-primary-700 dark:text-white">{{ b.year }}</p>
+    <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ <tx key="yearbook.count" l={l} vars={ {"n": b.items, "s": b.songs} } /> }}</p>
+  </div>
+</a>
+{% endcomponent yearbook_card %}
+
+{#- The tracks of a term page (a facet term, a concept) as a playable grid, from the term's
+    pages; one outside the catalogue (a draft) is skipped. -#}
+{% component term_grid(pages, catalog, l, heading="h2") %}
+<div id="term-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+  {%- for p in pages %}{% if p.relative_path in catalog.lookup %}{{ <track_card t={catalog.tracks[catalog.lookup[p.relative_path]]} l={l} heading={heading} /> }}{% endif %}{% endfor %}
+</div>
+{% endcomponent term_grid %}
+
+{#- In a review: {{ <concept_link name="sidechain compression" /> }} links the concept's page with
+    its definition as the tooltip; text= changes the link text. The term must also be in the
+    review's taxonomies.concept (scripts/catalog.py refuses it otherwise), so the page exists. -#}
+{% component concept_link(name, text="") %}
+{%- set c = load_data(path="static/data/catalog.json") -%}
+{%- set slug = name | slugify -%}
+{%- set_global found = "" -%}
+{%- for x in c.concepts %}{% if x.slug == slug %}{% set_global found = x.definition.en %}{% endif %}{% endfor -%}
+{#- get_taxonomy_url is not available while Zola renders an article's content: the term URL by
+    convention, /concept/<slug>/, which scripts/check-built.py proves resolves. -#}
+<a href="{{ get_url(path='concept/' ~ slug, trailing_slash=true) }}" class="concept-link font-medium text-primary-700 underline decoration-dotted underline-offset-4 hover:decoration-solid dark:text-primary-400" data-concept="{{ slug }}" title="{{ found }}">{% if text %}{{ text }}{% else %}{{ name }}{% endif %}</a>
+{%- endcomponent concept_link %}
+
+{#- In a review: {{ <track_link source="daft-punk-around-the-world.md" /> }} links another review,
+    its text derived from the catalogue ("Artist – Track"); text= changes it. scripts/catalog.py
+    refuses a source that names no review. -#}
+{% component track_link(source, text="") %}
+{%- set c = load_data(path="static/data/catalog.json") -%}
+{%- if source in c.lookup %}{% set t = c.tracks[c.lookup[source]] %}{% set label = t.artist ~ " – " ~ t.track %}{% else %}{% set label = source %}{% endif -%}
+<a href="{{ get_url(path='@/' ~ source) }}" class="font-medium text-primary-700 hover:underline dark:text-primary-400" data-track-link="{{ source }}">{% if text %}{{ text }}{% else %}{{ label }}{% endif %}</a>
+{%- endcomponent track_link %}

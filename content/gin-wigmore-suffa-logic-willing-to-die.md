@@ -8,6 +8,8 @@ genre = ["soul", "hip-hop", "alternative"]
 sentiment = ["defiant", "intense", "bold"]
 
 [extra]
+country = "NZ"
+musicbrainz = { recording = "10123620-84dc-421a-8c3f-4755b7683d07", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "c8aaf455-e7d0-4587-9fdf-e51dbf77fb95" }
 release_year = "2015"
 album = "Blood To Bone"
 youtube = "https://www.youtube.com/embed/dC_uvoc-jyU"

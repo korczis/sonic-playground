@@ -54,7 +54,8 @@
 {%- endif %}
 {%- if track %}
 <script type="application/ld+json">
-{{ {"@context": "https://schema.org", "@type": "MusicRecording", "name": track.track, "byArtist": {"@type": "MusicGroup", "name": track.artist}, "genre": track.facets.genre, "description": track.description, "url": ctx.permalink, "datePublished": track.date, "isPartOf": {"@type": "WebSite", "name": config.title, "url": config.base_url ~ "/"} } | json_encode | replace(from="<", to="\\u003c") | safe }}
+{%- set ld = load_data(path="data/derived/jsonld.json") %}
+{{ ld[track.source] | json_encode | replace(from="<", to="\\u003c") | safe }}
 </script>
 {%- endif %}
 <link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">

@@ -8,6 +8,9 @@ genre = ["blues", "rock", "soul"]
 sentiment = ["defiant", "gritty", "bold"]
 
 [extra]
+country = "NZ"
+isrc = "AUUM71500271"
+musicbrainz = { recording = "cace5a4f-3523-44f8-a26e-22fc0566d34c", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "379eb676-e750-4c99-9f50-00348fb0a239" }
 release_year = "2015"
 album = "Blood To Bone"
 youtube = "https://www.youtube.com/embed/lMQofCndDAA"

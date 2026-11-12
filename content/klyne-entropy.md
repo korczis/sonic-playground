@@ -8,6 +8,8 @@ genre = ["electronic", "soul", "downtempo"]
 sentiment = ["dreamy", "melancholic", "intimate"]
 
 [extra]
+country = "NL"
+musicbrainz = { recording = "030191ca-8f26-4760-814b-018be6ba0deb", artist = "0b58106c-e4e1-4b84-bf93-ee8364bff0a2", release = "ab2215a9-4c6d-4829-8362-1ffce944e96b" }
 release_year = "2015"
 album = "Paralyzed"
 youtube = "https://www.youtube.com/embed/yFcaiIQJzWE"

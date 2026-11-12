@@ -1,0 +1,54 @@
+{#- One yearbook: the owner's most played songs of a year, in the playlist's order. A song with a
+    review is a playable row (the queue and the menu work as everywhere); a recording without one
+    says so. Counts, artists and genres are derived by scripts/catalog.py. -#}
+{% extends "base.html" %}
+{%- block content %}
+{%- set year = page.extra.year %}
+{%- set_global b = "" %}
+{%- for x in catalog.yearbooks %}{% if x.year == year %}{% set_global b = x %}{% endif %}{% endfor %}
+{%- set card = "rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" %}
+{{ <page_header title={l["yearbook.one"] | replace(from="{year}", to=year ~ "")} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l["yearbook.title"], get_url(path="@/yearbook/_index.md"), "yearbook.title"], [year ~ "", "", ""]]} kicker={b.name} lead={l["yearbook.count"] | replace(from="{n}", to=b.items ~ "") | replace(from="{s}", to=b.songs ~ "")} /> }}
+<div class="grid grid-cols-1 gap-4 px-4 pt-6 xl:grid-cols-3 xl:px-8">
+  <section class="{{ card }} p-4 sm:p-6 xl:col-span-2" aria-labelledby="yb-list">
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <h2 id="yb-list" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.list" l={l} /> }}</h2>
+      {%- if b.present > 0 %}{{ <play_all target="yearbook-list" l={l} label={l["yearbook.play"] | replace(from="{year}", to=year ~ "")} lkey="yearbook.play" vars={ {"year": year} } /> }}{% endif %}
+    </div>
+    <ol id="yearbook-list" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">
+      {%- for i in b.tracks %}
+      {%- if i.source and i.source in catalog.lookup %}
+      {{ <track_row t={catalog.tracks[catalog.lookup[i.source]]} l={l} note={"#" ~ i.n} /> }}
+      {%- else %}
+      <li class="flex items-center gap-3 py-3 text-sm text-gray-500 dark:text-gray-400" id="n-{{ i.n }}" data-yearbook-item="{{ i.status }}">
+        <span class="w-10 shrink-0 text-center font-mono text-xs">#{{ i.n }}</span>
+        <span class="min-w-0 flex-1"><span class="block truncate text-gray-700 dark:text-gray-300">{{ i.title }}</span><span class="block truncate text-xs">{{ i.artist }}</span></span>
+        <span class="shrink-0 rounded bg-gray-100 px-2 py-0.5 text-xs dark:bg-gray-700" data-i18n="yearbook.status.{{ i.status }}">{{ l["yearbook.status." ~ i.status] }}</span>
+      </li>
+      {%- endif %}
+      {%- endfor %}
+    </ol>
+  </section>
+  <aside class="space-y-4" aria-label="{{ l["yearbook.about"] }}" data-i18n-aria-label="yearbook.about">
+    <div class="{{ card }} p-4 sm:p-6">
+      <h2 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.numbers" l={l} /> }}</h2>
+      <dl class="grid grid-cols-2 gap-3">
+        {%- for k in ["items", "songs", "present", "missing"] %}
+        <div class="rounded-lg bg-gray-50 p-3 dark:bg-gray-700"><dt class="text-xs text-gray-500 dark:text-gray-400" data-i18n="yearbook.k.{{ k }}">{{ l["yearbook.k." ~ k] }}</dt><dd class="text-2xl font-bold text-gray-900 dark:text-white">{{ b[k] }}</dd></div>
+        {%- endfor %}
+      </dl>
+    </div>
+    {%- if b.genres | length > 0 %}
+    <div class="{{ card }} p-4 sm:p-6">
+      <h2 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.genres" l={l} /> }}</h2>
+      <ul class="space-y-1.5 text-sm">{% for g in b.genres %}<li class="flex justify-between gap-3"><a class="text-primary-700 hover:underline dark:text-primary-400" href="{{ get_taxonomy_url(kind='genre', term=g.term) }}">{{ g.term }}</a><span class="text-gray-500 dark:text-gray-400">{{ g.count }}</span></li>{% endfor %}</ul>
+    </div>
+    {%- endif %}
+    {%- if b.artists | length > 0 %}
+    <div class="{{ card }} p-4 sm:p-6">
+      <h2 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.artists" l={l} /> }}</h2>
+      <ul class="space-y-1.5 text-sm">{% for a in b.artists %}<li class="flex justify-between gap-3"><span class="truncate text-gray-900 dark:text-white">{{ a.term }}</span><span class="text-gray-500 dark:text-gray-400">{{ a.count }}</span></li>{% endfor %}</ul>
+    </div>
+    {%- endif %}
+  </aside>
+</div>
+{%- endblock content %}

@@ -8,6 +8,9 @@ genre = ["deep house", "pop", "soul"]
 sentiment = ["alluring", "hypnotic", "romantic"]
 
 [extra]
+country = "FR"
+isrc = "FR9W11515482"
+musicbrainz = { recording = "f4011417-87a6-42de-bf56-eba1a55e7c74", artist = "478fe3cd-c42a-4f0f-86a1-9168041fbf14", release = "06590588-0350-46e3-b34c-93c69867f155" }
 release_year = "2015"
 album = "Sous les jupes des filles"
 youtube = "https://www.youtube.com/embed/6ATjxh-pwlQ"

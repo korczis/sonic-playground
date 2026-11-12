@@ -1,0 +1,10 @@
+term = "sidechain compression"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Dynamic_range_compression#Side-chaining"
+see_also = ["four-on-the-floor", "compression"]
+
+[en]
+definition = "Compression that turns one sound down whenever another plays, typically pads or bass ducking under each kick drum. It makes room in the mix and creates the familiar pumping feel of house and EDM."
+
+[cs]
+definition = "Komprese, která ztlumí jeden zvuk vždy, když hraje jiný, typicky plochy nebo basa uhnou pod každý úder kopáku. Uvolní místo v mixu a vytváří známé „pumpování“ house a EDM."

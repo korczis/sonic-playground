@@ -8,6 +8,9 @@ genre = ["alternative rock", "blues", "pop"]
 sentiment = ["defiant", "gritty", "provocative"]
 
 [extra]
+country = "NZ"
+isrc = "AUUM71601071"
+musicbrainz = { recording = "d06a7964-9341-4fce-99db-415c3b4e76ee", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "b641c79b-c01c-49e2-94ef-e029141e6f84" }
 release_year = "2016"
 album = "Ivory"
 youtube = "https://www.youtube.com/embed/4RY1f4QbbzA"

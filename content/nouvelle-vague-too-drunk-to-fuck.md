@@ -8,6 +8,10 @@ genre = ["bossa nova", "new wave", "alternative"]
 sentiment = ["playful", "ironic", "chill"]
 
 [extra]
+release_year = "2004"
+country = "FR"
+isrc = "FR13Z2400037"
+musicbrainz = { recording = "3fae541d-e7fc-414c-bcf9-ea01f8f54108", artist = "b017a7ae-e5ee-4675-bb13-c83346134971", release = "1de06cad-da12-4e38-a21d-97985444d4d7" }
 youtube = "https://www.youtube.com/embed/0wpuCypVneA"
 +++
 

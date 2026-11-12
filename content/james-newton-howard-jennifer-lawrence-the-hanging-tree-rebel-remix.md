@@ -8,6 +8,9 @@ genre = ["folk", "electronic", "remix"]
 sentiment = ["haunting", "defiant", "intense"]
 
 [extra]
+country = "US"
+isrc = "USUG11402063"
+musicbrainz = { recording = "cc20856f-3c15-4f00-ab9b-c752e93703ed", artist = "f6580b26-77f7-4a7b-8513-6db0476e8f21", release = "64d36824-bf22-42d1-b4c2-e516f586492e" }
 release_year = "2014"
 album = "The Hanging Tree (Rebel Remix)"
 youtube = "https://www.youtube.com/embed/YNrBBfqWpzE"

@@ -8,6 +8,10 @@ genre = ["indie folk", "folk"]
 sentiment = ["heartfelt", "intimate", "melancholic"]
 
 [extra]
+release_year = "2014"
+country = "IL"
+isrc = "IL1459000009"
+musicbrainz = { recording = "fd54b6e5-aa2c-446e-940f-ba384d2c2e47", artist = "047e3ab6-b8ea-4935-89ec-c9446e6b4440", release = "90731fae-ce82-4565-a37d-324d5aea4a5f" }
 album = "Exit Inside (Deluxe Edition)"
 youtube = "https://www.youtube.com/embed/P87-ZBnaaKU"
 +++

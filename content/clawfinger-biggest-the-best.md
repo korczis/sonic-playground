@@ -8,6 +8,10 @@ genre = ["rap metal", "industrial", "alternative rock"]
 sentiment = ["aggressive", "defiant", "provocative"]
 
 [extra]
+release_year = "1997"
+country = "SE"
+isrc = "SELBD9707030"
+musicbrainz = { recording = "0cd87b4d-a115-4e29-a020-815a8ee25ead", artist = "f16d25c6-556f-42f9-b648-5f48a8f96ec2", release = "b99714a7-49e6-4ab5-bed7-250cadc3f6ed" }
 youtube = "https://www.youtube.com/embed/4yG0QE9ce3U"
 +++
 

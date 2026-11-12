@@ -8,6 +8,9 @@ genre = ["house", "disco", "electronic"]
 sentiment = ["groovy", "euphoric", "playful"]
 
 [extra]
+country = "GB"
+isrc = "AUFF01500736"
+musicbrainz = { recording = "7da51232-7bc8-444c-bb8c-1b42b7da47e5", artist = "a2b18c06-8160-436c-a9bc-c9317574999e", release = "5b6add73-9dbe-4212-93e5-5fe6e17558fb" }
 release_year = "2015"
 album = "Birthday Card"
 youtube = "https://www.youtube.com/embed/OEEQwUjqa7U"

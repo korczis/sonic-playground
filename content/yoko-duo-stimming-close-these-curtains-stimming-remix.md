@@ -8,6 +8,7 @@ genre = ["deep house", "minimal", "electronic"]
 sentiment = ["melancholic", "hypnotic", "intimate"]
 
 [extra]
+musicbrainz = { recording = "4345110d-2441-47f7-8aab-e8e4b5dcabb2", artist = "54f6b03d-f11d-4f25-9d2b-cb559828f23c", release = "7eec21fa-0014-405b-aea5-6fe3d36d4e38" }
 publisher = "Fauxpas Musik"
 release_year = "2013"
 album = "Remixes"
