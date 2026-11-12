@@ -348,6 +348,25 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // Charts load when they come near the viewport, never before: a track page read from the top
+  // does not request ECharts or the catalogue (static/js/charts.js NEAR); scrolled to its graph,
+  // it does, and builds the graph.
+  {
+    // The listener is in place before the page loads: an eager request at load must be seen.
+    const { context, page } = await open(browser, 'about:blank', desktop);
+    const asked = [];
+    page.on('request', (r) => { if (/vendor\/echarts|data\/catalog\.json/.test(r.url())) asked.push(new URL(r.url()).pathname.split('/').pop()); });
+    await page.goto(at(sample.path), { waitUntil: 'load' });
+    await page.waitForTimeout(2500);
+    check(asked.length === 0, `track: read from the top, no chart code or catalogue is fetched (${asked.join(', ') || 'none'})`);
+    await page.locator('#chart-neighbourhood').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => Number(document.documentElement.dataset.chartsState) > 0, null, { timeout: 15000 }).catch(() => {});
+    const graph = await page.evaluate(seriesBuilt);
+    check(asked.length >= 2 && graph.length === 1 && graph[0].built > 0,
+      `track: scrolled to the graph, ECharts and the catalogue load and the graph is built (${asked.join(', ')})`);
+    await context.close();
+  }
+
   // Track page: video and related tracks.
   {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);
