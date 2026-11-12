@@ -30,6 +30,8 @@
       if (drawer && drawer.isVisible && drawer.isVisible()) drawer.hide();
       sidebar.removeAttribute('aria-hidden');
       sidebar.removeAttribute('inert');
+      var shell = document.getElementById('main-content');
+      if (shell) shell.removeAttribute('inert');
       return;
     }
     var closed = sidebar.classList.contains('-translate-x-full');

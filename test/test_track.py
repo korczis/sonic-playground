@@ -79,6 +79,51 @@ class Names(unittest.TestCase):
     def test_only_platform_suffixes_are_stripped(self):
         self.assertEqual(track.split_name("Virginia Plain", "Roxy Music"), ("Roxy Music", "Virginia Plain"))
 
+    def test_exact_channel_match_beats_a_prefix(self):
+        # review round 2: "Talk | Talk Talk" from the channel "Talk Talk"
+        self.assertEqual(track.split_name("Talk | Talk Talk", "Talk Talk"), ("Talk Talk", "Talk"))
+
+    def test_ambiguous_prefix_falls_back_to_the_convention(self):
+        self.assertEqual(track.split_name("Moderat - Moderato", "Mod"), ("Moderat", "Moderato"))
+
+
+class Robustness(unittest.TestCase):
+    def test_a_malformed_draft_does_not_break_the_engine(self):
+        # review round 2: a draft with extra = "TODO" crashed every resolve/new
+        with tempfile.TemporaryDirectory() as tmp:
+            old = cat.CONTENT
+            cat.CONTENT = Path(tmp)
+            try:
+                (Path(tmp) / "x-y.md").write_text('+++\ntitle = 3\ndraft = true\nextra = "TODO"\n+++\n',
+                                                  encoding="utf-8")
+                plan = track.resolve("Moderat - A New Error", namespace())
+                self.assertTrue(plan["complete"])
+                self.assertIsNone(plan["exists"])
+            finally:
+                cat.CONTENT = old
+
+    def test_refresh_adds_a_key_when_extra_is_not_the_last_table(self):
+        # review round 2: [extra] before [taxonomies] made refresh claim a change it did not make
+        with tempfile.TemporaryDirectory() as tmp:
+            old = cat.CONTENT
+            cat.CONTENT = Path(tmp)
+            try:
+                path = Path(tmp) / "moderat-a-new-error.md"
+                path.write_text(
+                    '+++\ntitle = "Moderat - A New Error"\ndate = "2026-01-02"\n'
+                    'description = "A slow-burning electronic piece with a hypnotic pulse."\n\n'
+                    '[extra]\nyoutube = "https://www.youtube.com/embed/dQw4w9WgXcQ"\n\n'
+                    '[taxonomies]\ngenre = ["electronic"]\nsentiment = ["hypnotic"]\n+++\n\nProse.\n',
+                    encoding="utf-8")
+                code, report = capture(track.refresh, str(path), argparse.Namespace(
+                    youtube=None, album="III", release_year="2016", publisher=None))
+                self.assertEqual(code, 0, report)
+                meta = tomllib.loads(path.read_text().split("+++")[1])
+                self.assertEqual((meta["extra"]["album"], meta["extra"]["release_year"]), ("III", "2016"))
+                self.assertIn("Prose.", path.read_text())
+            finally:
+                cat.CONTENT = old
+
 
 class Resolve(unittest.TestCase):
     def setUp(self):

@@ -65,9 +65,15 @@
       if (name !== skip && s[name] && it.terms[name].indexOf(s[name]) < 0) return false;
     }
     if (!s.q) return true;
-    var words = s.q.split(/\s+/);
+    // The query is tokenised exactly as scripts/catalog.py tokenises the reviews (letters and
+    // digits; punctuation splits), so "four-on-the-floor" finds a review that says it. The
+    // review index keeps words of 3+ letters; shorter tokens match the card text only.
+    var words = s.q.split(/[^a-z0-9]+/).filter(Boolean);
     for (var w = 0; w < words.length; w += 1) {
-      if (it.text.indexOf(words[w]) < 0 && it.review.indexOf(words[w]) < 0) return false;
+      var word = words[w];
+      var inCard = it.text.indexOf(word) >= 0;
+      var inReview = word.length > 2 && it.review.indexOf(word) >= 0;
+      if (!inCard && !inReview) return false;
     }
     return true;
   }

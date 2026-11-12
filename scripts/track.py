@@ -25,7 +25,7 @@ the track and replaces every TODO(write); `check` then proves the article meets 
 
     python3 scripts/track.py resolve "<link or Artist - Track>" [--offline]
     python3 scripts/track.py new "<link or Artist - Track>" --genre g ... --sentiment s ...
-                             [--mood m ...] [--tags t ...] [--description "..."] [--artist A]
+                             [--mood m ...] [--description "..."] [--artist A]
                              [--track T] [--youtube URL] [--date YYYY-MM-DD] [--dry-run]
                              [--offline] [--force]
     python3 scripts/track.py refresh content/<file>.md [--youtube URL] [--album A]
@@ -146,10 +146,18 @@ def split_name(name: str, channel: str = "") -> tuple[str, str]:
         if sep in name:
             left, right = (p.strip() for p in name.split(sep, 1))
             if artist_hint:
-                if fold(left).startswith(artist_hint) or artist_hint.startswith(fold(left) or "-"):
+                # An exact match decides; a prefix match decides only when one side alone has it.
+                if fold(left) == artist_hint and fold(right) != artist_hint:
                     return left, right
-                if fold(right).startswith(artist_hint) or artist_hint.startswith(fold(right) or "-"):
+                if fold(right) == artist_hint and fold(left) != artist_hint:
                     return right, left
+
+                def prefixed(side: str) -> bool:
+                    f = fold(side)
+                    return bool(f) and (f.startswith(artist_hint) or artist_hint.startswith(f))
+
+                if prefixed(left) != prefixed(right):
+                    return (left, right) if prefixed(left) else (right, left)
             return (right, left) if sep == " | " else (left, right)
     artist = CHANNEL_NOISE.sub("", channel).strip()
     if artist and name.lower().startswith(artist.lower()):
@@ -175,11 +183,15 @@ def corpus() -> list[dict]:
         except (ValueError, tomllib.TOMLDecodeError):
             found.append(entry)
             continue
-        extra = meta.get("extra", {}) or {}
-        artist, track, _ = cat.infer_artist_track(str(meta.get("title", "")), path.stem)
+        # A draft may be malformed in any way TOML allows; read only what has the right type.
+        extra = meta.get("extra") if isinstance(meta.get("extra"), dict) else {}
+        title = meta.get("title") if isinstance(meta.get("title"), str) else ""
+        artist, track, _ = cat.infer_artist_track(title, path.stem)
         match = cat.YOUTUBE_ID.search(str(extra.get("youtube", "")))
-        entry.update(title=meta.get("title", ""), artist=extra.get("artist") or artist,
-                     track=extra.get("track") or track, draft=bool(meta.get("draft")),
+        entry.update(title=title,
+                     artist=extra["artist"] if isinstance(extra.get("artist"), str) else artist,
+                     track=extra["track"] if isinstance(extra.get("track"), str) else track,
+                     draft=meta.get("draft") is True,
                      youtube=match.group(1) if match else None)
         found.append(entry)
     return found
@@ -393,16 +405,20 @@ def refresh(path: str, args) -> int:
     for key, value in updates.items():
         new_line = f"{key} = {toml_string(value)}"
         pattern = re.compile(rf"^\s*#?\s*{key}\s*=")
-        for i in range(start + 1, len(lines)):
-            if lines[i].startswith("["):
-                break
-            if pattern.match(lines[i]):
-                lines[i] = new_line
-                break
-        else:
+        end = next((i for i in range(start + 1, len(lines)) if lines[i].lstrip().startswith("[")),
+                   len(lines))  # [extra] ends at the next table or at the end
+        hit = next((i for i in range(start + 1, end) if pattern.match(lines[i])), None)
+        if hit is None:
             lines.insert(start + 1, new_line)
+        else:
+            lines[hit] = new_line
     rewritten = "+++\n" + "\n".join(lines) + "\n+++\n" + body
     errors, _ = prove(rewritten, file.name, {})
+    if not errors:
+        # Prove the article now says what was asked, not just that it still parses.
+        extra = tomllib.loads(cat.split_front_matter(rewritten, file.name)[0]).get("extra", {})
+        errors = [f"extra.{k} is {extra.get(k)!r} after the rewrite, not {v!r}"
+                  for k, v in updates.items() if extra.get(k) != v]
     if errors:
         out({"file": path, "written": False, "errors": errors})
         return 1

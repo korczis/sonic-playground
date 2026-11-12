@@ -59,7 +59,7 @@
   data-genre="{{ t.facets.genre | join(sep='|') }}"
   data-sentiment="{{ t.facets.sentiment | join(sep='|') }}"
   data-mood="{{ t.facets.mood | join(sep='|') }}"
-  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }} {{ t.facets.genre | join(sep=' ') }} {{ t.facets.sentiment | join(sep=' ') }} {{ t.facets.mood | join(sep=' ') }} {{ t.facets.tags | join(sep=' ') }}">
+  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }} {{ t.facets.genre | join(sep=' ') }} {{ t.facets.sentiment | join(sep=' ') }} {{ t.facets.mood | join(sep=' ') }}">
   <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
     {%- if thumb %}
     <img src="{{ thumb }}" alt="" data-thumb loading="lazy" decoding="async" width="480" height="360" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">

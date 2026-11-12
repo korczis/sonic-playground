@@ -38,10 +38,13 @@ CONTENT = ROOT / "content"
 STATIC = ROOT / "static"
 OUTPUT = STATIC / "data" / "catalog.json"
 SEARCH = STATIC / "data" / "search.json"
+VIDEO_STATUS = ROOT / "data" / "videos.json"  # written by scripts/probe-videos.py --write
 CONTRACT = ROOT / "data" / "track.schema.json"
 SCHEMA = "sonic-catalog/v1"
 
 TRACK_SCHEMA = json.loads(CONTRACT.read_text(encoding="utf-8"))
+GONE_VIDEOS = (json.loads(VIDEO_STATUS.read_text(encoding="utf-8"))["gone"]
+               if VIDEO_STATUS.exists() else {})
 RULES = TRACK_SCHEMA["x-sonic"]
 FACETS = tuple(TRACK_SCHEMA["properties"]["taxonomies"]["properties"])
 FACET_WEIGHTS = RULES["facet_weights"]
@@ -203,6 +206,7 @@ class Track:
     extra: dict = field(default_factory=dict)
     outline: list = field(default_factory=list)
     index: str = ""
+    video_gone: bool = False
 
 
 def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> Track | None:
@@ -239,6 +243,11 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
 
     match = YOUTUBE_ID.search(str(extra.get("youtube", "")))
     youtube_id = match.group(1) if match else None
+    # A video YouTube no longer serves (data/videos.json) is neither shown nor its still
+    # requested: each would be a console error on every page that lists the track.
+    video_gone = bool(youtube_id) and youtube_id in GONE_VIDEOS
+    if video_gone:
+        youtube_id = None
 
     thumbnail, local = "", False
     cover = extra.get("cover_image")
@@ -277,6 +286,7 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
         inferred=rule, date=when, description=description, facets=facets,
         youtube_id=youtube_id, thumbnail=thumbnail, thumbnail_local=local,
         words=len(re.findall(r"\w+", body)), extra=kept_extra, outline=headings(body),
+        video_gone=video_gone,
         index=" ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
                                if len(w) > 2})),
     )
@@ -384,6 +394,7 @@ def build(errors: list[str]) -> dict:
             "tracks": len(tracks),
             "artists": len(artists),
             "videos": sum(1 for t in tracks if t.youtube_id),
+            "videos_gone": sum(1 for t in tracks if t.video_gone),
             "words": sum(t.words for t in tracks),
             "median_words": word_counts[len(word_counts) // 2],
             "first": min((t.date for t in tracks), default=""),
@@ -406,6 +417,7 @@ def build(errors: list[str]) -> dict:
                 "description": t.description, "facets": t.facets, "youtube": t.youtube_id,
                 "thumbnail": t.thumbnail, "thumbnail_local": t.thumbnail_local,
                 "words": t.words, "extra": t.extra, "related": rel[t.source],
+                "video_gone": t.video_gone,
             }
             for t in tracks
         ],
