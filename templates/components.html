@@ -49,7 +49,8 @@
 {% endcomponent input_icon %}
 
 {#- Facet badges (Pro badge, linking to the taxonomy term). `kind` picks the tone. -#}
-{% component facet_badges(terms, kind, limit=12, size="xs") %}
+{#- terms: the track's terms; or ranked: the catalogue's [{term, count}], shown with the count. -#}
+{% component facet_badges(terms, kind, limit=12, size="xs", ranked=[]) %}
 {%- set tones = {
   "genre": "bg-primary-100 text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300 dark:hover:bg-primary-800",
   "sentiment": "bg-pink-100 text-pink-800 hover:bg-pink-200 dark:bg-pink-900 dark:text-pink-300 dark:hover:bg-pink-800",
@@ -61,6 +62,9 @@
 {%- if kind in tones %}{% set tone = tones[kind] %}{% else %}{% set tone = "bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600" %}{% endif -%}
 {%- for term in terms[:limit] -%}
 <a href="{{ get_taxonomy_url(kind=kind, term=term) }}" class="inline-flex items-center rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{{ term }}</a>
+{% endfor -%}
+{%- for r in ranked[:limit] -%}
+<a href="{{ get_taxonomy_url(kind=kind, term=r.term) }}" class="inline-flex items-center gap-1.5 rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{{ r.term }}<span class="opacity-70">{{ r.count }}</span></a>
 {% endfor -%}
 {% endcomponent facet_badges %}
 
@@ -384,7 +388,7 @@
 {% component featured_track(t, l) %}
 {%- set href = get_url(path="@/" ~ t.source) -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
-<section aria-labelledby="featured-title" class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" data-playlist id="featured">
+<section aria-labelledby="featured-title" class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" data-playlist id="featured" data-featured="{{ t.source }}">
   <div class="grid lg:grid-cols-2" data-track data-source="{{ t.source }}">
     <a href="{{ href }}" class="group relative block aspect-video overflow-hidden bg-gray-900 lg:aspect-auto lg:min-h-80" tabindex="-1" aria-hidden="true">
       {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100">

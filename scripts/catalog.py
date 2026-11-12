@@ -62,6 +62,12 @@ FACET_WEIGHTS = RULES["facet_weights"]
 RELATED_LIMIT = RULES["related_limit"]
 PLACEHOLDER_HOSTS = tuple(RULES["placeholder_hosts"])
 UNFINISHED = RULES["unfinished_marker"]
+# Phrases that would fit any track say nothing about this one (rule educational-article).
+CLICHES = tuple(c.lower() for c in RULES["cliches"])
+SHARED_PARAGRAPH = RULES["shared_paragraph_chars"]
+WORDS_MIN = tomllib.loads((ROOT / "data" / "review.toml").read_text(encoding="utf-8"))["defaults"]["words_min"]
+# The credit's first name: "A & B", "A x B", "A, B", "A feat. B" all name A first.
+MAIN_ARTIST = re.compile(r"\s*(?:,|&| x | and |\bfeat\.?|\bft\.|\bfeaturing\b|\bvs\.?)\s*", re.I)
 OUTLINE_THRESHOLD = RULES["outline_threshold"]
 TOP_PAIRS = 24
 YOUTUBE_ID = re.compile(r"/embed/([A-Za-z0-9_-]{11})$")
@@ -319,7 +325,9 @@ def yearbooks(tracks: list[Track], errors: list[str]) -> tuple[list[dict], dict[
             items.append({"n": item["n"], "title": item.get("title", ""),
                           "artist": ", ".join(item.get("artists", [])), "status": r["status"],
                           "source": r["source"] if r["status"] == "present" else None})
-            if r["status"] == "present":
+            # Two recordings of one song in one year (a single and its album version) are one
+            # membership, at the higher place.
+            if r["status"] == "present" and not any(m["year"] == p["year"] for m in member_of[r["source"]]):
                 member_of[r["source"]].append({"year": p["year"], "n": item["n"]})
         present = [by_source[i["source"]] for i in items if i["source"]]
         artists = Counter(t.artist for t in present)
@@ -397,6 +405,7 @@ class Track:
     outline: list = field(default_factory=list)
     index: str = ""
     video_gone: bool = False
+    paragraphs: list = field(default_factory=list)  # the long ones, normalised: shared-text check
 
 
 def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> Track | None:
@@ -494,6 +503,11 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
             err(f"{{{{ <concept_link name=\"{target}\" /> }}}} is linked but not in taxonomies.concept; add it there")
     if UNFINISHED in body or UNFINISHED in description:
         err(f"has an unfinished section ({UNFINISHED}); write it or remove it")
+    prose = rendered.lower()
+    for phrase in CLICHES:
+        if phrase in prose:
+            err(f"'{phrase}' would fit any track; say what this one does instead "
+                "(x-sonic.cliches in data/track.schema.json)")
 
     for term in facets.get("concept", []):
         if slugify(term) not in KNOWN_CONCEPTS:
@@ -506,19 +520,58 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
             err(f"extra.connections names {c.get('source')}, which is no review")
         if isinstance(c, dict) and c.get("source") == rel:
             err("extra.connections names the review itself")
+    # The review is about this recording: its prose names the artist and the song (a review
+    # pasted onto the wrong track names someone else's), and it has the length to say something.
+    # A skeleton is refused as unfinished above; these apply once it is written.
+    written = UNFINISHED not in body
+    folded = fold(rendered)
+    main = MAIN_ARTIST.split(artist)[0] if artist and written else ""
+    if main and fold(main) not in folded:
+        err(f"the review never names its artist ({main})")
+    named = re.sub(r"\s*[\(\[][^\)\]]*[\)\]]", "", song(track)) if track and written else ""
+    if named and fold(named) not in folded:
+        err(f"the review never names its track ({named})")
+    body_words = len(re.findall(r"\w+", body))
+    if written and body_words < WORDS_MIN and not extra.get("edu_exempt"):
+        err(f"{body_words} words; a review has at least {WORDS_MIN} (data/review.toml)")
+    paragraphs = sorted({re.sub(r"\s+", " ", p.strip().lower()) for p in re.split(r"\n\s*\n", rendered)
+                         if len(p.strip()) >= SHARED_PARAGRAPH and not p.strip().startswith(("#", "{{"))})
     kept_extra = {k: extra[k] for k in CATALOG_EXTRA if k in extra}
     return Track(
         source=rel, path=f"{slugify(path.stem)}/", title=title, artist=artist, track=track,
         inferred=rule, date=when, description=description, facets=facets,
         youtube_id=youtube_id, thumbnail=thumbnail, thumbnail_local=local,
-        words=len(re.findall(r"\w+", body)), extra=kept_extra, outline=headings(body),
-        video_gone=video_gone, full_extra=extra,
+        words=body_words, extra=kept_extra, outline=headings(body),
+        video_gone=video_gone, full_extra=extra, paragraphs=paragraphs,
         index=" ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
                                if len(w) > 2})),
     )
 
 
 # --- What the corpus says. -------------------------------------------------------------------
+
+def uniqueness(tracks: list[Track]) -> list[str]:
+    """One song, one review (rule yearbook-integrity): no two reviews share an artist and song,
+    an ISRC or a video; no paragraph is copied from one review into another."""
+    problems = []
+    keys = (("artist and song", lambda t: (fold(t.artist), fold(song(t.track))) if t.track else None),
+            ("ISRC", lambda t: t.full_extra.get("isrc")),
+            ("video", lambda t: t.youtube_id))
+    for what, key in keys:
+        owners: dict = defaultdict(list)
+        for t in tracks:
+            if key(t):
+                owners[key(t)].append(t.source)
+        problems += [f"{', '.join(sorted(v))}: the same {what} in two reviews; one song has one review"
+                     for v in owners.values() if len(v) > 1]
+    shared: dict[str, list[str]] = defaultdict(list)
+    for t in tracks:
+        for p in t.paragraphs:
+            shared[p].append(t.source)
+    problems += [f"{', '.join(sorted(v))}: a paragraph is copied between reviews ('{p[:60]}...')"
+                 for p, v in shared.items() if len(v) > 1]
+    return sorted(problems)
+
 
 def related_to(facets: dict[str, list[str]], tracks: list[Track], exclude: str = "") -> list[dict]:
     """Weighted Jaccard over the facet terms; ties go to the newer, then the title."""
@@ -603,6 +656,7 @@ def build(errors: list[str]) -> dict:
         seen[t.path] = t.source
 
     tracks.sort(key=lambda t: (t.date, t.title), reverse=True)
+    errors += uniqueness(tracks)
     rel = related(tracks)
     books, member_of = yearbooks(tracks, errors)
     # One artist, one home country: the reviews of an artist must agree (Mount Sims was DE in some

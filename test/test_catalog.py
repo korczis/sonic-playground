@@ -29,7 +29,8 @@ sentiment = ["uplifting"]
 youtube = "https://www.youtube.com/embed/rVeMiVU77wo"
 {extra}+++
 
-Body text with words.
+Bakermat built The River on a saxophone hook (Lulu Rouge wrote Lulu's Theme, a fixture of the
+artist override). """ + " ".join(f"detail{i}" for i in range(320)) + """
 """
 
 
@@ -146,6 +147,42 @@ class Contract(unittest.TestCase):
                                     'listen_for = [{ what = "the drums come in hard" }, { part = "intro", what = "a quiet pad" }, { at = "1:00", what = "the drop arrives" }]\n'
                                     'questions = ["What changes in the middle?", "Why does it end abruptly?"]\n')
         self.assertTrue(any("listen_for[0] needs a part" in e for e in errors))
+
+    def test_a_cliche_is_refused(self):
+        self.assertTrue(any("would fit any track" in e for e in self._append("\nA sonic journey.\n")))
+
+    def test_the_review_names_its_artist_and_track(self):
+        _, errors = self.load(title="Someone Else - Another Song", name="someone-else-another-song.md")
+        self.assertTrue(any("never names its artist (Someone Else)" in e for e in errors))
+        self.assertTrue(any("never names its track (Another Song)" in e for e in errors))
+        # the credit's first name is enough; a version in brackets is not required
+        _, errors = self.load(title="Bakermat & Friends - The River (Extended Mix)")
+        self.assertFalse(any("never names" in e for e in errors))
+
+    def test_a_short_review_is_refused_unless_exempt(self):
+        short = GOOD.split("+++")
+        path_errors = []
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        old = catalog.CONTENT
+        catalog.CONTENT = Path(tmp.name)
+        self.addCleanup(setattr, catalog, "CONTENT", old)
+        for exempt, refused in (("", True), ('edu_exempt = "no source describes it"\n', False)):
+            path = catalog.CONTENT / "bakermat-the-river.md"
+            path.write_text("+++" + short[1].format(title="Bakermat - The River", extra=exempt)
+                            + "+++\n\nBakermat made The River.\n", encoding="utf-8")
+            path_errors = []
+            catalog.load_track(path, path_errors)
+            self.assertEqual(any("a review has at least" in e for e in path_errors), refused, exempt)
+
+    def test_one_song_one_review(self):
+        a, _ = self.load()
+        b, _ = self.load(name="bakermat-the-river-2.md")
+        problems = catalog.uniqueness([a, b])
+        self.assertTrue(any("the same artist and song" in p for p in problems))
+        self.assertTrue(any("the same video" in p for p in problems))
+        self.assertTrue(any("a paragraph is copied" in p for p in problems))
+        self.assertEqual(catalog.uniqueness([a]), [])
 
     def test_artist_override(self):
         track, errors = self.load(title="Lulu's Theme", extra='artist = "Lulu Rouge"\n', name="x.md")

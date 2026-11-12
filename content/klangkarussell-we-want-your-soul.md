@@ -18,7 +18,7 @@ artist = "Klangkarussell"
 track = "We Want Your Soul"
 album = "Netzwerk"
 publisher = "Vertigo / Universal"
-youtube = "https://www.youtube.com/embed/4rYEigiNoPc"
+youtube = "https://www.youtube.com/embed/s8cY8-d8ENM"
 connections = [
   { source = "adam-freeland-do-you.md", why = "Adam Freeland, who wrote and first released We Want Your Soul, on his own later record." },
   { source = "freeland-under-control.md", why = "The lead single of Freeland's band album Cope, the same producer's breakbeat roots in a rock setting." },
@@ -116,7 +116,7 @@ The verses are {{ <concept_link name="spoken word" /> }} delivered by a speech s
 
 ## Artistic Context
 
-Klangkarussell are Tobias Rieser and Adrian Held, a duo formed in Salzburg, Austria, in 2011 and best known for "Sonnentanz", their 2012 debut single and biggest hit. Their debut album Netzwerk, released on 28 July 2014 by Vertigo, Capitol and Universal, reached number 5 in Austria, 8 in Germany and 2 in Switzerland, and includes this remix. Adam Freeland is a British DJ and producer associated with the breakbeat scene; his original "We Want Your Soul", written and produced with Damian Taylor, reached number 35 in the UK in 2003. The main video embedded here is a third-party upload.
+Klangkarussell are Tobias Rieser and Adrian Held, a duo formed in Salzburg, Austria, in 2011 and best known for "Sonnentanz", their 2012 debut single and biggest hit. Their debut album Netzwerk, released on 28 July 2014 by Vertigo, Capitol and Universal, reached number 5 in Austria, 8 in Germany and 2 in Switzerland, and includes this remix. Adam Freeland is a British DJ and producer associated with the breakbeat scene; his original "We Want Your Soul", written and produced with Damian Taylor, reached number 35 in the UK in 2003.
 
 ## Impact and Reception
 

@@ -127,6 +127,105 @@ class Import(unittest.TestCase):
         self.assertIn("skip", items[1])
 
 
+class Http(unittest.TestCase):
+    """http_get against a fake urlopen: the rate limit is waited out, a refused playlist is said
+    to be Spotify's policy, a missing authorisation is said as such."""
+    def setUp(self):
+        self.sleeps = []
+        for name, value in (("token", lambda: "t"), ("time", type("T", (), {
+                "sleep": staticmethod(self.sleeps.append), "time": staticmethod(lambda: 0)}))):
+            old = getattr(spotify, name)
+            setattr(spotify, name, value)
+            self.addCleanup(setattr, spotify, name, old)
+
+    def answer(self, *responses):
+        calls = iter(responses)
+
+        def urlopen(request, timeout=0):
+            r = next(calls)
+            if isinstance(r, int):
+                headers = {"Retry-After": "3"} if r == 429 else {}
+                raise spotify.urllib.error.HTTPError(request.full_url, r, "x", headers, None)
+
+            class Body:
+                def __enter__(self): return self
+                def __exit__(self, *a): return False
+                def read(self): return json.dumps(r).encode()
+            return Body()
+        old = spotify.urllib.request.urlopen
+        spotify.urllib.request.urlopen = urlopen
+        self.addCleanup(setattr, spotify.urllib.request, "urlopen", old)
+
+    def test_the_rate_limit_is_waited_out(self):
+        self.answer(429, 503, {"ok": 1})
+        self.assertEqual(spotify.http_get("https://api.spotify.com/v1/x"), {"ok": 1})
+        self.assertEqual(self.sleeps[0], 4)  # Retry-After 3, plus one
+
+    def test_a_refused_playlist_names_the_policy(self):
+        self.answer(403)
+        with self.assertRaises(spotify.SpotifyError) as ctx:
+            spotify.http_get("https://api.spotify.com/v1/playlists/x/tracks")
+        self.assertIn("Spotify-owned playlist", str(ctx.exception))
+
+    def test_a_rate_limit_that_never_ends_fails(self):
+        self.answer(*([429] * 6))
+        with self.assertRaises(spotify.SpotifyError):
+            spotify.http_get("https://api.spotify.com/v1/x")
+
+    def test_without_authorisation_the_command_says_so(self):
+        old = spotify.TOKEN
+        spotify.TOKEN = Path(tempfile.gettempdir()) / "no-such-spotify-token.json"
+        self.addCleanup(setattr, spotify, "TOKEN", old)
+        token = spotify.__dict__.get("token")
+        setattr(spotify, "token", type(self).real_token)
+        self.addCleanup(setattr, spotify, "token", token)
+        with self.assertRaises(spotify.SpotifyError) as ctx:
+            spotify.token()
+        self.assertIn("not authorised", str(ctx.exception))
+
+    real_token = staticmethod(spotify.token)
+
+
+class Identity(unittest.TestCase):
+    """resolve_item over a small fixture index: versions that are the same song match, versions
+    that are another recording do not, several candidates are ambiguous."""
+    def setUp(self):
+        reviews = [("bicep-glue.md", "Bicep", "Glue"),
+                   ("royksopp-eple.md", "Röyksopp", "Eple"),
+                   ("moderat-bad-kingdom.md", "Moderat", "Bad Kingdom"),
+                   ("moderat-bad-kingdom-dj-koze-remix.md", "Moderat", "Bad Kingdom (DJ Koze Remix)"),
+                   ("a-one.md", "Twin", "Same Name"), ("b-one.md", "Twin", "Same Name - Remastered 2011")]
+        self.index = cat.identity_index([{"source": s, "artist": a, "track": t} for s, a, t in reviews])
+        self.index["isrc"]["GBAAA0000001"] = {"bicep-glue.md"}
+
+    def of(self, title, *artists, **kw):
+        return cat.resolve_item({"n": 1, "title": title, "artists": list(artists), **kw}, self.index)
+
+    def test_versions_of_the_same_recording_match(self):
+        for title in ("Glue", "Glue - Radio Edit", "Glue (Remastered 2019)", "Glue - Extended Version",
+                      "Glue (feat. Someone)", "glue"):
+            self.assertEqual(self.of(title, "Bicep")["source"], "bicep-glue.md", title)
+        self.assertEqual(self.of("Glue", "Bicep", "Someone Featured")["source"], "bicep-glue.md")
+
+    def test_unicode_and_spelling_fold(self):
+        self.assertEqual(self.of("Eple", "Royksopp")["source"], "royksopp-eple.md")
+        self.assertEqual(self.of("EPLE", "RÖYKSOPP")["source"], "royksopp-eple.md")
+
+    def test_a_remix_or_a_live_recording_is_another_page(self):
+        self.assertEqual(self.of("Bad Kingdom - DJ Koze Remix", "Moderat")["source"],
+                         "moderat-bad-kingdom-dj-koze-remix.md")
+        self.assertEqual(self.of("Bad Kingdom", "Moderat")["source"], "moderat-bad-kingdom.md")
+        self.assertEqual(self.of("Bad Kingdom - Live", "Moderat")["status"], "missing")
+
+    def test_the_isrc_wins_and_collisions_are_never_chosen(self):
+        self.assertEqual(self.of("Another Title", "X", isrc="GBAAA0000001")["by"], "isrc")
+        r = self.of("Same Name", "Twin")
+        self.assertEqual((r["status"], r["by"]), ("ambiguous", "a-one.md, b-one.md"))
+
+    def test_an_override_names_the_review(self):
+        self.assertEqual(self.of("Whatever", "Y", review="bicep-glue.md")["by"], "override")
+
+
 class Derivation(unittest.TestCase):
     """catalog.py: items resolve to one review each; a song in two years is one page with two
     memberships; ambiguity and gaps are reported, never guessed."""
@@ -160,6 +259,25 @@ class Derivation(unittest.TestCase):
         self.assertEqual(member_of[t.source], [{"year": 2020, "n": 1}, {"year": 2021, "n": 7}])
         y2020 = books[1]
         self.assertEqual((y2020["items"], y2020["present"], y2020["missing"]), (2, 1, 1))
+
+    def test_two_recordings_of_one_song_in_one_year_are_one_membership(self):
+        t = self.sample
+        self.book(2016, [{"n": 3, "title": t.track, "artists": [t.artist]},
+                         {"n": 9, "title": t.track + " - Radio Edit", "artists": [t.artist]}])
+        books, member_of = cat.yearbooks(self.tracks, [])
+        self.assertEqual(member_of[t.source], [{"year": 2016, "n": 3}])
+        self.assertEqual((books[0]["items"], books[0]["songs"]), (2, 1))
+
+    def test_an_empty_yearbook_counts_nothing(self):
+        self.book(2015, [])
+        books, _ = cat.yearbooks(self.tracks, [])
+        self.assertEqual((books[0]["items"], books[0]["songs"], books[0]["present"]), (0, 0, 0))
+
+    def test_derivation_is_deterministic(self):
+        t = self.sample
+        self.book(2020, [{"n": 1, "title": t.track, "artists": [t.artist]}])
+        first = json.dumps(cat.yearbooks(self.tracks, []), sort_keys=True)
+        self.assertEqual(json.dumps(cat.yearbooks(list(reversed(self.tracks)), []), sort_keys=True), first)
 
     def test_an_isrc_resolves_before_names(self):
         t = next(t for t in self.tracks if t.full_extra.get("isrc")) if any(

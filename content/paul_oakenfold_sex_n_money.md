@@ -16,7 +16,7 @@ musicbrainz = { recording = "bb254b1a-d0bc-42fd-9fc1-ad8c6c10a43e", artist = "7b
 release_year = "2006"
 album = "A Lively Mind"
 publisher = "Perfecto / Maverick"
-youtube = "https://www.youtube.com/embed/E2aoCju-_NQ"
+youtube = "https://www.youtube.com/embed/ZJJo0zGyZAc"
 connections = [
   { source = "pharrell-williams-happy.md", why = "Pharrell Williams' own biggest hit, the same voice and falsetto-tinged cool in a sunnier setting." },
   { source = "daft-punk-pharrell-williams-nile-rodgers-get-lucky-radio-edit.md", why = "Pharrell again as the guest voice on a European electronic producer's track, seven years later." },

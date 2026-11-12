@@ -16,7 +16,7 @@ musicbrainz = { recording = "312f8897-a93b-488f-b903-2c3c5c5761d1", artist = "70
 album = "A Trap I've Built"
 publisher = "RAAR"
 cover_image = "/images/thumbnails/lousiahh-like-a-vice-x.jpg"
-youtube = "https://www.youtube.com/embed/ipXnX43YkQ0"
+youtube = "https://www.youtube.com/embed/TX15SfPxvUc"
 connections = [
   { source = "lousianahh-love-is-a-punk-vitalic-remix.md", why = "Louisahhh again, her voice and punk attitude reworked for the dance floor by Vitalic." },
   { source = "vitalic-cocaine.md", why = "Vitalic, who remixed Louisahhh, makes the same kind of distorted, aggressive French electro and techno." },

@@ -130,7 +130,7 @@ When the beat drops, it does so with relentless energy. Syncopated rhythms and d
 
 ### Midsection: Emotional Intensity
 
-The middle section amplifies the tension, with Louisahhh’s voice taking center stage. Her delivery oscillates between raw vulnerability and commanding authority, while Vitalic’s production layers evolve to maintain an intense, immersive atmosphere.
+The middle section amplifies the tension, with Louisahhh’s voice taking center stage. Her delivery oscillates between raw vulnerability and commanding authority, while Vitalic’s production keeps adding layers, so the intensity never drops.
 
 ### Climax: Punk Meets Techno
 

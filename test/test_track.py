@@ -13,6 +13,9 @@ import sys
 import tempfile
 import tomllib
 import unittest
+
+# Prose that meets the contract's length and names its recording (rule educational-article).
+PROSE = "Moderat built A New Error on a slow pulse. " + " ".join(f"detail{i}" for i in range(320))
 from typing import Any
 from pathlib import Path
 
@@ -121,14 +124,14 @@ class Robustness(unittest.TestCase):
                     '+++\ntitle = "Moderat - A New Error"\ndate = "2026-01-02"\n'
                     'description = "A slow-burning electronic piece with a hypnotic pulse."\n\n'
                     '[extra]\nyoutube = "https://www.youtube.com/embed/dQw4w9WgXcQ"\n\n'
-                    '[taxonomies]\ngenre = ["electronic"]\nsentiment = ["hypnotic"]\n+++\n\nProse.\n',
+                    '[taxonomies]\ngenre = ["electronic"]\nsentiment = ["hypnotic"]\n+++\n\n' + PROSE + '\n',
                     encoding="utf-8")
                 code, report = capture(track.refresh, str(path), argparse.Namespace(
                     youtube=None, album="III", release_year="2016", publisher=None))
                 self.assertEqual(code, 0, report)
                 meta = tomllib.loads(path.read_text().split("+++")[1])
                 self.assertEqual((meta["extra"]["album"], meta["extra"]["release_year"]), ("III", "2016"))
-                self.assertIn("Prose.", path.read_text())
+                self.assertIn(PROSE, path.read_text())
             finally:
                 cat.CONTENT = old
 
@@ -176,7 +179,7 @@ class NewArticle(unittest.TestCase):
                 errors = []
                 cat.load_track(path, errors)
                 self.assertTrue(any("TODO(write)" in e for e in errors), "skeleton is unfinished")
-                path.write_text(text.replace("TODO(write): ", "Written prose. "), encoding="utf-8")
+                path.write_text(text.replace("TODO(write): ", "Written prose. ") + "\n" + PROSE + "\n", encoding="utf-8")
                 errors = []
                 result = cat.load_track(path, errors)
                 self.assertEqual(errors, [])

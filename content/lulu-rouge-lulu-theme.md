@@ -36,7 +36,7 @@ objectives = [
 ]
 listen_for = [
   { part = "the intro", what = "Sparse, echoing synths and minimal beats establish a mysterious tone and a sense of space." },
-  { part = "the main theme", what = "A steady, hypnotic beat under heavy, reverberating bass, the dub influence the album was known for." },
+  { part = "the main theme", what = "A steady, unchanging beat under heavy, reverberating bass, the dub influence the album was known for." },
   { part = "the ambient passage", what = "The beat pauses and airy synths drift, sustained textures carrying the mood on their own." },
   { part = "the final section", what = "The main beat returns with added layers before a slow fade." },
 ]
@@ -90,7 +90,7 @@ The track begins with sparse, echoing synths that establish a mysterious tone. T
 
 ### Main Theme: Hypnotic Pulse
 
-A steady, hypnotic beat takes over, anchoring the track, while delicate synths and heavy, reverberating bass add depth and warmth.
+A steady, unchanging beat takes over, anchoring the track, while delicate synths and heavy, reverberating bass add depth and warmth.
 
 ### Bridge: Ambient Exploration
 
