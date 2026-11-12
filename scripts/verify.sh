@@ -1,15 +1,20 @@
 #!/usr/bin/env bash
-# The local gate, in the order CI runs it (.github/workflows/ci.yml):
+# The gate, in the order CI runs it (.github/workflows/ci.yml). It builds the site exactly once,
+# with the production base_url, and tests those bytes; CI deploys that same directory.
 #   1. scripts/catalog.py --check    content contract; static/data/catalog.json is current
 #   2. unit tests and skill cases    inference, contract, engine; add-song end to end, Pro shell
 #   3. vendored Flowbite and CSS     static/vendor/ and static/css/app.css are current
-#   4. zola build                    internal links are errors (config.toml [link_checker])
-#   5. test/e2e/smoke.cjs            every page class in a real browser, desktop and phone
+#   4. zola build                    production base_url; internal links are errors
+#   5. scripts/check-built.py        every same-origin src/href resolves under the site path,
+#                                    no raw iframe
+#   6. test/e2e/smoke.cjs            the artefact in a real browser, served as production
+#                                    (--artifact <dir> --as <base_url>), desktop and phone
 #
-#   scripts/verify.sh                 the full gate
-#   scripts/verify.sh --no-browser    steps 1-4 (the pre-push hook)
-#   SMOKE_REQUIRED=1 scripts/verify.sh   fail instead of skipping when no browser is available (CI)
-#   CHROME_PATH=<binary>              the browser for step 5 (default: Playwright's chromium)
+#   scripts/verify.sh                   the full gate (the build goes to a temporary directory)
+#   scripts/verify.sh --no-browser      steps 1-5 (the pre-push hook)
+#   PUBLIC_DIR=public scripts/verify.sh keep the tested build there (CI uploads it)
+#   SMOKE_REQUIRED=1                    fail instead of skipping when no browser is available
+#   CHROME_PATH=<binary>                the browser for step 6 (default: Playwright's chromium)
 set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
@@ -49,16 +54,24 @@ else
   step "vendored libraries and CSS: skipped (no node_modules; run npm ci)"
 fi
 
-port=${VERIFY_PORT:-18790}
-public=$(mktemp -d "${TMPDIR:-/tmp}/sonic-public.XXXXXX")
-trap 'rm -rf "$public"' EXIT
-step "zola build (internal links are errors)"
-zola build --force --base-url "http://127.0.0.1:${port}" --output-dir "$public"
+base_url=$(python3 -c 'import tomllib; print(tomllib.load(open("config.toml", "rb"))["base_url"])')
+if [ -n "${PUBLIC_DIR:-}" ]; then
+  public=$(cd "$(dirname "$PUBLIC_DIR")" && pwd)/$(basename "$PUBLIC_DIR")
+else
+  public=$(mktemp -d "${TMPDIR:-/tmp}/sonic-public.XXXXXX")
+  trap 'rm -rf "$public"' EXIT
+fi
+
+step "zola build ($base_url; internal links are errors)"
+zola build --force --output-dir "$public"
+
+step "built site: every local URL resolves under the site path"
+python3 scripts/check-built.py "$public" "$base_url"
 
 if [ "$browser" = 1 ]; then
-  step "browser smoke test"
+  step "browser smoke test on the artefact, served as $base_url"
   set +e
-  node test/e2e/smoke.cjs "$public" "$port"
+  node test/e2e/smoke.cjs --artifact "$public" --as "$base_url"
   code=$?
   set -e
   if [ "$code" = 3 ] && [ "${SMOKE_REQUIRED:-0}" != 1 ]; then

@@ -56,7 +56,7 @@
   data-genre="{{ t.facets.genre | join(sep='|') }}"
   data-sentiment="{{ t.facets.sentiment | join(sep='|') }}"
   data-mood="{{ t.facets.mood | join(sep='|') }}"
-  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }} {{ t.facets.genre | join(sep=' ') }} {{ t.facets.sentiment | join(sep=' ') }}">
+  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }} {{ t.facets.genre | join(sep=' ') }} {{ t.facets.sentiment | join(sep=' ') }} {{ t.facets.mood | join(sep=' ') }} {{ t.facets.tags | join(sep=' ') }}">
   <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
     {%- if thumb %}
     <img src="{{ thumb }}" alt="" data-thumb loading="lazy" decoding="async" width="480" height="360" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">
@@ -93,7 +93,7 @@
     <span class="min-w-0 flex-1">
       <span class="block truncate text-sm font-semibold text-gray-900 hover:underline dark:text-white">{{ t.track }}</span>
       <span class="block truncate text-sm text-gray-500 dark:text-gray-400">{{ t.artist }}</span>
-      {%- if note %}<span class="mt-0.5 block truncate text-xs text-gray-400 dark:text-gray-500">{{ note }}</span>{% endif %}
+      {%- if note %}<span class="mt-0.5 block truncate text-xs text-gray-500 dark:text-gray-400">{{ note }}</span>{% endif %}
     </span>
     <time datetime="{{ t.date }}" class="hidden shrink-0 text-xs text-gray-500 sm:block dark:text-gray-400">{{ t.date }}</time>
   </a>
@@ -113,6 +113,18 @@
   </a>
 </div>
 {% endcomponent video %}
+
+{#- An image in a review (Publisher figure): `src` is relative to static/ ("images/x.jpg"), so the
+    URL is built from base_url and works under the Pages sub-path and in feeds. Used from content:
+    {{ <figure src="images/x.jpg" alt="..." /> }}. -#}
+{% component figure(src, alt="", caption="") %}
+<figure class="not-format my-6">
+  <a href="{{ get_url(path=src) }}" class="block overflow-hidden rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+    <img src="{{ get_url(path=src) }}" alt="{{ alt }}" loading="lazy" decoding="async" class="h-auto w-full rounded-lg">
+  </a>
+  {%- if caption %}<figcaption class="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">{{ caption }}</figcaption>{% endif %}
+</figure>
+{% endcomponent figure %}
 
 {#- Pro stat card. -#}
 {% component stat_card(value, label, icon_name="music", href="") %}
@@ -161,7 +173,7 @@
     {%- set top = items | first %}
     {%- for it in items[:limit] %}
     <li class="flex items-center gap-3 py-2">
-      <span class="w-6 shrink-0 text-right font-mono text-xs text-gray-400">{{ loop.index }}</span>
+      <span class="w-6 shrink-0 text-right font-mono text-xs text-gray-500">{{ loop.index }}</span>
       <a href="{{ get_taxonomy_url(kind=kind, term=it.term) }}" class="min-w-0 flex-1 truncate text-sm font-medium text-gray-900 hover:underline dark:text-white">{{ it.term }}</a>
       <span class="hidden h-1.5 w-24 overflow-hidden rounded-full bg-gray-100 sm:block dark:bg-gray-700" aria-hidden="true"><span class="block h-1.5 rounded-full bg-primary-600 dark:bg-primary-500" style="width: {{ (it.count * 100 / top.count) | round | int }}%"></span></span>
       <span class="w-8 shrink-0 text-right text-sm font-semibold text-gray-700 dark:text-gray-300">{{ it.count }}</span>

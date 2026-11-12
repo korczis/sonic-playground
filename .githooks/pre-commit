@@ -9,4 +9,11 @@ fi
 majordomus worktree guard --quiet || exit $?
 git diff --cached --check || exit $?
 MAJORDOMUS_DOCTOR_CONTEXT=commit majordomus doctor || exit $?
+# The catalogue check reads the working tree, so the working tree must be what is committed for
+# the paths it derives from: content and the regenerated catalogue are staged together.
+if ! git diff --quiet -- content data static/data; then
+  echo "pre-commit: unstaged changes in content/, data/ or static/data/; stage the content and" >&2
+  echo "            the regenerated catalogue (npm run derive) together" >&2
+  exit 1
+fi
 python3 scripts/catalog.py --check || exit $?

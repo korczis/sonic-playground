@@ -65,4 +65,8 @@ the primary deploy target)".
   `sonic-playground` is no longer deployed and can be removed by the owner.
 - A deploy is done only when the Verify production job passes (`project.deploy-gate`).
 - CI needs the `MAJORDOMUS_KIT_EVIDENCE_FLOWBITE_PRO` secret (the repository is public and
-  declares the Flowbite Pro kit).
+  declares the Flowbite Pro kit). It was set on 2026-11-12T01:32:35Z by the agent from
+  `~/.claude/skills/flowbite-pro/evidence.sh secret` on the owner's instruction, verbatim:
+  "zkopiruj si a uloz sam z jineho ~/dev repo" (session `7e1d03a3-52cc-40aa-a61a-4f9713c27f2a`).
+- Pages builds from the workflow since 2026-11-12. The legacy `gh-pages` branch and the fly.io
+  app `sonic-playground` were left in place; removing them is the owner's call.

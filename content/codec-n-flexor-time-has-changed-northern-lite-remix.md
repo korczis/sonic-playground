@@ -14,10 +14,6 @@ sentiment = ["melancholic", "uplifting", "ethereal"]
 
 > The remix of "Time Has Changed" by Codec & Flexor delivers a profound sense of transformation, both in its lyrics and its sound. The Northern Lite rework heightens the original's melancholic themes while infusing it with a forward-driving, uplifting energy. It's a track that seems to embrace change, uncertainty, and the beauty of transition, wrapped in a sonically rich tapestry.
 
-<a href="/images/thumbnails/time-has-changed-cover.jpg" target="_blank">
-  <img src="/images/thumbnails/time-has-changed-cover.jpg" alt="Codec & Flexor" style="width: 100%; height: auto;">
-</a>
-
 The remix masterfully captures the duality of its title—both the nostalgic longing for the past and the hopeful anticipation of the future. Northern Lite's unique interpretation adds layers of ethereal melodies to the original minimal electro track, creating an emotional resonance that is both haunting and uplifting.
 
 ---
@@ -25,10 +21,6 @@ The remix masterfully captures the duality of its title—both the nostalgic lon
 ## Genre and Mood
 
 "Time Has Changed" is a genre-blending masterpiece, sitting at the intersection of **minimal electro** and **melodic techno**. Northern Lite's remix elevates its melancholic undertones with a brighter, more atmospheric sound. The result is a track that feels simultaneously introspective and liberating, making it perfect for reflective moments or deep dancefloor sessions.
-
-<a href="/images/thumbnails/northern-lite-remix.jpg" target="_blank">
-  <img src="/images/thumbnails/northern-lite-remix.jpg" alt="Northern Lite Remix Vibes" style="width: 100%; height: auto;">
-</a>
 
 ## About the Artists
 
@@ -41,10 +33,6 @@ The remix masterfully captures the duality of its title—both the nostalgic lon
 ## Song Summary
 
 This remix thrives on its delicate balance of contrast. Northern Lite transforms the original's brooding, minimalistic beats into a layered soundscape filled with shimmering melodies and pulsing basslines. The interplay between light and dark elements gives the track a cinematic quality, making it an unforgettable listening experience.
-
-<a href="/images/thumbnails/studio-vibes.jpg" target="_blank">
-  <img src="/images/thumbnails/studio-vibes.jpg" alt="Codec & Flexor Studio" style="width: 100%; height: auto;">
-</a>
 
 ---
 
@@ -83,10 +71,6 @@ Northern Lite’s remix of "Time Has Changed" is a masterclass in emotional stor
 ## Conclusion
 
 This remix is a testament to the transformative power of music. By blending melancholy with hope, simplicity with complexity, Northern Lite has created a timeless piece that will resonate with fans of both electronic and introspective music. "Time Has Changed" is not just a track—it’s an experience, a reminder of the inevitability of change, and an invitation to embrace it with open arms.
-
-<a href="/images/thumbnails/live-performance.jpg" target="_blank">
-  <img src="/images/thumbnails/live-performance.jpg" alt="Live Performance" style="width: 100%; height: auto;">
-</a>
 
 ---
 

@@ -20,9 +20,7 @@ youtube = "https://www.youtube.com/embed/-QoU2oclkXY"
 > where the listener is propelled into a whirlwind of sound, 
 > navigating the complexities of a dystopian landscape. 
  
-<a href="/images/thumbnails/anthony-rother/anthony-rother-wall.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-wall.jpg" alt="Anthony Rother" style="width: 100%; height: auto;">
-</a>
+{{ <figure src="images/thumbnails/anthony-rother/anthony-rother-wall.jpg" alt="Anthony Rother" /> }}
 
 The track symbolizes the clash between humanity and 
 technology, echoing themes of resilience and defiance in the
@@ -31,9 +29,7 @@ vibe, "Brainshaker" resonates as an anthem for those who embrace the
 darker, more powerful aspects of electronic music, inviting listeners 
 to surrender to the pulsating drive and lose themselves in the moment.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
-</a>
+{{ <figure src="images/thumbnails/anthony-rother/anthony-rother-party-1.jpg" alt="Anthony Rother at Party" /> }}
 
 ## Genre and Mood
 
@@ -41,9 +37,7 @@ to surrender to the pulsating drive and lose themselves in the moment.
 heavy industrial beats with dystopian soundscapes. The track exudes a **dark** and **futuristic** 
 atmosphere, making it ideal for those who appreciate **intense** and high-energy electronic music.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-dark.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-dark.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
-</a>
+{{ <figure src="images/thumbnails/anthony-rother/anthony-rother-dark.jpg" alt="Anthony Rother sitting on stairs" /> }}
 
 ## About the Artist
 
@@ -54,9 +48,7 @@ electronic music, pushing the boundaries of sound design and production. His mus
 explores themes of technology, dystopia, and human interaction with machines, crafting 
 immersive soundscapes that feel both mechanical and deeply emotional.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-face.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-face.jpg" alt="Anthony Rother at Party" style="width: 100%; height: auto;">
-</a>
+{{ <figure src="images/thumbnails/anthony-rother/anthony-rother-face.jpg" alt="Anthony Rother at Party" /> }}
 
 Influenced by the likes of Kraftwerk and early techno movements, Rother has created a 
 signature style that blends retro-futuristic elements with cutting-edge production techniques. 
@@ -67,9 +59,7 @@ which has become a hub for experimental and genre-defying music. Rother's commit
 innovation and artistic integrity has earned him a loyal following and solidified his 
 status as a true visionary in the electronic realm.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-production.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-production.jpg" alt="Anthony Rother Production" style="width: 100%; height: auto;">
-</a>
+{{ <figure src="images/thumbnails/anthony-rother/anthony-rother-production.jpg" alt="Anthony Rother Production" /> }}
 
 ## Song Summary
 
@@ -80,9 +70,7 @@ locked in a state of constant tension and thrill. The fusion of **techno** and *
 elements adds to the track’s futuristic, almost cinematic quality, transporting listeners 
 to a world of neon-lit dystopia.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
-</a>
+{{ <figure src="images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg" alt="Anthony Rother sitting on stairs" /> }}
 
 ## Sound Breakdown
 
@@ -94,9 +82,7 @@ in a soundscape of impending energy. The subtle layers of sound introduce the
 listener to the mood, evoking images of a darkened cityscape illuminated by 
 flickering lights.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-stairs.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-stairs.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
-</a>
+{{ <figure src="images/thumbnails/anthony-rother/anthony-rother-stairs.jpg" alt="Anthony Rother sitting on stairs" /> }}
 
 ### First Drop: The Shaker Begins
 
@@ -152,9 +138,7 @@ or through headphones, Rother's artistry leaves a lasting impression, making
 "Brainshaker" an essential listen for anyone seeking the darker edges of 
 electronic music.
 
-<a href="/images/thumbnails/anthony-rother/anthony-rother-studio-3.jpg" target="_blank">
-  <img src="/images/thumbnails/anthony-rother/anthony-rother-studio-3.jpg" alt="Anthony Rother sitting on stairs" style="width: 100%; height: auto;">
-</a>
+{{ <figure src="images/thumbnails/anthony-rother/anthony-rother-studio-3.jpg" alt="Anthony Rother sitting on stairs" /> }}
 
 ## References
 

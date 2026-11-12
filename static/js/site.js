@@ -33,15 +33,30 @@
       return;
     }
     var closed = sidebar.classList.contains('-translate-x-full');
+    var main = document.getElementById('main-content');
     if (closed) {
       sidebar.setAttribute('aria-hidden', 'true');
       sidebar.setAttribute('inert', '');
+      if (main) main.removeAttribute('inert');
+      // Focus returns to the toggle that opened the drawer.
+      if (sidebar.contains(document.activeElement) && sidebarToggle) sidebarToggle.focus();
     } else {
       sidebar.removeAttribute('aria-hidden');
       sidebar.removeAttribute('inert');
+      // An open drawer is modal: the page behind it is inert, focus moves into the drawer.
+      if (main) main.setAttribute('inert', '');
+      if (!sidebar.contains(document.activeElement)) {
+        var first = sidebar.querySelector('a[href], input, button');
+        if (first) first.focus();
+      }
     }
     if (sidebarToggle) sidebarToggle.setAttribute('aria-expanded', closed ? 'false' : 'true');
   }
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && drawer && !desktop.matches && drawer.isVisible && drawer.isVisible()) {
+      drawer.hide();
+    }
+  });
   window.addEventListener('load', function () {
     var registry = window.FlowbiteInstances;
     drawer = registry && registry.getInstance && registry.getInstance('Drawer', 'sidebar');
@@ -115,18 +130,21 @@
   var catalogUrl = body.getAttribute('data-catalog');
   var base = (body.getAttribute('data-base-url') || '').replace(/\/$/, '');
   if (random && catalogUrl && window.fetch) {
-    fetch(catalogUrl).then(function (r) { return r.ok ? r.json() : null; }).then(function (c) {
-      if (!c || !c.tracks || !c.tracks.length) return;
-      random.disabled = false;
-      random.classList.remove('hidden');
-      random.addEventListener('click', function () {
+    // The catalogue is fetched on the first click only, not on every page view.
+    random.disabled = false;
+    random.classList.remove('hidden');
+    random.addEventListener('click', function () {
+      random.disabled = true;
+      fetch(catalogUrl).then(function (r) { return r.ok ? r.json() : null; }).then(function (c) {
+        random.disabled = false;
+        if (!c || !c.tracks || !c.tracks.length) return;
         var here = window.location.pathname;
         var pick;
         do {
           pick = c.tracks[Math.floor(Math.random() * c.tracks.length)];
         } while (c.tracks.length > 1 && here.endsWith('/' + pick.path));
         window.location.href = base + '/' + pick.path;
-      });
-    }).catch(function () {});
+      }).catch(function () { random.disabled = false; });
+    });
   }
 })();

@@ -67,6 +67,22 @@
   [hidden] {
     display: none !important;
   }
+
+  /* Without JavaScript the mobile drawer cannot open: show the sidebar in the normal flow
+     above the content instead, and drop the toggle that would do nothing. */
+  @media (max-width: 1023px) {
+    .no-js #sidebar {
+      position: static;
+      transform: none;
+      width: 100%;
+      height: auto;
+      padding-top: 0;
+    }
+
+    .no-js #toggleSidebarMobile {
+      display: none;
+    }
+  }
 }
 
 @layer components {

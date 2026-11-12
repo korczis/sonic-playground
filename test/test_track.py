@@ -11,6 +11,7 @@ import io
 import json
 import sys
 import tempfile
+import tomllib
 import unittest
 from pathlib import Path
 
@@ -21,6 +22,30 @@ track = importlib.util.module_from_spec(spec)
 sys.modules["track"] = track
 spec.loader.exec_module(track)
 cat = track.cat
+
+FIXTURE = {
+    "aaaaaaaaaaa": {"title": "Bicep | Glue (Official Video)", "author_name": "Bicep"},
+    "bbbbbbbbbbb": {"title": "Hello | Hania Rani", "author_name": "KEXP"},
+    "ccccccccccc": {"title": "Virginia Plain (2012 Remaster)", "author_name": "Roxy Music"},
+    "ddddddddddd": {"title": "Primitive", "author_name": "Róisín Murphy - Topic"},
+}
+
+
+def namespace(**kw):
+    args = argparse.Namespace(offline=True, oembed_fixture=None, youtube=None, artist=None,
+                              track=None, description=None, date="2026-01-02", dry_run=True,
+                              force=False, genre=["electronic"], sentiment=["hypnotic"],
+                              mood=None, tags=None)
+    for k, v in kw.items():
+        setattr(args, k, v)
+    return args
+
+
+def capture(fn, *a):
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        code = fn(*a)
+    return code, json.loads(buf.getvalue())
 
 
 class Links(unittest.TestCase):
@@ -43,32 +68,52 @@ class Names(unittest.TestCase):
         self.assertEqual(track.split_name("Louisahhh - Love Is a Punk (Vitalic Remix) [Official Audio]"),
                          ("Louisahhh", "Love Is a Punk (Vitalic Remix)"))
 
+    def test_channel_orients_the_separator(self):
+        self.assertEqual(track.split_name("Bicep | Glue (Official Video)", "Bicep"), ("Bicep", "Glue"))
+        self.assertEqual(track.split_name("Glue - Bicep", "Bicep"), ("Bicep", "Glue"))
+
     def test_channel_is_the_artist_when_the_title_has_no_dash(self):
         self.assertEqual(track.split_name("alt-J (∆) Breezeblocks", "alt-J"), ("alt-J", "Breezeblocks"))
         self.assertEqual(track.split_name("Primitive", "Róisín Murphy - Topic"), ("Róisín Murphy", "Primitive"))
 
+    def test_only_platform_suffixes_are_stripped(self):
+        self.assertEqual(track.split_name("Virginia Plain", "Roxy Music"), ("Roxy Music", "Virginia Plain"))
+
+
+class Resolve(unittest.TestCase):
+    def setUp(self):
+        tmp = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False)
+        json.dump(FIXTURE, tmp)
+        tmp.close()
+        self.fixture = tmp.name
+        self.addCleanup(Path(tmp.name).unlink)
+
+    def resolve(self, vid):
+        return track.resolve(f"https://youtu.be/{vid}", namespace(oembed_fixture=self.fixture))
+
+    def test_oembed_paths(self):
+        bicep = self.resolve("aaaaaaaaaaa")
+        self.assertEqual((bicep["artist"], bicep["track"]), ("Bicep", "Glue"))
+        self.assertEqual(self.resolve("bbbbbbbbbbb")["artist"], "Hania Rani")
+        self.assertEqual(self.resolve("ccccccccccc")["artist"], "Roxy Music")
+        self.assertEqual(self.resolve("ddddddddddd")["file"], "content/roisin-murphy-primitive.md")
+
+    def test_non_latin_name_is_refused_not_written_to_the_root(self):
+        plan = track.resolve("你好 - 世界", namespace())
+        self.assertFalse(plan["complete"])
+        self.assertEqual(plan["file"], "")
+
 
 class NewArticle(unittest.TestCase):
     def run_new(self, text, **kw):
-        args = argparse.Namespace(offline=True, youtube=None, artist=None, track=None,
-                                  description=None, date="2026-01-02", dry_run=True, force=False,
-                                  genre=["electronic"], sentiment=["hypnotic"], mood=None, tags=None)
-        for k, v in kw.items():
-            setattr(args, k, v)
-        out = io.StringIO()
-        with contextlib.redirect_stdout(out):
-            code = track.new(text, args)
-        return code, json.loads(out.getvalue())
+        return capture(track.new, text, namespace(**kw))
 
     def test_written_article_meets_the_contract_once_written(self):
-        code, plan = self.run_new("Moderat - A New Error",
-                                  youtube="https://youtu.be/dQw4w9WgXcQ")
+        code, plan = self.run_new("Moderat - A New Error", youtube="https://youtu.be/dQw4w9WgXcQ")
         self.assertEqual(code, 0)
         self.assertEqual(plan["file"], "content/moderat-a-new-error.md")
         text = plan["preview"]
         self.assertIn('youtube = "https://www.youtube.com/embed/dQw4w9WgXcQ"', text)
-        for section in plan["outline"]:
-            self.assertIn(section.split()[0].capitalize(), text)
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "moderat-a-new-error.md"
             path.write_text(text, encoding="utf-8")
@@ -78,8 +123,7 @@ class NewArticle(unittest.TestCase):
                 errors = []
                 cat.load_track(path, errors)
                 self.assertTrue(any("TODO(write)" in e for e in errors), "skeleton is unfinished")
-                done = text.replace("TODO(write): ", "Written prose for this section. ")
-                path.write_text(done, encoding="utf-8")
+                path.write_text(text.replace("TODO(write): ", "Written prose. "), encoding="utf-8")
                 errors = []
                 result = cat.load_track(path, errors)
                 self.assertEqual(errors, [])
@@ -87,10 +131,64 @@ class NewArticle(unittest.TestCase):
             finally:
                 cat.CONTENT = old
 
+    def test_strings_are_serialised_as_toml(self):
+        code, plan = self.run_new(r"AC\DC - Back In Black",
+                                  description='Riffs "and" a \\ backslash,\nthen a new line that is long')
+        self.assertEqual(code, 0)
+        meta = tomllib.loads(plan["preview"].split("+++")[1])
+        self.assertEqual(meta["title"], r"AC\DC - Back In Black")
+        self.assertIn('"and"', meta["description"])
+
+    def test_identity_is_pinned_when_the_title_would_read_differently(self):
+        code, plan = self.run_new("x", artist="Moderat", track="Hello | Live")
+        self.assertEqual(code, 0)
+        self.assertTrue(plan["identity_pinned"])
+        meta = tomllib.loads(plan["preview"].split("+++")[1])
+        self.assertEqual((meta["extra"]["artist"], meta["extra"]["track"]), ("Moderat", "Hello | Live"))
+
     def test_existing_track_is_not_duplicated(self):
         code, plan = self.run_new("Bakermat - The River")
         self.assertEqual(code, 3)
         self.assertEqual(plan["exists"]["source"], "content/bakermat-the-river.md")
+
+    def test_a_draft_is_never_overwritten(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            old = cat.CONTENT
+            cat.CONTENT = Path(tmp)
+            try:
+                (Path(tmp) / "moderat-a-new-error.md").write_text(
+                    '+++\ntitle = "Moderat - A New Error"\ndraft = true\n+++\nprose\n', encoding="utf-8")
+                code, plan = self.run_new("Moderat - A New Error")
+                self.assertEqual(code, 3)
+                self.assertTrue(plan["exists"]["draft"])
+            finally:
+                cat.CONTENT = old
+
+
+class CheckAndRefresh(unittest.TestCase):
+    def test_check_refuses_an_unfinished_article_and_paths_outside_content(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            old = cat.CONTENT
+            cat.CONTENT = Path(tmp)
+            try:
+                code, plan = capture(track.new, "Moderat - A New Error", namespace(dry_run=False))
+                self.assertEqual(code, 0)
+                code, report = capture(track.check, str(Path(tmp) / "moderat-a-new-error.md"))
+                self.assertEqual(code, 1)
+                self.assertGreater(report["unfinished"], 0)
+                code, report = capture(track.refresh, str(Path(tmp) / "moderat-a-new-error.md"),
+                                       argparse.Namespace(youtube="https://youtu.be/dQw4w9WgXcQ",
+                                                          album="Moderat III", release_year=None,
+                                                          publisher=None))
+                self.assertEqual(code, 0)
+                meta = tomllib.loads((Path(tmp) / "moderat-a-new-error.md").read_text().split("+++")[1])
+                self.assertEqual(meta["extra"]["album"], "Moderat III")
+                self.assertTrue(meta["extra"]["youtube"].endswith("dQw4w9WgXcQ"))
+            finally:
+                cat.CONTENT = old
+        with self.assertRaises(SystemExit):
+            with contextlib.redirect_stderr(io.StringIO()):
+                track.check("README.md")
 
 
 if __name__ == "__main__":

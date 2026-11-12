@@ -6,30 +6,38 @@ Everything it writes is inferred or derived, never made up:
   - resolve   the input: a YouTube URL (watch, youtu.be, embed, shorts, music) gives the video id,
               and YouTube's oEmbed gives the video title and channel, from which the artist and
               the track are inferred (decorations such as "(Official Video)" dropped, remixes and
-              features kept); a name "Artist - Track" is split the same way;
+              features kept; the channel decides which side of a separator is the artist); a
+              name "Artist - Track" is split the same way;
   - identity  the file name content/<slug(artist track)>.md, artist first, exactly what
               scripts/catalog.py infers the artist back from; an existing track (same video,
-              same slug, same artist and track) is reported, never duplicated;
+              same artist and track, same file, drafts included) is reported, never duplicated;
   - facets    the terms given are normalised and checked against the corpus vocabulary, with
               the nearest existing term suggested for each new one;
   - related   the tracks the new one would sit next to (the catalogue's similarity);
   - outline   the sections the corpus shares, in their usual order (catalogue "outline"), each
               with the guidance of data/review.toml as a TODO(write) line;
-  - article   archetypes/track.md filled in, validated against data/track.schema.json.
+  - article   archetypes/track.md filled in, then proved before it is written: it parses, it
+              validates against data/track.schema.json, and the catalogue infers the same artist
+              and track from it (otherwise extra.artist/extra.track are written to pin them).
 
 The prose is the writer's: the skill add-song (.ai/repo/skills/add-song/SKILL.md) researches
 the track and replaces every TODO(write); `check` then proves the article meets the contract.
 
     python3 scripts/track.py resolve "<link or Artist - Track>" [--offline]
-    python3 scripts/track.py new "<link or Artist - Track>" [--genre g ...] [--sentiment s ...]
-                             [--mood m ...] [--description "..."] [--artist A] [--track T]
-                             [--youtube URL] [--date YYYY-MM-DD] [--dry-run] [--offline]
+    python3 scripts/track.py new "<link or Artist - Track>" --genre g ... --sentiment s ...
+                             [--mood m ...] [--tags t ...] [--description "..."] [--artist A]
+                             [--track T] [--youtube URL] [--date YYYY-MM-DD] [--dry-run]
+                             [--offline] [--force]
+    python3 scripts/track.py refresh content/<file>.md [--youtube URL] [--album A]
+                             [--release-year YYYY] [--publisher P]   (prose untouched)
     python3 scripts/track.py check content/<file>.md
     python3 scripts/track.py vocab [--facet genre] [--limit N]
     python3 scripts/track.py suggest --genre g ... --sentiment s ...
     python3 scripts/track.py outline
+  --oembed-fixture <file.json> answers oEmbed from a file ({"<video id>": {"title", "author_name"}})
 
-Every command prints JSON. Exit codes: 0 ok, 1 contract violation, 2 usage, 3 the track exists.
+Every command prints JSON. Exit codes: 0 ok, 1 contract violation or unfinished article,
+2 usage, 3 the track exists.
 """
 from __future__ import annotations
 
@@ -38,6 +46,7 @@ import difflib
 import json
 import re
 import sys
+import tempfile
 import tomllib
 import urllib.error
 import urllib.parse
@@ -57,7 +66,13 @@ DECORATION = re.compile(
     r"\s*[\(\[][^)\]]*\b(official|video|audio|lyrics?|visuali[sz]er|hd|hq|4k|mv|clip|"
     r"music video|full album|remaster(?:ed)?(?: \d{4})?)\b[^)\]]*[\)\]]",
     re.I)
-CHANNEL_NOISE = re.compile(r"\s*(-\s*topic|vevo|official|music|records?)\s*$", re.I)
+# Only suffixes YouTube itself adds to a channel name; "Roxy Music" stays "Roxy Music".
+CHANNEL_NOISE = re.compile(r"\s*(?:-\s*topic|vevo)\s*$", re.I)
+SEPARATORS = (" - ", " – ", " — ", " | ")
+
+
+def out(data: dict) -> None:
+    print(json.dumps(data, ensure_ascii=False, indent=1))
 
 
 def fail(message: str, code: int = 2) -> None:
@@ -65,11 +80,13 @@ def fail(message: str, code: int = 2) -> None:
     sys.exit(code)
 
 
-def youtube_id(text: str) -> str | None:
+def youtube_id(text: str | None) -> str | None:
     """The video id of any YouTube URL form, or None."""
+    if not text:
+        return None
     text = text.strip()
     if VIDEO_ID.match(text):
-        return None  # a bare 11-char word is a name, not a link
+        return None  # a bare 11-character word is a name, not a link
     try:
         url = urllib.parse.urlparse(text if "//" in text else "https://" + text)
     except ValueError:
@@ -89,8 +106,14 @@ def youtube_id(text: str) -> str | None:
     return candidate if candidate and VIDEO_ID.match(candidate) else None
 
 
-def oembed(video: str, offline: bool) -> dict:
-    if offline:
+def oembed(video: str, args) -> dict:
+    fixture = getattr(args, "oembed_fixture", None)
+    if fixture:
+        data = json.loads(Path(fixture).read_text(encoding="utf-8")).get(video)
+        if data is None:
+            return {"error": "not in the oEmbed fixture"}
+        return {"title": data.get("title", ""), "author": data.get("author_name", "")}
+    if getattr(args, "offline", False):
         return {}
     url = "https://www.youtube.com/oembed?format=json&url=" + urllib.parse.quote(
         f"https://www.youtube.com/watch?v={video}", safe="")
@@ -109,12 +132,24 @@ def clean(text: str) -> str:
     return re.sub(r"\s{2,}", " ", DECORATION.sub("", text)).strip(" -|·")
 
 
+def fold(text: str) -> str:
+    return "".join(cat.words(text))
+
+
 def split_name(name: str, channel: str = "") -> tuple[str, str]:
-    """'Artist - Track' (any dash) -> (artist, track); without a dash the channel is the artist."""
+    """(artist, track) from a title. The channel, when known, decides which side of the first
+    separator is the artist; without it 'Artist - Track' and 'Track | Artist' (the corpus
+    conventions) apply. A title without a separator is the track, the channel the artist."""
     name = clean(name)
-    for sep in (" - ", " – ", " — ", " | "):
+    artist_hint = fold(CHANNEL_NOISE.sub("", channel))
+    for sep in SEPARATORS:
         if sep in name:
             left, right = (p.strip() for p in name.split(sep, 1))
+            if artist_hint:
+                if fold(left).startswith(artist_hint) or artist_hint.startswith(fold(left) or "-"):
+                    return left, right
+                if fold(right).startswith(artist_hint) or artist_hint.startswith(fold(right) or "-"):
+                    return right, left
             return (right, left) if sep == " | " else (left, right)
     artist = CHANNEL_NOISE.sub("", channel).strip()
     if artist and name.lower().startswith(artist.lower()):
@@ -125,39 +160,66 @@ def split_name(name: str, channel: str = "") -> tuple[str, str]:
     return artist, name
 
 
-def fold(text: str) -> str:
-    return "".join(cat.words(text))
+def corpus() -> list[dict]:
+    """Every article's identity, drafts and unparseable files included (so nothing is ever
+    overwritten): file, title, inferred artist and track, video id."""
+    found = []
+    for path in sorted(cat.CONTENT.glob("*.md")):
+        if path.name == "_index.md":
+            continue
+        entry = {"source": f"content/{path.name}", "stem": path.stem, "artist": "", "track": "",
+                 "youtube": None, "title": "", "draft": False}
+        try:
+            raw, _ = cat.split_front_matter(path.read_text(encoding="utf-8"), path.name)
+            meta = tomllib.loads(raw)
+        except (ValueError, tomllib.TOMLDecodeError):
+            found.append(entry)
+            continue
+        extra = meta.get("extra", {}) or {}
+        artist, track, _ = cat.infer_artist_track(str(meta.get("title", "")), path.stem)
+        match = cat.YOUTUBE_ID.search(str(extra.get("youtube", "")))
+        entry.update(title=meta.get("title", ""), artist=extra.get("artist") or artist,
+                     track=extra.get("track") or track, draft=bool(meta.get("draft")),
+                     youtube=match.group(1) if match else None)
+        found.append(entry)
+    return found
 
 
 def resolve(text: str, args) -> dict:
-    video = youtube_id(text) or (youtube_id(args.youtube) if getattr(args, "youtube", None) else None)
-    meta = oembed(video, args.offline) if video else {}
-    if youtube_id(text):
-        source = "youtube"
+    link = youtube_id(text)
+    video = link or youtube_id(getattr(args, "youtube", None))
+    meta = oembed(video, args) if video else {}
+    if link:
+        kind = "youtube"
         artist, track = split_name(meta.get("title", ""), meta.get("author", ""))
     else:
-        source = "name"
+        kind = "name"
         artist, track = split_name(text)
-    artist = getattr(args, "artist", None) or artist
-    track = getattr(args, "track", None) or track
+    artist = (getattr(args, "artist", None) or artist).strip()
+    track = (getattr(args, "track", None) or track).strip()
     slug = cat.slugify(f"{artist} {track}") if artist and track else ""
 
-    errors: list[str] = []
-    tracks = [t for t in (cat.load_track(p, errors) for p in sorted(cat.CONTENT.glob("*.md"))
-                          if p.name != "_index.md") if t]
     existing = None
-    for t in tracks:
-        same_video = video and t.youtube_id == video
-        same_name = artist and track and fold(t.artist + t.track) == fold(artist + track)
-        if same_video or same_name or (slug and t.path == f"{slug}/"):
-            existing = {"source": f"content/{t.source}", "title": t.title, "path": t.path,
-                        "why": "same video" if same_video else "same artist and track"}
+    for e in corpus():
+        same_video = bool(video) and e["youtube"] == video
+        same_name = bool(artist and track) and (fold(e["artist"]), fold(e["track"])) == (
+            fold(artist), fold(track))
+        same_file = bool(slug) and cat.slugify(e["stem"]) == slug
+        if same_video or same_name or same_file:
+            why = "same video" if same_video else "same artist and track" if same_name else "same file"
+            existing = {"source": e["source"], "title": e["title"], "draft": e["draft"], "why": why}
             break
+    problems = []
+    if not (artist and track):
+        problems.append("cannot infer both artist and track; pass --artist and --track")
+    elif not slug:
+        problems.append("the name has no Latin letters to build a file name from; pass a "
+                        "transliterated --artist/--track (the original can stay in the title)")
     return {
-        "input": text, "kind": source, "youtube": video, "oembed": meta,
+        "input": text, "kind": kind, "youtube": video, "oembed": meta,
         "artist": artist, "track": track, "title": f"{artist} - {track}" if artist else track,
         "file": f"content/{slug}.md" if slug else "", "exists": existing,
-        "complete": bool(artist and track),
+        "complete": not problems, "problems": problems,
     }
 
 
@@ -168,7 +230,7 @@ def vocabulary() -> dict[str, dict[str, int]]:
 
 def suggest(facets: dict[str, list[str]]) -> dict:
     vocab = vocabulary()
-    out = {}
+    result = {}
     for facet, terms in facets.items():
         rows = []
         for raw in terms:
@@ -177,20 +239,29 @@ def suggest(facets: dict[str, list[str]]) -> dict:
             near = [] if known else difflib.get_close_matches(term, list(vocab[facet]), n=3, cutoff=0.6)
             rows.append({"term": term, "known": known, "uses": vocab[facet].get(term, 0),
                          "nearest": near})
-        out[facet] = rows
-    return out
+        result[facet] = rows
+    return result
+
+
+def loaded_tracks() -> list:
+    errors: list[str] = []
+    return [t for t in (cat.load_track(p, errors) for p in sorted(cat.CONTENT.glob("*.md"))
+                        if p.name != "_index.md") if t]
 
 
 def related_preview(facets: dict[str, list[str]]) -> list[dict]:
-    errors: list[str] = []
-    tracks = [t for t in (cat.load_track(p, errors) for p in sorted(cat.CONTENT.glob("*.md"))
-                          if p.name != "_index.md") if t]
+    tracks = loaded_tracks()
     by_source = {t.source: t for t in tracks}
     return [{**r, "title": by_source[r["source"]].title} for r in cat.related_to(facets, tracks)]
 
 
+def toml_string(value: str) -> str:
+    """A complete TOML basic string (JSON string syntax is a subset TOML accepts)."""
+    return json.dumps(value, ensure_ascii=False)
+
+
 def toml_list(terms: list[str]) -> str:
-    return "[" + ", ".join(json.dumps(t, ensure_ascii=False) for t in terms) + "]"
+    return "[" + ", ".join(toml_string(t) for t in terms) + "]"
 
 
 def render_body(outline: list[dict]) -> str:
@@ -209,56 +280,148 @@ def render_body(outline: list[dict]) -> str:
     return "\n".join(chunks)
 
 
-def new(text: str, args) -> int:
-    plan = resolve(text, args)
-    if not plan["complete"]:
-        fail("cannot infer both artist and track; pass --artist and --track", 2)
-    if plan["exists"] and not args.force:
-        print(json.dumps({**plan, "written": False}, ensure_ascii=False, indent=1))
-        return 3
-    facets = {f: [t.strip().lower() for t in (getattr(args, f) or [])] for f in cat.FACETS}
-    if not facets["genre"] or not facets["sentiment"]:
-        fail("--genre and --sentiment are required (see: scripts/track.py vocab)", 2)
+def render(plan: dict, facets: dict, args, pin: bool) -> str:
     catalog = json.loads(cat.OUTPUT.read_text(encoding="utf-8"))
-    taxonomies = "\n".join(f"{f} = {toml_list(terms)}" for f, terms in facets.items() if terms)
     extra = []
     if plan["youtube"]:
         extra.append(f'youtube = "https://www.youtube.com/embed/{plan["youtube"]}"')
-    if args.artist:
-        extra.append(f"artist = {json.dumps(args.artist, ensure_ascii=False)}")
+    if pin:
+        extra.append(f"artist = {toml_string(plan['artist'])}")
+        extra.append(f"track = {toml_string(plan['track'])}")
     description = args.description or f"{cat.UNFINISHED}: one or two sentences on the vibe of the track."
-    text_out = Template(ARCHETYPE.read_text(encoding="utf-8")).substitute(
-        title=plan["title"].replace('"', '\\"'),
+    return Template(ARCHETYPE.read_text(encoding="utf-8")).substitute(
+        title=toml_string(plan["title"])[1:-1],
         date=args.date or date.today().isoformat(),
-        description=description.replace('"', '\\"'),
-        taxonomies=taxonomies,
+        description=toml_string(" ".join(description.split()))[1:-1],
+        taxonomies="\n".join(f"{f} = {toml_list(t)}" for f, t in facets.items() if t),
         extra="\n".join(extra),
         body=render_body(catalog["outline"]),
     )
-    target = ROOT / plan["file"]
+
+
+def prove(text: str, name: str, plan: dict) -> tuple[list[str], tuple[str, str]]:
+    """Parse, validate and re-infer the rendered article exactly as the build will."""
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / name
+        path.write_text(text, encoding="utf-8")
+        old = cat.CONTENT
+        cat.CONTENT = Path(tmp)
+        try:
+            errors: list[str] = []
+            track = cat.load_track(path, errors, include_drafts=True)
+        finally:
+            cat.CONTENT = old
+    errors = [e for e in errors if cat.UNFINISHED not in e]  # the skeleton is unfinished by design
+    inferred = (track.artist, track.track) if track else ("", "")
+    return errors, inferred
+
+
+def new(text: str, args) -> int:
+    if args.date:
+        try:
+            date.fromisoformat(args.date)
+        except ValueError:
+            fail(f"--date must be YYYY-MM-DD, got {args.date}")
+    plan = resolve(text, args)
+    if not plan["complete"]:
+        fail("; ".join(plan["problems"]))
+    target = cat.CONTENT / Path(plan["file"]).name
+    if (plan["exists"] or target.exists()) and not args.force:
+        out({**plan, "written": False,
+             "hint": "refresh the existing review (scripts/track.py refresh) instead of a second one"})
+        return 3
+    facets = {f: [t.strip().lower() for t in (getattr(args, f) or [])] for f in cat.FACETS}
+    if not facets["genre"] or not facets["sentiment"]:
+        fail("--genre and --sentiment are required (see: scripts/track.py vocab)")
+
+    text_out = render(plan, facets, args, pin=False)
+    errors, inferred = prove(text_out, target.name, plan)
+    pinned = False
+    if not errors and inferred != (plan["artist"], plan["track"]):
+        # The catalogue would read the title differently: pin the resolved identity.
+        text_out = render(plan, facets, args, pin=True)
+        errors, inferred = prove(text_out, target.name, plan)
+        pinned = True
+    if errors or inferred != (plan["artist"], plan["track"]):
+        out({**plan, "written": False, "errors": errors, "inferred": inferred})
+        return 1
+
+    catalog = json.loads(cat.OUTPUT.read_text(encoding="utf-8"))
     result = {**plan, "facets": suggest(facets), "related": related_preview(facets),
               "outline": [s["name"] for s in catalog["outline"]],
-              "words_target": tomllib.loads(REVIEW.read_text(encoding="utf-8"))["defaults"]["words_target"],
+              "median_words": catalog["stats"]["median_words"], "identity_pinned": pinned,
               "written": not args.dry_run}
-    if not args.dry_run:
-        target.write_text(text_out, encoding="utf-8")
-    else:
+    if args.dry_run:
         result["preview"] = text_out
-    print(json.dumps(result, ensure_ascii=False, indent=1))
+    else:
+        with open(target, "w" if args.force else "x", encoding="utf-8") as handle:
+            handle.write(text_out)
+    out(result)
+    return 0
+
+
+def content_path(path: str) -> Path:
+    file = (ROOT / path).resolve() if not Path(path).is_absolute() else Path(path).resolve()
+    if file.parent != cat.CONTENT.resolve() or file.suffix != ".md" or not file.is_file():
+        fail(f"{path} is not an article in content/")
+    return cat.CONTENT / file.name  # as the catalogue names it (symlinked temp dirs included)
+
+
+def refresh(path: str, args) -> int:
+    """Update what a review references without touching its prose: the video, album, year,
+    label. Each value replaces the existing key in [extra] or is added to it."""
+    file = content_path(path)
+    text = file.read_text(encoding="utf-8")
+    raw, body = cat.split_front_matter(text, file.name)
+    updates = {}
+    if args.youtube:
+        video = youtube_id(args.youtube)
+        if not video:
+            fail(f"not a YouTube link: {args.youtube}")
+        updates["youtube"] = f"https://www.youtube.com/embed/{video}"
+    for key in ("album", "release_year", "publisher"):
+        value = getattr(args, key)
+        if value:
+            updates[key] = value
+    if not updates:
+        fail("nothing to refresh: pass --youtube, --album, --release-year or --publisher")
+    lines = raw.splitlines()
+    if "[extra]" not in (line.strip() for line in lines):
+        lines.append("")
+        lines.append("[extra]")
+    start = next(i for i, line in enumerate(lines) if line.strip() == "[extra]")
+    for key, value in updates.items():
+        new_line = f"{key} = {toml_string(value)}"
+        pattern = re.compile(rf"^\s*#?\s*{key}\s*=")
+        for i in range(start + 1, len(lines)):
+            if lines[i].startswith("["):
+                break
+            if pattern.match(lines[i]):
+                lines[i] = new_line
+                break
+        else:
+            lines.insert(start + 1, new_line)
+    rewritten = "+++\n" + "\n".join(lines) + "\n+++\n" + body
+    errors, _ = prove(rewritten, file.name, {})
+    if errors:
+        out({"file": path, "written": False, "errors": errors})
+        return 1
+    file.write_text(rewritten, encoding="utf-8")
+    out({"file": path, "written": True, "updated": updates})
     return 0
 
 
 def check(path: str) -> int:
-    file = (ROOT / path).resolve()
+    file = content_path(path)
     errors: list[str] = []
-    track = cat.load_track(file, errors)
+    track = cat.load_track(file, errors, include_drafts=True)
     todo = file.read_text(encoding="utf-8").count(cat.UNFINISHED)
     report = {"file": path, "errors": errors, "unfinished": todo}
     if track:
         report.update({"artist": track.artist, "track": track.track, "inferred": track.inferred,
                        "words": track.words, "slug": track.path})
-    print(json.dumps(report, ensure_ascii=False, indent=1))
-    return 1 if errors else 0
+    out(report)
+    return 1 if errors or todo else 0
 
 
 def main() -> int:
@@ -268,6 +431,7 @@ def main() -> int:
     def common(p):
         p.add_argument("input")
         p.add_argument("--offline", action="store_true", help="do not ask YouTube's oEmbed")
+        p.add_argument("--oembed-fixture", help="answer oEmbed from a JSON file (tests)")
         p.add_argument("--youtube", help="the video, when the input is a name")
         p.add_argument("--artist")
         p.add_argument("--track")
@@ -280,7 +444,13 @@ def main() -> int:
     p_new.add_argument("--description")
     p_new.add_argument("--date")
     p_new.add_argument("--dry-run", action="store_true")
-    p_new.add_argument("--force", action="store_true", help="write although the track exists")
+    p_new.add_argument("--force", action="store_true", help="overwrite although the track exists")
+    p_ref = sub.add_parser("refresh", help="update video/album/year/label, prose untouched")
+    p_ref.add_argument("file")
+    p_ref.add_argument("--youtube")
+    p_ref.add_argument("--album")
+    p_ref.add_argument("--release-year", dest="release_year")
+    p_ref.add_argument("--publisher")
     sub.add_parser("check", help="validate one article").add_argument("file")
     p_vocab = sub.add_parser("vocab", help="the facet vocabulary, most used first")
     p_vocab.add_argument("--facet", choices=cat.FACETS)
@@ -293,25 +463,25 @@ def main() -> int:
 
     if args.command == "resolve":
         plan = resolve(args.input, args)
-        print(json.dumps(plan, ensure_ascii=False, indent=1))
-        return 3 if plan["exists"] else 0
+        out(plan)
+        return 3 if plan["exists"] else (0 if plan["complete"] else 2)
     if args.command == "new":
         return new(args.input, args)
+    if args.command == "refresh":
+        return refresh(args.file, args)
     if args.command == "check":
         return check(args.file)
     if args.command == "vocab":
         vocab = vocabulary()
         facets = [args.facet] if args.facet else list(cat.FACETS)
-        out = {f: dict(list(vocab[f].items())[:args.limit or None]) for f in facets}
-        print(json.dumps(out, ensure_ascii=False, indent=1))
+        out({f: dict(list(vocab[f].items())[:args.limit or None]) for f in facets})
         return 0
     if args.command == "suggest":
         facets = {f: getattr(args, f) or [] for f in cat.FACETS}
-        print(json.dumps({"facets": suggest(facets), "related": related_preview(facets)},
-                         ensure_ascii=False, indent=1))
+        out({"facets": suggest(facets), "related": related_preview(facets)})
         return 0
     if args.command == "outline":
-        print(json.dumps(json.loads(cat.OUTPUT.read_text(encoding="utf-8"))["outline"], indent=1))
+        out({"outline": json.loads(cat.OUTPUT.read_text(encoding="utf-8"))["outline"]})
         return 0
     return 2
 

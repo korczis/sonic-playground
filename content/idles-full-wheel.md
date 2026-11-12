@@ -21,10 +21,7 @@ youtube = "https://www.youtube.com/embed/MH2HE6Gp3JQ"
 
 **Official audio**
 
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/2MKk-33XRGM" 
-    frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
+{{ <video id="2MKk-33XRGM" title="IDLES - The Wheel (another video)" /> }}
 
 The song is driven by pulsating rhythms, explosive guitar riffs, and passionate 
 vocals, drawing the audience into an emotional experience. Its combination of raw 

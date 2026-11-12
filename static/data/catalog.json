@@ -6,7 +6,7 @@
   "tracks": 114,
   "artists": 109,
   "videos": 110,
-  "words": 59487,
+  "words": 59053,
   "median_words": 420,
   "first": "2024-10-01",
   "last": "2024-12-06",
@@ -1911,7 +1911,7 @@
    "youtube": null,
    "thumbnail": "",
    "thumbnail_local": false,
-   "words": 756,
+   "words": 647,
    "extra": {},
    "related": [
     {
@@ -2041,7 +2041,7 @@
    "youtube": "_3EuiU1qdpE",
    "thumbnail": "images/thumbnails/hania-rani-full-performance-kexp-2.png",
    "thumbnail_local": true,
-   "words": 952,
+   "words": 914,
    "extra": {},
    "related": [
     {
@@ -2164,7 +2164,7 @@
    "youtube": "ipXnX43YkQ0",
    "thumbnail": "images/thumbnails/lousiahh-like-a-vice-x.jpg",
    "thumbnail_local": true,
-   "words": 1911,
+   "words": 1870,
    "extra": {},
    "related": [
     {
@@ -3145,7 +3145,7 @@
    "youtube": "_Zx-QNIGZ8Y",
    "thumbnail": "images/thumbnails/aloe-blacc-i-need-dollar.jpeg",
    "thumbnail_local": true,
-   "words": 1165,
+   "words": 1135,
    "extra": {},
    "related": [
     {
@@ -3210,7 +3210,7 @@
    "youtube": "MH2HE6Gp3JQ",
    "thumbnail": "images/thumbnails/idles-the-wheel.jpg",
    "thumbnail_local": true,
-   "words": 813,
+   "words": 794,
    "extra": {},
    "related": [
     {
@@ -3273,7 +3273,7 @@
    "youtube": "hcttROHKCNE",
    "thumbnail": "images/thumbnails/car-idle-eyes.jpg",
    "thumbnail_local": true,
-   "words": 456,
+   "words": 442,
    "extra": {},
    "related": [
     {
@@ -3401,7 +3401,7 @@
    "youtube": "WSrktmE963I",
    "thumbnail": "images/thumbnails/indiana-solo-dancing.jpeg",
    "thumbnail_local": true,
-   "words": 828,
+   "words": 809,
    "extra": {},
    "related": [
     {
@@ -3717,7 +3717,7 @@
    "youtube": "-QoU2oclkXY",
    "thumbnail": "images/thumbnails/anthony-rother-brainshaker.jpg",
    "thumbnail_local": true,
-   "words": 1281,
+   "words": 1134,
    "extra": {},
    "related": [
     {
@@ -4495,7 +4495,7 @@
    "youtube": "4rYEigiNoPc",
    "thumbnail": "https://i.ytimg.com/vi/4rYEigiNoPc/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 569,
+   "words": 552,
    "extra": {},
    "related": [
     {

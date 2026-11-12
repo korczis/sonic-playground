@@ -19,9 +19,7 @@ youtube = "https://www.youtube.com/embed/WSrktmE963I"
 > where the listener is enveloped by the synth-laden soundscape, moving to 
 > a beat that is both intoxicating and empowering.
 
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/9SYoSzkPE8g" frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
+{{ <video id="9SYoSzkPE8g" title="Indiana - Solo Dancing (another video)" /> }}
 
 The track reflects themes of personal empowerment and introspection, set 
 against the backdrop of a moody, danceable atmosphere. With its lush 
@@ -104,7 +102,6 @@ the beauty of solitude, transforming the act of dancing alone into a
 liberating experience. With its rich production and heartfelt lyrics, 
 "Solo Dancing" stands as a testament to Indiana's artistry, making it 
 a must-listen for fans of modern dark pop.
-
 
 ## Full Lyrics
 

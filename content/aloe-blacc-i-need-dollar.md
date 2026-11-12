@@ -19,10 +19,7 @@ youtube = "https://www.youtube.com/embed/_Zx-QNIGZ8Y"
 
 **Original version**
 
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/nFZP8zQ5kzk" 
-    frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
+{{ <video id="nFZP8zQ5kzk" title="Aloe Blacc - I Need a Dollar (Live) (another video)" /> }}
 
 Aloe Blacc's live rendition of "I Need a Dollar" is driven by a deep, soulful rhythm, 
 powerful vocals, and heartfelt lyrics that capture the essence of resilience in the face 
@@ -31,10 +28,7 @@ makes this performance stand out.
 
 **Studio version**
 
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/lDyUhI1ArPo" 
-    frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
+{{ <video id="lDyUhI1ArPo" title="Aloe Blacc - I Need a Dollar (Live) (another video)" /> }}
 
 ## Genre and Mood
 

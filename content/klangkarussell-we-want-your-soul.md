@@ -26,9 +26,7 @@ original version, which cleverly dissect the ways in which media and advertising
 our desires and lives. Klangkarussell reinvents this concept with modern production techniques, 
 amplifying both the groove and the message.
 
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/0oMEuyhBkRo" frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
+{{ <video id="0oMEuyhBkRo" title="Klangkarussell - We Want Your Soul (another video)" /> }}
 
 ## Musical Breakdown
 

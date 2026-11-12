@@ -20,10 +20,7 @@ youtube = "https://www.youtube.com/embed/hcttROHKCNE"
 
 **Original Version**
 
-<figure class="mb-4 mt-0">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/uwStEf7rNoE" 
-    frameborder="0" allowfullscreen class="w-full h-64"></iframe>
-</figure>
+{{ <video id="uwStEf7rNoE" title="C.A.R - Idle Eyes (Roman Flügel Remix) (another video)" /> }}
 
 With its delicate, almost haunting quality, this remix amplifies the mysterious and 
 introspective vibe of the original, creating a minimalist journey where every sound 

@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 STATIC = ROOT / "static"
 OUTPUT = STATIC / "data" / "catalog.json"
+SEARCH = STATIC / "data" / "search.json"
 CONTRACT = ROOT / "data" / "track.schema.json"
 SCHEMA = "sonic-catalog/v1"
 
@@ -50,10 +51,34 @@ UNFINISHED = RULES["unfinished_marker"]
 OUTLINE_THRESHOLD = RULES["outline_threshold"]
 TOP_PAIRS = 24
 YOUTUBE_ID = re.compile(r"/embed/([A-Za-z0-9_-]{11})$")
+ROOT_ABSOLUTE = re.compile(r'(?:\]\(|\b(?:src|href)=")(/[^)"\s]*)')
 SEPARATORS = (" - ", " – ")
 
 
 # --- The contract: a validator for the JSON Schema subset data/track.schema.json uses. -------
+
+SUPPORTED = {
+    "$schema", "$id", "$ref", "$defs", "title", "description", "type", "required",
+    "additionalProperties", "properties", "items", "pattern", "minLength", "minItems",
+    "uniqueItems", "x-sonic",
+}
+
+
+def unsupported(schema, where: str = "#") -> list[str]:
+    """Keywords this validator does not implement: refused, so a contract change can never be
+    silently ignored."""
+    found = []
+    if isinstance(schema, dict):
+        for key, value in schema.items():
+            if key not in SUPPORTED:
+                found.append(f"{where}/{key}")
+            if key in ("properties", "$defs"):
+                for name, sub in value.items():
+                    found += unsupported(sub, f"{where}/{key}/{name}")
+            elif key == "items":
+                found += unsupported(value, f"{where}/items")
+    return found
+
 
 def validate(value, schema: dict, where: str = "", root: dict | None = None) -> list[str]:
     """Return one message per violation of `schema` (type, required, additionalProperties,
@@ -177,9 +202,10 @@ class Track:
     words: int
     extra: dict = field(default_factory=dict)
     outline: list = field(default_factory=list)
+    index: str = ""
 
 
-def load_track(path: Path, errors: list[str]) -> Track | None:
+def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> Track | None:
     rel = path.relative_to(CONTENT).as_posix()
     text = path.read_text(encoding="utf-8")
     try:
@@ -188,7 +214,7 @@ def load_track(path: Path, errors: list[str]) -> Track | None:
     except (ValueError, tomllib.TOMLDecodeError) as exc:
         errors.append(f"{rel}: {exc}")
         return None
-    if meta.get("draft") is True:
+    if meta.get("draft") is True and not include_drafts:
         return None
 
     def err(msg: str) -> None:
@@ -232,9 +258,15 @@ def load_track(path: Path, errors: list[str]) -> Track | None:
     if not artist:
         err("artist cannot be inferred from the title or the file name; set extra.artist")
 
-    for match in re.finditer(r"\]\((/[^)\s]+)\)", body):
-        if not (STATIC / match.group(1).lstrip("/")).is_file():
-            err(f"links to {match.group(1)}, which is not a file under static/")
+    rendered = "\n".join(line for line in body.splitlines() if not line.startswith("[//]: #"))
+    for match in ROOT_ABSOLUTE.finditer(rendered):
+        err(f"root-absolute URL {match.group(1)} breaks under the Pages sub-path; use "
+            '{{ <figure src="images/..." /> }} or a @/ link')
+    if re.search(r"<iframe\b", rendered, re.I):
+        err('raw <iframe>: use {{ <video id="..." title="..." /> }} or a plain link')
+    for match in re.finditer(r'<figure src="([^"]+)"', rendered):
+        if not (STATIC / match.group(1)).is_file():
+            err(f"figure {match.group(1)} is not a file under static/")
     if UNFINISHED in body or UNFINISHED in description:
         err(f"has an unfinished section ({UNFINISHED}); write it or remove it")
 
@@ -245,6 +277,8 @@ def load_track(path: Path, errors: list[str]) -> Track | None:
         inferred=rule, date=when, description=description, facets=facets,
         youtube_id=youtube_id, thumbnail=thumbnail, thumbnail_local=local,
         words=len(re.findall(r"\w+", body)), extra=kept_extra, outline=headings(body),
+        index=" ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
+                               if len(w) > 2})),
     )
 
 
@@ -319,6 +353,8 @@ def outline(tracks: list[Track]) -> list[dict]:
 
 
 def build(errors: list[str]) -> dict:
+    for keyword in unsupported(TRACK_SCHEMA):
+        errors.append(f"data/track.schema.json: {keyword} is not implemented by the validator")
     files = sorted(p for p in CONTENT.glob("*.md") if p.name != "_index.md")
     tracks = [t for t in (load_track(p, errors) for p in files) if t]
 
@@ -362,6 +398,7 @@ def build(errors: list[str]) -> dict:
         "months": [{"month": m, "count": months[m]} for m in sorted(months)],
         "artists": ranked(artists),
         "lookup": {t.source: i for i, t in enumerate(tracks)},
+        "_search": {t.source: t.index for t in tracks},
         "tracks": [
             {
                 "source": t.source, "path": t.path, "title": t.title, "artist": t.artist,
@@ -376,7 +413,15 @@ def build(errors: list[str]) -> dict:
 
 
 def render(catalog: dict) -> str:
-    return json.dumps(catalog, ensure_ascii=False, indent=1) + "\n"
+    return json.dumps({k: v for k, v in catalog.items() if not k.startswith("_")},
+                      ensure_ascii=False, indent=1) + "\n"
+
+
+def render_search(catalog: dict) -> str:
+    """The review text index the explorer loads on the first query: per track, the distinct
+    folded words of its review (static/data/search.json, sonic-search/v1)."""
+    return json.dumps({"schema": "sonic-search/v1", "generated_by": "scripts/catalog.py",
+                       "tracks": catalog["_search"]}, ensure_ascii=False, indent=0) + "\n"
 
 
 def main() -> int:
@@ -387,7 +432,7 @@ def main() -> int:
 
     errors: list[str] = []
     catalog = build(errors)
-    text = render(catalog)
+    outputs = {OUTPUT: render(catalog), SEARCH: render_search(catalog)}
     count = catalog["stats"]["tracks"]
     for e in errors:
         print(f"catalog: {e}", file=sys.stderr)
@@ -395,15 +440,18 @@ def main() -> int:
         print(f"catalog: {len(errors)} contract violation(s)", file=sys.stderr)
         return 1
     if args.check:
-        current = OUTPUT.read_text(encoding="utf-8") if OUTPUT.exists() else ""
-        if current != text:
-            print("catalog: static/data/catalog.json is stale; run npm run derive", file=sys.stderr)
+        stale = [p for p, text in outputs.items()
+                 if not p.exists() or p.read_text(encoding="utf-8") != text]
+        for p in stale:
+            print(f"catalog: {p.relative_to(ROOT)} is stale; run npm run derive", file=sys.stderr)
+        if stale:
             return 1
         print(f"catalog: {count} tracks, contract and catalogue current")
         return 0
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(text, encoding="utf-8")
-    print(f"catalog: wrote {OUTPUT.relative_to(ROOT)} ({count} tracks)")
+    for path, text in outputs.items():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8")
+        print(f"catalog: wrote {path.relative_to(ROOT)} ({count} tracks)")
     return 0
 
 

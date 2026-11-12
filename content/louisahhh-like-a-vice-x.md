@@ -18,19 +18,12 @@ youtube = "https://www.youtube.com/embed/ipXnX43YkQ0"
 > 
 > – Louisahhh
 
-
 **Louisahhh**, a Los Angeles-born, Paris-based producer, has carved a niche in the underground techno scene with her signature blend of raw intensity and poetic depth. 
 
 Known for her collaborations with techno heavyweights and her independent work on the label **RAAR**, Louisahhh’s music is unapologetically visceral, addressing themes of empowerment, rebellion, and vulnerability. *Like A Vice* exemplifies her ability to merge gritty, industrial production with deeply emotional storytelling.
 
-<div style="display: flex; gap: 20px;">
-    <div class="post-content__embed">
-        <iframe src="https://open.spotify.com/embed/track/3QlGz2Dar5QHNAy2ERkfCD" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    </div>
-    <div class="post-content__embed">
-        <iframe src="https://open.spotify.com/embed/album/0ogcFT7kSterS9774ogXjU" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    </div>
-</div>
+Listen on Spotify: [the track](https://open.spotify.com/track/3QlGz2Dar5QHNAy2ERkfCD) ·
+[the album](https://open.spotify.com/album/0ogcFT7kSterS9774ogXjU)
 
 ### About the Song
 
@@ -56,14 +49,12 @@ The album takes listeners on a relentless journey through the shadowy edges of t
 
 The album's **voice-as-vice brutality** becomes its defining characteristic, with Louisahhh's vocals dominating, piercing, and commanding rather than merely complementing the instrumentation. Her voice carries raw yet deliberate power, echoing the struggle and triumph central to the album's narrative.
 
-
 **Brutality as an Art Form**
 
 *“A Trap I’ve Built”* isn’t just an album—it’s an assault, both sonically and emotionally. The relentless pounding basslines, distorted synth layers, and frenetic percussive elements work in tandem with Louisahhh’s vocal grit to create a soundscape that feels like a constant push-and-pull between chaos and catharsis.
 
-
 <div class="text-center">
-    <img src="/images/thumbnails/lousiahh-like-a-vice-x.jpg" alt="Louisahhh - Like A Vice" class="rounded-lg shadow-lg">
+    {{ <figure src="images/thumbnails/lousiahh-like-a-vice-x.jpg" alt="Louisahhh - Like A Vice" /> }}
 </div>
 
 This collection is an exploration of extremes: raw, brutal, and unflinchingly honest. Each track is a testament to Louisahhh's ability to channel intense emotional landscapes into meticulously crafted sonic experiences. Where tracks like *Numb, Undone* pulse with hypnotic despair, others, like *Feral Rhythm*, exude primal urgency, clawing at the listener’s subconscious.
@@ -77,7 +68,6 @@ The brutality of the album lies not just in its raw production but in the way it
 One of the most remarkable aspects of **"Like A Vice"** is how Louisahhh’s voice and the techno lines interplay to tell a story that feels alive and unpredictable. Her voice isn’t just a vessel for the lyrics; it’s a character in its own right, whispering, pleading, commanding, and at times, defying the relentless pulse of the music. The techno backdrop serves as an emotional mirror, evolving with the vocal performance, weaving an atmosphere that reflects the emotional stakes of the narrative.
 
 > The opening verse introduces the central metaphor of the song—a vice—representing something that is both alluring and suffocating. Louisahhh's breathy, restrained delivery is matched by minimal percussion and a repetitive synth loop, creating a sense of quiet desperation. The subdued arrangement mirrors the internal struggle hinted at in the lyrics.
-
 
 ### The Voice: Telling a Story
 
@@ -128,11 +118,9 @@ Louisahhh's vocal performance charts an emotional journey:
 2. Rising intensity transforms into embodied defiance
 3. Culminating in the triumphant yet complex declaration: *"It'll break me, but I'll ascend"*
 
-
 ### Techno as Emotional Landscape
 
 The production mirrors and amplifies this journey:
-
 
 1. Ominous, suffocating synths establish tension
 2. Chaotic yet cathartic intensity builds through the chorus

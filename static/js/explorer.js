@@ -25,10 +25,27 @@
       terms[s.name] = (d[s.name] || '').split('|').filter(Boolean);
     });
     return {
-      el: el, title: d.title || '', artist: d.artist || '', date: d.date || '',
-      text: (d.text || '').normalize('NFKD').replace(/[̀-ͯ]/g, ''), terms: terms,
+      el: el, source: d.source || '', title: d.title || '', artist: d.artist || '',
+      date: d.date || '', text: (d.text || '').normalize('NFKD').replace(/[̀-ͯ]/g, ''),
+      review: '', terms: terms,
     };
   });
+
+  // The words of every review (static/data/search.json, derived by scripts/catalog.py), loaded
+  // once, on the first query; until it arrives the query matches the card text only.
+  var reviewIndex = 'idle';
+  function loadReviews() {
+    var url = document.body.getAttribute('data-search');
+    if (reviewIndex !== 'idle' || !url || !window.fetch) return;
+    reviewIndex = 'loading';
+    fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+      if (!data || !data.tracks) { reviewIndex = 'failed'; return; }
+      items.forEach(function (it) { it.review = data.tracks[it.source] || ''; });
+      reviewIndex = 'ready';
+      document.documentElement.dataset.reviews = 'ready';
+      render(false);
+    }).catch(function () { reviewIndex = 'failed'; });
+  }
 
   function fold(s) {
     return s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').trim();
@@ -50,7 +67,7 @@
     if (!s.q) return true;
     var words = s.q.split(/\s+/);
     for (var w = 0; w < words.length; w += 1) {
-      if (it.text.indexOf(words[w]) < 0) return false;
+      if (it.text.indexOf(words[w]) < 0 && it.review.indexOf(words[w]) < 0) return false;
     }
     return true;
   }
@@ -64,6 +81,7 @@
 
   function render(push) {
     var s = state();
+    if (s.q) loadReviews();
     var shown = 0;
     var sorted = items.slice().sort(ORDER[s.sort] || ORDER.new);
     var frag = document.createDocumentFragment();

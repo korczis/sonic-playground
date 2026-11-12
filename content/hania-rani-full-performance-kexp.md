@@ -24,11 +24,7 @@ Hania Rani’s KEXP session beautifully bridges **ambient**, **neoclassical**, a
 
 > *Minimalism,* a cornerstone of Hania’s style, emphasizes space and simplicity, allowing each note to breathe. This approach mirrors the contemplative themes of her compositions, creating room for profound emotional impact.
 
-<a href="/images/thumbnails/hania-rani-full-performance-kexp-8.png" target="_blank">
-
-  <img src="/images/thumbnails/hania-rani-full-performance-kexp-8.png" alt="Hania Rani Playing Piano" style="width: 100%; height: auto;">
-
-</a>
+{{ <figure src="images/thumbnails/hania-rani-full-performance-kexp-8.png" alt="Hania Rani Playing Piano" /> }}
 
 ---
 
@@ -38,11 +34,7 @@ Hania Rani’s KEXP session beautifully bridges **ambient**, **neoclassical**, a
 
 Hania’s compositions often explore themes of nature, emotion, and the passage of time. Her live performances, such as this KEXP session, are celebrated for their ability to captivate audiences with their quiet intensity and profound beauty.
 
-<a href="/images/thumbnails/hania-rani-full-performance-kexp-10.png" target="_blank">
-
-  <img src="/images/thumbnails/hania-rani-full-performance-kexp-10.png" alt="Hania Rani Portrait" style="width: 100%; height: auto;">
-
-</a>
+{{ <figure src="images/thumbnails/hania-rani-full-performance-kexp-10.png" alt="Hania Rani Portrait" /> }}
 
 ---
 

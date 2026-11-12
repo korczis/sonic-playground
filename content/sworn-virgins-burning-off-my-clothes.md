@@ -17,7 +17,6 @@ youtube = "https://www.youtube.com/embed/oAkNT7b2nGs"
 > energy reflects a cathartic release, symbolizing the act of shedding old
 > identities and embracing chaos as a form of liberation.
 
-
 "Burning of My Clothes" is driven by gritty synths, throbbing basslines, 
 and a sense of reckless abandon that draws listeners into its chaotic energy. 
 The track feels like a powerful statement on destruction and rebirth, 

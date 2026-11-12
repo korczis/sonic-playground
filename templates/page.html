@@ -9,7 +9,7 @@
 {%- else %}
 {{ <page_header title={page.title} crumbs={[["Home", home], [page.title, ""]]} lead={lead} /> }}
 {%- endif %}
-{%- set body = page.content | replace(from='src="/images/', to='src="' ~ get_url(path="images", trailing_slash=true)) %}
+{%- set body = page.content %}
 <div class="grid grid-cols-1 gap-4 px-4 pt-6 xl:grid-cols-3">
   <div class="space-y-4 xl:col-span-2">
     {%- if track and track.youtube %}

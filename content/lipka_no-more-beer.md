@@ -20,7 +20,6 @@ a bittersweet anthem that resonates with anyone who's ever had to
 bid farewell to good times.
 Song Summary
 
-
 ## Song Summary
 
 "No More Bier" is a poignant reflection on the end of carefree

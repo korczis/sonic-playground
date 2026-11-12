@@ -77,14 +77,15 @@ jobs:
       - uses: ./.github/actions/setup
       - name: Browser for the smoke test (Playwright's chromium, no system packages)
         run: npx playwright-core install chromium
-      - name: Gate (catalogue, unit tests, vendored assets and CSS, zola build, browser smoke)
+      # One build, with the production base_url, tested in a browser as production; the same
+      # directory is the artefact pages.yml deploys (plus revision.txt, the commit it is).
+      - name: Gate (catalogue, tests, skill cases, assets, zola build, built-site check, browser smoke)
         env:
           SMOKE_REQUIRED: '1'
+          PUBLIC_DIR: public
         run: bash scripts/verify.sh
-      - name: Build the site for GitHub Pages
-        run: |
-          zola build --force --output-dir public
-          printf '%s\n' "$GITHUB_SHA" > public/revision.txt
+      - name: Stamp the tested artefact with its commit
+        run: printf '%s\n' "$GITHUB_SHA" > public/revision.txt
       - uses: actions/upload-artifact@v7
         with:
           name: site

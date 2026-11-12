@@ -74,7 +74,6 @@ that’s the final stages of a party or rave, a personal emotional reckoning, or
 introspective journey. It’s less about outward rebellion and more about the inner 
 confrontation of overwhelming energies.
 
-
 ## Mood and Atmosphere
 
 The mood of "Going Down In A Blaze Of Glory" is **dark yet energetic**, **intense yet liberating**. 
@@ -189,7 +188,6 @@ experience of descent into an all-encompassing moment of release, fitting perfec
 with the symbolic meaning of the title. The listener is invited to surrender to the 
 rhythm and embrace the intensity, knowing that the end will come in a spectacular, 
 powerful form.
-
 
 ## Reference 
 

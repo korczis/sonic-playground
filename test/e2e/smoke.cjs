@@ -1,11 +1,15 @@
 // majordomus-skill: fleet-flowbite-pro
 // E2E smoke test of the built site in a real browser (scripts/verify.sh runs it after
-// `zola build`; CI runs it before every deploy and against production).
+// `zola build`; CI runs it on the very artefact it deploys, and again against production).
 //
-//   node test/e2e/smoke.cjs <public dir> <port>      serve <public dir>, test it
-//   node test/e2e/smoke.cjs --url <base url>          test a deployed site (production)
+//   node test/e2e/smoke.cjs --artifact <public dir> --as <base url>
+//        the browser asks for <base url> (the production URL, sub-path included) and every
+//        such request is answered from <public dir>: the bytes that will be deployed, tested
+//        under the path they will be served from
+//   node test/e2e/smoke.cjs --url <base url>          test the deployed site
+//        REVISION=<sha> adds ?v=<sha> to every page and data request, past the Pages CDN cache
 //
-// The local build must have been made with --base-url http://127.0.0.1:<port>. Asserts:
+// Asserts:
 //   - every page class renders with no console error and no failed same-origin request;
 //   - the home explorer: one card per catalogue track, faceted filter + text search + sort,
 //     URL state, the empty state, reset;
@@ -18,7 +22,6 @@
 // Exit 0 pass, 1 fail, 2 usage, 3 skipped (playwright-core not installed).
 'use strict';
 const fs = require('node:fs');
-const http = require('node:http');
 const path = require('node:path');
 
 let chromium;
@@ -30,17 +33,25 @@ try {
 }
 
 const args = process.argv.slice(2);
+const flag = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : undefined; };
 let base;
 let root = null;
-let server = null;
-if (args[0] === '--url' && args[1]) {
-  base = args[1].replace(/\/?$/, '/');
-} else if (args.length >= 2) {
-  root = path.resolve(args[0]);
-  base = `http://127.0.0.1:${Number(args[1])}/`;
+if (flag('--artifact') && flag('--as')) {
+  root = path.resolve(flag('--artifact'));
+  base = flag('--as').replace(/\/?$/, '/');
+} else if (flag('--url')) {
+  base = flag('--url').replace(/\/?$/, '/');
 } else {
-  console.error('usage: node test/e2e/smoke.cjs <public dir> <port> | --url <base url>');
+  console.error('usage: node test/e2e/smoke.cjs --artifact <dir> --as <base url> | --url <base url>');
   process.exit(2);
+}
+const revision = !root && process.env.REVISION ? process.env.REVISION : '';
+
+// A URL of the site, past the CDN cache when a revision is known (production only).
+function at(rel) {
+  const url = new URL(rel, base);
+  if (revision) url.searchParams.set('v', revision);
+  return url.toString();
 }
 
 const TYPES = {
@@ -50,23 +61,19 @@ const TYPES = {
   '.txt': 'text/plain',
 };
 
-function serve(dir, port) {
-  return new Promise((resolve) => {
-    server = http.createServer((req, res) => {
-      let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-      let file = path.join(dir, p);
-      if (!file.startsWith(dir)) { res.writeHead(403); res.end(); return; }
-      if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
-      if (!fs.existsSync(file)) {
-        res.writeHead(404, { 'content-type': TYPES['.html'] });
-        res.end(fs.readFileSync(path.join(dir, '404.html')));
-        return;
-      }
-      res.writeHead(200, { 'content-type': TYPES[path.extname(file)] || 'application/octet-stream' });
-      res.end(fs.readFileSync(file));
-    });
-    server.listen(port, '127.0.0.1', resolve);
-  });
+// Answer a request for the site from the artefact, as GitHub Pages would.
+async function fromArtifact(route) {
+  const url = new URL(route.request().url());
+  let rel = decodeURIComponent(url.pathname).slice(new URL(base).pathname.length);
+  let file = path.join(root, rel);
+  if (!file.startsWith(root)) return route.fulfill({ status: 403, body: '' });
+  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
+  if (!fs.existsSync(file)) {
+    return route.fulfill({ status: 404, contentType: TYPES['.html'],
+      body: fs.readFileSync(path.join(root, '404.html')) });
+  }
+  return route.fulfill({ status: 200, body: fs.readFileSync(file),
+    contentType: TYPES[path.extname(file)] || 'application/octet-stream' });
 }
 
 const failures = [];
@@ -78,6 +85,7 @@ function check(ok, what) {
 
 async function open(browser, url, viewport, colorScheme = 'light') {
   const context = await browser.newContext({ viewport, colorScheme });
+  if (root) await context.route(`${base}**`, fromArtifact);
   const page = await context.newPage();
   const errors = [];
   const origin = new URL(base).origin;
@@ -106,8 +114,9 @@ async function shot(page, name) {
 }
 
 (async () => {
-  if (root) await serve(root, Number(new URL(base).port));
-  const catalog = await (await fetch(`${base}data/catalog.json`)).json();
+  const catalog = root
+    ? JSON.parse(fs.readFileSync(path.join(root, 'data/catalog.json'), 'utf8'))
+    : await (await fetch(at('data/catalog.json'))).json();
   check(catalog.schema === 'sonic-catalog/v1' && catalog.tracks.length > 0,
     `catalogue served (${catalog.tracks.length} tracks)`);
   if (root) {
@@ -130,21 +139,21 @@ async function shot(page, name) {
     ['genre term', `genre/${genre.slug}/`], ['feelings', 'sentiment/'],
   ];
   for (const [name, rel] of pages) {
-    const { context, page, errors, response } = await open(browser, base + rel, desktop);
+    const { context, page, errors, response } = await open(browser, at(rel), desktop);
     const h1 = await page.locator('h1').first().textContent().catch(() => '');
     check(response && response.status() === 200 && h1.trim().length > 0, `${name}: 200 with an H1 ("${h1.trim().slice(0, 40)}")`);
     check(errors.length === 0, `${name}: no console or request errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
   {
-    const { context, response, page } = await open(browser, `${base}nope-${Date.now()}/`, desktop);
+    const { context, response, page } = await open(browser, at(`nope-${Date.now()}/`), desktop);
     check(response.status() === 404 && (await page.locator('h1').textContent()).includes('skipped'), '404 page served for an unknown path');
     await context.close();
   }
 
   // Explorer.
   {
-    const { context, page, errors } = await open(browser, base, desktop);
+    const { context, page, errors } = await open(browser, at(''), desktop);
     await page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready');
     const visible = () => page.locator('[data-track]:not([hidden])').count();
     check((await page.locator('[data-track]').count()) === catalog.tracks.length, 'home renders one card per catalogue track');
@@ -166,7 +175,7 @@ async function shot(page, name) {
     await page.selectOption('#explorer-sort', 'old');
     const first = await page.locator('[data-track]:not([hidden])').first().getAttribute('data-date');
     check(first === catalog.stats.first, `sort oldest first starts at ${catalog.stats.first}`);
-    const deep = await open(browser, `${base}?genre=${encodeURIComponent(genre.term)}&sort=artist`, desktop);
+    const deep = await open(browser, at(`?genre=${encodeURIComponent(genre.term)}&sort=artist`), desktop);
     await deep.page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready');
     check((await deep.page.locator('[data-track]:not([hidden])').count()) === genre.count, 'a filtered URL opens filtered');
     await deep.context.close();
@@ -182,7 +191,7 @@ async function shot(page, name) {
 
   // Track page: video and related tracks.
   {
-    const { context, page, errors } = await open(browser, base + sample.path, desktop);
+    const { context, page, errors } = await open(browser, at(sample.path), desktop);
     check((await page.locator('aside[aria-label="About this track"] li').count()) === sample.related.length, `track: ${sample.related.length} related tracks listed`);
     await shot(page, 'track-desktop-light');
     await page.click('[data-video-play]');
@@ -194,7 +203,7 @@ async function shot(page, name) {
 
   // Phone width.
   for (const [name, rel] of [['home', ''], ['track', sample.path], ['insights', 'insights/']]) {
-    const { context, page } = await open(browser, base + rel, phone, name === 'track' ? 'dark' : 'light');
+    const { context, page } = await open(browser, at(rel), phone, name === 'track' ? 'dark' : 'light');
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${name} @390px: no horizontal overflow (${overflow}px)`);
     if (name === 'home') {
@@ -211,12 +220,10 @@ async function shot(page, name) {
   }
 
   await browser.close();
-  if (server) server.close();
   for (const n of notices) console.log(`note third-party ${n}`);
   console.log(failures.length ? `smoke: ${failures.length} failure(s)` : 'smoke: all checks passed');
   process.exit(failures.length ? 1 : 0);
 })().catch((e) => {
   console.error(e);
-  if (server) server.close();
   process.exit(1);
 });
