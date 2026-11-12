@@ -16,5 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Probe every video
+      - name: Probe every video (data/videos.json must match what YouTube answers)
         run: python3 scripts/probe-videos.py
+
+  links:
+    name: External links still answer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Probe every external link of the reviews and pages
+        run: python3 scripts/probe-links.py
