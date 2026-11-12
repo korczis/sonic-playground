@@ -31,6 +31,14 @@ bridge = "Bridge"
 climax = "Climax"
 outro = "Outro"
 
+# Required sections are written into every new review even before the corpus shares them;
+# `after` places one after a section of the outline (ADR 0004: every review teaches).
+[sections."concepts in focus"]
+heading = "Concepts in Focus"
+required = true
+after = "musical breakdown"
+guidance = "Explain two or three of the concepts in taxonomies.concept as they sound in this track, for a curious listener: what the idea is, where exactly to hear it (with the times of the listening guide), and why it matters here. Link each concept once with the concept_link component and every other review you mention with the track_link component (skill add-song); claim only what you can hear or source."
+
 [sections."artistic context"]
 heading = "Artistic Context"
 guidance = "Who the artist is, where the track comes from (album, year, label, scene) and what it connects to; only facts you can source."

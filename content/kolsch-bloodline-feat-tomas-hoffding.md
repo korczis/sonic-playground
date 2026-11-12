@@ -8,6 +8,9 @@ genre = ["techno", "electronic", "minimal"]
 sentiment = ["emotional", "euphoric", "nostalgic"]
 
 [extra]
+country = "DK"
+isrc = "DEU671500167"
+musicbrainz = { recording = "bd5f84e6-e902-403a-afaa-67b3be321733", artist = "556ee13f-1ef3-4cf0-a11e-1c71aff962d4", release = "4c5895c8-3a7c-4c3a-a742-7519bece1260" }
 publisher = "Kompakt"
 release_year = "2015"
 album = "1983"

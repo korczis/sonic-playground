@@ -1,0 +1,10 @@
+term = "four-on-the-floor"
+category = "rhythm"
+wikipedia = "https://en.wikipedia.org/wiki/Four_on_the_floor_(music)"
+see_also = ["house groove", "drum machine"]
+
+[en]
+definition = "A steady kick drum on every beat of a 4/4 bar. It is the pulse of disco, house and most techno: the body always knows where the next beat lands, so everything else can move around it."
+
+[cs]
+definition = "Rovnoměrný úder basového bubnu na každou dobu taktu 4/4. Je to puls disca, house a většiny techna: tělo vždy ví, kde přijde další doba, a vše ostatní se kolem ní může volně hýbat."

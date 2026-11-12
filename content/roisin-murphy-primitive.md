@@ -8,6 +8,10 @@ genre = ["electronic", "pop", "dance"]
 sentiment = ["bold", "introspective", "liberating"]
 
 [extra]
+release_year = "2007"
+country = "IE"
+isrc = "GBAYE0702648"
+musicbrainz = { recording = "d4cb73dc-66cc-48a4-8aff-decfa0ae247e", artist = "4c56405d-ba8e-4283-99c3-1dc95bdd50e7", release = "625a3d32-1942-43bb-a964-74fd111da07b" }
 youtube = "https://www.youtube.com/embed/3d9nrrQGxzA"
 +++
 

@@ -1,0 +1,10 @@
+term = "music video"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Music_video"
+see_also = ["cover version"]
+
+[en]
+definition = "A short film made to accompany a song. Since MTV it has shaped how songs are remembered, and on YouTube it is often the main way a song is heard."
+
+[cs]
+definition = "Krátký film doprovázející píseň. Od dob MTV ovlivňuje, jak si písně pamatujeme, a na YouTube je často hlavní cestou, jak se píseň poslouchá."

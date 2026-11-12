@@ -1,0 +1,10 @@
+term = "bridge"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Bridge_(music)"
+see_also = ["verse-chorus form"]
+
+[en]
+definition = "A contrasting section, usually once and late in a song, that leaves the familiar verse and chorus before returning to them. It refreshes the ear before the last chorus."
+
+[cs]
+definition = "Kontrastní část, obvykle jednou a ke konci písně, která opustí známou sloku a refrén, než se k nim vrátí. Osvěží ucho před posledním refrénem."

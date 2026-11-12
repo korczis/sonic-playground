@@ -8,6 +8,9 @@ genre = ["folk", "soundtrack", "ballad"]
 sentiment = ["haunting", "defiant", "melancholic"]
 
 [extra]
+country = "US"
+isrc = "USUG11401803"
+musicbrainz = { recording = "bae87b19-f222-4ebe-af05-dca32dc2b833", artist = "f6580b26-77f7-4a7b-8513-6db0476e8f21", release = "7c05c08f-614a-44f9-bbc4-a4db2afce5bc" }
 release_year = "2014"
 album = "The Hunger Games: Mockingjay, Part 1"
 youtube = "https://www.youtube.com/embed/F3hTW9e20d8"

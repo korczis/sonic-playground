@@ -25,7 +25,11 @@ Per song: find the official upload (artist channel, VEVO, label, "- Topic"); pro
 song exists, skip it; the oEmbed must answer); choose 2-4 genres and 2-3 feelings, each passed as
 its own quoted argument; `track.py new ... --date <today>`; `track.py refresh` with the album and,
 only when sourced, the year and label; replace every `TODO(write)` with 400-550 words in the
-existing reviews' voice, one line per paragraph, every heading kept in order; finish with
+existing reviews' voice, one line per paragraph, every heading kept in order; add the
+educational layer of the skill's step "Teach" (run `track.py enrich <file> --write` first: it is
+your own file; concepts from `data/concepts/`, creating `data/concepts/<slug>.toml` with en and cs
+definitions only for a concept none defines yet; the learning guide timed against the embedded
+video; at least two sources); finish with
 `python3 scripts/track.py check content/<file>.md` at `"errors": []` and `"unfinished": 0`.
 
 Report: a table (n, artist, track, file, youtube id or "none"), the skipped songs with the

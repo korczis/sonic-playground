@@ -3,7 +3,11 @@
   <p class="mb-4 text-sm text-gray-500 md:mb-0 dark:text-gray-400">{%- set last_year = catalog.stats.last | truncate(length=4, end="") %}© {{ config.extra.since }}{% if last_year != config.extra.since ~ "" %}–{{ last_year }}{% endif %} {{ config.author }} · <a href="{{ config.extra.license_url }}" class="hover:underline">{{ config.extra.license }}</a> · <span data-i18n="footer.note" data-i18n-vars="{{ {"n": catalog.stats.tracks} | json_encode }}">{{ l["footer.note"] | replace(from="{n}", to=catalog.stats.tracks ~ "") }}</span></p>
   <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
     {%- for m in config.extra.menu %}
-    <li><a href="{{ get_url(path=m.path) }}" class="hover:underline" data-i18n="{{ m.key }}">{{ l[m.key] }}</a></li>
+    {%- if m.requires %}{% set shown = catalog[m.requires] | length > 0 %}{% else %}{% set shown = true %}{% endif %}
+    {%- if shown %}
+    {%- if "@/" in m.path %}{% set url = get_url(path=m.path) %}{% else %}{% set url = get_url(path=m.path, trailing_slash=true) %}{% endif %}
+    <li><a href="{{ url }}" class="hover:underline" data-i18n="{{ m.key }}">{{ l[m.key] }}</a></li>
+    {%- endif %}
     {%- endfor %}
     {%- for s in config.extra.social %}
     <li><a href="{{ s.url }}" class="hover:underline">{{ s.name }}</a></li>

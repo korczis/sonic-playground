@@ -8,6 +8,8 @@ genre = ["electronic", "synth-pop", "darkwave"]
 sentiment = ["melancholic", "introspective", "atmospheric"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "44b98d3e-2230-4fad-ba9c-ec7b3c75fb81", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "bced4a3d-e264-40a7-b98a-6cf9736b83ce" }
 release_year = "2005"
 album = "Wild Light"
 youtube = "https://www.youtube.com/embed/UfR04LiZ2cg"

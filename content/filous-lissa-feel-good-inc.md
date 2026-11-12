@@ -8,6 +8,8 @@ genre = ["electronic", "cover", "chillout"]
 sentiment = ["dreamy", "relaxed", "nostalgic"]
 
 [extra]
+country = "AT"
+musicbrainz = { recording = "e0dec194-3699-4fff-b05e-86145ba1a45c", artist = "f6ef0b53-54e9-4fdd-9bad-eb94e7ddc69b", release = "0e47cdec-3185-4d24-bab6-b41520fd2468" }
 release_year = "2016"
 album = "Feel Good Inc."
 youtube = "https://www.youtube.com/embed/e1AvCxZnuLk"

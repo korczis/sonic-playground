@@ -8,6 +8,9 @@ genre = ["synth-pop", "electro-pop", "dance"]
 sentiment = ["nostalgic", "uplifting", "dreamy"]
 
 [extra]
+country = "GB"
+isrc = "CAN111000309"
+musicbrainz = { recording = "77c78737-7712-45eb-831e-ba36f1e2b524", artist = "b45335d1-5219-4262-a44d-936aa36eeaed", release = "7259ed56-793f-4b99-b64e-4a2ed7b85b49" }
 release_year = "2002"
 album = "Light & Magic"
 youtube = "https://www.youtube.com/embed/s6jaYJx7yeI"

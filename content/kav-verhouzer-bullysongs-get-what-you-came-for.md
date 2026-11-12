@@ -8,6 +8,8 @@ genre = ["deep house", "dance", "electronic"]
 sentiment = ["uplifting", "feel-good", "confident"]
 
 [extra]
+country = "NL"
+musicbrainz = { recording = "12805520-6701-4587-9818-1b15087a90fd", artist = "b22f9a75-412f-40bc-94bb-ad205a646ce8", release = "9a1fd66e-4638-4739-ae0c-817331a81efa" }
 release_year = "2016"
 album = "Get What You Came For"
 youtube = "https://www.youtube.com/embed/_DevQRN6XQY"

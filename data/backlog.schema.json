@@ -1,0 +1,39 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://korczis.github.io/sonic-playground/schema/backlog.v1.json",
+ "title": "sonic-playground playlist (data/backlog/<file>.toml)",
+ "description": "A playlist of the owner's as data: its items in order, each a recording. It holds relationships, never review metadata: scripts/catalog.py resolves every item to one review (by ISRC, then by artist and song, unless review= or skip= says otherwise) and derives from kind = \"yearbook\" the yearbook pages, counts and each song's years. scripts/spotify.py writes these files; a transcription may be written by hand. No account identifier is ever stored.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["kind", "source", "track"],
+ "properties": {
+  "kind": {"type": "string", "enum": ["yearbook", "playlist"], "description": "yearbook: the owner's annual Top Songs of `year`."},
+  "year": {"type": "integer", "description": "The listening year a yearbook covers (not a release year)."},
+  "name": {"type": "string", "minLength": 1, "description": "The playlist's name as the source shows it."},
+  "source": {"type": "string", "minLength": 10, "description": "Where the items come from (API, data export, transcription) and when."},
+  "retrieved": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+  "added": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+  "expected": {"type": "integer", "description": "How many items the source says the playlist has; the import reports retrieved against it."},
+  "track": {"type": "array", "items": {"$ref": "#/$defs/item"}}
+ },
+ "$defs": {
+  "item": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": ["n"],
+   "properties": {
+    "n": {"type": "integer", "description": "Position in the playlist, from 1."},
+    "title": {"type": "string", "description": "The recording title as the source gives it."},
+    "artists": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "album": {"type": "string"},
+    "duration": {"type": "string", "pattern": "^\\d{1,2}:\\d{2}$"},
+    "spotify": {"type": "string", "pattern": "^[0-9A-Za-z]{22}$", "description": "Spotify track id (a public catalogue id)."},
+    "isrc": {"type": "string", "pattern": "^[A-Z]{2}[A-Z0-9]{3}\\d{7}$"},
+    "uncertain": {"type": "boolean", "description": "The item could not be read completely; it is never resolved by guess."},
+    "review": {"type": "string", "pattern": "^[a-z0-9-]+\\.md$", "description": "Identity override: this item is that review."},
+    "skip": {"type": "string", "minLength": 5, "description": "Why this item gets no review (not a song, unavailable, ...)."},
+    "note": {"type": "string"}
+   }
+  }
+ }
+}

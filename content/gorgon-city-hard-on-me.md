@@ -8,6 +8,10 @@ genre = ["deep house", "electronic", "house"]
 sentiment = ["emotional", "introspective", "groovy"]
 
 [extra]
+release_year = "2014"
+country = "GB"
+isrc = "GBUM71404090"
+musicbrainz = { recording = "71e74a70-b523-4c3d-a93c-f095564a673d", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "b6317202-fb3b-4ebe-991a-22475d3e1fc9" }
 youtube = "https://www.youtube.com/embed/45KMkkl6hIY"
 +++
 

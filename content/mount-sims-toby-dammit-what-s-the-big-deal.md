@@ -8,6 +8,8 @@ genre = ["electronic", "electro", "post-punk"]
 sentiment = ["edgy", "ironic", "raw"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "bea6cdfc-386d-441a-b1d5-a93dc655b526", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "fafeabfd-df9c-4c9a-87d0-9ee7da754561" }
 release_year = "2008"
 album = "Happily Ever After"
 youtube = "https://www.youtube.com/embed/BhMslnJPlVM"

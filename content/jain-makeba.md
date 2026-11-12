@@ -8,6 +8,10 @@ genre = ["pop", "world", "afrobeat"]
 sentiment = ["empowering", "energetic", "uplifting"]
 
 [extra]
+release_year = "2015"
+country = "FR"
+isrc = "FR9W11504985"
+musicbrainz = { recording = "94ab444d-24a3-451a-883c-98a2c8e56964", artist = "0e6dffeb-bda0-4eb1-9567-2ac9306a516d", release = "c024904f-b176-42df-8522-62b561e5c3a4" }
 youtube = "https://www.youtube.com/embed/59Q_lhgGANc"
 +++
 

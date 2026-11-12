@@ -44,9 +44,11 @@ from __future__ import annotations
 import argparse
 import difflib
 import json
+import os
 import re
 import sys
 import tempfile
+import time
 import tomllib
 import urllib.error
 import urllib.parse
@@ -283,6 +285,15 @@ def render_body(outline: list[dict]) -> str:
     default = review["defaults"]["guidance"]
     marker = cat.UNFINISHED
     chunks = []
+    # A required section the outline does not have yet goes after its anchor (or last).
+    names = [s["name"] for s in outline]
+    outline = list(outline)
+    for name, conf in sections.items():
+        if conf.get("required") and name not in names:
+            anchor = conf.get("after")
+            at = names.index(anchor) + 1 if anchor in names else len(outline)
+            outline.insert(at, {"name": name, "subsections": []})
+            names.insert(at, name)
     for s in outline:
         conf = sections.get(s["name"], {})
         heading = conf.get("heading", s["name"].title())
@@ -343,7 +354,7 @@ def new(text: str, args) -> int:
         out({**plan, "written": False,
              "hint": "refresh the existing review (scripts/track.py refresh) instead of a second one"})
         return 3
-    facets = {f: [t.strip().lower() for t in (getattr(args, f) or [])] for f in cat.FACETS}
+    facets = {f: [t.strip().lower() for t in (getattr(args, f, None) or [])] for f in cat.FACETS}
     if not facets["genre"] or not facets["sentiment"]:
         fail("--genre and --sentiment are required (see: scripts/track.py vocab)")
 
@@ -398,13 +409,36 @@ def refresh(path: str, args) -> int:
             updates[key] = value
     if not updates:
         fail("nothing to refresh: pass --youtube, --album, --release-year or --publisher")
+    return write_extra(file, path, updates)
+
+
+def toml_value(value) -> str:
+    """A TOML value for [extra]: strings, integers, booleans, lists and inline tables."""
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, int):
+        return str(value)
+    if isinstance(value, str):
+        return toml_string(value)
+    if isinstance(value, list):
+        return "[" + ", ".join(toml_value(v) for v in value) + "]"
+    if isinstance(value, dict):
+        return "{ " + ", ".join(f"{k} = {toml_value(v)}" for k, v in value.items()) + " }"
+    raise TypeError(f"no TOML form for {type(value).__name__}")
+
+
+def write_extra(file: Path, path: str, updates: dict, quiet: bool = False) -> int:
+    """Set keys of [extra] (replace or add), prove the article still meets the contract and now
+    says what was asked, then write it. The prose is never touched."""
+    text = file.read_text(encoding="utf-8")
+    raw, body = cat.split_front_matter(text, file.name)
     lines = raw.splitlines()
     if "[extra]" not in (line.strip() for line in lines):
         lines.append("")
         lines.append("[extra]")
     start = next(i for i, line in enumerate(lines) if line.strip() == "[extra]")
     for key, value in updates.items():
-        new_line = f"{key} = {toml_string(value)}"
+        new_line = f"{key} = {toml_value(value)}"
         pattern = re.compile(rf"^\s*#?\s*{key}\s*=")
         end = next((i for i in range(start + 1, len(lines)) if lines[i].lstrip().startswith("[")),
                    len(lines))  # [extra] ends at the next table or at the end
@@ -421,11 +455,147 @@ def refresh(path: str, args) -> int:
         errors = [f"extra.{k} is {extra.get(k)!r} after the rewrite, not {v!r}"
                   for k, v in updates.items() if extra.get(k) != v]
     if errors:
-        out({"file": path, "written": False, "errors": errors})
+        if not quiet:
+            out({"file": path, "written": False, "errors": errors})
         return 1
     file.write_text(rewritten, encoding="utf-8")
-    out({"file": path, "written": True, "updated": updates})
+    if not quiet:
+        out({"file": path, "written": True, "updated": updates})
     return 0
+
+
+# --- MusicBrainz: identifiers and facts a review should not have to type. --------------------
+
+MB = "https://musicbrainz.org/ws/2/"
+MB_AGENT = "sonic-playground/1.0 (+https://github.com/korczis/sonic-playground)"
+MB_CACHE = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache")) / "sonic-playground" / "musicbrainz.json"
+_mb_last = [0.0]
+
+
+def mb_get(url: str, args) -> dict:
+    """GET a MusicBrainz JSON document: from the fixture (tests), the cache (outside the
+    repository), or the API at most once a second, as its terms ask."""
+    if getattr(args, "mb_fixture", None):
+        data = json.loads(Path(args.mb_fixture).read_text(encoding="utf-8"))
+        return data.get(url, {})
+    cache = json.loads(MB_CACHE.read_text(encoding="utf-8")) if MB_CACHE.exists() else {}
+    if url in cache:
+        return cache[url]
+    wait = 1.1 - (time.monotonic() - _mb_last[0])
+    if wait > 0:
+        time.sleep(wait)
+    request = urllib.request.Request(url, headers={"User-Agent": MB_AGENT, "Accept": "application/json"})
+    data: dict = {}
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                data = json.loads(response.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code in (429, 503) and attempt < 3:
+                time.sleep(2 ** attempt * 2)
+                continue
+            if exc.code == 404:
+                data = {}
+                break
+            raise
+    _mb_last[0] = time.monotonic()
+    cache[url] = data
+    MB_CACHE.parent.mkdir(parents=True, exist_ok=True)
+    MB_CACHE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+    return data
+
+
+def mb_quote(text: str) -> str:
+    return '"' + re.sub(r'([+\-&|!(){}\[\]^"~*?:\\/])', r"\\\1", text) + '"'
+
+
+def seconds(mmss: str | None) -> int | None:
+    if not mmss or not re.fullmatch(r"\d{1,2}:\d{2}", mmss):
+        return None
+    m, s_ = mmss.split(":")
+    return int(m) * 60 + int(s_)
+
+
+def mb_match(artist: str, track: str, duration: int | None, args) -> dict:
+    """The MusicBrainz recording of artist - track: a search scored by MusicBrainz, then kept
+    only when the title and the main artist agree (folded), the closest length when the video's
+    is known, else the earliest release. Ambiguity is reported, never guessed."""
+    main = re.split(r",| feat\.? | & | x ", artist, maxsplit=1)[0].strip()
+    title = re.sub(r"\s*\((feat\.|ft\.)[^)]*\)", "", track).strip()
+    q = f"recording:{mb_quote(title)} AND artist:{mb_quote(main)}"
+    found = mb_get(MB + "recording?" + urllib.parse.urlencode({"query": q, "fmt": "json", "limit": 15}), args)
+    want_title, want_artist = fold(title), fold(main)
+    candidates = []
+    for r in found.get("recordings", []):
+        credits = " ".join(c.get("name", "") + " " + (c.get("artist", {}).get("name", ""))
+                           for c in r.get("artist-credit", []))
+        if int(r.get("score", 0)) < 85 or fold(r.get("title", "")) != want_title:
+            continue
+        if want_artist not in fold(credits):
+            continue
+        dates = sorted(x.get("date", "") for x in r.get("releases", []) if x.get("date"))
+        length = (r.get("length") or 0) // 1000 or None
+        candidates.append({"r": r, "first": dates[0] if dates else "9999", "length": length})
+    if not candidates:
+        return {"status": "no-match", "query": q}
+    if duration:
+        candidates.sort(key=lambda c: (abs((c["length"] or 10**6) - duration), c["first"]))
+    else:
+        candidates.sort(key=lambda c: c["first"])
+    best = candidates[0]["r"]
+    first = candidates[0]["first"]
+    artist_id = next((c["artist"]["id"] for c in best.get("artist-credit", []) if "artist" in c), "")
+    releases = sorted((x for x in best.get("releases", []) if x.get("date")), key=lambda x: x["date"])
+    found_artist = mb_get(MB + f"artist/{artist_id}?fmt=json", args) if artist_id else {}
+    return {"status": "matched", "recording": best["id"], "artist": artist_id,
+            "release": releases[0]["id"] if releases else "",
+            "isrc": sorted(best.get("isrcs", []))[:1],
+            "year": first[:4] if first != "9999" else "",
+            "country": found_artist.get("country") or "",
+            "candidates": len(candidates)}
+
+
+def enrich(paths: list[str], args) -> int:
+    """Fill what MusicBrainz knows into [extra]: the recording, artist and first release ids,
+    the ISRC, the artist's country, and the release year when the review has none. A value the
+    review already has is kept; without --write this only reports."""
+    files = sorted(cat.CONTENT.glob("*.md")) if args.all else [content_path(p) for p in paths]
+    report = {"matched": [], "unchanged": [], "no-match": [], "failed": []}
+    for file in files:
+        if file.name == "_index.md":
+            continue
+        errors: list[str] = []
+        t = cat.load_track(file, errors)
+        if not t:
+            continue
+        rel = f"content/{file.name}"
+        if t.full_extra.get("musicbrainz") and not args.force:
+            report["unchanged"].append(rel)
+            continue
+        try:
+            m = mb_match(t.artist, t.track, seconds(t.full_extra.get("video_duration")), args)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            report["failed"].append({"file": rel, "error": str(exc)})
+            continue
+        if m["status"] != "matched":
+            report["no-match"].append({"file": rel, "query": m.get("query")})
+            continue
+        updates = {"musicbrainz": {k: m[k] for k in ("recording", "artist", "release") if m[k]}}
+        if m["isrc"] and not t.full_extra.get("isrc"):
+            updates["isrc"] = m["isrc"][0]
+        if m["country"] and re.fullmatch(r"[A-Z]{2}", m["country"]) and not t.full_extra.get("country"):
+            updates["country"] = m["country"]
+        if m["year"] and not t.full_extra.get("release_year"):
+            updates["release_year"] = m["year"]
+        entry = {"file": rel, "updates": updates, "candidates": m["candidates"]}
+        if args.write and write_extra(file, rel, updates, quiet=True) != 0:
+            report["failed"].append({"file": rel, "error": "the rewritten article fails the contract"})
+            continue
+        report["matched"].append(entry)
+    out({"written": bool(args.write), **{k: v for k, v in report.items()},
+         "counts": {k: len(v) for k, v in report.items()}})
+    return 1 if report["failed"] else 0
 
 
 def check(path: str) -> int:
@@ -469,6 +639,12 @@ def main() -> int:
     p_ref.add_argument("--release-year", dest="release_year")
     p_ref.add_argument("--publisher")
     sub.add_parser("check", help="validate one article").add_argument("file")
+    p_en = sub.add_parser("enrich", help="identifiers and facts from MusicBrainz into [extra]")
+    p_en.add_argument("files", nargs="*")
+    p_en.add_argument("--all", action="store_true", help="every review")
+    p_en.add_argument("--write", action="store_true", help="write (default: report only)")
+    p_en.add_argument("--force", action="store_true", help="also reviews that have identifiers")
+    p_en.add_argument("--mb-fixture", help="MusicBrainz answers from a JSON file (tests)")
     p_vocab = sub.add_parser("vocab", help="the facet vocabulary, most used first")
     p_vocab.add_argument("--facet", choices=cat.FACETS)
     p_vocab.add_argument("--limit", type=int, default=0)
@@ -486,6 +662,8 @@ def main() -> int:
         return new(args.input, args)
     if args.command == "refresh":
         return refresh(args.file, args)
+    if args.command == "enrich":
+        return enrich(args.files, args)
     if args.command == "check":
         return check(args.file)
     if args.command == "vocab":
@@ -494,7 +672,7 @@ def main() -> int:
         out({f: dict(list(vocab[f].items())[:args.limit or None]) for f in facets})
         return 0
     if args.command == "suggest":
-        facets = {f: getattr(args, f) or [] for f in cat.FACETS}
+        facets = {f: getattr(args, f, None) or [] for f in cat.FACETS}
         out({"facets": suggest(facets), "related": related_preview(facets)})
         return 0
     if args.command == "outline":

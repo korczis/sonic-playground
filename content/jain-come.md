@@ -8,6 +8,9 @@ genre = ["pop", "world", "electro-pop"]
 sentiment = ["playful", "uplifting", "joyful"]
 
 [extra]
+country = "FR"
+isrc = "FR9W11502680"
+musicbrainz = { recording = "26a6365b-cfb8-4088-ae61-73d9e3e9a054", artist = "0e6dffeb-bda0-4eb1-9567-2ac9306a516d", release = "98eed746-ec51-44f2-a4a0-c6222a39ef8d" }
 release_year = "2015"
 album = "Zanaka"
 youtube = "https://www.youtube.com/embed/KDXOzr0GoA4"

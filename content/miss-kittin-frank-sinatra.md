@@ -8,6 +8,8 @@ genre = ["electroclash", "dance", "electronic"]
 sentiment = ["satirical", "playful", "provocative"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "0af00b49-6131-4edc-9e5d-8f155dbee3a6", artist = "bc7ec666-4700-4f48-a797-5c607f84a890", release = "f16e54a4-b5dd-4d02-b8d3-d59751cef284" }
 release_year = "2001"
 album = "First Album"
 youtube = "https://www.youtube.com/embed/ouWAymYiUn8"

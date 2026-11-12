@@ -8,6 +8,9 @@ genre = ["alternative rock", "indie rock", "rock"]
 sentiment = ["energetic", "bold", "gritty"]
 
 [extra]
+country = "GB"
+isrc = "GBCEL1200081"
+musicbrainz = { recording = "64745b72-5bc8-43a9-a2a3-0d20afd42d5d", artist = "ada7a83c-e3e1-40f1-93f9-3e73dbc9298a", release = "c34bdf18-b9be-4b1e-930b-e052b699fd8d" }
 release_year = "2012"
 album = "AM"
 youtube = "https://www.youtube.com/embed/VQH8ZTgna3Q"

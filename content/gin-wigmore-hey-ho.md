@@ -8,6 +8,9 @@ genre = ["soul", "pop", "blues"]
 sentiment = ["playful", "bold", "upbeat"]
 
 [extra]
+country = "NZ"
+isrc = "AUUM70901997"
+musicbrainz = { recording = "dbb792ea-3fa6-419e-b5da-8d282d4f0f6d", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "c6c9d48e-2194-4169-aefc-694be6a720c1" }
 release_year = "2009"
 album = "Holy Smoke"
 youtube = "https://www.youtube.com/embed/_mGVr4uCMCQ"

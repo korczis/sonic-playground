@@ -8,6 +8,9 @@ genre = ["deep house", "dance", "folk"]
 sentiment = ["melancholic", "energetic", "bittersweet"]
 
 [extra]
+country = "FR"
+isrc = "DEA621400286"
+musicbrainz = { recording = "92a3c7fe-d3a0-40da-901b-1df9cb170cd0", artist = "1b72331b-3a97-4981-a81c-eeee9c275d28", release = "dd807837-635e-4cee-9924-2c44abee1ff9" }
 release_year = "2014"
 album = "Prayer"
 youtube = "https://www.youtube.com/embed/fiore9Z5iUg"

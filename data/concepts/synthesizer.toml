@@ -1,0 +1,10 @@
+term = "synthesizer"
+category = "technology"
+wikipedia = "https://en.wikipedia.org/wiki/Synthesizer"
+see_also = ["analog synthesizer", "drum machine", "sequencer"]
+
+[en]
+definition = "An electronic instrument that generates sound from oscillators and shapes it with filters and envelopes. Synthesizers define the sound of electronic pop, house and techno."
+
+[cs]
+definition = "Elektronický nástroj, který vytváří zvuk z oscilátorů a tvaruje ho filtry a obálkami. Syntezátory určují zvuk elektronického popu, house i techna."

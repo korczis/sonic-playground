@@ -8,6 +8,9 @@ genre = ["electronic", "house", "funk"]
 sentiment = ["energetic", "emotional", "groovy"]
 
 [extra]
+release_year = "2012"
+country = "BR"
+musicbrainz = { recording = "606cf38e-9863-4b05-8dba-6b2d24f701ef", artist = "3a2a2270-b793-4689-b0b4-2f9455881cbb", release = "60f84962-e96f-4314-8986-25a66ac1835d" }
 youtube = "https://www.youtube.com/embed/mxAc6fLKf-Y"
 +++
 

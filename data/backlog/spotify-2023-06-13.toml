@@ -2,6 +2,7 @@
 # the owner shared on 2026-11-12. The songs that have no review yet are the backlog of the skill
 # add-song: scripts/backlog.py lists them (it skips reviewed songs and repeats). Rows 14-21 were
 # not in the screenshots; `uncertain` marks a row whose title or artist was cut off.
+kind = "playlist"
 source = "Spotify playlist screenshots shared by the owner, 2026-11-12"
 added = "2023-06-13"
 
@@ -276,6 +277,8 @@ duration = "4:32"
 [[track]]
 n = 47
 title = "Happy - From \"Despicable Me 2\""
+review = "pharrell-williams-happy.md"
+note = "The film the song was written for is not a version; the review is Happy."
 artists = ["Pharrell Williams"]
 album = "G I R L"
 duration = "3:52"

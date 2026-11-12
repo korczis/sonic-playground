@@ -8,6 +8,10 @@ genre = ["deep house", "electronic", "downtempo"]
 sentiment = ["uplifting", "hypnotic", "relaxed"]
 
 [extra]
+release_year = "2011"
+country = "DE"
+isrc = "DEBL61219974"
+musicbrainz = { recording = "a65b5978-aadd-43ae-bdfb-d70462b6e5af", artist = "bee42076-a087-47c3-a7f9-d226f8a8f7ba", release = "8593f11e-97d8-4e0f-a6cd-5b1079b84db1" }
 publisher = "Bar 25 Music"
 album = "We Love The Sun"
 youtube = "https://www.youtube.com/embed/_vB01OnP1TA"

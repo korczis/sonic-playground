@@ -8,6 +8,8 @@ genre = ["pop", "r&b", "funk"]
 sentiment = ["playful", "groovy", "provocative"]
 
 [extra]
+country = "US"
+musicbrainz = { recording = "8a85ca64-2335-471a-bcb1-fe6eea861625", artist = "ddfd9b2f-186e-4b2c-ad09-01aa5380c225", release = "42ef20f8-14ce-45b4-8163-c53d6ec2f087" }
 release_year = "2013"
 album = "Blurred Lines (Deluxe)"
 youtube = "https://www.youtube.com/embed/yyDUC1LUXSU"

@@ -8,6 +8,9 @@ genre = ["deep house", "electronic", "dance"]
 sentiment = ["euphoric", "nostalgic", "joyful"]
 
 [extra]
+release_year = "2015"
+country = "AT"
+musicbrainz = { recording = "a55601a6-54bf-4c35-8bf5-95d21b8b11ac", artist = "dbbd3f1f-1c25-4dd6-b6d0-5a1bc7a3acc1", release = "3d88f104-5e80-441b-9670-8f683f9af225" }
 youtube = "https://www.youtube.com/embed/ZbDQ8SVqHZw"
 +++
 

@@ -8,6 +8,10 @@ genre = ["electronic", "pop", "chill"]
 sentiment = ["reflective", "dreamy", "poignant"]
 
 [extra]
+release_year = "2017"
+country = "DE"
+isrc = "DEKG91500107"
+musicbrainz = { recording = "a1e2a905-abcf-48c7-8f0e-63b71a9e4a09", artist = "5579a23d-c411-4930-987d-ff89d77c1c12", release = "a6bb4f26-a8e6-4e7a-9237-e242c9480f03" }
 cover_image = "/images/thumbnails/2raumwohnung-somebody-lonely-and-me-nacht.jpeg"
 youtube = "https://www.youtube.com/embed/87Lef7jLykc"
 +++

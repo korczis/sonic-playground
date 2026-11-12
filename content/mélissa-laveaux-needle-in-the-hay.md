@@ -8,6 +8,10 @@ genre = ["indie folk", "singer-songwriter", "alternative"]
 sentiment = ["melancholic", "introspective", "haunting"]
 
 [extra]
+release_year = "2008"
+country = "CA"
+isrc = "FR2W60800018"
+musicbrainz = { recording = "deb4d6e6-12d3-4602-bb27-99c0e4e6f122", artist = "748336d9-5327-42d0-a502-d0945c4c0b71", release = "7acdfee1-1a6e-419f-bcc9-a7221d93362d" }
 youtube = "https://www.youtube.com/embed/L_qJ8LSTdzc"
 +++
 

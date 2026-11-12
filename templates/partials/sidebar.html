@@ -26,13 +26,18 @@
             </a>
           </li>
           {%- for m in config.extra.menu %}
-          {%- set url = get_url(path=m.path) %}
+          {#- requires = "<catalogue key>": the entry shows only when that collection is not empty. -#}
+          {%- if m.requires %}{% set shown = catalog[m.requires] | length > 0 %}{% else %}{% set shown = true %}{% endif %}
+          {%- if shown %}
+          {#- An @/ path is a page; any other is a section, which keeps its trailing slash. -#}
+          {%- if "@/" in m.path %}{% set url = get_url(path=m.path) %}{% else %}{% set url = get_url(path=m.path, trailing_slash=true) %}{% endif %}
           {%- set on = url == ctx.permalink %}
           <li>
             <a href="{{ url }}" class="{{ item }}{% if on %}{{ active }}{% endif %}"{% if on %} aria-current="page"{% endif %}>
               {{ <icon name={m.icon} cls={icon_cls} /> }}<span class="ml-3 flex-1" data-i18n="{{ m.key }}">{{ l[m.key] }}</span>
             </a>
           </li>
+          {%- endif %}
           {%- endfor %}
         </ul>
         {%- for kind in ["genre", "sentiment"] %}

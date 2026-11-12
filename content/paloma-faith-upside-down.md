@@ -8,6 +8,9 @@ genre = ["soul", "pop", "jazz"]
 sentiment = ["playful", "upbeat", "quirky"]
 
 [extra]
+country = "GB"
+isrc = "GBARL0900879"
+musicbrainz = { recording = "d5269374-2971-40f4-9a80-9477dd0e0e26", artist = "f23f6dd0-bfb0-43d5-bf06-eae4315db502", release = "2db7c9c7-5faa-48a1-a4ee-699a48e61779" }
 release_year = "2009"
 album = "Do You Want the Truth or Something Beautiful?"
 youtube = "https://www.youtube.com/embed/lDeB5sDealI"

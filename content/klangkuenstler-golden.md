@@ -8,6 +8,10 @@ genre = ["techno", "electronic", "minimal"]
 sentiment = ["dark", "hypnotic", "groovy"]
 
 [extra]
+release_year = "2015"
+country = "DE"
+isrc = "DEAA21500034"
+musicbrainz = { recording = "388d3ec8-3908-45d2-916e-ecc1fe8ba780", artist = "dc60d275-d4d1-4bf2-b32c-4aa2332d7459", release = "ab771140-088a-45b2-8210-10aea2b3f8d0" }
 album = "Golden"
 youtube = "https://www.youtube.com/embed/MnMOPIvmp-4"
 +++

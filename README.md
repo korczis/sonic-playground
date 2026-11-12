@@ -17,7 +17,11 @@ Tailwind 4, in English and Czech, switchable without a reload.
 | `content/<artist>-<track>.md` front matter | `scripts/catalog.py` | `static/data/catalog.json` (inferred artist/track, URL, thumbnail, facets, related tracks, review outline, statistics) and `search.json` |
 | `data/track.schema.json` | `scripts/catalog.py` (validator) | the content contract every article must meet |
 | a YouTube link or "Artist - Track" | `scripts/track.py new` | a new article from `archetypes/track.md` with the derived outline and `data/review.toml` guidance |
-| `data/backlog/*.toml` (the owner's playlists) | `scripts/backlog.py` | the songs not reviewed yet, in batches for `/add-song` |
+| `data/backlog/*.toml` (the owner's playlists and yearbooks) | `scripts/catalog.py`, `scripts/backlog.py` | yearbook pages, counts and each song's years; the songs not reviewed yet, in batches for `/add-song` |
+| the owner's Spotify playlists or data export | `scripts/spotify.py` | `data/backlog/yearbook-<year>.toml` (ADR 0005) |
+| `data/concepts/<slug>.toml` | `scripts/catalog.py`, templates | the glossary, one page per concept with the tracks that demonstrate it (ADR 0004) |
+| the educational front matter of a review | templates, `scripts/catalog.py` | the learning guide (seeking the player), references, connections, credits; `data/derived/jsonld.json` (Article + LearningResource + MusicRecording) |
+| MusicBrainz | `scripts/track.py enrich` | recording, artist and release ids, ISRC, country, missing years in `[extra]` |
 | `data/videos.json` (written by `scripts/probe-videos.py`) | `scripts/catalog.py` | videos gone from YouTube: no still, no player, the derived artwork |
 | `data/i18n/<locale>.toml` | `scripts/i18n.py` | `static/data/i18n.json`; every key proven in every locale and every use |
 | every built page | `scripts/og.cjs` (Playwright) | `og/<slug>.png`, the 1200x630 card its Open Graph / X tags name |
@@ -41,6 +45,32 @@ npm run derive && bash scripts/verify.sh
 Many songs at once: `python3 scripts/backlog.py` lists what the owner's playlists hold and the
 journal does not; `--batches N` splits it for N `song-writer` agents (`.claude/agents/`), each
 running the same skill.
+
+## Every review teaches
+
+A review is also an educational article (ADR 0004, rule `project.educational-article`): the
+concepts it demonstrates (`taxonomies.concept`, defined once in `data/concepts/` in every locale),
+a listening guide by part of the song (and by time where sourced, which seeks the player),
+objectives, questions, cited sources, credits and open identifiers live in its front matter, and
+the page, the concept pages, the glossary and the structured data are derived from them.
+`catalog.education` measures the corpus; `x-sonic.edu_required` makes it a requirement.
+
+## Yearbooks
+
+The owner's annual Spotify "Top Songs" playlists become yearbooks (ADR 0005, rule
+`project.yearbook-integrity`, skill `import-yearbook`): `scripts/spotify.py` imports them into
+`data/backlog/yearbook-<year>.toml`, every item resolves to one review (ISRC, then artist and
+song; `review=` / `skip=` from the owner), and the yearbook pages, counts and each song's years
+are derived. A song in several years is one page.
+
+```sh
+export SPOTIFY_CLIENT_ID=<your Spotify app>   # redirect URI http://127.0.0.1:8765/callback
+python3 scripts/spotify.py auth               # once; the token stays outside the repository
+python3 scripts/spotify.py discover           # your playlists that name a year
+python3 scripts/spotify.py import <playlist> --year 2023 --write
+python3 scripts/spotify.py import-export <data export folder> --write
+python3 scripts/spotify.py coverage           # per year: present, missing, ambiguous, ...
+```
 
 ## The player
 

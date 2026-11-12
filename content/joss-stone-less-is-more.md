@@ -8,6 +8,9 @@ genre = ["soul", "r&b", "reggae"]
 sentiment = ["soulful", "confident", "relaxed"]
 
 [extra]
+country = "GB"
+isrc = "USEVS0400013"
+musicbrainz = { recording = "0797a933-5b1c-49f9-9e6c-f935b7a070c8", artist = "dbbc47a5-1338-4830-9298-a8d0b11c0a46", release = "b4753c63-b304-471b-a363-0ce7372a06ad" }
 release_year = "2004"
 album = "Mind Body & Soul (Special Edition)"
 youtube = "https://www.youtube.com/embed/npM_zvBNTGo"

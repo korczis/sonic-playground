@@ -8,6 +8,9 @@ genre = ["disco", "funk", "electronic"]
 sentiment = ["nostalgic", "groovy", "uplifting"]
 
 [extra]
+country = "FR"
+isrc = "FR0ML1200470"
+musicbrainz = { recording = "24168694-be1b-452d-b6f6-308af52ff048", artist = "0df6d50f-7e43-4c6a-8220-61932b67c9c5", release = "b58f2459-1dac-4b36-b3fc-449c5459453f" }
 release_year = "2011"
 album = "Between The Ages"
 youtube = "https://www.youtube.com/embed/eMQ0tZoq8LI"

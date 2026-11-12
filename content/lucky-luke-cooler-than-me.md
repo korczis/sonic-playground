@@ -8,6 +8,9 @@ genre = ["deep house", "electronic", "remix"]
 sentiment = ["chill", "playful", "confident"]
 
 [extra]
+release_year = "2019"
+country = "LT"
+musicbrainz = { recording = "3efcecdb-ae4f-40bb-9013-8a49144ac54d", artist = "ac3b8052-6dc1-448e-a678-a20bc9975e90", release = "79e4419a-eb95-4dd7-9d59-111dd1c7adb0" }
 youtube = "https://www.youtube.com/embed/A3pJB4m713M"
 +++
 

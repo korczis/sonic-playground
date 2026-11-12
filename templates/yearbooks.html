@@ -1,0 +1,12 @@
+{#- Every yearbook (the owner's annual Spotify "Top Songs", data/backlog/, kind = "yearbook"),
+    newest first, each with its counts and the artists it is made of. All of it derived by
+    scripts/catalog.py; the section exists only when a yearbook does. -#}
+{% extends "base.html" %}
+{%- block content %}
+{{ <page_header title={l["yearbook.title"]} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l["yearbook.title"], "", "yearbook.title"]]} lead={l["yearbook.lead"] | replace(from="{n}", to=catalog.yearbooks | length ~ "") | replace(from="{r}", to=catalog.stats.recurring ~ "")} lead_key="yearbook.lead" lead_vars={ {"n": catalog.yearbooks | length, "r": catalog.stats.recurring} } /> }}
+<div class="grid grid-cols-1 gap-4 px-4 pt-6 sm:grid-cols-2 xl:grid-cols-3 xl:px-8">
+  {%- for b in catalog.yearbooks %}
+  {{ <yearbook_card b={b} catalog={catalog} l={l} /> }}
+  {%- endfor %}
+</div>
+{%- endblock content %}

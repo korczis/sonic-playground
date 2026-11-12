@@ -8,6 +8,8 @@ genre = ["indie electronic", "acoustic", "electronic"]
 sentiment = ["melancholic", "reflective", "heartfelt"]
 
 [extra]
+country = "IT"
+musicbrainz = { recording = "7e352d2b-ba56-4f3a-83fe-7ab208126072", artist = "ca89a1e5-8e3e-4de4-a946-0331dcbac12a", release = "c1e8658e-d772-4dfd-bebe-221c38c88d08" }
 release_year = "2009"
 album = "A Raver's Diary"
 youtube = "https://www.youtube.com/embed/TRMsA_EboYs"

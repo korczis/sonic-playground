@@ -8,6 +8,8 @@ genre = ["deep house", "house", "electronic"]
 sentiment = ["hypnotic", "groovy", "euphoric"]
 
 [extra]
+country = "BA"
+musicbrainz = { recording = "53d646ba-2a75-41fe-8d9d-d867b9f54715", artist = "dff718ca-db66-4ce5-98b3-9585935b3dd1", release = "974cdd53-226d-4c70-b014-4957fe964374" }
 publisher = "Diynamic"
 release_year = "2014"
 album = "Friends"

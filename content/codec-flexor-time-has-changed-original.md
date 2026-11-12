@@ -8,6 +8,8 @@ genre = ["electroclash", "synth-pop", "electro"]
 sentiment = ["nostalgic", "hypnotic", "melancholic"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "5409dd27-33e1-488a-be06-9d55589a0d92", artist = "9b7ea29b-e1b4-4187-8aad-1299ea9c7245", release = "849f05e5-8723-497f-963f-a11c41fa126d" }
 release_year = "2002"
 album = "Time Has Changed Remixes"
 youtube = "https://www.youtube.com/embed/ItJwb7wUFFI"

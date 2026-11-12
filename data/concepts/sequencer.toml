@@ -1,0 +1,10 @@
+term = "sequencer"
+category = "technology"
+wikipedia = "https://en.wikipedia.org/wiki/Music_sequencer"
+see_also = ["loop", "drum machine", "quantization"]
+
+[en]
+definition = "A device or program that records and plays back musical events in time, so a producer can program parts that repeat exactly."
+
+[cs]
+definition = "Zařízení nebo program, který zaznamenává a v čase přehrává hudební události, takže producent může naprogramovat přesně se opakující party."

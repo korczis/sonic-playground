@@ -8,6 +8,9 @@ genre = ["jazz", "seductive", "bossa nova"]
 sentiment = ["bittersweet"]
 
 [extra]
+country = "AT"
+isrc = "GBKAE0600031"
+musicbrainz = { recording = "c5304e39-32f2-4071-a1de-855442c00b2f", artist = "5b3d1c89-c602-417e-a3f3-c3c9397d8ac8", release = "0b4d2d26-8893-4f88-ab79-f8a015f06927" }
 release_year = "2010"
 album = "What a Comeback!"
 youtube = "https://www.youtube.com/embed/8cKkBcmm2cE"

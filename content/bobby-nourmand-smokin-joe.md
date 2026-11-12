@@ -8,6 +8,8 @@ genre = ["deep house", "disco", "blues"]
 sentiment = ["groovy", "chill", "hypnotic"]
 
 [extra]
+isrc = "NLZ541500701"
+musicbrainz = { recording = "bfa5b13a-7aac-4142-ad70-034b8bc4a92e", artist = "aaab690f-bd8d-4487-8b5b-ccd40f878e01", release = "c2f4c83a-4d6c-4494-b08c-282908989172" }
 publisher = "Potion"
 release_year = "2016"
 album = "Smokin' Joe"

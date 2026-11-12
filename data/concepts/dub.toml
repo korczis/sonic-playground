@@ -1,0 +1,10 @@
+term = "dub"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Dub_music"
+see_also = ["delay", "reverb", "remix"]
+
+[en]
+definition = "A Jamaican practice of remixing a record by stripping it to drums and bass and treating the rest with echo, reverb and drop-outs. Dub's studio techniques shaped techno, house and electronic music at large."
+
+[cs]
+definition = "Jamajská praxe remixování desky jejím obnažením na bicí a basu a zpracováním zbytku ozvěnou, dozvukem a výpadky. Studiové postupy dubu formovaly techno, house i elektronickou hudbu obecně."

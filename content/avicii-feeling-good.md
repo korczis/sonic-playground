@@ -8,6 +8,9 @@ genre = ["electronic", "soul", "pop"]
 sentiment = ["uplifting", "empowering", "soulful"]
 
 [extra]
+country = "SE"
+isrc = "CHB701400124"
+musicbrainz = { recording = "81ce58c6-9bec-4b60-ae0b-8e53741367d8", artist = "c85cfd6b-b1e9-4a50-bd55-eb725f04f7d5", release = "78b30891-eb9e-44ca-908d-e559780fadac" }
 release_year = "2015"
 album = "Feeling Good"
 youtube = "https://www.youtube.com/embed/S565hk5T7SA"

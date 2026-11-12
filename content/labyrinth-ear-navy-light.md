@@ -8,6 +8,9 @@ genre = ["dream pop", "electronic", "ambient"]
 sentiment = ["dreamy", "ethereal", "melancholic"]
 
 [extra]
+country = "GB"
+isrc = "GBLFP1140151"
+musicbrainz = { recording = "0db625ec-6a3a-404f-a066-3e3d8b25a6ef", artist = "7f81aa90-dd1e-401c-af73-690affb997d6", release = "8feac2a1-7a51-4f0b-9d04-9ac6c64b406c" }
 publisher = "LE Records"
 release_year = "2010"
 album = "Oak"

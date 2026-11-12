@@ -8,6 +8,9 @@ genre = ["electronic", "big beat", "hip-hop"]
 sentiment = ["quirky", "playful", "humorous"]
 
 [extra]
+country = "GB"
+isrc = "GBAAA0701278"
+musicbrainz = { recording = "d17c0a30-58a7-4639-a913-369a557fffb9", artist = "1946a82a-f927-40c2-8235-38d64f50d043", release = "9243f583-02e1-431c-9a83-cdacc9652deb" }
 release_year = "2007"
 album = "We Are the Night"
 youtube = "https://www.youtube.com/embed/dDj7DuHVV9E"

@@ -8,6 +8,9 @@ genre = ["indie pop", "alternative"]
 sentiment = ["reflective", "uplifting", "soulful"]
 
 [extra]
+release_year = "2012"
+country = "US"
+musicbrainz = { recording = "0e5a3593-85b1-476a-9b33-caacf8c700f3", artist = "01202233-d155-4cfa-83bf-55dc776bc309", release = "c8670fc7-036d-407b-9bb3-a545e8cc672c" }
 cover_image = "/images/thumbnails/electric-guest-this-head-hold.jpeg"
 youtube = "https://www.youtube.com/embed/nVSiwMVaKe4"  # Replace with the actual video ID
 +++

@@ -8,6 +8,9 @@ genre = ["progressive house", "techno", "electronic"]
 sentiment = ["hypnotic", "intense", "energetic"]
 
 [extra]
+release_year = "2002"
+country = "DE"
+musicbrainz = { recording = "f9014ca1-9132-4d46-9eab-c216d77e58c7", artist = "71348eeb-0c15-4718-b0ca-5775f78ad5f8", release = "3ae1ca2a-88cf-4dc6-9276-7d16a2ab95b2" }
 youtube = "https://www.youtube.com/embed/jICyqacTGBM"
 +++
 

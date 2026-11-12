@@ -8,6 +8,8 @@ genre = ["soul", "pop", "r&b"]
 sentiment = ["carefree", "uplifting", "feel-good"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "601e5cb7-c9f0-4227-b72a-f0a5abad1cd4", artist = "bc85c6f6-6b06-44c1-8754-ef32c1e6b824", release = "32eabea9-e851-4dca-941e-b1712457822e" }
 release_year = "2006"
 album = "Put Your Records On"
 youtube = "https://www.youtube.com/embed/rjOhZZyn30k"

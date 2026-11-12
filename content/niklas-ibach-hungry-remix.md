@@ -8,6 +8,9 @@ genre = ["deep house", "electronic", "remix"]
 sentiment = ["melancholic", "hypnotic", "longing"]
 
 [extra]
+release_year = "2015"
+country = "DE"
+musicbrainz = { recording = "872bef80-0364-4b36-9416-56d26cdf30d7", artist = "10362a92-0080-486b-8f13-29632e12885f", release = "46f37cf9-4e53-44ca-960c-f979952f9263" }
 album = "Hungry (Remix)"
 youtube = "https://www.youtube.com/embed/E4ti1ppjpyk"
 +++

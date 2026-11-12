@@ -8,6 +8,8 @@ genre = ["house", "deep house", "dance"]
 sentiment = ["uplifting", "nostalgic", "euphoric"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "f881b6e6-085c-4da3-b63f-c9da53f6fdd6", artist = "d28c64d9-35be-4d4e-8e27-fd33566a57a2", release = "7a014805-94fc-4d5b-927c-f496edc8bee3" }
 release_year = "2013"
 album = "Changa"
 youtube = "https://www.youtube.com/embed/AZKUj_iytuw"

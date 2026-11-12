@@ -8,6 +8,9 @@ genre = ["rock", "reggae", "classic rock"]
 sentiment = ["longing", "intense", "emotional"]
 
 [extra]
+release_year = "1991"
+country = "GB"
+musicbrainz = { recording = "0eb653a5-781f-4bfe-ac03-248076143da7", artist = "9e0e2b01-41db-4008-bd8b-988977d6019a", release = "da824ac1-4cad-4c95-8fea-b5e5e31d736c" }
 youtube = "https://www.youtube.com/embed/3T1c7GkzRQQ"
 +++
 

@@ -8,6 +8,9 @@ genre = ["deep house", "house", "electronic"]
 sentiment = ["hypnotic", "melancholic", "longing"]
 
 [extra]
+country = "DK"
+isrc = "FR6V80160714"
+musicbrainz = { recording = "2eb5f27c-8615-4e8c-873f-482529a95892", artist = "f693fc5e-9080-4952-9814-6ff7244a5573", release = "87260748-05fb-4e48-bc1d-a4682d30bb7f" }
 release_year = "2011"
 album = "Around"
 youtube = "https://www.youtube.com/embed/7bMYhJ_UqnE"

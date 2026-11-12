@@ -8,6 +8,8 @@ genre = ["disco", "funk", "dance", "pop"]
 sentiment = ["groovy", "joyful", "celebratory"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "4eefcd62-6a81-4a63-b20a-48ebe8e0bdc8", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "5e910c2e-a9c7-4880-8740-5455d27fd0d6" }
 release_year = "2013"
 album = "Get Lucky (Radio Edit)"
 youtube = "https://www.youtube.com/embed/M7VTByl6WqA"

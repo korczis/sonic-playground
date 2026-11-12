@@ -51,15 +51,29 @@ link. Not for bulk imports (run the engine in a loop and review each article).
    `archetypes/track.md`: front matter per `data/track.schema.json` and the outline the corpus
    shares (`scripts/track.py outline`), each section carrying its `data/review.toml` guidance as a
    `TODO(write)` line.
-6. **Write the review.** Replace every `TODO(write)` with prose in the voice of the existing
+6. **Teach (ADR 0004, rule `project.educational-article`).** Every review is also an educational
+   article, described in its front matter:
+   - `python3 scripts/track.py enrich content/<file>.md --write` fills the MusicBrainz ids, ISRC,
+     the artist's country and a missing year (check the match is the right recording);
+   - `[taxonomies] concept = [...]` (2-4, from `data/concepts/`; a new concept is a new
+     `data/concepts/<slug>.toml` with a definition in every locale) and `instrument = [...]`;
+   - `[extra.credits]` (writers, producers, featuring, remixers, vocals) as credited;
+   - `[extra.learning]`: `level`, 2-4 `objectives`, at least 3 `listen_for` entries
+     (`at = "m:ss"` in the embedded video, `what` you hear there) and 2-3 `questions`;
+   - `[[extra.sources]]` (at least 2: title, url, kind, publisher, year) for every fact you used;
+   - `[[extra.connections]]` to 1-3 other reviews, each with `why`;
+   - in "Concepts in Focus", explain the concepts as they sound here, linking each once with
+     `{{ <concept_link name="…" /> }}` and other reviews with `{{ <track_link source="….md" /> }}`.
+   Claim nothing you cannot hear in the video or source: no invented BPM, key or chart position.
+7. **Write the review.** Replace every `TODO(write)` with prose in the voice of the existing
    reviews (read two related tracks the engine listed first): concrete, sensory, honest. Keep the
    section order; drop a breakdown part the track does not have, add one it does. Aim for the
    catalogue's median length (`stats.median_words`). Add `extra.album`, `release_year`,
    `publisher` when sourced.
-7. **Prove it.** `python3 scripts/track.py check content/<file>.md` (no errors, `unfinished: 0`),
+8. **Prove it.** `python3 scripts/track.py check content/<file>.md` (no errors, `unfinished: 0`),
    then `npm run derive` and `bash scripts/verify.sh` (catalogue, tests, build, browser smoke).
    `majordomus check` before claiming progress.
-8. **Commit and finish.** `git add content static/data && git commit -m "feat(content): add
+9. **Commit and finish.** `git add content static/data && git commit -m "feat(content): add
    <Artist> – <Track>"`; `majordomus finish --outcome completed --verify-command "bash
    scripts/verify.sh"`; merge to `main` with `--no-ff` and push — pushing `main` deploys
    (`.github/workflows/pages.yml`), and the run verifies production serves the commit.

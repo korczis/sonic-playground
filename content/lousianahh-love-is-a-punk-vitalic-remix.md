@@ -8,6 +8,9 @@ genre = ["techno", "industrial", "punk"]
 sentiment = ["rebellious", "intense", "raw"]
 
 [extra]
+release_year = "2021"
+country = "US"
+musicbrainz = { recording = "a8937261-ed6a-4f4a-ae52-2bc65e7c5666", artist = "70900801-c182-4906-b870-4bf8e2b8129b", release = "57cdd2eb-d3d1-4433-b9bb-0f1216804c73" }
 youtube = "https://www.youtube.com/embed/zAuh-u7VBaw"
 +++
 

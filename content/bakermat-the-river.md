@@ -8,6 +8,9 @@ genre = ["deep house", "electronic", "soulful"]
 sentiment = ["uplifting", "reflective", "spiritual"]
 
 [extra]
+country = "NL"
+isrc = "NLE802100254"
+musicbrainz = { recording = "0156ae80-2b29-4840-8c1b-2e741d45efee", artist = "df60a241-e8df-4917-82db-1f1a8ecd7cc3" }
 cover_image = "/images/thumbnails/bakermat-the-river.jpeg"
 youtube = "https://www.youtube.com/embed/8vyeiDEK62U"
 +++

@@ -1,0 +1,10 @@
+term = "cover version"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Cover_version"
+see_also = ["remix", "live recording"]
+
+[en]
+definition = "A new recording of a song by an artist other than the original. A cover can be faithful or transform the song's genre and meaning."
+
+[cs]
+definition = "Nová nahrávka písně jiným interpretem než původním. Coververze může být věrná, nebo změnit žánr i význam písně."

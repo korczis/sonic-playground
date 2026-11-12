@@ -8,6 +8,10 @@ genre = ["house", "electronic", "soul"]
 sentiment = ["vibrant", "introspective", "energetic"]
 
 [extra]
+release_year = "2003"
+country = "US"
+isrc = "USGR10300552"
+musicbrainz = { recording = "98452629-481b-4667-94e7-3a320d199b30", artist = "2944824d-4c26-476f-a981-be849081942f", release = "c5048e09-f23e-4f54-a887-8fdcce783094" }
 youtube = "https://www.youtube.com/embed/0hcEiEyylEA"  # Replace with the actual video link
 +++
 

@@ -1,0 +1,10 @@
+term = "filter sweep"
+category = "timbre"
+wikipedia = "https://en.wikipedia.org/wiki/Audio_filter"
+see_also = ["build-up", "synthesizer"]
+
+[en]
+definition = "Gradually opening or closing a filter so that a sound goes from muffled to bright or back. Filter sweeps create build-ups and are a signature of French house."
+
+[cs]
+definition = "Postupné otevírání nebo zavírání filtru, takže zvuk přechází z utlumeného do jasného nebo zpět. Filtrové přechody tvoří build-upy a jsou poznávacím znakem French house."

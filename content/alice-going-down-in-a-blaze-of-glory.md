@@ -8,6 +8,9 @@ genre = ["psychedelic", "dark techno", "minimal"]
 sentiment = ["eerie", "haunting", "immersive"]
 
 [extra]
+release_year = "2012"
+country = "DE"
+musicbrainz = { recording = "f83bf5a2-5238-4adb-bc76-25cc5506faf6", artist = "19d91e31-cbb4-41ac-879a-5d1517581778", release = "eb00738a-a033-426b-97e7-13e17ab90313" }
 cover_image = "/images/thumbnails/alice-going-down-in-a-blaze-of-glory.jpg"
 youtube = "https://www.youtube.com/embed/ICj67BEAt6k"
 +++

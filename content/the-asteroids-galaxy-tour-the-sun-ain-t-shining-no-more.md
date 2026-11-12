@@ -8,6 +8,9 @@ genre = ["indie pop", "psychedelic", "funk"]
 sentiment = ["playful", "vibrant", "upbeat"]
 
 [extra]
+country = "DK"
+isrc = "GBWRR0800028"
+musicbrainz = { recording = "cd1d8246-9a6b-4347-8aa7-8a73a018b25c", artist = "4661d98a-95bd-4cf1-a693-4f9f25691ada", release = "bfbca340-28cc-4a50-ba05-9ac47183eac1" }
 release_year = "2008"
 album = "The Sun Ain't Shining No More"
 youtube = "https://www.youtube.com/embed/UTuAXV8WyuI"

@@ -8,6 +8,8 @@ genre = ["brazilian", "samba", "funk", "soul"]
 sentiment = ["laid-back", "uplifting", "carefree"]
 
 [extra]
+country = "BR"
+musicbrainz = { recording = "4ccb37c2-5bdd-412d-aea2-cbac8d71864e", artist = "19499124-36d4-4ccc-b28d-04dde3d2076f", release = "7747e1c4-237f-42f7-b482-44f6ff29a993" }
 release_year = "1969"
 album = "Jorge Ben"
 youtube = "https://www.youtube.com/embed/BjhMp-FlBEk"

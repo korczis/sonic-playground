@@ -8,6 +8,9 @@ genre = ["indie pop", "folk", "singer-songwriter"]
 sentiment = ["introspective", "romantic", "melancholic"]
 
 [extra]
+release_year = "2007"
+country = "CA"
+musicbrainz = { recording = "10dec8b6-1af0-47b0-8c90-296b85d2e1b9", artist = "a670e05a-cea8-4b37-bce9-d82daf1a0fa4", release = "99e7ae1c-ab4b-4f78-8a72-983d1f24be0a" }
 youtube = "https://www.youtube.com/embed/ltYq-jalYm0"  # Replace with the actual video link
 +++
 

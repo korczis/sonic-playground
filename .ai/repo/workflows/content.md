@@ -8,6 +8,9 @@ Claude Code).
 | When | Run |
 |---|---|
 | a new song (link or name) | follow `majordomus://skill/add-song` |
+| a year's Spotify Top Songs (yearbook) | follow `majordomus://skill/import-yearbook` |
+| the identifiers MusicBrainz knows | `python3 scripts/track.py enrich content/<file>.md --write` (or `--all`) |
+| what the yearbooks and playlists still miss | `python3 scripts/backlog.py`; `python3 scripts/spotify.py coverage` |
 | is it already here? | `python3 scripts/track.py resolve "<input>"` — exit 3 names the existing file |
 | which facets exist | `python3 scripts/track.py vocab --limit 40` |
 | a term is new | `python3 scripts/track.py suggest --genre <g> --sentiment <s>` — nearest terms, related tracks |

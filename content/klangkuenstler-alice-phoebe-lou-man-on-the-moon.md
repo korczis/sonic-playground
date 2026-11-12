@@ -8,6 +8,9 @@ genre = ["deep house", "electronic", "folk"]
 sentiment = ["dreamy", "relaxed", "nostalgic"]
 
 [extra]
+country = "DE"
+isrc = "GBGNS1401243"
+musicbrainz = { recording = "5b0a7a43-84dd-4767-abaa-7ae815b06b85", artist = "dc60d275-d4d1-4bf2-b32c-4aa2332d7459", release = "7d7a3139-02e5-48da-89a7-109a9741e38e" }
 release_year = "2014"
 album = "That's Me"
 youtube = "https://www.youtube.com/embed/kGifuZwJqUA"

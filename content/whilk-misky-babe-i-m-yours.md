@@ -8,6 +8,9 @@ genre = ["indie", "folk", "electronic"]
 sentiment = ["romantic", "intimate", "soulful"]
 
 [extra]
+country = "GB"
+isrc = "GBUM71404417"
+musicbrainz = { recording = "75abf478-321b-477b-9a80-47a05815cef5", artist = "f4139c2c-26ef-4e1f-99d5-6e8859ef6c56" }
 publisher = "Island Records"
 release_year = "2014"
 album = "Babe I'm Yours"

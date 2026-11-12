@@ -1,0 +1,10 @@
+term = "minor key"
+category = "harmony"
+wikipedia = "https://en.wikipedia.org/wiki/Minor_scale"
+see_also = ["chord progression"]
+
+[en]
+definition = "Music centred on a minor scale, whose lowered third gives a darker or more melancholic colour than a major key. Much dance music is in minor keys, which keeps euphoria bittersweet."
+
+[cs]
+definition = "Hudba postavená na mollové stupnici, jejíž snížená tercie dává tmavší nebo melancholičtější barvu než dur. Velká část taneční hudby je v mollu, a proto je její euforie hořkosladká."

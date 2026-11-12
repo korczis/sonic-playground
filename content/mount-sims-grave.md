@@ -8,6 +8,8 @@ genre = ["electronic", "darkwave", "electroclash"]
 sentiment = ["dark", "haunting", "hypnotic"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "84bba254-c453-4292-8ace-e90e68cf3505", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "fafeabfd-df9c-4c9a-87d0-9ee7da754561" }
 release_year = "2010"
 album = "Happily Ever After... Again"
 youtube = "https://www.youtube.com/embed/8DQgkRyzg9I"

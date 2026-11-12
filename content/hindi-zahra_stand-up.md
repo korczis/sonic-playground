@@ -8,6 +8,9 @@ genre = ["soul", "jazz", "folk", "world"]
 sentiment = ["empowering", "rebellious", "uplifting"]
 
 [extra]
+country = "MA"
+isrc = "FR9W10902933"
+musicbrainz = { recording = "5756ed83-5156-4bb1-a24f-80e38c6f7a96", artist = "34964ede-3103-4023-93c8-ee514abdcb3b", release = "513c80a9-1d08-43b8-bfe0-f15db6d4cb6a" }
 release_year = "2010"
 album = "Handmade"
 youtube = "https://www.youtube.com/embed/YI2XuIOW3gM"

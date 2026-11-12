@@ -8,6 +8,8 @@ genre = ["soul", "indie pop", "r&b"]
 sentiment = ["intimate", "soulful", "romantic"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "5d089296-dbbc-46c0-a876-bf2f44dbe2e7", artist = "85002755-85e7-484e-a831-dc47c27af2b3", release = "12a7d932-4961-4030-bb45-e9daa6dc5ba3" }
 release_year = "2016"
 album = "Her Tape #1"
 youtube = "https://www.youtube.com/embed/bStM7PfP0jg"

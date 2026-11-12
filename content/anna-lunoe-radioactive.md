@@ -8,6 +8,9 @@ genre = ["house", "electronic", "dance"]
 sentiment = ["energetic", "euphoric", "bold"]
 
 [extra]
+country = "US"
+isrc = "USAT21602552"
+musicbrainz = { recording = "35cadc41-71a9-4c85-a770-064e729dd579", artist = "55c48847-73e9-4272-8c87-612dadcf8a37", release = "26f91c62-84d3-4ed3-85ad-d3ad6af48d19" }
 release_year = "2016"
 album = "Radioactive"
 youtube = "https://www.youtube.com/embed/Dg8tsMrzcP0"

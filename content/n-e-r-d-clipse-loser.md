@@ -8,6 +8,9 @@ genre = ["hip-hop", "rap", "funk"]
 sentiment = ["gritty", "playful", "edgy"]
 
 [extra]
+country = "US"
+isrc = "USAR10300891"
+musicbrainz = { recording = "afd70c55-cd5c-46a7-ac4e-9f11ed17e62e", artist = "3fb49f5a-fdc0-4789-9c84-22b38b3f3cb5", release = "4ee1f095-0727-4abe-84ad-f63d25f00574" }
 release_year = "2003"
 album = "The Neptunes Present... Clones"
 youtube = "https://www.youtube.com/embed/yxIM80EBofc"

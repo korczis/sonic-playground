@@ -8,6 +8,9 @@ genre = ["electronic", "soul", "downtempo"]
 sentiment = ["introspective", "soulful", "relaxed"]
 
 [extra]
+country = "AU"
+isrc = "AUFF81300504"
+musicbrainz = { recording = "0294a9af-5d56-4288-9e89-63daab260c67", artist = "a21b2652-62ed-4767-a3d2-0aa802abf080", release = "0481beb3-0a12-4d35-9663-909e5eb7691b" }
 release_year = "2014"
 album = "Built on Glass"
 youtube = "https://www.youtube.com/embed/aP_-P_BS6KY"

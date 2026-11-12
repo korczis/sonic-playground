@@ -1,0 +1,10 @@
+term = "ostinato"
+category = "melody"
+wikipedia = "https://en.wikipedia.org/wiki/Ostinato"
+see_also = ["riff", "loop"]
+
+[en]
+definition = "A pattern repeated persistently, often for a whole section, while other parts change above it. Minimal techno and much film music build tension from ostinatos."
+
+[cs]
+definition = "Vzorec, který se neúnavně opakuje, často celou část skladby, zatímco se nad ním mění ostatní hlasy. Minimal techno i filmová hudba z ostinata stavějí napětí."

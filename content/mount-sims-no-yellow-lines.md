@@ -8,6 +8,8 @@ genre = ["electroclash", "electronic", "post-punk"]
 sentiment = ["dark", "gritty", "rebellious"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "df8f2c4d-3657-4632-a615-c42ed79241de", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "3d99eb4f-263f-437e-8d59-6f3cdc85613c" }
 publisher = "International DeeJay Gigolo Records"
 release_year = "2005"
 album = "Wild Light"

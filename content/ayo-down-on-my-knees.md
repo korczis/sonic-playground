@@ -8,6 +8,8 @@ genre = ["soul", "folk", "acoustic"]
 sentiment = ["soulful", "heartfelt", "longing"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "5f3ba443-af3c-42f5-ba59-0aa9ba9777cd", artist = "633c13a3-335a-466f-8e01-535837faeff5", release = "d4f293ef-5d50-40d7-9b0e-27957c2f6420" }
 release_year = "2006"
 album = "Down On My Knees"
 youtube = "https://www.youtube.com/embed/NZOJsIlAgpE"

@@ -1,76 +1,404 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://korczis.github.io/sonic-playground/schema/track.v1.json",
-  "title": "sonic-playground track (front matter of content/<artist>-<track>.md)",
-  "description": "The one contract of a track review. scripts/catalog.py validates every article against it, scripts/track.py writes new ones from it, and the templates read only what it allows. The file name is the slug of 'artist track': the artist comes first, which is what artist inference relies on.",
-  "type": "object",
-  "additionalProperties": false,
-  "required": ["title", "date", "description", "taxonomies"],
-  "properties": {
-    "title": {
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://korczis.github.io/sonic-playground/schema/track.v1.json",
+ "title": "sonic-playground track (front matter of content/<artist>-<track>.md)",
+ "description": "The one contract of a track review. scripts/catalog.py validates every article against it, scripts/track.py writes new ones from it, and the templates read only what it allows. The file name is the slug of 'artist track': the artist comes first, which is what artist inference relies on. Since v2 (ADR 0004) every review is also an educational article: the concepts it teaches, a timed listening guide, discussion questions, cited sources, credits and stable identifiers (MusicBrainz, Wikidata, ISRC) live in the front matter, so pages, projections and links are derived from them.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "title",
+  "date",
+  "description",
+  "taxonomies"
+ ],
+ "properties": {
+  "title": {
+   "type": "string",
+   "minLength": 1,
+   "description": "'Artist - Track' (preferred) or 'Track | Artist'; scripts/catalog.py infers both parts from it."
+  },
+  "date": {
+   "type": "string",
+   "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+   "description": "Publication date, YYYY-MM-DD."
+  },
+  "description": {
+   "type": "string",
+   "minLength": 40,
+   "description": "One or two sentences: the vibe of the track. Used as lead, card text, meta and feed summary."
+  },
+  "draft": {
+   "type": "boolean",
+   "description": "true keeps the article out of the catalogue and the site."
+  },
+  "taxonomies": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "genre",
+    "sentiment"
+   ],
+   "properties": {
+    "genre": {
+     "$ref": "#/$defs/terms",
+     "minItems": 1,
+     "description": "Genres, most specific last; reuse the existing vocabulary (scripts/track.py vocab)."
+    },
+    "sentiment": {
+     "$ref": "#/$defs/terms",
+     "minItems": 1,
+     "description": "Feelings the track carries."
+    },
+    "mood": {
+     "$ref": "#/$defs/terms",
+     "description": "Optional moods."
+    },
+    "concept": {
+     "$ref": "#/$defs/terms",
+     "description": "Musical, technical or cultural concepts the track demonstrates; each one is defined in data/concepts/<slug>.toml (term, category, definitions in every locale) and gets a page that explains it and lists every track that shows it."
+    },
+    "instrument": {
+     "$ref": "#/$defs/terms",
+     "description": "Instruments and sound sources you can hear (\"drum machine\", \"vocoder\", \"cello\")."
+    }
+   }
+  },
+  "extra": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "youtube": {
+     "type": "string",
+     "pattern": "^https://www\\.youtube(-nocookie)?\\.com/embed/[A-Za-z0-9_-]{11}$",
+     "description": "The video as an embed URL; the site plays it through youtube-nocookie on demand."
+    },
+    "cover_image": {
+     "type": "string",
+     "pattern": "^/images/.+\\.(jpe?g|png|webp)$",
+     "description": "A local still under static/; without it the card uses the video's YouTube still."
+    },
+    "artist": {
+     "type": "string",
+     "minLength": 1,
+     "description": "Overrides the inferred artist."
+    },
+    "track": {
+     "type": "string",
+     "minLength": 1,
+     "description": "Overrides the inferred track name."
+    },
+    "album": {
+     "type": "string"
+    },
+    "publisher": {
+     "type": "string",
+     "description": "Record label."
+    },
+    "release_year": {
+     "type": "string",
+     "pattern": "^\\d{4}$"
+    },
+    "video_duration": {
+     "type": "string",
+     "pattern": "^\\d{1,2}:\\d{2}$"
+    },
+    "country": {
+     "type": "string",
+     "pattern": "^[A-Z]{2}$",
+     "description": "ISO 3166-1 alpha-2 code of the artist's home country."
+    },
+    "bpm": {
+     "type": "integer",
+     "description": "Tempo in beats per minute, when sourced (a database or the artist)."
+    },
+    "key": {
+     "type": "string",
+     "pattern": "^[A-G](#|b)? (major|minor)$",
+     "description": "Musical key, e.g. 'A minor', when sourced."
+    },
+    "time_signature": {
+     "type": "string",
+     "pattern": "^\\d{1,2}/\\d{1,2}$"
+    },
+    "isrc": {
+     "type": "string",
+     "pattern": "^[A-Z]{2}[A-Z0-9]{3}\\d{7}$",
+     "description": "International Standard Recording Code (MusicBrainz)."
+    },
+    "musicbrainz": {
+     "type": "object",
+     "additionalProperties": false,
+     "description": "MusicBrainz identifiers (scripts/track.py enrich): the recording, its artist and a release.",
+     "properties": {
+      "recording": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+      },
+      "artist": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+      },
+      "release": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+      }
+     }
+    },
+    "wikidata": {
+     "type": "string",
+     "pattern": "^Q\\d+$",
+     "description": "Wikidata item of the recording or, failing that, of the work."
+    },
+    "credits": {
+     "type": "object",
+     "additionalProperties": false,
+     "description": "Who made it, as credited.",
+     "properties": {
+      "writers": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "minLength": 1
+       },
+       "uniqueItems": true
+      },
+      "producers": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "minLength": 1
+       },
+       "uniqueItems": true
+      },
+      "featuring": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "minLength": 1
+       },
+       "uniqueItems": true
+      },
+      "remixers": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "minLength": 1
+       },
+       "uniqueItems": true
+      },
+      "vocals": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "minLength": 1
+       },
+       "uniqueItems": true
+      }
+     }
+    },
+    "influences": {
+     "type": "array",
+     "items": {
       "type": "string",
-      "minLength": 1,
-      "description": "'Artist - Track' (preferred) or 'Track | Artist'; scripts/catalog.py infers both parts from it."
+      "minLength": 1
+     },
+     "uniqueItems": true,
+     "description": "Artists or styles the track draws on, named in sources or interviews."
     },
-    "date": {
-      "type": "string",
-      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-      "description": "Publication date, YYYY-MM-DD."
-    },
-    "description": {
-      "type": "string",
-      "minLength": 40,
-      "description": "One or two sentences: the vibe of the track. Used as lead, card text, meta and feed summary."
-    },
-    "draft": {
-      "type": "boolean",
-      "description": "true keeps the article out of the catalogue and the site."
-    },
-    "taxonomies": {
+    "samples": {
+     "type": "array",
+     "items": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["genre", "sentiment"],
+      "required": [
+       "artist",
+       "track"
+      ],
       "properties": {
-        "genre": { "$ref": "#/$defs/terms", "minItems": 1, "description": "Genres, most specific last; reuse the existing vocabulary (scripts/track.py vocab)." },
-        "sentiment": { "$ref": "#/$defs/terms", "minItems": 1, "description": "Feelings the track carries." },
-        "mood": { "$ref": "#/$defs/terms", "description": "Optional moods." }
+       "artist": {
+        "type": "string",
+        "minLength": 1
+       },
+       "track": {
+        "type": "string",
+        "minLength": 1
+       },
+       "year": {
+        "type": "string",
+        "pattern": "^\\d{4}$"
+       }
       }
+     },
+     "description": "Recordings the track samples or interpolates."
     },
-    "extra": {
+    "connections": {
+     "type": "array",
+     "items": {
       "type": "object",
       "additionalProperties": false,
+      "required": [
+       "source",
+       "why"
+      ],
       "properties": {
-        "youtube": {
-          "type": "string",
-          "pattern": "^https://www\\.youtube(-nocookie)?\\.com/embed/[A-Za-z0-9_-]{11}$",
-          "description": "The video as an embed URL; the site plays it through youtube-nocookie on demand."
-        },
-        "cover_image": {
-          "type": "string",
-          "pattern": "^/images/.+\\.(jpe?g|png|webp)$",
-          "description": "A local still under static/; without it the card uses the video's YouTube still."
-        },
-        "artist": { "type": "string", "minLength": 1, "description": "Overrides the inferred artist." },
-        "track": { "type": "string", "minLength": 1, "description": "Overrides the inferred track name." },
-        "album": { "type": "string" },
-        "publisher": { "type": "string", "description": "Record label." },
-        "release_year": { "type": "string", "pattern": "^\\d{4}$" },
-        "video_duration": { "type": "string", "pattern": "^\\d{1,2}:\\d{2}$" }
+       "source": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+\\.md$",
+        "description": "Another review (content/<file>)."
+       },
+       "why": {
+        "type": "string",
+        "minLength": 20,
+        "description": "What the two share, in one sentence."
+       }
       }
+     },
+     "description": "Curated links to other reviews, each with its reason (the derived related tracks come on top)."
+    },
+    "learning": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "level",
+      "objectives",
+      "listen_for",
+      "questions"
+     ],
+     "description": "The didactic layer: what a reader learns, where to listen, what to discuss.",
+     "properties": {
+      "level": {
+       "type": "string",
+       "enum": [
+        "introductory",
+        "intermediate",
+        "advanced"
+       ]
+      },
+      "objectives": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "minLength": 20
+       },
+       "minItems": 2,
+       "description": "After reading and listening, the reader can ... (one sentence each)."
+      },
+      "listen_for": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "what"
+        ],
+        "properties": {
+         "at": {
+          "type": "string",
+          "pattern": "^\\d{1,2}:\\d{2}$",
+          "description": "Time in the embedded video, m:ss; only when sourced (the video's chapters, a credible analysis). It seeks the player."
+         },
+         "part": {
+          "type": "string",
+          "minLength": 3,
+          "description": "The part of the song (\"intro\", \"first chorus\", \"the outro\"); always possible without a stopwatch."
+         },
+         "what": {
+          "type": "string",
+          "minLength": 10
+         }
+        }
+       },
+       "minItems": 3,
+       "description": "A listening guide: each entry names a part of the song or a sourced time (the contract requires one of the two), and what to hear there."
+      },
+      "questions": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "minLength": 15
+       },
+       "minItems": 2,
+       "description": "Questions for discussion or a class."
+      }
+     }
+    },
+    "sources": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "title",
+       "url",
+       "kind"
+      ],
+      "properties": {
+       "title": {
+        "type": "string",
+        "minLength": 3
+       },
+       "url": {
+        "type": "string",
+        "pattern": "^https://"
+       },
+       "publisher": {
+        "type": "string",
+        "minLength": 1
+       },
+       "year": {
+        "type": "string",
+        "pattern": "^\\d{4}$"
+       },
+       "kind": {
+        "type": "string",
+        "enum": [
+         "encyclopedia",
+         "database",
+         "interview",
+         "review",
+         "article",
+         "book",
+         "liner-notes",
+         "video",
+         "label",
+         "artist"
+        ]
+       }
+      }
+     },
+     "minItems": 2,
+     "description": "The sources the review rests on, cited under References."
     }
-  },
-  "$defs": {
-    "terms": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": { "type": "string", "minLength": 1, "pattern": "^[^A-Z]*$" }
-    }
-  },
-  "x-sonic": {
-    "placeholder_hosts": ["example.com", "yourwebsite.com"],
-    "unfinished_marker": "TODO(write)",
-    "facet_weights": { "genre": 2.0, "sentiment": 1.0, "mood": 1.0 },
-    "related_limit": 4,
-    "outline_threshold": 0.3
+   }
   }
+ },
+ "$defs": {
+  "terms": {
+   "type": "array",
+   "uniqueItems": true,
+   "items": {
+    "type": "string",
+    "minLength": 1,
+    "pattern": "^[^A-Z]*$"
+   }
+  }
+ },
+ "x-sonic": {
+  "placeholder_hosts": [
+   "example.com",
+   "yourwebsite.com"
+  ],
+  "unfinished_marker": "TODO(write)",
+  "facet_weights": {
+   "genre": 2.0,
+   "sentiment": 1.0,
+   "mood": 1.0,
+   "concept": 1.5,
+   "instrument": 0.5
+  },
+  "related_limit": 4,
+  "outline_threshold": 0.3,
+  "concepts_dir": "data/concepts",
+  "edu_required": false
+ }
 }

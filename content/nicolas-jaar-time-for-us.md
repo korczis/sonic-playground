@@ -8,6 +8,8 @@ genre = ["minimal", "deep house", "experimental"]
 sentiment = ["hypnotic", "melancholic", "intimate"]
 
 [extra]
+country = "US"
+musicbrainz = { recording = "4d8568c2-5603-4a22-be7d-42ea9db3e3dc", artist = "06e99a1b-4020-4380-ab27-1a3e0c5e557c", release = "0d83d8be-3cec-417c-b8a7-7c6b8ad9f2c8" }
 release_year = "2010"
 album = "Time For Us"
 youtube = "https://www.youtube.com/embed/fyVYRrYiVSc"

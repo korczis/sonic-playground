@@ -8,6 +8,8 @@ genre = ["deep house", "house", "disco"]
 sentiment = ["nostalgic", "dreamy", "groovy"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "7a27415f-d7ff-4381-a1a8-e42d0e25d75c", artist = "0df6d50f-7e43-4c6a-8220-61932b67c9c5", release = "5dce7821-53d9-4f3d-a9d8-4c6f1cb629bd" }
 publisher = "Lafessé Records"
 release_year = "2013"
 album = "Moments"

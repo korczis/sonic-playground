@@ -8,6 +8,8 @@ genre = ["electroclash", "electronic", "synth-pop"]
 sentiment = ["dark", "defiant", "hypnotic"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "2f1f9e17-cff3-4e4b-ac20-ffbd49799653", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "fafeabfd-df9c-4c9a-87d0-9ee7da754561" }
 release_year = "2008"
 album = "Happily Ever After... Again"
 youtube = "https://www.youtube.com/embed/1C81uHCIuG0"

@@ -8,6 +8,10 @@ genre = ["indie pop", "electronic", "dream pop"]
 sentiment = ["intimate", "tense", "melancholic"]
 
 [extra]
+release_year = "2009"
+country = "GB"
+isrc = "GBBKS0900025"
+musicbrainz = { recording = "28565ecb-6f65-4f57-ab7f-1846d643c1d7", artist = "c5c2ea1c-4bde-4f4d-bd0b-47b200bf99d6", release = "8dfe0083-30f6-4929-9400-b566f3c03b9a" }
 youtube = "https://www.youtube.com/embed/Pib8eYDSFEI"
 +++
 

@@ -8,6 +8,9 @@ genre = ["techno", "industrial", "darkwave"]
 sentiment = ["intense", "raw", "empowering"]
 
 [extra]
+release_year = "2017"
+country = "US"
+musicbrainz = { recording = "312f8897-a93b-488f-b903-2c3c5c5761d1", artist = "70900801-c182-4906-b870-4bf8e2b8129b", release = "18ad00cb-c252-469c-ac0f-3a2ed37ecf47" }
 cover_image = "/images/thumbnails/lousiahh-like-a-vice-x.jpg"
 youtube = "https://www.youtube.com/embed/ipXnX43YkQ0"
 +++

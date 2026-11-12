@@ -8,6 +8,9 @@ genre = ["pop", "dancehall", "tropical house"]
 sentiment = ["romantic", "catchy", "playful"]
 
 [extra]
+country = "GB"
+isrc = "GBAHS1600463"
+musicbrainz = { recording = "d7500dd6-b815-4299-88c6-3fbda358f1fc", artist = "b8a7c51f-362c-4dcb-a259-bc6e0095f0a6", release = "6c2325d6-d225-4a5a-87fa-f3ad883ec662" }
 release_year = "2017"
 album = "÷ (Deluxe)"
 youtube = "https://www.youtube.com/embed/JGwWNGJdvx8"

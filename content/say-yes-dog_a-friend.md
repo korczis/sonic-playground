@@ -8,6 +8,8 @@ genre = ["synth-pop", "indie", "dance"]
 sentiment = ["catchy", "heartfelt", "uplifting"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "067ac9df-631d-4bd6-affa-b149159c736e", artist = "98671aa3-48d2-497f-8dcf-dd33542f7dc1", release = "7e23e2cb-0092-4628-b127-70cb8e9a1ad0" }
 release_year = "2015"
 album = "Plastic Love"
 cover_image = "/images/thumbnails/say-yes-dog_a-friend.jpg"

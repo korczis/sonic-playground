@@ -1,0 +1,22 @@
+{#- The glossary: every concept the reviews teach (data/concepts/), by category, each with its
+    definition in every locale and the number of tracks that demonstrate it. Derived from the
+    catalogue; a concept no review uses yet is listed too, so the glossary is complete. -#}
+{% extends "base.html" %}
+{%- block content %}
+{%- set name_key = "tax.name.concept" %}
+{{ <page_header title={l[name_key]} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l[name_key], "", name_key]]} lead={l["concept.list_lead"] | replace(from="{n}", to=catalog.concepts | length ~ "")} lead_key="concept.list_lead" lead_vars={ {"n": catalog.concepts | length} } /> }}
+<div class="space-y-8 px-4 pt-6 xl:px-8">
+  {%- set groups = catalog.concepts | group_by(attribute="category") %}
+  {#- In the order data/concept.schema.json lists the categories. -#}
+  {%- for cat in catalog.concept_categories %}{% if cat in groups %}{% set items = groups[cat] %}
+  <section aria-labelledby="cat-{{ cat }}">
+    <h2 id="cat-{{ cat }}" class="mb-3 text-lg font-semibold text-gray-900 dark:text-white" data-i18n="concept.category.{{ cat }}">{{ l["concept.category." ~ cat] }}</h2>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
+      {%- for c in items %}
+      {{ <concept_card c={c} l={l} /> }}
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endif %}{% endfor %}
+</div>
+{%- endblock content %}

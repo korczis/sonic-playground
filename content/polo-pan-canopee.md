@@ -8,6 +8,9 @@ genre = ["electronic", "world", "indie dance"]
 sentiment = ["dreamy", "escapist", "adventurous"]
 
 [extra]
+country = "FR"
+isrc = "FRPDG1600020"
+musicbrainz = { recording = "26d01b2d-33cd-437b-a2c3-762c47408d74", artist = "1d9ec7ea-0fa4-41d9-917b-723c735ebbfe", release = "8e02dc1a-7b01-422f-b316-33633a2bcf21" }
 release_year = "2016"
 album = "Caravelle"
 youtube = "https://www.youtube.com/embed/f5IruTV-LGQ"

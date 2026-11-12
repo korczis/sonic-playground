@@ -8,6 +8,10 @@ genre = ["electronic", "downtempo", "ambient"]
 sentiment = ["mysterious", "hypnotic", "haunting"]
 
 [extra]
+release_year = "2008"
+country = "DK"
+isrc = "DKAZ70842102"
+musicbrainz = { recording = "2d37c11a-fdb0-4c41-a995-e51eca06e4fa", artist = "d5d50cb7-3921-4de7-89d3-72b215b60693", release = "a8eef154-5c43-4b0e-9b9c-9cc57d211805" }
 artist = "Lulu Rouge"
 cover_image = "/images/thumbnails/lulus-theme.jpeg"
 youtube = "https://www.youtube.com/embed/k_k2Vmrvp70"

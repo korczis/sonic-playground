@@ -8,6 +8,8 @@ genre = ["electronic", "darkwave", "industrial"]
 sentiment = ["haunting", "dark", "eerie"]
 
 [extra]
+country = "US"
+musicbrainz = { recording = "56c57270-b919-4b95-b3ba-fd5804f316ae", artist = "752d58e6-d33f-4dcd-b40c-37acc14242f2", release = "e6c7f942-89c8-4b2a-be88-ac2101925204" }
 release_year = "2012"
 album = "Pinky's Dream (The Remixes)"
 youtube = "https://www.youtube.com/embed/x7sX4-3hAfg"

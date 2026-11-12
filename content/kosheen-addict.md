@@ -8,6 +8,9 @@ genre = ["trip-hop", "electronic", "downtempo"]
 sentiment = ["dark", "intense", "haunting"]
 
 [extra]
+country = "GB"
+isrc = "DEU241261416"
+musicbrainz = { recording = "a98bbd86-7981-4e53-ad76-4479b12d125a", artist = "4f4bda3c-d636-4135-b65a-6cc26bc75788", release = "4a5d9775-752f-4727-b03d-ba4616a3ca17" }
 release_year = "2012"
 album = "Independence"
 youtube = "https://www.youtube.com/embed/kwg0GIQ3qXA"

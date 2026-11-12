@@ -8,6 +8,8 @@ genre = ["soul", "cover", "pop"]
 sentiment = ["soulful", "raw", "bittersweet"]
 
 [extra]
+country = "AU"
+musicbrainz = { recording = "55294a61-3d78-4973-b090-75e4f1dfeb54", artist = "72ae6caf-4f9f-407e-8c70-8cd195df955c", release = "64d05874-bb67-4024-b6df-46938e6048af" }
 release_year = "2008"
 album = "Lessons To Be Learned"
 youtube = "https://www.youtube.com/embed/pKXDpgT7a8c"

@@ -8,6 +8,9 @@ genre = ["electronic", "ambient", "experimental"]
 sentiment = ["mysterious", "hypnotic", "reflective"]
 
 [extra]
+release_year = "2020"
+country = "FR"
+musicbrainz = { recording = "8f06cf5f-ce59-4c78-8456-c88b6e51a415", artist = "e66540fa-8700-4bb5-9e93-72c9e753cf29", release = "497e2857-4e76-4482-8f66-8027b92d33d5" }
 cover_image = "/images/thumbnails/inigo-montoya-es.jpg"
 youtube = "https://www.youtube.com/embed/cK54zeNP-ZU"
 +++

@@ -8,6 +8,9 @@ genre = ["electronic", "pop", "funk"]
 sentiment = ["energetic", "playful", "innovative"]
 
 [extra]
+release_year = "2001"
+country = "FR"
+musicbrainz = { recording = "0b064e82-a1cf-4821-b7d9-7313ae89d63c", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "4cc688c7-4080-4924-b138-45bd9cf223ac" }
 youtube = "https://www.youtube.com/embed/fUpdfpOPf4Y"
 +++
 

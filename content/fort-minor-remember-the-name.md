@@ -8,6 +8,10 @@ genre = ["hip-hop", "rap", "alternative"]
 sentiment = ["motivational", "empowering", "determined"]
 
 [extra]
+release_year = "2005"
+country = "US"
+isrc = "USWB10603333"
+musicbrainz = { recording = "a57dd705-898c-4aa4-a7ea-d35637b1884b", artist = "e1564e98-978b-4947-8698-f6fd6f8b0181", release = "29f9e1d1-b553-4e4d-8641-a31610fcd38d" }
 youtube = "https://www.youtube.com/embed/VDvr08sCPOc"
 +++
 

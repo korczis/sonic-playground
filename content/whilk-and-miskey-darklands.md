@@ -8,6 +8,9 @@ genre = ["electronic", "indie", "alternative"]
 sentiment = ["melancholic", "atmospheric", "introspective"]
 
 [extra]
+country = "GB"
+isrc = "GBUM71403944"
+musicbrainz = { recording = "a141a107-5f9c-4a80-8ea9-a514a14a9dc6", artist = "f4139c2c-26ef-4e1f-99d5-6e8859ef6c56" }
 youtube = "https://www.youtube.com/embed/fk3WPgcJWsQ"
 +++
 

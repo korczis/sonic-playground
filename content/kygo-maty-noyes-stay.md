@@ -8,6 +8,9 @@ genre = ["tropical house", "electronic", "pop"]
 sentiment = ["dreamy", "romantic", "longing"]
 
 [extra]
+country = "NO"
+isrc = "SEBGA1500364"
+musicbrainz = { recording = "2ac3c23d-6d35-41ac-ac28-60011458817e", artist = "ba0e7638-0cd6-4ff4-8987-c3e224d22c23", release = "53b92dde-acbe-448b-a705-ce3720ffa0df" }
 release_year = "2015"
 album = "Stay"
 youtube = "https://www.youtube.com/embed/z9porfO8C_Q"

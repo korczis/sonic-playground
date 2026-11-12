@@ -8,6 +8,10 @@ genre = ["deep house", "electronic", "funk"]
 sentiment = ["romantic", "groovy", "chill"]
 
 [extra]
+release_year = "2014"
+country = "FR"
+isrc = "FR9W11411340"
+musicbrainz = { recording = "6ace3c90-48f8-4e05-b045-c203d9a5c83f", artist = "8ef74994-73f6-459c-a10c-56a16e07b362", release = "a939a87e-3f6b-4903-8499-7ac5a768c914" }
 album = "Lying Together"
 youtube = "https://www.youtube.com/embed/Voqi7CZB4n8"
 +++

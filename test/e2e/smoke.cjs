@@ -757,6 +757,68 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // The educational layer (ADR 0004): a review that teaches shows its guide, concepts, sources
+  // and connections from the front matter; its structured data is an Article and a
+  // LearningResource; concepts link to their pages; the glossary lists every concept; a
+  // concept's definition follows the locale; the listening guide seeks the player.
+  {
+    const teacher = catalog.tracks.find((t) => (t.edu || []).includes('learning') && (t.edu || []).includes('concept'));
+    if (!teacher) {
+      check(false, 'education: at least one review teaches (catalog.tracks[].edu)');
+    } else {
+      const { context, page, errors } = await open(browser, at(teacher.path), desktop, 'light', {}, true);
+      check(await page.isVisible('#learn-title') && (await page.locator('[data-listening-guide] li').count()) >= 3,
+        `education (${teacher.source}): the learning guide with at least three listening points`);
+      check((await page.locator('#refs-title + ol li').count()) >= 2, 'education: at least two cited sources');
+      check(await page.locator('#concepts-title').isVisible() && (await page.locator('[data-concept-card]').count()) >= 1,
+        'education: the concepts the review teaches, as cards');
+      const ld = await page.evaluate(() => JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent));
+      const article = (ld['@graph'] || []).find((n) => Array.isArray(n['@type']) && n['@type'].includes('LearningResource'));
+      const recording = (ld['@graph'] || []).find((n) => n['@type'] === 'MusicRecording');
+      check(!!article && !!recording && (article.teaches || []).length >= 1 && article.about['@id'] === recording['@id'],
+        'education: structured data is an Article + LearningResource about the MusicRecording, with what it teaches');
+      const link = page.locator('.format a.concept-link').first();
+      const href = await link.getAttribute('href');
+      check(/\/concept\/[a-z0-9-]+\/$/.test(href || '') && (await link.getAttribute('title') || '').length > 40,
+        'education: a concept named in the prose links to its page, its definition as the tooltip');
+      // The listening guide's seek: the player starts the track at the time asked.
+      await page.evaluate((src) => window.Sonic.catalog().then((c) => window.SonicPlayer.seek(c.tracks.find((t) => t.source === src), '1:05')), teacher.source);
+      const src = await page.waitForSelector('#player-panel iframe', { timeout: 10000 }).then((e) => e.getAttribute('src')).catch(() => '');
+      check(/[?&]start=65(&|$)/.test(src), 'education: the listening guide seeks the player to its time (1:05 = 65 s)');
+      await link.click();
+      await page.waitForFunction(() => !!document.querySelector('[data-locale-group]') && /\/concept\//.test(location.pathname), null, { timeout: 15000 })
+        .then(() => check(true, 'education: the concept link opens the concept page (router)'))
+        .catch(() => check(false, 'education: the concept link opens the concept page (router)'));
+      const visibleLang = () => page.evaluate(() => { const g = document.querySelector('[data-locale-group]');
+        const v = [...g.querySelectorAll('[data-locale-text]')].filter((e) => !e.hidden); return v.map((e) => e.dataset.localeText).join(); });
+      check(await visibleLang() === 'en', 'education: a concept shows one definition, in the current locale (en)');
+      await page.selectOption('#locale-switch', 'cs');
+      await page.waitForFunction(() => document.documentElement.lang === 'cs');
+      check(await visibleLang() === 'cs', 'education: switching to cs shows the Czech definition');
+      await page.selectOption('#locale-switch', 'en');
+      await page.goto(at('concept/'), { waitUntil: 'load' });
+      check((await page.locator('[data-concept-card]').count()) === catalog.concepts.length,
+        `education: the glossary lists all ${catalog.concepts.length} concepts`);
+      check(errors.length === 0, `education: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+      await context.close();
+    }
+  }
+
+  // Yearbooks (ADR 0005): when the corpus has any, the list and each year serve, every reviewed
+  // item links to its review, and the counts are the catalogue's.
+  if (catalog.yearbooks && catalog.yearbooks.length) {
+    const { context, page, errors } = await open(browser, at('yearbook/'), desktop);
+    check((await page.locator('[data-yearbook]').count()) === catalog.yearbooks.length, `yearbooks: the list shows all ${catalog.yearbooks.length}`);
+    for (const b of catalog.yearbooks) {
+      await page.goto(at(`yearbook/${b.year}/`), { waitUntil: 'load' });
+      const rows = await page.locator('#yearbook-list > li').count();
+      const playable = await page.locator('#yearbook-list [data-track]').count();
+      check(rows === b.items && playable === b.present, `yearbook ${b.year}: ${b.items} items in order, ${b.present} playable reviews`);
+    }
+    check(errors.length === 0, `yearbooks: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+
   if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);
 
   await browser.close();

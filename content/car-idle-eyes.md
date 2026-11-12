@@ -8,6 +8,8 @@ genre = ["electronic", "minimal", "remix"]
 sentiment = ["hypnotic", "atmospheric", "ethereal"]
 
 [extra]
+release_year = "2014"
+musicbrainz = { recording = "adfd9d24-67f2-451f-9af7-d787ec2a576c", artist = "f3557fb4-f8ca-4252-b090-665b69a40a5f", release = "9c675875-eef6-43dc-988d-c8bb662a947b" }
 cover_image = "/images/thumbnails/car-idle-eyes.jpg"
 youtube = "https://www.youtube.com/embed/hcttROHKCNE"
 +++

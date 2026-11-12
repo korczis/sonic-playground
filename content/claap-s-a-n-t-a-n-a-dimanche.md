@@ -8,6 +8,8 @@ genre = ["deep house", "house", "electronic"]
 sentiment = ["relaxed", "dreamy", "hypnotic"]
 
 [extra]
+country = "FR"
+musicbrainz = { recording = "bafc4a1a-6e1e-468a-8676-53d2493b6e2d", artist = "84931203-8482-48ce-8add-3c7d1d1c7c92", release = "70f5913e-fc2e-434d-ac51-d19d6b495c11" }
 release_year = "2014"
 album = "Dimanche"
 youtube = "https://www.youtube.com/embed/qQ940C1j7XU"

@@ -30,13 +30,27 @@ USES = [
 ]
 # Keys composed at run time from a known prefix and a facet or chart name; their full forms are
 # listed here so the check can prove them (and does, below).
+# The facets come from the content contract's taxonomies, so a new taxonomy needs its strings.
+CONTRACT = json.loads((ROOT / "data" / "track.schema.json").read_text(encoding="utf-8"))
+FACET_NAMES = list(CONTRACT["properties"]["taxonomies"]["properties"])
+EXTRA = CONTRACT["properties"]["extra"]["properties"]
+CONCEPT_CATEGORIES = json.loads((ROOT / "data" / "concept.schema.json").read_text(encoding="utf-8"))[
+    "properties"]["category"]["enum"]
 DYNAMIC = {
     "side.all.": ["genre", "sentiment"], "side.": ["genre", "sentiment"],
-    "explorer.facet.": ["genre", "sentiment", "mood"], "explorer.any.": ["genre", "sentiment", "mood"],
+    "explorer.facet.": FACET_NAMES, "explorer.any.": FACET_NAMES,
     "explorer.sort.": ["new", "old", "artist", "title"],
-    "tax.name.": ["genre", "sentiment", "mood"], "tax.one.": ["genre", "sentiment", "mood"],
-    "track.": ["album", "release_year", "publisher", "video_duration"],
-    "menu.": ["welcome", "author", "archive", "insights"],
+    "tax.name.": FACET_NAMES, "tax.one.": FACET_NAMES,
+    "concept.category.": CONCEPT_CATEGORIES,
+    "yearbook.status.": ["present", "missing", "ambiguous", "skipped", "uncertain"],
+    "yearbook.k.": ["items", "songs", "present", "missing"],
+    "track.": ["album", "release_year", "publisher", "video_duration", "country", "bpm", "key",
+               "time_signature", "isrc"],
+    "track.credits.": list(EXTRA["credits"]["properties"]),
+    "learn.level.": EXTRA["learning"]["properties"]["level"]["enum"],
+    "learn.kind.": EXTRA["sources"]["items"]["properties"]["kind"]["enum"],
+    "menu.": [m["key"].split(".", 1)[1] for m in tomllib.loads(
+        (ROOT / "config.toml").read_text(encoding="utf-8"))["extra"]["menu"]],
     "player.": ["play", "pause"],
 }
 

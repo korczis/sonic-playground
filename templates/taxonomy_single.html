@@ -13,13 +13,7 @@
     <a href="{{ get_url(path='@/_index.md') }}?{{ taxonomy.name }}={{ term.name | urlencode }}" class="{{ btn }}">{{ <icon name="search" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.combine" l={l} /> }}</a>
     <a href="{{ term.permalink }}atom.xml" class="{{ btn }}">{{ <icon name="rss" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.feed" l={l} /> }}</a>
   </div>
-  <div id="term-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-    {%- for p in pages %}
-    {%- if p.relative_path in catalog.lookup %}
-    {{ <track_card t={catalog.tracks[catalog.lookup[p.relative_path]]} l={l} heading="h2" /> }}
-    {%- endif %}
-    {%- endfor %}
-  </div>
+  {{ <term_grid pages={pages} catalog={catalog} l={l} heading="h2" /> }}
   {%- if paginator and paginator.number_pagers > 1 %}
   <nav aria-label="Pages" class="flex items-center justify-between">
     {%- if paginator.previous %}<a href="{{ paginator.previous }}" class="{{ btn }}">{{ <tx key="tax.prev" l={l} /> }}</a>{% else %}<span></span>{% endif %}

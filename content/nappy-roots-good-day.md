@@ -8,6 +8,10 @@ genre = ["hip-hop", "rap", "soul"]
 sentiment = ["uplifting", "feel-good", "nostalgic"]
 
 [extra]
+release_year = "2008"
+country = "US"
+isrc = "USZXT0813935"
+musicbrainz = { recording = "859d41af-c9ea-44fb-a4e8-f12a60d60645", artist = "01b64e1d-1e61-4482-b34a-cdb6d2a47f8d", release = "546657cf-cbde-4780-a55f-c9d87b807970" }
 album = "The Humdinger"
 youtube = "https://www.youtube.com/embed/hjPLkPsLxc4"
 +++

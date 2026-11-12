@@ -1,0 +1,10 @@
+term = "off-beat"
+category = "rhythm"
+wikipedia = "https://en.wikipedia.org/wiki/Beat_(music)#Off-beat"
+see_also = ["syncopation", "four-on-the-floor"]
+
+[en]
+definition = "The points halfway between the main beats. An open hi-hat on the off-beat, the classic house pattern, lifts the groove because it answers each kick drum."
+
+[cs]
+definition = "Místa přesně mezi hlavními dobami. Otevřený hi-hat na lehké době, klasický house vzorec, groove nadnáší, protože odpovídá na každý úder basového bubnu."

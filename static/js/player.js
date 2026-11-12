@@ -10,6 +10,7 @@
 //   [data-play-radio="<source>"]        replace the queue: this track, its related tracks, theirs
 //   [data-play-all="<container id>"]    replace the queue: every visible track of that container
 //   [data-play-video="<id>"]            play a video that is not a catalogue track (in a review)
+//   [data-seek="<source>" data-seek-at="m:ss"]  the listening guide: play that track from that time
 //
 // The bar: previous (restarts a track past 3 s), play/pause, next (skip), repeat (off, all, one),
 // the queue panel (now playing, up next with reorder and remove, played; shuffle and clear),
@@ -415,6 +416,21 @@
     state.queue.splice(pos, 0, item(t));
     jump(pos);
   }
+  /** The listening guide: the track at a time, whether or not it is the one playing. */
+  function seekTrack(t, at) {
+    if (!t || !t.youtube) return;
+    var parts = String(at).split(':').map(Number);
+    var seconds = parts.length === 2 ? parts[0] * 60 + parts[1] : 0;
+    var cur = current();
+    if (cur && keyOf(cur) === keyOf(t) && yt && ready) {
+      yt.seekTo(seconds, true);
+      if (!isPlaying()) yt.playVideo();
+      return;
+    }
+    pendingStart = seconds; // load() starts this track there (and only this track)
+    resumeFor = keyOf(t);
+    playNow(t);
+  }
   /** Play a track right after the current one (moved there when it is already queued). */
   function playNext(t) {
     if (!t || !t.youtube) return;
@@ -586,7 +602,7 @@
   document.addEventListener('click', function (event) {
     var origin = /** @type {Element} */ (event.target);
     var target = /** @type {HTMLElement | null} */ (origin.closest && origin.closest(
-      '[data-play],[data-play-next],[data-queue],[data-play-radio],[data-play-all],[data-play-video],'
+      '[data-play],[data-play-next],[data-queue],[data-play-radio],[data-play-all],[data-play-video],[data-seek],'
       + '[data-player-jump],[data-player-remove],[data-player-up],[data-player-down],[data-player-undo]'));
     if (!target) return;
     event.preventDefault();
@@ -607,6 +623,7 @@
     Sonic.catalog().then(function (c) {
       var bySource = {};
       c.tracks.forEach(function (t) { bySource[t.source] = t; });
+      if (d.seek) { seekTrack(bySource[d.seek], d.seekAt || '0:00'); return; }
       if (d.play) { playNow(bySource[d.play]); return; }
       if (d.playNext) { playNext(bySource[d.playNext]); return; }
       if (d.queue) { toggleQueued(bySource[d.queue]); return; }
@@ -687,6 +704,6 @@
   if (current()) { pendingStart = state.time || 0; resumeFor = keyOf(current()); paint(); }
   window.SonicPlayer = { playNow: playNow, playNext: playNext, toggleQueued: toggleQueued, playList: playList,
     remove: remove, move: move, clear: clear, shuffle: shuffle, next: next, prev: prev, toggle: toggle,
-    stop: stop, jump: jump, undo: restore, notify: function (text) { toast(text); },
+    stop: stop, jump: jump, undo: restore, seek: seekTrack, notify: function (text) { toast(text); },
     state: function () { return JSON.parse(JSON.stringify(state)); } };
 })();

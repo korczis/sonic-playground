@@ -8,6 +8,7 @@ genre = ["dub", "reggae", "downtempo"]
 sentiment = ["relaxed", "soulful", "hypnotic"]
 
 [extra]
+musicbrainz = { recording = "75c361c4-be13-49f0-ab65-f98d7592d8a5", artist = "cf067e8c-22ef-4c83-b318-8ae308021845", release = "016b6240-b17a-4737-a6a6-c6c86dab15a8" }
 release_year = "2003"
 album = "Late Night Tales: Nightmares on Wax"
 youtube = "https://www.youtube.com/embed/dLJ5lJIyraY"

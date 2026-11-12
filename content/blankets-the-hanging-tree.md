@@ -8,6 +8,7 @@ genre = ["electronic", "folk", "cover"]
 sentiment = ["haunting", "hypnotic", "defiant"]
 
 [extra]
+musicbrainz = { recording = "4adce1bd-e336-404a-bad9-31cd562aa83d", artist = "92fa702e-fbf0-453a-80a6-9c86608912b1", release = "37f25595-bb8d-4d6d-8b65-6d5905939264" }
 publisher = "Mercury Music Group"
 release_year = "2015"
 album = "The Hanging Tree"

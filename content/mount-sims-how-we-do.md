@@ -8,6 +8,8 @@ genre = ["electronic", "underground", "experimental"]
 sentiment = ["rebellious", "defiant", "empowering"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "2c31ac00-a4dc-47ed-89a8-72575b913a06", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "179ab818-e5cb-4b31-a4a4-5f76d0daaa89" }
 release_year = "2005"
 album = "Wild Light"
 youtube = "https://www.youtube.com/embed/YrhxWcivUT4"

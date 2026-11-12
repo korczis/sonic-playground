@@ -8,6 +8,9 @@ genre = ["folk", "bossa nova", "indie"]
 sentiment = ["playful", "carefree", "uplifting"]
 
 [extra]
+country = "GB"
+isrc = "GBUM71404184"
+musicbrainz = { recording = "39cd2558-fa28-4e16-bd81-06b6102b125b", artist = "f4139c2c-26ef-4e1f-99d5-6e8859ef6c56", release = "4aa30851-6241-4b4c-8679-7b1256e587b3" }
 release_year = "2014"
 album = "Clap Your Hands"
 youtube = "https://www.youtube.com/embed/bH_jxhnPf2c"

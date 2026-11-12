@@ -8,6 +8,8 @@ genre = ["deep house", "electronic", "melodic house"]
 sentiment = ["melancholic", "hypnotic", "reflective"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "1e799e37-646b-4511-af7e-ab3859cbd353", artist = "0daa43d2-4fc1-4867-93a7-5f6b038a584d" }
 youtube = "https://www.youtube.com/embed/-TH0tfRjxwg"
 +++
 

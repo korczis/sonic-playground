@@ -8,6 +8,10 @@ genre = ["dance", "house", "electronic"]
 sentiment = ["energetic", "nostalgic", "celebratory"]
 
 [extra]
+release_year = "2021"
+country = "US"
+isrc = "QZFPL2100100"
+musicbrainz = { recording = "3fc73c64-59e3-451e-a95d-f48c9a4e4c14", artist = "e21e0137-b42d-44a5-abd6-c6ac160d0d7d", release = "1ae3a95e-eeff-453d-9bc5-ba2840211183" }
 youtube = "https://www.youtube.com/embed/cBSYJqv0Fjc"
 +++
 

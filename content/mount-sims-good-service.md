@@ -8,6 +8,8 @@ genre = ["electroclash", "electronic", "synth-pop"]
 sentiment = ["provocative", "playful", "edgy"]
 
 [extra]
+country = "DE"
+musicbrainz = { recording = "648a72fc-7541-40dc-bc7c-a154659e9e89", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "179ab818-e5cb-4b31-a4a4-5f76d0daaa89" }
 release_year = "2002"
 album = "UltraSex"
 youtube = "https://www.youtube.com/embed/PN6EtJM-go4"

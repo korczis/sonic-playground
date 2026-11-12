@@ -8,6 +8,8 @@ genre = ["dub", "reggae", "electronic"]
 sentiment = ["relaxed", "groovy", "uplifting"]
 
 [extra]
+release_year = "2016"
+musicbrainz = { recording = "4a680eaf-4182-4c8f-9464-ba5d9a896e26", artist = "2185c865-ac87-4807-bb43-f90a1ad9cdde", release = "4b401add-3af1-4787-b92d-188994cc1824" }
 youtube = "https://www.youtube.com/embed/zvf2J2Jh5aw"
 +++
 

@@ -8,6 +8,8 @@ genre = ["electro-pop", "indie pop", "folk"]
 sentiment = ["uplifting", "bittersweet", "dreamy"]
 
 [extra]
+isrc = "FR9W11506808"
+musicbrainz = { recording = "b439c3ee-0b57-41c3-9394-ffc51fe19f6d", artist = "40b8d9ed-072f-4f32-8fa6-137a298d883a", release = "84208edf-bfaa-4f98-8f34-2141cd9aca30" }
 release_year = "2015"
 album = "Dear Misfortune, Mother of Joy"
 youtube = "https://www.youtube.com/embed/j01T8N7wVK0"

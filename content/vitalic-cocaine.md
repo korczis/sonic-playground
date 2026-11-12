@@ -8,6 +8,9 @@ genre = ["electro", "dance", "techno"]
 sentiment = ["intense", "energetic", "hypnotic"]
 
 [extra]
+release_year = "2001"
+country = "FR"
+musicbrainz = { recording = "e33ad57b-ac05-49ee-9bc9-4c40b78733ee", artist = "1f064e2d-aa55-4631-8f62-e2c14bbe1f4e", release = "1e9492ef-f406-4343-914a-8189ba5bdbd6" }
 youtube = "https://www.youtube.com/embed/9os5uvNq6v8"
 +++
 

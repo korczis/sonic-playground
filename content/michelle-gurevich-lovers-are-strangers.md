@@ -8,6 +8,8 @@ genre = ["singer-songwriter", "indie pop", "ballad"]
 sentiment = ["melancholic", "bittersweet", "romantic"]
 
 [extra]
+country = "CA"
+musicbrainz = { recording = "fb4cf4e9-ad1d-4441-99db-c6bb34976055", artist = "7413ccd4-a9e9-4965-8506-49e580dda6d5", release = "0104343c-3987-41e8-beb4-da5c2ec9dc70" }
 release_year = "2007"
 album = "Party Girl"
 youtube = "https://www.youtube.com/embed/68u9VwKnl8Q"

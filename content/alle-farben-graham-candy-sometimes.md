@@ -8,6 +8,9 @@ genre = ["deep house", "electronic", "pop"]
 sentiment = ["bittersweet", "dreamy", "uplifting"]
 
 [extra]
+country = "DE"
+isrc = "DEAF71471843"
+musicbrainz = { recording = "7ee243ba-8854-4a00-b3e7-3daf26d011d6", artist = "18f9ced1-cab5-4852-b885-e7e98e7c5df1", release = "2ea92b8b-31bc-4fbe-ad8c-0feff5187cdd" }
 release_year = "2014"
 album = "Synesthesia"
 youtube = "https://www.youtube.com/embed/okBwFEz0TRI"

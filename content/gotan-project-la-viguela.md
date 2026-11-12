@@ -8,6 +8,9 @@ genre = ["tango", "electronic", "world"]
 sentiment = ["hypnotic", "nostalgic", "elegant"]
 
 [extra]
+country = "FR"
+isrc = "FR99S0500025"
+musicbrainz = { recording = "dc55f73f-2b3f-4003-99be-136adbfd2fe3", artist = "66cc244d-6f96-4668-a6e9-0f9cd5acc940", release = "72d59dc9-7b0f-4f17-a2a6-c9a9446b08c2" }
 release_year = "2008"
 album = "Gotan Project live"
 youtube = "https://www.youtube.com/embed/4_fTkErd820"

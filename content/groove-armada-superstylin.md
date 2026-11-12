@@ -8,6 +8,10 @@ genre = ["house", "breakbeat", "dub"]
 sentiment = ["energetic", "uplifting", "celebratory"]
 
 [extra]
+release_year = "2001"
+country = "GB"
+isrc = "GBAHK0100086"
+musicbrainz = { recording = "79c49c72-4024-43a9-a389-15f5baf958ce", artist = "35723b60-732e-4bd8-957f-320b416e7b7f", release = "8e85c4a6-a3b1-4695-9d4d-921387b558b7" }
 youtube = "https://www.youtube.com/embed/YrJDpEpw64E"
 +++
 

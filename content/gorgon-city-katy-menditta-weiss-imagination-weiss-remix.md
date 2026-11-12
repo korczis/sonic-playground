@@ -8,6 +8,9 @@ genre = ["house", "deep house", "remix"]
 sentiment = ["groovy", "hypnotic", "energetic"]
 
 [extra]
+release_year = "2015"
+country = "GB"
+musicbrainz = { recording = "e1a0894d-2aec-4b2d-b765-3339c73c6048", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "a1091df5-6350-4c7e-a24e-a0722eb9cd63" }
 album = "Sirens (Remixes)"
 youtube = "https://www.youtube.com/embed/ZrzoiTXFn3w"
 +++

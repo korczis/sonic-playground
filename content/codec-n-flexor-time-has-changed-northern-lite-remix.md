@@ -8,6 +8,9 @@ genre = ["electro", "minimal", "techno"]
 sentiment = ["melancholic", "uplifting", "ethereal"]
 
 [extra]
+release_year = "2004"
+country = "DE"
+musicbrainz = { recording = "aed48dc0-c0f6-42fb-9c08-e72f8382587d", artist = "9b7ea29b-e1b4-4187-8aad-1299ea9c7245", release = "849f05e5-8723-497f-963f-a11c41fa126d" }
 # TODO(owner): the video id was a placeholder ("sample-video-id")
 # youtube = "https://www.youtube.com/embed/<id>"
 +++

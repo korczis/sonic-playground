@@ -8,6 +8,10 @@ genre = ["electronic", "experimental", "art pop"]
 sentiment = ["emotive", "introspective", "immersive"]
 
 [extra]
+release_year = "1990"
+country = "IS"
+isrc = "GBBTF0300193"
+musicbrainz = { recording = "b7e0a1ba-471a-4e11-b2dd-cbd7be1aec62", artist = "87c5dedd-371d-4a53-9f7f-80522fb7f3cb", release = "a8dc79f3-7ee8-4001-bc68-adaf81bbe0a9" }
 youtube = "https://www.youtube.com/embed/oJWXJEnHGgI"
 +++
 

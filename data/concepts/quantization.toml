@@ -1,0 +1,10 @@
+term = "quantization"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Quantization_(music)"
+see_also = ["sequencer", "swing"]
+
+[en]
+definition = "Snapping played notes to a rhythmic grid. It gives machine precision; producers often loosen it, or add swing, to keep a human feel."
+
+[cs]
+definition = "Zarovnání zahraných not do rytmické mřížky. Dává strojovou přesnost; producenti ji často uvolňují nebo přidávají swing, aby zůstal lidský pocit."

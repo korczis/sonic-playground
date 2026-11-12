@@ -8,6 +8,8 @@ genre = ["electronic", "big beat", "house"]
 sentiment = ["hypnotic", "mesmerizing"]
 
 [extra]
+country = "GB"
+musicbrainz = { recording = "2e0e1e46-6d0f-478c-8a55-d51bca82b7c5", artist = "1946a82a-f927-40c2-8235-38d64f50d043", release = "f35c1cb2-2e07-4324-a7e5-b18b2bcf7617" }
 release_year = "2002"
 album = "Come with Us"
 youtube = "https://www.youtube.com/embed/0S43IwBF0uM"

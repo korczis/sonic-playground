@@ -8,6 +8,8 @@ genre = ["pop", "r&b", "electro-pop"]
 sentiment = ["confident", "alluring", "provocative"]
 
 [extra]
+isrc = "USUM71508006"
+musicbrainz = { recording = "10c2b5b4-0fef-4d27-a5ba-88520464ab71", artist = "dc8fc7a6-5dba-4d27-91cc-5a71fa86c69f", release = "b9fe05fa-256d-471a-9d74-eed13192f808" }
 publisher = "Cherrytree/Interscope"
 release_year = "2015"
 album = "No Good"

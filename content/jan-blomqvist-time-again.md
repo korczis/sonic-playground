@@ -8,6 +8,9 @@ genre = ["deep house", "minimal techno", "electronic"]
 sentiment = ["melancholic", "hypnotic", "emotive"]
 
 [extra]
+release_year = "2014"
+country = "DE"
+musicbrainz = { recording = "dd86c4c0-5b2c-4651-88e3-65b8105dd738", artist = "cccd1fad-a7bb-4a79-90d1-a2d7e1f8db17", release = "47557eb7-7dbf-464e-8a7c-3437b844a5a5" }
 youtube = "https://www.youtube.com/embed/7l1nijTC_yM"
 +++
 

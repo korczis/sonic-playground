@@ -8,6 +8,10 @@ genre = ["deep house", "electronic", "house"]
 sentiment = ["soulful", "hypnotic", "longing"]
 
 [extra]
+release_year = "2016"
+country = "DE"
+isrc = "GBCFZ1600035"
+musicbrainz = { recording = "a2c40d25-6474-400f-9e77-e0b2d1b2077c", artist = "c126d61e-b789-4982-8091-63772f2e9040", release = "4c8b7de4-b446-4a2e-98d9-41ebfa0f5b30" }
 album = "Say to Me"
 youtube = "https://www.youtube.com/embed/TiKMsx2Exrw"
 +++

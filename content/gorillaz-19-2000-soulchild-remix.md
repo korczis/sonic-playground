@@ -8,6 +8,9 @@ genre = ["alternative", "electronic", "hip-hop", "remix"]
 sentiment = ["playful", "upbeat", "carefree"]
 
 [extra]
+country = "GB"
+isrc = "GBAYE0100564"
+musicbrainz = { recording = "44f962fb-bb65-445e-8733-e926bcca9677", artist = "e21857d5-3256-4547-afb3-4b6ded592596", release = "30c401e2-3341-4aec-ae0d-733cdbe805c7" }
 release_year = "2001"
 album = "The Singles Collection 2001-2011"
 youtube = "https://www.youtube.com/embed/oVkatTa0D4c"

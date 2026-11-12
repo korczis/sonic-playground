@@ -8,6 +8,9 @@ genre = ["soul", "r&b", "jazz"]
 sentiment = ["raw", "gritty", "bittersweet"]
 
 [extra]
+country = "GB"
+isrc = "GBUM70603488"
+musicbrainz = { recording = "222e611f-2e4b-4569-80a4-0a38402f0c63", artist = "dfe9a7c4-8cf2-47f4-9dcb-d233c2b86ec3", release = "37ac1dbb-bca1-4c07-a9e0-53b0386d6335" }
 release_year = "2006"
 album = "Back To Black"
 youtube = "https://www.youtube.com/embed/b-I2s5zRbHg"
