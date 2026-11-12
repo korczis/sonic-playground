@@ -64,6 +64,24 @@ link. Not for bulk imports (run the engine in a loop and review each article).
    scripts/verify.sh"`; merge to `main` with `--no-ff` and push — pushing `main` deploys
    (`.github/workflows/pages.yml`), and the run verifies production serves the commit.
 
+# Many songs (the backlog)
+
+`python3 scripts/backlog.py` lists the songs of `data/backlog/*.toml` (the owner's playlists,
+transcribed) that have no review: a song, not a recording (version suffixes and featured
+artists folded, remixes kept), each once. `--batches N` splits it; each batch goes to one
+`song-writer` agent (`.claude/agents/song-writer.md`) running this procedure in one shared
+worktree, creating only its own files. The integrator then runs `npm run derive` and the gate
+once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 agents):
+
+- Pass every facet as its own quoted argument (`--genre "deep house" --genre techno`); an
+  unquoted shell variable joined or split terms in three files.
+- Find the video on YouTube's own search page; a general web search rarely returns watch URLs.
+  Prefer the artist's channel, VEVO, the label, then "- Topic"; a third-party channel only when
+  its upload is the official video, and say so in the report.
+- No official upload at all: create the page from the name; it shows the derived artwork.
+- A row that is not a song (an interview, a skit) or whose artist is unclear is skipped and
+  reported for the owner, never guessed.
+
 # Output
 
 - The article path, the inferred artist/track and the rule that inferred them, the chosen facets
