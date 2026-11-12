@@ -187,6 +187,31 @@ function watch(page) {
 
 // Every page the site has (its sitemap), each loaded and scrolled to the end so lazy images load,
 // must produce zero errors. Six pages at a time, one context per worker.
+async function visit(context, rel) {
+  const page = await context.newPage();
+  const errors = watch(page);
+  let stalled = false;
+  inFlight.add(rel || '/');
+  try {
+    await within(60000, `page /${rel}`, (async () => {
+      await page.goto(at(rel), { waitUntil: 'load', timeout: 30000 });
+      await page.evaluate(async () => {
+        for (let y = 0, i = 0; y < document.body.scrollHeight && i < 100; y += 800, i++) {
+          window.scrollTo(0, y);
+          await new Promise((r) => setTimeout(r, 40));
+        }
+      });
+      await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
+    })());
+  } catch (e) {
+    stalled = /timed out|Timeout/i.test(e.message) && !errors.length;
+    errors.push(`navigation: ${e.message}`);
+  }
+  inFlight.delete(rel || '/');
+  await within(10000, `close /${rel}`, page.close()).catch(() => {});
+  return { errors, stalled };
+}
+
 async function sweep(browser) {
   const xml = root ? fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8')
     : await (await get(at('sitemap.xml'))).text();
@@ -198,27 +223,17 @@ async function sweep(browser) {
     if (root) await context.route(`${base}**`, fromArtifact);
     while (next < urls.length) {
       const loc = urls[next++];
-      const page = await context.newPage();
-      const errors = watch(page);
       const rel = loc.startsWith(base) ? loc.slice(base.length) : loc;
-      inFlight.add(rel || '/');
-      try {
-        await within(60000, `page /${rel}`, (async () => {
-          await page.goto(at(rel), { waitUntil: 'load', timeout: 30000 });
-          await page.evaluate(async () => {
-            for (let y = 0, i = 0; y < document.body.scrollHeight && i < 100; y += 800, i++) {
-              window.scrollTo(0, y);
-              await new Promise((r) => setTimeout(r, 40));
-            }
-          });
-          await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
-        })());
-      } catch (e) {
-        errors.push(`navigation: ${e.message}`);
+      // A page whose deadline passes is loaded once more: a stalled third-party response (a
+      // YouTube still on a CI machine, 2026-11-12) is not a defect of the site, a page that
+      // stalls twice is. Errors (a console message, a 404) are never retried.
+      let result = await visit(context, rel);
+      if (result.stalled) {
+        const again = await visit(context, rel);
+        if (!again.stalled && !again.errors.length) notices.add(`stalled once, passed on retry: /${rel}`);
+        result = again;
       }
-      inFlight.delete(rel || '/');
-      if (errors.length) failed.push(`${rel || '/'}: ${errors.join(' | ')}`);
-      await within(10000, `close /${rel}`, page.close()).catch(() => {});
+      if (result.errors.length) failed.push(`${rel || '/'}: ${result.errors.join(' | ')}`);
     }
     await context.close();
   }
