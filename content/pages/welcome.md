@@ -5,7 +5,7 @@ path = "welcome"
 template = "pages.html"
 +++
 
-# Enter Your Sonic Playground!
+## Enter Your Sonic Playground!
 
 In a world flooded with **AI-generated playlists** and **algorithmic suggestions**, 
 where content is churned out faster than you can hit “skip,” finding genuine, 

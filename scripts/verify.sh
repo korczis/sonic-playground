@@ -44,6 +44,15 @@ step "skill cases (test/cases)"
 bash test/run.sh
 
 if [ -d node_modules ]; then
+  # Every later step reads the installed toolchain: a checkout whose node_modules predates its
+  # package-lock.json (a merged dependency) fails here with the fix, not later with a stack trace.
+  step "toolchain: node_modules matches package-lock.json"
+  if ! npm ls --depth=0 >/dev/null 2>&1; then
+    npm ls --depth=0 2>&1 | grep -E 'missing|invalid|ERR' | head -5 >&2 || true
+    echo "verify: node_modules does not match package-lock.json; run npm ci" >&2
+    exit 1
+  fi
+
   step "types: browser code (tsc --checkJs) and Python (pyright)"
   npx --no-install tsc -p tsconfig.json
   npx --no-install pyright

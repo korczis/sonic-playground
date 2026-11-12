@@ -4,7 +4,8 @@ poster; any quoting; absolute, root-relative or relative, resolved against the p
 URL) is a file of the build under the site path, and no page embeds a raw iframe (videos go
 through the video component). Every <img> has its width and height (nothing shifts as it loads),
 and no image a page references weighs more than data/media.toml budget.image_kb (rule
-project.media-budget: a page shows derived variants, never a source).
+project.media-budget: a page shows derived variants, never a source). Every page has exactly one
+<h1>, its title: content headings start at ## (a redirect stub has no <html> and is skipped).
 
 Zola's link checker validates Markdown links to other pages; it does not see raw HTML in the
 reviews or attributes the templates compute. This reads what a browser would request.
@@ -45,6 +46,7 @@ class Refs(HTMLParser):
         self.in_title = False
         self.title = ""
         self.images: list[str] = []
+        self.h1 = 0
         self.unsized: list[str] = []
 
     def handle_endtag(self, tag):
@@ -66,6 +68,8 @@ class Refs(HTMLParser):
             self.canonical = a.get("href") or ""
         if tag == "iframe":
             self.iframes += 1
+        if tag == "h1":
+            self.h1 += 1
         if tag == "img" and not (a.get("width") and a.get("height")):
             self.unsized.append(a.get("src") or "?")
         if tag in ("img", "source"):
@@ -114,6 +118,9 @@ def main() -> int:
                 problems.append(f"{rel}: social preview incomplete, missing {', '.join(missing)}")
             if not parser.title.strip() or not parser.canonical:
                 problems.append(f"{rel}: no <title> or canonical link")
+            if parser.h1 != 1:
+                problems.append(f"{rel}: {parser.h1} <h1> elements; a page has exactly one, its title "
+                                f"(content starts at ##)")
             image = parser.meta.get("og:image", "")
             if image and image != parser.meta.get("twitter:image"):
                 problems.append(f"{rel}: og:image and twitter:image differ")
