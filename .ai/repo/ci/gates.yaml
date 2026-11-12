@@ -30,3 +30,9 @@ classes:
   - id: ci
     paths: [.github/workflows/**, .github/actions/**, .ai/repo/ci/**, scripts/verify.sh, test/run.sh]
     gates: full
+
+  # the skills and the agents that serve them: verified by `skills verify` (supervision) and
+  # proven by their cases (site, through test/run.sh)
+  - id: skills
+    paths: [.ai/repo/skills/**, .claude/**]
+    gates: [supervision, site]

@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "executions": [
+    {
+      "test": "suite:10_add_song",
+      "runner": "suite",
+      "source": "test/cases/10_add_song.sh",
+      "outcome": "pass",
+      "seconds": 4,
+      "commit": "d8662501ae7e5ca38e7e3469056d44edc729e23f",
+      "working_tree": "clean",
+      "digest": "sha256:eb2ec77efb65877afdc1868649bbeabd2b2b7ee198a96564cd331f5533d098fa",
+      "at": "2026-11-12T11:57:42Z",
+      "origin": "local",
+      "command": "bash test/run.sh 10_add_song"
+    },
+    {
+      "test": "suite:20_ui_flowbite",
+      "runner": "suite",
+      "source": "test/cases/20_ui_flowbite.sh",
+      "outcome": "pass",
+      "seconds": 0,
+      "commit": "d8662501ae7e5ca38e7e3469056d44edc729e23f",
+      "working_tree": "clean",
+      "digest": "sha256:220bd4e9de30ed781cfcfca62dffcce5437ef1ce544e50338f622b20739b4bdd",
+      "at": "2026-11-12T11:57:42Z",
+      "origin": "local",
+      "command": "bash test/run.sh 20_ui_flowbite"
+    },
+    {
+      "test": "suite:30_state_attributes",
+      "runner": "suite",
+      "source": "test/cases/30_state_attributes.sh",
+      "outcome": "pass",
+      "seconds": 0,
+      "commit": "d8662501ae7e5ca38e7e3469056d44edc729e23f",
+      "working_tree": "clean",
+      "digest": "sha256:87981840a6c011e8331e92a6e6d78429c62f5ca3d1bb93e46cdf0966ae55eac5",
+      "at": "2026-11-12T11:57:42Z",
+      "origin": "local",
+      "command": "bash test/run.sh 30_state_attributes"
+    },
+    {
+      "test": "suite:40_workflow_deadlines",
+      "runner": "suite",
+      "source": "test/cases/40_workflow_deadlines.sh",
+      "outcome": "pass",
+      "seconds": 0,
+      "commit": "d8662501ae7e5ca38e7e3469056d44edc729e23f",
+      "working_tree": "clean",
+      "digest": "sha256:4163989ea24e748474d4b2c734b3887bd59c891dd532843c44e39811a8ae6e98",
+      "at": "2026-11-12T11:57:42Z",
+      "origin": "local",
+      "command": "bash test/run.sh 40_workflow_deadlines"
+    },
+    {
+      "test": "suite:50_import_yearbook",
+      "runner": "suite",
+      "source": "test/cases/50_import_yearbook.sh",
+      "outcome": "pass",
+      "seconds": 4,
+      "commit": "d8662501ae7e5ca38e7e3469056d44edc729e23f",
+      "working_tree": "clean",
+      "digest": "sha256:e4e4b491b5651826b4815823cebfb9e334516b42b399f7078a8a5afdface9ed8",
+      "at": "2026-11-12T11:57:42Z",
+      "origin": "local",
+      "command": "bash test/run.sh 50_import_yearbook"
+    },
+    {
+      "test": "suite:60_ci_model",
+      "runner": "suite",
+      "source": "test/cases/60_ci_model.sh",
+      "outcome": "pass",
+      "seconds": 0,
+      "commit": "d8662501ae7e5ca38e7e3469056d44edc729e23f",
+      "working_tree": "clean",
+      "digest": "sha256:ab3a0e341f334f9fd12b1428d70955eaa8dcc73d2703c38099b217435999c393",
+      "at": "2026-11-12T11:57:42Z",
+      "origin": "local",
+      "command": "bash test/run.sh 60_ci_model"
+    }
+  ]
+}
