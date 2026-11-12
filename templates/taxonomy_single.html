@@ -6,11 +6,11 @@
 {%- set one_key = "tax.one." ~ taxonomy.name %}
 {%- if paginator %}{% set pages = paginator.pages %}{% else %}{% set pages = term.pages %}{% endif %}
 {%- set btn = "inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-700" %}
-{{ <page_header title={term.name} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l[name_key], get_url(path=taxonomy.name, trailing_slash=true), name_key], [term.name, "", ""]]} kicker={l[one_key]} lead={l["tax.count"] | replace(from="{n}", to=term.page_count ~ "")} /> }}
+{{ <page_header title={term.name} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], get_url(path=lp ~ taxonomy.name, trailing_slash=true), name_key], [term.name, "", ""]]} kicker={l[one_key]} lead={l["tax.count"] | replace(from="{n}", to=term.page_count ~ "")} /> }}
 <div class="space-y-4 px-4 pt-6 xl:px-8">
   <div class="flex flex-wrap gap-2">
     {{ <play_all target="term-grid" l={l} label={l["tax.play"] | replace(from="{term}", to=term.name)} lkey="tax.play" vars={ {"term": term.name} } /> }}
-    <a href="{{ get_url(path='@/_index.md') }}?{{ taxonomy.name }}={{ term.name | urlencode }}" class="{{ btn }}">{{ <icon name="search" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.combine" l={l} /> }}</a>
+    <a href="{{ get_url(path='@/_index.md', lang=lang) }}?{{ taxonomy.name }}={{ term.name | urlencode }}" class="{{ btn }}">{{ <icon name="search" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.combine" l={l} /> }}</a>
     <a href="{{ term.permalink }}atom.xml" class="{{ btn }}">{{ <icon name="rss" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.feed" l={l} /> }}</a>
   </div>
   {{ <term_grid pages={pages} catalog={catalog} l={l} heading="h2" /> }}

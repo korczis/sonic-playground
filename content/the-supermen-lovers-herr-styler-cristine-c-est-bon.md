@@ -110,4 +110,4 @@ The Supermen Lovers is the project of the Parisian producer Guillaume Atlan, bor
 
 ## Impact and Reception
 
-Alongside "Say No More" and "Take a Chance", "C'est Bon" was one of the tracks from *Between The Ages* that drew positive critical reaction. It belongs on this playground for its effortless charm: a dance track that never tries too hard. Put it on as the evening starts and let it set the tone.
+Alongside "Say No More" and "Take a Chance", "C'est bon" was one of the tracks from *Between The Ages* that drew positive critical reaction. It belongs on this playground for its effortless charm: a dance track that never tries too hard. Put it on as the evening starts and let it set the tone.

@@ -19,6 +19,10 @@ interface SonicTrack {
   words: number;
   extra: Record<string, string>;
   related: { source: string; score: number; shared: string[] }[];
+  /** The languages the review is in, the default first (ADR 0006). */
+  langs: string[];
+  /** Per language besides the default: what its translation says. */
+  i18n: Record<string, { title: string; description: string; path: string }>;
 }
 
 interface SonicTerm { term: string; slug: string; count: number }
@@ -33,6 +37,9 @@ interface SonicCatalog {
   artists: SonicTerm[];
   lookup: Record<string, number>;
   tracks: SonicTrack[];
+  languages: string[];
+  /** Per language besides the default, per facet: the terms it has a page for. */
+  lang_terms: Record<string, Record<string, string[]>>;
 }
 
 interface SonicApi {
@@ -46,9 +53,13 @@ interface SonicApi {
   script(src: string): Promise<unknown>;
   t(key: string, vars?: Record<string, string | number>): string;
   locale(): string;
+  term(kind: string, term: string): string;
+  localPath(path: string): string;
+  trackPath(t: { path?: string; i18n?: Record<string, { path: string }> }): string;
+  termPath(kind: string, slug: string, term: string, catalog: SonicCatalog): string;
 }
 
-interface SonicQueueItem { source: string; path: string; artist: string; track: string; youtube: string; thumbnail: string; auto?: boolean }
+interface SonicQueueItem { source: string; path: string; i18n: Record<string, { title: string; description: string; path: string }>; artist: string; track: string; youtube: string; thumbnail: string; auto?: boolean }
 
 interface Window {
   Sonic: SonicApi;

@@ -7,7 +7,7 @@
 {%- set_global b = "" %}
 {%- for x in catalog.yearbooks %}{% if x.year == year %}{% set_global b = x %}{% endif %}{% endfor %}
 {%- set card = "rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" %}
-{{ <page_header title={l["yearbook.one"] | replace(from="{year}", to=year ~ "")} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l["yearbook.title"], get_url(path="@/yearbook/_index.md"), "yearbook.title"], [year ~ "", "", ""]]} kicker={b.name} lead={l["yearbook.count"] | replace(from="{n}", to=b.items ~ "") | replace(from="{s}", to=b.songs ~ "")} /> }}
+{{ <page_header title={l["yearbook.one"] | replace(from="{year}", to=year ~ "")} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["yearbook.title"], get_url(path="@/yearbook/_index.md", lang=lang), "yearbook.title"], [year ~ "", "", ""]]} kicker={b.name} lead={l["yearbook.count"] | replace(from="{n}", to=b.items ~ "") | replace(from="{s}", to=b.songs ~ "")} /> }}
 <div class="grid grid-cols-1 gap-4 px-4 pt-6 xl:grid-cols-3 xl:px-8">
   <section class="{{ card }} p-4 sm:p-6 xl:col-span-2" aria-labelledby="yb-list">
     <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
@@ -40,7 +40,7 @@
     {%- if b.genres | length > 0 %}
     <div class="{{ card }} p-4 sm:p-6">
       <h2 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.genres" l={l} /> }}</h2>
-      <ul class="space-y-1.5 text-sm">{% for g in b.genres %}<li class="flex justify-between gap-3"><a class="text-primary-700 hover:underline dark:text-primary-400" href="{{ get_taxonomy_url(kind='genre', term=g.term) }}">{{ g.term }}</a><span class="text-gray-500 dark:text-gray-400">{{ g.count }}</span></li>{% endfor %}</ul>
+      <ul class="space-y-1.5 text-sm">{% for g in b.genres %}<li class="flex justify-between gap-3"><a class="text-primary-700 hover:underline dark:text-primary-400" href="{% if l.lang in catalog.lang_terms and g.term not in catalog.lang_terms[l.lang]['genre'] %}{{ get_taxonomy_url(kind='genre', term=g.term, lang=catalog.languages | first) }}{% else %}{{ get_taxonomy_url(kind='genre', term=g.term, lang=l.lang) }}{% endif %}">{% set k = "term.genre." ~ g.term %}{% if k in l %}{{ l[k] }}{% else %}{{ g.term }}{% endif %}</a><span class="text-gray-500 dark:text-gray-400">{{ g.count }}</span></li>{% endfor %}</ul>
     </div>
     {%- endif %}
     {%- if b.artists | length > 0 %}

@@ -153,8 +153,8 @@
         var pick;
         do {
           pick = c.tracks[Math.floor(Math.random() * c.tracks.length)];
-        } while (c.tracks.length > 1 && here.endsWith('/' + pick.path));
-        var url = window.Sonic.base + '/' + pick.path;
+        } while (c.tracks.length > 1 && here.endsWith('/' + window.Sonic.trackPath(pick)));
+        var url = window.Sonic.base + '/' + window.Sonic.trackPath(pick);
         if (window.SonicRouter) window.SonicRouter.go(url); else window.location.href = url;
       }).catch(function () { random.disabled = false; });
     });

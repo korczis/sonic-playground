@@ -7,4 +7,5 @@ see_also = ["synthesizer"]
 definition = "Deliberately overdriving a signal so that it clips and gains harmonics: grit on a guitar, a bass or a vocal. It adds aggression and presence."
 
 [cs]
+term = "zkreslení"
 definition = "Záměrné přebuzení signálu, takže se ořízne a získá vyšší harmonické: drsnost kytary, basy nebo hlasu. Přidává agresivitu a přítomnost."

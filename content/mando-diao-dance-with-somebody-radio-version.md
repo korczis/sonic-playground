@@ -1,7 +1,7 @@
 +++
 title = "Mando Diao - Dance With Somebody (Radio Version)"
 date = "2026-11-12"
-description = "Mando Diao trade garage-rock grit for a disco-rock floor-filler, a pulsing four-to-the-floor beat and a shout-along chorus about needing someone to dance with."
+description = "Mando Diao trade garage-rock grit for a disco-rock floor-filler, a pulsing four-on-the-floor beat and a shout-along chorus about needing someone to dance with."
 
 [taxonomies]
 genre = ["rock", "indie rock", "dance"]

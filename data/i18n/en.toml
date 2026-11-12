@@ -7,7 +7,6 @@
 "locale.name" = "English"
 "locale.short" = "EN"
 "locale.switch" = "Language"
-"locale.content_note" = ""
 
 "site.skip" = "Skip to content"
 "site.home" = "Home"
@@ -322,6 +321,8 @@
 "yearbook.title" = "Yearbooks"
 "yearbook.lead" = "{n} years of the owner's most played songs on Spotify; {r} songs recur across years."
 "yearbook.one" = "Top songs of {year}"
+"yearbook.page_title" = "Yearbooks"
+"yearbook.page_description" = "The owner's most played songs of {year}: {items} recordings, {songs} with a review on Sonic Playground."
 "yearbook.count" = "{n} recordings, {s} with a review"
 "yearbook.list" = "In the playlist's order"
 "yearbook.play" = "Play {year}"

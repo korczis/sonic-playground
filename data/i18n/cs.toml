@@ -3,7 +3,6 @@
 "locale.name" = "Čeština"
 "locale.short" = "CS"
 "locale.switch" = "Jazyk"
-"locale.content_note" = "Recenze jsou psané anglicky; rozhraní je česky."
 
 "site.skip" = "Přeskočit na obsah"
 "site.home" = "Domů"
@@ -318,6 +317,8 @@
 "yearbook.title" = "Ročenky"
 "yearbook.lead" = "{n} let nejposlouchanějších skladeb autora na Spotify; {r} skladeb se opakuje ve více letech."
 "yearbook.one" = "Nejposlouchanější skladby {year}"
+"yearbook.page_title" = "Ročenky"
+"yearbook.page_description" = "Nejposlouchanější skladby autora v roce {year}: {items} nahrávek, {songs} s recenzí na Sonic Playground."
 "yearbook.count" = "{n} nahrávek, {s} s recenzí"
 "yearbook.list" = "V pořadí playlistu"
 "yearbook.play" = "Přehrát {year}"

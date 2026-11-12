@@ -22,7 +22,7 @@ samples = [
   { artist = "The Doors", track = "Bird of Prey" },
 ]
 connections = [
-  { source = "nina-simone-felix-da-housecat-sinnerman.md", why = "Another dance producer building a track around the recorded voice of a 1960s icon, years after the singer's death." },
+  { source = "nina-simone-felix-da-housecat-sinnerman.md", why = "Another dance producer building a track around the recorded voice of a 1960s icon, decades after the recording was made." },
   { source = "daft-punk-harder-better-faster-stronger.md", why = "A dance single from the same years whose identity rests on a sample from an older record, looped and transformed." },
 ]
 

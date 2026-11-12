@@ -108,7 +108,7 @@ The track winds down with the repetition of the title phrase, the persistent voi
 
 ## Concepts in Focus
 
-This is a {{ <concept_link name="remix" /> }} that changes genre. Freeland's original is breakbeat, built on broken, punchy drums and released on his label Marine Parade; Klangkarussell turned it into the long, four-to-the-floor house of their album Netzwerk. They posted it on SoundCloud in 2011, the year the duo formed, and it was released officially in 2014 with Freeland credited as featured artist and additional producer.
+This is a {{ <concept_link name="remix" /> }} that changes genre. Freeland's original is breakbeat, built on broken, punchy drums and released on his label Marine Parade; Klangkarussell turned it into the long, four-on-the-floor house of their album Netzwerk. They posted it on SoundCloud in 2011, the year the duo formed, and it was released officially in 2014 with Freeland credited as featured artist and additional producer.
 
 The words come through {{ <concept_link name="sampling" /> }} twice over. Freeland's original samples Bill Hicks, the American comedian whose routines attacked advertising and marketing, and Klangkarussell's remix samples Freeland's track in turn, so Hicks's anger is now two records deep.
 

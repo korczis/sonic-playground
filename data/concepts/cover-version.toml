@@ -7,4 +7,5 @@ see_also = ["remix", "live recording"]
 definition = "A new recording of a song by an artist other than the original. A cover can be faithful or transform the song's genre and meaning."
 
 [cs]
+term = "coververze"
 definition = "Nová nahrávka písně jiným interpretem než původním. Coververze může být věrná, nebo změnit žánr i význam písně."

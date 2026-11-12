@@ -7,4 +7,5 @@ see_also = ["analog synthesizer", "drum machine", "sequencer"]
 definition = "An electronic instrument that generates sound from oscillators and shapes it with filters and envelopes. Synthesizers define the sound of electronic pop, house and techno."
 
 [cs]
+term = "syntezátor"
 definition = "Elektronický nástroj, který vytváří zvuk z oscilátorů a tvaruje ho filtry a obálkami. Syntezátory určují zvuk elektronického popu, house i techna."

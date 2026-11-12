@@ -7,4 +7,5 @@ see_also = ["reverb", "dub"]
 definition = "An effect that repeats a sound after a set time, often several times and fading. Echoes timed to the tempo add rhythm; dub turned delay into an instrument of its own."
 
 [cs]
+term = "delay"
 definition = "Efekt, který zvuk po nastavené době zopakuje, často několikrát a slábnoucí. Ozvěny sladěné s tempem přidávají rytmus; dub z delaye udělal samostatný nástroj."

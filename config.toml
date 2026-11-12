@@ -25,6 +25,23 @@ taxonomies = [
   { name = "instrument", feed = true, paginate_by = 24 },
 ]
 
+# Czech (ADR 0006): every page has its translation beside it (<name>.cs.md, _index.cs.md) and is
+# served under /cs/. The taxonomies are the same set as the default language's; a term keeps one
+# identity in both languages, and its Czech label is data (data/i18n/terms.cs.toml).
+[languages.cs]
+title = "Sonic Playground"
+description = "Hudba, která vás chytne, ne algoritmický šum. Vybraná ručně, autentická a občas neuhlazená, jako život."
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+build_search_index = false
+taxonomies = [
+  { name = "genre", feed = true, paginate_by = 24 },
+  { name = "sentiment", feed = true, paginate_by = 24 },
+  { name = "mood", feed = true, paginate_by = 24 },
+  { name = "concept", feed = true, paginate_by = 24 },
+  { name = "instrument", feed = true, paginate_by = 24 },
+]
+
 [markdown]
 render_emoji = false
 external_links_target_blank = true

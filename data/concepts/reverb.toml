@@ -7,4 +7,5 @@ see_also = ["delay", "ambient texture"]
 definition = "The sound of a space: countless reflections that blend after the direct sound. Reverb places a voice in a room, a hall or an impossible space, and long reverbs make music feel distant or dreamlike."
 
 [cs]
+term = "dozvuk"
 definition = "Zvuk prostoru: nespočet odrazů, které splynou po přímém zvuku. Dozvuk umístí hlas do místnosti, sálu nebo nemožného prostoru; dlouhý dozvuk dělá hudbu vzdálenou či snovou."

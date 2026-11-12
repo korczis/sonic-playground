@@ -8,7 +8,8 @@ The site is static and serverless (ADR 0001): Zola builds every page, GitHub Pag
 everything dynamic runs in the browser over a catalogue the build derives from the articles
 (ADR 0002). A router swaps pages under a persistent player, and every page has a social card
 rendered from its own data (ADR 0003). The UI is the owner's Flowbite Pro admin shell on
-Tailwind 4, in English and Czech, switchable without a reload.
+Tailwind 4. The whole site is bilingual (ADR 0006): every page, review, description and term in
+English at the root and in Czech under `/cs/`; the language switch opens a page's counterpart.
 
 ## What derives what
 
@@ -23,7 +24,8 @@ Tailwind 4, in English and Czech, switchable without a reload.
 | the educational front matter of a review | templates, `scripts/catalog.py` | the learning guide (seeking the player), references, connections, credits; `data/derived/jsonld.json` (Article + LearningResource + MusicRecording) |
 | MusicBrainz | `scripts/track.py enrich` | recording, artist and release ids, ISRC, country, missing years in `[extra]` |
 | `data/videos.json` (written by `scripts/probe-videos.py`) | `scripts/catalog.py` | videos gone from YouTube: no still, no player, the derived artwork |
-| `data/i18n/<locale>.toml` | `scripts/i18n.py` | `static/data/i18n.json`; every key proven in every locale and every use |
+| `data/i18n/<locale>.toml`, `data/i18n/terms/<locale>.toml` | `scripts/i18n.py` | `static/data/i18n.json`: every interface key in every locale and every use, and `term.<facet>.<term>`, every term in use labelled |
+| `content/<name>.cs.md` (the Czech translation beside each page) | `scripts/catalog.py` through `scripts/translation.py` | each review's `langs` and Czech `i18n` layer in the catalogue, `search.cs.json`, Czech JSON-LD; a translation stale, structurally different or not Czech is refused |
 | every built page | `scripts/og.cjs` (Playwright) | `og/<slug>.png`, the 1200x630 card its Open Graph / X tags name |
 | `package.json` pins | `scripts/vendor.mjs`, `npm run css` | self-hosted Flowbite JS and ECharts, `static/css/app.css` |
 | `templates/components.html` | Zola 0.23 (Tera 2) | every page: explorer, track, archive, insights, taxonomies, 404 |
@@ -71,6 +73,24 @@ python3 scripts/spotify.py import <playlist> --year 2023 --write
 python3 scripts/spotify.py import-export <data export folder> --write
 python3 scripts/spotify.py coverage           # per year: present, missing, ambiguous, ...
 ```
+
+## Translate a page
+
+Every page has its Czech counterpart beside it (`<name>.cs.md`), holding only language: the facts
+stay in the English file. The procedure is the skill `.ai/repo/skills/translate/SKILL.md`:
+
+```sh
+python3 scripts/translate.py status                    # missing, stale or current, per page
+python3 scripts/translate.py scaffold content/<file>.md   # the skeleton, every text TODO(translate)
+# translate every text in place, then:
+python3 scripts/translate.py check content/<file>.cs.md
+python3 scripts/translate.py bless content/<file>.cs.md   # after translating a changed English text
+python3 scripts/translate.py batches 8                 # the work left, for 8 translators
+```
+
+A term keeps its key in both languages (`/genre/house/`, `/cs/genre/house/`); its Czech label is
+in `data/i18n/terms/cs.toml` (a concept's in `data/concepts/<slug>.toml`). The home page takes a
+browser that prefers Czech to `/cs/` on a first visit; every other URL stays in its language.
 
 ## The player
 

@@ -102,7 +102,7 @@ The voice is placed inside that atmosphere with {{ <concept_link name="reverb" /
 
 ## Artistic Context
 
-Labyrinth Ear are a British electronic duo, Emily and Tom, formed in London in 2010; they describe their sound as "fantasia pop" and cite influences from medieval and baroque music and opera to Detroit techno, dub and house. Navy Light comes from their first EP, Oak, self-released in March 2010, which also carries a longer 4am Mix of the track; LE Records issued Oak on 12-inch vinyl in 2026. The duo followed it with the Apparitions EP (2012) and the album The Orchid Room (2014) before moving to Berlin, and their early work sits in the same shadowy, reverb-soaked corner as the dream pop and witch house of that period.
+Labyrinth Ear are a British electronic duo, Emily and Tom, formed in London in 2010; they describe their sound as "fantasia pop" and cite influences from medieval and baroque music and opera to Detroit techno, dub and house. Navy Light comes from their first EP, Oak, self-released in March 2010, which also carries a longer 4am Mix of the track; LE Records also issued Oak on 12-inch vinyl. The duo followed it with the Apparitions EP (2012) and the album The Orchid Room (2014) before moving to Berlin, and their early work sits in the same shadowy, reverb-soaked corner as the dream pop and witch house of that period.
 
 ## Impact and Reception
 

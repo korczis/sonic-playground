@@ -5,6 +5,6 @@
   <p class="mb-2 font-mono text-sm text-gray-500 dark:text-gray-400">404</p>
   <h1 class="mb-3 text-2xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl dark:text-white" data-i18n="404.title">{{ l["404.title"] }}</h1>
   <p class="mb-6 text-base text-gray-500 dark:text-gray-400" data-i18n="404.text">{{ l["404.text"] }}</p>
-  <a href="{{ get_url(path='@/_index.md') }}" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" data-i18n="404.back">{{ l["404.back"] }}</a>
+  <a href="{{ get_url(path='@/_index.md', lang=lang) }}" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" data-i18n="404.back">{{ l["404.back"] }}</a>
 </div>
 {%- endblock content %}

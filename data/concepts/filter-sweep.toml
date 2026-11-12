@@ -7,4 +7,5 @@ see_also = ["build-up", "synthesizer"]
 definition = "Gradually opening or closing a filter so that a sound goes from muffled to bright or back. Filter sweeps create build-ups and are a signature of French house."
 
 [cs]
+term = "filtrový sweep"
 definition = "Postupné otevírání nebo zavírání filtru, takže zvuk přechází z utlumeného do jasného nebo zpět. Filtrové přechody tvoří build-upy a jsou poznávacím znakem French house."

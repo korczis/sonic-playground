@@ -9,6 +9,7 @@ Claude Code).
 |---|---|
 | a new song (link or name) | follow `majordomus://skill/add-song` |
 | a year's Spotify Top Songs (yearbook) | follow `majordomus://skill/import-yearbook` |
+| every page in Czech too (ADR 0006): a new page, or one the contract reports missing or stale | follow `majordomus://skill/translate`; `python3 scripts/translate.py status` lists what is left |
 | the identifiers MusicBrainz knows | `python3 scripts/track.py enrich content/<file>.md --write` (or `--all`) |
 | what the yearbooks and playlists still miss | `python3 scripts/backlog.py`; `python3 scripts/spotify.py coverage` |
 | is it already here? | `python3 scripts/track.py resolve "<input>"` — exit 3 names the existing file |
@@ -21,6 +22,9 @@ Claude Code).
 | weekly, or a still shows the placeholder | `python3 scripts/probe-videos.py` — videos removed from YouTube |
 
 ## Refreshing an existing review
+
+A change to an English page leaves its translation stale: the contract says so until the Czech
+page translates the change and `python3 scripts/translate.py bless content/<file>.cs.md` records it.
 
 `resolve` reports the existing file for the same video or the same artist and track. Edit that
 file: replace a dead video id (`probe-videos.py` names it), add sourced `extra.album`,

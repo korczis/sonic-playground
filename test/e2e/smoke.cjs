@@ -724,33 +724,58 @@ async function shot(page, name) {
     await context.close();
   }
 
-  // The interface language switches without a reload, survives navigation and a reload, and
-  // drives the strings the browser code writes (data/i18n/, static/js/i18n.js).
+  // Both languages (ADR 0006): every page is built in English at the root and in Czech under /cs/.
+  // The default home page takes a browser that prefers Czech to /cs/ on a first visit; any other
+  // URL stays in its language; the switch moves to the counterpart under the persistent player and
+  // is remembered; the shell (navbar, player) follows the language of the page shown.
   {
     const bundle = root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
       : await (await get(at('data/i18n.json'))).json();
     const other = Object.keys(bundle.locales).find((c) => c !== bundle.default);
-    if (other) {
+    const both = catalog.tracks.find((t) => (t.langs || []).includes(other));
+    if (other && !both) check(false, `i18n: at least one review is translated into ${other} (catalog.tracks[].langs)`);
+    if (other && both) {
       const s = bundle.locales[other].strings;
-      const { context, page, errors } = await open(browser, at(''), desktop);
-      await page.waitForFunction(() => document.documentElement.dataset.i18nState === 'ready' && document.documentElement.dataset.explorerState === 'ready');
-      await page.selectOption('#locale-switch', other);
-      await page.waitForFunction((code) => document.documentElement.lang === code, other);
-      const ph = await page.getAttribute('#topbar-search', 'placeholder');
-      const status = await page.textContent('[data-explorer-status]');
-      check(ph === s['nav.search_placeholder'] && status === s['explorer.status_all'].replace('{n}', String(catalog.tracks.length)),
-        `i18n: switching to ${other} translates templates and browser-written strings`);
-      await page.locator('#sidebar a[href$="/insights/"]').click();
-      await page.waitForFunction((t) => document.querySelector('h1') && document.querySelector('h1').textContent.trim() === t, s['menu.insights'], { timeout: 15000 })
-        .then(() => check(true, `i18n: ${other} survives navigation`)).catch(() => check(false, `i18n: ${other} survives navigation`));
-      await page.reload({ waitUntil: 'load' });
-      await page.waitForFunction((code) => document.documentElement.lang === code, other, { timeout: 10000 })
-        .then(() => check(true, `i18n: ${other} survives a reload`)).catch(() => check(false, `i18n: ${other} survives a reload`));
-      const untranslated = await page.evaluate((def) => [...document.querySelectorAll('[data-i18n]')]
-        .filter((el) => el.offsetParent !== null && el.textContent.trim() === '' && def[el.dataset.i18n]).length, bundle.locales[bundle.default].strings);
-      check(untranslated === 0, `i18n: no interface string left empty (${untranslated})`);
-      check(errors.length === 0, `i18n: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
-      await context.close();
+      const d = bundle.locales[bundle.default].strings;
+      // A browser that prefers the other language, on its first visit to the root.
+      {
+        const { context, page, errors } = await open(browser, at(''), desktop, 'light', { locale: other === 'cs' ? 'cs-CZ' : other });
+        await page.waitForFunction((code) => document.documentElement.lang === code && document.documentElement.dataset.i18nState === 'ready', other, { timeout: 15000 })
+          .then(() => check(true, `i18n: a browser preferring ${other} is taken from the root to /${other}/`))
+          .catch(() => check(false, `i18n: a browser preferring ${other} is taken from the root to /${other}/ (at ${page.url()})`));
+        check(new URL(page.url()).pathname.endsWith(`/${other}/`) && await page.getAttribute('#topbar-search', 'placeholder') === s['nav.search_placeholder'],
+          `i18n: the /${other}/ home is in ${other}, its interface strings too`);
+        check(errors.length === 0, `i18n: no console errors (${other} home)${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+        await context.close();
+      }
+      // The other language's URL stays in it for a browser of the default language.
+      {
+        const { context, page, errors } = await open(browser, at(both.i18n[other].path), desktop);
+        await page.waitForFunction(() => document.documentElement.dataset.i18nState === 'ready');
+        check(await page.evaluate(() => document.documentElement.lang) === other && new URL(page.url()).pathname.endsWith('/' + both.i18n[other].path),
+          `i18n: /${both.i18n[other].path} stays in ${other} (no redirect away from a link)`);
+        const h1 = (await page.textContent('h1') || '').trim();
+        check(h1 === both.track, `i18n: the ${other} review shows its track (${h1})`);
+        const hreflang = await page.locator('link[rel="alternate"][hreflang]').evaluateAll((els) => els.map((e) => e.getAttribute('hreflang')).sort().join());
+        check(hreflang.includes(bundle.default) && hreflang.includes(other) && hreflang.includes('x-default'),
+          `i18n: the page names its counterparts (hreflang ${hreflang})`);
+        // Switch to the default language: the counterpart, under the persistent player.
+        await page.evaluate(() => { window.__notReloaded = true; });
+        await page.selectOption('#locale-switch', bundle.default);
+        await page.waitForFunction((code) => document.documentElement.lang === code, bundle.default, { timeout: 15000 }).catch(() => {});
+        check(await page.evaluate(() => window.__notReloaded === true) && new URL(page.url()).pathname.endsWith('/' + both.path)
+          && await page.getAttribute('#topbar-search', 'placeholder') === d['nav.search_placeholder'],
+          `i18n: the switch opens the ${bundle.default} counterpart without a reload, the navbar follows`);
+        // Remembered: the root no longer redirects, whatever the browser prefers.
+        await page.goto(at(''), { waitUntil: 'load' });
+        await page.waitForFunction(() => document.documentElement.dataset.i18nState === 'ready');
+        check(await page.evaluate(() => document.documentElement.lang) === bundle.default, 'i18n: the choice is remembered');
+        const untranslated = await page.evaluate((def) => [...document.querySelectorAll('[data-i18n]')]
+          .filter((el) => el.offsetParent !== null && el.textContent.trim() === '' && def[el.dataset.i18n]).length, d);
+        check(untranslated === 0, `i18n: no interface string left empty (${untranslated})`);
+        check(errors.length === 0, `i18n: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+        await context.close();
+      }
     }
   }
 
@@ -809,16 +834,16 @@ async function shot(page, name) {
       const src = await page.waitForSelector('#player-panel iframe', { timeout: 10000 }).then((e) => e.getAttribute('src')).catch(() => '');
       check(/[?&]start=65(&|$)/.test(src), 'education: the listening guide seeks the player to its time (1:05 = 65 s)');
       await link.click();
-      await page.waitForFunction(() => !!document.querySelector('[data-locale-group]') && /\/concept\//.test(location.pathname), null, { timeout: 15000 })
+      await page.waitForFunction(() => /\/concept\//.test(location.pathname) && !!document.querySelector('main p[lang]'), null, { timeout: 15000 })
         .then(() => check(true, 'education: the concept link opens the concept page (router)'))
         .catch(() => check(false, 'education: the concept link opens the concept page (router)'));
-      const visibleLang = () => page.evaluate(() => { const g = document.querySelector('[data-locale-group]');
-        const v = [...g.querySelectorAll('[data-locale-text]')].filter((e) => !e.hidden); return v.map((e) => e.dataset.localeText).join(); });
-      check(await visibleLang() === 'en', 'education: a concept shows one definition, in the current locale (en)');
-      await page.selectOption('#locale-switch', 'cs');
-      await page.waitForFunction(() => document.documentElement.lang === 'cs');
-      check(await visibleLang() === 'cs', 'education: switching to cs shows the Czech definition');
-      await page.selectOption('#locale-switch', 'en');
+      const shownLang = () => page.evaluate(() => (document.querySelector('main p[lang]') || {}).lang || '');
+      check(await shownLang() === 'en', 'education: a concept shows its definition in the page language (en)');
+      // A concept the Czech corpus has a page for (catalog.lang_terms; every one, once translated).
+      const csTerm = ((catalog.lang_terms || {}).cs || {}).concept || [];
+      const csConcept = catalog.concepts.find((c) => csTerm.includes(c.term));
+      await page.goto(at('cs/concept/' + (csConcept ? csConcept.slug : '') + '/'), { waitUntil: 'load' });
+      check(await shownLang() === 'cs', 'education: the Czech concept page shows the Czech definition');
       await page.goto(at('concept/'), { waitUntil: 'load' });
       check((await page.locator('[data-concept-card]').count()) === catalog.concepts.length,
         `education: the glossary lists all ${catalog.concepts.length} concepts`);

@@ -56,7 +56,7 @@ def pending(rows: list[dict]) -> list[dict]:
     """The items no review covers yet, each once: the catalogue's own identity resolution
     (scripts/catalog.py resolve_item: ISRC, then artist and song)."""
     errors: list[str] = []
-    files = sorted(p for p in cat.CONTENT.glob("*.md") if p.name != "_index.md")
+    files = cat.review_files()
     tracks = [t for t in (cat.load_track(p, errors) for p in files) if t]
     index = cat.identity_index(tracks)
     seen = set()

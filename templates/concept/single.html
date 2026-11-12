@@ -9,11 +9,11 @@
 {%- set_global c = "" %}
 {%- for x in catalog.concepts %}{% if x.slug == slug %}{% set_global c = x %}{% endif %}{% endfor %}
 {%- set name_key = "tax.name.concept" %}
-{{ <page_header title={term.name} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l[name_key], get_url(path="concept", trailing_slash=true), name_key], [term.name, "", ""]]} kicker={l["concept.category." ~ c.category]} lead={l["tax.count"] | replace(from="{n}", to=term.page_count ~ "")} /> }}
+{{ <page_header title={term.name} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], get_url(path=lp ~ "concept", trailing_slash=true), name_key], [term.name, "", ""]]} kicker={l["concept.category." ~ c.category]} lead={l["tax.count"] | replace(from="{n}", to=term.page_count ~ "")} /> }}
 <div class="space-y-6 px-4 pt-6 xl:px-8">
   <section class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800" aria-labelledby="concept-what">
     <h2 id="concept-what" class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="concept.what" l={l} /> }}</h2>
-    {{ <localised texts={c.definition} cls="max-w-3xl text-base text-gray-700 dark:text-gray-300" /> }}
+    {{ <localised texts={c.definition} lang={lang} cls="max-w-3xl text-base text-gray-700 dark:text-gray-300" /> }}
     {%- if c.wikipedia %}<a href="{{ c.wikipedia }}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="concept.read_more" l={l} /> }}<span class="ml-1" aria-hidden="true">↗</span></a>{% endif %}
   </section>
   {%- set_global related = 0 %}

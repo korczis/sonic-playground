@@ -174,9 +174,7 @@ def corpus() -> list[dict]:
     """Every article's identity, drafts and unparseable files included (so nothing is ever
     overwritten): file, title, inferred artist and track, video id."""
     found = []
-    for path in sorted(cat.CONTENT.glob("*.md")):
-        if path.name == "_index.md":
-            continue
+    for path in cat.review_files():
         entry = {"source": f"content/{path.name}", "stem": path.stem, "artist": "", "track": "",
                  "youtube": None, "title": "", "draft": False}
         try:
@@ -260,8 +258,7 @@ def suggest(facets: dict[str, list[str]]) -> dict:
 
 def loaded_tracks() -> list:
     errors: list[str] = []
-    return [t for t in (cat.load_track(p, errors) for p in sorted(cat.CONTENT.glob("*.md"))
-                        if p.name != "_index.md") if t]
+    return [t for t in (cat.load_track(p, errors) for p in cat.review_files()) if t]
 
 
 def related_preview(facets: dict[str, list[str]]) -> list[dict]:
@@ -560,7 +557,7 @@ def enrich(paths: list[str], args) -> int:
     """Fill what MusicBrainz knows into [extra]: the recording, artist and first release ids,
     the ISRC, the artist's country, and the release year when the review has none. A value the
     review already has is kept; without --write this only reports."""
-    files = sorted(cat.CONTENT.glob("*.md")) if args.all else [content_path(p) for p in paths]
+    files = cat.review_files() if args.all else [content_path(p) for p in paths]
     report = {"matched": [], "unchanged": [], "no-match": [], "failed": []}
     for file in files:
         if file.name == "_index.md":
@@ -602,6 +599,13 @@ def enrich(paths: list[str], args) -> int:
 
 def check(path: str) -> int:
     file = content_path(path)
+    if cat.tr.translation_name(file.name):
+        # A translation has its own contract (ADR 0006, scripts/translation.py).
+        import translate  # noqa: E402  (scripts/ is on the path)
+        problems = translate.check_files([file])
+        out({"file": path, "translation_of": translate.english_of(file).relative_to(cat.ROOT).as_posix(),
+             "errors": problems})
+        return 1 if problems else 0
     errors: list[str] = []
     track = cat.load_track(file, errors, include_drafts=True)
     if track:

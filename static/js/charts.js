@@ -32,7 +32,7 @@ window.Sonic.module('charts', function mount() {
   function theme() {
     return document.documentElement.classList.contains('dark') ? PALETTE.dark : PALETTE.light;
   }
-  function facetUrl(kind, slug) { return base + '/' + kind + '/' + slug + '/'; }
+  function label(kind, term) { return window.Sonic.term(kind, term); }
   function go(url) { window.location.href = url; }
 
   function axisStyle(p) {
@@ -72,12 +72,12 @@ window.Sonic.module('charts', function mount() {
         var limit = Number(el.getAttribute('data-limit') || 15);
         var items = c.facets[kind].slice(0, limit).reverse();
         return {
-          rows: [[t('chart.col.term'), t('chart.tracks')]].concat(items.slice().reverse().map(function (f) { return [f.term, f.count]; })),
+          rows: [[t('chart.col.term'), t('chart.tracks')]].concat(items.slice().reverse().map(function (f) { return [label(kind, f.term), f.count]; })),
           option: {
             grid: { left: 8, right: 24, top: 8, bottom: 24, containLabel: true },
             tooltip: Object.assign(tooltip(p), { trigger: 'axis', axisPointer: { type: 'shadow' } }),
             xAxis: Object.assign({ type: 'value', minInterval: 1 }, axisStyle(p)),
-            yAxis: Object.assign({ type: 'category', data: items.map(function (f) { return f.term; }) }, axisStyle(p), { splitLine: { show: false } }),
+            yAxis: Object.assign({ type: 'category', data: items.map(function (f) { return label(kind, f.term); }) }, axisStyle(p), { splitLine: { show: false } }),
             series: [{ type: 'bar', name: t('chart.tracks'), data: items.map(function (f) { return f.count; }),
               barMaxWidth: 18, itemStyle: { color: p.single, borderRadius: [0, 4, 4, 0] } }],
           },
@@ -90,7 +90,7 @@ window.Sonic.module('charts', function mount() {
               select.dispatchEvent(new Event('change', { bubbles: true }));
               document.getElementById('explorer-title').scrollIntoView({ behavior: 'smooth' });
             } else {
-              go(facetUrl(kind, items[e.dataIndex].slug));
+              go(base + '/' + window.Sonic.termPath(kind, items[e.dataIndex].slug, items[e.dataIndex].term, c));
             }
           },
         };
@@ -111,24 +111,26 @@ window.Sonic.module('charts', function mount() {
           data.push([si, gi, count]);
         });
       });
+      var genreLabels = genres.map(function (g) { return label('genre', g); });
+      var feelingLabels = feelings.map(function (s) { return label('sentiment', s); });
       return {
-        rows: [[t('chart.col.cross')].concat(feelings)].concat(genres.map(function (g, gi) {
-          return [g].concat(feelings.map(function (s, si) { return data[gi * feelings.length + si][2]; }));
+        rows: [[t('chart.col.cross')].concat(feelingLabels)].concat(genres.map(function (g, gi) {
+          return [genreLabels[gi]].concat(feelings.map(function (s, si) { return data[gi * feelings.length + si][2]; }));
         })),
         option: {
           grid: { left: 8, right: 8, top: 8, bottom: 64, containLabel: true },
           tooltip: Object.assign(tooltip(p), { formatter: function (e) {
-            return '<b>' + genres[e.value[1]] + '</b> × <b>' + feelings[e.value[0]] + '</b><br>' + t('chart.track_count', { n: e.value[2] });
+            return '<b>' + genreLabels[e.value[1]] + '</b> × <b>' + feelingLabels[e.value[0]] + '</b><br>' + t('chart.track_count', { n: e.value[2] });
           } }),
-          xAxis: Object.assign({ type: 'category', data: feelings }, axisStyle(p), { axisLabel: { color: p.muted, rotate: 35, fontSize: 12 }, splitLine: { show: false } }),
-          yAxis: Object.assign({ type: 'category', data: genres, inverse: true }, axisStyle(p), { splitLine: { show: false } }),
+          xAxis: Object.assign({ type: 'category', data: feelingLabels }, axisStyle(p), { axisLabel: { color: p.muted, rotate: 35, fontSize: 12 }, splitLine: { show: false } }),
+          yAxis: Object.assign({ type: 'category', data: genreLabels, inverse: true }, axisStyle(p), { splitLine: { show: false } }),
           visualMap: { min: 0, max: max, calculable: false, orient: 'horizontal', left: 'center', bottom: 0,
             itemWidth: 12, itemHeight: 120, textStyle: { color: p.muted }, inRange: { color: p.ramp } },
           series: [{ type: 'heatmap', data: data, itemStyle: { borderColor: p.surface, borderWidth: 2, borderRadius: 4 },
             emphasis: { itemStyle: { borderColor: p.ink, borderWidth: 2 } } }],
         },
         onClick: function (e) {
-          go(base + '/?genre=' + encodeURIComponent(genres[e.value[1]]) + '&sentiment=' + encodeURIComponent(feelings[e.value[0]]));
+          go(base + '/' + window.Sonic.localPath('') + '?genre=' + encodeURIComponent(genres[e.value[1]]) + '&sentiment=' + encodeURIComponent(feelings[e.value[0]]));
         },
       };
     },
@@ -151,7 +153,7 @@ window.Sonic.module('charts', function mount() {
       var firsts = {};
       Object.keys(keep).forEach(function (s) { var g = bySource[s].facets.genre[0]; firsts[g] = (firsts[g] || 0) + 1; });
       var top = Object.keys(firsts).sort(function (a, b) { return firsts[b] - firsts[a] || a.localeCompare(b); }).slice(0, 3);
-      var categories = top.map(function (g, i) { return { name: g, itemStyle: { color: p.categorical[i] } }; })
+      var categories = top.map(function (g, i) { return { name: label('genre', g), itemStyle: { color: p.categorical[i] } }; })
         .concat([{ name: t('chart.other'), itemStyle: { color: p.other } }]);
       var degree = {};
       var links = [];
@@ -175,7 +177,7 @@ window.Sonic.module('charts', function mount() {
           symbolSize: (s === focus ? 26 : 8 + Math.sqrt(degree[s] || 1) * 4),
           itemStyle: { borderColor: p.surface, borderWidth: s === focus ? 3 : 1.5 },
           label: { show: s === focus || (focus && keep[s] === 1), color: p.ink, fontSize: 12, position: 'right' },
-          path: t.path, genre: t.facets.genre.join(', ') };
+          path: window.Sonic.trackPath(t), genre: t.facets.genre.map(function (g) { return label('genre', g); }).join(', ') };
       });
       return {
         rows: [[t('chart.col.track'), t('chart.col.genres'), t('chart.col.related')]].concat(nodes.map(function (n) {

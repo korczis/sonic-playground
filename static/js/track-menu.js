@@ -39,7 +39,7 @@
       if (!t) return;
       close(false);
       trigger = from;
-      url = Sonic.base + '/' + t.path;
+      url = Sonic.base + '/' + Sonic.trackPath(t);
       title.textContent = t.artist + ' – ' + t.track;
       var player = window.SonicPlayer;
       var s = player ? player.state() : { queue: [], index: -1 };

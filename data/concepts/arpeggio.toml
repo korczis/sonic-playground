@@ -7,4 +7,5 @@ see_also = ["sequencer", "synthesizer", "ostinato"]
 definition = "A chord played one note at a time instead of all at once, rising, falling or cycling in a steady rhythm. Synthesizers and sequencers can play arpeggios automatically, and the pulsing synth arpeggio became a signature of electronic disco and much dance music since the 1970s."
 
 [cs]
+term = "arpeggio"
 definition = "Akord zahraný postupně, tón po tónu, místo aby všechny tóny zazněly najednou; tóny stoupají, klesají nebo krouží v pravidelném rytmu. Syntezátory a sekvencery umějí arpeggio hrát samy a pulzující syntezátorové arpeggio se od sedmdesátých let stalo poznávacím znamením elektronického diska i velké části taneční hudby."
