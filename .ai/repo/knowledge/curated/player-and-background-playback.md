@@ -63,4 +63,7 @@ Keep anything that must survive navigation outside `#main-content`; anything ins
 module with an unmount. Never add an inline `<iframe>` (rule `project.console-clean`); play
 through `track_actions` / `play_all`, never a hand-written `data-play*` button that does two
 things. A change to the queue model updates the player block of `test/e2e/smoke.cjs` (desktop and
-phone), which asserts every operation and that nothing is ever duplicated.
+phone), which asserts every operation and that nothing is ever duplicated. Those suites drive
+a fake YouTube IFrame API (`FAKE_IFRAME_API`: it records calls and plays a video ending or
+failing on demand); a real video that ended or failed on a CI machine moved the queue on its own
+and failed the 0f909ff deploy. Only the track-page test uses the real player.
