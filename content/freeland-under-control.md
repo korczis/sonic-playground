@@ -1,89 +1,121 @@
 +++
 title = "Freeland - Under Control"
 date = "2024-10-08"
-description = "'Under Control' by Freeland is a powerful electronic track blending breakbeats and rock influences. With gritty vocals and a driving rhythm, the song captures themes of rebellion, control, and personal freedom, delivered with a raw, intense energy."
+description = "The lead single of Freeland's Cope swaps the guitar riff for a roaring synth and puts Kurt Baumann's deadpan vocal over breakbeat-bred drums: electronic rock with a raw, defiant edge."
 
 [taxonomies]
 genre = ["electronic", "breakbeat", "rock"]
 sentiment = ["rebellious", "intense", "gritty"]
+concept = ["riff", "distortion", "breakbeat"]
+instrument = ["synthesizer", "drums", "vocals"]
 
 [extra]
 release_year = "2009"
+album = "Cope"
+publisher = "Marine Parade"
 country = "GB"
 musicbrainz = { recording = "fb8e1a45-9298-4959-8604-3b03d55c807e", artist = "51af3ae9-3f39-4b2c-bec3-ded427708590", release = "b7f227aa-0ee8-4f03-8804-2667fa026f84" }
-youtube = "https://www.youtube.com/embed/AZkT2Rn9zCg"
+youtube = "https://www.youtube.com/embed/EPvqFcQGLOM"
+connections = [
+  { source = "adam-freeland-do-you.md", why = "The album's second single, written and produced by the same Freeland and Alex Metric team and sung by the same frontman." },
+  { source = "bodyrockers-i-like-the-way-radio-edit.md", why = "Another British record of the 2000s that dresses club production in rock clothing, and the act a critic compared Cope to." },
+]
+
+[extra.credits]
+writers = ["Adam Freeland", "Alex Metric", "Kurt Baumann"]
+producers = ["Adam Freeland", "Alex Metric"]
+vocals = ["Kurt Baumann"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Recognise a riff played on a distorted synthesizer instead of a guitar.",
+  "Describe how distortion gives electronic sounds the aggression of rock.",
+  "Place the track in the late-2000s moment when dance producers made rock records, from LCD Soundsystem to Does It Offend You, Yeah?",
+]
+listen_for = [
+  { part = "the opening", what = "A tense, distorted beat that sets the mood before the vocal arrives." },
+  { part = "the main riff", what = "The roaring, overdriven synth figure doing the job a rock guitar riff would normally do." },
+  { part = "the vocal", what = "Kurt Baumann's half-spoken, deadpan delivery, which critics compared to LCD Soundsystem's James Murphy." },
+  { part = "the final section", what = "Beat, riff and voice stacked at full intensity, the track at its densest." },
+]
+questions = [
+  "If the riff were played on a guitar, would the song be more or less rock?",
+  "Critics heard LCD Soundsystem's Losing My Edge in the vocal. Is borrowing a delivery style a homage, a weakness, or simply how scenes form?",
+  "The song's title and the album's anti-consumerist theme are about control. Who, in the song, is controlling whom?",
+]
+
+[[extra.sources]]
+title = "Cope (Freeland album)"
+url = "https://en.wikipedia.org/wiki/Cope_(Freeland_album)"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "Adam Freeland - Cope™"
+url = "https://ra.co/reviews/6272"
+publisher = "Resident Advisor"
+kind = "review"
+year = "2009"
+
+[[extra.sources]]
+title = "Freeland - Cope™"
+url = "https://www.theskinny.co.uk/music/reviews/albums/freeland-cope"
+publisher = "The Skinny"
+kind = "review"
+year = "2009"
+
+[[extra.sources]]
+title = "Adam Freeland"
+url = "https://en.wikipedia.org/wiki/Adam_Freeland"
+publisher = "Wikipedia"
+kind = "encyclopedia"
 +++
 
 ## Genre and Mood
 
-**Freeland**'s "Under Control" is a gritty, high-energy fusion of breakbeats 
-and rock, filled with raw intensity and a rebellious edge. The track combines 
-heavy electronic production with live instrumentation and gritty vocals, 
-creating a sound that feels both aggressive and anthemic.
+**Freeland**'s "Under Control" is a gritty, high-energy fusion of breakbeat-bred drums and rock attitude, with a rebellious edge. Its hook is not a guitar but a roaring, distorted synthesizer, and the vocal is half sung, half sneered.
 
 ## Song Summary
 
-"Under Control" delivers a bold statement of defiance and autonomy. With its
-driving rhythm, harsh guitar riffs, and hard-hitting lyrics, the song feels 
-like an outcry against external forces trying to impose control. Freeland 
-masterfully blends electronic and rock elements, crafting a track that feels 
-both chaotic and empowering.
+"Under Control" is a statement of defiance set to a driving rhythm. It came out as the lead single of *Cope*, an album Adam Freeland framed as an antidote to a culture where "we'll give you a problem and sell you the cure", and the song turns that idea into something you can dance to: tension, repetition and a voice refusing to be managed.
 
 ## Musical Breakdown
 
 ### Intro: Gritty and Tense
 
-The song begins with a distorted, industrial beat, immediately setting a 
-tense and aggressive mood. A haunting, mechanical rhythm builds anticipation, 
-drawing the listener into a dark, rebellious world where control is questioned.
+The song begins with a distorted, mechanical beat that sets a tense and aggressive mood before anything melodic arrives.
 
 ### Build-up: Aggression and Defiance
 
-As the track progresses, breakbeats kick in, accompanied by gritty, distorted 
-guitars and heavy bass. The vocals enter with a sense of urgency, delivering 
-lines that speak to the themes of rebellion and autonomy. The energy builds, 
-layering the intensity of rock and electronic elements together.
+The drums gather weight and the overdriven synth riff enters, filling the space a rock guitar would take. Kurt Baumann's vocal comes in with a cool, urgent deadpan.
 
 ### Main Section: Anthem of Resistance
 
-In the heart of the track, the vocals grow more assertive, with the chorus 
-acting as a powerful declaration of defiance. The combination of relentless 
-breakbeats and sharp guitar riffs gives the song a hard-edged, rebellious tone 
-that reflects the struggle for control and freedom.
+In the heart of the track the vocal grows more assertive and the chorus becomes the declaration the title promises, the riff and the beat locked together underneath.
 
 ### Bridge: Dynamic Shift
 
-The bridge offers a moment of contrast, where the energy pulls back slightly, 
-allowing for a deeper focus on the lyrics. The instrumentation becomes more 
-stripped back, offering space for the message of self-empowerment to resonate 
-before the track ramps up once again.
+The energy pulls back briefly, giving the voice more room before the track ramps up again.
 
 ### Climax: Explosive Rebellion
 
-"Under Control" reaches its peak with an explosive crescendo, as the intense 
-layering of beats, guitars, and vocals comes together in an all-out sonic assault.
-The energy is electrifying, capturing the feeling of breaking free from external 
-restraints in an emotional and sonic release.
+Beat, riff and voice stack at full intensity, the track at its densest and loudest.
 
 ### Outro: Chaotic Resolution
 
-The song concludes with a chaotic yet purposeful fade-out, leaving behind a sense 
-of lingering defiance. The relentless beat gradually dissolves, but the rebellious 
-spirit of the track lingers long after the music fades.
+The song winds down without softening; the beat dissolves and the defiance is left hanging.
+
+## Concepts in Focus
+
+The central lesson is the {{ <concept_link name="riff" /> }}. In rock the short, repeated figure that anchors a song is usually a guitar part; here Resident Advisor heard the strategy of Does It Offend You, Yeah?, a synth roar in place of a guitar riff. Listen for how the figure repeats and how everything else is arranged around it.
+
+What lets a synthesizer sound like a rock instrument is {{ <concept_link name="distortion" /> }}. Overdriven until it clips, the synth gains harmonics, grit and presence, the same physics that turn a clean electric guitar into a snarl. The drums, meanwhile, carry Freeland's history in {{ <concept_link name="breakbeat" /> }}, the breaks scene he came up in, pushed toward the straighter thump of rock. The album's second single, {{ <track_link source="adam-freeland-do-you.md" /> }}, uses the same tools with a live drummer.
 
 ## Artistic Context
 
-Freeland, the project led by UK producer and DJ Adam Freeland, is known for pushing 
-the boundaries of electronic music by incorporating elements of rock and breakbeat 
-into his work. "Under Control," from his *Cope* album (2009), exemplifies this 
-hybrid approach, blending gritty, live instrumentation with bold electronic 
-production to create an intense, rebellious anthem.
+Freeland is the band-format name of Adam Freeland, the English DJ and producer from Welwyn Garden City who runs the Marine Parade label and made his reputation in breaks. "Under Control" was released on 27 April 2009 as the first single from *Cope*, his second album, which came out on Marine Parade on 8 June 2009. He wrote it with Alex Metric and the singer Kurt Baumann, whom critics compared to LCD Soundsystem's James Murphy; Freeland and Metric produced it. An Alex Metric remix of the track was used in the video game MotoGP 09/10.
 
 ## Impact and Reception
 
-"Under Control" has become one of Freeland's standout tracks, admired for its 
-bold fusion of rock and electronic music. Its raw, energetic sound and unapologetically 
-rebellious message have resonated with listeners who appreciate music with both a 
-physical intensity and an underlying social critique. The track is often praised for 
-its unique production and genre-blurring approach, making it a memorable entry in 
-both the electronic and alternative music scenes.
+"Under Control" remains one of the best-known Freeland songs, though the critics were divided about the album around it. The Skinny thought the single was trying hard to be LCD Soundsystem's "Losing My Edge", and Resident Advisor admired the production while doubting the album's anti-capitalist ambitions. Heard today it is a clear snapshot of the late-2000s moment when dance producers set out to make rock records.

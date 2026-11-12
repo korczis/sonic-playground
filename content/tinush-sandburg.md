@@ -1,152 +1,132 @@
 +++
 title = "Tinush - Sandburg"
 date = "2024-10-08"
-description = "'Sandburg' by Tinush is a deep and soulful house track that captivates with its smooth melodies, textured soundscapes, and hypnotic rhythms. Its intricate production and emotional depth create a mesmerizing atmosphere that invites listeners into a reflective sonic journey."
+description = "'Sandburg', German for sandcastle, is the title track of the Berlin producer Tinush's 2014 EP on Crosswalk: seven minutes of melodic deep house, later cut to a three-minute radio edit, with remixes by Alec Troniq and Umami."
 
 [taxonomies]
 genre = ["deep house", "electronic", "melodic house"]
 sentiment = ["melancholic", "hypnotic", "reflective"]
+concept = ["radio edit", "remix", "breakdown"]
+instrument = ["synthesizer", "drum machine"]
 
 [extra]
 country = "DE"
 musicbrainz = { recording = "1e799e37-646b-4511-af7e-ab3859cbd353", artist = "0daa43d2-4fc1-4867-93a7-5f6b038a584d" }
 youtube = "https://www.youtube.com/embed/-TH0tfRjxwg"
+artist = "Tinush"
+track = "Sandburg"
+album = "Sandburg"
+publisher = "Crosswalk"
+release_year = "2014"
+connections = [
+  { source = "klangkuenstler-alice-phoebe-lou-man-on-the-moon.md", why = "Umami, who remixed Sandburg on the same EP, also remixed Man on the Moon in 2014, the same German melodic house circle." },
+]
+
+[extra.credits]
+producers = ["Tinush"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Compare a seven-minute original with its three-minute radio edit and say what was cut.",
+  "Recognise a breakdown in a deep house track and describe what it does for the listener.",
+  "Explain why an EP often carries remixes alongside the original track.",
+]
+listen_for = [
+  { part = "the intro", what = "A soft, atmospheric opening, with light percussion introduced slowly so the mood develops gradually." },
+  { part = "the build-up", what = "Melodic layers and a deeper bassline joining, the kick becoming the steady heartbeat of the track." },
+  { part = "the main section", what = "The hypnotic groove, with repetition used deliberately while small changes keep it moving." },
+  { part = "the breakdown", what = "Most of the percussion dropping away so the melody and atmosphere stand alone before the beat returns." },
+]
+questions = [
+  "A sandcastle is built to be washed away. How does a title like that change the way you hear an instrumental track?",
+  "The radio edit keeps less than half of the original. Which version would you choose for headphones, and which for a club?",
+  "Why might a producer put two remixes by other artists on his own EP?",
+]
+
+[[extra.sources]]
+title = "Tinush - Sandburg"
+url = "https://www.discogs.com/release/7304175-Tinush-Sandburg"
+publisher = "Discogs"
+kind = "database"
+year = "2014"
+
+[[extra.sources]]
+title = "Tinush - Sandburg (Radio Edit)"
+url = "https://www.discogs.com/release/8980898-Tinush-Sandburg"
+publisher = "Discogs"
+kind = "database"
+year = "2015"
+
+[[extra.sources]]
+title = "Sandburg"
+url = "https://musicbrainz.org/recording/1e799e37-646b-4511-af7e-ab3859cbd353"
+publisher = "MusicBrainz"
+kind = "database"
 +++
 
 ## Genre and Mood
 
-**Tinush** delivers a profound sonic experience with **Sandburg**, a deep house track that
-blends smooth melodies with intricate electronic textures. The song’s reflective and melancholic
-tone is perfect for introspective moments, evoking a sense of journey through its hypnotic rhythms
-and layered production. **Sandburg** stands out in the deep house genre for its emotional depth,
-taking listeners on an immersive auditory experience where melody and atmosphere intertwine seamlessly.
+**Tinush** made **Sandburg** a melodic deep house track that leans toward reflection more than release. Its tone is melancholic and hypnotic, a piece suited both to a late-night floor and to quiet listening, with melody and atmosphere carrying as much weight as the beat.
 
 ## Song Summary
 
-"**Sandburg**" showcases Tinush's ability to create a complex and emotionally rich deep
-house track. The song is characterized by its lush soundscapes, subtle build-ups, and a
-melodic structure that evolves throughout its runtime. The hypnotic rhythms of the track,
-paired with the use of both organic and electronic sounds, give it a timeless quality,
-making it suitable for both late-night dance floors and personal, contemplative listening
-sessions. The layers of atmospheric synths and carefully crafted percussion offer a deeply
-emotional listening experience that resonates long after the track ends.
+Sandburg is the German word for a sandcastle, and the track has that quality of something carefully built and slowly worn away. The original, the title track of Tinush's 2014 EP on Crosswalk, runs seven minutes and nine seconds and evolves gradually through layered synths and percussion; the version embedded here, published by Crosswalk, runs about three minutes, the length of the radio edit later issued by the Dutch label PM Recordings.
 
 ## Musical Breakdown
 
 ### Intro: Setting the Scene
 
-The track opens with a soft, atmospheric synth that immediately sets a reflective tone.
-Light percussive elements are introduced slowly, allowing the mood to develop gradually.
-This minimalistic approach establishes a contemplative soundscape, inviting listeners into
-the world of **Sandburg**. The initial simplicity draws focus to the subtle changes in
-rhythm and texture that unfold as the track progresses.
+The track opens with a soft, atmospheric synth that sets a reflective tone. Light percussion is introduced slowly, letting the mood develop gradually.
 
 ### Build-up: Textural Growth and Rhythmic Development
 
-As the track progresses, Tinush introduces more layers, with soft, melodic elements and deeper
-basslines joining the mix. A gentle kick drum provides the heartbeat of the song, while
-background textures and shimmering synths begin to weave together. The interplay between
-organic and electronic sounds is one of the track’s standout features, creating an evolving
-and immersive atmosphere. This gradual layering creates a sense of anticipation as the track
-builds towards its emotional core.
+More layers arrive, melodic elements and a deeper bassline, with a gentle kick drum as the heartbeat of the track. The layering creates a sense of anticipation.
 
 ### Main Section: The Hypnotic Groove
 
-At the heart of **Sandburg** is its deep, hypnotic groove. The beat locks into a
-mesmerizing rhythm that pulls the listener deeper into the track’s world. Tinush uses
-repetition strategically, allowing the listener to become lost in the rhythmic patterns
-while subtle changes in the background keep the track dynamic. The bassline, though understated,
-provides a strong foundation, giving the track a warm, grounding quality that contrasts with the ethereal
- melodies floating above it.
+At the heart of Sandburg is its hypnotic groove. Repetition is used deliberately, so the listener can get lost in the patterns while small changes in the background keep the track moving. The bassline is understated but grounding, warm beneath the floating melodies.
 
 ### Breakdown: Emotional Release and Reflection
 
-In the breakdown, much of the percussion drops away, leaving space for the emotional
-depth of the melody to shine through. The ambient synths take center stage, creating a
-moment of stillness and introspection. The stripped-back arrangement amplifies the
-emotional resonance of the track, allowing the listener to fully immerse themselves in
-the reflective soundscape. This section feels like a pause in the journey, a moment to
-reflect before the final build.
+Much of the percussion drops away, leaving room for the melody and the atmosphere. It is a moment of stillness before the final build.
 
 ### Climax: Peak Emotion and Fullness
 
-The climax of the track sees the reintroduction of the full beat and additional
-melodic layers, creating a sense of catharsis and emotional release. Tinush expertly
-balances the various elements, allowing the track to reach a peak of intensity
-without overwhelming the listener. The subtle interplay between the bass, percussion,
-and melody creates a deeply satisfying groove, making this section the emotional
-high point of the track.
+The full beat returns with additional melodic layers, the track at its most intense without becoming overwhelming.
 
 ### Outro: Fading into Silence
 
-The song begins to wind down as layers are gradually peeled back, leaving only
-the core elements in the final moments. The outro mirrors the intro, with soft
-synths and delicate percussion easing the listener back into silence. The track
-concludes on a reflective note, leaving a lingering sense of tranquility and introspection.
+Layers are peeled back until only the core elements remain, the ending mirroring the opening.
+
+## Concepts in Focus
+
+Sandburg exists as an original and a {{ <concept_link name="radio edit" /> }}, and the gap between them is large: 7:09 against 3:12. A deep house original is built for DJs, with long intros and outros to mix in and out of and slow development in between; the radio edit keeps the melodic core and drops most of the runway. Listen to the embedded version and imagine where the four missing minutes would go: mostly at the edges.
+
+The EP also carries two {{ <concept_link name="remix" /> }} versions, by Alec Troniq and by Umami, beside the original and a second Tinush track, "Things". That is the usual shape of a club EP: one idea, several readings, so different DJs can find the version that fits their set.
+
+Inside the track, the {{ <concept_link name="breakdown" /> }} is where the mood is decided. When the percussion drops away, the melody stands on its own and the dancefloor gets a moment to breathe; when the beat returns, it feels like the tide coming back in over the sandcastle.
 
 ## Production Techniques and Sound Design
 
-Tinush’s **Sandburg** is a masterclass in deep house production. The track’s clean,
-minimalistic approach allows for every element to breathe, creating a spacious and
-immersive sound. The subtle use of reverb and delay on the melodic elements adds
-to the track’s hypnotic quality, while the deep, rolling bassline anchors the
-listener in the groove. The production shines through in the attention to detail—each
-layer of sound feels meticulously crafted, contributing to the track’s overall
-emotional depth.
-
-The use of organic textures, such as the occasional piano chords or atmospheric
-field recordings, contrasts with the electronic beats, giving the track a warm,
-human feel despite its deep house roots. This blend of synthetic and natural sounds
-is what makes **Sandburg** stand out, offering a listening experience that feels
-both modern and timeless.
+Sandburg's production is clean and spacious, letting every element breathe. Reverb and delay on the melodic parts add to its hypnotic quality, while the rolling bassline anchors the groove. The craft is in restraint: few elements, carefully balanced, and changes small enough that the track seems to evolve rather than move from section to section.
 
 ## Lyrical Themes (or Absence of Lyrics)
 
-While **Sandburg** is an instrumental track, the absence of lyrics allows for
-greater interpretative depth. The music itself tells a story, one that speaks
-to themes of introspection, emotional evolution, and the passage of time.
-The track feels like a journey through shifting emotional landscapes, with
-the listener free to project their own experiences and feelings onto the music.
-The title itself, **Sandburg**, evokes imagery of transient, ever-changing
-landscapes—perhaps a metaphor for the impermanence of emotions or experiences,
-as sands shift and reform with time.
+Sandburg is an instrumental, so its story is told by its title and its shape. A sandcastle is a structure made to be temporary, and the track's slow building, its breakdown and its gentle dissolve at the end follow the same arc, leaving the listener free to bring their own meaning to it.
 
 ## Cultural and Genre Context
 
-Within the **deep house** genre, **Sandburg** stands out for its emotional and
-melodic richness. While much of deep house focuses on rhythm and groove, Tinush places
- a stronger emphasis on melody and atmosphere, creating a track that feels
-as suited to reflective listening as it does to the dancefloor. The track’s
-hypnotic rhythm and evolving soundscapes place it alongside some of the best
-deep house releases, while its emotional depth and detailed production push it
-into more nuanced territory.
+Sandburg belongs to the melodic strand of German deep house of the mid-2010s, where melody and atmosphere count as much as the groove. Tinush, born Tinush Salehi in Dortmund in 1990 and based in Berlin, is a producer, composer and DJ working in that idiom, and Crosswalk released the EP digitally on 10 May 2014.
 
 ## Legacy and Reception
 
-Although **Sandburg** may not have the mainstream recognition of more commercial
-house tracks, it has garnered a dedicated following within the electronic music community
-. Its blend of deep house, melodic elements, and emotional resonance ensures
-that it remains a standout track in Tinush's discography. As deep house continues to
-evolve, **Sandburg** serves as a reminder of the genre's capacity for emotional storytelling
-through sound. The track has been praised for its rich production and ability to capture
-the listener's imagination, making it a favorite for late-night sets and introspective
-listening sessions alike.
+Sandburg is not a mainstream hit, but it travelled beyond its original release: in 2015 the Dutch label PM Recordings issued the radio edit, a year after the EP. It remains a fine example of deep house as reflective, melodic music.
 
 ## Visual Interpretation
 
-While **Sandburg** doesn’t have an official music video, the track’s atmospheric
-qualities inspire vivid mental imagery. The soft, rolling beats and expansive
-soundscapes evoke images of wide, open landscapes—perhaps a sandy beach at dusk,
-with the waves gently lapping against the shore. This sense of space and movement
-perfectly complements the track’s hypnotic nature, making it a visual and auditory
-journey for the listener.
+The track is published on Crosswalk's YouTube channel rather than with a narrative music video, so the imagery is left to the listener: perhaps a beach at dusk and a castle of sand the tide is about to reach.
 
 ## Conclusion
 
-**Tinush - Sandburg** is a deeply emotional and immersive track that
-pushes the boundaries of deep house. Its hypnotic rhythms, lush soundscapes,
-and intricate production create a listening experience that is both introspective
-and timeless. By blending organic and electronic elements, Tinush crafts a
-sound that feels both personal and expansive, inviting listeners to lose
-themselves in the journey of the track. **Sandburg** is a testament to the
-power of deep house music to evoke complex emotions and tell stories through sound.
+**Tinush - Sandburg** is a deeply atmospheric piece of melodic deep house, built and dissolved with patience. Listen to the radio edit for its core, then find the seven-minute original to hear how much space a deep house track can hold.

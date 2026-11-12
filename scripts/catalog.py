@@ -52,6 +52,7 @@ LOCALES = sorted(p.stem for p in (ROOT / "data" / "i18n").glob("*.toml"))
 CATALOG_EXTRA = ("album", "publisher", "release_year", "video_duration", "country")
 JSONLD = ROOT / "data" / "derived" / "jsonld.json"
 CONFIG = tomllib.loads((ROOT / "config.toml").read_text(encoding="utf-8"))
+LYRIC_RUN = 8
 CONTENT_LINK = re.compile(r'\{\{\s*<(concept|track)_link\s+(?:name|source)="([^"]+)"[^>]*/>\s*\}\}')
 GONE_VIDEOS = (json.loads(VIDEO_STATUS.read_text(encoding="utf-8"))["gone"]
                if VIDEO_STATUS.exists() else {})
@@ -469,6 +470,21 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
     for match in re.finditer(r'<figure src="([^"]+)"', rendered):
         if not (STATIC / match.group(1)).is_file():
             err(f"figure {match.group(1)} is not a file under static/")
+    # Reproduced lyrics have a shape prose never has: many short lines in a row (fenced or not).
+    # Four reviews carried full lyrics until 2026-11-12; a review quotes a few words at most.
+    run = longest = 0
+    for line in rendered.splitlines():
+        text = line.strip()
+        if text.startswith("```"):
+            continue
+        if text and len(text) < 70 and not text.startswith(("#", "-", "*", "|", ">", "{{", "[//]", "+")):
+            run += 1
+            longest = max(longest, run)
+        elif text:
+            run = 0
+    if longest >= LYRIC_RUN:
+        err(f"{longest} short lines in a row look like reproduced lyrics; describe the lyric, "
+            "quote a few words at most")
     for kind, target in CONTENT_LINK.findall(rendered):
         if kind == "track" and not review_exists(target):
             err(f"{{{{ <track_link source=\"{target}\" /> }}}} names no review")
@@ -589,12 +605,22 @@ def build(errors: list[str]) -> dict:
     tracks.sort(key=lambda t: (t.date, t.title), reverse=True)
     rel = related(tracks)
     books, member_of = yearbooks(tracks, errors)
+    # One artist, one home country: the reviews of an artist must agree (Mount Sims was DE in some
+    # and US in others on 2026-11-12).
+    countries: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
+    for t in tracks:
+        if t.full_extra.get("country"):
+            countries[t.artist][t.full_extra["country"]].append(t.source)
+    for artist, by_country in sorted(countries.items()):
+        if len(by_country) > 1:
+            errors.append(f"{artist}: the reviews disagree on the country "
+                          + "; ".join(f"{c} in {', '.join(sorted(v))}" for c, v in sorted(by_country.items())))
     # Once the corpus is complete, the contract requires every review to teach (ADR 0004).
-    if TRACK_SCHEMA["x-sonic"].get("edu_required"):
-        for t in tracks:
-            missing = [p for p in EDU_PARTS if p not in edu_parts(t)]
-            if missing:
-                errors.append(f"{t.source}: an educational article needs {', '.join(missing)} (ADR 0004)")
+    # The parts every review must have are listed in the contract (x-sonic.edu_required_parts);
+    # credits and identifiers are measured, since not every recording has a source for them. A
+    # review with no source at all says why in extra.edu_exempt instead of passing silently.
+    for t in tracks:
+        errors += edu_problems(t)
     facet_counts = {f: Counter(term for t in tracks for term in t.facets[f]) for f in FACETS}
     pairs = Counter((g, s) for t in tracks for g in t.facets["genre"] for s in t.facets["sentiment"])
     months = Counter(t.date[:7] for t in tracks)
@@ -678,8 +704,20 @@ def education(tracks: list[Track]) -> dict:
     def has(t: Track, part: str) -> bool:
         return bool(t.facets.get("concept")) if part == "concept" else bool(t.full_extra.get(part))
     return {"parts": list(EDU_PARTS),
+            "exempt": sum(1 for t in tracks if t.full_extra.get("edu_exempt")),
             "complete": sum(1 for t in tracks if all(has(t, p) for p in EDU_PARTS)),
             **{p: sum(1 for t in tracks if has(t, p)) for p in EDU_PARTS}}
+
+
+def edu_problems(t: Track) -> list[str]:
+    """What keeps a review from being the educational article the contract requires (ADR 0004):
+    the parts of x-sonic.edu_required_parts it lacks, unless extra.edu_exempt gives the reason."""
+    if not TRACK_SCHEMA["x-sonic"].get("edu_required") or t.full_extra.get("edu_exempt"):
+        return []
+    required = TRACK_SCHEMA["x-sonic"].get("edu_required_parts", list(EDU_PARTS))
+    missing = [p for p in required if p not in edu_parts(t)]
+    return [f"{t.source}: an educational article needs {', '.join(missing)} (ADR 0004), "
+            "or extra.edu_exempt with the reason"] if missing else []
 
 
 def edu_parts(t: Track) -> list[str]:

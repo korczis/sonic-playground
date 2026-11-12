@@ -1,155 +1,117 @@
 +++
 title = "Indiana - Solo Dancing"
 date = "2024-10-17"
-description = "A hypnotic, synth-driven exploration of independence, blending dark pop with an infectious groove."
+description = "A hypnotic, synth-driven song about dancing alone, the 2014 single that took the Nottingham singer Indiana to number 14 in the UK and became the centre of her debut album No Romeo."
 
 [taxonomies]
 genre = ["dark pop", "synthwave", "indie"]
 sentiment = ["hypnotic", "empowering", "mysterious"]
+concept = ["synthesizer", "hook", "remix"]
+instrument = ["vocals", "synthesizer", "bass", "drum machine"]
 
 [extra]
 release_year = "2014"
+album = "No Romeo"
+publisher = "Sony Music"
 country = "GB"
 isrc = "GBARL1400145"
 musicbrainz = { recording = "4a5196fa-f4a6-4cb3-b4ec-fe9e3324e328", artist = "5be8db78-fb0c-4427-9e25-547b64da79f9", release = "477e0806-c203-413d-86f3-2dd002ad7a61" }
 cover_image = "/images/thumbnails/indiana-solo-dancing.jpeg"
 youtube = "https://www.youtube.com/embed/WSrktmE963I"
+connections = [
+  { source = "the-xx-crystalised.md", why = "Another piece of dark, minimal British pop from the early 2010s that turns solitude and restraint into a mood you can move to." },
+]
+
+[extra.credits]
+writers = ["Lauren Henson", "John Beck", "Steve Chrisanthou"]
+producers = ["John Beck", "Steve Chrisanthou", "Darren Heelis"]
+remixers = ["Chris Lake", "Joe Goddard", "KAOS"]
+vocals = ["Indiana"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Hear how a driving synthesizer line can carry a pop song's mood from the first bar.",
+  "Explain how a short, repeated vocal line works as a hook that sums up the song's idea.",
+  "Compare the original with its club remixes and describe what a remixer changes in a pop single.",
+]
+listen_for = [
+  { part = "the intro", what = "Shimmering synthesizers and a steady bassline build anticipation before the voice enters." },
+  { part = "the first verse", what = "Indiana's cool, controlled voice over the pulse, describing dancing alone." },
+  { part = "the chorus", what = "The title phrase as the hook, repeated over the full beat: the whole song in a few words." },
+  { part = "the bridge", what = "A stripped passage with minimal instrumentation, a moment of stillness before the last chorus." },
+]
+questions = [
+  "Is dancing alone in this song a sign of loneliness or of independence? What in the music points you one way or the other?",
+  "Why might a pop single be released with remixes by club producers such as Chris Lake and Joe Goddard?",
+  "The video was Indiana's most-watched upload. How much does a video shape the way a new artist is first heard?",
+]
+
+[[extra.sources]]
+title = "Solo Dancing"
+url = "https://en.wikipedia.org/wiki/Solo_Dancing"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "Our City, Rock City: artist bio, Indiana"
+url = "https://themicmagazine.uk/post/our-city-rock-city-04-12-artist-bio-indiana"
+publisher = "The MIC Magazine"
+kind = "article"
 +++
 
-> The title "Solo Dancing" embodies an ode to independence and self-expression, 
-> suggesting a journey into the solitude of one's inner world. The phrase 
-> evokes imagery of a lone figure lost in rhythm, embracing the night with 
-> confidence and mystery. It captures the essence of a hypnotic dance, 
-> where the listener is enveloped by the synth-laden soundscape, moving to 
-> a beat that is both intoxicating and empowering.
+> The title "Solo Dancing" names a simple scene: one person on a dance floor, lost in the music and asking nobody to join. The song makes that scene hypnotic rather than sad.
 
 {{ <video id="9SYoSzkPE8g" title="Indiana - Solo Dancing (another video)" /> }}
 
-The track reflects themes of personal empowerment and introspection, set 
-against the backdrop of a moody, danceable atmosphere. With its lush 
-production and captivating melodies, "Solo Dancing" serves as an anthem 
-for those seeking liberation on the dance floor.
+The track sets personal independence against a moody, danceable backdrop. Its spell, the lyric says, lasts only as long as the music; when the music stops, the spell is broken.
 
 ## Genre and Mood
 
-**Indiana**'s track **Solo Dancing** is a mesmerizing blend of dark pop 
-and synthwave, creating an empowering and hypnotic listening experience. 
-The song radiates a **mysterious** vibe that draws listeners in, making 
-it perfect for late-night escapades or introspective moments.
+**Indiana**'s **Solo Dancing** blends dark pop with synth-driven production, hypnotic and quietly empowering. The **mysterious** mood comes from the contrast between a cool, controlled voice and a beat that keeps pushing forward.
 
 ## About the Artist
 
-**Indiana** is a rising star in the indie and dark pop music scene, known 
-for her ethereal vocals and innovative sound. With a unique ability to 
-blend genres, Indiana crafts tracks that explore themes of identity, love, 
-and resilience. Her music often combines rich synth textures with emotional 
-lyrics, creating an immersive experience for listeners.
+**Indiana** is the stage name of Lauren Henson, a singer-songwriter born in Loughborough and based in Nottingham. Solo Dancing made her one of Nottingham's most successful artists of the period; her debut album *No Romeo* followed in 2015, with "Only the Lonely" and "Heart on Fire" among its other singles.
 
 ## Song Summary
 
-"Solo Dancing" opens with a driving synth line that sets a captivating 
-tone. Indiana's vocals glide over pulsating beats, creating a blend of 
-allure and introspection. The fusion of **dark pop** and **synthwave** 
-elements gives the track its hypnotic quality, drawing listeners into a 
-danceable yet reflective state.
+"Solo Dancing" opens with a driving synthesizer line that sets the tone. Indiana's vocal glides over pulsating beats, and the chorus distils the song's idea into its title. The song was written by Henson with John Beck and Steve Chrisanthou and produced by Beck, Chrisanthou and Darren Heelis.
 
 ## Sound Breakdown
 
 ### Intro: Setting the Mood
 
-The track begins with shimmering synths and a steady bassline, 
-immediately creating an inviting atmosphere. The combination of airy 
-sounds builds a sense of anticipation, preparing the listener for the 
-journey ahead.
+The track begins with shimmering synthesizers and a steady bassline, building anticipation.
 
 ### First Verse: Lyrical Reflection
 
-As the first verse unfolds, Indiana's vocals shine with vulnerability and 
-strength. Her lyrics explore the theme of dancing alone, celebrating 
-independence and self-discovery while weaving a narrative that resonates 
-with many listeners. 
+Indiana's voice is cool and controlled as she describes dancing alone, to no one's rhythm but her own.
 
 ### Chorus: The Dance Begins
 
-The chorus bursts forth with energy, marked by infectious hooks and a 
-driving beat. The sonic landscape transforms into an empowering anthem, 
-inviting listeners to join in the celebration of solitude and confidence. 
+The chorus arrives with the full beat and the title hook, the song's most direct moment.
 
 ### Bridge: Moment of Introspection
 
-The bridge takes a step back, allowing for a reflective moment with 
-minimal instrumentation. This section provides a contrast, emphasizing 
-the emotional weight of the song before launching back into the upbeat 
-rhythm.
+The bridge pulls back to minimal instrumentation, a moment of stillness before the beat returns.
 
 ### Final Chorus: Empowerment Unleashed
 
-The final chorus reintroduces the full instrumentation, amplifying the 
-sense of freedom and empowerment. The layers of synths and beats combine 
-to create a climactic experience that leaves the listener exhilarated 
-and ready to dance.
+The final chorus brings back the full arrangement, synthesizers and beat together.
+
+## Concepts in Focus
+
+Solo Dancing is driven by the {{ <concept_link name="synthesizer" /> }}. The opening line, the shimmering pads and the bass pulse are all electronic, and their cool, glossy tone is what makes the song feel nocturnal; the same restraint shapes {{ <track_link source="the-xx-crystalised.md" /> }}.
+
+Its {{ <concept_link name="hook" /> }} is the title itself. A short phrase repeated over the chorus does more than any verse to fix the song in memory, and it states the song's idea in two words.
+
+The single was also released with a set of club versions, and each {{ <concept_link name="remix" /> }} shows another reading of the same song: the digital release carried remixes by Chris Lake, Joe Goddard of Hot Chip and KAOS next to the original. Listening to them side by side shows which parts of a pop song a remixer keeps (usually the vocal hook) and which parts he rebuilds.
 
 ## Overall Vibe
 
-“Solo Dancing” encapsulates Indiana's ability to blend introspective 
-lyrics with captivating melodies. Its **hypnotic** and **empowering** 
-vibe makes it an anthem for those embracing their individuality, 
-resonating with anyone who has ever found joy in dancing alone. The 
-track invites listeners to celebrate their own journeys, leaving a 
-lasting impact that lingers long after the last note.
+Solo Dancing is hypnotic and self-possessed, a song for anyone who has found joy in dancing alone. Its mood is dark without being bleak.
 
 ## Conclusion
 
-In "Solo Dancing," Indiana delivers a powerful and emotive soundscape 
-that encourages self-acceptance and empowerment. The track encapsulates 
-the beauty of solitude, transforming the act of dancing alone into a 
-liberating experience. With its rich production and heartfelt lyrics, 
-"Solo Dancing" stands as a testament to Indiana's artistry, making it 
-a must-listen for fans of modern dark pop.
-
-## Full Lyrics
-
-```
-Lyrics
-I go dancing by myself
-I go dancing with no one else
-Solo dancing push me as I go
-I go dancing it's so intense
-I will dance till the bitter end
-No point in asking
-'Cause I always dance alone!
-Hypnotized by a lot emotion
-Music stop and the spell is broken
-I go dancing by myself
-
-I go dancing with no one else
-Solo dancing push me as I go, go
-I go dancin' it's so intense
-I will dance till the bitter end
-No point in asking
-'Cause I always dance alone!
-Don't hold back
-My dance devotion
-It's the path that I have chosen
-Hypnotized by a lot emotion
-
-Music stop and the spell is broken
-(Broken broken broken)
-You, how I move, how I move, how I move
-Uuuuu uuuh don't hold back
-My dance devotion
-How I move, how I move, how I move
-I go dancing by myself
-I go dancing no one else
-Solo dancing push me as I go, go
-
-I go dancin' it's so intense
-I will dance till the bitter end
-No point in asking
-'Cause I always dance alone!
-Don't hold back
-My dance devotion
-It's the path that I have chosen
-Hypnotized by a lot emotion
-Music stop and the spell is broken!
-```
+In "Solo Dancing", Indiana turns the image of a lone dancer into a pop single with a cool, synth-driven pulse. Released on 18 April 2014, it reached number 14 on the UK Singles Chart and number 9 in Scotland, and its video, posted in February 2014, became her most-watched upload. It remains the best introduction to her work.

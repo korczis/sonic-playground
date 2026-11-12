@@ -6,6 +6,8 @@ description = "A three-minute haze of blurred synths, soft beats and a distant, 
 [taxonomies]
 genre = ["dream pop", "electronic", "ambient"]
 sentiment = ["dreamy", "ethereal", "melancholic"]
+concept = ["ambient texture", "reverb"]
+instrument = ["vocals", "synthesizer"]
 
 [extra]
 country = "GB"
@@ -15,6 +17,49 @@ publisher = "LE Records"
 release_year = "2010"
 album = "Oak"
 youtube = "https://www.youtube.com/embed/6FpAHhKCeWg"
+connections = [
+  { source = "the-xx-crystalised.md", why = "London at the turn of the 2010s: another young act making hushed, intimate songs out of space and a few soft sounds." },
+  { source = "klyne-paralyzed.md", why = "Electronic music that draws you in by staying quiet, a soft voice set inside slow pads and a muted beat." },
+]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Explain what ambient texture is and hear it carry a song's mood.",
+  "Hear how reverb places a voice inside the mix instead of in front of it.",
+  "Compare a three-minute song with its longer 4am mix and describe what the extra time changes.",
+]
+listen_for = [
+  { part = "the intro", what = "Washed-out synth pads fade in slowly, setting a misty, nocturnal atmosphere before anything rhythmic appears." },
+  { part = "the first verse", what = "A soft, reverb-heavy vocal, the words half dissolved into the mix, carried by a light, understated beat." },
+  { part = "the bridge", what = "The beat drops away and the pads drift alone: the most ambient stretch of the track." },
+  { part = "the outro", what = "Rhythm and voice recede into the haze and the song fades as gently as it arrived." },
+]
+questions = [
+  "The vocal is treated as texture rather than as a lead. What do you lose and what do you gain when you cannot quite make out the words?",
+  "The duo describe their sound as fantasia pop and cite medieval and baroque music alongside Detroit techno. Where, if anywhere, can you hear those influences in Navy Light?",
+  "Why might a band release a second, longer mix of a song on the same EP?",
+]
+
+[[extra.sources]]
+title = "Labyrinth Ear"
+url = "https://www.discogs.com/artist/2159187"
+publisher = "Discogs"
+kind = "database"
+
+[[extra.sources]]
+title = "Oak EP"
+url = "https://www.discogs.com/release/2763444"
+publisher = "Discogs"
+kind = "database"
+year = "2010"
+
+[[extra.sources]]
+title = "Oak (release)"
+url = "https://musicbrainz.org/release/8feac2a1-7a51-4f0b-9d04-9ac6c64b406c"
+publisher = "MusicBrainz"
+kind = "database"
+year = "2010"
 +++
 
 ## Genre and Mood
@@ -49,9 +94,15 @@ The beat drops away and the pads drift alone for a moment, the most ambient stre
 
 The rhythm and voice recede into the haze, and the song fades out as gently as it arrived, leaving a lingering blue afterglow.
 
+## Concepts in Focus
+
+Navy Light is made of {{ <concept_link name="ambient texture" /> }}. The synth pads that open it are not chords to sing over so much as a climate: sustained, slowly shifting sounds that set the mood before any rhythm appears. Listen in the bridge, when the beat drops out and only the pads remain; the song does not stop, it simply becomes its atmosphere.
+
+The voice is placed inside that atmosphere with {{ <concept_link name="reverb" /> }}. Heavy reverb makes a sound seem to come from a large space, and it blurs the edges of words, so the vocal reads as one more layer of colour rather than as a lead line in front of the band. That is why the song feels distant and close at once, like a voice heard from the next room.
+
 ## Artistic Context
 
-Labyrinth Ear are a London electronic duo who first drew attention by putting music online for free. Navy Light comes from Oak, an EP released in March 2010 on LE Records, which also carries a longer 4am Mix of the track. The duo went on to release more material and a debut full-length, and their early work sits in the same shadowy, reverb-soaked corner as the dream pop and witch house of that period.
+Labyrinth Ear are a British electronic duo, Emily and Tom, formed in London in 2010; they describe their sound as "fantasia pop" and cite influences from medieval and baroque music and opera to Detroit techno, dub and house. Navy Light comes from their first EP, Oak, self-released in March 2010, which also carries a longer 4am Mix of the track; LE Records issued Oak on 12-inch vinyl in 2026. The duo followed it with the Apparitions EP (2012) and the album The Orchid Room (2014) before moving to Berlin, and their early work sits in the same shadowy, reverb-soaked corner as the dream pop and witch house of that period.
 
 ## Impact and Reception
 

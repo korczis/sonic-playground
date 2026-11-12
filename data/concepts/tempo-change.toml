@@ -1,0 +1,10 @@
+term = "tempo change"
+category = "rhythm"
+wikipedia = "https://en.wikipedia.org/wiki/Tempo"
+see_also = ["breakdown", "half-time"]
+
+[en]
+definition = "A shift in a piece's speed, measured in beats per minute, partway through. In dance music the tempo usually stays fixed so DJs can mix tracks together, which makes a deliberate slowdown or speed-up a striking, emotional event."
+
+[cs]
+definition = "Změna rychlosti skladby, měřené v úderech za minutu, uprostřed jejího průběhu. V taneční hudbě tempo obvykle zůstává stejné, aby DJové mohli skladby navazovat, a proto je záměrné zpomalení nebo zrychlení nápadnou a emotivní událostí."

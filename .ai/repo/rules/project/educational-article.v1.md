@@ -28,8 +28,13 @@ nothing.
   `{{ <concept_link name="…" /> }}` that `data/concepts/` does not define; a linked concept that is not in
   the review's `taxonomies.concept`; a `{{ <track_link source="…" /> }}` or `extra.connections` entry that
   names no review; a concept without a definition in every locale of `data/i18n/`.
-- `catalog.education` measures how many reviews have each part; `x-sonic.edu_required = true`
-  makes every part required, and is switched on once every review has them.
+- `catalog.education` measures how many reviews have each part. `x-sonic.edu_required` is on
+  (2026-11-12): every review has the parts in `x-sonic.edu_required_parts` (concept, learning,
+  sources) or an `extra.edu_exempt` reason; credits and MusicBrainz identifiers are measured,
+  since not every recording has a source for them.
+- A review never reproduces lyrics: eight or more short lines in a row (fenced or not) are
+  refused; describe the lyric and quote a few words at most.
+- One artist has one `country` (origin) across all reviews.
 - `scripts/track.py new` writes the required section "Concepts in Focus" (data/review.toml);
   `scripts/track.py enrich` fills the identifiers MusicBrainz knows.
 - Structured data (`Article` + `LearningResource` + `MusicRecording`) is derived into

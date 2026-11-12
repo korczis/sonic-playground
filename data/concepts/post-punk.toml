@@ -1,0 +1,10 @@
+term = "post-punk"
+category = "genre-history"
+wikipedia = "https://en.wikipedia.org/wiki/Post-punk"
+see_also = ["riff", "synthesizer", "electroclash"]
+
+[en]
+definition = "The music that followed punk from the late 1970s: still tense and stripped-down, but more experimental, with prominent bass, angular guitars, cold synthesizers and detached vocals. Its dark branches, gothic rock and darkwave, have been revived again and again since."
+
+[cs]
+definition = "Hudba, která od konce 70. let navázala na punk: stále napjatá a úsporná, ale experimentálnější, s výraznou baskytarou, ostrými kytarami, chladnými syntezátory a odtažitým zpěvem. Její temné větve, gothic rock a darkwave, se od té doby znovu a znovu vracejí."

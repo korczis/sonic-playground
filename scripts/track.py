@@ -584,7 +584,9 @@ def enrich(paths: list[str], args) -> int:
         updates = {"musicbrainz": {k: m[k] for k in ("recording", "artist", "release") if m[k]}}
         if m["isrc"] and not t.full_extra.get("isrc"):
             updates["isrc"] = m["isrc"][0]
-        if m["country"] and re.fullmatch(r"[A-Z]{2}", m["country"]) and not t.full_extra.get("country"):
+        # MusicBrainz uses XW (worldwide), XE (Europe) and XU (unknown) for areas, not countries.
+        if (m["country"] and re.fullmatch(r"[A-Z]{2}", m["country"]) and m["country"] not in ("XW", "XE", "XU")
+                and not t.full_extra.get("country")):
             updates["country"] = m["country"]
         if m["year"] and not t.full_extra.get("release_year"):
             updates["release_year"] = m["year"]
@@ -602,6 +604,8 @@ def check(path: str) -> int:
     file = content_path(path)
     errors: list[str] = []
     track = cat.load_track(file, errors, include_drafts=True)
+    if track:
+        errors += cat.edu_problems(track)
     todo = file.read_text(encoding="utf-8").count(cat.UNFINISHED)
     report = {"file": path, "errors": errors, "unfinished": todo}
     if track:

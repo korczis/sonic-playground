@@ -26,6 +26,36 @@ if python3 scripts/catalog.py >/dev/null 2>&1; then
 fi
 
 sed -i.bak 's/TODO(write): /Written prose. /' "$file" && rm -f "$file.bak"
+# Written prose alone is not a review any more (ADR 0004): without the educational layer the
+# contract refuses it; with concepts, a learning guide and sources it passes.
+if python3 scripts/track.py check "$file" >/dev/null 2>&1; then
+  echo "FAIL: a review without the educational layer passed the contract"; exit 1
+fi
+python3 - "$file" <<'EOF2'
+import sys
+path = sys.argv[1]
+text = open(path, encoding="utf-8").read()
+fm, body = text.split("+++", 2)[1], text.split("+++", 2)[2]
+fm = fm.replace('sentiment = ["hypnotic"]', 'sentiment = ["hypnotic"]\nconcept = ["four-on-the-floor"]')
+fm += """
+[extra.learning]
+level = "introductory"
+objectives = ["Hear how a steady kick drum anchors a slow-burning track.", "Follow how the arrangement adds layers over the pulse."]
+listen_for = [{ part = "the intro", what = "the pulse arrives alone" }, { part = "the middle", what = "pads widen over the kick" }, { part = "the end", what = "the layers fall away again" }]
+questions = ["What keeps the track moving when nothing else changes?", "Where does it feel fullest, and why?"]
+
+[[extra.sources]]
+title = "Moderat"
+url = "https://en.wikipedia.org/wiki/Moderat"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "Moderat discography"
+url = "https://www.discogs.com/artist/1121428-Moderat"
+kind = "database"
+"""
+open(path, "w", encoding="utf-8").write("+++" + fm + "+++" + body)
+EOF2
 python3 scripts/track.py check "$file" >/dev/null
 python3 scripts/catalog.py >/dev/null
 python3 - <<'EOF'
@@ -35,6 +65,6 @@ t = c["tracks"][c["lookup"]["moderat-a-new-error.md"]]
 assert (t["artist"], t["track"]) == ("Moderat", "A New Error"), t
 assert t["youtube"] == "dQw4w9WgXcQ"
 assert t["related"], "no related tracks"
-print("ok   add-song: skeleton refused until written, then integrated with",
+print("ok   add-song: skeleton refused until written and taught, then integrated with",
       len(t["related"]), "related tracks")
 EOF

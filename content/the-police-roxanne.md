@@ -1,95 +1,114 @@
 +++
 title = "The Police - Roxanne"
 date = "2024-10-08"
-description = "'Roxanne' by The Police is a timeless blend of rock and reggae, telling the story of unrequited love and infatuation with a woman living a dangerous lifestyle. With Sting’s iconic voice and the band’s unique sound, 'Roxanne' became one of the defining tracks of the late 70s."
+description = "Sting wrote 'Roxanne' after seeing street workers near the band's Paris hotel in 1977: a plea to a woman to leave that life, set to off-beat reggae guitar and a tango-like rhythm, the A&M debut single that became the Police's signature song."
 
 [taxonomies]
 genre = ["rock", "reggae", "classic rock"]
 sentiment = ["longing", "intense", "emotional"]
+concept = ["off-beat", "cover version", "interpolation"]
+instrument = ["vocals", "bass", "guitar", "drums", "piano"]
 
 [extra]
-release_year = "1991"
+release_year = "1978"
 country = "GB"
-musicbrainz = { recording = "0eb653a5-781f-4bfe-ac03-248076143da7", artist = "9e0e2b01-41db-4008-bd8b-988977d6019a", release = "da824ac1-4cad-4c95-8fea-b5e5e31d736c" }
+isrc = "GBAAM7800003"
+musicbrainz = { recording = "68aaa830-20c5-4e4a-bc5c-3bfcecc43fde", artist = "9e0e2b01-41db-4008-bd8b-988977d6019a", release = "e07a2c71-dde7-37a3-8b02-44d25dd128f9" }
 youtube = "https://www.youtube.com/embed/3T1c7GkzRQQ"
+artist = "The Police"
+track = "Roxanne"
+album = "Outlandos d'Amour"
+publisher = "A&M Records"
+connections = [
+  { source = "nouvelle-vague-too-drunk-to-fuck.md", why = "A punk-era song remade in a completely different style, as Moulin Rouge! remade Roxanne as a tango." },
+]
+
+[extra.credits]
+writers = ["Sting"]
+vocals = ["Sting"]
+
+[extra.learning]
+level = "introductory"
+objectives = [
+  "Hear how reggae's off-beat guitar chords change the feel of a rock song.",
+  "Describe how a song can be remade as a cover in a completely different genre and keep its identity.",
+  "Explain the difference between covering a song and interpolating it inside a new one.",
+]
+listen_for = [
+  { part = "the intro", what = "The atonal piano chord and the laughter at the very start: Sting accidentally sat on the keyboard, and the band kept it." },
+  { part = "the verses", what = "Sparse guitar chords landing between the beats, the reggae off-beat, with Stewart Copeland's drums leaving space around them." },
+  { part = "the chorus", what = "The name sung again and again with rising intensity and backing voices, the plea turned into a chant." },
+  { part = "the ending", what = "The repetition of the name, leaving the plea unresolved." },
+]
+questions = [
+  "Sting first imagined Roxanne as a bossa nova; Stewart Copeland suggested a tango feel. How would the song change in each rhythm?",
+  "The band were embarrassed by the song because it was slower and quieter than their punk-era material. Why might a 'throwaway' become an artist's signature?",
+  "Moulin Rouge! turned Roxanne into a tango and Swedish House Mafia interpolated it in Redlight. Which treatment stays closer to the song's meaning?",
+]
+
+[[extra.sources]]
+title = "Roxanne (The Police song)"
+url = "https://en.wikipedia.org/wiki/Roxanne_(The_Police_song)"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
+title = "Roxanne"
+url = "https://musicbrainz.org/recording/68aaa830-20c5-4e4a-bc5c-3bfcecc43fde"
+publisher = "MusicBrainz"
+kind = "database"
 +++
 
 ## Genre and Mood
 
-**The Police**'s hit **Roxanne** combines rock and reggae influences to create a 
-unique sound that stood out during its release in 1978. The song’s mood is both 
-intense and emotional, driven by Sting's passionate vocals and the band’s tight 
-instrumentation. The fusion of upbeat rhythms with a theme of unrequited love 
-gives the track its signature emotional tension.
+**The Police**'s **Roxanne** combines rock and reggae influences into a sound that stood out when it was released in 1978. The mood is intense and emotional, driven by Sting's high, urgent vocal and the band's spare, tight playing. The fusion of a cool, spacious rhythm with a desperate plea gives the track its signature tension.
 
 ## Song Summary
 
-"Roxanne" tells the story of a man who falls for a woman living a dangerous 
-lifestyle as a sex worker. The song captures his deep infatuation and his plea 
-for her to leave behind that life. With its infectious melody and emotional 
-delivery, "Roxanne" became one of The Police’s most recognizable tracks, and 
-its distinctive guitar riff and rhythmic off-beat reggae influences set it 
-apart from the rock scene of the time.
+"Roxanne" is sung by a man who has fallen in love with a woman working as a prostitute and begs her to leave that life. Sting wrote it after seeing the street workers near the band's run-down hotel in Paris, where the Police were staying in October 1977 to play the Nashville Club; the name came from Cyrano de Bergerac, whose old poster hung in the hotel foyer. Its distinctive rhythm guitar and reggae off-beat set it apart from the punk scene the band came out of.
 
 ## Musical Breakdown
 
 ### Intro: The Iconic Opening
 
-The song opens with a simple yet striking piano chord followed by the 
-iconic “Roxanne” shout from Sting. This sets the stage for the rhythmically 
-engaging fusion of rock and reggae that defines the track.
+The song opens with an atonal piano chord and a burst of laughter, an accident preserved on tape: during recording Sting sat down on a piano keyboard in the studio. Then the band falls in.
 
 ### Verse 1: The Plea
 
-Sting’s voice, both pleading and resolute, begins to tell the story of his 
-infatuation with Roxanne. The reggae-inflected guitar rhythm carries the 
-verses, while Sting's raw emotion drives the lyrics. The bassline and drums 
-subtly support the track, creating a laid-back yet compelling groove.
+Sting's voice, pleading and resolute, tells the story. Andy Summers' guitar plays short chords on the off-beat while Sting's bass and Stewart Copeland's drums leave space around them, a laid-back yet tense groove.
 
 ### Chorus: A Cry of Love
 
-In the chorus, Sting repeatedly sings the name "Roxanne" with emotional intensity. 
-The syncopated rhythm and the addition of backing harmonies elevate the emotional 
-weight of his plea. The chorus is simple yet powerful, making it instantly memorable.
+In the chorus Sting sings the name "Roxanne" again and again with rising intensity, backed by the band's voices. The chorus is simple and powerful, which is why it is instantly memorable.
 
 ### Bridge: Building Tension
 
-The bridge introduces a shift in dynamics, with Sting’s voice becoming more urgent. 
-The guitar riffs become sharper, and the drums pick up intensity, matching the 
-growing emotional tension in the narrative. This section highlights the increasing 
-desperation in the protagonist’s voice as he tries to convince Roxanne to leave 
-her current lifestyle.
+The arrangement tightens and Sting's voice becomes more urgent, matching the growing desperation of a man trying to convince someone to change her life.
 
 ### Outro: The Unresolved Ending
 
-As the song draws to a close, the repetition of the name “Roxanne” leaves 
-listeners with a sense of lingering frustration and unresolved love. The track 
-fades out with the same rhythmic groove, echoing the endless nature of the 
-protagonist’s longing.
+The repetition of the name leaves a sense of lingering frustration and unresolved love, the plea still unanswered as the song ends.
+
+## Concepts in Focus
+
+The verses are built on the reggae {{ <concept_link name="off-beat" /> }}: instead of strumming on the beat as rock guitarists usually do, Summers places clipped chords in the gaps between the beats. Sting has said he conceived the song as a bossa nova and credits Copeland with suggesting the rhythm that made it work, and Summers remembered Copeland telling Sting where to place the bass notes. Listen to how much space the three players leave; the tension comes from what is not played.
+
+Roxanne is also one of rock's most adaptable songs for the {{ <concept_link name="cover version" /> }}. George Michael recorded it on Songs from the Last Century in 1999, Juliet Simms took it into the Billboard Hot 100 from The Voice in 2012, and for Baz Luhrmann's 2001 film Moulin Rouge! it was fused with Mariano Mores's "Tanguera" into "El Tango de Roxanne", sung by Jacek Koman, Ewan McGregor, Nicole Kidman and José Feliciano.
+
+A different kind of borrowing is the {{ <concept_link name="interpolation" /> }}. In 2022 Swedish House Mafia and Sting released "Redlight", which re-sings parts of Roxanne inside a new house track rather than covering the whole song. Earlier, Puff Daddy's 1997 remix "Roxanne '97" with Pras sampled UTFO's "Roxanne, Roxanne", a song from another tradition that shares the name.
 
 ## Lyrical Themes
 
-The lyrics of "Roxanne" explore themes of:
-- Unrequited love and emotional desperation
-- The desire to protect someone from a dangerous life
-- The pain of loving someone who may not love you back
-- The moral and emotional struggles that come with infatuation
+The lyric of "Roxanne" explores:
+
+- love for someone whose life the narrator cannot accept;
+- the wish to rescue someone from a dangerous life;
+- the desperation of a plea that may not be heard.
 
 ## Cultural Impact
 
-Released in 1978 as part of their debut album *Outlandos d'Amour*, "Roxanne" 
-was a breakthrough hit for The Police. It helped establish the band’s unique 
-blend of rock and reggae and launched them into mainstream success. The song 
-also became a cultural touchstone, appearing in numerous films, commercials, 
-and cover versions over the years. Sting’s iconic delivery and the band's 
-distinct sound helped solidify "Roxanne" as one of the most memorable 
-tracks of the late 70s.
+Recorded at Surrey Sound Studios, "Roxanne" was released as a single on 14 April 1978, the band's first on A&M Records, ahead of their debut album Outlandos d'Amour in November. Sting called it a throwaway, and the band were embarrassed by how slow and melodic it was next to their punk material, but Miles Copeland, Stewart's brother, loved it, became their manager and won them the A&M deal. The single did not chart at first; after it reached number 32 in the US in April 1979, its UK re-release that month peaked at number 12.
 
 ## Legacy
 
-"Roxanne" remains a staple of classic rock playlists and continues to influence 
-both musicians and listeners alike. The song’s fusion of genres, emotional 
-storytelling, and memorable chorus have made it an enduring classic, still 
-relevant more than four decades after its release. Whether heard on the 
-radio or reinterpreted by other artists, "Roxanne" continues to resonate 
-as a timeless tale of unrequited love and emotional longing.
+Rolling Stone ranked "Roxanne" number 388 in its 500 Greatest Songs of All Time, it is one of the Rock and Roll Hall of Fame's 500 Songs that Shaped Rock and Roll, and in 2008 it entered the Grammy Hall of Fame. The Police opened their 2007 Grammy Awards performance, which launched their reunion tour, with it. More than four decades on, it remains the band's signature tune.
