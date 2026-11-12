@@ -33,10 +33,6 @@ window.Sonic.module('charts', function mount() {
     return document.documentElement.classList.contains('dark') ? PALETTE.dark : PALETTE.light;
   }
   function facetUrl(kind, slug) { return base + '/' + kind + '/' + slug + '/'; }
-  function slugify(s) {
-    return s.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  }
   function go(url) { window.location.href = url; }
 
   function axisStyle(p) {
@@ -87,7 +83,8 @@ window.Sonic.module('charts', function mount() {
           },
           onClick: function (e) {
             // On the home page the chart drives the explorer; elsewhere it opens the facet page.
-            var select = el.getAttribute('data-target') === 'explorer' && document.getElementById('explorer-' + kind);
+            var select = el.getAttribute('data-target') === 'explorer'
+              && /** @type {HTMLSelectElement | null} */ (document.getElementById('explorer-' + kind));
             if (select) {
               select.value = items[e.dataIndex].term;
               select.dispatchEvent(new Event('change', { bubbles: true }));
@@ -204,7 +201,7 @@ window.Sonic.module('charts', function mount() {
   FORMS.sentiment = FORMS.facet('sentiment');
 
   function table(holder, rows) {
-    var target = document.querySelector('[data-chart-table="' + holder.id + '"]');
+    var target = /** @type {HTMLElement | null} */ (document.querySelector('[data-chart-table="' + holder.id + '"]'));
     if (!target || target.dataset.filled) return;
     var t = document.createElement('table');
     t.className = 'w-full text-left text-sm text-gray-500 dark:text-gray-400';
@@ -256,7 +253,7 @@ window.Sonic.module('charts', function mount() {
       stopTheme = window.Sonic.on('dark-mode', function () { render(catalog); });
       var stopLocale = window.Sonic.on('sonic:locale', function () {
         holders.forEach(function (h) {
-          var box = document.querySelector('[data-chart-table="' + h.id + '"]');
+          var box = /** @type {HTMLElement | null} */ (document.querySelector('[data-chart-table="' + h.id + '"]'));
           if (box) { box.replaceChildren(); delete box.dataset.filled; }
         });
         render(catalog);

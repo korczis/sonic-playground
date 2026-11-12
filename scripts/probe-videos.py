@@ -69,7 +69,7 @@ def render(gone: dict[str, str]) -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--write", action="store_true", help="rewrite data/videos.json")
     args = parser.parse_args()

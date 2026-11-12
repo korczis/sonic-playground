@@ -6,25 +6,25 @@
 // the listeners it put outside #main-content when the router leaves the page.
 window.Sonic.module('explorer', function mount() {
   'use strict';
-  var form = document.querySelector('form[data-explorer]');
-  var grid = document.querySelector('div[data-explorer-grid]');
+  var form = /** @type {HTMLFormElement | null} */ (document.querySelector('form[data-explorer]'));
+  var grid = /** @type {HTMLElement | null} */ (document.querySelector('div[data-explorer-grid]'));
   if (!form || !grid) return null;
   var cleanup = [];
 
   var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-track]'));
-  var status = document.querySelector('[data-explorer-status]');
-  var empty = document.querySelector('[data-explorer-empty]');
-  var reset = document.querySelector('[data-explorer-reset]');
-  var submit = document.querySelector('[data-explorer-submit]');
-  var query = form.elements.q;
-  var sort = form.elements.sort;
+  var status = /** @type {HTMLElement | null} */ (document.querySelector('[data-explorer-status]'));
+  var empty = /** @type {HTMLElement | null} */ (document.querySelector('[data-explorer-empty]'));
+  var reset = /** @type {HTMLElement | null} */ (document.querySelector('[data-explorer-reset]'));
+  var submit = /** @type {HTMLElement | null} */ (document.querySelector('[data-explorer-submit]'));
+  var query = /** @type {HTMLInputElement} */ (form.elements.namedItem('q'));
+  var sort = /** @type {HTMLSelectElement} */ (form.elements.namedItem('sort'));
   var facets = Array.prototype.slice.call(form.querySelectorAll('[data-facet]'));
   var KEYS = ['q', 'sort'].concat(facets.map(function (s) { return s.name; }));
   // Matches beyond the first PAGE are rendered but folded ([data-overflow]) behind "Show more";
   // they stay matches, so "Play these" still queues every one of them.
   var PAGE = Number(grid.getAttribute('data-page') || 24);
   var limit = PAGE;
-  var more = document.querySelector('[data-explorer-more]');
+  var more = /** @type {HTMLElement | null} */ (document.querySelector('[data-explorer-more]'));
 
   var items = cards.map(function (el) {
     var d = el.dataset;
@@ -137,14 +137,14 @@ window.Sonic.module('explorer', function mount() {
 
     var params = new URLSearchParams();
     KEYS.forEach(function (k) {
-      var v = k === 'q' ? query.value.trim() : form.elements[k].value;
+      var v = k === 'q' ? query.value.trim() : /** @type {HTMLSelectElement} */ (form.elements.namedItem(k)).value;
       if (v && !(k === 'sort' && v === 'new')) params.set(k, v);
     });
     var url = window.location.pathname + (params.toString() ? '?' + params : '');
     if (url !== window.location.pathname + window.location.search) {
       window.history[push ? 'pushState' : 'replaceState'](null, '', url);
     }
-    document.querySelectorAll('[data-search-input]').forEach(function (el) {
+    /** @type {NodeListOf<HTMLInputElement>} */ (document.querySelectorAll('[data-search-input]')).forEach(function (el) {
       if (el !== document.activeElement) el.value = query.value;
     });
   }
@@ -191,7 +191,7 @@ window.Sonic.module('explorer', function mount() {
   cleanup.push(function () { window.removeEventListener('popstate', load); });
 
   // The navbar search on this page drives the explorer instead of reloading it.
-  document.querySelectorAll('[data-search-input]').forEach(function (el) {
+  /** @type {NodeListOf<HTMLInputElement>} */ (document.querySelectorAll('[data-search-input]')).forEach(function (el) {
     function onInput() {
       query.value = el.value;
       clearTimeout(timer);

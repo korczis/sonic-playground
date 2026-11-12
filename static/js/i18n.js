@@ -46,8 +46,8 @@
       });
     });
     document.documentElement.lang = Sonic.locale();
-    document.querySelectorAll('[data-locale-switch]').forEach(function (select) { select.value = Sonic.locale(); });
-    var note = document.querySelectorAll('[data-locale-note]');
+    /** @type {NodeListOf<HTMLSelectElement>} */ (document.querySelectorAll('[data-locale-switch]')).forEach(function (select) { select.value = Sonic.locale(); });
+    var note = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-locale-note]'));
     note.forEach(function (el) { el.hidden = !Sonic.t('locale.content_note'); });
   }
   function use(code, announce) {
@@ -68,7 +68,8 @@
   }).catch(function () { document.documentElement.dataset.i18nState = 'failed'; });
 
   document.addEventListener('change', function (event) {
-    if (event.target.matches && event.target.matches('[data-locale-switch]')) use(event.target.value, true);
+    var target = /** @type {HTMLSelectElement} */ (event.target);
+    if (target.matches && target.matches('[data-locale-switch]')) use(target.value, true);
   });
   Sonic.on('sonic:page', function () { apply(); });
 })();

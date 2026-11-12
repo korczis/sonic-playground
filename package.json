@@ -22,7 +22,8 @@
     "test:e2e": "node test/e2e/smoke.cjs",
     "verify": "bash scripts/verify.sh",
     "track": "python3 scripts/track.py",
-    "probe:videos": "python3 scripts/probe-videos.py"
+    "probe:videos": "python3 scripts/probe-videos.py",
+    "typecheck": "tsc -p tsconfig.json && pyright"
   },
   "devDependencies": {
     "@tailwindcss/cli": "4.3.3",
@@ -30,6 +31,8 @@
     "flowbite": "4.0.2",
     "flowbite-typography": "1.0.5",
     "playwright-core": "1.63.0",
-    "tailwindcss": "4.3.3"
+    "pyright": "1.1.407",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
   }
 }

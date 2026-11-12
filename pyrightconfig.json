@@ -1,0 +1,6 @@
+{
+  "include": ["scripts", "test"],
+  "pythonVersion": "3.12",
+  "typeCheckingMode": "standard",
+  "reportMissingImports": "error"
+}

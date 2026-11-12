@@ -13,12 +13,14 @@ import sys
 import tempfile
 import tomllib
 import unittest
+from typing import Any
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 spec = importlib.util.spec_from_file_location("track", ROOT / "scripts" / "track.py")
-track = importlib.util.module_from_spec(spec)
+assert spec is not None and spec.loader is not None
+track: Any = importlib.util.module_from_spec(spec)
 sys.modules["track"] = track
 spec.loader.exec_module(track)
 cat = track.cat
