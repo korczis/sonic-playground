@@ -54,6 +54,9 @@ UNFINISHED = RULES["unfinished_marker"]
 OUTLINE_THRESHOLD = RULES["outline_threshold"]
 TOP_PAIRS = 24
 YOUTUBE_ID = re.compile(r"/embed/([A-Za-z0-9_-]{11})$")
+# A single letter other than "a"/"I" at the end of a line, the word going on on the next line:
+# Markdown renders it "T he". Found 33 times in the restored reviews (2026-11-12).
+SPLIT_WORD = re.compile(r"(?<![\w’'])[b-hj-zB-HJ-Z] ?\n[a-z]+")
 ROOT_ABSOLUTE = re.compile(r'(?:\]\(|\b(?:src|href)=")(/[^)"\s]*)')
 SEPARATORS = (" - ", " – ")
 
@@ -271,6 +274,8 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
     for match in ROOT_ABSOLUTE.finditer(rendered):
         err(f"root-absolute URL {match.group(1)} breaks under the Pages sub-path; use "
             '{{ <figure src="images/..." /> }} or a @/ link')
+    for match in SPLIT_WORD.finditer(rendered):
+        err(f"a word is split across lines ('{match.group(0).replace(chr(10), '⏎')}'); join it")
     if re.search(r"<iframe\b", rendered, re.I):
         err('raw <iframe>: use {{ <video id="..." title="..." /> }} or a plain link')
     for match in re.finditer(r'<figure src="([^"]+)"', rendered):

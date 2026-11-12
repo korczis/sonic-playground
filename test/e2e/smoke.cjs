@@ -232,6 +232,11 @@ async function shot(page, name) {
     check(await page.locator('[data-explorer-empty]').isVisible(), 'empty state when nothing matches');
     await page.click('[data-explorer-reset]');
     check((await visible()) === catalog.tracks.length, 'reset shows every track again');
+    const unfolded = () => page.locator('#explorer-grid [data-track]:not([hidden]):not([data-overflow])').count();
+    const before = await unfolded();
+    check(before === Math.min(24, catalog.tracks.length), `explorer shows the first page (${before} cards)`);
+    await page.click('[data-explorer-more]');
+    check((await unfolded()) === Math.min(48, catalog.tracks.length), 'Show more unfolds the next page');
     await page.selectOption('#explorer-sort', 'old');
     const first = await page.locator('[data-track]:not([hidden])').first().getAttribute('data-date');
     check(first === catalog.stats.first, `sort oldest first starts at ${catalog.stats.first}`);

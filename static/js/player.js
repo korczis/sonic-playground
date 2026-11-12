@@ -240,7 +240,7 @@
   // The tracks a [data-playlist] container shows, in the order shown, skipping hidden ones.
   function listOf(container) {
     return Array.prototype.slice.call(container.querySelectorAll('[data-track]'))
-      .filter(function (card) { return !card.hidden && card.offsetParent !== null; })
+      .filter(function (card) { return !card.hidden; })
       .map(function (card) { return card.dataset.source; });
   }
 
