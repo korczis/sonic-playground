@@ -58,6 +58,12 @@ class Links(unittest.TestCase):
                     "https://music.youtube.com/watch?v=dQw4w9WgXcQ"):
             self.assertEqual(track.youtube_id(url), "dQw4w9WgXcQ", url)
 
+    def test_slugs_transliterate_like_zola(self):
+        # 2026-11-12: "Høffding" became "hffding", "Trentemøller" "trentemller"
+        self.assertEqual(cat.slugify("Kölsch - Bloodline (feat. Tomas Høffding)"),
+                         "kolsch-bloodline-feat-tomas-hoffding")
+        self.assertEqual(cat.slugify("Trentemøller, Æther, Straße, Łódź"), "trentemoller-aether-strasse-lodz")
+
     def test_names_are_not_links(self):
         self.assertIsNone(track.youtube_id("Moderat - A New Error"))
         self.assertIsNone(track.youtube_id("dQw4w9WgXcQ"))

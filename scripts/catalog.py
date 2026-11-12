@@ -130,9 +130,17 @@ def validate(value, schema: dict, where: str = "", root: dict | None = None) -> 
 
 # --- Inference. ------------------------------------------------------------------------------
 
+# Letters NFKD does not decompose into a base letter; Zola (deunicode) transliterates them, so must
+# this ("Tomas Høffding" is "hoffding", not "hffding": a defect found on 2026-11-12).
+TRANSLIT = str.maketrans({"ø": "o", "Ø": "O", "æ": "ae", "Æ": "AE", "œ": "oe", "Œ": "OE", "ß": "ss",
+                          "ł": "l", "Ł": "L", "đ": "d", "Đ": "D", "ð": "d", "Ð": "D", "þ": "th",
+                          "Þ": "TH", "ı": "i", "ħ": "h", "Ħ": "H"})
+
+
 def slugify(text: str) -> str:
     """Zola's default slug (slugify = on): transliterate, lowercase, non-alphanumerics to '-'."""
-    ascii_text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    ascii_text = (unicodedata.normalize("NFKD", text.translate(TRANSLIT))
+                  .encode("ascii", "ignore").decode())
     return re.sub(r"[^a-z0-9]+", "-", ascii_text.lower()).strip("-")
 
 
