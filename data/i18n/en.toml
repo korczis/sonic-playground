@@ -229,6 +229,7 @@
 "player.jump" = "Play {track}"
 "player.move_up" = "Move {track} up"
 "player.move_down" = "Move {track} down"
+"player.drag" = "Drag to reorder"
 "player.video_small" = "Smaller video"
 "player.video_large" = "Larger video"
 "player.minimise" = "Minimise the player"

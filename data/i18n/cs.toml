@@ -225,6 +225,7 @@
 "player.jump" = "Přehrát {track}"
 "player.move_up" = "Posunout {track} výš"
 "player.move_down" = "Posunout {track} níž"
+"player.drag" = "Přetažením změníte pořadí"
 "player.video_small" = "Menší video"
 "player.video_large" = "Větší video"
 "player.minimise" = "Minimalizovat přehrávač"
