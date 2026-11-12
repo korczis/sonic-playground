@@ -368,11 +368,23 @@ async function shot(page, name) {
     await context.close();
   }
 
-  // Phone width.
-  for (const [name, rel] of [['home', ''], ['track', sample.path], ['insights', 'insights/']]) {
+  // Phone width. Every control a finger has to hit is at least TARGET px each way (WCAG 2.2
+  // 2.5.8 Target Size, AA); a link inside running text is exempt, as the criterion says.
+  const TARGET = 24;
+  const term = catalog.facets.genre[0];
+  for (const [name, rel] of [['home', ''], ['track', sample.path], ['insights', 'insights/'], ['genre term', `genre/${term.slug}/`]]) {
     const { context, page } = await open(browser, at(rel), phone, name === 'track' ? 'dark' : 'light');
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${name} @390px: no horizontal overflow (${overflow}px)`);
+    const small = await page.evaluate((min) => [...document.querySelectorAll('button, a[href], [role=button], select, input')]
+      .filter((el) => {
+        const box = el.getBoundingClientRect();
+        if (!el.offsetParent || box.width <= 1) return false;  // not shown, or visually hidden (sr-only)
+        if (getComputedStyle(el).display === 'inline') return false;  // in a sentence or a heading's line
+        return box.width < min || box.height < min;
+      })
+      .map((el) => `${el.tagName.toLowerCase()} ${Math.round(el.getBoundingClientRect().width)}x${Math.round(el.getBoundingClientRect().height)} "${(el.textContent || el.getAttribute('aria-label') || '').trim().slice(0, 24)}"`), TARGET);
+    check(small.length === 0, `${name} @390px: every control is at least ${TARGET}x${TARGET}px (${small.length}${small.length ? ': ' + [...new Set(small)].slice(0, 4).join(' | ') : ''})`);
     if (name === 'home') {
       await page.waitForFunction(() => window.FlowbiteInstances);
       await page.click('#toggleSidebarMobile');
