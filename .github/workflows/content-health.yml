@@ -1,0 +1,20 @@
+name: Content health
+
+# Weekly, and on demand: the videos the catalogue names still exist on YouTube. Network-bound,
+# so never part of the deploy gate; a failure here is a content task, not a broken site.
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  videos:
+    name: Videos are still on YouTube
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Probe every video
+        run: python3 scripts/probe-videos.py

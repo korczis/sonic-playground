@@ -1,0 +1,40 @@
+# What each section of a track review is for. scripts/track.py writes the sections the corpus
+# shares (static/data/catalog.json "outline", derived by scripts/catalog.py) and puts this
+# guidance under each heading as a TODO(write) line the writer replaces; the content contract
+# refuses an article that still carries one. A section the corpus starts to share and this
+# file does not know gets the generic guidance.
+
+[defaults]
+guidance = "Write two or three paragraphs in the voice of the existing reviews: concrete, sensory, honest about what does not work."
+words_min = 300
+words_target = 450
+
+[sections."genre and mood"]
+heading = "Genre and Mood"
+guidance = "Open with **Artist** and **Track** in bold; name the genres and the feelings from the front matter and say how the track sits inside or against them."
+
+[sections."song summary"]
+heading = "Song Summary"
+guidance = "What the track is about and how it is built: theme, arrangement, production, the one detail that makes it memorable."
+
+[sections."musical breakdown"]
+heading = "Musical Breakdown"
+guidance = "Walk through the track in order; one short paragraph per part below. Drop a part the track does not have, add one it does."
+
+[sections."musical breakdown".parts]
+intro = "Intro"
+"verse 1" = "Verse 1"
+"build-up" = "Build-up"
+"main section" = "Main Section"
+chorus = "Chorus"
+bridge = "Bridge"
+climax = "Climax"
+outro = "Outro"
+
+[sections."artistic context"]
+heading = "Artistic Context"
+guidance = "Who the artist is, where the track comes from (album, year, label, scene) and what it connects to; only facts you can source."
+
+[sections."impact and reception"]
+heading = "Impact and Reception"
+guidance = "How the track was received and why it is on this playground; end with an invitation to listen."

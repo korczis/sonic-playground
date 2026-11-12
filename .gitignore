@@ -1,43 +1,16 @@
-/node_modules
-# The directory Mix will write compiled artifacts to.
-/_build/
+# Majordomus: this checkout's own state never leaves it.
+.ai/local/
+.ai/repo/**/.tmp.*
 
-# If you run "mix test --cover", coverage assets end up here.
-/cover/
+# Build output (CI builds and deploys it; never committed).
+/public/
+node_modules/
 
-# The directory Mix downloads your dependencies sources to.
-/deps/
+# Python and OS noise.
+__pycache__/
+*.pyc
+.DS_Store
 
-# Where 3rd-party dependencies like ExDoc output generated docs.
-/doc/
-
-# Ignore .fetch files in case you like to edit your project deps locally.
-/.fetch
-
-# If the VM crashes, it generates a dump, let's ignore it too.
-erl_crash.dump
-
-# Also ignore archive artifacts (built via "mix archive.build").
-*.ez
-
-# Temporary files, for example, from tests.
-/tmp/
-
-# Ignore package tarball (built via "mix hex.build").
-blog_korczis_com-*.tar
-
-# Ignore assets that are produced by build tools.
-/priv/static/assets/
-
-# Ignore digested assets cache.
-/priv/static/cache_manifest.json
-
-# In case you use Node.js/npm, you want to ignore these.
-npm-debug.log
-/assets/node_modules/
-
-# Database files
-*.db
-*.db-*
-
-/tmp/
+# Local secrets (creator tooling, direnv).
+.env
+.envrc

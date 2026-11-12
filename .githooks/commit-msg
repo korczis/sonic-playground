@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Conventional Commits (policy enforcement commit-format): type(scope): description.
+exec bash scripts/lint-commits.sh --file "$1"

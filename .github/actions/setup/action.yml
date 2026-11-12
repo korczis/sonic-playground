@@ -1,0 +1,30 @@
+name: Toolchain
+description: Node.js 22 with npm ci, Python 3, and Zola pinned by .zola-version and a SHA-256 digest.
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v7
+      with:
+        node-version: '22'
+        cache: npm
+
+    - name: npm ci
+      shell: bash
+      run: npm ci
+
+    - name: Install Zola
+      shell: bash
+      env:
+        # Digest of zola-v<version>-x86_64-unknown-linux-gnu.tar.gz for the version in .zola-version.
+        # Changing .zola-version without updating it fails here, loudly.
+        ZOLA_SHA256: 54d1a347781b2f32330914fcc02def81c7e3ddb6111b36d1cc89c06557aed1de
+      run: |
+        version="$(tr -d '[:space:]' < .zola-version)"
+        archive="zola-v${version}-x86_64-unknown-linux-gnu.tar.gz"
+        curl -fsSL -o "$RUNNER_TEMP/$archive" "https://github.com/getzola/zola/releases/download/v${version}/${archive}"
+        echo "${ZOLA_SHA256}  $RUNNER_TEMP/$archive" | sha256sum --check --strict
+        mkdir -p "$RUNNER_TEMP/zola"
+        tar -xzf "$RUNNER_TEMP/$archive" -C "$RUNNER_TEMP/zola"
+        echo "$RUNNER_TEMP/zola" >> "$GITHUB_PATH"
+        "$RUNNER_TEMP/zola/zola" --version

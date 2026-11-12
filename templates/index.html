@@ -1,57 +1,74 @@
-{% import "macros.html" as macros %}
-<!doctype html>
-<html class="not-ready lg:text-base" lang="{{ lang }}">
-  {% include "partials/head.html" %}
-  <body class="text-black duration-200 ease-out dark:text-white">
-    {% include "partials/header.html" %}
+{#- Home: the explorer. Every card is rendered here from the catalogue, so the page is complete
+    without JavaScript; static/js/explorer.js adds faceted filtering, text search, sorting and
+    URL state (?q=&genre=&sentiment=&mood=&sort=) on top of the same cards. -#}
+{% extends "base.html" %}
+{%- block content %}
+{%- set s = catalog.stats %}
+{{ <page_header title="Explore the playground" crumbs={[["Home", ""]]} kicker={s.tracks ~ " hand-picked tracks"} lead={config.description} /> }}
+<div class="space-y-4 px-4 pt-6">
+  <section aria-label="Catalogue at a glance" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
+    {{ <stat_card value={s.tracks} label="tracks" icon_name="music" href={get_url(path="@/pages/archive.md")} /> }}
+    {{ <stat_card value={s.artists} label="artists" icon_name="user" href={get_url(path="@/pages/insights.md")} /> }}
+    {{ <stat_card value={s.genre_terms} label="genres" icon_name="tag" href={get_url(path="genre", trailing_slash=true)} /> }}
+    {{ <stat_card value={s.sentiment_terms} label="feelings" icon_name="heart" href={get_url(path="sentiment", trailing_slash=true)} /> }}
+  </section>
 
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg"
-    >
-      {% block main %}
-
-      <section class="manifesto bg-gray-100 dark:bg-gray-800 rounded-lg border-2 border-gray-400 p-8 mb-12 mx-auto max-w-4xl text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight mb-6">
-          Curated Chaos, Just for You
-        </h1>
-        <p class="text-xl text-gray-700 dark:text-gray-300 mb-4">
-          In a world of auto-generated content, this place stands for something different:
-          <span class="font-semibold text-indigo-600">Authenticity. Emotion. Story.</span>
-        </p>
-        <p class="text-lg text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-          Each song here is hand-picked, carefully selected to reflect every corner of the human experience—
-          from the <span class="font-semibold">brightest moments of joy</span> to the
-          <span class="font-semibold">darkest, rawest edges of melancholy</span>.
-        </p>
-        <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-          And it’s not just music. These songs have history,
-          <span class="font-semibold text-indigo-600">iconic stories</span> that shaped them into more than just a tune.
-          <span class="font-semibold">Cultural game-changers</span>,
-          <span class="font-semibold">underground classics</span>, and pieces that might surprise you with their depth.
-        </p>
-
-        <div class="flex justify-center gap-4 mt-8">
-          <a href="/welcome"
-             class="px-6 py-3 text-lg font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-            Explore the Sonic Playground
-          </a>
-          <a href="/author"
-             class="px-6 py-3 text-lg font-medium text-gray-800 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-            Meet the Author
-          </a>
+  {%- set field = "block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" %}
+  {%- set lbl = "mb-2 block text-sm font-medium text-gray-900 dark:text-white" %}
+  <section aria-labelledby="explorer-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-2">
+      <h2 id="explorer-title" class="text-lg font-semibold text-gray-900 dark:text-white">Tracks</h2>
+      <p class="text-sm text-gray-500 dark:text-gray-400" data-explorer-status aria-live="polite">{{ s.tracks }} tracks</p>
+    </div>
+    <form data-explorer class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6" action="{{ get_url(path='@/_index.md') }}" method="get">
+      <div class="sm:col-span-2 lg:col-span-3 2xl:col-span-2">
+        <label for="explorer-q" class="{{ lbl }}">Search</label>
+        <div class="relative">
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 dark:text-gray-400">{{ <icon name="search" /> }}</div>
+          <input type="search" id="explorer-q" name="q" class="{{ field }} pl-10" placeholder="Artist, track, words of the review…" autocomplete="off">
         </div>
-      </section>
+      </div>
+      {%- for facet in [["genre", "Genre"], ["sentiment", "Feeling"], ["mood", "Mood"]] %}
+      {%- if catalog.facets[facet[0]] | length > 0 %}
+      <div>
+        <label for="explorer-{{ facet[0] }}" class="{{ lbl }}">{{ facet[1] }}</label>
+        <select id="explorer-{{ facet[0] }}" name="{{ facet[0] }}" data-facet="{{ facet[0] }}" class="{{ field }}">
+          <option value="">Any {{ facet[1] | lower }}</option>
+          {%- for f in catalog.facets[facet[0]] %}
+          <option value="{{ f.term }}" data-count="{{ f.count }}">{{ f.term }} ({{ f.count }})</option>
+          {%- endfor %}
+        </select>
+      </div>
+      {%- endif %}
+      {%- endfor %}
+      <div>
+        <label for="explorer-sort" class="{{ lbl }}">Sort</label>
+        <select id="explorer-sort" name="sort" class="{{ field }}">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+          <option value="artist">Artist A–Z</option>
+          <option value="title">Track A–Z</option>
+        </select>
+      </div>
+      <div class="flex items-end gap-2 sm:col-span-2 lg:col-span-3 2xl:col-span-6">
+        <button type="submit" class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" data-explorer-submit>Apply</button>
+        <a href="{{ get_url(path='@/_index.md') }}" data-explorer-reset class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">Reset</a>
+      </div>
+    </form>
+  </section>
 
-      <!-- Profile -->
-      {% if paginator is undefined or paginator.current_index == 1 %}<!---->
-      {% include "partials/profile.html" %}<!---->
-      {% endif %}<!---->
-
-
-      {% include "partials/page_list.html" %}<!---->
-      {% endblock main %}
-    </main>
-
-    {% include "partials/footer.html" %}
-  </body>
-</html>
+  <section aria-label="Track list">
+    <div data-explorer-grid class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+      {%- for t in catalog.tracks %}
+      {{ <track_card t={t} heading="h3" /> }}
+      {%- endfor %}
+    </div>
+    <div data-explorer-empty hidden>
+      {{ <empty_state title="No track matches" text="Loosen a filter or search for fewer words." /> }}
+    </div>
+  </section>
+</div>
+{%- endblock content %}
+{%- block scripts %}
+<script src="{{ get_url(path='js/explorer.js', cachebust=true) }}" defer></script>
+{%- endblock scripts %}

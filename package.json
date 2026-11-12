@@ -1,22 +1,34 @@
 {
-  "name": "kita",
-  "version": "0.1.0",
-  "description": "Kita is a clean, elegant and simple blog theme for Zola.",
-  "homepage": "https://github.com/st1020/kita",
-  "license": "MIT",
-  "author": "st1020 <me@st1020.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/st1020/kita.git"
+  "name": "sonic-playground",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Sonic Playground: a hand-picked music journal. Static Zola site on GitHub Pages, Flowbite Pro UI, catalogue derived from front matter.",
+  "license": "UNLICENSED",
+  "author": "Tomas Korcak",
+  "engines": {
+    "node": ">=22"
   },
   "scripts": {
-    "dev": "pnpm tailwindcss -i ./static/app.css -o ./static/main.css --watch",
-    "build": "pnpm tailwindcss -i ./static/app.css -o ./static/main.css"
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "vendor": "node scripts/vendor.mjs",
+    "vendor:check": "node scripts/vendor.mjs --check",
+    "css": "tailwindcss --input styles/app.css --output static/css/app.css --minify",
+    "assets": "npm run --silent vendor && npm run --silent css",
+    "derive": "python3 scripts/catalog.py",
+    "check": "python3 scripts/catalog.py --check",
+    "build": "npm run --silent assets && npm run --silent check && zola build",
+    "dev": "npm run --silent assets && npm run --silent derive && zola serve",
+    "test": "python3 -m unittest discover -s test -p 'test_*.py'",
+    "test:e2e": "node test/e2e/smoke.cjs",
+    "verify": "bash scripts/verify.sh",
+    "track": "python3 scripts/track.py",
+    "probe:videos": "python3 scripts/probe-videos.py"
   },
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "tailwindcss": "^3.4.10"
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3",
+    "flowbite": "4.0.2",
+    "flowbite-typography": "1.0.5",
+    "playwright-core": "1.63.0",
+    "tailwindcss": "4.3.3"
   }
 }

@@ -1,0 +1,193 @@
+{#- UI components (Zola 0.23 / Tera 2), adapted from the Flowbite Pro admin dashboard and blocks.
+    Each takes explicit props and reads no page context, so a page composes them and never
+    repeats their markup. Call: {{ <track_card t={t} /> }}. -#}
+
+{#- Inline icon set (Flowbite icons, outline 24x24). Unknown names render nothing. -#}
+{% component icon(name, cls="h-5 w-5") %}
+{%- set paths = {
+  "home": "m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5",
+  "user": "M15 9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 10a6 6 0 0 1 12 0v1H6v-1Z",
+  "archive": "M4 7h16M4 7v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7M4 7l1.5-3h13L20 7m-10 4h4",
+  "chart": "M4 4v15a1 1 0 0 0 1 1h15M8 16v-4m4 4V9m4 7v-6",
+  "music": "M9 18V6l10-2v12M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm10-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z",
+  "tag": "M15.6 4H19a1 1 0 0 1 1 1v3.4a1 1 0 0 1-.3.7l-9.4 9.6a1 1 0 0 1-1.4 0l-3.6-3.6a1 1 0 0 1 0-1.4L14.9 4.3a1 1 0 0 1 .7-.3ZM16 8h.01",
+  "heart": "M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z",
+  "search": "m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z",
+  "shuffle": "M16 4h4v4m0-4-5 5M4 20l7-7m9 3v4h-4m4 0-5-5M4 4l5 5",
+  "play": "M8 18V6l10 6-10 6Z",
+  "calendar": "M4 10h16M8 4v3m8-3v3M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z",
+  "clock": "M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
+  "link": "M13.2 10.8a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5l.9-.9m-.3-4.7a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5l-.9.9",
+  "rss": "M5 11a8 8 0 0 1 8 8M5 5a14 14 0 0 1 14 14M6 19h.01",
+  "arrow-left": "M19 12H5m0 0 5-5m-5 5 5 5",
+  "arrow-right": "M5 12h14m0 0-5-5m5 5-5 5",
+  "info": "M12 11v5m0-8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
+  "sparkles": "M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2 2m8 8 2 2M6 18l2-2m8-8 2-2",
+} -%}
+{%- if name in paths -%}
+<svg class="{{ cls }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ paths[name] }}"/></svg>
+{%- endif -%}
+{% endcomponent icon %}
+
+{#- Facet badges (Pro badge, linking to the taxonomy term). `kind` picks the tone. -#}
+{% component facet_badges(terms, kind, limit=12, size="xs") %}
+{%- set tones = {
+  "genre": "bg-primary-100 text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300 dark:hover:bg-primary-800",
+  "sentiment": "bg-pink-100 text-pink-800 hover:bg-pink-200 dark:bg-pink-900 dark:text-pink-300 dark:hover:bg-pink-800",
+  "mood": "bg-teal-100 text-teal-800 hover:bg-teal-200 dark:bg-teal-900 dark:text-teal-300 dark:hover:bg-teal-800",
+  "tags": "bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600",
+} -%}
+{%- for term in terms[:limit] -%}
+<a href="{{ get_taxonomy_url(kind=kind, term=term) }}" class="inline-flex items-center rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tones[kind] }}">{{ term }}</a>
+{% endfor -%}
+{% endcomponent facet_badges %}
+
+{#- Track card (Pro product card): thumbnail, artist, track, date, genres. The data-* attributes
+    are what static/js/explorer.js filters and sorts on; they mirror the catalogue entry. -#}
+{% component track_card(t, heading="h3") %}
+{%- set href = get_url(path="@/" ~ t.source) -%}
+{%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
+<article class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+  data-track
+  data-source="{{ t.source }}"
+  data-title="{{ t.track }}"
+  data-artist="{{ t.artist }}"
+  data-date="{{ t.date }}"
+  data-genre="{{ t.facets.genre | join(sep='|') }}"
+  data-sentiment="{{ t.facets.sentiment | join(sep='|') }}"
+  data-mood="{{ t.facets.mood | join(sep='|') }}"
+  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }} {{ t.facets.genre | join(sep=' ') }} {{ t.facets.sentiment | join(sep=' ') }} {{ t.facets.mood | join(sep=' ') }} {{ t.facets.tags | join(sep=' ') }}">
+  <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
+    {%- if thumb %}
+    <img src="{{ thumb }}" alt="" data-thumb loading="lazy" decoding="async" width="480" height="360" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">
+    {%- else %}
+    <span class="flex h-full w-full items-center justify-center text-gray-400 dark:text-gray-500">{{ <icon name="music" cls="h-10 w-10" /> }}</span>
+    {%- endif %}
+    {%- if t.youtube %}
+    <span class="absolute bottom-2 right-2 inline-flex items-center rounded-md bg-gray-900/75 px-2 py-0.5 text-xs font-medium text-white">{{ <icon name="play" cls="mr-1 h-3 w-3" /> }}Video</span>
+    {%- endif %}
+  </a>
+  <div class="flex flex-1 flex-col p-4">
+    <p class="mb-1 truncate text-sm font-medium text-primary-700 dark:text-primary-400">{{ t.artist }}</p>
+    <{{ heading }} class="mb-2 line-clamp-2 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
+      <a href="{{ href }}" class="hover:underline focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-800">{{ t.track }}</a>
+    </{{ heading }}>
+    <p class="mb-3 line-clamp-2 text-sm text-gray-500 dark:text-gray-400">{{ t.description }}</p>
+    <div class="mt-auto flex flex-wrap gap-1.5">{{ <facet_badges terms={t.facets.genre} kind="genre" limit={3} /> }}</div>
+    <p class="mt-3 flex items-center text-xs text-gray-500 dark:text-gray-400">{{ <icon name="calendar" cls="mr-1.5 h-3.5 w-3.5" /> }}<time datetime="{{ t.date }}">{{ t.date }}</time></p>
+  </div>
+</article>
+{% endcomponent track_card %}
+
+{#- Compact track row (Pro list group item) for related tracks, archives and rankings. -#}
+{% component track_row(t, note="") %}
+{%- set href = get_url(path="@/" ~ t.source) -%}
+{%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
+<li class="py-3 sm:py-4">
+  <a href="{{ href }}" class="flex items-center gap-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-800">
+    {%- if thumb %}
+    <img class="h-12 w-16 shrink-0 rounded object-cover" data-thumb src="{{ thumb }}" alt="" loading="lazy" width="64" height="48">
+    {%- else %}
+    <span class="flex h-12 w-16 shrink-0 items-center justify-center rounded bg-gray-100 text-gray-400 dark:bg-gray-700">{{ <icon name="music" /> }}</span>
+    {%- endif %}
+    <span class="min-w-0 flex-1">
+      <span class="block truncate text-sm font-semibold text-gray-900 hover:underline dark:text-white">{{ t.track }}</span>
+      <span class="block truncate text-sm text-gray-500 dark:text-gray-400">{{ t.artist }}</span>
+      {%- if note %}<span class="mt-0.5 block truncate text-xs text-gray-500 dark:text-gray-400">{{ note }}</span>{% endif %}
+    </span>
+    <time datetime="{{ t.date }}" class="hidden shrink-0 text-xs text-gray-500 sm:block dark:text-gray-400">{{ t.date }}</time>
+  </a>
+</li>
+{% endcomponent track_row %}
+
+{#- Privacy-friendly video: a still and a play button; static/js/site.js swaps in the
+    youtube-nocookie player on click. Without JavaScript the link opens YouTube. -#}
+{% component video(id, title) %}
+<div class="relative aspect-video w-full overflow-hidden rounded-lg bg-gray-900" data-video="{{ id }}" data-video-title="{{ title }}">
+  <a href="https://www.youtube.com/watch?v={{ id }}" class="group absolute inset-0 flex items-center justify-center" data-video-play>
+    <img src="https://i.ytimg.com/vi/{{ id }}/hqdefault.jpg" alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-80 transition group-hover:opacity-100" loading="lazy" width="480" height="360">
+    <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition group-hover:scale-110 group-focus:ring-4 group-focus:ring-primary-300">
+      {{ <icon name="play" cls="ml-1 h-8 w-8" /> }}
+      <span class="sr-only">Play {{ title }}</span>
+    </span>
+  </a>
+</div>
+{% endcomponent video %}
+
+{#- An image in a review (Publisher figure): `src` is relative to static/ ("images/x.jpg"), so the
+    URL is built from base_url and works under the Pages sub-path and in feeds. Used from content:
+    {{ <figure src="images/x.jpg" alt="..." /> }}. -#}
+{% component figure(src, alt="", caption="") %}
+<figure class="not-format my-6">
+  <a href="{{ get_url(path=src) }}" class="block overflow-hidden rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+    <img src="{{ get_url(path=src) }}" alt="{{ alt }}" loading="lazy" decoding="async" class="h-auto w-full rounded-lg">
+  </a>
+  {%- if caption %}<figcaption class="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">{{ caption }}</figcaption>{% endif %}
+</figure>
+{% endcomponent figure %}
+
+{#- Pro stat card. -#}
+{% component stat_card(value, label, icon_name="music", href="") %}
+<div class="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+  <div>
+    <p class="text-2xl font-bold leading-none text-gray-900 sm:text-3xl dark:text-white">{{ value }}</p>
+    {%- if href %}
+    <a href="{{ href }}" class="mt-1 block text-sm font-normal text-gray-500 hover:underline dark:text-gray-400">{{ label }}</a>
+    {%- else %}
+    <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">{{ label }}</p>
+    {%- endif %}
+  </div>
+  <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300">{{ <icon name={icon_name} cls="h-6 w-6" /> }}</span>
+</div>
+{% endcomponent stat_card %}
+
+{#- Pro page header: breadcrumb (a list of [label, url] pairs, the last one is the page) and
+    the title with an optional kicker and lead. -#}
+{% component page_header(title, crumbs=[], kicker="", lead="") %}
+<div class="border-b border-gray-200 bg-white px-4 py-5 dark:border-gray-700 dark:bg-gray-800">
+  <nav class="mb-3 flex" aria-label="Breadcrumb">
+    <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 md:space-x-2">
+      {%- for c in crumbs %}
+      <li class="inline-flex items-center">
+        {%- if not loop.first %}<svg class="mx-1 h-3 w-3 text-gray-400" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>{% endif %}
+        {%- if loop.last %}
+        <span class="text-sm font-medium text-gray-500 dark:text-gray-400" aria-current="page">{{ c[0] }}</span>
+        {%- else %}
+        <a href="{{ c[1] }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-700 dark:text-gray-300 dark:hover:text-white">{% if loop.first %}{{ <icon name="home" cls="mr-1.5 h-4 w-4" /> }}{% endif %}{{ c[0] }}</a>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+  </nav>
+  {%- if kicker %}<p class="mb-1 text-sm font-medium text-primary-700 dark:text-primary-400">{{ kicker }}</p>{% endif %}
+  <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">{{ title }}</h1>
+  {%- if lead %}<p class="mt-2 max-w-3xl text-base text-gray-500 dark:text-gray-400">{{ lead }}</p>{% endif %}
+</div>
+{% endcomponent page_header %}
+
+{#- Ranked facet terms with their counts (Pro list group); the bar is the share of the top term. -#}
+{% component ranked_terms(items, kind, limit=10, title="") %}
+<div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
+  {%- if title %}<h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">{{ title }}</h2>{% endif %}
+  <ol class="divide-y divide-gray-200 dark:divide-gray-700">
+    {%- set top = items | first %}
+    {%- for it in items[:limit] %}
+    <li class="flex items-center gap-3 py-2">
+      <span class="w-6 shrink-0 text-right font-mono text-xs text-gray-500">{{ loop.index }}</span>
+      <a href="{{ get_taxonomy_url(kind=kind, term=it.term) }}" class="min-w-0 flex-1 truncate text-sm font-medium text-gray-900 hover:underline dark:text-white">{{ it.term }}</a>
+      <span class="hidden h-1.5 w-24 overflow-hidden rounded-full bg-gray-100 sm:block dark:bg-gray-700" aria-hidden="true"><span class="block h-1.5 rounded-full bg-primary-600 dark:bg-primary-500" style="width: {{ (it.count * 100 / top.count) | round | int }}%"></span></span>
+      <span class="w-8 shrink-0 text-right text-sm font-semibold text-gray-700 dark:text-gray-300">{{ it.count }}</span>
+    </li>
+    {%- endfor %}
+  </ol>
+</div>
+{% endcomponent ranked_terms %}
+
+{#- Pro empty state. -#}
+{% component empty_state(title, text="") %}
+<div class="flex flex-col items-center justify-center rounded-lg border border-dashed border-gray-300 bg-white px-6 py-12 text-center dark:border-gray-600 dark:bg-gray-800">
+  <span class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400">{{ <icon name="search" cls="h-6 w-6" /> }}</span>
+  <p class="text-base font-semibold text-gray-900 dark:text-white">{{ title }}</p>
+  {%- if text %}<p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ text }}</p>{% endif %}
+</div>
+{% endcomponent empty_state %}

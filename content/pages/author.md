@@ -1,9 +1,8 @@
 +++
 title = "Author"
+description = "From reluctant pianist to synth enthusiast: who picks the tracks."
 path = "author"
 template = "pages.html"
-[extra]
-section = "_index.md"
 +++
 
 ## From Reluctant Pianist to Synth Enthusiast: My Musical Odyssey
@@ -14,7 +13,7 @@ music to the raw energy of Eminem, Guano Apes, Offspring, and Nirvana. That boy
 was me, and little did I know that this forced piano practice was the first 
 step in a lifelong love affair with music.
 
-![A serene and peaceful sketched illustration](/images/man_1.png)
+{{ <figure src="images/man_1.png" alt="A serene and peaceful sketched illustration" /> }}
 
 As time passed, my musical palate expanded exponentially. I dove headfirst 
 into the mosh pits of heavy metal, crowdsurfed through punk shows, headbanged 
@@ -35,7 +34,7 @@ fortune) crafting sounds, tweaking parameters, and creating music that
 resonates with my soul. While I've dabbled with guitar, bass, and harmonica, 
 synths in all their glorious shapes and sizes remain my true love.
 
-![A serene and peaceful sketched illustration](/images/combo_1.png)
+{{ <figure src="images/combo_1.png" alt="A serene and peaceful sketched illustration" /> }}
 
 As a person who appreciates the finer things in life – from the flowing lines 
 of calligraphy to the bold structures of architecture – I find beauty in the 
