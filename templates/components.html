@@ -50,7 +50,8 @@
 
 {#- Facet badges (Pro badge, linking to the taxonomy term). `kind` picks the tone. -#}
 {#- terms: the track's terms; or ranked: the catalogue's [{term, count}], shown with the count. -#}
-{% component facet_badges(terms, kind, limit=12, size="xs", ranked=[]) %}
+{% component facet_badges(terms, kind, l, limit=12, size="xs", ranked=[]) %}
+{%- set tc = load_data(path="static/data/catalog.json") -%}
 {%- set tones = {
   "genre": "bg-primary-100 text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300 dark:hover:bg-primary-800",
   "sentiment": "bg-pink-100 text-pink-800 hover:bg-pink-200 dark:bg-pink-900 dark:text-pink-300 dark:hover:bg-pink-800",
@@ -61,10 +62,10 @@
 {#- A facet added to the contract later gets the neutral tone until it is given its own. -#}
 {%- if kind in tones %}{% set tone = tones[kind] %}{% else %}{% set tone = "bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600" %}{% endif -%}
 {%- for term in terms[:limit] -%}
-<a href="{{ get_taxonomy_url(kind=kind, term=term) }}" class="inline-flex items-center rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{{ term }}</a>
+{%- set k = "term." ~ kind ~ "." ~ term %}<a href="{% if l.lang in tc.lang_terms and term not in tc.lang_terms[l.lang][kind] %}{{ get_taxonomy_url(kind=kind, term=term, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind=kind, term=term, lang=l.lang) }}{% endif %}" class="inline-flex items-center rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{% if k in l %}{{ l[k] }}{% else %}{{ term }}{% endif %}</a>
 {% endfor -%}
 {%- for r in ranked[:limit] -%}
-<a href="{{ get_taxonomy_url(kind=kind, term=r.term) }}" class="inline-flex items-center gap-1.5 rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{{ r.term }}<span class="opacity-70">{{ r.count }}</span></a>
+{%- set k = "term." ~ kind ~ "." ~ r.term %}<a href="{% if l.lang in tc.lang_terms and r.term not in tc.lang_terms[l.lang][kind] %}{{ get_taxonomy_url(kind=kind, term=r.term, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind=kind, term=r.term, lang=l.lang) }}{% endif %}" class="inline-flex items-center gap-1.5 rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{% if k in l %}{{ l[k] }}{% else %}{{ r.term }}{% endif %}<span class="opacity-70">{{ r.count }}</span></a>
 {% endfor -%}
 {% endcomponent facet_badges %}
 
@@ -72,7 +73,8 @@
     data-* attributes are what static/js/explorer.js filters and sorts on; they mirror the
     catalogue entry. -#}
 {% component track_card(t, l, heading="h3") %}
-{%- set href = get_url(path="@/" ~ t.source) -%}
+{%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
+{%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 <article class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
   data-track
@@ -81,7 +83,7 @@
   data-artist="{{ t.artist }}"
   data-date="{{ t.date }}"
   {%- for kind, terms in t.facets %} data-{{ kind }}="{{ terms | join(sep='|') }}"{% endfor %}
-  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ t.description | lower }}{% for kind, terms in t.facets %} {{ terms | join(sep=' ') }}{% endfor %}">
+  data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ desc | lower }}{% for kind, terms in t.facets %} {{ terms | join(sep=' ') }}{% endfor %}">
   <div class="relative">
     <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
       {%- if thumb %}
@@ -99,8 +101,8 @@
     <{{ heading }} class="mb-2 line-clamp-2 text-lg font-semibold leading-tight text-gray-900 dark:text-white">
       <a href="{{ href }}" class="hover:underline focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-800">{{ t.track }}</a>
     </{{ heading }}>
-    <p class="mb-3 line-clamp-2 text-sm text-gray-500 dark:text-gray-400">{{ t.description }}</p>
-    <div class="mt-auto flex flex-wrap gap-1.5">{{ <facet_badges terms={t.facets.genre} kind="genre" limit={3} /> }}</div>
+    <p class="mb-3 line-clamp-2 text-sm text-gray-500 dark:text-gray-400">{{ desc }}</p>
+    <div class="mt-auto flex flex-wrap gap-1.5">{{ <facet_badges terms={t.facets.genre} kind="genre" l={l} limit={3} /> }}</div>
     <p class="mt-3 flex items-center text-xs text-gray-500 dark:text-gray-400">{{ <icon name="calendar" cls="mr-1.5 h-3.5 w-3.5" /> }}<time datetime="{{ t.date }}">{{ t.date }}</time></p>
   </div>
 </article>
@@ -108,7 +110,8 @@
 
 {#- Compact track row (Pro list group item) for archives and lists: play, still, track, artist. -#}
 {% component track_row(t, l, note="") %}
-{%- set href = get_url(path="@/" ~ t.source) -%}
+{%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
+{%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 {%- set label = t.artist ~ " – " ~ t.track -%}
 <li class="flex items-center gap-2 py-3 sm:py-4" data-track data-source="{{ t.source }}">
@@ -282,8 +285,10 @@
     darkened, behind the breadcrumb, the genre it is published in, the artist and the title.
     The article card that follows overlaps it (-mt-24). -#}
 {% component track_hero(t, home, l, lead="") %}
+{%- set tc = load_data(path="static/data/catalog.json") -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 {%- set genre = t.facets.genre | first -%}
+{%- set gk = "term.genre." ~ genre -%}{%- if gk in l %}{% set glabel = l[gk] %}{% else %}{% set glabel = genre %}{% endif -%}
 <header class="relative isolate overflow-hidden bg-gray-900">
   {%- if thumb %}
   <img src="{{ thumb }}" alt="" data-thumb class="absolute inset-0 -z-10 h-full w-full scale-110 object-cover opacity-60 blur-sm" fetchpriority="high">
@@ -293,11 +298,11 @@
     <nav class="mb-8 flex" aria-label="Breadcrumb">
       <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 text-sm md:space-x-2">
         <li class="inline-flex items-center"><a href="{{ home }}" class="inline-flex items-center font-medium text-gray-300 hover:text-white">{{ <icon name="home" cls="mr-1.5 h-4 w-4" /> }}{{ <tx key="site.home" l={l} /> }}</a></li>
-        <li class="inline-flex items-center text-gray-400"><svg class="mx-1 h-3 w-3" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg><a href="{{ get_taxonomy_url(kind='genre', term=genre) }}" class="font-medium text-gray-300 hover:text-white">{{ genre }}</a></li>
+        <li class="inline-flex items-center text-gray-400"><svg class="mx-1 h-3 w-3" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg><a href="{% if l.lang in tc.lang_terms and genre not in tc.lang_terms[l.lang]['genre'] %}{{ get_taxonomy_url(kind='genre', term=genre, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind='genre', term=genre, lang=l.lang) }}{% endif %}" class="font-medium text-gray-300 hover:text-white">{{ glabel }}</a></li>
         <li class="inline-flex min-w-0 items-center text-gray-400" aria-current="page"><svg class="mx-1 h-3 w-3 shrink-0" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg><span class="max-w-[12rem] truncate sm:max-w-none">{{ t.track }}</span></li>
       </ol>
     </nav>
-    <span class="mb-3 block text-sm text-gray-300">{{ <tx key="track.published_in" l={l} /> }} <a href="{{ get_taxonomy_url(kind='genre', term=genre) }}" class="font-semibold text-white hover:underline">{{ genre }}</a> · <time datetime="{{ t.date }}">{{ t.date }}</time></span>
+    <span class="mb-3 block text-sm text-gray-300">{{ <tx key="track.published_in" l={l} /> }} <a href="{% if l.lang in tc.lang_terms and genre not in tc.lang_terms[l.lang]['genre'] %}{{ get_taxonomy_url(kind='genre', term=genre, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind='genre', term=genre, lang=l.lang) }}{% endif %}" class="font-semibold text-white hover:underline">{{ glabel }}</a> · <time datetime="{{ t.date }}">{{ t.date }}</time></span>
     <p class="mb-2 text-lg font-semibold text-primary-300 sm:text-xl">{{ t.artist }}</p>
     <h1 class="mb-4 max-w-4xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">{{ t.track }}</h1>
     {%- if lead %}<p class="max-w-3xl text-base font-normal text-gray-300 sm:text-lg">{{ lead }}</p>{% endif %}
@@ -362,7 +367,8 @@
 {#- Related track (Publisher "related articles, horizontal cards"): still with play, title,
     artist and the terms the two tracks share, which is why the catalogue relates them. -#}
 {% component related_card(t, shared, score, l) %}
-{%- set href = get_url(path="@/" ~ t.source) -%}
+{%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
+{%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 {%- set label = t.artist ~ " – " ~ t.track -%}
 <article class="flex flex-col gap-4 sm:flex-row" data-track data-source="{{ t.source }}">
@@ -432,7 +438,8 @@
 
 {#- Featured track (Publisher "featured post"): the newest review with a picture, large. -#}
 {% component featured_track(t, l) %}
-{%- set href = get_url(path="@/" ~ t.source) -%}
+{%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
+{%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
 {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 <section aria-labelledby="featured-title" class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" data-playlist id="featured" data-featured="{{ t.source }}">
   <div class="grid lg:grid-cols-2" data-track data-source="{{ t.source }}">
@@ -446,8 +453,8 @@
       <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><time datetime="{{ t.date }}">{{ t.date }}</time> · {{ <tx key="home.words" l={l} vars={ {"n": t.words} } /> }}</p>
       <p class="mb-1 text-lg font-semibold text-primary-700 dark:text-primary-400">{{ t.artist }}</p>
       <h2 id="featured-title" class="mb-4 text-2xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-3xl dark:text-white"><a href="{{ href }}" class="hover:underline">{{ t.track }}</a></h2>
-      <p class="mb-5 text-base text-gray-500 dark:text-gray-400">{{ t.description }}</p>
-      <div class="mb-6 flex flex-wrap gap-2">{{ <facet_badges terms={t.facets.genre} kind="genre" limit={3} size="sm" /> }}{{ <facet_badges terms={t.facets.sentiment} kind="sentiment" limit={2} size="sm" /> }}</div>
+      <p class="mb-5 text-base text-gray-500 dark:text-gray-400">{{ desc }}</p>
+      <div class="mb-6 flex flex-wrap gap-2">{{ <facet_badges terms={t.facets.genre} kind="genre" l={l} limit={3} size="sm" /> }}{{ <facet_badges terms={t.facets.sentiment} kind="sentiment" l={l} limit={2} size="sm" /> }}</div>
       <div class="flex flex-wrap gap-3">
         {%- if t.youtube %}{{ <track_actions source={t.source} label={t.artist ~ " – " ~ t.track} l={l} variant="bar" /> }}{% endif %}
         <a href="{{ href }}" class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">{{ <tx key="home.read" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-5 w-5" /> }}</a>
@@ -461,30 +468,34 @@
     locale (static/js/i18n.js shows the current one), how many tracks demonstrate it. A concept
     no review uses yet has no page, so its card links nowhere. -#}
 {% component concept_card(c, l) %}
+{%- set tc = load_data(path="static/data/catalog.json") -%}
 {%- set n = c.tracks | length -%}
+{%- set ck = "term.concept." ~ c.term -%}{%- if ck in l %}{% set clabel = l[ck] %}{% else %}{% set clabel = c.term %}{% endif -%}
 <article class="flex h-full flex-col rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800" data-concept-card="{{ c.slug }}">
   <div class="mb-2 flex items-start justify-between gap-3">
-    <h3 class="text-base font-semibold text-gray-900 dark:text-white">{% if n > 0 %}<a href="{{ get_taxonomy_url(kind='concept', term=c.term) }}" class="hover:underline">{{ c.term }}</a>{% else %}{{ c.term }}{% endif %}</h3>
+    <h3 class="text-base font-semibold text-gray-900 dark:text-white">{% if n > 0 %}<a href="{% if l.lang in tc.lang_terms and c.term not in tc.lang_terms[l.lang]['concept'] %}{{ get_taxonomy_url(kind='concept', term=c.term, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind='concept', term=c.term, lang=l.lang) }}{% endif %}" class="hover:underline">{{ clabel }}</a>{% else %}{{ clabel }}{% endif %}</h3>
     <span class="shrink-0 rounded-full bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">{{ <tx key="concept.tracks" l={l} vars={ {"n": n} } /> }}</span>
   </div>
-  {{ <localised texts={c.definition} cls="text-sm text-gray-600 dark:text-gray-300" /> }}
+  {{ <localised texts={c.definition} lang={l.lang} cls="text-sm text-gray-600 dark:text-gray-300" /> }}
 </article>
 {% endcomponent concept_card %}
 
-{#- Localised data: one text per locale, the default shown until static/js/i18n.js picks the
-    reader's. texts is {code: text}. -#}
-{% component localised(texts, cls="", default="en") %}
-<p class="{{ cls }}" data-locale-group>{% for code, text in texts %}<span data-locale-text="{{ code }}" lang="{{ code }}"{% if code != default %} hidden{% endif %}>{{ text }}</span>{% endfor %}</p>
+{#- Localised data (a concept's definition): the text of the page's language, the default's when
+    it has none. texts is {code: text}; every page is in one language (ADR 0006). -#}
+{% component localised(texts, lang="en", cls="", default="en") %}
+{%- if lang in texts %}{% set text = texts[lang] %}{% set code = lang %}{% else %}{% set text = texts[default] %}{% set code = default %}{% endif -%}
+<p class="{{ cls }}" lang="{{ code }}">{{ text }}</p>
 {% endcomponent localised %}
 
 {#- The didactic layer of a review (ADR 0004), from its front matter: the level, what the reader
     learns, and a timed listening guide whose times seek the bottom-bar player (data-seek,
     static/js/player.js; without a video the times are plain text). -#}
-{% component learning_guide(source, learning, playable, l) %}
+{% component learning_guide(source, learning, playable, l, level="") %}
+{%- if not level %}{% set level = learning.level %}{% endif -%}
 <section aria-labelledby="learn-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:p-8 dark:border-gray-700 dark:bg-gray-800">
   <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
     <h2 id="learn-title" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ <tx key="learn.title" l={l} /> }}</h2>
-    <span class="rounded-md bg-primary-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-primary-800 dark:bg-primary-900 dark:text-primary-300" data-i18n="learn.level.{{ learning.level }}">{{ l["learn.level." ~ learning.level] }}</span>
+    <span class="rounded-md bg-primary-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-primary-800 dark:bg-primary-900 dark:text-primary-300" data-i18n="learn.level.{{ level }}">{{ l["learn.level." ~ level] }}</span>
   </div>
   <div class="grid gap-6 lg:grid-cols-2">
     <div>
@@ -539,7 +550,8 @@
 {#- Curated links to other reviews (extra.connections), each with why; c is the catalogue
     track, why the reason. -#}
 {% component connection_card(t, why, l) %}
-{%- set href = get_url(path="@/" ~ t.source) -%}
+{%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
+{%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
 <a href="{{ href }}" class="flex gap-3 rounded-lg border border-gray-200 bg-white p-3 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" data-track data-source="{{ t.source }}">
   {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif %}
   {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="96" height="54" class="h-14 w-24 shrink-0 rounded object-cover">{% else %}<span class="flex h-14 w-24 shrink-0 items-center justify-center rounded bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" /> }}</span>{% endif %}
@@ -550,7 +562,7 @@
 {#- A yearbook on the list and the landing page: the year, its counts, a mosaic of its first
     reviewed tracks' stills. b is an entry of catalog.yearbooks. -#}
 {% component yearbook_card(b, catalog, l) %}
-<a href="{{ get_url(path='@/yearbook/' ~ b.year ~ '.md') }}" class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800" data-yearbook="{{ b.year }}">
+<a href="{{ get_url(path='@/yearbook/' ~ b.year ~ '.md', lang=l.lang) }}" class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800" data-yearbook="{{ b.year }}">
   <div class="grid aspect-[2/1] grid-cols-4 gap-0.5 bg-gray-100 dark:bg-gray-700">
     {%- set_global shown = 0 %}
     {%- for i in b.tracks %}{% if shown < 8 and i.source and i.source in catalog.lookup %}{% set t = catalog.tracks[catalog.lookup[i.source]] %}{% if t.thumbnail %}{% set_global shown = shown + 1 %}{% if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="160" height="90" class="h-full w-full object-cover">{% endif %}{% endif %}{% endfor %}
@@ -566,28 +578,40 @@
     pages; one outside the catalogue (a draft) is skipped. -#}
 {% component term_grid(pages, catalog, l, heading="h2") %}
 <div id="term-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-  {%- for p in pages %}{% if p.relative_path in catalog.lookup %}{{ <track_card t={catalog.tracks[catalog.lookup[p.relative_path]]} l={l} heading={heading} /> }}{% endif %}{% endfor %}
+  {%- for p in pages %}{% set src = p.relative_path | replace(from="." ~ l.lang ~ ".md", to=".md") %}{% if src in catalog.lookup %}{{ <track_card t={catalog.tracks[catalog.lookup[src]]} l={l} heading={heading} /> }}{% endif %}{% endfor %}
 </div>
 {% endcomponent term_grid %}
 
 {#- In a review: {{ <concept_link name="sidechain compression" /> }} links the concept's page with
     its definition as the tooltip; text= changes the link text. The term must also be in the
     review's taxonomies.concept (scripts/catalog.py refuses it otherwise), so the page exists. -#}
-{% component concept_link(name, text="") %}
+{% component concept_link(name, text="", lang="") %}
 {%- set c = load_data(path="static/data/catalog.json") -%}
+{%- set bundle = load_data(path="static/data/i18n.json") -%}
+{#- A component rendered in content sees nothing of its page, so a translation names its language:
+    {{ <concept_link name="..." lang="cs" /> }} (scripts/translate.py writes it, the contract
+    requires it; ADR 0006). -#}
+{%- if lang %}{% set code = lang %}{% else %}{% set code = bundle.default %}{% endif -%}
+{#- The concept's page in the page's language, or the default language's while no review in this
+    language names it yet (catalog.lang_terms). -#}
+{%- if code == bundle.default or code not in c.lang_terms or name not in c.lang_terms[code].concept %}{% set prefix = "" %}{% else %}{% set prefix = code ~ "/" %}{% endif -%}
 {%- set slug = name | slugify -%}
 {%- set_global found = "" -%}
-{%- for x in c.concepts %}{% if x.slug == slug %}{% set_global found = x.definition.en %}{% endif %}{% endfor -%}
+{%- for x in c.concepts %}{% if x.slug == slug %}{% if code in x.definition %}{% set_global found = x.definition[code] %}{% else %}{% set_global found = x.definition.en %}{% endif %}{% endif %}{% endfor -%}
+{%- set key = "term.concept." ~ name -%}
+{%- if key in bundle.locales[code].strings %}{% set label = bundle.locales[code].strings[key] %}{% else %}{% set label = name %}{% endif -%}
 {#- get_taxonomy_url is not available while Zola renders an article's content: the term URL by
-    convention, /concept/<slug>/, which scripts/check-built.py proves resolves. -#}
-<a href="{{ get_url(path='concept/' ~ slug, trailing_slash=true) }}" class="concept-link font-medium text-primary-700 underline decoration-dotted underline-offset-4 hover:decoration-solid dark:text-primary-400" data-concept="{{ slug }}" title="{{ found }}">{% if text %}{{ text }}{% else %}{{ name }}{% endif %}</a>
+    convention, /<lang>/concept/<slug>/, which scripts/check-built.py proves resolves. -#}
+<a href="{{ get_url(path=prefix ~ 'concept/' ~ slug, trailing_slash=true) }}" class="concept-link font-medium text-primary-700 underline decoration-dotted underline-offset-4 hover:decoration-solid dark:text-primary-400" data-concept="{{ slug }}" title="{{ found }}">{% if text %}{{ text }}{% else %}{{ label }}{% endif %}</a>
 {%- endcomponent concept_link %}
 
 {#- In a review: {{ <track_link source="daft-punk-around-the-world.md" /> }} links another review,
-    its text derived from the catalogue ("Artist – Track"); text= changes it. scripts/catalog.py
-    refuses a source that names no review. -#}
-{% component track_link(source, text="") %}
+    its text derived from the catalogue ("Artist – Track"); text= changes it. The link goes to the
+    review in the page's language when it has one. scripts/catalog.py refuses a source that names
+    no review. -#}
+{% component track_link(source, text="", lang="") %}
 {%- set c = load_data(path="static/data/catalog.json") -%}
-{%- if source in c.lookup %}{% set t = c.tracks[c.lookup[source]] %}{% set label = t.artist ~ " – " ~ t.track %}{% else %}{% set label = source %}{% endif -%}
-<a href="{{ get_url(path='@/' ~ source) }}" class="font-medium text-primary-700 hover:underline dark:text-primary-400" data-track-link="{{ source }}">{% if text %}{{ text }}{% else %}{{ label }}{% endif %}</a>
+{%- if lang %}{% set code = lang %}{% else %}{% set code = "en" %}{% endif -%}
+{%- if source in c.lookup %}{% set t = c.tracks[c.lookup[source]] %}{% set label = t.artist ~ " – " ~ t.track %}{% if code in t.langs %}{% set href = get_url(path='@/' ~ source, lang=code) %}{% else %}{% set href = get_url(path='@/' ~ source, lang=t.langs | first) %}{% endif %}{% else %}{% set label = source %}{% set href = get_url(path='@/' ~ source, lang=c.languages | first) %}{% endif -%}
+<a href="{{ href }}" class="font-medium text-primary-700 hover:underline dark:text-primary-400" data-track-link="{{ source }}">{% if text %}{{ text }}{% else %}{{ label }}{% endif %}</a>
 {%- endcomponent track_link %}

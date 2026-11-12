@@ -3,34 +3,46 @@
     static/data/catalog.json (scripts/catalog.py) or the front matter. -#}
 {%- set_global catalog = load_data(path="static/data/catalog.json") -%}
 {%- set_global vendor = load_data(path="static/data/vendor.json") -%}
-{#- Interface strings of the default locale (data/i18n/, scripts/i18n.py); static/js/i18n.js
-    switches the page to another locale without a reload. -#}
-{%- set_global l = load_data(path="data/i18n/" ~ config.default_language ~ ".toml") -%}
+{#- The page's language (ADR 0006): English at the root, every other under /<lang>/. Its interface
+    strings, the term labels and "lang" come from the derived bundle (scripts/i18n.py). -#}
+{%- set_global i18n_bundle = load_data(path="static/data/i18n.json") -%}
+{%- set_global l = i18n_bundle.locales[lang].strings -%}
+{%- if lang == config.default_language %}{% set_global lp = "" %}{% else %}{% set_global lp = lang ~ "/" %}{% endif -%}
 {%- if page is defined -%}{%- set_global ctx = page -%}
 {%- elif section is defined -%}{%- set_global ctx = section -%}
 {#- Every page gets a title and a description derived from what it shows (data/i18n/ seo.*). -#}
-{%- elif term is defined -%}{%- set_global ctx = {"title": term.name ~ " · " ~ l["tax.one." ~ taxonomy.name], "description": l["seo.term"] | replace(from="{n}", to=term.page_count ~ "") | replace(from="{term}", to=term.name) | replace(from="{kind}", to=l["tax.one." ~ taxonomy.name] | lower), "permalink": term.permalink} -%}
-{%- elif taxonomy is defined -%}{%- set_global ctx = {"title": l["tax.name." ~ taxonomy.name], "description": l["seo.taxonomy"] | replace(from="{n}", to=terms | length ~ "") | replace(from="{kind}", to=l["tax.name." ~ taxonomy.name] | lower), "permalink": config.base_url ~ "/" ~ taxonomy.name ~ "/"} -%}
+{%- elif term is defined -%}{%- set tkey = "term." ~ taxonomy.name ~ "." ~ term.name -%}{%- if tkey in l %}{% set tlabel = l[tkey] %}{% else %}{% set tlabel = term.name %}{% endif -%}
+{%- set_global ctx = {"title": tlabel ~ " · " ~ l["tax.one." ~ taxonomy.name], "description": l["seo.term"] | replace(from="{n}", to=term.page_count ~ "") | replace(from="{term}", to=tlabel) | replace(from="{kind}", to=l["tax.one." ~ taxonomy.name] | lower), "permalink": term.permalink} -%}
+{%- elif taxonomy is defined -%}{%- set_global ctx = {"title": l["tax.name." ~ taxonomy.name], "description": l["seo.taxonomy"] | replace(from="{n}", to=terms | length ~ "") | replace(from="{kind}", to=l["tax.name." ~ taxonomy.name] | lower), "permalink": config.base_url ~ "/" ~ lp ~ taxonomy.name ~ "/"} -%}
 {%- else -%}{%- set_global ctx = {"title": l["404.title"], "description": l["404.text"], "permalink": config.base_url ~ "/404.html"} -%}
 {%- endif -%}
 {%- if ctx.description %}{% set_global description = ctx.description %}{% else %}{% set_global description = config.description %}{% endif -%}
 {%- if current_path is defined -%}{%- set_global cur = current_path -%}{%- else -%}{%- set_global cur = "/404/" -%}{%- endif -%}
+{%- set_global home = cur == "/" ~ lp -%}
+{#- The path of this page without its language prefix: a taxonomy page has no translations of its
+    own, so its counterpart is the same path under the other language's prefix. -#}
+{%- set_global rest = ("~" ~ cur) | replace(from="~/" ~ lp, to="") -%}
 {#- The home page is the one most shared: its title and description are the pitch (seo.home_*),
     filled with the catalogue's counts. -#}
 {%- set_global share_title = ctx.title | default(value=config.title) -%}
-{%- if cur == "/" -%}
+{%- if home -%}
 {%- set_global share_title = config.title ~ " · " ~ l["seo.home_title"] -%}
 {%- set_global description = l["seo.home_description"] | replace(from="{tracks}", to=catalog.stats.tracks ~ "") | replace(from="{artists}", to=catalog.stats.artists ~ "") -%}
 {%- endif -%}
-{%- set_global i18n_bundle = load_data(path="static/data/i18n.json") -%}
 {%- set_global track = false -%}
-{%- if page is defined and page.relative_path in catalog.lookup -%}{%- set_global track = catalog.tracks[catalog.lookup[page.relative_path]] -%}{%- endif -%}
+{#- A review's facts live in its English page; its translation holds only language (ADR 0006). -#}
+{%- set_global facts = false -%}
+{%- if page is defined -%}
+{%- set_global source = page.relative_path | replace(from="." ~ lang ~ ".md", to=".md") -%}
+{%- if source in catalog.lookup -%}{%- set_global track = catalog.tracks[catalog.lookup[source]] -%}{%- endif -%}
+{%- if lang == config.default_language %}{% set_global facts = page %}{% else %}{% set_global facts = get_page(path=source, lang=config.default_language) %}{% endif -%}
+{%- endif -%}
 {#- The social card of this page, rendered by scripts/og.cjs at build time under the same key:
     the page path slugified, "home" for the root. -#}
 {%- set og_key = cur | slugify -%}{%- if og_key == "" %}{% set og_key = "home" %}{% endif -%}
 {%- set og_image = get_url(path="og/" ~ og_key ~ ".png") -%}
 <!doctype html>
-<html lang="{{ config.default_language }}" class="no-js">
+<html lang="{{ lang }}" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,21 +53,40 @@
 <meta name="theme-color" content="#6d28d9">
 <meta name="generator" content="Zola">
 <link rel="canonical" href="{{ ctx.permalink }}">
-<link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+{%- if page is defined or section is defined %}
+{%- for tl in ctx.translations %}
+<link rel="alternate" hreflang="{{ tl.lang }}" href="{{ tl.permalink }}" data-locale-href="{{ tl.lang }}">
+{%- if tl.lang == config.default_language %}
+<link rel="alternate" hreflang="x-default" href="{{ tl.permalink }}">
+{%- endif %}
+{%- endfor %}
+{%- elif taxonomy is defined %}
+{#- A taxonomy page: its counterpart is the same term (or list) under the other language's prefix,
+    named only when that language has it (catalog.lang_terms), on its first page. -#}
+{%- set first = rest | split(pat="page/") | first %}
+{%- for code, loc in i18n_bundle.locales %}
+{%- if code == config.default_language %}{% set pre = "" %}{% set has = true %}{% else %}{% set pre = code ~ "/" %}
+{%- if term is defined %}{% set has = code in catalog.lang_terms and term.name in catalog.lang_terms[code][taxonomy.name] %}{% else %}{% set has = code in catalog.lang_terms and catalog.lang_terms[code][taxonomy.name] | length > 0 %}{% endif %}{% endif %}
+{%- if has %}
+<link rel="alternate" hreflang="{{ code }}" href="{{ config.base_url }}/{{ pre }}{{ first }}" data-locale-href="{{ code }}">
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+<link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path=lp ~ 'atom.xml', trailing_slash=false) }}">
 <meta property="og:type" content="{% if track %}music.song{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ config.title }}">
 <meta property="og:title" content="{{ share_title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ ctx.permalink }}">
 <meta property="og:locale" content="{{ l["seo.locale"] }}">
-{%- for code, loc in i18n_bundle.locales %}{% if code != config.default_language %}
+{%- for code, loc in i18n_bundle.locales %}{% if code != lang %}
 <meta property="og:locale:alternate" content="{{ loc.strings["seo.locale"] }}">
 {%- endif %}{% endfor %}
 <meta property="og:image" content="{{ og_image }}">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-{%- if track %}{% set image_alt = track.artist ~ " – " ~ track.track ~ " · " ~ config.title %}{% elif cur == "/" %}{% set image_alt = share_title %}{% else %}{% set image_alt = ctx.title | default(value=config.title) ~ " · " ~ config.title %}{% endif %}
+{%- if track %}{% set image_alt = track.artist ~ " – " ~ track.track ~ " · " ~ config.title %}{% elif home %}{% set image_alt = share_title %}{% else %}{% set image_alt = ctx.title | default(value=config.title) ~ " · " ~ config.title %}{% endif %}
 <meta property="og:image:secure_url" content="{{ og_image }}">
 <meta property="og:image:alt" content="{{ image_alt }}">
 <meta name="twitter:card" content="summary_large_image">
@@ -70,7 +101,7 @@
 {%- for soc in config.extra.social %}
 <link rel="me" href="{{ soc.url }}">
 {%- endfor %}
-{%- if cur == "/" %}
+{%- if home %}
 {#- The site itself (schema.org WebSite): name, pitch, languages, author and the explorer's text
     search (?q=), so search engines and link previews know what the playground is. -#}
 {%- set site_ld = {
@@ -78,13 +109,13 @@
   "@type": "WebSite",
   "name": config.title,
   "alternateName": l["seo.home_title"],
-  "url": config.base_url ~ "/",
+  "url": config.base_url ~ "/" ~ lp,
   "description": description,
   "image": og_image,
-  "inLanguage": i18n_bundle.locales | keys,
-  "author": {"@type": "Person", "name": config.extra.author, "url": get_url(path="@/pages/author.md")},
+  "inLanguage": lang,
+  "author": {"@type": "Person", "name": config.extra.author, "url": get_url(path="@/pages/author.md", lang=lang)},
   "license": config.extra.license_url,
-  "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": config.base_url ~ "/?q={search_term_string}"}, "query-input": "required name=search_term_string"},
+  "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": config.base_url ~ "/" ~ lp ~ "?q={search_term_string}"}, "query-input": "required name=search_term_string"},
 } %}
 <script type="application/ld+json">
 {{ site_ld | json_encode | replace(from="<", to="\\u003c") | safe }}
@@ -93,7 +124,8 @@
 {%- if track %}
 <script type="application/ld+json">
 {%- set ld = load_data(path="data/derived/jsonld.json") %}
-{{ ld[track.source] | json_encode | replace(from="<", to="\\u003c") | safe }}
+{%- if track.source in ld[lang] %}{% set entry = ld[lang][track.source] %}{% else %}{% set entry = ld[config.default_language][track.source] %}{% endif %}
+{{ entry | json_encode | replace(from="<", to="\\u003c") | safe }}
 </script>
 {%- endif %}
 <link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
@@ -112,7 +144,7 @@
 </script>
 {% block head_extra %}{% endblock head_extra %}
 </head>
-<body class="bg-gray-50 antialiased dark:bg-gray-900" data-base-url="{{ config.base_url }}" data-catalog="{{ get_url(path='data/catalog.json', cachebust=true) }}" data-search="{{ get_url(path='data/search.json', cachebust=true) }}" data-echarts="{{ get_url(path=vendor.libs.echarts.js) }}" data-i18n-bundle="{{ get_url(path='data/i18n.json', cachebust=true) }}">
+<body class="bg-gray-50 antialiased dark:bg-gray-900" data-base-url="{{ config.base_url }}" data-catalog="{{ get_url(path='data/catalog.json', cachebust=true) }}" data-search="{% if lang == config.default_language %}{{ get_url(path='data/search.json', cachebust=true) }}{% else %}{{ get_url(path='data/search.' ~ lang ~ '.json', cachebust=true) }}{% endif %}" data-echarts="{{ get_url(path=vendor.libs.echarts.js) }}" data-i18n-bundle="{{ get_url(path='data/i18n.json', cachebust=true) }}">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-gray-900 focus:shadow" data-i18n="site.skip">{{ l["site.skip"] }}</a>
 {% include "partials/nav.html" %}
 <div id="shell" class="flex overflow-hidden bg-gray-50 pt-16 dark:bg-gray-900">

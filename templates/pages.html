@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {%- block content %}
 {%- if page.description %}{% set lead = page.description %}{% else %}{% set lead = "" %}{% endif %}
-{{ <page_header title={page.title} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [page.title, "", ""]]} lead={lead} /> }}
+{{ <page_header title={page.title} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [page.title, "", ""]]} lead={lead} /> }}
 {%- set body = page.content %}
 <div class="px-4 pt-6 xl:px-8">
   <article class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:p-8 dark:border-gray-700 dark:bg-gray-800">

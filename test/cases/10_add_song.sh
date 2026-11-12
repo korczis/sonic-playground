@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # majordomus-skill: add-song
+# majordomus-skill: translate
 # The add-song procedure end to end, offline: resolve a name, refuse a duplicate, write a skeleton
-# into a scratch copy of content/, prove the contract refuses it while TODO(write) remains and
-# accepts it once written, and that the catalogue then integrates it with related tracks.
+# into a scratch copy of content/, prove the contract refuses it while TODO(write) remains or its
+# Czech translation is missing or untranslated, and accepts it once written and translated, and that the catalogue then integrates it with related tracks.
 set -euo pipefail
 root=$(cd "$(dirname "$0")/../.." && pwd)
 work=$(mktemp -d "${TMPDIR:-/tmp}/add-song.XXXXXX")
@@ -59,6 +60,31 @@ body += "\nModerat let A New Error grow from a single pulse. " + " ".join(f"deta
 open(path, "w", encoding="utf-8").write("+++" + fm + "+++" + body)
 EOF2
 python3 scripts/track.py check "$file" >/dev/null
+# Every page is bilingual (ADR 0006): the English review alone is refused, its scaffold too, its
+# translation is accepted.
+if python3 scripts/catalog.py >/dev/null 2>&1; then
+  echo "FAIL: a review without its Czech translation passed the contract"; exit 1
+fi
+python3 scripts/translate.py scaffold "$file" >/dev/null
+cs=content/moderat-a-new-error.cs.md
+if python3 scripts/translate.py check "$cs" >/dev/null 2>&1; then
+  echo "FAIL: an untranslated scaffold passed the contract"; exit 1
+fi
+python3 - "$cs" <<'EOF3'
+import re, sys
+path = sys.argv[1]
+text = open(path, encoding="utf-8").read()
+_, fm, body = text.split("+++", 2)
+n = iter(range(1, 1000))
+fm = re.sub(r'TODO\(translate\) [^"]*', lambda m: f"Česká věta číslo {next(n)}, která vysvětluje, jak skladba plyne.", fm)
+lines = []
+for line in body.replace("TODO(translate)", "").splitlines():
+    if line.strip() and not line.startswith(("#", "{{")):
+        line = "Skladba Moderat A New Error roste z jediného pulzu, který se nemění. " + "příklad " * (len(line.split()) // 1)
+    lines.append(line)
+open(path, "w", encoding="utf-8").write("+++" + fm + "+++" + "\n".join(lines) + "\n")
+EOF3
+python3 scripts/translate.py check "$cs" >/dev/null
 python3 scripts/catalog.py >/dev/null
 python3 - <<'EOF'
 import json
@@ -67,6 +93,7 @@ t = c["tracks"][c["lookup"]["moderat-a-new-error.md"]]
 assert (t["artist"], t["track"]) == ("Moderat", "A New Error"), t
 assert t["youtube"] == "dQw4w9WgXcQ"
 assert t["related"], "no related tracks"
-print("ok   add-song: skeleton refused until written and taught, then integrated with",
+assert t["langs"] == ["en", "cs"] and t["i18n"]["cs"]["path"] == "cs/moderat-a-new-error/", t["langs"]
+print("ok   add-song: skeleton refused until written, taught and translated, then integrated in both languages with",
       len(t["related"]), "related tracks")
 EOF

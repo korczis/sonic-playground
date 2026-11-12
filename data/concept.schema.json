@@ -12,10 +12,14 @@
   "wikipedia": {"type": "string", "pattern": "^https://[a-z]{2}\\.wikipedia\\.org/wiki/"},
   "see_also": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 2}},
   "en": {"$ref": "#/$defs/text"},
-  "cs": {"$ref": "#/$defs/text"}
+  "cs": {"$ref": "#/$defs/text_cs"}
  },
  "$defs": {
   "text": {"type": "object", "additionalProperties": false, "required": ["definition"], "properties": {
+   "definition": {"type": "string", "minLength": 60, "description": "Two or three sentences a curious listener understands without a dictionary."}
+  }},
+  "text_cs": {"type": "object", "additionalProperties": false, "required": ["term", "definition"], "properties": {
+   "term": {"type": "string", "minLength": 2, "description": "The concept's Czech name: its label on every Czech page (ADR 0006)."},
    "definition": {"type": "string", "minLength": 60, "description": "Two or three sentences a curious listener understands without a dictionary."}
   }}
  }

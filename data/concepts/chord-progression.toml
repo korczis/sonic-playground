@@ -7,4 +7,5 @@ see_also = ["minor key", "pedal point"]
 definition = "The order in which chords follow each other. A few progressions recur across thousands of songs; the choice shapes whether music feels resolved, yearning or restless."
 
 [cs]
+term = "akordový postup"
 definition = "Pořadí, v jakém po sobě následují akordy. Několik postupů se opakuje v tisících písní; jejich volba určuje, zda hudba působí uzavřeně, toužebně nebo neklidně."

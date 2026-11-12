@@ -11,7 +11,7 @@
   <div class="relative flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white pt-0 dark:border-gray-700 dark:bg-gray-800">
     <nav class="flex flex-1 flex-col overflow-y-auto pb-6 pt-4" aria-label="Site">
       <div class="flex-1 space-y-1 px-3">
-        <form class="mb-2 lg:hidden" role="search" action="{{ get_url(path='@/_index.md') }}" method="get">
+        <form class="mb-2 lg:hidden" role="search" action="{{ get_url(path='@/_index.md', lang=lang) }}" method="get">
           <label for="mobile-search" class="sr-only" data-i18n="nav.search_label">{{ l["nav.search_label"] }}</label>
           <div class="relative">
             {{ <input_icon name="search" /> }}
@@ -21,7 +21,7 @@
         <ul class="space-y-1">
           {%- set on = cur == "/" %}
           <li>
-            <a href="{{ get_url(path='@/_index.md') }}" class="{{ item }}{% if on %}{{ active }}{% endif %}"{% if on %} aria-current="page"{% endif %}>
+            <a href="{{ get_url(path='@/_index.md', lang=lang) }}" class="{{ item }}{% if on %}{{ active }}{% endif %}"{% if on %} aria-current="page"{% endif %}>
               {{ <icon name="music" cls={icon_cls} /> }}<span class="ml-3 flex-1" data-i18n="side.explore">{{ l["side.explore"] }}</span><span class="{{ badge }}">{{ catalog.stats.tracks }}</span>
             </a>
           </li>
@@ -30,7 +30,7 @@
           {%- if m.requires %}{% set shown = catalog[m.requires] | length > 0 %}{% else %}{% set shown = true %}{% endif %}
           {%- if shown %}
           {#- An @/ path is a page; any other is a section, which keeps its trailing slash. -#}
-          {%- if "@/" in m.path %}{% set url = get_url(path=m.path) %}{% else %}{% set url = get_url(path=m.path, trailing_slash=true) %}{% endif %}
+          {%- if "@/" in m.path %}{% set url = get_url(path=m.path, lang=lang) %}{% else %}{% set url = get_url(path=lp ~ m.path, trailing_slash=true) %}{% endif %}
           {%- set on = url == ctx.permalink %}
           <li>
             <a href="{{ url }}" class="{{ item }}{% if on %}{{ active }}{% endif %}"{% if on %} aria-current="page"{% endif %}>
@@ -44,9 +44,9 @@
         <p class="{{ heading }}" data-i18n="side.{{ kind }}">{{ l["side." ~ kind] }}</p>
         <ul class="space-y-0.5">
           {%- for f in catalog.facets[kind][:8] %}
-          <li><a href="{{ get_taxonomy_url(kind=kind, term=f.term) }}" class="{{ sub }}"><span class="min-w-0 flex-1 truncate">{{ f.term }}</span><span class="{{ badge }}">{{ f.count }}</span></a></li>
+          <li><a href="{% if l.lang in catalog.lang_terms and f.term not in catalog.lang_terms[l.lang][kind] %}{{ get_taxonomy_url(kind=kind, term=f.term, lang=catalog.languages | first) }}{% else %}{{ get_taxonomy_url(kind=kind, term=f.term, lang=l.lang) }}{% endif %}" class="{{ sub }}">{% set k = "term." ~ kind ~ "." ~ f.term %}<span class="min-w-0 flex-1 truncate">{% if k in l %}{{ l[k] }}{% else %}{{ f.term }}{% endif %}</span><span class="{{ badge }}">{{ f.count }}</span></a></li>
           {%- endfor %}
-          <li><a href="{{ get_url(path=kind, trailing_slash=true) }}" class="{{ sub }} font-medium text-primary-700 dark:text-primary-400" data-i18n="side.all.{{ kind }}" data-i18n-vars="{{ {"n": catalog.facets[kind] | length} | json_encode }}">{{ l["side.all." ~ kind] | replace(from="{n}", to=catalog.facets[kind] | length ~ "") }}</a></li>
+          <li><a href="{{ get_url(path=lp ~ kind, trailing_slash=true) }}" class="{{ sub }} font-medium text-primary-700 dark:text-primary-400" data-i18n="side.all.{{ kind }}" data-i18n-vars="{{ {"n": catalog.facets[kind] | length} | json_encode }}">{{ l["side.all." ~ kind] | replace(from="{n}", to=catalog.facets[kind] | length ~ "") }}</a></li>
         </ul>
         {%- endfor %}
       </div>

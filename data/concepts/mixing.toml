@@ -7,4 +7,5 @@ see_also = ["compression", "reverb", "remastering"]
 definition = "The stage of making a record where all the recorded parts are balanced into one finished stereo track: their levels, placement, tone and effects. Mixing comes after recording and before mastering, and is often done by a specialist rather than by the producer."
 
 [cs]
+term = "mixáž"
 definition = "Fáze vzniku nahrávky, kdy se všechny nahrané stopy vyváží do jedné hotové stereofonní skladby: jejich hlasitost, umístění, barva i efekty. Mix následuje po nahrávání a předchází masteringu a často ho dělá specialista, ne sám producent."

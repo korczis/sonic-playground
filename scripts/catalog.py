@@ -33,6 +33,9 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import translation as tr  # noqa: E402  (the translation contract, ADR 0006)
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 STATIC = ROOT / "static"
@@ -52,6 +55,9 @@ LOCALES = sorted(p.stem for p in (ROOT / "data" / "i18n").glob("*.toml"))
 CATALOG_EXTRA = ("album", "publisher", "release_year", "video_duration", "country")
 JSONLD = ROOT / "data" / "derived" / "jsonld.json"
 CONFIG = tomllib.loads((ROOT / "config.toml").read_text(encoding="utf-8"))
+DEFAULT_LANG = CONFIG["default_language"]
+LANGUAGES = sorted(CONFIG.get("languages", {}))  # the languages besides the default (ADR 0006)
+TRANSLATION_SCHEMA = json.loads((ROOT / "data" / "translation.schema.json").read_text(encoding="utf-8"))
 LYRIC_RUN = 8
 CONTENT_LINK = re.compile(r'\{\{\s*<(concept|track)_link\s+(?:name|source)="([^"]+)"[^>]*/>\s*\}\}')
 GONE_VIDEOS = (json.loads(VIDEO_STATUS.read_text(encoding="utf-8"))["gone"]
@@ -62,6 +68,7 @@ FACET_WEIGHTS = RULES["facet_weights"]
 RELATED_LIMIT = RULES["related_limit"]
 PLACEHOLDER_HOSTS = tuple(RULES["placeholder_hosts"])
 UNFINISHED = RULES["unfinished_marker"]
+TRANSLATION = RULES["translation"]
 # Phrases that would fit any track say nothing about this one (rule educational-article).
 CLICHES = tuple(c.lower() for c in RULES["cliches"])
 SHARED_PARAGRAPH = RULES["shared_paragraph_chars"]
@@ -378,6 +385,97 @@ def load_concepts(errors: list[str]) -> dict[str, dict]:
 KNOWN_CONCEPTS: dict[str, dict] = {}
 
 
+def review_files() -> list[Path]:
+    """The reviews: every content/*.md but the section and the translations (<name>.<lang>.md)."""
+    return sorted(p for p in CONTENT.glob("*.md") if p.name != "_index.md" and not tr.translation_name(p.name))
+
+
+def load_translations(tracks: list[Track], errors: list[str]) -> dict[str, dict[str, dict]]:
+    """Per language, per review: what its translation says (title, description, path, words,
+    index), each checked against its English page (scripts/translation.py). A missing one is an
+    error once x-sonic.translation.required is true."""
+    out: dict[str, dict[str, dict]] = {lang: {} for lang in LANGUAGES}
+    by_source = {t.source: t for t in tracks}
+    for path in tr.files(CONTENT):
+        rel = path.relative_to(CONTENT).as_posix()
+        english, lang = tr.split_name(path.name)
+        english = (path.parent / english).relative_to(CONTENT).as_posix()
+        if lang not in LANGUAGES:
+            errors.append(f"{rel}: '{lang}' is no language of config.toml ([languages.{lang}])")
+            continue
+        if not (CONTENT / english).is_file():
+            errors.append(f"{rel}: translates {english}, which does not exist")
+            continue
+        if english not in by_source:
+            continue  # a page or a section: page_translations() checks it
+        t = by_source[english]
+        try:
+            raw, body = split_front_matter(path.read_text(encoding="utf-8"), rel)
+            meta = tomllib.loads(raw)
+        except (ValueError, tomllib.TOMLDecodeError) as exc:
+            errors.append(f"{rel}: {exc}")
+            continue
+        problems = validate(meta, TRANSLATION_SCHEMA) + tr.check(rel, meta, body, t.fingerprint, TRANSLATION)
+        errors += [f"{rel}: {p}" for p in problems]
+        out[lang][english] = {
+            "title": str(meta.get("title", "")).strip(), "description": str(meta.get("description", "")).strip(),
+            "path": f"{lang}/{t.path}", "words": len(re.findall(r"\w+", body)),
+            "index": " ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
+                                      if len(w) > 2})),
+        }
+    for lang in LANGUAGES:
+        missing = [t.source for t in tracks if t.source not in out[lang]]
+        if missing and TRANSLATION["required"]:
+            errors += [f"{s}: has no {lang} translation ({s[:-3]}.{lang}.md; python3 scripts/translate.py scaffold {s})"
+                       for s in missing]
+    return out
+
+
+def page_translations(errors: list[str]) -> dict[str, list[str]]:
+    """The pages and sections that are not reviews (_index.md, pages/*.md): each has its
+    translation beside it, current (translation.of), and identical to it but for its words
+    (title, description, body). Derived pages (yearbook/) are written in every language."""
+    present: dict[str, list[str]] = {lang: [] for lang in LANGUAGES}
+    reviews = {p.relative_to(CONTENT).as_posix() for p in review_files()}
+    for path in sorted(CONTENT.rglob("*.md")):
+        rel = path.relative_to(CONTENT).as_posix()
+        if tr.translation_name(path.name) or rel in reviews or rel.startswith("yearbook/"):
+            continue
+        raw, body = split_front_matter(path.read_text(encoding="utf-8"), rel)
+        meta = tomllib.loads(raw)
+        if meta.get("draft") is True:
+            continue
+        for lang in LANGUAGES:
+            other = path.with_name(path.name[:-3] + f".{lang}.md")
+            orel = other.relative_to(CONTENT).as_posix()
+            if not other.is_file():
+                if TRANSLATION["required"]:
+                    errors.append(f"{rel}: has no {lang} translation ({orel})")
+                continue
+            present[lang].append(rel)
+            oraw, obody = split_front_matter(other.read_text(encoding="utf-8"), orel)
+            ometa = tomllib.loads(oraw)
+            of = ((ometa.get("extra") or {}).get("translation") or {}).get("of", "")
+            if of != tr.prose_hash(meta, body):
+                errors.append(f"{orel}: translates English text {of or '(none)'} but {rel} is now "
+                              f"{tr.prose_hash(meta, body)}: update it, then python3 scripts/translate.py bless {orel}")
+            if meta.get("path") and ometa.get("path") != f"{lang}/{meta['path']}":
+                errors.append(f"{orel}: path must be \"{lang}/{meta['path']}\" (Zola does not prefix a custom path)")
+            def facts(m):
+                x = {k: v for k, v in m.items() if k not in ("title", "description", "extra", "path")}
+                x["extra"] = {k: v for k, v in (m.get("extra") or {}).items() if k != "translation"}
+                return x
+            if facts(ometa) != facts(meta):
+                errors.append(f"{orel}: front matter other than title and description differs from {rel}")
+            marker = TRANSLATION["untranslated_marker"]
+            for where, text in (("title", ometa.get("title", "")), ("description", ometa.get("description", "")), ("body", obody)):
+                if marker in str(text):
+                    errors.append(f"{orel}: {where} is not translated yet ({marker})")
+                elif where != "title" and not tr.czech_enough(str(text), TRANSLATION["czech_word_ratio"]):
+                    errors.append(f"{orel}: {where} does not read as Czech")
+    return present
+
+
 def review_exists(source: str) -> bool:
     """A reference to another review: in the content directory, or in the repository's own when
     an article is proven in isolation (scripts/track.py writes through a temporary directory)."""
@@ -407,6 +505,7 @@ class Track:
     index: str = ""
     video_gone: bool = False
     paragraphs: list = field(default_factory=list)  # the long ones, normalised: shared-text check
+    fingerprint: dict = field(default_factory=dict)  # what a translation keeps (scripts/translation.py)
 
 
 def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> Track | None:
@@ -548,6 +647,7 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
         youtube_id=youtube_id, thumbnail=thumbnail, thumbnail_local=local,
         words=body_words, extra=kept_extra, outline=headings(body),
         video_gone=video_gone, full_extra=extra, paragraphs=paragraphs,
+        fingerprint=tr.fingerprint(meta, body),
         index=" ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
                                if len(w) > 2})),
     )
@@ -651,7 +751,7 @@ def build(errors: list[str]) -> dict:
         errors.append(f"data/track.schema.json: {keyword} is not implemented by the validator")
     KNOWN_CONCEPTS.clear()
     KNOWN_CONCEPTS.update(load_concepts(errors))
-    files = sorted(p for p in CONTENT.glob("*.md") if p.name != "_index.md")
+    files = review_files()
     tracks = [t for t in (load_track(p, errors) for p in files) if t]
 
     seen: dict[str, str] = {}
@@ -662,6 +762,8 @@ def build(errors: list[str]) -> dict:
 
     tracks.sort(key=lambda t: (t.date, t.title), reverse=True)
     errors += uniqueness(tracks)
+    translated = load_translations(tracks, errors)
+    pages_translated = page_translations(errors)
     rel = related(tracks)
     books, member_of = yearbooks(tracks, errors)
     # One artist, one home country: the reviews of an artist must agree (Mount Sims was DE in some
@@ -706,7 +808,14 @@ def build(errors: list[str]) -> dict:
             **{f"{f}_terms": len(facet_counts[f]) for f in FACETS},
             "yearbooks": len(books),
             "recurring": sum(1 for m in member_of.values() if len(m) > 1),
+            "translations": {lang: {"reviews": len(translated[lang]), "pages": len(pages_translated[lang])}
+                             for lang in LANGUAGES},
         },
+        "languages": [DEFAULT_LANG] + LANGUAGES,
+        # The terms each language has a page for: those of its translated reviews. A link to a
+        # term the language has no page for yet goes to the default language's (ADR 0006).
+        "lang_terms": {lang: {f: sorted({term for t in tracks if t.source in translated[lang] for term in t.facets[f]})
+                              for f in FACETS} for lang in LANGUAGES},
         "outline": outline(tracks),
         "facet_names": list(FACETS),
         "concepts": concept_index(tracks),
@@ -722,7 +831,8 @@ def build(errors: list[str]) -> dict:
         "artists": ranked(artists),
         "lookup": {t.source: i for i, t in enumerate(tracks)},
         "_search": {t.source: t.index for t in tracks},
-        "_jsonld": jsonld(tracks),
+        "_search_i18n": {lang: {s: x["index"] for s, x in translated[lang].items()} for lang in LANGUAGES},
+        "_jsonld": jsonld(tracks, translated),
         "tracks": [
             {
                 "source": t.source, "path": t.path, "title": t.title, "artist": t.artist,
@@ -732,6 +842,9 @@ def build(errors: list[str]) -> dict:
                 "words": t.words, "extra": t.extra, "related": rel[t.source],
                 "video_gone": t.video_gone, "edu": edu_parts(t),
                 "yearbooks": member_of.get(t.source, []),
+                "langs": [DEFAULT_LANG] + [lang for lang in LANGUAGES if t.source in translated[lang]],
+                "i18n": {lang: {k: translated[lang][t.source][k] for k in ("title", "description", "path")}
+                         for lang in LANGUAGES if t.source in translated[lang]},
             }
             for t in tracks
         ],
@@ -784,7 +897,7 @@ def edu_parts(t: Track) -> list[str]:
             if (t.facets.get("concept") if p == "concept" else t.full_extra.get(p))]
 
 
-def jsonld(tracks: list[Track]) -> dict:
+def jsonld(tracks: list[Track], translated: dict[str, dict[str, dict]] | None = None) -> dict:
     """schema.org structured data per review: the recording (with its identifiers as sameAs) and
     the review as an Article that is also a LearningResource (what it teaches, its level, the
     sources it cites). Keyed by source; templates/base.html prints the entry of its page."""
@@ -829,7 +942,16 @@ def jsonld(tracks: list[Track]) -> dict:
                                     **({"publisher": s["publisher"]} if s.get("publisher") else {}),
                                     **({"datePublished": s["year"]} if s.get("year") else {})}
                                    for s in x["sources"]]
-        out[t.source] = {"@context": "https://schema.org", "@graph": [recording, article]}
+        out.setdefault(DEFAULT_LANG, {})[t.source] = {"@context": "https://schema.org", "@graph": [recording, article]}
+        for lang, by_source in (translated or {}).items():
+            if t.source in by_source:
+                x = by_source[t.source]
+                local = {**article, "@id": f"{base}/{x['path']}#review", "headline": x["title"],
+                         "description": x["description"], "url": f"{base}/{x['path']}", "inLanguage": lang,
+                         "wordCount": x["words"], "translationOfWork": {"@id": url + "#review"}}
+                if t.facets.get("concept"):
+                    local["teaches"] = [{**d, "url": f"{base}/{lang}/concept/{slugify(d['name'])}/"} for d in article["teaches"]]
+                out.setdefault(lang, {})[t.source] = {"@context": "https://schema.org", "@graph": [recording, local]}
     return out
 
 
@@ -852,6 +974,20 @@ def yearbook_pages(catalog: dict) -> dict[Path, str]:
             f'title = "{b["year"]}"\ntemplate = "yearbook.html"\n'
             f'description = "The owner\'s most played songs of {b["year"]}: {b["items"]} recordings, '
             f'{b["songs"]} with a review on Sonic Playground."\n\n[extra]\nyear = {b["year"]}\n+++\n')
+    # Every language gets the same pages in its own words (ADR 0006); the words are data
+    # (data/i18n/<lang>.toml: yearbook.page_title, yearbook.page_description).
+    for lang in LANGUAGES:
+        strings = tomllib.loads((ROOT / "data" / "i18n" / f"{lang}.toml").read_text(encoding="utf-8"))
+        pages[YEARBOOK_PAGES / f"_index.{lang}.md"] = (
+            "+++\n# Derived by scripts/catalog.py from data/backlog/ (kind = \"yearbook\"); do not edit.\n"
+            f'title = "{strings["yearbook.page_title"]}"\ntemplate = "yearbooks.html"\nsort_by = "title"\n+++\n')
+        for b in books:
+            text = strings["yearbook.page_description"].replace("{year}", str(b["year"])).replace(
+                "{items}", str(b["items"])).replace("{songs}", str(b["songs"]))
+            pages[YEARBOOK_PAGES / f"{b['year']}.{lang}.md"] = (
+                "+++\n# Derived by scripts/catalog.py from " + b["file"] + "; do not edit.\n"
+                f'title = "{b["year"]}"\ntemplate = "yearbook.html"\n'
+                f'description = "{text}"\n\n[extra]\nyear = {b["year"]}\n+++\n')
     return pages
 
 
@@ -860,11 +996,12 @@ def render(catalog: dict) -> str:
                       ensure_ascii=False, indent=1) + "\n"
 
 
-def render_search(catalog: dict) -> str:
+def render_search(catalog: dict, lang: str = "") -> str:
     """The review text index the explorer loads on the first query: per track, the distinct
     folded words of its review (static/data/search.json, sonic-search/v1)."""
+    index = catalog["_search_i18n"][lang] if lang else catalog["_search"]
     return json.dumps({"schema": "sonic-search/v1", "generated_by": "scripts/catalog.py",
-                       "tracks": catalog["_search"]}, ensure_ascii=False, indent=0) + "\n"
+                       "tracks": index}, ensure_ascii=False, indent=0) + "\n"
 
 
 def main() -> int:
@@ -878,6 +1015,7 @@ def main() -> int:
     pages = yearbook_pages(catalog)
     leftovers = [p for p in YEARBOOK_PAGES.glob("*.md") if p not in pages] if YEARBOOK_PAGES.exists() else []
     outputs = {**pages, OUTPUT: render(catalog), SEARCH: render_search(catalog),
+               **{SEARCH.with_name(f"search.{lang}.json"): render_search(catalog, lang) for lang in LANGUAGES},
                JSONLD: json.dumps(catalog["_jsonld"], ensure_ascii=False, indent=1, sort_keys=True) + "\n"}
     count = catalog["stats"]["tracks"]
     for e in errors:

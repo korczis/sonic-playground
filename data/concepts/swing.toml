@@ -7,4 +7,5 @@ see_also = ["groove", "quantization"]
 definition = "Playing pairs of equal notes unevenly, the first longer than the second. Drum machines and sequencers have a swing setting because a little lilt makes a programmed pattern feel played."
 
 [cs]
+term = "swing"
 definition = "Hraní dvojic stejných not nerovnoměrně, první delší než druhá. Bicí automaty a sekvencery mají nastavení swingu, protože mírné zhoupnutí dodá naprogramovanému vzorci lidský pocit."

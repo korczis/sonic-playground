@@ -7,4 +7,5 @@ see_also = ["sidechain compression"]
 definition = "Reducing the difference between the loud and quiet parts of a sound. Compression makes vocals and drums sit forward and steady; pushed hard, it becomes an audible effect."
 
 [cs]
+term = "komprese"
 definition = "Zmenšení rozdílu mezi hlasitými a tichými místy zvuku. Komprese posune zpěv a bicí dopředu a zklidní je; při silném nastavení se stane slyšitelným efektem."

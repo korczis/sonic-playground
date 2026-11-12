@@ -236,7 +236,7 @@ class Derivation(unittest.TestCase):
         cat.BACKLOG = Path(self.tmp.name)
         self.addCleanup(lambda: setattr(cat, "BACKLOG", self.old))
         errors = []
-        files = sorted(p for p in cat.CONTENT.glob("*.md") if p.name != "_index.md")
+        files = cat.review_files()
         self.tracks = [t for t in (cat.load_track(p, errors) for p in files) if t]
         self.sample = next(t for t in self.tracks if "," not in t.artist and t.youtube_id)
 

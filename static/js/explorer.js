@@ -122,7 +122,7 @@ window.Sonic.module('explorer', function mount() {
       Array.prototype.forEach.call(sel.options, function (opt) {
         if (!opt.value) return;
         var n = counts[opt.value] || 0;
-        opt.textContent = opt.value + ' (' + n + ')';
+        opt.textContent = (opt.getAttribute('data-label') || opt.value) + ' (' + n + ')';
         opt.disabled = n === 0 && opt.value !== sel.value;
       });
     });

@@ -7,7 +7,7 @@
 {% extends "base.html" %}
 {%- block content %}
 {%- if page.description %}{% set lead = page.description %}{% else %}{% set lead = "" %}{% endif %}
-{%- set home = get_url(path="@/_index.md") %}
+{%- set home = get_url(path="@/_index.md", lang=lang) %}
 {%- set card = "rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" %}
 {%- if track %}
 {{ <track_hero t={track} home={home} l={l} lead={lead} /> }}
@@ -20,7 +20,7 @@
       {%- if track %}
       <div class="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-gray-200 pb-4 dark:border-gray-700">
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-gray-500 dark:text-gray-400">
-          <span>{{ <tx key="track.by" l={l} /> }} <a href="{{ get_url(path='@/pages/author.md') }}" class="font-semibold text-gray-900 hover:underline dark:text-white">{{ config.author }}</a></span>
+          <span>{{ <tx key="track.by" l={l} /> }} <a href="{{ get_url(path='@/pages/author.md', lang=lang) }}" class="font-semibold text-gray-900 hover:underline dark:text-white">{{ config.author }}</a></span>
           <span class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-gray-500" aria-hidden="true"></span>
           <time datetime="{{ track.date }}">{{ track.date }}</time>
           <span class="h-1.5 w-1.5 rounded-full bg-gray-300 dark:bg-gray-500" aria-hidden="true"></span>
@@ -28,7 +28,6 @@
         </div>
         {{ <share url={page.permalink} text={l["share.text"] | replace(from="{label}", to=track.artist ~ " – " ~ track.track) | replace(from="{site}", to=config.title)} l={l} /> }}
       </div>
-      <p data-locale-note hidden class="mb-4 rounded-lg bg-gray-50 px-3 py-2 text-sm text-gray-600 dark:bg-gray-700 dark:text-gray-300" data-i18n="locale.content_note">{{ l["locale.content_note"] }}</p>
       <h2 id="review-title" class="sr-only">{{ <tx key="track.review" l={l} /> }}</h2>
       {%- if track.youtube %}
       <div class="mb-8 space-y-3">
@@ -49,9 +48,10 @@
       </div>
     </article>
 
-    {#- The educational article (ADR 0004): everything below comes from the front matter. -#}
+    {#- The educational article (ADR 0004): everything below comes from the front matter; its words
+        from this page (a translation holds its own), its facts from the English page (facts, ADR 0006). -#}
     {%- if track and page.extra.learning %}
-    {{ <learning_guide source={track.source} learning={page.extra.learning} playable={track.youtube} l={l} /> }}
+    {{ <learning_guide source={track.source} learning={page.extra.learning} playable={track.youtube} l={l} level={facts.extra.learning.level} /> }}
     {%- endif %}
     {%- if track and page.taxonomies.concept %}
     <section aria-labelledby="concepts-title" class="space-y-3">
@@ -70,8 +70,8 @@
     {%- if track and page.extra.learning and page.extra.learning.questions %}
     {{ <discussion questions={page.extra.learning.questions} l={l} /> }}
     {%- endif %}
-    {%- if track and page.extra.sources %}
-    {{ <references sources={page.extra.sources} l={l} /> }}
+    {%- if track and facts.extra.sources %}
+    {{ <references sources={facts.extra.sources} l={l} /> }}
     {%- endif %}
 
     {%- if track and track.related | length > 0 %}
@@ -88,7 +88,8 @@
       <div id="related-list" data-playlist class="grid gap-6 md:grid-cols-2">
         {%- for r in track.related %}
         {%- set rt = catalog.tracks[catalog.lookup[r.source]] %}
-        {%- set shared = r.shared | join(sep=", ") | replace(from="genre:", to="") | replace(from="sentiment:", to="") | replace(from="mood:", to="") %}
+        {%- set_global shared = "" %}
+        {%- for x in r.shared %}{% set k = "term." ~ x | replace(from=":", to=".") %}{% if k in l %}{% set lab = l[k] %}{% else %}{% set lab = x | split(pat=":") | last %}{% endif %}{% if loop.first %}{% set_global shared = lab %}{% else %}{% set_global shared = shared ~ ", " ~ lab %}{% endif %}{% endfor %}
         {{ <related_card t={rt} shared={shared} score={r.score} l={l} /> }}
         {%- endfor %}
       </div>
@@ -121,10 +122,10 @@
       {%- for kind in catalog.facet_names %}
       {%- if track.facets[kind] | length > 0 %}
       <p class="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ <tx key={"tax.one." ~ kind} l={l} /> }}</p>
-      <div class="mb-4 flex flex-wrap gap-2">{{ <facet_badges terms={track.facets[kind]} kind={kind} size="sm" /> }}</div>
+      <div class="mb-4 flex flex-wrap gap-2">{{ <facet_badges terms={track.facets[kind]} kind={kind} l={l} size="sm" /> }}</div>
       {%- endif %}
       {%- endfor %}
-      <a href="{{ home }}?genre={{ track.facets.genre | first | urlencode }}" class="inline-flex items-center text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="track.explore_more" l={l} vars={ {"genre": track.facets.genre | first} } /> }}{{ <icon name="arrow-right" cls="ml-1.5 h-4 w-4" /> }}</a>
+      <a href="{{ home }}?genre={{ track.facets.genre | first | urlencode }}" class="inline-flex items-center text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{%- set gk = "term.genre." ~ track.facets.genre | first %}{% if gk in l %}{% set glabel = l[gk] %}{% else %}{% set glabel = track.facets.genre | first %}{% endif %}{{ <tx key="track.explore_more" l={l} vars={ {"genre": glabel} } /> }}{{ <icon name="arrow-right" cls="ml-1.5 h-4 w-4" /> }}</a>
     </div>
     <div class="{{ card }} p-4 sm:p-6">
       <h2 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="track.listen" l={l} /> }}</h2>
@@ -138,25 +139,25 @@
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.artist" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.artist }}</dd></div>
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.track" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ track.track }}</dd></div>
         {%- for k in ["album", "release_year", "publisher", "video_duration", "country", "bpm", "key", "time_signature", "isrc"] %}
-        {%- if k in page.extra %}
-        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key={"track." ~ k} l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ page.extra[k] }}</dd></div>
+        {%- if k in facts.extra %}
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key={"track." ~ k} l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ facts.extra[k] }}</dd></div>
         {%- endif %}
         {%- endfor %}
-        {%- if page.extra.credits %}
-        {%- for role, names in page.extra.credits %}
+        {%- if facts.extra.credits %}
+        {%- for role, names in facts.extra.credits %}
         {%- if names | length > 0 %}
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key={"track.credits." ~ role} l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ names | join(sep=", ") }}</dd></div>
         {%- endif %}
         {%- endfor %}
         {%- endif %}
-        {%- if page.extra.musicbrainz or page.extra.wikidata %}
+        {%- if facts.extra.musicbrainz or facts.extra.wikidata %}
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.open_data" l={l} /> }}</dt><dd class="flex flex-wrap justify-end gap-x-3 text-right font-medium">
-          {%- if page.extra.musicbrainz and page.extra.musicbrainz.recording %}<a class="text-primary-700 hover:underline dark:text-primary-400" href="https://musicbrainz.org/recording/{{ page.extra.musicbrainz.recording }}" target="_blank" rel="noopener noreferrer">MusicBrainz</a>{% endif %}
-          {%- if page.extra.wikidata %}<a class="text-primary-700 hover:underline dark:text-primary-400" href="https://www.wikidata.org/wiki/{{ page.extra.wikidata }}" target="_blank" rel="noopener noreferrer">Wikidata</a>{% endif %}
+          {%- if facts.extra.musicbrainz and facts.extra.musicbrainz.recording %}<a class="text-primary-700 hover:underline dark:text-primary-400" href="https://musicbrainz.org/recording/{{ facts.extra.musicbrainz.recording }}" target="_blank" rel="noopener noreferrer">MusicBrainz</a>{% endif %}
+          {%- if facts.extra.wikidata %}<a class="text-primary-700 hover:underline dark:text-primary-400" href="https://www.wikidata.org/wiki/{{ facts.extra.wikidata }}" target="_blank" rel="noopener noreferrer">Wikidata</a>{% endif %}
         </dd></div>
         {%- endif %}
         {%- if track.yearbooks | length > 0 %}
-        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.yearbooks" l={l} /> }}</dt><dd class="flex flex-wrap justify-end gap-1.5">{% for m in track.yearbooks %}<a href="{{ get_url(path='@/yearbook/' ~ m.year ~ '.md') }}#n-{{ m.n }}" class="rounded bg-primary-100 px-2 py-0.5 text-xs font-semibold text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300">{{ m.year }} · #{{ m.n }}</a>{% endfor %}</dd></div>
+        <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.yearbooks" l={l} /> }}</dt><dd class="flex flex-wrap justify-end gap-1.5">{% for m in track.yearbooks %}<a href="{{ get_url(path='@/yearbook/' ~ m.year ~ '.md', lang=lang) }}#n-{{ m.n }}" class="rounded bg-primary-100 px-2 py-0.5 text-xs font-semibold text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300">{{ m.year }} · #{{ m.n }}</a>{% endfor %}</dd></div>
         {%- endif %}
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.review" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ <tx key="track.words" l={l} vars={ {"n": track.words} } /> }}</dd></div>
       </dl>

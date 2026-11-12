@@ -1,0 +1,54 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://korczis.github.io/sonic-playground/schema/translation.v1.json",
+ "title": "sonic-playground translation of a review (content/<name>.<lang>.md)",
+ "description": "ADR 0006: what a translation of a review holds, which is only language. Its date and taxonomies are the English page's (written by scripts/translate.py, refused when they differ); every fact (video, ISRC, credits, release, sources) stays in the English file and the template reads it from there. scripts/translation.py checks the rest: the English text it translates is current, the structure is the English page's, every text reads as the language.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["title", "date", "description", "taxonomies", "extra"],
+ "properties": {
+  "title": {"type": "string", "minLength": 3},
+  "date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+  "description": {"type": "string", "minLength": 40},
+  "taxonomies": {"type": "object"},
+  "extra": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": ["translation"],
+   "properties": {
+    "translation": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": ["of"],
+     "properties": {
+      "of": {"type": "string", "pattern": "^[0-9a-f]{12}$", "description": "The English text translated (scripts/translation.py prose_hash); scripts/translate.py bless sets it."}
+     }
+    },
+    "learning": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": ["objectives", "listen_for", "questions"],
+     "properties": {
+      "objectives": {"type": "array", "items": {"type": "string", "minLength": 20}},
+      "listen_for": {"type": "array", "items": {
+       "type": "object", "additionalProperties": false, "required": ["what"],
+       "properties": {
+        "at": {"type": "string", "pattern": "^\\d{1,2}:\\d{2}$"},
+        "part": {"type": "string", "minLength": 3},
+        "what": {"type": "string", "minLength": 10}
+       }
+      }},
+      "questions": {"type": "array", "items": {"type": "string", "minLength": 20}}
+     }
+    },
+    "connections": {"type": "array", "items": {
+     "type": "object", "additionalProperties": false, "required": ["source", "why"],
+     "properties": {
+      "source": {"type": "string", "pattern": "\\.md$"},
+      "why": {"type": "string", "minLength": 20}
+     }
+    }}
+   }
+  }
+ }
+}

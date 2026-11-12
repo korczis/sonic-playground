@@ -35,6 +35,17 @@
     var canonical = /** @type {HTMLLinkElement | null} */ (document.querySelector('link[rel="canonical"]'));
     var nextCanonical = /** @type {HTMLLinkElement | null} */ (doc.querySelector('link[rel="canonical"]'));
     if (canonical && nextCanonical) canonical.href = nextCanonical.href;
+    // The language of the page (ADR 0006) and its counterparts in every language: the persistent
+    // shell (navbar, player) follows it, the language switch links the new counterparts.
+    document.documentElement.lang = doc.documentElement.lang || document.documentElement.lang;
+    // What <body> carries per page (the search index of the page's language): the new page's.
+    Array.prototype.forEach.call(doc.body.attributes, function (a) {
+      if (a.name.indexOf('data-') === 0) document.body.setAttribute(a.name, a.value);
+    });
+    document.querySelectorAll('link[data-locale-href]').forEach(function (link) { link.remove(); });
+    doc.querySelectorAll('link[data-locale-href]').forEach(function (link) {
+      document.head.appendChild(document.importNode(link, true));
+    });
     return true;
   }
 

@@ -7,4 +7,5 @@ see_also = ["loop", "drum machine", "quantization"]
 definition = "A device or program that records and plays back musical events in time, so a producer can program parts that repeat exactly."
 
 [cs]
+term = "sekvencer"
 definition = "Zařízení nebo program, který zaznamenává a v čase přehrává hudební události, takže producent může naprogramovat přesně se opakující party."

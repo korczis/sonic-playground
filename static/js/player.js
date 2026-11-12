@@ -93,7 +93,7 @@
   }
   /** @returns {SonicQueueItem} */
   function item(t) {
-    return { source: t.source || '', path: t.path || '', artist: t.artist || '', track: t.track || t.title || '',
+    return { source: t.source || '', path: t.path || '', i18n: t.i18n || {}, artist: t.artist || '', track: t.track || t.title || '',
       youtube: t.youtube, thumbnail: t.youtube ? 'https://i.ytimg.com/vi/' + t.youtube + '/mqdefault.jpg' : '' };
   }
   function upcoming() { return Math.max(0, state.queue.length - state.index - 1); }
@@ -147,7 +147,7 @@
     html.dataset.playerVideoState = state.video;
     html.dataset.playerPanelState = started ? 'shown' : '';
     el.title.textContent = t.track;
-    el.title.href = t.path ? Sonic.base + '/' + t.path : 'https://www.youtube.com/watch?v=' + t.youtube;
+    el.title.href = t.path ? Sonic.base + '/' + Sonic.trackPath(t) : 'https://www.youtube.com/watch?v=' + t.youtube;
     // A loose video's title opens YouTube in a new tab: leaving the site would stop the music.
     if (t.path) { el.title.removeAttribute('target'); el.title.removeAttribute('rel'); }
     else { el.title.target = '_blank'; el.title.rel = 'noopener noreferrer'; }

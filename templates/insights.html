@@ -4,10 +4,10 @@
 {% extends "base.html" %}
 {%- block content %}
 {%- set s = catalog.stats %}
-{{ <page_header title={l["menu.insights"]} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l["menu.insights"], "", "menu.insights"]]} lead={l["insights.lead"]} lead_key="insights.lead" /> }}
+{{ <page_header title={l["menu.insights"]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["menu.insights"], "", "menu.insights"]]} lead={l["insights.lead"]} lead_key="insights.lead" /> }}
 <div class="space-y-4 px-4 pt-6 xl:px-8">
   <section aria-label="Totals" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
-    {{ <stat_card value={s.tracks} label={l["stat.tracks"]} lkey="stat.tracks" icon_name="music" href={get_url(path="@/pages/archive.md")} /> }}
+    {{ <stat_card value={s.tracks} label={l["stat.tracks"]} lkey="stat.tracks" icon_name="music" href={get_url(path="@/pages/archive.md", lang=lang)} /> }}
     {{ <stat_card value={s.videos} label={l["stat.videos"]} lkey="stat.videos" icon_name="play" /> }}
     {{ <stat_card value={(s.words / 1000) | round | int ~ "k"} label={l["stat.words"]} lkey="stat.words" icon_name="archive" /> }}
     {{ <stat_card value={s.artists} label={l["stat.artists"]} lkey="stat.artists" icon_name="user" /> }}
@@ -15,10 +15,10 @@
   {%- if s.yearbooks > 0 %}
   {#- The yearbooks (ADR 0005): derived from data/backlog/, absent until one is imported. -#}
   <section aria-label="Yearbooks" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
-    {{ <stat_card value={s.yearbooks} label={l["stat.yearbooks"]} lkey="stat.yearbooks" icon_name="calendar" href={get_url(path="@/yearbook/_index.md")} /> }}
+    {{ <stat_card value={s.yearbooks} label={l["stat.yearbooks"]} lkey="stat.yearbooks" icon_name="calendar" href={get_url(path="@/yearbook/_index.md", lang=lang)} /> }}
     {{ <stat_card value={s.recurring} label={l["stat.recurring"]} lkey="stat.recurring" icon_name="radio" /> }}
-    {{ <stat_card value={s.concept_terms} label={l["stat.concepts"]} lkey="stat.concepts" icon_name="book" href={get_url(path="concept", trailing_slash=true)} /> }}
-    {{ <stat_card value={s.instrument_terms} label={l["stat.instruments"]} lkey="stat.instruments" icon_name="music" href={get_url(path="instrument", trailing_slash=true)} /> }}
+    {{ <stat_card value={s.concept_terms} label={l["stat.concepts"]} lkey="stat.concepts" icon_name="book" href={get_url(path=lp ~ "concept", trailing_slash=true)} /> }}
+    {{ <stat_card value={s.instrument_terms} label={l["stat.instruments"]} lkey="stat.instruments" icon_name="music" href={get_url(path=lp ~ "instrument", trailing_slash=true)} /> }}
   </section>
   {%- endif %}
   {{ <chart_card id="chart-months" chart="months" ckey="chart.months" l={l} height="h-64" /> }}
@@ -33,7 +33,7 @@
     <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">{{ <tx key="insights.artists_caption" l={l} vars={ {"n": s.artists} } /> }}</p>
     <ul class="flex flex-wrap gap-2">
       {%- for a in catalog.artists %}
-      <li><a href="{{ get_url(path='@/_index.md') }}?q={{ a.term | urlencode }}" class="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">{{ a.term }}{% if a.count > 1 %}<span class="ml-1.5 rounded-full bg-primary-700 px-1.5 text-[10px] text-white">{{ a.count }}</span>{% endif %}</a></li>
+      <li><a href="{{ get_url(path='@/_index.md', lang=lang) }}?q={{ a.term | urlencode }}" class="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">{{ a.term }}{% if a.count > 1 %}<span class="ml-1.5 rounded-full bg-primary-700 px-1.5 text-[10px] text-white">{{ a.count }}</span>{% endif %}</a></li>
       {%- endfor %}
     </ul>
   </section>

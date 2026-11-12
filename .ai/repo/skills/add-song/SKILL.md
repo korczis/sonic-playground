@@ -70,10 +70,14 @@ link. Not for bulk imports (run the engine in a loop and review each article).
    section order; drop a breakdown part the track does not have, add one it does. Aim for the
    catalogue's median length (`stats.median_words`). Add `extra.album`, `release_year`,
    `publisher` when sourced.
-8. **Prove it.** `python3 scripts/track.py check content/<file>.md` (no errors, `unfinished: 0`),
+8. **Translate (ADR 0006).** Every page is bilingual: write the Czech counterpart through the
+   skill `translate` (`python3 scripts/translate.py scaffold content/<file>.md`, translate in
+   place, `python3 scripts/translate.py check content/<file>.cs.md`). The contract refuses a
+   review without its translation, and a translation older than its English text.
+9. **Prove it.** `python3 scripts/track.py check content/<file>.md` (no errors, `unfinished: 0`),
    then `npm run derive` and `bash scripts/verify.sh` (catalogue, tests, build, browser smoke).
    `majordomus check` before claiming progress.
-9. **Commit and finish.** `git add content static/data && git commit -m "feat(content): add
+10. **Commit and finish.** `git add content static/data && git commit -m "feat(content): add
    <Artist> – <Track>"`; `majordomus finish --outcome completed --verify-command "bash
    scripts/verify.sh"`; merge to `main` with `--no-ff` and push — pushing `main` deploys
    (`.github/workflows/pages.yml`), and the run verifies production serves the commit.
@@ -87,8 +91,8 @@ artists folded, remixes kept), each once. `--batches N` splits it; each batch go
 worktree, creating only its own files. The integrator then runs `npm run derive` and the gate
 once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 agents):
 
-- Pass every facet as its own quoted argument (`--genre "deep house" --genre techno`); an
-  unquoted shell variable joined or split terms in three files.
+- Pass every facet as its own quoted argument (`--genre "deep house" --genre techno`, or several
+  terms after one flag); an unquoted shell variable joined or split terms in three files.
 - Find the video on YouTube's own search page; a general web search rarely returns watch URLs.
   Prefer the artist's channel, VEVO, the label, then "- Topic"; a third-party channel only when
   its upload is the official video, and say so in the report.

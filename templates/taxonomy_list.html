@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {%- block content %}
 {%- set name_key = "tax.name." ~ taxonomy.name %}
-{{ <page_header title={l[name_key]} crumbs={[[l["site.home"], get_url(path="@/_index.md"), "site.home"], [l[name_key], "", name_key]]} lead={l["tax.list_lead"] | replace(from="{n}", to=terms | length ~ "")} /> }}
+{{ <page_header title={l[name_key]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], "", name_key]]} lead={l["tax.list_lead"] | replace(from="{n}", to=terms | length ~ "")} /> }}
 <div class="px-4 pt-6 xl:px-8">
   {%- if terms | length > 0 %}
   <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">

@@ -7,7 +7,7 @@
   "artists": 222,
   "videos": 277,
   "videos_gone": 3,
-  "words": 185652,
+  "words": 185649,
   "median_words": 639,
   "first": "2024-10-01",
   "last": "2026-11-12",
@@ -17,7 +17,357 @@
   "concept_terms": 61,
   "instrument_terms": 60,
   "yearbooks": 0,
-  "recurring": 0
+  "recurring": 0,
+  "translations": {
+   "cs": {
+    "reviews": 283,
+    "pages": 5
+   }
+  }
+ },
+ "languages": [
+  "en",
+  "cs"
+ ],
+ "lang_terms": {
+  "cs": {
+   "genre": [
+    "80s",
+    "acoustic",
+    "afrobeat",
+    "alternative",
+    "alternative rock",
+    "ambient",
+    "art pop",
+    "art rock",
+    "atmospheric",
+    "ballad",
+    "bassline",
+    "big beat",
+    "blues",
+    "bossa nova",
+    "brazilian",
+    "breakbeat",
+    "chill",
+    "chillout",
+    "chillwave",
+    "classic rock",
+    "club",
+    "contemporary",
+    "cover",
+    "dance",
+    "dancehall",
+    "dark electronic",
+    "dark pop",
+    "dark techno",
+    "darkwave",
+    "deep house",
+    "disco",
+    "downtempo",
+    "dream pop",
+    "drum and bass",
+    "dub",
+    "electro",
+    "electro-house",
+    "electro-pop",
+    "electro-rap",
+    "electro-swing",
+    "electroclash",
+    "electronic",
+    "electropop",
+    "experimental",
+    "experimental pop",
+    "folk",
+    "french house",
+    "funk",
+    "future bass",
+    "hardcore punk",
+    "hip-hop",
+    "house",
+    "indie",
+    "indie dance",
+    "indie electronic",
+    "indie folk",
+    "indie pop",
+    "indie rock",
+    "industrial",
+    "introspective",
+    "jazz",
+    "lounge",
+    "melodic house",
+    "melodic techno",
+    "minimal",
+    "minimal techno",
+    "neoclassical",
+    "new wave",
+    "nu-jazz",
+    "party",
+    "playful",
+    "pop",
+    "post-punk",
+    "progressive",
+    "progressive house",
+    "psychedelic",
+    "punk",
+    "punk rock",
+    "r&b",
+    "rap",
+    "rap metal",
+    "reggae",
+    "remix",
+    "rock",
+    "samba",
+    "seductive",
+    "singer-songwriter",
+    "soul",
+    "soulful",
+    "soundtrack",
+    "spoken word",
+    "synth-pop",
+    "synthwave",
+    "tango",
+    "tech house",
+    "techno",
+    "trip-hop",
+    "tropical house",
+    "underground",
+    "urban",
+    "vocal jazz",
+    "world",
+    "worldbeat"
+   ],
+   "sentiment": [
+    "adventurous",
+    "aggressive",
+    "alluring",
+    "angry",
+    "atmospheric",
+    "authentic",
+    "bittersweet",
+    "bold",
+    "calm",
+    "carefree",
+    "catchy",
+    "cathartic",
+    "celebratory",
+    "chill",
+    "cleansing",
+    "confident",
+    "cosmic",
+    "dark",
+    "defiant",
+    "determined",
+    "dreamy",
+    "dynamic",
+    "eclectic",
+    "edgy",
+    "eerie",
+    "elegant",
+    "emotional",
+    "emotive",
+    "empowering",
+    "energetic",
+    "energizing",
+    "escapist",
+    "ethereal",
+    "euphoric",
+    "evocative",
+    "exuberant",
+    "feel-good",
+    "festive",
+    "futuristic",
+    "glamorous",
+    "grateful",
+    "gritty",
+    "groovy",
+    "haunting",
+    "heartbroken",
+    "heartfelt",
+    "humorous",
+    "hypnotic",
+    "iconic",
+    "immersive",
+    "indulgent",
+    "infectious",
+    "innovative",
+    "inspirational",
+    "intense",
+    "intimate",
+    "intricate",
+    "intriguing",
+    "introspective",
+    "ironic",
+    "irreverent",
+    "joyful",
+    "laid-back",
+    "liberating",
+    "longing",
+    "melancholic",
+    "melodic",
+    "mesmerizing",
+    "motivational",
+    "mysterious",
+    "nostalgic",
+    "playful",
+    "poignant",
+    "political",
+    "provocative",
+    "quirky",
+    "raw",
+    "rebellious",
+    "reflective",
+    "relaxed",
+    "resilient",
+    "romantic",
+    "satirical",
+    "sensual",
+    "serene",
+    "soothing",
+    "sophisticated",
+    "soulful",
+    "spiritual",
+    "sultry",
+    "tense",
+    "theatrical",
+    "trance-like",
+    "transformative",
+    "upbeat",
+    "uplifting",
+    "urban",
+    "vibrant",
+    "vindictive",
+    "warm"
+   ],
+   "mood": [
+    "positive",
+    "reflective"
+   ],
+   "concept": [
+    "alternate version",
+    "ambient texture",
+    "analog synthesizer",
+    "arpeggio",
+    "bassline",
+    "blues",
+    "breakbeat",
+    "breakdown",
+    "build-up",
+    "call and response",
+    "chord progression",
+    "club culture",
+    "cover version",
+    "delay",
+    "distortion",
+    "dj mix",
+    "drop",
+    "drum machine",
+    "dub",
+    "electroclash",
+    "extended mix",
+    "falsetto",
+    "featured artist",
+    "filter sweep",
+    "fingerstyle guitar",
+    "four-on-the-floor",
+    "groove",
+    "hook",
+    "house groove",
+    "interlude",
+    "interpolation",
+    "live recording",
+    "lo-fi",
+    "loop",
+    "mashup",
+    "melisma",
+    "minor key",
+    "mixing",
+    "music video",
+    "off-beat",
+    "ostinato",
+    "post-punk",
+    "radio edit",
+    "remastering",
+    "remix",
+    "reverb",
+    "riff",
+    "sampling",
+    "sequencer",
+    "soundtrack",
+    "spoken word",
+    "stage persona",
+    "swing",
+    "syncopation",
+    "synthesizer",
+    "tempo change",
+    "tremolo",
+    "turntablism",
+    "verse-chorus form",
+    "vocal harmony",
+    "vocoder"
+   ],
+   "instrument": [
+    "acoustic bass",
+    "acoustic guitar",
+    "backing vocals",
+    "bandoneon",
+    "bass",
+    "bass guitar",
+    "bongos",
+    "cello",
+    "claps",
+    "clarinet",
+    "cowbell",
+    "double bass",
+    "drum machine",
+    "drum programming",
+    "drums",
+    "electric guitar",
+    "electric piano",
+    "electronic beats",
+    "farfisa organ",
+    "fiddle",
+    "finger snaps",
+    "guitar",
+    "hammond organ",
+    "handclaps",
+    "horns",
+    "keyboard",
+    "keyboards",
+    "kick drum",
+    "kora",
+    "laptop",
+    "lyricon",
+    "marimba",
+    "modular synthesizer",
+    "orchestra",
+    "organ",
+    "oud",
+    "pedal steel guitar",
+    "percussion",
+    "piano",
+    "programmed beats",
+    "sampler",
+    "saxophone",
+    "sequencer",
+    "speech synthesizer",
+    "strings",
+    "synth bass",
+    "synthesizer",
+    "talk box",
+    "trombone",
+    "trumpet",
+    "turntables",
+    "upright bass",
+    "vinyl noise",
+    "violin",
+    "vocal samples",
+    "vocals",
+    "vocoder",
+    "voice",
+    "whistling",
+    "xylophone"
+   ]
+  }
  },
  "outline": [
   {
@@ -5241,7 +5591,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "theAngelcy - My Baby Boy",
+     "description": "Drnkané struny, sbor hlasů a syrový tenor Rotema Bar Ora dávají této telavivské folkové písni pocit ukolébavky zpívané v temné, neklidné době.",
+     "path": "cs/theangelcy-my-baby-boy/"
+    }
+   }
   },
   {
    "source": "filous-lissa-feel-good-inc.md",
@@ -5338,7 +5699,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "filous, LissA - Feel Good Inc.",
+     "description": "Rakouský producent filous osekává klasiku Gorillaz na jemný xylofon, drnkané struny a vzdušné beaty a lehký hlas LissA mění starou hymnu s větrným mlýnem v zamlžené snění za bílého dne.",
+     "path": "cs/filous-lissa-feel-good-inc/"
+    }
+   }
   },
   {
    "source": "ayokay-quinn-xcii-kings-of-summer.md",
@@ -5436,7 +5808,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "ayokay, Quinn XCII - Kings of Summer",
+     "description": "Jasné syntezátory a lehký zpěv Quinna XCII malují vzpomínku na léta, kdy jste si s přáteli připadali nedotknutelní: průlom dvou spolužáků z Michiganu z roku 2016.",
+     "path": "cs/ayokay-quinn-xcii-kings-of-summer/"
+    }
+   }
   },
   {
    "source": "yoko-duo-stimming-close-these-curtains-stimming-remix.md",
@@ -5542,7 +5925,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Yoko Duo, Stimming - Close These Curtains (Stimming Remix)",
+     "description": "Stimming balí křehkou píseň Yoko Duo do sametu: pomalý, organický deep house remix plný měkkých textur, tlumeného vokálu a pocitu místnosti, v níž se rozhostí ticho.",
+     "path": "cs/yoko-duo-stimming-close-these-curtains-stimming-remix/"
+    }
+   }
   },
   {
    "source": "whilk-misky-i-want-your-lovin-edit.md",
@@ -5641,7 +6035,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Whilk & Misky - I Want Your Lovin' (Edit)",
+     "description": "Londýnský soul-pop Whilk & Misky v té nejpřímější podobě: vřelý, swingující groove a hlas, který žádá jedinou věc, znovu a znovu, dokud ji nezačnete chtít i vy.",
+     "path": "cs/whilk-misky-i-want-your-lovin-edit/"
+    }
+   }
   },
   {
    "source": "whilk-misky-get-what-we-want.md",
@@ -5741,7 +6146,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Whilk & Misky - Get What We Want",
+     "description": "Whilk & Misky v této skladbě z alba My Round mísí akustickou vřelost s elektronickým pulsem: procítěný hlas Charlieho Dickense a produkce Nimy Khasteho se ženou za prostým přáním dostat, co chceme.",
+     "path": "cs/whilk-misky-get-what-we-want/"
+    }
+   }
   },
   {
    "source": "whilk-misky-clap-your-hands.md",
@@ -5837,7 +6253,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Whilk & Misky - Clap Your Hands",
+     "description": "Průlomová skladba londýnského dua Whilk & Misky z roku 2014: bosonohá akustická píseň s nádechem bossa novy a tleskáním místo bicích, kterou hrál Zane Lowe ve svém pořadu na Radio 1 a kterou později na taneční parkety přenesl remix od Solomuna.",
+     "path": "cs/whilk-misky-clap-your-hands/"
+    }
+   }
   },
   {
    "source": "whilk-misky-babe-i-m-yours.md",
@@ -5929,7 +6356,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Whilk & Misky - Babe I'm Yours",
+     "description": "Ztišený, zakouřený hlas pluje nad drnkanou folkovou kytarou a pomalým elektronickým tepem a mění prosté vyznání oddanosti v noční zpověď.",
+     "path": "cs/whilk-misky-babe-i-m-yours/"
+    }
+   }
   },
   {
    "source": "waldeck-memories.md",
@@ -6026,7 +6464,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Waldeck - Memories",
+     "description": "Waldeck zasazuje kouřový hlas Zeebee do praskavého swingu tanečních sálů v barvách sépie, downtempového snění o lásce, která žije už jen ve vzpomínce.",
+     "path": "cs/waldeck-memories/"
+    }
+   }
   },
   {
    "source": "whtkd-say-to-me.md",
@@ -6132,7 +6581,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "WHTKD - Say to Me",
+     "description": "WHTKD smyčkuje procítěný, prosebný vokál nad hřejivým, valivým deep house groovem; skladba zní jako pozdní odpoledne, které se přelévá do večera.",
+     "path": "cs/whtkd-say-to-me/"
+    }
+   }
   },
   {
    "source": "tiggs-da-author-georgia.md",
@@ -6226,7 +6686,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Tiggs Da Author - Georgia",
+     "description": "Chraplavý, nafoukaně sebejistý vokál Tiggse Da Authora se veze na staromódním soulovém feelingu a hiphopovém pérování v milostné písni z roku 2015 od producenta Show N Prove, která navázala na jeho první singl Run a stala se jeho průlomem.",
+     "path": "cs/tiggs-da-author-georgia/"
+    }
+   }
   },
   {
    "source": "the-supermen-lovers-jay-lamar-jesse-oliver-moments-jay-lamar-jesse-oliver-remix.md",
@@ -6321,7 +6792,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Supermen Lovers, Jay Lamar, Jesse Oliver - Moments (Jay Lamar & Jesse Oliver Remix)",
+     "description": "Helsinské duo Jay Lamar a Jesse Oliver protahuje Moments, singl z roku 2013 od francouzského producenta, který stojí za Starlight, do teplého, nespěchajícího deephousového klouzání z měkkých akordů, oblé basy a teskných melodií.",
+     "path": "cs/the-supermen-lovers-jay-lamar-jesse-oliver-moments-jay-lamar-jesse-oliver-remix/"
+    }
+   }
   },
   {
    "source": "the-supermen-lovers-herr-styler-cristine-c-est-bon.md",
@@ -6425,7 +6907,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Supermen Lovers, Herr Styler, Cristine - C'est bon",
+     "description": "Koketní kousek francouzského pop-funkového house z projektu Guillauma Atlana: dva hlasy si přehazují verše nad pružnou basovou linkou, až se z názvu stane pokrčení ramen a úsměvný verdikt nad celou nocí.",
+     "path": "cs/the-supermen-lovers-herr-styler-cristine-c-est-bon/"
+    }
+   }
   },
   {
    "source": "the-supermen-lovers-moments.md",
@@ -6520,7 +7013,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Supermen Lovers - Moments",
+     "description": "Hřejivý kousek francouzského disco-funku od autora Starlight, v němž syntezátory a pružná basová linka proměňují prchavý okamžik v dlouhý, zářící groove.",
+     "path": "cs/the-supermen-lovers-moments/"
+    }
+   }
   },
   {
    "source": "the-hacker-mount-sims-traces-oxia-remix.md",
@@ -6621,7 +7125,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Hacker, Mount Sims - Traces (Oxia Remix)",
+     "description": "Oxia proměňuje chladné wave electro The Hacker a Mount Sims v trpělivou, valivou technovou cestu plnou zadumaných syntezátorových linek a gradace, která šroub utahuje pořád pevněji.",
+     "path": "cs/the-hacker-mount-sims-traces-oxia-remix/"
+    }
+   }
   },
   {
    "source": "the-avener-ane-brun-to-let-myself-go.md",
@@ -6731,7 +7246,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Avener, Ane Brun - To Let Myself Go",
+     "description": "The Avener balí křehkou skandinávskou folkovou zpověď Ane Brun do pomalého, valivého deep house grooveu a z osobního odevzdání dělá chvíli na tanečním parketu při západu slunce.",
+     "path": "cs/the-avener-ane-brun-to-let-myself-go/"
+    }
+   }
   },
   {
    "source": "the-asteroids-galaxy-tour-the-sun-ain-t-shining-no-more.md",
@@ -6835,7 +7361,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Asteroids Galaxy Tour - The Sun Ain't Shining No More",
+     "description": "Dechy nabitá, pestrobarevná psych-popová dupárna z Dánska: zářivý hlas Mette Lindberg, jako by se nadýchala hélia, se veze na žesťových linkách a vykračujícím beatu, které ze zlomeného srdce dělají průvod.",
+     "path": "cs/the-asteroids-galaxy-tour-the-sun-ain-t-shining-no-more/"
+    }
+   }
   },
   {
    "source": "teemid-joie-tan-crazy-radio-mix.md",
@@ -6932,7 +7469,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "TEEMID, Joie Tan - Crazy (Radio Mix)",
+     "description": "Zběsilá klasika Gnarls Barkley zpomalená do zamžené deep house ukolébavky: TEEMID a Joie Tan nechávají Crazy znít jako zpověď zašeptanou ve čtyři ráno.",
+     "path": "cs/teemid-joie-tan-crazy-radio-mix/"
+    }
+   }
   },
   {
    "source": "solomun-friends.md",
@@ -7037,7 +7585,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Solomun - Friends",
+     "description": "Devět minut typického deep house Solomuna, vydaných na jeho experimentálním labelu 2DIY4: Friends se veze na pružném, swingujícím grooveu a náladových akordech, které stoupají právě natolik, aby taneční parket nepřestal být vtažený.",
+     "path": "cs/solomun-friends/"
+    }
+   }
   },
   {
    "source": "solange-losing-you.md",
@@ -7136,7 +7695,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Solange - Losing You",
+     "description": "Solange a Dev Hynes balí konec vztahu do těkavého R&B grooveu s nádechem osmdesátek: hlavní singl EP True z roku 2012 na labelu Terrible Records s videoklipem Meliny Matsoukas, natočeným v kapském townshipu Langa.",
+     "path": "cs/solange-losing-you/"
+    }
+   }
   },
   {
    "source": "sante-richard-judge-awake.md",
@@ -7242,7 +7812,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Santé, Richard Judge - Awake",
+     "description": "Santé podkládá vážnému, procítěnému hlasu J.U.D.G.E hluboký, valivý groove: šest minut house do temného sálu, které působí jako první jasná myšlenka po dlouhé noci.",
+     "path": "cs/sante-richard-judge-awake/"
+    }
+   }
   },
   {
    "source": "robin-thicke-t-i-pharrell-williams-blurred-lines.md",
@@ -7345,7 +7926,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Robin Thicke, T.I., Pharrell Williams - Blurred Lines",
+     "description": "Funk-popová promenáda Robina Thickea, Pharrella a T.I., plná klapajícího kravského zvonce a falzetu, která ovládla léto 2013 a pak i soudní síň.",
+     "path": "cs/robin-thicke-t-i-pharrell-williams-blurred-lines/"
+    }
+   }
   },
   {
    "source": "robin-schulz-francesco-yates-sugar.md",
@@ -7444,7 +8036,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Robin Schulz, Francesco Yates - Sugar",
+     "description": "Sluncem vybělený deep house se soulovým hookem: Robin Schulz staví sladký, poskakující groove kolem Francesca Yatese a interpolace hitu „Suga Suga“ od Baby Bashe z roku 2003, v roce 2015 jedničku v sedmi zemích.",
+     "path": "cs/robin-schulz-francesco-yates-sugar/"
+    }
+   }
   },
   {
    "source": "recable-big-jet-plane-recable-remix.md",
@@ -7521,7 +8124,18 @@
    ],
    "video_gone": false,
    "edu": [],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Recable - Big Jet Plane (Recable Remix)",
+     "description": "Recable zvedá toužebnou Big Jet Plane od Angus & Julia Stone na jemně valivý house groove a snění o útěku letadlem nechává nedotčené.",
+     "path": "cs/recable-big-jet-plane-recable-remix/"
+    }
+   }
   },
   {
    "source": "queen-the-miami-project-another-one-bites-the-dust-a-skillz-remix.md",
@@ -7625,7 +8239,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Queen, The Miami Project - Another One Bites The Dust (A Skillz Remix)",
+     "description": "A Skillz rozsekává nesmrtelnou basovou linku Johna Deacona do vykračujícího breakbeatového tréninku, Freddieho Mercuryho a jeho suverénnost drží v popředí a bicí přitom bijí jako v b-boyové battle.",
+     "path": "cs/queen-the-miami-project-another-one-bites-the-dust-a-skillz-remix/"
+    }
+   }
   },
   {
    "source": "polo-pan-canopee.md",
@@ -7716,7 +8341,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Polo & Pan - Canopée",
+     "description": "Dechové duetové vokály, jasné perkusivní melodie a líný tropický groove: Canopée je pozvánkou Polo & Pan, abyste vylezli do korun stromů a na čtyři a půl minuty zapomněli na město.",
+     "path": "cs/polo-pan-canopee/"
+    }
+   }
   },
   {
    "source": "platinum-doug-move-on-original-club-mix.md",
@@ -7818,7 +8454,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Platinum Doug - Move On (Original Club Mix)",
+     "description": "Úderný klubový mix bez okolků od švýcarského house producenta Platinum Doug u Enormous Tunes, v němž opakovaný vokální hook a poskakující basová linka ženou taneční parket kupředu takt za taktem.",
+     "path": "cs/platinum-doug-move-on-original-club-mix/"
+    }
+   }
   },
   {
    "source": "pharrell-williams-happy.md",
@@ -7922,7 +8569,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Pharrell Williams - Happy",
+     "description": "Tleskání, poskakující basová linka, Pharrellův falzet a refrén s nádechem gospelu dělají z jeho písně pro film Já, padouch 2 čistou dávku slunce, která se stala nejprodávanější písní roku 2014.",
+     "path": "cs/pharrell-williams-happy/"
+    }
+   }
   },
   {
    "source": "peaches-pickles.md",
@@ -8023,7 +8681,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Peaches - Pickles",
+     "description": "Peaches v té nejrozjařeněji oplzlé podobě: Pickles se veze na strohém, gumovém electro beatu, zatímco ona rapuje o touze s úsměvem, který slyšíte v každém verši.",
+     "path": "cs/peaches-pickles/"
+    }
+   }
   },
   {
    "source": "paloma-faith-upside-down.md",
@@ -8127,7 +8796,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Paloma Faith - Upside Down",
+     "description": "Žesťová, swingem zabarvená retro-soulová jízda Palomy Faith o světě postaveném na hlavu, s dupavou rytmikou a hlasem, který si vychutnává každou divadelní ozdobu.",
+     "path": "cs/paloma-faith-upside-down/"
+    }
+   }
   },
   {
    "source": "nu-jo-ke-who-loves-the-sun.md",
@@ -8221,7 +8901,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Nu, Jo.Ke - Who Loves the Sun",
+     "description": "Devět sluncem prohřátých minut organického deep house ze světa Bar 25, kde jemný zpěv Jo.Ke, který si chcete zpívat s sebou, pluje nad houpavým groovem stvořeným pro tanec ve zlaté hodince.",
+     "path": "cs/nu-jo-ke-who-loves-the-sun/"
+    }
+   }
   },
   {
    "source": "noir-haze-solomun-around-solomun-vox.md",
@@ -8327,7 +9018,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Noir, Haze, Solomun - Around (Solomun Vox)",
+     "description": "Solomunův vokální mix singlu Noir & Haze, remix roku 2011 podle Resident Advisor: valivý deephousový groove s těžkou basou pod bolestně toužebným hlasem Haze, vydaný u Noir Music a později licencovaný labelu Defected.",
+     "path": "cs/noir-haze-solomun-around-solomun-vox/"
+    }
+   }
   },
   {
    "source": "nils-ohrmann-in-ya-face-original-mix.md",
@@ -8425,7 +9127,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Nils Ohrmann - In Ya Face (Original Mix)",
+     "description": "Šest a půl minuty pumpujícího berlínského house od Nilse Ohrmanna: drzé vokální popichování, pružná basová linka a groove, který nikdy nepustí.",
+     "path": "cs/nils-ohrmann-in-ya-face-original-mix/"
+    }
+   }
   },
   {
    "source": "niklas-ibach-hungry-remix.md",
@@ -8537,7 +9250,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Niklas Ibach - Hungry (Remix)",
+     "description": "Niklas Ibach pokládá Dotanovu bolestnou folk-popovou prosbu na měkký deep house puls; bolest zachovává, ale dává jí kam se pohnout.",
+     "path": "cs/niklas-ibach-hungry-remix/"
+    }
+   }
   },
   {
    "source": "nicolas-jaar-time-for-us.md",
@@ -8636,7 +9360,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Nicolas Jaar - Time For Us",
+     "description": "Pomalá, žhavá minimal-housová klasika mladého Nicolase Jaara: šeptem zpívaný vokál a zaprášené, pohupující se textury, které proslule klesnou z tanečního tempa do dlouhého, omamného breakdownu, z něhož nikdo nechce vymixovat.",
+     "path": "cs/nicolas-jaar-time-for-us/"
+    }
+   }
   },
   {
    "source": "nappy-roots-good-day.md",
@@ -8730,7 +9465,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Nappy Roots - Good Day",
+     "description": "Nappy Roots mění slunečný, soulový beat a hook ke zpívání v jižanskou hymnu ze schodů verandy o probouzení, počítání požehnání a naději, že dnešek dopadne dobře.",
+     "path": "cs/nappy-roots-good-day/"
+    }
+   }
   },
   {
    "source": "n-e-r-d-clipse-loser.md",
@@ -8829,7 +9575,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "N.E.R.D, Clipse - Loser",
+     "description": "N.E.R.D a Clipse uzavírají kompilaci Neptunes Clones klávesami hnaným rap-rockovým křížencem: arénový refrén v rozměrech Queen proti rychle pálícím hip-hopovým slokám.",
+     "path": "cs/n-e-r-d-clipse-loser/"
+    }
+   }
   },
   {
    "source": "mount-sims-toby-dammit-what-s-the-big-deal.md",
@@ -8926,7 +9683,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims, Toby Dammit - What's the Big Deal",
+     "description": "Mount Sims vyměňuje klub za odřený groove s pokrčením ramen a na bicí mu hraje Toby Dammit z kapel Iggyho Popa a Nicka Cavea: What's the Big Deal klade svou otázku s úšklebkem a s beatem, který neposedí.",
+     "path": "cs/mount-sims-toby-dammit-what-s-the-big-deal/"
+    }
+   }
   },
   {
    "source": "mount-sims-jessie-evans-andy-of-jenny.md",
@@ -9027,7 +9795,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims, Jessie Evans - Andy of Jenny",
+     "description": "Krátké, ostré electroclash z alba Happily Ever After, které Mount Sims vydal v roce 2008: živé bicí André Langa pod syntezátory a undergroundová punková zpěvačka Jessie Evans se saxofonem.",
+     "path": "cs/mount-sims-jessie-evans-andy-of-jenny/"
+    }
+   }
   },
   {
    "source": "mount-sims-together-alone.md",
@@ -9131,7 +9910,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - Together Alone",
+     "description": "Chladný strojový rytmus a odtažitý croon z americké edice debutu Mount Sims UltraSex z roku 2002: electroclashová meditace o tom, jaké je být někomu blízko, a přesto úplně sám.",
+     "path": "cs/mount-sims-together-alone/"
+    }
+   }
   },
   {
    "source": "mount-sims-the-bitten-bite-back.md",
@@ -9237,7 +10027,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - The Bitten Bite Back",
+     "description": "Chladné syntezátorové údery a bezvýrazný, posměšný vokál mění pomstu v taneční pokřik: Mount Sims v nejšlachovitější, nejšpinavější a nejvzdornější podobě.",
+     "path": "cs/mount-sims-the-bitten-bite-back/"
+    }
+   }
   },
   {
    "source": "mount-sims-restless.md",
@@ -9343,7 +10144,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - Restless",
+     "description": "Sedm minut pomalu doutnajícího napětí: Restless točí ve smyčce nervózní syntezátorovou figuru a plíživý beat, až se vzrušením stane samo opakování.",
+     "path": "cs/mount-sims-restless/"
+    }
+   }
   },
   {
    "source": "mount-sims-no-yellow-lines.md",
@@ -9449,7 +10261,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - No Yellow Lines",
+     "description": "Noční jízda se zhasnutými světly: drnčící analogový bas, úsečné bicí automaty a chladný, výhružný zpěv Mount Sims z temnější strany electroclashe.",
+     "path": "cs/mount-sims-no-yellow-lines/"
+    }
+   }
   },
   {
    "source": "mount-sims-new-authority-volunteers.md",
@@ -9545,7 +10368,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - New Authority Volunteers",
+     "description": "Mount Sims mění electroclashový lesk za kytarové stíny svého post-punkového obratu, krátký, napjatý výbuch darkwaveového neklidu.",
+     "path": "cs/mount-sims-new-authority-volunteers/"
+    }
+   }
   },
   {
    "source": "mount-sims-hellbent.md",
@@ -9646,7 +10480,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - Hellbent",
+     "description": "Mount Sims v nejzarputilejší podobě: sevřený, hrozivý electro puls a zpěv odhodlaný jít rovnou vstříc potížím, jedna z písní přidaných na Happily Ever After...Again, přepracovanou podobu jeho darkwavového alba vydanou v roce 2010.",
+     "path": "cs/mount-sims-hellbent/"
+    }
+   }
   },
   {
    "source": "mount-sims-grave.md",
@@ -9752,7 +10597,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - Grave",
+     "description": "Pomalé, chladnokrevné plížení skrz syntezátory, živé bicí a zpěv nad hrobem: Grave z alba Happily Ever After z roku 2008, které produkoval Thomas Stern, proměňuje zálibu Mount Sims v hororu v pět minut noční hrůzy.",
+     "path": "cs/mount-sims-grave/"
+    }
+   }
   },
   {
    "source": "mount-sims-good-service.md",
@@ -9856,7 +10712,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - Good Service",
+     "description": "Kamenný výraz ve zpěvu, bzučící analogové syntezátory a bicí automat s postojem: v Good Service servíruje Mount Sims electroclash počátku nultých let se šibalským, dvojsmyslným úšklebkem.",
+     "path": "cs/mount-sims-good-service/"
+    }
+   }
   },
   {
    "source": "mount-sims-ashes.md",
@@ -9958,7 +10825,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - Ashes",
+     "description": "Doutnající kus temného synth-popu, který otevírá album Mount Sims Wild Light z roku 2004: chladné stroje a unavený, tlumený zpěv krouží kolem pozůstatků něčeho, co dávno vyhořelo.",
+     "path": "cs/mount-sims-ashes/"
+    }
+   }
   },
   {
    "source": "michelle-gurevich-lovers-are-strangers.md",
@@ -10058,7 +10936,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Michelle Gurevich - Lovers Are Strangers",
+     "description": "Michelle Gurevich s kamennou tváří zpívá elegii při svíčkách za vychladlou lásku; lo-fi syntezátory a pohupování pomalého tance dodávají zlomenému srdci podivnou eleganci.",
+     "path": "cs/michelle-gurevich-lovers-are-strangers/"
+    }
+   }
   },
   {
    "source": "michelle-gurevich-first-six-months-of-love.md",
@@ -10161,7 +11050,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Michelle Gurevich - First Six Months of Love",
+     "description": "Pomalá, zakouřená syntezátorová balada, v níž Michelle Gurevich svým kamenně klidným altem připíjí na opojné první měsíce románku a přitom už slyší přicházet jeho konec.",
+     "path": "cs/michelle-gurevich-first-six-months-of-love/"
+    }
+   }
   },
   {
    "source": "michael-jackson-billie-jean.md",
@@ -10266,7 +11166,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Michael Jackson - Billie Jean",
+     "description": "Jedna z nejznámějších basových linek popu nese paranoidní příběh Michaela Jacksona o sporném otcovství, sevřený, stinný groove, který dnes zní stejně ostře jako na albu Thriller.",
+     "path": "cs/michael-jackson-billie-jean/"
+    }
+   }
   },
   {
    "source": "metronomy-love-letters-soulwax-remix.md",
@@ -10362,7 +11273,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Metronomy - Love Letters (Soulwax Remix)",
+     "description": "Soulwax osekají pop Metronomy s nádechem šedesátek na lesklý strojový groove a znovu ho postaví: šest a půl minuty neonového disco popu, které pohání basová linka a pomalu doutnající uvolnění.",
+     "path": "cs/metronomy-love-letters-soulwax-remix/"
+    }
+   }
   },
   {
    "source": "marek-hemmann-gemini.md",
@@ -10462,7 +11384,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Marek Hemmann - Gemini",
+     "description": "Devět minut melodického německého minimalu z jenského labelu Freude am Tanzen: Gemini Marka Hemmanna se žene na swingujícím housovém groovu, zatímco syntezátorové vzorce a funky licky tenorsaxofonu se kolem sebe proplétají.",
+     "path": "cs/marek-hemmann-gemini/"
+    }
+   }
   },
   {
    "source": "marcus-marr-nick-murphy-the-trouble-with-us.md",
@@ -10570,7 +11503,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Marcus Marr, Nick Murphy - The Trouble With Us",
+     "description": "Marcus Marr a Chet Faker (Nick Murphy) nahráli tenhle disco-funkový jam během čtyř dnů v červenci 2015 ve studiu v Brixtonu: kytarový riff s nádechem funku a procítěná prosba o vztahu, který se kazí, proměněná v důvod k tanci.",
+     "path": "cs/marcus-marr-nick-murphy-the-trouble-with-us/"
+    }
+   }
   },
   {
    "source": "marcus-marr-nick-murphy-birthday-card.md",
@@ -10671,7 +11615,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Marcus Marr, Nick Murphy - Birthday Card",
+     "description": "Téměř osm minut uhlazeného house s nádechem disca: pružná produkce a jasné syntezátory Marcuse Marra nesou kouřový hlas Nicka Murphyho k dlouhému uvolnění na parketu, úvodní skladba jejich EP Work z roku 2015.",
+     "path": "cs/marcus-marr-nick-murphy-birthday-card/"
+    }
+   }
   },
   {
    "source": "mando-diao-dance-with-somebody-radio-version.md",
@@ -10681,7 +11636,7 @@
    "track": "Dance With Somebody (Radio Version)",
    "inferred": "title: artist - track",
    "date": "2026-11-12",
-   "description": "Mando Diao trade garage-rock grit for a disco-rock floor-filler, a pulsing four-to-the-floor beat and a shout-along chorus about needing someone to dance with.",
+   "description": "Mando Diao trade garage-rock grit for a disco-rock floor-filler, a pulsing four-on-the-floor beat and a shout-along chorus about needing someone to dance with.",
    "facets": {
     "genre": [
      "rock",
@@ -10777,7 +11732,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mando Diao - Dance With Somebody (Radio Version)",
+     "description": "Mando Diao vyměňují garážovou drsnost za disco rockovou pecku na parket: pulzující beat four-on-the-floor a refrén k vykřikování o tom, že potřebujete někoho, s kým tančit.",
+     "path": "cs/mando-diao-dance-with-somebody-radio-version/"
+    }
+   }
   },
   {
    "source": "lilly-wood-and-the-prick-robin-schulz-prayer-in-c-robin-schulz-radio-edit.md",
@@ -10876,7 +11842,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Lilly Wood and The Prick, Robin Schulz - Prayer in C (Robin Schulz Radio Edit)",
+     "description": "Robin Schulz přenesl truchlivou francouzskou folkpopovou píseň z roku 2010 na poskakující deep house beat a ponurá modlitba Nili Hadidy spolu se smyčkou kytarového riffu se v roce 2014 staly jedničkou napříč Evropou.",
+     "path": "cs/lilly-wood-and-the-prick-robin-schulz-prayer-in-c-robin-schulz-radio-edit/"
+    }
+   }
   },
   {
    "source": "lamomali-m-toumani-diabate-amadou-mariam-l-ame-au-mali.md",
@@ -10971,7 +11948,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Lamomali, -M-, Toumani Diabaté, Amadou & Mariam - L'Âme Au Mali",
+     "description": "Píseň, která dala jméno francouzsko-malijskému kolektivu Matthieua Chedida: kaskády kory Toumaniho Diabatého, hlasy Amadou & Mariam a Jain a slovní hříčka na „duši v Mali“, z alba Lamomali z roku 2017.",
+     "path": "cs/lamomali-m-toumani-diabate-amadou-mariam-l-ame-au-mali/"
+    }
+   }
   },
   {
    "source": "labyrinth-ear-navy-light.md",
@@ -11006,7 +11994,7 @@
    "youtube": "6FpAHhKCeWg",
    "thumbnail": "https://i.ytimg.com/vi/6FpAHhKCeWg/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 594,
+   "words": 593,
    "extra": {
     "album": "Oak",
     "publisher": "LE Records",
@@ -11065,7 +12053,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Labyrinth Ear - Navy Light",
+     "description": "Tříminutový opar rozmazaných syntezátorů, měkkých beatů a vzdáleného, beztížného hlasu: Navy Light působí jako světla města viděná přes déšť na okně nočního autobusu.",
+     "path": "cs/labyrinth-ear-navy-light/"
+    }
+   }
   },
   {
    "source": "kolsch-bloodline-feat-tomas-hoffding.md",
@@ -11164,7 +12163,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Kölsch - Bloodline (feat. Tomas Høffding)",
+     "description": "Melodic techno Kölsche se v Bloodline setkává s hřejivým, ošlehaným hlasem Tomase Høffdinga z WhoMadeWho: pozvolna doutnající skladba z alba 1983, desky o dětských cestách autem napříč Evropou, která se nad DJským pultem vzdouvá jako východ slunce.",
+     "path": "cs/kolsch-bloodline-feat-tomas-hoffding/"
+    }
+   }
   },
   {
    "source": "kygo-maty-noyes-stay.md",
@@ -11202,7 +12212,7 @@
    "youtube": "z9porfO8C_Q",
    "thumbnail": "https://i.ytimg.com/vi/z9porfO8C_Q/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 679,
+   "words": 678,
    "extra": {
     "album": "Stay",
     "publisher": "Sony Music",
@@ -11267,7 +12277,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Kygo, Maty Noyes - Stay",
+     "description": "Tropical house s měkkou kresbou od Kyga, s drnkavými melodiemi a vřelým, prosebným vokálem Maty Noyes, která někoho žádá, aby ještě neodcházel.",
+     "path": "cs/kygo-maty-noyes-stay/"
+    }
+   }
   },
   {
    "source": "kosheen-addict.md",
@@ -11365,7 +12386,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Kosheen - Addict",
+     "description": "Hluboká, temná basa, neodbytné bicí a hlas Sian Evans, který se prořezává mlhou: Addict otevírá album Independence od Kosheen s tahem něčeho, čeho se nedokážete vzdát.",
+     "path": "cs/kosheen-addict/"
+    }
+   }
   },
   {
    "source": "klyne-waiting.md",
@@ -11461,7 +12493,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klyne - Waiting",
+     "description": "Pomalý, osekaný kousek temného elektronického R&B od dua Klyne z Eindhovenu, v němž měkký hlas Nicka Kleina, nahraný těsně u mikrofonu, pluje nad řídkými beaty a tlumenými syntezátory; nová píseň na jejich EP Closer z roku 2015.",
+     "path": "cs/klyne-waiting/"
+    }
+   }
   },
   {
    "source": "klyne-paralyzed.md",
@@ -11565,7 +12608,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klyne - Paralyzed",
+     "description": "Tichý, pomalu doutnající kousek elektronického soulu od nizozemského dua Klyne, v němž se křehký falzet vznáší nad tlumenými beaty a srdcem příliš omráčeným, než aby se pohnulo.",
+     "path": "cs/klyne-paralyzed/"
+    }
+   }
   },
   {
    "source": "klyne-entropy.md",
@@ -11670,7 +12724,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klyne - Entropy",
+     "description": "Tichá pomalá skladba konce léta od nizozemského dua Klyne, v níž se lehounký falzet vznáší nad měkkými klávesami, bicími s tropickým nádechem a pulzujícími syntezátory.",
+     "path": "cs/klyne-entropy/"
+    }
+   }
   },
   {
    "source": "klangkuenstler-alice-phoebe-lou-man-on-the-moon-miguel-campbell-remix.md",
@@ -11773,7 +12838,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klangkuenstler, Alice Phoebe Lou - Man On the Moon (Miguel Campbell Remix)",
+     "description": "Britský producent Miguel Campbell proměňuje měsíční píseň KlangKuenstlera a Alice Phoebe Lou z roku 2014 v hřejivý, valivý groove pro Sunday Best: její hlas se beztíže vznáší nad basovou linkou, která nepřestává jemně tlačit kupředu.",
+     "path": "cs/klangkuenstler-alice-phoebe-lou-man-on-the-moon-miguel-campbell-remix/"
+    }
+   }
   },
   {
    "source": "klangkuenstler-alice-phoebe-lou-man-on-the-moon.md",
@@ -11874,7 +12950,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klangkuenstler, Alice Phoebe Lou - Man On the Moon",
+     "description": "KlangKuenstler halí měkký hlas Alice Phoebe Lou s folkovým nádechem do hřejivého, nespěchajícího deep house shuffle, který působí jako pomalá jízda domů pod úplňkem.",
+     "path": "cs/klangkuenstler-alice-phoebe-lou-man-on-the-moon/"
+    }
+   }
   },
   {
    "source": "klangkuenstler-soul-digger-original-mix.md",
@@ -11978,7 +13065,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klangkuenstler - Soul Digger (Original Mix)",
+     "description": "Valivý tech house groove s hřejivostí klasického house pod povrchem: Soul Digger nachází duši ve stroji a udržuje parket v pohybu skoro sedm minut.",
+     "path": "cs/klangkuenstler-soul-digger-original-mix/"
+    }
+   }
   },
   {
    "source": "klangkuenstler-jam-master-jack-original-mix.md",
@@ -12073,7 +13171,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klangkuenstler - Jam Master Jack (Original Mix)",
+     "description": "Šestiminutová housová dřina z Klangkuenstlerových raných let, kdy na prvním místě stál groove, stvořená pro dlouhou prostřední část klubové noci, kdy parket chce prostě jackovat.",
+     "path": "cs/klangkuenstler-jam-master-jack-original-mix/"
+    }
+   }
   },
   {
    "source": "klangkuenstler-golden.md",
@@ -12171,7 +13280,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klangkuenstler - Golden",
+     "description": "Noční techno roller z debutu Klangkuenstlera na labelu Great Stuff z roku 2015: mohutná, zaoblená basová linka, ošklivě krásná pilovitá vedoucí linka a podklad ze šumu vinylu, díky němuž působí temný groove podivně hřejivě.",
+     "path": "cs/klangkuenstler-golden/"
+    }
+   }
   },
   {
    "source": "kele-first-impressions.md",
@@ -12275,7 +13395,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Kele - First Impressions",
+     "description": "Kele Okereke otevírá svou nahrávku po půlnoci, Trick, šeptem: chladný, noční house groove o elektrizujícím setkání s někým novým, nazpívaný s Yasmin.",
+     "path": "cs/kele-first-impressions/"
+    }
+   }
   },
   {
    "source": "kav-verhouzer-bullysongs-get-what-you-came-for.md",
@@ -12372,7 +13503,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Kav Verhouzer, BullySongs - Get What You Came For",
+     "description": "Slunečné deep house akordy a hřejivý, chraplavý vokál BullySongs: Get What You Came For je pohodová pozvánka na taneční parket, která nikdy netlačí, jen vás vtáhne dovnitř.",
+     "path": "cs/kav-verhouzer-bullysongs-get-what-you-came-for/"
+    }
+   }
   },
   {
    "source": "kant-leo-stannard-close-to-the-wire-club-remix.md",
@@ -12478,7 +13620,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "KANT, Leo Stannard - Close to the Wire (Club Remix)",
+     "description": "Kodaňský produkční tým KANT rozprostírá bolavý zpěv Lea Stannarda do sedmiminutového klubového aranžmá u Black Butter Records, v němž melancholické klavírní akordy a stálý deep house pulz mění zlomené srdce v něco, čím se dá protančit.",
+     "path": "cs/kant-leo-stannard-close-to-the-wire-club-remix/"
+    }
+   }
   },
   {
    "source": "joss-stone-less-is-more.md",
@@ -12593,7 +13746,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Joss Stone - Less Is More",
+     "description": "Dospívající Joss Stone se opírá o houpavý soulový groove políbený reggae a zpívá o touze po méně se zastřenou autoritou zpěvačky dvakrát starší.",
+     "path": "cs/joss-stone-less-is-more/"
+    }
+   }
   },
   {
    "source": "john-newman-kove-love-me-again-kove-remix.md",
@@ -12687,7 +13851,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "John Newman, Kove - Love Me Again (Kove Remix)",
+     "description": "Kove žene northern soulovou prosbu Johna Newmana o druhou šanci do valivého drum and bass: syrový hlas jede na rychlých breacích a velkých, jasných akordech.",
+     "path": "cs/john-newman-kove-love-me-again-kove-remix/"
+    }
+   }
   },
   {
    "source": "jan-blomqvist-animal-trainer-big-jet-plane-animal-trainer-remix.md",
@@ -12792,7 +13967,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jan Blomqvist, Animal Trainer - Big Jet Plane (Animal Trainer Remix)",
+     "description": "Curyšské duo Animal Trainer vplétá tichou coververzi Big Jet Plane Jana Blomqvista z roku 2011 do valivého, pozdně nočního deephousového remixu vydaného na berlínském labelu Dantze, v němž se toužebný zpěv vznáší nad trpělivým, pulzujícím grooveem.",
+     "path": "cs/jan-blomqvist-animal-trainer-big-jet-plane-animal-trainer-remix/"
+    }
+   }
   },
   {
    "source": "jan-blomqvist-big-jet-plane.md",
@@ -12897,7 +14083,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jan Blomqvist - Big Jet Plane",
+     "description": "Jan Blomqvist zpomaluje folkovou ukolébavku Angus & Julia Stone v dlouhé, zářící melodic-housové plynutí, v němž se jeho unavený vokál vznáší nad pulzem jako letadlo nad nočními mraky.",
+     "path": "cs/jan-blomqvist-big-jet-plane/"
+    }
+   }
   },
   {
    "source": "james-newton-howard-jennifer-lawrence-the-hanging-tree-rebel-remix.md",
@@ -12998,7 +14195,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "James Newton Howard, Jennifer Lawrence - The Hanging Tree (Rebel Remix)",
+     "description": "Tísnivá folková píseň Jennifer Lawrence ze Síly vzdoru přetavená v rychlou rebelskou hymnu plnou bicích: sloka bez doprovodu přerůstá v dunivý pochod se smyčci a tanečním pulzem.",
+     "path": "cs/james-newton-howard-jennifer-lawrence-the-hanging-tree-rebel-remix/"
+    }
+   }
   },
   {
    "source": "james-newton-howard-jennifer-lawrence-the-hanging-tree.md",
@@ -13098,7 +14306,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "James Newton Howard, Jennifer Lawrence - The Hanging Tree",
+     "description": "Holý, neuhlazený hlas Jennifer Lawrence zpívá tísnivou vražednou baladu z románu Suzanne Collinsové Síla vzdoru na melodii od The Lumineers, která se s orchestrem Jamese Newtona Howarda za zády vzedme v rebelskou hymnu.",
+     "path": "cs/james-newton-howard-jennifer-lawrence-the-hanging-tree/"
+    }
+   }
   },
   {
    "source": "jain-so-peaceful.md",
@@ -13207,7 +14426,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jain - So Peaceful",
+     "description": "Jemná tečka za albem Zanaka, houpavá skladba s nádechem reggae, v níž Jain nechává cesty celého alba usadit se do klidné, prosluněné spokojenosti.",
+     "path": "cs/jain-so-peaceful/"
+    }
+   }
   },
   {
    "source": "jain-mr-johnson.md",
@@ -13308,7 +14538,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jain - Mr Johnson",
+     "description": "Perkuse lehké jako tleskání, poskakující basa a hravý, trochu rozpustilý přednes Jain dělají z Mr Johnson jeden z nejslunnějších malých příběhů alba Zanaka.",
+     "path": "cs/jain-mr-johnson/"
+    }
+   }
   },
   {
    "source": "jain-hope.md",
@@ -13417,7 +14658,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jain - Hope",
+     "description": "Lehký, zpěvavý hlas Jain, její vlastní programování bicích a baskytara a pozoun od Yodelice nesou malou, slunečnou prosbu za lepší svět, titulní skladbu jejího prvního EP z roku 2015.",
+     "path": "cs/jain-hope/"
+    }
+   }
   },
   {
    "source": "jain-come.md",
@@ -13521,7 +14773,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jain - Come",
+     "description": "Debutový hit Jain skrývá pod veselým poskakováním text o nešťastné lásce: zarputilá kytara, nesmělé žestě a zdvojené vokály, necelé tři minuty afropopové lehkosti, které ve Francii vystoupaly na 1. místo.",
+     "path": "cs/jain-come/"
+    }
+   }
   },
   {
    "source": "jain-city.md",
@@ -13623,7 +14886,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jain - City",
+     "description": "Závěrečná píseň EP Hope, které Jain vydala v roce 2015 a produkoval Yodelice: její jasný, lehce šibalský hlas jede na beatu, který zní jako podomácku vyrobený a mísí popovou prostotu s rytmickými barvami dětství stráveného mezi Dubají, Kongem a Abú Zabí.",
+     "path": "cs/jain-city/"
+    }
+   }
   },
   {
    "source": "ivy-levan-cadre-like-a-glove.md",
@@ -13717,7 +14991,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Ivy Levan, CADRÉ - Like A Glove",
+     "description": "Kouřový, nafoukaný vokál Ivy Levan se vine nad uhlazeným popovým beatem s těžkou basou, s rapovou slokou od Cadre: skladba z jejího „swamp-hopového“ debutu z roku 2015, která odpovídá svému názvu, sevřená, temná a šitá na míru.",
+     "path": "cs/ivy-levan-cadre-like-a-glove/"
+    }
+   }
   },
   {
    "source": "infinity-ink-infinity.md",
@@ -13826,7 +15111,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Infinity Ink - Infinity",
+     "description": "Infinity od Infinity Ink je deep housová hymna vedená basovou linkou, jejíž donekonečna smyčkovaný, napůl šeptaný hook z ní udělal platinový hit v Belgii a od roku 2012 stálici klubů.",
+     "path": "cs/infinity-ink-infinity/"
+    }
+   }
   },
   {
    "source": "imany-filatov-karas-don-t-be-so-shy-filatov-karas-remix.md",
@@ -13916,7 +15212,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Imany, Filatov & Karas - Don't Be So Shy (Filatov & Karas Remix)",
+     "description": "Zakouřený kontraalt Imany se potkává s uhlazeným, pulzujícím house remixem od Filatov & Karas, který z pomalého svádění z filmového soundtracku udělal hit tanečních parketů celého kontinentu.",
+     "path": "cs/imany-filatov-karas-don-t-be-so-shy-filatov-karas-remix/"
+    }
+   }
   },
   {
    "source": "hindi-zahra-old-friends-remastered-version.md",
@@ -14010,7 +15317,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Hindi Zahra - Old Friends (Remastered Version)",
+     "description": "Pomalá, snová závěrečná píseň debutu Hindi Zahry Handmade, kterou věnovala svým předkům: chraplavý hlas navrstvený do tichého sboru proměňuje vzpomínku v něco hřejivého a tiše bolestného.",
+     "path": "cs/hindi-zahra-old-friends-remastered-version/"
+    }
+   }
   },
   {
    "source": "hindi-zahra-music-remastered-version.md",
@@ -14114,7 +15432,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Hindi Zahra - Music (Remastered Version)",
+     "description": "Hindi Zahra zpívá milostný dopis samotné hudbě; její hřejivý, zastřený hlas se pohupuje nad propletenými kytarami a jemnými perkusemi, které spojují folk, soul a berberské kořeny.",
+     "path": "cs/hindi-zahra-music-remastered-version/"
+    }
+   }
   },
   {
    "source": "hindi-zahra-beautiful-tango-remastered-version.md",
@@ -14212,7 +15541,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Hindi Zahra - Beautiful Tango (Remastered Version)",
+     "description": "Kouřový hlas Hindi Zahry klouže v Beautiful Tango nad houpavou kytarou pouštního blues a jemnými perkusemi: pomalý tanec v podobě písně, který zní jako soumrak v malé místnosti.",
+     "path": "cs/hindi-zahra-beautiful-tango-remastered-version/"
+    }
+   }
   },
   {
    "source": "him-self-her-kieran-fowkes-gone-too-long-original-mix.md",
@@ -14312,7 +15652,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Him_Self_Her, Kieran Fowkes - Gone Too Long (Original Mix)",
+     "description": "Pomalu se valící deep house groove pod procítěným, toužebným vokálem Kierana Fowkese, nahrávka leicesterského dua vydaná u Crosstown Rebels a stvořená pro poslední, emotivní hodinu noci.",
+     "path": "cs/him-self-her-kieran-fowkes-gone-too-long-original-mix/"
+    }
+   }
   },
   {
    "source": "her-interlude.md",
@@ -14402,7 +15753,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Her - Interlude",
+     "description": "Krátké noční nadechnutí na první kazetě Her, sametový elektronický soul francouzského dua zredukovaný na něco málo přes dvě minuty nálady, prostoru a pomalé, smyslné záře.",
+     "path": "cs/her-interlude/"
+    }
+   }
   },
   {
    "source": "her-her.md",
@@ -14512,7 +15874,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Her - Her",
+     "description": "Francouzské duo Her pojmenovalo svůj manifest po sobě: pomalá, smyslná indie soulová skladba z tlumených beatů, hřejivé basy a hlasu, který se naklání až k mikrofonu.",
+     "path": "cs/her-her/"
+    }
+   }
   },
   {
    "source": "gotan-project-la-viguela.md",
@@ -14607,7 +15980,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gotan Project - La vigüela",
+     "description": "Bandoneon, kytara a hlas Cristiny Vilallongy plující nad pomalým elektronickým pulzem: La Vigüela je tango Gotan Project, které vyráží do otevřených pamp.",
+     "path": "cs/gotan-project-la-viguela/"
+    }
+   }
   },
   {
    "source": "gorillaz-neneh-cherry-kids-with-guns.md",
@@ -14708,7 +16092,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gorillaz, Neneh Cherry - Kids with Guns",
+     "description": "Chladná, řinčivá skladba Gorillaz z alba Demon Days, v níž unavený vokál Damona Albarna a přízračný doprovod Neneh Cherry mění melodii jako z dětské říkanky v tichý poplach kvůli dětem a násilí.",
+     "path": "cs/gorillaz-neneh-cherry-kids-with-guns/"
+    }
+   }
   },
   {
    "source": "gorillaz-19-2000-soulchild-remix.md",
@@ -14811,7 +16206,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gorillaz - 19-2000 (Soulchild Remix)",
+     "description": "Soulchild Remix proměňuje malátnou 19-2000 od Gorillaz v jasný, poskakující kreslený výlet autem: singl z roku 2001, který se dostal do britské první desítky, titulní znělka hry FIFA Football 2002 a refrén, který si pamatuje každý: „get the cool shoeshine“.",
+     "path": "cs/gorillaz-19-2000-soulchild-remix/"
+    }
+   }
   },
   {
    "source": "gorgon-city-zak-abel-dj-anna-unmissable-dj-anna-remix.md",
@@ -14916,7 +16322,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gorgon City, Zak Abel, Dj Anna - Unmissable (DJ Anna Remix)",
+     "description": "DJ Anna stahuje popový singl Gorgon City do tmy: těžká valivá basová linka, procítěný hlas Zaka Abela v útržcích a téměř osm minut nočního tlaku.",
+     "path": "cs/gorgon-city-zak-abel-dj-anna-unmissable-dj-anna-remix/"
+    }
+   }
   },
   {
    "source": "gorgon-city-mnek-will-saul-ready-for-your-love-close-remix.md",
@@ -15020,7 +16437,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gorgon City, MNEK, Will Saul - Ready For Your Love (CLOSE Remix)",
+     "description": "Will Saul, remixující jako CLOSE, natahuje britskou čtyřku Gorgon City a MNEK z roku 2014 do šest a půl minuty dlouhé deephousové cesty s nádechem dubu, v níž se procítěný vokál nese ozvěnou nočním oparem.",
+     "path": "cs/gorgon-city-mnek-will-saul-ready-for-your-love-close-remix/"
+    }
+   }
   },
   {
    "source": "gorgon-city-katy-menditta-weiss-imagination-weiss-remix.md",
@@ -15127,7 +16555,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gorgon City, Katy Menditta, WEISS - Imagination (Weiss Remix)",
+     "description": "WEISS natahuje Imagination od Gorgon City do šestiminutové house jízdy vedené groovem pro remixové EP z roku 2015 a nechává hlas Katy Menditty probleskovat nad basou.",
+     "path": "cs/gorgon-city-katy-menditta-weiss-imagination-weiss-remix/"
+    }
+   }
   },
   {
    "source": "gorgon-city-katy-menditta-imagination.md",
@@ -15237,7 +16676,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gorgon City, Katy Menditta - Imagination",
+     "description": "Uhlazená, sluncem zalitá house skladba, v níž se procítěný vokál Katy Menditty vznáší nad pružnou basovou linkou a ostrými bicími s nádechem garage, stvořená pro chvíli, kdy klub vydechne.",
+     "path": "cs/gorgon-city-katy-menditta-imagination/"
+    }
+   }
   },
   {
    "source": "glass-animals-gilligan-moss-gooey-gilligan-moss-remix.md",
@@ -15334,7 +16784,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Glass Animals, Gilligan Moss - Gooey (Gilligan Moss Remix)",
+     "description": "Gilligan Moss natahuje lepkavou milostnou píseň Glass Animals do třpytivého elektronického snění plného zvonivých perkusí, pokřivených útržků zpěvu a pomalu rozkvétajícího grooveu.",
+     "path": "cs/glass-animals-gilligan-moss-gooey-gilligan-moss-remix/"
+    }
+   }
   },
   {
    "source": "glass-animals-gooey.md",
@@ -15437,7 +16898,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Glass Animals - Gooey",
+     "description": "Průlomová skladba Glass Animals je pomalá, sirupová džungle milostné písně: zamumlaný vokál Davea Bayleyho se vznáší nad beaty z luskání prsty, měkkou kytarou a basovou linkou, která se roztéká.",
+     "path": "cs/glass-animals-gooey/"
+    }
+   }
   },
   {
    "source": "gin-wigmore-suffa-logic-willing-to-die.md",
@@ -15534,7 +17006,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gin Wigmore, Suffa, Logic - Willing To Die",
+     "description": "Syrový, drsně zpívaný hook Gin Wigmore se potkává se slokami amerického rapera Logica a Suffy z Hilltop Hoods v těžké, vzdorné hymně postavené nad samplovanou terénní nahrávkou.",
+     "path": "cs/gin-wigmore-suffa-logic-willing-to-die/"
+    }
+   }
   },
   {
    "source": "gin-wigmore-written-in-the-water.md",
@@ -15643,7 +17126,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gin Wigmore - Written In The Water",
+     "description": "Gin Wigmore vrčí krátkým, dupavým bluesrockovým číslem ze svého alba Blood to Bone z roku 2015, její chraplavý hlas se staví osudu čelem a videoklip rozděluje do dvoudílného příběhu psanců.",
+     "path": "cs/gin-wigmore-written-in-the-water/"
+    }
+   }
   },
   {
    "source": "gin-wigmore-new-rush.md",
@@ -15748,7 +17242,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gin Wigmore - New Rush",
+     "description": "Comebackový singl Gin Wigmore z roku 2015, napsaný spolu s Charliem Andrewem, udeří jako dávka adrenalinu: dunivé bicí a refrén k společnému skandování ženou její chraplavý hlas k novému začátku po dusivém vztahu.",
+     "path": "cs/gin-wigmore-new-rush/"
+    }
+   }
   },
   {
    "source": "gin-wigmore-man-like-that.md",
@@ -15857,7 +17362,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gin Wigmore - Man Like That",
+     "description": "Dupavá bluesově-soulová promenáda, v níž Gin Wigmore svým chraplavým, nebojácným hlasem přesně vyjmenuje, jakého muže chce; produkoval ji Butch Walker pro album Gravel & Wine a později zazněla v reklamě Heinekenu spojené s Jamesem Bondem.",
+     "path": "cs/gin-wigmore-man-like-that/"
+    }
+   }
   },
   {
    "source": "gin-wigmore-kill-of-the-night.md",
@@ -15972,7 +17488,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gin Wigmore - Kill Of The Night",
+     "description": "Kouřový chraplák Gin Wigmore se plíží nad dupavými bicími a nafoukaným bluesovým vykračováním: půlnoční lov, který zpívá někdo, kdo rozhodně hodlá vyhrát.",
+     "path": "cs/gin-wigmore-kill-of-the-night/"
+    }
+   }
   },
   {
    "source": "gin-wigmore-hey-ho.md",
@@ -16076,7 +17603,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gin Wigmore - Hey Ho",
+     "description": "Dupavý, tleskavý kousek retro soul-popu z debutu Gin Wigmore, v němž její hlas ze štěrku a medu dělá z bezstarostného pokřiku vyzývavou sázku.",
+     "path": "cs/gin-wigmore-hey-ho/"
+    }
+   }
   },
   {
    "source": "gin-wigmore-dirty-mercy.md",
@@ -16177,7 +17715,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gin Wigmore - Dirty Mercy",
+     "description": "Vykračující a bažinatá Dirty Mercy spojuje chraptivé vrčení Gin Wigmore s dupavým grooveem a lstivě zlověstným ostřím; je to úvodní výstřel její éry alba Ivory.",
+     "path": "cs/gin-wigmore-dirty-mercy/"
+    }
+   }
   },
   {
    "source": "gin-wigmore-black-sheep.md",
@@ -16291,7 +17840,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gin Wigmore - Black Sheep",
+     "description": "Dupavé bicí, skandované doprovodné vokály a hook k hromadnému křičení rámují štěrkovitý hlas Gin Wigmore v hrdé hymně pro každého, kdo nikdy nezapadl do stáda.",
+     "path": "cs/gin-wigmore-black-sheep/"
+    }
+   }
   },
   {
    "source": "gabriella-cilmi-left-with-someone-else.md",
@@ -16387,7 +17947,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gabriella Cilmi - Left With Someone Else",
+     "description": "Zakouřené retro soulové rozloučení z nezávislého třetího alba Gabrielly Cilmi: dávná láska odchází s někým novým a střídmé aranžmá nechává prostor zpěvu, který je čistým jedem zabaleným do sametu.",
+     "path": "cs/gabriella-cilmi-left-with-someone-else/"
+    }
+   }
   },
   {
    "source": "gabriella-cilmi-cry-me-a-river-live-version.md",
@@ -16484,7 +18055,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gabriella Cilmi - Cry Me A River (Live Version)",
+     "description": "Šestnáctiletá Gabriella Cilmi přenáší rozchodový hit Justina Timberlakea z roku 2002 s trojčlennou kapelou na kouřové, živé soulové území: B-strana z roku 2008, kterou nahráli Xenomania, a její chraplavý hlas nese všechnu bolest.",
+     "path": "cs/gabriella-cilmi-cry-me-a-river-live-version/"
+    }
+   }
   },
   {
    "source": "future-forward-mount-sims-time-for-livin.md",
@@ -16579,7 +18161,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Future Forward, Mount Sims - Time for Livin",
+     "description": "Dlouhý, nakrucující se electro groove vydaný u Kompute Musik, v němž se kamenný vokál Mount Sims veze na neúnavném strojovém pulzu, který se skoro nemění a nikdy nemusí.",
+     "path": "cs/future-forward-mount-sims-time-for-livin/"
+    }
+   }
   },
   {
    "source": "future-forward-society-mount-sims-the-creep-hv-thrillseeker-mix.md",
@@ -16681,7 +18274,18 @@
     "learning",
     "sources"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Future Forward Society, Mount Sims - The Creep (HV Thrillseeker Mix)",
+     "description": "HV Thrillseeker Mix natahuje The Creep do delšího a tvrdšího klubového nástroje, v němž je hrozivost originálu protlačena neúprosným, hnacím groovem.",
+     "path": "cs/future-forward-society-mount-sims-the-creep-hv-thrillseeker-mix/"
+    }
+   }
   },
   {
    "source": "future-forward-society-mount-sims-the-creep-capri-mix.md",
@@ -16785,7 +18389,18 @@
     "learning",
     "sources"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Future Forward Society, Mount Sims - The Creep (Capri Mix)",
+     "description": "Dlouhý, plíživý electro mix, který si své stíny drží u těla: The Creep v podobě Capri Mix natahuje úlisnou hrozbu Mount Sims přes šest a půl minuty pulzujících syntezátorů.",
+     "path": "cs/future-forward-society-mount-sims-the-creep-capri-mix/"
+    }
+   }
   },
   {
    "source": "future-forward-society-mount-sims-the-creep.md",
@@ -16885,7 +18500,18 @@
     "learning",
     "sources"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Future Forward Society, Mount Sims - The Creep",
+     "description": "Future Forward Society a Mount Sims staví plíživé, stinné electro plazení: nízko posazený bas, chladné syntezátory a hlas, který jako by šeptal z kouta místnosti.",
+     "path": "cs/future-forward-society-mount-sims-the-creep/"
+    }
+   }
   },
   {
    "source": "foster-the-people-pumped-up-kicks.md",
@@ -16985,7 +18611,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Foster The People - Pumped Up Kicks",
+     "description": "Svěží, pískaná indiepopová chytlavka s mrazivým příběhem pod povrchem: demo, které Mark Foster napsal a nahrál sám za pět hodin, se v roce 2010 šířilo po internetu a v USA strávilo osm týdnů na 3. místě.",
+     "path": "cs/foster-the-people-pumped-up-kicks/"
+    }
+   }
   },
   {
    "source": "format-b-chunky-radio-edit.md",
@@ -17088,7 +18725,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Format:B - Chunky (Radio Edit)",
+     "description": "Gumová, nafoukaně sebevědomá tech house pecka berlínského dua Format:B, postavená na tlusté basové lince a nasekaných vokálech z motownského singlu Function at the Junction od Shortyho Longa z roku 1966, zkrácená na rozhlasovou délku.",
+     "path": "cs/format-b-chunky-radio-edit/"
+    }
+   }
   },
   {
    "source": "flume-holdin-on.md",
@@ -17187,7 +18835,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Flume - Holdin On",
+     "description": "Rozsekaný soulový vokál, kolébající se syntezátorové akordy a houpavý beat, při kterém kýváte hlavou: Flumova průlomová skladba jsou dvě a půl minuty čisté, omámené radosti.",
+     "path": "cs/flume-holdin-on/"
+    }
+   }
   },
   {
    "source": "faul-wad-pnau-changes.md",
@@ -17298,7 +18957,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Faul & Wad, PNAU - Changes",
+     "description": "Faul & Wad Ad stavějí saxofonem prosvětlený, hořkosladký house groove kolem refrénu dětského sboru z písně Baby od Pnau; z písně o dospívání se stala evropská jednička.",
+     "path": "cs/faul-wad-pnau-changes/"
+    }
+   }
   },
   {
    "source": "fkj-lying-together.md",
@@ -17401,7 +19071,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "FKJ - Lying Together",
+     "description": "Neo-house skladba, se kterou se představil FKJ: sekané vokály, hřejivé filtrované akordy a pružná basová linka zabalené do čtyř a půl minuty pomalu se rozhořívající, sluncem zalité intimity.",
+     "path": "cs/fkj-lying-together/"
+    }
+   }
   },
   {
    "source": "ed-sheeran-shape-of-you.md",
@@ -17496,7 +19177,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Ed Sheeran - Shape of You",
+     "description": "Drnkaná smyčka připomínající marimbu, dancehallové pohupování a flirt, který začíná u baru: Shape of You je minimalistický popový stroj, který v roce 2017 dobyl svět.",
+     "path": "cs/ed-sheeran-shape-of-you/"
+    }
+   }
   },
   {
    "source": "dusty-kid-nemur-walls-of-guitars-extended-version.md",
@@ -17587,7 +19279,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Dusty Kid - Nemur (Walls of Guitars) (Extended Version)",
+     "description": "Sardinský techno producent uzavírá své debutové album A Raver's Diary (Boxer, 2009) nečekanou, něžnou písní z vrstvených kytar a vlastního křehkého hlasu, která se vzdouvá do zvukové stěny.",
+     "path": "cs/dusty-kid-nemur-walls-of-guitars-extended-version/"
+    }
+   }
   },
   {
    "source": "drake-the-throne-pop-style.md",
@@ -17682,7 +19385,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Drake, The Throne - Pop Style",
+     "description": "Drake si vyměňuje verše s Kanyem Westem a dva řádky s Jay-Z nad kalným, minimalistickým beatem s nádechem trapu: chladné, nenápadné vytahování z éry Views, které existuje ve třech různých verzích.",
+     "path": "cs/drake-the-throne-pop-style/"
+    }
+   }
   },
   {
    "source": "depeche-mode-wrong-live-in-barcelona.md",
@@ -17783,7 +19497,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Depeche Mode - Wrong (Live in Barcelona)",
+     "description": "Rozeklaná litanie omylů Depeche Mode, vytlučená naživo v Barceloně s vrčícími syntezátory, živými bicími a Davem Gahanem, který si vychutnává každé špatné rozhodnutí.",
+     "path": "cs/depeche-mode-wrong-live-in-barcelona/"
+    }
+   }
   },
   {
    "source": "david-lynch-karen-o-pinky-s-dream-trentemoller-remix-instrumental.md",
@@ -17882,7 +19607,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "David Lynch, Karen O - Pinky's Dream (Trentemøller Remix Instrumental)",
+     "description": "Trentemøller odstraňuje Karen O a nechává jen noční můru: pulzující, zlověstný syntezátorový tah, který zní jako auto řítící se v noci lynchovskou dálnicí.",
+     "path": "cs/david-lynch-karen-o-pinky-s-dream-trentemoller-remix-instrumental/"
+    }
+   }
   },
   {
    "source": "daft-punk-pharrell-williams-nile-rodgers-get-lucky-radio-edit.md",
@@ -17999,7 +19735,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Daft Punk, Pharrell Williams, Nile Rodgers - Get Lucky (Radio Edit)",
+     "description": "Kytara Nilea Rodgerse ve stylu chicken scratch, Pharrellův lehký zpěv a robotický sbor Daft Punk dělají ze smyčky čtyř akordů nejneodolatelnější návrat disca 2010s: pilotní singl alba Random Access Memories v rádiové verzi.",
+     "path": "cs/daft-punk-pharrell-williams-nile-rodgers-get-lucky-radio-edit/"
+    }
+   }
   },
   {
    "source": "daft-punk-harder-better-faster-stronger.md",
@@ -18097,7 +19844,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Daft Punk - Harder, Better, Faster, Stronger",
+     "description": "Rozsekaná funková smyčka a robot, který odříkává cvičební mantru: v Harder, Better, Faster, Stronger proměnili Daft Punk sampl v jeden z nejcitovanějších hooků století.",
+     "path": "cs/daft-punk-harder-better-faster-stronger/"
+    }
+   }
   },
   {
    "source": "daft-punk-give-life-back-to-music.md",
@@ -18206,7 +19964,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Daft Punk - Give Life Back to Music",
+     "description": "Úvodní opona alba Random Access Memories: živé bicí, kytara Nila Rodgerse a vokodérové programové prohlášení, že se Daft Punk vrátili, aby hudba znovu dýchala.",
+     "path": "cs/daft-punk-give-life-back-to-music/"
+    }
+   }
   },
   {
    "source": "daft-punk-giorgio-by-moroder.md",
@@ -18310,7 +20079,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Daft Punk - Giorgio by Moroder",
+     "description": "Giorgio Moroder vypráví nad kliktrackem vlastní příběh o tom, jak začínal, a Daft Punk pak rozvinou devět minut arpeggiového disca, živých bicích a smyčců v poctu napříč časem zvuku, který vynalezl.",
+     "path": "cs/daft-punk-giorgio-by-moroder/"
+    }
+   }
   },
   {
    "source": "daft-punk-face-to-face-short-circuit.md",
@@ -18416,7 +20196,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Daft Punk - Face to Face / Short Circuit",
+     "description": "V živé nahrávce z Bercy spojují Daft Punk slunečné housové houpání Face to Face s neklidným robotím funkem Short Circuit a publikum kolem pyramidy jde nahoru s nimi.",
+     "path": "cs/daft-punk-face-to-face-short-circuit/"
+    }
+   }
   },
   {
    "source": "daft-punk-episode-3-nile-rodgers.md",
@@ -18511,7 +20302,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Daft Punk - Episode 3, Nile Rodgers",
+     "description": "Nile Rodgers vypráví svůj vlastní příběh ve třetím z filmů Collaborators od Daft Punk, vřelém a vtipném portrétu kytaristy, jehož rytmus prostupuje celým albem Random Access Memories.",
+     "path": "cs/daft-punk-episode-3-nile-rodgers/"
+    }
+   }
   },
   {
    "source": "daft-punk-episode-1-giorgio-moroder.md",
@@ -18604,7 +20406,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Daft Punk - Episode 1, Giorgio Moroder",
+     "description": "Giorgio Moroder otevírá filmy Daft Punk The Collaborators a vzpomíná na Moog, na taneční parket a na perfekcionismus dvou Francouzů, kteří ho kvůli Random Access Memories přivedli zpět do studia.",
+     "path": "cs/daft-punk-episode-1-giorgio-moroder/"
+    }
+   }
   },
   {
    "source": "daft-punk-around-the-world.md",
@@ -18713,7 +20526,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Daft Punk - Around the World",
+     "description": "Jedna fráze, jedna basová linka a sedm minut opakování: v Around the World Daft Punk dokazují, že smyčka může být celým světem sama o sobě, a videoklip Michela Gondryho proměnil jejich aranžmá v choreografii.",
+     "path": "cs/daft-punk-around-the-world/"
+    }
+   }
   },
   {
    "source": "dj-s-k-t-must-be-a-reason-radio-edit.md",
@@ -18822,7 +20646,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "DJ S.K.T - Must Be A Reason (Radio Edit)",
+     "description": "DJ S.K.T přestavuje vokální hook singlu King of My Castle od Wamdue Project, britské jedničky z roku 1999, do sevřené, slunečné house verze z roku 2017 pro label DFX, a to s přehraným samplem místo původního masteru.",
+     "path": "cs/dj-s-k-t-must-be-a-reason-radio-edit/"
+    }
+   }
   },
   {
    "source": "dj-patife-sambassim-dj-patife-remix.md",
@@ -18922,7 +20757,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "DJ Patife - Sambassim (DJ Patife Remix)",
+     "description": "Vzdušná bossa melodie Fernandy Porto se veze na valivém drum and bass breaku ze São Paula: prosluněný sambový swing se tu potkává s chrastivými breakbeaty a hlubokým subbasem.",
+     "path": "cs/dj-patife-sambassim-dj-patife-remix/"
+    }
+   }
   },
   {
    "source": "dj-fitchie-joe-dukie-midnight-marauders.md",
@@ -19019,7 +20865,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "DJ Fitchie, Joe Dukie - Midnight Marauders",
+     "description": "Sedm nespěchajících minut tichomořského dub soulu od dvou opor Fat Freddy's Drop: medový hlas Joea Dukieho pluje nad hlubokou, trpělivou basovou linkou stvořenou pro hodiny po půlnoci.",
+     "path": "cs/dj-fitchie-joe-dukie-midnight-marauders/"
+    }
+   }
   },
   {
    "source": "corinne-bailey-rae-put-your-records-on.md",
@@ -19125,7 +20982,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Corinne Bailey Rae - Put Your Records On",
+     "description": "Sluncem prozářený soul-popový singl Corinne Bailey Rae je jemnou výzvou, abyste se uvolnili: samá lehká kytara, měkké žestě a hřejivý hlas, který vám radí, abyste dorostli do sebe samých.",
+     "path": "cs/corinne-bailey-rae-put-your-records-on/"
+    }
+   }
   },
   {
    "source": "codec-flexor-time-has-changed-original.md",
@@ -19232,7 +21100,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Codec & Flexor - Time Has Changed (Original)",
+     "description": "Chladné, pulzující syntezátory v analogovém duchu a odtažitý zpěv dávají klubovému hitu Codec & Flexor z éry electroclashe zvuk rave, na který vzpomínáte přes ojíněné sklo.",
+     "path": "cs/codec-flexor-time-has-changed-original/"
+    }
+   }
   },
   {
    "source": "clea-vincent-all-that-she-wants.md",
@@ -19332,7 +21211,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Clea Vincent - All that she wants",
+     "description": "Cléa Vincent mění hit Ace of Base z roku 1992 ve vzdušný, domácky vyrobený francouzský synth-pop a místo jeho reggae-popového vykračování nabízí snový lo-fi groove, který má blíž k hip-hopu a R&B.",
+     "path": "cs/clea-vincent-all-that-she-wants/"
+    }
+   }
   },
   {
    "source": "claptone-clap-your-hands-say-yeah-ghost.md",
@@ -19431,7 +21321,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Claptone, Clap Your Hands Say Yeah - Ghost",
+     "description": "Claptone pokládá křehký, chvějivý indie vokál Aleca Ounswortha na trpělivý deep house groove: taneční skladba, která zní, jako by za něčím truchlila.",
+     "path": "cs/claptone-clap-your-hands-say-yeah-ghost/"
+    }
+   }
   },
   {
    "source": "chet-faker-talk-is-cheap.md",
@@ -19525,7 +21426,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Chet Faker - Talk Is Cheap",
+     "description": "Teskná, efekty upravená saxofonová linka, líný, hřejivý beat a zastřený croon Chet Fakera dělají z tohoto hlavního singlu alba Built on Glass samotnou definici nočního elektronického soulu a píseň číslo jedna stanice triple j za rok 2014.",
+     "path": "cs/chet-faker-talk-is-cheap/"
+    }
+   }
   },
   {
    "source": "chet-faker-gold.md",
@@ -19630,7 +21542,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Chet Faker - Gold",
+     "description": "Kouřový noční soul Cheta Fakera nad pomalým elektronickým groovem s luskáním prstů: minimalistická skladba, která všechen svůj žár bere z jeho ošlehaného hlasu a z basové linky, která se sotva pohne.",
+     "path": "cs/chet-faker-gold/"
+    }
+   }
   },
   {
    "source": "camel-power-club-ourson.md",
@@ -19727,7 +21650,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Camel Power Club - Ourson",
+     "description": "Měkké beaty, slunné smyčky a samplovaný bluesový hlas Son House: Ourson je krátký, mazlivý kousek francouzského chilloutu, nejdřív singl z roku 2015 a později součást alba Sputnik II, který působí jako plyšový medvídek převedený do hřejivého zvuku.",
+     "path": "cs/camel-power-club-ourson/"
+    }
+   }
   },
   {
    "source": "claap-s-a-n-t-a-n-a-dimanche.md",
@@ -19830,7 +21764,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "CLAAP!, S.A.N.T.A.N.A. - Dimanche",
+     "description": "Pomalý deep house na nedělní odpoledne z debutového EP pařížského dua u La Belle Records: samé hřejivé akordy, nespěchající beat a jemný vokál Santany, který se vynořuje a mizí v oparu.",
+     "path": "cs/claap-s-a-n-t-a-n-a-dimanche/"
+    }
+   }
   },
   {
    "source": "broken-back-happiest-man-on-earth-radio-edit.md",
@@ -19927,7 +21872,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Broken Back - Happiest Man on Earth (Radio Edit)",
+     "description": "Jasné akustické drnkání nad jemným elektronickým beatem: první singl Broken Back zní jako optimismus vydobytý tvrdou cestou.",
+     "path": "cs/broken-back-happiest-man-on-earth-radio-edit/"
+    }
+   }
   },
   {
    "source": "branko-skip-die-fellow-made-of-gold.md",
@@ -20019,7 +21975,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Branko, SKIP&DIE, Fellow - Made of Gold",
+     "description": "Brankův globální klubový zvuk v miniatuře: amsterodamské setkání se SKIP&DIE a Fellow na jeho debutovém albu ATLAS, lesklý groove s těžkou basou stavěný pro dav.",
+     "path": "cs/branko-skip-die-fellow-made-of-gold/"
+    }
+   }
   },
   {
    "source": "bodyrockers-i-like-the-way-radio-edit.md",
@@ -20125,7 +22092,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Bodyrockers - I Like The Way (Radio Edit)",
+     "description": "Drtivý dance-rockový riff, vykračující beat a hook o tom, jak se hýbete: taneční pecka Bodyrockers z roku 2005 je čistá, nestydatá suverénnost.",
+     "path": "cs/bodyrockers-i-like-the-way-radio-edit/"
+    }
+   }
   },
   {
    "source": "bobby-nourmand-smokin-joe.md",
@@ -20226,7 +22204,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Bobby Nourmand - Smokin' Joe",
+     "description": "Uvolněný, zakouřený kousek deep housu, kde se valivá basová linka potkává s bluesovým vokálem: tajemná skladba losangeleského producenta z The Magician's Magic Tapes, kterou v roce 2016 vydal label Potion.",
+     "path": "cs/bobby-nourmand-smokin-joe/"
+    }
+   }
   },
   {
    "source": "bob-moses-tearing-me-up.md",
@@ -20336,7 +22325,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Bob Moses - Tearing Me Up",
+     "description": "Bob Moses rozprostírají zakouřený vokál zlomeného srdce přes pozvolna doutnající deep house groove, samá zadumaná kytara, valící se basa a noční napětí, které se nikdy docela nezlomí; remix skladby od RAC získal Grammy.",
+     "path": "cs/bob-moses-tearing-me-up/"
+    }
+   }
   },
   {
    "source": "blankets-the-hanging-tree.md",
@@ -20435,7 +22435,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Blankets - The Hanging Tree",
+     "description": "Blankets vynášejí vražednou baladu z Síly vzdoru z lesa na taneční parket: francouzská elektronická coververze z roku 2015, která ponechává broukatelnou, znepokojivou melodii písně a staví ji na pulzující beat.",
+     "path": "cs/blankets-the-hanging-tree/"
+    }
+   }
   },
   {
    "source": "big-data-joywave-dangerous.md",
@@ -20537,7 +22548,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Big Data, Joywave - Dangerous",
+     "description": "Nafoukaný, paranoidní electro-rockový dupák, v němž Daniel Armbruster z Joywave posměšně odříkává hook přes úsečnou funkovou kytaru, mohutné tleskání a basovou linku stvořenou pro sluchátka i taneční parket.",
+     "path": "cs/big-data-joywave-dangerous/"
+    }
+   }
   },
   {
    "source": "ben-khan-savage.md",
@@ -20637,7 +22659,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Ben Khan - Savage",
+     "description": "Dvě a půl minuty pokrouceného, omámeného funku: chladný falzet Bena Khana klouže po kolísajících syntezátorech, kytarových stabech a žestích, které znějí jako uvězněné v bublině.",
+     "path": "cs/ben-khan-savage/"
+    }
+   }
   },
   {
    "source": "basement-jaxx-galactical.md",
@@ -20742,7 +22775,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Basement Jaxx - Galactical",
+     "description": "Jasná, poskakující a trochu šílená skladba Galactical posílá Basement Jaxx a zpěvačku Vulu do vesmíru na house groovu stavěném pro tanec ve stavu beztíže.",
+     "path": "cs/basement-jaxx-galactical/"
+    }
+   }
   },
   {
    "source": "ayo-down-on-my-knees.md",
@@ -20847,7 +22891,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Ayọ - Down On My Knees",
+     "description": "Ayọ prosí o ztracenou lásku nad akustickou kytarou a jemným reggae houpáním: debutový singl z roku 2006, nahraný s živou kapelou za pět dní v New Yorku, který z německo-nigerijské zpěvačky udělal hvězdu ve Francii.",
+     "path": "cs/ayo-down-on-my-knees/"
+    }
+   }
   },
   {
    "source": "axwell-max-c-i-found-u-radio-edit.md",
@@ -20957,7 +23012,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Axwell, Max C - I Found U (Radio Edit)",
+     "description": "Axwellova house hymna prozářená klavírem zhuštěná pod tři minuty: valivá basová linka, zpěv Max'C s nádechem gospelu a refrén stvořený pro ruce nad hlavou.",
+     "path": "cs/axwell-max-c-i-found-u-radio-edit/"
+    }
+   }
   },
   {
    "source": "axwell-feel-the-vibe.md",
@@ -21057,7 +23123,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Axwell - Feel The Vibe",
+     "description": "Klubová deska Axwella z roku 2004 v původní dlouhé podobě: pumpující, filtrovaný house groove, který graduje, dokud s sebou nezvedne celý parket.",
+     "path": "cs/axwell-feel-the-vibe/"
+    }
+   }
   },
   {
    "source": "avicii-feeling-good.md",
@@ -21155,7 +23232,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Avicii - Feeling Good",
+     "description": "Avicii balí standard proslavený Ninou Simone do měkkých, vzdouvajících se syntezátorů a nechává zakouřený, vzlétající hlas Audry Mae nést píseň o nových úsvitech, nahranou v roce 2015 pro film o jeho vlastním zotavení z let koncertování.",
+     "path": "cs/avicii-feeling-good/"
+    }
+   }
   },
   {
    "source": "asaf-avidan-the-mojos-reckoning-song-one-day.md",
@@ -21250,7 +23338,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Asaf Avidan & the Mojos - Reckoning Song (One Day)",
+     "description": "Zlomený hlas bez věku nad několika akustickými akordy: původní Reckoning Song z roku 2008 je zpověď od táboráku o stárnutí, čtyři roky předtím, než z ní Wankelmutův remix udělal evropskou jedničku.",
+     "path": "cs/asaf-avidan-the-mojos-reckoning-song-one-day/"
+    }
+   }
   },
   {
    "source": "arctic-monkeys-snap-out-of-it.md",
@@ -21362,7 +23461,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Arctic Monkeys - Snap Out Of It",
+     "description": "Alex Turner prosí milovanou osobu, aby se probrala z kouzla někoho jiného, nad sebevědomě kráčejícím shufflem s tleskáním a s hookem v refrénu, který vám zůstane v hlavě celé dny: šestý singl z alba AM.",
+     "path": "cs/arctic-monkeys-snap-out-of-it/"
+    }
+   }
   },
   {
    "source": "arctic-monkeys-r-u-mine.md",
@@ -21472,7 +23582,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Arctic Monkeys - R U Mine?",
+     "description": "Arctic Monkeys proměňují žárlivou noční textovku v dupavou skladbu nabitou riffy, v níž bleskurychlé slovní hříčky Alexe Turnera jedou na zkreslené, nafoukané kytarové lince.",
+     "path": "cs/arctic-monkeys-r-u-mine/"
+    }
+   }
   },
   {
    "source": "arctic-monkeys-do-i-wanna-know.md",
@@ -21579,7 +23700,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Arctic Monkeys - Do I Wanna Know?",
+     "description": "Těžký, plíživý riff, dupavé tleskání a noční zpráva, která nikdy neměla odejít: Do I Wanna Know? mění milostné pochybnosti v pomalu doutnající vychloubačnost.",
+     "path": "cs/arctic-monkeys-do-i-wanna-know/"
+    }
+   }
   },
   {
    "source": "anna-lunoe-radioactive.md",
@@ -21687,7 +23819,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Anna Lunoe - Radioactive",
+     "description": "Radioactive, debut Anny Lunoe na labelu OWSLA z roku 2016, je „hyperhousová“ pecka ve světle stroboskopů, nazpívaná jejím vlastním hlasem: samé useknuté vokální hooky, ravové syntezátorové údery a basy stvořené k tomu, aby rozechvěly festivalový stan.",
+     "path": "cs/anna-lunoe-radioactive/"
+    }
+   }
   },
   {
    "source": "angus-julia-stone-big-jet-plane.md",
@@ -21783,7 +23926,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Angus & Julia Stone - Big Jet Plane",
+     "description": "Jemné kytary, sourozenecké harmonie a snění o tom, že s někým uletíte: Big Jet Plane pomalu připluje a zůstane s vámi ještě dlouho po přistání.",
+     "path": "cs/angus-julia-stone-big-jet-plane/"
+    }
+   }
   },
   {
    "source": "amy-winehouse-you-know-i-m-no-good.md",
@@ -21823,7 +23977,7 @@
    "youtube": "b-I2s5zRbHg",
    "thumbnail": "https://i.ytimg.com/vi/b-I2s5zRbHg/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 721,
+   "words": 720,
    "extra": {
     "album": "Back To Black",
     "publisher": "Island",
@@ -21895,7 +24049,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Amy Winehouse - You Know I'm No Good",
+     "description": "Plíživé zpovědní přiznání nevěry, protínané údery dechů, z alba Back to Black, které napsala Amy Winehouse a produkoval Mark Ronson s hudebníky Dap-Kings: retro soul s textem, jaký by žádná dívčí skupina 60. let nezazpívala.",
+     "path": "cs/amy-winehouse-you-know-i-m-no-good/"
+    }
+   }
   },
   {
    "source": "alle-farben-graham-candy-sometimes.md",
@@ -22001,7 +24166,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Alle Farben, Graham Candy - Sometimes",
+     "description": "Sluncem prohřátý deep house Alle Farben se setkává s chvějivým, nezaměnitelným vysokým hlasem Grahama Candyho v toužebné berlínské letní písni o dnech, které nejdou podle plánu.",
+     "path": "cs/alle-farben-graham-candy-sometimes/"
+    }
+   }
   },
   {
    "source": "alicia-keys-fallin.md",
@@ -22102,7 +24278,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Alicia Keys - Fallin'",
+     "description": "Dvacetiletá Alicia Keys u klavíru vlévá touhu gospelových rozměrů do strohé mollové zpovědi o lásce, do které nedokáže přestat padat.",
+     "path": "cs/alicia-keys-fallin/"
+    }
+   }
   },
   {
    "source": "adam-freeland-do-you.md",
@@ -22207,7 +24394,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Adam Freeland - Do You",
+     "description": "Melodické syntezátory narážejí do živých bicích a vrčícího rockového zpěvu: Do You otevírá Freelandovo album Cope breakbeat-punkovým šokem, který zní jako kapela a DJ ve válce.",
+     "path": "cs/adam-freeland-do-you/"
+    }
+   }
   },
   {
    "source": "awolnation-sail.md",
@@ -22307,7 +24505,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "AWOLNATION - Sail",
+     "description": "Pomalé, hrozivé electro-rockové plížení, které vybuchne ve vyřvané zpovědi: Sail od AWOLNATION je stejnou měrou úzkost i úleva.",
+     "path": "cs/awolnation-sail/"
+    }
+   }
   },
   {
    "source": "codec-n-flexor-time-has-changed-northern-lite-remix.md",
@@ -22403,7 +24612,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Time Has Changed (Northern Lite Remix) - Codec & Flexor",
+     "description": "Erfurtští Northern Lite přepracovali klubový hit Codec & Flexor z doby electroclashe pro remixové EP z roku 2004: šestiminutová verze si ponechává chladný, odtažitý refrén písně a dodává mu vlastní směs electra a popu.",
+     "path": "cs/codec-n-flexor-time-has-changed-northern-lite-remix/"
+    }
+   }
   },
   {
    "source": "lousianahh-love-is-a-punk-vitalic-remix.md",
@@ -22503,7 +24723,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Louisahhh - Love Is a Punk (Vitalic Remix)",
+     "description": "Vitalic přetváří úvodní skladbu techno-punkového debutu Louisahhh The Practice of Freedom v pět a půl minuty dlouhou industriální klubovou skladbu, vydanou v roce 2021 na rozšířené edici alba u labelu HE.SHE.THEY.",
+     "path": "cs/lousianahh-love-is-a-punk-vitalic-remix/"
+    }
+   }
   },
   {
    "source": "hania-rani-full-performance-kexp.md",
@@ -22594,7 +24825,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Hania Rani - Full Performance (Live on KEXP)",
+     "description": "Poklidná, pohlcující šestatřicetiminutová session pro KEXP natočená v červenci 2022: polská klavíristka a skladatelka Hania Rani hraje na klavír a syntezátory skladby 24.03, Ghosts, Komeda Part 3 a Buka, které se později dostaly na její alba.",
+     "path": "cs/hania-rani-full-performance-kexp/"
+    }
+   }
   },
   {
    "source": "chicks-on-speed-euro-trash-girl.md",
@@ -22691,7 +24933,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Chicks On Speed - Euro Trash Girl",
+     "description": "Mnichovský umělecký kolektiv Chicks On Speed proměňuje silniční píseň alt-rockové kapely Cracker z 90. let v nevzrušeně podanou elektronickou coververzi: raný electroclashový singl, poprvé vylisovaný v roce 1998 na jejich vlastním labelu Go Records.",
+     "path": "cs/chicks-on-speed-euro-trash-girl/"
+    }
+   }
   },
   {
    "source": "louisahhh-like-a-vice-x.md",
@@ -22792,7 +25045,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Louisahhh - Like A Vice",
+     "description": "Temná, pulzující techno skladba, která uzavírá záměrně brutální EP Louisahhh A Trap I've Built z roku 2017 a noří se do touhy, kontroly a osvobození.",
+     "path": "cs/louisahhh-like-a-vice-x/"
+    }
+   }
   },
   {
    "source": "brazilian-girls-karakoy.md",
@@ -22894,7 +25158,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Brazilian Girls - Karaköy",
+     "description": "Snění v tempu chůze pojmenované po staré istanbulské přístavní čtvrti: poddajný hlas Sabiny Sciubby a měkké trubky nesou píseň o toulání a stesku po někom, z alba Let's Make Love, jímž se Brazilian Girls v roce 2018 vrátili.",
+     "path": "cs/brazilian-girls-karakoy/"
+    }
+   }
   },
   {
    "source": "pigeon-the-bomb.md",
@@ -22991,7 +25266,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Pigeon John - The Bomb",
+     "description": "Losangeleský raper Pigeon John otevírá své album Dragon Slayer z roku 2010 skladbou The Bomb, jasným, poskakujícím singlem, který koprodukoval s Hervém Saltersem z General Elektriks a postavil ze samplů živě nahraných nástrojů, ne starých desek.",
+     "path": "cs/pigeon-the-bomb/"
+    }
+   }
   },
   {
    "source": "electric-guest-this-head-i-hold.md",
@@ -23090,7 +25376,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Electric Guest - This Head I Hold",
+     "description": "Klavírem hnaná jízda vedená falzetem, kterou produkoval Danger Mouse: „This Head I Hold“ byla debutovým singlem Electric Guest z roku 2012, retro soul-popový švih omotaný kolem připomínky, že nemusíte jít po krocích, které vám vytyčí společnost.",
+     "path": "cs/electric-guest-this-head-i-hold/"
+    }
+   }
   },
   {
    "source": "c2c-feat-pigeon-john-because-of-you.md",
@@ -23191,7 +25488,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "C2C feat. Pigeon John - Because of You",
+     "description": "„Because of You“ od C2C s Pigeon Johnem je jasný střet hip-hopu, elektroniky a soulu od čtyř francouzských turntablistů a mistrů světa, v němž se hřejivý hlas rappera z Los Angeles veze na beatu postaveném ručně na gramofonech.",
+     "path": "cs/c2c-feat-pigeon-john-because-of-you/"
+    }
+   }
   },
   {
    "source": "bakermat-the-river.md",
@@ -23285,7 +25593,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Bakermat - The River",
+     "description": "„The River“ je krátká, hřejivá house skladba z druhého alba Bakermata The Spirit (2021), desky, kterou nizozemský producent postavil z gospelového, soulového a folkového materiálu: dvouapůlminutová skica povznesení, ne klubový epos.",
+     "path": "cs/bakermat-the-river/"
+    }
+   }
   },
   {
    "source": "lulu-rouge-sweeter-than-sweet.md",
@@ -23384,7 +25703,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Sweeter Than Sweet (feat. Alice Carreri)",
+     "description": "Z debutu Lulu Rouge Bless You z roku 2008: pomalá kodaňská downtempo skladba ve stínu dubu, v níž Alice Carreri zpívá slova Mikaela Simpsona nad hlubokým basem a prostornými, ozvěnou prodchnutými texturami.",
+     "path": "cs/lulu-rouge-sweeter-than-sweet/"
+    }
+   }
   },
   {
    "source": "lulu-rouge-lulu-theme.md",
@@ -23480,7 +25810,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Lulu's Theme (feat. Trentemøller)",
+     "description": "Dánské duo Lulu Rouge a jejich starý spojenec Trentemøller v sedmi a půl minutách nočního minimal housu: dubová basa v dozvuku, pomalu narůstající vrstvy a stín Basic Channel.",
+     "path": "cs/lulu-rouge-lulu-theme/"
+    }
+   }
   },
   {
    "source": "mickey-avalon-eli-ultraviolence.md",
@@ -23575,7 +25916,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mickey Avalon, Eli - Ultra-Violence",
+     "description": "Temně komická balada o psancích z alba Mickeyho Avalona Speak of the Devil z roku 2020, které produkoval Eli Meltzer jako Smoov-E: dva kluci z maloměsta, lopata a útěk, nad cinkavou kytarou a refrénem o tom, že nic na tomhle světě není zadarmo.",
+     "path": "cs/mickey-avalon-eli-ultraviolence/"
+    }
+   }
   },
   {
    "source": "kazy-lambist-doing-yoga.md",
@@ -23676,7 +26028,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Kazy Lambist - Doing Yoga",
+     "description": "Titulní skladba debutového EP Kazy Lambist z roku 2015: hladká, sluncem zalitá elektronická popová píseň montpellierského producenta Arthura Dubreucqa, nenucené beaty a hravá melodie stvořené pro léto.",
+     "path": "cs/kazy-lambist-doing-yoga/"
+    }
+   }
   },
   {
    "source": "eli-faster-you-fall.md",
@@ -23771,7 +26134,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Eli - Faster You Fall",
+     "description": "Eli Meltzer, známější jako rapper a producent Smoov-E ze San Francisco Bay Area, si půjčuje chvástavost raného rock and rollu pro krátkou, nafoukanou píseň o honičce postavenou na jediném posměšném refrénu.",
+     "path": "cs/eli-faster-you-fall/"
+    }
+   }
   },
   {
    "source": "knopfauge-saschienne.md",
@@ -23861,7 +26235,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Saschienne - Knopfauge",
+     "description": "„Knopfauge“ je skladba z alba Unknown (Kompakt, 2012), debutu dua Saschienne, které tvoří berlínský DJ Sascha Funke a francouzská zpěvačka a hráčka na syntezátory Julienne Dessagne: minimalistická elektronická hudba postavená na linkách Moogu a trpělivém vrstvení.",
+     "path": "cs/knopfauge-saschienne/"
+    }
+   }
   },
   {
    "source": "moisture-lucca-santucci-headman-club-version.md",
@@ -23965,7 +26350,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Headman, Luca Santucci - Moisture (Headman Club Version)",
+     "description": "Headmanova vlastní klubová verze Moisture, jeho písně se zpěvákem Lucou Santuccim: uhlazený, hypnotický nu-disco a housový groove natažený pro taneční parket, bonusová skladba deluxe edice jeho alba ON z roku 2016.",
+     "path": "cs/moisture-lucca-santucci-headman-club-version/"
+    }
+   }
   },
   {
    "source": "bonaparte-acid-pauli-not-today.md",
@@ -24061,7 +26457,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Bonaparte, Acid Pauli - Not Today",
+     "description": "Berlínský principál dance-punku Bonaparte a elektronický producent Acid Pauli, kdysi člen The Notwist, si v singlu z roku 2020 předávají potutelný, vzdorný refrén a zpívají z pohledu něčeho, čemu lidstvo ublížilo a koho teď prosí o záchranu.",
+     "path": "cs/bonaparte-acid-pauli-not-today/"
+    }
+   }
   },
   {
    "source": "sworn-virgins-burning-off-my-clothes.md",
@@ -24151,7 +26558,18 @@
     "learning",
     "sources"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Sworn Virgins - Burning Off My Clothes",
+     "description": "Strana B dvanáctipalcové desky anonymního londýnského disco projektu Sworn Virgins z roku 2018 u labelu DEEWEE skupiny Soulwax: hnaná, valivá noční skladba, kterou The Vinyl Factory nazval harveyovským „freak-outem“ pro nasycené noční tuláky.",
+     "path": "cs/sworn-virgins-burning-off-my-clothes/"
+    }
+   }
   },
   {
    "source": "aloe-blacc-i-need-dollar.md",
@@ -24252,7 +26670,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Aloe Blacc - I Need a Dollar (Live)",
+     "description": "Prosba z těžkých časů zasazená do brooklynského retro-soulového jamu: hit Aloe Blacca z roku 2010, znělka seriálu HBO How to Make It in America, tady v živém provedení z Berlína roku 2011, kde je refrén o ztracené práci a vypůjčeném dolaru stvořený k tomu, aby ho zpíval celý sál.",
+     "path": "cs/aloe-blacc-i-need-dollar/"
+    }
+   }
   },
   {
    "source": "idles-full-wheel.md",
@@ -24350,7 +26779,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "IDLES - The Wheel",
+     "description": "Píseň IDLES o koloběhu alkoholismu, který přechází z matky na syna, z alba Crawler z roku 2021: hrozivý jednotónový riff, těžké akordy a Joe Talbot, který vyje výzvu jako gospelový kazatel, tady v živé session pro KEXP.",
+     "path": "cs/idles-full-wheel/"
+    }
+   }
   },
   {
    "source": "car-idle-eyes.md",
@@ -24453,7 +26893,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "C.A.R - Idle Eyes (Roman Flügel Remix)",
+     "description": "Roman Flügel proměňuje coldwaveovou Idle Eyes od C.A.R. v trpělivý, hypnotický minimal house: chřestivá basová linka, spirálovité klávesy a plochy, které se pomalu vzdouvají k euforickému vrcholu.",
+     "path": "cs/car-idle-eyes/"
+    }
+   }
   },
   {
    "source": "2raumwohnung-somebody-lonely-and-me-nacht.md",
@@ -24552,7 +27003,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "2raumwohnung - Somebody Lonely and Me (Nacht)",
+     "description": "Noční strana písně nahrané dvakrát: singl 2raumwohnung z roku 2017 zasazuje německé sloky a anglický refrén Ingy Humpe do temnějšího syntezátorového aranžmá s nádechem osmdesátých let, jedné ze dvou verzí na jejich dvojalbu Nacht und Tag.",
+     "path": "cs/2raumwohnung-somebody-lonely-and-me-nacht/"
+    }
+   }
   },
   {
    "source": "indiana-solo-dancing.md",
@@ -24653,7 +27115,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Indiana - Solo Dancing",
+     "description": "Hypnotická píseň o tanci o samotě, nesená syntezátory: singl z roku 2014, který zpěvačku Indiana z Nottinghamu dostal na 14. místo britské hitparády a stal se středobodem jejího debutového alba No Romeo.",
+     "path": "cs/indiana-solo-dancing/"
+    }
+   }
   },
   {
    "source": "northern-lite-trusting-blind.md",
@@ -24745,7 +27218,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Northern Lite - Trusting Blind",
+     "description": "Debutový singl erfurtských Northern Lite z roku 2001, vydaný na jejich vlastním labelu 1st Decade Records: technové kořeny přecházející v elektronický pop, s ambientními plochami, stálou basovou linkou a pomalou gradací k hnanému finále.",
+     "path": "cs/northern-lite-trusting-blind/"
+    }
+   }
   },
   {
    "source": "mafia-klvb-credit-card.md",
@@ -24840,7 +27324,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mafia Klvb - Credit Card",
+     "description": "Závěrečná skladba debutu Mafia Klvb z roku 2022, natočená s Pilocka Krach a Mommo G: undergroundový lifestyle rap, který dělá z kreditní karty symbol nadbytku a z persony samotnou pointu.",
+     "path": "cs/mafia-klvb-credit-card/"
+    }
+   }
   },
   {
    "source": "jpatterson-elevator.md",
@@ -24931,7 +27426,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "JPattersson - Elevator",
+     "description": "Pohodová fúze dubu, reggae a hlubokých elektronických beatů z východního Německa: Elevator od JPatterssona z roku 2016, titulní skladba EP, na kterém je i její vlastní dubová verze a dva remixy.",
+     "path": "cs/jpatterson-elevator/"
+    }
+   }
   },
   {
    "source": "inigo-montoya-es.md",
@@ -25007,7 +27513,18 @@
    "edu": [
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Inigo Montoya - .E.S",
+     "description": "„Inigo Montoya - .E.S“ je hypnotické spojení elektronických beatů a introspektivních melodií, které vytváří snovou atmosféru a zve posluchače na cestu do vlastního nitra. Tajemná zvuková krajina skladby z ní dělá dílo zároveň uhrančivé a hluboce poutavé.",
+     "path": "cs/inigo-montoya-es/"
+    }
+   }
   },
   {
    "source": "anthony-rother-brainshaker.md",
@@ -25107,7 +27624,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Anthony Rother - Brainshaker",
+     "description": "Pulzující electro z alba Super Space Model, které Anthony Rother vydal v roce 2006 na vlastním labelu Datapunk: strojové rytmy, tvrdé syntezátory a skandovaný výčet jmen, který se stává hookem.",
+     "path": "cs/anthony-rother-brainshaker/"
+    }
+   }
   },
   {
    "source": "alice-going-down-in-a-blaze-of-glory.md",
@@ -25198,7 +27726,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Alic - Going Down In A Blaze Of Glory",
+     "description": "Sedmiminutový blok psychedelického techna od německého dua Alic, vydaný zdarma v roce 2012 na jejich vlastním netlabelu Digital Diamonds: úderné bicí pod pomalu se proměňujícími atmosférickými vrstvami.",
+     "path": "cs/alice-going-down-in-a-blaze-of-glory/"
+    }
+   }
   },
   {
    "source": "ultraista-smalltalk.md",
@@ -25306,7 +27845,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Ultraísta - Smalltalk",
+     "description": "„Smalltalk“ je hlavní singl Ultraísty z roku 2012, tria producenta Radiohead Nigela Godriche, bubeníka Joeyho Waronkera a zpěvačky Laury Bettinson: vrstvené syntezátory a bicí s afrobeatovým cítěním pod prosbou, ať skončí prázdné tlachání, tady v garage-shufflovém remixu Four Teta.",
+     "path": "cs/ultraista-smalltalk/"
+    }
+   }
   },
   {
    "source": "melissa-laveaux-needle-in-the-hay.md",
@@ -25405,7 +27955,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mélissa Laveaux - Needle in the Hay",
+     "description": "Mélissa Laveaux, písničkářka haitského původu narozená v Montrealu, přestavěla bezútěšnou píseň Elliotta Smithe z roku 1995 pro perkusivní prstovou hru na kytaru, kontrabas, tleskání a bicí na svém albu Camphor & Copper z roku 2008.",
+     "path": "cs/melissa-laveaux-needle-in-the-hay/"
+    }
+   }
   },
   {
    "source": "marbert-rocel-hush-now.md",
@@ -25504,7 +28065,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Marbert Rocel - Hush Now",
+     "description": "Procítěná downtempo píseň z druhého alba německého tria Marbert Rocel Catch A Bird: jemný hlas Antje Seifarth nad měkkou, pomalu se rozvíjející elektronikou, stvořená ke zklidnění.",
+     "path": "cs/marbert-rocel-hush-now/"
+    }
+   }
   },
   {
    "source": "fischerspooner-emerge.md",
@@ -25601,7 +28173,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Fischerspooner - Emerge",
+     "description": "„Emerge“ je debutový singl Fischerspooner a jedna z nahrávek, které definovaly electroclash: dunivá, divadelní electro-popová hymna newyorského dua, jež začínalo jako performance o zábavě.",
+     "path": "cs/fischerspooner-emerge/"
+    }
+   }
   },
   {
    "source": "felix-da-house-cat-madame-hollywood.md",
@@ -25701,7 +28284,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Felix Da Housecat - Madame Hollywood (feat. Miss Kittin)",
+     "description": "„Madame Hollywood“ od Felixe Da Housecata s Miss Kittin je electroclashový singl, který hraje okouzlení slávou s kamennou tváří: napjatý electro beat chicagského house producenta a francouzský hlas, který zní, jako by ho sláva nudila.",
+     "path": "cs/felix-da-house-cat-madame-hollywood/"
+    }
+   }
   },
   {
    "source": "acraze-do-it-to-it.md",
@@ -25804,7 +28398,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "ACRAZE - Do It To It (feat. Cherish)",
+     "description": "Producent ACRAZE z Orlanda proměnil vokál z R&B singlu skupiny Cherish z roku 2006 ve dvaapůlminutový tech house, který se šířil DJ sety ještě před vydáním a v roce 2022 se dostal do britské top ten.",
+     "path": "cs/acraze-do-it-to-it/"
+    }
+   }
   },
   {
    "source": "tinush-sandburg.md",
@@ -25907,7 +28512,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Tinush - Sandburg",
+     "description": "„Sandburg“, německy pískový hrad, je titulní skladba EP berlínského producenta Tinushe z roku 2014 na labelu Crosswalk: sedm minut melodického deep house, později zkrácených na tříminutovou rádiovou verzi, s remixy, které připravili Alec Troniq a Umami.",
+     "path": "cs/tinush-sandburg/"
+    }
+   }
   },
   {
    "source": "the-xx-crystalised.md",
@@ -26002,7 +28618,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The xx - Crystalised",
+     "description": "„Crystalised“, debutový singl The xx z roku 2009, je minimalistický indie pop v té nejintimnější podobě: tlumený kytarový riff, řídký beat od Jamieho xx a dva hlasy, Romy Madley Croft a Olivera Sima, které si sloku po sloce odpovídají.",
+     "path": "cs/the-xx-crystalised/"
+    }
+   }
   },
   {
    "source": "the-police-roxanne.md",
@@ -26101,7 +28728,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Police - Roxanne",
+     "description": "Sting napsal „Roxanne“ v roce 1977 poté, co poblíž pařížského hotelu kapely viděl pouliční prostitutky: prosba k ženě, aby takový život opustila, zasazená do reggae kytary na offbeat a rytmu blízkého tangu, debutový singl u A&M, který se stal poznávací písní The Police.",
+     "path": "cs/the-police-roxanne/"
+    }
+   }
   },
   {
    "source": "lucky-luke-cooler-than-me.md",
@@ -26196,7 +28834,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Lucky Luke - Cooler Than Me",
+     "description": "Electro-house přepracování debutového hitu Mika Posnera z roku 2010 od litevského producenta Lucky Luke z roku 2019, vydané u Columbia/B1: píseň o pocitu odstrčení proměněná v uvolněnou klubovou hymnu, která se o rok později stala rádiovým hitem ve Francii.",
+     "path": "cs/lucky-luke-cooler-than-me/"
+    }
+   }
   },
   {
    "source": "klangkarussell-we-want-your-soul.md",
@@ -26294,7 +28943,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klangkarussell - We Want Your Soul",
+     "description": "„We Want Your Soul“ je remix, který Klangkarussell udělali z antikonzumního breakbeatového singlu Adama Freelanda z roku 2003: sloky ze syntezátoru řeči a sampl Billa Hickse z originálu, zpomalené do dlouhého, hypnotického housového grooveu na albu Netzwerk.",
+     "path": "cs/klangkarussell-we-want-your-soul/"
+    }
+   }
   },
   {
    "source": "groove-armada-superstylin.md",
@@ -26393,7 +29053,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Groove Armada - Superstylin'",
+     "description": "Singl Groove Armada z roku 2001 propojuje house s dancehallem, reggae a dubem nad basovou linkou ve stylu speed garage; zpívá MC M.A.D. a hraje živá dechová sekce. Dosáhl 12. místa v britské hitparádě a v roce 2003 získal nominaci na Grammy.",
+     "path": "cs/groove-armada-superstylin/"
+    }
+   }
   },
   {
    "source": "gorgon-city-hard-on-me.md",
@@ -26499,7 +29170,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gorgon City - Hard On Me",
+     "description": "Uhlazený noční deep house Gorgon City se v Hard On Me potkává se syrovým, procítěným hlasem Mavericka Sabrea: závěrečná skladba jejich debutového alba Sirens z roku 2014, prosba o laskavost nesená vytrvalým, valivým groovem.",
+     "path": "cs/gorgon-city-hard-on-me/"
+    }
+   }
   },
   {
    "source": "gabriella-cilmi-cry-me-a-river.md",
@@ -26591,7 +29273,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gabriella Cilmi - Cry Me a River (Cover)",
+     "description": "Dospívající Gabriella Cilmi vyjímá rozchodový hit Justina Timberlakea z roku 2002 z Timbalandovy produkce plné beatboxu a clavinetu a zpívá ho jako střídmý soulový nářek, v němž všechnu bolest nese její zastřený hlas.",
+     "path": "cs/gabriella-cilmi-cry-me-a-river/"
+    }
+   }
   },
   {
    "source": "freeland-under-control.md",
@@ -26696,7 +29389,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Freeland - Under Control",
+     "description": "Hlavní singl alba Cope od Freeland vyměňuje kytarový riff za řvoucí syntezátor a staví kamenný přednes Kurta Baumanna nad bicí vyrostlé z breakbeatu: elektronický rock se syrovým, vzdorným ostřím.",
+     "path": "cs/freeland-under-control/"
+    }
+   }
   },
   {
    "source": "fort-minor-remember-the-name.md",
@@ -26797,7 +29501,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Fort Minor - Remember The Name",
+     "description": "„Remember The Name“ od Fort Minor je hymna vytrvalosti: Mike Shinoda a Styles of Beyond se střídají ve slokách nad violoncellovou smyčkou a refrénem, který rozkládá úspěch na procenta, píseň, která se stala zvukovou kulisou sportu.",
+     "path": "cs/fort-minor-remember-the-name/"
+    }
+   }
   },
   {
    "source": "ibiza-deep-summer-sweet-dreams.md",
@@ -26896,7 +29611,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Eurythmics - Sweet Dreams (Ibiza Deep Summer Remix 2015)",
+     "description": "Nepodepsané deephousové přepracování synth-popové klasiky Eurythmics z roku 1983 z roku 2015: chladný, uhrančivý hlas Annie Lennox na uvolněném letním housovém beatu, lekce o tom, jak slavná basová linka přežije jakýkoli remix.",
+     "path": "cs/ibiza-deep-summer-sweet-dreams/"
+    }
+   }
   },
   {
    "source": "annen-may-kantereit-x-parcels-cant-get-you-out-of-my-head.md",
@@ -26990,7 +29716,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Can't Get You Out of My Head (Cover) - AnnenMayKantereit x Parcels",
+     "description": "AnnenMayKantereit a Parcels spojují síly v osekané coververzi písně Kylie Minogue „Can't Get You Out of My Head“ a chladný elektronický puls originálu vyměňují za drsný hlas Henninga Maye a těsné harmonie kapely.",
+     "path": "cs/annen-may-kantereit-x-parcels-cant-get-you-out-of-my-head/"
+    }
+   }
   },
   {
    "source": "asian-dub-foundation-fly-over.md",
@@ -27088,7 +29825,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Asian Dub Foundation - Flyover",
+     "description": "Úvodní skladba alba Tank od Asian Dub Foundation, nabitá syntezátory: vířivý drum and bass, refrén jako stvořený pro dub a politická naléhavost kapely na začátku alba psaného ve stínu války v Iráku.",
+     "path": "cs/asian-dub-foundation-fly-over/"
+    }
+   }
   },
   {
    "source": "funky-fat-and-digitaria-you-bring-me-down.md",
@@ -27189,7 +29937,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "You Bring Me Down | Funky Fat & Digitaria",
+     "description": "Dvě brazilské formace, trio Funky Fat z Belo Horizonte a duo Digitaria, se v roce 2012 potkávají na labelu Hot Creations Jamieho Jonese a Lee Fosse: pomalejší house skladba s nádechem electra, plná vzlétajících syntezátorů, bručivých stabů a dýchavých vokálů.",
+     "path": "cs/funky-fat-and-digitaria-you-bring-me-down/"
+    }
+   }
   },
   {
    "source": "roseaux-walking-on-the-moon.md",
@@ -27282,7 +30041,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Walking on the Moon | Roseaux",
+     "description": "Francouzský kolektiv Roseaux a americký soulový zpěvák Aloe Blacc proměňují reggae hit The Police z roku 1979 v nespěchající soulovou píseň, nejslavnější skladbu svého alba coververzí z roku 2012.",
+     "path": "cs/roseaux-walking-on-the-moon/"
+    }
+   }
   },
   {
    "source": "fatboy-slim-bird-of-pray.md",
@@ -27383,7 +30153,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Sunset (Bird of Prey) | Fatboy Slim",
+     "description": "„Sunset (Bird of Prey)“ je singl Fatboy Slima z roku 2000 postavený na hlase Jima Morrisona, samplovaném z písně „Bird of Prey“ skupiny The Doors: pomalu stoupající, sluncem vybělená taneční skladba, jejíž videoklip posílá stíhacího pilota ze šedesátých let do halucinace.",
+     "path": "cs/fatboy-slim-bird-of-pray/"
+    }
+   }
   },
   {
    "source": "nina-simone-felix-da-housecat-sinnerman.md",
@@ -27479,7 +30260,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Sinnerman (Felix Da Housecat's Heavenly House Mix) | Nina Simone",
+     "description": "„Sinnerman (Felix Da Housecat's Heavenly House Mix)“ zasazuje desetiminutovou nahrávku Niny Simone z roku 1965, tradiční spirituál o hříšníkovi, který se nemá kam schovat, do čtyř a půl minuty dlouhého houseového groovu pro kompilaci Verve Remixed 2 z roku 2003.",
+     "path": "cs/nina-simone-felix-da-housecat-sinnerman/"
+    }
+   }
   },
   {
    "source": "fernanda-porto-sambassim.md",
@@ -27576,7 +30368,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Sambassim | Fernanda Porto",
+     "description": "Vlastní Sambassim Fernandy Porto: píseň skladatelky ze São Paula, která spojila melodiku samby a bossa novy s elektronickými beaty a pomohla dát jméno stylu drum 'n' bossa.",
+     "path": "cs/fernanda-porto-sambassim/"
+    }
+   }
   },
   {
    "source": "roisin-murphy-primitive.md",
@@ -27668,7 +30471,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Primitive | Róisín Murphy",
+     "description": "Pomalé, smyčci protkané zastavení na electro-disco albu Róisín Murphy Overpowered z roku 2007, napsané společně s Ill Factorem a aranžované veteránem filadelfského soulu Larrym Goldem, tady v živém provedení z doby vydání alba.",
+     "path": "cs/roisin-murphy-primitive/"
+    }
+   }
   },
   {
    "source": "hrdvision-nsd-discolight.md",
@@ -27760,7 +30574,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Pilocka Krach - Discolight (Hrdvsion's NSD Mix)",
+     "description": "Kanadský producent Hrdvsion (Nathan Jonson) remixuje „Discolight“ berlínské experimentální umělkyně Pilocka Krach na pět a půl minuty dlouhou klubovou skladbu, hlavní stranu remixové dvanáctipalcové desky z roku 2012 na labelu Greatest Hits International.",
+     "path": "cs/hrdvision-nsd-discolight/"
+    }
+   }
   },
   {
    "source": "michelle-gurevich-party-girl.md",
@@ -27852,7 +30677,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Party Girl | Michelle Gurevich",
+     "description": "„Party Girl“ je doma nahraná titulní píseň debutu Michelle Gurevich z roku 2007, vydaného pod jménem Chinawoman: pomalá balada s kamenně klidným altem o nočním životě, která se stala její nejznámější písní a dala název filmu oceněnému v Cannes.",
+     "path": "cs/michelle-gurevich-party-girl/"
+    }
+   }
   },
   {
    "source": "the-horroris-one-night-in-nyc.md",
@@ -27946,7 +30782,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "One Night In New York City | The Horrorist",
+     "description": "„One Night In New York City“ je temný technový příběh The Horrorist o noci naivní dívky z předměstí ve velkoměstě, poprvé vydaný v roce 1996 na jeho vlastním labelu Things To Come a v roce 2001 jednička německého tanečního žebříčku, vyprávěný chladným mluveným hlasem nad hnaným strojovým beatem.",
+     "path": "cs/the-horroris-one-night-in-nyc/"
+    }
+   }
   },
   {
    "source": "nancy-sinatra-bang-bang.md",
@@ -28041,7 +30888,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Nancy Sinatra - Bang Bang (My Baby Shot Me Down)",
+     "description": "Verze písně Sonnyho Bona, kterou Nancy Sinatra nahrála v roce 1966 a která stojí na uhrančivé tremolové kytaře Billyho Strange, je tlumená balada o dětské lásce a zradě, kterou Quentin Tarantino oživil v úvodních titulcích filmu Kill Bill.",
+     "path": "cs/nancy-sinatra-bang-bang/"
+    }
+   }
   },
   {
    "source": "feist-my-man-my-mood.md",
@@ -28138,7 +30996,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "My Moon My Man | Feist",
+     "description": "První singl z alba The Reminder (2007), které Feist napsala a produkovala spolu s Chillym Gonzalesem: šibalská indie popová píseň vedená klavírem, o lásce a touze, kterou ve videoklipu Patricka Daughterse protančí prázdným nočním letištěm.",
+     "path": "cs/feist-my-man-my-mood/"
+    }
+   }
   },
   {
    "source": "waldeck-zeebee-midsummer-night-blues.md",
@@ -28230,7 +31099,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Midsummer Night Blues (feat. Zeebee)",
+     "description": "„Midsummer Night Blues“ je píseň z alba Ballroom Stories, které v roce 2007 vydal vídeňský producent Waldeck; napsala a nazpívala ji Zeebee. Je to swing tanečních sálů konce dvacátých let viděný optikou moderní produkce, s praskáním šelakových desek a melancholií letní noci.",
+     "path": "cs/waldeck-zeebee-midsummer-night-blues/"
+    }
+   }
   },
   {
    "source": "luca-malina-fckrz.md",
@@ -28323,7 +31203,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Luca Malina - FCKRZ",
+     "description": "„FCKRZ“ je singl vídeňské zpěvačky Luky Maliny z roku 2021, pop inspirovaný R&B o temnější stránce vztahů, který produkoval Luca Pivetz, na kytaru hraje Lukas Koffler a videoklip vznikl vlastními silami.",
+     "path": "cs/luca-malina-fckrz/"
+    }
+   }
   },
   {
    "source": "caravan-palace-lone-digger.md",
@@ -28430,7 +31321,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Lone Digger | Caravan Palace",
+     "description": "Singl Caravan Palace z roku 2015 spojuje swing ve stylu 30. let s klubovými beaty a hlasem Zoé Colotis a díky animovanému videu o rvačce v baru plném zvířat se stal jednou z nejsledovanějších electro swingových skladeb vůbec.",
+     "path": "cs/caravan-palace-lone-digger/"
+    }
+   }
   },
   {
    "source": "pomplamoose-harder-better-faster-stronger.md",
@@ -28537,7 +31439,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Harder, Better, Faster, Stronger | Daft Punk | Pomplamoose",
+     "description": "Coververze skladby „Harder, Better, Faster, Stronger“ od Daft Punk, kterou Pomplamoose nahráli v roce 2019: robotická hymna postavená ze samplu a vokodéru, přehraná živou kapelou se skutečnými klávesami, basou, bicími a lidskými hlasy a natočená tak, že všechno, co slyšíte, také vidíte.",
+     "path": "cs/pomplamoose-harder-better-faster-stronger/"
+    }
+   }
   },
   {
    "source": "portugal-the-man-feel-it-still.md",
@@ -28644,7 +31557,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Feel It Still | Portugal. The Man",
+     "description": "Pozvolný hit Portugal. The Man oceněný Grammy: rychlý, houpavý kousek psychedelického funk-popu, který si melodii půjčuje z motownské Please Mr. Postman a jede na jedné z nejznámějších basových linek dekády.",
+     "path": "cs/portugal-the-man-feel-it-still/"
+    }
+   }
   },
   {
    "source": "cardi-b-wap-feat-megan-thee-stallion.md",
@@ -28743,7 +31667,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Cardi B - WAP (feat. Megan Thee Stallion)",
+     "description": "„WAP“ je odvážná a provokativní hiphopová skladba Cardi B s Megan Thee Stallion: minimální beat, smyčkované skandování z baltimorského clubu a dvě raperky, které si předávají explicitní, radostně nekajícné sloky o touze.",
+     "path": "cs/cardi-b-wap-feat-megan-thee-stallion/"
+    }
+   }
   },
   {
    "source": "alt-j-breezeblocks.md",
@@ -28839,7 +31774,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Breezeblocks | alt-J (∆)",
+     "description": "Ukolébavka se zuby: průlomová skladba alt-J z roku 2012 balí posedlou milostnou píseň, zčásti vypůjčenou z knihy Max a divočina, do drnkané kytary, těsných harmonií a refrénu, který se vrší, dokud nepustí.",
+     "path": "cs/alt-j-breezeblocks/"
+    }
+   }
   },
   {
    "source": "clawfinger-biggest-the-best.md",
@@ -28936,7 +31882,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Biggest & The Best | Clawfinger",
+     "description": "„Biggest & The Best“ je hlavní singl stejnojmenného alba Clawfinger z roku 1997: švédsko-norský rap metal s industriálním programováním, mířený přímo na lidi, kteří si myslí, že jsou všemocní.",
+     "path": "cs/clawfinger-biggest-the-best/"
+    }
+   }
   },
   {
    "source": "whilk-and-miskey-darklands.md",
@@ -29035,7 +31992,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Whilk & Misky - Darklands",
+     "description": "„Darklands“ patří k prvním dvěma písním, které londýnské duo Whilk & Misky kdy napsalo: pomalu doutnající spojení bluesové kytary, elektronické produkce a hlasu, který začíná potichu a nakonec zpívá z plných plic, z debutového EP The First Sip z roku 2014.",
+     "path": "cs/whilk-and-miskey-darklands/"
+    }
+   }
   },
   {
    "source": "vitalic-cocaine.md",
@@ -29130,7 +32098,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Vitalic - You Prefer Cocaine",
+     "description": "Pulzující electro z Vitalicova EP Poney z roku 2001 u International DeeJay Gigolo: hnané strojové beaty a vrčivý syntezátorový riff, které zachycují syrovou energii tanečních parketů počátku 2000s.",
+     "path": "cs/vitalic-cocaine/"
+    }
+   }
   },
   {
    "source": "tubbe-in-berlin.md",
@@ -29229,7 +32208,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Tubbe - In Berlin",
+     "description": "Queer elektropunková dvojice Tubbe, která se v roce 2013 přestěhovala z Mnichova do Berlína, staví maloměstský sen o velkoměstě proti jeho konfetám, hluku a realitě obchodů za 1 euro: synthpopový singl z roku 2015 z jejich alba Keine Arbeit lieber Tanzen u labelu Audiolith.",
+     "path": "cs/tubbe-in-berlin/"
+    }
+   }
   },
   {
    "source": "totally-enormous-extinct-dinosaurs-garden.md",
@@ -29328,7 +32318,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Totally Enormous Extinct Dinosaurs - Garden",
+     "description": "Průlom Orlanda Higginbottoma jako Totally Enormous Extinct Dinosaurs: bohaté syntezátory, taneční puls a hlas Luisy Gerstein, nejprve na EP u Greco-Roman z roku 2010 a poté na singlu u Polydoru z roku 2011, který zněl v reklamách na telefony Nokia Lumia.",
+     "path": "cs/totally-enormous-extinct-dinosaurs-garden/"
+    }
+   }
   },
   {
    "source": "timo-maas-shifter.md",
@@ -29422,7 +32423,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Timo Maas - Shifter",
+     "description": "„Shifter“ od Timo Maase s MC Chickaboo je hnaný singl z roku 2002 z jeho debutového alba Loud: německá klubová produkce na pomezí house a breakbeatu, s MC, který se veze na grooveu; hit britské top 40.",
+     "path": "cs/timo-maas-shifter/"
+    }
+   }
   },
   {
    "source": "chemical_brothers_the_salmon_dance.md",
@@ -29527,7 +32539,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Chemical Brothers - The Salmon Dance",
+     "description": "The Chemical Brothers předávají mikrofon Fatlipovi z The Pharcyde na kamenně vážný rap o tanci inspirovaném rybou: bublající, funky odbočka na jejich albu We Are the Night z roku 2007, oceněném cenou Grammy.",
+     "path": "cs/chemical-brothers-the-salmon-dance/"
+    }
+   }
   },
   {
    "source": "chemical_brothers_star_guitar.md",
@@ -29626,7 +32649,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "The Chemical Brothers - Star Guitar",
+     "description": "„Star Guitar“ je pomalu rozkvétající singl The Chemical Brothers z roku 2002, postavený na čtyřech taktech akustické kytary samplovaných z písně „Starman“ Davida Bowieho, a skladba, ke které Michel Gondry natočil svůj slavný klip z okna vlaku na jeden záběr.",
+     "path": "cs/chemical-brothers-star-guitar/"
+    }
+   }
   },
   {
    "source": "sleaford-mods-tweet-tweet-tweet.md",
@@ -29719,7 +32753,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Sleaford Mods - Tweet Tweet Tweet",
+     "description": "„Tweet Tweet Tweet“ od Sleaford Mods je drsná postpunková tiráda zrozená z bezútěšné jízdy autobusem, mířená na lidi ztracené ve svých telefonech a na politiku Anglie roku 2014, tady natočená živě pro KEXP v roce 2023: jeden muž mačká play, druhý chrlí oheň.",
+     "path": "cs/sleaford-mods-tweet-tweet-tweet/"
+    }
+   }
   },
   {
    "source": "nouvelle-vague-too-drunk-to-fuck.md",
@@ -29811,7 +32856,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Nouvelle Vague - Too Drunk to Fuck",
+     "description": "Nouvelle Vague mění punkovou satiru Dead Kennedys ve ztišenou bossa novu, kterou zpívá Camille; coververze z roku 2004, jejíž měkkost dělá text absurdnějším a znepokojivějším, než ho dělal hluk originálu.",
+     "path": "cs/nouvelle-vague-too-drunk-to-fuck/"
+    }
+   }
   },
   {
    "source": "mirwais-naiive-song.md",
@@ -29909,7 +32965,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mirwais - Naïve Song",
+     "description": "Mirwais, bývalý kytarista Taxi Girl, který brzy nato produkoval Madonnino Music, staví hlas prohnaný vokodérem proti přerývané akustické kytaře a retro syntezátorům: francouzský electro singl z roku 2000, který dosáhl 2. místa v americkém klubovém žebříčku.",
+     "path": "cs/mirwais-naiive-song/"
+    }
+   }
   },
   {
    "source": "miike-snow-paddling-out.md",
@@ -30012,7 +33079,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Miike Snow - Paddling Out",
+     "description": "Hlavní singl Miike Snow z roku 2012 klade melancholii ke zpívání nad zadrhávající klavírní akordy a house beat four-on-the-floor, nahraný ve stockholmském studiu, které kdysi používali ABBA.",
+     "path": "cs/miike-snow-paddling-out/"
+    }
+   }
   },
   {
    "source": "kutiman-inner-galactic-lovers.md",
@@ -30112,7 +33190,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Kutiman - Inner Galactic Lovers",
+     "description": "„Inner Galactic Lovers“ je Kutimanova píseň z roku 2015 složená z partů, které nahrálo 24 hudebníků na volné noze v tuctu zemí: éterická, funky koláž, v níž byl každý hráč najat přes internet a nikdy se s ostatními nesetkal.",
+     "path": "cs/kutiman-inner-galactic-lovers/"
+    }
+   }
   },
   {
    "source": "klangkarusell-moments.md",
@@ -30217,7 +33306,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Klangkarussell - Moments",
+     "description": "Hřejivá deep house píseň z debutového alba Klangkarussell Netzwerk z roku 2014, kterou zpívá Will Heard, anglický hlas britského hitu rakouského dua Sonnentanz (Sun Don't Shine).",
+     "path": "cs/klangkarusell-moments/"
+    }
+   }
   },
   {
    "source": "k-flay-high-enough.md",
@@ -30315,7 +33415,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "K.Flay - High Enough",
+     "description": "Průlomová píseň K.Flay odpovídá na celou dekádu písní o tom, jak se zhulit, otázkou, co když už jsem dost high: lehký rytmus, bublavé kytarové linky a zpěvavý flow v produkci Mikea Elizonda.",
+     "path": "cs/k-flay-high-enough/"
+    }
+   }
   },
   {
    "source": "joris-delacroix-epoque.md",
@@ -30413,7 +33524,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Joris Delacroix - Epoque",
+     "description": "Joris Delacroix uzavírá své album Night Visions z roku 2018 skladbou Epoque, sedmi minutami melodického deep house, v nichž se měkké melodie s klavírním školením nesou na pravidelném, hnacím pulsu.",
+     "path": "cs/joris-delacroix-epoque/"
+    }
+   }
   },
   {
    "source": "jan-blomqvist-time-again.md",
@@ -30525,7 +33647,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jan Blomqvist - Time Again",
+     "description": "Letní hit Jana Blomqvista z roku 2014 klade jeho měkký hlas s ozvěnou, Rhodes piano Felixe Lehmanna a dvě kytary nad minimalistický deep housový puls: zvuk berlínského „koncertního techna“, které pomohl dostat na velká pódia.",
+     "path": "cs/jan-blomqvist-time-again/"
+    }
+   }
   },
   {
    "source": "jain-makeba.md",
@@ -30633,7 +33766,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jain - Makeba",
+     "description": "„Makeba“ od Jain je svižná, neodolatelně chytlavá pocta jihoafrické zpěvačce a aktivistce Miriam Makebě, postavená na samplu Hamiltona Bohannona, refrénu ve stylu otázky a odpovědi a jasném popu naprogramovaném doma.",
+     "path": "cs/jain-makeba/"
+    }
+   }
   },
   {
    "source": "her-five-minutes.md",
@@ -30737,7 +33881,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Her - Five Minutes",
+     "description": "„Five Minutes“ je druhý singl francouzského dua Her, které tvořili Simon Carpentier a Victor Solf: čistý pop s nádechem R&B z luskání prsty, zvlněných kytar a vrstvených vokálů z jejich debutu Tape #1.",
+     "path": "cs/her-five-minutes/"
+    }
+   }
   },
   {
    "source": "gregory-porter-do-not-lose-your-steam.md",
@@ -30846,7 +34001,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gregory Porter - Don't Lose Your Steam",
+     "description": "Svižný úvodní singl Gregoryho Portera z alba Take Me to the Alley: hřejivá, v gospelu zakořeněná jazz-soulová píseň povzbuzení, kterou nese jeho sytý baryton a malá akustická kapela.",
+     "path": "cs/gregory-porter-do-not-lose-your-steam/"
+    }
+   }
   },
   {
    "source": "felix-da-house-cat-silverscreen.md",
@@ -30946,7 +34112,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Felix Da Housecat - Silver Screen (Shower Scene)",
+     "description": "Electroclashový singl Felixe Da Housecata z roku 2001: melodie samplovaná z písně „Passion“ od The Flirts, chladný, napůl mluvený a napůl zpívaný vokál Miss Kittin a text o hvězdičkách a kamerách, nahrávka, která otevřela album Kittenz and Thee Glitz.",
+     "path": "cs/felix-da-house-cat-silverscreen/"
+    }
+   }
   },
   {
    "source": "tum-rakak-deluxe.md",
@@ -31054,7 +34231,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Deluxe - Tum Rakak",
+     "description": "„Tum Rakak“ je píseň kapely Deluxe, kníratých muzikantů z Aix-en-Provence: funky groove živé kapely v b moll, v němž Liliboy s chutí zpívá absurdní text o zvědavosti, drobcích po večírku a náklaďáku, který v horku páchne.",
+     "path": "cs/tum-rakak-deluxe/"
+    }
+   }
   },
   {
    "source": "dead-kennedys-too-drunk-to-fuck.md",
@@ -31155,7 +34343,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Dead Kennedys - Too Drunk to Fuck",
+     "description": "Singl Dead Kennedys z roku 1981 pokládá satiru Jella Biafry na přiblblý večírek na střemhlavý surf-punkový riff East Bay Raye a navzdory zákazu BBC se stal prvním hitem britské top 40 s tímto slovem v názvu.",
+     "path": "cs/dead-kennedys-too-drunk-to-fuck/"
+    }
+   }
   },
   {
    "source": "bjork-kata-rokkar.md",
@@ -31256,7 +34455,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Björk - Kata rokkar",
+     "description": "Ještě před sólovou dráhou zpívala Björk islandské populární písně a jazzové standardy s ostříleným klavírním triem: Kata rokkar z alba Gling-Gló z roku 1990 je krátkým, hravým pohledem na tuto stránku jejího hlasu.",
+     "path": "cs/bjork-kata-rokkar/"
+    }
+   }
   },
   {
    "source": "bassement-freaks-soul-intoxication.md",
@@ -31353,7 +34563,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Basement Freaks - Soul Intoxication (Lonely Boy's Detox Dub)",
+     "description": "Losangeleský producent Lonely Boy obnažuje funkovou skladbu řeckého producenta Basement Freaks na hypnotický house dub, který vyšel v roce 2013 u Jalapeno Records a později se dostal na francouzské lounge kompilace.",
+     "path": "cs/bassement-freaks-soul-intoxication/"
+    }
+   }
   },
   {
    "source": "alif-tree_forgotten-places.md",
@@ -31446,7 +34667,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Alif Tree - Forgotten Places",
+     "description": "„Forgotten Places“ je ztišená downtempová skladba marseilleského producenta Alif Tree, postavená kolem samplovaného hlasu jazzové zpěvačky Shirley Horn a vydaná u Compost Records v roce 2006: nu jazz, který zní jako přehrávaná vzpomínka.",
+     "path": "cs/alif-tree-forgotten-places/"
+    }
+   }
   },
   {
    "source": "zwicker_oddity.md",
@@ -31540,7 +34772,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Zwicker - Oddity (feat. Olivera Stanimirov)",
+     "description": "„Oddity“ je diskotékou nasáklý vrchol alba Songs of Lucid Dreamers curyšského producenta Zwickera z roku 2009 u Compost Records: hnací beaty, funky basová linka a xylofon pod hlasem hostující zpěvačky Olivery Stanimirov.",
+     "path": "cs/zwicker-oddity/"
+    }
+   }
   },
   {
    "source": "say-yes-dog_a-friend.md",
@@ -31643,7 +34886,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Say Yes Dog - A Friend",
+     "description": "Titulní skladba debutového EP Say Yes Dog z roku 2013, kterou kapela později přenesla i na album Plastic Love: hřejivý, nespěchající synth-pop od německo-lucemburského tria, které se seznámilo při studiu jazzu a zvukové techniky v Haagu.",
+     "path": "cs/say-yes-dog-a-friend/"
+    }
+   }
   },
   {
    "source": "ryan-blyth_once-twice-feat-rachel-k-collier.md",
@@ -31749,7 +35003,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Ryan Blyth - Once Twice feat. Rachel K Collier",
+     "description": "„Once Twice“ je krátká, povznášející houseová skladba Ryana Blytha se zpěvem Rachel K Collier, zpěvačky a producentky ze Swansea, která měla premiéru v roce 2016 na kanálu Love & Other: jasné beaty, zpívaná melodická linka a hook stvořený pro taneční parket.",
+     "path": "cs/ryan-blyth-once-twice-feat-rachel-k-collier/"
+    }
+   }
   },
   {
    "source": "pilocka-krach_la_luna-y-el-sol.md",
@@ -31846,7 +35111,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Pilocka Krach - La Luna Y El Sol",
+     "description": "Skladba z dvojalba Pilocky Krach Sugar Cane & The Lost Amigos z roku 2017, cestovního deníku rozpjatého mezi Mexikem, Detroitem a Berlínem: syrové samplované střihy a vrčící syntezátory v electro post-rave stylu veteránky z Bar25.",
+     "path": "cs/pilocka-krach-la-luna-y-el-sol/"
+    }
+   }
   },
   {
    "source": "paul_oakenfold_sex_n_money.md",
@@ -31948,7 +35224,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Paul Oakenfold feat. Pharrell Williams - Sex 'N' Money",
+     "description": "Srážka breakbeatu a hip house Paula Oakenfolda s Pharrellem Williamsem: pulzující, provokativní singl z roku 2006 o přitažlivosti touhy a peněz s animovaným videem, které končí varováním.",
+     "path": "cs/paul-oakenfold-sex-n-money/"
+    }
+   }
   },
   {
    "source": "mount-sims-how-we-do.md",
@@ -32048,7 +35335,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Mount Sims - How We Do",
+     "description": "Temný, pulzující kus electroclashe z debutu UltraSex, který Mount Sims vydal v roce 2002 u Gigola v Evropě a u Emperor Norton v USA: drsné strojové beaty, mollové syntezátorové melodie a chladný, vzdorný zpěv.",
+     "path": "cs/mount-sims-how-we-do/"
+    }
+   }
   },
   {
    "source": "miss-kittin-frank-sinatra.md",
@@ -32141,7 +35439,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Miss Kittin - Frank Sinatra",
+     "description": "„Frank Sinatra“ je jednou ze zakladatelských hymen electroclashe: kamenně netečný mluvený přednes Miss Kittin nad syrovým electrem The Hackera, chladný, satirický portrét slávy a výstřelků, který dodnes plní taneční parkety.",
+     "path": "cs/miss-kittin-frank-sinatra/"
+    }
+   }
   },
   {
    "source": "louie-austen-one-night-in-rio.md",
@@ -32231,7 +35540,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Louie Austen - One Night In Rio",
+     "description": "„One Night In Rio“ od Louieho Austena je s nadsázkou podaný electro-loungeový příběh z roku 2001: vídeňský crooner z hotelového baru, tehdy po padesátce, odpočítává turné z Ria do LA a do Moskvy a stěžuje si na taxík, zatímco doprovodné zpěvačky opakují každý verš.",
+     "path": "cs/louie-austen-one-night-in-rio/"
+    }
+   }
   },
   {
    "source": "lekota_i-used-to.md",
@@ -32305,7 +35625,18 @@
    "edu": [
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Lekota - I Used To",
+     "description": "I Used To od Lekoty spojuje nostalgické melodie s moderním elektronickým zvukem a vytváří emotivní, introspektivní poslechový zážitek.",
+     "path": "cs/lekota-i-used-to/"
+    }
+   }
   },
   {
    "source": "kollektiv-turmstrasse_on-the-streets-let-freedom.md",
@@ -32396,7 +35727,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Kollektiv Turmstrasse - On The Streets (Let Freedom)",
+     "description": "Remix „Let Freedom“ hamburského dua Kollektiv Turmstrasse z roku 2009 ke skladbě On the Streets od Federleicht: melancholický, melodický house z hlubokých beatů a pomalu se rozvíjejících syntezátorů, od labelu, který později vydal jejich album.",
+     "path": "cs/kollektiv-turmstrasse-on-the-streets-let-freedom/"
+    }
+   }
   },
   {
    "source": "justice-vs-simian_we-are-your-friends.md",
@@ -32493,7 +35835,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Justice Vs Simian - We Are Your Friends",
+     "description": "Remix písně „Never Be Alone“ od Simian v podání Justice, poprvé vylisovaný v roce 2003 na druhém vydání labelu Ed Banger a v roce 2006 znovu vydaný jako „We Are Your Friends“: hit britské dvacítky, jehož videoklip získal cenu za nejlepší video na MTV Europe Music Awards.",
+     "path": "cs/justice-vs-simian-we-are-your-friends/"
+    }
+   }
   },
   {
    "source": "jorge-ben-jr_take-it-easy-my-brother-charles.md",
@@ -32589,7 +35942,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Jorge Ben Jor - Take It Easy My Brother Charles",
+     "description": "„Take It Easy My Brother Charles“ od Jorge Bena je dvouapůlminutová samba-soulová klasika z jeho alba z roku 1969: houpavá kytara, perkuse Trio Mocotó a vlídné varování „bratrovi jiné barvy pleti“, napůl portugalsky, napůl anglicky.",
+     "path": "cs/jorge-ben-jr-take-it-easy-my-brother-charles/"
+    }
+   }
   },
   {
    "source": "hindi-zahra_stand-up.md",
@@ -32688,7 +36052,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Hindi Zahra - Stand Up",
+     "description": "„Stand Up“ od Hindi Zahry je rozjařená, reggae zabarvená výzva k povstání z jejího debutu Handmade z roku 2010, v níž pop-reggae ustupuje závratnému sólu na ud a rytmus graduje až k tanci.",
+     "path": "cs/hindi-zahra-stand-up/"
+    }
+   }
   },
   {
    "source": "gabriel-vitel_burn-it-down.md",
@@ -32770,7 +36145,18 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Gabriel Vitel - Burn It Down",
+     "description": "„Burn It Down“ od Gabriela Vitela je temná, šestiminutová minimalová skladba z debutového EP německého písničkáře a živého indie dance projektu, vydaného v roce 2014 u Ipoly Music, stvořená pro taneční parket, a ne pro rádio.",
+     "path": "cs/gabriel-vitel-burn-it-down/"
+    }
+   }
   },
   {
    "source": "controller-7_get-ready-for-the-young-folks.md",
@@ -32868,7 +36254,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Controller 7 - Get Ready for the Young Folks",
+     "description": "Mashup producenta Controller 7 ze San Jose z roku 2007 klade a cappellu „Get Ready“ od Temptations z roku 1966 na rytmickou sekci „Young Folks“ od Peter Bjorn and John: dvě písně, mezi nimiž je čtyřicet let, do sebe zapadají až neuvěřitelně.",
+     "path": "cs/controller-7-get-ready-for-the-young-folks/"
+    }
+   }
   },
   {
    "source": "bronski-beat_small_town_boy.md",
@@ -32969,7 +36366,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Bronski Beat - Small Town Boy",
+     "description": "Debutový singl Bronski Beat z roku 1984 proměňuje útěk gay teenagera z domova v synth-popovou hymnu nesenou falzetem, postavenou na sekvencované oktávové figuře a zapamatovanou díky strohému videoklipu Bernarda Rose.",
+     "path": "cs/bronski-beat-small-town-boy/"
+    }
+   }
   },
   {
    "source": "amanda-blank_dj.md",
@@ -33063,7 +36471,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Amanda Blank - DJ",
+     "description": "„DJ“ od Amandy Blank je píseň o zlomeném srdci převlečená za klubovou skladbu: raperka z Filadelfie žádá nad beatem od Diplo a Switche DJe, ať přidá, aby mohla vytancovat špatný vztah ze sebe.",
+     "path": "cs/amanda-blank-dj/"
+    }
+   }
   },
   {
    "source": "marcu-rares_camimosa.md",
@@ -33159,7 +36578,18 @@
     "sources",
     "credits"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Marcu Rares - Camimosa",
+     "description": "Osmnáctiminutová minimalová skladba rumunského producenta Marcu Rareșe, titulní kus jeho EP z roku 2018 pro rumunský minimal techno label Welter Records.",
+     "path": "cs/marcu-rares-camimosa/"
+    }
+   }
   },
   {
    "source": "lipka_no-more-beer.md",
@@ -33253,7 +36683,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Lipka - No More Beer",
+     "description": "Ženevské duo zastaví večírek, aby oznámilo tu nejhorší možnou zprávu: ironická electro-indie skladba k společnému pokřikování, v níž dostane DJ pokyn vypnout hudbu, protože dochází pivo.",
+     "path": "cs/lipka-no-more-beer/"
+    }
+   }
   },
   {
    "source": "ladytron_seventeen.md",
@@ -33358,7 +36799,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Ladytron - Seventeen",
+     "description": "Singl Ladytron z roku 2002: vrnící syntezátory, dva chladné, do sebe zapadající hlasy a minimalistický text, který si rýpne do průmyslu posedlého mládím; na povrchu lesklý a na jedno použití, pod ním temný.",
+     "path": "cs/ladytron-seventeen/"
+    }
+   }
   },
   {
    "source": "chris-lorenzo-and-the-streets_take-me-as-i-am.md",
@@ -33455,7 +36907,18 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": []
+   "yearbooks": [],
+   "langs": [
+    "en",
+    "cs"
+   ],
+   "i18n": {
+    "cs": {
+     "title": "Chris Lorenzo & The Streets - Take Me as I Am",
+     "description": "Basový producent z Birminghamu Chris Lorenzo a Mike Skinner z The Streets se potkávají v rychlém, zuřivém kousku drum and bass: sevřené bicí, trhající basové syntezátory a Skinnerův suchý, hovorový zpěv.",
+     "path": "cs/chris-lorenzo-and-the-streets-take-me-as-i-am/"
+    }
+   }
   }
  ]
 }

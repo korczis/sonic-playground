@@ -117,4 +117,4 @@ Kygo, the Norwegian producer Kyrre Gørvell-Dahll, became the face of tropical h
 
 ## Impact and Reception
 
-Stay reached number 2 in Norway and number 3 in Sweden, number 11 in Switzerland, number 14 in Portugal and number 20 in the UK, where it reached number 7 on the dance chart. It showed that dance music could be soft, emotional and still deeply catchy. It is here for the sense of calm it creates, a few minutes of warmth that feel like holding on to a perfect moment. Put it on as the evening sets in and let it stay with you.
+Stay reached number 2 in Norway, number 3 in Sweden, number 11 in Switzerland, number 14 in Portugal and number 20 in the UK, where it reached number 7 on the dance chart. It showed that dance music could be soft, emotional and still deeply catchy. It is here for the sense of calm it creates, a few minutes of warmth that feel like holding on to a perfect moment. Put it on as the evening sets in and let it stay with you.

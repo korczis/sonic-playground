@@ -26,6 +26,9 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import catalog as cat  # noqa: E402  (the reviews, not their translations)
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 STATUS = ROOT / "data" / "videos.json"
@@ -35,7 +38,7 @@ YOUTUBE_ID = re.compile(r"/embed/([A-Za-z0-9_-]{11})$")
 def videos() -> dict[str, str]:
     """Every video id the reviews name, with the review that names it."""
     found = {}
-    for path in sorted(CONTENT.glob("*.md")):
+    for path in cat.review_files():
         text = path.read_text(encoding="utf-8")
         match = re.match(r"\A\+\+\+\r?\n(.*?)\r?\n\+\+\+", text, re.S)
         if not match:

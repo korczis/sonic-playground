@@ -409,6 +409,13 @@
    "a testament to"
   ],
   "shared_paragraph_chars": 120,
+  "translation": {
+    "description": "ADR 0006: every page has its translation beside it (<name>.<lang>.md, scripts/translation.py). required: a missing one is an error. untranslated_marker: what translate.py scaffold leaves in each text. czech_word_ratio: the share of words with Czech diacritics a Czech text has at least. min_words_ratio: a translation has at least this share of the English page's words.",
+    "required": true,
+    "untranslated_marker": "TODO(translate)",
+    "czech_word_ratio": 0.15,
+    "min_words_ratio": 0.6
+  },
   "facet_weights": {
    "genre": 2.0,
    "sentiment": 1.0,

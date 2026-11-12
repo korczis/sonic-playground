@@ -10,11 +10,11 @@
           <span class="sr-only" data-i18n="nav.open_sidebar">{{ l["nav.open_sidebar"] }}</span>
           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
         </button>
-        <a href="{{ get_url(path='@/_index.md') }}" class="mr-4 flex items-center lg:mr-14">
+        <a href="{{ get_url(path='@/_index.md', lang=lang) }}" class="mr-4 flex items-center lg:mr-14">
           <img src="{{ get_url(path='favicon.svg') }}" class="mr-3 h-8 w-8" alt="" width="32" height="32">
           <span class="self-center whitespace-nowrap text-base font-semibold sm:text-xl dark:text-white">{{ config.title }}</span>
         </a>
-        <form class="hidden lg:block lg:pl-2" role="search" action="{{ get_url(path='@/_index.md') }}" method="get">
+        <form class="hidden lg:block lg:pl-2" role="search" action="{{ get_url(path='@/_index.md', lang=lang) }}" method="get">
           <label for="topbar-search" class="sr-only" data-i18n="nav.search_label">{{ l["nav.search_label"] }}</label>
           <div class="relative mt-1 lg:w-96">
             {{ <input_icon name="search" /> }}
@@ -27,7 +27,7 @@
           <span class="sr-only" data-i18n="nav.random">{{ l["nav.random"] }}</span>{{ <icon name="shuffle" /> }}
         </button>
         <div id="tooltip-random" role="tooltip" class="{{ tip }}"><span data-i18n="nav.random_tip">{{ l["nav.random_tip"] }}</span><div class="tooltip-arrow" data-popper-arrow></div></div>
-        <a href="{{ get_url(path='atom.xml', trailing_slash=false) }}" data-tooltip-target="tooltip-feed" class="{{ btn }} hidden sm:block">
+        <a href="{{ get_url(path=lp ~ 'atom.xml', trailing_slash=false) }}" data-tooltip-target="tooltip-feed" class="{{ btn }} hidden sm:block">
           <span class="sr-only" data-i18n="nav.feed">{{ l["nav.feed"] }}</span>{{ <icon name="rss" /> }}
         </a>
         <div id="tooltip-feed" role="tooltip" class="{{ tip }}"><span data-i18n="nav.feed">{{ l["nav.feed"] }}</span><div class="tooltip-arrow" data-popper-arrow></div></div>
@@ -40,7 +40,7 @@
         <label for="locale-switch" class="sr-only" data-i18n="locale.switch">{{ l["locale.switch"] }}</label>
         <select id="locale-switch" data-locale-switch class="rounded-lg border-0 bg-transparent py-2 pl-2 pr-7 text-sm font-medium text-gray-600 hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
           {%- for code, loc in locales.locales %}
-          <option value="{{ code }}"{% if code == config.default_language %} selected{% endif %}>{{ loc.short }}</option>
+          <option value="{{ code }}"{% if code == lang %} selected{% endif %}>{{ loc.short }}</option>
           {%- endfor %}
         </select>
         <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button" class="{{ btn }}">

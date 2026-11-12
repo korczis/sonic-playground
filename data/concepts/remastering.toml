@@ -7,4 +7,5 @@ see_also = ["compression", "remix", "alternate version"]
 definition = "Preparing a finished recording again at the mastering stage, the last step before release: adjusting its loudness, tonal balance and dynamics, often from the original tapes and for a new format or reissue. Unlike a remix, a remaster leaves the arrangement and the balance between instruments as they were and changes only the overall sound."
 
 [cs]
+term = "remastering"
 definition = "Nové zpracování hotové nahrávky ve fázi masteringu, tedy v posledním kroku před vydáním: úprava hlasitosti, zvukového vyvážení a dynamiky, často z původních pásků a pro nový formát nebo reedici. Na rozdíl od remixu remaster nemění aranžmá ani poměr mezi nástroji, mění jen celkový zvuk."
