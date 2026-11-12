@@ -78,10 +78,31 @@ async function fromArtifact(route) {
 
 const failures = [];
 const notices = new Set();
+let last = 'start';
 function check(ok, what) {
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}`);
   if (!ok) failures.push(what);
+  last = what;
 }
+
+// Every step has a deadline (a production run once hung for 45 minutes in the sweep: a
+// page.evaluate and fetch have none of their own). The watchdog ends a stuck run with the last
+// check that passed and the pages still in flight, so the cause is in the log.
+const inFlight = new Set();
+const WATCHDOG = Number(process.env.SMOKE_TIMEOUT_MS || 15 * 60 * 1000);
+setTimeout(() => {
+  console.error(`smoke: watchdog: no result after ${WATCHDOG / 1000} s; last check: ${last}; ` +
+    `in flight: ${[...inFlight].join(', ') || 'none'}`);
+  process.exit(1);
+}, WATCHDOG).unref();
+/** Resolve with p, or reject after ms with what. */
+function within(ms, what, p) {
+  let timer;
+  return Promise.race([p, new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`timed out after ${ms / 1000} s: ${what}`)), ms);
+  })]).finally(() => clearTimeout(timer));
+}
+const get = (url) => fetch(url, { signal: AbortSignal.timeout(30000) });
 
 async function open(browser, url, viewport, colorScheme = 'light', options = {}) {
   const context = await browser.newContext({ viewport, colorScheme, ...options });
@@ -132,7 +153,7 @@ function watch(page) {
 // must produce zero errors. Six pages at a time, one context per worker.
 async function sweep(browser) {
   const xml = root ? fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8')
-    : await (await fetch(at('sitemap.xml'))).text();
+    : await (await get(at('sitemap.xml'))).text();
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   const failed = [];
   let next = 0;
@@ -144,20 +165,24 @@ async function sweep(browser) {
       const page = await context.newPage();
       const errors = watch(page);
       const rel = loc.startsWith(base) ? loc.slice(base.length) : loc;
+      inFlight.add(rel || '/');
       try {
-        await page.goto(at(rel), { waitUntil: 'load' });
-        await page.evaluate(async () => {
-          for (let y = 0; y < document.body.scrollHeight; y += 800) {
-            window.scrollTo(0, y);
-            await new Promise((r) => setTimeout(r, 40));
-          }
-        });
-        await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
+        await within(60000, `page /${rel}`, (async () => {
+          await page.goto(at(rel), { waitUntil: 'load', timeout: 30000 });
+          await page.evaluate(async () => {
+            for (let y = 0, i = 0; y < document.body.scrollHeight && i < 100; y += 800, i++) {
+              window.scrollTo(0, y);
+              await new Promise((r) => setTimeout(r, 40));
+            }
+          });
+          await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
+        })());
       } catch (e) {
         errors.push(`navigation: ${e.message}`);
       }
+      inFlight.delete(rel || '/');
       if (errors.length) failed.push(`${rel || '/'}: ${errors.join(' | ')}`);
-      await page.close();
+      await within(10000, `close /${rel}`, page.close()).catch(() => {});
     }
     await context.close();
   }
@@ -176,7 +201,7 @@ async function shot(page, name) {
 (async () => {
   const catalog = root
     ? JSON.parse(fs.readFileSync(path.join(root, 'data/catalog.json'), 'utf8'))
-    : await (await fetch(at('data/catalog.json'))).json();
+    : await (await get(at('data/catalog.json'))).json();
   check(catalog.schema === 'sonic-catalog/v1' && catalog.tracks.length > 0,
     `catalogue served (${catalog.tracks.length} tracks)`);
   if (root) {
@@ -259,17 +284,25 @@ async function shot(page, name) {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);
     check((await page.locator('[aria-labelledby="related-title"] article').count()) === sample.related.length, `track: ${sample.related.length} related tracks listed`);
     await shot(page, 'track-desktop-light');
-    // The still starts the track's radio in the bottom-bar player: the track, then its related.
-    await page.click('[data-video] [data-play-radio]');
+    // The still plays this one track, nothing else (owner finding 2026-11-12: it used to queue
+    // the track's radio); the radio is its own labelled control.
+    await page.click('[data-video] [data-play]');
     await page.waitForFunction(() => window.SonicPlayer && window.SonicPlayer.state().queue.length > 0);
-    const radio = await page.evaluate(() => window.SonicPlayer.state().queue.map((t) => t.source));
-    const playable = sample.related.filter((r) => (catalog.tracks.find((t) => t.source === r.source) || {}).youtube);
-    check(radio[0] === sample.source && playable.every((r) => radio.indexOf(r.source) > 0),
-      `track: the still starts its radio (${radio.length} tracks, the track first, its related next)`);
+    const single = await page.evaluate(() => window.SonicPlayer.state().queue.map((t) => t.source));
+    check(single.length === 1 && single[0] === sample.source, `track: the still plays this one track only (queued ${single.length})`);
     const src = await page.waitForSelector('#player-panel iframe', { timeout: 30000 })
       .then((el) => el.getAttribute('src')).catch(() => '');
     check(src.startsWith('https://www.youtube-nocookie.com/embed/' + sample.youtube), 'track: the player uses youtube-nocookie');
     check(await page.locator('[data-video] iframe').count() === 0, 'track: no inline iframe in the page');
+    await page.click('[data-track-actions] [data-play-radio]');
+    await page.waitForFunction(() => window.SonicPlayer.state().queue.length > 1, null, { timeout: 10000 }).catch(() => {});
+    const radio = await page.evaluate(() => window.SonicPlayer.state().queue.map((t) => t.source));
+    const playable = sample.related.filter((r) => (catalog.tracks.find((t) => t.source === r.source) || {}).youtube);
+    check(radio[0] === sample.source && playable.every((r) => radio.indexOf(r.source) > 0)
+      && new Set(radio).size === radio.length,
+      `track: Radio replaces the queue with the track and its related, each once (${radio.length})`);
+    check(await page.isVisible('#player-toast') && (await page.textContent('[data-player-toast-text]')).trim() !== '',
+      'track: replacing the queue is announced');
     await page.waitForTimeout(1500);
     check(errors.length === 0, `track: no console errors after the player loads${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
@@ -313,7 +346,7 @@ async function shot(page, name) {
     const term = 'four-on-the-floor';
     const expected = Object.entries(JSON.parse(root
       ? fs.readFileSync(path.join(root, 'data/search.json'), 'utf8')
-      : await (await fetch(at('data/search.json'))).text()).tracks)
+      : await (await get(at('data/search.json'))).text()).tracks)
       .filter(([, words]) => ['four', 'floor'].every((w) => words.split(' ').includes(w))).length;
     const { context, page } = await open(browser, at(''), desktop);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
@@ -337,21 +370,92 @@ async function shot(page, name) {
     }
   }
 
-  // The player keeps playing across navigation: the router swaps pages without reloading, the
-  // bar and its YouTube frame survive, page modules (explorer, charts) remount, back works.
+  // The player: one control, one effect, no duplicates (owner findings 2026-11-12), and it keeps
+  // playing across navigation (the router swaps pages, the bar and its frame survive).
   {
     const { context, page, errors } = await open(browser, at(''), desktop);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     await page.evaluate(() => { window.__noReload = true; });
-    const first = await page.locator('#explorer-grid [data-track]:not([hidden]) [data-play]').first().getAttribute('data-play');
-    await page.locator('#explorer-grid [data-play]').first().click();
+    const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
+    const S = [];
+    for (let i = 0; i < 5; i++) S.push(await cards.nth(i).getAttribute('data-source'));
+    const card = (i, sel) => cards.nth(i).locator(sel);
+    const queue = () => page.evaluate(() => window.SonicPlayer.state());
+    const until = (expected, what) => page.waitForFunction((e) => {
+      const s = window.SonicPlayer.state();
+      return JSON.stringify(s.queue.map((t) => t.source)) === JSON.stringify(e.q) && (e.i === undefined || s.index === e.i);
+    }, expected, { timeout: 10000 }).then(() => check(true, what)).catch(async () => {
+      const s = await queue();
+      check(false, `${what} (queue ${JSON.stringify(s.queue.map((t) => t.source))}, index ${s.index})`);
+    });
+    const pressed = (i) => card(i, '[data-queue]').getAttribute('aria-pressed');
+
+    await card(0, '[data-play]').click();
+    await until({ q: [S[0]], i: 0 }, 'player: play on a card plays that one track, nothing else');
     await page.waitForFunction(() => !document.getElementById('player').hidden, null, { timeout: 10000 });
-    const state = await page.evaluate(() => window.SonicPlayer.state());
-    const visible = await page.locator('#explorer-grid [data-track]:not([hidden]) [data-play]').count();
-    check(state.queue[0] && state.queue[0].source === first && state.queue.length === visible,
-      `player: play on the first card queues the ${visible} tracks shown, from the first (queued ${state.queue.length}, first ${state.queue[0] && state.queue[0].source} vs ${first})`);
     const frame = await page.waitForSelector('#player-panel iframe', { timeout: 30000 }).then(() => true).catch(() => false);
     check(frame, 'player: the YouTube player loads in the docked panel');
+
+    await card(1, '[data-queue]').click();
+    await until({ q: [S[0], S[1]] }, 'player: the queue button adds the track at the end');
+    check(await pressed(1) === 'true', 'player: the queue button shows the track is queued (aria-pressed)');
+    check(await page.isVisible('#player-toast'), 'player: adding to the queue is announced');
+    await card(1, '[data-queue]').click();
+    await until({ q: [S[0]] }, 'player: the queue button again takes the track out (no duplicates)');
+    check(await pressed(1) === 'false', 'player: the queue button shows the track is no longer queued');
+    await card(1, '[data-queue]').click();
+    await until({ q: [S[0], S[1]] }, 'player: queued again');
+    await card(2, '[data-queue]').click();
+    await until({ q: [S[0], S[1], S[2]] }, 'player: a second track queued after the first');
+    await card(3, '[data-play-next]').click();
+    await until({ q: [S[0], S[3], S[1], S[2]], i: 0 }, 'player: play next puts the track right after the current one');
+    await card(2, '[data-play]').click();
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 1 }, 'player: play on a queued track plays it now, moved, not duplicated');
+    await page.click('[data-player-next]');
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 2 }, 'player: next skips to the following track');
+
+    await page.click('[data-player-queue]');
+    check(await page.isVisible('#player-queue'), 'player: the queue panel opens');
+    const rows = async (kind) => page.locator(`#player-queue [data-queue-row="${kind}"]`).evaluateAll((els) => els.map((e) => e.dataset.source));
+    check(JSON.stringify(await rows('now')) === JSON.stringify([S[3]]) && JSON.stringify(await rows('next')) === JSON.stringify([S[1]])
+      && JSON.stringify(await rows('played')) === JSON.stringify([S[2], S[0]]),
+      'player: the queue panel shows now playing, up next and played');
+    await card(4, '[data-queue]').click();
+    await until({ q: [S[0], S[2], S[3], S[1], S[4]] }, 'player: queued while the panel is open');
+    await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-down]`);
+    await until({ q: [S[0], S[2], S[3], S[4], S[1]] }, 'player: a queued track moves down');
+    await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-up]`);
+    await until({ q: [S[0], S[2], S[3], S[1], S[4]] }, 'player: and up');
+    await page.click(`#player-queue [data-queue-row="next"][data-source="${S[4]}"] [data-player-remove]`);
+    await until({ q: [S[0], S[2], S[3], S[1]] }, 'player: a queued track is removed from the panel');
+    check(await pressed(4) === 'false', 'player: the card follows a removal made in the panel');
+    await page.click('[data-player-clear]');
+    await until({ q: [S[3]], i: 0 }, 'player: clear flushes the queue, the current track plays on');
+    check(await page.isHidden('[data-player-count]'), 'player: no badge when nothing is queued');
+    check(await page.isVisible('#player-queue [data-queue-empty]'), 'player: the empty queue says how to add tracks');
+    await page.keyboard.press('Escape');
+    check(await page.isHidden('#player-queue'), 'player: Escape closes the queue panel');
+
+    const repeats = [];
+    for (let i = 0; i < 3; i++) { await page.click('[data-player-repeat]'); repeats.push((await queue()).repeat); }
+    check(repeats.join() === 'all,one,off', `player: repeat cycles all, one, off (${repeats.join()})`);
+
+    const width = () => page.evaluate(() => document.getElementById('player-panel').getBoundingClientRect().width);
+    const before = await width();
+    await page.click('[data-player-size]');
+    const after = await width();
+    const [small, large] = [Math.min(before, after), Math.max(before, after)];
+    check(before < 250 && small >= 200 && large > 300,
+      `player: the video starts small and toggles larger (${Math.round(small)} ↔ ${Math.round(large)} px), never hidden`);
+    await page.click('[data-player-size]');
+    await page.click('[data-player-minimise]');
+    const mini = await page.evaluate(() => ({ view: document.documentElement.dataset.playerViewState,
+      bar: document.getElementById('player').getBoundingClientRect().width }));
+    check(mini.view === 'mini' && mini.bar <= 360 && await page.isVisible('[data-player-expand]') && await page.isHidden('[data-player-queue]'),
+      `player: minimise turns the bar into a pill (${Math.round(mini.bar)} px)`);
+    await page.click('[data-player-expand]');
+    check(await page.evaluate(() => document.documentElement.dataset.playerViewState === 'full'), 'player: expand restores the bar');
+
     await page.evaluate(() => { window.__frame = document.querySelector('#player-panel iframe'); });
     await page.locator('#sidebar a[href$="/insights/"]').click();
     await page.waitForFunction(() => /Insights/.test(document.title) && Number(document.documentElement.dataset.chartsState) > 0, null, { timeout: 20000 });
@@ -363,12 +467,52 @@ async function shot(page, name) {
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready', null, { timeout: 15000 })
       .then(() => check(true, 'router: back remounts the explorer'))
       .catch(() => check(false, 'router: back remounts the explorer'));
-    await page.locator('#explorer-grid [data-queue]').nth(3).click();
-    await page.waitForTimeout(300);
-    const after = await page.evaluate(() => window.SonicPlayer.state().queue.length);
-    check(after === visible + 1, `player: + Queue appends (${visible} → ${after})`);
-    check(errors.length === 0, `player and router: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+
+    const visible = await page.locator('#explorer-grid [data-track]:not([hidden]) [data-play]').count();
+    await page.click('[data-play-all="explorer-grid"]');
+    await page.waitForFunction((n) => window.SonicPlayer.state().queue.length === n, visible, { timeout: 10000 })
+      .then(() => check(true, `player: Play all replaces the queue with the ${visible} tracks shown`))
+      .catch(() => check(false, `player: Play all replaces the queue with the ${visible} tracks shown`));
     await shot(page, 'player-home');
+
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForFunction(() => !document.getElementById('player').hidden, null, { timeout: 10000 }).catch(() => {});
+    const resumed = await page.evaluate(() => ({ n: window.SonicPlayer.state().queue.length,
+      panel: document.getElementById('player-panel').hidden, frame: !!document.querySelector('#player-panel iframe') }));
+    check(resumed.n === visible && resumed.panel && !resumed.frame,
+      'player: a reload keeps the queue, paused, with no third-party request until play');
+    await page.click('[data-player-close]');
+    check(await page.isHidden('#player') && (await queue()).queue.length === 0, 'player: close stops and empties the player');
+    check(errors.length === 0, `player and router: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+
+  // The player at phone width: everything reachable, nothing overlapping, nothing overflowing.
+  {
+    const { context, page, errors } = await open(browser, at(''), phone);
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
+    const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
+    await cards.nth(0).locator('[data-play]').click();
+    await cards.nth(1).locator('[data-queue]').click();
+    await page.waitForFunction(() => window.SonicPlayer.state().queue.length === 2, null, { timeout: 10000 });
+    await page.waitForSelector('#player-panel iframe', { timeout: 30000 }).catch(() => {});
+    const box = (sel) => page.evaluate((s) => { const r = document.querySelector(s).getBoundingClientRect();
+      return { l: r.left, r: r.right, t: r.top, b: r.bottom }; }, sel);
+    const fits = await page.evaluate(() => [...document.querySelectorAll('#player button')]
+      .filter((b) => b.offsetParent !== null).every((b) => { const r = b.getBoundingClientRect(); return r.left >= 0 && r.right <= innerWidth; }));
+    check(fits, 'player (phone): every visible bar control is on screen');
+    await page.click('[data-player-queue]');
+    const q = await box('#player-queue');
+    const v = await box('#player-panel');
+    const overlap = !(q.r <= v.l || v.r <= q.l || q.b <= v.t || v.b <= q.t);
+    check(!overlap, 'player (phone): the open queue and the video do not overlap');
+    check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'player (phone): no horizontal overflow');
+    await shot(page, 'player-phone-queue');
+    await page.keyboard.press('Escape');
+    await page.click('[data-player-minimise]');
+    const pill = await box('#player');
+    check(pill.r <= 390 && pill.l >= 0 && pill.b - pill.t < 70, 'player (phone): minimised to a pill');
+    check(errors.length === 0, `player (phone): no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
 
@@ -376,7 +520,7 @@ async function shot(page, name) {
   // drives the strings the browser code writes (data/i18n/, static/js/i18n.js).
   {
     const bundle = root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
-      : await (await fetch(at('data/i18n.json'))).json();
+      : await (await get(at('data/i18n.json'))).json();
     const other = Object.keys(bundle.locales).find((c) => c !== bundle.default);
     if (other) {
       const s = bundle.locales[other].strings;
