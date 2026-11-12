@@ -46,7 +46,9 @@ running the same skill.
 
 Every track has the same controls, one effect each (component `track_actions`): **Play** plays
 that track now, **Play next** puts it after the current one, the **queue** button adds it or
-takes it out again, **Radio** and **Play all** replace the queue and say so. The bar: previous,
+takes it out again, **Radio** and **Play all** replace the queue and say so; the "⋯" menu on
+every card lists them all, labelled. When the queue runs out, autoplay (on by default) plays a
+random track. The bar: previous,
 play/pause, next, repeat, the queue (reorder, remove, shuffle, clear), a small or large video,
 minimise, close. The queue survives navigation and reloads. A locked phone stops any embedded
 video; "Open in the YouTube app" hands the queue to an app that keeps playing. Details:
@@ -91,7 +93,7 @@ content/            reviews (front matter = the database) and pages/ (welcome, a
 data/               track.schema.json (contract), review.toml, i18n/, backlog/, videos.json
 archetypes/         track.md, the template of a new review
 templates/          components.html (UI components), partials/ (shell, player), page templates
-static/js/          core (modules), router, player, explorer, charts, i18n, site (shell)
+static/js/          core (modules), router, player, track-menu, explorer, charts, i18n, site (shell)
 static/data/        catalog.json, search.json, i18n.json (derived, committed), vendor.json
 scripts/            catalog, track, backlog, i18n, og, check-built, check-components, probes, verify
 test/               unit tests, cases/ (skill and policy cases), e2e/smoke.cjs (Playwright)

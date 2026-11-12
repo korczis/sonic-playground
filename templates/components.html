@@ -30,6 +30,7 @@
   "queue-add": "M4 6h11M4 11h11M4 16h7m6-4v8m-4-4h8",
   "radio": "M5 12a7 7 0 0 1 14 0M8 12a4 4 0 0 1 8 0M12 13v7m-3 0h6",
   "pause": "M9 6v12m6-12v12",
+  "dots": "M6.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm7 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm7 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z",
 } -%}
 {%- if name in paths -%}
 <svg class="{{ cls }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ paths[name] }}"/></svg>
@@ -127,10 +128,11 @@
 {#- The controls of one track (static/js/player.js), one effect each, never a hidden playlist
     (owner finding 2026-11-12):
       play        play this track now (the queue after it stays as it is)
-      play next   play it after the current track
+      play next   play it after the current track (bar; the menu elsewhere)
       queue       a toggle: add it to the end of the queue, or take it out (aria-pressed)
-      radio       replace the queue with this track and similar ones (variant "bar" only)
-    variant: "overlay" over a picture (play left, icon buttons right), "row" icon buttons at the
+      radio       replace the queue with this track and similar ones (bar; the menu elsewhere)
+      ⋯           the track menu (static/js/track-menu.js): every action, labelled
+    variant: "overlay" over a picture (play left; queue and ⋯ right), "row" queue and ⋯ at the
     end of a list row (its play button is the row's own), "bar" labelled buttons (track page,
     featured track). Icon-only buttons carry a localised aria-label and title. -#}
 {% component track_actions(source, label, l, variant="overlay") %}
@@ -155,8 +157,8 @@
   <button type="button" data-play="{{ source }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition hover:scale-105 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" title="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-title="card.play" data-i18n-vars="{{ ivars }}"><span data-icon-play>{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span><span data-icon-pause>{{ <icon name="pause" cls="h-5 w-5" /> }}</span></button>
   {%- endif %}
   <span class="flex items-center gap-1.5">
-    <button type="button" data-play-next="{{ source }}" class="{{ ibtn }}" aria-label="{{ l["card.play_next"] | replace(from="{label}", to=label) }}" title="{{ l["card.play_next"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play_next" data-i18n-title="card.play_next" data-i18n-vars="{{ ivars }}">{{ <icon name="play-next" cls="h-4 w-4" /> }}</button>
     <button type="button" data-queue="{{ source }}" aria-pressed="false" class="group {{ ibtn }}" aria-label="{{ l["card.queue_label"] | replace(from="{label}", to=label) }}" title="{{ l["card.queue_add_hint"] }}" data-i18n-aria-label="card.queue_label" data-i18n-vars="{{ ivars }}"><span class="group-aria-pressed:hidden">{{ <icon name="queue-add" cls="h-4 w-4" /> }}</span><span class="hidden group-aria-pressed:inline">{{ <icon name="check" cls="h-4 w-4" /> }}</span></button>
+    <button type="button" data-track-menu="{{ source }}" aria-haspopup="menu" aria-expanded="false" aria-controls="track-menu" class="{{ ibtn }}" aria-label="{{ l["card.more"] | replace(from="{label}", to=label) }}" title="{{ l["card.more"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.more" data-i18n-title="card.more" data-i18n-vars="{{ ivars }}">{{ <icon name="dots" cls="h-4 w-4" /> }}</button>
   </span>
 </div>
 {%- endif -%}

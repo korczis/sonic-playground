@@ -430,6 +430,10 @@ async function shot(page, name) {
     const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
     const S = [];
     for (let i = 0; i < 5; i++) S.push(await cards.nth(i).getAttribute('data-source'));
+    const S5 = await cards.nth(5).getAttribute('data-source');
+    const S6 = await cards.nth(6).getAttribute('data-source');
+    const bundleStrings = (root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
+      : await (await get(at('data/i18n.json'))).json()).locales.en.strings;
     const card = (i, sel) => cards.nth(i).locator(sel);
     const queue = () => page.evaluate(() => window.SonicPlayer.state());
     const until = (expected, what) => page.waitForFunction((e) => {
@@ -440,6 +444,13 @@ async function shot(page, name) {
       check(false, `${what} (queue ${JSON.stringify(s.queue.map((t) => t.source))}, index ${s.index})`);
     });
     const pressed = (i) => card(i, '[data-queue]').getAttribute('aria-pressed');
+    // The track menu ("⋯"): every action, labelled.
+    const fromMenu = async (i, which) => {
+      await card(i, '[data-track-menu]').click();
+      await page.waitForSelector('#track-menu:not([hidden])', { timeout: 5000 });
+      await page.click(`#track-menu [data-menu-item="${which}"]`);
+      await page.waitForSelector('#track-menu', { state: 'hidden', timeout: 5000 });
+    };
 
     await card(0, '[data-play]').click();
     await until({ q: [S[0]], i: 0 }, 'player: play on a card plays that one track, nothing else');
@@ -458,8 +469,8 @@ async function shot(page, name) {
     await until({ q: [S[0], S[1]] }, 'player: queued again');
     await card(2, '[data-queue]').click();
     await until({ q: [S[0], S[1], S[2]] }, 'player: a second track queued after the first');
-    await card(3, '[data-play-next]').click();
-    await until({ q: [S[0], S[3], S[1], S[2]], i: 0 }, 'player: play next puts the track right after the current one');
+    await fromMenu(3, 'next');
+    await until({ q: [S[0], S[3], S[1], S[2]], i: 0 }, 'player: play next (from the track menu) puts the track right after the current one');
     await card(2, '[data-play]').click();
     await until({ q: [S[0], S[2], S[3], S[1]], i: 1 }, 'player: play on a queued track plays it now, moved, not duplicated');
     await page.click('[data-player-next]');
@@ -490,8 +501,19 @@ async function shot(page, name) {
     // the queue runs out (it stops on the last track), repeat one (the track plays again).
     await page.evaluate(() => window.__yt.fire(0));
     await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: a track that ends plays the next one');
+    // Autoplay is on by default: past the last track a random track that has not played follows.
     await page.evaluate(() => window.__yt.fire(0));
-    await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: past the last track the queue stops, nothing loops');
+    await page.waitForFunction(() => window.SonicPlayer.state().queue.length === 5, null, { timeout: 5000 }).catch(() => {});
+    const auto = await queue();
+    check(auto.queue.length === 5 && auto.index === 4 && auto.queue[4].auto === true && !S.slice(0, 4).includes(auto.queue[4].source)
+      && (await page.getAttribute('#player-toast', 'data-shown')) === 'true',
+      `player: autoplay (default) plays a random new track when the queue ends (${auto.queue[4] && auto.queue[4].source})`);
+    await page.evaluate(() => window.SonicPlayer.remove(4));
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: the autoplayed track is removed again');
+    await page.click('#player-queue label:has([data-player-autoplay])');
+    check((await queue()).autoplay === false, 'player: the autoplay switch turns it off (and it is remembered)');
+    await page.evaluate(() => window.__yt.fire(0));
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: without autoplay the queue stops at its end, nothing loops');
     check(await page.evaluate(() => document.documentElement.dataset.playerState) === 'paused'
       && await page.isDisabled('[data-player-next]'), 'player: at the end it shows paused and next is disabled');
     await page.click('#player-queue [data-queue-row="played"] [data-player-jump]');
@@ -518,7 +540,7 @@ async function shot(page, name) {
     check(await page.evaluate(() => window.__yt.player._state) === 1, 'player: and plays again');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-jump]`);
     await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: an up-next track plays from the panel');
-    await card(3, '[data-play-next]').click();
+    await fromMenu(3, 'next');
     await until({ q: [S[0], S[2], S[1], S[3]], i: 2 }, 'player: play next on a played track moves it after the current one');
     await page.click('[data-player-clear]');
     await until({ q: [S[1]], i: 0 }, 'player: clear flushes the queue, the current track plays on');
@@ -610,6 +632,35 @@ async function shot(page, name) {
       .then(() => check(true, 'player: undo after close brings the player and its queue back'))
       .catch(() => check(false, 'player: undo after close brings the player and its queue back'));
     await page.click('[data-player-close]');
+
+    // The track menu: opens beside its trigger, labelled, driven by the keyboard.
+    const trigger = card(5, '[data-track-menu]');
+    await trigger.click();
+    await page.waitForSelector('#track-menu:not([hidden])', { timeout: 5000 });
+    const title5 = catalog.tracks.find((t) => t.source === S5);
+    check((await page.textContent('[data-track-menu-title]')).includes(title5.track)
+      && await trigger.getAttribute('aria-expanded') === 'true'
+      && await page.evaluate(() => document.activeElement && document.activeElement.dataset.menuItem === 'play'),
+      'track menu: opens with the track named, aria-expanded, focus on its first action');
+    await shot(page, 'track-menu-desktop');
+    await page.keyboard.press('ArrowDown');
+    check(await page.evaluate(() => document.activeElement.dataset.menuItem) === 'next', 'track menu: arrows move between actions');
+    await page.keyboard.press('Escape');
+    check(await page.isHidden('#track-menu') && await page.evaluate(() => document.activeElement && document.activeElement.hasAttribute('data-track-menu'))
+      && await trigger.getAttribute('aria-expanded') === 'false', 'track menu: Escape closes it and returns focus to its trigger');
+    await fromMenu(5, 'play');
+    await until({ q: [S5], i: 0 }, 'track menu: Play now plays that one track');
+    await fromMenu(6, 'queue');
+    await until({ q: [S5, S6] }, 'track menu: Add to queue adds the track');
+    await card(6, '[data-track-menu]').click();
+    await page.waitForSelector('#track-menu:not([hidden])', { timeout: 5000 });
+    check(await page.textContent('[data-menu-queue-label]') === bundleStrings['trackmenu.queue_remove'],
+      'track menu: a queued track offers Remove from queue');
+    await page.click('#track-menu [data-menu-item="queue"]');
+    await until({ q: [S5] }, 'track menu: Remove from queue takes it out');
+    await fromMenu(5, 'copy');
+    check((await page.textContent('[data-player-toast-text]')) === bundleStrings['trackmenu.copied'], 'track menu: Copy link says the link is copied');
+    await page.click('[data-player-close]');
     check(errors.length === 0, `player and router: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
@@ -635,6 +686,13 @@ async function shot(page, name) {
     check(!overlap, 'player (phone): the open queue and the video do not overlap');
     check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'player (phone): no horizontal overflow');
     await shot(page, 'player-phone-queue');
+    await page.keyboard.press('Escape');
+    await cards.nth(2).locator('[data-track-menu]').click();
+    await page.waitForSelector('#track-menu:not([hidden])', { timeout: 5000 });
+    const sheet = await box('#track-menu');
+    check(Math.round(sheet.l) === 0 && Math.round(sheet.r) === 390 && Math.abs(sheet.b - 844) < 2,
+      'track menu (phone): a bottom sheet across the screen');
+    await shot(page, 'track-menu-phone');
     await page.keyboard.press('Escape');
     await page.click('[data-player-minimise]');
     const pill = await box('#player');

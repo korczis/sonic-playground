@@ -48,7 +48,7 @@ interface SonicApi {
   locale(): string;
 }
 
-interface SonicQueueItem { source: string; path: string; artist: string; track: string; youtube: string; thumbnail: string }
+interface SonicQueueItem { source: string; path: string; artist: string; track: string; youtube: string; thumbnail: string; auto?: boolean }
 
 interface Window {
   Sonic: SonicApi;
@@ -68,7 +68,8 @@ interface Window {
     stop(): void;
     jump(index: number): void;
     undo(): void;
-    state(): { queue: SonicQueueItem[]; index: number; time: number; repeat: string; view: string; video: string };
+    notify(text: string): void;
+    state(): { queue: SonicQueueItem[]; index: number; time: number; repeat: string; view: string; video: string; autoplay: boolean };
   };
   echarts: any;
   YT: any;

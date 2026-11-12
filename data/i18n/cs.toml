@@ -72,9 +72,9 @@
 
 "card.play" = "Přehrát {label}"
 "card.queue_label" = "Fronta: {label}"
-"card.play_next" = "Přehrát {label} jako další"
 "card.queue_add_hint" = "Přidat do fronty"
 "card.queue_remove_hint" = "Ve frontě: kliknutím odeberete"
+"card.more" = "Další akce pro {label}"
 
 "share.copy" = "Kopírovat odkaz"
 "share.copied" = "Odkaz zkopírován"
@@ -203,6 +203,10 @@
 "player.toast_undone" = "Obnoveno"
 "player.toast_closed" = "Přehrávač zavřen"
 "player.close_short" = "Zavřít přehrávač"
+"player.autoplay" = "Automatické přehrávání"
+"player.autoplay_hint" = "Po skončení fronty hraje náhodná skladba"
+"player.autoplay_badge" = "Automaticky"
+"player.toast_autoplay" = "Automaticky: {artist} – {track}"
 
 "seo.locale" = "cs_CZ"
 "seo.term" = "{n} ručně vybraných skladeb zařazených pod {kind} {term}: recenze, videa a skladby, které zní podobně."
@@ -214,3 +218,11 @@
 "action.radio" = "Rádio"
 "action.radio_hint" = "Nahradí frontu touto skladbou a podobnými"
 "action.play_all_hint" = "Nahradí frontu těmito skladbami"
+"trackmenu.play" = "Přehrát hned"
+"trackmenu.play_next" = "Přehrát jako další"
+"trackmenu.queue_add" = "Přidat do fronty"
+"trackmenu.queue_remove" = "Odebrat z fronty"
+"trackmenu.radio" = "Spustit rádio"
+"trackmenu.open" = "Otevřít recenzi"
+"trackmenu.copy" = "Kopírovat odkaz"
+"trackmenu.copied" = "Odkaz zkopírován"
