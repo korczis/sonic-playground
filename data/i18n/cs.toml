@@ -174,3 +174,7 @@
 "player.close" = "Zastavit a zavřít přehrávač"
 "player.remove" = "Odebrat {track} z fronty"
 "player.video" = "Video"
+
+"seo.locale" = "cs_CZ"
+"seo.term" = "{n} ručně vybraných skladeb zařazených pod {kind} {term}: recenze, videa a skladby, které zní podobně."
+"seo.taxonomy" = "Všech {n} {kind} hřiště, nejčastější první."

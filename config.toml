@@ -45,7 +45,7 @@ repo_url = "https://github.com/korczis/sonic-playground"
 since = 2024
 license = "CC BY-SA 4.0"
 license_url = "https://creativecommons.org/licenses/by-sa/4.0/"
-social_image = "images/wall.jpeg"
+x_handle = "@korczis"
 
 # Sidebar: the facets come from the catalogue; these are the fixed pages.
 [[extra.menu]]

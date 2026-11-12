@@ -12,12 +12,22 @@ reviews or attributes the templates compute. This reads what a browser would req
 from __future__ import annotations
 
 import html
+import os
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 
 URL_ATTRS = {"src", "href", "poster", "data-copy-link"}
+# The social cards are rendered by scripts/og.cjs (a browser); without one (the pre-push gate) the
+# tags are still checked, the files are not: CHECK_OG_FILES=0.
+OG_FILES = os.environ.get("CHECK_OG_FILES", "1") != "0"
+
+
+# Every page carries a complete social preview (rule project.social-preview).
+SOCIAL = ["og:title", "og:description", "og:url", "og:image", "og:image:width", "og:image:height",
+          "og:image:alt", "og:type", "og:site_name", "twitter:card", "twitter:title",
+          "twitter:description", "twitter:image", "description"]
 
 
 class Refs(HTMLParser):
@@ -25,8 +35,27 @@ class Refs(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.urls: list[str] = []
         self.iframes = 0
+        self.meta: dict[str, str] = {}
+        self.canonical = ""
+        self.in_title = False
+        self.title = ""
+
+    def handle_endtag(self, tag):
+        if tag == "title":
+            self.in_title = False
+
+    def handle_data(self, data):
+        if self.in_title:
+            self.title += data
 
     def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "title":
+            self.in_title = True
+        if tag == "meta" and (a.get("property") or a.get("name")):
+            self.meta[a.get("property") or a.get("name")] = a.get("content") or ""
+        if tag == "link" and a.get("rel") == "canonical":
+            self.canonical = a.get("href") or ""
         if tag == "iframe":
             self.iframes += 1
         for name, value in attrs:
@@ -53,6 +82,7 @@ def main() -> int:
     base = sys.argv[2].rstrip("/") + "/"
     site = urlsplit(base)
     prefix = site.path  # e.g. /sonic-playground/
+    origin = f"{site.scheme}://{site.netloc}"
     problems: list[str] = []
     files = sorted(public.rglob("*.html")) + sorted(public.rglob("*.xml"))
     for file in files:
@@ -63,6 +93,21 @@ def main() -> int:
         parser.feed(html.unescape(text) if file.suffix == ".xml" else text)
         if parser.iframes and file.suffix == ".html":
             problems.append(f"{rel}: raw <iframe> (use the video component or a link)")
+        if file.suffix == ".html" and "<html" in text[:300]:
+            missing = [k for k in SOCIAL if not parser.meta.get(k, "").strip()]
+            if missing:
+                problems.append(f"{rel}: social preview incomplete, missing {', '.join(missing)}")
+            if not parser.title.strip() or not parser.canonical:
+                problems.append(f"{rel}: no <title> or canonical link")
+            image = parser.meta.get("og:image", "")
+            if image and image != parser.meta.get("twitter:image"):
+                problems.append(f"{rel}: og:image and twitter:image differ")
+            if image and not image.startswith(origin + prefix):
+                problems.append(f"{rel}: og:image {image} is not an absolute URL of this site")
+            elif image and OG_FILES:
+                card = public / unquote(urlsplit(image).path[len(prefix):])
+                if not card.is_file():
+                    problems.append(f"{rel}: og:image {image} does not exist in the build (scripts/og.cjs)")
         here = page_url(base, rel)
         for raw in set(parser.urls):
             if raw.startswith(("#", "mailto:", "tel:", "javascript:", "data:")):
