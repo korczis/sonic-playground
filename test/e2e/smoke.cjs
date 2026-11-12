@@ -104,9 +104,45 @@ function within(ms, what, p) {
 }
 const get = (url) => fetch(url, { signal: AbortSignal.timeout(30000) });
 
-async function open(browser, url, viewport, colorScheme = 'light', options = {}) {
+// A deterministic YouTube for the player suites: they test the queue, not YouTube, and a real
+// video that errors or ends on a CI machine moved the queue on its own (2026-11-12, CI of
+// 0f909ff). The fake IFrame API records every call; window.__yt.fire(state) and
+// window.__yt.error() play the parts of a video ending or failing. The track page keeps the real
+// player as the integration test.
+const FAKE_IFRAME_API = `
+window.__yt = { calls: [], player: null,
+  fire: function (s) { var p = window.__yt.player; p._state = s; p._events.onStateChange({ data: s, target: p }); },
+  error: function () { var p = window.__yt.player; p._events.onError({ data: 150, target: p }); } };
+window.YT = { Player: function (frame, opts) {
+  var self = this; self._events = opts.events || {}; self._state = -1; self._time = 0;
+  self._video = decodeURIComponent(((frame.src || '').split('/embed/')[1] || '').split('?')[0]);
+  window.__yt.player = self;
+  function log(n, a) { window.__yt.calls.push([n, a === undefined ? null : a]); }
+  self.playVideo = function () { log('play'); self._state = 1; self._events.onStateChange && self._events.onStateChange({ data: 1, target: self }); };
+  self.pauseVideo = function () { log('pause'); self._state = 2; self._events.onStateChange && self._events.onStateChange({ data: 2, target: self }); };
+  self.stopVideo = function () { log('stop'); self._state = 5; };
+  self.loadVideoById = function (o) { log('load', o.videoId); self._video = o.videoId; self._time = 0; self.playVideo(); };
+  self.cueVideoById = function (o) { log('cue', o.videoId); self._video = o.videoId; self._state = 5; };
+  self.seekTo = function (t) { log('seek', t); self._time = t; };
+  self.getPlayerState = function () { return self._state; };
+  self.getCurrentTime = function () { return self._time; };
+  self.getDuration = function () { return 240; };
+  self.getVideoData = function () { return { video_id: self._video }; };
+  setTimeout(function () { self._events.onReady && self._events.onReady({ target: self }); }, 0);
+} };
+if (window.onYouTubeIframeAPIReady) window.onYouTubeIframeAPIReady();
+`;
+async function fakeYouTube(context) {
+  await context.route('https://www.youtube.com/iframe_api', (r) => r.fulfill({ status: 200,
+    contentType: 'text/javascript', body: FAKE_IFRAME_API }));
+  await context.route('https://www.youtube-nocookie.com/**', (r) => r.fulfill({ status: 200,
+    contentType: 'text/html', body: '<!doctype html><title>fake player</title>' }));
+}
+
+async function open(browser, url, viewport, colorScheme = 'light', options = {}, fake = false) {
   const context = await browser.newContext({ viewport, colorScheme, ...options });
   if (root) await context.route(`${base}**`, fromArtifact);
+  if (fake) await fakeYouTube(context);
   const page = await context.newPage();
   const errors = watch(page);
   const response = await page.goto(url, { waitUntil: 'load' });
@@ -373,7 +409,7 @@ async function shot(page, name) {
   // The player: one control, one effect, no duplicates (owner findings 2026-11-12), and it keeps
   // playing across navigation (the router swaps pages, the bar and its frame survive).
   {
-    const { context, page, errors } = await open(browser, at(''), desktop);
+    const { context, page, errors } = await open(browser, at(''), desktop, 'light', {}, true);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     await page.evaluate(() => { window.__noReload = true; });
     const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
@@ -414,6 +450,10 @@ async function shot(page, name) {
     await page.click('[data-player-next]');
     await until({ q: [S[0], S[2], S[3], S[1]], i: 2 }, 'player: next skips to the following track');
 
+    const video = () => page.evaluate(() => window.__yt.player && window.__yt.player._video);
+    const sample3 = catalog.tracks.find((t) => t.source === S[3]);
+    check(await video() === sample3.youtube, 'player: the frame plays the current track\'s video');
+
     await page.click('[data-player-queue]');
     check(await page.isVisible('#player-queue'), 'player: the queue panel opens');
     const rows = async (kind) => page.locator(`#player-queue [data-queue-row="${kind}"]`).evaluateAll((els) => els.map((e) => e.dataset.source));
@@ -429,8 +469,42 @@ async function shot(page, name) {
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[4]}"] [data-player-remove]`);
     await until({ q: [S[0], S[2], S[3], S[1]] }, 'player: a queued track is removed from the panel');
     check(await pressed(4) === 'false', 'player: the card follows a removal made in the panel');
+    // What YouTube does on its own: a track ends (the next plays), a video fails (it is skipped),
+    // the queue runs out (it stops on the last track), repeat one (the track plays again).
+    await page.evaluate(() => window.__yt.fire(0));
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: a track that ends plays the next one');
+    await page.evaluate(() => window.__yt.fire(0));
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: past the last track the queue stops, nothing loops');
+    check(await page.evaluate(() => document.documentElement.dataset.playerState) === 'paused'
+      && await page.isDisabled('[data-player-next]'), 'player: at the end it shows paused and next is disabled');
+    await page.click('#player-queue [data-queue-row="played"] [data-player-jump]');
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 2 }, 'player: a played track can be played again from the panel');
+    await page.evaluate(() => window.__yt.error());
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: a video that cannot play is skipped');
+    await page.click('[data-player-repeat]');
+    await page.click('[data-player-repeat]');
+    const loads = await page.evaluate(() => window.__yt.calls.filter((c) => c[0] === 'load').length);
+    await page.evaluate(() => window.__yt.fire(0));
+    await page.waitForFunction((n) => window.__yt.calls.filter((c) => c[0] === 'load').length > n, loads, { timeout: 5000 })
+      .then(() => check(true, 'player: repeat one plays the ended track again')).catch(() => check(false, 'player: repeat one plays the ended track again'));
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: repeat one stays on the track');
+    await page.click('[data-player-repeat]');
+    await page.click('[data-player-prev]');
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 2 }, 'player: previous at the start of a track goes to the previous track');
+    await page.evaluate(() => { window.__yt.player._time = 42; });
+    await page.click('[data-player-prev]');
+    check(await page.evaluate(() => { const c = window.__yt.calls; const l = c[c.length - 1]; return l[0] === 'seek' && l[1] === 0; })
+      && (await queue()).index === 2, 'player: previous past 3 s restarts the track');
+    await page.click('[data-player-toggle]');
+    check(await page.evaluate(() => window.__yt.player._state) === 2, 'player: the toggle pauses');
+    await page.click('[data-player-toggle]');
+    check(await page.evaluate(() => window.__yt.player._state) === 1, 'player: and plays again');
+    await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-jump]`);
+    await until({ q: [S[0], S[2], S[3], S[1]], i: 3 }, 'player: an up-next track plays from the panel');
+    await card(3, '[data-play-next]').click();
+    await until({ q: [S[0], S[2], S[1], S[3]], i: 2 }, 'player: play next on a played track moves it after the current one');
     await page.click('[data-player-clear]');
-    await until({ q: [S[3]], i: 0 }, 'player: clear flushes the queue, the current track plays on');
+    await until({ q: [S[1]], i: 0 }, 'player: clear flushes the queue, the current track plays on');
     check(await page.isHidden('[data-player-count]'), 'player: no badge when nothing is queued');
     check(await page.isVisible('#player-queue [data-queue-empty]'), 'player: the empty queue says how to add tracks');
     await page.keyboard.press('Escape');
@@ -489,7 +563,7 @@ async function shot(page, name) {
 
   // The player at phone width: everything reachable, nothing overlapping, nothing overflowing.
   {
-    const { context, page, errors } = await open(browser, at(''), phone);
+    const { context, page, errors } = await open(browser, at(''), phone, 'light', {}, true);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
     await cards.nth(0).locator('[data-play]').click();
