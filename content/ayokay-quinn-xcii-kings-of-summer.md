@@ -15,7 +15,7 @@ country = "US"
 isrc = "USSM11605999"
 musicbrainz = { recording = "2dc0745f-6e0d-43c0-acb1-a0b295fe3517", artist = "04454506-29bb-48f2-a310-bb043f4b6681", release = "c18aad48-5f57-4ef3-9933-0ff247e42a45" }
 album = "Kings of Summer"
-publisher = "Columbia Records"
+publisher = "Columbia"
 youtube = "https://www.youtube.com/embed/5dS-n8qZjPk"
 connections = [
   { source = "kygo-maty-noyes-stay.md", why = "Another mid-2010s electronic pop single built by a producer around a guest singer's warm, close vocal." },

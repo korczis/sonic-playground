@@ -247,5 +247,16 @@ class CheckAndRefresh(unittest.TestCase):
                 track.check("README.md")
 
 
+class Cli(unittest.TestCase):
+    def test_a_repeated_facet_flag_adds_terms(self):
+        import subprocess
+        out = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "track.py"), "new", "Nobody Atall - Test Song",
+             "--offline", "--genre", "house", "--genre", "techno", "disco", "--sentiment", "calm",
+             "--dry-run"], capture_output=True, text=True, check=True, cwd=ROOT)
+        terms = [r["term"] for r in json.loads(out.stdout)["facets"]["genre"]]
+        self.assertEqual(terms, ["house", "techno", "disco"])
+
+
 if __name__ == "__main__":
     unittest.main()

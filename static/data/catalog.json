@@ -3,12 +3,12 @@
  "generated_by": "scripts/catalog.py",
  "contract": "data/track.schema.json",
  "stats": {
-  "tracks": 282,
+  "tracks": 283,
   "artists": 222,
-  "videos": 276,
+  "videos": 277,
   "videos_gone": 3,
-  "words": 185074,
-  "median_words": 641,
+  "words": 185652,
+  "median_words": 639,
   "first": "2024-10-01",
   "last": "2026-11-12",
   "genre_terms": 103,
@@ -92,6 +92,7 @@
     "branko-skip-die-fellow-made-of-gold.md",
     "chicks-on-speed-euro-trash-girl.md",
     "codec-flexor-time-has-changed-original.md",
+    "daft-punk-episode-1-giorgio-moroder.md",
     "klangkuenstler-jam-master-jack-original-mix.md",
     "nu-jo-ke-who-loves-the-sun.md",
     "sworn-virgins-burning-off-my-clothes.md"
@@ -1066,6 +1067,7 @@
     "en": "A vocal delivered as speech rather than song: talked, recited or half-sung with little or no melody. In electronic and post-punk music a flat, deadpan spoken voice over a beat can sound cool, ironic or confrontational."
    },
    "tracks": [
+    "daft-punk-episode-1-giorgio-moroder.md",
     "daft-punk-episode-3-nile-rodgers.md",
     "felix-da-house-cat-madame-hollywood.md",
     "klangkarussell-we-want-your-soul.md",
@@ -1641,6 +1643,7 @@
    },
    "tracks": [
     "awolnation-sail.md",
+    "daft-punk-episode-1-giorgio-moroder.md",
     "daft-punk-giorgio-by-moroder.md",
     "knopfauge-saschienne.md"
    ]
@@ -1957,19 +1960,19 @@
    "musicbrainz"
   ],
   "exempt": 3,
-  "complete": 236,
-  "concept": 279,
-  "learning": 279,
-  "sources": 279,
-  "credits": 263,
-  "musicbrainz": 250
+  "complete": 237,
+  "concept": 280,
+  "learning": 280,
+  "sources": 280,
+  "credits": 264,
+  "musicbrainz": 251
  },
  "facets": {
   "genre": [
    {
     "term": "electronic",
     "slug": "electronic",
-    "count": 155
+    "count": 156
    },
    {
     "term": "deep house",
@@ -2062,14 +2065,14 @@
     "count": 14
    },
    {
-    "term": "electro",
-    "slug": "electro",
+    "term": "disco",
+    "slug": "disco",
     "count": 13
    },
    {
-    "term": "disco",
-    "slug": "disco",
-    "count": 12
+    "term": "electro",
+    "slug": "electro",
+    "count": 13
    },
    {
     "term": "remix",
@@ -2227,6 +2230,11 @@
     "count": 3
    },
    {
+    "term": "spoken word",
+    "slug": "spoken-word",
+    "count": 3
+   },
+   {
     "term": "tech house",
     "slug": "tech-house",
     "count": 3
@@ -2269,11 +2277,6 @@
    {
     "term": "samba",
     "slug": "samba",
-    "count": 2
-   },
-   {
-    "term": "spoken word",
-    "slug": "spoken-word",
     "count": 2
    },
    {
@@ -2516,7 +2519,7 @@
    {
     "term": "nostalgic",
     "slug": "nostalgic",
-    "count": 33
+    "count": 34
    },
    {
     "term": "dreamy",
@@ -2549,6 +2552,11 @@
     "count": 20
    },
    {
+    "term": "reflective",
+    "slug": "reflective",
+    "count": 19
+   },
+   {
     "term": "bold",
     "slug": "bold",
     "count": 18
@@ -2556,11 +2564,6 @@
    {
     "term": "dark",
     "slug": "dark",
-    "count": 18
-   },
-   {
-    "term": "reflective",
-    "slug": "reflective",
     "count": 18
    },
    {
@@ -2739,6 +2742,11 @@
     "count": 3
    },
    {
+    "term": "inspirational",
+    "slug": "inspirational",
+    "count": 3
+   },
+   {
     "term": "spiritual",
     "slug": "spiritual",
     "count": 3
@@ -2781,11 +2789,6 @@
    {
     "term": "humorous",
     "slug": "humorous",
-    "count": 2
-   },
-   {
-    "term": "inspirational",
-    "slug": "inspirational",
     "count": 2
    },
    {
@@ -3128,24 +3131,24 @@
     "count": 10
    },
    {
+    "term": "spoken word",
+    "slug": "spoken-word",
+    "count": 9
+   },
+   {
     "term": "swing",
     "slug": "swing",
     "count": 9
    },
    {
+    "term": "club culture",
+    "slug": "club-culture",
+    "count": 8
+   },
+   {
     "term": "dub",
     "slug": "dub",
     "count": 8
-   },
-   {
-    "term": "spoken word",
-    "slug": "spoken-word",
-    "count": 8
-   },
-   {
-    "term": "club culture",
-    "slug": "club-culture",
-    "count": 7
    },
    {
     "term": "distortion",
@@ -3195,7 +3198,7 @@
    {
     "term": "analog synthesizer",
     "slug": "analog-synthesizer",
-    "count": 3
+    "count": 4
    },
    {
     "term": "interpolation",
@@ -3445,6 +3448,11 @@
     "count": 2
    },
    {
+    "term": "voice",
+    "slug": "voice",
+    "count": 2
+   },
+   {
     "term": "xylophone",
     "slug": "xylophone",
     "count": 2
@@ -3595,11 +3603,6 @@
     "count": 1
    },
    {
-    "term": "voice",
-    "slug": "voice",
-    "count": 1
-   },
-   {
     "term": "whistling",
     "slug": "whistling",
     "count": 1
@@ -3660,7 +3663,7 @@
   {
    "genre": "electronic",
    "sentiment": "nostalgic",
-   "count": 16
+   "count": 17
   },
   {
    "genre": "electronic",
@@ -3688,6 +3691,11 @@
    "count": 13
   },
   {
+   "genre": "electronic",
+   "sentiment": "reflective",
+   "count": 13
+  },
+  {
    "genre": "pop",
    "sentiment": "playful",
    "count": 13
@@ -3700,11 +3708,6 @@
   {
    "genre": "electronic",
    "sentiment": "intense",
-   "count": 12
-  },
-  {
-   "genre": "electronic",
-   "sentiment": "reflective",
    "count": 12
   },
   {
@@ -3743,7 +3746,7 @@
   },
   {
    "month": "2026-11",
-   "count": 168
+   "count": 169
   }
  ],
  "artists": [
@@ -3755,7 +3758,7 @@
   {
    "term": "Daft Punk",
    "slug": "daft-punk",
-   "count": 7
+   "count": 8
   },
   {
    "term": "Gin Wigmore",
@@ -4991,156 +4994,157 @@
   "daft-punk-giorgio-by-moroder.md": 129,
   "daft-punk-face-to-face-short-circuit.md": 130,
   "daft-punk-episode-3-nile-rodgers.md": 131,
-  "daft-punk-around-the-world.md": 132,
-  "dj-s-k-t-must-be-a-reason-radio-edit.md": 133,
-  "dj-patife-sambassim-dj-patife-remix.md": 134,
-  "dj-fitchie-joe-dukie-midnight-marauders.md": 135,
-  "corinne-bailey-rae-put-your-records-on.md": 136,
-  "codec-flexor-time-has-changed-original.md": 137,
-  "clea-vincent-all-that-she-wants.md": 138,
-  "claptone-clap-your-hands-say-yeah-ghost.md": 139,
-  "chet-faker-talk-is-cheap.md": 140,
-  "chet-faker-gold.md": 141,
-  "camel-power-club-ourson.md": 142,
-  "claap-s-a-n-t-a-n-a-dimanche.md": 143,
-  "broken-back-happiest-man-on-earth-radio-edit.md": 144,
-  "branko-skip-die-fellow-made-of-gold.md": 145,
-  "bodyrockers-i-like-the-way-radio-edit.md": 146,
-  "bobby-nourmand-smokin-joe.md": 147,
-  "bob-moses-tearing-me-up.md": 148,
-  "blankets-the-hanging-tree.md": 149,
-  "big-data-joywave-dangerous.md": 150,
-  "ben-khan-savage.md": 151,
-  "basement-jaxx-galactical.md": 152,
-  "ayo-down-on-my-knees.md": 153,
-  "axwell-max-c-i-found-u-radio-edit.md": 154,
-  "axwell-feel-the-vibe.md": 155,
-  "avicii-feeling-good.md": 156,
-  "asaf-avidan-the-mojos-reckoning-song-one-day.md": 157,
-  "arctic-monkeys-snap-out-of-it.md": 158,
-  "arctic-monkeys-r-u-mine.md": 159,
-  "arctic-monkeys-do-i-wanna-know.md": 160,
-  "anna-lunoe-radioactive.md": 161,
-  "angus-julia-stone-big-jet-plane.md": 162,
-  "amy-winehouse-you-know-i-m-no-good.md": 163,
-  "alle-farben-graham-candy-sometimes.md": 164,
-  "alicia-keys-fallin.md": 165,
-  "adam-freeland-do-you.md": 166,
-  "awolnation-sail.md": 167,
-  "codec-n-flexor-time-has-changed-northern-lite-remix.md": 168,
-  "lousianahh-love-is-a-punk-vitalic-remix.md": 169,
-  "hania-rani-full-performance-kexp.md": 170,
-  "chicks-on-speed-euro-trash-girl.md": 171,
-  "louisahhh-like-a-vice-x.md": 172,
-  "brazilian-girls-karakoy.md": 173,
-  "pigeon-the-bomb.md": 174,
-  "electric-guest-this-head-i-hold.md": 175,
-  "c2c-feat-pigeon-john-because-of-you.md": 176,
-  "bakermat-the-river.md": 177,
-  "lulu-rouge-sweeter-than-sweet.md": 178,
-  "lulu-rouge-lulu-theme.md": 179,
-  "mickey-avalon-eli-ultraviolence.md": 180,
-  "kazy-lambist-doing-yoga.md": 181,
-  "eli-faster-you-fall.md": 182,
-  "knopfauge-saschienne.md": 183,
-  "moisture-lucca-santucci-headman-club-version.md": 184,
-  "bonaparte-acid-pauli-not-today.md": 185,
-  "sworn-virgins-burning-off-my-clothes.md": 186,
-  "aloe-blacc-i-need-dollar.md": 187,
-  "idles-full-wheel.md": 188,
-  "car-idle-eyes.md": 189,
-  "2raumwohnung-somebody-lonely-and-me-nacht.md": 190,
-  "indiana-solo-dancing.md": 191,
-  "northern-lite-trusting-blind.md": 192,
-  "mafia-klvb-credit-card.md": 193,
-  "jpatterson-elevator.md": 194,
-  "inigo-montoya-es.md": 195,
-  "anthony-rother-brainshaker.md": 196,
-  "alice-going-down-in-a-blaze-of-glory.md": 197,
-  "ultraista-smalltalk.md": 198,
-  "mélissa-laveaux-needle-in-the-hay.md": 199,
-  "marbert-rocel-hush-now.md": 200,
-  "fischerspooner-emerge.md": 201,
-  "felix-da-house-cat-madame-hollywood.md": 202,
-  "acraze-do-it-to-it.md": 203,
-  "tinush-sandburg.md": 204,
-  "the-xx-crystalised.md": 205,
-  "the-police-roxanne.md": 206,
-  "lucky-luke-cooler-than-me.md": 207,
-  "klangkarussell-we-want-your-soul.md": 208,
-  "groove-armada-superstylin.md": 209,
-  "gorgon-city-hard-on-me.md": 210,
-  "gabriella-cilmi-cry-me-a-river.md": 211,
-  "freeland-under-control.md": 212,
-  "fort-minor-remember-the-name.md": 213,
-  "ibiza-deep-summer-sweet-dreams.md": 214,
-  "annen-may-kantereit-x-parcels-cant-get-you-out-of-my-head.md": 215,
-  "asian-dub-foundation-fly-over.md": 216,
-  "funky-fat-and-digitaria-you-bring-me-down.md": 217,
-  "roseaux-walking-on-the-moon.md": 218,
-  "fatboy-slim-bird-of-pray.md": 219,
-  "nina-simone-felix-da-housecat-sinnerman.md": 220,
-  "fernanda-porto-sambassim.md": 221,
-  "roisin-murphy-primitive.md": 222,
-  "hrdvision-nsd-discolight.md": 223,
-  "michelle-gurevich-party-girl.md": 224,
-  "the-horroris-one-night-in-nyc.md": 225,
-  "nancy-sinatra-bang-bang.md": 226,
-  "feist-my-man-my-mood.md": 227,
-  "waldeck-zeebee-midsummer-night-blues.md": 228,
-  "luca-malina-fckrz.md": 229,
-  "caravan-palace-lone-digger.md": 230,
-  "pomplamoose-harder-better-faster-stronger.md": 231,
-  "portugal-the-man-feel-it-still.md": 232,
-  "cardi-b-wap-feat-megan-thee-stallion.md": 233,
-  "alt-j-breezeblocks.md": 234,
-  "clawfinger-biggest-the-best.md": 235,
-  "whilk-and-miskey-darklands.md": 236,
-  "vitalic-cocaine.md": 237,
-  "tubbe-in-berlin.md": 238,
-  "totally-enormous-extinct-dinosaurs-garden.md": 239,
-  "timo-maas-shifter.md": 240,
-  "chemical_brothers_the_salmon_dance.md": 241,
-  "chemical_brothers_star_guitar.md": 242,
-  "sleaford-mods-tweet-tweet-tweet.md": 243,
-  "nouvelle-vague-too-drunk-to-fuck.md": 244,
-  "mirwais-naiive-song.md": 245,
-  "miike-snow-paddling-out.md": 246,
-  "kutiman-inner-galactic-lovers.md": 247,
-  "klangkarusell-moments.md": 248,
-  "k-flay-high-enough.md": 249,
-  "joris-delacroix-epoque.md": 250,
-  "jan-blomqvist-time-again.md": 251,
-  "jain-makeba.md": 252,
-  "her-five-minutes.md": 253,
-  "gregory-porter-do-not-lose-your-steam.md": 254,
-  "felix-da-house-cat-silverscreen.md": 255,
-  "tum-rakak-deluxe.md": 256,
-  "dead-kennedys-too-drunk-to-fuck.md": 257,
-  "bjork-kata-rokkar.md": 258,
-  "bassement-freaks-soul-intoxication.md": 259,
-  "alif-tree_forgotten-places.md": 260,
-  "zwicker_oddity.md": 261,
-  "say-yes-dog_a-friend.md": 262,
-  "ryan-blyth_once-twice-feat-rachel-k-collier.md": 263,
-  "pilocka-krach_la_luna-y-el-sol.md": 264,
-  "paul_oakenfold_sex_n_money.md": 265,
-  "mount-sims-how-we-do.md": 266,
-  "miss-kittin-frank-sinatra.md": 267,
-  "louie-austen-one-night-in-rio.md": 268,
-  "lekota_i-used-to.md": 269,
-  "kollektiv-turmstrasse_on-the-streets-let-freedom.md": 270,
-  "justice-vs-simian_we-are-your-friends.md": 271,
-  "jorge-ben-jr_take-it-easy-my-brother-charles.md": 272,
-  "hindi-zahra_stand-up.md": 273,
-  "gabriel-vitel_burn-it-down.md": 274,
-  "controller-7_get-ready-for-the-young-folks.md": 275,
-  "bronski-beat_small_town_boy.md": 276,
-  "amanda-blank_dj.md": 277,
-  "marcu-rares_camimosa.md": 278,
-  "lipka_no-more-beer.md": 279,
-  "ladytron_seventeen.md": 280,
-  "chris-lorenzo-and-the-streets_take-me-as-i-am.md": 281
+  "daft-punk-episode-1-giorgio-moroder.md": 132,
+  "daft-punk-around-the-world.md": 133,
+  "dj-s-k-t-must-be-a-reason-radio-edit.md": 134,
+  "dj-patife-sambassim-dj-patife-remix.md": 135,
+  "dj-fitchie-joe-dukie-midnight-marauders.md": 136,
+  "corinne-bailey-rae-put-your-records-on.md": 137,
+  "codec-flexor-time-has-changed-original.md": 138,
+  "clea-vincent-all-that-she-wants.md": 139,
+  "claptone-clap-your-hands-say-yeah-ghost.md": 140,
+  "chet-faker-talk-is-cheap.md": 141,
+  "chet-faker-gold.md": 142,
+  "camel-power-club-ourson.md": 143,
+  "claap-s-a-n-t-a-n-a-dimanche.md": 144,
+  "broken-back-happiest-man-on-earth-radio-edit.md": 145,
+  "branko-skip-die-fellow-made-of-gold.md": 146,
+  "bodyrockers-i-like-the-way-radio-edit.md": 147,
+  "bobby-nourmand-smokin-joe.md": 148,
+  "bob-moses-tearing-me-up.md": 149,
+  "blankets-the-hanging-tree.md": 150,
+  "big-data-joywave-dangerous.md": 151,
+  "ben-khan-savage.md": 152,
+  "basement-jaxx-galactical.md": 153,
+  "ayo-down-on-my-knees.md": 154,
+  "axwell-max-c-i-found-u-radio-edit.md": 155,
+  "axwell-feel-the-vibe.md": 156,
+  "avicii-feeling-good.md": 157,
+  "asaf-avidan-the-mojos-reckoning-song-one-day.md": 158,
+  "arctic-monkeys-snap-out-of-it.md": 159,
+  "arctic-monkeys-r-u-mine.md": 160,
+  "arctic-monkeys-do-i-wanna-know.md": 161,
+  "anna-lunoe-radioactive.md": 162,
+  "angus-julia-stone-big-jet-plane.md": 163,
+  "amy-winehouse-you-know-i-m-no-good.md": 164,
+  "alle-farben-graham-candy-sometimes.md": 165,
+  "alicia-keys-fallin.md": 166,
+  "adam-freeland-do-you.md": 167,
+  "awolnation-sail.md": 168,
+  "codec-n-flexor-time-has-changed-northern-lite-remix.md": 169,
+  "lousianahh-love-is-a-punk-vitalic-remix.md": 170,
+  "hania-rani-full-performance-kexp.md": 171,
+  "chicks-on-speed-euro-trash-girl.md": 172,
+  "louisahhh-like-a-vice-x.md": 173,
+  "brazilian-girls-karakoy.md": 174,
+  "pigeon-the-bomb.md": 175,
+  "electric-guest-this-head-i-hold.md": 176,
+  "c2c-feat-pigeon-john-because-of-you.md": 177,
+  "bakermat-the-river.md": 178,
+  "lulu-rouge-sweeter-than-sweet.md": 179,
+  "lulu-rouge-lulu-theme.md": 180,
+  "mickey-avalon-eli-ultraviolence.md": 181,
+  "kazy-lambist-doing-yoga.md": 182,
+  "eli-faster-you-fall.md": 183,
+  "knopfauge-saschienne.md": 184,
+  "moisture-lucca-santucci-headman-club-version.md": 185,
+  "bonaparte-acid-pauli-not-today.md": 186,
+  "sworn-virgins-burning-off-my-clothes.md": 187,
+  "aloe-blacc-i-need-dollar.md": 188,
+  "idles-full-wheel.md": 189,
+  "car-idle-eyes.md": 190,
+  "2raumwohnung-somebody-lonely-and-me-nacht.md": 191,
+  "indiana-solo-dancing.md": 192,
+  "northern-lite-trusting-blind.md": 193,
+  "mafia-klvb-credit-card.md": 194,
+  "jpatterson-elevator.md": 195,
+  "inigo-montoya-es.md": 196,
+  "anthony-rother-brainshaker.md": 197,
+  "alice-going-down-in-a-blaze-of-glory.md": 198,
+  "ultraista-smalltalk.md": 199,
+  "mélissa-laveaux-needle-in-the-hay.md": 200,
+  "marbert-rocel-hush-now.md": 201,
+  "fischerspooner-emerge.md": 202,
+  "felix-da-house-cat-madame-hollywood.md": 203,
+  "acraze-do-it-to-it.md": 204,
+  "tinush-sandburg.md": 205,
+  "the-xx-crystalised.md": 206,
+  "the-police-roxanne.md": 207,
+  "lucky-luke-cooler-than-me.md": 208,
+  "klangkarussell-we-want-your-soul.md": 209,
+  "groove-armada-superstylin.md": 210,
+  "gorgon-city-hard-on-me.md": 211,
+  "gabriella-cilmi-cry-me-a-river.md": 212,
+  "freeland-under-control.md": 213,
+  "fort-minor-remember-the-name.md": 214,
+  "ibiza-deep-summer-sweet-dreams.md": 215,
+  "annen-may-kantereit-x-parcels-cant-get-you-out-of-my-head.md": 216,
+  "asian-dub-foundation-fly-over.md": 217,
+  "funky-fat-and-digitaria-you-bring-me-down.md": 218,
+  "roseaux-walking-on-the-moon.md": 219,
+  "fatboy-slim-bird-of-pray.md": 220,
+  "nina-simone-felix-da-housecat-sinnerman.md": 221,
+  "fernanda-porto-sambassim.md": 222,
+  "roisin-murphy-primitive.md": 223,
+  "hrdvision-nsd-discolight.md": 224,
+  "michelle-gurevich-party-girl.md": 225,
+  "the-horroris-one-night-in-nyc.md": 226,
+  "nancy-sinatra-bang-bang.md": 227,
+  "feist-my-man-my-mood.md": 228,
+  "waldeck-zeebee-midsummer-night-blues.md": 229,
+  "luca-malina-fckrz.md": 230,
+  "caravan-palace-lone-digger.md": 231,
+  "pomplamoose-harder-better-faster-stronger.md": 232,
+  "portugal-the-man-feel-it-still.md": 233,
+  "cardi-b-wap-feat-megan-thee-stallion.md": 234,
+  "alt-j-breezeblocks.md": 235,
+  "clawfinger-biggest-the-best.md": 236,
+  "whilk-and-miskey-darklands.md": 237,
+  "vitalic-cocaine.md": 238,
+  "tubbe-in-berlin.md": 239,
+  "totally-enormous-extinct-dinosaurs-garden.md": 240,
+  "timo-maas-shifter.md": 241,
+  "chemical_brothers_the_salmon_dance.md": 242,
+  "chemical_brothers_star_guitar.md": 243,
+  "sleaford-mods-tweet-tweet-tweet.md": 244,
+  "nouvelle-vague-too-drunk-to-fuck.md": 245,
+  "mirwais-naiive-song.md": 246,
+  "miike-snow-paddling-out.md": 247,
+  "kutiman-inner-galactic-lovers.md": 248,
+  "klangkarusell-moments.md": 249,
+  "k-flay-high-enough.md": 250,
+  "joris-delacroix-epoque.md": 251,
+  "jan-blomqvist-time-again.md": 252,
+  "jain-makeba.md": 253,
+  "her-five-minutes.md": 254,
+  "gregory-porter-do-not-lose-your-steam.md": 255,
+  "felix-da-house-cat-silverscreen.md": 256,
+  "tum-rakak-deluxe.md": 257,
+  "dead-kennedys-too-drunk-to-fuck.md": 258,
+  "bjork-kata-rokkar.md": 259,
+  "bassement-freaks-soul-intoxication.md": 260,
+  "alif-tree_forgotten-places.md": 261,
+  "zwicker_oddity.md": 262,
+  "say-yes-dog_a-friend.md": 263,
+  "ryan-blyth_once-twice-feat-rachel-k-collier.md": 264,
+  "pilocka-krach_la_luna-y-el-sol.md": 265,
+  "paul_oakenfold_sex_n_money.md": 266,
+  "mount-sims-how-we-do.md": 267,
+  "miss-kittin-frank-sinatra.md": 268,
+  "louie-austen-one-night-in-rio.md": 269,
+  "lekota_i-used-to.md": 270,
+  "kollektiv-turmstrasse_on-the-streets-let-freedom.md": 271,
+  "justice-vs-simian_we-are-your-friends.md": 272,
+  "jorge-ben-jr_take-it-easy-my-brother-charles.md": 273,
+  "hindi-zahra_stand-up.md": 274,
+  "gabriel-vitel_burn-it-down.md": 275,
+  "controller-7_get-ready-for-the-young-folks.md": 276,
+  "bronski-beat_small_town_boy.md": 277,
+  "amanda-blank_dj.md": 278,
+  "marcu-rares_camimosa.md": 279,
+  "lipka_no-more-beer.md": 280,
+  "ladytron_seventeen.md": 281,
+  "chris-lorenzo-and-the-streets_take-me-as-i-am.md": 282
  },
  "tracks": [
   {
@@ -5373,7 +5377,7 @@
    "words": 563,
    "extra": {
     "album": "Kings of Summer",
-    "publisher": "Columbia Records",
+    "publisher": "Columbia",
     "release_year": "2016",
     "country": "US"
    },
@@ -18253,6 +18257,17 @@
    },
    "related": [
     {
+     "source": "daft-punk-episode-1-giorgio-moroder.md",
+     "score": 0.2857,
+     "shared": [
+      "concept:analog synthesizer",
+      "genre:disco",
+      "genre:electronic",
+      "instrument:voice",
+      "sentiment:nostalgic"
+     ]
+    },
+    {
      "source": "daft-punk-give-life-back-to-music.md",
      "score": 0.2727,
      "shared": [
@@ -18284,16 +18299,6 @@
       "genre:dance",
       "genre:electronic",
       "sentiment:euphoric"
-     ]
-    },
-    {
-     "source": "klangkarusell-moments.md",
-     "score": 0.24,
-     "shared": [
-      "genre:dance",
-      "genre:electronic",
-      "sentiment:euphoric",
-      "sentiment:nostalgic"
      ]
     }
    ],
@@ -18449,11 +18454,23 @@
    "words": 720,
    "extra": {
     "album": "Random Access Memories: The Collaborators",
-    "publisher": "Columbia Records",
+    "publisher": "Columbia",
     "release_year": "2013",
     "country": "FR"
    },
    "related": [
+    {
+     "source": "daft-punk-episode-1-giorgio-moroder.md",
+     "score": 0.4359,
+     "shared": [
+      "concept:spoken word",
+      "genre:disco",
+      "genre:spoken word",
+      "sentiment:inspirational",
+      "sentiment:nostalgic",
+      "sentiment:reflective"
+     ]
+    },
     {
      "source": "the-supermen-lovers-moments.md",
      "score": 0.325,
@@ -18484,15 +18501,98 @@
       "genre:funk",
       "instrument:guitar"
      ]
+    }
+   ],
+   "video_gone": false,
+   "edu": [
+    "concept",
+    "learning",
+    "sources",
+    "credits",
+    "musicbrainz"
+   ],
+   "yearbooks": []
+  },
+  {
+   "source": "daft-punk-episode-1-giorgio-moroder.md",
+   "path": "daft-punk-episode-1-giorgio-moroder/",
+   "title": "Daft Punk - Episode 1, Giorgio Moroder",
+   "artist": "Daft Punk",
+   "track": "Episode 1, Giorgio Moroder",
+   "inferred": "title: artist - track",
+   "date": "2026-11-12",
+   "description": "Giorgio Moroder opens Daft Punk's Collaborators films, remembering the Moog, the dance floor and the perfectionism of the two Frenchmen who brought him back into the studio for Random Access Memories.",
+   "facets": {
+    "genre": [
+     "spoken word",
+     "disco",
+     "electronic"
+    ],
+    "sentiment": [
+     "inspirational",
+     "nostalgic",
+     "reflective"
+    ],
+    "mood": [],
+    "concept": [
+     "spoken word",
+     "analog synthesizer",
+     "club culture"
+    ],
+    "instrument": [
+     "voice"
+    ]
+   },
+   "youtube": "CSkbg3ZbQzA",
+   "thumbnail": "https://i.ytimg.com/vi/CSkbg3ZbQzA/hqdefault.jpg",
+   "thumbnail_local": false,
+   "words": 578,
+   "extra": {
+    "album": "Random Access Memories: The Collaborators",
+    "publisher": "Columbia",
+    "release_year": "2013",
+    "country": "FR"
+   },
+   "related": [
+    {
+     "source": "daft-punk-episode-3-nile-rodgers.md",
+     "score": 0.4359,
+     "shared": [
+      "concept:spoken word",
+      "genre:disco",
+      "genre:spoken word",
+      "sentiment:inspirational",
+      "sentiment:nostalgic",
+      "sentiment:reflective"
+     ]
     },
     {
-     "source": "daft-punk-pharrell-williams-nile-rodgers-get-lucky-radio-edit.md",
-     "score": 0.2105,
+     "source": "daft-punk-giorgio-by-moroder.md",
+     "score": 0.2857,
      "shared": [
-      "concept:riff",
+      "concept:analog synthesizer",
       "genre:disco",
-      "genre:funk",
-      "instrument:guitar"
+      "genre:electronic",
+      "instrument:voice",
+      "sentiment:nostalgic"
+     ]
+    },
+    {
+     "source": "sworn-virgins-burning-off-my-clothes.md",
+     "score": 0.2391,
+     "shared": [
+      "concept:club culture",
+      "genre:disco",
+      "genre:electronic"
+     ]
+    },
+    {
+     "source": "sleaford-mods-tweet-tweet-tweet.md",
+     "score": 0.2391,
+     "shared": [
+      "concept:spoken word",
+      "genre:electronic",
+      "genre:spoken word"
      ]
     }
    ],
@@ -29582,6 +29682,15 @@
      ]
     },
     {
+     "source": "daft-punk-episode-1-giorgio-moroder.md",
+     "score": 0.2391,
+     "shared": [
+      "concept:spoken word",
+      "genre:electronic",
+      "genre:spoken word"
+     ]
+    },
+    {
      "source": "daft-punk-face-to-face-short-circuit.md",
      "score": 0.2157,
      "shared": [
@@ -29599,15 +29708,6 @@
       "instrument:vocals",
       "sentiment:gritty",
       "sentiment:rebellious"
-     ]
-    },
-    {
-     "source": "mount-sims-toby-dammit-what-s-the-big-deal.md",
-     "score": 0.1915,
-     "shared": [
-      "genre:electronic",
-      "genre:post-punk",
-      "instrument:vocals"
      ]
     }
    ],
@@ -32176,6 +32276,15 @@
      ]
     },
     {
+     "source": "daft-punk-episode-1-giorgio-moroder.md",
+     "score": 0.2353,
+     "shared": [
+      "genre:electronic",
+      "sentiment:nostalgic",
+      "sentiment:reflective"
+     ]
+    },
+    {
      "source": "recable-big-jet-plane-recable-remix.md",
      "score": 0.2308,
      "shared": [
@@ -32188,15 +32297,6 @@
      "score": 0.2308,
      "shared": [
       "genre:electronic",
-      "sentiment:reflective"
-     ]
-    },
-    {
-     "source": "bronski-beat_small_town_boy.md",
-     "score": 0.2162,
-     "shared": [
-      "genre:electronic",
-      "sentiment:nostalgic",
       "sentiment:reflective"
      ]
     }

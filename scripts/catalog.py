@@ -296,6 +296,9 @@ def load_playlists(errors: list[str]) -> list[dict]:
             errors.append(f"{rel}: {problem}")
         if data.get("kind") == "yearbook" and not isinstance(data.get("year"), int):
             errors.append(f"{rel}: a yearbook needs its year")
+        for item in data.get("track", []):
+            if item.get("review") and not (CONTENT / item["review"]).is_file():
+                errors.append(f"{rel} #{item.get('n')}: review={item['review']} names no review")
         positions = [i.get("n") for i in data.get("track", [])]
         if len(set(positions)) != len(positions):
             errors.append(f"{rel}: a position n repeats")
@@ -318,8 +321,6 @@ def yearbooks(tracks: list[Track], errors: list[str]) -> tuple[list[dict], dict[
         items = []
         for item in sorted(p.get("track", []), key=lambda i: i["n"]):
             r = resolve_item(item, index)
-            if r["status"] == "broken":
-                errors.append(f"{p['file']} #{item['n']}: review={item['review']} names no review")
             if r["source"] and r["source"] not in by_source:
                 r = {**r, "status": "missing"}  # a draft or an unpublished review
             items.append({"n": item["n"], "title": item.get("title", ""),

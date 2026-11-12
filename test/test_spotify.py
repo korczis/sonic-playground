@@ -300,6 +300,15 @@ class Derivation(unittest.TestCase):
         self.assertEqual(statuses[:3], ["present", "skipped", "uncertain"])
         self.assertTrue(any("no-such-review.md names no review" in e for e in errors))
 
+    def test_an_override_naming_no_review_is_refused_in_any_playlist(self):
+        (cat.BACKLOG / "mix.toml").write_text(
+            'kind = "playlist"\nsource = "fixture of the unit tests"\n'
+            '[[track]]\nn = 1\ntitle = "X"\nartists = ["Y"]\nreview = "no-such-review.md"\n')
+        errors = []
+        cat.load_playlists(errors)
+        self.assertEqual([e.split("/")[-1] for e in errors],
+                         ["mix.toml #1: review=no-such-review.md names no review"])
+
     def test_a_yearbook_without_its_year_is_refused(self):
         (cat.BACKLOG / "broken.toml").write_text('kind = "yearbook"\nsource = "fixture of the unit tests"\n')
         errors = []
