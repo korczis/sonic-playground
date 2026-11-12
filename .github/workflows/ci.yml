@@ -15,6 +15,7 @@ jobs:
   commits:
     name: Conventional commits
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       # The last commit before the convention was adopted; older subjects are history.
       ADOPTION_BASE: e32d2caf84b8c82000bfc058d1b7b6c8a39d3731
@@ -42,6 +43,7 @@ jobs:
   supervision:
     name: Majordomus supervision
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       MAJORDOMUS_VERSION: v1.0.1
     steps:

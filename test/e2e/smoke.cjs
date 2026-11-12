@@ -78,10 +78,31 @@ async function fromArtifact(route) {
 
 const failures = [];
 const notices = new Set();
+let last = 'start';
 function check(ok, what) {
   console.log(`${ok ? 'ok  ' : 'FAIL'} ${what}`);
   if (!ok) failures.push(what);
+  last = what;
 }
+
+// Every step has a deadline (a production run once hung for 45 minutes in the sweep: a
+// page.evaluate and fetch have none of their own). The watchdog ends a stuck run with the last
+// check that passed and the pages still in flight, so the cause is in the log.
+const inFlight = new Set();
+const WATCHDOG = Number(process.env.SMOKE_TIMEOUT_MS || 15 * 60 * 1000);
+setTimeout(() => {
+  console.error(`smoke: watchdog: no result after ${WATCHDOG / 1000} s; last check: ${last}; ` +
+    `in flight: ${[...inFlight].join(', ') || 'none'}`);
+  process.exit(1);
+}, WATCHDOG).unref();
+/** Resolve with p, or reject after ms with what. */
+function within(ms, what, p) {
+  let timer;
+  return Promise.race([p, new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`timed out after ${ms / 1000} s: ${what}`)), ms);
+  })]).finally(() => clearTimeout(timer));
+}
+const get = (url) => fetch(url, { signal: AbortSignal.timeout(30000) });
 
 async function open(browser, url, viewport, colorScheme = 'light', options = {}) {
   const context = await browser.newContext({ viewport, colorScheme, ...options });
@@ -132,7 +153,7 @@ function watch(page) {
 // must produce zero errors. Six pages at a time, one context per worker.
 async function sweep(browser) {
   const xml = root ? fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8')
-    : await (await fetch(at('sitemap.xml'))).text();
+    : await (await get(at('sitemap.xml'))).text();
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   const failed = [];
   let next = 0;
@@ -144,20 +165,24 @@ async function sweep(browser) {
       const page = await context.newPage();
       const errors = watch(page);
       const rel = loc.startsWith(base) ? loc.slice(base.length) : loc;
+      inFlight.add(rel || '/');
       try {
-        await page.goto(at(rel), { waitUntil: 'load' });
-        await page.evaluate(async () => {
-          for (let y = 0; y < document.body.scrollHeight; y += 800) {
-            window.scrollTo(0, y);
-            await new Promise((r) => setTimeout(r, 40));
-          }
-        });
-        await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
+        await within(60000, `page /${rel}`, (async () => {
+          await page.goto(at(rel), { waitUntil: 'load', timeout: 30000 });
+          await page.evaluate(async () => {
+            for (let y = 0, i = 0; y < document.body.scrollHeight && i < 100; y += 800, i++) {
+              window.scrollTo(0, y);
+              await new Promise((r) => setTimeout(r, 40));
+            }
+          });
+          await page.waitForLoadState('networkidle', { timeout: 10000 }).catch(() => {});
+        })());
       } catch (e) {
         errors.push(`navigation: ${e.message}`);
       }
+      inFlight.delete(rel || '/');
       if (errors.length) failed.push(`${rel || '/'}: ${errors.join(' | ')}`);
-      await page.close();
+      await within(10000, `close /${rel}`, page.close()).catch(() => {});
     }
     await context.close();
   }
@@ -176,7 +201,7 @@ async function shot(page, name) {
 (async () => {
   const catalog = root
     ? JSON.parse(fs.readFileSync(path.join(root, 'data/catalog.json'), 'utf8'))
-    : await (await fetch(at('data/catalog.json'))).json();
+    : await (await get(at('data/catalog.json'))).json();
   check(catalog.schema === 'sonic-catalog/v1' && catalog.tracks.length > 0,
     `catalogue served (${catalog.tracks.length} tracks)`);
   if (root) {
@@ -321,7 +346,7 @@ async function shot(page, name) {
     const term = 'four-on-the-floor';
     const expected = Object.entries(JSON.parse(root
       ? fs.readFileSync(path.join(root, 'data/search.json'), 'utf8')
-      : await (await fetch(at('data/search.json'))).text()).tracks)
+      : await (await get(at('data/search.json'))).text()).tracks)
       .filter(([, words]) => ['four', 'floor'].every((w) => words.split(' ').includes(w))).length;
     const { context, page } = await open(browser, at(''), desktop);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
@@ -495,7 +520,7 @@ async function shot(page, name) {
   // drives the strings the browser code writes (data/i18n/, static/js/i18n.js).
   {
     const bundle = root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
-      : await (await fetch(at('data/i18n.json'))).json();
+      : await (await get(at('data/i18n.json'))).json();
     const other = Object.keys(bundle.locales).find((c) => c !== bundle.default);
     if (other) {
       const s = bundle.locales[other].strings;
