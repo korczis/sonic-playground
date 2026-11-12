@@ -4,6 +4,10 @@
     "flowbite": {
       "version": "4.0.2",
       "js": "vendor/flowbite-4.0.2.min.js"
+    },
+    "echarts": {
+      "version": "6.1.0",
+      "js": "vendor/echarts-6.1.0.min.js"
     }
   }
 }

@@ -60,6 +60,10 @@
     </section>
     {%- endif %}
 
+    {%- if track and track.related | length > 0 %}
+    {{ <chart_card id="chart-neighbourhood" chart="graph" title="Neighbourhood" caption="This track, the tracks most like it and theirs. Drag, zoom, hover; a dot opens the track." height="h-[28rem]" focus={track.source} /> }}
+    {%- endif %}
+
     {%- if page.lower or page.higher %}
     <nav aria-label="Neighbouring tracks" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {%- if page.higher %}
@@ -108,3 +112,6 @@
   {%- endif %}
 </div>
 {%- endblock content %}
+{%- block scripts %}
+{%- if track and track.related | length > 0 %}{% include "partials/chart_scripts.html" %}{% endif %}
+{%- endblock scripts %}

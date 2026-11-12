@@ -1,0 +1,4 @@
+{#- The chart runtime, loaded only by pages that hold a chart_card: the vendored, pinned ECharts
+    (static/data/vendor.json) and static/js/charts.js. -#}
+<script src="{{ get_url(path=vendor.libs.echarts.js) }}" defer></script>
+<script src="{{ get_url(path='js/charts.js', cachebust=true) }}" defer></script>

@@ -1,43 +1,27 @@
-{#- Insights: what the catalogue says about itself. Every number is computed by
-    scripts/catalog.py from the front matter at build time; nothing here is written by hand. -#}
+{#- Insights: what the catalogue says about itself, as charts (static/js/charts.js) over the
+    derived catalogue, each with a table view; every mark links to the page or filter it counts.
+    Nothing here is written by hand. -#}
 {% extends "base.html" %}
 {%- block content %}
 {%- set s = catalog.stats %}
-{{ <page_header title={page.title} crumbs={[["Home", get_url(path="@/_index.md")], [page.title, ""]]} lead="Derived from the front matter of every review at build time: no database, no server, no hand-kept numbers." /> }}
-<div class="space-y-4 px-4 pt-6">
+{{ <page_header title={page.title} crumbs={[["Home", get_url(path="@/_index.md")], [page.title, ""]]} lead="Derived from the front matter of every review at build time: no database, no server, no hand-kept numbers. Click any bar, cell or dot to open what it counts." /> }}
+<div class="space-y-4 px-4 pt-6 xl:px-8">
   <section aria-label="Totals" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
-    {{ <stat_card value={s.tracks} label="tracks" icon_name="music" /> }}
-    {{ <stat_card value={s.videos} label="with a video" icon_name="play" /> }}
+    {{ <stat_card value={s.tracks} label="tracks" icon_name="music" href={get_url(path="@/pages/archive.md")} /> }}
+    {{ <stat_card value={s.videos} label="playable videos" icon_name="play" /> }}
     {{ <stat_card value={(s.words / 1000) | round | int ~ "k"} label="words of reviews" icon_name="archive" /> }}
-    {{ <stat_card value={catalog.months | length} label="months of listening" icon_name="calendar" /> }}
+    {{ <stat_card value={s.artists} label="artists" icon_name="user" /> }}
   </section>
+  {{ <chart_card id="chart-months" chart="months" title="Reviews per month" caption="When the reviews were published. A bar opens that month in the archive." height="h-64" /> }}
   <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
-    {{ <ranked_terms items={catalog.facets.genre} kind="genre" limit={12} title="Top genres" /> }}
-    {{ <ranked_terms items={catalog.facets.sentiment} kind="sentiment" limit={12} title="Top feelings" /> }}
+    {{ <chart_card id="chart-genres" chart="genre" title="Top genres" caption="Tracks per genre. A bar opens the genre." height="h-[28rem]" limit={15} /> }}
+    {{ <chart_card id="chart-feelings" chart="sentiment" title="Top feelings" caption="Tracks per feeling. A bar opens the feeling." height="h-[28rem]" limit={15} /> }}
   </div>
-  <section aria-labelledby="pairs-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
-    <h2 id="pairs-title" class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Genre × feeling</h2>
-    <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">How often a genre and a feeling are given to the same track.</p>
-    <div class="overflow-x-auto">
-      <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400">
-        <thead class="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
-          <tr><th scope="col" class="px-4 py-3">Genre</th><th scope="col" class="px-4 py-3">Feeling</th><th scope="col" class="px-4 py-3 text-right">Tracks</th></tr>
-        </thead>
-        <tbody>
-          {%- for p in catalog.pairs %}
-          <tr class="border-b border-gray-200 dark:border-gray-700">
-            <td class="px-4 py-2"><a class="font-medium text-gray-900 hover:underline dark:text-white" href="{{ get_taxonomy_url(kind='genre', term=p.genre) }}">{{ p.genre }}</a></td>
-            <td class="px-4 py-2"><a class="hover:underline" href="{{ get_taxonomy_url(kind='sentiment', term=p.sentiment) }}">{{ p.sentiment }}</a></td>
-            <td class="px-4 py-2 text-right font-semibold text-gray-900 dark:text-white">{{ p.count }}</td>
-          </tr>
-          {%- endfor %}
-        </tbody>
-      </table>
-    </div>
-  </section>
+  {{ <chart_card id="chart-heatmap" chart="heatmap" title="Genre × feeling" caption="How often a genre and a feeling meet on the same track (top 10 of each). A cell opens the explorer with both filters." height="h-[32rem]" limit={10} /> }}
+  {{ <chart_card id="chart-graph" chart="graph" title="The map of the playground" caption="Every track, linked to the tracks it is most alike (shared genres, feelings and moods), coloured by its first genre. Drag, zoom, hover; a dot opens the track." height="h-[40rem]" /> }}
   <section aria-labelledby="artists-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800">
     <h2 id="artists-title" class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Artists</h2>
-    <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">{{ s.artists }} artists, inferred from the titles and file names (see each track's note).</p>
+    <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">{{ s.artists }} artists, inferred from the titles and file names (see each track's note). An artist opens the explorer.</p>
     <ul class="flex flex-wrap gap-2">
       {%- for a in catalog.artists %}
       <li><a href="{{ get_url(path='@/_index.md') }}?q={{ a.term | urlencode }}" class="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">{{ a.term }}{% if a.count > 1 %}<span class="ml-1.5 rounded-full bg-primary-700 px-1.5 text-[10px] text-white">{{ a.count }}</span>{% endif %}</a></li>
@@ -46,3 +30,6 @@
   </section>
 </div>
 {%- endblock content %}
+{%- block scripts %}
+{%- include "partials/chart_scripts.html" %}
+{%- endblock scripts %}
