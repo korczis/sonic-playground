@@ -4,12 +4,15 @@
 // light and dark palettes validated with the dataviz validator, and re-renders on theme change.
 //
 //   <div data-chart="months|genre|sentiment|heatmap|graph" data-limit="15" data-focus="<source>">
-(function () {
+// A page module (static/js/core.js): mounts where a [data-chart] exists, loads the vendored
+// ECharts only then (body[data-echarts]), and disposes its charts when the router leaves.
+window.Sonic.module('charts', function mount() {
   'use strict';
   var holders = Array.prototype.slice.call(document.querySelectorAll('[data-chart]'));
-  if (!holders.length || !window.echarts || !window.fetch) return;
+  if (!holders.length) return null;
   var body = document.body;
-  var base = (body.getAttribute('data-base-url') || '').replace(/\/$/, '');
+  var base = window.Sonic.base;
+  var alive = true;
 
   // Validated palettes (dataviz validator, 2026-11-12): categorical first three slots pass
   // all-pairs in both modes on white / gray-800; single-series violet >= 3:1 on both surfaces.
@@ -242,12 +245,30 @@
     document.documentElement.dataset.charts = String(charts.length);
   }
 
-  fetch(body.getAttribute('data-catalog')).then(function (r) { return r.json(); }).then(function (catalog) {
-    render(catalog);
-    document.addEventListener('dark-mode', function () { render(catalog); });
-    if (window.ResizeObserver) {
-      var ro = new ResizeObserver(function () { charts.forEach(function (ch) { ch.instance.resize(); }); });
-      holders.forEach(function (h) { ro.observe(h); });
-    }
-  }).catch(function () { document.documentElement.dataset.charts = 'failed'; });
-})();
+  var stopTheme = null;
+  var ro = null;
+  Promise.all([window.Sonic.script(body.getAttribute('data-echarts')), window.Sonic.catalog()])
+    .then(function (loaded) {
+      if (!alive || !window.echarts) return;
+      var catalog = loaded[1];
+      render(catalog);
+      stopTheme = window.Sonic.on('dark-mode', function () { render(catalog); });
+      if (window.ResizeObserver) {
+        ro = new ResizeObserver(function () { charts.forEach(function (ch) { ch.instance.resize(); }); });
+        holders.forEach(function (h) { ro.observe(h); });
+      }
+    })
+    .catch(function (error) {
+      document.documentElement.dataset.charts = 'failed';
+      console.error('charts:', error.message);
+    });
+
+  return function unmount() {
+    alive = false;
+    if (stopTheme) stopTheme();
+    if (ro) ro.disconnect();
+    charts.forEach(function (ch) { ch.instance.dispose(); });
+    charts = [];
+    document.documentElement.dataset.charts = '';
+  };
+});

@@ -113,12 +113,16 @@ function watch(page) {
     if (!own) notices.add(`third-party console ${m.type()} (${from}): ${m.text()}`);
   });
   page.on('pageerror', (e) => errors.push(`uncaught: ${String(e)}`));
+  // Only what the page's own document requests is the site's; the YouTube player's frame makes
+  // and cancels its own requests (ERR_ABORTED is a cancellation, not a failure).
+  const mine = (r) => ownRequest(r.url()) && r.frame() === page.mainFrame();
   page.on('requestfailed', (r) => {
-    if (ownRequest(r.url())) errors.push(`request failed: ${r.url()} (${r.failure() && r.failure().errorText})`);
+    const why = r.failure() && r.failure().errorText;
+    if (mine(r) && why !== 'net::ERR_ABORTED') errors.push(`request failed: ${r.url()} (${why})`);
   });
   page.on('response', (r) => {
     if (r.status() < 400 || r.url().includes('/nope-')) return;
-    if (ownRequest(r.url())) errors.push(`HTTP ${r.status()}: ${r.url()}`);
+    if (mine(r.request())) errors.push(`HTTP ${r.status()}: ${r.url()}`);
     else notices.add(`HTTP ${r.status()}: ${r.url()}`);
   });
   return errors;
@@ -250,9 +254,17 @@ async function shot(page, name) {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);
     check((await page.locator('[aria-labelledby="related-title"] article').count()) === sample.related.length, `track: ${sample.related.length} related tracks listed`);
     await shot(page, 'track-desktop-light');
-    await page.click('[data-video-play]');
-    const src = await page.locator('[data-video] iframe').getAttribute('src');
-    check(src && src.startsWith('https://www.youtube-nocookie.com/embed/' + sample.youtube), 'track: the still becomes a youtube-nocookie player');
+    // The still starts the track's radio in the bottom-bar player: the track, then its related.
+    await page.click('[data-video] [data-play-radio]');
+    await page.waitForFunction(() => window.SonicPlayer && window.SonicPlayer.state().queue.length > 0);
+    const radio = await page.evaluate(() => window.SonicPlayer.state().queue.map((t) => t.source));
+    const playable = sample.related.filter((r) => (catalog.tracks.find((t) => t.source === r.source) || {}).youtube);
+    check(radio[0] === sample.source && playable.every((r) => radio.indexOf(r.source) > 0),
+      `track: the still starts its radio (${radio.length} tracks, the track first, its related next)`);
+    const src = await page.waitForSelector('#player-panel iframe', { timeout: 30000 })
+      .then((el) => el.getAttribute('src')).catch(() => '');
+    check(src.startsWith('https://www.youtube-nocookie.com/embed/' + sample.youtube), 'track: the player uses youtube-nocookie');
+    check(await page.locator('[data-video] iframe').count() === 0, 'track: no inline iframe in the page');
     await page.waitForTimeout(1500);
     check(errors.length === 0, `track: no console errors after the player loads${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
@@ -318,6 +330,41 @@ async function shot(page, name) {
       check(errors.length === 0, `gone video: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
       await context.close();
     }
+  }
+
+  // The player keeps playing across navigation: the router swaps pages without reloading, the
+  // bar and its YouTube frame survive, page modules (explorer, charts) remount, back works.
+  {
+    const { context, page, errors } = await open(browser, at(''), desktop);
+    await page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready');
+    await page.evaluate(() => { window.__noReload = true; });
+    const first = await page.locator('#explorer-grid [data-track]:not([hidden]) [data-play]').first().getAttribute('data-play');
+    await page.locator('#explorer-grid [data-play]').first().click();
+    await page.waitForFunction(() => !document.getElementById('player').hidden, null, { timeout: 10000 });
+    const state = await page.evaluate(() => window.SonicPlayer.state());
+    const visible = await page.locator('#explorer-grid [data-track]:not([hidden]) [data-play]').count();
+    check(state.queue[0] && state.queue[0].source === first && state.queue.length === visible,
+      `player: play on the first card queues the ${visible} tracks shown, from the first (queued ${state.queue.length}, first ${state.queue[0] && state.queue[0].source} vs ${first})`);
+    const frame = await page.waitForSelector('#player-panel iframe', { timeout: 30000 }).then(() => true).catch(() => false);
+    check(frame, 'player: the YouTube player loads in the docked panel');
+    await page.evaluate(() => { window.__frame = document.querySelector('#player-panel iframe'); });
+    await page.locator('#sidebar a[href$="/insights/"]').click();
+    await page.waitForFunction(() => /Insights/.test(document.title) && Number(document.documentElement.dataset.charts) > 0, null, { timeout: 20000 });
+    const kept = await page.evaluate(() => window.__noReload === true && !document.getElementById('player').hidden
+      && document.querySelector('#player-panel iframe') === window.__frame);
+    check(kept, 'router: navigating keeps the page, the bar and the playing frame (no reload)');
+    check(new URL(page.url()).pathname.endsWith('/insights/'), 'router: the URL follows the navigation');
+    await page.goBack();
+    await page.waitForFunction(() => document.documentElement.dataset.explorer === 'ready', null, { timeout: 15000 })
+      .then(() => check(true, 'router: back remounts the explorer'))
+      .catch(() => check(false, 'router: back remounts the explorer'));
+    await page.locator('#explorer-grid [data-queue]').nth(3).click();
+    await page.waitForTimeout(300);
+    const after = await page.evaluate(() => window.SonicPlayer.state().queue.length);
+    check(after === visible + 1, `player: + Queue appends (${visible} → ${after})`);
+    check(errors.length === 0, `player and router: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await shot(page, 'player-home');
+    await context.close();
   }
 
   if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);

@@ -2,11 +2,14 @@
 // build rendered (their data-* attributes mirror static/data/catalog.json). State lives in the
 // URL (?q=&genre=&sentiment=&mood=&sort=), so every view is a link; without this script the
 // form still submits and the page shows every track.
-(function () {
+// A page module (static/js/core.js): mounts on every page that has the explorer, and unmounts
+// the listeners it put outside #main-content when the router leaves the page.
+window.Sonic.module('explorer', function mount() {
   'use strict';
-  var form = document.querySelector('[data-explorer]');
-  var grid = document.querySelector('[data-explorer-grid]');
-  if (!form || !grid) return;
+  var form = document.querySelector('form[data-explorer]');
+  var grid = document.querySelector('div[data-explorer-grid]');
+  if (!form || !grid) return null;
+  var cleanup = [];
 
   var cards = Array.prototype.slice.call(grid.querySelectorAll('[data-track]'));
   var status = document.querySelector('[data-explorer-status]');
@@ -167,24 +170,34 @@
   }
   if (submit) submit.classList.add('sm:hidden');
   window.addEventListener('popstate', load);
+  cleanup.push(function () { window.removeEventListener('popstate', load); });
 
   // The navbar search on this page drives the explorer instead of reloading it.
   document.querySelectorAll('[data-search-input]').forEach(function (el) {
-    el.addEventListener('input', function () {
+    function onInput() {
       query.value = el.value;
       clearTimeout(timer);
       timer = setTimeout(function () { render(false); }, 120);
-    });
-    if (el.form) {
-      el.form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        query.value = el.value;
-        render(true);
-        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
     }
+    function onSubmit(event) {
+      event.preventDefault();
+      query.value = el.value;
+      render(true);
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    el.addEventListener('input', onInput);
+    if (el.form) el.form.addEventListener('submit', onSubmit);
+    cleanup.push(function () {
+      el.removeEventListener('input', onInput);
+      if (el.form) el.form.removeEventListener('submit', onSubmit);
+    });
   });
 
   load();
   document.documentElement.dataset.explorer = 'ready';
-})();
+  return function unmount() {
+    clearTimeout(timer);
+    cleanup.forEach(function (fn) { fn(); });
+    document.documentElement.dataset.explorer = '';
+  };
+});

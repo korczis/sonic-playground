@@ -3,8 +3,7 @@
 @import 'tailwindcss' source(none);
 
 @source '../templates';
-@source '../static/js/site.js';
-@source '../static/js/explorer.js';
+@source '../static/js';
 @source '../node_modules/flowbite/lib/esm/components';
 
 @plugin 'flowbite/plugin';
@@ -91,6 +90,18 @@
   .no-js #toggleSidebarMobile {
     display: none;
   }
+}
+
+/* The player (static/js/player.js): room for the bar, and the track it plays marked wherever it
+   is listed. */
+body.has-player #main-content {
+  padding-bottom: 6rem;
+}
+
+[data-track][data-now-playing] {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
 }
 
 @layer components {
