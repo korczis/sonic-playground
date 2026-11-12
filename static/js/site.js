@@ -13,6 +13,7 @@
       var dark = !root.classList.contains('dark');
       root.classList.toggle('dark', dark);
       try { localStorage.setItem('color-theme', dark ? 'dark' : 'light'); } catch (e) {}
+      document.dispatchEvent(new Event('dark-mode'));
     });
   }
 

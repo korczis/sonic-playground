@@ -15,6 +15,7 @@ const TARGET = join(ROOT, 'static/vendor');
 const MANIFEST = join(ROOT, 'static/data/vendor.json');
 const LIBS = {
   flowbite: { bundle: 'dist/flowbite.min.js', licence: 'LICENSE.md', ext: 'min.js' },
+  echarts: { bundle: 'dist/echarts.min.js', licence: 'LICENSE', ext: 'min.js' },
 };
 
 const pkg = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
