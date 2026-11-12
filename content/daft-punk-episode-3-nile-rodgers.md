@@ -14,7 +14,7 @@ country = "FR"
 musicbrainz = { recording = "a8529d00-1a7e-43b2-b075-e082a10dbafa", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56" }
 release_year = "2013"
 album = "Random Access Memories: The Collaborators"
-publisher = "Columbia Records"
+publisher = "Columbia"
 youtube = "https://www.youtube.com/embed/_oHjtBlMMgA"
 connections = [
   { source = "daft-punk-pharrell-williams-nile-rodgers-get-lucky-radio-edit.md", why = "The single this episode leads up to, built on the rhythm guitar Rodgers talks about here." },

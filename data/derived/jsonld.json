@@ -5822,6 +5822,141 @@
    }
   ]
  },
+ "daft-punk-episode-1-giorgio-moroder.md": {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@id": "https://korczis.github.io/sonic-playground/daft-punk-episode-1-giorgio-moroder/#recording",
+    "@type": "MusicRecording",
+    "byArtist": {
+     "@type": "MusicGroup",
+     "name": "Daft Punk",
+     "sameAs": "https://musicbrainz.org/artist/056e4f3e-d505-4dad-8ec1-d04f521cbb56"
+    },
+    "datePublished": "2013",
+    "genre": [
+     "spoken word",
+     "disco",
+     "electronic"
+    ],
+    "inAlbum": {
+     "@type": "MusicAlbum",
+     "name": "Random Access Memories: The Collaborators"
+    },
+    "name": "Episode 1, Giorgio Moroder",
+    "sameAs": [
+     "https://musicbrainz.org/recording/5992aef3-6723-4883-9c94-e3610d3f3b3e",
+     "https://www.youtube.com/watch?v=CSkbg3ZbQzA"
+    ]
+   },
+   {
+    "@id": "https://korczis.github.io/sonic-playground/daft-punk-episode-1-giorgio-moroder/#review",
+    "@type": [
+     "Article",
+     "LearningResource"
+    ],
+    "about": {
+     "@id": "https://korczis.github.io/sonic-playground/daft-punk-episode-1-giorgio-moroder/#recording"
+    },
+    "author": {
+     "@type": "Person",
+     "name": "korczis"
+    },
+    "citation": [
+     {
+      "@type": "CreativeWork",
+      "name": "Daft Punk - The Collaborators - Episode 1 - Giorgio Moroder (Official Video)",
+      "publisher": "Daft Punk",
+      "url": "https://www.youtube.com/watch?v=CSkbg3ZbQzA"
+     },
+     {
+      "@type": "CreativeWork",
+      "datePublished": "2013",
+      "name": "Daft Punk unveils the first episode in 'The Collaborators' video series; Giorgio Moroder featured",
+      "publisher": "Dancing Astronaut",
+      "url": "https://dancingastronaut.com/2013/04/daft-punk-unveils-the-first-episode-in-the-collaborators-video-series-featuring-giorgio-moroder/"
+     },
+     {
+      "@type": "CreativeWork",
+      "datePublished": "2013",
+      "name": "Watch An Interview With Giorgio Moroder For Daft Punk's New Web Video Series",
+      "publisher": "Stereogum",
+      "url": "https://stereogum.com/1309001/watch-an-interview-with-giorgio-moroder-for-daft-punks-new-web-video-series/news"
+     },
+     {
+      "@type": "CreativeWork",
+      "datePublished": "2013",
+      "name": "Daft Punk's 'Random Access Memories' Collaborators: Giorgio Moroder",
+      "publisher": "The Creators Project (VICE)",
+      "url": "https://www.vice.com/en/article/bnyekq/daft-punks-random-access-memories-collaborators-giorgio-moroder"
+     },
+     {
+      "@type": "CreativeWork",
+      "datePublished": "2013",
+      "name": "Giorgio Moroder Discusses Collaborating On Daft Punk's New Album 'Random Access Memories'",
+      "publisher": "The Creators Project (VICE)",
+      "url": "https://www.vice.com/da/article/giorgio-moroder-discusses-collaborating-on-daft-punks-new-album-random-access-memories"
+     },
+     {
+      "@type": "CreativeWork",
+      "datePublished": "2013",
+      "name": "Daft Punk releases Episode 1 of Collaborator Series: Giorgio Moroder",
+      "publisher": "Elektro Daily",
+      "url": "https://elektrodaily.com/daft-punk-releases-episode-1-of-collaborator-series-giorgio-moroder/"
+     },
+     {
+      "@type": "CreativeWork",
+      "datePublished": "2023",
+      "name": "Daft Punk share five-part mini-documentary series about the collaborators on 'Random Access Memories'",
+      "publisher": "DMY",
+      "url": "https://dmy.co/news/daft-punk-share-five-part-mini-documentary-series-about-the-collaborators-on-random-access-memories"
+     },
+     {
+      "@type": "CreativeWork",
+      "name": "Random Access Memories: The Collaborators",
+      "publisher": "MusicBrainz",
+      "url": "https://musicbrainz.org/release/e12b6e72-625f-42fc-877e-eece497dc97e"
+     },
+     {
+      "@type": "CreativeWork",
+      "name": "Giorgio by Moroder",
+      "publisher": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Giorgio_by_Moroder"
+     }
+    ],
+    "datePublished": "2026-11-12",
+    "description": "Giorgio Moroder opens Daft Punk's Collaborators films, remembering the Moog, the dance floor and the perfectionism of the two Frenchmen who brought him back into the studio for Random Access Memories.",
+    "educationalLevel": "introductory",
+    "headline": "Daft Punk - Episode 1, Giorgio Moroder",
+    "inLanguage": "en",
+    "isPartOf": {
+     "@type": "WebSite",
+     "name": "Sonic Playground",
+     "url": "https://korczis.github.io/sonic-playground/"
+    },
+    "learningResourceType": "listening guide",
+    "teaches": [
+     {
+      "@type": "DefinedTerm",
+      "name": "spoken word",
+      "url": "https://korczis.github.io/sonic-playground/concept/spoken-word/"
+     },
+     {
+      "@type": "DefinedTerm",
+      "name": "analog synthesizer",
+      "url": "https://korczis.github.io/sonic-playground/concept/analog-synthesizer/"
+     },
+     {
+      "@type": "DefinedTerm",
+      "name": "club culture",
+      "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+     }
+    ],
+    "url": "https://korczis.github.io/sonic-playground/daft-punk-episode-1-giorgio-moroder/",
+    "wordCount": 578
+   }
+  ]
+ },
  "daft-punk-episode-3-nile-rodgers.md": {
   "@context": "https://schema.org",
   "@graph": [

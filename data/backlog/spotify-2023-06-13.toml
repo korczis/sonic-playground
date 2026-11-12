@@ -75,6 +75,8 @@ title = "Reckoning Song (One Day)"
 artists = ["Asaf Avidan & the Mojos"]
 album = "The Reckoning"
 duration = "2:46"
+review = "asaf-avidan-the-mojos-reckoning-song-one-day.md"
+note = "The song is Reckoning Song; Spotify appends (One Day), the refrain that also titles the 2012 Wankelmut remix."
 
 [[track]]
 n = 11
@@ -877,6 +879,8 @@ title = "Around - Solomun Vox"
 artists = ["Noir", "Haze", "Solomun"]
 album = "Around"
 duration = "6:58"
+review = "noir-haze-solomun-around-solomun-vox.md"
+note = "Spotify credits Noir, Haze and Solomun apart; the review credits the duo Noir & Haze, with Solomun as the remixer of this vocal mix."
 
 [[track]]
 n = 133
@@ -1277,6 +1281,8 @@ title = "The Trouble With Us"
 artists = ["Marcus Marr", "Nick Murphy"]
 album = "The Trouble With Us"
 duration = "3:42"
+review = "marcus-marr-nick-murphy-the-trouble-with-us.md"
+note = "Spotify credits Nick Murphy, the later name of Chet Faker, the 2015 credit the review keeps."
 
 [[track]]
 n = 190
@@ -1291,6 +1297,8 @@ title = "The Hanging Tree"
 artists = ["The Hanging Tree"]
 album = "The Hanging Tree"
 duration = "3:38"
+review = "james-newton-howard-jennifer-lawrence-the-hanging-tree.md"
+note = "Credited only to “The Hanging Tree”; its 3:38 is the duration of row #130 (James Newton Howard, Jennifer Lawrence), not of Blankets (#138, 3:07) or the Rebel Remix (#168, 2:27)."
 
 [[track]]
 n = 192

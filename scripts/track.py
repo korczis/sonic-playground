@@ -631,7 +631,7 @@ def main() -> int:
     p_new = sub.add_parser("new", help="write content/<slug>.md from the archetype")
     common(p_new)
     for f in cat.FACETS:
-        p_new.add_argument(f"--{f}", nargs="+")
+        p_new.add_argument(f"--{f}", nargs="+", action="extend")  # --genre a --genre b, or --genre a b
     p_new.add_argument("--description")
     p_new.add_argument("--date")
     p_new.add_argument("--dry-run", action="store_true")
