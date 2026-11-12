@@ -3,6 +3,7 @@
 "locale.name" = "Čeština"
 "locale.short" = "CS"
 "locale.switch" = "Jazyk"
+"locale.plural" = { one = [1], few = [2, 3, 4] }
 
 "site.skip" = "Přeskočit na obsah"
 "site.home" = "Domů"
@@ -21,8 +22,8 @@
 "side.search_placeholder" = "Hledat skladby…"
 "side.genre" = "Žánry"
 "side.sentiment" = "Pocity"
-"side.all.genre" = "Všech {n} žánrů →"
-"side.all.sentiment" = "Všech {n} pocitů →"
+"side.all.genre" = { one = "{n} žánr →", few = "Všechny {n} žánry →", other = "Všech {n} žánrů →" }
+"side.all.sentiment" = { one = "{n} pocit →", few = "Všechny {n} pocity →", other = "Všech {n} pocitů →" }
 
 "menu.welcome" = "Vítejte"
 "menu.author" = "Autor"
@@ -31,25 +32,25 @@
 "menu.concepts" = "Pojmy"
 "menu.yearbooks" = "Ročenky"
 
-"footer.note" = "{n} ručně vybraných skladeb; katalog se odvozuje při sestavení, web je statický."
+"footer.note" = { one = "{n} ručně vybraná skladba; katalog se odvozuje při sestavení, web je statický.", few = "{n} ručně vybrané skladby; katalog se odvozuje při sestavení, web je statický.", other = "{n} ručně vybraných skladeb; katalog se odvozuje při sestavení, web je statický." }
 
 "home.cta_play" = "Pustit nejnovější"
 "home.cta_explore" = "Procházet skladby"
 "home.cta_why" = "Proč tohle hřiště"
 "home.latest" = "Nejnovější skladba"
-"home.words" = "{n} slov"
+"home.words" = { one = "{n} slovo", few = "{n} slova", other = "{n} slov" }
 "home.read" = "Číst recenzi"
-"home.all_yearbooks" = "Všech {n} ročenek →"
+"home.all_yearbooks" = { one = "{n} ročenka →", few = "Všechny {n} ročenky →", other = "Všech {n} ročenek →" }
 "home.learn_title" = "Učte se při poslechu"
-"home.learn_text" = "{n} pojmů z rytmu, harmonie, zvuku a produkce, vysvětlených a slyšitelných ve skladbách; {t} recenzí má průvodce poslechem."
+"home.learn_text" = { one = "{n} pojem z rytmu, harmonie, zvuku nebo produkce, vysvětlený a slyšitelný ve skladbách; recenze s průvodcem poslechem: {t}.", few = "{n} pojmy z rytmu, harmonie, zvuku a produkce, vysvětlené a slyšitelné ve skladbách; recenze s průvodcem poslechem: {t}.", other = "{n} pojmů z rytmu, harmonie, zvuku a produkce, vysvětlených a slyšitelných ve skladbách; recenze s průvodcem poslechem: {t}." }
 "home.learn_cta" = "Otevřít slovník pojmů"
 "home.recent" = "Nově publikované"
 "home.recent_all" = "Celý archiv →"
 "home.recent_play" = "Přehrát tyto"
-"home.recurring" = "Rok co rok zpátky: {n} skladeb"
+"home.recurring" = { one = "Rok co rok zpátky: {n} skladba", few = "Rok co rok zpátky: {n} skladby", other = "Rok co rok zpátky: {n} skladeb" }
 "home.recurring_play" = "Přehrát je"
 "home.sound" = "Objevujte podle zvuku"
-"home.sound_all" = "Všech {n} →"
+"home.sound_all" = { one = "{n} →", few = "Všechny {n} →", other = "Všech {n} →" }
 "home.headline" = "Vypněte algoritmus."
 "home.headline_accent" = "Hudba zůstane."
 "home.lead" = "Každá skladba tady je ta, která mě nepustila. Zatím jich je {tracks}, každá s recenzí, průvodcem poslechem a příběhem, který za ní stojí. Pusťte si ji: hudba hraje dál, i když čtete."
@@ -59,7 +60,7 @@
 "home.stat_concepts" = "vysvětlených pojmů"
 "home.stat_zero" = "algoritmů, reklam a registrací"
 "home.deepest" = "Nejhlubší ponor"
-"home.deepest_meta" = "{n} slov o jedné písničce"
+"home.deepest_meta" = { one = "{n} slovo o jedné písničce", few = "{n} slova o jedné písničce", other = "{n} slov o jedné písničce" }
 "home.share_kicker" = "Pošlete to dál"
 "home.share_title" = "Znáte někoho, koho už nebaví pořád stejných deset písniček?"
 "home.share_text" = "Pošlete mu {tracks} skladeb od {artists} interpretů, které by mu žádný algoritmus nenabídl."
@@ -93,8 +94,8 @@
 "explorer.apply" = "Použít"
 "explorer.reset" = "Zrušit filtry"
 "explorer.play" = "Přehrát vše zobrazené"
-"explorer.status_all" = "{n} skladeb"
-"explorer.status_some" = "{shown} z {n} skladeb"
+"explorer.status_all" = { one = "{n} skladba", few = "{n} skladby", other = "{n} skladeb" }
+"explorer.status_some" = { one = "{shown} z {n} skladby", few = "{shown} z {n} skladeb", other = "{shown} z {n} skladeb" }
 "explorer.more" = "Zobrazit dalších {page} (zbývá {left})"
 "explorer.empty_title" = "Žádná skladba neodpovídá"
 "explorer.empty_text" = "Uvolněte filtr nebo hledejte méně slov."
@@ -118,7 +119,7 @@
 
 "track.published_in" = "Zařazeno do"
 "track.by" = "Autor"
-"track.min_read" = "{n} min čtení"
+"track.min_read" = { one = "{n} min čtení", few = "{n} min čtení", other = "{n} min čtení" }
 "track.review" = "Recenze"
 "track.video_gone" = "Video, ke kterému recenze vznikla, bylo z YouTube odstraněno."
 "track.video_search" = "Hledat {track} na YouTube"
@@ -137,12 +138,12 @@
 "track.release_year" = "Vydáno"
 "track.publisher" = "Vydavatel"
 "track.video_duration" = "Délka"
-"track.words" = "{n} slov"
+"track.words" = { one = "{n} slovo", few = "{n} slova", other = "{n} slov" }
 "track.inferred" = "Interpret a skladba odvozeny z: {rule}."
 "track.shares" = "Společné: {terms} · shoda {pct} %"
 "track.neighbourhood_chart.title" = "Okolí"
 "track.neighbourhood_chart.caption" = "Tato skladba, skladby jí nejpodobnější a jejich podobné. Táhněte, přibližte, najeďte; tečka otevře skladbu."
-"track.play_related" = "Přehrát všech {n}"
+"track.play_related" = { one = "Přehrát {n}", few = "Přehrát všechny {n}", other = "Přehrát všech {n}" }
 "track.country" = "Země"
 "track.bpm" = "Tempo (BPM)"
 "track.key" = "Tónina"
@@ -158,7 +159,7 @@
 
 "insights.lead" = "Odvozeno z front matter každé recenze při sestavení: žádná databáze, žádný server, žádná ručně psaná čísla. Klikněte na sloupec, buňku nebo tečku a otevře se, co počítá."
 "insights.artists" = "Interpreti"
-"insights.artists_caption" = "{n} interpretů odvozených z názvů a jmen souborů (viz poznámka u každé skladby). Interpret otevře průzkumník."
+"insights.artists_caption" = { one = "{n} interpret odvozený z názvů a jmen souborů (viz poznámka u každé skladby). Interpret otevře průzkumník.", few = "{n} interpreti odvození z názvů a jmen souborů (viz poznámka u každé skladby). Interpret otevře průzkumník.", other = "{n} interpretů odvozených z názvů a jmen souborů (viz poznámka u každé skladby). Interpret otevře průzkumník." }
 
 "chart.months.title" = "Recenze podle měsíců"
 "chart.months.caption" = "Kdy recenze vyšly. Sloupec otevře daný měsíc v archivu."
@@ -176,7 +177,7 @@
 "chart.browse_feelings.caption" = "Sloupec filtruje skladby níže."
 "chart.table" = "Zobrazit jako tabulku"
 "chart.tracks" = "Skladby"
-"chart.track_count" = "{n} skladeb"
+"chart.track_count" = { one = "{n} skladba", few = "{n} skladby", other = "{n} skladeb" }
 "chart.alike" = "shoda {pct} %"
 "chart.other" = "ostatní žánry"
 "chart.col.month" = "Měsíc"
@@ -186,8 +187,8 @@
 "chart.col.related" = "Zobrazené podobné skladby"
 "chart.col.cross" = "Žánr \\ pocit"
 
-"archive.lead" = "{n} skladeb vydaných mezi {first} a {last}."
-"archive.count" = "{n} skladeb"
+"archive.lead" = { one = "{n} skladba vydaná mezi {first} a {last}.", few = "{n} skladby vydané mezi {first} a {last}.", other = "{n} skladeb vydaných mezi {first} a {last}." }
+"archive.count" = { one = "{n} skladba", few = "{n} skladby", other = "{n} skladeb" }
 "archive.play" = "Přehrát měsíc"
 
 "tax.name.genre" = "Žánry"
@@ -196,14 +197,14 @@
 "tax.one.genre" = "Žánr"
 "tax.one.sentiment" = "Pocit"
 "tax.one.mood" = "Nálada"
-"tax.list_lead" = "{n} pojmů, nejčastější první."
+"tax.list_lead" = { one = "{n} pojem.", few = "{n} pojmy, nejčastější první.", other = "{n} pojmů, nejčastější první." }
 "tax.combine" = "Kombinovat v průzkumníku"
 "tax.feed" = "Feed"
 "tax.play" = "Přehrát {term}"
-"tax.count" = "{n} skladeb."
+"tax.count" = { one = "{n} skladba.", few = "{n} skladby.", other = "{n} skladeb." }
 "tax.prev" = "← Předchozí"
 "tax.next" = "Další →"
-"tax.page" = "Strana {i} z {n}"
+"tax.page" = "Strana {i} z {total}"
 "tax.empty_title" = "Zatím tu nic není"
 "tax.empty_text" = "Pojmy se objeví, jakmile je některá recenze použije."
 "tax.name.concept" = "Pojmy"
@@ -233,9 +234,9 @@
 "player.shuffle" = "Zamíchat"
 "player.clear" = "Vyprázdnit frontu"
 "player.now" = "Právě hraje"
-"player.up_next" = "Další na řadě ({n})"
+"player.up_next" = "Další na řadě ({total})"
 "player.up_next_empty" = "Fronta je prázdná. Přidávejte skladby tlačítkem fronty u každé skladby."
-"player.played" = "Přehráno ({n})"
+"player.played" = "Přehráno ({total})"
 "player.jump" = "Přehrát {track}"
 "player.move_up" = "Posunout {track} výš"
 "player.move_down" = "Posunout {track} níž"
@@ -248,7 +249,7 @@
 "player.toast_removed" = "Odebráno z fronty: {track}"
 "player.toast_next" = "Hraje jako další: {track}"
 "player.toast_playing" = "Právě hraje: {track}"
-"player.toast_list" = "Fronta nahrazena: {n} skladeb"
+"player.toast_list" = { one = "Fronta nahrazena: {n} skladba", few = "Fronta nahrazena: {n} skladby", other = "Fronta nahrazena: {n} skladeb" }
 "player.toast_cleared" = "Fronta vyprázdněna"
 "player.toast_shuffled" = "Další na řadě zamíchány"
 "player.undo" = "Zpět"
@@ -261,8 +262,8 @@
 "player.toast_autoplay" = "Automaticky: {artist} – {track}"
 
 "seo.locale" = "cs_CZ"
-"seo.term" = "{n} ručně vybraných skladeb zařazených pod {kind} {term}: recenze, videa a skladby, které zní podobně."
-"seo.taxonomy" = "Všech {n} {kind} hřiště, nejčastější první."
+"seo.term" = { one = "{n} ručně vybraná skladba – {kind}: {term}. Její recenze, video a skladby, které zní podobně.", few = "{n} ručně vybrané skladby – {kind}: {term}. Recenze, videa a skladby, které zní podobně.", other = "{n} ručně vybraných skladeb – {kind}: {term}. Recenze, videa a skladby, které zní podobně." }
+"seo.taxonomy" = { one = "Hřiště – {kind}: {n} pojem.", few = "Hřiště – {kind}: {n} pojmy, nejčastější první.", other = "Hřiště – {kind}: {n} pojmů, nejčastější první." }
 "seo.home_title" = "Vypněte algoritmus. Hudba zůstane."
 "seo.home_description" = "{tracks} skladeb od {artists} interpretů, ručně vybraných a vysvětlených: recenze, průvodce poslechem a příběh, který za každou stojí. Zdarma, bez registrace, bez reklam."
 "action.play" = "Přehrát"
@@ -301,8 +302,8 @@
 "learn.kind.video" = "Video"
 "learn.kind.label" = "Vydavatelství"
 "learn.kind.artist" = "Interpret"
-"concept.list_lead" = "{n} pojmů, které recenze vysvětlují, každý se skladbami, na nichž je slyšet."
-"concept.tracks" = "{n} skladeb"
+"concept.list_lead" = { one = "{n} pojem, který recenze vysvětlují, se skladbami, na nichž je slyšet.", few = "{n} pojmy, které recenze vysvětlují, každý se skladbami, na nichž je slyšet.", other = "{n} pojmů, které recenze vysvětlují, každý se skladbami, na nichž je slyšet." }
+"concept.tracks" = { one = "{n} skladba", few = "{n} skladby", other = "{n} skladeb" }
 "concept.what" = "Co to je"
 "concept.read_more" = "Více na Wikipedii"
 "concept.related" = "Související pojmy"
@@ -318,11 +319,11 @@
 "concept.category.genre-history" = "Dějiny žánrů"
 "concept.category.culture" = "Kultura"
 "yearbook.title" = "Ročenky"
-"yearbook.lead" = "{n} let nejposlouchanějších skladeb autora na Spotify; {r} skladeb se opakuje ve více letech."
+"yearbook.lead" = { one = "{n} rok nejposlouchanějších skladeb autora na Spotify; skladby opakované ve více letech: {r}.", few = "{n} roky nejposlouchanějších skladeb autora na Spotify; skladby opakované ve více letech: {r}.", other = "{n} let nejposlouchanějších skladeb autora na Spotify; skladby opakované ve více letech: {r}." }
 "yearbook.one" = "Nejposlouchanější skladby {year}"
 "yearbook.page_title" = "Ročenky"
 "yearbook.page_description" = "Nejposlouchanější skladby autora v roce {year}: {items} nahrávek, {songs} s recenzí na Sonic Playground."
-"yearbook.count" = "{n} nahrávek, {s} s recenzí"
+"yearbook.count" = { one = "{n} nahrávka, {s} s recenzí", few = "{n} nahrávky, {s} s recenzí", other = "{n} nahrávek, {s} s recenzí" }
 "yearbook.list" = "V pořadí playlistu"
 "yearbook.play" = "Přehrát {year}"
 "yearbook.about" = "O této ročence"

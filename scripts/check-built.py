@@ -2,7 +2,9 @@
 """Check the built site: every same-origin URL any page or feed references (src, href, srcset,
 poster; any quoting; absolute, root-relative or relative, resolved against the page's deployed
 URL) is a file of the build under the site path, and no page embeds a raw iframe (videos go
-through the video component).
+through the video component). Every <img> has its width and height (nothing shifts as it loads),
+and no image a page references weighs more than data/media.toml budget.image_kb (rule
+project.media-budget: a page shows derived variants, never a source).
 
 Zola's link checker validates Markdown links to other pages; it does not see raw HTML in the
 reviews or attributes the templates compute. This reads what a browser would request.
@@ -14,6 +16,7 @@ from __future__ import annotations
 import html
 import os
 import sys
+import tomllib
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
@@ -22,6 +25,8 @@ URL_ATTRS = {"src", "href", "poster", "data-copy-link"}
 # The social cards are rendered by scripts/og.cjs (a browser); without one (the pre-push gate) the
 # tags are still checked, the files are not: CHECK_OG_FILES=0.
 OG_FILES = os.environ.get("CHECK_OG_FILES", "1") != "0"
+MEDIA = tomllib.loads((Path(__file__).resolve().parent.parent / "data" / "media.toml").read_text(encoding="utf-8"))
+IMAGE_BYTES = MEDIA["budget"]["image_kb"] * 1024
 
 
 # Every page carries a complete social preview (rule project.social-preview).
@@ -39,6 +44,8 @@ class Refs(HTMLParser):
         self.canonical = ""
         self.in_title = False
         self.title = ""
+        self.images: list[str] = []
+        self.unsized: list[str] = []
 
     def handle_endtag(self, tag):
         if tag == "title":
@@ -59,6 +66,13 @@ class Refs(HTMLParser):
             self.canonical = a.get("href") or ""
         if tag == "iframe":
             self.iframes += 1
+        if tag == "img" and not (a.get("width") and a.get("height")):
+            self.unsized.append(a.get("src") or "?")
+        if tag in ("img", "source"):
+            src = a.get("src")
+            if src:
+                self.images.append(src)
+            self.images += [part.strip().split(" ")[0] for part in (a.get("srcset") or "").split(",") if part.strip()]
         for name, value in attrs:
             if not value:
                 continue
@@ -110,6 +124,16 @@ def main() -> int:
                 if not card.is_file():
                     problems.append(f"{rel}: og:image {image} does not exist in the build (scripts/og.cjs)")
         here = page_url(base, rel)
+        if file.suffix == ".html":
+            for src in sorted(set(parser.unsized)):
+                problems.append(f"{rel}: <img src={src}> has no width and height (the page shifts as it loads)")
+            for raw in sorted(set(parser.images)):
+                target = urlsplit(urljoin(here, raw))
+                if (target.scheme, target.netloc) == (site.scheme, site.netloc) and target.path.startswith(prefix):
+                    local = public / unquote(target.path[len(prefix):])
+                    if local.is_file() and local.stat().st_size > IMAGE_BYTES:
+                        problems.append(f"{rel}: {raw} weighs {local.stat().st_size // 1024} kB, over the budget of "
+                                        f"{IMAGE_BYTES // 1024} kB (data/media.toml): show its derived variants")
         for raw in set(parser.urls):
             if raw.startswith(("#", "mailto:", "tel:", "javascript:", "data:")):
                 continue

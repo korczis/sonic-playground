@@ -776,6 +776,33 @@ async function shot(page, name) {
         check(errors.length === 0, `i18n: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
         await context.close();
       }
+      // Plurals: the browser (Sonic.t) picks the form the build (`tr`) picked, for every count
+      // string of a page in the other language, and each of that locale's forms for its integers.
+      {
+        const terms = ((catalog.lang_terms || {})[other] || {}).genre || [];
+        const term = catalog.facets.genre.find((f) => terms.includes(f.term)) || catalog.facets.genre[0];
+        const { context, page, errors } = await open(browser, at(`${other}/genre/${term.slug}/`), desktop);
+        await page.waitForFunction(() => document.documentElement.dataset.i18nState === 'ready');
+        const diff = await page.evaluate(async (strings) => {
+          const built = new DOMParser().parseFromString(await (await fetch(location.href)).text(), 'text/html');
+          const sel = '[data-i18n][data-i18n-vars]';
+          const live = [...document.querySelectorAll(sel)];
+          const plural = (el) => strings[el.getAttribute('data-i18n')] && typeof strings[el.getAttribute('data-i18n')] === 'object';
+          const was = [...built.querySelectorAll(sel)].filter(plural).map((el) => el.textContent.trim());
+          const now = live.filter(plural).map((el) => el.textContent.trim());
+          return { count: now.length, differ: now.filter((t, i) => t !== was[i]) };
+        }, s);
+        check(diff.count >= 2 && diff.differ.length === 0,
+          `i18n: ${diff.count} count strings of /${other}/genre/${term.slug}/ read the same in the build and the browser${diff.differ.length ? ' — ' + diff.differ.join(' | ') : ''}`);
+        const rule = s['locale.plural'];
+        for (const [cat, ns] of Object.entries(rule)) {
+          const n = ns[0];
+          const got = await page.evaluate(([n]) => window.Sonic.t('tax.count', { n }), [n]);
+          check(got === s['tax.count'][cat].replace('{n}', String(n)), `i18n: Sonic.t picks the ${other} '${cat}' form for ${n} (${got})`);
+        }
+        check(errors.length === 0, `i18n: no console errors (plurals)${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+        await context.close();
+      }
     }
   }
 

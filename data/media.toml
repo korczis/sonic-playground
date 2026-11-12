@@ -1,0 +1,19 @@
+# Derived images (scripts/images.py, rule project.media-budget). Every local image a page shows
+# (a review's or a page's {{ <figure src=… /> }} and a review's extra.cover_image) is served as
+# these variants, never as its source: the source stays under static/ and is the input only.
+# Change a value and run `python3 scripts/images.py`; the manifest records what made each file.
+
+# Rendered widths in pixels; a source narrower than one is rendered at its own width instead.
+widths = [480, 960, 1600]
+# The formats a <picture> offers, best first; the last is the <img> fallback.
+formats = ["avif", "webp"]
+# The width a card's still uses (catalog.json thumbnail): the smallest variant at least this wide.
+card_width = 480
+
+[quality]
+avif = 55
+webp = 74
+
+[budget]
+# No image a built page references may weigh more (scripts/check-built.py, scripts/images.py).
+image_kb = 300

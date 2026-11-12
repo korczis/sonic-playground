@@ -42,6 +42,20 @@ STATIC = ROOT / "static"
 OUTPUT = STATIC / "data" / "catalog.json"
 SEARCH = STATIC / "data" / "search.json"
 VIDEO_STATUS = ROOT / "data" / "videos.json"  # written by scripts/probe-videos.py --write
+MEDIA = STATIC / "data" / "images.json"  # written by scripts/images.py (data/media.toml)
+
+
+def card_still(src: str) -> str:
+    """A local still as a card shows it: the smallest derived variant at least card_width wide in
+    the fallback format (scripts/images.py), else the source until the variants are rendered
+    (scripts/images.py --check refuses that state)."""
+    media = json.loads(MEDIA.read_text(encoding="utf-8")) if MEDIA.exists() else {}
+    entry = media.get("images", {}).get(src)
+    if not entry:
+        return src
+    rows = sorted(entry["variants"][media["formats"][-1]])
+    wide = [r for r in rows if r[0] >= media["card_width"]]
+    return (wide[0] if wide else rows[-1])[2]
 CONTRACT = ROOT / "data" / "track.schema.json"
 SCHEMA = "sonic-catalog/v1"
 
@@ -560,7 +574,7 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
         if not (STATIC / str(cover).lstrip("/")).is_file():
             err(f"extra.cover_image '{cover}' is not a file under static/")
         else:
-            thumbnail, local = str(cover).lstrip("/"), True
+            thumbnail, local = card_still(str(cover).lstrip("/")), True
     if not thumbnail and youtube_id:
         thumbnail = f"https://i.ytimg.com/vi/{youtube_id}/hqdefault.jpg"
 

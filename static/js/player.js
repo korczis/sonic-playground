@@ -280,7 +280,7 @@
     list.replaceChildren();
     if (!t) return;
     list.append(heading(Sonic.t('player.now')), row(t, state.index, 'now'));
-    list.append(heading(Sonic.t('player.up_next', { n: String(upcoming()) })));
+    list.append(heading(Sonic.t('player.up_next', { total: String(upcoming()) })));
     if (!upcoming()) {
       var empty = document.createElement('li');
       empty.className = 'px-2 py-2 text-sm text-gray-500 dark:text-gray-400';
@@ -290,7 +290,7 @@
     }
     for (var i = state.index + 1; i < state.queue.length; i++) list.append(row(state.queue[i], i, 'next'));
     if (state.index > 0) {
-      list.append(heading(Sonic.t('player.played', { n: String(state.index) })));
+      list.append(heading(Sonic.t('player.played', { total: String(state.index) })));
       for (var j = state.index - 1; j >= 0; j--) list.append(row(state.queue[j], j, 'played'));
     }
     el.shuffle.disabled = upcoming() < 2;
@@ -484,7 +484,7 @@
     if (replaced) snapshot();
     state.queue = list;
     state.time = 0;
-    toast(Sonic.t('player.toast_list', { n: String(list.length) }), replaced);
+    toast(Sonic.t('player.toast_list', { n: list.length }), replaced);
     jump(Math.max(0, Math.min(start || 0, list.length - 1)));
   }
   function remove(i) {

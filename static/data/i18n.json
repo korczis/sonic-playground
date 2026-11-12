@@ -16,8 +16,16 @@
 "action.queued": "Ve frontě",
 "action.radio": "Rádio",
 "action.radio_hint": "Nahradí frontu touto skladbou a podobnými",
-"archive.count": "{n} skladeb",
-"archive.lead": "{n} skladeb vydaných mezi {first} a {last}.",
+"archive.count": {
+"few": "{n} skladby",
+"one": "{n} skladba",
+"other": "{n} skladeb"
+},
+"archive.lead": {
+"few": "{n} skladby vydané mezi {first} a {last}.",
+"one": "{n} skladba vydaná mezi {first} a {last}.",
+"other": "{n} skladeb vydaných mezi {first} a {last}."
+},
 "archive.play": "Přehrát měsíc",
 "card.more": "Další akce pro {label}",
 "card.play": "Přehrát {label}",
@@ -47,7 +55,11 @@
 "chart.months.title": "Recenze podle měsíců",
 "chart.other": "ostatní žánry",
 "chart.table": "Zobrazit jako tabulku",
-"chart.track_count": "{n} skladeb",
+"chart.track_count": {
+"few": "{n} skladby",
+"one": "{n} skladba",
+"other": "{n} skladeb"
+},
 "chart.tracks": "Skladby",
 "concept.category.culture": "Kultura",
 "concept.category.form": "Forma a stavba",
@@ -60,10 +72,18 @@
 "concept.category.technology": "Nástroje a technologie",
 "concept.category.timbre": "Zvuk a barva",
 "concept.hear_it": "Slyšte ho v těchto skladbách",
-"concept.list_lead": "{n} pojmů, které recenze vysvětlují, každý se skladbami, na nichž je slyšet.",
+"concept.list_lead": {
+"few": "{n} pojmy, které recenze vysvětlují, každý se skladbami, na nichž je slyšet.",
+"one": "{n} pojem, který recenze vysvětlují, se skladbami, na nichž je slyšet.",
+"other": "{n} pojmů, které recenze vysvětlují, každý se skladbami, na nichž je slyšet."
+},
 "concept.read_more": "Více na Wikipedii",
 "concept.related": "Související pojmy",
-"concept.tracks": "{n} skladeb",
+"concept.tracks": {
+"few": "{n} skladby",
+"one": "{n} skladba",
+"other": "{n} skladeb"
+},
 "concept.what": "Co to je",
 "explorer.any.concept": "Jakýkoli pojem",
 "explorer.any.genre": "Jakýkoli žánr",
@@ -88,43 +108,83 @@
 "explorer.sort.new": "Nejnovější",
 "explorer.sort.old": "Nejstarší",
 "explorer.sort.title": "Skladba A–Z",
-"explorer.status_all": "{n} skladeb",
-"explorer.status_some": "{shown} z {n} skladeb",
+"explorer.status_all": {
+"few": "{n} skladby",
+"one": "{n} skladba",
+"other": "{n} skladeb"
+},
+"explorer.status_some": {
+"few": "{shown} z {n} skladeb",
+"one": "{shown} z {n} skladby",
+"other": "{shown} z {n} skladeb"
+},
 "explorer.title": "Skladby",
-"footer.note": "{n} ručně vybraných skladeb; katalog se odvozuje při sestavení, web je statický.",
-"home.all_yearbooks": "Všech {n} ročenek →",
+"footer.note": {
+"few": "{n} ručně vybrané skladby; katalog se odvozuje při sestavení, web je statický.",
+"one": "{n} ručně vybraná skladba; katalog se odvozuje při sestavení, web je statický.",
+"other": "{n} ručně vybraných skladeb; katalog se odvozuje při sestavení, web je statický."
+},
+"home.all_yearbooks": {
+"few": "Všechny {n} ročenky →",
+"one": "{n} ročenka →",
+"other": "Všech {n} ročenek →"
+},
 "home.cta_explore": "Procházet skladby",
 "home.cta_play": "Pustit nejnovější",
 "home.cta_why": "Proč tohle hřiště",
 "home.deepest": "Nejhlubší ponor",
-"home.deepest_meta": "{n} slov o jedné písničce",
+"home.deepest_meta": {
+"few": "{n} slova o jedné písničce",
+"one": "{n} slovo o jedné písničce",
+"other": "{n} slov o jedné písničce"
+},
 "home.eyebrow": "Osobní hudební deník · od roku {since}",
 "home.headline": "Vypněte algoritmus.",
 "home.headline_accent": "Hudba zůstane.",
 "home.latest": "Nejnovější skladba",
 "home.lead": "Každá skladba tady je ta, která mě nepustila. Zatím jich je {tracks}, každá s recenzí, průvodcem poslechem a příběhem, který za ní stojí. Pusťte si ji: hudba hraje dál, i když čtete.",
 "home.learn_cta": "Otevřít slovník pojmů",
-"home.learn_text": "{n} pojmů z rytmu, harmonie, zvuku a produkce, vysvětlených a slyšitelných ve skladbách; {t} recenzí má průvodce poslechem.",
+"home.learn_text": {
+"few": "{n} pojmy z rytmu, harmonie, zvuku a produkce, vysvětlené a slyšitelné ve skladbách; recenze s průvodcem poslechem: {t}.",
+"one": "{n} pojem z rytmu, harmonie, zvuku nebo produkce, vysvětlený a slyšitelný ve skladbách; recenze s průvodcem poslechem: {t}.",
+"other": "{n} pojmů z rytmu, harmonie, zvuku a produkce, vysvětlených a slyšitelných ve skladbách; recenze s průvodcem poslechem: {t}."
+},
 "home.learn_title": "Učte se při poslechu",
 "home.read": "Číst recenzi",
 "home.recent": "Nově publikované",
 "home.recent_all": "Celý archiv →",
 "home.recent_play": "Přehrát tyto",
-"home.recurring": "Rok co rok zpátky: {n} skladeb",
+"home.recurring": {
+"few": "Rok co rok zpátky: {n} skladby",
+"one": "Rok co rok zpátky: {n} skladba",
+"other": "Rok co rok zpátky: {n} skladeb"
+},
 "home.recurring_play": "Přehrát je",
 "home.share_kicker": "Pošlete to dál",
 "home.share_post": "Vypněte algoritmus, hudba zůstane: {tracks} ručně vybraných skladeb, každá vysvětlená.",
 "home.share_text": "Pošlete mu {tracks} skladeb od {artists} interpretů, které by mu žádný algoritmus nenabídl.",
 "home.share_title": "Znáte někoho, koho už nebaví pořád stejných deset písniček?",
 "home.sound": "Objevujte podle zvuku",
-"home.sound_all": "Všech {n} →",
+"home.sound_all": {
+"few": "Všechny {n} →",
+"one": "{n} →",
+"other": "Všech {n} →"
+},
 "home.stat_artists": "interpretů",
 "home.stat_concepts": "vysvětlených pojmů",
 "home.stat_tracks": "skladeb",
 "home.stat_zero": "algoritmů, reklam a registrací",
-"home.words": "{n} slov",
+"home.words": {
+"few": "{n} slova",
+"one": "{n} slovo",
+"other": "{n} slov"
+},
 "insights.artists": "Interpreti",
-"insights.artists_caption": "{n} interpretů odvozených z názvů a jmen souborů (viz poznámka u každé skladby). Interpret otevře průzkumník.",
+"insights.artists_caption": {
+"few": "{n} interpreti odvození z názvů a jmen souborů (viz poznámka u každé skladby). Interpret otevře průzkumník.",
+"one": "{n} interpret odvozený z názvů a jmen souborů (viz poznámka u každé skladby). Interpret otevře průzkumník.",
+"other": "{n} interpretů odvozených z názvů a jmen souborů (viz poznámka u každé skladby). Interpret otevře průzkumník."
+},
 "insights.lead": "Odvozeno z front matter každé recenze při sestavení: žádná databáze, žádný server, žádná ručně psaná čísla. Klikněte na sloupec, buňku nebo tečku a otevře se, co počítá.",
 "lang": "cs",
 "learn.concepts": "Pojmy v této skladbě",
@@ -149,6 +209,16 @@
 "learn.seek": "Přehrát od {at}",
 "learn.title": "Co se z této skladby naučíte",
 "locale.name": "Čeština",
+"locale.plural": {
+"few": [
+2,
+3,
+4
+],
+"one": [
+1
+]
+},
 "locale.short": "CS",
 "locale.switch": "Jazyk",
 "menu.archive": "Archiv",
@@ -183,7 +253,7 @@
 "player.now": "Právě hraje",
 "player.pause": "Pozastavit",
 "player.play": "Přehrát",
-"player.played": "Přehráno ({n})",
+"player.played": "Přehráno ({total})",
 "player.position": "Pozice",
 "player.prev": "Předchozí skladba",
 "player.queue": "Fronta",
@@ -198,14 +268,18 @@
 "player.toast_autoplay": "Automaticky: {artist} – {track}",
 "player.toast_cleared": "Fronta vyprázdněna",
 "player.toast_closed": "Přehrávač zavřen",
-"player.toast_list": "Fronta nahrazena: {n} skladeb",
+"player.toast_list": {
+"few": "Fronta nahrazena: {n} skladby",
+"one": "Fronta nahrazena: {n} skladba",
+"other": "Fronta nahrazena: {n} skladeb"
+},
 "player.toast_next": "Hraje jako další: {track}",
 "player.toast_playing": "Právě hraje: {track}",
 "player.toast_removed": "Odebráno z fronty: {track}",
 "player.toast_shuffled": "Další na řadě zamíchány",
 "player.toast_undone": "Obnoveno",
 "player.undo": "Zpět",
-"player.up_next": "Další na řadě ({n})",
+"player.up_next": "Další na řadě ({total})",
 "player.up_next_empty": "Fronta je prázdná. Přidávejte skladby tlačítkem fronty u každé skladby.",
 "player.video": "Video",
 "player.video_large": "Větší video",
@@ -213,16 +287,32 @@
 "seo.home_description": "{tracks} skladeb od {artists} interpretů, ručně vybraných a vysvětlených: recenze, průvodce poslechem a příběh, který za každou stojí. Zdarma, bez registrace, bez reklam.",
 "seo.home_title": "Vypněte algoritmus. Hudba zůstane.",
 "seo.locale": "cs_CZ",
-"seo.taxonomy": "Všech {n} {kind} hřiště, nejčastější první.",
-"seo.term": "{n} ručně vybraných skladeb zařazených pod {kind} {term}: recenze, videa a skladby, které zní podobně.",
+"seo.taxonomy": {
+"few": "Hřiště – {kind}: {n} pojmy, nejčastější první.",
+"one": "Hřiště – {kind}: {n} pojem.",
+"other": "Hřiště – {kind}: {n} pojmů, nejčastější první."
+},
+"seo.term": {
+"few": "{n} ručně vybrané skladby – {kind}: {term}. Recenze, videa a skladby, které zní podobně.",
+"one": "{n} ručně vybraná skladba – {kind}: {term}. Její recenze, video a skladby, které zní podobně.",
+"other": "{n} ručně vybraných skladeb – {kind}: {term}. Recenze, videa a skladby, které zní podobně."
+},
 "share.copied": "Odkaz zkopírován",
 "share.copy": "Kopírovat odkaz",
 "share.facebook": "Sdílet na Facebooku",
 "share.linkedin": "Sdílet na LinkedInu",
 "share.text": "{label} na {site}",
 "share.x": "Sdílet na X",
-"side.all.genre": "Všech {n} žánrů →",
-"side.all.sentiment": "Všech {n} pocitů →",
+"side.all.genre": {
+"few": "Všechny {n} žánry →",
+"one": "{n} žánr →",
+"other": "Všech {n} žánrů →"
+},
+"side.all.sentiment": {
+"few": "Všechny {n} pocity →",
+"one": "{n} pocit →",
+"other": "Všech {n} pocitů →"
+},
 "side.explore": "Procházet skladby",
 "side.genre": "Žánry",
 "side.search_placeholder": "Hledat skladby…",
@@ -240,11 +330,19 @@
 "stat.words": "slov recenzí",
 "stat.yearbooks": "ročenek",
 "tax.combine": "Kombinovat v průzkumníku",
-"tax.count": "{n} skladeb.",
+"tax.count": {
+"few": "{n} skladby.",
+"one": "{n} skladba.",
+"other": "{n} skladeb."
+},
 "tax.empty_text": "Pojmy se objeví, jakmile je některá recenze použije.",
 "tax.empty_title": "Zatím tu nic není",
 "tax.feed": "Feed",
-"tax.list_lead": "{n} pojmů, nejčastější první.",
+"tax.list_lead": {
+"few": "{n} pojmy, nejčastější první.",
+"one": "{n} pojem.",
+"other": "{n} pojmů, nejčastější první."
+},
 "tax.name.concept": "Pojmy",
 "tax.name.genre": "Žánry",
 "tax.name.instrument": "Nástroje",
@@ -256,7 +354,7 @@
 "tax.one.instrument": "Nástroj",
 "tax.one.mood": "Nálada",
 "tax.one.sentiment": "Pocit",
-"tax.page": "Strana {i} z {n}",
+"tax.page": "Strana {i} z {total}",
 "tax.play": "Přehrát {term}",
 "tax.prev": "← Předchozí",
 "term.concept.alternate version": "alternativní verze",
@@ -612,7 +710,11 @@
 "track.key": "Tónina",
 "track.listen": "Poslech",
 "track.listen_caption": "Tady v přehrávači, nebo v aplikaci, která hraje i při zamčeném telefonu.",
-"track.min_read": "{n} min čtení",
+"track.min_read": {
+"few": "{n} min čtení",
+"one": "{n} min čtení",
+"other": "{n} min čtení"
+},
 "track.more_like": "Podobné skladby",
 "track.more_like_caption": "Vážená shoda žánrů, pocitů a nálad.",
 "track.neighbourhood_chart.caption": "Tato skladba, skladby jí nejpodobnější a jejich podobné. Táhněte, přibližte, najeďte; tečka otevře skladbu.",
@@ -620,7 +722,11 @@
 "track.newer": "Novější",
 "track.older": "Starší",
 "track.open_data": "Otevřená data",
-"track.play_related": "Přehrát všech {n}",
+"track.play_related": {
+"few": "Přehrát všechny {n}",
+"one": "Přehrát {n}",
+"other": "Přehrát všech {n}"
+},
 "track.published_in": "Zařazeno do",
 "track.publisher": "Vydavatel",
 "track.release_year": "Vydáno",
@@ -631,7 +737,11 @@
 "track.video_duration": "Délka",
 "track.video_gone": "Video, ke kterému recenze vznikla, bylo z YouTube odstraněno.",
 "track.video_search": "Hledat {track} na YouTube",
-"track.words": "{n} slov",
+"track.words": {
+"few": "{n} slova",
+"one": "{n} slovo",
+"other": "{n} slov"
+},
 "track.yearbooks": "V ročenkách",
 "trackmenu.copied": "Odkaz zkopírován",
 "trackmenu.copy": "Kopírovat odkaz",
@@ -643,13 +753,21 @@
 "trackmenu.radio": "Spustit rádio",
 "yearbook.about": "O této ročence",
 "yearbook.artists": "Interpreti",
-"yearbook.count": "{n} nahrávek, {s} s recenzí",
+"yearbook.count": {
+"few": "{n} nahrávky, {s} s recenzí",
+"one": "{n} nahrávka, {s} s recenzí",
+"other": "{n} nahrávek, {s} s recenzí"
+},
 "yearbook.genres": "Žánry",
 "yearbook.k.items": "Nahrávky",
 "yearbook.k.missing": "Zatím bez recenze",
 "yearbook.k.present": "Lze přehrát zde",
 "yearbook.k.songs": "Recenzované skladby",
-"yearbook.lead": "{n} let nejposlouchanějších skladeb autora na Spotify; {r} skladeb se opakuje ve více letech.",
+"yearbook.lead": {
+"few": "{n} roky nejposlouchanějších skladeb autora na Spotify; skladby opakované ve více letech: {r}.",
+"one": "{n} rok nejposlouchanějších skladeb autora na Spotify; skladby opakované ve více letech: {r}.",
+"other": "{n} let nejposlouchanějších skladeb autora na Spotify; skladby opakované ve více letech: {r}."
+},
 "yearbook.list": "V pořadí playlistu",
 "yearbook.numbers": "V číslech",
 "yearbook.one": "Nejposlouchanější skladby {year}",
@@ -678,8 +796,14 @@
 "action.queued": "In the queue",
 "action.radio": "Radio",
 "action.radio_hint": "Replaces the queue with this track and similar ones",
-"archive.count": "{n} tracks",
-"archive.lead": "{n} tracks published between {first} and {last}.",
+"archive.count": {
+"one": "{n} track",
+"other": "{n} tracks"
+},
+"archive.lead": {
+"one": "{n} track published between {first} and {last}.",
+"other": "{n} tracks published between {first} and {last}."
+},
 "archive.play": "Play month",
 "card.more": "More actions for {label}",
 "card.play": "Play {label}",
@@ -709,7 +833,10 @@
 "chart.months.title": "Reviews per month",
 "chart.other": "other genres",
 "chart.table": "Show as table",
-"chart.track_count": "{n} track(s)",
+"chart.track_count": {
+"one": "{n} track",
+"other": "{n} tracks"
+},
 "chart.tracks": "Tracks",
 "concept.category.culture": "Culture",
 "concept.category.form": "Form and structure",
@@ -722,10 +849,16 @@
 "concept.category.technology": "Instruments and technology",
 "concept.category.timbre": "Sound and timbre",
 "concept.hear_it": "Hear it in these tracks",
-"concept.list_lead": "{n} concepts the reviews teach, each with the tracks that demonstrate it.",
+"concept.list_lead": {
+"one": "{n} concept the reviews teach, with the tracks that demonstrate it.",
+"other": "{n} concepts the reviews teach, each with the tracks that demonstrate it."
+},
 "concept.read_more": "Read more on Wikipedia",
 "concept.related": "Related concepts",
-"concept.tracks": "{n} track(s)",
+"concept.tracks": {
+"one": "{n} track",
+"other": "{n} tracks"
+},
 "concept.what": "What it is",
 "explorer.any.concept": "Any concept",
 "explorer.any.genre": "Any genre",
@@ -750,43 +883,73 @@
 "explorer.sort.new": "Newest first",
 "explorer.sort.old": "Oldest first",
 "explorer.sort.title": "Track A–Z",
-"explorer.status_all": "{n} tracks",
-"explorer.status_some": "{shown} of {n} tracks",
+"explorer.status_all": {
+"one": "{n} track",
+"other": "{n} tracks"
+},
+"explorer.status_some": {
+"one": "{shown} of {n} track",
+"other": "{shown} of {n} tracks"
+},
 "explorer.title": "Tracks",
-"footer.note": "{n} tracks, hand-picked; the catalogue is derived at build time, the site is static.",
-"home.all_yearbooks": "All {n} yearbooks →",
+"footer.note": {
+"one": "{n} track, hand-picked; the catalogue is derived at build time, the site is static.",
+"other": "{n} tracks, hand-picked; the catalogue is derived at build time, the site is static."
+},
+"home.all_yearbooks": {
+"one": "{n} yearbook →",
+"other": "All {n} yearbooks →"
+},
 "home.cta_explore": "Explore the tracks",
 "home.cta_play": "Play the newest",
 "home.cta_why": "Why this playground",
 "home.deepest": "The deepest dive",
-"home.deepest_meta": "{n} words on one song",
+"home.deepest_meta": {
+"one": "{n} word on one song",
+"other": "{n} words on one song"
+},
 "home.eyebrow": "A personal music journal · since {since}",
 "home.headline": "Skip the algorithm.",
 "home.headline_accent": "Keep the music.",
 "home.latest": "Latest track",
 "home.lead": "Every track here is one that wouldn't let me go. {tracks} of them so far, each with a review, a listening guide and the story behind it. Press play: the music keeps going while you read.",
 "home.learn_cta": "Open the glossary",
-"home.learn_text": "{n} concepts of rhythm, harmony, sound and production, explained and heard in the tracks; {t} reviews come with a listening guide.",
+"home.learn_text": {
+"one": "{n} concept of rhythm, harmony, sound or production, explained and heard in the tracks; reviews with a listening guide: {t}.",
+"other": "{n} concepts of rhythm, harmony, sound and production, explained and heard in the tracks; reviews with a listening guide: {t}."
+},
 "home.learn_title": "Learn while you listen",
 "home.read": "Read the review",
 "home.recent": "Recently published",
 "home.recent_all": "The whole archive →",
 "home.recent_play": "Play these",
-"home.recurring": "Back year after year: {n} songs",
+"home.recurring": {
+"one": "Back year after year: {n} song",
+"other": "Back year after year: {n} songs"
+},
 "home.recurring_play": "Play them",
 "home.share_kicker": "Pass it on",
 "home.share_post": "Skip the algorithm, keep the music: {tracks} hand-picked tracks, each one explained.",
 "home.share_text": "Send them {tracks} tracks from {artists} artists that no algorithm would have picked.",
 "home.share_title": "Know someone tired of the same ten songs?",
 "home.sound": "Explore by sound",
-"home.sound_all": "All {n} →",
+"home.sound_all": {
+"one": "{n} →",
+"other": "All {n} →"
+},
 "home.stat_artists": "artists",
 "home.stat_concepts": "concepts explained",
 "home.stat_tracks": "tracks",
 "home.stat_zero": "algorithms, ads or sign-ups",
-"home.words": "{n} words",
+"home.words": {
+"one": "{n} word",
+"other": "{n} words"
+},
 "insights.artists": "Artists",
-"insights.artists_caption": "{n} artists, inferred from the titles and file names (see each track's note). An artist opens the explorer.",
+"insights.artists_caption": {
+"one": "{n} artist, inferred from the titles and file names (see each track's note). An artist opens the explorer.",
+"other": "{n} artists, inferred from the titles and file names (see each track's note). An artist opens the explorer."
+},
 "insights.lead": "Derived from the front matter of every review at build time: no database, no server, no hand-kept numbers. Click any bar, cell or dot to open what it counts.",
 "lang": "en",
 "learn.concepts": "Concepts in this track",
@@ -811,6 +974,11 @@
 "learn.seek": "Play from {at}",
 "learn.title": "Learn from this track",
 "locale.name": "English",
+"locale.plural": {
+"one": [
+1
+]
+},
 "locale.short": "EN",
 "locale.switch": "Language",
 "menu.archive": "Archive",
@@ -845,7 +1013,7 @@
 "player.now": "Now playing",
 "player.pause": "Pause",
 "player.play": "Play",
-"player.played": "Played ({n})",
+"player.played": "Played ({total})",
 "player.position": "Position",
 "player.prev": "Previous track",
 "player.queue": "Queue",
@@ -860,14 +1028,17 @@
 "player.toast_autoplay": "Autoplay: {artist} – {track}",
 "player.toast_cleared": "Queue cleared",
 "player.toast_closed": "Player closed",
-"player.toast_list": "Queue replaced: {n} tracks",
+"player.toast_list": {
+"one": "Queue replaced: {n} track",
+"other": "Queue replaced: {n} tracks"
+},
 "player.toast_next": "Plays next: {track}",
 "player.toast_playing": "Playing now: {track}",
 "player.toast_removed": "Removed from the queue: {track}",
 "player.toast_shuffled": "Up next shuffled",
 "player.toast_undone": "Restored",
 "player.undo": "Undo",
-"player.up_next": "Up next ({n})",
+"player.up_next": "Up next ({total})",
 "player.up_next_empty": "Nothing queued. Add tracks with the queue button on any track.",
 "player.video": "Video",
 "player.video_large": "Larger video",
@@ -875,16 +1046,28 @@
 "seo.home_description": "{tracks} tracks from {artists} artists, hand-picked by a person and each one explained: a review, a listening guide and the story behind it. Free, no sign-up, no ads.",
 "seo.home_title": "Skip the algorithm. Keep the music.",
 "seo.locale": "en_US",
-"seo.taxonomy": "All {n} {kind} of the playground, most used first.",
-"seo.term": "{n} hand-picked tracks filed under the {kind} {term}: reviews, videos and the tracks that sound alike.",
+"seo.taxonomy": {
+"one": "The playground's {kind}: {n}.",
+"other": "All {n} {kind} of the playground, most used first."
+},
+"seo.term": {
+"one": "{n} hand-picked track filed under the {kind} {term}: its review, its video and the tracks that sound alike.",
+"other": "{n} hand-picked tracks filed under the {kind} {term}: reviews, videos and the tracks that sound alike."
+},
 "share.copied": "Link copied",
 "share.copy": "Copy link",
 "share.facebook": "Share on Facebook",
 "share.linkedin": "Share on LinkedIn",
 "share.text": "{label} on {site}",
 "share.x": "Share on X",
-"side.all.genre": "All {n} genres →",
-"side.all.sentiment": "All {n} feelings →",
+"side.all.genre": {
+"one": "{n} genre →",
+"other": "All {n} genres →"
+},
+"side.all.sentiment": {
+"one": "{n} feeling →",
+"other": "All {n} feelings →"
+},
 "side.explore": "Explore tracks",
 "side.genre": "Genres",
 "side.search_placeholder": "Search tracks…",
@@ -902,11 +1085,17 @@
 "stat.words": "words of reviews",
 "stat.yearbooks": "yearbooks",
 "tax.combine": "Combine in the explorer",
-"tax.count": "{n} track(s).",
+"tax.count": {
+"one": "{n} track.",
+"other": "{n} tracks."
+},
 "tax.empty_text": "Terms appear here as soon as a review uses them.",
 "tax.empty_title": "Nothing here yet",
 "tax.feed": "Feed",
-"tax.list_lead": "{n} terms, most used first.",
+"tax.list_lead": {
+"one": "{n} term.",
+"other": "{n} terms, most used first."
+},
 "tax.name.concept": "Concepts",
 "tax.name.genre": "Genres",
 "tax.name.instrument": "Instruments",
@@ -918,7 +1107,7 @@
 "tax.one.instrument": "Instrument",
 "tax.one.mood": "Mood",
 "tax.one.sentiment": "Feeling",
-"tax.page": "Page {i} of {n}",
+"tax.page": "Page {i} of {total}",
 "tax.play": "Play {term}",
 "tax.prev": "← Previous",
 "term.concept.alternate version": "alternate version",
@@ -1274,7 +1463,10 @@
 "track.key": "Key",
 "track.listen": "Listen",
 "track.listen_caption": "Here in the player, or in an app that keeps playing when your phone locks.",
-"track.min_read": "{n} min read",
+"track.min_read": {
+"one": "{n} min read",
+"other": "{n} min read"
+},
 "track.more_like": "More like this",
 "track.more_like_caption": "Weighted overlap of genres, feelings and moods.",
 "track.neighbourhood_chart.caption": "This track, the tracks most like it and theirs. Drag, zoom, hover; a dot opens the track.",
@@ -1282,7 +1474,10 @@
 "track.newer": "Newer",
 "track.older": "Older",
 "track.open_data": "Open data",
-"track.play_related": "Play all {n}",
+"track.play_related": {
+"one": "Play {n}",
+"other": "Play all {n}"
+},
 "track.published_in": "Published in",
 "track.publisher": "Label",
 "track.release_year": "Released",
@@ -1293,7 +1488,10 @@
 "track.video_duration": "Duration",
 "track.video_gone": "The video this review was written to has been removed from YouTube.",
 "track.video_search": "Search YouTube for {track}",
-"track.words": "{n} words",
+"track.words": {
+"one": "{n} word",
+"other": "{n} words"
+},
 "track.yearbooks": "In the yearbooks",
 "trackmenu.copied": "Link copied",
 "trackmenu.copy": "Copy link",
@@ -1305,13 +1503,19 @@
 "trackmenu.radio": "Start radio",
 "yearbook.about": "About this yearbook",
 "yearbook.artists": "Artists",
-"yearbook.count": "{n} recordings, {s} with a review",
+"yearbook.count": {
+"one": "{n} recording, {s} with a review",
+"other": "{n} recordings, {s} with a review"
+},
 "yearbook.genres": "Genres",
 "yearbook.k.items": "Recordings",
 "yearbook.k.missing": "Not reviewed yet",
 "yearbook.k.present": "Playable here",
 "yearbook.k.songs": "Reviewed songs",
-"yearbook.lead": "{n} years of the owner's most played songs on Spotify; {r} songs recur across years.",
+"yearbook.lead": {
+"one": "{n} year of the owner's most played songs on Spotify; songs that recur across years: {r}.",
+"other": "{n} years of the owner's most played songs on Spotify; songs that recur across years: {r}."
+},
 "yearbook.list": "In the playlist's order",
 "yearbook.numbers": "In numbers",
 "yearbook.one": "Top songs of {year}",

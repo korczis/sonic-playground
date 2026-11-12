@@ -38,10 +38,17 @@
 {%- endif -%}
 {% endcomponent icon %}
 
-{#- An interface string (data/i18n/): rendered in the default locale with its {placeholders}
-    filled, marked so static/js/i18n.js can switch it. Every visible interface text goes through
-    this or carries data-i18n itself; nothing is written in a template. -#}
-{% component tx(key, l, vars={}) %}{%- set_global s = l[key] -%}{%- for k, v in vars %}{%- set_global s = s | replace(from="{" ~ k ~ "}", to=v ~ "") -%}{%- endfor -%}<span data-i18n="{{ key }}"{% if vars %} data-i18n-vars="{{ vars | json_encode }}"{% endif %}>{{ s }}</span>{% endcomponent tx %}
+{#- The one formatter of interface strings (data/i18n/), the twin of Sonic.t in static/js/i18n.js:
+    a count string is a table of plural forms, chosen for vars.n by the locale's "locale.plural"
+    rule (category -> the integers it takes, every other integer "other"); then every {name} is
+    filled from vars. Bare, escaped text: for attributes and {% set %} blocks. No template formats
+    a string any other way (scripts/check-components.py). -#}
+{% component tr(key, l, vars={}) %}{%- set_global s = l[key] -%}{%- if s is map -%}{%- set_global form = "other" -%}{%- for cat, ns in l["locale.plural"] -%}{%- if vars.n in ns and cat in s -%}{%- set_global form = cat -%}{%- endif -%}{%- endfor -%}{%- set_global s = s[form] -%}{%- endif -%}{%- for k, v in vars %}{%- set_global s = s | replace(from="{" ~ k ~ "}", to=v ~ "") -%}{%- endfor -%}{{ s }}{% endcomponent tr %}
+
+{#- An interface string as visible text: `tr`, marked so static/js/i18n.js can switch it. Every
+    visible interface text goes through this or carries data-i18n itself; nothing is written in a
+    template. -#}
+{% component tx(key, l, vars={}) %}<span data-i18n="{{ key }}"{% if vars %} data-i18n-vars="{{ vars | json_encode }}"{% endif %}>{{ <tr key={key} l={l} vars={vars} /> }}</span>{% endcomponent tx %}
 
 {#- The icon inside a Pro input (search fields): decorative, behind the text. -#}
 {% component input_icon(name) %}
@@ -116,7 +123,7 @@
 {%- set label = t.artist ~ " – " ~ t.track -%}
 <li class="flex items-center gap-2 py-3 sm:py-4" data-track data-source="{{ t.source }}">
   {%- if t.youtube %}
-  <button type="button" data-play="{{ t.source }}" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-primary-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:text-primary-400 dark:hover:bg-gray-700" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}"><span data-icon-play>{{ <icon name="play" cls="h-5 w-5" /> }}</span><span data-icon-pause>{{ <icon name="pause" cls="h-5 w-5" /> }}</span></button>
+  <button type="button" data-play="{{ t.source }}" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-primary-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:text-primary-400 dark:hover:bg-gray-700" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": label} } /> }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}"><span data-icon-play>{{ <icon name="play" cls="h-5 w-5" /> }}</span><span data-icon-pause>{{ <icon name="pause" cls="h-5 w-5" /> }}</span></button>
   {%- else %}<span class="w-10 shrink-0"></span>{%- endif %}
   <a href="{{ href }}" class="flex min-w-0 flex-1 items-center gap-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-800">
     {%- if thumb %}
@@ -164,11 +171,11 @@
 {%- endif -%}
 <div class="{% if variant == "overlay" %}absolute bottom-2 left-2 right-2 flex items-center justify-between{% else %}flex shrink-0 items-center{% endif %}" data-track-actions>
   {%- if variant == "overlay" %}
-  <button type="button" data-play="{{ source }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition hover:scale-105 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" title="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-title="card.play" data-i18n-vars="{{ ivars }}"><span data-icon-play>{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span><span data-icon-pause>{{ <icon name="pause" cls="h-5 w-5" /> }}</span></button>
+  <button type="button" data-play="{{ source }}" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition hover:scale-105 hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": label} } /> }}" title="{{ <tr key="card.play" l={l} vars={ {"label": label} } /> }}" data-i18n-aria-label="card.play" data-i18n-title="card.play" data-i18n-vars="{{ ivars }}"><span data-icon-play>{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span><span data-icon-pause>{{ <icon name="pause" cls="h-5 w-5" /> }}</span></button>
   {%- endif %}
   <span class="flex items-center gap-1.5">
-    <button type="button" data-queue="{{ source }}" aria-pressed="false" class="group {{ ibtn }}" aria-label="{{ l["card.queue_label"] | replace(from="{label}", to=label) }}" title="{{ l["card.queue_add_hint"] }}" data-i18n-aria-label="card.queue_label" data-i18n-vars="{{ ivars }}"><span class="group-aria-pressed:hidden">{{ <icon name="queue-add" cls="h-4 w-4" /> }}</span><span class="hidden group-aria-pressed:inline">{{ <icon name="check" cls="h-4 w-4" /> }}</span></button>
-    <button type="button" data-track-menu="{{ source }}" aria-haspopup="menu" aria-expanded="false" aria-controls="track-menu" class="{{ ibtn }}" aria-label="{{ l["card.more"] | replace(from="{label}", to=label) }}" title="{{ l["card.more"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.more" data-i18n-title="card.more" data-i18n-vars="{{ ivars }}">{{ <icon name="dots" cls="h-4 w-4" /> }}</button>
+    <button type="button" data-queue="{{ source }}" aria-pressed="false" class="group {{ ibtn }}" aria-label="{{ <tr key="card.queue_label" l={l} vars={ {"label": label} } /> }}" title="{{ l["card.queue_add_hint"] }}" data-i18n-aria-label="card.queue_label" data-i18n-vars="{{ ivars }}"><span class="group-aria-pressed:hidden">{{ <icon name="queue-add" cls="h-4 w-4" /> }}</span><span class="hidden group-aria-pressed:inline">{{ <icon name="check" cls="h-4 w-4" /> }}</span></button>
+    <button type="button" data-track-menu="{{ source }}" aria-haspopup="menu" aria-expanded="false" aria-controls="track-menu" class="{{ ibtn }}" aria-label="{{ <tr key="card.more" l={l} vars={ {"label": label} } /> }}" title="{{ <tr key="card.more" l={l} vars={ {"label": label} } /> }}" data-i18n-aria-label="card.more" data-i18n-title="card.more" data-i18n-vars="{{ ivars }}">{{ <icon name="dots" cls="h-4 w-4" /> }}</button>
   </span>
 </div>
 {%- endif -%}
@@ -189,11 +196,22 @@
 
 {#- An image in a review (Publisher figure): `src` is relative to static/ ("images/x.jpg"), so the
     URL is built from base_url and works under the Pages sub-path and in feeds. Used from content:
-    {{ <figure src="images/x.jpg" alt="..." /> }}. -#}
+    {{ <figure src="images/x.jpg" alt="..." /> }}. The source is never served: its derived variants
+    (scripts/images.py, data/media.toml) are, as a <picture> of every format at every width with
+    the intrinsic width and height set, so the page does not shift as it loads. -#}
 {% component figure(src, alt="", caption="") %}
+{%- set media = load_data(path="static/data/images.json") -%}
+{%- set m = media.images[src] -%}
 <figure class="not-format my-6">
-  <a href="{{ get_url(path=src) }}" class="block overflow-hidden rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
-    <img src="{{ get_url(path=src) }}" alt="{{ alt }}" loading="lazy" decoding="async" class="h-auto w-full rounded-lg">
+  {%- set last_fmt = media.formats | last -%}
+  {%- set big = m.variants[last_fmt] | last -%}
+  <a href="{{ get_url(path=big[2]) }}" class="block overflow-hidden rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+    <picture>
+      {%- for fmt, rows in m.variants %}{% if fmt != last_fmt %}
+      <source type="image/{{ fmt }}" sizes="(min-width: 1024px) 720px, 100vw" srcset="{% for v in rows %}{{ get_url(path=v[2]) }} {{ v[0] }}w{% if not loop.last %}, {% endif %}{% endfor %}">
+      {%- endif %}{% endfor %}
+      <img src="{{ get_url(path=big[2]) }}" sizes="(min-width: 1024px) 720px, 100vw" srcset="{% for v in m.variants[last_fmt] %}{{ get_url(path=v[2]) }} {{ v[0] }}w{% if not loop.last %}, {% endif %}{% endfor %}" width="{{ big[0] }}" height="{{ big[1] }}" alt="{{ alt }}" loading="lazy" decoding="async" class="h-auto w-full rounded-lg">
+    </picture>
   </a>
   {%- if caption %}<figcaption class="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">{{ caption }}</figcaption>{% endif %}
 </figure>
@@ -215,8 +233,10 @@
 {% endcomponent stat_card %}
 
 {#- Pro page header: breadcrumb (a list of [label, url, key] triples; the last is the page; key is
-    its interface string or "" for content such as a term) and the title, kicker and lead. -#}
-{% component page_header(title, crumbs=[], kicker="", lead="", lead_key="", lead_vars={}) %}
+    its interface string or "" for content such as a term) and the title, kicker and lead. The
+    lead is an interface string (lead_key with lead_vars and l, formatted by `tr`) or, for
+    content, plain text (lead). -#}
+{% component page_header(title, crumbs=[], kicker="", lead="", lead_key="", lead_vars={}, l={}) %}
 <div class="border-b border-gray-200 bg-white px-4 py-5 xl:px-8 dark:border-gray-700 dark:bg-gray-800">
   <nav class="mb-3 flex" aria-label="Breadcrumb">
     <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 md:space-x-2">
@@ -234,7 +254,8 @@
   </nav>
   {%- if kicker %}<p class="mb-1 text-sm font-medium text-primary-700 dark:text-primary-400">{{ kicker }}</p>{% endif %}
   <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl dark:text-white"{% if crumbs and (crumbs | last)[2] %} data-i18n="{{ (crumbs | last)[2] }}"{% endif %}>{{ title }}</h1>
-  {%- if lead %}<p class="mt-2 max-w-3xl text-base text-gray-500 dark:text-gray-400"{% if lead_key %} data-i18n="{{ lead_key }}"{% if lead_vars %} data-i18n-vars="{{ lead_vars | json_encode }}"{% endif %}{% endif %}>{{ lead }}</p>{% endif %}
+  {%- if lead_key %}<p class="mt-2 max-w-3xl text-base text-gray-500 dark:text-gray-400" data-i18n="{{ lead_key }}"{% if lead_vars %} data-i18n-vars="{{ lead_vars | json_encode }}"{% endif %}>{{ <tr key={lead_key} l={l} vars={lead_vars} /> }}</p>
+  {%- elif lead %}<p class="mt-2 max-w-3xl text-base text-gray-500 dark:text-gray-400">{{ lead }}</p>{% endif %}
 </div>
 {% endcomponent page_header %}
 
@@ -254,8 +275,8 @@
 {% endcomponent chart_card %}
 
 {#- "Play all" (Pro button): plays every matching track of the container, in the order shown. -#}
-{% component play_all(target, label, l, lkey="", vars={}) %}
-<button type="button" data-play-all="{{ target }}" title="{{ l["action.play_all_hint"] }}" data-i18n-title="action.play_all_hint" class="inline-flex shrink-0 items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}<span{% if lkey %} data-i18n="{{ lkey }}"{% endif %}{% if vars %} data-i18n-vars="{{ vars | json_encode }}"{% endif %}>{{ label }}</span></button>
+{% component play_all(target, lkey, l, vars={}) %}
+<button type="button" data-play-all="{{ target }}" title="{{ l["action.play_all_hint"] }}" data-i18n-title="action.play_all_hint" class="inline-flex shrink-0 items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}{{ <tx key={lkey} l={l} vars={vars} /> }}</button>
 {% endcomponent play_all %}
 
 {#- Listen elsewhere: search links derived from the artist and the track for the apps that keep
@@ -291,7 +312,7 @@
 {%- set gk = "term.genre." ~ genre -%}{%- if gk in l %}{% set glabel = l[gk] %}{% else %}{% set glabel = genre %}{% endif -%}
 <header class="relative isolate overflow-hidden bg-gray-900">
   {%- if thumb %}
-  <img src="{{ thumb }}" alt="" data-thumb class="absolute inset-0 -z-10 h-full w-full scale-110 object-cover opacity-60 blur-sm" fetchpriority="high">
+  <img src="{{ thumb }}" alt="" width="480" height="360" data-thumb class="absolute inset-0 -z-10 h-full w-full scale-110 object-cover opacity-60 blur-sm" fetchpriority="high">
   {%- endif %}
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/75 to-primary-900/40" aria-hidden="true"></div>
   <div class="px-4 pb-32 pt-6 sm:pt-10 lg:pb-36 xl:px-8">
@@ -425,7 +446,7 @@
         {%- if t.youtube and shown < 9 %}
         {%- set_global shown = shown + 1 %}
         {%- set label = t.artist ~ " – " ~ t.track %}
-        <button type="button" data-track data-source="{{ t.source }}" data-play="{{ t.source }}" class="group relative aspect-square overflow-hidden rounded-xl shadow-xl shadow-black/40 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:ring-white/40 focus:outline-none focus:ring-4 focus:ring-primary-500{% if shown % 3 == 2 %} translate-y-5 hover:translate-y-4{% endif %}{% if shown > 6 %} hidden sm:block{% endif %}" aria-label="{{ l["card.play"] | replace(from="{label}", to=label) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">
+        <button type="button" data-track data-source="{{ t.source }}" data-play="{{ t.source }}" class="group relative aspect-square overflow-hidden rounded-xl shadow-xl shadow-black/40 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:ring-white/40 focus:outline-none focus:ring-4 focus:ring-primary-500{% if shown % 3 == 2 %} translate-y-5 hover:translate-y-4{% endif %}{% if shown > 6 %} hidden sm:block{% endif %}" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": label} } /> }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">
           <img src="https://i.ytimg.com/vi/{{ t.youtube }}/mqdefault.jpg" alt="" data-thumb loading="lazy" width="320" height="180" class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
           <span class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent"></span>
           <span class="absolute bottom-1.5 left-1.5 right-1.5 truncate text-left text-[11px] font-semibold text-white sm:text-xs">{{ t.artist }}</span>
@@ -438,7 +459,7 @@
       {#- The longest review: a glass card over the mosaic that plays it and links to it. -#}
       {%- if l.lang in deep.langs %}{% set deep_href = get_url(path="@/" ~ deep.source, lang=l.lang) %}{% else %}{% set deep_href = get_url(path="@/" ~ deep.source, lang=deep.langs | first) %}{% endif %}
       <div class="relative z-10 mx-auto -mt-6 flex max-w-sm items-center gap-3 rounded-2xl bg-gray-900/70 p-3 shadow-2xl shadow-black/50 ring-1 ring-white/15 backdrop-blur-md sm:-mt-10 lg:absolute lg:-bottom-10 lg:-left-10 lg:mt-0" data-track data-source="{{ deep.source }}" data-playlist>
-        <button type="button" data-play="{{ deep.source }}" class="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-500" aria-label="{{ l["card.play"] | replace(from="{label}", to=deep.artist ~ " – " ~ deep.track) }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": deep.artist ~ " – " ~ deep.track} | json_encode }}">
+        <button type="button" data-play="{{ deep.source }}" class="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-500" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": deep.artist ~ " – " ~ deep.track} } /> }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": deep.artist ~ " – " ~ deep.track} | json_encode }}">
           <img src="https://i.ytimg.com/vi/{{ deep.youtube }}/mqdefault.jpg" alt="" loading="lazy" width="320" height="180" class="h-full w-full object-cover">
           <span class="absolute inset-0 flex items-center justify-center bg-gray-950/40 text-white">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span>
         </button>
@@ -463,7 +484,7 @@
 <section aria-labelledby="featured-title" class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" data-playlist id="featured" data-featured="{{ t.source }}">
   <div class="grid lg:grid-cols-2" data-track data-source="{{ t.source }}">
     <a href="{{ href }}" class="group relative block aspect-video overflow-hidden bg-gray-900 lg:aspect-auto lg:min-h-80" tabindex="-1" aria-hidden="true">
-      {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100">
+      {%- if thumb %}<img src="{{ thumb }}" alt="" width="480" height="360" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100">
       {%- else %}<span class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-700 via-primary-900 to-pink-900 text-white/70">{{ <icon name="music" cls="h-20 w-20" /> }}</span>{% endif %}
       <span class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></span>
       <span class="absolute bottom-4 left-4 inline-flex items-center rounded-md bg-primary-700 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white">{{ <icon name="sparkles" cls="mr-1.5 h-3.5 w-3.5" /> }}{{ <tx key="home.latest" l={l} /> }}</span>
@@ -529,7 +550,7 @@
         {%- for m in learning.listen_for %}
         <li class="flex items-start gap-3">
           {%- if playable and m.at %}
-          <button type="button" data-seek="{{ source }}" data-seek-at="{{ m.at }}" class="inline-flex shrink-0 items-center gap-1 rounded-md bg-gray-100 px-2 py-1 font-mono text-xs font-semibold text-primary-700 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:bg-gray-700 dark:text-primary-300 dark:hover:bg-gray-600" aria-label="{{ l["learn.seek"] | replace(from="{at}", to=m.at) }}" data-i18n-aria-label="learn.seek" data-i18n-vars="{{ {"at": m.at} | json_encode }}">{{ <icon name="play" cls="h-3 w-3" /> }}{{ m.at }}</button>
+          <button type="button" data-seek="{{ source }}" data-seek-at="{{ m.at }}" class="inline-flex shrink-0 items-center gap-1 rounded-md bg-gray-100 px-2 py-1 font-mono text-xs font-semibold text-primary-700 hover:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:bg-gray-700 dark:text-primary-300 dark:hover:bg-gray-600" aria-label="{{ <tr key="learn.seek" l={l} vars={ {"at": m.at} } /> }}" data-i18n-aria-label="learn.seek" data-i18n-vars="{{ {"at": m.at} | json_encode }}">{{ <icon name="play" cls="h-3 w-3" /> }}{{ m.at }}</button>
           {%- elif m.at %}
           <span class="shrink-0 rounded-md bg-gray-100 px-2 py-1 font-mono text-xs font-semibold text-gray-600 dark:bg-gray-700 dark:text-gray-300">{{ m.at }}</span>
           {%- else %}

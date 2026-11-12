@@ -12,8 +12,10 @@
 {%- elif section is defined -%}{%- set_global ctx = section -%}
 {#- Every page gets a title and a description derived from what it shows (data/i18n/ seo.*). -#}
 {%- elif term is defined -%}{%- set tkey = "term." ~ taxonomy.name ~ "." ~ term.name -%}{%- if tkey in l %}{% set tlabel = l[tkey] %}{% else %}{% set tlabel = term.name %}{% endif -%}
-{%- set_global ctx = {"title": tlabel ~ " · " ~ l["tax.one." ~ taxonomy.name], "description": l["seo.term"] | replace(from="{n}", to=term.page_count ~ "") | replace(from="{term}", to=tlabel) | replace(from="{kind}", to=l["tax.one." ~ taxonomy.name] | lower), "permalink": term.permalink} -%}
-{%- elif taxonomy is defined -%}{%- set_global ctx = {"title": l["tax.name." ~ taxonomy.name], "description": l["seo.taxonomy"] | replace(from="{n}", to=terms | length ~ "") | replace(from="{kind}", to=l["tax.name." ~ taxonomy.name] | lower), "permalink": config.base_url ~ "/" ~ lp ~ taxonomy.name ~ "/"} -%}
+{%- set tdesc %}{{ <tr key="seo.term" l={l} vars={ {"n": term.page_count, "term": tlabel, "kind": l["tax.one." ~ taxonomy.name] | lower} } /> }}{% endset -%}
+{%- set_global ctx = {"title": tlabel ~ " · " ~ l["tax.one." ~ taxonomy.name], "description": tdesc, "permalink": term.permalink} -%}
+{%- elif taxonomy is defined -%}{%- set tdesc %}{{ <tr key="seo.taxonomy" l={l} vars={ {"n": terms | length, "kind": l["tax.name." ~ taxonomy.name] | lower} } /> }}{% endset -%}
+{%- set_global ctx = {"title": l["tax.name." ~ taxonomy.name], "description": tdesc, "permalink": config.base_url ~ "/" ~ lp ~ taxonomy.name ~ "/"} -%}
 {%- else -%}{%- set_global ctx = {"title": l["404.title"], "description": l["404.text"], "permalink": config.base_url ~ "/404.html"} -%}
 {%- endif -%}
 {%- if ctx.description %}{% set_global description = ctx.description %}{% else %}{% set_global description = config.description %}{% endif -%}
@@ -27,7 +29,8 @@
 {%- set_global share_title = ctx.title | default(value=config.title) -%}
 {%- if home -%}
 {%- set_global share_title = config.title ~ " · " ~ l["seo.home_title"] -%}
-{%- set_global description = l["seo.home_description"] | replace(from="{tracks}", to=catalog.stats.tracks ~ "") | replace(from="{artists}", to=catalog.stats.artists ~ "") -%}
+{%- set home_desc %}{{ <tr key="seo.home_description" l={l} vars={ {"tracks": catalog.stats.tracks, "artists": catalog.stats.artists} } /> }}{% endset -%}
+{%- set_global description = home_desc -%}
 {%- endif -%}
 {%- set_global track = false -%}
 {#- A review's facts live in its English page; its translation holds only language (ADR 0006). -#}

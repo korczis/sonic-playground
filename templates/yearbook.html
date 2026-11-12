@@ -6,13 +6,14 @@
 {%- set year = page.extra.year %}
 {%- set_global b = "" %}
 {%- for x in catalog.yearbooks %}{% if x.year == year %}{% set_global b = x %}{% endif %}{% endfor %}
+{%- set ytitle %}{{ <tr key="yearbook.one" l={l} vars={ {"year": year} } /> }}{% endset %}
 {%- set card = "rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" %}
-{{ <page_header title={l["yearbook.one"] | replace(from="{year}", to=year ~ "")} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["yearbook.title"], get_url(path="@/yearbook/_index.md", lang=lang), "yearbook.title"], [year ~ "", "", ""]]} kicker={b.name} lead={l["yearbook.count"] | replace(from="{n}", to=b.items ~ "") | replace(from="{s}", to=b.songs ~ "")} /> }}
+{{ <page_header title={ytitle} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["yearbook.title"], get_url(path="@/yearbook/_index.md", lang=lang), "yearbook.title"], [year ~ "", "", ""]]} kicker={b.name} lead_key="yearbook.count" lead_vars={ {"n": b.items, "s": b.songs} } l={l} /> }}
 <div class="grid grid-cols-1 gap-4 px-4 pt-6 xl:grid-cols-3 xl:px-8">
   <section class="{{ card }} p-4 sm:p-6 xl:col-span-2" aria-labelledby="yb-list">
     <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
       <h2 id="yb-list" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.list" l={l} /> }}</h2>
-      {%- if b.present > 0 %}{{ <play_all target="yearbook-list" l={l} label={l["yearbook.play"] | replace(from="{year}", to=year ~ "")} lkey="yearbook.play" vars={ {"year": year} } /> }}{% endif %}
+      {%- if b.present > 0 %}{{ <play_all target="yearbook-list" l={l} lkey="yearbook.play" vars={ {"year": year} } /> }}{% endif %}
     </div>
     <ol id="yearbook-list" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">
       {%- for i in b.tracks %}

@@ -1,0 +1,1259 @@
+{
+ "card_width": 480,
+ "formats": [
+  "avif",
+  "webp"
+ ],
+ "generated_by": "scripts/images.py",
+ "images": {
+  "images/car_1.png": {
+   "height": 1024,
+   "params": "b0065bae6b71",
+   "sha256": "01ced403bfbff2e8",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/car_1-480.avif",
+      17537
+     ],
+     [
+      960,
+      960,
+      "images/derived/car_1-960.avif",
+      65899
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/car_1-480.webp",
+      22686
+     ],
+     [
+      960,
+      960,
+      "images/derived/car_1-960.webp",
+      84944
+     ]
+    ]
+   },
+   "width": 1024
+  },
+  "images/colors_1.png": {
+   "height": 1024,
+   "params": "b0065bae6b71",
+   "sha256": "43a953dc76831d56",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/colors_1-480.avif",
+      24780
+     ],
+     [
+      960,
+      960,
+      "images/derived/colors_1-960.avif",
+      75780
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/colors_1-480.webp",
+      27570
+     ],
+     [
+      960,
+      960,
+      "images/derived/colors_1-960.webp",
+      77262
+     ]
+    ]
+   },
+   "width": 1024
+  },
+  "images/combo_1.png": {
+   "height": 1024,
+   "params": "b0065bae6b71",
+   "sha256": "acc68599f99a29ff",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/combo_1-480.avif",
+      16081
+     ],
+     [
+      960,
+      960,
+      "images/derived/combo_1-960.avif",
+      45424
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/combo_1-480.webp",
+      24006
+     ],
+     [
+      960,
+      960,
+      "images/derived/combo_1-960.webp",
+      65966
+     ]
+    ]
+   },
+   "width": 1024
+  },
+  "images/girl_1.png": {
+   "height": 1024,
+   "params": "b0065bae6b71",
+   "sha256": "b67b0ff3059ba869",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/girl_1-480.avif",
+      19396
+     ],
+     [
+      960,
+      960,
+      "images/derived/girl_1-960.avif",
+      62937
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/girl_1-480.webp",
+      24838
+     ],
+     [
+      960,
+      960,
+      "images/derived/girl_1-960.webp",
+      73336
+     ]
+    ]
+   },
+   "width": 1024
+  },
+  "images/man_1.png": {
+   "height": 1024,
+   "params": "b0065bae6b71",
+   "sha256": "eef8189ea7272515",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/man_1-480.avif",
+      35833
+     ],
+     [
+      960,
+      960,
+      "images/derived/man_1-960.avif",
+      127949
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/man_1-480.webp",
+      53006
+     ],
+     [
+      960,
+      960,
+      "images/derived/man_1-960.webp",
+      196046
+     ]
+    ]
+   },
+   "width": 1024
+  },
+  "images/thumbnails/2raumwohnung-somebody-lonely-and-me-nacht.jpeg": {
+   "height": 500,
+   "params": "b0065bae6b71",
+   "sha256": "6b642b5f80649e0f",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/2raumwohnung-somebody-lonely-and-me-nacht-480.avif",
+      12003
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/2raumwohnung-somebody-lonely-and-me-nacht-480.webp",
+      13358
+     ]
+    ]
+   },
+   "width": 500
+  },
+  "images/thumbnails/alice-going-down-in-a-blaze-of-glory.jpg": {
+   "height": 1000,
+   "params": "b0065bae6b71",
+   "sha256": "fac443ece4900caa",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/alice-going-down-in-a-blaze-of-glory-480.avif",
+      36995
+     ],
+     [
+      960,
+      960,
+      "images/derived/thumbnails/alice-going-down-in-a-blaze-of-glory-960.avif",
+      96392
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/alice-going-down-in-a-blaze-of-glory-480.webp",
+      54844
+     ],
+     [
+      960,
+      960,
+      "images/derived/thumbnails/alice-going-down-in-a-blaze-of-glory-960.webp",
+      146900
+     ]
+    ]
+   },
+   "width": 1000
+  },
+  "images/thumbnails/aloe-blacc-i-need-dollar.jpeg": {
+   "height": 480,
+   "params": "b0065bae6b71",
+   "sha256": "0ac3b8808e687a14",
+   "variants": {
+    "avif": [
+     [
+      480,
+      360,
+      "images/derived/thumbnails/aloe-blacc-i-need-dollar-480.avif",
+      10779
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      360,
+      "images/derived/thumbnails/aloe-blacc-i-need-dollar-480.webp",
+      12304
+     ]
+    ]
+   },
+   "width": 640
+  },
+  "images/thumbnails/anthony-rother-brainshaker.jpg": {
+   "height": 1200,
+   "params": "b0065bae6b71",
+   "sha256": "dbcdcdaabc72fa99",
+   "variants": {
+    "avif": [
+     [
+      480,
+      719,
+      "images/derived/thumbnails/anthony-rother-brainshaker-480.avif",
+      9641
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      719,
+      "images/derived/thumbnails/anthony-rother-brainshaker-480.webp",
+      9206
+     ]
+    ]
+   },
+   "width": 801
+  },
+  "images/thumbnails/anthony-rother/anthony-rother-dark.jpg": {
+   "height": 720,
+   "params": "b0065bae6b71",
+   "sha256": "0a6a5b1e8200ca15",
+   "variants": {
+    "avif": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-dark-480.avif",
+      6464
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-dark-960.avif",
+      29607
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-dark-480.webp",
+      6846
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-dark-960.webp",
+      33660
+     ]
+    ]
+   },
+   "width": 1280
+  },
+  "images/thumbnails/anthony-rother/anthony-rother-face.jpg": {
+   "height": 311,
+   "params": "b0065bae6b71",
+   "sha256": "c1ccbe9d918617f4",
+   "variants": {
+    "avif": [
+     [
+      480,
+      267,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-face-480.avif",
+      3254
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      267,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-face-480.webp",
+      3226
+     ]
+    ]
+   },
+   "width": 560
+  },
+  "images/thumbnails/anthony-rother/anthony-rother-party-1.jpg": {
+   "height": 395,
+   "params": "b0065bae6b71",
+   "sha256": "d3442dee8abcc7da",
+   "variants": {
+    "avif": [
+     [
+      480,
+      300,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-party-1-480.avif",
+      20139
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      300,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-party-1-480.webp",
+      28404
+     ]
+    ]
+   },
+   "width": 632
+  },
+  "images/thumbnails/anthony-rother/anthony-rother-production.jpg": {
+   "height": 614,
+   "params": "b0065bae6b71",
+   "sha256": "3aba9503dad5aa14",
+   "variants": {
+    "avif": [
+     [
+      480,
+      288,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-production-480.avif",
+      13537
+     ],
+     [
+      960,
+      576,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-production-960.avif",
+      31936
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      288,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-production-480.webp",
+      20104
+     ],
+     [
+      960,
+      576,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-production-960.webp",
+      43024
+     ]
+    ]
+   },
+   "width": 1024
+  },
+  "images/thumbnails/anthony-rother/anthony-rother-stairs.jpg": {
+   "height": 303,
+   "params": "b0065bae6b71",
+   "sha256": "a011cf3fbf98668e",
+   "variants": {
+    "avif": [
+     [
+      480,
+      284,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-stairs-480.avif",
+      14273
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      284,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-stairs-480.webp",
+      18746
+     ]
+    ]
+   },
+   "width": 512
+  },
+  "images/thumbnails/anthony-rother/anthony-rother-studio-2.jpg": {
+   "height": 720,
+   "params": "b0065bae6b71",
+   "sha256": "671d42eaad85ce46",
+   "variants": {
+    "avif": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-2-480.avif",
+      16581
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-2-960.avif",
+      43594
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-2-480.webp",
+      24492
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-2-960.webp",
+      63692
+     ]
+    ]
+   },
+   "width": 1280
+  },
+  "images/thumbnails/anthony-rother/anthony-rother-studio-3.jpg": {
+   "height": 945,
+   "params": "b0065bae6b71",
+   "sha256": "5e94de6d545260a1",
+   "variants": {
+    "avif": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-3-480.avif",
+      18363
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-3-960.avif",
+      54428
+     ],
+     [
+      1600,
+      900,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-3-1600.avif",
+      116536
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-3-480.webp",
+      28918
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-3-960.webp",
+      83242
+     ],
+     [
+      1600,
+      900,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-studio-3-1600.webp",
+      167018
+     ]
+    ]
+   },
+   "width": 1680
+  },
+  "images/thumbnails/anthony-rother/anthony-rother-wall.jpg": {
+   "height": 500,
+   "params": "b0065bae6b71",
+   "sha256": "277e0d0fac756d64",
+   "variants": {
+    "avif": [
+     [
+      480,
+      320,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-wall-480.avif",
+      4824
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      320,
+      "images/derived/thumbnails/anthony-rother/anthony-rother-wall-480.webp",
+      4648
+     ]
+    ]
+   },
+   "width": 750
+  },
+  "images/thumbnails/bakermat-the-river.jpeg": {
+   "height": 500,
+   "params": "b0065bae6b71",
+   "sha256": "d8acca820c844d19",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/bakermat-the-river-480.avif",
+      11613
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/bakermat-the-river-480.webp",
+      15794
+     ]
+    ]
+   },
+   "width": 500
+  },
+  "images/thumbnails/bonaparte-acid-pauli-not-today.jpg": {
+   "height": 900,
+   "params": "b0065bae6b71",
+   "sha256": "fdcf66a5e4f7f00f",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/bonaparte-acid-pauli-not-today-480.avif",
+      14582
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/bonaparte-acid-pauli-not-today-480.webp",
+      19830
+     ]
+    ]
+   },
+   "width": 900
+  },
+  "images/thumbnails/c2c-feat-pigeon-john-because-of-you.jpeg": {
+   "height": 386,
+   "params": "b0065bae6b71",
+   "sha256": "11a7eb48786d940b",
+   "variants": {
+    "avif": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/c2c-feat-pigeon-john-because-of-you-480.avif",
+      8141
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/c2c-feat-pigeon-john-because-of-you-480.webp",
+      9062
+     ]
+    ]
+   },
+   "width": 686
+  },
+  "images/thumbnails/car-idle-eyes.jpg": {
+   "height": 1900,
+   "params": "b0065bae6b71",
+   "sha256": "dd4ebce8a13f2c9d",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/car-idle-eyes-480.avif",
+      4875
+     ],
+     [
+      960,
+      960,
+      "images/derived/thumbnails/car-idle-eyes-960.avif",
+      11875
+     ],
+     [
+      1600,
+      1600,
+      "images/derived/thumbnails/car-idle-eyes-1600.avif",
+      24896
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/car-idle-eyes-480.webp",
+      4106
+     ],
+     [
+      960,
+      960,
+      "images/derived/thumbnails/car-idle-eyes-960.webp",
+      11148
+     ],
+     [
+      1600,
+      1600,
+      "images/derived/thumbnails/car-idle-eyes-1600.webp",
+      23242
+     ]
+    ]
+   },
+   "width": 1900
+  },
+  "images/thumbnails/electric-guest-this-head-hold.jpeg": {
+   "height": 316,
+   "params": "b0065bae6b71",
+   "sha256": "2f587879e183cacf",
+   "variants": {
+    "avif": [
+     [
+      316,
+      316,
+      "images/derived/thumbnails/electric-guest-this-head-hold-316.avif",
+      5317
+     ]
+    ],
+    "webp": [
+     [
+      316,
+      316,
+      "images/derived/thumbnails/electric-guest-this-head-hold-316.webp",
+      5192
+     ]
+    ]
+   },
+   "width": 316
+  },
+  "images/thumbnails/eli-faster-you-fall.jpg": {
+   "height": 640,
+   "params": "b0065bae6b71",
+   "sha256": "0ee0efb7dd57e57a",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/eli-faster-you-fall-480.avif",
+      14083
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/eli-faster-you-fall-480.webp",
+      19134
+     ]
+    ]
+   },
+   "width": 640
+  },
+  "images/thumbnails/hania-rani-full-performance-kexp-10.png": {
+   "height": 703,
+   "params": "b0065bae6b71",
+   "sha256": "283801cd2cdde9ee",
+   "variants": {
+    "avif": [
+     [
+      480,
+      268,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-10-480.avif",
+      4055
+     ],
+     [
+      960,
+      535,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-10-960.avif",
+      8457
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      268,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-10-480.webp",
+      4500
+     ],
+     [
+      960,
+      535,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-10-960.webp",
+      10080
+     ]
+    ]
+   },
+   "width": 1261
+  },
+  "images/thumbnails/hania-rani-full-performance-kexp-2.png": {
+   "height": 701,
+   "params": "b0065bae6b71",
+   "sha256": "a854eab7b22fea79",
+   "variants": {
+    "avif": [
+     [
+      480,
+      266,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-2-480.avif",
+      9210
+     ],
+     [
+      960,
+      533,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-2-960.avif",
+      19991
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      266,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-2-480.webp",
+      10188
+     ],
+     [
+      960,
+      533,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-2-960.webp",
+      21222
+     ]
+    ]
+   },
+   "width": 1263
+  },
+  "images/thumbnails/hania-rani-full-performance-kexp-8.png": {
+   "height": 698,
+   "params": "b0065bae6b71",
+   "sha256": "6f2729114ffa1863",
+   "variants": {
+    "avif": [
+     [
+      480,
+      268,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-8-480.avif",
+      6518
+     ],
+     [
+      960,
+      535,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-8-960.avif",
+      13284
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      268,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-8-480.webp",
+      6836
+     ],
+     [
+      960,
+      535,
+      "images/derived/thumbnails/hania-rani-full-performance-kexp-8-960.webp",
+      14624
+     ]
+    ]
+   },
+   "width": 1252
+  },
+  "images/thumbnails/idles-the-wheel.jpg": {
+   "height": 386,
+   "params": "b0065bae6b71",
+   "sha256": "b1c246774103dc06",
+   "variants": {
+    "avif": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/idles-the-wheel-480.avif",
+      12558
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/idles-the-wheel-480.webp",
+      16636
+     ]
+    ]
+   },
+   "width": 686
+  },
+  "images/thumbnails/indiana-solo-dancing.jpeg": {
+   "height": 640,
+   "params": "b0065bae6b71",
+   "sha256": "709563ed0a62c69c",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/indiana-solo-dancing-480.avif",
+      10353
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/indiana-solo-dancing-480.webp",
+      11246
+     ]
+    ]
+   },
+   "width": 640
+  },
+  "images/thumbnails/inigo-montoya-es.jpg": {
+   "height": 720,
+   "params": "b0065bae6b71",
+   "sha256": "2ccf7c2283020aee",
+   "variants": {
+    "avif": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/inigo-montoya-es-480.avif",
+      1656
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/inigo-montoya-es-960.avif",
+      2814
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/inigo-montoya-es-480.webp",
+      2626
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/inigo-montoya-es-960.webp",
+      4740
+     ]
+    ]
+   },
+   "width": 1280
+  },
+  "images/thumbnails/kazy-lambist-doing-yoga.jpg": {
+   "height": 386,
+   "params": "b0065bae6b71",
+   "sha256": "1c16221c83d0348b",
+   "variants": {
+    "avif": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/kazy-lambist-doing-yoga-480.avif",
+      5089
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/kazy-lambist-doing-yoga-480.webp",
+      5128
+     ]
+    ]
+   },
+   "width": 686
+  },
+  "images/thumbnails/knopfauge-saschienne.jpg": {
+   "height": 500,
+   "params": "b0065bae6b71",
+   "sha256": "42dbadd11efa6f1a",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/knopfauge-saschienne-480.avif",
+      11015
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/knopfauge-saschienne-480.webp",
+      12512
+     ]
+    ]
+   },
+   "width": 500
+  },
+  "images/thumbnails/lousiahh-like-a-vice-x.jpg": {
+   "height": 720,
+   "params": "b0065bae6b71",
+   "sha256": "d71dd9fd3d51fd74",
+   "variants": {
+    "avif": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/lousiahh-like-a-vice-x-480.avif",
+      12392
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/lousiahh-like-a-vice-x-960.avif",
+      52851
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      270,
+      "images/derived/thumbnails/lousiahh-like-a-vice-x-480.webp",
+      17870
+     ],
+     [
+      960,
+      540,
+      "images/derived/thumbnails/lousiahh-like-a-vice-x-960.webp",
+      74830
+     ]
+    ]
+   },
+   "width": 1280
+  },
+  "images/thumbnails/lulus-theme.jpeg": {
+   "height": 1200,
+   "params": "b0065bae6b71",
+   "sha256": "ca25655f9f5f7571",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/lulus-theme-480.avif",
+      7518
+     ],
+     [
+      960,
+      960,
+      "images/derived/thumbnails/lulus-theme-960.avif",
+      18102
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/lulus-theme-480.webp",
+      10056
+     ],
+     [
+      960,
+      960,
+      "images/derived/thumbnails/lulus-theme-960.webp",
+      22300
+     ]
+    ]
+   },
+   "width": 1200
+  },
+  "images/thumbnails/mickey-avalon-eli-ultra-violence.jpg": {
+   "height": 640,
+   "params": "b0065bae6b71",
+   "sha256": "b64aa1dde482b2eb",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/mickey-avalon-eli-ultra-violence-480.avif",
+      37743
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/mickey-avalon-eli-ultra-violence-480.webp",
+      60300
+     ]
+    ]
+   },
+   "width": 640
+  },
+  "images/thumbnails/moisture-headman.jpg": {
+   "height": 500,
+   "params": "b0065bae6b71",
+   "sha256": "cdfbbed59123a104",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/moisture-headman-480.avif",
+      15583
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/moisture-headman-480.webp",
+      23924
+     ]
+    ]
+   },
+   "width": 500
+  },
+  "images/thumbnails/northern-lite-trusting-blind.jpg": {
+   "height": 600,
+   "params": "b0065bae6b71",
+   "sha256": "016fc69167908ff7",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/northern-lite-trusting-blind-480.avif",
+      24118
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/northern-lite-trusting-blind-480.webp",
+      33858
+     ]
+    ]
+   },
+   "width": 600
+  },
+  "images/thumbnails/pigeon-the-bomb.jpeg": {
+   "height": 640,
+   "params": "b0065bae6b71",
+   "sha256": "d73590f34f5428ab",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/pigeon-the-bomb-480.avif",
+      26914
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/pigeon-the-bomb-480.webp",
+      41038
+     ]
+    ]
+   },
+   "width": 640
+  },
+  "images/thumbnails/pilocka-krach_la_luna-y-el-sol.jpg": {
+   "height": 1400,
+   "params": "b0065bae6b71",
+   "sha256": "806b90725e99cc97",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/pilocka-krach_la_luna-y-el-sol-480.avif",
+      17205
+     ],
+     [
+      960,
+      960,
+      "images/derived/thumbnails/pilocka-krach_la_luna-y-el-sol-960.avif",
+      52120
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/pilocka-krach_la_luna-y-el-sol-480.webp",
+      26218
+     ],
+     [
+      960,
+      960,
+      "images/derived/thumbnails/pilocka-krach_la_luna-y-el-sol-960.webp",
+      74634
+     ]
+    ]
+   },
+   "width": 1400
+  },
+  "images/thumbnails/say-yes-dog_a-friend.jpg": {
+   "height": 240,
+   "params": "b0065bae6b71",
+   "sha256": "ecbf3fa9d8321a59",
+   "variants": {
+    "avif": [
+     [
+      240,
+      240,
+      "images/derived/thumbnails/say-yes-dog_a-friend-240.avif",
+      5208
+     ]
+    ],
+    "webp": [
+     [
+      240,
+      240,
+      "images/derived/thumbnails/say-yes-dog_a-friend-240.webp",
+      6738
+     ]
+    ]
+   },
+   "width": 240
+  },
+  "images/thumbnails/sweeter-than-sweet.jpeg": {
+   "height": 360,
+   "params": "b0065bae6b71",
+   "sha256": "016e768496a922b2",
+   "variants": {
+    "avif": [
+     [
+      480,
+      360,
+      "images/derived/thumbnails/sweeter-than-sweet-480.avif",
+      7169
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      360,
+      "images/derived/thumbnails/sweeter-than-sweet-480.webp",
+      8318
+     ]
+    ]
+   },
+   "width": 480
+  },
+  "images/thumbnails/sworn-virgins-burning-off-my-clothes.jpeg": {
+   "height": 700,
+   "params": "b0065bae6b71",
+   "sha256": "ffb5457722d7137e",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/sworn-virgins-burning-off-my-clothes-480.avif",
+      21184
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/sworn-virgins-burning-off-my-clothes-480.webp",
+      29118
+     ]
+    ]
+   },
+   "width": 700
+  },
+  "images/thumbnails/waldeck-zeebee-midsummer-night-blues.jpg": {
+   "height": 500,
+   "params": "b0065bae6b71",
+   "sha256": "2b1a88c06aaa92b0",
+   "variants": {
+    "avif": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/waldeck-zeebee-midsummer-night-blues-480.avif",
+      10870
+     ]
+    ],
+    "webp": [
+     [
+      480,
+      480,
+      "images/derived/thumbnails/waldeck-zeebee-midsummer-night-blues-480.webp",
+      12050
+     ]
+    ]
+   },
+   "width": 500
+  }
+ },
+ "schema": "sonic-images/v1"
+}

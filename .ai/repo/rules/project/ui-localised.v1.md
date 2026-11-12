@@ -4,13 +4,13 @@ version: 1
 kind: rule
 title: Every page and every interface string exists in every language of the site
 description: The site is bilingual (ADR 0006). Interface strings are keys of data/i18n/<locale>.toml; every page has its translation beside it (<name>.<lang>.md), current and structurally equal to its English page; every taxonomy term in use has a label in every language; the language switch opens a page's counterpart.
-statement: Write every interface string as a key in data/i18n/<locale>.toml for every locale, render it through the tx component or a data-i18n* attribute in templates and Sonic.t() in browser code; give every page its translation in every language of config.toml (skill translate) and every term in use its label (data/i18n/terms/<lang>.toml, data/concepts/<slug>.toml); keep scripts/i18n.py --check and scripts/catalog.py --check green.
+statement: Write every interface string as a key in data/i18n/<locale>.toml for every locale, render it through the tr/tx components or a data-i18n* attribute in templates and Sonic.t() in browser code, a count as a table of the locale's plural forms; give every page its translation in every language of config.toml (skill translate) and every term in use its label (data/i18n/terms/<lang>.toml, data/concepts/<slug>.toml); keep scripts/i18n.py --check and scripts/catalog.py --check green.
 status: active
 class: blocking
 depends_on: [project.ui-components@1]
 tags: [ui, i18n, localisation, content]
 x-majordomus:
-  tests: [scripts/i18n.py, scripts/catalog.py, test/test_translation.py, test/e2e/smoke.cjs]
+  tests: [scripts/i18n.py, scripts/catalog.py, scripts/check-components.py, test/test_i18n.py, test/test_translation.py, test/e2e/smoke.cjs]
 ---
 
 # Rationale
@@ -25,6 +25,14 @@ language only cannot be linked, shared or found in the other (ADR 0006).
 
 - Strings: `data/i18n/en.toml` (default, `config.toml default_language`) and every other locale
   file, flat keys, `{name}` placeholders identical across locales.
+- Plurals (CLDR): every locale declares `"locale.plural"`, its rule for integer counts (category
+  -> the integers it takes, every other integer `other`), proven equal to `Intl.PluralRules` by
+  `test/test_i18n.py`. A string with the count `{n}` is a table of exactly the locale's forms
+  (`{ one = "{n} track", other = "{n} tracks" }`); a number with no noun to agree with is
+  `{total}`; a hedge such as "track(s)" is refused. One formatter fills a string: the `tr`
+  component (bare, for attributes and `{% set %}` blocks; `tx` wraps it in a switchable span) and
+  `Sonic.t` read the same rule; `scripts/check-components.py` refuses any template that fills
+  `{placeholders}` itself.
 - Templates: `{{ <tx key="…" l={l} vars={ {…} } /> }}` or an element with `data-i18n="key"`
   (`data-i18n-placeholder`, `-aria-label`, `-title`, `-alt` for attributes,
   `data-i18n-vars` for values). Components that show interface text take `l`.
