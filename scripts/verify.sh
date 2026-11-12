@@ -43,6 +43,10 @@ for case in test/cases/*.sh; do
 done
 
 if [ -d node_modules ]; then
+  step "types: browser code (tsc --checkJs) and Python (pyright)"
+  npx --no-install tsc -p tsconfig.json
+  npx --no-install pyright
+
   step "vendored libraries and CSS are current"
   node scripts/vendor.mjs --check
   css=$(mktemp)

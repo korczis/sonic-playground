@@ -32,8 +32,8 @@
       var b = doc.querySelector(sel);
       if (a && b) a.setAttribute('content', b.getAttribute('content'));
     });
-    var canonical = document.querySelector('link[rel="canonical"]');
-    var nextCanonical = doc.querySelector('link[rel="canonical"]');
+    var canonical = /** @type {HTMLLinkElement | null} */ (document.querySelector('link[rel="canonical"]'));
+    var nextCanonical = /** @type {HTMLLinkElement | null} */ (doc.querySelector('link[rel="canonical"]'));
     if (canonical && nextCanonical) canonical.href = nextCanonical.href;
     return true;
   }
@@ -72,7 +72,8 @@
   document.addEventListener('click', function (event) {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey
       || event.shiftKey || event.altKey) return;
-    var a = event.target.closest && event.target.closest('a[href]');
+    var origin = /** @type {Element} */ (event.target);
+    var a = /** @type {HTMLAnchorElement | null} */ (origin.closest && origin.closest('a[href]'));
     if (!a || a.target || a.hasAttribute('download') || a.getAttribute('rel') === 'external') return;
     var url = new URL(a.href, location.href);
     if (!internal(url)) return;
@@ -83,12 +84,14 @@
   });
 
   document.addEventListener('submit', function (event) {
-    var form = event.target;
+    var form = /** @type {HTMLFormElement} */ (event.target);
     if (event.defaultPrevented || (form.method || 'get').toLowerCase() !== 'get') return;
     var url = new URL(form.action || location.href, location.href);
     if (!internal(url)) return;
     event.preventDefault();
-    url.search = new URLSearchParams(new FormData(form)).toString();
+    var params = new URLSearchParams();
+    new FormData(form).forEach(function (value, name) { params.append(name, String(value)); });
+    url.search = params.toString();
     go(url, true);
   });
 

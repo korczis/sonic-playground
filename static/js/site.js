@@ -4,7 +4,6 @@
 (function () {
   'use strict';
   var root = document.documentElement;
-  var body = document.body;
 
   // --- Theme: flip the class and remember the choice. ----------------------------------------
   var toggle = document.getElementById('theme-toggle');
@@ -50,7 +49,7 @@
       if (main) main.setAttribute('inert', '');
       if (!sidebar.contains(document.activeElement)) {
         var first = sidebar.querySelector('a[href], input, button');
-        if (first) first.focus();
+        if (first) /** @type {HTMLElement} */ (first).focus();
       }
     }
     if (sidebarToggle) sidebarToggle.setAttribute('aria-expanded', closed ? 'false' : 'true');
@@ -95,11 +94,11 @@
       'dark:from-primary-900', 'dark:to-gray-800');
   }
   document.addEventListener('error', function (event) {
-    var el = event.target;
+    var el = /** @type {HTMLImageElement} */ (event.target);
     if (el && el.tagName === 'IMG' && el.hasAttribute('data-thumb')) fallback(el);
   }, true);
   function checkThumbs() {
-    document.querySelectorAll('img[data-thumb]').forEach(function (img) {
+    /** @type {NodeListOf<HTMLImageElement>} */ (document.querySelectorAll('img[data-thumb]')).forEach(function (img) {
       if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) fallback(img);
     });
   }
@@ -108,12 +107,13 @@
 
   // --- Copy link (the share row): the clipboard, then a check mark for two seconds. ---------
   document.addEventListener('click', function (event) {
-    var button = event.target.closest && event.target.closest('[data-copy-link]');
+    var origin = /** @type {Element} */ (event.target);
+    var button = origin.closest && origin.closest('[data-copy-link]');
     if (!button || !navigator.clipboard) return;
     navigator.clipboard.writeText(button.getAttribute('data-copy-link')).then(function () {
-      var idle = button.querySelector('[data-copy-idle]');
-      var done = button.querySelector('[data-copy-done]');
-      var label = button.querySelector('[data-copy-label]');
+      var idle = /** @type {HTMLElement | null} */ (button.querySelector('[data-copy-idle]'));
+      var done = /** @type {HTMLElement | null} */ (button.querySelector('[data-copy-done]'));
+      var label = /** @type {HTMLElement | null} */ (button.querySelector('[data-copy-label]'));
       if (idle) idle.hidden = true;
       if (done) done.hidden = false;
       if (label) label.textContent = window.Sonic ? window.Sonic.t('share.copied') : '';
@@ -130,7 +130,7 @@
     if (event.key !== '/' || event.metaKey || event.ctrlKey || event.altKey) return;
     var tag = (document.activeElement && document.activeElement.tagName) || '';
     if (/^(INPUT|TEXTAREA|SELECT)$/.test(tag)) return;
-    var fields = document.querySelectorAll('#explorer-q, [data-search-input]');
+    var fields = /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('#explorer-q, [data-search-input]'));
     for (var i = 0; i < fields.length; i += 1) {
       if (fields[i].offsetParent !== null) {
         event.preventDefault();
@@ -141,7 +141,7 @@
   });
 
   // --- Random track: pick from the derived catalogue, open it without stopping the player. ---
-  var random = document.querySelector('[data-random-track]');
+  var random = /** @type {HTMLButtonElement | null} */ (document.querySelector('[data-random-track]'));
   if (random && window.Sonic) {
     random.disabled = false;
     random.classList.remove('hidden');

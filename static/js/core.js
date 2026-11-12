@@ -23,7 +23,8 @@
     }
   }
 
-  var Sonic = {
+  /** @type {SonicApi} the t() and locale() members are added by i18n.js */
+  var Sonic = /** @type {any} */ ({
     base: (body.getAttribute('data-base-url') || '').replace(/\/$/, ''),
     module: function (name, mount) {
       var entry = { name: name, mount: mount };
@@ -72,6 +73,6 @@
         return loading[src];
       };
     })(),
-  };
+  });
   window.Sonic = Sonic;
 })();

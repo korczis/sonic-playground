@@ -6,11 +6,13 @@ import importlib.util
 import sys
 import tempfile
 import unittest
+from typing import Any
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 spec = importlib.util.spec_from_file_location("catalog", ROOT / "scripts" / "catalog.py")
-catalog = importlib.util.module_from_spec(spec)
+assert spec is not None and spec.loader is not None
+catalog: Any = importlib.util.module_from_spec(spec)
 sys.modules["catalog"] = catalog
 spec.loader.exec_module(catalog)
 

@@ -18,24 +18,25 @@
   var bar = document.getElementById('player');
   if (!Sonic || !bar) return;
   var KEY = 'sonic-player';
-  var $ = function (sel) { return bar.querySelector(sel); };
+  /** @param {string} sel @returns {HTMLElement} */
+  var $ = function (sel) { return /** @type {HTMLElement} */ (bar.querySelector(sel)); };
   var el = {
     video: document.getElementById('player-video'),
     panel: document.getElementById('player-panel'),
-    title: $('[data-player-title]'),
+    title: /** @type {HTMLAnchorElement} */ ($('[data-player-title]')),
     artist: $('[data-player-artist]'),
-    thumb: $('[data-player-thumb]'),
+    thumb: /** @type {HTMLImageElement} */ ($('[data-player-thumb]')),
     toggle: $('[data-player-toggle]'),
-    prev: $('[data-player-prev]'),
-    next: $('[data-player-next]'),
-    seek: $('[data-player-seek]'),
+    prev: /** @type {HTMLButtonElement} */ ($('[data-player-prev]')),
+    next: /** @type {HTMLButtonElement} */ ($('[data-player-next]')),
+    seek: /** @type {HTMLInputElement} */ ($('[data-player-seek]')),
     time: $('[data-player-time]'),
     duration: $('[data-player-duration]'),
     queueButton: $('[data-player-queue]'),
     queueCount: $('[data-player-count]'),
-    queuePanel: document.getElementById('player-queue'),
+    queuePanel: /** @type {HTMLElement} */ (document.getElementById('player-queue')),
     queueList: document.querySelector('[data-player-list]'),
-    exportLink: document.querySelector('[data-player-export]'),
+    exportLink: /** @type {HTMLAnchorElement} */ (document.querySelector('[data-player-export]')),
     close: $('[data-player-close]'),
   };
   var state = { queue: [], index: -1, time: 0 };
@@ -82,8 +83,8 @@
       .slice(state.index, state.index + 50).map(function (q) { return q.youtube; }).join(',');
     var playing = yt && ready && yt.getPlayerState && yt.getPlayerState() === 1;
     el.toggle.setAttribute('aria-label', Sonic.t(playing ? 'player.pause' : 'player.play'));
-    el.toggle.querySelector('[data-icon-play]').hidden = playing;
-    el.toggle.querySelector('[data-icon-pause]').hidden = !playing;
+    /** @type {HTMLElement} */ (el.toggle.querySelector('[data-icon-play]')).hidden = playing;
+    /** @type {HTMLElement} */ (el.toggle.querySelector('[data-icon-pause]')).hidden = !playing;
     document.documentElement.dataset.playerState = playing ? 'playing' : 'paused';
     markCards();
     paintQueue();
@@ -124,7 +125,7 @@
   // Cards of the page that hold the current track get a ring and an "playing" badge.
   function markCards() {
     var t = current();
-    document.querySelectorAll('[data-track]').forEach(function (card) {
+    /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-track]')).forEach(function (card) {
       card.toggleAttribute('data-now-playing', !!t && card.dataset.source === t.source);
     });
   }
@@ -245,8 +246,9 @@
   }
 
   document.addEventListener('click', function (event) {
-    var target = event.target.closest && event.target.closest(
-      '[data-play],[data-play-radio],[data-play-all],[data-queue],[data-play-video],[data-player-jump],[data-player-remove]');
+    var origin = /** @type {Element} */ (event.target);
+    var target = /** @type {HTMLElement | null} */ (origin.closest && origin.closest(
+      '[data-play],[data-play-radio],[data-play-all],[data-queue],[data-play-video],[data-player-jump],[data-player-remove]'));
     if (!target) return;
     event.preventDefault();
     if (target.dataset.playerJump) { jump(Number(target.dataset.playerJump)); return; }

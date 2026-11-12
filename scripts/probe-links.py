@@ -56,7 +56,7 @@ def probe(url: str) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     found = links()

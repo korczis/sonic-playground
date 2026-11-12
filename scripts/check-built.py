@@ -52,8 +52,9 @@ class Refs(HTMLParser):
         a = dict(attrs)
         if tag == "title":
             self.in_title = True
-        if tag == "meta" and (a.get("property") or a.get("name")):
-            self.meta[a.get("property") or a.get("name")] = a.get("content") or ""
+        name = a.get("property") or a.get("name")
+        if tag == "meta" and name:
+            self.meta[name] = a.get("content") or ""
         if tag == "link" and a.get("rel") == "canonical":
             self.canonical = a.get("href") or ""
         if tag == "iframe":
@@ -76,7 +77,7 @@ def page_url(base: str, rel: str) -> str:
 
 def main() -> int:
     if len(sys.argv) != 3:
-        print(__doc__.strip().splitlines()[-1], file=sys.stderr)
+        print((__doc__ or "").strip().splitlines()[-1], file=sys.stderr)
         return 2
     public = Path(sys.argv[1]).resolve()
     base = sys.argv[2].rstrip("/") + "/"
@@ -94,7 +95,7 @@ def main() -> int:
         if parser.iframes and file.suffix == ".html":
             problems.append(f"{rel}: raw <iframe> (use the video component or a link)")
         if file.suffix == ".html" and "<html" in text[:300]:
-            missing = [k for k in SOCIAL if not parser.meta.get(k, "").strip()]
+            missing = [k for k in SOCIAL if not (parser.meta.get(k) or "").strip()]
             if missing:
                 problems.append(f"{rel}: social preview incomplete, missing {', '.join(missing)}")
             if not parser.title.strip() or not parser.canonical:

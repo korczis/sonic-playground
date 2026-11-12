@@ -184,8 +184,9 @@ def corpus() -> list[dict]:
             found.append(entry)
             continue
         # A draft may be malformed in any way TOML allows; read only what has the right type.
-        extra = meta.get("extra") if isinstance(meta.get("extra"), dict) else {}
-        title = meta.get("title") if isinstance(meta.get("title"), str) else ""
+        raw_extra, raw_title = meta.get("extra"), meta.get("title")
+        extra: dict = raw_extra if isinstance(raw_extra, dict) else {}
+        title: str = raw_title if isinstance(raw_title, str) else ""
         artist, track, _ = cat.infer_artist_track(title, path.stem)
         match = cat.YOUTUBE_ID.search(str(extra.get("youtube", "")))
         entry.update(title=title,
@@ -441,7 +442,7 @@ def check(path: str) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     sub = parser.add_subparsers(dest="command", required=True)
 
     def common(p):
