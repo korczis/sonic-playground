@@ -407,7 +407,9 @@ async function shot(page, name) {
   // 2.5.8 Target Size, AA); a link inside running text is exempt, as the criterion says.
   const TARGET = 24;
   const term = catalog.facets.genre[0];
-  for (const [name, rel] of [['home', ''], ['track', sample.path], ['insights', 'insights/'], ['genre term', `genre/${term.slug}/`]]) {
+  for (const [name, rel] of [['home', ''], ['track', sample.path], ['insights', 'insights/'], ['genre term', `genre/${term.slug}/`],
+    ['genres', 'genre/'], ['archive', 'archive/'], ['concepts', 'concept/'], ['concept', `concept/${(catalog.concepts.find((c) => (c.tracks || []).length) || {}).slug}/`],
+    ['author', 'author/'], ['welcome', 'welcome/'], ['cs track', (sample.i18n && sample.i18n.cs && sample.i18n.cs.path) || 'cs/']]) {
     const { context, page } = await open(browser, at(rel), phone, name === 'track' ? 'dark' : 'light');
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${name} @390px: no horizontal overflow (${overflow}px)`);
