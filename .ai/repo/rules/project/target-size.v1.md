@@ -30,8 +30,9 @@ one base rule cannot.
 
 # Failure behaviour
 
-`test/e2e/smoke.cjs` measures every visible, non-inline control of the home, track, insights and
-genre-term pages at 390 px and fails on any smaller than 24 px either way, naming the first ones.
+`test/e2e/smoke.cjs` measures every visible, non-inline control of every page class at 390 px (home,
+track in both languages, insights, the genre list and a genre, the archive, the concept list and a
+concept, author, welcome) and fails on any smaller than 24 px either way, naming the first ones.
 A visually hidden control (the skip link, 1x1 px until focused) is not a target.
 
 # Verification
