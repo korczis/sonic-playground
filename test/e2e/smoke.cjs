@@ -554,6 +554,49 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // Forward keeps the reader's place too: home, a review read down to 900 px, Back, Forward; the
+  // review returns where it was left (only pushed navigations used to save, so it came back at 0).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    const page = await context.newPage();
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate((href) => window.SonicRouter.go(href), new URL(sample.path, base).href);
+    await page.waitForFunction((p) => location.pathname.endsWith('/' + p) && document.documentElement.dataset.navigatingState === '', sample.path, { timeout: 10000 }).catch(() => {});
+    await page.evaluate(() => window.scrollTo(0, 900));
+    await page.waitForTimeout(400);
+    const left = await page.evaluate(() => Math.round(window.scrollY));
+    await page.goBack();
+    await page.waitForFunction(() => !!document.getElementById('explorer-grid') && document.documentElement.dataset.navigatingState === '', null, { timeout: 10000 }).catch(() => {});
+    await page.goForward();
+    await page.waitForFunction((p) => location.pathname.endsWith('/' + p) && document.documentElement.dataset.navigatingState === '', sample.path, { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(400);
+    const back = await page.evaluate(() => Math.round(window.scrollY));
+    check(left >= 850 && Math.abs(back - left) <= 40, `router: Forward returns to where the page was left (${back} of ${left})`);
+    await context.close();
+  }
+
+  // Close beats a command still waiting for the play index: Play, then Close before play.json
+  // arrives; nothing plays and YouTube is never asked (the late index used to reopen the player).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    let api = 0;
+    await context.route('https://www.youtube.com/iframe_api', (r) => { api++; return r.fulfill({ status: 200, contentType: 'text/javascript', body: FAKE_IFRAME_API }); });
+    await context.route(/\/data\/play\.json/, async (route) => {
+      await new Promise((r) => setTimeout(r, 1500));
+      await route.fallback().catch(() => {});
+    });
+    const page = await context.newPage();
+    await page.goto(at(`genre/${catalog.facets.genre[0].slug}/`), { waitUntil: 'load' });
+    await page.locator('#term-grid [data-track] [data-play]').first().click();
+    await page.evaluate(() => { const b = document.querySelector('[data-player-close]'); if (b) b.click(); });
+    await page.waitForTimeout(2500);
+    const queue = await page.evaluate(() => (window.SonicPlayer ? window.SonicPlayer.state().queue.length : -1));
+    check(queue === 0 && api === 0, `player: Close before the play index arrives keeps the player closed (queue ${queue}, ${api} API requests)`);
+    await context.close();
+  }
+
   // Only the latest navigation lands: the archive is clicked first and answers slowly, a genre page
   // second and fast; the genre page stays (the slower, older page used to be committed over it).
   {

@@ -69,6 +69,9 @@
   // Every load() takes a token and Close takes a new one: a load whose API arrives after Close (or
   // after a newer load) is dropped, so a dismissed player never starts playing on its own.
   var loadToken = 0;
+  // Close also cancels a command still waiting for the play index (a Play clicked just before):
+  // each command remembers the epoch it began in, and Close starts a new one.
+  var closeEpoch = 0;
   var seeking = false;
   var undo = null;         // the queue before the last destructive action
   var queueSig = '';
@@ -602,6 +605,7 @@
     var had = state.queue.length > 0;
     if (had && !quiet) snapshot();
     loadToken += 1;
+    closeEpoch += 1;
     pendingVideo = null;
     if (yt && ready) yt.stopVideo();
     var focusWasInside = bar.contains(document.activeElement);
@@ -646,7 +650,9 @@
       playNow({ youtube: d.playVideo, track: d.playTitle || Sonic.t('player.video'), artist: '' });
       return;
     }
+    var epoch = closeEpoch;
     Sonic.playIndex().then(function (c) {
+      if (epoch !== closeEpoch) return; // closed while the index was on its way
       var bySource = {};
       c.tracks.forEach(function (t) { bySource[t.source] = t; });
       if (d.seek) { seekTrack(bySource[d.seek], d.seekAt || '0:00'); return; }

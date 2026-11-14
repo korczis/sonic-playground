@@ -72,6 +72,18 @@
   function remember() {
     history.replaceState(Object.assign({}, history.state || {}, { sonic: true, scroll: scrollPosition() }), '');
   }
+  // The position is kept in the current entry while the reader scrolls (debounced), not only when
+  // a link is followed: Back and Forward leave a page through native history, with no moment to
+  // save it, so Forward used to return to the top.
+  var saving = /** @type {ReturnType<typeof setTimeout> | undefined} */ (undefined);
+  function keep() {
+    clearTimeout(saving);
+    saving = setTimeout(remember, 150);
+  }
+  window.addEventListener('scroll', keep, { passive: true });
+  document.addEventListener('scroll', function (event) {
+    if (event.target && /** @type {Element} */ (event.target).id === 'main-content') keep();
+  }, { capture: true, passive: true });
   function restore(at) {
     var main = document.getElementById('main-content');
     if (main) main.scrollTop = at.main || 0;
