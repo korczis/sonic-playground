@@ -20,6 +20,7 @@ English at the root and in Czech under `/cs/`; the language switch opens a page'
 | a YouTube link or "Artist - Track" | `scripts/track.py new` | a new article from `archetypes/track.md` with the derived outline and `data/review.toml` guidance |
 | `data/backlog/*.toml` (the owner's playlists and yearbooks) | `scripts/catalog.py`, `scripts/backlog.py` | yearbook pages, counts and each song's years; the songs not reviewed yet, in batches for `/add-song` |
 | the owner's Spotify playlists or data export | `scripts/spotify.py` | `data/backlog/yearbook-<year>.toml` (ADR 0005) |
+| the owner's Spotify web player or data export, kept in `data/spotify/private/` | `scripts/spotify_history.py` | one record per song and playlist in `data/spotify/`, `index.json`, the yearbooks (ADR 0007) |
 | `data/concepts/<slug>.toml` | `scripts/catalog.py`, templates | the glossary, one page per concept with the tracks that demonstrate it (ADR 0004) |
 | the educational front matter of a review | templates, `scripts/catalog.py` | the learning guide (seeking the player), references, connections, credits; `data/derived/jsonld.json` (Article + LearningResource + MusicRecording) |
 | MusicBrainz | `scripts/track.py enrich` | recording, artist and release ids, ISRC, country, missing years in `[extra]` |
@@ -74,6 +75,31 @@ python3 scripts/spotify.py import <playlist> --year 2023 --write
 python3 scripts/spotify.py import-export <data export folder> --write
 python3 scripts/spotify.py coverage           # per year: present, missing, ambiguous, ...
 ```
+
+## Spotify history
+
+The owner's whole Spotify library is kept as one record per song and per playlist (ADR 0007,
+rule `project.spotify-history`, skill `import-spotify-history`). Each record is Markdown whose
+YAML front matter holds only JSON values, so people, LLMs, Majordomus and `json`/`yaml` readers
+can all parse it. The repository is public, so the split is strict:
+
+| Where | What | Committed |
+|---|---|---|
+| `data/spotify/tracks/<id>.md` | a recording: title, artists, album, Spotify ids, liked, yearbook and playlist positions, its review | yes |
+| `data/spotify/playlists/<id>.md` | a playlist: kind (liked, own, yearbook, made-for-you, followed), items in order | yes |
+| `data/spotify/library.md`, `index.json` | counts, saved albums, followed artists; per review what the history says | yes |
+| `data/spotify/private/` | raw web-player snapshots, the data export, the same records with dates added and plays | **never** (ignored, refused by the gate) |
+
+```sh
+python3 scripts/spotify_history.py ingest-snapshot ~/Downloads/<snapshot>.json   # private store
+python3 scripts/spotify_history.py import-export <unpacked export folder>          # private store
+npm run spotify:build    # every record and yearbook, then the catalogue
+npm run spotify:check    # the gate: schemas, references, nothing private, records current
+npm run spotify:stats
+```
+
+A review page reads `index.json`: a song the owner liked or keeps in playlists says so in its
+details, and its Spotify link opens the recording itself rather than a search.
 
 ## Translate a page
 

@@ -1,0 +1,165 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://korczis.github.io/sonic-playground/schema/spotify-track.v1.json",
+ "title": "One song of the owner's Spotify history (data/spotify/tracks/<id>.md front matter)",
+ "description": "A recording the owner liked or keeps in a playlist: catalogue identity and relationships only. Derived by scripts/spotify_history.py (ADR 0007); never edited by hand. Dates of adding, plays and account identifiers are private (data/spotify/private/) and refused here.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "schema",
+  "id",
+  "title",
+  "artists",
+  "status",
+  "liked",
+  "sources"
+ ],
+ "properties": {
+  "schema": {
+   "type": "string",
+   "enum": [
+    "spotify-track/v1"
+   ]
+  },
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9-]*$",
+   "description": "The file name: main artist and title, slugified; a collision gets the track id's first six characters."
+  },
+  "title": {
+   "type": "string",
+   "minLength": 1
+  },
+  "artists": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "string",
+    "minLength": 1
+   }
+  },
+  "album": {
+   "type": "string"
+  },
+  "duration": {
+   "type": "string",
+   "pattern": "^\\d+:\\d{2}(:\\d{2})?$"
+  },
+  "explicit": {
+   "type": "boolean"
+  },
+  "spotify": {
+   "type": "object",
+   "additionalProperties": false,
+   "description": "Public catalogue ids.",
+   "properties": {
+    "track": {
+     "type": "string",
+     "pattern": "^[0-9A-Za-z]{22}$"
+    },
+    "album": {
+     "type": "string",
+     "pattern": "^[0-9A-Za-z]{22}$"
+    },
+    "artists": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^[0-9A-Za-z]{22}$"
+     }
+    }
+   }
+  },
+  "review": {
+   "type": "string",
+   "pattern": "\\.md$",
+   "description": "The review this song resolves to (scripts/catalog.py resolve_item)."
+  },
+  "status": {
+   "type": "string",
+   "enum": [
+    "present",
+    "missing",
+    "ambiguous",
+    "uncertain",
+    "skipped",
+    "broken"
+   ]
+  },
+  "liked": {
+   "type": "boolean"
+  },
+  "yearbooks": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "year",
+     "n"
+    ],
+    "properties": {
+     "year": {
+      "type": "integer"
+     },
+     "n": {
+      "type": "integer"
+     }
+    }
+   }
+  },
+  "playlists": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "playlist",
+     "n"
+    ],
+    "properties": {
+     "playlist": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+     },
+     "n": {
+      "type": "integer"
+     }
+    }
+   }
+  },
+  "sources": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "string",
+    "pattern": "^(web-player:\\d{4}-\\d{2}-\\d{2}|spotify-export)$"
+   }
+  },
+  "keys": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "fold"
+   ],
+   "description": "Join keys: the catalogue identity (folded main artist|song) and, from the resolved review, its ISRC, MusicBrainz recording and Wikidata item.",
+   "properties": {
+    "fold": {
+     "type": "string",
+     "minLength": 1
+    },
+    "isrc": {
+     "type": "string",
+     "pattern": "^[A-Z]{2}[A-Z0-9]{3}\\d{7}$"
+    },
+    "musicbrainz": {
+     "type": "string"
+    },
+    "wikidata": {
+     "type": "string",
+     "pattern": "^Q\\d+$"
+    }
+   }
+  }
+ }
+}

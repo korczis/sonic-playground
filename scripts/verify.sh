@@ -2,6 +2,7 @@
 # The gate, in the order CI runs it (.github/workflows/ci.yml). It builds the site exactly once,
 # with the production base_url, and tests those bytes; CI deploys that same directory.
 #   1. scripts/catalog.py --check    content contract; static/data/catalog.json is current
+#      scripts/spotify_history.py    the Spotify records: valid, current, nothing private (ADR 0007)
 #   2. unit tests and skill cases    inference, contract, engine; add-song end to end, Pro shell
 #   3. vendored Flowbite and CSS     static/vendor/ and static/css/app.css are current
 #   4. zola build                    production base_url; internal links are errors
@@ -36,6 +37,9 @@ step() { step_done; step_name="$1"; step_start=$SECONDS; printf '\n== %s\n' "$1"
 
 step "catalogue: content contract and currency"
 python3 scripts/catalog.py --check
+
+step "spotify history: records valid, nothing private committed (ADR 0007)"
+python3 scripts/spotify_history.py --check
 
 step "interface strings: every locale complete, every used key defined, bundle current"
 python3 scripts/i18n.py --check

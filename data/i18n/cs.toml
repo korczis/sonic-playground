@@ -139,6 +139,8 @@
 "track.publisher" = "Vydavatel"
 "track.video_duration" = "Délka"
 "track.words" = { one = "{n} slovo", few = "{n} slova", other = "{n} slov" }
+"track.spotify_liked" = "Oblíbená skladba"
+"track.spotify_playlists" = { one = "V {n} mém playlistu", few = "Ve {n} mých playlistech", other = "V {n} mých playlistech" }
 "track.inferred" = "Interpret a skladba odvozeny z: {rule}."
 "track.shares" = "Společné: {terms} · shoda {pct} %"
 "track.neighbourhood_chart.title" = "Okolí"

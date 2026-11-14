@@ -1,0 +1,118 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://korczis.github.io/sonic-playground/schema/spotify-library.v1.json",
+ "title": "The owner's Spotify library (data/spotify/library.md front matter)",
+ "description": "Counts, the playlists by kind, the saved albums and the followed artists. Derived by scripts/spotify_history.py.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "schema",
+  "id",
+  "songs",
+  "liked",
+  "reviewed",
+  "sources"
+ ],
+ "properties": {
+  "schema": {
+   "type": "string",
+   "enum": [
+    "spotify-library/v1"
+   ]
+  },
+  "id": {
+   "type": "string",
+   "enum": [
+    "library"
+   ]
+  },
+  "songs": {
+   "type": "integer"
+  },
+  "liked": {
+   "type": "integer"
+  },
+  "reviewed": {
+   "type": "integer"
+  },
+  "sources": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "playlists": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "kind",
+     "ids"
+    ],
+    "properties": {
+     "kind": {
+      "type": "string",
+      "enum": [
+       "liked",
+       "own",
+       "yearbook",
+       "made-for-you",
+       "followed"
+      ]
+     },
+     "ids": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "pattern": "^[a-z0-9][a-z0-9-]*$"
+      }
+     }
+    }
+   }
+  },
+  "albums": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "id"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "artist": {
+      "type": "string"
+     },
+     "id": {
+      "type": "string",
+      "pattern": "^[0-9A-Za-z]{22}$"
+     }
+    }
+   }
+  },
+  "artists": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "id"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "id": {
+      "type": "string",
+      "pattern": "^[0-9A-Za-z]{22}$"
+     }
+    }
+   }
+  }
+ }
+}

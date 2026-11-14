@@ -309,14 +309,16 @@ src="{{ get_url(path=t.thumbnail) }}"
 {% endcomponent play_all %}
 
 {#- Listen elsewhere: search links derived from the artist and the track for the apps that keep
-    playing in the background on a phone (an embedded video cannot). Brand names, not strings. -#}
-{% component listen_links(artist, track, youtube="") %}
+    playing in the background on a phone (an embedded video cannot). Brand names, not strings.
+    spotify: the recording's Spotify track id when the owner's history knows it (data/spotify/,
+    ADR 0007), which opens the track itself instead of a search. -#}
+{% component listen_links(artist, track, youtube="", spotify="") %}
 {%- set q = (artist ~ " " ~ track) | urlencode -%}
 {%- set item = "flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" -%}
 <ul class="space-y-1">
   {%- if youtube %}<li><a class="{{ item }}" href="https://www.youtube.com/watch?v={{ youtube }}" target="_blank" rel="noopener noreferrer">YouTube<span aria-hidden="true">↗</span></a></li>{% endif %}
   <li><a class="{{ item }}" href="https://music.youtube.com/search?q={{ q }}" target="_blank" rel="noopener noreferrer">YouTube Music<span aria-hidden="true">↗</span></a></li>
-  <li><a class="{{ item }}" href="https://open.spotify.com/search/{{ q }}" target="_blank" rel="noopener noreferrer">Spotify<span aria-hidden="true">↗</span></a></li>
+  <li><a class="{{ item }}" href="{% if spotify %}https://open.spotify.com/track/{{ spotify }}{% else %}https://open.spotify.com/search/{{ q }}{% endif %}" target="_blank" rel="noopener noreferrer">Spotify<span aria-hidden="true">↗</span></a></li>
   <li><a class="{{ item }}" href="https://music.apple.com/search?term={{ q }}" target="_blank" rel="noopener noreferrer">Apple Music<span aria-hidden="true">↗</span></a></li>
   <li><a class="{{ item }}" href="https://www.discogs.com/search/?q={{ q }}&amp;type=all" target="_blank" rel="noopener noreferrer">Discogs<span aria-hidden="true">↗</span></a></li>
 </ul>

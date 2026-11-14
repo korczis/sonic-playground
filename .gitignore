@@ -14,3 +14,6 @@ __pycache__/
 # Local secrets (creator tooling, direnv).
 .env
 .envrc
+
+# The owner's private Spotify history (ADR 0007): raw snapshots, the data export, dates and plays.
+/data/spotify/private

@@ -143,6 +143,8 @@
 "track.publisher" = "Label"
 "track.video_duration" = "Duration"
 "track.words" = { one = "{n} word", other = "{n} words" }
+"track.spotify_liked" = "A liked song"
+"track.spotify_playlists" = { one = "In {n} of my playlists", other = "In {n} of my playlists" }
 "track.inferred" = "Artist and track inferred from the {rule}."
 "track.shares" = "Shares {terms} · {pct} % alike"
 "track.neighbourhood_chart.title" = "Neighbourhood"

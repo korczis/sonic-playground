@@ -10,6 +10,10 @@
 {%- set home = get_url(path="@/_index.md", lang=lang) %}
 {%- set card = "rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" %}
 {%- if track %}
+{#- What the owner's Spotify history says about this song (data/spotify/index.json, ADR 0007). -#}
+{%- set sp_index = load_data(path="data/spotify/index.json", required=false) -%}
+{%- set sp = false %}{% set sp_track = "" %}
+{%- if sp_index and track.source in sp_index.reviews %}{% set sp = sp_index.reviews[track.source] %}{% if sp.track %}{% set sp_track = sp.track %}{% endif %}{% endif %}
 {{ <track_hero t={track} home={home} l={l} lead={lead} /> }}
 {%- else %}
 {{ <page_header title={page.title} crumbs={[[l["site.home"], home, "site.home"], [page.title, "", ""]]} lead={lead} /> }}
@@ -132,7 +136,7 @@
       <h2 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="track.listen" l={l} /> }}</h2>
       <p class="mb-3 text-sm text-gray-500 dark:text-gray-400">{{ <tx key="track.listen_caption" l={l} /> }}</p>
       {%- if track.youtube %}{% set yt = track.youtube %}{% else %}{% set yt = "" %}{% endif %}
-      {{ <listen_links artist={track.artist} track={track.track} youtube={yt} /> }}
+      {{ <listen_links artist={track.artist} track={track.track} youtube={yt} spotify={sp_track} /> }}
     </div>
     <div class="{{ card }} p-4 sm:p-6">
       <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="track.details" l={l} /> }}</h2>
@@ -159,6 +163,12 @@
         {%- endif %}
         {%- if track.yearbooks | length > 0 %}
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.yearbooks" l={l} /> }}</dt><dd class="flex flex-wrap justify-end gap-1.5">{% for m in track.yearbooks %}<a href="{{ get_url(path='@/yearbook/' ~ m.year ~ '.md', lang=lang) }}#n-{{ m.n }}" class="rounded bg-primary-100 px-2 py-0.5 text-xs font-semibold text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300">{{ m.year }} · #{{ m.n }}</a>{% endfor %}</dd></div>
+        {%- endif %}
+        {%- if sp and (sp.liked or sp.playlists > 0) %}
+        <div class="flex justify-between gap-4 py-2" data-spotify-history><dt class="text-gray-500 dark:text-gray-400">Spotify</dt><dd class="flex flex-wrap justify-end gap-1.5">
+          {%- if sp.liked %}<span class="inline-flex items-center gap-1 rounded bg-green-100 px-2 py-0.5 text-xs font-semibold text-green-800 dark:bg-green-900 dark:text-green-300">{{ <icon name="heart" cls="h-3 w-3" /> }}{{ <tx key="track.spotify_liked" l={l} /> }}</span>{% endif %}
+          {%- if sp.playlists > 0 %}<span class="rounded bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-800 dark:bg-gray-700 dark:text-gray-200">{{ <tx key="track.spotify_playlists" l={l} vars={ {"n": sp.playlists} } /> }}</span>{% endif %}
+        </dd></div>
         {%- endif %}
         <div class="flex justify-between gap-4 py-2"><dt class="text-gray-500 dark:text-gray-400">{{ <tx key="track.review" l={l} /> }}</dt><dd class="text-right font-medium text-gray-900 dark:text-white">{{ <tx key="track.words" l={l} vars={ {"n": track.words} } /> }}</dd></div>
       </dl>
