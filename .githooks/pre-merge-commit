@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Git runs pre-commit only for commits it records itself; a merge that needs no conflict
+# resolution commits through this hook instead, and skipped every check until 2026-11-14 (merge
+# 486a8c2 went in with stale Spotify records). A merge commit is judged exactly like any commit.
+# Derived data follows a merge (the yearbook pages, the catalogue, and the Spotify records where
+# the private store is linked), so a refused merge is left staged with MERGE_HEAD, and deriving
+# completes it; the closing `git commit` is judged by pre-commit again.
+"$(dirname "$0")/pre-commit" "$@" && exit 0
+status=$?
+cat >&2 <<'MSG'
+pre-merge-commit: the merged tree is refused as it stands; the merge is staged, not lost.
+  If derived data is what is stale, derive and commit the merge:
+    npm run derive && git add -A data/spotify content static/data && git commit --no-edit
+  Next time: git merge --no-ff --no-commit <branch> && npm run derive && git add -A ... && git commit
+MSG
+exit $status
