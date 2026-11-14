@@ -203,6 +203,21 @@ class Crawl(unittest.TestCase):
         self.assertIn(f"schema: '{sh.SNAPSHOT_SCHEMA}'", code)
 
 
+class Derive(unittest.TestCase):
+    def test_without_private_sources_the_derive_leaves_the_records_alone(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            saved = (sh.SNAPSHOTS, sh.EXPORTS)
+            sh.SNAPSHOTS, sh.EXPORTS = Path(tmp) / "snapshots", Path(tmp) / "export"
+            try:
+                self.assertFalse(sh.has_sources(), "a checkout without the store has no source")
+                (Path(tmp) / "snapshots").mkdir()
+                (Path(tmp) / "snapshots" / "web-2026-11-14.json").write_text("{}")
+                self.assertTrue(sh.has_sources())
+            finally:
+                sh.SNAPSHOTS, sh.EXPORTS = saved
+
+
 class Gate(unittest.TestCase):
     def test_private_keys_are_found_anywhere(self):
         self.assertEqual(sh.find_private_keys({"a": [{"added": 1}], "plays": {}}), ["a[0].added", "plays"])
