@@ -8,7 +8,7 @@
   <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
     {%- for t in terms | sort(attribute="page_count") | reverse %}
     <a href="{{ t.permalink }}" class="flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <span class="truncate text-sm font-medium text-gray-900 dark:text-white">{{ t.name }}</span>
+      {% set k = "term." ~ taxonomy.name ~ "." ~ t.name %}<span class="truncate text-sm font-medium text-gray-900 dark:text-white">{% if k in l %}{{ l[k] }}{% else %}{{ t.name }}{% endif %}</span>
       <span class="ml-3 shrink-0 rounded-full bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">{{ t.page_count }}</span>
     </a>
     {%- endfor %}

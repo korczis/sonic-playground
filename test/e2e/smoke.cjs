@@ -839,6 +839,29 @@ async function shot(page, name) {
         check(await page.evaluate(() => window.__notReloaded === true) && new URL(page.url()).pathname.endsWith('/' + both.path)
           && await page.getAttribute('#topbar-search', 'placeholder') === d['nav.search_placeholder'],
           `i18n: the switch opens the ${bundle.default} counterpart without a reload, the navbar follows`);
+        // Every term the page shows is its label in the page's language: a term page's and a concept
+        // page's heading, the cards of a facet's list, the archive's genre notes.
+        const term = (catalog.lang_terms[other].genre || []).find((g) => s['term.genre.' + g] && s['term.genre.' + g] !== g);
+        if (term) {
+          await page.goto(at(`${other}/genre/${term.replace(/[^a-z0-9]+/g, '-')}/`), { waitUntil: 'load' });
+          check((await page.textContent('h1') || '').trim() === s['term.genre.' + term],
+            `i18n: the ${other} term page is headed by its label (${term} → ${s['term.genre.' + term]})`);
+        }
+        const concept = catalog.concepts.find((c) => (catalog.lang_terms[other].concept || []).includes(c.term) && s['term.concept.' + c.term] !== c.term);
+        if (concept) {
+          await page.goto(at(`${other}/concept/${concept.slug}/`), { waitUntil: 'load' });
+          check((await page.textContent('h1') || '').trim() === s['term.concept.' + concept.term],
+            `i18n: the ${other} concept page is headed by its label (${concept.term} → ${s['term.concept.' + concept.term]})`);
+        }
+        await page.goto(at(`${other}/genre/`), { waitUntil: 'load' });
+        const labels = new Set(Object.keys(s).filter((k) => k.startsWith('term.genre.')).map((k) => s[k]));
+        const cards = await page.locator('main a span.truncate').allTextContents();
+        const raw = cards.map((c) => c.trim()).filter((c) => !labels.has(c));
+        check(cards.length > 0 && raw.length === 0, `i18n: every ${other} genre card shows its label (${cards.length} cards${raw.length ? ', raw: ' + raw.slice(0, 3).join(', ') : ''})`);
+        await page.goto(at(`${other}/archive/`), { waitUntil: 'load' });
+        const notes = await page.locator('[data-queue-row], main li[data-track] span.text-xs').allTextContents();
+        const english = notes.flatMap((n) => n.split(' · ').map((x) => x.trim())).filter((x) => x && !labels.has(x));
+        check(notes.length > 0 && english.length === 0, `i18n: the ${other} archive names genres by their labels${english.length ? ' (raw: ' + english.slice(0, 3).join(', ') + ')' : ''}`);
         // Remembered: the root no longer redirects, whatever the browser prefers.
         await page.goto(at(''), { waitUntil: 'load' });
         await page.waitForFunction(() => document.documentElement.dataset.i18nState === 'ready');

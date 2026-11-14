@@ -17,7 +17,9 @@
     <ul id="list-{{ m.month }}" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">
       {%- for t in catalog.tracks %}
       {%- if t.date is starting_with(pat=m.month) %}
-      {{ <track_row t={t} l={l} note={t.facets.genre | join(sep=" · ")} /> }}
+      {%- set_global note = "" %}
+      {%- for g in t.facets.genre %}{% set k = "term.genre." ~ g %}{% if k in l %}{% set lab = l[k] %}{% else %}{% set lab = g %}{% endif %}{% if loop.first %}{% set_global note = lab %}{% else %}{% set_global note = note ~ " · " ~ lab %}{% endif %}{% endfor %}
+      {{ <track_row t={t} l={l} note={note} /> }}
       {%- endif %}
       {%- endfor %}
     </ul>
