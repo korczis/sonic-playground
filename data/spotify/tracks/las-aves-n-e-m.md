@@ -6,8 +6,9 @@ artists: ["Las Aves"]
 album: "Die In Shanghai"
 duration: "3:20"
 spotify: {"track": "1evi0s1rOH5ZFJkrCWbStm", "album": "3X0fVmPjhrn1tjsz8ALmdC", "artists": ["0bbL6moYLUu792U2ZdWgXU"]}
-keys: {"fold": "lasaves|nem"}
-status: "missing"
+keys: {"fold": "lasaves|nem", "isrc": "FR6F31600350", "musicbrainz": "7d191830-2a0a-4400-8400-d92e755d2353"}
+review: "las-aves-n-e-m.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 44}
@@ -23,4 +24,4 @@ From the album *Die In Shanghai*, 3:20.
 A liked song.
 Your Top Songs 2022: #44.
 In Best of the Best (#88); My Top Songs of All the Time (#556).
-No review yet.
+Reviewed: content/las-aves-n-e-m.md.

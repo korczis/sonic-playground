@@ -6,8 +6,9 @@ artists: ["Koudlam"]
 album: "Goodbye"
 duration: "5:10"
 spotify: {"track": "5KrTIoePTb1n18C5kndpKX", "album": "3VBc4MfyPg7jFCQtunkvwu", "artists": ["6EfilTfy7TJQI7KXitffIq"]}
-keys: {"fold": "koudlam|seeyouall"}
-status: "missing"
+keys: {"fold": "koudlam|seeyouall", "musicbrainz": "d41d627f-cfa9-4a7e-9440-c4d0e1d755bf"}
+review: "koudlam-see-you-all.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 36}
@@ -22,4 +23,4 @@ From the album *Goodbye*, 5:10.
 A liked song.
 Your Top Songs 2022: #36.
 In My Top Songs of All the Time (#548).
-No review yet.
+Reviewed: content/koudlam-see-you-all.md.

@@ -6,8 +6,9 @@ artists: ["Trauma"]
 album: "Sunny (Bonus Version)"
 duration: "5:26"
 spotify: {"track": "4g0pltSum7wtswhKjrnJM9", "album": "69q44OxPdxT4LYQuuSaGs4", "artists": ["10qR8qhrhXZIy5nx3sRSyr"]}
-keys: {"fold": "trauma|sunnyextendedmix"}
-status: "missing"
+keys: {"fold": "trauma|sunnyextendedmix", "isrc": "DEMA61301791", "musicbrainz": "d2d616b9-d269-4076-b447-4be6f734c697"}
+review: "trauma-sunny-extended-mix.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 48}
@@ -22,4 +23,4 @@ From the album *Sunny (Bonus Version)*, 5:26.
 Not among the liked songs.
 Your Top Songs 2022: #48.
 In My Top Songs of All the Time (#559).
-No review yet.
+Reviewed: content/trauma-sunny-extended-mix.md.

@@ -6,8 +6,9 @@ artists: ["Ms. Dynamite"]
 album: "A Little Deeper"
 duration: "3:37"
 spotify: {"track": "3cCjEDTIWSNr5stzGhiRWI", "album": "3R6aIbq0UGfht1x0rck5Tn", "artists": ["42qLC3FgtazA9AvaIoiP62"]}
-keys: {"fold": "msdynamite|dynamitee"}
-status: "missing"
+keys: {"fold": "msdynamite|dynamitee", "isrc": "GBAKW0201117", "musicbrainz": "0baa7ad3-1ed8-4538-941d-bb9d3e484411"}
+review: "ms-dynamite-dy-na-mi-tee.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 24}
@@ -23,4 +24,4 @@ From the album *A Little Deeper*, 3:37.
 A liked song.
 Your Top Songs 2022: #24.
 In Best of the Best (#79); My Top Songs of All the Time (#539).
-No review yet.
+Reviewed: content/ms-dynamite-dy-na-mi-tee.md.

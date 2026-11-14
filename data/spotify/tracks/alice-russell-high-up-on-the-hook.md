@@ -6,8 +6,9 @@ artists: ["Alice Russell"]
 album: "My Favourite Letters"
 duration: "6:01"
 spotify: {"track": "0CGwt6OI3w4BWezsrlKVsa", "album": "2Pf5ICGlGI2nJEA9plfIJM", "artists": ["1ga4lWS7NtKo4r9jNSWumc"]}
-keys: {"fold": "alicerussell|highuponthehook"}
-status: "missing"
+keys: {"fold": "alicerussell|highuponthehook", "isrc": "GBEUE0500248", "musicbrainz": "77966c44-4056-43d6-bd58-3a1ccba4346e"}
+review: "alice-russell-high-up-on-the-hook.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 9}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14"]
 From the album *My Favourite Letters*, 6:01.
 Not among the liked songs.
 Your Top Songs 2022: #9.
-No review yet.
+Reviewed: content/alice-russell-high-up-on-the-hook.md.

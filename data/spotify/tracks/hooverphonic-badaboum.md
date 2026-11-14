@@ -6,8 +6,9 @@ artists: ["Hooverphonic"]
 album: "In Wonderland"
 duration: "3:17"
 spotify: {"track": "71BzOLRdrwd0MGRYtJAoWX", "album": "2lBE8cmnrkKDvCOPhPVTNe", "artists": ["5EP020iZcwBqHRnJftibXX"]}
-keys: {"fold": "hooverphonic|badaboum"}
-status: "missing"
+keys: {"fold": "hooverphonic|badaboum", "isrc": "BEB471500095", "musicbrainz": "bc532d54-6aa3-49bc-9fdf-9b9620d1b8ab"}
+review: "hooverphonic-badaboum.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 22}
@@ -22,4 +23,4 @@ From the album *In Wonderland*, 3:17.
 A liked song.
 Your Top Songs 2022: #22.
 In My Top Songs of All the Time (#537).
-No review yet.
+Reviewed: content/hooverphonic-badaboum.md.

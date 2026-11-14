@@ -6,8 +6,9 @@ artists: ["Dapayk & Padberg", "Caro"]
 album: "Black Beauty"
 duration: "5:47"
 spotify: {"track": "1G0cJI9EJ20s1wZPrjuQxG", "album": "6OFooR8nGwnaeXvAjWmtYU", "artists": ["0CSUa2tToUsyQZYhQPPhyl", "3cXbxGVDr1Rqshwnwrnhef"]}
-keys: {"fold": "dapaykpadberg|island"}
-status: "missing"
+keys: {"fold": "dapaykpadberg|island", "musicbrainz": "e3da9dba-a9c9-4c90-b906-d19805ed68e4"}
+review: "dapayk-padberg-caro-island.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 33}
@@ -22,4 +23,4 @@ From the album *Black Beauty*, 5:47.
 Not among the liked songs.
 Your Top Songs 2022: #33.
 In My Top Songs of All the Time (#546).
-No review yet.
+Reviewed: content/dapayk-padberg-caro-island.md.

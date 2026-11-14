@@ -6,8 +6,9 @@ artists: ["Sofa Surfers", "Mani Obeya"]
 album: "Superluminal"
 duration: "4:46"
 spotify: {"track": "7ItezsVpDJjSP2Y5mpnOnH", "album": "3l50IaIO1hQnl4MiTHTJsn", "artists": ["0pNP0TPeyffi8QbE8U5D1X", "3Ex5qqvWXjVZkWuTkYkKc6"]}
-keys: {"fold": "sofasurfers|brokentogether"}
-status: "missing"
+keys: {"fold": "sofasurfers|brokentogether", "musicbrainz": "35fbf159-ed18-417c-b329-0d0a1653df6b"}
+review: "sofa-surfers-mani-obeya-broken-together.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 15}
@@ -22,4 +23,4 @@ From the album *Superluminal*, 4:46.
 Not among the liked songs.
 Your Top Songs 2022: #15.
 In My Top Songs of All the Time (#532).
-No review yet.
+Reviewed: content/sofa-surfers-mani-obeya-broken-together.md.

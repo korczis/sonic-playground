@@ -6,8 +6,9 @@ artists: ["Poni Hoax"]
 album: "Tropical Suite"
 duration: "4:16"
 spotify: {"track": "4gURwGc6oLBW4NqLDHCAnr", "album": "6C67gFfjaikafMKHgHHit3", "artists": ["7Dl9ZgaSmEt7a8aWMlAHXD"]}
-keys: {"fold": "ponihoax|thewild"}
-status: "missing"
+keys: {"fold": "ponihoax|thewild", "isrc": "FR2FD1600042", "musicbrainz": "469e700f-5661-40f9-adbc-e2986483de72"}
+review: "poni-hoax-the-wild.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 43}
@@ -22,4 +23,4 @@ From the album *Tropical Suite*, 4:16.
 A liked song.
 Your Top Songs 2022: #43.
 In My Top Songs of All the Time (#555).
-No review yet.
+Reviewed: content/poni-hoax-the-wild.md.

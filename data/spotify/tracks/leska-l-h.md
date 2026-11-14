@@ -6,8 +6,9 @@ artists: ["Leska"]
 album: "L&H"
 duration: "3:16"
 spotify: {"track": "5OPDeIRcidVtxghYE86W5w", "album": "29uh4WXXPYZAaY0XIVPj25", "artists": ["0kRb2OhvXmS14Bop8FzFoS"]}
-keys: {"fold": "leska|lh"}
-status: "missing"
+keys: {"fold": "leska|lh", "musicbrainz": "b148babc-c694-4ae2-ad9e-bc6a4d0a88db"}
+review: "leska-l-h.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 50}
@@ -22,4 +23,4 @@ From the album *L&H*, 3:16.
 A liked song.
 Your Top Songs 2022: #50.
 In My Top Songs of All the Time (#561).
-No review yet.
+Reviewed: content/leska-l-h.md.

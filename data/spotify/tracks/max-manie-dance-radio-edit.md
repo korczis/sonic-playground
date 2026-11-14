@@ -6,8 +6,9 @@ artists: ["Max Manie"]
 album: "Dance (Radio Edit)"
 duration: "3:38"
 spotify: {"track": "1rSvlJ7qFB4MBMSdMFvTDu", "album": "6hrRJcd5uC7DHX4L8ThfFn", "artists": ["0esUZwk3FcZiAH1fXa66dU"]}
-keys: {"fold": "maxmanie|dance"}
-status: "missing"
+keys: {"fold": "maxmanie|dance", "isrc": "FR9W11603773"}
+review: "max-manie-dance-radio-edit.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 17}
@@ -22,4 +23,4 @@ From the album *Dance (Radio Edit)*, 3:38.
 A liked song.
 Your Top Songs 2022: #17.
 In My Top Songs of All the Time (#533).
-No review yet.
+Reviewed: content/max-manie-dance-radio-edit.md.

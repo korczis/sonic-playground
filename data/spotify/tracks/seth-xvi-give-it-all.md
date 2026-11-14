@@ -6,8 +6,9 @@ artists: ["Seth XVI"]
 album: "Give It All"
 duration: "4:11"
 spotify: {"track": "0ym3V9GpVPe5UrTLWEgqta", "album": "7At2Cpbb3iZ8reHMpoMQKm", "artists": ["173wMRubTW7g208ZRpzFpu"]}
-keys: {"fold": "sethxvi|giveitall"}
-status: "missing"
+keys: {"fold": "sethxvi|giveitall", "isrc": "FR10S1771644", "musicbrainz": "c66616e0-ea04-4b29-859b-e0e3e6e948e0"}
+review: "seth-xvi-give-it-all.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 8}
@@ -22,4 +23,4 @@ From the album *Give It All*, 4:11.
 A liked song.
 Your Top Songs 2022: #8.
 In My Top Songs of All the Time (#526).
-No review yet.
+Reviewed: content/seth-xvi-give-it-all.md.

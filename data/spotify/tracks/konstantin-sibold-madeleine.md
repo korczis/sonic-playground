@@ -6,8 +6,9 @@ artists: ["Konstantin Sibold"]
 album: "Madeleine"
 duration: "9:01"
 spotify: {"track": "53ibRjjP5fWlD4yPp1OmKm", "album": "3ONjtYzmF10Upmn4RshaG3", "artists": ["5Ls75umF4lBOQVp3pJAlbW"]}
-keys: {"fold": "konstantinsibold|madeleine"}
-status: "missing"
+keys: {"fold": "konstantinsibold|madeleine", "musicbrainz": "3df464c0-be7e-4f2a-9e0a-81e56002b39f"}
+review: "konstantin-sibold-madeleine.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 61}
@@ -22,4 +23,4 @@ From the album *Madeleine*, 9:01.
 Not among the liked songs.
 Your Top Songs 2022: #61.
 In My Top Songs of All the Time (#569).
-No review yet.
+Reviewed: content/konstantin-sibold-madeleine.md.
