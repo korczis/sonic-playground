@@ -1,0 +1,19 @@
+---
+schema: "spotify-track/v1"
+id: "ayawake-scarecrow"
+title: "Scarecrow"
+artists: ["AYAWAKE", "Be Svendsen"]
+album: "Scarecrow"
+duration: "3:26"
+spotify: {"track": "6ZMvunZhqQbcZTUxrHU9GU", "album": "7wyEr1NLRsdBwoqhziHaPH", "artists": ["6q3W9kTktti93nDItAx8XH", "4BaLB5aiExO29BEGVUisru"]}
+keys: {"fold": "ayawake|scarecrow"}
+status: "missing"
+liked: true
+sources: ["web-player:2026-11-14"]
+---
+
+# Scarecrow · AYAWAKE, Be Svendsen
+
+From the album *Scarecrow*, 3:26.
+A liked song.
+No review yet.

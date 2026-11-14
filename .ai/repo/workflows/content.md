@@ -9,6 +9,7 @@ Claude Code).
 |---|---|
 | a new song (link or name) | follow `majordomus://skill/add-song` |
 | a year's Spotify Top Songs (yearbook) | follow `majordomus://skill/import-yearbook` |
+| the owner's Spotify history (library, playlists, yearbooks, the data export) | follow `majordomus://skill/import-spotify-history`; `npm run spotify:check` |
 | every page in Czech too (ADR 0006): a new page, or one the contract reports missing or stale | follow `majordomus://skill/translate`; `python3 scripts/translate.py status` lists what is left |
 | the identifiers MusicBrainz knows | `python3 scripts/track.py enrich content/<file>.md --write` (or `--all`) |
 | what the yearbooks and playlists still miss | `python3 scripts/backlog.py`; `python3 scripts/spotify.py coverage` |

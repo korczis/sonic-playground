@@ -742,6 +742,12 @@
 "track.release_year": "Vydáno",
 "track.review": "Recenze",
 "track.shares": "Společné: {terms} · shoda {pct} %",
+"track.spotify_liked": "Oblíbená skladba",
+"track.spotify_playlists": {
+"few": "Ve {n} mých playlistech",
+"one": "V {n} mém playlistu",
+"other": "V {n} mých playlistech"
+},
 "track.time_signature": "Takt",
 "track.track": "Skladba",
 "track.video_duration": "Délka",
@@ -1503,6 +1509,11 @@
 "track.release_year": "Released",
 "track.review": "Review",
 "track.shares": "Shares {terms} · {pct} % alike",
+"track.spotify_liked": "A liked song",
+"track.spotify_playlists": {
+"one": "In {n} of my playlists",
+"other": "In {n} of my playlists"
+},
 "track.time_signature": "Time signature",
 "track.track": "Track",
 "track.video_duration": "Duration",

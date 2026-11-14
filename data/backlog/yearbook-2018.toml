@@ -1,0 +1,808 @@
+# The owner's Spotify yearbook 2018 ("Your Top Songs 2018"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2018
+name = "Your Top Songs 2018"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2018\", read off the rendered page on 2026-11-14 (scripts/spotify_history.py)"
+retrieved = "2026-11-14"
+expected = 100
+
+[[track]]
+n = 1
+title = "Smokin' Joe"
+artists = ["Bobby Nourmand"]
+album = "Smokin' Joe"
+duration = "2:53"
+spotify = "0RbA7r0dUAS48Z0E2Twh8s"
+
+[[track]]
+n = 2
+title = "Oddity feat. Olivera Stanimirov (Album Version)"
+artists = ["Zwicker"]
+album = "Songs of Lucid Dreamers"
+duration = "4:21"
+spotify = "5N1GHKkB7pSLlROojX7bi7"
+
+[[track]]
+n = 3
+title = "Pinky's Dream - Trentemøller Remix Instrumental"
+artists = ["David Lynch", "Karen O"]
+album = "Pinky's Dream (The Remixes)"
+duration = "5:54"
+spotify = "03PR32VfsF2afVgVGT6KEk"
+
+[[track]]
+n = 4
+title = "Gone Too Long - Original Mix"
+artists = ["Him_Self_Her", "Kieran Fowkes"]
+album = "Gone Too Long"
+duration = "7:19"
+spotify = "3h5gVwU9yazZE7yNlGT8Di"
+
+[[track]]
+n = 5
+title = "Made of Gold (feat. SKIP&DIE & Fellow)"
+artists = ["Branko", "SKIP&DIE", "Fellow", "SKIP", "DIE"]
+album = "ATLAS"
+duration = "4:02"
+spotify = "5P1AcGHeJh0r7R9Fj34b2E"
+
+[[track]]
+n = 6
+title = "Time For Us"
+artists = ["Nicolas Jaar"]
+album = "Time For Us"
+duration = "7:40"
+spotify = "493Cq02N6XzraXjYfnuqib"
+
+[[track]]
+n = 7
+title = "How We Do"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:54"
+spotify = "4flxgPC0426CEeSrzQIic0"
+
+[[track]]
+n = 8
+title = "Blue Hotel"
+artists = ["trentemøller"]
+album = "Late Night Tales: Trentemøller"
+duration = "4:30"
+spotify = "16AHLGK4nDgWJd2QglQpZW"
+
+[[track]]
+n = 9
+title = "On The Streets - Kollektiv Turmstrasse Let Freedom"
+artists = ["Federleicht", "Kollektiv Turmstrasse"]
+album = "On The Streets - The Remixes X-Tra 10"
+duration = "8:15"
+spotify = "2LPeSaWnm1GccUli5vBD9T"
+
+[[track]]
+n = 10
+title = "Tainted Jazz"
+artists = ["Poncho Warwick"]
+album = "Tainted Jazz"
+duration = "6:59"
+spotify = "62XPwRpkLoBCDwisySiCPY"
+
+[[track]]
+n = 11
+title = "Walking Boots"
+artists = ["ME & her", "David Keno"]
+album = "Alpine Grooves, Vol. 7 (Kristallhütte)"
+duration = "6:56"
+spotify = "5ZcKEGbknvynUW5S5nvyMa"
+
+[[track]]
+n = 12
+title = "Call Me"
+artists = ["Blondie"]
+album = "Best Of Blondie"
+duration = "3:32"
+spotify = "0vLwL4xuJ3s7SeaCdvMqkY"
+
+[[track]]
+n = 13
+title = "Brutal Hearts (feat. Cœur De Pirate)"
+artists = ["Bedouin Soundclash"]
+album = "Light the Horizon"
+duration = "3:10"
+spotify = "28hOzwuwDDSdiTm9rZPAUx"
+
+[[track]]
+n = 14
+title = "Gold"
+artists = ["Chet Faker"]
+album = "Built on Glass"
+duration = "4:45"
+spotify = "1g7zNtcGrWt8gcBRwDQEkf"
+
+[[track]]
+n = 15
+title = "Summer Days"
+artists = ["Radio Citizen", "Bajka"]
+album = "Hope and Despair"
+duration = "4:36"
+spotify = "4pGe711Sg4M7jcvPK94hDn"
+
+[[track]]
+n = 16
+title = "Blow"
+artists = ["Clyde P"]
+album = "Sleep And Fuck EP"
+duration = "6:41"
+spotify = "4UuXPsNZNekGgjnZQEVTHC"
+
+[[track]]
+n = 17
+title = "Taboo"
+artists = ["Gater", "Chesty Morganstein"]
+album = "Taboo"
+duration = "4:19"
+spotify = "5CVOeNkatHhW7Uc7M7zffK"
+
+[[track]]
+n = 18
+title = "See You Next Tuesday - Danny Tenaglia's Return to Twilo Mix"
+artists = ["Nicole Moudaber", "Carl Cox", "Danny Tenaglia"]
+album = "See You Next Tuesday"
+duration = "9:33"
+spotify = "0R2DCvon6x22gLNGcbqDde"
+
+[[track]]
+n = 19
+title = "Can't Breathe"
+artists = ["Pischinger & Dermota", "Anne Eck"]
+album = "Reisedrang"
+duration = "6:05"
+spotify = "35zgD2iHJilMacdmbKkmCV"
+
+[[track]]
+n = 20
+title = "Island - Nôze Remix"
+artists = ["Dapayk & Padberg", "Caro", "Nôze"]
+album = "Black Beauty Remixes, Pt. 2"
+duration = "6:21"
+spotify = "1qsY9bxSfxbJ7bnHRbe0JR"
+
+[[track]]
+n = 21
+title = "Savage"
+artists = ["Ben Khan"]
+album = "1992 EP"
+duration = "2:34"
+spotify = "08ahLC8obCMMroTU3DH8wW"
+
+[[track]]
+n = 22
+title = "My Baby Boy"
+artists = ["theAngelcy"]
+album = "Exit Inside (Deluxe Edition)"
+duration = "3:11"
+spotify = "4WyNz1KalCOsOmhcwUsUmY"
+
+[[track]]
+n = 23
+title = "Why Don't You Do Right - Tez Cadey Remix"
+artists = ["Tez Cadey feat. Nina K Lucas & Cab Canavaral", "Nina K Lucas", "Cab Canavaral"]
+album = "Cab Canavaral Remixed"
+duration = "3:14"
+spotify = "0DkbV3l5GsPJZ9dBGeqkrn"
+
+[[track]]
+n = 24
+title = "Seelenluft - Manila (Radio Edit)"
+artists = ["Seelenluft"]
+album = "Manila"
+duration = "3:39"
+spotify = "3IA673ONFVihQa0c8h94BI"
+
+[[track]]
+n = 25
+title = "Sky feat. Luisa Gerstein"
+artists = ["Black Rose", "Luisa Gerstein"]
+album = "Sky feat. Luisa Gerstein"
+duration = "6:06"
+spotify = "1HQxA4w8caeU6TxEqYM3tN"
+
+[[track]]
+n = 26
+title = "Caminho De Dreyfus"
+artists = ["Red Axes"]
+album = "Caminho De Dreyfus"
+duration = "5:16"
+spotify = "1N3j0EkMaQg5AEh8txQUtn"
+
+[[track]]
+n = 27
+title = "All in You"
+artists = ["Synapson", "Anna Kova"]
+album = "Convergence (Deluxe Edition)"
+duration = "4:17"
+spotify = "7iLZPvDZMKCG7pXFaih6vL"
+
+[[track]]
+n = 28
+title = "Fading Nights"
+artists = ["Parra for Cuva", "Anna Naklab"]
+album = "Fading Nights"
+duration = "7:05"
+spotify = "4bhoQCNYx5TjINvtSMiaAb"
+
+[[track]]
+n = 29
+title = "Paradise Circus - Gui Boratto Remix"
+artists = ["Massive Attack", "Gui Boratto"]
+album = "Madrid Fashion Week"
+duration = "7:41"
+spotify = "5Tyi10wvVbd3pu65GCHD8y"
+
+[[track]]
+n = 30
+title = "Set Free - Original Mix"
+artists = ["Tube & Berger", "Ghost Loft"]
+album = "Deep City Grooves Ibiza, Vol. 17"
+duration = "6:53"
+spotify = "0y430XtS7OmdYtKNGVk9rU"
+
+[[track]]
+n = 31
+title = "Grass Is Greener"
+artists = ["Phonique", "Antonia Vai"]
+album = "Green Supreme"
+duration = "7:28"
+spotify = "7t1NrQeTNSz1uoDqO2sg4o"
+
+[[track]]
+n = 32
+title = "Hypnotized"
+artists = ["JANIS"]
+album = "Hypnotized"
+duration = "4:08"
+spotify = "3fThUiifN17brFqJ6LIjyz"
+
+[[track]]
+n = 33
+title = "Song For You"
+artists = ["Marbert Rocel"]
+album = "Small Hours"
+duration = "6:23"
+spotify = "0lI4NU85a2bxlPVfzjOuTc"
+
+[[track]]
+n = 34
+title = "King Of My Castle - Roy Malone's King Mix"
+artists = ["Wamdue Project", "Roy Malone"]
+album = "King Of My Castle (Mixes)"
+duration = "4:58"
+spotify = "4XZwpHpscrMkbpQPqjnwRJ"
+
+[[track]]
+n = 35
+title = "Grounding"
+artists = ["Langoth", "Da Fonz"]
+album = "Grounding"
+duration = "5:27"
+spotify = "0q3jcaL29mWYfNEYVQlkEO"
+
+[[track]]
+n = 36
+title = "We Are Child Of Love"
+artists = ["Mario Basanov"]
+album = "We Are Child Of Love"
+duration = "5:45"
+spotify = "1DmNGUxc33ZXz0O23O7XoZ"
+
+[[track]]
+n = 37
+title = "Asunder - Gabe Remix"
+artists = ["Stee Downes", "Gabe"]
+album = "Secret Place EP"
+duration = "7:50"
+spotify = "0d8gPLIq4YGQdt9c0Q3rhc"
+
+[[track]]
+n = 38
+title = "Come"
+artists = ["Jain"]
+album = "Zanaka"
+duration = "2:42"
+spotify = "1YrC8s6yZWw23QxW6rfM9f"
+
+[[track]]
+n = 39
+title = "Small Flowered"
+artists = ["Parra for Cuva", "Anna Naklab"]
+album = "Fading Nights"
+duration = "6:38"
+spotify = "0dcZz4jNKp28SkVrQwyZfg"
+
+[[track]]
+n = 40
+title = "Free - Original Mix"
+artists = ["Kilian & Finn"]
+album = "Free"
+duration = "4:52"
+spotify = "5hguffJoomBmZ4pTeAS6eP"
+
+[[track]]
+n = 41
+title = "Lostfound"
+artists = ["Francis Harris"]
+album = "Leland"
+duration = "7:34"
+spotify = "6FWgQsraY3pX161zYwsoyg"
+
+[[track]]
+n = 42
+title = "K.T.B."
+artists = ["Robag Wruhme"]
+album = "Wuzzelbud KK"
+duration = "3:40"
+spotify = "7MT7E1leNGRDp7PofCDonf"
+
+[[track]]
+n = 43
+title = "Wanderland - Radio Edit"
+artists = ["Hermanos Inglesos", "meme"]
+album = "Wanderland"
+duration = "3:34"
+spotify = "3WpoNywb1eZ9EWZ1MYVtca"
+
+[[track]]
+n = 44
+title = "I'm Done"
+artists = ["Artenvielfalt", "The Project", "Miss NatNat"]
+album = "I'm Done"
+duration = "3:39"
+spotify = "6t7l5pp8OWQESVp8mv1hFO"
+
+[[track]]
+n = 45
+title = "Picking Words"
+artists = ["Stella"]
+album = "Σtella"
+duration = "3:57"
+spotify = "3z9CqzfJqORcR2qLgef3Nn"
+
+[[track]]
+n = 46
+title = "Same To You - Bakermat Remix"
+artists = ["Melody Gardot", "Bakermat"]
+album = "Same To You (Bakermat Remix)"
+duration = "4:01"
+spotify = "6ZWam8Kk0MILM7dG5ebeHt"
+
+[[track]]
+n = 47
+title = "Party Girl"
+artists = ["Michelle Gurevich"]
+album = "Party Girl"
+duration = "4:26"
+spotify = "4otkGEyV72X9B5NLK6Dfyk"
+
+[[track]]
+n = 48
+title = "Mind Doodles"
+artists = ["Alec Troniq", "GABRIEL VITEL"]
+album = "Mind Doodles"
+duration = "6:41"
+spotify = "1DiCxg8SOTYBBTFVc7ddEw"
+
+[[track]]
+n = 49
+title = "Dragon Fly feat. Billy Oden (Album Version)"
+artists = ["Zwicker"]
+album = "Songs of Lucid Dreamers"
+duration = "5:12"
+spotify = "61g4d5MtGKssH3biH9JOeH"
+
+[[track]]
+n = 50
+title = "Swept Away"
+artists = ["Parra for Cuva", "Anna Naklab"]
+album = "Fading Nights"
+duration = "5:46"
+spotify = "7xDQyTnrkVycrr64PtDY1A"
+
+[[track]]
+n = 51
+title = "Meine"
+artists = ["Daso"]
+album = "Meine Idee"
+duration = "7:55"
+spotify = "2KUcdsb8TLCtj4RtULT4Sw"
+
+[[track]]
+n = 52
+title = "Drop the Game"
+artists = ["Flume", "Chet Faker"]
+album = "Lockjaw"
+duration = "3:41"
+spotify = "4KtrE35pTuqwNc22QP58RT"
+
+[[track]]
+n = 53
+title = "Underwater Love"
+artists = ["Smoke City"]
+album = "Flying Away"
+duration = "6:46"
+spotify = "1vahbgf2hkAjBvYRtIo09F"
+
+[[track]]
+n = 54
+title = "One Last Dance - Original Mix"
+artists = ["Soeren Lindberg", "Janine Delon"]
+album = "One Last Dance"
+duration = "4:48"
+spotify = "4O3aqovXIOeZ5oiZvBZ5zr"
+
+[[track]]
+n = 55
+title = "Blinded By The Sun - Original Mix"
+artists = ["Phil Kieran"]
+album = "Blinded by the Sun"
+duration = "3:52"
+spotify = "4mVfKmUGR50s3gWlfsAepS"
+
+[[track]]
+n = 56
+title = "Changes - Pretty Pink Remix"
+artists = ["Faul & Wad", "PNAU"]
+album = "Changes"
+duration = "5:16"
+spotify = "4XD0NWZcMne2ulVIpxhBcH"
+
+[[track]]
+n = 57
+title = "Six o'clock - Original Mix"
+artists = ["Paji"]
+album = "Six o'clock E.P. (Incl. Remix by Basti Grub)"
+duration = "6:23"
+spotify = "35ZlQDq1yR3amRoDg8Yptq"
+
+[[track]]
+n = 58
+title = "No Mic Stand"
+artists = ["Thylacine", "Camille Després"]
+album = "Intuitive - EP"
+duration = "3:44"
+spotify = "7zjlNRo3a3z2qcvFWuYJHa"
+
+[[track]]
+n = 59
+title = "Take It Easy My Brother Charles"
+artists = ["Jorge Ben Jor"]
+album = "Jorge Ben"
+duration = "2:35"
+spotify = "399Hm1oqfzzQaZRu3CtVMb"
+
+[[track]]
+n = 60
+title = "Who Loves the Sun - Acid Pauli's Let It Be Naked Remix"
+artists = ["Nu", "Jo.Ke", "Acid Pauli"]
+album = "We Love The Sun"
+duration = "6:11"
+spotify = "2c4Omj9rAubA5bxnArJPPs"
+
+[[track]]
+n = 61
+title = "The Race - Radio Edit"
+artists = ["Stereofysh"]
+album = "Igor"
+duration = "4:02"
+spotify = "70YPpGSz7Tuoal0uuMA7kY"
+
+[[track]]
+n = 62
+title = "Oddity feat. Olivera Stanimirov (Extended Version)"
+artists = ["Zwicker"]
+album = "Compost Black Label #46"
+duration = "4:40"
+spotify = "1MQPSK8F294CLGnIrac9m2"
+
+[[track]]
+n = 63
+title = "Perlentaucher - Melokind Remix"
+artists = ["KlangTherapeuten", "Melokind"]
+album = "Perlentaucher"
+duration = "7:33"
+spotify = "4ag3ZlCnlAO5gkJNq9kraF"
+
+[[track]]
+n = 64
+title = "A Homeless Ghost"
+artists = ["Console"]
+album = "Herself"
+duration = "5:41"
+spotify = "4S5ciB6ffaezvWKDHP57x5"
+
+[[track]]
+n = 65
+title = "Sommerliebe"
+artists = ["Solee"]
+album = "The Seven Year Itch"
+duration = "8:27"
+spotify = "4isxMquXplgA0jimVb0OHB"
+
+[[track]]
+n = 66
+title = "Herr B"
+artists = ["Federleicht"]
+album = "On The Streets - The Remixes X-Tra 10"
+duration = "8:12"
+spotify = "5tQ8N2euGvATxEcHzYKmpw"
+
+[[track]]
+n = 67
+title = "Days Without You (Crussen Remix)"
+artists = ["Satori", "Miou Amadee", "Crussen"]
+album = "Alpine Grooves Easy Beats 1 (Kristallhütte) [incl. DJ Mix]"
+duration = "10:43"
+spotify = "5gYwFcI49P0ijDDvmpgWS9"
+
+[[track]]
+n = 68
+title = "Kill Of The Night"
+artists = ["Gin Wigmore"]
+album = "Gravel & Wine"
+duration = "3:25"
+spotify = "2m17BTWlZq0wtS9cpJsCfM"
+
+[[track]]
+n = 69
+title = "Music In You (feat. Lorenz Rhode)"
+artists = ["Purple Disco Machine", "Lorenz Rhode"]
+album = "Soulmatic"
+duration = "4:31"
+spotify = "6vqdNL9wEue7DD9pLmeFno"
+
+[[track]]
+n = 70
+title = "Kafi Lied"
+artists = ["Kalabrese", "Sarah Palin"]
+album = "Hello Asshole / Kafi Lied"
+duration = "7:44"
+spotify = "1IrWZesp3Yjc6buTJ5R0u3"
+
+[[track]]
+n = 71
+title = "Blood In The Cut - Aire Atlantica Remix"
+artists = ["K.Flay", "Aire Atlantica"]
+album = "Blood In The Cut (Remixed)"
+duration = "3:19"
+spotify = "4AHrsrtg8YWUGZfXve0Gyl"
+
+[[track]]
+n = 72
+title = "Opportunity - Original Mix"
+artists = ["Brasstronaut"]
+album = "Opportunity"
+duration = "5:35"
+spotify = "2z38occQCtnSiGovrCFbAW"
+
+[[track]]
+n = 73
+title = "Sleepwalking feat. Jamie Lloyd"
+artists = ["Zwicker"]
+album = "Songs of Lucid Dreamers"
+duration = "4:35"
+spotify = "7b2ybzYdWMqYr4MD0aF68J"
+
+[[track]]
+n = 74
+title = "Living (feat. Alex Clare)"
+artists = ["Bakermat", "Alex Clare"]
+album = "Living (feat. Alex Clare)"
+duration = "3:17"
+spotify = "63Qco1ncI5U4qEUnxL1DsH"
+
+[[track]]
+n = 75
+title = "Circle"
+artists = ["Be Svendsen"]
+album = "Circle"
+duration = "6:12"
+spotify = "4Bh4qqa4CUe0lmZGbBYZNC"
+
+[[track]]
+n = 76
+title = "Around (Solomun Vox) [Moodymann Edit] - Mixed"
+artists = ["Noir", "Haze", "Solomun"]
+album = "DJ-Kicks (Moodymann) [DJ Mix]"
+duration = "3:20"
+spotify = "3D4ye4jul39kOoubzM0wVW"
+
+[[track]]
+n = 77
+title = "American Boy"
+artists = ["Estelle", "Kanye West"]
+album = "Shine"
+duration = "4:44"
+spotify = "22UDw8rSfLbUsaAGTXQ4Z8"
+
+[[track]]
+n = 78
+title = "Forgiveness - Extended Original"
+artists = ["Wamdue Project", "Jonathan Mendelsohn"]
+album = "Fierce Angel Presents Wamdue Project - Forgiveness, Vol. 1"
+duration = "8:19"
+spotify = "3JTt46DscHqBhpPYN0j6zI"
+
+[[track]]
+n = 79
+title = "Disco On the Dancefloor"
+artists = ["Kellerkind"]
+album = "Basement Story"
+duration = "5:55"
+spotify = "5tr87YpnHiJaGKFD56cjQN"
+
+[[track]]
+n = 80
+title = "Body Funk"
+artists = ["Purple Disco Machine"]
+album = "Soulmatic"
+duration = "4:16"
+spotify = "2Qw4nXX0eCRLRIX8BT19p2"
+
+[[track]]
+n = 81
+title = "Melody"
+artists = ["Kungs", "Luke Pritchard"]
+album = "Layers"
+duration = "4:02"
+spotify = "051WX251PkJuedh3S1eWZS"
+
+[[track]]
+n = 82
+title = "Seewhat"
+artists = ["Hijacked"]
+album = "Rising Path"
+duration = "4:37"
+spotify = "0zZXM55kENfgv4p8npw5O6"
+
+[[track]]
+n = 83
+title = "Things We Do on the Weekend"
+artists = ["Nonku Phiri"]
+album = "Things We Do on the Weekend"
+duration = "4:12"
+spotify = "00d03eGeoWTaFLJ1AshFWE"
+
+[[track]]
+n = 84
+title = "Cafe Prague - Original Mix"
+artists = ["Groovejuice"]
+album = "Café Prague"
+duration = "6:31"
+spotify = "1ccaGPwqu07WpFa8RppVf2"
+
+[[track]]
+n = 85
+title = "Take Off, Baby! feat. Orlando - Original Mix"
+artists = ["Ronald Christoph", "Orlando"]
+album = "Take Off, Baby!"
+duration = "6:42"
+spotify = "53De5pp7L4umlJU7srhacZ"
+
+[[track]]
+n = 86
+title = "Plastic Bags & Magazines"
+artists = ["Micatone"]
+album = "Is You Is"
+duration = "5:00"
+spotify = "2qNkmhCXvMZojZ6W7aeWRM"
+
+[[track]]
+n = 87
+title = "Stone on Your Back"
+artists = ["Kalabrese"]
+album = "Independent Dancer"
+duration = "6:48"
+spotify = "52zGqkcaB7ZzeVNvcZMBKl"
+
+[[track]]
+n = 88
+title = "The Hanging Tree"
+artists = ["James Newton Howard", "Jennifer Lawrence"]
+album = "The Hunger Games: Mockingjay Pt. 1 (Original Motion Picture Score)"
+duration = "3:38"
+spotify = "5ONu4EF5vxDOCmBbQI6s0M"
+
+[[track]]
+n = 89
+title = "Hurt"
+artists = ["Johnny Cash"]
+album = "American IV: The Man Comes Around"
+duration = "3:36"
+spotify = "28cnXtME493VX9NOw9cIUh"
+
+[[track]]
+n = 90
+title = "Sing It Back"
+artists = ["Ash", "Naila"]
+album = "Sing It Back (feat. Naila)"
+duration = "4:12"
+spotify = "0afBI0cb2U0swk3Ufrh56t"
+
+[[track]]
+n = 91
+title = "Love for Days (feat. Karen Harding)"
+artists = ["Purple Disco Machine", "Boris Dlugosch", "Karen Harding"]
+album = "Soulmatic"
+duration = "3:15"
+spotify = "4QUPwuTbZXYRX5jHau0QeM"
+
+[[track]]
+n = 92
+title = "Games Continued (feat. Marie Plassard) - Radio Edit"
+artists = ["Bakermat", "GoldFish", "Marie Plassard"]
+album = "Games (feat. Marie Plassard)"
+duration = "3:23"
+spotify = "64dkTKKNLwbjBuU4xnS2ei"
+
+[[track]]
+n = 93
+title = "Feels Like Home (Red Velvet Dress) - Bakermat Remix"
+artists = ["Spada", "Hosie Neal", "Bakermat"]
+album = "Feels Like Home (Red Velvet Dress)"
+duration = "6:20"
+spotify = "5HQHgB1bGkLBLKavhtqOiS"
+
+[[track]]
+n = 94
+title = "Fathorn"
+artists = ["Tweak"]
+album = "Hybrid Organics (Expanded)"
+duration = "5:53"
+spotify = "3veB0NKy9yFfYP7ODGOVwS"
+
+[[track]]
+n = 95
+title = "No Yellow Lines"
+artists = ["Mount Sims"]
+album = "Wild Light"
+duration = "3:29"
+spotify = "6n83wvge1cLedK7S2sCs9B"
+
+[[track]]
+n = 96
+title = "Left You At The Farm"
+artists = ["Michelle Gurevich"]
+album = "Party Girl"
+duration = "4:56"
+spotify = "3E0nLYakwAaFDYgiak8hdp"
+
+[[track]]
+n = 97
+title = "Anything You Want - Not That"
+artists = ["Belleruche"]
+album = "The Express"
+duration = "3:22"
+spotify = "6sI5m6cabkKWBuDh0kXMKk"
+
+[[track]]
+n = 98
+title = "Casino Aquatique"
+artists = ["Dirty Doering"]
+album = "Casino Aquatique"
+duration = "6:43"
+spotify = "1ji646QD5gihAcgbMhfzk7"
+
+[[track]]
+n = 99
+title = "Prayer (feat. Nicolette Krebitz, Udo Kier) - Gui Boratto Mix"
+artists = ["Terranova", "Nicolette Krebitz", "Udo Kier"]
+album = "Hotel Amour - Nightporter"
+duration = "6:48"
+spotify = "64pk1lQHgERU0cZG8cfPSX"
+
+[[track]]
+n = 100
+title = "Makeba"
+artists = ["Jain"]
+album = "Hope - EP"
+duration = "4:09"
+spotify = "6RqUBXCNqbMdp8u3eIXjQw"

@@ -1,0 +1,808 @@
+# The owner's Spotify yearbook 2020 ("Your Top Songs 2020"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2020
+name = "Your Top Songs 2020"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2020\", read off the rendered page on 2026-11-14 (scripts/spotify_history.py)"
+retrieved = "2026-11-14"
+expected = 100
+
+[[track]]
+n = 1
+title = "Exodus"
+artists = ["Nôze", "Wareika"]
+album = "Dring"
+duration = "4:04"
+spotify = "2QoCFcUbc3UTujoLiqWsvR"
+
+[[track]]
+n = 2
+title = "Seven Nation Army"
+artists = ["The White Stripes"]
+album = "Elephant"
+duration = "3:51"
+spotify = "47wPvRG8FEwbZP22UBgTQr"
+
+[[track]]
+n = 3
+title = "Smalltown Boy"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "5:02"
+spotify = "5vmRQ3zELMLUQPo2FLQ76x"
+
+[[track]]
+n = 4
+title = "A Friend"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "4:20"
+spotify = "3XhbiGCzShv8we87L1BjQP"
+
+[[track]]
+n = 5
+title = "Smalltown Boy (Arnaud Rebotini Remix)"
+artists = ["Bronski Beat", "Arnaud Rebotini"]
+album = "The Age Of Consent (Remastered & Expanded)"
+duration = "5:36"
+spotify = "7fyu9Wz66k5n5tcFnkYDXo"
+
+[[track]]
+n = 6
+title = "bury a friend"
+artists = ["Billie Eilish"]
+album = "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?"
+duration = "3:13"
+spotify = "4SSnFejRGlZikf02HLewEF"
+
+[[track]]
+n = 7
+title = "Dance Monkey"
+artists = ["Tones And I"]
+album = "Dance Monkey (Stripped Back) / Dance Monkey"
+duration = "3:29"
+spotify = "2XU0oxnq2qxCpomAAuJY8K"
+
+[[track]]
+n = 8
+title = "Asunder"
+artists = ["Stee Downes"]
+album = "All In A Day"
+duration = "5:49"
+spotify = "0AT5tolKxuVl6tnsQatG5C"
+
+[[track]]
+n = 9
+title = "Jeanie J"
+artists = ["Her"]
+album = "Her Tape #2"
+duration = "4:32"
+spotify = "6vPBfCMBFRNtR0G4jNJbHD"
+
+[[track]]
+n = 10
+title = "Pretend"
+artists = ["Brandt Brauer Frick", "Emika"]
+album = "Mr. Machine"
+duration = "7:29"
+spotify = "7HCB4FZijpCy7EhyfsSDmr"
+
+[[track]]
+n = 11
+title = "Freedom"
+artists = ["MYDY"]
+album = "Freedom"
+duration = "2:35"
+spotify = "1VkbrCNADFv6zPyH6Jkvor"
+
+[[track]]
+n = 12
+title = "Let the Beat Control Your Body"
+artists = ["Brodinski", "Louisahhh"]
+album = "Bromance #1 - Single"
+duration = "5:11"
+spotify = "5Ku0pfmAZUyEbO5grfQsyP"
+
+[[track]]
+n = 13
+title = "Put Your Hands Where My Eyes Could See (feat. Jamal)"
+artists = ["Busta Rhymes", "Jamal"]
+album = "When Disaster Strikes..."
+duration = "3:14"
+spotify = "1NHwvBmrUje4L1dxfWnXCH"
+
+[[track]]
+n = 14
+title = "Toop Toop"
+artists = ["Cassius"]
+album = "15 Again (Deluxe Edition)"
+duration = "2:47"
+spotify = "7cHhpJV9fC2AqgdiLvq1AO"
+
+[[track]]
+n = 15
+title = "Liquid feat. Fran - Original Mix"
+artists = ["Format:B", "Fran"]
+album = "Restless"
+duration = "6:43"
+spotify = "0ivz4BSlYuiXGmji7U8ab3"
+
+[[track]]
+n = 16
+title = "Another One Bites The Dust - Remastered 2011"
+artists = ["Queen"]
+album = "The Game"
+duration = "3:34"
+spotify = "5vdp5UmvTsnMEMESIF2Ym7"
+
+[[track]]
+n = 17
+title = "Dark Noise"
+artists = ["Jan Blomqvist"]
+album = "Remote Control"
+duration = "8:27"
+spotify = "0U7AyaPfu0EjCizzhMbQl2"
+
+[[track]]
+n = 18
+title = "Maryland"
+artists = ["Elephanz"]
+album = "Elephanz"
+duration = "3:18"
+spotify = "2VXhNd2IzaR9ZtndCUq7hu"
+
+[[track]]
+n = 19
+title = "Make and Model"
+artists = ["Parson Jones"]
+album = "Parson Jones"
+duration = "2:53"
+spotify = "79NQ3vJtnne2jCKr9zSvW3"
+
+[[track]]
+n = 20
+title = "Lies"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "3:45"
+spotify = "0Zzur28YBbI93bgjo0YdNR"
+
+[[track]]
+n = 21
+title = "Pretty Flaws"
+artists = ["Deluxe"]
+album = "The Deluxe Family Show"
+duration = "4:24"
+spotify = "1yibWhxefvqJQfcNKS9m4l"
+
+[[track]]
+n = 22
+title = "Gone by the Morning - Radio Edit"
+artists = ["Clara Moto"]
+album = "Gone by the Morning (Radio Edit)"
+duration = "3:15"
+spotify = "0Fo7oInW6xd1Gh5Mij7qeQ"
+
+[[track]]
+n = 23
+title = "Five Minutes"
+artists = ["Her"]
+album = "Her"
+duration = "3:48"
+spotify = "7LqT7LqKsCh6epYR9UdAlP"
+
+[[track]]
+n = 24
+title = "Deep Space"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "4:10"
+spotify = "6fOGZ9hY8rkobJSO3TQXbA"
+
+[[track]]
+n = 25
+title = "Too Drunk to Fuck"
+artists = ["Dead Kennedys"]
+album = "Fresh Fruit For Rotting Vegetables (Expanded Edition)"
+duration = "2:40"
+spotify = "0gJ4X2ojTykeaoDEDEE1Xj"
+
+[[track]]
+n = 26
+title = "Hurt"
+artists = ["Johnny Cash"]
+album = "American IV: The Man Comes Around"
+duration = "3:36"
+spotify = "28cnXtME493VX9NOw9cIUh"
+
+[[track]]
+n = 27
+title = "You Got The Love (feat. Candi Staton) - New Voyager Radio Mix"
+artists = ["The Source", "Candi Staton", "The Rhythm Masters for Seven Music Promotions"]
+album = "You Got the Love"
+duration = "3:12"
+spotify = "1OjfJDyOysrg3KnR2s3l21"
+
+[[track]]
+n = 28
+title = "Stronger"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "4:01"
+spotify = "6L3J9yrifGuFcz157aKQfo"
+
+[[track]]
+n = 29
+title = "In the Back of My Ship"
+artists = ["Nôze", "dOP"]
+album = "Dring"
+duration = "5:30"
+spotify = "39CTejZlgjqTKkkHRoI9QI"
+
+[[track]]
+n = 30
+title = "LK - Original Mix"
+artists = ["DJ Marky", "Stamina MC", "XRS", "Stamina MC Carol Carolina Bela"]
+album = "In Rotation"
+duration = "5:29"
+spotify = "2EiazSYyCSlBEKED2EvysD"
+
+[[track]]
+n = 31
+title = "mygut - Solomun Remix"
+artists = ["Super Flu", "Solomun"]
+album = "Musik 3+"
+duration = "8:22"
+spotify = "0WhgArpfTbGnIPFFaWiUqa"
+
+[[track]]
+n = 32
+title = "Black Sunglasses"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "4:51"
+spotify = "50i9vPCkHgEEfNuMsj01ji"
+
+[[track]]
+n = 33
+title = "Desperate Man feat. Khan"
+artists = ["Kalabrese", "Khan"]
+album = "Independent Dancer"
+duration = "10:35"
+spotify = "5mx2ZxKOejA8cHnreNPDfP"
+
+[[track]]
+n = 34
+title = "Close to My Fire"
+artists = ["Slackwax", "Anna Leyne"]
+album = "Night Out"
+duration = "3:58"
+spotify = "6rFayWHp3FHxUVyNzrLirb"
+
+[[track]]
+n = 35
+title = "Girlfriend"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "3:40"
+spotify = "6nPjXRdflfYvhwLMS1Xdxs"
+
+[[track]]
+n = 36
+title = "I Need A Dollar"
+artists = ["Aloe Blacc"]
+album = "Good Things"
+duration = "4:03"
+spotify = "6q1qACcezH6eH77Xljh5QV"
+
+[[track]]
+n = 37
+title = "Time for Us"
+artists = ["Nicolas Jaar"]
+album = "Time For Us"
+duration = "7:40"
+spotify = "798mI116dJdZ12n9CkdflI"
+
+[[track]]
+n = 38
+title = "Your Woman"
+artists = ["GYM"]
+album = "Your Woman - Single"
+duration = "4:16"
+spotify = "0dkduFMGQsmTd5D8CoGDYl"
+
+[[track]]
+n = 39
+title = "Fresh and Foolish feat. Sarah Palin"
+artists = ["Kalabrese", "Sarah Palin"]
+album = "Independent Dancer"
+duration = "4:57"
+spotify = "43335d4chxjzyIpiq4RXCu"
+
+[[track]]
+n = 40
+title = "I Know What You Want (feat. Flipmode Squad)"
+artists = ["Busta Rhymes", "Mariah Carey", "Flipmode Squad"]
+album = "It Ain't Safe No More. . ."
+duration = "5:24"
+spotify = "0YImOCkIJ2PWhCXaURCZnY"
+
+[[track]]
+n = 41
+title = "Forgotten Places"
+artists = ["Alif Tree"]
+album = "French Cuisine"
+duration = "4:51"
+spotify = "0WuQYFqYHDgCbtKups3Ciu"
+
+[[track]]
+n = 42
+title = "The Kids Are Coming"
+artists = ["Tones And I"]
+album = "The Kids Are Coming"
+duration = "3:24"
+spotify = "76bvw5EDyhm1b3dfsOToYG"
+
+[[track]]
+n = 43
+title = "212"
+artists = ["Azealia Banks", "Lazy Jay"]
+album = "Broke with Expensive Taste"
+duration = "3:24"
+spotify = "6no1mklq4BJBg7KJ6Dly7N"
+
+[[track]]
+n = 44
+title = "To Let Myself Go - Don Rimini Sweet Home Version"
+artists = ["The Avener", "Ane Brun"]
+album = "We Go Deep, Saison 3 (Mixed by The Avener)"
+duration = "5:48"
+spotify = "2X7LXwFW35TwAKTIJocAA5"
+
+[[track]]
+n = 45
+title = "Kata rokkar"
+artists = ["Björk Guðmundsdóttir", "Trio Gudmundar Ingólfssonar"]
+album = "Gling-Gló"
+duration = "2:58"
+spotify = "3EY3eSCDYtA7c0fizDXs0b"
+
+[[track]]
+n = 46
+title = "Funk Ad"
+artists = ["Daft Punk"]
+album = "Homework"
+duration = "0:51"
+spotify = "0cjavaamK4gxP9iZYw5I2X"
+
+[[track]]
+n = 47
+title = "Feel Better"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "3:23"
+spotify = "0VxmXSMb4X69RWFW8BwgRA"
+
+[[track]]
+n = 48
+title = "Too Drunk To Fuck"
+artists = ["Nouvelle Vague"]
+album = "Nouvelle vague"
+duration = "2:16"
+spotify = "7EUPsoE2iSNlnuQDh0Tn7w"
+
+[[track]]
+n = 49
+title = "City Of Stars - From \"La La Land\" Soundtrack"
+artists = ["Ryan Gosling", "Emma Stone"]
+album = "La La Land (Original Motion Picture Soundtrack)"
+duration = "2:29"
+spotify = "6XQHlsNu6so4PdglFkJQRJ"
+
+[[track]]
+n = 50
+title = "Whisper to Me"
+artists = ["General Elektriks"]
+album = "To Be a Stranger"
+duration = "4:36"
+spotify = "6gil7rvxOOGsUMebzJtCqI"
+
+[[track]]
+n = 51
+title = "Oddity feat. Olivera Stanimirov (Album Version)"
+artists = ["Zwicker"]
+album = "Songs of Lucid Dreamers"
+duration = "4:21"
+spotify = "5N1GHKkB7pSLlROojX7bi7"
+
+[[track]]
+n = 52
+title = "Coo Coo"
+artists = ["Gak", "Babs", "Mysonne", "Lord Tariq", "Cuban Linx"]
+album = "Pow Europe"
+duration = "4:14"
+spotify = "6Kwds61T2o9h0QNYMgOeIq"
+
+[[track]]
+n = 53
+title = "Gimme Some More"
+artists = ["Busta Rhymes"]
+album = "Extinction Level Event: The Final World Front"
+duration = "2:38"
+spotify = "47wZfF4OdME3xkIPhhpSSF"
+
+[[track]]
+n = 54
+title = "Sinnerman"
+artists = ["Nina Simone"]
+album = "Pastel Blues"
+duration = "10:22"
+spotify = "5xRP5iyVdGglqlY4Vcjhkx"
+
+[[track]]
+n = 55
+title = "Who Loves The Sun"
+artists = ["Jo.Ke", "Nu"]
+album = "We Love The Sun"
+duration = "9:22"
+spotify = "2u2aognU8U2C3bPJO5pVmz"
+
+[[track]]
+n = 56
+title = "My Soul"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "3:39"
+spotify = "2pB6k4zoEPVHfXXXoIOKoT"
+
+[[track]]
+n = 57
+title = "Written In The Water"
+artists = ["Gin Wigmore"]
+album = "Blood To Bone"
+duration = "2:46"
+spotify = "4VBOT2FRGcu5bjerUG9wMR"
+
+[[track]]
+n = 58
+title = "Call Me"
+artists = ["Blondie"]
+album = "Call Me"
+duration = "3:32"
+spotify = "7HKxTNVlkHsfMLhigmhC0I"
+
+[[track]]
+n = 59
+title = "Giorgio by Moroder"
+artists = ["Daft Punk"]
+album = "Random Access Memories"
+duration = "9:04"
+spotify = "0oks4FnzhNp5QPTZtoet7c"
+
+[[track]]
+n = 60
+title = "Talk"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "3:40"
+spotify = "160Pfm5KaKwtA1VgREDyfz"
+
+[[track]]
+n = 61
+title = "How We Do"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:54"
+spotify = "4flxgPC0426CEeSrzQIic0"
+
+[[track]]
+n = 62
+title = "Odessa"
+artists = ["Caribou"]
+album = "Swim"
+duration = "5:15"
+spotify = "305tGJy16yTTFe6Ya9nMKJ"
+
+[[track]]
+n = 63
+title = "Sunny"
+artists = ["Boney M."]
+album = "Take The Heat Off Me"
+duration = "4:02"
+spotify = "3pf96IFggfQuT6Gafqx2rt"
+
+[[track]]
+n = 64
+title = "Plastik"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "3:18"
+spotify = "4dzsCGwg0eaboDEnkx5acR"
+
+[[track]]
+n = 65
+title = "Want It Back"
+artists = ["Guts", "Patrice", "The Studio School Voices NYC"]
+album = "Hip Hop After All"
+duration = "3:31"
+spotify = "7eN0Sdh3AE1VKKLSsFwKBh"
+
+[[track]]
+n = 66
+title = "Coffee Cold"
+artists = ["Galt MacDermot"]
+album = "Shapes of Rhythm/Woman Is Sweeter"
+duration = "3:25"
+spotify = "6MN6yRVriszuyAVlyF8ndB"
+
+[[track]]
+n = 67
+title = "Stick Up"
+artists = ["Kelis"]
+album = "Tasty"
+duration = "3:51"
+spotify = "3xTgNbWCVjXxRrGCuzUE9C"
+
+[[track]]
+n = 68
+title = "Focus"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "3:19"
+spotify = "4IMslvlcy5zjLeNZAGwRuq"
+
+[[track]]
+n = 69
+title = "Queens - Live At Gaité Lyrique, Paris"
+artists = ["Her", "Zefire"]
+album = "Her Live Tape #2"
+duration = "7:01"
+spotify = "2gQxfc9Os8q6afe3jjfs44"
+
+[[track]]
+n = 70
+title = "Billie Jean"
+artists = ["Michael Jackson"]
+album = "Thriller 25 Super Deluxe Edition"
+duration = "4:53"
+spotify = "5ChkMS8OtdzJeqyybCc9R5"
+
+[[track]]
+n = 71
+title = "Windowlicker"
+artists = ["Aphex Twin"]
+album = "Windowlicker"
+duration = "6:08"
+spotify = "60Pe9j2pCBa4Zp4ztf5nhd"
+
+[[track]]
+n = 72
+title = "Black Math"
+artists = ["The White Stripes"]
+album = "Elephant"
+duration = "3:03"
+spotify = "1HwULI7SXDKUHOlEtgO4bJ"
+
+[[track]]
+n = 73
+title = "Before I Lose My Mind"
+artists = ["Claptone", "Say Yes Dog"]
+album = "Heartbeat"
+duration = "3:25"
+spotify = "4vcYsTBvh5ovTAbkzRUhu5"
+
+[[track]]
+n = 74
+title = "Nights Introlude"
+artists = ["Nightmares On Wax"]
+album = "Smokers Delight"
+duration = "4:40"
+spotify = "3SpXpcG603AqfxhJ6l4uzk"
+
+[[track]]
+n = 75
+title = "High - Original Mix"
+artists = ["Christopher Schwarzwälder", "Iannis Ritter"]
+album = "Three Rivers EP"
+duration = "6:51"
+spotify = "0k0vu2jd7Hf3SrTRPDFMsM"
+
+[[track]]
+n = 76
+title = "Be Svendsen: Black Tower Hotel - Be Svendsen Mix"
+artists = ["The Crooked Spoke"]
+album = "Catchpenny & Cosmos"
+duration = "7:22"
+spotify = "2gOCNhq2NjeifowcwN6xqQ"
+
+[[track]]
+n = 77
+title = "Grey"
+artists = ["Kölsch"]
+album = "1989"
+duration = "4:50"
+spotify = "4rjA5kJJWbwU1prXCvg6Fk"
+
+[[track]]
+n = 78
+title = "Starwin"
+artists = ["Boys Noize"]
+album = "Go Hard"
+duration = "4:00"
+spotify = "2g5WlH1b6dce45feunvtoc"
+
+[[track]]
+n = 79
+title = "Reach for the Bottle"
+artists = ["Belleruche"]
+album = "Rollerchain"
+duration = "3:07"
+spotify = "2HXUNqPjvcx7S5BuGW9hSV"
+
+[[track]]
+n = 80
+title = "Sugar"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "4:00"
+spotify = "1q3TpgTKZ0XGHWtslzgELg"
+
+[[track]]
+n = 81
+title = "You Wish"
+artists = ["Nightmares On Wax"]
+album = "In A Space Outta Sound"
+duration = "3:30"
+spotify = "2MddqD0MryxIAKS03raHsz"
+
+[[track]]
+n = 82
+title = "Budapest"
+artists = ["Poni Hoax", "Olga Kouklaki"]
+album = "Poni Hoax"
+duration = "5:29"
+spotify = "327qcYbdOIUhFGyt9OFhW1"
+
+[[track]]
+n = 83
+title = "Uprising"
+artists = ["Muse"]
+album = "The Resistance"
+duration = "5:04"
+spotify = "4VqPOruhp5EdPBeR92t6lQ"
+
+[[track]]
+n = 84
+title = "Into You"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "3:54"
+spotify = "77KNREbnCc8NUo4i07l9zL"
+
+[[track]]
+n = 85
+title = "Starry Night - Edit"
+artists = ["Peggy Gou"]
+album = "Starry Night"
+duration = "3:53"
+spotify = "2NeSirLM2VHQW4upn0nMfB"
+
+[[track]]
+n = 86
+title = "I Don't Listen Much"
+artists = ["Junior"]
+album = "Self Fulfilling Prophets"
+duration = "3:47"
+spotify = "79DUnbRilEheZsRoGicf8L"
+
+[[track]]
+n = 87
+title = "California Dreamin'"
+artists = ["Bobby Womack"]
+album = "Fly Me To The Moon"
+duration = "3:20"
+spotify = "6G7MHIvSDR3ehXPkuDFAlM"
+
+[[track]]
+n = 88
+title = "Around My Neck"
+artists = ["Say Yes Dog"]
+album = "A Friend"
+duration = "3:32"
+spotify = "6wY3ErLgaUN1y1TxVkOYwB"
+
+[[track]]
+n = 89
+title = "Les Nuits"
+artists = ["Nightmares On Wax"]
+album = "Carboot Soul"
+duration = "6:20"
+spotify = "4P8qXnroR43S0xk0hmSbNs"
+
+[[track]]
+n = 90
+title = "Hush Now"
+artists = ["Marbert Rocel"]
+album = "Catch a Bird"
+duration = "5:34"
+spotify = "5ThN7cCQKwXZA3uadpVYnG"
+
+[[track]]
+n = 91
+title = "Sky"
+artists = ["Sonique"]
+album = "Hear My Cry"
+duration = "4:26"
+spotify = "7zlkYAQdYPIwagUwO7Dyah"
+
+[[track]]
+n = 92
+title = "Golden Nights"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "3:23"
+spotify = "3MQbnRVdFxViLej8nNhs6p"
+
+[[track]]
+n = 93
+title = "Po schodoch"
+artists = ["Richard Müller & Banket"]
+album = "Bioelektrovízia"
+duration = "3:12"
+spotify = "0txSi550sRew7KVhJfJyio"
+
+[[track]]
+n = 94
+title = "Don’t Lose Your Steam"
+artists = ["Gregory Porter"]
+album = "Take Me To The Alley"
+duration = "3:17"
+spotify = "19A6DtYrz9n8FDvb7kMVVW"
+
+[[track]]
+n = 95
+title = "It Ain't Necessarily So"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "4:43"
+spotify = "5Hws6nnJuqf6rJwZGA82GG"
+
+[[track]]
+n = 96
+title = "Before I Go"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "2:48"
+spotify = "0PF6YypH3Tf4n8vNLJPIrz"
+
+[[track]]
+n = 97
+title = "Quite Like"
+artists = ["Her"]
+album = "Her"
+duration = "4:05"
+spotify = "1dSRuZuKGJLb34w9nFnoTj"
+
+[[track]]
+n = 98
+title = "Over"
+artists = ["GusGus"]
+album = "Over"
+duration = "5:56"
+spotify = "5VCc43KmJKs6TyWx8ZGF7q"
+
+[[track]]
+n = 99
+title = "Destructive"
+artists = ["Urban Species"]
+album = "Blanket"
+duration = "5:06"
+spotify = "3oFwBDwoP2ojFNVSWgUp6U"
+
+[[track]]
+n = 100
+title = "Heartless"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "2:11"
+spotify = "181uwx1UjUOTxCSKl8ww5p"

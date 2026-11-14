@@ -1,0 +1,808 @@
+# The owner's Spotify yearbook 2017 ("Your Top Songs 2017"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2017
+name = "Your Top Songs 2017"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2017\", read off the rendered page on 2026-11-14 (scripts/spotify_history.py)"
+retrieved = "2026-11-14"
+expected = 100
+
+[[track]]
+n = 1
+title = "How We Do"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:54"
+spotify = "4flxgPC0426CEeSrzQIic0"
+
+[[track]]
+n = 2
+title = "Kill Of The Night"
+artists = ["Gin Wigmore"]
+album = "Gravel & Wine"
+duration = "3:25"
+spotify = "3Xq7wFyAIr8z3VKHpuraGb"
+
+[[track]]
+n = 3
+title = "Come"
+artists = ["Jain"]
+album = "Zanaka"
+duration = "2:42"
+spotify = "1YrC8s6yZWw23QxW6rfM9f"
+
+[[track]]
+n = 4
+title = "Navy Light"
+artists = ["Labyrinth Ear"]
+album = "Oak"
+duration = "3:07"
+spotify = "6o43Gi1cX7Nyi6koSkwIBc"
+
+[[track]]
+n = 5
+title = "Stand Up - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade"
+duration = "4:39"
+spotify = "1y01CYF2Cr8ICQAPRcjxz3"
+
+[[track]]
+n = 6
+title = "Get What You Came For"
+artists = ["Kav Verhouzer", "BullySongs"]
+album = "Get What You Came For"
+duration = "3:14"
+spotify = "2bG5yFcRlclKdNpxlg0QEJ"
+
+[[track]]
+n = 7
+title = "Black Sheep"
+artists = ["Gin Wigmore"]
+album = "Gravel & Wine"
+duration = "3:03"
+spotify = "1jLGpWpQXwwmygRErCeAXf"
+
+[[track]]
+n = 8
+title = "Don't Be So Shy - Filatov & Karas Remix"
+artists = ["Imany", "Filatov & Karas"]
+album = "Sous les jupes des filles (Original Motion Picture Soundtrack / Bonus Track Version)"
+duration = "3:10"
+spotify = "6iQdOR7NpulkD1hXkPHWvs"
+
+[[track]]
+n = 9
+title = "Upside Down"
+artists = ["Paloma Faith"]
+album = "Do You Want the Truth or Something Beautiful?"
+duration = "3:09"
+spotify = "7wTmnOSpVJcIzj5FIz2I04"
+
+[[track]]
+n = 10
+title = "Gemini"
+artists = ["Marek Hemmann"]
+album = "In Between"
+duration = "9:07"
+spotify = "7ahEhRHS4Ji5MFWv8o6vAP"
+
+[[track]]
+n = 11
+title = "Hope"
+artists = ["Jain"]
+album = "Hope - EP"
+duration = "3:12"
+spotify = "3FAuiYCv5AdSOytLFwPs8f"
+
+[[track]]
+n = 12
+title = "Sweet About Me"
+artists = ["Gabriella Cilmi"]
+album = "Lessons To Be Learned"
+duration = "3:21"
+spotify = "2BkdnK1Sl8pDlgeaHcXvzn"
+
+[[track]]
+n = 13
+title = "Say to Me"
+artists = ["WHTKD"]
+album = "Say to Me"
+duration = "2:34"
+spotify = "6vbmvfKJg6MghZhVmCpV9D"
+
+[[track]]
+n = 14
+title = "Ghost (feat. Clap Your Hands Say Yeah)"
+artists = ["Claptone", "Clap Your Hands Say Yeah"]
+album = "Ghost"
+duration = "6:55"
+spotify = "2aH8tLE6nIgQLLGsUv3KjO"
+
+[[track]]
+n = 15
+title = "Shape of You"
+artists = ["Ed Sheeran"]
+album = "÷ (Deluxe)"
+duration = "3:53"
+spotify = "0FE9t6xYkqWXU2ahLh6D8X"
+
+[[track]]
+n = 16
+title = "Dimanche"
+artists = ["CLAAP!", "S.A.N.T.A.N.A."]
+album = "Dimanche"
+duration = "4:33"
+spotify = "2omQY42P8l0YVqG2vhovUO"
+
+[[track]]
+n = 17
+title = "La vigüela"
+artists = ["Gotan Project"]
+album = "Gotan Project live"
+duration = "5:36"
+spotify = "0B9veKH2yIJnM2a78lWYwg"
+
+[[track]]
+n = 18
+title = "Written In The Water"
+artists = ["Gin Wigmore"]
+album = "Blood To Bone"
+duration = "2:46"
+spotify = "4VBOT2FRGcu5bjerUG9wMR"
+
+[[track]]
+n = 19
+title = "Big Jet Plane - Animal Trainer Remix"
+artists = ["Jan Blomqvist", "Animal Trainer"]
+album = "Faze #53: Animal Trainer"
+duration = "6:40"
+spotify = "18mfe5YtwXeqhbuSABYVCK"
+
+[[track]]
+n = 20
+title = "Together Alone"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:24"
+spotify = "3qRbjKQoQnVcXjLb1ZrLXe"
+
+[[track]]
+n = 21
+title = "Down On My Knees"
+artists = ["Ayọ"]
+album = "Down On My Knees"
+duration = "3:59"
+spotify = "1ZhXsAdYamgMfhFvpyRYyr"
+
+[[track]]
+n = 22
+title = "Who Loves the Sun"
+artists = ["Nu", "Jo.Ke"]
+album = "We Love The Sun"
+duration = "9:22"
+spotify = "0GCLyiQXeI7zXDKQ4jY1mB"
+
+[[track]]
+n = 23
+title = "Traces - Oxia Remix"
+artists = ["The Hacker", "Mount Sims"]
+album = "Traces"
+duration = "6:35"
+spotify = "2R9lIdKnJEUXF5brvmX8CX"
+
+[[track]]
+n = 24
+title = "Big Jet Plane"
+artists = ["Angus & Julia Stone"]
+album = "Down The Way"
+duration = "3:59"
+spotify = "0zScLh0yufjmMy0pAm97uE"
+
+[[track]]
+n = 25
+title = "Time Has Changed (Original)"
+artists = ["Codec & Flexor"]
+album = "Time Has Changed Remixes"
+duration = "6:53"
+spotify = "3scRdJErUafE6Tc4xcsQ6c"
+
+[[track]]
+n = 26
+title = "Ourson"
+artists = ["Camel Power Club"]
+album = "Sputnik II"
+duration = "2:41"
+spotify = "5SjC5nUco5hHp3zDXUHnbh"
+
+[[track]]
+n = 27
+title = "Prayer in C - Robin Schulz Radio Edit"
+artists = ["Lilly Wood and The Prick", "Robin Schulz"]
+album = "Prayer"
+duration = "3:09"
+spotify = "0uVyZywUNOp6S0dU5r8TS8"
+
+[[track]]
+n = 28
+title = "Makeba"
+artists = ["Jain"]
+album = "Hope - EP"
+duration = "4:09"
+spotify = "6RqUBXCNqbMdp8u3eIXjQw"
+
+[[track]]
+n = 29
+title = "Awake (feat. J.U.D.G.E)"
+artists = ["Santé", "Richard Judge"]
+album = "Awake (feat. J.U.D.G.E) [Remixes]"
+duration = "6:12"
+spotify = "1potXpkyQVqdPsWYRTzYc9"
+
+[[track]]
+n = 30
+title = "Sometimes"
+artists = ["Alle Farben", "Graham Candy"]
+album = "Synesthesia"
+duration = "3:24"
+spotify = "1JvjXTE1Tcgey8up2uLuPT"
+
+[[track]]
+n = 31
+title = "Five Minutes"
+artists = ["Her"]
+album = "Her"
+duration = "3:44"
+spotify = "1dOJtXmqzWgqAw5hX8CJdP"
+
+[[track]]
+n = 32
+title = "Memories"
+artists = ["Waldeck"]
+album = "Ballroom Stories"
+duration = "3:50"
+spotify = "0gDWgUpmcRyIb9yBxeaGQj"
+
+[[track]]
+n = 33
+title = "Sandburg"
+artists = ["Tinush"]
+album = "Sandburg"
+duration = "7:09"
+spotify = "3xJLi9PvRToiqb9zRqpTQ7"
+
+[[track]]
+n = 34
+title = "The Hanging Tree"
+artists = ["James Newton Howard", "Jennifer Lawrence"]
+album = "The Hunger Games: Mockingjay Pt. 1 (Original Motion Picture Score)"
+duration = "3:38"
+spotify = "5ONu4EF5vxDOCmBbQI6s0M"
+
+[[track]]
+n = 35
+title = "Do You"
+artists = ["Adam Freeland"]
+album = "Cope™ (Bonus Track Version)"
+duration = "3:35"
+spotify = "4AFXYJWglE02KTdj0ByBpO"
+
+[[track]]
+n = 36
+title = "Around - Solomun Vox"
+artists = ["Noir", "Haze", "Solomun"]
+album = "Around"
+duration = "6:58"
+spotify = "5qA35ZZWFOqynheP5x8rty"
+
+[[track]]
+n = 37
+title = "In Ya Face - Original Mix"
+artists = ["Nils Ohrmann"]
+album = "Tumbleweed EP"
+duration = "6:38"
+spotify = "5n2lT6FvgiVu7h5K4NJaaA"
+
+[[track]]
+n = 38
+title = "City"
+artists = ["Jain"]
+album = "Hope - EP"
+duration = "3:17"
+spotify = "0FyjbWXFIVAuGIgvMxVRon"
+
+[[track]]
+n = 39
+title = "Close These Curtains - Stimming Remix"
+artists = ["Yoko Duo", "Stimming"]
+album = "Remixes"
+duration = "6:56"
+spotify = "0ZYQ8J5CmB7EBnFCWwZfaG"
+
+[[track]]
+n = 40
+title = "To Let Myself Go"
+artists = ["The Avener", "Ane Brun"]
+album = "The Wanderings Of The Avener"
+duration = "4:14"
+spotify = "4IQgbTjXZfINWOS5TKL6T0"
+
+[[track]]
+n = 41
+title = "Radioactive"
+artists = ["Anna Lunoe"]
+album = "Radioactive"
+duration = "4:06"
+spotify = "1w3K9vULEEnS56XNiY9Qyj"
+
+[[track]]
+n = 42
+title = "The Hanging Tree"
+artists = ["Blankets"]
+album = "The Hanging Tree"
+duration = "3:07"
+spotify = "5rZlL72cb8u1qqYMBH9u7a"
+
+[[track]]
+n = 43
+title = "Pickles"
+artists = ["Peaches"]
+album = "Rub"
+duration = "3:52"
+spotify = "5B9XiJvYFOk3lRoMFsgkfA"
+
+[[track]]
+n = 44
+title = "Nemur (Walls of Guitars) (Extended Version)"
+artists = ["Dusty Kid"]
+album = "A Raver’s Diary"
+duration = "4:51"
+spotify = "7v1Q35VP8jWCwzJObk5eRP"
+
+[[track]]
+n = 45
+title = "Man Like That"
+artists = ["Gin Wigmore"]
+album = "Gravel & Wine"
+duration = "2:50"
+spotify = "56rMas1oC093iusgMSY0nv"
+
+[[track]]
+n = 46
+title = "Lying Together"
+artists = ["FKJ"]
+album = "Lying Together"
+duration = "4:27"
+spotify = "1Tcslcd6beS3WF3aVqwl17"
+
+[[track]]
+n = 47
+title = "Bloodline feat. Tomas Høffding"
+artists = ["Kölsch"]
+album = "1983"
+duration = "5:50"
+spotify = "1GyLXvaWJ0dlugN99u4kKb"
+
+[[track]]
+n = 48
+title = "I Want Your Lovin’ - Edit"
+artists = ["Whilk & Misky"]
+album = "I Want Your Lovin' (Edit)"
+duration = "3:20"
+spotify = "6JGrfJxBTLjtq8HvvbXxKF"
+
+[[track]]
+n = 49
+title = "Infinity"
+artists = ["Infinity Ink"]
+album = "Infinity"
+duration = "5:08"
+spotify = "2NzefHcyKtTvzLxBiz3lzj"
+
+[[track]]
+n = 50
+title = "Less Is More"
+artists = ["Joss Stone"]
+album = "Mind Body & Soul (Special Edition)"
+duration = "4:17"
+spotify = "0ozKDRPig9rKkBhJA6NxDI"
+
+[[track]]
+n = 51
+title = "Addict"
+artists = ["Kosheen"]
+album = "Independence"
+duration = "4:43"
+spotify = "7mo2ZJqHt8fGhMcyJvvCiT"
+
+[[track]]
+n = 52
+title = "Birthday Card"
+artists = ["Marcus Marr", "Nick Murphy"]
+album = "Birthday Card"
+duration = "7:46"
+spotify = "67ezdMYTwbIO2lnTWfx3sE"
+
+[[track]]
+n = 53
+title = "Happiest Man on Earth - Radio Edit"
+artists = ["Broken Back"]
+album = "Dear Misfortune, Mother of Joy - EP"
+duration = "3:03"
+spotify = "6rQi85JWh2LcMLwc4SFZOp"
+
+[[track]]
+n = 54
+title = "Get What We Want"
+artists = ["Whilk & Misky"]
+album = "My Round"
+duration = "3:53"
+spotify = "3VHoh0HTj1QTD3goAikBKU"
+
+[[track]]
+n = 55
+title = "Friends"
+artists = ["Solomun"]
+album = "Friends"
+duration = "9:07"
+spotify = "1IbNYr8ByXsgwGbmOxLBXP"
+
+[[track]]
+n = 56
+title = "Willing To Die"
+artists = ["Gin Wigmore", "Suffa", "Logic"]
+album = "Blood To Bone"
+duration = "3:15"
+spotify = "1NjSYVG9aSXMu2yiaeWBuY"
+
+[[track]]
+n = 57
+title = "Must Be A Reason - Radio Edit"
+artists = ["DJ S.K.T"]
+album = "Must Be A Reason"
+duration = "3:07"
+spotify = "68a5EPLYkWgrtpYEkw0Zbu"
+
+[[track]]
+n = 58
+title = "Savage"
+artists = ["Ben Khan"]
+album = "1992 EP"
+duration = "2:34"
+spotify = "08ahLC8obCMMroTU3DH8wW"
+
+[[track]]
+n = 59
+title = "Crazy (feat. Joie Tan) - Radio Mix"
+artists = ["TEEMID", "Joie Tan"]
+album = "Crazy"
+duration = "3:37"
+spotify = "38nm9c5ATEoZLqbjn72Rew"
+
+[[track]]
+n = 60
+title = "New Rush"
+artists = ["Gin Wigmore"]
+album = "Blood To Bone"
+duration = "3:49"
+spotify = "5a804AvrXCExtlHkJ8iYVX"
+
+[[track]]
+n = 61
+title = "First Impressions"
+artists = ["Kele"]
+album = "Trick"
+duration = "3:56"
+spotify = "4lET8zL9moR6c1LRV7XMja"
+
+[[track]]
+n = 62
+title = "Losing You"
+artists = ["Solange"]
+album = "Losing You"
+duration = "4:20"
+spotify = "6pijLoLtiB2XVb4iNovLRq"
+
+[[track]]
+n = 63
+title = "The Bitten Bite Back"
+artists = ["Mount Sims"]
+album = "Happily Ever After... Again"
+duration = "3:25"
+spotify = "2tD1oB01uAc9leY63gn8yY"
+
+[[track]]
+n = 64
+title = "Beautiful Tango - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade"
+duration = "3:56"
+spotify = "4AgRNjbPzEtWu91uHrDPRb"
+
+[[track]]
+n = 65
+title = "Big Jet Plane"
+artists = ["Jan Blomqvist"]
+album = "Big Jet Plane"
+duration = "5:51"
+spotify = "0GyrGp2eMkkaEwPoCqgLaq"
+
+[[track]]
+n = 66
+title = "Move On - Original Club Mix"
+artists = ["Platinum Doug"]
+album = "Move On"
+duration = "5:07"
+spotify = "5eGy6RKpEULwriSrb18ryj"
+
+[[track]]
+n = 67
+title = "Good Service"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:38"
+spotify = "4WxUkWNynBJgko4xTtuojL"
+
+[[track]]
+n = 68
+title = "Changes"
+artists = ["Faul & Wad", "PNAU"]
+album = "Changa"
+duration = "5:45"
+spotify = "13qqdlSeF8FcxsRyapDMZ0"
+
+[[track]]
+n = 69
+title = "Drop the Game"
+artists = ["Flume", "Chet Faker"]
+album = "Lockjaw"
+duration = "3:41"
+spotify = "4KtrE35pTuqwNc22QP58RT"
+
+[[track]]
+n = 70
+title = "What's the Big Deal"
+artists = ["Mount Sims", "Toby Dammit"]
+album = "Happily Ever After"
+duration = "3:47"
+spotify = "6ijl5SQfD6fKkLXRDZSpsq"
+
+[[track]]
+n = 71
+title = "Music - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade (Bonus Track Version)"
+duration = "3:49"
+spotify = "6kdh1P00SbjcUYqxEsUVJL"
+
+[[track]]
+n = 72
+title = "Left With Someone Else"
+artists = ["Gabriella Cilmi"]
+album = "The Sting"
+duration = "3:15"
+spotify = "0qin3yx9CCpBxiZRAwSeGJ"
+
+[[track]]
+n = 73
+title = "Mr Johnson"
+artists = ["Jain"]
+album = "Zanaka"
+duration = "3:03"
+spotify = "5gsSDoHxU2qSIGKJ48fac7"
+
+[[track]]
+n = 74
+title = "The Hanging Tree - Rebel Remix"
+artists = ["James Newton Howard", "Jennifer Lawrence"]
+album = "The Hanging Tree [(Rebel Remix) From The Hunger Games: Mockingjay Part 1]"
+duration = "2:27"
+spotify = "4z41UlGXD92A526CZgJT80"
+
+[[track]]
+n = 75
+title = "Old Friends - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade (Bonus Track Version)"
+duration = "3:01"
+spotify = "5mIivtukIlGnH8vCmhl3Yf"
+
+[[track]]
+n = 76
+title = "Hey Ho"
+artists = ["Gin Wigmore"]
+album = "Holy Smoke"
+duration = "4:03"
+spotify = "5Cn7dXaPOf1URbxEbwjTqW"
+
+[[track]]
+n = 77
+title = "Her"
+artists = ["Her"]
+album = "Her Tape #1"
+duration = "4:18"
+spotify = "15WD2cgiZAlQSY6DHr7rW3"
+
+[[track]]
+n = 78
+title = "Cry Me A River - Live Version"
+artists = ["Gabriella Cilmi"]
+album = "Lessons To Be Learned"
+duration = "3:37"
+spotify = "1VdmbvKkfoh2pgu4CvJt8R"
+
+[[track]]
+n = 79
+title = "Big Jet Plane (Recable Remix)"
+artists = ["Recable"]
+album = "Traffic (Recable Originals and Remixes)"
+duration = "4:38"
+spotify = "54bxxfdPQ5jsWXMF9JQ0eR"
+
+[[track]]
+n = 80
+title = "Changes - Radio Mix"
+artists = ["Faul & Wad", "PNAU"]
+album = "Changes"
+duration = "3:20"
+spotify = "1r5B0TnJn5SOecOH7oVw90"
+
+[[track]]
+n = 81
+title = "No Yellow Lines"
+artists = ["Mount Sims"]
+album = "Wild Light"
+duration = "3:29"
+spotify = "6n83wvge1cLedK7S2sCs9B"
+
+[[track]]
+n = 82
+title = "Unmissable - DJ Anna Remix"
+artists = ["Gorgon City", "Zak Abel", "Dj Anna"]
+album = "Sirens (Remixes)"
+duration = "7:42"
+spotify = "2oC6XvqyeRqQr0svutnCYa"
+
+[[track]]
+n = 83
+title = "Dirty Mercy"
+artists = ["Gin Wigmore"]
+album = "Ivory"
+duration = "3:25"
+spotify = "1D5AFoFypBXNsfNDy9Vyaq"
+
+[[track]]
+n = 84
+title = "So Peaceful"
+artists = ["Jain"]
+album = "Zanaka"
+duration = "3:59"
+spotify = "0MZG9BTLqN6D6mBnyNQfUr"
+
+[[track]]
+n = 85
+title = "Gold"
+artists = ["Chet Faker"]
+album = "Built on Glass"
+duration = "4:45"
+spotify = "1g7zNtcGrWt8gcBRwDQEkf"
+
+[[track]]
+n = 86
+title = "All that she wants"
+artists = ["Clea Vincent"]
+album = "Non mais oui"
+duration = "4:17"
+spotify = "1t2DuK4AAnNbaiQl7QKFKA"
+
+[[track]]
+n = 87
+title = "Interlude"
+artists = ["Her"]
+album = "Her Tape #1"
+duration = "2:18"
+spotify = "3HJ6k62ireUji21RW8KL8U"
+
+[[track]]
+n = 88
+title = "Imagination - Weiss Remix"
+artists = ["Gorgon City", "Katy Menditta", "WEISS"]
+album = "Sirens (Remixes)"
+duration = "6:12"
+spotify = "5i4BVrJ5Pw3MpzxhX7FhRJ"
+
+[[track]]
+n = 89
+title = "Makeba - Radio Edit"
+artists = ["Jain"]
+album = "Makeba (Radio Edit)"
+duration = "3:36"
+spotify = "5FkBFIGzG8lYFktLyZNUq6"
+
+[[track]]
+n = 90
+title = "Georgia"
+artists = ["Tiggs Da Author"]
+album = "Georgia"
+duration = "3:11"
+spotify = "06VFJ6o6ywoSdrSWMZMIoN"
+
+[[track]]
+n = 91
+title = "Canopée"
+artists = ["Polo & Pan"]
+album = "Caravelle"
+duration = "4:36"
+spotify = "2XOXx2U5IIoBRPlmGgDqj8"
+
+[[track]]
+n = 92
+title = "Ashes"
+artists = ["Mount Sims"]
+album = "Wild Light"
+duration = "4:07"
+spotify = "2RM99SilID02L1QT4lbdEn"
+
+[[track]]
+n = 93
+title = "Talk Is Cheap"
+artists = ["Chet Faker"]
+album = "Built on Glass"
+duration = "3:38"
+spotify = "0240T0gP9w6xEgIciBrfVF"
+
+[[track]]
+n = 94
+title = "Hanging Tree"
+artists = ["L.E.J"]
+album = "En attendant l’album"
+duration = "3:15"
+spotify = "2Uo2L5cH4PhaldUY5z8csJ"
+
+[[track]]
+n = 95
+title = "Ready For Your Love - CLOSE Remix"
+artists = ["Gorgon City", "MNEK", "Will Saul"]
+album = "Sirens (Remixes)"
+duration = "6:36"
+spotify = "5EfVPLq8y1pbumgWK5AxFU"
+
+[[track]]
+n = 96
+title = "Love Me Again - Kove Remix"
+artists = ["John Newman", "Kove"]
+album = "Love Me Again"
+duration = "4:20"
+spotify = "7oIie45AkGl7IA4yBu898V"
+
+[[track]]
+n = 97
+title = "Come - Extended Version"
+artists = ["Jain"]
+album = "Come EP"
+duration = "4:50"
+spotify = "5Fu8pc4fMbga7EV2zNsGcr"
+
+[[track]]
+n = 98
+title = "The Trouble With Us"
+artists = ["Marcus Marr", "Nick Murphy"]
+album = "The Trouble With Us"
+duration = "3:42"
+spotify = "60bBoLe9ocxO3zrb0mRO4k"
+
+[[track]]
+n = 99
+title = "L'Âme Au Mali"
+artists = ["Lamomali", "-M-", "Toumani Diabaté", "Amadou & Mariam", "Jain"]
+album = "Lamomali"
+duration = "3:08"
+spotify = "0tZnCHPbUWtafdlafpE6Cs"
+
+[[track]]
+n = 100
+title = "The Hanging Tree"
+artists = ["The Hanging Tree"]
+album = "The Hanging Tree"
+duration = "3:38"
+spotify = "5VInoBRoNHnhCkVJ4sOExy"

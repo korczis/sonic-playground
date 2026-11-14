@@ -1,0 +1,184 @@
+"""Unit tests of scripts/spotify_history.py on fixtures: no network, no account, no private data.
+
+majordomus-skill: import-spotify-history
+
+    python3 -m unittest discover -s test -p 'test_*.py'
+"""
+import importlib.util
+import json
+import sys
+import unittest
+from pathlib import Path
+from typing import Any
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+spec = importlib.util.spec_from_file_location("spotify_history", ROOT / "scripts" / "spotify_history.py")
+assert spec is not None and spec.loader is not None
+sh: Any = importlib.util.module_from_spec(spec)
+sys.modules["spotify_history"] = sh
+spec.loader.exec_module(sh)
+
+A = "A" * 22
+B = "B" * 22
+C = "C" * 22
+
+
+def row(n, title, artists, track_id=None, album="Album", added="9 Oct 2026", duration="3:35"):
+    return {"n": n, "title": title, "track_id": track_id, "artists": [{"name": a, "id": None} for a in artists],
+            "album": {"name": album, "id": None}, "added": added, "duration": duration, "explicit": False}
+
+
+def snapshot(**over):
+    snap = {"schema": sh.SNAPSHOT_SCHEMA, "captured": "2026-11-14", "library": [
+        {"uri": f"spotify:album:{C}", "name": "Aphrodite", "sub": "Album • Aphrodite"},
+        {"uri": f"spotify:artist:{B}", "name": "Moloko", "sub": "Artist"}],
+        "playlists": [
+            {"uri": "spotify:collection:tracks", "name": "Liked Songs", "owner": {"name": "Owner", "id": "u1"},
+             "expected": 2, "items": [row(1, "Gooey", ["Glass Animals"], A), row(2, "Sing It Back", ["Moloko"], added="4 weeks ago")]},
+            {"uri": f"spotify:playlist:{B}", "name": "Your Top Songs 2019", "library_subtitle": "Playlist • Made for Owner",
+             "owner": {"name": "Spotify", "id": "spotify"}, "expected": 2,
+             "items": [row(1, "Sing It Back", ["Moloko"]), row(2, "Gooey", ["Glass Animals"], A)]},
+            {"uri": f"spotify:playlist:{C}", "name": "Mine", "library_subtitle": "Playlist • Owner",
+             "owner": {"name": "Owner", "id": "u1"}, "expected": 2,
+             "items": [row(1, "Gooey", ["Glass Animals"], A), {"n": 2, "unavailable": True, "text": "gone"}]}]}
+    snap.update(over)
+    return snap
+
+
+def built(snaps=None):
+    m = sh.model(snaps or [snapshot()])
+    sh.assign_ids(m)
+    for s in m["songs"].values():
+        s["review"], s["status"] = None, "missing"
+    return m
+
+
+class FrontMatter(unittest.TestCase):
+    def test_a_record_reads_back_as_written(self):
+        meta = {"schema": "spotify-track/v1", "title": "Déjà \"vu\"", "artists": ["A", "B"],
+                "yearbooks": [{"year": 2019, "n": 3}], "liked": True, "album": None}
+        meta2, body = sh.load_record(sh.dump_record(meta, "# body"), "t")
+        self.assertEqual(meta2, {k: v for k, v in meta.items() if v is not None})
+        self.assertEqual(body.strip(), "# body")
+
+    def test_a_malformed_record_is_refused_with_its_line(self):
+        for text, said in (("no front matter", "no front matter"), ("---\ntitle: x\n", "not closed"),
+                           ("---\ntitle: unquoted\n---\n", ":2:"), ("---\na: 1\na: 2\n---\n", "twice")):
+            with self.assertRaises(sh.HistoryError) as ctx:
+                sh.load_record(text, "t")
+            self.assertIn(said, str(ctx.exception))
+
+
+class Dates(unittest.TestCase):
+    def test_the_date_added_cell_becomes_a_date(self):
+        self.assertEqual(sh.added_date("9 Oct 2026", "2026-11-14"), {"date": "2026-10-09"})
+        self.assertEqual(sh.added_date("Oct 9, 2026", "2026-11-14"), {"date": "2026-10-09"})
+        self.assertEqual(sh.added_date("4 weeks ago", "2026-11-14"), {"date": "2026-10-17", "approx": True})
+        self.assertEqual(sh.added_date("an hour ago", "2026-11-14"), {"date": "2026-11-14", "approx": True})
+        self.assertEqual(sh.added_date("včera", "2026-11-14"), {"text": "včera"})
+        self.assertIsNone(sh.added_date("", "2026-11-14"))
+
+
+class Model(unittest.TestCase):
+    def test_one_song_one_record_across_playlists(self):
+        m = built()
+        self.assertEqual(len(m["songs"]), 2, "Gooey by id, Sing It Back by artist and song")
+        kinds = {p["name"]: p["kind"] for p in m["playlists"]}
+        self.assertEqual(kinds, {"Liked Songs": "liked", "Your Top Songs 2019": "yearbook", "Mine": "own"})
+
+    def test_an_id_less_row_joins_the_song_its_id_names(self):
+        snap = snapshot()
+        snap["playlists"][1]["items"][1]["track_id"] = None  # the yearbook row lacks the id
+        m = built([snap])
+        self.assertEqual(len(m["songs"]), 2)
+
+    def test_a_short_crawl_is_completed_from_a_full_one(self):
+        pls = [{"uri": "spotify:collection:tracks", "expected": 3, "items": [row(1, "X", ["Y"], A)]}]
+        plain = [{"n": 1, "title": "X", "artists": ["Y"]}, {"n": 2, "title": "Z", "artists": ["W"]}]
+        merged = sh.merge_liked(pls, plain)
+        self.assertEqual([r["n"] for r in merged[0]["items"]], [1, 2])
+        self.assertEqual(merged[0]["items"][0]["track_id"], A, "the id-bearing row wins")
+
+    def test_colliding_names_stay_distinct_and_stable(self):
+        snap = snapshot()
+        snap["playlists"][2]["items"].append(row(3, "Gooey", ["Glass Animals"], B))  # another recording
+        ids1 = sorted(s["id"] for s in built([snap])["songs"].values())
+        ids2 = sorted(s["id"] for s in built([snap])["songs"].values())
+        self.assertEqual(ids1, ids2)
+        self.assertEqual(len(set(ids1)), 3)
+
+
+class Records(unittest.TestCase):
+    def setUp(self):
+        self.m = built()
+        self.public = sh.records(self.m, private=False)
+        self.private = sh.records(self.m, private=True)
+
+    def test_public_records_hold_nothing_private_and_validate(self):
+        schemas = {k: sh.schema(k) for k in ("track", "playlist", "library")}
+        for path, text in self.public.items():
+            if path.suffix != ".md":
+                continue
+            meta, _ = sh.load_record(text, path.name)
+            kind = "library" if path.name == "library.md" else path.parent.name.rstrip("s")
+            self.assertEqual(sh.cat.validate(meta, schemas[kind]), [], path.name)
+            self.assertEqual(sh.find_private_keys(meta), [], path.name)
+        self.assertNotIn("u1", "".join(self.public.values()), "no user id in public")
+
+    def test_private_records_keep_the_dates(self):
+        texts = [t for p, t in self.private.items() if p.parent.name == "tracks"]
+        self.assertTrue(any('"added": {"date": "2026-10-09"}' in t for t in texts))
+        self.assertTrue(all(str(p).startswith(str(sh.PRIVATE)) for p in self.private))
+
+    def test_a_yearbook_and_its_items(self):
+        pl = next(p for p in self.m["playlists"] if p["kind"] == "yearbook")
+        items = sh.yearbook_items(pl, self.m)
+        self.assertEqual([(i["n"], i["title"], i.get("spotify")) for i in items],
+                         [(1, "Sing It Back", None), (2, "Gooey", A)])
+        track = next(t for p, t in self.public.items() if p.name.startswith("glass-animals-gooey"))
+        meta, _ = sh.load_record(track)
+        self.assertEqual(meta["yearbooks"], [{"year": 2019, "n": 2}])
+        self.assertTrue(meta["liked"])
+
+    def test_an_unavailable_item_keeps_its_place(self):
+        mine = next(t for p, t in self.public.items() if p.parent.name == "playlists" and p.stem == "mine")
+        meta, _ = sh.load_record(mine)
+        self.assertEqual(meta["tracks"][1], {"n": 2, "unavailable": True})
+        self.assertEqual((meta["retrieved"], meta["unavailable"]), (1, 1))
+
+
+class Gate(unittest.TestCase):
+    def test_private_keys_are_found_anywhere(self):
+        self.assertEqual(sh.find_private_keys({"a": [{"added": 1}], "plays": {}}), ["a[0].added", "plays"])
+
+    def test_the_committed_history_passes_the_gate(self):
+        self.assertEqual(sh.check(), [])
+
+
+class Export(unittest.TestCase):
+    def test_the_export_is_read_into_liked_playlists_and_plays(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp)
+            (d / "YourLibrary.json").write_text(json.dumps({"tracks": [
+                {"artist": "Moloko", "album": "Things to Make and Do", "track": "Sing It Back", "uri": f"spotify:track:{B}"}]}))
+            (d / "Playlist1.json").write_text(json.dumps({"playlists": [{"name": "Your Top Songs 2019", "items": [
+                {"track": {"trackName": "Sing It Back", "artistName": "Moloko", "albumName": "X", "trackUri": f"spotify:track:{B}"},
+                 "addedDate": "2019-12-01"}]}]}))
+            (d / "Streaming_History_Audio_2019.json").write_text(json.dumps([
+                {"ts": "2019-05-01T10:00:00Z", "ms_played": 60000, "master_metadata_track_name": "Sing It Back",
+                 "master_metadata_album_artist_name": "Moloko", "spotify_track_uri": f"spotify:track:{B}", "ip_addr": "1.2.3.4"},
+                {"ts": "2019-05-02T10:00:00Z", "ms_played": 0, "master_metadata_track_name": None}]))
+            ex = sh.export_sources(d)
+        self.assertEqual(ex["liked"][0]["track_id"], B)
+        self.assertEqual(ex["playlists"][0]["items"][0]["track_id"], B)
+        self.assertEqual(len(ex["plays"]), 1, "a play with no track (a podcast or a gap) is not a song")
+        self.assertNotIn("ip_addr", ex["plays"][0], "the address never leaves the raw file")
+        m = sh.model([], ex)
+        sh.assign_ids(m)
+        self.assertEqual(m["plays"][("id", B)]["count"], 1)
+
+
+if __name__ == "__main__":
+    unittest.main()

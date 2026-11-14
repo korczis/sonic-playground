@@ -1,0 +1,816 @@
+# The owner's Spotify yearbook 2016 ("Your Top Songs 2016"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2016
+name = "Your Top Songs 2016"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2016\", read off the rendered page on 2026-11-14 (scripts/spotify_history.py)"
+retrieved = "2026-11-14"
+expected = 101
+
+[[track]]
+n = 1
+title = "Sugar (feat. Francesco Yates)"
+artists = ["Robin Schulz", "Francesco Yates"]
+album = "Sugar"
+duration = "3:39"
+spotify = "5tf1VVWniHgryyumXyJM7w"
+
+[[track]]
+n = 2
+title = "Dangerous (feat. Joywave)"
+artists = ["Big Data", "Joywave"]
+album = "2.0"
+duration = "4:40"
+spotify = "3y8AEUef1AVfr0npU5UOa9"
+
+[[track]]
+n = 3
+title = "Stand Up - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade"
+duration = "4:39"
+spotify = "1y01CYF2Cr8ICQAPRcjxz3"
+
+[[track]]
+n = 4
+title = "How We Do"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:54"
+spotify = "4flxgPC0426CEeSrzQIic0"
+
+[[track]]
+n = 5
+title = "Imagination"
+artists = ["Gorgon City", "Katy Menditta"]
+album = "Sirens"
+duration = "3:37"
+spotify = "3ZrWmt3DGH75hItHp6uWLz"
+
+[[track]]
+n = 6
+title = "Paralyzed"
+artists = ["Klyne"]
+album = "Klyne"
+duration = "3:06"
+spotify = "0I2Rf23IjDIKHsfJnYz6wu"
+
+[[track]]
+n = 7
+title = "Party Girl"
+artists = ["Michelle Gurevich"]
+album = "Party Girl"
+duration = "4:26"
+spotify = "4otkGEyV72X9B5NLK6Dfyk"
+
+[[track]]
+n = 8
+title = "Entropy"
+artists = ["Klyne"]
+album = "Paralyzed"
+duration = "3:02"
+spotify = "08eZTW0dN8nFOjjt4KSGWl"
+
+[[track]]
+n = 9
+title = "Babe I'm Yours"
+artists = ["Whilk & Misky"]
+album = "Babe I'm Yours"
+duration = "5:18"
+spotify = "7b1724xEzf45o0DzPkg7GJ"
+
+[[track]]
+n = 10
+title = "Reckoning Song (One Day)"
+artists = ["Asaf Avidan & the Mojos"]
+album = "The Reckoning"
+duration = "2:46"
+spotify = "40H0KbZ0fdOrHipLTTRuTr"
+
+[[track]]
+n = 11
+title = "Waiting"
+artists = ["Klyne"]
+album = "Closer"
+duration = "3:06"
+spotify = "3sfTg035iFeajWtGNhfysJ"
+
+[[track]]
+n = 12
+title = "Darklands"
+artists = ["Whilk & Misky"]
+album = "Darklands"
+duration = "7:16"
+spotify = "1YRrscFaLcdwa9GST5uk5G"
+
+[[track]]
+n = 13
+title = "Sunny"
+artists = ["Bobby Hebb"]
+album = "Sunny"
+duration = "2:45"
+spotify = "2JdM4xPoCuHrMzOGQrMUBj"
+
+[[track]]
+n = 14
+title = "What's the Big Deal"
+artists = ["Mount Sims", "Toby Dammit"]
+album = "Happily Ever After"
+duration = "3:47"
+spotify = "3SIDhbdHFuIdlaJLS05Ua6"
+
+[[track]]
+n = 15
+title = "One Day / Reckoning Song (Wankelmut Remix) [Radio Edit]"
+artists = ["Asaf Avidan & the Mojos", "Wankelmut"]
+album = "One Day / Reckoning Song (Wankelmut Remix)"
+duration = "3:33"
+spotify = "3gNNXc7GUgKRPR15W77eDR"
+
+[[track]]
+n = 16
+title = "Closer"
+artists = ["Klyne"]
+album = "Closer"
+duration = "3:32"
+spotify = "0mijLnuwhy4HpsF9iDPqKo"
+
+[[track]]
+n = 17
+title = "Say No More"
+artists = ["The Supermen Lovers"]
+album = "Between The Ages"
+duration = "3:28"
+spotify = "6bSqBPNTw3p4WJ4Y4BQaDk"
+
+[[track]]
+n = 18
+title = "Santa María (del Buen Ayre)"
+artists = ["Gotan Project"]
+album = "La revancha del tango"
+duration = "5:57"
+spotify = "65MDo5mxRY45IHpyVkLEU5"
+
+[[track]]
+n = 19
+title = "Black Sunglasses"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "4:51"
+spotify = "50i9vPCkHgEEfNuMsj01ji"
+
+[[track]]
+n = 20
+title = "Drop the Game"
+artists = ["Flume", "Chet Faker"]
+album = "Lockjaw"
+duration = "3:41"
+spotify = "4KtrE35pTuqwNc22QP58RT"
+
+[[track]]
+n = 21
+title = "American Boy (feat. Kanye West)"
+artists = ["Estelle", "Kanye West"]
+album = "Shine"
+duration = "4:44"
+spotify = "41on8RwRh22IHcChAN2gm8"
+
+[[track]]
+n = 22
+title = "Sweet About Me"
+artists = ["Gabriella Cilmi"]
+album = "Lessons To Be Learned"
+duration = "3:21"
+spotify = "2BkdnK1Sl8pDlgeaHcXvzn"
+
+[[track]]
+n = 23
+title = "Grave"
+artists = ["Mount Sims"]
+album = "Happily Ever After... Again"
+duration = "5:02"
+spotify = "1NxkF0qACQtiNR52G2qga9"
+
+[[track]]
+n = 24
+title = "C'est bon"
+artists = ["The Supermen Lovers", "Herr Styler", "Cristine"]
+album = "Between The Ages"
+duration = "3:19"
+spotify = "5ALcK9iZxr3iMOXQTPH52r"
+
+[[track]]
+n = 25
+title = "Clap Your Hands"
+artists = ["Whilk & Misky"]
+album = "Clap Your Hands"
+duration = "5:05"
+spotify = "5ndyjqPPACB114cu4PlAw9"
+
+[[track]]
+n = 26
+title = "Loser"
+artists = ["N.E.R.D", "Clipse"]
+album = "The Neptunes Present... Clones (Clean Version)"
+duration = "3:10"
+spotify = "6sY4fEoiM7zTvFeGx8jP1y"
+
+[[track]]
+n = 27
+title = "Tearing Me Up"
+artists = ["Bob Moses"]
+album = "Days Gone By"
+duration = "7:50"
+spotify = "72AfoN1wsvI9aGsR1WaRxD"
+
+[[track]]
+n = 28
+title = "The Bitten Bite Back"
+artists = ["Mount Sims"]
+album = "Happily Ever After... Again"
+duration = "3:23"
+spotify = "09VTFAkBgfd3tZHVVfLDA7"
+
+[[track]]
+n = 29
+title = "Left With Someone Else"
+artists = ["Gabriella Cilmi"]
+album = "The Sting"
+duration = "3:15"
+spotify = "1IY75FIyPiGewmfc2AbPGa"
+
+[[track]]
+n = 30
+title = "Feel Good Inc."
+artists = ["filous", "LissA"]
+album = "Feel Good Inc."
+duration = "3:56"
+spotify = "5qeL0fWg4IDLZNUjVu53f2"
+
+[[track]]
+n = 31
+title = "I Found U - Radio Edit"
+artists = ["Axwell", "Max C"]
+album = "I Found U"
+duration = "2:54"
+spotify = "1UgLlbrbGgYmsObfVzLiy3"
+
+[[track]]
+n = 32
+title = "Man On the Moon - Miguel Campbell Remix"
+artists = ["Klangkuenstler", "Alice Phoebe Lou"]
+album = "Man on the Moon"
+duration = "5:48"
+spotify = "04NzfvGky8pjtMX7u5TpAC"
+
+[[track]]
+n = 33
+title = "Gooey - Gilligan Moss Remix"
+artists = ["Glass Animals", "Gilligan Moss"]
+album = "Remixes"
+duration = "5:39"
+spotify = "2HKQvs4fugYZH8qkPOyrFc"
+
+[[track]]
+n = 34
+title = "Get Lucky (Radio Edit) [feat. Pharrell Williams and Nile Rodgers]"
+artists = ["Daft Punk", "Pharrell Williams", "Nile Rodgers"]
+album = "Get Lucky (Radio Edit) [feat. Pharrell Williams and Nile Rodgers]"
+duration = "4:07"
+spotify = "2Foc5Q5nqNiosCNqttzHof"
+
+[[track]]
+n = 35
+title = "R U Mine?"
+artists = ["Arctic Monkeys"]
+album = "AM"
+duration = "3:21"
+spotify = "2LlvrdnLa3XbB1b4jYuCnl"
+
+[[track]]
+n = 36
+title = "Sambassim - DJ Patife Remix"
+artists = ["DJ Patife"]
+album = "Cool Steps Drum 'N' Bass Grooves"
+duration = "3:36"
+spotify = "2OFXv6WxWbfuOV72ayBPrK"
+
+[[track]]
+n = 37
+title = "Good Service"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:38"
+spotify = "4WxUkWNynBJgko4xTtuojL"
+
+[[track]]
+n = 38
+title = "Feel The Vibe"
+artists = ["Axwell"]
+album = "Feel The Vibe"
+duration = "7:06"
+spotify = "5b7FkNOZEjRj6OkzKpWyee"
+
+[[track]]
+n = 39
+title = "Chunky - Radio Edit"
+artists = ["Format:B"]
+album = "Chunky"
+duration = "2:38"
+spotify = "3g52QTF7u7dYUEB0DswE2V"
+
+[[track]]
+n = 40
+title = "Snap Out Of It"
+artists = ["Arctic Monkeys"]
+album = "AM"
+duration = "3:13"
+spotify = "30uJNlHIjfDeE4vr8g9fpf"
+
+[[track]]
+n = 41
+title = "Traces - Oxia Remix"
+artists = ["The Hacker", "Mount Sims"]
+album = "Traces"
+duration = "6:35"
+spotify = "2R9lIdKnJEUXF5brvmX8CX"
+
+[[track]]
+n = 42
+title = "Jam Master Jack - Original Mix"
+artists = ["Klangkuenstler"]
+album = "Jam Master Jack"
+duration = "6:20"
+spotify = "6GJjktlalKZY3xUeocaE9o"
+
+[[track]]
+n = 43
+title = "Sail"
+artists = ["AWOLNATION"]
+album = "Megalithic Symphony"
+duration = "4:19"
+spotify = "5xhQChGGhKLWqBqX4XhtYE"
+
+[[track]]
+n = 44
+title = "No Yellow Lines"
+artists = ["Mount Sims"]
+album = "Wild Light"
+duration = "3:29"
+spotify = "6n83wvge1cLedK7S2sCs9B"
+
+[[track]]
+n = 45
+title = "Hard On Me"
+artists = ["Gorgon City", "Maverick Sabre"]
+album = "Sirens"
+duration = "4:37"
+spotify = "3idVZI4aZARbPmznVOzpCk"
+
+[[track]]
+n = 46
+title = "Do I Wanna Know?"
+artists = ["Arctic Monkeys"]
+album = "AM"
+duration = "4:32"
+spotify = "3jfr0TF6DQcOLat8gGn7E2"
+
+[[track]]
+n = 47
+title = "Happy - From \"Despicable Me 2\""
+artists = ["Pharrell Williams"]
+album = "G I R L"
+duration = "3:52"
+spotify = "5b88tNINg4Q4nrRbrCXUmg"
+
+[[track]]
+n = 48
+title = "Ashes"
+artists = ["Mount Sims"]
+album = "Wild Light"
+duration = "4:07"
+spotify = "2RM99SilID02L1QT4lbdEn"
+
+[[track]]
+n = 49
+title = "Midnight Marauders"
+artists = ["DJ Fitchie", "Joe Dukie"]
+album = "Late Night Tales: Nightmares On Wax"
+duration = "7:20"
+spotify = "06TgKY3VqiUG9JQ6OdR4rU"
+
+[[track]]
+n = 50
+title = "Moments"
+artists = ["The Supermen Lovers"]
+album = "Between The Ages (Deluxxx Edition)"
+duration = "5:56"
+spotify = "1r6AEeStwpV6GZPRalVFU7"
+
+[[track]]
+n = 51
+title = "Fallin'"
+artists = ["Alicia Keys"]
+album = "Songs In A Minor"
+duration = "3:30"
+spotify = "0KQx6HOpJueiSkztcS0r7D"
+
+[[track]]
+n = 52
+title = "Lovers Are Strangers"
+artists = ["Michelle Gurevich"]
+album = "Party Girl"
+duration = "5:05"
+spotify = "6281gMeX2bpTyHqrKNlUeW"
+
+[[track]]
+n = 53
+title = "Restless"
+artists = ["Mount Sims"]
+album = "Wild Light"
+duration = "6:58"
+spotify = "5mK1MjJEPsEXZA80eLT5Zp"
+
+[[track]]
+n = 54
+title = "Soul Digger - Original Mix"
+artists = ["Klangkuenstler"]
+album = "Jam Master Jack"
+duration = "6:47"
+spotify = "6Iri0Tq5aCDELH6pX2ZvCw"
+
+[[track]]
+n = 55
+title = "First Six Months of Love"
+artists = ["Michelle Gurevich"]
+album = "New Decadence"
+duration = "4:38"
+spotify = "0ImZJIFxv4HBobMgG4BRpU"
+
+[[track]]
+n = 56
+title = "You Know I'm No Good"
+artists = ["Amy Winehouse"]
+album = "Back To Black"
+duration = "4:16"
+spotify = "4SyowQi18ym4zJGJDBnsTj"
+
+[[track]]
+n = 57
+title = "Giorgio by Moroder"
+artists = ["Daft Punk"]
+album = "Random Access Memories"
+duration = "9:04"
+spotify = "0oks4FnzhNp5QPTZtoet7c"
+
+[[track]]
+n = 58
+title = "Andy of Jenny"
+artists = ["Mount Sims", "Jessie Evans"]
+album = "Happily Ever After"
+duration = "3:20"
+spotify = "3uiYamkiAwV75JQ3coxeJy"
+
+[[track]]
+n = 59
+title = "Hungry - Remix"
+artists = ["Niklas Ibach"]
+album = "Hungry (Remix)"
+duration = "4:08"
+spotify = "2Y6HWIuckvl1hjmgIs4c6t"
+
+[[track]]
+n = 60
+title = "Face to Face / Short Circuit"
+artists = ["Daft Punk"]
+album = "Alive 2007"
+duration = "4:55"
+spotify = "5XzGyYZemDuCG3OdbhVFvh"
+
+[[track]]
+n = 61
+title = "Feeling Good"
+artists = ["Avicii"]
+album = "Feeling Good"
+duration = "3:48"
+spotify = "7oDjaRDdf9zNQ8N3yRjQwF"
+
+[[track]]
+n = 62
+title = "Episode 3, Nile Rodgers"
+artists = ["Daft Punk"]
+album = "Daft Punk | Random Access Memories | The Collaborators"
+duration = "7:33"
+spotify = "2fJp2bDmhG62vlmUpuWjxb"
+
+[[track]]
+n = 63
+title = "Holdin On"
+artists = ["Flume"]
+album = "Flume"
+duration = "2:34"
+spotify = "4iFbpj8YwYkgJdbI5hFFlt"
+
+[[track]]
+n = 64
+title = "Hellbent"
+artists = ["Mount Sims"]
+album = "Happily Ever After... Again"
+duration = "3:39"
+spotify = "3lKMtekqlrUMWYTOPTtxpA"
+
+[[track]]
+n = 65
+title = "Close to the Wire - Club Remix"
+artists = ["KANT", "Leo Stannard"]
+album = "Close to the Wire - EP"
+duration = "6:56"
+spotify = "0FuwDI2j2NmUj5YO3Oj6xq"
+
+[[track]]
+n = 66
+title = "Frank Sinatra"
+artists = ["Miss Kittin", "The Hacker"]
+album = "First Album (2009 Reissue)"
+duration = "3:56"
+spotify = "1hTBci21ebFOUBjPHoJ4Zz"
+
+[[track]]
+n = 67
+title = "Like A Glove"
+artists = ["Ivy Levan", "CADRÉ"]
+album = "No Good"
+duration = "3:16"
+spotify = "6jpFzeFIY2hfiT9fysOLtO"
+
+[[track]]
+n = 68
+title = "New Authority Volunteers"
+artists = ["Mount Sims"]
+album = "Happily Ever After... Again"
+duration = "3:10"
+spotify = "5oGuy6LkmGTEUOT9qd6cfW"
+
+[[track]]
+n = 69
+title = "Episode 1, Giorgio Moroder"
+artists = ["Daft Punk"]
+album = "Daft Punk | Random Access Memories | The Collaborators"
+duration = "7:53"
+spotify = "4l2bO887Yauqos4LwkCwBm"
+
+[[track]]
+n = 70
+title = "Moments (Jay Lamar & Jesse Oliver Remix)"
+artists = ["The Supermen Lovers", "Jay Lamar", "Jesse Oliver"]
+album = "Moments"
+duration = "5:56"
+spotify = "6ulRn7JwWxOaA9ywKSZhZ4"
+
+[[track]]
+n = 71
+title = "Galactical"
+artists = ["Basement Jaxx"]
+album = "Junto (Special Edition)"
+duration = "3:06"
+spotify = "6MuU9qiwhXnnkGVGua0GeA"
+
+[[track]]
+n = 72
+title = "Cry Me A River - Live Version"
+artists = ["Gabriella Cilmi"]
+album = "Lessons To Be Learned"
+duration = "3:37"
+spotify = "1VdmbvKkfoh2pgu4CvJt8R"
+
+[[track]]
+n = 73
+title = "Pumped Up Kicks"
+artists = ["Foster The People"]
+album = "Torches"
+duration = "3:59"
+spotify = "7w87IxuO7BDcJ3YUqCyMTT"
+
+[[track]]
+n = 74
+title = "Get Lucky (feat. Pharrell Williams and Nile Rodgers)"
+artists = ["Daft Punk", "Pharrell Williams", "Nile Rodgers"]
+album = "Random Access Memories"
+duration = "6:09"
+spotify = "69kOkLUCkxIZYexIgSG8rq"
+
+[[track]]
+n = 75
+title = "Golden"
+artists = ["Klangkuenstler"]
+album = "Golden"
+duration = "6:46"
+spotify = "38B26AvxZ6G6c9HnBFON0G"
+
+[[track]]
+n = 76
+title = "Gooey"
+artists = ["Glass Animals"]
+album = "ZABA"
+duration = "4:49"
+spotify = "3djK2yDqJArNAzHyhzSf8G"
+
+[[track]]
+n = 77
+title = "Good Day"
+artists = ["Nappy Roots"]
+album = "The Humdinger"
+duration = "4:21"
+spotify = "0s9COZY8wLOadAzbHka2GO"
+
+[[track]]
+n = 78
+title = "Sandburg"
+artists = ["Tinush"]
+album = "Sandburg"
+duration = "7:09"
+spotify = "3xJLi9PvRToiqb9zRqpTQ7"
+
+[[track]]
+n = 79
+title = "Blurred Lines"
+artists = ["Robin Thicke", "T.I.", "Pharrell Williams"]
+album = "Blurred Lines (Deluxe)"
+duration = "4:23"
+spotify = "0Rz1KXsP4bhGxs0ffySSSn"
+
+[[track]]
+n = 80
+title = "The Creep"
+artists = ["Future Forward Society", "Mount Sims"]
+album = "The Creep"
+duration = "4:51"
+spotify = "05lInljPk6kxeUXedn5i9K"
+
+[[track]]
+n = 81
+title = "Harder, Better, Faster, Stronger"
+artists = ["Daft Punk"]
+album = "Discovery"
+duration = "3:46"
+spotify = "5W3cjX2J3tjhG8zb6u0qHn"
+
+[[track]]
+n = 82
+title = "My Baby Boy"
+artists = ["theAngelcy"]
+album = "Exit Inside (Deluxe Edition)"
+duration = "3:11"
+spotify = "4WyNz1KalCOsOmhcwUsUmY"
+
+[[track]]
+n = 83
+title = "Wrong - Live In Barcelona"
+artists = ["Depeche Mode"]
+album = "Tour of The Universe: Barcelona 20/21:11:09 (Live)"
+duration = "3:48"
+spotify = "1wZaq6zXBqvNyXlB9HKaTD"
+
+[[track]]
+n = 84
+title = "Put Your Records On"
+artists = ["Corinne Bailey Rae"]
+album = "Put Your Records On"
+duration = "3:35"
+spotify = "2nGFzvICaeEWjIrBrL2RAx"
+
+[[track]]
+n = 85
+title = "The Sun Ain't Shining No More"
+artists = ["The Asteroids Galaxy Tour"]
+album = "The Sun Ain't Shining No More"
+duration = "3:37"
+spotify = "6ZEVMb0NsZX2ubSVwYYczv"
+
+[[track]]
+n = 86
+title = "Give Life Back to Music"
+artists = ["Daft Punk"]
+album = "Random Access Memories"
+duration = "4:35"
+spotify = "0dEIca2nhcxDUV8C5QkPYb"
+
+[[track]]
+n = 87
+title = "Man On the Moon"
+artists = ["Klangkuenstler", "Alice Phoebe Lou"]
+album = "That's Me"
+duration = "5:41"
+spotify = "2XU3qr6OVwdrLXxmTGAnPW"
+
+[[track]]
+n = 88
+title = "The Creep - HV Thrillseeker Mix"
+artists = ["Future Forward Society", "Mount Sims"]
+album = "The Creep"
+duration = "6:41"
+spotify = "77utFc24BcNBq0ky8tjpfB"
+
+[[track]]
+n = 89
+title = "The Creep - Capri Mix"
+artists = ["Future Forward Society", "Mount Sims"]
+album = "The Creep"
+duration = "6:34"
+spotify = "2PdNwdyduAYncycuMFbH1p"
+
+[[track]]
+n = 90
+title = "Pop Style"
+artists = ["Drake", "The Throne"]
+album = "Views"
+duration = "3:29"
+spotify = "1snt6FNtZASSQrJuS9serg"
+
+[[track]]
+n = 91
+title = "I Like The Way - Radio Edit"
+artists = ["Bodyrockers"]
+album = "Bodyrockers"
+duration = "3:21"
+spotify = "29A8JwgJHc8FNfgm6ygqup"
+
+[[track]]
+n = 92
+title = "Kids with Guns"
+artists = ["Gorillaz", "Neneh Cherry"]
+album = "Demon Days"
+duration = "3:45"
+spotify = "0eEgMbSzOHmkOeVuNC3E0k"
+
+[[track]]
+n = 93
+title = "Dance With Somebody - Radio Version"
+artists = ["Mando Diao"]
+album = "Dance with Somebody"
+duration = "4:01"
+spotify = "5BncQXZqKNmcoy6TRN0IYi"
+
+[[track]]
+n = 94
+title = "Kings of Summer"
+artists = ["ayokay", "Quinn XCII"]
+album = "Kings of Summer (feat. Quinn XCII)"
+duration = "3:42"
+spotify = "6hph3AtlYSki64xnAPIfi6"
+
+[[track]]
+n = 95
+title = "19-2000 - Soulchild Remix"
+artists = ["Gorillaz"]
+album = "The Singles Collection 2001-2011"
+duration = "3:29"
+spotify = "3SgYwNgMYlnl3yODszuWnc"
+
+[[track]]
+n = 96
+title = "Another One Bites The Dust - A Skillz Remix"
+artists = ["Queen vs The Miami Project"]
+album = "Another One Bites The Dust"
+duration = "5:35"
+spotify = "4cNQ8AVhfVG4rMAzBPnGGV"
+
+[[track]]
+n = 97
+title = "Around the World"
+artists = ["Daft Punk"]
+album = "Homework"
+duration = "7:09"
+spotify = "1pKYYY0dkg23sQQXi0Q5zN"
+
+[[track]]
+n = 98
+title = "Time for Livin (feat. Mount Sims)"
+artists = ["Future Forward", "Mount Sims"]
+album = "Time for Livin"
+duration = "6:29"
+spotify = "31V13lCIyz5BPwgDRbcRS9"
+
+[[track]]
+n = 99
+title = "Stay (feat. Maty Noyes)"
+artists = ["Kygo", "Maty Noyes"]
+album = "Stay (feat. Maty Noyes)"
+duration = "3:59"
+spotify = "7gBj0VgcuAgkXkiRRYvSmK"
+
+[[track]]
+n = 100
+title = "Billie Jean"
+artists = ["Michael Jackson"]
+album = "HIStory - PAST, PRESENT AND FUTURE - BOOK I"
+duration = "4:54"
+spotify = "6vR5u5b8JeRESx5nZaIWx6"
+
+[[track]]
+n = 101
+title = "Love Letters - Soulwax Remix"
+artists = ["Metronomy"]
+album = "Love Letters (Soulwax Remix)"
+duration = "6:28"
+spotify = "1oMwz5PBptPBZEM9dQCIX1"

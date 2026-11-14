@@ -1,0 +1,163 @@
+---
+schema: "spotify-playlist/v1"
+id: "written-by-jt-daly"
+name: "Written By JT Daly"
+kind: "followed"
+curator: "Spotify"
+description: "Public Playlist"
+expected: 147
+retrieved: 147
+read: "2026-11-14"
+tracks:
+  - {"n": 1, "track": "benson-boone-ghost-town"}
+  - {"n": 2, "track": "miyavi-snakes-from-the-series-arcane-league-of-legends"}
+  - {"n": 3, "track": "k-flay-blood-in-the-cut"}
+  - {"n": 4, "track": "alex-warren-headlights"}
+  - {"n": 5, "track": "pvris-dead-weight"}
+  - {"n": 6, "track": "camylio-monsters"}
+  - {"n": 7, "track": "pvris-hallucinations"}
+  - {"n": 8, "track": "quinn-xcii-two-10s"}
+  - {"n": 9, "track": "pvris-death-of-me"}
+  - {"n": 10, "track": "pvris-use-me-feat-070-shake"}
+  - {"n": 11, "track": "the-regrettes-barely-on-my-mind"}
+  - {"n": 12, "track": "pvris-goddess"}
+  - {"n": 13, "track": "grandson-in-over-my-head"}
+  - {"n": 14, "track": "pvris-monster"}
+  - {"n": 15, "track": "luna-aura-honey"}
+  - {"n": 16, "track": "tai-verdes-two-sugars"}
+  - {"n": 17, "track": "pvris-loveless"}
+  - {"n": 18, "track": "pvris-animal"}
+  - {"n": 19, "track": "grandson-we-did-it"}
+  - {"n": 20, "track": "tai-verdes-sandman"}
+  - {"n": 21, "track": "pvris-gimme-a-minute"}
+  - {"n": 22, "track": "bully-lose-you"}
+  - {"n": 23, "track": "dhruv-how"}
+  - {"n": 24, "track": "paper-route-chariots"}
+  - {"n": 25, "track": "dhruv-tragedy"}
+  - {"n": 26, "track": "k-flay-i-like-myself-most-of-the-time"}
+  - {"n": 27, "track": "k-flay-hollywood-forever"}
+  - {"n": 28, "track": "pvris-january-rain"}
+  - {"n": 29, "track": "pvris-my-way"}
+  - {"n": 30, "track": "pvris-good-to-be-alive"}
+  - {"n": 31, "track": "bren-joy-headline"}
+  - {"n": 32, "track": "pvris-nightmare"}
+  - {"n": 33, "track": "k-flay-tgif-feat-tom-morello"}
+  - {"n": 34, "track": "k-flay-champagne"}
+  - {"n": 35, "track": "pvris-wish-you-well"}
+  - {"n": 36, "track": "bigxthaplug-24-7-feat-ink"}
+  - {"n": 37, "track": "isaac-dunbar-tainted-love"}
+  - {"n": 38, "track": "pvris-stay-gold"}
+  - {"n": 39, "track": "k-flay-you-felt-right"}
+  - {"n": 40, "track": "betcha-pleasure"}
+  - {"n": 41, "track": "demi-lovato-feed"}
+  - {"n": 42, "track": "pvris-love-is-a"}
+  - {"n": 43, "track": "holly-humberstone-too-cute-to-be-lonely"}
+  - {"n": 44, "track": "anna-shoemaker-if-you-re-going-i-ll-go"}
+  - {"n": 45, "track": "k-flay-slow-march"}
+  - {"n": 46, "track": "michael-clifford-give-me-a-break-feat-waterparks"}
+  - {"n": 47, "track": "the-regrettes-that-s-what-makes-me-love-you"}
+  - {"n": 48, "track": "lyell-eraser"}
+  - {"n": 49, "track": "paper-route-better-life"}
+  - {"n": 50, "track": "third-day-our-deliverer"}
+  - {"n": 51, "track": "third-day-victorious"}
+  - {"n": 52, "track": "pvris-things-are-better"}
+  - {"n": 53, "track": "astrid-s-first-to-go"}
+  - {"n": 54, "track": "forest-blakk-another-love-song"}
+  - {"n": 55, "track": "luna-aura-crash-dive"}
+  - {"n": 56, "track": "third-day-spirit"}
+  - {"n": 57, "track": "astrid-s-that-guy"}
+  - {"n": 58, "track": "betcha-falling"}
+  - {"n": 59, "track": "paper-route-balconies"}
+  - {"n": 60, "track": "k-flay-it-s-been-so-long"}
+  - {"n": 61, "track": "isaac-dunbar-sunburn"}
+  - {"n": 62, "track": "tai-verdes-all-white"}
+  - {"n": 63, "track": "k-flay-my-name-isn-t-katherine"}
+  - {"n": 64, "track": "lyell-potions"}
+  - {"n": 65, "track": "arlie-karma"}
+  - {"n": 66, "track": "k-flay-nervous"}
+  - {"n": 67, "track": "michael-clifford-remember-when"}
+  - {"n": 68, "track": "miles-caton-don-t-hate-me"}
+  - {"n": 69, "track": "scout-willis-it-ain-t-nothing"}
+  - {"n": 70, "track": "paper-route-two-hearts"}
+  - {"n": 71, "track": "paper-route-laugh-about-it"}
+  - {"n": 72, "track": "mad-wave-caroline"}
+  - {"n": 73, "track": "k-flay-ice-cream"}
+  - {"n": 74, "track": "bully-hard-to-love"}
+  - {"n": 75, "track": "tobymac-heart-of-my-beat"}
+  - {"n": 76, "track": "paper-route-letting-you-let-go"}
+  - {"n": 77, "track": "bully-how-will-i-know"}
+  - {"n": 78, "track": "paper-route-writing-on-the-wall"}
+  - {"n": 79, "track": "the-saint-johns-lost-the-feeling"}
+  - {"n": 80, "track": "daniel-bashta-i-want-it-all-just-give-me-jesus"}
+  - {"n": 81, "track": "mad-wave-mad-wave"}
+  - {"n": 82, "track": "scout-willis-so-many-ways"}
+  - {"n": 83, "track": "bby-voices-in-my-head"}
+  - {"n": 84, "track": "the-regrettes-better-now"}
+  - {"n": 85, "track": "lyell-i-m-somebody-else"}
+  - {"n": 86, "track": "fleurie-strawberries-sunsets"}
+  - {"n": 87, "track": "the-regrettes-subtleties-never-giving-up-on-you"}
+  - {"n": 88, "track": "bully-a-wonderful-life"}
+  - {"n": 89, "track": "dhruv-the-morning"}
+  - {"n": 90, "track": "bby-voices-in-my-head-pt-2-feat-betty"}
+  - {"n": 91, "track": "lyell-you"}
+  - {"n": 92, "track": "fleurie-i-only-wanna-live-forever"}
+  - {"n": 93, "track": "delacey-lipstick"}
+  - {"n": 94, "track": "lyell-kiss-kiss-bang-bang"}
+  - {"n": 95, "track": "bully-a-love-profound"}
+  - {"n": 96, "track": "fleurie-supertropicali"}
+  - {"n": 97, "track": "bully-all-this-noise"}
+  - {"n": 98, "track": "fleurie-that-kinda-girl"}
+  - {"n": 99, "track": "paper-route-real-emotion"}
+  - {"n": 100, "track": "fleurie-love-u-already"}
+  - {"n": 101, "track": "fleurie-let-them-eat-cake"}
+  - {"n": 102, "track": "luna-aura-money-bag"}
+  - {"n": 103, "track": "paper-route-untitled"}
+  - {"n": 104, "track": "scout-willis-blame-me"}
+  - {"n": 105, "track": "paper-route-zhivago"}
+  - {"n": 106, "track": "delacey-french-toast"}
+  - {"n": 107, "track": "paper-route-pretend"}
+  - {"n": 108, "track": "fleurie-say-it-s-over"}
+  - {"n": 109, "track": "delacey-star-eyes"}
+  - {"n": 110, "track": "delacey-not-enough"}
+  - {"n": 111, "track": "fleurie-rain-in-the-summer"}
+  - {"n": 112, "track": "paper-route-american-clouds"}
+  - {"n": 113, "track": "anna-shoemaker-funny"}
+  - {"n": 114, "track": "paper-route-mona-lisa"}
+  - {"n": 115, "track": "paper-route-second-place"}
+  - {"n": 116, "track": "paper-route-vanisher"}
+  - {"n": 117, "track": "delacey-heaven"}
+  - {"n": 118, "track": "delacey-her-apartment"}
+  - {"n": 119, "track": "amy-guess-save-me"}
+  - {"n": 120, "track": "paper-route-blue-collar-daydream"}
+  - {"n": 121, "track": "daniel-bashta-suddenly"}
+  - {"n": 122, "track": "daniel-bashta-by-my-side"}
+  - {"n": 123, "track": "paper-route-intro"}
+  - {"n": 124, "track": "paper-route-bleary"}
+  - {"n": 125, "track": "the-saint-johns-dead-of-night"}
+  - {"n": 126, "track": "mad-wave-1969"}
+  - {"n": 127, "track": "paper-route-love-is-red-with-every-shade-of-blue"}
+  - {"n": 128, "track": "paper-route-lara"}
+  - {"n": 129, "track": "fleurie-opus-22"}
+  - {"n": 130, "track": "delacey-breathe-if-you-love-me"}
+  - {"n": 131, "track": "mad-wave-follow-blind"}
+  - {"n": 132, "track": "sarah-macintosh-current"}
+  - {"n": 133, "track": "delacey-smoke-one-more"}
+  - {"n": 134, "track": "delacey-crying-over-beauty"}
+  - {"n": 135, "track": "mad-wave-let-s-get-married"}
+  - {"n": 136, "track": "anna-shoemaker-figure-it-out"}
+  - {"n": 137, "track": "anna-shoemaker-i-need-ya"}
+  - {"n": 138, "track": "sarah-macintosh-take-it-all"}
+  - {"n": 139, "track": "anna-shoemaker-so-low-solo"}
+  - {"n": 140, "track": "sarah-macintosh-galaxy-former"}
+  - {"n": 141, "track": "the-arc-project-money"}
+  - {"n": 142, "track": "delacey-bad-things"}
+  - {"n": 143, "track": "mad-wave-knocking-at-a-shut-door"}
+  - {"n": 144, "track": "sarah-macintosh-the-damaged"}
+  - {"n": 145, "track": "sarah-macintosh-joy-comes-in"}
+  - {"n": 146, "track": "jt-daly-the-blood-orchestra-the-blackest-bird"}
+  - {"n": 147, "track": "mackenzie-second-chances"}
+---
+
+# Written By JT Daly
+
+A playlist the owner follows: 147 of 147 items read on 2026-11-14, 0 of them reviewed on the site.

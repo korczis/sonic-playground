@@ -1,0 +1,96 @@
+{
+ "schema": "spotify-manifest/v1",
+ "description": "The owner's Spotify history: public identity and relationships (ADR 0007). Derived by scripts/spotify_history.py build --write; never edited by hand.",
+ "sources": [
+  "web-player:2026-11-14",
+  "web-player:2026-11-14"
+ ],
+ "records": {
+  "track": {
+   "glob": "data/spotify/tracks/*.md",
+   "schema": "data/spotify-track.schema.json",
+   "format": "Markdown, YAML front matter of JSON literals",
+   "key": "id"
+  },
+  "playlist": {
+   "glob": "data/spotify/playlists/*.md",
+   "schema": "data/spotify-playlist.schema.json",
+   "format": "Markdown, YAML front matter of JSON literals",
+   "key": "id"
+  },
+  "library": {
+   "path": "data/spotify/library.md",
+   "schema": "data/spotify-library.schema.json"
+  }
+ },
+ "tables": {
+  "tracks": {
+   "path": "data/spotify/tables/tracks.jsonl",
+   "rows": 6516,
+   "key": "id",
+   "join": {
+    "spotify_track": "Spotify track id",
+    "key_fold": "catalogue identity (artist|song folded)",
+    "key_isrc": "ISRC",
+    "key_musicbrainz": "MusicBrainz recording",
+    "key_wikidata": "Wikidata item",
+    "review": "content/<review> (static/data/catalog.json tracks[].source)"
+   }
+  },
+  "playlists": {
+   "path": "data/spotify/tables/playlists.jsonl",
+   "rows": 55,
+   "key": "id"
+  },
+  "memberships": {
+   "path": "data/spotify/tables/memberships.jsonl",
+   "rows": 7922,
+   "key": [
+    "playlist",
+    "n"
+   ],
+   "foreign": {
+    "track": "tracks.id",
+    "playlist": "playlists.id"
+   }
+  },
+  "artists": {
+   "path": "data/spotify/tables/artists.jsonl",
+   "rows": 4825,
+   "key": "spotify_artist",
+   "join": {
+    "name": "tracks.artists[]"
+   }
+  },
+  "albums": {
+   "path": "data/spotify/tables/albums.jsonl",
+   "rows": 4718,
+   "key": "spotify_album",
+   "join": {
+    "name": "tracks.album"
+   }
+  }
+ },
+ "index": {
+  "path": "data/spotify/index.json",
+  "key": "reviews.<review file>",
+  "use": "templates/page.html"
+ },
+ "counts": {
+  "tracks": 6516,
+  "liked": 2029,
+  "reviewed": 303,
+  "playlists": 55,
+  "memberships": 7922,
+  "artists": 4825,
+  "albums": 4718,
+  "playlists_by_kind": {
+   "liked": 1,
+   "own": 11,
+   "yearbook": 7,
+   "made-for-you": 9,
+   "followed": 27
+  }
+ },
+ "private": "data/spotify/private/ (ignored; its own local git repository): raw sources, dates added, plays"
+}

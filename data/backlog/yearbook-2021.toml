@@ -1,0 +1,808 @@
+# The owner's Spotify yearbook 2021 ("Your Top Songs 2021"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2021
+name = "Your Top Songs 2021"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2021\", read off the rendered page on 2026-11-14 (scripts/spotify_history.py)"
+retrieved = "2026-11-14"
+expected = 100
+
+[[track]]
+n = 1
+title = "Smalltown Boy"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "5:02"
+spotify = "5vmRQ3zELMLUQPo2FLQ76x"
+
+[[track]]
+n = 2
+title = "Big In Japan"
+artists = ["Ane Brun"]
+album = "Changing of the Seasons"
+duration = "3:09"
+spotify = "7lhqX9jwTQchUhC5lEOnzK"
+
+[[track]]
+n = 3
+title = "Poison"
+artists = ["Qodës"]
+album = "Poison"
+duration = "3:30"
+spotify = "0VALxgIP6H9hGv4lvQYeRW"
+
+[[track]]
+n = 4
+title = "Fckrz"
+artists = ["Luca Malina"]
+album = "Fckrz"
+duration = "3:10"
+spotify = "4gdOGETp6oy2xi1A8UFrgb"
+
+[[track]]
+n = 5
+title = "Why ?"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "4:03"
+spotify = "7vOLJwP5O0woITaIQWOoUX"
+
+[[track]]
+n = 6
+title = "Closer"
+artists = ["Postmodern Jukebox", "KENTON"]
+album = "33 Resolutions Per Minute"
+duration = "4:15"
+spotify = "0E32W7S52AaR4ht7i7DwDq"
+
+[[track]]
+n = 7
+title = "Blinding Lights"
+artists = ["The Weeknd"]
+album = "After Hours"
+duration = "3:20"
+spotify = "0VjIjW4GlUZAMYd2vXMi3b"
+
+[[track]]
+n = 8
+title = "bury a friend"
+artists = ["Billie Eilish"]
+album = "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?"
+duration = "3:13"
+spotify = "4SSnFejRGlZikf02HLewEF"
+
+[[track]]
+n = 9
+title = "It Ain't Necessarily So"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "4:43"
+spotify = "5Hws6nnJuqf6rJwZGA82GG"
+
+[[track]]
+n = 10
+title = "Dance Monkey"
+artists = ["Tones And I"]
+album = "Dance Monkey (Stripped Back) / Dance Monkey"
+duration = "3:29"
+spotify = "2XU0oxnq2qxCpomAAuJY8K"
+
+[[track]]
+n = 11
+title = "Johnson"
+artists = ["Kruder & Dorfmeister"]
+album = "Johnson"
+duration = "5:38"
+spotify = "522A3dgrvWe27tK3L3gbYF"
+
+[[track]]
+n = 12
+title = "In Berlin"
+artists = ["Tubbe"]
+album = "Keine Arbeit lieber Tanzen"
+duration = "3:31"
+spotify = "5aMzdlgZnDYa08Man9gm8E"
+
+[[track]]
+n = 13
+title = "A Friend"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "4:20"
+spotify = "3XhbiGCzShv8we87L1BjQP"
+
+[[track]]
+n = 14
+title = "Seven Nation Army"
+artists = ["The White Stripes"]
+album = "Elephant"
+duration = "3:52"
+spotify = "3dPQuX8Gs42Y7b454ybpMR"
+
+[[track]]
+n = 15
+title = "Black Sunglasses"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "4:51"
+spotify = "50i9vPCkHgEEfNuMsj01ji"
+
+[[track]]
+n = 16
+title = "The Kids Are Coming"
+artists = ["Tones And I"]
+album = "The Kids Are Coming"
+duration = "3:24"
+spotify = "76bvw5EDyhm1b3dfsOToYG"
+
+[[track]]
+n = 17
+title = "West Coast - Solomun Remix"
+artists = ["Lana Del Rey", "Solomun"]
+album = "Solomun - Selected Remixes 2009-2015"
+duration = "8:07"
+spotify = "1bmKwuKJXqQRlFBPqLwkcQ"
+
+[[track]]
+n = 18
+title = "Exodus"
+artists = ["Nôze", "Wareika"]
+album = "Dring"
+duration = "4:04"
+spotify = "2QoCFcUbc3UTujoLiqWsvR"
+
+[[track]]
+n = 19
+title = "Darklands"
+artists = ["Whilk & Misky"]
+album = "Darklands"
+duration = "7:16"
+spotify = "2U85igyu5BUWrfqnUOQYrv"
+
+[[track]]
+n = 20
+title = "Kouzen"
+artists = ["Melissa Laveaux"]
+album = "Radyo siwèl"
+duration = "2:21"
+spotify = "5xm25DdCRuMuUqb9cZTa4z"
+
+[[track]]
+n = 21
+title = "Rich Folks Hoax"
+artists = ["Rodríguez"]
+album = "Cold Fact"
+duration = "3:05"
+spotify = "3S36aqn9EqvHkRCAa86oiF"
+
+[[track]]
+n = 22
+title = "I'll Be There For You/You're All I Need To Get By - Puff Daddy Mix"
+artists = ["Method Man", "Mary J. Blige"]
+album = "Tical (Deluxe Edition)"
+duration = "5:09"
+spotify = "6C3yPXYG2NJYlIYVe5J7hv"
+
+[[track]]
+n = 23
+title = "The Beat Goes On - Live At The Chez Club, Hollywood/1967"
+artists = ["Buddy Rich Big Band"]
+album = "Blue Break Beats Vol. 4"
+duration = "4:55"
+spotify = "4RvQSYyiyhdgQ4lJlVZZZa"
+
+[[track]]
+n = 24
+title = "Hurt"
+artists = ["Johnny Cash"]
+album = "American IV: The Man Comes Around"
+duration = "3:36"
+spotify = "28cnXtME493VX9NOw9cIUh"
+
+[[track]]
+n = 25
+title = "Money"
+artists = ["Cardi B"]
+album = "Pride Party"
+duration = "3:03"
+spotify = "0th8A1tMdGYG5ivorx6FVJ"
+
+[[track]]
+n = 26
+title = "Reckoning Song"
+artists = ["Asaf Avidan", "The Mojos"]
+album = "The Reckoning"
+duration = "2:46"
+spotify = "7djl4lZ6guZYAckDsfzrfs"
+
+[[track]]
+n = 27
+title = "I Feel Love"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "6:01"
+spotify = "3oDtHLkS4k687WbPCd7EdN"
+
+[[track]]
+n = 28
+title = "Moanin' for You"
+artists = ["Swing Republic", "The Mills Brothers"]
+album = "Mo' Electro Swing Republic - Let's Misbehave"
+duration = "4:52"
+spotify = "0gEw6pgw9tPQPwOXHbNez7"
+
+[[track]]
+n = 29
+title = "Que Sera - Phonovisions Symphonic Version"
+artists = ["Wax Tailor"]
+album = "Phonovisions Symphonic Orchestra"
+duration = "3:22"
+spotify = "5IAExP6GYabtfwK72JkXBk"
+
+[[track]]
+n = 30
+title = "Body Language - Interpretation"
+artists = ["Booka Shade"]
+album = "Movements"
+duration = "5:00"
+spotify = "6syBFNheQcC5HYt4sh6gkC"
+
+[[track]]
+n = 31
+title = "LK - Original Mix"
+artists = ["DJ Marky", "Stamina MC", "XRS", "Stamina MC Carol Carolina Bela"]
+album = "In Rotation"
+duration = "5:29"
+spotify = "2EiazSYyCSlBEKED2EvysD"
+
+[[track]]
+n = 32
+title = "Beautiful Day"
+artists = ["Laidback"]
+album = "Kumharas Ibiza Vol.2 (Compiled By DJ Malte M.V.T.)"
+duration = "6:58"
+spotify = "3SJY53oFCra9sKQYyWrhtI"
+
+[[track]]
+n = 33
+title = "Ain't Necessarily So"
+artists = ["Bronski Beat"]
+album = "The Very Best Of Jimmy Somerville, Bronski Beat & The Communards"
+duration = "4:06"
+spotify = "5h5uqSntGsIoNOinbk48iC"
+
+[[track]]
+n = 34
+title = "Mas Que Nada"
+artists = ["Luiz Henrique"]
+album = "Barra Limpa"
+duration = "3:04"
+spotify = "4X24gbKkMyC1VlNFog3EUD"
+
+[[track]]
+n = 35
+title = "212"
+artists = ["Azealia Banks", "Lazy Jay"]
+album = "Broke with Expensive Taste"
+duration = "3:24"
+spotify = "16EMONl2vH3rt9f4ehTG8g"
+
+[[track]]
+n = 36
+title = "Lost - Club Mix"
+artists = ["Simion", "Roland Clark"]
+album = "Buddha Bar Clubbing by Ravin"
+duration = "6:09"
+spotify = "6sEzseJe6Df8gAtBmk3nUl"
+
+[[track]]
+n = 37
+title = "Smalltown Boy - Reprise 2014"
+artists = ["Bronski Beat"]
+album = "The Age Of Consent (Remastered & Expanded)"
+duration = "2:45"
+spotify = "6Z0csFlyJnQqqwREJeBsXL"
+
+[[track]]
+n = 38
+title = "Sinnerman"
+artists = ["Nina Simone"]
+album = "Pastel Blues"
+duration = "10:22"
+spotify = "5xRP5iyVdGglqlY4Vcjhkx"
+
+[[track]]
+n = 39
+title = "Stick Up"
+artists = ["Kelis"]
+album = "Tasty"
+duration = "3:51"
+spotify = "3xTgNbWCVjXxRrGCuzUE9C"
+
+[[track]]
+n = 40
+title = "Jungle Drum"
+artists = ["The Colorist Orchestra", "Emilíana Torrini"]
+album = "The Colorist & Emiliana Torrini"
+duration = "2:46"
+spotify = "0CNG7yB98CAfH7NDAtBheY"
+
+[[track]]
+n = 41
+title = "Naïve Song"
+artists = ["Mirwais"]
+album = "Production"
+duration = "4:28"
+spotify = "3oK0sqmYxpXb8Ct6lr3b16"
+
+[[track]]
+n = 42
+title = "Poop Poop Poop Poop Song"
+artists = ["The Toilet Bowl Cleaners"]
+album = "The White Album (With Brown and Yellow Stains)"
+duration = "1:58"
+spotify = "5sS3UyQOm51T5BbauysWBr"
+
+[[track]]
+n = 43
+title = "Rolling Through The Hood"
+artists = ["Kelis"]
+album = "Tasty"
+duration = "4:45"
+spotify = "7jr2617hq8udFrycxR3ilu"
+
+[[track]]
+n = 44
+title = "Pump up the Jam"
+artists = ["The Lost Fingers"]
+album = "Lost in the 80's"
+duration = "3:48"
+spotify = "1yWlP9paRmFQ4W4xtRTSlW"
+
+[[track]]
+n = 45
+title = "I Need A Dollar"
+artists = ["Aloe Blacc"]
+album = "Good Things"
+duration = "4:03"
+spotify = "6q1qACcezH6eH77Xljh5QV"
+
+[[track]]
+n = 46
+title = "Another One Bites The Dust - Remastered 2011"
+artists = ["Queen"]
+album = "The Game"
+duration = "3:34"
+spotify = "5vdp5UmvTsnMEMESIF2Ym7"
+
+[[track]]
+n = 47
+title = "Too Drunk to Fuck"
+artists = ["Dead Kennedys"]
+album = "Fresh Fruit For Rotting Vegetables (Expanded Edition)"
+duration = "2:40"
+spotify = "0gJ4X2ojTykeaoDEDEE1Xj"
+
+[[track]]
+n = 48
+title = "Girls Like You (feat. Cardi B) - Cardi B Version"
+artists = ["Maroon 5", "Cardi B"]
+album = "Red Pill Blues (Deluxe)"
+duration = "3:55"
+spotify = "7fa9MBXhVfQ8P8Df9OEbD8"
+
+[[track]]
+n = 49
+title = "Rehab"
+artists = ["Amy Winehouse"]
+album = "Back To Black (Deluxe Edition)"
+duration = "3:34"
+spotify = "3N4DI1vuTSX1tz7fa2NQZw"
+
+[[track]]
+n = 50
+title = "Inner Galactic Lovers - Radio Edit"
+artists = ["Kutiman"]
+album = "Inner Galactic Lovers (Kutiman Mixes Fiverr)"
+duration = "3:18"
+spotify = "05hjzT36Wuw5wdygLjbISe"
+
+[[track]]
+n = 51
+title = "Smells Like Teen Spirit"
+artists = ["Patti Smith"]
+album = "Twelve"
+duration = "6:31"
+spotify = "05Umbh1rVwvTUWHnhRcENn"
+
+[[track]]
+n = 52
+title = "Fou de toi"
+artists = ["Pupkulies & Rebecca"]
+album = "Looking for the Sea"
+duration = "3:33"
+spotify = "32w1T02SEa3WVJIukZjvEe"
+
+[[track]]
+n = 53
+title = "Bloodbath"
+artists = ["DRAMAS"]
+album = "Dramas"
+duration = "3:27"
+spotify = "6njKkIaxsmAqREsjLPmITm"
+
+[[track]]
+n = 54
+title = "Platonic Johny"
+artists = ["Charlie Straight"]
+album = "She's a Good Swimmer"
+duration = "4:21"
+spotify = "0WGs6xU8JfHC5rlUmJ3sCZ"
+
+[[track]]
+n = 55
+title = "Sugar Honey Iced Tea"
+artists = ["Kelis"]
+album = "Tasty"
+duration = "3:23"
+spotify = "7h1kWdBH8pV84RNP2foaf5"
+
+[[track]]
+n = 56
+title = "You Got The Love"
+artists = ["The Retrosettes Sister Band"]
+album = "Youth (Original Soundtrack Album)"
+duration = "3:20"
+spotify = "0tj2O9CiHkOdyEvKDwrDVG"
+
+[[track]]
+n = 57
+title = "Miss Me"
+artists = ["adaolisa", "madL"]
+album = "Miss Me"
+duration = "2:58"
+spotify = "4m7YrGPVCE2PE2tntZS8Y3"
+
+[[track]]
+n = 58
+title = "Odessa"
+artists = ["Caribou"]
+album = "Swim"
+duration = "5:15"
+spotify = "305tGJy16yTTFe6Ya9nMKJ"
+
+[[track]]
+n = 59
+title = "Gone by the Morning - Radio Edit"
+artists = ["Clara Moto"]
+album = "Gone by the Morning (Radio Edit)"
+duration = "3:15"
+spotify = "0Fo7oInW6xd1Gh5Mij7qeQ"
+
+[[track]]
+n = 60
+title = "Gone Too Long - Original Mix"
+artists = ["Him_Self_Her", "Kieran Fowkes"]
+album = "Gone Too Long"
+duration = "7:19"
+spotify = "3h5gVwU9yazZE7yNlGT8Di"
+
+[[track]]
+n = 61
+title = "Five Minutes"
+artists = ["Her"]
+album = "Her"
+duration = "3:48"
+spotify = "7LqT7LqKsCh6epYR9UdAlP"
+
+[[track]]
+n = 62
+title = "Pumped Up Kicks"
+artists = ["Foster The People"]
+album = "Torches"
+duration = "3:59"
+spotify = "7w87IxuO7BDcJ3YUqCyMTT"
+
+[[track]]
+n = 63
+title = "Written In The Water"
+artists = ["Gin Wigmore"]
+album = "Blood To Bone"
+duration = "2:46"
+spotify = "4VBOT2FRGcu5bjerUG9wMR"
+
+[[track]]
+n = 64
+title = "Uprising"
+artists = ["Muse"]
+album = "The Resistance"
+duration = "5:04"
+spotify = "4VqPOruhp5EdPBeR92t6lQ"
+
+[[track]]
+n = 65
+title = "Coo Coo"
+artists = ["Gak", "Babs", "Mysonne", "Lord Tariq", "Cuban Linx"]
+album = "Pow Europe"
+duration = "4:14"
+spotify = "6Kwds61T2o9h0QNYMgOeIq"
+
+[[track]]
+n = 66
+title = "Your Girl"
+artists = ["Kakkmaddafakka"]
+album = "Hest"
+duration = "3:29"
+spotify = "0yhMqJsI9cArVxG7XAXDaC"
+
+[[track]]
+n = 67
+title = "A Little Party Never Killed Nobody (All We Got)"
+artists = ["Fergie", "Q-Tip", "GoonRock"]
+album = "Music From Baz Luhrmann's Film The Great Gatsby (International Streaming Version)"
+duration = "4:01"
+spotify = "36482hNESSwELpr9sS3NbE"
+
+[[track]]
+n = 68
+title = "Through the Darkness"
+artists = ["Oliver Koletzki"]
+album = "The Arc of Tension"
+duration = "5:48"
+spotify = "3DrhMn4HRNus2uqguX17Rl"
+
+[[track]]
+n = 69
+title = "Paddling Out"
+artists = ["Miike Snow"]
+album = "Happy To You (Deluxe Edition)"
+duration = "3:43"
+spotify = "0rfXn2iUwqQXzNvJgmcG6p"
+
+[[track]]
+n = 70
+title = "Let the Beat Control Your Body"
+artists = ["Brodinski", "Louisahhh"]
+album = "Bromance #1 - Single"
+duration = "5:11"
+spotify = "5Ku0pfmAZUyEbO5grfQsyP"
+
+[[track]]
+n = 71
+title = "Lies"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "3:45"
+spotify = "0Zzur28YBbI93bgjo0YdNR"
+
+[[track]]
+n = 72
+title = "Gone Too Long - Compuphonic Remix"
+artists = ["Him_Self_Her", "Kieran Fowkes", "Compuphonic"]
+album = "Gone Too Long"
+duration = "7:16"
+spotify = "36sz2ueeBZKUljBxaRFBad"
+
+[[track]]
+n = 73
+title = "Flash - Radio Edit"
+artists = ["Slove", "Sarah Rebecca"]
+album = "Flash"
+duration = "3:26"
+spotify = "5xlUsQtbHiOnSPoAeey2Xy"
+
+[[track]]
+n = 74
+title = "Horse with No Name"
+artists = ["Seelenluft"]
+album = "Birds and Plants and Rocks and Things"
+duration = "4:18"
+spotify = "0zSWLbqCq2TaolWNaeGknJ"
+
+[[track]]
+n = 75
+title = "Break On Through"
+artists = ["DJ Disse", "Will Buhrkall"]
+album = "When I'm Bored I Change Colour (Deluxe)"
+duration = "6:19"
+spotify = "10OC1oEUtH63ESbyVjpWae"
+
+[[track]]
+n = 76
+title = "Windowlicker"
+artists = ["Aphex Twin"]
+album = "Windowlicker"
+duration = "6:08"
+spotify = "60Pe9j2pCBa4Zp4ztf5nhd"
+
+[[track]]
+n = 77
+title = "The Beat Goes On"
+artists = ["Jojo Effect"]
+album = "Not With Me"
+duration = "5:15"
+spotify = "1vjhjnYGhIODZsDnMjfdpw"
+
+[[track]]
+n = 78
+title = "Sweet Dreams (Are Made of This) - 2005 Remaster"
+artists = ["Eurythmics", "Annie Lennox", "Dave Stewart"]
+album = "Sweet Dreams (Are Made Of This)"
+duration = "3:36"
+spotify = "1TfqLAPs4K3s2rJMoCokcS"
+
+[[track]]
+n = 79
+title = "In The Death Car"
+artists = ["Iggy Pop"]
+album = "Roadkill Rising: The Bootleg Collection 1977-2009"
+duration = "5:09"
+spotify = "22aa0ffnoPUJyggLuQkPfT"
+
+[[track]]
+n = 80
+title = "Forgotten Places"
+artists = ["Alif Tree"]
+album = "French Cuisine"
+duration = "4:51"
+spotify = "0WuQYFqYHDgCbtKups3Ciu"
+
+[[track]]
+n = 81
+title = "Put Your Hands Where My Eyes Could See (feat. Jamal)"
+artists = ["Busta Rhymes", "Jamal"]
+album = "When Disaster Strikes..."
+duration = "3:14"
+spotify = "1NHwvBmrUje4L1dxfWnXCH"
+
+[[track]]
+n = 82
+title = "On & On"
+artists = ["Her", "AnnenMayKantereit", "Roméo Elvis"]
+album = "Her"
+duration = "3:38"
+spotify = "1y5FGDQHfDOSIRye0jkoBt"
+
+[[track]]
+n = 83
+title = "Grillen im Garten - Gerberei Version"
+artists = ["Kollektiv Turmstrasse"]
+album = "Musik Gewinnt Freunde Collection"
+duration = "7:02"
+spotify = "3WTSVuJewaXTakNZlSiIMx"
+
+[[track]]
+n = 84
+title = "One night in Rio"
+artists = ["Louie Austen"]
+album = "Hôtel Costes Best of"
+duration = "6:26"
+spotify = "344T86EXj0i3NBg5EVtKcw"
+
+[[track]]
+n = 85
+title = "Man on the Moon"
+artists = ["Klangkuenstler", "Alice Phoebe Lou"]
+album = "That's Me"
+duration = "5:41"
+spotify = "4ik0vQVgNdIjq6hLQJjNeR"
+
+[[track]]
+n = 86
+title = "You Showed Me - Edit"
+artists = ["Trinidad Senolia"]
+album = "Postcards From Strangers"
+duration = "4:37"
+spotify = "3tctGdaLmXcMlvSUvEyLoU"
+
+[[track]]
+n = 87
+title = "Sunny"
+artists = ["Boney M."]
+album = "Take The Heat Off Me"
+duration = "4:02"
+spotify = "3pf96IFggfQuT6Gafqx2rt"
+
+[[track]]
+n = 88
+title = "Need Your Love"
+artists = ["Curtis Harding"]
+album = "Face Your Fear"
+duration = "2:57"
+spotify = "3zYQ1KXzqBWRsxIqdVMoYF"
+
+[[track]]
+n = 89
+title = "Po schodoch"
+artists = ["Richard Muller", "Banket"]
+album = "Bioelektrovízia"
+duration = "3:09"
+spotify = "23jdbqqdziTkAVbYVnIuRk"
+
+[[track]]
+n = 90
+title = "Whisper to Me"
+artists = ["General Elektriks"]
+album = "To Be a Stranger"
+duration = "4:36"
+spotify = "6gil7rvxOOGsUMebzJtCqI"
+
+[[track]]
+n = 91
+title = "On My Way Home"
+artists = ["Earl Zinger"]
+album = "Put Your Phasers on ..."
+duration = "2:34"
+spotify = "0HCDlPzfyQjReym5IIC43z"
+
+[[track]]
+n = 92
+title = "Screaming"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "4:16"
+spotify = "585iaRHHtqCCBDgdagkhFJ"
+
+[[track]]
+n = 93
+title = "Feel Good Inc."
+artists = ["Gorillaz", "De La Soul"]
+album = "Demon Days"
+duration = "3:42"
+spotify = "0d28khcov6AiegSCpG5TuT"
+
+[[track]]
+n = 94
+title = "Quite Like"
+artists = ["Her"]
+album = "Her"
+duration = "4:05"
+spotify = "1dSRuZuKGJLb34w9nFnoTj"
+
+[[track]]
+n = 95
+title = "Me, Myself and I"
+artists = ["Marbert Rocel"]
+album = "In the Beginning"
+duration = "4:25"
+spotify = "7utWxeHFjxjiwEoKsTerB2"
+
+[[track]]
+n = 96
+title = "Pretend"
+artists = ["Brandt Brauer Frick", "Emika"]
+album = "Mr. Machine"
+duration = "7:29"
+spotify = "7HCB4FZijpCy7EhyfsSDmr"
+
+[[track]]
+n = 97
+title = "Dark Noise"
+artists = ["Jan Blomqvist"]
+album = "Remote Control"
+duration = "8:27"
+spotify = "0U7AyaPfu0EjCizzhMbQl2"
+
+[[track]]
+n = 98
+title = "Queens - Live At Gaité Lyrique, Paris"
+artists = ["Her", "Zefire"]
+album = "Her Live Tape #2"
+duration = "7:01"
+spotify = "2gQxfc9Os8q6afe3jjfs44"
+
+[[track]]
+n = 99
+title = "Smalltown Boy (Arnaud Rebotini Remix)"
+artists = ["Bronski Beat", "Arnaud Rebotini"]
+album = "The Age Of Consent (Remastered & Expanded)"
+duration = "5:36"
+spotify = "7fyu9Wz66k5n5tcFnkYDXo"
+
+[[track]]
+n = 100
+title = "Before You Leave"
+artists = ["Pepe Deluxé"]
+album = "Super Sound"
+duration = "5:33"
+spotify = "6jaiqeXtu1BvKUexs9lbXF"

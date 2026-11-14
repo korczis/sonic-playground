@@ -1,0 +1,25 @@
+---
+schema: "spotify-track/v1"
+id: "marc-houle-where-is-kittin"
+title: "Where is Kittin?"
+artists: ["Marc Houle", "Miss Kittin"]
+album: "Where is Kittin?"
+duration: "5:57"
+spotify: {"track": "5xMQ15omNGJHTvZgsL5MPS", "album": "2snctkzSZ4kN2jDeN0VBSy", "artists": ["50b6p8UF5dHfvjaN3GduG3", "3QhNv79NoIvarU6N57GBzL"]}
+keys: {"fold": "marchoule|whereiskittin"}
+status: "missing"
+liked: true
+yearbooks:
+  - {"year": 2019, "n": 67}
+playlists:
+  - {"playlist": "my-top-songs-of-all-the-time", "n": 342}
+sources: ["web-player:2026-11-14"]
+---
+
+# Where is Kittin? · Marc Houle, Miss Kittin
+
+From the album *Where is Kittin?*, 5:57.
+A liked song.
+Your Top Songs 2019: #67.
+In My Top Songs of All the Time (#342).
+No review yet.

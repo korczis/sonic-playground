@@ -1,0 +1,19 @@
+---
+schema: "spotify-track/v1"
+id: "kid-francescoli-come-online"
+title: "Come Online"
+artists: ["Kid Francescoli", "Julia Minkin"]
+album: "Play Me Again"
+duration: "2:38"
+spotify: {"track": "1n4Ooi4zsQOfXFed4tMxME", "album": "54vSb9255iZKykjuytWbZh", "artists": ["2G7QgTep5IsJHGHm1hXygD", "63fbQTZ9yW3SUsBRYcn1Wm"]}
+keys: {"fold": "kidfrancescoli|comeonline"}
+status: "missing"
+liked: true
+sources: ["web-player:2026-11-14"]
+---
+
+# Come Online · Kid Francescoli, Julia Minkin
+
+From the album *Play Me Again*, 2:38.
+A liked song.
+No review yet.

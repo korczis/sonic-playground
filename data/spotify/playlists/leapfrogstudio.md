@@ -1,0 +1,141 @@
+---
+schema: "spotify-playlist/v1"
+id: "leapfrogstudio"
+name: "Leapfrogstudio"
+kind: "followed"
+description: "Public Playlist"
+expected: 126
+retrieved: 126
+read: "2026-11-14"
+tracks:
+  - {"n": 1, "track": "leo-take-me-to-church-metal-cover-4tsgpx"}
+  - {"n": 2, "track": "leo-get-lucky-metal-cover"}
+  - {"n": 3, "track": "leo-ex-s-oh-s-metal-cover-6ewhv0"}
+  - {"n": 4, "track": "leo-mamma-mia-metal-cover"}
+  - {"n": 5, "track": "leo-gangnam-style-metal-cover"}
+  - {"n": 6, "track": "leo-ace-of-spades-metal-cover"}
+  - {"n": 7, "track": "leo-girl-you-know-it-s-true-metal-cover-5vg9mk"}
+  - {"n": 8, "track": "leo-wannabe-metal-cover"}
+  - {"n": 9, "track": "leo-california-dreamin-metal-cover-6bi3lj"}
+  - {"n": 10, "track": "leo-what-a-wonderful-world-cover"}
+  - {"n": 11, "track": "leo-hello-metal-cover"}
+  - {"n": 12, "track": "leo-feel-good-inc-metal-cover"}
+  - {"n": 13, "track": "leo-bad-metal-cover"}
+  - {"n": 14, "track": "leo-firework-metal-cover"}
+  - {"n": 15, "track": "leo-hotline-bling-metal-cover"}
+  - {"n": 16, "track": "leo-barbie-girl-metal-cover"}
+  - {"n": 17, "track": "leo-don-t-fear-the-reaper-metal-cover"}
+  - {"n": 18, "track": "leo-song-2-metal-cover"}
+  - {"n": 19, "track": "leo-the-power-of-love-metal-cover"}
+  - {"n": 20, "track": "leo-last-christmas-metal-cover"}
+  - {"n": 21, "track": "leo-shake-it-off-metal-cover"}
+  - {"n": 22, "track": "leo-roar-metal-cover"}
+  - {"n": 23, "track": "leo-gangsta-s-paradise-metal-cover"}
+  - {"n": 24, "track": "leo-titanium-metal-cover"}
+  - {"n": 25, "track": "leo-ghostbusters-metal-cover"}
+  - {"n": 26, "track": "leo-bang-bang-metal-cover"}
+  - {"n": 27, "track": "leo-mambo-no-5-metal-cover"}
+  - {"n": 28, "track": "leo-baby-metal-cover"}
+  - {"n": 29, "track": "leo-bad-romance-metal-cover"}
+  - {"n": 30, "track": "leo-black-night-metal-cover"}
+  - {"n": 31, "track": "leo-elastic-heart-metal-cover"}
+  - {"n": 32, "track": "leo-money-money-money-metal-cover"}
+  - {"n": 33, "track": "leo-smells-like-teen-spirit-metal-cover"}
+  - {"n": 34, "track": "leo-bad-blood-metal-cover"}
+  - {"n": 35, "track": "leo-hey-jude-metal-cover"}
+  - {"n": 36, "track": "leo-true-survivor-metal-cover"}
+  - {"n": 37, "track": "leo-superstition-metal-cover"}
+  - {"n": 38, "track": "leo-the-power-of-love-metal-cover-5phl2m"}
+  - {"n": 39, "track": "leo-sing-metal-cover"}
+  - {"n": 40, "track": "leo-greased-lightning-metal-cover"}
+  - {"n": 41, "track": "leo-poker-face-metal-cover"}
+  - {"n": 42, "track": "leo-rolling-in-the-deep-metal-cover"}
+  - {"n": 43, "track": "leo-stayin-alive-metal-cover"}
+  - {"n": 44, "track": "leo-u-cant-t-touch-this-metal-cover"}
+  - {"n": 45, "track": "leo-stay-metal-cover"}
+  - {"n": 46, "track": "leo-push-it-metal-cover"}
+  - {"n": 47, "track": "leo-scatman-metal-cover"}
+  - {"n": 48, "track": "leo-fatty-boom-boom-metal-cover"}
+  - {"n": 49, "track": "leo-like-a-virgin-metal-cover"}
+  - {"n": 50, "track": "leo-respect-metal-cover"}
+  - {"n": 51, "track": "leo-all-about-that-bass-metal-cover"}
+  - {"n": 52, "track": "leo-livin-la-vida-loca-metal-cover"}
+  - {"n": 53, "track": "leo-macarena-metal-cover"}
+  - {"n": 54, "track": "leo-moves-like-jagger-metal-cover"}
+  - {"n": 55, "track": "leo-anaconda-metal-cover"}
+  - {"n": 56, "track": "leo-baby-one-more-time-metal-cover"}
+  - {"n": 57, "track": "leo-uptown-funk-metal-cover"}
+  - {"n": 58, "track": "leo-beat-it-metal-cover"}
+  - {"n": 59, "track": "leo-gin-and-juice-metal-cover"}
+  - {"n": 60, "track": "leo-white-christmas-metal-cover"}
+  - {"n": 61, "track": "leo-chandelier-metal-cover"}
+  - {"n": 62, "track": "leo-take-on-me-metal-cover"}
+  - {"n": 63, "track": "leo-let-it-go-metal-cover"}
+  - {"n": 64, "track": "leo-try-metal-cover"}
+  - {"n": 65, "track": "leo-lips-are-movin-metal-cover"}
+  - {"n": 66, "track": "leo-no-limit-metal-cover"}
+  - {"n": 67, "track": "leo-never-gonna-give-you-up-metal-cover"}
+  - {"n": 68, "track": "leo-ice-ice-baby-metal-cover"}
+  - {"n": 69, "track": "leo-dark-horse-metal-cover"}
+  - {"n": 70, "track": "leo-sharp-dressed-man-metal-cover"}
+  - {"n": 71, "track": "leo-kiss-acoustic-cover"}
+  - {"n": 72, "track": "leo-paranoid-semiacoustic-cover"}
+  - {"n": 73, "track": "leo-teardrop-acoustic-cover"}
+  - {"n": 74, "track": "leo-i-am-a-man-of-constant-sorrow-acoustic-cover"}
+  - {"n": 75, "track": "leo-cemetary-gates-acoustic-cover"}
+  - {"n": 76, "track": "phedora-hello-rock-version"}
+  - {"n": 77, "track": "leo-zombie-metal-cover"}
+  - {"n": 78, "track": "leo-take-me-to-church-metal-cover-4tsgpx"}
+  - {"n": 79, "track": "leo-get-lucky-metal-cover"}
+  - {"n": 80, "track": "leo-ex-s-oh-s-metal-cover-6ewhv0"}
+  - {"n": 81, "track": "leo-mamma-mia-metal-cover"}
+  - {"n": 82, "track": "leo-gangnam-style-metal-cover"}
+  - {"n": 83, "track": "leo-ace-of-spades-metal-cover"}
+  - {"n": 84, "track": "leo-girl-you-know-it-s-true-metal-cover-5vg9mk"}
+  - {"n": 85, "track": "leo-wannabe-metal-cover"}
+  - {"n": 86, "track": "leo-california-dreamin-metal-cover-6bi3lj"}
+  - {"n": 87, "track": "leo-what-a-wonderful-world-cover"}
+  - {"n": 88, "track": "leo-zombie-metal-cover"}
+  - {"n": 89, "track": "leo-dance-with-u-6vwvbj"}
+  - {"n": 90, "track": "leo-aerials-acoustic-cover"}
+  - {"n": 91, "track": "leo-nightly"}
+  - {"n": 92, "track": "leo-royals-metal-cover"}
+  - {"n": 93, "track": "leo-informer-metal-cover"}
+  - {"n": 94, "track": "leo-informer-metal-cover"}
+  - {"n": 95, "track": "leo-vertigo-metal-cover"}
+  - {"n": 96, "track": "leo-stitches-metal-cover"}
+  - {"n": 97, "track": "leo-danger-zone-metal-cover-feat-eric-calderone"}
+  - {"n": 98, "track": "leo-paparazzi-metal-cover"}
+  - {"n": 99, "track": "leo-paparazzi-metal-cover"}
+  - {"n": 100, "track": "leo-stressed-out-metal-cover"}
+  - {"n": 101, "track": "leo-girls-just-want-to-have-fun-metal-cover"}
+  - {"n": 102, "track": "leo-eye-of-the-tiger-metal-cover"}
+  - {"n": 103, "track": "leo-wrecking-ball-metal-cover"}
+  - {"n": 104, "track": "leo-radioactive-metal-cover"}
+  - {"n": 105, "track": "leo-kiss-of-magika"}
+  - {"n": 106, "track": "leo-cruisin-feat-yung-gift"}
+  - {"n": 107, "track": "leo-sorry-metal-cover"}
+  - {"n": 108, "track": "leo-cruisin-feat-yung-gift"}
+  - {"n": 109, "track": "leo-the-wheels-on-the-bus-metal-cover"}
+  - {"n": 110, "track": "leo-girl-you-know-it-s-true-metal-cover"}
+  - {"n": 111, "track": "leo-girl-you-know-it-s-true-metal-cover"}
+  - {"n": 112, "track": "leo-get-lucky-metal-cover-2f7ig1"}
+  - {"n": 113, "track": "leo-take-me-to-church-metal-cover"}
+  - {"n": 114, "track": "leo-people-pleaser"}
+  - {"n": 115, "track": "leo-wannabe-metal-cover-5nsxxc"}
+  - {"n": 116, "track": "leo-california-dreamin-metal-cover"}
+  - {"n": 117, "track": "leo-ex-s-oh-s-metal-cover"}
+  - {"n": 118, "track": "leo-what-a-wonderful-world-cover-4s6olz"}
+  - {"n": 119, "track": "leo-ace-of-spades-metal-cover-2z80io"}
+  - {"n": 120, "track": "leo-gangnam-style-metal-cover-7rze8p"}
+  - {"n": 121, "track": "leo-hello-metal-cover-4d8kdd"}
+  - {"n": 122, "track": "leo-work-it-out"}
+  - {"n": 123, "track": "leo-dance-with-u"}
+  - {"n": 124, "track": "leo-love-me-like-you-do-metal-cover"}
+  - {"n": 125, "track": "leo-sail-metal-cover"}
+  - {"n": 126, "track": "leo-heathens-metal-cover"}
+---
+
+# Leapfrogstudio
+
+A playlist the owner follows: 126 of 126 items read on 2026-11-14, 0 of them reviewed on the site.

@@ -22,6 +22,9 @@
     "test:e2e": "node test/e2e/smoke.cjs",
     "verify": "bash scripts/verify.sh",
     "track": "python3 scripts/track.py",
+    "spotify:build": "python3 scripts/spotify_history.py build --write && python3 scripts/catalog.py",
+    "spotify:check": "python3 scripts/spotify_history.py --check",
+    "spotify:stats": "python3 scripts/spotify_history.py stats",
     "probe:videos": "python3 scripts/probe-videos.py",
     "typecheck": "tsc -p tsconfig.json && pyright"
   },

@@ -1,0 +1,808 @@
+# The owner's Spotify yearbook 2019 ("Your Top Songs 2019"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2019
+name = "Your Top Songs 2019"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2019\", read off the rendered page on 2026-11-14 (scripts/spotify_history.py)"
+retrieved = "2026-11-14"
+expected = 100
+
+[[track]]
+n = 1
+title = "Exodus"
+artists = ["Nôze", "Wareika"]
+album = "Dring"
+duration = "4:04"
+spotify = "2QoCFcUbc3UTujoLiqWsvR"
+
+[[track]]
+n = 2
+title = "Deja vu"
+artists = ["Scarlet Pleasure"]
+album = "Limbo/Lagune"
+duration = "3:29"
+spotify = "4A5X60HdwE5AqCyqq8ojQZ"
+
+[[track]]
+n = 3
+title = "Fresh and Foolish feat. Sarah Palin"
+artists = ["Kalabrese", "Sarah Palin"]
+album = "Independent Dancer"
+duration = "4:57"
+spotify = "43335d4chxjzyIpiq4RXCu"
+
+[[track]]
+n = 4
+title = "Drunk Groove"
+artists = ["MARUV", "Boosin"]
+album = "Drunk Groove"
+duration = "3:46"
+spotify = "7xVzkiXvUfwI72l0qh03Fj"
+
+[[track]]
+n = 5
+title = "Feel It Still"
+artists = ["Portugal. The Man"]
+album = "Woodstock"
+duration = "2:43"
+spotify = "6QgjcU0zLnzq5OrUoSZ3OK"
+
+[[track]]
+n = 6
+title = "Forgotten Places"
+artists = ["Alif Tree"]
+album = "French Cuisine"
+duration = "4:51"
+spotify = "0WuQYFqYHDgCbtKups3Ciu"
+
+[[track]]
+n = 7
+title = "Father - Original"
+artists = ["Anthony Rother"]
+album = "Popkiller"
+duration = "6:33"
+spotify = "37wWrejU41DEs1xtVpBmv9"
+
+[[track]]
+n = 8
+title = "A Friend"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "4:20"
+spotify = "3XhbiGCzShv8we87L1BjQP"
+
+[[track]]
+n = 9
+title = "Moments"
+artists = ["Klangkarussell", "Will Heard"]
+album = "Netzwerk"
+duration = "5:01"
+spotify = "3fx25M65m6ATiKnEIDS3HK"
+
+[[track]]
+n = 10
+title = "Oddity feat. Olivera Stanimirov (Album Version)"
+artists = ["Zwicker"]
+album = "Songs of Lucid Dreamers"
+duration = "4:21"
+spotify = "5N1GHKkB7pSLlROojX7bi7"
+
+[[track]]
+n = 11
+title = "Wasting Time"
+artists = ["Frivolous"]
+album = "Meteorology (Reissue)"
+duration = "5:11"
+spotify = "4qGFEja2VpLmayJ2R5NsKC"
+
+[[track]]
+n = 12
+title = "Crystalised - Original Mix"
+artists = ["Martina Topley-Bird", "Mark Lanegan", "Warpaint"]
+album = "Crystalised"
+duration = "3:51"
+spotify = "3GiivCdOx4aiM149VvdjcH"
+
+[[track]]
+n = 13
+title = "Hurt"
+artists = ["Johnny Cash"]
+album = "American IV: The Man Comes Around"
+duration = "3:36"
+spotify = "28cnXtME493VX9NOw9cIUh"
+
+[[track]]
+n = 14
+title = "Stand Up - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade"
+duration = "4:39"
+spotify = "1y01CYF2Cr8ICQAPRcjxz3"
+
+[[track]]
+n = 15
+title = "Something Says"
+artists = ["Jan Blomqvist"]
+album = "Ink"
+duration = "8:15"
+spotify = "0NbULP2j3V2MgaoXLJPhdZ"
+
+[[track]]
+n = 16
+title = "D.R.O.M.P - Special 12\" Mix"
+artists = ["Chicken Lips"]
+album = "D.R.O.M.P"
+duration = "8:12"
+spotify = "5H80Tzo0Hjy9wdlY075xIz"
+
+[[track]]
+n = 17
+title = "Po schodoch"
+artists = ["Richard Müller & Banket"]
+album = "Bioelektrovízia"
+duration = "3:12"
+spotify = "0txSi550sRew7KVhJfJyio"
+
+[[track]]
+n = 18
+title = "Smalltalk - Four Tet Remix"
+artists = ["Ultraísta", "Four Tet"]
+album = "Ultraísta (Deluxe)"
+duration = "6:06"
+spotify = "3ruo6JHTVOwkw0oXboVUyi"
+
+[[track]]
+n = 19
+title = "Hush Now"
+artists = ["Marbert Rocel"]
+album = "Catch a Bird"
+duration = "5:34"
+spotify = "5ThN7cCQKwXZA3uadpVYnG"
+
+[[track]]
+n = 20
+title = "My Beauty"
+artists = ["Beauty Freak", "Malee"]
+album = "Mon amour"
+duration = "3:06"
+spotify = "3olYaO88urwz88KQIjmGWd"
+
+[[track]]
+n = 21
+title = "A War Is Coming"
+artists = ["Jeanne Added"]
+album = "Be Sensational"
+duration = "2:35"
+spotify = "4xeW5ZakgtFMjIp6SvpFIC"
+
+[[track]]
+n = 22
+title = "Who Loves the Sun"
+artists = ["Nu", "Jo.Ke"]
+album = "We Love The Sun"
+duration = "9:22"
+spotify = "0GCLyiQXeI7zXDKQ4jY1mB"
+
+[[track]]
+n = 23
+title = "The Bay"
+artists = ["Metronomy"]
+album = "The English Riviera"
+duration = "4:50"
+spotify = "2akjLHnHjDGsgqxuf48VYs"
+
+[[track]]
+n = 24
+title = "Budapest"
+artists = ["Poni Hoax", "Olga Kouklaki"]
+album = "Poni Hoax"
+duration = "5:29"
+spotify = "327qcYbdOIUhFGyt9OFhW1"
+
+[[track]]
+n = 25
+title = "Battles"
+artists = ["Emika"]
+album = "DREI"
+duration = "3:33"
+spotify = "2utNme0G9OtUVqq7wYUOf3"
+
+[[track]]
+n = 26
+title = "Moon River(Vocal Audrey Hepburn)"
+artists = ["Henry Mancini"]
+album = "Champagne For The Private Eye"
+duration = "2:05"
+spotify = "5iGleL7HpEThuuYQ3us2jh"
+
+[[track]]
+n = 27
+title = "The Most"
+artists = ["Weval"]
+album = "Half Age EP"
+duration = "5:29"
+spotify = "13BVARm5bWjWM2TLyCHDA3"
+
+[[track]]
+n = 28
+title = "Cola - Club Mix"
+artists = ["CAMELPHAT", "Elderbrook"]
+album = "Cola"
+duration = "6:55"
+spotify = "0ReCEc0B5vFdvMMpc18xYf"
+
+[[track]]
+n = 29
+title = "My Heart Bleeds Melody"
+artists = ["Emika"]
+album = "DREI"
+duration = "4:31"
+spotify = "4DxwubEmUsN2EBXTEQeAdh"
+
+[[track]]
+n = 30
+title = "Try"
+artists = ["Bugge Wesseltoft"]
+album = "Somewhere in Between"
+duration = "4:00"
+spotify = "4pCI9LrUmH1AbIPlHPIe96"
+
+[[track]]
+n = 31
+title = "Kata Rokkar"
+artists = ["Björk Guðmundsdóttir", "Trio Gudmundar Ingólfssonar"]
+album = "Gling-Gló"
+duration = "2:58"
+spotify = "3wP1reik9nojpqnbFuoeOu"
+
+[[track]]
+n = 32
+title = "Shivering Sense"
+artists = ["Stereoclip"]
+album = "Hometown"
+duration = "4:55"
+spotify = "6oVbWcRJhtEWytRCB4Gqer"
+
+[[track]]
+n = 33
+title = "Miracles Prelude"
+artists = ["Emika"]
+album = "DREI"
+duration = "1:49"
+spotify = "6LjPFFHYDN6V8KLT9HWvTI"
+
+[[track]]
+n = 34
+title = "Remedy"
+artists = ["Agoria", "NOEMIE"]
+album = "Drift"
+duration = "2:58"
+spotify = "6sH7LTzonbkNleLPvk1Yie"
+
+[[track]]
+n = 35
+title = "Imik si mik - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade"
+duration = "3:55"
+spotify = "3r3PT5TiwoZwQuZ9xnTKhf"
+
+[[track]]
+n = 36
+title = "Left With Someone Else"
+artists = ["Gabriella Cilmi"]
+album = "The Sting"
+duration = "3:15"
+spotify = "1IY75FIyPiGewmfc2AbPGa"
+
+[[track]]
+n = 37
+title = "Never let you go"
+artists = ["Waldeck", "Patrizia Ferrara"]
+album = "Atlantic Ballroom"
+duration = "3:11"
+spotify = "5IK9dSUSzioE9lilLi4AEi"
+
+[[track]]
+n = 38
+title = "You Got Me (Featuring Jill Scott) - Live / 1999"
+artists = ["The Roots", "Jill Scott"]
+album = "The Roots Come Alive"
+duration = "8:50"
+spotify = "71he7ShvDkKna60RozMqyN"
+
+[[track]]
+n = 39
+title = "High - Original Mix"
+artists = ["Christopher Schwarzwälder", "Iannis Ritter"]
+album = "Three Rivers EP"
+duration = "6:51"
+spotify = "0k0vu2jd7Hf3SrTRPDFMsM"
+
+[[track]]
+n = 40
+title = "On My Way"
+artists = ["Jain"]
+album = "Souldier"
+duration = "3:23"
+spotify = "0occFly3Mc8koSIdVsObkZ"
+
+[[track]]
+n = 41
+title = "Miracles"
+artists = ["Emika"]
+album = "DREI"
+duration = "3:14"
+spotify = "5Phlm0Kx2sr0znfvuQ6X1o"
+
+[[track]]
+n = 42
+title = "Our Dance"
+artists = ["Wax Tailor", "Charlotte Savary"]
+album = "Tales of the Forgotten Melodies"
+duration = "4:24"
+spotify = "35Dznxpk4j0A6hGayXWy6Z"
+
+[[track]]
+n = 43
+title = "Quite Like"
+artists = ["Her"]
+album = "Her"
+duration = "4:05"
+spotify = "1dSRuZuKGJLb34w9nFnoTj"
+
+[[track]]
+n = 44
+title = "The Hanging Tree - From \"The Hunger Games: Mockingjay\" Soundtrack"
+artists = ["James Newton Howard", "Jennifer Lawrence"]
+album = "The Hunger Games: Mockingjay Pt. 1 (Original Motion Picture Score)"
+duration = "3:38"
+spotify = "416MsJxvxSKY96DCmbJIRs"
+
+[[track]]
+n = 45
+title = "The Owner"
+artists = ["NTEIBINT", "Σtella"]
+album = "The Owner"
+duration = "3:53"
+spotify = "18MiFGI5knNI9PDNNVoO44"
+
+[[track]]
+n = 46
+title = "What's the Cure"
+artists = ["Emika"]
+album = "DREI"
+duration = "4:15"
+spotify = "6TsMXRJsp6Qvwxum95d4Vu"
+
+[[track]]
+n = 47
+title = "Five Minutes"
+artists = ["Her"]
+album = "Her"
+duration = "3:48"
+spotify = "7LqT7LqKsCh6epYR9UdAlP"
+
+[[track]]
+n = 48
+title = "Nicotine Love"
+artists = ["Tricky", "Francesca Belmonte"]
+album = "Adrian Thaws"
+duration = "3:06"
+spotify = "2kh7yj7uppzfby3a0hpGuv"
+
+[[track]]
+n = 49
+title = "New Day"
+artists = ["Monkey Safari"]
+album = "HI"
+duration = "8:17"
+spotify = "7548lIowWrwIbVIbAOSewT"
+
+[[track]]
+n = 50
+title = "Without Expression"
+artists = ["Emika"]
+album = "DREI"
+duration = "4:24"
+spotify = "4eB4uoGVVTg7gtScG9zsxW"
+
+[[track]]
+n = 51
+title = "The Fugue (Extended Version)"
+artists = ["Dusty Kid"]
+album = "A Raver's Diary - Singles & B-Sides"
+duration = "10:05"
+spotify = "14DbTmAlicuVtDHjzFr48n"
+
+[[track]]
+n = 52
+title = "Diamonds"
+artists = ["Y'akoto"]
+album = "Babyblues"
+duration = "3:44"
+spotify = "0aBZ8AFkFpfdCl1wDHORNC"
+
+[[track]]
+n = 53
+title = "Old Tortures"
+artists = ["Alec Troniq", "GABRIEL VITEL"]
+album = "The Aviating"
+duration = "8:48"
+spotify = "4TWPlBaYKnjls3KpOjcaBX"
+
+[[track]]
+n = 54
+title = "Son of a Sun"
+artists = ["Jain"]
+album = "Zanaka - EP"
+duration = "3:31"
+spotify = "6L57eOHgtM5RoucZEythR0"
+
+[[track]]
+n = 55
+title = "No Home"
+artists = ["Sascha Braemer"]
+album = "No Home"
+duration = "3:26"
+spotify = "5664QOZxIDZ18WoLfxu7vM"
+
+[[track]]
+n = 56
+title = "Close Up"
+artists = ["dOP"]
+album = "Close Up"
+duration = "5:39"
+spotify = "4wLEoEi6OlZ7K3D6inaUks"
+
+[[track]]
+n = 57
+title = "Rache"
+artists = ["Emika"]
+album = "DREI"
+duration = "4:39"
+spotify = "0con0vWIq7YI1GaVNrhPTH"
+
+[[track]]
+n = 58
+title = "Dragon Fly feat. Billy Oden (Album Version)"
+artists = ["Zwicker"]
+album = "Songs of Lucid Dreamers"
+duration = "5:12"
+spotify = "61g4d5MtGKssH3biH9JOeH"
+
+[[track]]
+n = 59
+title = "Day into Night"
+artists = ["Katalyst", "Stephanie McKay"]
+album = "Deep Impressions"
+duration = "3:38"
+spotify = "53aW96vcdQskIrg0jtja5P"
+
+[[track]]
+n = 60
+title = "It's Oh So Quiet"
+artists = ["Björk"]
+album = "Post"
+duration = "3:38"
+spotify = "3CMVjlbvNJMHDfYPX7xCpi"
+
+[[track]]
+n = 61
+title = "Arrow and Bow - Original Version"
+artists = ["Oliver Koletzki", "Fran"]
+album = "Lovestoned"
+duration = "4:10"
+spotify = "4Prk3d2tits1xGs5deDAxo"
+
+[[track]]
+n = 62
+title = "Love Rehab"
+artists = ["Chaim", "Meital De Razon"]
+album = "Love Rehab"
+duration = "7:40"
+spotify = "0QqexX8RENBLirZ8W1qMvY"
+
+[[track]]
+n = 63
+title = "On & On"
+artists = ["Her", "AnnenMayKantereit", "Roméo Elvis"]
+album = "Her"
+duration = "3:38"
+spotify = "1y5FGDQHfDOSIRye0jkoBt"
+
+[[track]]
+n = 64
+title = "Smile (feat. Alex Gopher & Asher Roth) - Vocal Mix"
+artists = ["Etienne de Crécy", "Alex Gopher", "Asher Roth"]
+album = "Smile (Vocal Mix)"
+duration = "3:26"
+spotify = "4SpXkrjuPnyErjE504cnFE"
+
+[[track]]
+n = 65
+title = "Sweet About Me"
+artists = ["Gabriella Cilmi"]
+album = "Lessons To Be Learned"
+duration = "3:22"
+spotify = "5wznxkB792LjSRdbZ1J1zo"
+
+[[track]]
+n = 66
+title = "Serious Trouble"
+artists = ["Emika"]
+album = "DREI"
+duration = "3:47"
+spotify = "5N2Gv7l1WNmc4VB0D9V8i3"
+
+[[track]]
+n = 67
+title = "Where is Kittin?"
+artists = ["Marc Houle", "Miss Kittin"]
+album = "Where is Kittin?"
+duration = "5:57"
+spotify = "5xMQ15omNGJHTvZgsL5MPS"
+
+[[track]]
+n = 68
+title = "Not safe for work (feat. Forensic)"
+artists = ["Matzak", "Forensic"]
+album = "Bring Me the Moon"
+duration = "6:02"
+spotify = "3irrmtSq2sdb1LwdufT4lz"
+
+[[track]]
+n = 69
+title = "Cumbia del Olvido"
+artists = ["Nicola Cruz"]
+album = "Prender el Alma"
+duration = "3:36"
+spotify = "6qINThmTDYBm8twguFRueG"
+
+[[track]]
+n = 70
+title = "It Runs Through Me"
+artists = ["Tom Misch", "De La Soul"]
+album = "Geography"
+duration = "4:21"
+spotify = "0p92TJPcRHCbcSk3wCwWBz"
+
+[[track]]
+n = 71
+title = "Feels Like Home (Red Velvet Dress) - Video Edit"
+artists = ["Spada", "Hosie Neal"]
+album = "Feels Like Home (Red Velvet Dress)"
+duration = "2:42"
+spotify = "1f0wtb8kqg9mEZ13R8XmK8"
+
+[[track]]
+n = 72
+title = "Jetlands"
+artists = ["Ron Flatter", "Nick D-Lite"]
+album = "Jetlands und Wolken"
+duration = "7:52"
+spotify = "1Yf98TVe3AOClCCbbQnQjr"
+
+[[track]]
+n = 73
+title = "My Bed"
+artists = ["Marbert Rocel"]
+album = "Catch a Bird"
+duration = "3:03"
+spotify = "3fQ9CYlh69aJzkRCDr3pnT"
+
+[[track]]
+n = 74
+title = "Hypnotized"
+artists = ["Oliver Koletzki", "Fran"]
+album = "Großstadtmärchen"
+duration = "5:40"
+spotify = "0V2GX0aukyZMt6nSMxfOJk"
+
+[[track]]
+n = 75
+title = "Destiny Killer"
+artists = ["Emika"]
+album = "DREI"
+duration = "3:46"
+spotify = "7aVNYMYivI1iJVw0F5T6Ey"
+
+[[track]]
+n = 76
+title = "Dance in My Pants"
+artists = ["Nu"]
+album = "We Love The Sun"
+duration = "6:39"
+spotify = "4x84WG5Gs5MZUADW6ZZRO8"
+
+[[track]]
+n = 77
+title = "Say My Name"
+artists = ["David Guetta", "Bebe Rexha", "J Balvin"]
+album = "7"
+duration = "3:18"
+spotify = "0YammaEkYSeo9vQYZ1OwS6"
+
+[[track]]
+n = 78
+title = "Trenchcoat"
+artists = ["Marbert Rocel"]
+album = "Catch a Bird"
+duration = "4:02"
+spotify = "1wSxQP4Apd0v3DQ5cMjl3N"
+
+[[track]]
+n = 79
+title = "Time For Us"
+artists = ["Nicolas Jaar"]
+album = "Time For Us"
+duration = "7:40"
+spotify = "493Cq02N6XzraXjYfnuqib"
+
+[[track]]
+n = 80
+title = "Saubohnen"
+artists = ["FEATHERED SUN"]
+album = "Saubohnen"
+duration = "8:07"
+spotify = "0oFdegvjhxiQg9lMAyjWgo"
+
+[[track]]
+n = 81
+title = "Hooray"
+artists = ["Marek Hemmann"]
+album = "Bittersweet"
+duration = "5:35"
+spotify = "6xzLyquEsfD7BVwoPBI6ic"
+
+[[track]]
+n = 82
+title = "Reklama na ticho"
+artists = ["Team"]
+album = "Team"
+duration = "3:42"
+spotify = "50I8EQ1iJ2tCyiWGbWuuHG"
+
+[[track]]
+n = 83
+title = "Is It Ok"
+artists = ["Pablo Nouvelle", "Fiona Daniel"]
+album = "Pablo Nouvelle"
+duration = "4:11"
+spotify = "65czAF6AV80BuRs4ysGAOA"
+
+[[track]]
+n = 84
+title = "Phoenix - Unique Repeat Remix"
+artists = ["Solee", "Unique Repeat"]
+album = "Phoenix (Remixes)"
+duration = "8:27"
+spotify = "0qZpqoCudAZALDllBsHjFb"
+
+[[track]]
+n = 85
+title = "Like Abby Said"
+artists = ["Marbert Rocel"]
+album = "Catch a Bird"
+duration = "4:46"
+spotify = "0mGjh3weq6ScFdMk4VJoMr"
+
+[[track]]
+n = 86
+title = "Eternity"
+artists = ["Joachim Pastor"]
+album = "Eternity"
+duration = "6:20"
+spotify = "1fhcMMxjn3Gvin19Akf3Ig"
+
+[[track]]
+n = 87
+title = "Harder, Better, Faster, Stronger - Alive Radio Edit 2007"
+artists = ["Daft Punk"]
+album = "Harder, Better, Faster, Stronger (Alive Radio Edit 2007)"
+duration = "3:24"
+spotify = "7z2Xur2O6Dy9mh8oSauXa2"
+
+[[track]]
+n = 88
+title = "Full Clip"
+artists = ["Gang Starr"]
+album = "Full Clip: A Decade Of Gang Starr"
+duration = "3:37"
+spotify = "30oTS7bm0aH3p7lqjEIu8q"
+
+[[track]]
+n = 89
+title = "Time"
+artists = ["NTO"]
+album = "Time"
+duration = "6:04"
+spotify = "7hofL9YADeFqnsFdDrxdbs"
+
+[[track]]
+n = 90
+title = "Amsterdam"
+artists = ["Klangkuenstler", "Alice Phoebe Lou"]
+album = "That's Me"
+duration = "5:11"
+spotify = "2J5Go5skiXpGqyk9DvK9ay"
+
+[[track]]
+n = 91
+title = "Pabbi Minn"
+artists = ["Björk Guðmundsdóttir", "Trio Gudmundar Ingólfssonar"]
+album = "Gling-Gló"
+duration = "2:42"
+spotify = "3ZBQwjnpO28X5GWlTIwGxU"
+
+[[track]]
+n = 92
+title = "Ghost - Radio Edit"
+artists = ["Claptone", "Clap Your Hands Say Yeah"]
+album = "Ghost"
+duration = "3:25"
+spotify = "0vy51AcGPWRGKfCJRgyI9s"
+
+[[track]]
+n = 93
+title = "I Wanna"
+artists = ["Joris Delacroix", "Synapson", "Schérazade"]
+album = "Night Visions"
+duration = "4:57"
+spotify = "2ZRzpgauyYgvg8AleN5BbW"
+
+[[track]]
+n = 94
+title = "Summer Days"
+artists = ["Radio Citizen", "Bajka"]
+album = "Hope and Despair"
+duration = "4:36"
+spotify = "4pGe711Sg4M7jcvPK94hDn"
+
+[[track]]
+n = 95
+title = "Sunset"
+artists = ["Compuphonic", "Marques Toliver"]
+album = "Sunset"
+duration = "6:12"
+spotify = "5AheUFhxRKox7XvuGlbh1U"
+
+[[track]]
+n = 96
+title = "Walking By The Sea - Original Mix"
+artists = ["Pitto"]
+album = "Objects In A Mirror Are Closer Than They Appear"
+duration = "5:15"
+spotify = "3rjZzxVyOJyVVjvYeFA8nu"
+
+[[track]]
+n = 97
+title = "Don’t Lose Your Steam"
+artists = ["Gregory Porter"]
+album = "Take Me To The Alley"
+duration = "3:17"
+spotify = "19A6DtYrz9n8FDvb7kMVVW"
+
+[[track]]
+n = 98
+title = "King Of My Castle - Roy Malone's King Mix"
+artists = ["Wamdue Project", "Roy Malone"]
+album = "King Of My Castle (Mixes)"
+duration = "4:58"
+spotify = "4XZwpHpscrMkbpQPqjnwRJ"
+
+[[track]]
+n = 99
+title = "Be Svendsen: Black Tower Hotel - Be Svendsen Mix"
+artists = ["The Crooked Spoke"]
+album = "Catchpenny & Cosmos"
+duration = "7:22"
+spotify = "2gOCNhq2NjeifowcwN6xqQ"
+
+[[track]]
+n = 100
+title = "Silent Spring"
+artists = ["Stavroz"]
+album = "Silent Spring EP"
+duration = "7:06"
+spotify = "7Ahsl5h4B9e98znG7OrBZd"
