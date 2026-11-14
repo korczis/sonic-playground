@@ -148,6 +148,13 @@ class Records(unittest.TestCase):
         self.assertEqual((meta["retrieved"], meta["unavailable"]), (1, 1))
 
 
+class Overrides(unittest.TestCase):
+    def test_a_record_resolves_the_way_its_yearbook_item_does(self):
+        ov = sh.playlist_overrides()
+        self.assertEqual(ov.get(("bjorkgudmundsdottir", "katarokkar")), {"review": "bjork-kata-rokkar.md"},
+                         "the owner's review= in yearbook-2019.toml, keyed by artist and song")
+
+
 class Gate(unittest.TestCase):
     def test_private_keys_are_found_anywhere(self):
         self.assertEqual(sh.find_private_keys({"a": [{"added": 1}], "plays": {}}), ["a[0].added", "plays"])

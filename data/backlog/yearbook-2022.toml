@@ -382,6 +382,8 @@ artists = ["Digitaria", "Funky Fat"]
 album = "Mascochist"
 duration = "5:36"
 spotify = "1IsfJhAPIA6kitJQQDCDyq"
+review = "funky-fat-and-digitaria-you-bring-me-down.md"
+note = "the reviewed recording: same length, the Masochist EP (Spotify spells it Mascochist)"
 
 [[track]]
 n = 48

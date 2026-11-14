@@ -254,6 +254,8 @@ artists = ["Björk Guðmundsdóttir", "Trio Gudmundar Ingólfssonar"]
 album = "Gling-Gló"
 duration = "2:58"
 spotify = "3wP1reik9nojpqnbFuoeOu"
+review = "bjork-kata-rokkar.md"
+note = "the reviewed recording: Gling-Gló, credited to Björk Guðmundsdóttir & Trio Gudmundar Ingólfssonar"
 
 [[track]]
 n = 32

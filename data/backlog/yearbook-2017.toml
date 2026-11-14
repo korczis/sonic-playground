@@ -294,6 +294,8 @@ artists = ["Noir", "Haze", "Solomun"]
 album = "Around"
 duration = "6:58"
 spotify = "5qA35ZZWFOqynheP5x8rty"
+review = "noir-haze-solomun-around-solomun-vox.md"
+note = "the reviewed recording: same release (Around) and credits; the review's title names the Solomun Vox"
 
 [[track]]
 n = 37
@@ -790,6 +792,8 @@ artists = ["Marcus Marr", "Nick Murphy"]
 album = "The Trouble With Us"
 duration = "3:42"
 spotify = "60bBoLe9ocxO3zrb0mRO4k"
+review = "marcus-marr-nick-murphy-the-trouble-with-us.md"
+note = "the reviewed recording: same title, credits and release"
 
 [[track]]
 n = 99
