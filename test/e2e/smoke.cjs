@@ -228,10 +228,68 @@ async function visit(context, rel) {
 const SWEEP_WORKERS = Number(process.env.SMOKE_WORKERS)
   || Math.min(16, Math.max(6, require('node:os').cpus().length - 2));
 
-async function sweep(browser) {
+// Every page of the site (its sitemap), as absolute URLs.
+async function sitemap() {
   const xml = root ? fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8')
     : await (await get(at('sitemap.xml'))).text();
-  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+}
+
+// The kind of a page from its path: the language, then home, a review (reviews: the catalogue's
+// paths), a top-level page, or a taxonomy's index, term or term page (cs/genre/house/page/2/ ->
+// cs:genre:page).
+function pageKind(rel, reviews) {
+  const parts = rel.split('/').filter(Boolean);
+  const lang = parts[0] === 'cs' ? parts.shift() : 'en';
+  if (!parts.length) return `${lang}:home`;
+  if (parts.length === 1) return reviews.has(parts[0] + '/') ? `${lang}:review` : `${lang}:${parts[0]}`;
+  return `${lang}:${parts[0]}:${parts.includes('page') ? 'page' : parts.length === 2 ? 'term' : 'deep'}`;
+}
+
+// WCAG 2.2 A and AA (rule project.wcag-aa): axe-core's rules of those levels, colour contrast
+// included, report nothing on one page of every kind the sitemap has, in light and in dark.
+// The site's own checks cover names and target size; this is the independent instrument.
+const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
+async function wcag(browser, viewport, reviews) {
+  const axe = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
+  const kinds = new Map();
+  for (const loc of await sitemap()) {
+    const rel = loc.startsWith(base) ? loc.slice(base.length) : loc;
+    if (!kinds.has(pageKind(rel, reviews))) kinds.set(pageKind(rel, reviews), rel);
+  }
+  const jobs = [];
+  for (const scheme of ['light', 'dark']) for (const rel of kinds.values()) jobs.push({ scheme, rel });
+  const found = [];
+  let next = 0;
+  async function worker() {
+    const contexts = {};
+    while (next < jobs.length) {
+      const { scheme, rel } = jobs[next++];
+      if (!contexts[scheme]) {
+        contexts[scheme] = await browser.newContext({ viewport, colorScheme: scheme });
+        if (root) await contexts[scheme].route(`${base}**`, fromArtifact);
+        await contexts[scheme].addInitScript((s) => { try { localStorage.setItem('color-theme', s); } catch (e) { /* private mode */ } }, scheme);
+      }
+      const page = await contexts[scheme].newPage();
+      await page.goto(at(rel), { waitUntil: 'load' });
+      await page.addScriptTag({ content: axe });
+      const violations = await page.evaluate(async (tags) => {
+        const r = await window.axe.run(document, { runOnly: { type: 'tag', values: tags }, resultTypes: ['violations'] });
+        return r.violations.map((v) => `${v.id} (${v.nodes.length}): ${v.nodes[0].target.join(' ')} — ${(v.nodes[0].failureSummary || '').split('\n')[1] || v.help}`);
+      }, WCAG_TAGS);
+      for (const v of violations) found.push(`${scheme} /${rel}: ${v}`);
+      await page.close();
+    }
+    for (const c of Object.values(contexts)) await c.close();
+  }
+  await Promise.all(Array.from({ length: Math.min(SWEEP_WORKERS, jobs.length) }, worker));
+  check(kinds.size > 10 && found.length === 0,
+    `wcag: axe-core ${WCAG_TAGS.join('/')} finds nothing on ${kinds.size} kinds of page, light and dark` +
+    (found.length ? `\n     ${found.slice(0, 12).join('\n     ')}` : ''));
+}
+
+async function sweep(browser) {
+  const urls = await sitemap();
   const failed = [];
   let next = 0;
   async function worker() {
@@ -1029,6 +1087,7 @@ async function shot(page, name) {
     await context.close();
   }
 
+  await wcag(browser, desktop, new Set(catalog.tracks.map((t) => t.path)));
   if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);
 
   await browser.close();

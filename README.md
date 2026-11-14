@@ -127,8 +127,9 @@ currency, the locales,
 unit tests, the skill cases (`test/cases/`), type checks, vendored assets and CSS, `zola build`
 (internal links are errors), the social cards, the built-site check (every local URL resolves,
 every page has complete social tags), and the browser smoke test (every page class, the
-explorer, the player on desktop and phone, the router, the locales, and a sweep of every sitemap
-page for console errors, warnings and failed requests).
+explorer, the player on desktop and phone, the router, the locales, axe-core's WCAG 2.2 A and AA
+rules on one page of every kind in light and dark, and a sweep of every sitemap page for console
+errors, warnings and failed requests).
 
 ## Deploy
 
