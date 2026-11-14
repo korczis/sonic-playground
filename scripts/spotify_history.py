@@ -38,6 +38,7 @@ import sys
 from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
+from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog as cat  # noqa: E402
@@ -293,7 +294,7 @@ def model(snaps: list[dict], export: dict | None = None) -> dict:
     songs: dict[tuple, dict] = {}
     alias: dict[tuple, tuple] = {}  # artist+song key -> id key, to join id-less rows
     playlists: list[dict] = []
-    library = {"albums": {}, "artists": {}}
+    library: dict[str, Any] = {"albums": {}, "artists": {}}
     plays: dict[tuple, dict] = defaultdict(lambda: {"count": 0, "ms": 0, "first": None, "last": None})
     sources = []
 
