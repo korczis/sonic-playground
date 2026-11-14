@@ -646,7 +646,8 @@ async function shot(page, name) {
     await page.evaluate(() => { window.__notReloaded = true; });
     await page.evaluate((href) => window.SonicRouter.go(href), new URL('cs/insights/', base).href);
     await page.waitForFunction(() => location.pathname.endsWith('/cs/insights/'), null, { timeout: 10000 }).catch(() => {});
-    await page.locator('#chart-months').scrollIntoViewIfNeeded();
+    // Centred, so the fixed player bar (playing here) never covers the bar the click aims at.
+    await page.evaluate(() => document.getElementById('chart-months').scrollIntoView({ block: 'center' }));
     await page.waitForFunction(() => {
       const el = document.getElementById('chart-months');
       return el && window.echarts && window.echarts.getInstanceByDom(el);
