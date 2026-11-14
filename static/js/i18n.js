@@ -99,7 +99,7 @@
     var href = counterpart(code);
     if (!href) return;
     if (window.SonicRouter) window.SonicRouter.go(href + location.search + location.hash);
-    else location.assign(href + location.search + location.hash);
+    else location.assign(href + location.search + location.hash); // full load: no router on this page
   }
   /** The first language of the site the browser prefers, or null. */
   function preferred() {
@@ -120,12 +120,15 @@
       var target = want && want !== locale ? counterpart(want) : null;
       if (target) {
         document.documentElement.dataset.i18nState = 'redirecting';
-        location.replace(target + location.search + location.hash);
+        location.replace(target + location.search + location.hash); // full load: the entry redirect, before anything plays
         return;
       }
     }
     apply();
     document.documentElement.dataset.i18nState = 'ready';
+    // What modules rendered before the bundle arrived (the explorer's status, a chart's labels)
+    // renders again with the strings now here, as on a change of language.
+    Sonic.emit('sonic:locale', { locale: locale });
   }).catch(function () { document.documentElement.dataset.i18nState = 'failed'; });
 
   document.addEventListener('change', function (event) {
