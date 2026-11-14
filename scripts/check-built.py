@@ -6,6 +6,11 @@ through the video component). Every <img> has its width and height (nothing shif
 and no image a page references weighs more than data/media.toml budget.image_kb (rule
 project.media-budget: a page shows derived variants, never a source). Every page has exactly one
 <h1>, its title: content headings start at ## (a redirect stub has no <html> and is skipped).
+Every link and button has an accessible name (its text, an aria-label, aria-labelledby, a title or
+an image's alt) or is out of reach entirely (aria-hidden="true" and tabindex="-1": a redundant
+link beside the one that carries the name), or sits in a subtree not exposed yet (an ancestor or
+itself `hidden` or aria-hidden: the player bar and the explorer's "more" button are filled by the
+browser when they appear). WCAG 4.1.2.
 
 Zola's link checker validates Markdown links to other pages; it does not see raw HTML in the
 reviews or attributes the templates compute. This reads what a browser would request.
@@ -28,6 +33,7 @@ URL_ATTRS = {"src", "href", "poster", "data-copy-link"}
 OG_FILES = os.environ.get("CHECK_OG_FILES", "1") != "0"
 MEDIA = tomllib.loads((Path(__file__).resolve().parent.parent / "data" / "media.toml").read_text(encoding="utf-8"))
 IMAGE_BYTES = MEDIA["budget"]["image_kb"] * 1024
+VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 
 
 # Every page carries a complete social preview (rule project.social-preview).
@@ -47,15 +53,26 @@ class Refs(HTMLParser):
         self.title = ""
         self.images: list[str] = []
         self.h1 = 0
+        self.controls: list[dict] = []   # open <a href> / <button>: their name so far
+        self.hidden: list[str] = []      # open elements inside a hidden subtree (hidden, aria-hidden)
+        self.unnamed: list[str] = []
         self.unsized: list[str] = []
 
     def handle_endtag(self, tag):
         if tag == "title":
             self.in_title = False
+        if self.hidden and self.hidden[-1] == tag:
+            self.hidden.pop()
+        if tag in ("a", "button") and self.controls and self.controls[-1]["tag"] == tag:
+            c = self.controls.pop()
+            if not c["name"].strip() and not c["hidden"]:
+                self.unnamed.append(c["desc"])
 
     def handle_data(self, data):
         if self.in_title:
             self.title += data
+        for c in self.controls:
+            c["name"] += data
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -70,6 +87,17 @@ class Refs(HTMLParser):
             self.iframes += 1
         if tag == "h1":
             self.h1 += 1
+        concealed = bool(self.hidden) or "hidden" in a or a.get("aria-hidden") == "true"
+        if concealed and tag not in VOID:
+            self.hidden.append(tag)
+        if (tag == "a" and a.get("href") is not None) or tag == "button":
+            named = " ".join(filter(None, [a.get("aria-label"), a.get("aria-labelledby"), a.get("title")]))
+            hidden = concealed and (a.get("tabindex") == "-1" or len(self.hidden) > 1 or "hidden" in a)
+            self.controls.append({"tag": tag, "name": named, "hidden": hidden,
+                                  "desc": f"<{tag} {'href=' + (a.get('href') or '')[:60] if tag == 'a' else 'class=' + (a.get('class') or '')[:40]}>"})
+        if tag == "img" and a.get("alt"):
+            for c in self.controls:
+                c["name"] += a["alt"]
         if tag == "img" and not (a.get("width") and a.get("height")):
             self.unsized.append(a.get("src") or "?")
         if tag in ("img", "source"):
@@ -118,6 +146,9 @@ def main() -> int:
                 problems.append(f"{rel}: social preview incomplete, missing {', '.join(missing)}")
             if not parser.title.strip() or not parser.canonical:
                 problems.append(f"{rel}: no <title> or canonical link")
+            for desc in sorted(set(parser.unnamed))[:5]:
+                problems.append(f"{rel}: {desc} has no accessible name (text, aria-label, title or an "
+                                f"image's alt), and is not hidden as a redundant link")
             if parser.h1 != 1:
                 problems.append(f"{rel}: {parser.h1} <h1> elements; a page has exactly one, its title "
                                 f"(content starts at ##)")
