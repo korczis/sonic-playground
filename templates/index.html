@@ -55,7 +55,7 @@
     </div>
   </section>
   {%- endif %}
-  <section aria-label="Catalogue at a glance" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
+  <section aria-label="{{ <tr key="landmark.glance" l={l} /> }}" data-i18n-aria-label="landmark.glance" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
     {{ <stat_card value={s.tracks} label={l["stat.tracks"]} lkey="stat.tracks" icon_name="music" href={get_url(path="@/pages/archive.md", lang=lang)} /> }}
     {{ <stat_card value={s.artists} label={l["stat.artists"]} lkey="stat.artists" icon_name="user" href={get_url(path="@/pages/insights.md", lang=lang)} /> }}
     {{ <stat_card value={s.genre_terms} label={l["stat.genres"]} lkey="stat.genres" icon_name="tag" href={get_url(path="genre", trailing_slash=true)} /> }}
@@ -144,7 +144,7 @@
     </form>
   </section>
 
-  <section aria-label="Track list">
+  <section aria-label="{{ <tr key="landmark.track_list" l={l} /> }}" data-i18n-aria-label="landmark.track_list">
     <div id="explorer-grid" data-explorer-grid data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
       {%- for t in catalog.tracks %}
       {{ <track_card t={t} l={l} heading="h3" /> }}

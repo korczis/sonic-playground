@@ -10,7 +10,10 @@
   - one formatter: no template fills an interface string's {placeholders} itself
     (replace(from="{…")); the `tr` component does, plural forms included;
   - one still: no template or review writes a YouTube still (i.ytimg.com) or a track's thumbnail
-    as an <img> src itself; the `still` component does, with the srcset data/media.toml names.
+    as an <img> src itself; the `still` component does, with the srcset data/media.toml names;
+  - no literal words in what assistive technology reads: an aria-label, title, alt, placeholder or
+    aria-description of a template is empty or comes from a string (tr, l[...]), never typed in
+    one language (Czech pages announced "Breadcrumb", "Main", "Site").
 
     python3 scripts/check-components.py     exit 1 on any finding
 """
@@ -31,6 +34,12 @@ IGNORE = re.compile(r"^\s*(\{%|\{#|</|<!--|\{\{\s*<)")  # a component call is re
 FORMAT = re.compile(r'replace\(from="\{')
 TR_DEFINITION = re.compile(r"\{%\s*component\s+tr\(")
 STILL = re.compile(r'i\.ytimg\.com|src="\{\{[^"]*thumb')
+SPOKEN = re.compile(r'\s(aria-label|aria-description|title|alt|placeholder)="([^"{]+)"')
+# The Flowbite Pro verifier (~/.claude/skills/flowbite-pro/verify.mjs) recognises the Pro shell by
+# these English landmark names in the template; they stay literal and i18n.js translates them in
+# the browser, so each must carry its data-i18n-aria-label. An owner decision may lift this.
+PRO_ANCHORS = {"Sidebar", "Breadcrumb"}
+COMMENT = re.compile(r"\{#.*?#\}", re.S)
 STILL_DEFINITION = re.compile(r"\{%\s*component\s+still\((.*?)\{%\s*endcomponent\s+still\s*%\}", re.S)
 
 
@@ -81,6 +90,17 @@ def main() -> int:
             if STILL.search(line):
                 problems.append(f"{path.relative_to(ROOT).as_posix()}:{number} writes a still by hand; "
                                 f"use <img {{{{ <still t={{t}} sizes=\"…\" /> }}}} …>")
+
+    # Spoken words come from strings: a literal accessible name is in one language on every page.
+    for path in sorted(TEMPLATES.rglob("*.html")):
+        text = COMMENT.sub(lambda m: "\n" * m.group(0).count("\n"), path.read_text(encoding="utf-8"))
+        for number, line in enumerate(text.splitlines(), 1):
+            for attr, value in SPOKEN.findall(line):
+                if attr == "aria-label" and value in PRO_ANCHORS and "data-i18n-aria-label=" in line:
+                    continue
+                if value.strip():
+                    problems.append(f"{path.relative_to(ROOT).as_posix()}:{number} {attr}=\"{value}\" is typed in one "
+                                    f"language; use {attr}=\"{{{{ <tr key=… l={{l}} /> }}}}\" data-i18n-{attr}=\"…\"")
 
     for p in problems:
         print(f"check-components: {p}", file=sys.stderr)

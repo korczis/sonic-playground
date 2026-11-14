@@ -506,6 +506,54 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // A script that failed to load is asked for again: the first YouTube API request fails (the
+  // player opens the video on YouTube instead), the next Play loads the API and plays here. A
+  // cached rejection used to leave the player dead until a reload.
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    let asked = 0;
+    await context.route('https://www.youtube.com/iframe_api', (r) => (asked++ === 0 ? r.abort()
+      : r.fulfill({ status: 200, contentType: 'text/javascript', body: FAKE_IFRAME_API })));
+    await context.route('https://www.youtube-nocookie.com/**', (r) => r.fulfill({ status: 200,
+      contentType: 'text/html', body: '<!doctype html><title>fake player</title>' }));
+    await context.route('https://www.youtube.com/watch**', (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '' }));
+    const page = await context.newPage();
+    await page.goto(at(sample.path), { waitUntil: 'load' });
+    await page.click('[data-video] [data-play]');
+    await page.waitForTimeout(800);
+    await page.locator('[aria-labelledby="related-title"] [data-play]').first().click();
+    const recovered = await page.waitForFunction(() => window.__yt && window.__yt.calls.some((c) => c[0] === 'play' || c[0] === 'load'),
+      null, { timeout: 10000 }).then(() => true, () => false);
+    check(recovered && asked >= 2, `player: after the YouTube API failed to load once, the next Play loads it and plays (${asked} requests)`);
+    await context.close();
+  }
+
+  // Back keeps the reader's place: on home, "Show more" twice and a scroll down, a review, Back;
+  // as many results are open and the page is where it was (it used to reset to 24, at the top).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    const page = await context.newPage();
+    await page.goto(at(''), { waitUntil: 'load' });
+    const open = () => page.evaluate(() => document.querySelectorAll('#explorer-grid [data-track]:not([data-overflow]):not([hidden])').length);
+    for (let i = 0; i < 2; i++) await page.click('[data-explorer-more]');
+    const where = () => page.evaluate(() => ({ y: Math.round(window.scrollY), main: Math.round((document.getElementById('main-content') || {}).scrollTop || 0) }));
+    const card = page.locator('#explorer-grid [data-track]:not([data-overflow]) h3 a').nth(40);
+    await card.scrollIntoViewIfNeeded();
+    const before = { open: await open(), at: await where() };
+    await card.click();
+    await page.waitForFunction(() => document.documentElement.dataset.navigatingState === '' && !document.getElementById('explorer-grid'), null, { timeout: 10000 }).catch(() => {});
+    await page.goBack();
+    await page.waitForFunction(() => !!document.getElementById('explorer-grid') && document.documentElement.dataset.navigatingState === '', null, { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(400);
+    const after = { open: await open(), at: await where() };
+    const near = Math.abs(after.at.y - before.at.y) <= 40 && Math.abs(after.at.main - before.at.main) <= 40;
+    check(before.open > 48 && after.open === before.open && (before.at.y + before.at.main) > 400 && near,
+      `router: Back keeps the reader's place (${after.open} of ${before.open} results open, at ${JSON.stringify(after.at)} of ${JSON.stringify(before.at)})`);
+    await context.close();
+  }
+
   // Only the latest navigation lands: the archive is clicked first and answers slowly, a genre page
   // second and fast; the genre page stays (the slower, older page used to be committed over it).
   {

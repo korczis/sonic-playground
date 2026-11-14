@@ -344,3 +344,14 @@
 "yearbook.status.skipped" = "Not a song"
 "yearbook.status.uncertain" = "Unreadable"
 "yearbook.status.present" = "Reviewed"
+
+# Landmark and region names (aria-label): what a screen reader announces when it lists them.
+"landmark.glance" = "Catalogue at a glance"
+"landmark.track_list" = "Track list"
+"landmark.neighbours" = "Neighbouring tracks"
+"landmark.about_track" = "About this track"
+"landmark.totals" = "Totals"
+"landmark.breadcrumb" = "Breadcrumb"
+"landmark.main" = "Main"
+"landmark.sidebar" = "Sidebar"
+"landmark.site" = "Site"
