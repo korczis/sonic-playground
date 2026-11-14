@@ -30,18 +30,22 @@ data export arrives, and to refresh the records after the library changes.
 
 1. **Branch and task.** `majordomus worktree create feature/spotify-<topic>`, then
    `majordomus start "…" --scope data/spotify,data/backlog,content,static/data`.
-2. **Read the web player (snapshot).** In the owner's logged-in Chrome tab, at open.spotify.com:
-   - read the library grid ("Your Library": playlists, albums, artists; each row's
-     `aria-labelledby` names its `spotify:<kind>:<id>`);
-   - open every playlist and the liked songs through the app's own navigation
-     (`history.pushState` and a `popstate` event), and scroll its grid, collecting each
-     `[role=row]`: title and track id from the `/track/` link, artists and album from their
-     links, the "Date added" cell and the duration. Map the cells through the column headers.
-   - Never read or use the session's credentials, and never call Spotify's API with them: the
-     page shows everything this needs. The tool output masks 22-character ids, so the page saves
-     the result as one JSON download (`schema: spotify-web-snapshot/v1`, `captured`, `library`,
-     `playlists[]` with `uri`, `name`, `library_subtitle`, `owner`, `expected`, `items`).
-   - Rerun a playlist whose `items` fall short of `expected`, more slowly, until they match.
+2. **Read the web player (snapshot).** In the owner's logged-in Chrome tab at
+   https://open.spotify.com/, inject `scripts/spotify-web-crawl.js` (Claude in Chrome
+   `javascript_tool`, or DevTools), then run `SonicCrawl.run()` without awaiting it, and poll
+   `SonicCrawl.progress` until it is `done`. `SonicCrawl.result` names any playlist short of its
+   count. What the script does:
+   - it reads the library grid, the liked songs, every playlist and the profile's top lists off
+     the rendered page;
+   - it never reads the session's credentials and never calls Spotify's API (tested in
+     `test/test_spotify_history.py` `Crawl`);
+   - it carries the lessons of the first crawl: skeleton rows, restored scroll positions,
+     trimmed names, top tracks without links, empty playlists.
+
+   The snapshot goes to the origin's localStorage. Chrome allows one automatic download per
+   tab, so open a fresh tab at https://open.spotify.com/robots.txt, inject the script again and
+   run `SonicCrawl.download()`, which saves `sonic-spotify-snapshot-<day>.json` and clears the
+   key. The tool output masks 22-character ids, which is why the snapshot travels as a download.
 3. **Keep it private.** `python3 scripts/spotify_history.py ingest-snapshot ~/Downloads/<file>.json`
    (add `--plain <file>` when a full liked-songs reading without ids completes a short one).
    The raw file goes to `data/spotify/private/snapshots/`; delete the download afterwards.
