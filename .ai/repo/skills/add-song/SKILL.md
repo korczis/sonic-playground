@@ -62,12 +62,15 @@ link. Not for bulk imports (run the engine in a loop and review each article).
      `data/concepts/<slug>.toml` with a definition in every locale) and `instrument = [...]`;
    - `[extra.credits]` (writers, producers, featuring, remixers, vocals) as credited;
    - `[extra.learning]`: `level`, 2-4 `objectives`, at least 3 `listen_for` entries
-     (`at = "m:ss"` in the embedded video, `what` you hear there) and 2-3 `questions`;
+     (each keyed by `part`, such as "the chorus"; `at = "m:ss"` only when a source gives the
+     time, such as the video's chapters or a timed analysis; `what` is what the sources say to
+     listen for there) and 2-3 `questions`;
    - `[[extra.sources]]` (at least 2: title, url, kind, publisher, year) for every fact you used;
    - `[[extra.connections]]` to 1-3 other reviews, each with `why`;
    - in "Concepts in Focus", explain the concepts as they sound here, linking each once with
      `{{ <concept_link name="…" /> }}` and other reviews with `{{ <track_link source="….md" /> }}`.
-   Claim nothing you cannot hear in the video or source: no invented BPM, key or chart position.
+   Claim nothing a cited source does not support: no invented BPM, key, chart position or song
+   structure.
 7. **Write the review.** Replace every `TODO(write)` with prose in the voice of the existing
    reviews (read two related tracks the engine listed first): concrete, sensory, honest. Keep the
    section order; drop a breakdown part the track does not have, add one it does. Aim for the
