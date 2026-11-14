@@ -209,6 +209,7 @@
 "tax.prev" = "← Previous"
 "tax.next" = "Next →"
 "tax.page" = "Page {i} of {total}"
+"tax.pages" = "Pages"
 "tax.empty_title" = "Nothing here yet"
 "tax.empty_text" = "Terms appear here as soon as a review uses them."
 "tax.name.concept" = "Concepts"

@@ -78,7 +78,7 @@
 {%- endif %}
 {%- endfor %}
 {%- endif %}
-<link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path=lp ~ 'atom.xml', trailing_slash=false) }}">
+<link rel="alternate" data-follows-page="feed-link" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path=lp ~ 'atom.xml', trailing_slash=false) }}">
 <meta property="og:type" content="{% if track %}music.song{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ config.title }}">
 <meta property="og:title" content="{{ share_title }}">

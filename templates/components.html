@@ -179,6 +179,20 @@
 {%- endif -%}
 {% endcomponent track_actions %}
 
+{#- The pager of a paginated listing (a taxonomy term, a concept): previous, "page i of n",
+    next. Renders nothing for one page or no paginator. Every page of a listing is reachable
+    only through it (scripts/check-built.py refuses a built page no other page links to). -#}
+{% component pager(paginator, l) %}
+{%- if paginator and paginator.number_pagers > 1 %}
+{%- set btn = "inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-700" %}
+<nav aria-label="{{ <tr key="tax.pages" l={l} /> }}" data-i18n-aria-label="tax.pages" class="flex items-center justify-between">
+  {%- if paginator.previous %}<a href="{{ paginator.previous }}" class="{{ btn }}">{{ <tx key="tax.prev" l={l} /> }}</a>{% else %}<span></span>{% endif %}
+  <span class="text-sm text-gray-500 dark:text-gray-400">{{ <tx key="tax.page" l={l} vars={ {"i": paginator.current_index, "total": paginator.number_pagers} } /> }}</span>
+  {%- if paginator.next %}<a href="{{ paginator.next }}" class="{{ btn }}">{{ <tx key="tax.next" l={l} /> }}</a>{% else %}<span></span>{% endif %}
+</nav>
+{%- endif %}
+{% endcomponent pager %}
+
 {#- A track's still, as the <img> attributes: for a YouTube still, src and the srcset of every
     still data/media.toml [youtube] names, with sizes, the width the page shows it at; the browser
     takes the smallest one sharp at the screen's density. A local cover (extra.cover_image) is

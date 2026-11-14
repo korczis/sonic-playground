@@ -16,6 +16,13 @@
   var catalogPromise = null;
   var playPromise = null;
   var body = document.body;
+  /** @param {string | null} url @param {string} what */
+  function json(url, what) {
+    return fetch(url || '').then(function (r) {
+      if (!r.ok) throw new Error(what + ': HTTP ' + r.status);
+      return r.json();
+    });
+  }
 
   function mountOne(entry) {
     try {
@@ -46,24 +53,27 @@
       mounted = modules.map(mountOne);
       Sonic.emit('sonic:page', { url: window.location.href });
     },
+    // The catalogue and the play index are each fetched once per page life. A failed fetch is
+    // forgotten, so the next call asks again: a cached rejection (a host's 503) used to leave
+    // Play, Queue and Random dead until a reload.
     catalog: function () {
       if (!catalogPromise) {
-        catalogPromise = fetch(body.getAttribute('data-catalog')).then(function (r) {
-          if (!r.ok) throw new Error('catalogue: HTTP ' + r.status);
-          return r.json();
-        });
+        catalogPromise = json(body.getAttribute('data-catalog'), 'catalogue');
+        catalogPromise.catch(function () { catalogPromise = null; });
       }
       return catalogPromise;
     },
+    // Every track's playable fields: the catalogue when it is already here (it carries them),
+    // else the small play index; a catalogue that failed falls back to the play index.
     playIndex: function () {
-      if (catalogPromise) return catalogPromise;
-      if (!playPromise) {
-        playPromise = fetch(body.getAttribute('data-play-index')).then(function (r) {
-          if (!r.ok) throw new Error('play index: HTTP ' + r.status);
-          return r.json();
-        });
-      }
-      return playPromise;
+      var index = function () {
+        if (!playPromise) {
+          playPromise = json(body.getAttribute('data-play-index'), 'play index');
+          playPromise.catch(function () { playPromise = null; });
+        }
+        return playPromise;
+      };
+      return catalogPromise ? catalogPromise.catch(index) : index();
     },
     emit: function (name, detail) { document.dispatchEvent(new CustomEvent(name, { detail: detail })); },
     on: function (name, fn) {

@@ -205,6 +205,7 @@
 "tax.prev" = "← Předchozí"
 "tax.next" = "Další →"
 "tax.page" = "Strana {i} z {total}"
+"tax.pages" = "Stránky"
 "tax.empty_title" = "Zatím tu nic není"
 "tax.empty_text" = "Pojmy se objeví, jakmile je některá recenze použije."
 "tax.name.concept" = "Pojmy"
