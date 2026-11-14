@@ -190,7 +190,7 @@ function watch(page) {
   page.on('response', (r) => {
     if (r.status() < 400 || r.url().includes('/nope-')) return;
     if (mine(r.request())) errors.push(`HTTP ${r.status()}: ${r.url()}`);
-    else notices.add(`HTTP ${r.status()}: ${r.url()}`);
+    else notices.add(`third-party HTTP ${r.status()}: ${r.url()}`);
   });
   return errors;
 }
@@ -240,16 +240,20 @@ async function sweep(browser) {
     while (next < urls.length) {
       const loc = urls[next++];
       const rel = loc.startsWith(base) ? loc.slice(base.length) : loc;
-      // A stalled page, or a live host's transient answer, is loaded once more (test/e2e/retry.cjs);
-      // a page that fails twice fails, and a console message or a 404 is never retried.
+      // A stalled page is loaded once more, a live host's transient answer up to three times with
+      // growing pauses (test/e2e/retry.cjs); a page that still fails fails, and a console message
+      // or a 404 is never retried.
       let result = await visit(context, rel);
-      const pause = retryAfter(result, !root);
-      if (pause !== null) {
-        const why = result.stalled ? 'stalled' : `host answered ${result.errors[0].split(':')[0]}`;
+      const first = result.stalled ? 'stalled' : (result.errors[0] || '').split(':')[0];
+      for (let attempt = 1; ; attempt++) {
+        const pause = retryAfter(result, !root, attempt);
+        if (pause === null) break;
         await new Promise((r) => setTimeout(r, pause));
-        const again = await visit(context, rel);
-        if (!again.stalled && !again.errors.length) notices.add(`${why} once, passed on retry: /${rel}`);
-        result = again;
+        result = await visit(context, rel);
+        if (!result.stalled && !result.errors.length) {
+          notices.add(`site: ${first === 'stalled' ? 'stalled' : 'host answered ' + first}, passed on retry ${attempt}: /${rel}`);
+          break;
+        }
       }
       if (result.errors.length) failed.push(`${rel || '/'}: ${result.errors.join(' | ')}`);
     }
@@ -1028,7 +1032,7 @@ async function shot(page, name) {
   if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);
 
   await browser.close();
-  for (const n of notices) console.log(`note third-party ${n}`);
+  for (const n of notices) console.log(`note ${n}`);
   console.log(failures.length ? `smoke: ${failures.length} failure(s)` : 'smoke: all checks passed');
   process.exit(failures.length ? 1 : 0);
 })().catch((e) => {
