@@ -150,6 +150,8 @@ artists = ["Ultraísta", "Four Tet"]
 album = "Ultraísta (Deluxe)"
 duration = "6:06"
 spotify = "3ruo6JHTVOwkw0oXboVUyi"
+review = "ultraista-smalltalk.md"
+note = "the reviewed recording: the review embeds Four Tet's remix (video 1bMR83ZI7m8, 'Ultraísta - Smalltalk (Four Tet remix)', 6:07), credits remixers = [\"Four Tet\"] and teaches the remix; the item is that remix (6:06)"
 
 [[track]]
 n = 19

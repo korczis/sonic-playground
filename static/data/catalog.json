@@ -5190,9 +5190,9 @@
    "file": "data/backlog/yearbook-2019.toml",
    "expected": 100,
    "items": 100,
-   "songs": 15,
-   "present": 15,
-   "missing": 85,
+   "songs": 16,
+   "present": 16,
+   "missing": 84,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -5256,6 +5256,10 @@
      "count": 5
     },
     {
+     "term": "dance",
+     "count": 4
+    },
+    {
      "term": "deep house",
      "count": 4
     },
@@ -5264,20 +5268,16 @@
      "count": 4
     },
     {
-     "term": "dance",
+     "term": "downtempo",
      "count": 3
     },
     {
-     "term": "downtempo",
+     "term": "indie",
      "count": 3
     },
     {
      "term": "pop",
      "count": 3
-    },
-    {
-     "term": "indie",
-     "count": 2
     },
     {
      "term": "synth-pop",
@@ -5420,8 +5420,8 @@
      "n": 18,
      "title": "Smalltalk - Four Tet Remix",
      "artist": "Ultraísta, Four Tet",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "ultraista-smalltalk.md"
     },
     {
      "n": 19,
@@ -54433,7 +54433,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2019,
+     "n": 18
+    }
+   ],
    "langs": [
     "en",
     "cs"

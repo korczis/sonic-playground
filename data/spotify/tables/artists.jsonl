@@ -1495,7 +1495,7 @@
 {"followed": false, "id": "fort-minor", "liked": 1, "name": "Fort Minor", "reviewed": 1, "spotify_artist": "7dWYWUbO68rXJOcyA7SpJk", "tracks": 1}
 {"followed": false, "id": "fort-romeau", "liked": 0, "name": "Fort Romeau", "reviewed": 0, "spotify_artist": "5MKqWyqq5CStK7AhkTvzQF", "tracks": 1}
 {"followed": false, "id": "foster-the-people", "liked": 1, "name": "Foster The People", "reviewed": 1, "spotify_artist": "7gP3bB2nilZXLfPHJhMdvc", "tracks": 2}
-{"followed": false, "id": "four-tet", "liked": 0, "name": "Four Tet", "reviewed": 0, "spotify_artist": "7Eu1txygG6nJttLHbZdQOh", "tracks": 4}
+{"followed": false, "id": "four-tet", "liked": 0, "name": "Four Tet", "reviewed": 1, "spotify_artist": "7Eu1txygG6nJttLHbZdQOh", "tracks": 4}
 {"followed": false, "id": "four-winds", "liked": 0, "name": "Four Winds", "reviewed": 0, "spotify_artist": "3MNXmvXsz12M9aeI4w6qqE", "tracks": 1}
 {"followed": false, "id": "fourth-eye", "liked": 0, "name": "Fourth Eye", "reviewed": 0, "spotify_artist": "6rRi2CL7CAJPlreLloPwxY", "tracks": 2}
 {"followed": false, "id": "fout-tet", "liked": 1, "name": "Fout Tet", "reviewed": 0, "spotify_artist": "3Jp1VsAaEANhufFmGxNS90", "tracks": 1}
@@ -4585,7 +4585,7 @@
 {"followed": false, "id": "udo-kier", "liked": 1, "name": "Udo Kier", "reviewed": 0, "spotify_artist": "7gxpk53ACZHKNqS0Q82FF3", "tracks": 1}
 {"followed": false, "id": "ugly-mac-beer", "liked": 0, "name": "Ugly Mac Beer", "reviewed": 0, "spotify_artist": "3UnSlb3cSKqGqjWyQ7Jvo6", "tracks": 1}
 {"followed": false, "id": "ultra-nate", "liked": 0, "name": "Ultra Naté", "reviewed": 0, "spotify_artist": "1cK2Abwkni7m51wJCSGllN", "tracks": 1}
-{"followed": false, "id": "ultraista", "liked": 1, "name": "Ultraísta", "reviewed": 0, "spotify_artist": "2f88S1uYsEwP0n4x36wvG7", "tracks": 2}
+{"followed": false, "id": "ultraista", "liked": 1, "name": "Ultraísta", "reviewed": 1, "spotify_artist": "2f88S1uYsEwP0n4x36wvG7", "tracks": 2}
 {"followed": false, "id": "ulysse", "liked": 1, "name": "ULYSSE", "reviewed": 0, "spotify_artist": "3PsfijqSoN8fNyYSJwcni4", "tracks": 2}
 {"followed": false, "id": "umami", "liked": 2, "name": "Umami", "reviewed": 0, "spotify_artist": "67qmoqrkr162LFix4Czmlv", "tracks": 3}
 {"followed": false, "id": "umbraflux", "liked": 0, "name": "Umbraflux", "reviewed": 0, "spotify_artist": "7Ca2KOKTaukb1A8iMW4ejL", "tracks": 1}
