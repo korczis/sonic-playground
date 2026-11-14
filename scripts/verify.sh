@@ -26,7 +26,13 @@ for arg in "$@"; do
   esac
 done
 
-step() { printf '\n== %s\n' "$1"; }
+# Every step reports how long the one before it took, and the end prints the profile: a slow gate
+# is profiled before anyone raises a bound or skips a step.
+step_name=""; step_start=$SECONDS; profile=""
+step_done() {
+  if [ -n "$step_name" ]; then profile="$profile$(printf '%5ss  %s' $((SECONDS - step_start)) "$step_name")\n"; fi
+}
+step() { step_done; step_name="$1"; step_start=$SECONDS; printf '\n== %s\n' "$1"; }
 
 step "catalogue: content contract and currency"
 python3 scripts/catalog.py --check
@@ -113,4 +119,6 @@ if [ "$browser" = 1 ]; then
   fi
 fi
 
+step_done
+printf '\nverify: profile (seconds per step, %ss in all)\n%b' "$SECONDS" "$profile"
 printf '\nverify: all gates passed\n'

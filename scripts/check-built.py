@@ -6,6 +6,8 @@ through the video component). Every <img> has its width and height (nothing shif
 and no image a page references weighs more than data/media.toml budget.image_kb (rule
 project.media-budget: a page shows derived variants, never a source). Every page has exactly one
 <h1>, its title: content headings start at ## (a redirect stub has no <html> and is skipped).
+Every page's social card is a .jpg (or the format data/media.toml [social] names) within its
+card_kb budget.
 Every link and button has an accessible name (its text, an aria-label, aria-labelledby, a title or
 an image's alt) or is out of reach entirely (aria-hidden="true" and tabindex="-1": a redundant
 link beside the one that carries the name), or sits in a subtree not exposed yet (an ancestor or
@@ -33,6 +35,9 @@ URL_ATTRS = {"src", "href", "poster", "data-copy-link"}
 OG_FILES = os.environ.get("CHECK_OG_FILES", "1") != "0"
 MEDIA = tomllib.loads((Path(__file__).resolve().parent.parent / "data" / "media.toml").read_text(encoding="utf-8"))
 IMAGE_BYTES = MEDIA["budget"]["image_kb"] * 1024
+CARD = MEDIA["social"]
+CARD_EXT = "jpg" if CARD["format"] == "jpeg" else CARD["format"]
+CARD_BYTES = CARD["card_kb"] * 1024
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 
 
@@ -157,10 +162,15 @@ def main() -> int:
                 problems.append(f"{rel}: og:image and twitter:image differ")
             if image and not image.startswith(origin + prefix):
                 problems.append(f"{rel}: og:image {image} is not an absolute URL of this site")
+            elif image and not image.endswith("." + CARD_EXT):
+                problems.append(f"{rel}: og:image {image} is not a .{CARD_EXT} card (data/media.toml [social])")
             elif image and OG_FILES:
                 card = public / unquote(urlsplit(image).path[len(prefix):])
                 if not card.is_file():
                     problems.append(f"{rel}: og:image {image} does not exist in the build (scripts/og.cjs)")
+                elif card.stat().st_size > CARD_BYTES:
+                    problems.append(f"{rel}: its social card weighs {card.stat().st_size // 1024} kB, over the "
+                                    f"budget of {CARD['card_kb']} kB (data/media.toml [social])")
         here = page_url(base, rel)
         if file.suffix == ".html":
             for src in sorted(set(parser.unsized)):

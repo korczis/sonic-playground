@@ -34,6 +34,8 @@ Building this site on Zola 0.23.4 (measured in a scratch site, 2026-11-12):
 - A child template may hold only `extends`, `block` and `component` at the top level; Tera 1
   templates with anything else (even an HTML comment) fail.
 - Inside `{{ … }}` a map literal ending in `}}` closes the expression early: write `} }`.
+- A function call's result cannot be indexed in the same expression: `load_data(path=…).social` is
+  a parse error ("Found `.` but expected %}"). Set the result first, then read the field.
 - `default(value=…)` replaces only an undefined value; a field present as `none` (an unset page
   `description`) still reaches a component typed as string and fails. Guard with `{% if %}`.
 - `get_url(path="dir/")` drops the trailing slash unless `trailing_slash=true`; link pages by

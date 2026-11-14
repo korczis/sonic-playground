@@ -17,3 +17,11 @@ webp = 74
 [budget]
 # No image a built page references may weigh more (scripts/check-built.py, scripts/images.py).
 image_kb = 300
+
+[social]
+# The 1200x630 card every page names as og:image / twitter:image (scripts/og.cjs renders it,
+# templates/base.html names it, scripts/check-built.py and the smoke test check it). JPEG: every
+# network reads it, and a card is ~100 kB where PNG was ~560 kB (~1.1 GB per deploy for 2007 pages).
+format = "jpeg"
+quality = 85
+card_kb = 180
