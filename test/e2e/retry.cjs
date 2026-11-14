@@ -10,7 +10,7 @@
 //     growing pauses (HOST_PAUSES_MS) cost at most 43 s for a page and give a slower recovery
 //     the same chance; a real outage still fails.
 // A stalled page is retried once, a host's answer at most HOST_PAUSES_MS.length times; a page that
-// still fails fails, and a console message or a 404 is never retried.
+// still fails fails, and a console message or a 404 without a host's answer is never retried.
 'use strict';
 
 const HOST_TRANSIENT = /^HTTP (429|502|503|504): /;
@@ -20,7 +20,10 @@ const HOST_PAUSE_MS = HOST_PAUSES_MS[0];
 // The pause before retry number `attempt` (1 for the first retry), or null: the failure stands.
 function retryAfter({ stalled, errors }, live, attempt = 1) {
   if (stalled) return attempt === 1 ? 0 : null;
-  if (live && errors.length > 0 && errors.every((e) => HOST_TRANSIENT.test(e))) {
+  // Any transient host answer, not only on the page itself: a 503 for js/core.js (run 43636079537)
+  // brought its consequences with it (uncaught TypeError, reading 'module'), and those must not
+  // stop the retry. A retry without the 503 shows whether the rest is the site's own defect.
+  if (live && errors.some((e) => HOST_TRANSIENT.test(e))) {
     return attempt <= HOST_PAUSES_MS.length ? HOST_PAUSES_MS[attempt - 1] : null;
   }
   return null;
