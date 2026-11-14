@@ -15,7 +15,10 @@ import tomllib
 import unittest
 
 # Prose that meets the contract's length and names its recording (rule educational-article).
-PROSE = "Moderat built A New Error on a slow pulse. " + " ".join(f"detail{i}" for i in range(320))
+PROSE = ("Fixture Artist built Fixture Song on a slow pulse. "
+         + " ".join(f"detail{i}" for i in range(320)))
+# A song no review will ever be about (test_writer_lessons holds it).
+NEW_FILE = "fixture-artist-fixture-song.md"
 from typing import Any
 from pathlib import Path
 
@@ -68,7 +71,7 @@ class Links(unittest.TestCase):
         self.assertEqual(cat.slugify("Trentemøller, Æther, Straße, Łódź"), "trentemoller-aether-strasse-lodz")
 
     def test_names_are_not_links(self):
-        self.assertIsNone(track.youtube_id("Moderat - A New Error"))
+        self.assertIsNone(track.youtube_id("Fixture Artist - Fixture Song"))
         self.assertIsNone(track.youtube_id("dQw4w9WgXcQ"))
 
 
@@ -107,7 +110,7 @@ class Robustness(unittest.TestCase):
             try:
                 (Path(tmp) / "x-y.md").write_text('+++\ntitle = 3\ndraft = true\nextra = "TODO"\n+++\n',
                                                   encoding="utf-8")
-                plan = track.resolve("Moderat - A New Error", namespace())
+                plan = track.resolve("Fixture Artist - Fixture Song", namespace())
                 self.assertTrue(plan["complete"])
                 self.assertIsNone(plan["exists"])
             finally:
@@ -119,9 +122,9 @@ class Robustness(unittest.TestCase):
             old = cat.CONTENT
             cat.CONTENT = Path(tmp)
             try:
-                path = Path(tmp) / "moderat-a-new-error.md"
+                path = Path(tmp) / NEW_FILE
                 path.write_text(
-                    '+++\ntitle = "Moderat - A New Error"\ndate = "2026-01-02"\n'
+                    '+++\ntitle = "Fixture Artist - Fixture Song"\ndate = "2026-01-02"\n'
                     'description = "A slow-burning electronic piece with a hypnotic pulse."\n\n'
                     '[extra]\nyoutube = "https://www.youtube.com/embed/dQw4w9WgXcQ"\n\n'
                     '[taxonomies]\ngenre = ["electronic"]\nsentiment = ["hypnotic"]\n+++\n\n' + PROSE + '\n',
@@ -171,7 +174,7 @@ class NewArticle(unittest.TestCase):
         text = plan["preview"]
         self.assertIn('youtube = "https://www.youtube.com/embed/dQw4w9WgXcQ"', text)
         with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp) / "fixture-artist-fixture-song.md"
+            path = Path(tmp) / NEW_FILE
             path.write_text(text, encoding="utf-8")
             old = cat.CONTENT
             cat.CONTENT = Path(tmp)
@@ -179,9 +182,8 @@ class NewArticle(unittest.TestCase):
                 errors = []
                 cat.load_track(path, errors)
                 self.assertTrue(any("TODO(write)" in e for e in errors), "skeleton is unfinished")
-                prose = PROSE.replace("Moderat built A New Error", "Fixture Artist built Fixture Song")
                 written = text.replace("TODO(write): ", "Written prose. ")
-                path.write_text(written + "\n" + prose + "\n", encoding="utf-8")
+                path.write_text(written + "\n" + PROSE + "\n", encoding="utf-8")
                 errors = []
                 result = cat.load_track(path, errors)
                 self.assertEqual(errors, [])
@@ -205,7 +207,7 @@ class NewArticle(unittest.TestCase):
         self.assertEqual((meta["extra"]["artist"], meta["extra"]["track"]), ("Moderat", "Hello | Live"))
 
     def test_existing_track_is_not_duplicated(self):
-        code, plan = self.run_new("Bakermat - The River")
+        code, plan = self.run_new("Bakermat - The River")  # fixture: an existing review
         self.assertEqual(code, 3)
         self.assertEqual(plan["exists"]["source"], "content/bakermat-the-river.md")
 
@@ -214,9 +216,10 @@ class NewArticle(unittest.TestCase):
             old = cat.CONTENT
             cat.CONTENT = Path(tmp)
             try:
-                (Path(tmp) / "moderat-a-new-error.md").write_text(
-                    '+++\ntitle = "Moderat - A New Error"\ndraft = true\n+++\nprose\n', encoding="utf-8")
-                code, plan = self.run_new("Moderat - A New Error")
+                (Path(tmp) / NEW_FILE).write_text(
+                    '+++\ntitle = "Fixture Artist - Fixture Song"\ndraft = true\n+++\nprose\n',
+                    encoding="utf-8")
+                code, plan = self.run_new("Fixture Artist - Fixture Song")
                 self.assertEqual(code, 3)
                 self.assertTrue(plan["exists"]["draft"])
             finally:
@@ -229,17 +232,18 @@ class CheckAndRefresh(unittest.TestCase):
             old = cat.CONTENT
             cat.CONTENT = Path(tmp)
             try:
-                code, plan = capture(track.new, "Moderat - A New Error", namespace(dry_run=False))
+                code, plan = capture(track.new, "Fixture Artist - Fixture Song",
+                                     namespace(dry_run=False))
                 self.assertEqual(code, 0)
-                code, report = capture(track.check, str(Path(tmp) / "moderat-a-new-error.md"))
+                code, report = capture(track.check, str(Path(tmp) / NEW_FILE))
                 self.assertEqual(code, 1)
                 self.assertGreater(report["unfinished"], 0)
-                code, report = capture(track.refresh, str(Path(tmp) / "moderat-a-new-error.md"),
+                code, report = capture(track.refresh, str(Path(tmp) / NEW_FILE),
                                        argparse.Namespace(youtube="https://youtu.be/dQw4w9WgXcQ",
                                                           album="Moderat III", release_year=None,
                                                           publisher=None))
                 self.assertEqual(code, 0)
-                meta = tomllib.loads((Path(tmp) / "moderat-a-new-error.md").read_text().split("+++")[1])
+                meta = tomllib.loads((Path(tmp) / NEW_FILE).read_text().split("+++")[1])
                 self.assertEqual(meta["extra"]["album"], "Moderat III")
                 self.assertTrue(meta["extra"]["youtube"].endswith("dQw4w9WgXcQ"))
             finally:

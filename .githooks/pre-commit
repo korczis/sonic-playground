@@ -1,21 +1,32 @@
 #!/usr/bin/env bash
 # Majordomus supervision is mandatory in this repository: a commit requires a healthy, wired .ai/
 # layer (policy enforcement doctor-on-commit), a current catalogue and no whitespace errors.
+#
+# The derived-data checks judge the tree this commit records, an export of the index, not the
+# working tree: unrelated work left unstaged or untracked never refuses a sound commit, and a
+# catalogue that lists a review the commit lacks is refused although the review exists in the
+# working tree. `--judge-index` runs only that judgement (git passes no arguments to this hook;
+# test/cases/65_judge_index.sh uses it).
 set -euo pipefail
-if ! command -v majordomus >/dev/null 2>&1; then
-  echo "pre-commit: majordomus is required (https://majordomus.dev)" >&2
-  exit 1
+if [ "${1:-}" != "--judge-index" ]; then
+  if ! command -v majordomus >/dev/null 2>&1; then
+    echo "pre-commit: majordomus is required (https://majordomus.dev)" >&2
+    exit 1
+  fi
+  majordomus worktree guard --quiet || exit $?
+  git diff --cached --check || exit $?
+  MAJORDOMUS_DOCTOR_CONTEXT=commit majordomus doctor || exit $?
 fi
-majordomus worktree guard --quiet || exit $?
-git diff --cached --check || exit $?
-MAJORDOMUS_DOCTOR_CONTEXT=commit majordomus doctor || exit $?
-# The catalogue check reads the working tree, so the working tree must be what is committed for
-# the paths it derives from: content and the regenerated catalogue are staged together.
-if ! git diff --quiet -- content data static/data templates static/js; then
-  echo "pre-commit: unstaged changes in content/, data/ or static/data/; stage the content and" >&2
-  echo "            the regenerated catalogue (npm run derive) together" >&2
-  exit 1
+root=$(git rev-parse --show-toplevel)
+tree=$(git write-tree)
+export_dir=$(mktemp -d "${TMPDIR:-/tmp}/sonic-index.XXXXXX")
+trap 'rm -rf "$export_dir"' EXIT
+git archive "$tree" | tar -x -C "$export_dir"
+# The private Spotify store is never tracked; where this checkout links it, so does the export.
+if [ -e "$root/data/spotify/private" ]; then
+  ln -s "$(cd "$root/data/spotify/private" && pwd -P)" "$export_dir/data/spotify/private"
 fi
+cd "$export_dir"
 python3 scripts/catalog.py --check || exit $?
 python3 scripts/spotify_history.py --check || exit $?
 python3 scripts/i18n.py --check || exit $?

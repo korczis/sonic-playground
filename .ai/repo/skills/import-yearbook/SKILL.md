@@ -41,8 +41,20 @@ When the owner asks for a year's (or every year's) Top Songs, or a new year's pl
    present, missing, ambiguous, skipped, uncertain. Give an ambiguous item `review = "<file>.md"`;
    an item that is no song `skip = "<why>"`. Never guess.
 6. **Write the missing songs.** `python3 scripts/backlog.py --batches N` splits what has no review;
-   each batch goes to a `song-writer` agent (skill add-song, educational layer included). Then
-   `python3 scripts/track.py enrich --all --write` so new reviews get their ISRC and resolve.
+   each batch goes to a `song-writer` agent (skill add-song, educational layer included, the
+   Czech translation through skill translate). Then `python3 scripts/track.py enrich --all
+   --write` so new reviews get their ISRC and resolve. Lessons of the 2022 wave (2026-11-14):
+   - before batching, match each pending item by folded song and any credited artist against
+     the reviews; a match under other credits is an override (`review =`), never a second
+     page (6 of 371 were). A remix or a cover is its own recording and gets its own page;
+   - writers never download or analyse a recording (add-song step 3): three of seven did on
+     their own when the brief did not forbid it, so every brief says it;
+   - once a wave is merged in the primary checkout (which holds the private store, so its
+     pre-push gate refuses stale records), `npm run derive` re-resolves the Spotify records
+     too and prints "spotify-history: N songs, X record(s) changed, Y removed"; commit
+     `data/spotify` with the catalogue and push. If a `data/backlog/yearbook-*.toml` changes or
+     "removed" is non-zero, stop and hand the output to the Spotify history lane. Announce
+     before merging on the primary checkout's main: two lanes merge there.
 7. **Prove and deploy.** `npm run derive && bash scripts/verify.sh`, commit (`feat(content): …`),
    `majordomus finish --outcome completed --verify-command "bash scripts/verify.sh"`, merge to
    `main` and push; then verify production (agent deploy-verifier): every yearbook URL and its
