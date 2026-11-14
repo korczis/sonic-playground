@@ -6,8 +6,9 @@ artists: ["Emika"]
 album: "DREI"
 duration: "3:33"
 spotify: {"track": "2utNme0G9OtUVqq7wYUOf3", "album": "7jNBAhp5DxAPFhkkLkuxeG", "artists": ["50Gx1SNB4vH2V7peIiYD4S"]}
-keys: {"fold": "emika|battles"}
-status: "missing"
+keys: {"fold": "emika|battles", "musicbrainz": "310dd8fd-9167-4841-8fa5-57b15a4f1f25"}
+review: "emika-battles.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 25}
@@ -22,4 +23,4 @@ From the album *DREI*, 3:33.
 A liked song.
 Your Top Songs 2019: #25.
 In My Top Songs of All the Time (#302).
-No review yet.
+Reviewed: content/emika-battles.md.

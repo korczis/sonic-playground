@@ -7,7 +7,8 @@ album: "Mon amour"
 duration: "3:06"
 spotify: {"track": "0nK3BRR0IHNT7W1uLOx15P", "album": "1tYdbecTnznbx0YGQ4rT55", "artists": ["5Hk9aPXdLLND2s8qnmG2bE", "7Cvps4yiO4M4CSYlv15C6G"]}
 keys: {"fold": "beautyfreak|mybeauty"}
-status: "missing"
+review: "beauty-freak-malee-my-beauty.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Mon amour*, 3:06.
 A liked song.
-No review yet.
+Reviewed: content/beauty-freak-malee-my-beauty.md.

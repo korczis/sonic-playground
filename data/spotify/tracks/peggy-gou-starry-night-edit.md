@@ -6,8 +6,9 @@ artists: ["Peggy Gou"]
 album: "Starry Night"
 duration: "3:53"
 spotify: {"track": "2NeSirLM2VHQW4upn0nMfB", "album": "0bYW9weJ7SXRaBFbWuBQeI", "artists": ["2mLA48B366zkELXYx7hcDN"]}
-keys: {"fold": "peggygou|starrynight"}
-status: "missing"
+keys: {"fold": "peggygou|starrynight", "isrc": "GBJX31975003", "musicbrainz": "cc95eb7d-4958-413d-8b29-ad704c29a62d"}
+review: "peggy-gou-starry-night-edit.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 85}
@@ -22,4 +23,4 @@ From the album *Starry Night*, 3:53.
 A liked song.
 Your Top Songs 2020: #85.
 In My Top Songs of All the Time (#443).
-No review yet.
+Reviewed: content/peggy-gou-starry-night-edit.md.

@@ -7,7 +7,8 @@ album: "Mon amour"
 duration: "3:06"
 spotify: {"track": "3olYaO88urwz88KQIjmGWd", "album": "1tYdbecTnznbx0YGQ4rT55", "artists": ["5Hk9aPXdLLND2s8qnmG2bE", "0zN8TYXYQloR9K3KoAU8eH"]}
 keys: {"fold": "beautyfreak|mybeauty"}
-status: "missing"
+review: "beauty-freak-malee-my-beauty.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2019, "n": 20}
@@ -22,4 +23,4 @@ From the album *Mon amour*, 3:06.
 Not among the liked songs.
 Your Top Songs 2019: #20.
 In My Top Songs of All the Time (#298).
-No review yet.
+Reviewed: content/beauty-freak-malee-my-beauty.md.

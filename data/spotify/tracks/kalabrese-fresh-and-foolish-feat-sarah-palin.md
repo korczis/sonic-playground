@@ -6,8 +6,9 @@ artists: ["Kalabrese", "Sarah Palin"]
 album: "Independent Dancer"
 duration: "4:57"
 spotify: {"track": "43335d4chxjzyIpiq4RXCu", "album": "6aGKLN1RkJ9LlnWjEJK77i", "artists": ["2MUENaxB93ZPNclZIDEMMV", "6fmTk1MJqNGNmDHw5Upsu5"]}
-keys: {"fold": "kalabrese|freshandfoolish"}
-status: "missing"
+keys: {"fold": "kalabrese|freshandfoolish", "isrc": "DEM091300016", "musicbrainz": "ef8b3f9d-a236-45fd-895b-2fe0309648cc"}
+review: "kalabrese-sarah-palin-fresh-and-foolish-feat-sarah-palin.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 3}
@@ -25,4 +26,4 @@ A liked song.
 Your Top Songs 2019: #3.
 Your Top Songs 2020: #39.
 In Best of the Best (#22); My Top Songs of All the Time (#284).
-No review yet.
+Reviewed: content/kalabrese-sarah-palin-fresh-and-foolish-feat-sarah-palin.md.

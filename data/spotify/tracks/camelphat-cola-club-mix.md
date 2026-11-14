@@ -6,8 +6,9 @@ artists: ["CAMELPHAT", "Elderbrook"]
 album: "Cola"
 duration: "6:55"
 spotify: {"track": "0ReCEc0B5vFdvMMpc18xYf", "album": "50mIxTR0ErViEATyLXRyni", "artists": ["240wlM8vDrf6S4zCyzGj2W", "2vf4pRsEY6LpL5tKmqWb64"]}
-keys: {"fold": "camelphat|colaclubmix"}
-status: "missing"
+keys: {"fold": "camelphat|colaclubmix", "isrc": "GBCPZ1711554", "musicbrainz": "b625993f-0338-4eee-a42e-25dda7c1e0cb"}
+review: "camelphat-elderbrook-cola-club-mix.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2019, "n": 28}
@@ -22,4 +23,4 @@ From the album *Cola*, 6:55.
 Not among the liked songs.
 Your Top Songs 2019: #28.
 In My Top Songs of All the Time (#305).
-No review yet.
+Reviewed: content/camelphat-elderbrook-cola-club-mix.md.

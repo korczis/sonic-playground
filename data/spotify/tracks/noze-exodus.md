@@ -6,8 +6,9 @@ artists: ["Nôze", "Wareika"]
 album: "Dring"
 duration: "4:04"
 spotify: {"track": "2QoCFcUbc3UTujoLiqWsvR", "album": "1UEn9U5zdN1FXD6oQipTQ6", "artists": ["6rbW4PmepEAeeow5x9eW3u", "5QVs44HFX0u3AXqN1EoePc"]}
-keys: {"fold": "noze|exodus"}
-status: "missing"
+keys: {"fold": "noze|exodus", "musicbrainz": "cb5335f4-5d5d-4934-95be-aed3e32c5b39"}
+review: "noze-wareika-exodus.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 1}
@@ -26,4 +27,4 @@ Your Top Songs 2019: #1.
 Your Top Songs 2020: #1.
 Your Top Songs 2021: #18.
 In My Top Songs of All the Time (#282).
-No review yet.
+Reviewed: content/noze-wareika-exodus.md.

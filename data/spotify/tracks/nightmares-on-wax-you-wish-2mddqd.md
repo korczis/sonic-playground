@@ -6,8 +6,9 @@ artists: ["Nightmares On Wax"]
 album: "In A Space Outta Sound"
 duration: "3:30"
 spotify: {"track": "2MddqD0MryxIAKS03raHsz", "album": "0SoMbQsPZTM8iA6HB5GSkg", "artists": ["4tNxq9NGKTKaX8OkZBLgf0"]}
-keys: {"fold": "nightmaresonwax|youwish"}
-status: "missing"
+keys: {"fold": "nightmaresonwax|youwish", "isrc": "GBBPW0500164", "musicbrainz": "6a3759fb-c92d-454a-9b92-5852146ca282"}
+review: "nightmares-on-wax-you-wish.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 81}
@@ -22,4 +23,4 @@ From the album *In A Space Outta Sound*, 3:30.
 A liked song.
 Your Top Songs 2020: #81.
 In My Top Songs of All the Time (#440).
-No review yet.
+Reviewed: content/nightmares-on-wax-you-wish.md.

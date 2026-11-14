@@ -6,8 +6,9 @@ artists: ["Bronski Beat"]
 album: "The Age of Consent"
 duration: "4:43"
 spotify: {"track": "5Hws6nnJuqf6rJwZGA82GG", "album": "6OMYQUITdN6wBaWfEtgooI", "artists": ["2wpWOzQE5TpA0dVnh5YD08"]}
-keys: {"fold": "bronskibeat|itaintnecessarilyso"}
-status: "missing"
+keys: {"fold": "bronskibeat|itaintnecessarilyso", "musicbrainz": "fa3e64c2-2dbf-4ce6-872b-2f71c0b1d704"}
+review: "bronski-beat-it-ain-t-necessarily-so.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 95}
@@ -26,4 +27,4 @@ Your Top Songs 2020: #95.
 Your Top Songs 2021: #9.
 Your Top Songs 2022: #84.
 In My Top Songs of All the Time (#450).
-No review yet.
+Reviewed: content/bronski-beat-it-ain-t-necessarily-so.md.

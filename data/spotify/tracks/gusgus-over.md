@@ -6,8 +6,9 @@ artists: ["GusGus"]
 album: "Over"
 duration: "5:56"
 spotify: {"track": "5VCc43KmJKs6TyWx8ZGF7q", "album": "2V5YPouP8bZqDLIywIVqNT", "artists": ["5sL9uDMwceYHPknnCLAAwJ"]}
-keys: {"fold": "gusgus|over"}
-status: "missing"
+keys: {"fold": "gusgus|over", "musicbrainz": "d7c8fdf5-c8b8-4288-908a-a554298e6fb5"}
+review: "gusgus-over.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 98}
@@ -22,4 +23,4 @@ From the album *Over*, 5:56.
 A liked song.
 Your Top Songs 2020: #98.
 In My Top Songs of All the Time (#452).
-No review yet.
+Reviewed: content/gusgus-over.md.

@@ -6,8 +6,9 @@ artists: ["Belleruche"]
 album: "Rollerchain"
 duration: "3:07"
 spotify: {"track": "2HXUNqPjvcx7S5BuGW9hSV", "album": "6zH9znJDOb5thzElmb6iB2", "artists": ["4N9nNkpjGuBlGWnYubQI8t"]}
-keys: {"fold": "belleruche|reachforthebottle"}
-status: "missing"
+keys: {"fold": "belleruche|reachforthebottle", "musicbrainz": "95947ee0-4d6b-4974-95f0-6c89f0815b3b"}
+review: "belleruche-reach-for-the-bottle.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 79}
@@ -22,4 +23,4 @@ From the album *Rollerchain*, 3:07.
 A liked song.
 Your Top Songs 2020: #79.
 In My Top Songs of All the Time (#438).
-No review yet.
+Reviewed: content/belleruche-reach-for-the-bottle.md.

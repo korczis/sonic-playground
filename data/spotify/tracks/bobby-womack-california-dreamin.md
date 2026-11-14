@@ -6,8 +6,9 @@ artists: ["Bobby Womack"]
 album: "Fly Me To The Moon"
 duration: "3:20"
 spotify: {"track": "6G7MHIvSDR3ehXPkuDFAlM", "album": "1Kw0H84LL5YuP37Kh8lbzY", "artists": ["0vqkz1b2qBkoYrGMj2CUWq"]}
-keys: {"fold": "bobbywomack|californiadreamin"}
-status: "missing"
+keys: {"fold": "bobbywomack|californiadreamin", "isrc": "USEM39200360", "musicbrainz": "3c5d67f5-4be4-4cea-86f3-c81243418397"}
+review: "bobby-womack-california-dreamin.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 87}
@@ -23,4 +24,4 @@ From the album *Fly Me To The Moon*, 3:20.
 A liked song.
 Your Top Songs 2020: #87.
 In Funk & Soul Classics (#6); My Top Songs of All the Time (#445).
-No review yet.
+Reviewed: content/bobby-womack-california-dreamin.md.

@@ -6,8 +6,9 @@ artists: ["Nightmares On Wax"]
 album: "Carboot Soul"
 duration: "6:20"
 spotify: {"track": "4P8qXnroR43S0xk0hmSbNs", "album": "5c3DKyqo1I7vMqozsrEImO", "artists": ["4tNxq9NGKTKaX8OkZBLgf0"]}
-keys: {"fold": "nightmaresonwax|lesnuits"}
-status: "missing"
+keys: {"fold": "nightmaresonwax|lesnuits", "isrc": "GBBPW9900021", "musicbrainz": "67240386-0f5d-4592-ad63-e94797d0473d"}
+review: "nightmares-on-wax-les-nuits.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 89}
@@ -22,4 +23,4 @@ From the album *Carboot Soul*, 6:20.
 A liked song.
 Your Top Songs 2020: #89.
 In My Top Songs of All the Time (#447).
-No review yet.
+Reviewed: content/nightmares-on-wax-les-nuits.md.

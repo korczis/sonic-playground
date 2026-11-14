@@ -9,6 +9,7 @@
 
 [genre]
 "80s" = "osmdesátky"
+"acid house" = "acid house"
 "acoustic" = "akustická hudba"
 "afrobeat" = "afrobeat"
 "alternative" = "alternativa"
@@ -64,6 +65,7 @@
 "funk" = "funk"
 "future bass" = "future bass"
 "garage rock" = "garážový rock"
+"glam rock" = "glam rock"
 "gypsy jazz" = "gypsy jazz"
 "hardcore punk" = "hardcore punk"
 "hi-nrg" = "hi-NRG"
@@ -120,6 +122,7 @@
 "tango" = "tango"
 "tech house" = "tech house"
 "techno" = "techno"
+"trance" = "trance"
 "trap" = "trap"
 "trip-hop" = "trip-hop"
 "tropical house" = "tropical house"
@@ -250,6 +253,7 @@
 "choir" = "sbor"
 "claps" = "tlesknutí"
 "clarinet" = "klarinet"
+"congas" = "kongy"
 "cowbell" = "kravský zvonec"
 "cuatro" = "cuatro"
 "double bass" = "kontrabas"

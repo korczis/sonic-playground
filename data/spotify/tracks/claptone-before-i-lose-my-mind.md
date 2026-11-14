@@ -6,8 +6,9 @@ artists: ["Claptone", "Say Yes Dog"]
 album: "Heartbeat"
 duration: "3:25"
 spotify: {"track": "4vcYsTBvh5ovTAbkzRUhu5", "album": "1CTGPeZMzVLfV2xb8mzSwt", "artists": ["4mncDFjVLUa3s025Tct3Ry", "039HWymb5EJiSHhtlJctsi"]}
-keys: {"fold": "claptone|beforeilosemymind"}
-status: "missing"
+keys: {"fold": "claptone|beforeilosemymind", "isrc": "GBENL1601583", "musicbrainz": "e7702b16-4a6b-4b8d-b96b-04228b74989e"}
+review: "claptone-say-yes-dog-before-i-lose-my-mind.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2020, "n": 73}
@@ -22,4 +23,4 @@ From the album *Heartbeat*, 3:25.
 Not among the liked songs.
 Your Top Songs 2020: #73.
 In My Top Songs of All the Time (#434).
-No review yet.
+Reviewed: content/claptone-say-yes-dog-before-i-lose-my-mind.md.

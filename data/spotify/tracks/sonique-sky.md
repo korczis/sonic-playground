@@ -6,8 +6,9 @@ artists: ["Sonique"]
 album: "Hear My Cry"
 duration: "4:26"
 spotify: {"track": "7zlkYAQdYPIwagUwO7Dyah", "album": "0URtQPPT2v8bRux2w6amMP", "artists": ["5xtqw2B8z8JGfDYi2eAZHI"]}
-keys: {"fold": "sonique|sky"}
-status: "missing"
+keys: {"fold": "sonique|sky", "isrc": "USUR10000043", "musicbrainz": "41efcb0a-a5ec-4c97-8281-67ea27627506"}
+review: "sonique-sky.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 91}
@@ -22,4 +23,4 @@ From the album *Hear My Cry*, 4:26.
 A liked song.
 Your Top Songs 2020: #91.
 In My Top Songs of All the Time (#448).
-No review yet.
+Reviewed: content/sonique-sky.md.

@@ -1,7 +1,7 @@
 {
  "liked": 2029,
  "playlists": 55,
- "reviewed": 519,
+ "reviewed": 565,
  "reviews": {
   "2raumwohnung-somebody-lonely-and-me-nacht.md": {
    "liked": true,
@@ -224,6 +224,17 @@
    "track": "2jTkp5akY8h9WrDBu9JSDl",
    "yearbooks": []
   },
+  "anthony-rother-father-original.md": {
+   "liked": true,
+   "playlists": 3,
+   "records": [
+    "anthony-rother-father-original"
+   ],
+   "track": "37wWrejU41DEs1xtVpBmv9",
+   "yearbooks": [
+    2019
+   ]
+  },
   "aphex-twin-windowlicker.md": {
    "liked": true,
    "playlists": 1,
@@ -408,6 +419,18 @@
     2022
    ]
   },
+  "beauty-freak-malee-my-beauty.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "beauty-freak-my-beauty",
+    "beauty-freak-my-beauty-feat-malee"
+   ],
+   "track": "3olYaO88urwz88KQIjmGWd",
+   "yearbooks": [
+    2019
+   ]
+  },
   "belako-sinnerman.md": {
    "liked": true,
    "playlists": 1,
@@ -418,6 +441,17 @@
    "track": "40N2ijlKMFQ5pfuQD9Z45m",
    "yearbooks": [
     2022
+   ]
+  },
+  "belleruche-reach-for-the-bottle.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "belleruche-reach-for-the-bottle"
+   ],
+   "track": "2HXUNqPjvcx7S5BuGW9hSV",
+   "yearbooks": [
+    2020
    ]
   },
   "ben-khan-savage.md": {
@@ -518,6 +552,17 @@
     2018
    ]
   },
+  "bobby-womack-california-dreamin.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "bobby-womack-california-dreamin"
+   ],
+   "track": "6G7MHIvSDR3ehXPkuDFAlM",
+   "yearbooks": [
+    2020
+   ]
+  },
   "bodyrockers-i-like-the-way-radio-edit.md": {
    "liked": true,
    "playlists": 1,
@@ -572,6 +617,17 @@
    "track": "1ABwlOhYanbuafWx1yvx0T",
    "yearbooks": [
     2021
+   ]
+  },
+  "boys-noize-starwin.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "boys-noize-starwin"
+   ],
+   "track": "2g5WlH1b6dce45feunvtoc",
+   "yearbooks": [
+    2020
    ]
   },
   "brandt-brauer-frick-emika-pretend.md": {
@@ -676,6 +732,19 @@
     2021
    ]
   },
+  "bronski-beat-it-ain-t-necessarily-so.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "bronski-beat-it-ain-t-necessarily-so"
+   ],
+   "track": "5Hws6nnJuqf6rJwZGA82GG",
+   "yearbooks": [
+    2020,
+    2021,
+    2022
+   ]
+  },
   "bronski-beat-screaming.md": {
    "liked": false,
    "playlists": 1,
@@ -733,6 +802,17 @@
     2021
    ]
   },
+  "bugge-wesseltoft-try.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "bugge-wesseltoft-try"
+   ],
+   "track": "4pCI9LrUmH1AbIPlHPIe96",
+   "yearbooks": [
+    2019
+   ]
+  },
   "busta-rhymes-gimme-some-more.md": {
    "liked": true,
    "playlists": 1,
@@ -785,6 +865,18 @@
    "track": "5SjC5nUco5hHp3zDXUHnbh",
    "yearbooks": [
     2017
+   ]
+  },
+  "camelphat-elderbrook-cola-club-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "camelphat-cola-club-mix",
+    "camelphat-cola-club-mix-5fzlwh"
+   ],
+   "track": "0ReCEc0B5vFdvMMpc18xYf",
+   "yearbooks": [
+    2019
    ]
   },
   "caravan-palace-lone-digger.md": {
@@ -886,6 +978,17 @@
     2017
    ]
   },
+  "chicken-lips-d-r-o-m-p-special-12-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "chicken-lips-d-r-o-m-p-special-12-mix"
+   ],
+   "track": "5H80Tzo0Hjy9wdlY075xIz",
+   "yearbooks": [
+    2019
+   ]
+  },
   "chicks-on-speed-euro-trash-girl.md": {
    "liked": true,
    "playlists": 0,
@@ -928,6 +1031,17 @@
    "yearbooks": [
     2017,
     2019
+   ]
+  },
+  "claptone-say-yes-dog-before-i-lose-my-mind.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "claptone-before-i-lose-my-mind"
+   ],
+   "track": "4vcYsTBvh5ovTAbkzRUhu5",
+   "yearbooks": [
+    2020
    ]
   },
   "clara-moto-gone-by-the-morning-radio-edit.md": {
@@ -1325,6 +1439,28 @@
    "track": "0scFkQkZhWVCImZ3FiWM9q",
    "yearbooks": []
   },
+  "emika-battles.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "emika-battles"
+   ],
+   "track": "2utNme0G9OtUVqq7wYUOf3",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "emika-my-heart-bleeds-melody.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "emika-my-heart-bleeds-melody"
+   ],
+   "track": "4DxwubEmUsN2EBXTEQeAdh",
+   "yearbooks": [
+    2019
+   ]
+  },
   "ephemerals-wolfgang-valbrun-you-made-us-change.md": {
    "liked": false,
    "playlists": 0,
@@ -1501,6 +1637,19 @@
    "yearbooks": [
     2016,
     2021
+   ]
+  },
+  "frivolous-wasting-time.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "frivolous-wasting-time",
+    "frivolous-wasting-time-7qpuwd"
+   ],
+   "track": "4qGFEja2VpLmayJ2R5NsKC",
+   "yearbooks": [
+    2019,
+    2022
    ]
   },
   "funky-fat-and-digitaria-you-bring-me-down.md": {
@@ -1861,6 +2010,17 @@
     2020
    ]
   },
+  "gusgus-over.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "gusgus-over"
+   ],
+   "track": "5VCc43KmJKs6TyWx8ZGF7q",
+   "yearbooks": [
+    2020
+   ]
+  },
   "guts-patrice-the-studio-school-voices-nyc-want-it-back.md": {
    "liked": true,
    "playlists": 1,
@@ -1892,6 +2052,17 @@
    "track": "40KaXgxCGPabaQ1lCOGbe2",
    "yearbooks": [
     2022
+   ]
+  },
+  "henry-mancini-moon-river-vocal-audrey-hepburn.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "henry-mancini-moon-river-vocal-audrey-hepburn"
+   ],
+   "track": "5iGleL7HpEThuuYQ3us2jh",
+   "yearbooks": [
+    2019
    ]
   },
   "her-five-minutes.md": {
@@ -2238,6 +2409,28 @@
     2021
    ]
   },
+  "jan-blomqvist-something-says.md": {
+   "liked": false,
+   "playlists": 2,
+   "records": [
+    "jan-blomqvist-something-says"
+   ],
+   "track": "0NbULP2j3V2MgaoXLJPhdZ",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "jeanne-added-a-war-is-coming.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "jeanne-added-a-war-is-coming"
+   ],
+   "track": "4xeW5ZakgtFMjIp6SvpFIC",
+   "yearbooks": [
+    2019
+   ]
+  },
   "john-newman-kove-love-me-again-kove-remix.md": {
    "liked": true,
    "playlists": 1,
@@ -2301,6 +2494,17 @@
    "track": "7rxGwreZKALEvHE2lME6uM",
    "yearbooks": []
   },
+  "junior-i-don-t-listen-much.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "junior-i-don-t-listen-much"
+   ],
+   "track": "79DUnbRilEheZsRoGicf8L",
+   "yearbooks": [
+    2020
+   ]
+  },
   "k-flay-high-enough.md": {
    "liked": true,
    "playlists": 0,
@@ -2330,6 +2534,18 @@
    ],
    "track": "5mx2ZxKOejA8cHnreNPDfP",
    "yearbooks": [
+    2020
+   ]
+  },
+  "kalabrese-sarah-palin-fresh-and-foolish-feat-sarah-palin.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "kalabrese-fresh-and-foolish-feat-sarah-palin"
+   ],
+   "track": "43335d4chxjzyIpiq4RXCu",
+   "yearbooks": [
+    2019,
     2020
    ]
   },
@@ -2542,6 +2758,17 @@
    "track": "1GyLXvaWJ0dlugN99u4kKb",
    "yearbooks": [
     2017
+   ]
+  },
+  "kolsch-grey.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "kolsch-grey"
+   ],
+   "track": "4rjA5kJJWbwU1prXCvg6Fk",
+   "yearbooks": [
+    2020
    ]
   },
   "konstantin-sibold-madeleine.md": {
@@ -2982,6 +3209,28 @@
     2022
    ]
   },
+  "martina-topley-bird-mark-lanegan-warpaint-crystalised-original-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "martina-topley-bird-crystalised-original-mix"
+   ],
+   "track": "3GiivCdOx4aiM149VvdjcH",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "maruv-boosin-drunk-groove.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "maruv-drunk-groove"
+   ],
+   "track": "7xVzkiXvUfwI72l0qh03Fj",
+   "yearbooks": [
+    2019
+   ]
+  },
   "mat-joe-david-keno-shamoozey-early-morning.md": {
    "liked": false,
    "playlists": 1,
@@ -3059,6 +3308,17 @@
    "track": "1oMwz5PBptPBZEM9dQCIX1",
    "yearbooks": [
     2016
+   ]
+  },
+  "metronomy-the-bay.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "metronomy-the-bay"
+   ],
+   "track": "2akjLHnHjDGsgqxuf48VYs",
+   "yearbooks": [
+    2019
    ]
   },
   "michael-jackson-billie-jean.md": {
@@ -3320,6 +3580,18 @@
     2022
    ]
   },
+  "muse-uprising.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "muse-uprising"
+   ],
+   "track": "4VqPOruhp5EdPBeR92t6lQ",
+   "yearbooks": [
+    2020,
+    2021
+   ]
+  },
   "mydy-freedom.md": {
    "liked": true,
    "playlists": 2,
@@ -3385,6 +3657,42 @@
    "track": "0tjZZfltCs26FapwZJPo9G",
    "yearbooks": [
     2022
+   ]
+  },
+  "nightmares-on-wax-les-nuits.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "nightmares-on-wax-les-nuits",
+    "nightmares-on-wax-les-nuits-5xxecd"
+   ],
+   "track": "4P8qXnroR43S0xk0hmSbNs",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "nightmares-on-wax-nights-introlude.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "nightmares-on-wax-nights-introlude"
+   ],
+   "track": "3SpXpcG603AqfxhJ6l4uzk",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "nightmares-on-wax-you-wish.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "nightmares-on-wax-you-wish",
+    "nightmares-on-wax-you-wish-2mddqd",
+    "nightmares-on-wax-you-wish-6g6m4f"
+   ],
+   "track": "0V4cvR7sEBGyukbMVozfc1",
+   "yearbooks": [
+    2020
    ]
   },
   "niklas-ibach-hungry-remix.md": {
@@ -3485,6 +3793,20 @@
     2020
    ]
   },
+  "noze-wareika-exodus.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "noze-exodus",
+    "noze-exodus-3058eh"
+   ],
+   "track": "2QoCFcUbc3UTujoLiqWsvR",
+   "yearbooks": [
+    2019,
+    2020,
+    2021
+   ]
+  },
   "nu-jo-ke-who-loves-the-sun.md": {
    "liked": true,
    "playlists": 3,
@@ -3579,6 +3901,17 @@
     2017
    ]
   },
+  "peggy-gou-starry-night-edit.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "peggy-gou-starry-night-edit"
+   ],
+   "track": "2NeSirLM2VHQW4upn0nMfB",
+   "yearbooks": [
+    2020
+   ]
+  },
   "pepe-deluxe-before-you-leave.md": {
    "liked": false,
    "playlists": 1,
@@ -3662,6 +3995,18 @@
    ],
    "track": "1s2LrYFnrFdG2LCtyvwBmv",
    "yearbooks": []
+  },
+  "poni-hoax-olga-kouklaki-budapest.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "poni-hoax-budapest"
+   ],
+   "track": "327qcYbdOIUhFGyt9OFhW1",
+   "yearbooks": [
+    2019,
+    2020
+   ]
   },
   "poni-hoax-the-wild.md": {
    "liked": true,
@@ -3841,6 +4186,28 @@
     2017
    ]
   },
+  "say-yes-dog-around-my-neck.md": {
+   "liked": false,
+   "playlists": 2,
+   "records": [
+    "say-yes-dog-around-my-neck"
+   ],
+   "track": "6wY3ErLgaUN1y1TxVkOYwB",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "say-yes-dog-before-i-go.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-before-i-go"
+   ],
+   "track": "0PF6YypH3Tf4n8vNLJPIrz",
+   "yearbooks": [
+    2020
+   ]
+  },
   "say-yes-dog-deep-space.md": {
    "liked": false,
    "playlists": 1,
@@ -3885,6 +4252,28 @@
     2020
    ]
   },
+  "say-yes-dog-golden-nights.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-golden-nights"
+   ],
+   "track": "3MQbnRVdFxViLej8nNhs6p",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "say-yes-dog-heartless.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-heartless"
+   ],
+   "track": "181uwx1UjUOTxCSKl8ww5p",
+   "yearbooks": [
+    2020
+   ]
+  },
   "say-yes-dog-lies.md": {
    "liked": true,
    "playlists": 1,
@@ -3920,6 +4309,17 @@
     2020
    ]
   },
+  "say-yes-dog-sugar.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-sugar"
+   ],
+   "track": "1q3TpgTKZ0XGHWtslzgELg",
+   "yearbooks": [
+    2020
+   ]
+  },
   "say-yes-dog-talk.md": {
    "liked": false,
    "playlists": 1,
@@ -3944,6 +4344,17 @@
     2020,
     2021,
     2022
+   ]
+  },
+  "scarlet-pleasure-deja-vu.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "scarlet-pleasure-deja-vu"
+   ],
+   "track": "4A5X60HdwE5AqCyqq8ojQZ",
+   "yearbooks": [
+    2019
    ]
   },
   "seelenluft-horse-with-no-name.md": {
@@ -4068,6 +4479,17 @@
    "track": "0bPZyMEy94ui7CYxqQJUb3",
    "yearbooks": [
     2022
+   ]
+  },
+  "sonique-sky.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "sonique-sky"
+   ],
+   "track": "7zlkYAQdYPIwagUwO7Dyah",
+   "yearbooks": [
+    2020
    ]
   },
   "stee-downes-asunder.md": {
@@ -4311,6 +4733,17 @@
    "track": "0VjIjW4GlUZAMYd2vXMi3b",
    "yearbooks": [
     2021
+   ]
+  },
+  "the-white-stripes-black-math.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "the-white-stripes-black-math"
+   ],
+   "track": "1HwULI7SXDKUHOlEtgO4bJ",
+   "yearbooks": [
+    2020
    ]
   },
   "the-white-stripes-seven-nation-army.md": {
@@ -4583,6 +5016,17 @@
     2021
    ]
   },
+  "weval-the-most.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "weval-the-most"
+   ],
+   "track": "13BVARm5bWjWM2TLyCHDA3",
+   "yearbooks": [
+    2019
+   ]
+  },
   "whilk-and-miskey-darklands.md": {
    "liked": true,
    "playlists": 2,
@@ -4743,6 +5187,7 @@
    "rank": 6,
    "read": "2026-11-14",
    "record": "noze-exodus-3058eh",
+   "review": "noze-wareika-exodus.md",
    "title": "Exodus"
   },
   {

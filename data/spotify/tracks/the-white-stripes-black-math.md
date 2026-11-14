@@ -6,8 +6,9 @@ artists: ["The White Stripes"]
 album: "Elephant"
 duration: "3:03"
 spotify: {"track": "1HwULI7SXDKUHOlEtgO4bJ", "album": "6D9urpsOWWKtYvF6PaorGE", "artists": ["4F84IBURUo98rz4r61KF70"]}
-keys: {"fold": "thewhitestripes|blackmath"}
-status: "missing"
+keys: {"fold": "thewhitestripes|blackmath", "isrc": "GBBKS0200609", "musicbrainz": "e4003498-11f2-4a71-b650-f6e8ac42a9f8"}
+review: "the-white-stripes-black-math.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2020, "n": 72}
@@ -22,4 +23,4 @@ From the album *Elephant*, 3:03.
 Not among the liked songs.
 Your Top Songs 2020: #72.
 In My Top Songs of All the Time (#433).
-No review yet.
+Reviewed: content/the-white-stripes-black-math.md.

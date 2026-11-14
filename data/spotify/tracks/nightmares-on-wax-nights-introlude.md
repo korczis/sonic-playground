@@ -6,8 +6,9 @@ artists: ["Nightmares On Wax"]
 album: "Smokers Delight"
 duration: "4:40"
 spotify: {"track": "3SpXpcG603AqfxhJ6l4uzk", "album": "3stVzMomzhVGw0prDxLY0K", "artists": ["4tNxq9NGKTKaX8OkZBLgf0"]}
-keys: {"fold": "nightmaresonwax|nightsintrolude"}
-status: "missing"
+keys: {"fold": "nightmaresonwax|nightsintrolude", "isrc": "GBBPW9500150", "musicbrainz": "6d259d06-40c7-4e93-8b0f-0d776696d5be"}
+review: "nightmares-on-wax-nights-introlude.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2020, "n": 74}
@@ -22,4 +23,4 @@ From the album *Smokers Delight*, 4:40.
 Not among the liked songs.
 Your Top Songs 2020: #74.
 In My Top Songs of All the Time (#435).
-No review yet.
+Reviewed: content/nightmares-on-wax-nights-introlude.md.
