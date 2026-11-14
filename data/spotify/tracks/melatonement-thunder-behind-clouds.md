@@ -10,7 +10,7 @@ keys: {"fold": "melatonement|thunderbehindclouds"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 62}
+  - {"playlist": "night-rain", "n": 66}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Thunder Behind Clouds*, 2:38.
 Not among the liked songs.
-In Night Rain (#62).
+In Night Rain (#66).
 No review yet.

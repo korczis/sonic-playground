@@ -10,7 +10,7 @@ keys: {"fold": "urchn|ova"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 76}
+  - {"playlist": "mellow-beats", "n": 75}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Ova*, 2:03.
 Not among the liked songs.
-In Mellow Beats (#76).
+In Mellow Beats (#75).
 No review yet.

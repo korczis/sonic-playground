@@ -10,7 +10,7 @@ keys: {"fold": "gottsstreetpark|ozu"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 124}
+  - {"playlist": "brain-food", "n": 133}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Diego E.P.*, 3:41.
 Not among the liked songs.
-In Brain Food (#124).
+In Brain Food (#133).
 No review yet.

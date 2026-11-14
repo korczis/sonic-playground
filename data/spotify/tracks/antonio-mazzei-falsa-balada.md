@@ -10,7 +10,7 @@ keys: {"fold": "antoniomazzei|falsabalada"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 142}
+  - {"playlist": "late-night-jazz", "n": 144}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Casa*, 3:24.
 Not among the liked songs.
-In Late Night Jazz (#142).
+In Late Night Jazz (#144).
 No review yet.

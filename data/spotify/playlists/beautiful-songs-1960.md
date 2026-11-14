@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "beautiful-songs-1960"
 name: "Beautiful Songs <1960"
 kind: "followed"
-description: "Public Playlist"
 expected: 20
 retrieved: 20
 read: "2026-11-14"

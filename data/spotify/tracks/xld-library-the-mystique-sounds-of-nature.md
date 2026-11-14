@@ -10,7 +10,7 @@ keys: {"fold": "xldlibrary|themystiquesoundsofnature"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 148}
+  - {"playlist": "night-rain", "n": 147}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Moods & Water sounds*, 2:24.
 Not among the liked songs.
-In Night Rain (#148).
+In Night Rain (#147).
 No review yet.

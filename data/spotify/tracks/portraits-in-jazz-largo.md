@@ -10,7 +10,7 @@ keys: {"fold": "portraitsinjazz|largo"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 54}
+  - {"playlist": "late-night-jazz", "n": 55}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Sunday*, 4:22.
 Not among the liked songs.
-In Late Night Jazz (#54).
+In Late Night Jazz (#55).
 No review yet.

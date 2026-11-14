@@ -10,7 +10,7 @@ keys: {"fold": "sharonjonesthedapkings|howdoiletagoodmandown"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 35}
+  - {"playlist": "funk-soul-classics", "n": 34}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Naturally*, 3:02.
 Not among the liked songs.
-In Funk & Soul Classics (#35).
+In Funk & Soul Classics (#34).
 No review yet.

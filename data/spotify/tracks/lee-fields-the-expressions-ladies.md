@@ -10,7 +10,7 @@ keys: {"fold": "leefieldstheexpressions|ladies"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 68}
+  - {"playlist": "funk-soul-classics", "n": 72}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *My World*, 4:17.
 Not among the liked songs.
-In Funk & Soul Classics (#68).
+In Funk & Soul Classics (#72).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "phipsonics|anoffering"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 12}
+  - {"playlist": "late-night-jazz", "n": 11}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Octava*, 6:09.
 Not among the liked songs.
-In Late Night Jazz (#12).
+In Late Night Jazz (#11).
 No review yet.

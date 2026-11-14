@@ -10,7 +10,7 @@ keys: {"fold": "eaglesbutterflies|thelastdancesynthapella"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 94}
+  - {"playlist": "brain-food", "n": 88}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Art Imitating Life Vol. 3*, 2:41.
 Not among the liked songs.
-In Brain Food (#94).
+In Brain Food (#88).
 No review yet.

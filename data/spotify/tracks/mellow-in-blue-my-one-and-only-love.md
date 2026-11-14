@@ -10,7 +10,7 @@ keys: {"fold": "mellowinblue|myoneandonlylove"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 116}
+  - {"playlist": "late-night-jazz", "n": 117}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *My One and Only Love*, 5:01.
 Not among the liked songs.
-In Late Night Jazz (#116).
+In Late Night Jazz (#117).
 No review yet.

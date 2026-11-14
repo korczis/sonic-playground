@@ -10,7 +10,7 @@ keys: {"fold": "koolthegang|jungleboogie"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 43}
+  - {"playlist": "funk-soul-classics", "n": 44}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Wild And Peaceful*, 3:06.
 Not among the liked songs.
-In Funk & Soul Classics (#43).
+In Funk & Soul Classics (#44).
 No review yet.

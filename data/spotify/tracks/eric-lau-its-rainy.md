@@ -11,7 +11,7 @@ status: "missing"
 liked: false
 playlists:
   - {"playlist": "chill", "n": 224}
-  - {"playlist": "mellow-beats", "n": 32}
+  - {"playlist": "mellow-beats", "n": 31}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Examples*, 2:08.
 Not among the liked songs.
-In Chill (#224); Mellow Beats (#32).
+In Chill (#224); Mellow Beats (#31).
 No review yet.

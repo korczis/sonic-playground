@@ -10,7 +10,7 @@ keys: {"fold": "rivalconsoles|catherine"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 68}
+  - {"playlist": "brain-food", "n": 67}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Landscape from Memory*, 5:23.
 Not among the liked songs.
-In Brain Food (#68).
+In Brain Food (#67).
 No review yet.

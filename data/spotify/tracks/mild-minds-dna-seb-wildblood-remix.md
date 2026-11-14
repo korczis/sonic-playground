@@ -10,7 +10,7 @@ keys: {"fold": "mildminds|dnasebwildbloodremix"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 182}
+  - {"playlist": "brain-food", "n": 180}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *DNA ∞ / 1 DAY 2 LATE REMIXES*, 4:17.
 Not among the liked songs.
-In Brain Food (#182).
+In Brain Food (#180).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "joelovano|firstsong"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 55}
+  - {"playlist": "late-night-jazz", "n": 53}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Paramount Quartet*, 7:24.
 Not among the liked songs.
-In Late Night Jazz (#55).
+In Late Night Jazz (#53).
 No review yet.

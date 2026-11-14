@@ -10,7 +10,7 @@ keys: {"fold": "pluvialecho|lowrainenvironment"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 73}
+  - {"playlist": "night-rain", "n": 74}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Low Rain Environment*, 2:02.
 Not among the liked songs.
-In Night Rain (#73).
+In Night Rain (#74).
 No review yet.

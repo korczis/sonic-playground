@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "leapfrogstudio"
 name: "Leapfrogstudio"
 kind: "followed"
-description: "Public Playlist"
 expected: 126
 retrieved: 126
 read: "2026-11-14"

@@ -10,7 +10,7 @@ keys: {"fold": "spiller|groovejetifthisaintlove"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "jamiroquai-radio", "n": 42}
+  - {"playlist": "jamiroquai-radio", "n": 33}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Groovejet (If This Ain’t Love)*, 3:47.
 Not among the liked songs.
-In Jamiroquai Radio (#42).
+In Jamiroquai Radio (#33).
 No review yet.

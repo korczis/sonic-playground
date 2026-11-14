@@ -10,7 +10,8 @@ keys: {"fold": "marvingaye|gottogiveitup"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 39}
+  - {"playlist": "funk-soul-classics", "n": 40}
+  - {"playlist": "kitchen-swagger", "n": 32}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Favorites*, 6:01.
 Not among the liked songs.
-In Funk & Soul Classics (#39).
+In Funk & Soul Classics (#40); Kitchen Swagger (#32).
 No review yet.

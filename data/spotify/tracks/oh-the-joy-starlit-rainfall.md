@@ -10,7 +10,7 @@ keys: {"fold": "ohthejoy|starlitrainfall"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 55}
+  - {"playlist": "night-rain", "n": 54}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *peaceful showers (rain)*, 2:41.
 Not among the liked songs.
-In Night Rain (#55).
+In Night Rain (#54).
 No review yet.

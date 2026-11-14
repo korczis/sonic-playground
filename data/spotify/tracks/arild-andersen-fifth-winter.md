@@ -10,7 +10,7 @@ keys: {"fold": "arildandersen|fifthwinter"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 60}
+  - {"playlist": "late-night-jazz", "n": 62}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Fifth Winter*, 4:58.
 Not among the liked songs.
-In Late Night Jazz (#60).
+In Late Night Jazz (#62).
 No review yet.

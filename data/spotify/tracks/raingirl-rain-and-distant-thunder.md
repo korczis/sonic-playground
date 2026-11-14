@@ -10,7 +10,7 @@ keys: {"fold": "raingirl|rainanddistantthunder"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 44}
+  - {"playlist": "night-rain", "n": 41}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rain And Distant Thunder*, 2:13.
 Not among the liked songs.
-In Night Rain (#44).
+In Night Rain (#41).
 No review yet.

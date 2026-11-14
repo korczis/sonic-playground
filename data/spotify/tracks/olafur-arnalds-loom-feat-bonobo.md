@@ -10,7 +10,7 @@ keys: {"fold": "olafurarnalds|loom"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 32}
+  - {"playlist": "brain-food", "n": 35}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Loom*, 3:46.
 Not among the liked songs.
-In Brain Food (#32).
+In Brain Food (#35).
 No review yet.

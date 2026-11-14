@@ -10,7 +10,7 @@ keys: {"fold": "naturen|frisktregn"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 143}
+  - {"playlist": "night-rain", "n": 142}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Regn*, 2:59.
 Not among the liked songs.
-In Night Rain (#143).
+In Night Rain (#142).
 No review yet.

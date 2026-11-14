@@ -10,7 +10,7 @@ keys: {"fold": "julietta|beachbreakknksremix"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "rachel-k-collier-mix", "n": 42}
+  - {"playlist": "rachel-k-collier-mix", "n": 40}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Smooth Sailing (Remixes)*, 2:38.
 Not among the liked songs.
-In Rachel K Collier Mix (#42).
+In Rachel K Collier Mix (#40).
 No review yet.

@@ -10,8 +10,8 @@ keys: {"fold": "catchingflies|tides"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 96}
-  - {"playlist": "the-wind-down", "n": 50}
+  - {"playlist": "brain-food", "n": 94}
+  - {"playlist": "the-wind-down", "n": 49}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Tides*, 3:36.
 Not among the liked songs.
-In Brain Food (#96); The Wind Down (#50).
+In Brain Food (#94); The Wind Down (#49).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "handbook|tinygrainsofguilt"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 61}
+  - {"playlist": "mellow-beats", "n": 64}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Tiny Grains of Guilt*, 2:04.
 Not among the liked songs.
-In Mellow Beats (#61).
+In Mellow Beats (#64).
 No review yet.

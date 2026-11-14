@@ -10,7 +10,7 @@ keys: {"fold": "carlwinther|estate"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 100}
+  - {"playlist": "late-night-jazz", "n": 99}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Brazilian Moods*, 5:15.
 Not among the liked songs.
-In Late Night Jazz (#100).
+In Late Night Jazz (#99).
 No review yet.

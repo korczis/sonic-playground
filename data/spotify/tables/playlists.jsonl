@@ -22,7 +22,7 @@
 {"available": 50, "id": "gold-school", "items": 50, "kind": "followed", "name": "Gold School", "read": "2026-11-14", "record": "data/spotify/playlists/gold-school.md", "year": null}
 {"available": 100, "id": "housewerk", "items": 100, "kind": "followed", "name": "Housewerk", "read": "2026-11-14", "record": "data/spotify/playlists/housewerk.md", "year": null}
 {"available": 50, "id": "jamiroquai-radio", "items": 50, "kind": "made-for-you", "name": "Jamiroquai Radio", "read": "2026-11-14", "record": "data/spotify/playlists/jamiroquai-radio.md", "year": null}
-{"available": 107, "id": "kitchen-swagger", "items": 150, "kind": "followed", "name": "Kitchen Swagger", "read": "2026-11-14", "record": "data/spotify/playlists/kitchen-swagger.md", "year": null}
+{"available": 150, "id": "kitchen-swagger", "items": 150, "kind": "followed", "name": "Kitchen Swagger", "read": "2026-11-14", "record": "data/spotify/playlists/kitchen-swagger.md", "year": null}
 {"available": 150, "id": "late-night-jazz", "items": 150, "kind": "made-for-you", "name": "Late Night Jazz", "read": "2026-11-14", "record": "data/spotify/playlists/late-night-jazz.md", "year": null}
 {"available": 126, "id": "leapfrogstudio", "items": 126, "kind": "followed", "name": "Leapfrogstudio", "read": "2026-11-14", "record": "data/spotify/playlists/leapfrogstudio.md", "year": null}
 {"available": 28, "id": "liked-from-radio", "items": 28, "kind": "own", "name": "Liked from Radio", "read": "2026-11-14", "record": "data/spotify/playlists/liked-from-radio.md", "year": null}
@@ -38,7 +38,7 @@
 {"available": 35, "id": "my-shazam-tracks", "items": 35, "kind": "own", "name": "My Shazam Tracks", "read": "2026-11-14", "record": "data/spotify/playlists/my-shazam-tracks.md", "year": null}
 {"available": 596, "id": "my-top-songs-of-all-the-time", "items": 596, "kind": "own", "name": "My Top Songs of All the Time", "read": "2026-11-14", "record": "data/spotify/playlists/my-top-songs-of-all-the-time.md", "year": null}
 {"available": 170, "id": "night-rain", "items": 170, "kind": "made-for-you", "name": "Night Rain", "read": "2026-11-14", "record": "data/spotify/playlists/night-rain.md", "year": null}
-{"available": 283, "id": "playlist-zami-lee", "items": 283, "kind": "followed", "name": "Playlist • Zami Lee", "read": "2026-11-14", "record": "data/spotify/playlists/playlist-zami-lee.md", "year": null}
+{"available": 291, "id": "playlist-zami-lee", "items": 291, "kind": "followed", "name": "Playlist • Zami Lee", "read": "2026-11-14", "record": "data/spotify/playlists/playlist-zami-lee.md", "year": null}
 {"available": 50, "id": "rachel-k-collier-mix", "items": 50, "kind": "made-for-you", "name": "Rachel K Collier Mix", "read": "2026-11-14", "record": "data/spotify/playlists/rachel-k-collier-mix.md", "year": null}
 {"available": 209, "id": "sensation", "items": 209, "kind": "followed", "name": "SENSATION", "read": "2026-11-14", "record": "data/spotify/playlists/sensation.md", "year": null}
 {"available": 40, "id": "slam-40-updated-weekly", "items": 40, "kind": "followed", "name": "SLAM! 40 (updated weekly)", "read": "2026-11-14", "record": "data/spotify/playlists/slam-40-updated-weekly.md", "year": null}

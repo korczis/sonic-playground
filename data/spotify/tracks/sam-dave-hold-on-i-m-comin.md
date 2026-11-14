@@ -10,7 +10,7 @@ keys: {"fold": "samdave|holdonimcomin"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 25}
+  - {"playlist": "funk-soul-classics", "n": 24}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Hold On, I'm Comin'*, 2:35.
 Not among the liked songs.
-In Funk & Soul Classics (#25).
+In Funk & Soul Classics (#24).
 No review yet.

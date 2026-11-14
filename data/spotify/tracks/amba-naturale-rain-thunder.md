@@ -10,7 +10,7 @@ keys: {"fold": "ambanaturale|rainthunder"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 154}
+  - {"playlist": "night-rain", "n": 156}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Sub Tropics*, 1:48.
 Not among the liked songs.
-In Night Rain (#154).
+In Night Rain (#156).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "oscarpetersontrio|myoneandonlylove"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 18}
+  - {"playlist": "late-night-jazz", "n": 21}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Oscar Peterson For Lovers (Deluxe Edition)*, 5:08.
 Not among the liked songs.
-In Late Night Jazz (#18).
+In Late Night Jazz (#21).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "geotic|actuallysmiling"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 184}
+  - {"playlist": "brain-food", "n": 182}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Abysma*, 4:54.
 Not among the liked songs.
-In Brain Food (#184).
+In Brain Food (#182).
 No review yet.

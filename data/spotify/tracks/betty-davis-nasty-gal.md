@@ -10,7 +10,7 @@ keys: {"fold": "bettydavis|nastygal"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 78}
+  - {"playlist": "funk-soul-classics", "n": 77}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Nasty Gal*, 4:37.
 Not among the liked songs.
-In Funk & Soul Classics (#78).
+In Funk & Soul Classics (#77).
 No review yet.

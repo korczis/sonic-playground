@@ -10,7 +10,7 @@ keys: {"fold": "stephanmoccio|opaline"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 49}
+  - {"playlist": "late-night-jazz", "n": 50}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Opaline*, 3:17.
 Not among the liked songs.
-In Late Night Jazz (#49).
+In Late Night Jazz (#50).
 No review yet.

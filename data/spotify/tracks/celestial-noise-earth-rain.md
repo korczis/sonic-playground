@@ -10,7 +10,7 @@ keys: {"fold": "celestialnoise|earthrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 52}
+  - {"playlist": "night-rain", "n": 51}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Space Rain*, 3:41.
 Not among the liked songs.
-In Night Rain (#52).
+In Night Rain (#51).
 No review yet.

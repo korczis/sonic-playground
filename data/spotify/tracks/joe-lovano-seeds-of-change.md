@@ -10,7 +10,7 @@ keys: {"fold": "joelovano|seedsofchange"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 50}
+  - {"playlist": "late-night-jazz", "n": 48}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Seeds Of Change*, 5:13.
 Not among the liked songs.
-In Late Night Jazz (#50).
+In Late Night Jazz (#48).
 No review yet.

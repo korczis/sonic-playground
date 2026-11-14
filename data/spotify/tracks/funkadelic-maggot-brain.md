@@ -11,7 +11,7 @@ keys: {"fold": "funkadelic|maggotbrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 14}
+  - {"playlist": "funk-soul-classics", "n": 13}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Maggot Brain*, 10:19.
 Not among the liked songs.
-In Funk & Soul Classics (#14).
+In Funk & Soul Classics (#13).
 No review yet.

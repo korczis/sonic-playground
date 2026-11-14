@@ -10,7 +10,7 @@ keys: {"fold": "naturem|steadyruralrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 155}
+  - {"playlist": "night-rain", "n": 152}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Mind Calming Rainstorms*, 3:01.
 Not among the liked songs.
-In Night Rain (#155).
+In Night Rain (#152).
 No review yet.

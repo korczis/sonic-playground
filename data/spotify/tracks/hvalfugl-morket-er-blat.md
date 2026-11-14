@@ -10,7 +10,7 @@ keys: {"fold": "hvalfugl|morketerblat"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 27}
+  - {"playlist": "late-night-jazz", "n": 26}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Mørket Er Blåt*, 5:13.
 Not among the liked songs.
-In Late Night Jazz (#27).
+In Late Night Jazz (#26).
 No review yet.

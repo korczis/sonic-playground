@@ -10,7 +10,7 @@ keys: {"fold": "matthewhalsall|thetideandthemoon"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 3}
+  - {"playlist": "late-night-jazz", "n": 5}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Bright Sparkling Light*, 10:03.
 Not among the liked songs.
-In Late Night Jazz (#3).
+In Late Night Jazz (#5).
 No review yet.

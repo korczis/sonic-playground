@@ -10,7 +10,7 @@ keys: {"fold": "antoniozambrini|alfie"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 148}
+  - {"playlist": "late-night-jazz", "n": 149}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Quietly*, 8:19.
 Not among the liked songs.
-In Late Night Jazz (#148).
+In Late Night Jazz (#149).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "keithjarrett|wherecanigowithoutyou"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 37}
+  - {"playlist": "late-night-jazz", "n": 36}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Last Dance*, 9:32.
 Not among the liked songs.
-In Late Night Jazz (#37).
+In Late Night Jazz (#36).
 No review yet.

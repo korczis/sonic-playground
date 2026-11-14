@@ -10,7 +10,7 @@ keys: {"fold": "thecontours|moneythatswhatiwant"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 76}
+  - {"playlist": "funk-soul-classics", "n": 64}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Do You Love Me: The High-Octane Soul of The Contours*, 2:37.
 Not among the liked songs.
-In Funk & Soul Classics (#76).
+In Funk & Soul Classics (#64).
 No review yet.

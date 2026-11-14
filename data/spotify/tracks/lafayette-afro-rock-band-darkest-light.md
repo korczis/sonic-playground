@@ -10,7 +10,7 @@ keys: {"fold": "lafayetteafrorockband|darkestlight"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 52}
+  - {"playlist": "funk-soul-classics", "n": 51}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Darkest Light*, 6:26.
 Not among the liked songs.
-In Funk & Soul Classics (#52).
+In Funk & Soul Classics (#51).
 No review yet.

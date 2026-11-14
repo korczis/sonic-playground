@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "discover-weekly"
 name: "Discover Weekly"
 kind: "own"
-description: "Choose photo"
 expected: 2
 retrieved: 2
 read: "2026-11-14"

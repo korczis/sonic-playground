@@ -10,7 +10,7 @@ keys: {"fold": "shuko|dotherightthing"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 28}
+  - {"playlist": "mellow-beats", "n": 35}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Do the Right Thing*, 2:01.
 Not among the liked songs.
-In Mellow Beats (#28).
+In Mellow Beats (#35).
 No review yet.

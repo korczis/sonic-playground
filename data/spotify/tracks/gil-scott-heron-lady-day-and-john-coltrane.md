@@ -10,7 +10,7 @@ keys: {"fold": "gilscottheron|ladydayandjohncoltrane"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 72}
+  - {"playlist": "funk-soul-classics", "n": 73}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Revolution Will Not Be Televised*, 3:34.
 Not among the liked songs.
-In Funk & Soul Classics (#72).
+In Funk & Soul Classics (#73).
 No review yet.

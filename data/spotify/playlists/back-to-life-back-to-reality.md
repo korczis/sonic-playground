@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "back-to-life-back-to-reality"
 name: "Back to life, Back to reality"
 kind: "followed"
-description: "Public Playlist"
 expected: 83
 retrieved: 82
 unavailable: 1

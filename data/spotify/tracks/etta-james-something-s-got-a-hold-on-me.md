@@ -10,7 +10,7 @@ keys: {"fold": "ettajames|somethingsgotaholdonme"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 34}
+  - {"playlist": "funk-soul-classics", "n": 32}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Sweetest Peaches: The Chess Years Part One (1940-1966)*, 2:47.
 Not among the liked songs.
-In Funk & Soul Classics (#34).
+In Funk & Soul Classics (#32).
 No review yet.

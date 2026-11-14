@@ -10,7 +10,7 @@ keys: {"fold": "rainismylife|rainsoundsareforsleeping"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 42}
+  - {"playlist": "night-rain", "n": 43}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rain Sounds are for Sleeping*, 4:34.
 Not among the liked songs.
-In Night Rain (#42).
+In Night Rain (#43).
 No review yet.

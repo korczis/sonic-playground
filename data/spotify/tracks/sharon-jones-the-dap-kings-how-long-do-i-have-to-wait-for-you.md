@@ -10,7 +10,7 @@ keys: {"fold": "sharonjonesthedapkings|howlongdoihavetowaitforyou"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 12}
+  - {"playlist": "funk-soul-classics", "n": 14}
   - {"playlist": "kitchen-swagger", "n": 131}
 sources: ["web-player:2026-11-14"]
 ---
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Naturally*, 4:03.
 Not among the liked songs.
-In Funk & Soul Classics (#12); Kitchen Swagger (#131).
+In Funk & Soul Classics (#14); Kitchen Swagger (#131).
 No review yet.

@@ -4,7 +4,6 @@ id: "gold-school"
 name: "Gold School"
 kind: "followed"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 50
 retrieved: 50
 read: "2026-11-14"

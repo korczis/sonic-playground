@@ -10,7 +10,7 @@ keys: {"fold": "djmitsuthebeats|summermadness"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 49}
+  - {"playlist": "mellow-beats", "n": 52}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Summer Madness*, 4:32.
 Not among the liked songs.
-In Mellow Beats (#49).
+In Mellow Beats (#52).
 No review yet.

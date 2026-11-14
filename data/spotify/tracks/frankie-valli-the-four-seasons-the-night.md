@@ -10,7 +10,7 @@ keys: {"fold": "frankievallithefourseasons|thenight"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 64}
+  - {"playlist": "funk-soul-classics", "n": 75}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Chameleon*, 3:23.
 Not among the liked songs.
-In Funk & Soul Classics (#64).
+In Funk & Soul Classics (#75).
 No review yet.

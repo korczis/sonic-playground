@@ -10,7 +10,7 @@ keys: {"fold": "r4rain|rustlingrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 54}
+  - {"playlist": "night-rain", "n": 53}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rainy Day Melodies*, 2:32.
 Not among the liked songs.
-In Night Rain (#54).
+In Night Rain (#53).
 No review yet.

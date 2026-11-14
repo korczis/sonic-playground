@@ -10,7 +10,7 @@ keys: {"fold": "kiasmos|flown"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 105}
+  - {"playlist": "brain-food", "n": 106}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Flown*, 3:55.
 Not among the liked songs.
-In Brain Food (#105).
+In Brain Food (#106).
 No review yet.

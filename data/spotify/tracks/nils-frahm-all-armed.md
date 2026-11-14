@@ -10,7 +10,7 @@ keys: {"fold": "nilsfrahm|allarmed"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 44}
+  - {"playlist": "the-wind-down", "n": 45}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *All Encores*, 11:39.
 Not among the liked songs.
-In The Wind Down (#44).
+In The Wind Down (#45).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "wyntonmarsalis|whereorwhen"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 16}
+  - {"playlist": "late-night-jazz", "n": 17}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Standard time volume 3: The revolution of romance*, 2:48.
 Not among the liked songs.
-In Late Night Jazz (#16).
+In Late Night Jazz (#17).
 No review yet.

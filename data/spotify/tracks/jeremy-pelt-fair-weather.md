@@ -10,7 +10,7 @@ keys: {"fold": "jeremypelt|fairweather"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 52}
+  - {"playlist": "late-night-jazz", "n": 51}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Fair Weather*, 4:44.
 Not among the liked songs.
-In Late Night Jazz (#52).
+In Late Night Jazz (#51).
 No review yet.

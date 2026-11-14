@@ -11,7 +11,7 @@ keys: {"fold": "delac|disrupt"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 38}
+  - {"playlist": "the-wind-down", "n": 37}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Disrupt*, 4:14.
 Not among the liked songs.
-In The Wind Down (#38).
+In The Wind Down (#37).
 No review yet.

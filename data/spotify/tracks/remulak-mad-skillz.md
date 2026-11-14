@@ -10,7 +10,7 @@ keys: {"fold": "remulak|madskillz"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 14}
+  - {"playlist": "mellow-beats", "n": 17}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Mad Skillz*, 2:31.
 Not among the liked songs.
-In Mellow Beats (#14).
+In Mellow Beats (#17).
 No review yet.

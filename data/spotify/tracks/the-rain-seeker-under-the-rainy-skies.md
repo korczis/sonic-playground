@@ -10,7 +10,7 @@ keys: {"fold": "therainseeker|undertherainyskies"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 88}
+  - {"playlist": "night-rain", "n": 89}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Under the Rainy Skies*, 3:23.
 Not among the liked songs.
-In Night Rain (#88).
+In Night Rain (#89).
 No review yet.

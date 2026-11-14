@@ -10,7 +10,7 @@ keys: {"fold": "hypnotronica|anintenserainshower"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 132}
+  - {"playlist": "night-rain", "n": 129}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Warm Rain Shower*, 2:45.
 Not among the liked songs.
-In Night Rain (#132).
+In Night Rain (#129).
 No review yet.

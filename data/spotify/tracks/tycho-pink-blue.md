@@ -10,7 +10,7 @@ keys: {"fold": "tycho|pinkblue"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 45}
+  - {"playlist": "the-wind-down", "n": 41}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Pink & Blue*, 4:19.
 Not among the liked songs.
-In The Wind Down (#45).
+In The Wind Down (#41).
 No review yet.

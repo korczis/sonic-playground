@@ -10,7 +10,7 @@ keys: {"fold": "seanmason|lullaby"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 112}
+  - {"playlist": "late-night-jazz", "n": 108}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Southern Suite*, 3:39.
 Not among the liked songs.
-In Late Night Jazz (#112).
+In Late Night Jazz (#108).
 No review yet.

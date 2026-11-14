@@ -10,7 +10,7 @@ keys: {"fold": "otojiray|nomadictribedjmitsuthebeatsremix"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 56}
+  - {"playlist": "mellow-beats", "n": 54}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Nomadic tribe (DJ Mitsu The Beats Remix)*, 4:05.
 Not among the liked songs.
-In Mellow Beats (#56).
+In Mellow Beats (#54).
 No review yet.

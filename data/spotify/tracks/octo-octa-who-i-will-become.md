@@ -10,7 +10,7 @@ keys: {"fold": "octoocta|whoiwillbecome"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 40}
+  - {"playlist": "the-wind-down", "n": 38}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Between Two Selves*, 6:07.
 Not among the liked songs.
-In The Wind Down (#40).
+In The Wind Down (#38).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "tordgustavsentrio|curves"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 46}
+  - {"playlist": "late-night-jazz", "n": 44}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Other Side*, 6:19.
 Not among the liked songs.
-In Late Night Jazz (#46).
+In Late Night Jazz (#44).
 No review yet.

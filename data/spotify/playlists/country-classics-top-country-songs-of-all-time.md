@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "country-classics-top-country-songs-of-all-time"
 name: "Country Classics 🤠 Top Country Songs of All Time"
 kind: "followed"
-description: "Public Playlist"
 expected: 132
 retrieved: 132
 read: "2026-11-14"

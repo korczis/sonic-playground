@@ -10,7 +10,7 @@ keys: {"fold": "naturesorchestra|noiserain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 61}
+  - {"playlist": "night-rain", "n": 64}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Noise Rain*, 2:44.
 Not among the liked songs.
-In Night Rain (#61).
+In Night Rain (#64).
 No review yet.

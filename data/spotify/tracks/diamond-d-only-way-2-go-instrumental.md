@@ -10,7 +10,7 @@ keys: {"fold": "diamondd|onlyway2goinstrumental"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 34}
+  - {"playlist": "mellow-beats", "n": 33}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Diam Piece Instrumentals*, 2:33.
 Not among the liked songs.
-In Mellow Beats (#34).
+In Mellow Beats (#33).
 No review yet.

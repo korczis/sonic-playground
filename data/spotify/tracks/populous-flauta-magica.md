@@ -10,7 +10,7 @@ keys: {"fold": "populous|flautamagica"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 58}
+  - {"playlist": "brain-food", "n": 56}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Moonbaton Vol. 1*, 2:22.
 Not among the liked songs.
-In Brain Food (#58).
+In Brain Food (#56).
 No review yet.

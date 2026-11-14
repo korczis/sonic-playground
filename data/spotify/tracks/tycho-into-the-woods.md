@@ -10,7 +10,7 @@ keys: {"fold": "tycho|intothewoods"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 97}
+  - {"playlist": "brain-food", "n": 96}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Simulcast*, 4:02.
 Not among the liked songs.
-In Brain Food (#97).
+In Brain Food (#96).
 No review yet.

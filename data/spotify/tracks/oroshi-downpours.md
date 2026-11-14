@@ -10,7 +10,7 @@ keys: {"fold": "oroshi|downpours"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 33}
+  - {"playlist": "night-rain", "n": 34}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Downpours*, 2:28.
 Not among the liked songs.
-In Night Rain (#33).
+In Night Rain (#34).
 No review yet.

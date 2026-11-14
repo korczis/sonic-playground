@@ -10,7 +10,7 @@ keys: {"fold": "hotelrubio|homesick"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 145}
+  - {"playlist": "brain-food", "n": 144}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Cherry*, 3:54.
 Not among the liked songs.
-In Brain Food (#145).
+In Brain Food (#144).
 No review yet.

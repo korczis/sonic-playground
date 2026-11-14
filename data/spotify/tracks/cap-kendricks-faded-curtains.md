@@ -10,7 +10,7 @@ keys: {"fold": "capkendricks|fadedcurtains"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 50}
+  - {"playlist": "mellow-beats", "n": 45}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Hotel Melancholia*, 2:27.
 Not among the liked songs.
-In Mellow Beats (#50).
+In Mellow Beats (#45).
 No review yet.

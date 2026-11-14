@@ -10,7 +10,7 @@ keys: {"fold": "radiopluvialis|ensintonia"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 153}
+  - {"playlist": "night-rain", "n": 154}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *En Sintonía*, 2:40.
 Not among the liked songs.
-In Night Rain (#153).
+In Night Rain (#154).
 No review yet.

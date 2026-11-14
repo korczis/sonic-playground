@@ -10,7 +10,7 @@ keys: {"fold": "naturaldreammakers|lakesiderain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 141}
+  - {"playlist": "night-rain", "n": 145}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Storm Of The Sea*, 2:06.
 Not among the liked songs.
-In Night Rain (#141).
+In Night Rain (#145).
 No review yet.

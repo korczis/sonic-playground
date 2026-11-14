@@ -10,7 +10,7 @@ keys: {"fold": "weatherality|markettentsinrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 107}
+  - {"playlist": "night-rain", "n": 106}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Wall of Rain*, 2:05.
 Not among the liked songs.
-In Night Rain (#107).
+In Night Rain (#106).
 No review yet.

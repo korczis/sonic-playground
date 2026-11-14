@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "liked-songs"
 name: "Liked Songs"
 kind: "liked"
-description: "Playlist"
 expected: 2031
 retrieved: 2029
 unavailable: 2

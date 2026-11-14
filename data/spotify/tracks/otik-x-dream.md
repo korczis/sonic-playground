@@ -10,7 +10,7 @@ keys: {"fold": "otik|xdream"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 154}
+  - {"playlist": "brain-food", "n": 192}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *X-Dream*, 4:21.
 Not among the liked songs.
-In Brain Food (#154).
+In Brain Food (#192).
 No review yet.

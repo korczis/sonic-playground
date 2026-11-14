@@ -10,7 +10,7 @@ keys: {"fold": "allrain|chillsummerrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 95}
+  - {"playlist": "night-rain", "n": 107}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Chill Summer Rain*, 2:17.
 Not among the liked songs.
-In Night Rain (#95).
+In Night Rain (#107).
 No review yet.

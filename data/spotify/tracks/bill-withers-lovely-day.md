@@ -10,7 +10,8 @@ keys: {"fold": "billwithers|lovelyday"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 27}
+  - {"playlist": "funk-soul-classics", "n": 33}
+  - {"playlist": "kitchen-swagger", "n": 59}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Menagerie*, 4:17.
 Not among the liked songs.
-In Funk & Soul Classics (#27).
+In Funk & Soul Classics (#33); Kitchen Swagger (#59).
 No review yet.

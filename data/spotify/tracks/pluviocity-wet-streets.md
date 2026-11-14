@@ -10,7 +10,7 @@ keys: {"fold": "pluviocity|wetstreets"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 59}
+  - {"playlist": "night-rain", "n": 63}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Wet Streets*, 2:32.
 Not among the liked songs.
-In Night Rain (#59).
+In Night Rain (#63).
 No review yet.

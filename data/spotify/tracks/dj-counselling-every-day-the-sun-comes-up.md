@@ -10,7 +10,7 @@ keys: {"fold": "djcounselling|everydaythesuncomesup"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 36}
+  - {"playlist": "brain-food", "n": 34}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Every Day the Sun Comes Up*, 5:16.
 Not among the liked songs.
-In Brain Food (#36).
+In Brain Food (#34).
 No review yet.

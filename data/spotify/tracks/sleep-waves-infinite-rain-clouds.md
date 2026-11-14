@@ -10,7 +10,7 @@ keys: {"fold": "sleepwaves|infiniterainclouds"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 126}
+  - {"playlist": "night-rain", "n": 124}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Infinite Rain Clouds*, 2:36.
 Not among the liked songs.
-In Night Rain (#126).
+In Night Rain (#124).
 No review yet.

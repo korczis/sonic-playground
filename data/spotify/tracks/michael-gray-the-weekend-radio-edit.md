@@ -10,7 +10,7 @@ keys: {"fold": "michaelgray|theweekend"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "jamiroquai-radio", "n": 34}
+  - {"playlist": "jamiroquai-radio", "n": 37}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Analog Is On*, 3:12.
 Not among the liked songs.
-In Jamiroquai Radio (#34).
+In Jamiroquai Radio (#37).
 No review yet.

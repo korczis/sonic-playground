@@ -10,7 +10,7 @@ keys: {"fold": "randycrawford|streetlife"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 58}
+  - {"playlist": "funk-soul-classics", "n": 60}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Jackie Brown (Music from the Miramax Motion Picture)*, 4:16.
 Not among the liked songs.
-In Funk & Soul Classics (#58).
+In Funk & Soul Classics (#60).
 No review yet.

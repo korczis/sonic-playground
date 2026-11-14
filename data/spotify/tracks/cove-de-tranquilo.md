@@ -10,7 +10,7 @@ keys: {"fold": "covedetranquilo|"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 71}
+  - {"playlist": "night-rain", "n": 65}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Ήρεμη ελληνική καλοκαιρινή βροχή*, 2:23.
 Not among the liked songs.
-In Night Rain (#71).
+In Night Rain (#65).
 No review yet.

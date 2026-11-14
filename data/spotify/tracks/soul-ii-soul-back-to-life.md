@@ -11,6 +11,7 @@ status: "missing"
 liked: true
 playlists:
   - {"playlist": "back-to-life-back-to-reality", "n": 11}
+  - {"playlist": "kitchen-swagger", "n": 53}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Keep On Movin'*, 3:48.
 A liked song.
-In Back to life, Back to reality (#11).
+In Back to life, Back to reality (#11); Kitchen Swagger (#53).
 No review yet.

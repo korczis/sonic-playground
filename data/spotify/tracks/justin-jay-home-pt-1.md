@@ -10,7 +10,7 @@ keys: {"fold": "justinjay|homept1"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 177}
+  - {"playlist": "brain-food", "n": 176}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Home*, 2:19.
 Not among the liked songs.
-In Brain Food (#177).
+In Brain Food (#176).
 No review yet.

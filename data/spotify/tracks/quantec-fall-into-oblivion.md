@@ -10,7 +10,7 @@ keys: {"fold": "quantec|fallintooblivion"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 139}
+  - {"playlist": "brain-food", "n": 136}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Cauldron Subsidence*, 6:22.
 Not among the liked songs.
-In Brain Food (#139).
+In Brain Food (#136).
 No review yet.

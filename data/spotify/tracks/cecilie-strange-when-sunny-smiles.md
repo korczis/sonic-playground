@@ -10,7 +10,7 @@ keys: {"fold": "ceciliestrange|whensunnysmiles"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 44}
+  - {"playlist": "late-night-jazz", "n": 45}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *When Sunny Smiles*, 7:44.
 Not among the liked songs.
-In Late Night Jazz (#44).
+In Late Night Jazz (#45).
 No review yet.

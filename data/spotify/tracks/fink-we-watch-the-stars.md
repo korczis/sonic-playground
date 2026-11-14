@@ -10,7 +10,7 @@ keys: {"fold": "fink|wewatchthestars"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 39}
+  - {"playlist": "the-wind-down", "n": 46}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *We Watch The Stars*, 8:04.
 Not among the liked songs.
-In The Wind Down (#39).
+In The Wind Down (#46).
 No review yet.

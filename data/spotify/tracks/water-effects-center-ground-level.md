@@ -10,7 +10,7 @@ keys: {"fold": "watereffectscenter|groundlevel"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 102}
+  - {"playlist": "night-rain", "n": 101}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Cloud Droplets*, 2:39.
 Not among the liked songs.
-In Night Rain (#102).
+In Night Rain (#101).
 No review yet.

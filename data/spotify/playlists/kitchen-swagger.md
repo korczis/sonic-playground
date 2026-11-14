@@ -4,10 +4,8 @@ id: "kitchen-swagger"
 name: "Kitchen Swagger"
 kind: "followed"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 150
-retrieved: 107
-unavailable: 43
+retrieved: 150
 read: "2026-11-14"
 tracks:
   - {"n": 1, "track": "rufus-ain-t-nobody"}
@@ -39,49 +37,49 @@ tracks:
   - {"n": 27, "track": "leven-kali-breathe"}
   - {"n": 28, "track": "sade-the-sweetest-taboo"}
   - {"n": 29, "track": "prince-kiss"}
-  - {"n": 30, "unavailable": true}
-  - {"n": 31, "unavailable": true}
-  - {"n": 32, "unavailable": true}
-  - {"n": 33, "unavailable": true}
-  - {"n": 34, "unavailable": true}
-  - {"n": 35, "unavailable": true}
-  - {"n": 36, "unavailable": true}
-  - {"n": 37, "unavailable": true}
-  - {"n": 38, "unavailable": true}
-  - {"n": 39, "unavailable": true}
-  - {"n": 40, "unavailable": true}
-  - {"n": 41, "unavailable": true}
-  - {"n": 42, "unavailable": true}
-  - {"n": 43, "unavailable": true}
-  - {"n": 44, "unavailable": true}
-  - {"n": 45, "unavailable": true}
-  - {"n": 46, "unavailable": true}
-  - {"n": 47, "unavailable": true}
-  - {"n": 48, "unavailable": true}
-  - {"n": 49, "unavailable": true}
-  - {"n": 50, "unavailable": true}
-  - {"n": 51, "unavailable": true}
-  - {"n": 52, "unavailable": true}
-  - {"n": 53, "unavailable": true}
-  - {"n": 54, "unavailable": true}
-  - {"n": 55, "unavailable": true}
-  - {"n": 56, "unavailable": true}
-  - {"n": 57, "unavailable": true}
-  - {"n": 58, "unavailable": true}
-  - {"n": 59, "unavailable": true}
-  - {"n": 60, "unavailable": true}
-  - {"n": 61, "unavailable": true}
-  - {"n": 62, "unavailable": true}
-  - {"n": 63, "unavailable": true}
-  - {"n": 64, "unavailable": true}
-  - {"n": 65, "unavailable": true}
-  - {"n": 66, "unavailable": true}
-  - {"n": 67, "unavailable": true}
-  - {"n": 68, "unavailable": true}
-  - {"n": 69, "unavailable": true}
-  - {"n": 70, "unavailable": true}
-  - {"n": 71, "unavailable": true}
-  - {"n": 72, "unavailable": true}
+  - {"n": 30, "track": "paul-russell-slippin-feat-meghan-trainor"}
+  - {"n": 31, "track": "alissia-hypnotic-night"}
+  - {"n": 32, "track": "marvin-gaye-got-to-give-it-up"}
+  - {"n": 33, "track": "whitney-houston-my-love-is-your-love"}
+  - {"n": 34, "track": "george-michael-as"}
+  - {"n": 35, "track": "bob-marley-the-wailers-is-this-love"}
+  - {"n": 36, "track": "lizzo-about-damn-time"}
+  - {"n": 37, "track": "lawrence-do"}
+  - {"n": 38, "track": "bob-marley-the-wailers-jamming"}
+  - {"n": 39, "track": "amy-winehouse-you-know-i-m-no-good-4zquww"}
+  - {"n": 40, "track": "lake-street-dive-rich-girl"}
+  - {"n": 41, "track": "tom-misch-it-runs-through-me-feat-de-la-soul"}
+  - {"n": 42, "track": "zhane-hey-mr-d-j"}
+  - {"n": 43, "track": "bakar-hell-n-back"}
+  - {"n": 44, "track": "leon-bridges-beyond"}
+  - {"n": 45, "track": "anderson-paak-tints-feat-kendrick-lamar"}
+  - {"n": 46, "track": "michael-jackson-you-rock-my-world-radio-edit"}
+  - {"n": 47, "track": "michael-jackson-the-way-you-make-me-feel-2012-remaster"}
+  - {"n": 48, "track": "india-arie-video"}
+  - {"n": 49, "track": "lenny-kravitz-i-belong-to-you"}
+  - {"n": 50, "track": "bruno-mars-leave-the-door-open"}
+  - {"n": 51, "track": "oliver-cheatham-get-down-saturday-night"}
+  - {"n": 52, "track": "luther-vandross-never-too-much"}
+  - {"n": 53, "track": "soul-ii-soul-back-to-life"}
+  - {"n": 54, "track": "ms-lauryn-hill-doo-wop-that-thing"}
+  - {"n": 55, "track": "elton-john-cold-heart-pnau-remix"}
+  - {"n": 56, "track": "salt-n-pepa-whatta-man"}
+  - {"n": 57, "track": "mac-miller-dang-feat-anderson-paak"}
+  - {"n": 58, "track": "calvin-harris-slide-feat-frank-ocean-migos-7tr2za"}
+  - {"n": 59, "track": "bill-withers-lovely-day"}
+  - {"n": 60, "track": "monica-don-t-take-it-personal-just-one-of-dem-days"}
+  - {"n": 61, "track": "chic-good-times"}
+  - {"n": 62, "track": "janet-jackson-got-til-it-s-gone"}
+  - {"n": 63, "track": "the-teskey-brothers-so-caught-up"}
+  - {"n": 64, "track": "busty-and-the-bass-out-of-love"}
+  - {"n": 65, "track": "sam-smith-dancing-with-a-stranger-with-normani"}
+  - {"n": 66, "track": "fabolous-into-you-feat-tamia-main-mix"}
+  - {"n": 67, "track": "john-legend-used-to-love-u"}
+  - {"n": 68, "track": "samm-henshaw-church-feat-earthgang"}
+  - {"n": 69, "track": "keyshia-cole-let-it-go"}
+  - {"n": 70, "track": "eric-benet-georgy-porgy-feat-faith-evans"}
+  - {"n": 71, "track": "whitney-houston-it-s-not-right-but-it-s-okay"}
+  - {"n": 72, "track": "mary-j-blige-real-love"}
   - {"n": 73, "track": "boz-scaggs-lowdown-2023-remaster"}
   - {"n": 74, "track": "emeli-sande-heaven"}
   - {"n": 75, "track": "jon-allen-keep-on-walking"}
@@ -164,4 +162,4 @@ tracks:
 
 # Kitchen Swagger
 
-A playlist the owner follows: 107 of 150 items read on 2026-11-14, 0 of them reviewed on the site.
+A playlist the owner follows: 150 of 150 items read on 2026-11-14, 1 of them reviewed on the site.

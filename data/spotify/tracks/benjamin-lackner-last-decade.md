@@ -10,7 +10,7 @@ keys: {"fold": "benjaminlackner|lastdecade"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 88}
+  - {"playlist": "late-night-jazz", "n": 86}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Last Decade*, 5:49.
 Not among the liked songs.
-In Late Night Jazz (#88).
+In Late Night Jazz (#86).
 No review yet.

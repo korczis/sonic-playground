@@ -10,7 +10,7 @@ keys: {"fold": "otisredding|sittinonthedockofthebaymono"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 53}
+  - {"playlist": "funk-soul-classics", "n": 56}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Dock of the Bay (Mono)*, 2:43.
 Not among the liked songs.
-In Funk & Soul Classics (#53).
+In Funk & Soul Classics (#56).
 No review yet.

@@ -26,7 +26,7 @@
  "tables": {
   "tracks": {
    "path": "data/spotify/tables/tracks.jsonl",
-   "rows": 6516,
+   "rows": 6560,
    "key": "id",
    "join": {
     "spotify_track": "Spotify track id",
@@ -44,7 +44,7 @@
   },
   "memberships": {
    "path": "data/spotify/tables/memberships.jsonl",
-   "rows": 7922,
+   "rows": 7973,
    "key": [
     "playlist",
     "n"
@@ -56,7 +56,7 @@
   },
   "artists": {
    "path": "data/spotify/tables/artists.jsonl",
-   "rows": 4825,
+   "rows": 4849,
    "key": "spotify_artist",
    "join": {
     "name": "tracks.artists[]"
@@ -64,7 +64,7 @@
   },
   "albums": {
    "path": "data/spotify/tables/albums.jsonl",
-   "rows": 4718,
+   "rows": 4747,
    "key": "spotify_album",
    "join": {
     "name": "tracks.album"
@@ -77,13 +77,13 @@
   "use": "templates/page.html"
  },
  "counts": {
-  "tracks": 6516,
+  "tracks": 6560,
   "liked": 2029,
-  "reviewed": 471,
+  "reviewed": 472,
   "playlists": 55,
-  "memberships": 7922,
-  "artists": 4825,
-  "albums": 4718,
+  "memberships": 7973,
+  "artists": 4849,
+  "albums": 4747,
   "playlists_by_kind": {
    "liked": 1,
    "own": 11,

@@ -10,7 +10,7 @@ keys: {"fold": "shuggieotis|ahtuhmihed"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 33}
+  - {"playlist": "funk-soul-classics", "n": 39}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *INSPIRATION INFORMATION*, 4:17.
 Not among the liked songs.
-In Funk & Soul Classics (#33).
+In Funk & Soul Classics (#39).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "nellotoscano|clouds"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 78}
+  - {"playlist": "late-night-jazz", "n": 77}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Inside*, 5:13.
 Not among the liked songs.
-In Late Night Jazz (#78).
+In Late Night Jazz (#77).
 No review yet.

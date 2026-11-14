@@ -3,9 +3,8 @@ schema: "spotify-playlist/v1"
 id: "playlist-zami-lee"
 name: "Playlist • Zami Lee"
 kind: "followed"
-description: "Public Playlist"
 expected: 291
-retrieved: 283
+retrieved: 291
 read: "2026-11-14"
 tracks:
   - {"n": 1, "track": "postmodern-jukebox-perfect-duet"}
@@ -253,7 +252,7 @@ tracks:
   - {"n": 243, "track": "scubba-crazy-in-love"}
   - {"n": 244, "track": "postmodern-jukebox-colors-of-the-wind"}
   - {"n": 245, "track": "postmodern-jukebox-chasing-pavements"}
-  - {"n": 246, "track": "postmodern-jukebox-attention"}
+  - {"n": 246, "track": "postmodern-jukebox-attention-777ayw"}
   - {"n": 247, "track": "postmodern-jukebox-before-he-cheats"}
   - {"n": 248, "track": "postmodern-jukebox-thriller"}
   - {"n": 249, "track": "postmodern-jukebox-bad-at-love"}
@@ -266,6 +265,14 @@ tracks:
   - {"n": 256, "track": "postmodern-jukebox-despacito"}
   - {"n": 257, "track": "postmodern-jukebox-look-what-you-made-me-do"}
   - {"n": 258, "track": "postmodern-jukebox-we-can-t-stop-acapella"}
+  - {"n": 259, "track": "postmodern-jukebox-attention"}
+  - {"n": 260, "track": "postmodern-jukebox-colours-of-the-wind"}
+  - {"n": 261, "track": "postmodern-jukebox-tennessee-whiskey"}
+  - {"n": 262, "track": "postmodern-jukebox-zombie"}
+  - {"n": 263, "track": "postmodern-jukebox-shape-of-you"}
+  - {"n": 264, "track": "postmodern-jukebox-the-middle"}
+  - {"n": 265, "track": "postmodern-jukebox-still-into-you"}
+  - {"n": 266, "track": "postmodern-jukebox-old-town-road"}
   - {"n": 267, "track": "postmodern-jukebox-young-dumb-broke"}
   - {"n": 268, "track": "postmodern-jukebox-misery-business"}
   - {"n": 269, "track": "postmodern-jukebox-chandelier-3wqcdb"}
@@ -295,4 +302,4 @@ tracks:
 
 # Playlist • Zami Lee
 
-A playlist the owner follows: 283 of 291 items read on 2026-11-14, 1 of them reviewed on the site.
+A playlist the owner follows: 291 of 291 items read on 2026-11-14, 1 of them reviewed on the site.

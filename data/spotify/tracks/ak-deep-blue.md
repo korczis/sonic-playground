@@ -10,7 +10,7 @@ keys: {"fold": "ak|deepblue"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 148}
+  - {"playlist": "brain-food", "n": 150}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Deep Blue*, 3:16.
 Not among the liked songs.
-In Brain Food (#148).
+In Brain Food (#150).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "evisbeats|algorithm"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 77}
+  - {"playlist": "mellow-beats", "n": 76}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *アルゴリズム (Algorithm)*, 3:27.
 Not among the liked songs.
-In Mellow Beats (#77).
+In Mellow Beats (#76).
 No review yet.

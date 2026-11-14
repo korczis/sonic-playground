@@ -10,7 +10,7 @@ keys: {"fold": "tsha|sacred"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 41}
+  - {"playlist": "the-wind-down", "n": 43}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Sacred*, 3:26.
 Not among the liked songs.
-In The Wind Down (#41).
+In The Wind Down (#43).
 No review yet.

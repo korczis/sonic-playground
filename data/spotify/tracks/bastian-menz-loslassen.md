@@ -10,7 +10,7 @@ keys: {"fold": "bastianmenz|loslassen"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 144}
+  - {"playlist": "late-night-jazz", "n": 145}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Loslassen*, 4:21.
 Not among the liked songs.
-In Late Night Jazz (#144).
+In Late Night Jazz (#145).
 No review yet.

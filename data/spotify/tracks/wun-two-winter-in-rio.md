@@ -10,7 +10,7 @@ keys: {"fold": "wuntwo|winterinrio"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 47}
+  - {"playlist": "mellow-beats", "n": 50}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rio*, 1:40.
 Not among the liked songs.
-In Mellow Beats (#47).
+In Mellow Beats (#50).
 No review yet.

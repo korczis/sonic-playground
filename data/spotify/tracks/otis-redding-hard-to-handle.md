@@ -10,7 +10,7 @@ keys: {"fold": "otisredding|hardtohandle"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 63}
+  - {"playlist": "funk-soul-classics", "n": 61}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Dock of the Bay Sessions*, 2:21.
 Not among the liked songs.
-In Funk & Soul Classics (#63).
+In Funk & Soul Classics (#61).
 No review yet.

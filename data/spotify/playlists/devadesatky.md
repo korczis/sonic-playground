@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "devadesatky"
 name: "Devadesátky"
 kind: "followed"
-description: "Public Playlist"
 expected: 26
 retrieved: 26
 read: "2026-11-14"

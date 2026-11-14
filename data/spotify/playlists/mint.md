@@ -4,7 +4,6 @@ id: "mint"
 name: "mint"
 kind: "followed"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 75
 retrieved: 75
 read: "2026-11-14"

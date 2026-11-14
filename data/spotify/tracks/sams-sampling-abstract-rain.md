@@ -10,7 +10,7 @@ keys: {"fold": "samssampling|abstractrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 133}
+  - {"playlist": "night-rain", "n": 132}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Urban Rain For Dreams*, 2:41.
 Not among the liked songs.
-In Night Rain (#133).
+In Night Rain (#132).
 No review yet.

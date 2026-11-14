@@ -10,7 +10,7 @@ keys: {"fold": "rayny|cozyrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 142}
+  - {"playlist": "night-rain", "n": 141}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Heavy Rain*, 2:48.
 Not among the liked songs.
-In Night Rain (#142).
+In Night Rain (#141).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "theearthsong|raininkauai"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 72}
+  - {"playlist": "night-rain", "n": 73}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Hawaiian Rainforest*, 3:21.
 Not among the liked songs.
-In Night Rain (#72).
+In Night Rain (#73).
 No review yet.

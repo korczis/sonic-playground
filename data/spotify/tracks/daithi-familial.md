@@ -10,7 +10,7 @@ keys: {"fold": "daithi|familial"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 47}
+  - {"playlist": "brain-food", "n": 46}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *I'm Here Now*, 4:36.
 Not among the liked songs.
-In Brain Food (#47).
+In Brain Food (#46).
 No review yet.

@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "best-of-post-modern-jukebox"
 name: "Best of Post Modern Jukebox"
 kind: "followed"
-description: "Public Playlist"
 expected: 44
 retrieved: 44
 read: "2026-11-14"

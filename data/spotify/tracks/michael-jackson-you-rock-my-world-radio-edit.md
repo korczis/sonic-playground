@@ -11,6 +11,7 @@ status: "missing"
 liked: false
 playlists:
   - {"playlist": "back-to-life-back-to-reality", "n": 20}
+  - {"playlist": "kitchen-swagger", "n": 46}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Number Ones*, 4:26.
 Not among the liked songs.
-In Back to life, Back to reality (#20).
+In Back to life, Back to reality (#20); Kitchen Swagger (#46).
 No review yet.

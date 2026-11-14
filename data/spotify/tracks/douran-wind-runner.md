@@ -10,7 +10,7 @@ keys: {"fold": "douran|windrunner"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 103}
+  - {"playlist": "brain-food", "n": 112}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Wind Runner*, 4:40.
 Not among the liked songs.
-In Brain Food (#103).
+In Brain Food (#112).
 No review yet.

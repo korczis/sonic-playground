@@ -10,7 +10,7 @@ keys: {"fold": "olburgerbeats|sotheysay"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 15}
+  - {"playlist": "mellow-beats", "n": 9}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Daybreaks*, 2:18.
 Not among the liked songs.
-In Mellow Beats (#15).
+In Mellow Beats (#9).
 No review yet.

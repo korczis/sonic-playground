@@ -10,7 +10,7 @@ keys: {"fold": "nimbostratus|calmrainfall"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 56}
+  - {"playlist": "night-rain", "n": 55}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Calm Rainfall*, 2:49.
 Not among the liked songs.
-In Night Rain (#56).
+In Night Rain (#55).
 No review yet.

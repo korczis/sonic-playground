@@ -10,7 +10,7 @@ keys: {"fold": "funkydl|kumomi"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 22}
+  - {"playlist": "mellow-beats", "n": 23}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *February: A Rest in Beats Tribute to the Sounds of Nujabes*, 3:47.
 Not among the liked songs.
-In Mellow Beats (#22).
+In Mellow Beats (#23).
 No review yet.

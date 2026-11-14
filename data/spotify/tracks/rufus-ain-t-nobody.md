@@ -11,7 +11,7 @@ status: "missing"
 liked: false
 playlists:
   - {"playlist": "back-to-life-back-to-reality", "n": 56}
-  - {"playlist": "funk-soul-classics", "n": 41}
+  - {"playlist": "funk-soul-classics", "n": 43}
   - {"playlist": "kitchen-swagger", "n": 1}
 sources: ["web-player:2026-11-14"]
 ---
@@ -20,5 +20,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Stompin' At The Savoy*, 4:45.
 Not among the liked songs.
-In Back to life, Back to reality (#56); Funk & Soul Classics (#41); Kitchen Swagger (#1).
+In Back to life, Back to reality (#56); Funk & Soul Classics (#43); Kitchen Swagger (#1).
 No review yet.

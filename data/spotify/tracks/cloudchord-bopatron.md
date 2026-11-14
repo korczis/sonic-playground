@@ -10,7 +10,7 @@ keys: {"fold": "cloudchord|bopatron"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 36}
+  - {"playlist": "mellow-beats", "n": 37}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Bopatron*, 3:16.
 Not among the liked songs.
-In Mellow Beats (#36).
+In Mellow Beats (#37).
 No review yet.

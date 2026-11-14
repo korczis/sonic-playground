@@ -10,7 +10,7 @@ keys: {"fold": "daveliebman|designs"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 92}
+  - {"playlist": "late-night-jazz", "n": 90}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Trust and Honesty*, 4:38.
 Not among the liked songs.
-In Late Night Jazz (#92).
+In Late Night Jazz (#90).
 No review yet.

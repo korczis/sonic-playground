@@ -10,7 +10,7 @@ keys: {"fold": "elaquent|recuringdream"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 30}
+  - {"playlist": "mellow-beats", "n": 29}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Scenic Route*, 2:53.
 Not among the liked songs.
-In Mellow Beats (#30).
+In Mellow Beats (#29).
 No review yet.

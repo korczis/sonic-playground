@@ -10,7 +10,7 @@ keys: {"fold": "paperidol|feelrealpretty"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "rachel-k-collier-mix", "n": 48}
+  - {"playlist": "rachel-k-collier-mix", "n": 49}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Feel Real Pretty*, 3:03.
 Not among the liked songs.
-In Rachel K Collier Mix (#48).
+In Rachel K Collier Mix (#49).
 No review yet.

@@ -4,7 +4,6 @@ id: "deep-sleep"
 name: "Deep Sleep"
 kind: "followed"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 375
 retrieved: 375
 read: "2026-11-14"

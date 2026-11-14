@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "berlin-electronic-underground"
 name: "Berlin Electronic Underground"
 kind: "followed"
-description: "Public Playlist"
 expected: 261
 retrieved: 261
 read: "2026-11-14"

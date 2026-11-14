@@ -10,7 +10,7 @@ keys: {"fold": "russliquid|opusone"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 78}
+  - {"playlist": "brain-food", "n": 77}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Purple*, 5:17.
 Not among the liked songs.
-In Brain Food (#78).
+In Brain Food (#77).
 No review yet.

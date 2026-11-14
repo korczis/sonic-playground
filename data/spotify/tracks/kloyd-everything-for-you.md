@@ -10,7 +10,7 @@ keys: {"fold": "kloyd|everythingforyou"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 120}
+  - {"playlist": "brain-food", "n": 118}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Everything (For You)*, 4:53.
 Not among the liked songs.
-In Brain Food (#120).
+In Brain Food (#118).
 No review yet.

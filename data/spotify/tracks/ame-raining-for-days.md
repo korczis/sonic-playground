@@ -10,7 +10,7 @@ keys: {"fold": "ame|rainingfordays"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 31}
+  - {"playlist": "night-rain", "n": 32}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *raining for days*, 2:06.
 Not among the liked songs.
-In Night Rain (#31).
+In Night Rain (#32).
 No review yet.

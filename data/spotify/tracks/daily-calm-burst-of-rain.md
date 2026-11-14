@@ -10,7 +10,7 @@ keys: {"fold": "dailycalm|burstofrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 108}
+  - {"playlist": "night-rain", "n": 109}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Calm Rain*, 2:38.
 Not among the liked songs.
-In Night Rain (#108).
+In Night Rain (#109).
 No review yet.

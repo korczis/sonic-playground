@@ -11,7 +11,7 @@ status: "missing"
 liked: false
 playlists:
   - {"playlist": "back-to-life-back-to-reality", "n": 32}
-  - {"playlist": "funk-soul-classics", "n": 77}
+  - {"playlist": "funk-soul-classics", "n": 76}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Street Songs (Deluxe Edition)*, 3:25.
 Not among the liked songs.
-In Back to life, Back to reality (#32); Funk & Soul Classics (#77).
+In Back to life, Back to reality (#32); Funk & Soul Classics (#76).
 No review yet.

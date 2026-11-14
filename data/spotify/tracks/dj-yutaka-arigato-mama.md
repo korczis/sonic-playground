@@ -10,7 +10,7 @@ keys: {"fold": "djyutaka|arigatomama"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 54}
+  - {"playlist": "mellow-beats", "n": 51}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Cali Life 3*, 3:12.
 Not among the liked songs.
-In Mellow Beats (#54).
+In Mellow Beats (#51).
 No review yet.

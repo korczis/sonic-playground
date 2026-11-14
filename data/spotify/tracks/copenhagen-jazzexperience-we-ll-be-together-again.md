@@ -10,7 +10,7 @@ keys: {"fold": "copenhagenjazzexperience|wellbetogetheragain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 82}
+  - {"playlist": "late-night-jazz", "n": 80}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Lazy Afternoon*, 5:08.
 Not among the liked songs.
-In Late Night Jazz (#82).
+In Late Night Jazz (#80).
 No review yet.

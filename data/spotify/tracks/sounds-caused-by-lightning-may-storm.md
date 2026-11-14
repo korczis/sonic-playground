@@ -10,7 +10,7 @@ keys: {"fold": "soundscausedbylightning|maystorm"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 60}
+  - {"playlist": "night-rain", "n": 61}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Majestic Storm*, 2:16.
 Not among the liked songs.
-In Night Rain (#60).
+In Night Rain (#61).
 No review yet.

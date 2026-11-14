@@ -10,7 +10,7 @@ keys: {"fold": "pluviocity|contemplate"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 43}
+  - {"playlist": "night-rain", "n": 44}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Through the Window*, 2:12.
 Not among the liked songs.
-In Night Rain (#43).
+In Night Rain (#44).
 No review yet.

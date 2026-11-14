@@ -10,7 +10,7 @@ keys: {"fold": "yagya|thesaltonhercheeks"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 46}
+  - {"playlist": "brain-food", "n": 41}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Inescapable Decay of My Heart*, 6:56.
 Not among the liked songs.
-In Brain Food (#46).
+In Brain Food (#41).
 No review yet.

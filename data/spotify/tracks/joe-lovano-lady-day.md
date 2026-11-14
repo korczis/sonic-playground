@@ -10,7 +10,7 @@ keys: {"fold": "joelovano|ladyday"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 45}
+  - {"playlist": "late-night-jazz", "n": 43}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Lady Day*, 7:59.
 Not among the liked songs.
-In Late Night Jazz (#45).
+In Late Night Jazz (#43).
 No review yet.

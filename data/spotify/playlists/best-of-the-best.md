@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "best-of-the-best"
 name: "Best of the Best"
 kind: "own"
-description: "Choose photo"
 expected: 103
 retrieved: 103
 read: "2026-11-14"

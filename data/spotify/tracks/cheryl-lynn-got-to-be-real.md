@@ -10,7 +10,7 @@ keys: {"fold": "cheryllynn|gottobereal"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 56}
+  - {"playlist": "funk-soul-classics", "n": 53}
   - {"playlist": "kitchen-swagger", "n": 19}
 sources: ["web-player:2026-11-14"]
 ---
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Cheryl Lynn (Expanded Edition)*, 5:07.
 Not among the liked songs.
-In Funk & Soul Classics (#56); Kitchen Swagger (#19).
+In Funk & Soul Classics (#53); Kitchen Swagger (#19).
 No review yet.

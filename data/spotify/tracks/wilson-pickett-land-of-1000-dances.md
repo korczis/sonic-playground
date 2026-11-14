@@ -10,7 +10,7 @@ keys: {"fold": "wilsonpickett|landof1000dances"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 73}
+  - {"playlist": "funk-soul-classics", "n": 71}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Exciting Wilson Pickett*, 2:26.
 Not among the liked songs.
-In Funk & Soul Classics (#73).
+In Funk & Soul Classics (#71).
 No review yet.

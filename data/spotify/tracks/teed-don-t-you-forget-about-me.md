@@ -10,7 +10,7 @@ keys: {"fold": "teed|dontyouforgetaboutme"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 31}
+  - {"playlist": "the-wind-down", "n": 29}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Don't You Forget About Me*, 5:48.
 Not among the liked songs.
-In The Wind Down (#31).
+In The Wind Down (#29).
 No review yet.

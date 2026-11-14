@@ -10,7 +10,7 @@ keys: {"fold": "djpoolboi|wecanbehappy"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 42}
+  - {"playlist": "the-wind-down", "n": 40}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *we can be happy*, 5:45.
 Not among the liked songs.
-In The Wind Down (#42).
+In The Wind Down (#40).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "kiefer|itsokbu"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 24}
+  - {"playlist": "mellow-beats", "n": 25}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *It's Ok, B U*, 4:22.
 Not among the liked songs.
-In Mellow Beats (#24).
+In Mellow Beats (#25).
 No review yet.

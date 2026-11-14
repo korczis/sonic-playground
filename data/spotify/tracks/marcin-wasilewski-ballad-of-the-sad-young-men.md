@@ -10,7 +10,7 @@ keys: {"fold": "marcinwasilewski|balladofthesadyoungmen"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 62}
+  - {"playlist": "late-night-jazz", "n": 60}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Faithful*, 5:29.
 Not among the liked songs.
-In Late Night Jazz (#62).
+In Late Night Jazz (#60).
 No review yet.

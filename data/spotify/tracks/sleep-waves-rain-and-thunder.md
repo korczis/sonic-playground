@@ -10,7 +10,7 @@ keys: {"fold": "sleepwaves|rainandthunder"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 131}
+  - {"playlist": "night-rain", "n": 146}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Exclusive Nature*, 1:24.
 Not among the liked songs.
-In Night Rain (#131).
+In Night Rain (#146).
 No review yet.

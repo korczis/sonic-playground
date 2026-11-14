@@ -10,7 +10,7 @@ keys: {"fold": "dripdrop|softestnightrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 79}
+  - {"playlist": "night-rain", "n": 83}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Softest Night Rain*, 2:56.
 Not among the liked songs.
-In Night Rain (#79).
+In Night Rain (#83).
 No review yet.

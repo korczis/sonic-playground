@@ -10,7 +10,7 @@ keys: {"fold": "chic|lefreak2018"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "jamiroquai-radio", "n": 33}
+  - {"playlist": "jamiroquai-radio", "n": 34}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *C'est Chic (2018 Remaster)*, 5:31.
 Not among the liked songs.
-In Jamiroquai Radio (#33).
+In Jamiroquai Radio (#34).
 No review yet.

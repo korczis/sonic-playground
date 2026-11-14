@@ -10,7 +10,7 @@ keys: {"fold": "andiman|"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 74}
+  - {"playlist": "night-rain", "n": 72}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *เสียงฝนกรุงเทพ*, 2:13.
 Not among the liked songs.
-In Night Rain (#74).
+In Night Rain (#72).
 No review yet.

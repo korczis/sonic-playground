@@ -10,7 +10,7 @@ keys: {"fold": "bobbybluebland|aintnoloveintheheartofthecitysingleversion"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 44}
+  - {"playlist": "funk-soul-classics", "n": 37}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Dreamer*, 3:53.
 Not among the liked songs.
-In Funk & Soul Classics (#44).
+In Funk & Soul Classics (#37).
 No review yet.

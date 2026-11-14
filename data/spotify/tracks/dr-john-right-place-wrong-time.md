@@ -10,7 +10,7 @@ keys: {"fold": "drjohn|rightplacewrongtime"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 69}
+  - {"playlist": "funk-soul-classics", "n": 68}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *In The Right Place*, 2:55.
 Not among the liked songs.
-In Funk & Soul Classics (#69).
+In Funk & Soul Classics (#68).
 No review yet.

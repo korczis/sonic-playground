@@ -10,7 +10,7 @@ keys: {"fold": "mixednoisebank|rainshelter"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 146}
+  - {"playlist": "night-rain", "n": 151}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rain: Night Sleep*, 2:33.
 Not among the liked songs.
-In Night Rain (#146).
+In Night Rain (#151).
 No review yet.

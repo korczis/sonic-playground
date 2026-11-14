@@ -10,7 +10,7 @@ keys: {"fold": "galcherlustwerk|warmingup"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 175}
+  - {"playlist": "brain-food", "n": 174}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Information (Redacted)*, 3:36.
 Not among the liked songs.
-In Brain Food (#175).
+In Brain Food (#174).
 No review yet.

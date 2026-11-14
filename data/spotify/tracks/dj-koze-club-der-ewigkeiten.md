@@ -10,7 +10,7 @@ keys: {"fold": "djkoze|clubderewigkeiten"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 34}
+  - {"playlist": "brain-food", "n": 30}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Knock Knock*, 4:09.
 Not among the liked songs.
-In Brain Food (#34).
+In Brain Food (#30).
 No review yet.

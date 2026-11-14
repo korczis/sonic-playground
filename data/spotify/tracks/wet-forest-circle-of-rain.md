@@ -10,7 +10,7 @@ keys: {"fold": "wetforest|circleofrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 163}
+  - {"playlist": "night-rain", "n": 165}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Wilderness*, 2:35.
 Not among the liked songs.
-In Night Rain (#163).
+In Night Rain (#165).
 No review yet.

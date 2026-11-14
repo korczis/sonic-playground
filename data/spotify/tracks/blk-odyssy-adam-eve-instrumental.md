@@ -10,7 +10,7 @@ keys: {"fold": "blkodyssy|adameveinstrumental"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 52}
+  - {"playlist": "mellow-beats", "n": 56}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *DIAMONDS & FREAKS (Instrumentals)*, 4:29.
 Not among the liked songs.
-In Mellow Beats (#52).
+In Mellow Beats (#56).
 No review yet.

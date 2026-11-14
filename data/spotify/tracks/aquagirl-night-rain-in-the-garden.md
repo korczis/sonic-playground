@@ -10,7 +10,7 @@ keys: {"fold": "aquagirl|nightraininthegarden"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 117}
+  - {"playlist": "night-rain", "n": 119}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *My Secret Garden*, 2:26.
 Not among the liked songs.
-In Night Rain (#117).
+In Night Rain (#119).
 No review yet.

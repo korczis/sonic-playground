@@ -10,7 +10,7 @@ keys: {"fold": "gatheringinjazz|aflowerisalovesomething"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 113}
+  - {"playlist": "late-night-jazz", "n": 112}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Straight Road*, 4:45.
 Not among the liked songs.
-In Late Night Jazz (#113).
+In Late Night Jazz (#112).
 No review yet.

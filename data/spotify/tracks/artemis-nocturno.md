@@ -10,7 +10,7 @@ keys: {"fold": "artemis|nocturno"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 47}
+  - {"playlist": "late-night-jazz", "n": 46}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *ARTEMIS*, 5:27.
 Not among the liked songs.
-In Late Night Jazz (#47).
+In Late Night Jazz (#46).
 No review yet.

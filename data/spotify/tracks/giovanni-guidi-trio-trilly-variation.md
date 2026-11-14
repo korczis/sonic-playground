@@ -10,7 +10,7 @@ keys: {"fold": "giovanniguiditrio|trillyvariation"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 99}
+  - {"playlist": "late-night-jazz", "n": 97}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *This Is The Day*, 4:57.
 Not among the liked songs.
-In Late Night Jazz (#99).
+In Late Night Jazz (#97).
 No review yet.

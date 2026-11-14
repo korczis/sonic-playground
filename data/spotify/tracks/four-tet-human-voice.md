@@ -10,7 +10,7 @@ keys: {"fold": "fourtet|humanvoice"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 101}
+  - {"playlist": "brain-food", "n": 102}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Human Voice*, 6:36.
 Not among the liked songs.
-In Brain Food (#101).
+In Brain Food (#102).
 No review yet.

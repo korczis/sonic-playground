@@ -10,7 +10,7 @@ keys: {"fold": "bettydavis|theysayimdifferent"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 36}
+  - {"playlist": "funk-soul-classics", "n": 35}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *They Say I'm Different*, 4:15.
 Not among the liked songs.
-In Funk & Soul Classics (#36).
+In Funk & Soul Classics (#35).
 No review yet.

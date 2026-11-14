@@ -10,7 +10,7 @@ keys: {"fold": "foxtrott|betterwithyou"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 34}
+  - {"playlist": "the-wind-down", "n": 36}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Better with You*, 3:41.
 Not among the liked songs.
-In The Wind Down (#34).
+In The Wind Down (#36).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "dowork|coffeenap"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 26}
+  - {"playlist": "mellow-beats", "n": 32}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Old School*, 1:48.
 Not among the liked songs.
-In Mellow Beats (#26).
+In Mellow Beats (#32).
 No review yet.

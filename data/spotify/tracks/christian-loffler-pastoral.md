@@ -10,7 +10,7 @@ keys: {"fold": "christianloffler|pastoral"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 180}
+  - {"playlist": "brain-food", "n": 179}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Pastoral*, 3:40.
 Not among the liked songs.
-In Brain Food (#180).
+In Brain Food (#179).
 No review yet.

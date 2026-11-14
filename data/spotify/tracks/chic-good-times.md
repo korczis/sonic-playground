@@ -11,6 +11,7 @@ status: "missing"
 liked: false
 playlists:
   - {"playlist": "back-to-life-back-to-reality", "n": 5}
+  - {"playlist": "kitchen-swagger", "n": 61}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Risqué*, 8:15.
 Not among the liked songs.
-In Back to life, Back to reality (#5).
+In Back to life, Back to reality (#5); Kitchen Swagger (#61).
 No review yet.

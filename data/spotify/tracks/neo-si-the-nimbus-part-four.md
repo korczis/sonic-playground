@@ -10,7 +10,7 @@ keys: {"fold": "neosi|thenimbuspartfour"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 41}
+  - {"playlist": "night-rain", "n": 42}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Nimbus Part Four*, 2:59.
 Not among the liked songs.
-In Night Rain (#41).
+In Night Rain (#42).
 No review yet.

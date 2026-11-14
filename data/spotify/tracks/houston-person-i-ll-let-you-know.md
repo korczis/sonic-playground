@@ -10,7 +10,7 @@ keys: {"fold": "houstonperson|illletyouknow"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 123}
+  - {"playlist": "late-night-jazz", "n": 121}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Reminiscing at Rudy's*, 7:42.
 Not among the liked songs.
-In Late Night Jazz (#123).
+In Late Night Jazz (#121).
 No review yet.

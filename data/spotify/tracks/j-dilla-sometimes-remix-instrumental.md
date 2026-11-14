@@ -10,7 +10,7 @@ keys: {"fold": "jdilla|sometimesremixinstrumental"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 27}
+  - {"playlist": "mellow-beats", "n": 22}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Jay Deelicious 95-98 - The Delicious Vinyl Years (Originals, Remixes & Rarities)*, 4:03.
 Not among the liked songs.
-In Mellow Beats (#27).
+In Mellow Beats (#22).
 No review yet.

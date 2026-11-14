@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "midnight-music-deep-house-chill-vocal-house"
 name: "Midnight Music - Deep House & Chill Vocal House"
 kind: "followed"
-description: "Public Playlist"
 expected: 202
 retrieved: 202
 read: "2026-11-14"

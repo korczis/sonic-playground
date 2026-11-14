@@ -10,7 +10,7 @@ keys: {"fold": "cloudcity|rainbeforedawn"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 87}
+  - {"playlist": "night-rain", "n": 78}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rain Before Dawn*, 3:28.
 Not among the liked songs.
-In Night Rain (#87).
+In Night Rain (#78).
 No review yet.

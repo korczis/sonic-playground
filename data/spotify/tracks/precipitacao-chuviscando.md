@@ -10,7 +10,7 @@ keys: {"fold": "precipitacao|chuviscando"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 103}
+  - {"playlist": "night-rain", "n": 102}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Chuviscando*, 2:12.
 Not among the liked songs.
-In Night Rain (#103).
+In Night Rain (#102).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "djkoze|blissda"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 135}
+  - {"playlist": "brain-food", "n": 131}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Blissda*, 5:43.
 Not among the liked songs.
-In Brain Food (#135).
+In Brain Food (#131).
 No review yet.

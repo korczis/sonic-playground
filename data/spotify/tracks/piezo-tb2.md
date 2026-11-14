@@ -10,7 +10,7 @@ keys: {"fold": "piezo|tb2"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 121}
+  - {"playlist": "brain-food", "n": 119}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *LSD Superhero*, 3:59.
 Not among the liked songs.
-In Brain Food (#121).
+In Brain Food (#119).
 No review yet.

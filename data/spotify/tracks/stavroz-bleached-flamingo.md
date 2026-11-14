@@ -10,7 +10,7 @@ keys: {"fold": "stavroz|bleachedflamingo"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 106}
+  - {"playlist": "brain-food", "n": 107}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Bleached Flamingo EP*, 4:32.
 Not among the liked songs.
-In Brain Food (#106).
+In Brain Food (#107).
 No review yet.

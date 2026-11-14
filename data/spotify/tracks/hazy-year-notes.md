@@ -10,7 +10,7 @@ keys: {"fold": "hazyyear|notes"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 29}
+  - {"playlist": "mellow-beats", "n": 28}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Notes*, 2:46.
 Not among the liked songs.
-In Mellow Beats (#29).
+In Mellow Beats (#28).
 No review yet.

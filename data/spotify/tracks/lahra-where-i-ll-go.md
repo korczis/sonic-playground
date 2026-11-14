@@ -10,7 +10,7 @@ keys: {"fold": "lahra|whereillgo"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "rachel-k-collier-mix", "n": 40}
+  - {"playlist": "rachel-k-collier-mix", "n": 41}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Where I'll Go*, 2:39.
 Not among the liked songs.
-In Rachel K Collier Mix (#40).
+In Rachel K Collier Mix (#41).
 No review yet.

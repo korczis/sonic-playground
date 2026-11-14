@@ -10,7 +10,7 @@ keys: {"fold": "claudiocusmano|tomtraubertsblues"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 141}
+  - {"playlist": "late-night-jazz", "n": 140}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Remember to Remember*, 5:31.
 Not among the liked songs.
-In Late Night Jazz (#141).
+In Late Night Jazz (#140).
 No review yet.

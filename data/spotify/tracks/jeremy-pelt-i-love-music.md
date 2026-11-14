@@ -10,7 +10,7 @@ keys: {"fold": "jeremypelt|ilovemusic"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 61}
+  - {"playlist": "late-night-jazz", "n": 65}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *I Love Music*, 4:19.
 Not among the liked songs.
-In Late Night Jazz (#61).
+In Late Night Jazz (#65).
 No review yet.

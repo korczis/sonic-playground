@@ -10,7 +10,7 @@ keys: {"fold": "raingirl|itsreallypouring"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 28}
+  - {"playlist": "night-rain", "n": 31}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *It's Really Pouring*, 2:04.
 Not among the liked songs.
-In Night Rain (#28).
+In Night Rain (#31).
 No review yet.

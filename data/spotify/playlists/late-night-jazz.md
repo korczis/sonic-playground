@@ -4,160 +4,159 @@ id: "late-night-jazz"
 name: "Late Night Jazz"
 kind: "made-for-you"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 150
 retrieved: 150
 read: "2026-11-14"
 tracks:
   - {"n": 1, "track": "snorre-kirk-on-late-nights"}
   - {"n": 2, "track": "okvsho-where-moments-wait"}
-  - {"n": 3, "track": "matthew-halsall-the-tide-and-the-moon"}
+  - {"n": 3, "track": "mary-lou-williams-it-ain-t-necessarily-so"}
   - {"n": 4, "track": "red-garland-i-know-why-and-so-do-you"}
-  - {"n": 5, "track": "mary-lou-williams-it-ain-t-necessarily-so"}
+  - {"n": 5, "track": "matthew-halsall-the-tide-and-the-moon"}
   - {"n": 6, "track": "houston-person-willow-weep-for-me"}
   - {"n": 7, "track": "okvsho-place-of-two"}
   - {"n": 8, "track": "michael-benedikt-better-late-than-never"}
-  - {"n": 9, "track": "jasmine-myra-some-rain-must-fall"}
+  - {"n": 9, "track": "jasmine-myra-where-light-settles"}
   - {"n": 10, "track": "roy-hargrove-ruby-my-dear"}
-  - {"n": 11, "track": "chip-wickham-slow-down-look-around"}
-  - {"n": 12, "track": "phi-psonics-an-offering"}
+  - {"n": 11, "track": "phi-psonics-an-offering"}
+  - {"n": 12, "track": "chip-wickham-slow-down-look-around"}
   - {"n": 13, "track": "avishai-cohen-el-bazita"}
-  - {"n": 14, "track": "jasmine-myra-where-light-settles"}
+  - {"n": 14, "track": "jasmine-myra-some-rain-must-fall"}
   - {"n": 15, "track": "ambrose-akinmusire-roy"}
-  - {"n": 16, "track": "wynton-marsalis-where-or-when"}
-  - {"n": 17, "track": "pat-metheny-moondial"}
-  - {"n": 18, "track": "oscar-peterson-trio-my-one-and-only-love"}
+  - {"n": 16, "track": "pat-metheny-moondial"}
+  - {"n": 17, "track": "wynton-marsalis-where-or-when"}
+  - {"n": 18, "track": "joe-webb-collblanc"}
   - {"n": 19, "track": "jasmine-myra-reverie"}
   - {"n": 20, "track": "walter-smith-iii-mother-stands-for-comfort"}
-  - {"n": 21, "track": "joe-webb-collblanc"}
+  - {"n": 21, "track": "oscar-peterson-trio-my-one-and-only-love"}
   - {"n": 22, "track": "roy-hargrove-trust"}
   - {"n": 23, "track": "avishai-cohen-azalea"}
   - {"n": 24, "track": "joel-lyssarides-is-there-a-way"}
   - {"n": 25, "track": "indra-lesmana-fainted-light"}
-  - {"n": 26, "track": "pat-metheny-from-the-mountains"}
-  - {"n": 27, "track": "hvalfugl-morket-er-blat"}
-  - {"n": 28, "track": "kenny-barron-the-nearness-of-you"}
+  - {"n": 26, "track": "hvalfugl-morket-er-blat"}
+  - {"n": 27, "track": "pat-metheny-from-the-mountains"}
+  - {"n": 28, "track": "melissa-aldana-la-sentencia"}
   - {"n": 29, "track": "dave-holland-another-land"}
   - {"n": 30, "track": "soren-bebe-trio-tango-for-one"}
-  - {"n": 31, "track": "nduduzo-makhathini-unembeza"}
-  - {"n": 32, "track": "oded-tzur-isabela"}
-  - {"n": 33, "track": "melissa-aldana-la-sentencia"}
-  - {"n": 34, "track": "steve-kuhn-wisteria"}
-  - {"n": 35, "track": "jakob-bro-song-to-an-old-friend"}
-  - {"n": 36, "track": "immanuel-wilkins-the-dreamer"}
-  - {"n": 37, "track": "keith-jarrett-where-can-i-go-without-you"}
+  - {"n": 31, "track": "jakob-bro-song-to-an-old-friend"}
+  - {"n": 32, "track": "nduduzo-makhathini-unembeza"}
+  - {"n": 33, "track": "kenny-barron-the-nearness-of-you"}
+  - {"n": 34, "track": "oded-tzur-isabela"}
+  - {"n": 35, "track": "immanuel-wilkins-the-dreamer"}
+  - {"n": 36, "track": "keith-jarrett-where-can-i-go-without-you"}
+  - {"n": 37, "track": "steve-kuhn-wisteria"}
   - {"n": 38, "track": "tingvall-trio-a-promise"}
-  - {"n": 39, "track": "ben-webster-in-the-wee-small-hours-of-the-morning"}
-  - {"n": 40, "track": "red-garland-the-very-thought-of-you"}
-  - {"n": 41, "track": "aaron-parks-little-river"}
-  - {"n": 42, "track": "jan-harbeck-quartet-one-step-at-a-time"}
-  - {"n": 43, "track": "paolo-fresu-selim"}
-  - {"n": 44, "track": "cecilie-strange-when-sunny-smiles"}
-  - {"n": 45, "track": "joe-lovano-lady-day"}
-  - {"n": 46, "track": "tord-gustavsen-trio-curves"}
-  - {"n": 47, "track": "artemis-nocturno"}
-  - {"n": 48, "track": "jerk-still-dreaming"}
-  - {"n": 49, "track": "stephan-moccio-opaline"}
-  - {"n": 50, "track": "joe-lovano-seeds-of-change"}
-  - {"n": 51, "track": "soren-bebe-trio-on-and-on"}
-  - {"n": 52, "track": "jeremy-pelt-fair-weather"}
-  - {"n": 53, "track": "benjamin-lackner-where-do-we-go-from-here"}
-  - {"n": 54, "track": "portraits-in-jazz-largo"}
-  - {"n": 55, "track": "joe-lovano-first-song"}
-  - {"n": 56, "track": "tord-gustavsen-trio-stream"}
-  - {"n": 57, "track": "michael-brecker-midnight-mood"}
-  - {"n": 58, "track": "armel-dupas-trio-comme-un-echo-lointain"}
-  - {"n": 59, "track": "connie-han-captains-song"}
-  - {"n": 60, "track": "arild-andersen-fifth-winter"}
-  - {"n": 61, "track": "jeremy-pelt-i-love-music"}
-  - {"n": 62, "track": "marcin-wasilewski-ballad-of-the-sad-young-men"}
-  - {"n": 63, "track": "copenhagen-jazzexperience-never-let-me-go"}
-  - {"n": 64, "track": "the-mellowtones-round-midnight"}
-  - {"n": 65, "track": "scott-hamilton-slowly"}
-  - {"n": 66, "track": "chris-botti-blue-in-green"}
-  - {"n": 67, "track": "magnus-lindgren-theme-for-laura"}
+  - {"n": 39, "track": "aaron-parks-little-river"}
+  - {"n": 40, "track": "ben-webster-in-the-wee-small-hours-of-the-morning"}
+  - {"n": 41, "track": "jan-harbeck-quartet-one-step-at-a-time"}
+  - {"n": 42, "track": "paolo-fresu-selim"}
+  - {"n": 43, "track": "joe-lovano-lady-day"}
+  - {"n": 44, "track": "tord-gustavsen-trio-curves"}
+  - {"n": 45, "track": "cecilie-strange-when-sunny-smiles"}
+  - {"n": 46, "track": "artemis-nocturno"}
+  - {"n": 47, "track": "jerk-still-dreaming"}
+  - {"n": 48, "track": "joe-lovano-seeds-of-change"}
+  - {"n": 49, "track": "red-garland-the-very-thought-of-you"}
+  - {"n": 50, "track": "stephan-moccio-opaline"}
+  - {"n": 51, "track": "jeremy-pelt-fair-weather"}
+  - {"n": 52, "track": "benjamin-lackner-where-do-we-go-from-here"}
+  - {"n": 53, "track": "joe-lovano-first-song"}
+  - {"n": 54, "track": "soren-bebe-trio-on-and-on"}
+  - {"n": 55, "track": "portraits-in-jazz-largo"}
+  - {"n": 56, "track": "michael-brecker-midnight-mood"}
+  - {"n": 57, "track": "armel-dupas-trio-comme-un-echo-lointain"}
+  - {"n": 58, "track": "connie-han-captains-song"}
+  - {"n": 59, "track": "chris-botti-blue-in-green"}
+  - {"n": 60, "track": "marcin-wasilewski-ballad-of-the-sad-young-men"}
+  - {"n": 61, "track": "magnus-lindgren-theme-for-laura"}
+  - {"n": 62, "track": "arild-andersen-fifth-winter"}
+  - {"n": 63, "track": "tord-gustavsen-trio-stream"}
+  - {"n": 64, "track": "copenhagen-jazzexperience-never-let-me-go"}
+  - {"n": 65, "track": "jeremy-pelt-i-love-music"}
+  - {"n": 66, "track": "the-mellowtones-round-midnight"}
+  - {"n": 67, "track": "scott-hamilton-slowly"}
   - {"n": 68, "track": "marc-johnson-swept-away"}
   - {"n": 69, "track": "john-engels-the-peacocks-single-edit"}
   - {"n": 70, "track": "john-scofield-stairway-to-the-stars"}
   - {"n": 71, "track": "ari-bragi-karason-solitude"}
-  - {"n": 72, "track": "joel-ross-benediction"}
-  - {"n": 73, "track": "immanuel-wilkins-shadow"}
-  - {"n": 74, "track": "mellow-in-blue-in-a-sentimental-mood"}
-  - {"n": 75, "track": "giorgi-mikadze-elene-s-song"}
-  - {"n": 76, "track": "david-gibson-there-will-always-be-we"}
-  - {"n": 77, "track": "eddie-henderson-it-never-entered-my-mind"}
-  - {"n": 78, "track": "nello-toscano-clouds"}
-  - {"n": 79, "track": "walter-smith-iii-office-party-music"}
-  - {"n": 80, "track": "jumaane-smith-misty"}
-  - {"n": 81, "track": "jan-harbeck-quartet-woodwind"}
-  - {"n": 82, "track": "copenhagen-jazzexperience-we-ll-be-together-again"}
-  - {"n": 83, "track": "battista-lena-round-midnight"}
-  - {"n": 84, "track": "le-boeuf-brothers-oblique-two-step"}
-  - {"n": 85, "track": "peace-flag-ensemble-the-past-is-what-changes-the-most"}
-  - {"n": 86, "track": "gathering-in-jazz-blue-sunday"}
-  - {"n": 87, "track": "joel-lyssarides-procession"}
-  - {"n": 88, "track": "benjamin-lackner-last-decade"}
-  - {"n": 89, "track": "hans-ulrik-a-nightingale-sang-in-berkeley-square"}
-  - {"n": 90, "track": "caris-hermes-abeyance"}
-  - {"n": 91, "track": "rasmus-h-thomsen-trio-angel-eyes"}
-  - {"n": 92, "track": "dave-liebman-designs"}
-  - {"n": 93, "track": "the-jazz-seekers-in-a-sentimental-mood"}
+  - {"n": 72, "track": "immanuel-wilkins-shadow"}
+  - {"n": 73, "track": "joel-ross-benediction"}
+  - {"n": 74, "track": "giorgi-mikadze-elene-s-song"}
+  - {"n": 75, "track": "david-gibson-there-will-always-be-we"}
+  - {"n": 76, "track": "eddie-henderson-it-never-entered-my-mind"}
+  - {"n": 77, "track": "nello-toscano-clouds"}
+  - {"n": 78, "track": "walter-smith-iii-office-party-music"}
+  - {"n": 79, "track": "jan-harbeck-quartet-woodwind"}
+  - {"n": 80, "track": "copenhagen-jazzexperience-we-ll-be-together-again"}
+  - {"n": 81, "track": "battista-lena-round-midnight"}
+  - {"n": 82, "track": "peace-flag-ensemble-the-past-is-what-changes-the-most"}
+  - {"n": 83, "track": "jumaane-smith-misty"}
+  - {"n": 84, "track": "gathering-in-jazz-blue-sunday"}
+  - {"n": 85, "track": "joel-lyssarides-procession"}
+  - {"n": 86, "track": "benjamin-lackner-last-decade"}
+  - {"n": 87, "track": "mellow-in-blue-in-a-sentimental-mood"}
+  - {"n": 88, "track": "hans-ulrik-a-nightingale-sang-in-berkeley-square"}
+  - {"n": 89, "track": "rasmus-h-thomsen-trio-angel-eyes"}
+  - {"n": 90, "track": "dave-liebman-designs"}
+  - {"n": 91, "track": "le-boeuf-brothers-oblique-two-step"}
+  - {"n": 92, "track": "the-jazz-seekers-in-a-sentimental-mood"}
+  - {"n": 93, "track": "caris-hermes-abeyance"}
   - {"n": 94, "track": "johannes-wallmann-try-to-remember"}
   - {"n": 95, "track": "helge-lien-trio-apres-un-reve"}
   - {"n": 96, "track": "thomas-sejthen-trio-this-is-our-year"}
-  - {"n": 97, "track": "kevin-hays-for-heaven-s-sake"}
-  - {"n": 98, "track": "art-roho-dark-turn-of-mind"}
-  - {"n": 99, "track": "giovanni-guidi-trio-trilly-variation"}
-  - {"n": 100, "track": "carl-winther-estate"}
+  - {"n": 97, "track": "giovanni-guidi-trio-trilly-variation"}
+  - {"n": 98, "track": "kevin-hays-for-heaven-s-sake"}
+  - {"n": 99, "track": "carl-winther-estate"}
+  - {"n": 100, "track": "art-roho-dark-turn-of-mind"}
   - {"n": 101, "track": "harry-allen-when-october-goes-live"}
-  - {"n": 102, "track": "bobby-watson-i-m-glad-there-is-you"}
-  - {"n": 103, "track": "art-roho-ack-varmeland-du-skona"}
+  - {"n": 102, "track": "rasmus-h-thomsen-trio-beautiful-love"}
+  - {"n": 103, "track": "bobby-watson-i-m-glad-there-is-you"}
   - {"n": 104, "track": "claire-cross-road-to-eden"}
-  - {"n": 105, "track": "mikkel-ploug-monet"}
-  - {"n": 106, "track": "gerlo-hesselink-quartet-meant-for-you"}
-  - {"n": 107, "track": "rasmus-h-thomsen-trio-beautiful-love"}
-  - {"n": 108, "track": "portraits-in-jazz-ballad-for-bernt"}
-  - {"n": 109, "track": "shalosh-quiet-corner"}
-  - {"n": 110, "track": "johanna-linnea-jakobsson-opaque"}
-  - {"n": 111, "track": "caris-hermes-twelve-for-j"}
-  - {"n": 112, "track": "sean-mason-lullaby"}
-  - {"n": 113, "track": "gathering-in-jazz-a-flower-is-a-lovesome-thing"}
-  - {"n": 114, "track": "enzo-carniel-for-all-we-know"}
-  - {"n": 115, "track": "steve-davis-indigo-to-azure"}
-  - {"n": 116, "track": "mellow-in-blue-my-one-and-only-love"}
-  - {"n": 117, "track": "flash-pig-voyageur"}
-  - {"n": 118, "track": "emil-brandqvist-trio-lullaby-in-green"}
-  - {"n": 119, "track": "jim-snidero-search-for-peace"}
-  - {"n": 120, "track": "gustav-lundgren-round-midnight"}
-  - {"n": 121, "track": "nice-chair-little-piece"}
-  - {"n": 122, "track": "johnathan-blake-out-of-sight-out-of-mind"}
-  - {"n": 123, "track": "houston-person-i-ll-let-you-know"}
+  - {"n": 105, "track": "art-roho-ack-varmeland-du-skona"}
+  - {"n": 106, "track": "mikkel-ploug-monet"}
+  - {"n": 107, "track": "gerlo-hesselink-quartet-meant-for-you"}
+  - {"n": 108, "track": "sean-mason-lullaby"}
+  - {"n": 109, "track": "portraits-in-jazz-ballad-for-bernt"}
+  - {"n": 110, "track": "shalosh-quiet-corner"}
+  - {"n": 111, "track": "johanna-linnea-jakobsson-opaque"}
+  - {"n": 112, "track": "gathering-in-jazz-a-flower-is-a-lovesome-thing"}
+  - {"n": 113, "track": "enzo-carniel-for-all-we-know"}
+  - {"n": 114, "track": "steve-davis-indigo-to-azure"}
+  - {"n": 115, "track": "emil-brandqvist-trio-lullaby-in-green"}
+  - {"n": 116, "track": "jim-snidero-search-for-peace"}
+  - {"n": 117, "track": "mellow-in-blue-my-one-and-only-love"}
+  - {"n": 118, "track": "flash-pig-voyageur"}
+  - {"n": 119, "track": "gustav-lundgren-round-midnight"}
+  - {"n": 120, "track": "johnathan-blake-out-of-sight-out-of-mind"}
+  - {"n": 121, "track": "houston-person-i-ll-let-you-know"}
+  - {"n": 122, "track": "diego-rivera-dignified-response"}
+  - {"n": 123, "track": "caris-hermes-twelve-for-j"}
   - {"n": 124, "track": "casper-hejlesen-pause"}
-  - {"n": 125, "track": "diego-rivera-dignified-response"}
+  - {"n": 125, "track": "nice-chair-little-piece"}
   - {"n": 126, "track": "the-modern-jazz-trio-theme-for-ernie"}
-  - {"n": 127, "track": "bevort-3-theme-for-ernie"}
-  - {"n": 128, "track": "michel-bisceglia-secondo"}
+  - {"n": 127, "track": "michel-bisceglia-secondo"}
+  - {"n": 128, "track": "andrew-rathbun-old-ballad-for-hawk"}
   - {"n": 129, "track": "johan-lindvall-trio-this-is-not-about-you"}
-  - {"n": 130, "track": "andrew-rathbun-old-ballad-for-hawk"}
-  - {"n": 131, "track": "john-nilsson-ledsen"}
-  - {"n": 132, "track": "christophe-marguet-waltz-for-an-absent-lover"}
-  - {"n": 133, "track": "henrik-gunde-blame-it-on-my-youth"}
+  - {"n": 130, "track": "matthias-bublath-what-are-you-doing-for-the-rest-of-your-life"}
+  - {"n": 131, "track": "bevort-3-theme-for-ernie"}
+  - {"n": 132, "track": "richard-andersson-wall"}
+  - {"n": 133, "track": "jd-allen-stardust"}
   - {"n": 134, "track": "dominick-farinacci-the-shadow-of-your-smile"}
-  - {"n": 135, "track": "matthias-bublath-what-are-you-doing-for-the-rest-of-your-life"}
-  - {"n": 136, "track": "richard-andersson-wall"}
-  - {"n": 137, "track": "jd-allen-stardust"}
+  - {"n": 135, "track": "john-nilsson-ledsen"}
+  - {"n": 136, "track": "christophe-marguet-waltz-for-an-absent-lover"}
+  - {"n": 137, "track": "henrik-gunde-blame-it-on-my-youth"}
   - {"n": 138, "track": "joel-lyssarides-no-cure"}
   - {"n": 139, "track": "wolfgang-haffner-forever-and-ever"}
-  - {"n": 140, "track": "federica-lorusso-just-go-ahead"}
-  - {"n": 141, "track": "claudio-cusmano-tom-traubert-s-blues"}
-  - {"n": 142, "track": "antonio-mazzei-falsa-balada"}
+  - {"n": 140, "track": "claudio-cusmano-tom-traubert-s-blues"}
+  - {"n": 141, "track": "kevin-hays-song-for-peace"}
+  - {"n": 142, "track": "federica-lorusso-just-go-ahead"}
   - {"n": 143, "track": "daniel-guggenheim-quartet-solitude"}
-  - {"n": 144, "track": "bastian-menz-loslassen"}
-  - {"n": 145, "track": "kevin-hays-song-for-peace"}
+  - {"n": 144, "track": "antonio-mazzei-falsa-balada"}
+  - {"n": 145, "track": "bastian-menz-loslassen"}
   - {"n": 146, "track": "massimo-farao-these-things-you-left-me"}
   - {"n": 147, "track": "eyolf-dale-a-blacksmith-s-tale"}
-  - {"n": 148, "track": "antonio-zambrini-alfie"}
-  - {"n": 149, "track": "armel-dupas-trio-all-the-things-you-are"}
+  - {"n": 148, "track": "armel-dupas-trio-all-the-things-you-are"}
+  - {"n": 149, "track": "antonio-zambrini-alfie"}
   - {"n": 150, "track": "juraj-stanik-trio-close-enough-for-love"}
 ---
 

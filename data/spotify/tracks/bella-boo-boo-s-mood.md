@@ -10,7 +10,7 @@ keys: {"fold": "bellaboo|boosmood"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 134}
+  - {"playlist": "brain-food", "n": 132}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Boo's Mood*, 4:23.
 Not among the liked songs.
-In Brain Food (#134).
+In Brain Food (#132).
 No review yet.

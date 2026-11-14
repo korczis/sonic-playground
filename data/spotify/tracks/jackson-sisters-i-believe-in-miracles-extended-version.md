@@ -10,7 +10,7 @@ keys: {"fold": "jacksonsisters|ibelieveinmiracles"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 40}
+  - {"playlist": "funk-soul-classics", "n": 41}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Jackson Sisters (Expanded Edition)*, 4:51.
 Not among the liked songs.
-In Funk & Soul Classics (#40).
+In Funk & Soul Classics (#41).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "bookertthemgs|greenonions"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 16}
+  - {"playlist": "funk-soul-classics", "n": 17}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Green Onions*, 2:56.
 Not among the liked songs.
-In Funk & Soul Classics (#16).
+In Funk & Soul Classics (#17).
 No review yet.

@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "liked-from-radio"
 name: "Liked from Radio"
 kind: "own"
-description: "Choose photo"
 expected: 28
 retrieved: 28
 read: "2026-11-14"

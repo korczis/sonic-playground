@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "eurythmics-sweet-dreams-ibiza-deep-summer-remix-2015"
 name: "Eurythmics - Sweet Dreams (Ibiza Deep Summer Remix 2015)"
 kind: "followed"
-description: "Public Playlist"
 expected: 318
 retrieved: 314
 unavailable: 4

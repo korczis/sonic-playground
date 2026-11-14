@@ -10,7 +10,7 @@ keys: {"fold": "kcthesunshineband|thatsthewayilikeit"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "jamiroquai-radio", "n": 39}
+  - {"playlist": "jamiroquai-radio", "n": 41}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *15 Classic Tracks: KC and the Sunshine Band*, 5:06.
 Not among the liked songs.
-In Jamiroquai Radio (#39).
+In Jamiroquai Radio (#41).
 No review yet.

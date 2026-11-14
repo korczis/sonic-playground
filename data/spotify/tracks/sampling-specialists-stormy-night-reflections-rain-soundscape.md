@@ -10,7 +10,7 @@ keys: {"fold": "samplingspecialists|stormynightreflectionsrainsoundscape"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 26}
+  - {"playlist": "night-rain", "n": 25}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Stormy Night Reflections: Rain Soundscape*, 2:35.
 Not among the liked songs.
-In Night Rain (#26).
+In Night Rain (#25).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "marylouwilliams|itaintnecessarilyso"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 5}
+  - {"playlist": "late-night-jazz", "n": 3}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Gilles Peterson - Magic Peterson Sunshine*, 4:40.
 Not among the liked songs.
-In Late Night Jazz (#5).
+In Late Night Jazz (#3).
 No review yet.

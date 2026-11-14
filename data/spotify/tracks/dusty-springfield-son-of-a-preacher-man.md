@@ -10,7 +10,7 @@ keys: {"fold": "dustyspringfield|sonofapreacherman"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 24}
+  - {"playlist": "funk-soul-classics", "n": 23}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Dusty In Memphis*, 2:28.
 Not among the liked songs.
-In Funk & Soul Classics (#24).
+In Funk & Soul Classics (#23).
 No review yet.

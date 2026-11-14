@@ -10,7 +10,7 @@ keys: {"fold": "rone|verbaaliena"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 144}
+  - {"playlist": "brain-food", "n": 137}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Megaptera (Original Soundtrack from the Movie the Musician and the Whale)*, 2:43.
 Not among the liked songs.
-In Brain Food (#144).
+In Brain Food (#137).
 No review yet.

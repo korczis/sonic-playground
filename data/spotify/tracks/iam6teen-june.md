@@ -10,7 +10,7 @@ keys: {"fold": "iam6teen|june"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 25}
+  - {"playlist": "mellow-beats", "n": 26}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Consider The Flowers*, 2:24.
 Not among the liked songs.
-In Mellow Beats (#25).
+In Mellow Beats (#26).
 No review yet.

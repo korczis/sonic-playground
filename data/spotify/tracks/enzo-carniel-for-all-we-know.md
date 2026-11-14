@@ -10,7 +10,7 @@ keys: {"fold": "enzocarniel|forallweknow"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 114}
+  - {"playlist": "late-night-jazz", "n": 113}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *NO(w) Beauty*, 6:49.
 Not among the liked songs.
-In Late Night Jazz (#114).
+In Late Night Jazz (#113).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "madzach|noth"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 192}
+  - {"playlist": "brain-food", "n": 181}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Noth*, 3:12.
 Not among the liked songs.
-In Brain Food (#192).
+In Brain Food (#181).
 No review yet.

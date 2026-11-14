@@ -10,7 +10,7 @@ keys: {"fold": "slythefamilystone|ifyouwantmetostay"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 23}
+  - {"playlist": "funk-soul-classics", "n": 22}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Fresh*, 3:00.
 Not among the liked songs.
-In Funk & Soul Classics (#23).
+In Funk & Soul Classics (#22).
 No review yet.

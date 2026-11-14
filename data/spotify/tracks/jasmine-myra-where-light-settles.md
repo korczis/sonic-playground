@@ -10,7 +10,7 @@ keys: {"fold": "jasminemyra|wherelightsettles"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 14}
+  - {"playlist": "late-night-jazz", "n": 9}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Where Light Settles*, 6:29.
 Not among the liked songs.
-In Late Night Jazz (#14).
+In Late Night Jazz (#9).
 No review yet.

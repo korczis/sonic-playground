@@ -10,7 +10,7 @@ keys: {"fold": "weatherandnaturerecordings|rainystoop"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 165}
+  - {"playlist": "night-rain", "n": 157}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rain in Spring*, 2:24.
 Not among the liked songs.
-In Night Rain (#165).
+In Night Rain (#157).
 No review yet.

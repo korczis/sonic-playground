@@ -10,7 +10,7 @@ keys: {"fold": "guiboratto|scene2"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 92}
+  - {"playlist": "brain-food", "n": 90}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Pentagram*, 2:52.
 Not among the liked songs.
-In Brain Food (#92).
+In Brain Food (#90).
 No review yet.

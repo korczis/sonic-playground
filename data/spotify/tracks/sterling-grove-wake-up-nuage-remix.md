@@ -10,7 +10,7 @@ keys: {"fold": "sterlinggrove|wakeupnuageremix"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 14}
+  - {"playlist": "brain-food", "n": 15}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Wake Up (Nuage Remix)*, 3:36.
 Not among the liked songs.
-In Brain Food (#14).
+In Brain Food (#15).
 No review yet.

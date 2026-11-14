@@ -10,7 +10,7 @@ keys: {"fold": "bdrmm|becarefulfilabrazilliaremix"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 8}
+  - {"playlist": "brain-food", "n": 6}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Be Careful (Fila Brazillia Remix)*, 5:42.
 Not among the liked songs.
-In Brain Food (#8).
+In Brain Food (#6).
 No review yet.

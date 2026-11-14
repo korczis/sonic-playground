@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "my-shazam-tracks"
 name: "My Shazam Tracks"
 kind: "own"
-description: "Choose photo"
 expected: 35
 retrieved: 35
 read: "2026-11-14"

@@ -10,7 +10,7 @@ keys: {"fold": "rasmushthomsentrio|beautifullove"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 107}
+  - {"playlist": "late-night-jazz", "n": 102}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Beautiful Love*, 4:40.
 Not among the liked songs.
-In Late Night Jazz (#107).
+In Late Night Jazz (#102).
 No review yet.

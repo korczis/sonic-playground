@@ -10,7 +10,7 @@ keys: {"fold": "mrmitch|daydreamofyou"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 191}
+  - {"playlist": "brain-food", "n": 190}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Lazy*, 3:12.
 Not among the liked songs.
-In Brain Food (#191).
+In Brain Food (#190).
 No review yet.

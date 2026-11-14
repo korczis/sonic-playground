@@ -10,7 +10,7 @@ keys: {"fold": "splize|bringitback"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "rachel-k-collier-mix", "n": 41}
+  - {"playlist": "rachel-k-collier-mix", "n": 39}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Bring it Back*, 1:51.
 Not among the liked songs.
-In Rachel K Collier Mix (#41).
+In Rachel K Collier Mix (#39).
 No review yet.

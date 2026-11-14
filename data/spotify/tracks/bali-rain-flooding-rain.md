@@ -10,7 +10,7 @@ keys: {"fold": "balirain|floodingrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 78}
+  - {"playlist": "night-rain", "n": 79}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Part 1*, 3:47.
 Not among the liked songs.
-In Night Rain (#78).
+In Night Rain (#79).
 No review yet.

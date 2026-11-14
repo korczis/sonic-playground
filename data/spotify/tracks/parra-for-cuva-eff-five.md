@@ -10,7 +10,7 @@ keys: {"fold": "parraforcuva|efffive"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 35}
+  - {"playlist": "the-wind-down", "n": 34}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Paspatou Remixed*, 4:51.
 Not among the liked songs.
-In The Wind Down (#35).
+In The Wind Down (#34).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "jerk|stilldreaming"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 48}
+  - {"playlist": "late-night-jazz", "n": 47}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *as day breaks*, 4:26.
 Not among the liked songs.
-In Late Night Jazz (#48).
+In Late Night Jazz (#47).
 No review yet.

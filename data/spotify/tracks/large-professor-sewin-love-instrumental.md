@@ -10,7 +10,7 @@ keys: {"fold": "largeprofessor|sewinloveinstrumental"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 17}
+  - {"playlist": "mellow-beats", "n": 16}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Main Source (Instrumentals)*, 2:58.
 Not among the liked songs.
-In Mellow Beats (#17).
+In Mellow Beats (#16).
 No review yet.

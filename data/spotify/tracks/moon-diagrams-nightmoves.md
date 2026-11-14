@@ -10,7 +10,7 @@ keys: {"fold": "moondiagrams|nightmoves"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 107}
+  - {"playlist": "brain-food", "n": 108}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Lifetime of Love*, 6:38.
 Not among the liked songs.
-In Brain Food (#107).
+In Brain Food (#108).
 No review yet.

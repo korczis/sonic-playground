@@ -10,7 +10,7 @@ keys: {"fold": "baile|knowsnoend"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 67}
+  - {"playlist": "brain-food", "n": 63}
   - {"playlist": "chill", "n": 292}
 sources: ["web-player:2026-11-14"]
 ---
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *After All This Time*, 5:36.
 Not among the liked songs.
-In Brain Food (#67); Chill (#292).
+In Brain Food (#63); Chill (#292).
 No review yet.

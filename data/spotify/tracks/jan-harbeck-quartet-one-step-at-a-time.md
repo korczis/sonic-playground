@@ -10,7 +10,7 @@ keys: {"fold": "janharbeckquartet|onestepatatime"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 42}
+  - {"playlist": "late-night-jazz", "n": 41}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Balanced*, 4:56.
 Not among the liked songs.
-In Late Night Jazz (#42).
+In Late Night Jazz (#41).
 No review yet.

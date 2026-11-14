@@ -10,7 +10,7 @@ keys: {"fold": "myrs|thunderthroughthenight"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 35}
+  - {"playlist": "night-rain", "n": 30}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Nature Rumble*, 2:12.
 Not among the liked songs.
-In Night Rain (#35).
+In Night Rain (#30).
 No review yet.

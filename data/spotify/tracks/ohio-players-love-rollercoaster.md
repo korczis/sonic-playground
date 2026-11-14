@@ -10,7 +10,7 @@ keys: {"fold": "ohioplayers|loverollercoaster"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 60}
+  - {"playlist": "funk-soul-classics", "n": 59}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Honey*, 4:50.
 Not among the liked songs.
-In Funk & Soul Classics (#60).
+In Funk & Soul Classics (#59).
 No review yet.

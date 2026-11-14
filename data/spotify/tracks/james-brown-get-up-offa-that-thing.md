@@ -10,7 +10,7 @@ keys: {"fold": "jamesbrown|getupoffathatthing"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 38}
+  - {"playlist": "funk-soul-classics", "n": 36}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Cold Sweat & Other Soul Classics: James Brown*, 4:10.
 Not among the liked songs.
-In Funk & Soul Classics (#38).
+In Funk & Soul Classics (#36).
 No review yet.

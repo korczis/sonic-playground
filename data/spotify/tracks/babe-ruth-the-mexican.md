@@ -10,7 +10,7 @@ keys: {"fold": "baberuth|themexican"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 22}
+  - {"playlist": "funk-soul-classics", "n": 21}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Grand Slam - The Best Of Babe Ruth*, 3:25.
 Not among the liked songs.
-In Funk & Soul Classics (#22).
+In Funk & Soul Classics (#21).
 No review yet.

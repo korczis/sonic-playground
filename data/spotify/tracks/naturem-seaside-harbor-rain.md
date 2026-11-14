@@ -10,7 +10,7 @@ keys: {"fold": "naturem|seasideharborrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 106}
+  - {"playlist": "night-rain", "n": 105}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Drizzling Days*, 2:40.
 Not among the liked songs.
-In Night Rain (#106).
+In Night Rain (#105).
 No review yet.

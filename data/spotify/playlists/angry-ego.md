@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "angry-ego"
 name: "Angry Ego"
 kind: "own"
-description: "Choose photo"
 expected: 2
 retrieved: 2
 read: "2026-11-14"

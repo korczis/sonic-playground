@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "sensation"
 name: "SENSATION"
 kind: "followed"
-description: "Public Playlist"
 expected: 209
 retrieved: 209
 read: "2026-11-14"

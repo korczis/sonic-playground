@@ -1,9 +1,9 @@
 ---
 schema: "spotify-library/v1"
 id: "library"
-songs: 6516
+songs: 6560
 liked: 2029
-reviewed: 471
+reviewed: 472
 sources: ["web-player:2026-11-14", "web-player:2026-11-14"]
 playlists:
   - {"kind": "liked", "ids": ["liked-songs"]}
@@ -136,7 +136,6 @@ artists:
   - {"name": "Asaf Avidan & the Mojos", "id": "2TwepUY7feaTuipStcyzLZ"}
   - {"name": "Ayọ", "id": "6OkX55UMCw4Hgc5HM4zr7K"}
   - {"name": "Basement Jaxx", "id": "4YrKBkKSVeqDamzBPWVnSJ"}
-  - {"name": "Belleruche", "id": "4N9nNkpjGuBlGWnYubQI8t"}
   - {"name": "Big Data", "id": "4S1nvNHWiZLP4rzwmULmUa"}
   - {"name": "Bloodhound Gang", "id": "6nDLku5uL3ou60kvCGZorh"}
   - {"name": "Bob Moses", "id": "6LHsnRBUYhFyt01PdKXAF5"}
@@ -274,4 +273,4 @@ top_artists:
 
 # The owner's Spotify library
 
-6516 songs (2029 liked, 471 reviewed on the site), 55 playlists, 115 saved albums and 91 followed artists. Derived by scripts/spotify_history.py; never edit by hand.
+6560 songs (2029 liked, 472 reviewed on the site), 55 playlists, 115 saved albums and 90 followed artists. Derived by scripts/spotify_history.py; never edit by hand.

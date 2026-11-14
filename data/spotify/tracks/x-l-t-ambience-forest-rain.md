@@ -10,7 +10,7 @@ keys: {"fold": "xlt|ambienceforestrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 129}
+  - {"playlist": "night-rain", "n": 130}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Ambience: Forest Rain*, 2:48.
 Not among the liked songs.
-In Night Rain (#129).
+In Night Rain (#130).
 No review yet.

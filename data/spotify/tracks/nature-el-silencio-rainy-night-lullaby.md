@@ -10,7 +10,7 @@ keys: {"fold": "nature|elsilenciorainynightlullaby"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 32}
+  - {"playlist": "night-rain", "n": 33}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rain Sounds Symphony*, 2:13.
 Not among the liked songs.
-In Night Rain (#32).
+In Night Rain (#33).
 No review yet.

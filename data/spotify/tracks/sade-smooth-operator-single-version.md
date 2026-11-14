@@ -10,7 +10,7 @@ keys: {"fold": "sade|smoothoperatorsingleversion"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "jamiroquai-radio", "n": 41}
+  - {"playlist": "jamiroquai-radio", "n": 42}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Best of Sade*, 4:18.
 Not among the liked songs.
-In Jamiroquai Radio (#41).
+In Jamiroquai Radio (#42).
 No review yet.

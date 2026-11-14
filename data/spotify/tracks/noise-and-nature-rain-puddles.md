@@ -10,7 +10,7 @@ keys: {"fold": "noiseandnature|rainpuddles"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 65}
+  - {"playlist": "night-rain", "n": 69}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rain Retreat*, 2:50.
 Not among the liked songs.
-In Night Rain (#65).
+In Night Rain (#69).
 No review yet.

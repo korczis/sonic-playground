@@ -10,7 +10,7 @@ keys: {"fold": "sairu|luster"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 23}
+  - {"playlist": "mellow-beats", "n": 24}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *LUSTER*, 4:37.
 Not among the liked songs.
-In Mellow Beats (#23).
+In Mellow Beats (#24).
 No review yet.

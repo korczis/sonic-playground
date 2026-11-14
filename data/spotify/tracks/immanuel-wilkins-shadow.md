@@ -10,7 +10,7 @@ keys: {"fold": "immanuelwilkins|shadow"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 73}
+  - {"playlist": "late-night-jazz", "n": 72}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The 7th Hand*, 4:44.
 Not among the liked songs.
-In Late Night Jazz (#73).
+In Late Night Jazz (#72).
 No review yet.

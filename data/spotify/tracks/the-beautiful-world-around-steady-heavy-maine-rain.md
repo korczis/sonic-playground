@@ -10,7 +10,7 @@ keys: {"fold": "thebeautifulworldaround|steadyheavymainerain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 145}
+  - {"playlist": "night-rain", "n": 143}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Gentle Splashy September Rain*, 3:09.
 Not among the liked songs.
-In Night Rain (#145).
+In Night Rain (#143).
 No review yet.

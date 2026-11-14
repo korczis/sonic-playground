@@ -10,7 +10,7 @@ keys: {"fold": "thejazzseekers|inasentimentalmood"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 93}
+  - {"playlist": "late-night-jazz", "n": 92}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Divine Beasts*, 6:23.
 Not among the liked songs.
-In Late Night Jazz (#93).
+In Late Night Jazz (#92).
 No review yet.

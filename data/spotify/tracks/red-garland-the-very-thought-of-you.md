@@ -10,7 +10,7 @@ keys: {"fold": "redgarland|theverythoughtofyou"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 40}
+  - {"playlist": "late-night-jazz", "n": 49}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Red Garland's Piano*, 4:10.
 Not among the liked songs.
-In Late Night Jazz (#40).
+In Late Night Jazz (#49).
 No review yet.

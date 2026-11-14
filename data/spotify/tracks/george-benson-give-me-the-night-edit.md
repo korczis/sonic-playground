@@ -10,7 +10,7 @@ keys: {"fold": "georgebenson|givemethenight"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 70}
+  - {"playlist": "funk-soul-classics", "n": 69}
   - {"playlist": "kitchen-swagger", "n": 16}
 sources: ["web-player:2026-11-14"]
 ---
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Best of George Benson*, 3:39.
 Not among the liked songs.
-In Funk & Soul Classics (#70); Kitchen Swagger (#16).
+In Funk & Soul Classics (#69); Kitchen Swagger (#16).
 No review yet.

@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "my-top-songs-of-all-the-time"
 name: "My Top Songs of All the Time"
 kind: "own"
-description: "Choose photo"
 expected: 596
 retrieved: 596
 read: "2026-11-14"

@@ -10,7 +10,7 @@ keys: {"fold": "esperos|raininthewoods"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 138}
+  - {"playlist": "night-rain", "n": 131}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Rain in the Woods*, 2:39.
 Not among the liked songs.
-In Night Rain (#138).
+In Night Rain (#131).
 No review yet.

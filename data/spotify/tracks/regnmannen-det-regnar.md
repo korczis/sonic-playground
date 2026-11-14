@@ -10,7 +10,7 @@ keys: {"fold": "regnmannen|detregnar"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 162}
+  - {"playlist": "night-rain", "n": 164}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Regnmannen*, 3:12.
 Not among the liked songs.
-In Night Rain (#162).
+In Night Rain (#164).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "croquetclub|youleftme"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 86}
+  - {"playlist": "brain-food", "n": 95}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Love Exposure*, 3:21.
 Not among the liked songs.
-In Brain Food (#86).
+In Brain Food (#95).
 No review yet.

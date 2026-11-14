@@ -10,7 +10,7 @@ keys: {"fold": "kevinhays|songforpeace"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 145}
+  - {"playlist": "late-night-jazz", "n": 141}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Bridges*, 4:30.
 Not among the liked songs.
-In Late Night Jazz (#145).
+In Late Night Jazz (#141).
 No review yet.

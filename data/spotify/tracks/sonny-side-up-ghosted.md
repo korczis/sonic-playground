@@ -10,7 +10,7 @@ keys: {"fold": "sonnysideup|ghosted"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 185}
+  - {"playlist": "brain-food", "n": 186}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Ghosted*, 2:37.
 Not among the liked songs.
-In Brain Food (#185).
+In Brain Food (#186).
 No review yet.

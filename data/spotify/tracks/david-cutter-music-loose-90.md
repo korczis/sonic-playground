@@ -10,7 +10,7 @@ keys: {"fold": "davidcuttermusic|loose90"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 20}
+  - {"playlist": "mellow-beats", "n": 21}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Loose 90*, 2:12.
 Not among the liked songs.
-In Mellow Beats (#20).
+In Mellow Beats (#21).
 No review yet.

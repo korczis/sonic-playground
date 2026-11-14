@@ -10,7 +10,7 @@ keys: {"fold": "billwithers|grandmashands"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 32}
+  - {"playlist": "funk-soul-classics", "n": 28}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Just As I Am*, 2:02.
 Not among the liked songs.
-In Funk & Soul Classics (#32).
+In Funk & Soul Classics (#28).
 No review yet.

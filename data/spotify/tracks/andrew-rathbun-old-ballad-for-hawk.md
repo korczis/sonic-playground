@@ -10,7 +10,7 @@ keys: {"fold": "andrewrathbun|oldballadforhawk"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 130}
+  - {"playlist": "late-night-jazz", "n": 128}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Semantics*, 8:21.
 Not among the liked songs.
-In Late Night Jazz (#130).
+In Late Night Jazz (#128).
 No review yet.

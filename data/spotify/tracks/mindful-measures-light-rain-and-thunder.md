@@ -10,7 +10,7 @@ keys: {"fold": "mindfulmeasures|lightrainandthunder"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 151}
+  - {"playlist": "night-rain", "n": 144}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Resting (Rain and Rivers)*, 3:08.
 Not among the liked songs.
-In Night Rain (#151).
+In Night Rain (#144).
 No review yet.

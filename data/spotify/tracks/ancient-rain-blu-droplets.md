@@ -10,7 +10,7 @@ keys: {"fold": "ancientrain|bludroplets"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 67}
+  - {"playlist": "night-rain", "n": 70}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Blu Droplets*, 3:34.
 Not among the liked songs.
-In Night Rain (#67).
+In Night Rain (#70).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "daithi|nobodynewaroundyou"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 49}
+  - {"playlist": "the-wind-down", "n": 50}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *L.O.S.S.*, 4:27.
 Not among the liked songs.
-In The Wind Down (#49).
+In The Wind Down (#50).
 No review yet.

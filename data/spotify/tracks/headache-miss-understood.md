@@ -10,7 +10,7 @@ keys: {"fold": "headache|missunderstood"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 26}
+  - {"playlist": "the-wind-down", "n": 28}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Miss Understood*, 3:39.
 Not among the liked songs.
-In The Wind Down (#26).
+In The Wind Down (#28).
 No review yet.

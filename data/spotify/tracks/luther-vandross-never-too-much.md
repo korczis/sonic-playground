@@ -11,6 +11,7 @@ status: "missing"
 liked: false
 playlists:
   - {"playlist": "back-to-life-back-to-reality", "n": 16}
+  - {"playlist": "kitchen-swagger", "n": 52}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Never Too Much*, 3:50.
 Not among the liked songs.
-In Back to life, Back to reality (#16).
+In Back to life, Back to reality (#16); Kitchen Swagger (#52).
 No review yet.

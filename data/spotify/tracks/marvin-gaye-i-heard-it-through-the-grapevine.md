@@ -10,7 +10,7 @@ keys: {"fold": "marvingaye|ihearditthroughthegrapevine"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 54}
+  - {"playlist": "funk-soul-classics", "n": 52}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *In The Groove*, 3:14.
 Not among the liked songs.
-In Funk & Soul Classics (#54).
+In Funk & Soul Classics (#52).
 No review yet.

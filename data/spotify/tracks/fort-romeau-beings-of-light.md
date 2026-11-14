@@ -10,7 +10,7 @@ keys: {"fold": "fortromeau|beingsoflight"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 161}
+  - {"playlist": "brain-food", "n": 146}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Beings of Light*, 6:12.
 Not among the liked songs.
-In Brain Food (#161).
+In Brain Food (#146).
 No review yet.

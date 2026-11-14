@@ -10,7 +10,7 @@ keys: {"fold": "gwenmccrae|keepthefireburning"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 51}
+  - {"playlist": "funk-soul-classics", "n": 57}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *On My Way*, 5:44.
 Not among the liked songs.
-In Funk & Soul Classics (#51).
+In Funk & Soul Classics (#57).
 No review yet.

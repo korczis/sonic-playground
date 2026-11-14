@@ -10,7 +10,7 @@ keys: {"fold": "stanforebee|cargorhodes"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 44}
+  - {"playlist": "mellow-beats", "n": 46}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Orange*, 2:29.
 Not among the liked songs.
-In Mellow Beats (#44).
+In Mellow Beats (#46).
 No review yet.

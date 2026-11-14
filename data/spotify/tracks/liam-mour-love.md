@@ -10,7 +10,7 @@ keys: {"fold": "liammour|love"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 173}
+  - {"playlist": "brain-food", "n": 166}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Love*, 4:38.
 Not among the liked songs.
-In Brain Food (#173).
+In Brain Food (#166).
 No review yet.

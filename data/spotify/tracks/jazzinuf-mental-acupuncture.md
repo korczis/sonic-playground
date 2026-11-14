@@ -10,7 +10,7 @@ keys: {"fold": "jazzinuf|mentalacupuncture"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 16}
+  - {"playlist": "mellow-beats", "n": 14}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Mental Acupuncture*, 2:32.
 Not among the liked songs.
-In Mellow Beats (#16).
+In Mellow Beats (#14).
 No review yet.

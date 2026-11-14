@@ -10,7 +10,7 @@ keys: {"fold": "nihils|cantgive"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "rachel-k-collier-mix", "n": 47}
+  - {"playlist": "rachel-k-collier-mix", "n": 48}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *AM/PM, Pt. 1*, 3:47.
 Not among the liked songs.
-In Rachel K Collier Mix (#47).
+In Rachel K Collier Mix (#48).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "haai|headabovetheparakeets"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 117}
+  - {"playlist": "brain-food", "n": 116}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Put Your Head Above The Parakeets*, 7:16.
 Not among the liked songs.
-In Brain Food (#117).
+In Brain Food (#116).
 No review yet.

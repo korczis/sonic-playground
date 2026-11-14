@@ -10,7 +10,7 @@ keys: {"fold": "jackieshane|comindown"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 57}
+  - {"playlist": "funk-soul-classics", "n": 54}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *In My Tenement / Comin' Down*, 2:37.
 Not among the liked songs.
-In Funk & Soul Classics (#57).
+In Funk & Soul Classics (#54).
 No review yet.

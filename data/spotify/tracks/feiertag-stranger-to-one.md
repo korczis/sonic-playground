@@ -10,7 +10,7 @@ keys: {"fold": "feiertag|strangertoone"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 153}
+  - {"playlist": "brain-food", "n": 148}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Time to Recover*, 2:16.
 Not among the liked songs.
-In Brain Food (#153).
+In Brain Food (#148).
 No review yet.

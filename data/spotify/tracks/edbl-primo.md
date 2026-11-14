@@ -10,7 +10,7 @@ keys: {"fold": "edbl|primo"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 41}
+  - {"playlist": "mellow-beats", "n": 39}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Primo*, 2:42.
 Not among the liked songs.
-In Mellow Beats (#41).
+In Mellow Beats (#39).
 No review yet.

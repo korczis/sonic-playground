@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "love-me-love-me-say-that-you-love-me"
 name: "LOVE ME LOVE ME!! SAY THAT YOU LOVE ME!!"
 kind: "followed"
-description: "Public Playlist"
 expected: 66
 retrieved: 66
 read: "2026-11-14"

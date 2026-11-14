@@ -10,7 +10,7 @@ keys: {"fold": "waltersmithiii|officepartymusic"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 79}
+  - {"playlist": "late-night-jazz", "n": 78}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *three of us are from Houston and Reuben is not*, 4:22.
 Not among the liked songs.
-In Late Night Jazz (#79).
+In Late Night Jazz (#78).
 No review yet.

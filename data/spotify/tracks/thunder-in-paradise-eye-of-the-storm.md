@@ -10,7 +10,7 @@ keys: {"fold": "thunderinparadise|eyeofthestorm"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 70}
+  - {"playlist": "night-rain", "n": 56}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Episode One*, 3:46.
 Not among the liked songs.
-In Night Rain (#70).
+In Night Rain (#56).
 No review yet.

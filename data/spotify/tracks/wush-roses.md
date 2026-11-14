@@ -10,7 +10,7 @@ keys: {"fold": "wush|roses"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 70}
+  - {"playlist": "mellow-beats", "n": 69}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *For Her*, 1:35.
 Not among the liked songs.
-In Mellow Beats (#70).
+In Mellow Beats (#69).
 No review yet.

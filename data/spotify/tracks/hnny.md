@@ -10,7 +10,7 @@ keys: {"fold": "hnny|"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 128}
+  - {"playlist": "brain-food", "n": 127}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Close*, 2:19.
 Not among the liked songs.
-In Brain Food (#128).
+In Brain Food (#127).
 No review yet.

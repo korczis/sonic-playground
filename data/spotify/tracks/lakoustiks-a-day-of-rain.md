@@ -10,7 +10,7 @@ keys: {"fold": "lakoustiks|adayofrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 157}
+  - {"playlist": "night-rain", "n": 160}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *A Day of Rain*, 2:19.
 Not among the liked songs.
-In Night Rain (#157).
+In Night Rain (#160).
 No review yet.

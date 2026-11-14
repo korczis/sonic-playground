@@ -10,7 +10,7 @@ keys: {"fold": "ameba|tangerinehues"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 64}
+  - {"playlist": "mellow-beats", "n": 73}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Tangerine Hues*, 3:04.
 Not among the liked songs.
-In Mellow Beats (#64).
+In Mellow Beats (#73).
 No review yet.

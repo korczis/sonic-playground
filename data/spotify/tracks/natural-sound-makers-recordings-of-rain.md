@@ -10,7 +10,7 @@ keys: {"fold": "naturalsoundmakers|recordingsofrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 125}
+  - {"playlist": "night-rain", "n": 121}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Recordings of Rain*, 2:13.
 Not among the liked songs.
-In Night Rain (#125).
+In Night Rain (#121).
 No review yet.

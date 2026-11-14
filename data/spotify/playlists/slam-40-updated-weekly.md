@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "slam-40-updated-weekly"
 name: "SLAM! 40 (updated weekly)"
 kind: "followed"
-description: "Public Playlist"
 expected: 40
 retrieved: 40
 read: "2026-11-14"

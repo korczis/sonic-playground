@@ -10,7 +10,7 @@ keys: {"fold": "seascapers|japanesegardenrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 34}
+  - {"playlist": "night-rain", "n": 35}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Nihon Garden Rain*, 2:45.
 Not among the liked songs.
-In Night Rain (#34).
+In Night Rain (#35).
 No review yet.

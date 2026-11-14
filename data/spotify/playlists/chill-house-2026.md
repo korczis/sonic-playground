@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "chill-house-2026"
 name: "Chill House 2026"
 kind: "followed"
-description: "Public Playlist"
 expected: 156
 retrieved: 156
 read: "2026-11-14"

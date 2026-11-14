@@ -10,7 +10,7 @@ keys: {"fold": "christiancohle|drownmeslow"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 28}
+  - {"playlist": "the-wind-down", "n": 23}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Holy Trouble*, 4:31.
 Not among the liked songs.
-In The Wind Down (#28).
+In The Wind Down (#23).
 No review yet.

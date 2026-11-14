@@ -10,7 +10,7 @@ keys: {"fold": "rainismylife|raininginthecourtyard"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 130}
+  - {"playlist": "night-rain", "n": 127}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *I wish it was raining everyday*, 2:36.
 Not among the liked songs.
-In Night Rain (#130).
+In Night Rain (#127).
 No review yet.

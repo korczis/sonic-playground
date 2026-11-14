@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "slam-fm-top-40-updated-weekly-may-7th"
 name: "SLAM!FM Top 40 (updated weekly: May 7th)"
 kind: "followed"
-description: "Public Playlist"
 expected: 40
 retrieved: 40
 read: "2026-11-14"

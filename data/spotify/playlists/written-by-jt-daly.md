@@ -4,7 +4,6 @@ id: "written-by-jt-daly"
 name: "Written By JT Daly"
 kind: "followed"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 147
 retrieved: 147
 read: "2026-11-14"

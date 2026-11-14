@@ -10,7 +10,7 @@ keys: {"fold": "pablonouvelle|curiosity"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 27}
+  - {"playlist": "the-wind-down", "n": 31}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Curiosity*, 2:46.
 Not among the liked songs.
-In The Wind Down (#27).
+In The Wind Down (#31).
 No review yet.

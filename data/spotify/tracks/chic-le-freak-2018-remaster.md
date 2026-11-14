@@ -10,7 +10,7 @@ keys: {"fold": "chic|lefreak2018"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 79}
+  - {"playlist": "funk-soul-classics", "n": 80}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Chic Organization 1977-1979 (2018 Remaster)*, 5:31.
 Not among the liked songs.
-In Funk & Soul Classics (#79).
+In Funk & Soul Classics (#80).
 No review yet.

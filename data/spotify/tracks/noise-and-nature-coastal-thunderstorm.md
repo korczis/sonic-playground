@@ -10,7 +10,7 @@ keys: {"fold": "noiseandnature|coastalthunderstorm"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 99}
+  - {"playlist": "night-rain", "n": 88}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Tranquil Rain Sounds*, 2:32.
 Not among the liked songs.
-In Night Rain (#99).
+In Night Rain (#88).
 No review yet.

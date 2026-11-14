@@ -10,7 +10,7 @@ keys: {"fold": "laketurner|1990"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 47}
+  - {"playlist": "the-wind-down", "n": 35}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *1990*, 3:30.
 Not among the liked songs.
-In The Wind Down (#47).
+In The Wind Down (#35).
 No review yet.

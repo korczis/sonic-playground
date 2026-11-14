@@ -10,7 +10,7 @@ keys: {"fold": "vegyn|britnaeysnewbaby125bpm"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 38}
+  - {"playlist": "mellow-beats", "n": 44}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Don't Follow Me Because I'm Lost Too!!*, 2:52.
 Not among the liked songs.
-In Mellow Beats (#38).
+In Mellow Beats (#44).
 No review yet.

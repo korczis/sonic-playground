@@ -10,7 +10,7 @@ keys: {"fold": "paolofresu|selim"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 43}
+  - {"playlist": "late-night-jazz", "n": 42}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Selim / Orange*, 3:16.
 Not among the liked songs.
-In Late Night Jazz (#43).
+In Late Night Jazz (#42).
 No review yet.

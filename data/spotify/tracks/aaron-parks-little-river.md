@@ -10,7 +10,7 @@ keys: {"fold": "aaronparks|littleriver"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 41}
+  - {"playlist": "late-night-jazz", "n": 39}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Little River*, 6:51.
 Not among the liked songs.
-In Late Night Jazz (#41).
+In Late Night Jazz (#39).
 No review yet.

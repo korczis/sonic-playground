@@ -10,7 +10,7 @@ keys: {"fold": "clark|blowtorchthimble"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 170}
+  - {"playlist": "brain-food", "n": 159}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Blowtorch Thimble*, 3:30.
 Not among the liked songs.
-In Brain Food (#170).
+In Brain Food (#159).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "northerlynature|rainontheautumnleaves"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 94}
+  - {"playlist": "night-rain", "n": 96}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Natural Serenity*, 3:29.
 Not among the liked songs.
-In Night Rain (#94).
+In Night Rain (#96).
 No review yet.

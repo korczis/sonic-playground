@@ -10,7 +10,7 @@ keys: {"fold": "lunacy|thunderbloom"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 29}
+  - {"playlist": "night-rain", "n": 28}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Thunder Bloom*, 2:22.
 Not among the liked songs.
-In Night Rain (#29).
+In Night Rain (#28).
 No review yet.

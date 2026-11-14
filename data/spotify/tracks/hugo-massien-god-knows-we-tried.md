@@ -10,7 +10,7 @@ keys: {"fold": "hugomassien|godknowswetried"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 93}
+  - {"playlist": "brain-food", "n": 92}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Metamorphosis*, 6:13.
 Not among the liked songs.
-In Brain Food (#93).
+In Brain Food (#92).
 No review yet.

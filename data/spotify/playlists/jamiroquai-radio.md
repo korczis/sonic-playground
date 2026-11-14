@@ -4,7 +4,6 @@ id: "jamiroquai-radio"
 name: "Jamiroquai Radio"
 kind: "made-for-you"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 50
 retrieved: 50
 read: "2026-11-14"
@@ -37,27 +36,27 @@ tracks:
   - {"n": 26, "track": "basement-jaxx-red-alert-jaxx-radio-mix"}
   - {"n": 27, "track": "calvin-harris-acceptable-in-the-80-s"}
   - {"n": 28, "track": "cassius-cassius-1999-radio-edit"}
-  - {"n": 29, "track": "jungle-back-on-74"}
-  - {"n": 30, "track": "jamiroquai-seven-days-in-sunny-june"}
+  - {"n": 29, "track": "jamiroquai-seven-days-in-sunny-june"}
+  - {"n": 30, "track": "jungle-back-on-74"}
   - {"n": 31, "track": "us3-cantaloop-flip-fantasia"}
   - {"n": 32, "track": "afro-medusa-pasilda"}
-  - {"n": 33, "track": "chic-le-freak-2018-remaster-7kszjz"}
-  - {"n": 34, "track": "michael-gray-the-weekend-radio-edit"}
+  - {"n": 33, "track": "spiller-groovejet-if-this-ain-t-love"}
+  - {"n": 34, "track": "chic-le-freak-2018-remaster-7kszjz"}
   - {"n": 35, "track": "jamiroquai-love-foolosophy-radio-edit"}
   - {"n": 36, "track": "fatboy-slim-gangster-trippin"}
-  - {"n": 37, "track": "gorillaz-superfast-jellyfish-feat-gruff-rhys-and-de-la-soul-6gmemf"}
-  - {"n": 38, "track": "crystal-waters-gypsy-woman-she-s-homeless-la-da-dee-la-da-da-basement-boy-strip-to-the-bon"}
-  - {"n": 39, "track": "kc-the-sunshine-band-that-s-the-way-i-like-it"}
+  - {"n": 37, "track": "michael-gray-the-weekend-radio-edit"}
+  - {"n": 38, "track": "gorillaz-superfast-jellyfish-feat-gruff-rhys-and-de-la-soul-6gmemf"}
+  - {"n": 39, "track": "crystal-waters-gypsy-woman-she-s-homeless-la-da-dee-la-da-da-basement-boy-strip-to-the-bon"}
   - {"n": 40, "track": "jamiroquai-space-cowboy"}
-  - {"n": 41, "track": "sade-smooth-operator-single-version"}
-  - {"n": 42, "track": "spiller-groovejet-if-this-ain-t-love"}
+  - {"n": 41, "track": "kc-the-sunshine-band-that-s-the-way-i-like-it"}
+  - {"n": 42, "track": "sade-smooth-operator-single-version"}
   - {"n": 43, "track": "talking-heads-this-must-be-the-place-naive-melody-2005-remaster"}
   - {"n": 44, "track": "basement-jaxx-do-your-thing"}
   - {"n": 45, "track": "chaka-khan-like-sugar"}
   - {"n": 46, "track": "boney-m-sunny"}
   - {"n": 47, "track": "fatboy-slim-wonderful-night"}
-  - {"n": 48, "track": "gorillaz-dare-feat-shaun-ryder-roses-gabor"}
-  - {"n": 49, "track": "us3-tukka-yoot-s-riddim"}
+  - {"n": 48, "track": "us3-tukka-yoot-s-riddim"}
+  - {"n": 49, "track": "gorillaz-dare-feat-shaun-ryder-roses-gabor"}
   - {"n": 50, "track": "breakbot-baby-i-m-yours"}
 ---
 

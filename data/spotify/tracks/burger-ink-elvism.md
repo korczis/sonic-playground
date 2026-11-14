@@ -10,7 +10,7 @@ keys: {"fold": "burgerink|elvism"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 80}
+  - {"playlist": "brain-food", "n": 72}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Las Vegas*, 5:14.
 Not among the liked songs.
-In Brain Food (#80).
+In Brain Food (#72).
 No review yet.

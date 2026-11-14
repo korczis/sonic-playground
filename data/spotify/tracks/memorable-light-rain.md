@@ -10,7 +10,7 @@ keys: {"fold": "memorable|lightrain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 17}
+  - {"playlist": "night-rain", "n": 16}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Light Rain*, 3:40.
 Not among the liked songs.
-In Night Rain (#17).
+In Night Rain (#16).
 No review yet.

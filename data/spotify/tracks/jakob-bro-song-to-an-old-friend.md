@@ -10,7 +10,7 @@ keys: {"fold": "jakobbro|songtoanoldfriend"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 35}
+  - {"playlist": "late-night-jazz", "n": 31}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Song To An Old Friend*, 6:09.
 Not among the liked songs.
-In Late Night Jazz (#35).
+In Late Night Jazz (#31).
 No review yet.

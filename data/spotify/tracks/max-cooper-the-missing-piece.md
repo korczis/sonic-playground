@@ -10,7 +10,7 @@ keys: {"fold": "maxcooper|themissingpiece"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 125}
+  - {"playlist": "brain-food", "n": 124}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Missing Piece*, 4:16.
 Not among the liked songs.
-In Brain Food (#125).
+In Brain Food (#124).
 No review yet.

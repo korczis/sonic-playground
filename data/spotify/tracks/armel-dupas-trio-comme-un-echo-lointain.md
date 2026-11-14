@@ -10,7 +10,7 @@ keys: {"fold": "armeldupastrio|commeunecholointain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 58}
+  - {"playlist": "late-night-jazz", "n": 57}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Comme un écho lointain*, 4:16.
 Not among the liked songs.
-In Late Night Jazz (#58).
+In Late Night Jazz (#57).
 No review yet.

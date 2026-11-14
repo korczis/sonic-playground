@@ -10,7 +10,7 @@ keys: {"fold": "hnny|by"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 32}
+  - {"playlist": "the-wind-down", "n": 26}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Hosoi*, 2:46.
 Not among the liked songs.
-In The Wind Down (#32).
+In The Wind Down (#26).
 No review yet.

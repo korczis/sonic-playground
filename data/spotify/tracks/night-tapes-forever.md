@@ -10,7 +10,7 @@ keys: {"fold": "nighttapes|forever"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 46}
+  - {"playlist": "the-wind-down", "n": 47}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Forever*, 4:09.
 Not among the liked songs.
-In The Wind Down (#46).
+In The Wind Down (#47).
 No review yet.

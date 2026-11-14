@@ -10,7 +10,7 @@ keys: {"fold": "michelbisceglia|secondo"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 128}
+  - {"playlist": "late-night-jazz", "n": 127}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Secondo*, 6:09.
 Not among the liked songs.
-In Late Night Jazz (#128).
+In Late Night Jazz (#127).
 No review yet.

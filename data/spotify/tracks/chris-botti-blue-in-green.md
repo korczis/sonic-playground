@@ -10,7 +10,7 @@ keys: {"fold": "chrisbotti|blueingreen"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 66}
+  - {"playlist": "late-night-jazz", "n": 59}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Vol. 1*, 3:25.
 Not among the liked songs.
-In Late Night Jazz (#66).
+In Late Night Jazz (#59).
 No review yet.

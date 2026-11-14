@@ -10,7 +10,7 @@ keys: {"fold": "jamesbrown|peoplegetupanddriveyourfunkysoulremix"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 59}
+  - {"playlist": "funk-soul-classics", "n": 58}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Motherlode*, 9:04.
 Not among the liked songs.
-In Funk & Soul Classics (#59).
+In Funk & Soul Classics (#58).
 No review yet.

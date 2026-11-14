@@ -10,7 +10,7 @@ keys: {"fold": "curtismayfield|moveonup"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 75}
+  - {"playlist": "funk-soul-classics", "n": 79}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Curtis (Expanded Edition)*, 8:55.
 Not among the liked songs.
-In Funk & Soul Classics (#75).
+In Funk & Soul Classics (#79).
 No review yet.

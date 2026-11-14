@@ -10,7 +10,7 @@ keys: {"fold": "engelwood|goodevening"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 48}
+  - {"playlist": "mellow-beats", "n": 41}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Boardwalk Bumps 3*, 2:01.
 Not among the liked songs.
-In Mellow Beats (#48).
+In Mellow Beats (#41).
 No review yet.

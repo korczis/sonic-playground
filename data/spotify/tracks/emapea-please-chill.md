@@ -10,7 +10,7 @@ keys: {"fold": "emapea|pleasechill"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 13}
+  - {"playlist": "mellow-beats", "n": 15}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Zoning Out Vol. 2*, 2:05.
 Not among the liked songs.
-In Mellow Beats (#13).
+In Mellow Beats (#15).
 No review yet.

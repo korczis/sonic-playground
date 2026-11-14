@@ -10,7 +10,7 @@ keys: {"fold": "maceoandthemacks|crossthetrackswebettergoback"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 19}
+  - {"playlist": "funk-soul-classics", "n": 26}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Funky Good Time: The Anthology*, 3:18.
 Not among the liked songs.
-In Funk & Soul Classics (#19).
+In Funk & Soul Classics (#26).
 No review yet.

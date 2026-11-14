@@ -10,7 +10,7 @@ keys: {"fold": "anna|letyouin"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 127}
+  - {"playlist": "brain-food", "n": 126}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Intentions*, 5:56.
 Not among the liked songs.
-In Brain Food (#127).
+In Brain Food (#126).
 No review yet.

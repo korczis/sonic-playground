@@ -10,7 +10,7 @@ keys: {"fold": "electricality|wetweather"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 116}
+  - {"playlist": "night-rain", "n": 117}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Live In Thunder*, 2:36.
 Not among the liked songs.
-In Night Rain (#116).
+In Night Rain (#117).
 No review yet.

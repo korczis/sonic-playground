@@ -10,7 +10,7 @@ keys: {"fold": "tordgustavsentrio|stream"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 56}
+  - {"playlist": "late-night-jazz", "n": 63}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Stream*, 7:03.
 Not among the liked songs.
-In Late Night Jazz (#56).
+In Late Night Jazz (#63).
 No review yet.

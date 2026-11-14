@@ -10,7 +10,7 @@ keys: {"fold": "odedtzur|isabela"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 32}
+  - {"playlist": "late-night-jazz", "n": 34}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Isabela*, 10:50.
 Not among the liked songs.
-In Late Night Jazz (#32).
+In Late Night Jazz (#34).
 No review yet.

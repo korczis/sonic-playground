@@ -10,7 +10,7 @@ keys: {"fold": "hansulrik|anightingalesanginberkeleysquare"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 89}
+  - {"playlist": "late-night-jazz", "n": 88}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *A Nightingale Sang In Berkeley Square*, 6:20.
 Not among the liked songs.
-In Late Night Jazz (#89).
+In Late Night Jazz (#88).
 No review yet.

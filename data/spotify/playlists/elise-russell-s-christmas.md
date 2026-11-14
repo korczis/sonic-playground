@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "elise-russell-s-christmas"
 name: "Elise & Russell's Christmas"
 kind: "followed"
-description: "Public Playlist"
 expected: 44
 retrieved: 44
 read: "2026-11-14"

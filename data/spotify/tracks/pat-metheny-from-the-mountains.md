@@ -10,7 +10,7 @@ keys: {"fold": "patmetheny|fromthemountains"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 26}
+  - {"playlist": "late-night-jazz", "n": 27}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Dream Box*, 8:20.
 Not among the liked songs.
-In Late Night Jazz (#26).
+In Late Night Jazz (#27).
 No review yet.

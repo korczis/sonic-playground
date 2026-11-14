@@ -10,7 +10,7 @@ keys: {"fold": "brockberrigan|secret"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 8}
+  - {"playlist": "mellow-beats", "n": 11}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Cadillac Mountain*, 1:43.
 Not among the liked songs.
-In Mellow Beats (#8).
+In Mellow Beats (#11).
 No review yet.

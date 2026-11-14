@@ -10,7 +10,7 @@ keys: {"fold": "instantrecuperate|dropletdrift"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 63}
+  - {"playlist": "night-rain", "n": 58}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Droplet Drift*, 3:08.
 Not among the liked songs.
-In Night Rain (#63).
+In Night Rain (#58).
 No review yet.

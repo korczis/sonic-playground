@@ -10,7 +10,7 @@ keys: {"fold": "maxcooper|theshapeofmemory"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 187}
+  - {"playlist": "brain-food", "n": 196}
   - {"playlist": "the-wind-down", "n": 5}
 sources: ["web-player:2026-11-14"]
 ---
@@ -19,5 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Feeling Is Structure*, 4:38.
 Not among the liked songs.
-In Brain Food (#187); The Wind Down (#5).
+In Brain Food (#196); The Wind Down (#5).
 No review yet.

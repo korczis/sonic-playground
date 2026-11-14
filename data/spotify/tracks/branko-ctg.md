@@ -10,7 +10,7 @@ keys: {"fold": "branko|ctg"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 41}
+  - {"playlist": "brain-food", "n": 43}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *CTG*, 3:18.
 Not among the liked songs.
-In Brain Food (#41).
+In Brain Food (#43).
 No review yet.

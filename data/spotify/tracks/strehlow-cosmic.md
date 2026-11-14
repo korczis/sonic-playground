@@ -10,7 +10,7 @@ keys: {"fold": "strehlow|cosmic"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 74}
+  - {"playlist": "mellow-beats", "n": 70}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Cosmic*, 1:34.
 Not among the liked songs.
-In Mellow Beats (#74).
+In Mellow Beats (#70).
 No review yet.

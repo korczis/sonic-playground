@@ -10,7 +10,7 @@ keys: {"fold": "chipwickham|slowdownlookaround"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 11}
+  - {"playlist": "late-night-jazz", "n": 12}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Love & Life*, 6:59.
 Not among the liked songs.
-In Late Night Jazz (#11).
+In Late Night Jazz (#12).
 No review yet.

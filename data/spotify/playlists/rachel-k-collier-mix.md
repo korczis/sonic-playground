@@ -4,7 +4,6 @@ id: "rachel-k-collier-mix"
 name: "Rachel K Collier Mix"
 kind: "made-for-you"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 50
 retrieved: 50
 read: "2026-11-14"
@@ -47,17 +46,17 @@ tracks:
   - {"n": 36, "track": "jadu-heart-the-cure"}
   - {"n": 37, "track": "astrocolor-push-too-hard"}
   - {"n": 38, "track": "maxamillion-power-of-my-melodies"}
-  - {"n": 39, "track": "k-flay-blood-in-the-cut-aire-atlantica-remix-52bkbl"}
-  - {"n": 40, "track": "lahra-where-i-ll-go"}
-  - {"n": 41, "track": "splize-bring-it-back"}
-  - {"n": 42, "track": "julietta-beach-break-knks-remix"}
+  - {"n": 39, "track": "splize-bring-it-back"}
+  - {"n": 40, "track": "julietta-beach-break-knks-remix"}
+  - {"n": 41, "track": "lahra-where-i-ll-go"}
+  - {"n": 42, "track": "k-flay-blood-in-the-cut-aire-atlantica-remix-52bkbl"}
   - {"n": 43, "track": "ixik-into-you"}
   - {"n": 44, "track": "nombe-can-t-catch-me-2-0"}
   - {"n": 45, "track": "erez-modern-dream"}
   - {"n": 46, "track": "memba-strider"}
-  - {"n": 47, "track": "nihils-can-t-give"}
-  - {"n": 48, "track": "paper-idol-feel-real-pretty"}
-  - {"n": 49, "track": "boogrov-move-your-mind"}
+  - {"n": 47, "track": "boogrov-move-your-mind"}
+  - {"n": 48, "track": "nihils-can-t-give"}
+  - {"n": 49, "track": "paper-idol-feel-real-pretty"}
   - {"n": 50, "track": "lorine-chia-the-zone-leave-me-alone"}
 ---
 

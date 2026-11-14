@@ -10,7 +10,7 @@ keys: {"fold": "artschoolgirlfriend|thepeaks"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 115}
+  - {"playlist": "brain-food", "n": 104}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Peaks*, 4:26.
 Not among the liked songs.
-In Brain Food (#115).
+In Brain Food (#104).
 No review yet.

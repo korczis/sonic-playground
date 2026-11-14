@@ -10,7 +10,7 @@ keys: {"fold": "joewebb|collblanc"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 21}
+  - {"playlist": "late-night-jazz", "n": 18}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Collblanc*, 6:03.
 Not among the liked songs.
-In Late Night Jazz (#21).
+In Late Night Jazz (#18).
 No review yet.

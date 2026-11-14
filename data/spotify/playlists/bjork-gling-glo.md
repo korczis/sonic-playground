@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "bjork-gling-glo"
 name: "Björk – Gling-Glo"
 kind: "followed"
-description: "Public Playlist"
 expected: 17
 retrieved: 17
 read: "2026-11-14"

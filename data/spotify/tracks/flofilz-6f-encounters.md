@@ -10,7 +10,7 @@ keys: {"fold": "flofilz|6fencounters"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "mellow-beats", "n": 53}
+  - {"playlist": "mellow-beats", "n": 49}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *6F Encounters*, 2:24.
 Not among the liked songs.
-In Mellow Beats (#53).
+In Mellow Beats (#49).
 No review yet.

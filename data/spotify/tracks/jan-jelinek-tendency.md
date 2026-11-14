@@ -10,7 +10,7 @@ keys: {"fold": "janjelinek|tendency"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 104}
+  - {"playlist": "brain-food", "n": 105}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Loop-Finding-Jazz-Records*, 7:21.
 Not among the liked songs.
-In Brain Food (#104).
+In Brain Food (#105).
 No review yet.

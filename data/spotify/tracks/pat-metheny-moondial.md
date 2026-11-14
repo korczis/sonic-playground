@@ -10,7 +10,7 @@ keys: {"fold": "patmetheny|moondial"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 17}
+  - {"playlist": "late-night-jazz", "n": 16}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *MoonDial*, 6:23.
 Not among the liked songs.
-In Late Night Jazz (#17).
+In Late Night Jazz (#16).
 No review yet.

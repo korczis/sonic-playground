@@ -10,7 +10,7 @@ keys: {"fold": "catchingflies|opals"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "the-wind-down", "n": 36}
+  - {"playlist": "the-wind-down", "n": 44}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Opals*, 2:24.
 Not among the liked songs.
-In The Wind Down (#36).
+In The Wind Down (#44).
 No review yet.

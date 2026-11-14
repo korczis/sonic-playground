@@ -10,7 +10,7 @@ keys: {"fold": "serenesurroundings|grayday"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 53}
+  - {"playlist": "night-rain", "n": 52}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Ethereal Showers*, 6:21.
 Not among the liked songs.
-In Night Rain (#53).
+In Night Rain (#52).
 No review yet.

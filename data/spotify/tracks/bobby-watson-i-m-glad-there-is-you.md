@@ -10,7 +10,7 @@ keys: {"fold": "bobbywatson|imgladthereisyou"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 102}
+  - {"playlist": "late-night-jazz", "n": 103}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Back Home in Kansas City*, 7:15.
 Not among the liked songs.
-In Late Night Jazz (#102).
+In Late Night Jazz (#103).
 No review yet.

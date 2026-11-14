@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "sonic-playground"
 name: "Sonic Playground"
 kind: "own"
-description: "Choose photo"
 expected: 25
 retrieved: 25
 read: "2026-11-14"

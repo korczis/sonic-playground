@@ -10,7 +10,7 @@ keys: {"fold": "portraitsinjazz|balladforbernt"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 108}
+  - {"playlist": "late-night-jazz", "n": 109}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Ballad For Bernt*, 5:57.
 Not among the liked songs.
-In Late Night Jazz (#108).
+In Late Night Jazz (#109).
 No review yet.

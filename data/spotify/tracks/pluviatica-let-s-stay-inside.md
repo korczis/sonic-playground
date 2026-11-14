@@ -10,7 +10,7 @@ keys: {"fold": "pluviatica|letsstayinside"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 144}
+  - {"playlist": "night-rain", "n": 148}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Soft Rain & Thunder*, 2:12.
 Not among the liked songs.
-In Night Rain (#144).
+In Night Rain (#148).
 No review yet.

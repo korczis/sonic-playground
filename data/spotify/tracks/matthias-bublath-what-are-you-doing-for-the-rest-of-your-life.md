@@ -10,7 +10,7 @@ keys: {"fold": "matthiasbublath|whatareyoudoingfortherestofyourlife"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 135}
+  - {"playlist": "late-night-jazz", "n": 130}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Orange Sea*, 6:09.
 Not among the liked songs.
-In Late Night Jazz (#135).
+In Late Night Jazz (#130).
 No review yet.

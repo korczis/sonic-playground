@@ -3,7 +3,6 @@ schema: "spotify-playlist/v1"
 id: "coding-music"
 name: "Coding Music 💻"
 kind: "followed"
-description: "Public Playlist"
 expected: 160
 retrieved: 160
 read: "2026-11-14"

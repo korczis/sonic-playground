@@ -10,7 +10,7 @@ keys: {"fold": "lyncollins|thinkaboutit"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 48}
+  - {"playlist": "funk-soul-classics", "n": 47}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Think (About It)*, 3:24.
 Not among the liked songs.
-In Funk & Soul Classics (#48).
+In Funk & Soul Classics (#47).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "jacanapeople|fara"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 61}
+  - {"playlist": "brain-food", "n": 71}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Fara*, 3:48.
 Not among the liked songs.
-In Brain Food (#61).
+In Brain Food (#71).
 No review yet.

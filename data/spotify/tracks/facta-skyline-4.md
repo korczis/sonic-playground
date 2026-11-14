@@ -10,7 +10,7 @@ keys: {"fold": "facta|skyline4"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 147}
+  - {"playlist": "brain-food", "n": 149}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *GULP*, 4:51.
 Not among the liked songs.
-In Brain Food (#147).
+In Brain Food (#149).
 No review yet.

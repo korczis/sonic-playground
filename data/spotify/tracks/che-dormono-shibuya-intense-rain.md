@@ -10,7 +10,7 @@ keys: {"fold": "chedormono|shibuyaintenserain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 66}
+  - {"playlist": "night-rain", "n": 62}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Shinjuku Night Showers*, 2:54.
 Not among the liked songs.
-In Night Rain (#66).
+In Night Rain (#62).
 No review yet.

@@ -10,7 +10,7 @@ keys: {"fold": "farsi|clashofjoy"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 118}
+  - {"playlist": "brain-food", "n": 120}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Clash of Joy*, 5:27.
 Not among the liked songs.
-In Brain Food (#118).
+In Brain Food (#120).
 No review yet.

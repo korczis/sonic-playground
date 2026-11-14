@@ -10,7 +10,7 @@ keys: {"fold": "marvingaye|troubleman"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 71}
+  - {"playlist": "funk-soul-classics", "n": 70}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Trouble Man*, 3:48.
 Not among the liked songs.
-In Funk & Soul Classics (#71).
+In Funk & Soul Classics (#70).
 No review yet.

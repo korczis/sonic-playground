@@ -10,7 +10,7 @@ keys: {"fold": "tycho|devices"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 165}
+  - {"playlist": "brain-food", "n": 167}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Devices / Green*, 5:10.
 Not among the liked songs.
-In Brain Food (#165).
+In Brain Food (#167).
 No review yet.

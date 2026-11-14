@@ -5,7 +5,6 @@ name: "Your Top Songs 2022"
 kind: "yearbook"
 year: 2022
 curator: "Spotify"
-description: "Public Playlist"
 expected: 99
 retrieved: 99
 read: "2026-11-14"

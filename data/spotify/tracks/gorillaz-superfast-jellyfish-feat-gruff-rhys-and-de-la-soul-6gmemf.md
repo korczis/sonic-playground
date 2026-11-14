@@ -10,7 +10,7 @@ keys: {"fold": "gorillaz|superfastjellyfish"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "jamiroquai-radio", "n": 37}
+  - {"playlist": "jamiroquai-radio", "n": 38}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Plastic Beach (Deluxe)*, 2:54.
 Not among the liked songs.
-In Jamiroquai Radio (#37).
+In Jamiroquai Radio (#38).
 No review yet.

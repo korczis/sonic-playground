@@ -10,7 +10,7 @@ keys: {"fold": "akinsevgor|leftovers"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 87}
+  - {"playlist": "brain-food", "n": 86}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Reveries*, 3:01.
 Not among the liked songs.
-In Brain Food (#87).
+In Brain Food (#86).
 No review yet.

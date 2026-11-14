@@ -10,7 +10,7 @@ keys: {"fold": "altrice|thinkdream"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "brain-food", "n": 108}
+  - {"playlist": "brain-food", "n": 110}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *think & dream*, 3:36.
 Not among the liked songs.
-In Brain Food (#108).
+In Brain Food (#110).
 No review yet.

@@ -4,7 +4,6 @@ id: "discover-weekly-2"
 name: "Discover Weekly"
 kind: "made-for-you"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 30
 retrieved: 30
 read: "2026-11-14"

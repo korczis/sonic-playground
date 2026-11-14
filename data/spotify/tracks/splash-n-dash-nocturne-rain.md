@@ -10,7 +10,7 @@ keys: {"fold": "splashndash|nocturnerain"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 127}
+  - {"playlist": "night-rain", "n": 126}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Holiday Hickups*, 2:25.
 Not among the liked songs.
-In Night Rain (#127).
+In Night Rain (#126).
 No review yet.

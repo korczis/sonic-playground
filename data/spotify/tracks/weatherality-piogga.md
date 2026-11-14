@@ -10,7 +10,7 @@ keys: {"fold": "weatherality|piogga"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 119}
+  - {"playlist": "night-rain", "n": 118}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Gocce*, 2:39.
 Not among the liked songs.
-In Night Rain (#119).
+In Night Rain (#118).
 No review yet.

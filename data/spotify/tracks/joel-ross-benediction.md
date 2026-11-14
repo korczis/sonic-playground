@@ -10,7 +10,7 @@ keys: {"fold": "joelross|benediction"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "late-night-jazz", "n": 72}
+  - {"playlist": "late-night-jazz", "n": 73}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Parable Of The Poet*, 5:44.
 Not among the liked songs.
-In Late Night Jazz (#72).
+In Late Night Jazz (#73).
 No review yet.

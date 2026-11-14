@@ -10,7 +10,7 @@ keys: {"fold": "jamesbrown|theboss"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 13}
+  - {"playlist": "funk-soul-classics", "n": 12}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Black Caesar*, 3:14.
 Not among the liked songs.
-In Funk & Soul Classics (#13).
+In Funk & Soul Classics (#12).
 No review yet.

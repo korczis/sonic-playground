@@ -10,7 +10,7 @@ keys: {"fold": "gorillaz|dare"}
 status: "missing"
 liked: true
 playlists:
-  - {"playlist": "jamiroquai-radio", "n": 48}
+  - {"playlist": "jamiroquai-radio", "n": 49}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Demon Days*, 4:04.
 A liked song.
-In Jamiroquai Radio (#48).
+In Jamiroquai Radio (#49).
 No review yet.

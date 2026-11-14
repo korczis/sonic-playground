@@ -4,7 +4,6 @@ id: "the-wind-down"
 name: "The Wind Down"
 kind: "made-for-you"
 curator: "Spotify"
-description: "Public Playlist"
 expected: 50
 retrieved: 50
 read: "2026-11-14"
@@ -27,38 +26,38 @@ tracks:
   - {"n": 16, "track": "frameworks-fires"}
   - {"n": 17, "track": "jon-hopkins-home-station-dj-kicks-version"}
   - {"n": 18, "track": "fionnlagh-built-upon-a-path"}
-  - {"n": 19, "track": "zimmer-landing"}
-  - {"n": 20, "track": "catching-flies-satisfied-strings"}
-  - {"n": 21, "track": "james-blake-don-t-miss-it"}
+  - {"n": 19, "track": "james-blake-don-t-miss-it"}
+  - {"n": 20, "track": "zimmer-landing"}
+  - {"n": 21, "track": "catching-flies-satisfied-strings"}
   - {"n": 22, "track": "jesse-blake-always"}
-  - {"n": 23, "track": "parra-for-cuva-chaos-in-calm"}
+  - {"n": 23, "track": "christian-cohle-drown-me-slow"}
   - {"n": 24, "track": "bibio-lichen-trip"}
   - {"n": 25, "track": "mossera-redbud"}
-  - {"n": 26, "track": "headache-miss-understood"}
-  - {"n": 27, "track": "pablo-nouvelle-curiosity"}
-  - {"n": 28, "track": "christian-cohle-drown-me-slow"}
-  - {"n": 29, "track": "bibio-curls"}
+  - {"n": 26, "track": "hnny-by"}
+  - {"n": 27, "track": "parra-for-cuva-chaos-in-calm"}
+  - {"n": 28, "track": "headache-miss-understood"}
+  - {"n": 29, "track": "teed-don-t-you-forget-about-me"}
   - {"n": 30, "track": "swim-get-that-close-orchestral"}
-  - {"n": 31, "track": "teed-don-t-you-forget-about-me"}
-  - {"n": 32, "track": "hnny-by"}
+  - {"n": 31, "track": "pablo-nouvelle-curiosity"}
+  - {"n": 32, "track": "bibio-curls"}
   - {"n": 33, "track": "mondo-loops-one-last-stand"}
-  - {"n": 34, "track": "foxtrott-better-with-you"}
-  - {"n": 35, "track": "parra-for-cuva-eff-five"}
-  - {"n": 36, "track": "catching-flies-opals"}
-  - {"n": 37, "track": "leon-vynehall-envelopes-chapter-vi-edit"}
-  - {"n": 38, "track": "delac-disrupt"}
-  - {"n": 39, "track": "fink-we-watch-the-stars"}
-  - {"n": 40, "track": "octo-octa-who-i-will-become"}
-  - {"n": 41, "track": "tsha-sacred-radio-edit"}
-  - {"n": 42, "track": "dj-poolboi-we-can-be-happy"}
-  - {"n": 43, "track": "aphex-twin-3"}
-  - {"n": 44, "track": "nils-frahm-all-armed"}
-  - {"n": 45, "track": "tycho-pink-blue"}
-  - {"n": 46, "track": "night-tapes-forever"}
-  - {"n": 47, "track": "lake-turner-1990-edit"}
+  - {"n": 34, "track": "parra-for-cuva-eff-five"}
+  - {"n": 35, "track": "lake-turner-1990-edit"}
+  - {"n": 36, "track": "foxtrott-better-with-you"}
+  - {"n": 37, "track": "delac-disrupt"}
+  - {"n": 38, "track": "octo-octa-who-i-will-become"}
+  - {"n": 39, "track": "aphex-twin-3"}
+  - {"n": 40, "track": "dj-poolboi-we-can-be-happy"}
+  - {"n": 41, "track": "tycho-pink-blue"}
+  - {"n": 42, "track": "leon-vynehall-envelopes-chapter-vi-edit"}
+  - {"n": 43, "track": "tsha-sacred-radio-edit"}
+  - {"n": 44, "track": "catching-flies-opals"}
+  - {"n": 45, "track": "nils-frahm-all-armed"}
+  - {"n": 46, "track": "fink-we-watch-the-stars"}
+  - {"n": 47, "track": "night-tapes-forever"}
   - {"n": 48, "track": "luke-marzec-feel"}
-  - {"n": 49, "track": "daithi-nobody-new-around-you"}
-  - {"n": 50, "track": "catching-flies-tides"}
+  - {"n": 49, "track": "catching-flies-tides"}
+  - {"n": 50, "track": "daithi-nobody-new-around-you"}
 ---
 
 # The Wind Down

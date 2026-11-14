@@ -10,7 +10,7 @@ keys: {"fold": "naturetrudge|stormsout"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "night-rain", "n": 58}
+  - {"playlist": "night-rain", "n": 60}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Storms Out*, 2:54.
 Not among the liked songs.
-In Night Rain (#58).
+In Night Rain (#60).
 No review yet.

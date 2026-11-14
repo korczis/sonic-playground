@@ -10,7 +10,7 @@ keys: {"fold": "gloriajones|taintedlove"}
 status: "missing"
 liked: false
 playlists:
-  - {"playlist": "funk-soul-classics", "n": 26}
+  - {"playlist": "funk-soul-classics", "n": 25}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Vixen*, 2:42.
 Not among the liked songs.
-In Funk & Soul Classics (#26).
+In Funk & Soul Classics (#25).
 No review yet.
