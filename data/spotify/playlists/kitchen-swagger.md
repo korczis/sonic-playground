@@ -1,0 +1,167 @@
+---
+schema: "spotify-playlist/v1"
+id: "kitchen-swagger"
+name: "Kitchen Swagger"
+kind: "followed"
+curator: "Spotify"
+description: "Public Playlist"
+expected: 150
+retrieved: 107
+unavailable: 43
+read: "2026-11-14"
+tracks:
+  - {"n": 1, "track": "rufus-ain-t-nobody"}
+  - {"n": 2, "track": "lalah-hathaway-rainbo"}
+  - {"n": 3, "track": "mondo-freaks-turn-this-love-around"}
+  - {"n": 4, "track": "black-pumas-colors"}
+  - {"n": 5, "track": "mark-morrison-return-of-the-mack-3jddpx"}
+  - {"n": 6, "track": "nao-eugene"}
+  - {"n": 7, "track": "simply-red-sunrise"}
+  - {"n": 8, "track": "lenny-kravitz-it-ain-t-over-til-it-s-over"}
+  - {"n": 9, "track": "mariah-carey-fantasy"}
+  - {"n": 10, "track": "bruno-mars-something-serious"}
+  - {"n": 11, "track": "neil-frances-music-sounds-better-with-you"}
+  - {"n": 12, "track": "ayra-starr-rush"}
+  - {"n": 13, "track": "craig-david-7-days"}
+  - {"n": 14, "track": "the-womack-sisters-if-you-want-me"}
+  - {"n": 15, "track": "patrice-rushen-forget-me-nots-remastered"}
+  - {"n": 16, "track": "george-benson-give-me-the-night-edit"}
+  - {"n": 17, "track": "santana-maria-maria-feat-the-product-g-b"}
+  - {"n": 18, "track": "adi-oasis-stuck-in-my-head"}
+  - {"n": 19, "track": "cheryl-lynn-got-to-be-real"}
+  - {"n": 20, "track": "childish-gambino-feels-like-summer"}
+  - {"n": 21, "track": "amy-winehouse-valerie-bbc-radio-1-live-lounge"}
+  - {"n": 22, "track": "pj-morton-how-deep-is-your-love-feat-yebba-live"}
+  - {"n": 23, "track": "samm-henshaw-closer"}
+  - {"n": 24, "track": "angie-stone-wish-i-didn-t-miss-you"}
+  - {"n": 25, "track": "carl-carlton-she-s-a-bad-mama-jama-she-s-built-she-s-stacked-single-version"}
+  - {"n": 26, "track": "will-smith-gettin-jiggy-wit-it"}
+  - {"n": 27, "track": "leven-kali-breathe"}
+  - {"n": 28, "track": "sade-the-sweetest-taboo"}
+  - {"n": 29, "track": "prince-kiss"}
+  - {"n": 30, "unavailable": true}
+  - {"n": 31, "unavailable": true}
+  - {"n": 32, "unavailable": true}
+  - {"n": 33, "unavailable": true}
+  - {"n": 34, "unavailable": true}
+  - {"n": 35, "unavailable": true}
+  - {"n": 36, "unavailable": true}
+  - {"n": 37, "unavailable": true}
+  - {"n": 38, "unavailable": true}
+  - {"n": 39, "unavailable": true}
+  - {"n": 40, "unavailable": true}
+  - {"n": 41, "unavailable": true}
+  - {"n": 42, "unavailable": true}
+  - {"n": 43, "unavailable": true}
+  - {"n": 44, "unavailable": true}
+  - {"n": 45, "unavailable": true}
+  - {"n": 46, "unavailable": true}
+  - {"n": 47, "unavailable": true}
+  - {"n": 48, "unavailable": true}
+  - {"n": 49, "unavailable": true}
+  - {"n": 50, "unavailable": true}
+  - {"n": 51, "unavailable": true}
+  - {"n": 52, "unavailable": true}
+  - {"n": 53, "unavailable": true}
+  - {"n": 54, "unavailable": true}
+  - {"n": 55, "unavailable": true}
+  - {"n": 56, "unavailable": true}
+  - {"n": 57, "unavailable": true}
+  - {"n": 58, "unavailable": true}
+  - {"n": 59, "unavailable": true}
+  - {"n": 60, "unavailable": true}
+  - {"n": 61, "unavailable": true}
+  - {"n": 62, "unavailable": true}
+  - {"n": 63, "unavailable": true}
+  - {"n": 64, "unavailable": true}
+  - {"n": 65, "unavailable": true}
+  - {"n": 66, "unavailable": true}
+  - {"n": 67, "unavailable": true}
+  - {"n": 68, "unavailable": true}
+  - {"n": 69, "unavailable": true}
+  - {"n": 70, "unavailable": true}
+  - {"n": 71, "unavailable": true}
+  - {"n": 72, "unavailable": true}
+  - {"n": 73, "track": "boz-scaggs-lowdown-2023-remaster"}
+  - {"n": 74, "track": "emeli-sande-heaven"}
+  - {"n": 75, "track": "jon-allen-keep-on-walking"}
+  - {"n": 76, "track": "teddy-swims-911"}
+  - {"n": 77, "track": "mayer-hawthorne-the-walk"}
+  - {"n": 78, "track": "tame-impala-is-it-true"}
+  - {"n": 79, "track": "leon-bridges-bad-bad-news"}
+  - {"n": 80, "track": "amber-mark-lose-my-cool-franc-moody-remix"}
+  - {"n": 81, "track": "stevie-wonder-as"}
+  - {"n": 82, "track": "michael-kiwanuka-cold-little-heart-radio-edit"}
+  - {"n": 83, "track": "jon-batiste-it-s-all-right-from-soul-soundtrack-version"}
+  - {"n": 84, "track": "saint-joshua-palo-santo"}
+  - {"n": 85, "track": "musiq-soulchild-just-friends-sunny"}
+  - {"n": 86, "track": "anthony-hamilton-best-of-me"}
+  - {"n": 87, "track": "swv-right-here-human-nature-radio-mix"}
+  - {"n": 88, "track": "mayer-hawthorne-henny-gingerale-bonus-track"}
+  - {"n": 89, "track": "faith-evans-love-like-this"}
+  - {"n": 90, "track": "cory-wong-golden"}
+  - {"n": 91, "track": "jill-scott-it-s-love-2020-remastered"}
+  - {"n": 92, "track": "gregory-porter-holding-on"}
+  - {"n": 93, "track": "robin-thicke-morning-sun"}
+  - {"n": 94, "track": "tom-misch-south-of-the-river"}
+  - {"n": 95, "track": "chic-i-want-your-love-2018-remaster-7oohei"}
+  - {"n": 96, "track": "groove-theory-tell-me"}
+  - {"n": 97, "track": "dua-lipa-don-t-start-now"}
+  - {"n": 98, "track": "miguel-adorn"}
+  - {"n": 99, "track": "joss-stone-free-me"}
+  - {"n": 100, "track": "erykah-badu-appletree"}
+  - {"n": 101, "track": "janet-jackson-that-s-the-way-love-goes"}
+  - {"n": 102, "track": "chromeo-don-t-sleep-feat-french-montana-stefflon-don"}
+  - {"n": 103, "track": "raheem-devaughn-i-don-t-care"}
+  - {"n": 104, "track": "adi-oasis-adonis-feat-kirby"}
+  - {"n": 105, "track": "jaheim-just-in-case"}
+  - {"n": 106, "track": "frank-mccomb-whatcha-gonna-do"}
+  - {"n": 107, "track": "tweet-boogie-2nite"}
+  - {"n": 108, "track": "sir-woman-highroad"}
+  - {"n": 109, "track": "ashanti-rock-wit-u-awww-baby"}
+  - {"n": 110, "track": "dojo-cuts-easy-to-come-home"}
+  - {"n": 111, "track": "jade-don-t-walk-away"}
+  - {"n": 112, "track": "donell-jones-u-know-what-s-up-feat-lisa-left-eye-lopes"}
+  - {"n": 113, "track": "lucy-pearl-don-t-mess-with-my-man"}
+  - {"n": 114, "track": "the-isley-brothers-work-to-do"}
+  - {"n": 115, "track": "maxwell-sumthin-sumthin-remastered-2021"}
+  - {"n": 116, "track": "solange-cranes-in-the-sky"}
+  - {"n": 117, "track": "earth-wind-fire-shining-star"}
+  - {"n": 118, "track": "bj-the-chicago-kid-turnin-me-up"}
+  - {"n": 119, "track": "brownstone-if-you-love-me"}
+  - {"n": 120, "track": "sister-sledge-thinking-of-you-1995-remaster"}
+  - {"n": 121, "track": "toni-braxton-you-re-makin-me-high"}
+  - {"n": 122, "track": "michael-jackson-rock-with-you-single-version"}
+  - {"n": 123, "track": "leon-bridges-if-it-feels-good-then-it-must-be"}
+  - {"n": 124, "track": "two-another-keeping-me-under"}
+  - {"n": 125, "track": "jill-scott-golden"}
+  - {"n": 126, "track": "booker-t-broken-heart"}
+  - {"n": 127, "track": "toni-braxton-he-wasn-t-man-enough"}
+  - {"n": 128, "track": "sg-lewis-chemicals"}
+  - {"n": 129, "track": "durand-jones-the-indications-sea-gets-hotter"}
+  - {"n": 130, "track": "jalen-ngonda-if-you-don-t-want-my-love"}
+  - {"n": 131, "track": "sharon-jones-the-dap-kings-how-long-do-i-have-to-wait-for-you"}
+  - {"n": 132, "track": "proxima-parada-musta-been-a-ghost"}
+  - {"n": 133, "track": "jamiroquai-seven-days-in-sunny-june"}
+  - {"n": 134, "track": "janelle-monae-make-me-feel"}
+  - {"n": 135, "track": "still-woozy-goodie-bag"}
+  - {"n": 136, "track": "keyshia-cole-last-night"}
+  - {"n": 137, "track": "bruno-mars-24k-magic"}
+  - {"n": 138, "track": "sam-smith-i-m-not-here-to-make-friends"}
+  - {"n": 139, "track": "next-too-close"}
+  - {"n": 140, "track": "maxwell-ascension-don-t-ever-wonder-remastered-2021"}
+  - {"n": 141, "track": "the-dip-sure-don-t-miss-you"}
+  - {"n": 142, "track": "boyz-ii-men-motownphilly"}
+  - {"n": 143, "track": "joey-dosik-in-heaven"}
+  - {"n": 144, "track": "guru-no-time-to-play"}
+  - {"n": 145, "track": "aaron-frazer-bad-news"}
+  - {"n": 146, "track": "jamiroquai-you-give-me-something"}
+  - {"n": 147, "track": "avery-sunshine-i-got-sunshine"}
+  - {"n": 148, "track": "thee-sacred-souls-will-i-see-you-again"}
+  - {"n": 149, "track": "eric-benet-spiritual-thang"}
+  - {"n": 150, "track": "omar-apollo-endlessly"}
+---
+
+# Kitchen Swagger
+
+A playlist the owner follows: 107 of 150 items read on 2026-11-14, 0 of them reviewed on the site.

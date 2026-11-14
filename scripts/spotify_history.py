@@ -74,7 +74,8 @@ def dump_record(meta: dict, body: str) -> str:
         else:
             lines.append(f"{key}: {json.dumps(value, ensure_ascii=False)}")
     lines.append("---")
-    return "\n".join(lines) + "\n\n" + body.rstrip() + "\n"
+    body = "\n".join(line.rstrip() for line in body.strip().split("\n"))
+    return "\n".join(lines) + "\n\n" + body + "\n"
 
 
 def load_record(text: str, name: str = "record") -> tuple[dict, str]:
@@ -150,14 +151,14 @@ def snapshot_items(raw: list[dict]) -> list[dict]:
         if r.get("unavailable") or not r.get("title"):
             out.append({"n": r["n"], "unavailable": True})
             continue
-        artists = [a["name"] if isinstance(a, dict) else a for a in r.get("artists", [])]
+        artists = [(a["name"] if isinstance(a, dict) else a or "").strip() for a in r.get("artists", [])]
         artist_ids = [a.get("id") for a in r.get("artists", []) if isinstance(a, dict)]
         if not any(artists):  # a local file or a row without artist links: no catalogue identity
             out.append({"n": r["n"], "unavailable": True})
             continue
         album = r.get("album")
-        item = {"n": r["n"], "title": r["title"], "artists": [a for a in artists if a],
-                "album": (album or {}).get("name") if isinstance(album, dict) else (album or None),
+        item = {"n": r["n"], "title": r["title"].strip(), "artists": [a for a in artists if a],
+                "album": (((album or {}).get("name") if isinstance(album, dict) else album) or "").strip() or None,
                 "duration": r.get("duration") or None, "explicit": bool(r.get("explicit")),
                 "track_id": id_of(r.get("track_id"), "track"),
                 "album_id": id_of((album or {}).get("id") if isinstance(album, dict) else None, "album"),
@@ -338,7 +339,7 @@ def model(snaps: list[dict], export: dict | None = None) -> dict:
                     if it.get("unavailable") or it.get("episode") or bool(it.get("track_id")) != first_pass:
                         continue
                     song_for(it)
-            pl = {"name": p.get("name") or "", "uri": p.get("uri"), "kind": classify(p, self_name),
+            pl = {"name": (p.get("name") or "").strip(), "uri": p.get("uri"), "kind": classify(p, self_name),
                   "library_subtitle": p.get("library_subtitle"), "owner": p.get("owner"),
                   "description": (p.get("description") or "").strip(), "expected": p.get("expected"),
                   "captured": snap["captured"], "rows": []}
@@ -707,10 +708,11 @@ def build(write: bool, snaps: list[dict] | None = None, export: dict | None = No
                     path.unlink()
     books = []
     for pl in m["playlists"]:
-        if pl["kind"] == "yearbook":
+        year = spotify.year_of(pl["name"])
+        if pl["kind"] == "yearbook" and year:
             source = (f"Spotify web player, the owner's playlist \"{pl['name']}\", read off the rendered page "
                       f"on {pl['captured']} (scripts/spotify_history.py)")
-            books.append(spotify.write_yearbook(spotify.year_of(pl["name"]), pl["name"], source,
+            books.append(spotify.write_yearbook(year, pl["name"], source,
                                                 yearbook_items(pl, m), pl.get("expected"), write))
     private_commit = commit_private(f"build: {len(m['songs'])} songs, {len(m['playlists'])} playlists") if write else None
     return {"songs": len(m["songs"]), "playlists": len(m["playlists"]), "changed": len(changed),
@@ -824,7 +826,7 @@ def stats() -> dict:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap = argparse.ArgumentParser(description=(__doc__ or "").split("\n")[0])
     ap.add_argument("--check", action="store_true", help="the gate: records valid, nothing private committed")
     sub = ap.add_subparsers(dest="cmd")
     s = sub.add_parser("ingest-snapshot", help="keep a web-player snapshot in the private store")

@@ -1,0 +1,800 @@
+# The owner's Spotify yearbook 2022 ("Your Top Songs 2022"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2022
+name = "Your Top Songs 2022"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2022\", read off the rendered page on 2026-11-14 (scripts/spotify_history.py)"
+retrieved = "2026-11-14"
+expected = 99
+
+[[track]]
+n = 1
+title = "Cooler Than Me"
+artists = ["Lucky Luke"]
+album = "Cooler Than Me"
+duration = "2:59"
+spotify = "525GY0mXYnxajolwgS8Eaz"
+
+[[track]]
+n = 2
+title = "Needle in the Hay"
+artists = ["Melissa Laveaux"]
+album = "Camphor & Copper (Bonus Track Version)"
+duration = "3:24"
+spotify = "4TCcDD97LU6rBUnYhjGmR8"
+
+[[track]]
+n = 3
+title = "Do It To It"
+artists = ["ACRAZE", "Cherish"]
+album = "Do It To It"
+duration = "2:37"
+spotify = "7cyGxmLnHWlwt41cr2RZzG"
+
+[[track]]
+n = 4
+title = "Feel It Still - Coldabank Remix"
+artists = ["Portugal. The Man", "Coldabank"]
+album = "Feel It Still (The Remixes)"
+duration = "4:07"
+spotify = "19pFLS7ZAAAeq2yrOwlBbJ"
+
+[[track]]
+n = 5
+title = "Tum Rakak"
+artists = ["Deluxe"]
+album = "Stachelight"
+duration = "4:36"
+spotify = "2C2SY9l26IT3guKqQoMMSr"
+
+[[track]]
+n = 6
+title = "Mad World"
+artists = ["Timmy Trumpet", "Gabry Ponte"]
+album = "Mad World"
+duration = "2:33"
+spotify = "6L5eyrIlO6GkRJAdqQEThe"
+
+[[track]]
+n = 7
+title = "Fading Nights"
+artists = ["Parra for Cuva", "Anna Naklab"]
+album = "Fading Nights"
+duration = "7:05"
+spotify = "6RqNzlRmo0PnQNKm8ub69O"
+
+[[track]]
+n = 8
+title = "Give It All"
+artists = ["Seth XVI"]
+album = "Give It All"
+duration = "4:11"
+spotify = "0ym3V9GpVPe5UrTLWEgqta"
+
+[[track]]
+n = 9
+title = "High Up On the Hook"
+artists = ["Alice Russell"]
+album = "My Favourite Letters"
+duration = "6:01"
+spotify = "0CGwt6OI3w4BWezsrlKVsa"
+
+[[track]]
+n = 10
+title = "Seven Nation Army"
+artists = ["Gaullin", "Julian Perretta"]
+album = "Seven Nation Army"
+duration = "2:53"
+spotify = "4SCbD68sf3dBfaE2X8uDSP"
+
+[[track]]
+n = 11
+title = "Hear Me Now"
+artists = ["Alok", "Zeeba", "Bruno Martini"]
+album = "Hear Me Now (feat. Zeeba)"
+duration = "3:14"
+spotify = "39cmB3ZoTOLwOTq7tMNqKa"
+
+[[track]]
+n = 12
+title = "Thunder"
+artists = ["Timmy Trumpet", "Vini Vici"]
+album = "Mad World"
+duration = "2:40"
+spotify = "3HzTRw3smu7ncmdmhnYQfJ"
+
+[[track]]
+n = 13
+title = "A Friend"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "4:20"
+spotify = "0NHa9oZtgHjATqVobmGeNp"
+
+[[track]]
+n = 14
+title = "Cake By The Ocean"
+artists = ["DNCE"]
+album = "DNCE"
+duration = "3:39"
+spotify = "76hfruVvmfQbw0eYn1nmeC"
+
+[[track]]
+n = 15
+title = "Broken Together"
+artists = ["Sofa Surfers", "Mani Obeya"]
+album = "Superluminal"
+duration = "4:46"
+spotify = "7ItezsVpDJjSP2Y5mpnOnH"
+
+[[track]]
+n = 16
+title = "On The Streets - Kollektiv Turmstrasse Let Freedom"
+artists = ["Federleicht", "Kollektiv Turmstrasse"]
+album = "On The Streets - The Remixes X-Tra 10"
+duration = "8:15"
+spotify = "2LPeSaWnm1GccUli5vBD9T"
+
+[[track]]
+n = 17
+title = "Dance - Radio Edit"
+artists = ["Max Manie"]
+album = "Dance (Radio Edit)"
+duration = "3:38"
+spotify = "1rSvlJ7qFB4MBMSdMFvTDu"
+
+[[track]]
+n = 18
+title = "Faces"
+artists = ["Alec Troniq", "GABRIEL VITEL"]
+album = "The Aviating"
+duration = "6:37"
+spotify = "1sZgoeJtLh1yqmCFuGhCI4"
+
+[[track]]
+n = 19
+title = "Forever and Ever"
+artists = ["Boogie Belgique"]
+album = "Nightwalker Vol. 1"
+duration = "5:50"
+spotify = "4WLL2Hnnt0egTleTXG3jBi"
+
+[[track]]
+n = 20
+title = "All that she wants"
+artists = ["Clea Vincent"]
+album = "Non mais oui"
+duration = "4:17"
+spotify = "1t2DuK4AAnNbaiQl7QKFKA"
+
+[[track]]
+n = 21
+title = "Good Stuff"
+artists = ["Kelis", "Terrar"]
+album = "Kaleidoscope"
+duration = "3:52"
+spotify = "6E2K2I89maFIMR7Zqx57aE"
+
+[[track]]
+n = 22
+title = "Badaboum"
+artists = ["Hooverphonic"]
+album = "In Wonderland"
+duration = "3:17"
+spotify = "71BzOLRdrwd0MGRYtJAoWX"
+
+[[track]]
+n = 23
+title = "Gerd"
+artists = ["Martin Waslewski"]
+album = "Gerd EP"
+duration = "7:08"
+spotify = "6lC9bFA7J6buL5kctIDy1Y"
+
+[[track]]
+n = 24
+title = "Dy-Na-Mi-Tee"
+artists = ["Ms. Dynamite"]
+album = "A Little Deeper"
+duration = "3:37"
+spotify = "3cCjEDTIWSNr5stzGhiRWI"
+
+[[track]]
+n = 25
+title = "Dance Monkey"
+artists = ["Tones And I"]
+album = "Dance Monkey (Stripped Back) / Dance Monkey"
+duration = "3:29"
+spotify = "2XU0oxnq2qxCpomAAuJY8K"
+
+[[track]]
+n = 26
+title = "A New Error"
+artists = ["Moderat"]
+album = "Moderat"
+duration = "6:07"
+spotify = "1fmoCZ6mtMiqA5GHWPcZz9"
+
+[[track]]
+n = 27
+title = "Tango In Harlem"
+artists = ["Touch & Go"]
+album = "I Find You Very Attractive"
+duration = "3:25"
+spotify = "6iHgkGwqtr5f4A6qMk0zdC"
+
+[[track]]
+n = 28
+title = "Change"
+artists = ["Lipka"]
+album = "Grande giocatore"
+duration = "3:02"
+spotify = "4BOdCKuO8W8OwSuFdUxVop"
+
+[[track]]
+n = 29
+title = "Love Wanted"
+artists = ["Lonely Boy"]
+album = "Love Wanted"
+duration = "5:11"
+spotify = "11jdt4u36pdoyb1OfoLKEd"
+
+[[track]]
+n = 30
+title = "Sunday Driver"
+artists = ["The Limp Twins"]
+album = "Tales from Beyond the Groove"
+duration = "3:29"
+spotify = "2ityp6WOdynrAVCMzMPYdr"
+
+[[track]]
+n = 31
+title = "Flash - Radio Edit"
+artists = ["Slove", "Sarah Rebecca"]
+album = "Flash"
+duration = "3:26"
+spotify = "5jc9jArEc485xcXzCVPOF0"
+
+[[track]]
+n = 32
+title = "Break on Through"
+artists = ["DJ Disse", "Will Buhrkall"]
+album = "When I'm Bored I Change Colour (Deluxe)"
+duration = "6:17"
+spotify = "1LdUJYVOxpQpeQFo2Y5NP0"
+
+[[track]]
+n = 33
+title = "Island"
+artists = ["Dapayk & Padberg", "Caro"]
+album = "Black Beauty"
+duration = "5:47"
+spotify = "1G0cJI9EJ20s1wZPrjuQxG"
+
+[[track]]
+n = 34
+title = "Soul Intoxication (Lonely Boy's Detox Dub)"
+artists = ["Basement Freaks", "Lonely Boy"]
+album = "Soul Intoxication - EP"
+duration = "5:50"
+spotify = "1GWCcOXFk9zkyORM0bMCNt"
+
+[[track]]
+n = 35
+title = "Hooray"
+artists = ["Marek Hemmann"]
+album = "Bittersweet"
+duration = "5:35"
+spotify = "6xzLyquEsfD7BVwoPBI6ic"
+
+[[track]]
+n = 36
+title = "See You All"
+artists = ["Koudlam"]
+album = "Goodbye"
+duration = "5:10"
+spotify = "5KrTIoePTb1n18C5kndpKX"
+
+[[track]]
+n = 37
+title = "Je Veux"
+artists = ["Tinush"]
+album = "Collection 01"
+duration = "4:33"
+spotify = "75Qc1EkcgGMktNh1RWrmCo"
+
+[[track]]
+n = 38
+title = "For You"
+artists = ["Marian"]
+album = "Only Our Hearts to Lose"
+duration = "4:08"
+spotify = "1ufgba0lgaZKzxJwgcYbUI"
+
+[[track]]
+n = 39
+title = "Paddling Out"
+artists = ["Miike Snow"]
+album = "Happy To You (Deluxe Edition)"
+duration = "3:43"
+spotify = "5WCO7yEZrl8Qi1MSpTLBkP"
+
+[[track]]
+n = 40
+title = "Generous Bones"
+artists = ["Melissa Laveaux"]
+album = "Dying Is a Wild Night"
+duration = "2:36"
+spotify = "5NZ1N58MFDR2P9OgLCsfp7"
+
+[[track]]
+n = 41
+title = "Fresh and Foolish"
+artists = ["Kalabrese", "Palinstar"]
+album = "Independent Dancer"
+duration = "4:57"
+spotify = "5XUKTrnL8ybaNsgfxCgrGK"
+
+[[track]]
+n = 42
+title = "Vidlik"
+artists = ["ONUKA"]
+album = "Vidlik"
+duration = "4:39"
+spotify = "1Q73nKAPXcMfwXp51af9VU"
+
+[[track]]
+n = 43
+title = "The Wild"
+artists = ["Poni Hoax"]
+album = "Tropical Suite"
+duration = "4:16"
+spotify = "4gURwGc6oLBW4NqLDHCAnr"
+
+[[track]]
+n = 44
+title = "N.E.M."
+artists = ["Las Aves"]
+album = "Die In Shanghai"
+duration = "3:20"
+spotify = "1evi0s1rOH5ZFJkrCWbStm"
+
+[[track]]
+n = 45
+title = "Moments"
+artists = ["Klangkarussell", "Will Heard"]
+album = "Netzwerk"
+duration = "5:01"
+spotify = "3fx25M65m6ATiKnEIDS3HK"
+
+[[track]]
+n = 46
+title = "Pining Moon"
+artists = ["Chopstick & Johnjon"]
+album = "Twelve"
+duration = "5:36"
+spotify = "53DY1QzeCfP50ZA0G30L6h"
+
+[[track]]
+n = 47
+title = "You Bring Me Down"
+artists = ["Digitaria", "Funky Fat"]
+album = "Mascochist"
+duration = "5:36"
+spotify = "1IsfJhAPIA6kitJQQDCDyq"
+
+[[track]]
+n = 48
+title = "Sunny - Extended Mix"
+artists = ["Trauma"]
+album = "Sunny (Bonus Version)"
+duration = "5:26"
+spotify = "4g0pltSum7wtswhKjrnJM9"
+
+[[track]]
+n = 49
+title = "Closer"
+artists = ["Lemaitre", "Jennie A."]
+album = "Chapter One"
+duration = "4:30"
+spotify = "3h5IIiL9vK5aR0DZO6jD7D"
+
+[[track]]
+n = 50
+title = "L&H"
+artists = ["Leska"]
+album = "L&H"
+duration = "3:16"
+spotify = "5OPDeIRcidVtxghYE86W5w"
+
+[[track]]
+n = 51
+title = "Need Your Love"
+artists = ["Curtis Harding"]
+album = "Face Your Fear"
+duration = "2:57"
+spotify = "3zYQ1KXzqBWRsxIqdVMoYF"
+
+[[track]]
+n = 52
+title = "Reckoning Song"
+artists = ["Asaf Avidan", "The Mojos"]
+album = "The Reckoning"
+duration = "2:46"
+spotify = "3pSdueiVFFQdP6oDtt97of"
+
+[[track]]
+n = 53
+title = "Wasting Time"
+artists = ["Frivolous"]
+album = "Meteorology (Reissue)"
+duration = "5:11"
+spotify = "7qpUwDgOGyNvaLONS3MNUr"
+
+[[track]]
+n = 54
+title = "Why ?"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "4:03"
+spotify = "7vOLJwP5O0woITaIQWOoUX"
+
+[[track]]
+n = 55
+title = "Shadows"
+artists = ["Pitto", "Woodie S"]
+album = "Shadows"
+duration = "9:54"
+spotify = "3GQVZYyOESX89jvMj9K0IX"
+
+[[track]]
+n = 56
+title = "We Want To Thank All Our Friends"
+artists = ["Session Victim"]
+album = "We Want To Thank All Our Friends"
+duration = "7:06"
+spotify = "412iyHyNh6oVjabik3uPhp"
+
+[[track]]
+n = 57
+title = "Body Language - Original Remaster"
+artists = ["M.A.N.D.Y.", "Booka Shade"]
+album = "Body Language"
+duration = "7:16"
+spotify = "5GCQrFrYeAZqHtQ9fdYbw2"
+
+[[track]]
+n = 58
+title = "Dance Cult (feat. Stahsi)"
+artists = ["Blue Monday", "Stahsi"]
+album = "Dance Cult (feat. Stahsi)"
+duration = "6:17"
+spotify = "6QdRMJHgM9rpWIKkjqdrFn"
+
+[[track]]
+n = 59
+title = "The Thing"
+artists = ["Nils Penner"]
+album = "The Thing"
+duration = "5:55"
+spotify = "2ySOj9jmN0kE8dE0ByvABp"
+
+[[track]]
+n = 60
+title = "Sinnerman"
+artists = ["Belako"]
+album = "Hamen"
+duration = "3:33"
+spotify = "7w5AaDPWMjZRhE5zO5C1ef"
+
+[[track]]
+n = 61
+title = "Madeleine"
+artists = ["Konstantin Sibold"]
+album = "Madeleine"
+duration = "9:01"
+spotify = "53ibRjjP5fWlD4yPp1OmKm"
+
+[[track]]
+n = 62
+title = "November Morning"
+artists = ["Stimming", "David Christensen", "Bernd Ruf"]
+album = "November Morning"
+duration = "8:26"
+spotify = "0OWFGKd8SGwrsyYNF6vUgk"
+
+[[track]]
+n = 63
+title = "A Fifth of Beethoven - The Reflex Re-Vision"
+artists = ["Henri-Pierre Noel", "The Reflex"]
+album = "Wah Friends Electric 2"
+duration = "7:29"
+spotify = "40KaXgxCGPabaQ1lCOGbe2"
+
+[[track]]
+n = 64
+title = "Corporate Butcher - Solomun Remix"
+artists = ["MAMA", "Tiefschwarz", "Solomun"]
+album = "Corporate Butcher EP"
+duration = "7:20"
+spotify = "1qnkW5FcYBpuG50FDLGQ9Y"
+
+[[track]]
+n = 65
+title = "Into the Dark"
+artists = ["Marc Moulin"]
+album = "Top Secret"
+duration = "6:32"
+spotify = "5J75csVihxemZailkLFMEF"
+
+[[track]]
+n = 66
+title = "Take No More"
+artists = ["Utah Jazz"]
+album = "Vintage"
+duration = "6:25"
+spotify = "0oFrgQsespoo1VdDVtuwHE"
+
+[[track]]
+n = 67
+title = "Dream Machine - Kaskade Mix"
+artists = ["Mark Farina", "Kaskade"]
+album = "To Do"
+duration = "6:15"
+spotify = "7wlDCYTcXbNYF9RsKN5lpp"
+
+[[track]]
+n = 68
+title = "Love & Soulsaving - Original Mix"
+artists = ["OOFT!"]
+album = "The Pitch Down Jamz EP"
+duration = "5:43"
+spotify = "1x8qfecQ6n3Wa4mS10vx0D"
+
+[[track]]
+n = 69
+title = "Dub Cherie"
+artists = ["Tim Love Lee"]
+album = "Tim Love Lee: Fully Bearded (15 Years of Tummy Touch Records in Dub)"
+duration = "5:06"
+spotify = "2z5DwRWcmvwmlJWRUKaCJk"
+
+[[track]]
+n = 70
+title = "Swinging in the Rain"
+artists = ["Nicolas Repac"]
+album = "Swing-Swing"
+duration = "4:59"
+spotify = "0tjZZfltCs26FapwZJPo9G"
+
+[[track]]
+n = 71
+title = "Dancing shoes - Kamp! Remix"
+artists = ["Brodka", "Kamp!"]
+album = "LAX"
+duration = "4:43"
+spotify = "4eAd5xFRkCVBAy6FrffxZy"
+
+[[track]]
+n = 72
+title = "Garden"
+artists = ["TEED"]
+album = "Trouble"
+duration = "4:35"
+spotify = "1Wrmm4XppIEegxMsU8utlv"
+
+[[track]]
+n = 73
+title = "Come to This"
+artists = ["Clement Bazin"]
+album = "Night Things"
+duration = "4:12"
+spotify = "2YSO6wetDA5bC9IAj0K0HN"
+
+[[track]]
+n = 74
+title = "Another Night"
+artists = ["Stepart", "Pupajim"]
+album = "Another Night"
+duration = "4:07"
+spotify = "5ew3JElU38PsjOTu7M713y"
+
+[[track]]
+n = 75
+title = "Sanctuary"
+artists = ["FM LAETI"]
+album = "For the Music"
+duration = "3:43"
+spotify = "7pVwjQPcMQEOMeXdG5uYoN"
+
+[[track]]
+n = 76
+title = "Huacachina"
+artists = ["MonteRosso"]
+album = "Kitsuné Parisien 4"
+duration = "3:33"
+spotify = "4ZZ592cEhEAwwcqlix5fQO"
+
+[[track]]
+n = 77
+title = "Rafale"
+artists = ["Alligator"]
+album = "Octets"
+duration = "3:29"
+spotify = "4aeBHbD86BXtc63YGWuy5B"
+
+[[track]]
+n = 78
+title = "Your Girl"
+artists = ["Kakkmaddafakka"]
+album = "Hest"
+duration = "3:29"
+spotify = "0yhMqJsI9cArVxG7XAXDaC"
+
+[[track]]
+n = 79
+title = "Celestial Blues"
+artists = ["Andy Bey"]
+album = "Experience And Judgment"
+duration = "3:18"
+spotify = "1QR3PGFme0LiPUEtmWxXm7"
+
+[[track]]
+n = 80
+title = "No Food (feat. Linval Thompson)"
+artists = ["Tom Fire", "Linval Thompson"]
+album = "Low Fidelity"
+duration = "3:17"
+spotify = "7wz1dRobFzMRMPFSTKfStq"
+
+[[track]]
+n = 81
+title = "Kouzen"
+artists = ["Melissa Laveaux"]
+album = "Radyo siwèl"
+duration = "2:21"
+spotify = "5xm25DdCRuMuUqb9cZTa4z"
+
+[[track]]
+n = 82
+title = "Early Morning"
+artists = ["Mat.Joe", "David Keno", "Shamoozey"]
+album = "Early Morning"
+duration = "6:22"
+spotify = "4lwEWqDRT2pylNGMAcIEPe"
+
+[[track]]
+n = 83
+title = "Lost - Club Mix"
+artists = ["Simion", "Roland Clark"]
+album = "Buddha Bar Clubbing by Ravin"
+duration = "6:09"
+spotify = "6sEzseJe6Df8gAtBmk3nUl"
+
+[[track]]
+n = 84
+title = "It Ain't Necessarily So"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "4:43"
+spotify = "5Hws6nnJuqf6rJwZGA82GG"
+
+[[track]]
+n = 85
+title = "Devil Take My Soul"
+artists = ["Son Of Dave"]
+album = "O2"
+duration = "4:16"
+spotify = "4F2r5tc0M3WgqsnU4oDsZd"
+
+[[track]]
+n = 86
+title = "Young Folks"
+artists = ["Peter Bjorn and John"]
+album = "Writer's Block"
+duration = "4:36"
+spotify = "4dyx5SzxPPaD8xQIid5Wjj"
+
+[[track]]
+n = 87
+title = "Seven Nation Army"
+artists = ["The White Stripes"]
+album = "Elephant"
+duration = "3:52"
+spotify = "3dPQuX8Gs42Y7b454ybpMR"
+
+[[track]]
+n = 88
+title = "Fou de toi"
+artists = ["Pupkulies & Rebecca"]
+album = "Looking for the Sea"
+duration = "3:33"
+spotify = "32w1T02SEa3WVJIukZjvEe"
+
+[[track]]
+n = 89
+title = "Bloodbath"
+artists = ["DRAMAS"]
+album = "Dramas"
+duration = "3:27"
+spotify = "2xkiddKeMQuXQ1ybdxQkzV"
+
+[[track]]
+n = 90
+title = "You Made Us Change"
+artists = ["Ephemerals", "Wolfgang Valbrun"]
+album = "Nothin Is Easy"
+duration = "3:25"
+spotify = "3BU9t17L9vZssJIEz6eHhi"
+
+[[track]]
+n = 91
+title = "Johnson"
+artists = ["Kruder & Dorfmeister"]
+album = "Johnson"
+duration = "5:38"
+spotify = "522A3dgrvWe27tK3L3gbYF"
+
+[[track]]
+n = 92
+title = "Lies"
+artists = ["Say Yes Dog"]
+album = "Voyage"
+duration = "3:45"
+spotify = "0Zzur28YBbI93bgjo0YdNR"
+
+[[track]]
+n = 93
+title = "The Owner"
+artists = ["NTEIBINT", "Σtella"]
+album = "The Owner"
+duration = "3:53"
+spotify = "18MiFGI5knNI9PDNNVoO44"
+
+[[track]]
+n = 94
+title = "In Berlin"
+artists = ["Tubbe"]
+album = "Keine Arbeit lieber Tanzen"
+duration = "3:31"
+spotify = "2xoJnJ2IHqa4AHJ0d1oshJ"
+
+[[track]]
+n = 95
+title = "The Kids Are Coming"
+artists = ["Tones And I"]
+album = "The Kids Are Coming"
+duration = "3:24"
+spotify = "76bvw5EDyhm1b3dfsOToYG"
+
+[[track]]
+n = 96
+title = "Jungle Drum"
+artists = ["The Colorist Orchestra", "Emilíana Torrini"]
+album = "The Colorist & Emiliana Torrini"
+duration = "2:46"
+spotify = "0CNG7yB98CAfH7NDAtBheY"
+
+[[track]]
+n = 97
+title = "Beautiful Day"
+artists = ["Laidback"]
+album = "Kumharas Ibiza Vol.2 (Compiled By DJ Malte M.V.T.)"
+duration = "6:58"
+spotify = "3SJY53oFCra9sKQYyWrhtI"
+
+[[track]]
+n = 98
+title = "Love Song"
+artists = ["Marcus Worgull"]
+album = "Love Song"
+duration = "6:27"
+spotify = "6MWIaTPMTBItxX83g2RukN"
+
+[[track]]
+n = 99
+title = "Odessa"
+artists = ["Caribou"]
+album = "Swim"
+duration = "5:15"
+spotify = "3iwH1DfB0Yq2uKhCv7SMxp"

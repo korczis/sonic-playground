@@ -1,0 +1,226 @@
+---
+schema: "spotify-library/v1"
+id: "library"
+songs: 6514
+liked: 2029
+reviewed: 303
+sources: ["web-player:2026-11-14"]
+playlists:
+  - {"kind": "liked", "ids": ["liked-songs"]}
+  - {"kind": "own", "ids": ["angry-ego", "best-of-the-best", "discover-weekly", "liked-from-radio", "my-playlist-10", "my-playlist-11", "my-playlist-5", "my-playlist-9", "my-shazam-tracks", "my-top-songs-of-all-the-time", "sonic-playground"]}
+  - {"kind": "yearbook", "ids": ["your-top-songs-2016", "your-top-songs-2017", "your-top-songs-2018", "your-top-songs-2019", "your-top-songs-2020", "your-top-songs-2021", "your-top-songs-2022"]}
+  - {"kind": "made-for-you", "ids": ["brain-food", "discover-weekly-2", "funk-soul-classics", "jamiroquai-radio", "late-night-jazz", "mellow-beats", "night-rain", "rachel-k-collier-mix", "the-wind-down"]}
+  - {"kind": "followed", "ids": ["back-to-life-back-to-reality", "beautiful-songs-1960", "berlin-electronic-underground", "best-of-post-modern-jukebox", "bjork-gling-glo", "chill", "chill-house-2026", "coding-music", "country-classics-top-country-songs-of-all-time", "deep-sleep", "devadesatky", "elise-russell-s-christmas", "eurythmics-sweet-dreams-ibiza-deep-summer-remix-2015", "evening-commute", "full-bk", "gold-school", "housewerk", "kitchen-swagger", "leapfrogstudio", "love-me-love-me-say-that-you-love-me", "midnight-music-deep-house-chill-vocal-house", "mint", "playlist-zami-lee", "sensation", "slam-40-updated-weekly", "slam-fm-top-40-updated-weekly-may-7th", "written-by-jt-daly"]}
+albums:
+  - {"name": "#1", "artist": "Fischerspooner", "id": "3OCiJ6mbOzJdzTrk8R9hy2"}
+  - {"name": "16 Minutes", "artist": "Belleruche", "id": "3DETubI2iNXN9xjoXzPbeL"}
+  - {"name": "3 Amp Fuse", "artist": "Belleruche", "id": "5SlWomjh1XSzd0Y7yArLnz"}
+  - {"name": "911 [Live in NYC] (feat. D12) [Live in NYC;feat. D12]", "artist": "Gorillaz", "id": "0VKwF4KVCtuS7TCYWg92to"}
+  - {"name": "A Night in Torino", "artist": "Parov Stelar", "id": "76rA0SoQguuHKTE6535wOt"}
+  - {"name": "A Style Suite", "artist": "Farolfi&gambafreaks", "id": "73L00O60LeOipZFAmwK0Rr"}
+  - {"name": "All Back to Mine", "artist": "Moloko", "id": "3AMduA3hE3KPsBvyzJ8R8Y"}
+  - {"name": "Anything You Want (Not That)", "artist": "Belleruche", "id": "6xgIr5cOVsPhiDGqiJOb1P"}
+  - {"name": "Aphrodite", "artist": "Aphrodite", "id": "1pbf0MXA7pw3oknZ1tSOK0"}
+  - {"name": "Beba", "artist": "Pantyraid", "id": "34ygppvS7mmp5Oxa9ZJbIU"}
+  - {"name": "Ben Khan", "artist": "Ben Khan", "id": "5nQd48aJzlN8sBDVteV7YL"}
+  - {"name": "Best Of (A Remastered Selection Chosen by the Band & Label)", "artist": "Belleruche", "id": "4kBejeRuk9MwcrnG9ju3U4"}
+  - {"name": "Betcha Bottom Dollar", "artist": "The Puppini Sisters", "id": "2AD7zV5R4L6SbRRMBKy60K"}
+  - {"name": "Between the Ages (Deluxxx Edition)", "artist": "The Supermen Lovers", "id": "54tNxTQUkJPkenhJzWefyN"}
+  - {"name": "Calling From The Stars", "artist": "Miss Kittin", "id": "5cPXN2lqLQkWHxZ1itCO3U"}
+  - {"name": "Catalogue", "artist": "Moloko", "id": "7u0wqdMKwrqpB3ZBnjHdux"}
+  - {"name": "Christmas With The Puppini Sisters", "artist": "The Puppini Sisters", "id": "2gPPsbS0eWP2PwklI23bWX"}
+  - {"name": "Clint Eastwood", "artist": "Gorillaz", "id": "3sB5GyaLFk9Vlf9UG7B1W8"}
+  - {"name": "Clockwatching / Mirror in the Bathroom", "artist": "Belleruche", "id": "55gN9t5iZOObO5n3cWYapb"}
+  - {"name": "D-Sides", "artist": "Gorillaz", "id": "0pdYY0CHFRVFLBZEPEKTMZ"}
+  - {"name": "D-Sides [Special Edition]", "artist": "Gorillaz", "id": "2w4tLG1JH25BysuILfkI0x"}
+  - {"name": "Dance Till You're Dead", "artist": "ANI", "id": "25v6ibjwBnDSpUIIBdKVwD"}
+  - {"name": "Dantze, Baby II", "artist": "Various Artists", "id": "4f7zrT6A1epXaMtnoZs6G9"}
+  - {"name": "DARE", "artist": "Gorillaz", "id": "4h1VDZwacXaPt7CtO186uP"}
+  - {"name": "DARE", "artist": "Gorillaz", "id": "1REnCQXttzffbS7blTB0zO"}
+  - {"name": "Demon Days", "artist": "Gorillaz", "id": "0bUTHlWbkSQysoM3VsWldT"}
+  - {"name": "Demon Days Live at the Manchester Opera House", "artist": "Gorillaz", "id": "0J3u0IeHzuymSz7v934vrd"}
+  - {"name": "Dirty Harry", "artist": "Gorillaz", "id": "4eqJ2bgFYVtM6JaZCLlONE"}
+  - {"name": "Dirty Harry", "artist": "Gorillaz", "id": "046irMJGxbyxFOFwglj02y"}
+  - {"name": "Do You Like My Tight Sweater?", "artist": "Moloko", "id": "79zNaejMz1csDEURdI1o05"}
+  - {"name": "DREI", "artist": "Emika", "id": "7jNBAhp5DxAPFhkkLkuxeG"}
+  - {"name": "Dring", "artist": "Nôze", "id": "7gp8wTLwi8lehZ66jEkwuP"}
+  - {"name": "El Mañana / Kids with Guns", "artist": "Gorillaz", "id": "49445aulSsQdUfDaTJaX8G"}
+  - {"name": "Elephant", "artist": "The White Stripes", "id": "4bud6XY9UtafCOiYzv2vOl"}
+  - {"name": "Extinction Level Event: The Final World Front", "artist": "Busta Rhymes", "id": "4zb4gmGzDYtlWMjmc1NZWW"}
+  - {"name": "Fading Nights", "artist": "Parra for Cuva", "id": "3HhFG3GjSPW9WbFUOmOsi6"}
+  - {"name": "Fckrz", "artist": "Luca Malina", "id": "08ImBx7uLHQLofVofW0h3z"}
+  - {"name": "Feel Good Inc.", "artist": "Gorillaz", "id": "1PaGSrBTNm4CX66AH6HRfk"}
+  - {"name": "Feel Good Inc. (Instrumental)", "artist": "Gorillaz", "id": "1RZ7P20N9GXP5VQt5Y7s8o"}
+  - {"name": "Feelin' Good", "artist": "Nightmares On Wax", "id": "0NiTyT12fH6UBVFDQvFWIO"}
+  - {"name": "Forbidden Fruit - The Age of Consent Remixed", "artist": "Bronski Beat", "id": "0bN40MWwKQnFtls64rqTlJ"}
+  - {"name": "From Then Until Now", "artist": "Crookers", "id": "23hTRQVUECDeCdPKDP1qHF"}
+  - {"name": "Fuzz Face", "artist": "Belleruche", "id": "6Unre5VyrpIXbMVyqIS3Xx"}
+  - {"name": "G-Sides", "artist": "Gorillaz", "id": "6z8arLj8lWDoxk99ayMYlz"}
+  - {"name": "Gold Dust (Shy FX Re-Edit)", "artist": "DJ Fresh", "id": "76VmChs7uy2V2unF9KTg7F"}
+  - {"name": "Golden", "artist": "Klangkuenstler", "id": "0tQ6eV5y35I4A089BmQdsZ"}
+  - {"name": "Gorillaz", "artist": "Gorillaz", "id": "4tUxQkrduOE8sfgwJ5BI2F"}
+  - {"name": "Gorillaz Are Ten - Spotify Radio Show 1", "artist": "Gorillaz", "id": "1vYDlDjuYapfyX2DpdrziG"}
+  - {"name": "Gorillaz Are Ten - Spotify Radio Show 2", "artist": "Gorillaz", "id": "3g0Eg9PPsWu0FisNDPAMuY"}
+  - {"name": "Gorillaz Are Ten - Spotify Radio Show 3", "artist": "Gorillaz", "id": "1qHKot5zKNk8e0fLkXR3xi"}
+  - {"name": "Gravel & Wine", "artist": "Gin Wigmore", "id": "2HtT4gawEGgOvAPUO7tiU2"}
+  - {"name": "Handmade [New Version - Includes Bonus]", "artist": "Hindi Zahra", "id": "3SCQOw6RtHMq3E4fqke8cE"}
+  - {"name": "Hej Teto!", "artist": "Michal Horák", "id": "3xsKM29KRQYWhXyXI7P2dH"}
+  - {"name": "Her Tape #2", "artist": "Her", "id": "5vrLdFSO9eTXuJsL5ts8YO"}
+  - {"name": "Hollywood", "artist": "The Puppini Sisters", "id": "086W7ocmWnFXKbF2Yj5O7W"}
+  - {"name": "Hollywood, Mon Amour", "artist": "Marc Collin", "id": "0yyvXBu98bamoOEuDm4sCT"}
+  - {"name": "Hope - EP", "artist": "Jain", "id": "3JJsBRqOoJFcve31D2ppee"}
+  - {"name": "How Big, How Blue, How Beautiful (Deluxe)", "artist": "Florence + The Machine", "id": "2jn2n5OkuHliOLKCqHnjXV"}
+  - {"name": "Hořký Menu", "artist": "Naše Věc", "id": "0zM9rf5Q7N8Rt6khgrsoUu"}
+  - {"name": "Hybrid Organics (Expanded)", "artist": "Tweak", "id": "1l4wxKE9H5il9wB88XMEPo"}
+  - {"name": "I Am Not a Doctor", "artist": "Moloko", "id": "0ygSdpTLoz5WgPcPZL5NAp"}
+  - {"name": "I Am Ok", "artist": "Oliver Koletzki", "id": "30L74py2BuYNmOgivu7k64"}
+  - {"name": "Laika Come Home", "artist": "Gorillaz", "id": "0yPLNfI8WPJWFoJugr0KAv"}
+  - {"name": "Late Night Tales: MGMT", "artist": "MGMT", "id": "0B5pcafMxo5Omahl9XvMCc"}
+  - {"name": "Late Night Tales: Nightmares On Wax", "artist": "Nightmares On Wax", "id": "7KX2iR6pNOeygvmopRWv7O"}
+  - {"name": "Legendary - EP", "artist": "Welshly Arms", "id": "3tjQ1eW9teRK9ux5DcL0aJ"}
+  - {"name": "Lil' Dub Chefin'", "artist": "Gorillaz", "id": "7n4E71vKRFIjR45q4eBwp0"}
+  - {"name": "Love Me Again", "artist": "John Newman", "id": "7bCDE4ddc9T8Zkw588bN73"}
+  - {"name": "Lucie", "artist": "Lucie", "id": "0LagWIr5yt2tXXTGLSfLK0"}
+  - {"name": "Minor Swing / Eastern City Lights", "artist": "Belleruche", "id": "16AuRBFi9N1tRHzRrWX8tu"}
+  - {"name": "Modrej dym", "artist": "Black Milk", "id": "4Qk3uxFhNdMad2rHtKsvHJ"}
+  - {"name": "N.O.W. Is The Time", "artist": "Nightmares On Wax", "id": "0qfVrYCrUdfBmkAd0O8Nye"}
+  - {"name": "N.O.W. Is The Time (Deep Down Edition)", "artist": "Nightmares On Wax", "id": "2iu3Jv6DPKyFLKmzavQE25"}
+  - {"name": "Northern Girls", "artist": "Belleruche", "id": "6Tba94djeR8RRNkoJfbYgm"}
+  - {"name": "Northern Girls", "artist": "Belleruche", "id": "35iD4vV5RDp5pQ8zei5OL6"}
+  - {"name": "Odyssey", "artist": "Fischerspooner", "id": "0xd9UW8Pe93kPIkFYv5jen"}
+  - {"name": "On The Streets - The Remixes X-Tra 10", "artist": "Federleicht", "id": "3ub6t7pkqj9SY8fAAcKxbz"}
+  - {"name": "Once Upon A Time", "artist": "Dreadzone", "id": "4gycVOzj8YSBSftbvtZo5L"}
+  - {"name": "Petrichor", "artist": "Klangkarussell", "id": "2lti3xxEJ9Yta59kUAq0Eg"}
+  - {"name": "Plastic Beach", "artist": "Gorillaz", "id": "2dIGnmEIy1WZIcZCFSj6i8"}
+  - {"name": "Plays Metallica by Four Cellos (Remastered)", "artist": "Apocalyptica", "id": "7LZNQn0nVJCEUQXfidfizI"}
+  - {"name": "Pop Style", "artist": "Drake", "id": "1w1W7G5HtflBjz5WYKMnWG"}
+  - {"name": "Prázdniny Na Zemi (Zlatá Edice 6)", "artist": "Olympic", "id": "2NCY9Bab1XxlviNje2Kece"}
+  - {"name": "Relaxing Classical Piano Study Music: Perfect Songs For Calm And Concentration", "artist": "Classical Study Music", "id": "7CrcsUPiiVAhVMu4w0GHxA"}
+  - {"name": "RKC", "artist": "Rachel K Collier", "id": "2DPnqlfvzMr2jA2wgehkVc"}
+  - {"name": "Ruby Blue", "artist": "Róisín Murphy", "id": "2yseKsHTGnuXWn79vCC8FU"}
+  - {"name": "Samba Rock Vol.1", "artist": "Various Artists", "id": "2i4f3XYYgq9PH9sd7BULSa"}
+  - {"name": "Sirens", "artist": "Gorgon City", "id": "1tfrh7jInz0lgBamg12OFj"}
+  - {"name": "Sirens (Remixes)", "artist": "Gorgon City", "id": "2XHkI3lJirn9yiJGku30kR"}
+  - {"name": "Songs Of Lucid Dreamers", "artist": "Zwicker", "id": "6D6T5cWOl1VvtXr3qarvfs"}
+  - {"name": "Soulmatic", "artist": "Purple Disco Machine", "id": "04X6SiqkYtSHq3TN8JtEJ9"}
+  - {"name": "State of Mind", "artist": "Klangkuenstler", "id": "5Hlq43ytKz3lMWQAHtxeV8"}
+  - {"name": "Statues", "artist": "Moloko", "id": "7kuw6Ln9MNt74dInNb1Mmi"}
+  - {"name": "Stormbird", "artist": "Belleruche", "id": "6ujTWIIUxXsiVfCfewjWk1"}
+  - {"name": "Surrender", "artist": "The Chemical Brothers", "id": "1QJP73UumgERuzp3yJSXw3"}
+  - {"name": "The Day Is My Enemy", "artist": "The Prodigy", "id": "64B6CA8cnu2jP43z0BZ2KI"}
+  - {"name": "The Day Is My Enemy (Expanded Edition)", "artist": "The Prodigy", "id": "2Iz1KZSeCEeP5fmiOJmvHI"}
+  - {"name": "The Express", "artist": "Belleruche", "id": "4gDRMgF1lgDHfn8PsYMwEp"}
+  - {"name": "The Fall", "artist": "Gorillaz", "id": "5jJGGsAztgUEXUHHZ2zrah"}
+  - {"name": "The Hamlet EP", "artist": "Fischerspooner", "id": "7yDFVFlBKuoGGjWUFOxCQ8"}
+  - {"name": "The Rise And Fall Of Ruby Woo", "artist": "The Puppini Sisters", "id": "6jfP2zf5d6xlyb0ZfusmEs"}
+  - {"name": "The Rise And Fall Of Ruby Woo", "artist": "The Puppini Sisters", "id": "7iGtc5SzJN7ufni1iE028D"}
+  - {"name": "The Rules Of Dada", "artist": "Dada Life", "id": "1lqbyIuEs1vy1lfgdKvCu0"}
+  - {"name": "The Score (Expanded Edition)", "artist": "Fugees", "id": "18XFe4CPBgVezXkxZP6rTb"}
+  - {"name": "The Singles Collection 2001-2011", "artist": "Gorillaz", "id": "5cyCeFPqDXC6R9rvx6TO1w"}
+  - {"name": "Things to Make and Do", "artist": "Moloko", "id": "7hEHHae2X4bQ7H5essLm0X"}
+  - {"name": "Thought So…", "artist": "Nightmares On Wax", "id": "0nLCUby65vPnn29qRPFq4I"}
+  - {"name": "Tremel", "artist": "Glasser", "id": "2U4r5KIiAsp14OT7nJ79IG"}
+  - {"name": "Turntable Soul Music", "artist": "Belleruche", "id": "5s9ppT3i8OW0aJ10NkhZu2"}
+  - {"name": "Two Shoes", "artist": "The Cat Empire", "id": "3okfW6boEQczljg1jSXpcz"}
+  - {"name": "Ultra-Violence", "artist": "Mickey Avalon", "id": "6mnGEEJjCUfmmACxbSFDrw"}
+  - {"name": "We Are Electric", "artist": "Fischerspooner", "id": "19mJad6aAivU34IZhV6xiO"}
+  - {"name": "What People Play House Compilation 1 by Wordandsound", "artist": "Various Artists", "id": "6iHaP9Cten7p74VSX099Ze"}
+  - {"name": "Young God", "artist": "Jonas Aden", "id": "0Jrk5JjFuBtEtM5FWySYDa"}
+  - {"name": "Ze Světa Muzikálů", "artist": "Karel Vlach se svým orchestrem", "id": "53svWLok8HYdgVEjbYVuHQ"}
+artists:
+  - {"name": "Amanda Blank", "id": "6cMBAd7j8KLD9TnjfwQ91E"}
+  - {"name": "Anthony Rother", "id": "5eWbdoIDCRxrPyiv7TEtw8"}
+  - {"name": "Aphex Twin", "id": "6kBDZFXuLrZgHnvmPu9NsG"}
+  - {"name": "Aphrodite", "id": "1SsdsVIIKLUe54OsHzm5uQ"}
+  - {"name": "Arctic Monkeys", "id": "7Ln80lUS6He07XvHI8qqHH"}
+  - {"name": "Asaf Avidan & the Mojos", "id": "2TwepUY7feaTuipStcyzLZ"}
+  - {"name": "Ayọ", "id": "6OkX55UMCw4Hgc5HM4zr7K"}
+  - {"name": "Basement Jaxx", "id": "4YrKBkKSVeqDamzBPWVnSJ"}
+  - {"name": "Belleruche", "id": "4N9nNkpjGuBlGWnYubQI8t"}
+  - {"name": "Big Data", "id": "4S1nvNHWiZLP4rzwmULmUa"}
+  - {"name": "Bloodhound Gang", "id": "6nDLku5uL3ou60kvCGZorh"}
+  - {"name": "Bob Moses", "id": "6LHsnRBUYhFyt01PdKXAF5"}
+  - {"name": "Bulp", "id": "6AdcW2Ek7opH6UJ4UMJRuS"}
+  - {"name": "Busta Rhymes", "id": "1YfEcTuGvBQ8xSD1f53UnK"}
+  - {"name": "Chaozz", "id": "1aGMkI6SNVzLr57RIiGkjv"}
+  - {"name": "Com Truise", "id": "2wouN3QXejYa5tKetYdcVX"}
+  - {"name": "Croatia Squad", "id": "3FAUGHLioXySQ1QTnCOWQC"}
+  - {"name": "D12", "id": "5Qi4Bb7a8C0a00NZcA77L0"}
+  - {"name": "DeFuckTo", "id": "5ePLZV8qgXvEewuJCWkwTU"}
+  - {"name": "Depeche Mode", "id": "762310PdDnwsDxAQxzQkfX"}
+  - {"name": "Dr. Dre", "id": "6DPYiyq5kWVQS4RGwxzPC7"}
+  - {"name": "DRAMAS", "id": "7wwQRdYt302AuynW8ioIgS"}
+  - {"name": "Electric Universe", "id": "55SDgogZ1SRUhIgmGvLyhD"}
+  - {"name": "Fischerspooner", "id": "5R7K1GezC0jy24v1R2n4x3"}
+  - {"name": "Florence + The Machine", "id": "1moxjboGR7GNWYIMWsRjgG"}
+  - {"name": "Frankie Knuckles", "id": "63yl9nDNrHpiAYGlNJxxjc"}
+  - {"name": "Giorgia Angiuli", "id": "4iHnLagnnmgiIwMSm1wuTq"}
+  - {"name": "Gnarls Barkley", "id": "5SbkVQYYzlw1kte75QIabH"}
+  - {"name": "Gorgon City", "id": "4VNQWV2y1E97Eqo2D5UTjx"}
+  - {"name": "Gorillaz", "id": "3AA28KZvwAUcZuOKwyblJQ"}
+  - {"name": "GusGus", "id": "5sL9uDMwceYHPknnCLAAwJ"}
+  - {"name": "Heather Rigdon", "id": "28C9ybIZUdN7uTb1NBzmBT"}
+  - {"name": "Henri Herbert", "id": "0G32pVd2iVT6plLjN1MZOP"}
+  - {"name": "Howard Levy", "id": "6ZboLMTMVOnCFHQd9SqFQa"}
+  - {"name": "Ian Brown", "id": "3s398TKZNahAURRacx7oIT"}
+  - {"name": "Indiana", "id": "7a5Srm7U661DotL6VWRmYk"}
+  - {"name": "Jain", "id": "2HHmvvSQ44ePDH7IKVzgK0"}
+  - {"name": "Jamiroquai", "id": "6J7biCazzYhU3gM9j1wfid"}
+  - {"name": "Joris Delacroix", "id": "3HRRzIZNQFus3xlUx2xKy1"}
+  - {"name": "Joss Stone", "id": "7bvcQXJHkFiN1ppIN3q4fi"}
+  - {"name": "K.Flay", "id": "0pCNk4D3E2xtszsm6hMsWr"}
+  - {"name": "Kelis", "id": "0IF46mUS8NXjgHabxk2MCM"}
+  - {"name": "Klangkuenstler", "id": "6H77vD9YyhyxHBTkRpbMBk"}
+  - {"name": "Klyne", "id": "3q4qbeWVDpN7LcwU6db2a7"}
+  - {"name": "Kollektiv Turmstrasse", "id": "1oXiuCd5F0DcnmXH5KaM6N"}
+  - {"name": "Kosheen", "id": "5squ8uM6fhMQY71t9xobJC"}
+  - {"name": "Kovacs", "id": "62peb1sKdVJQD00xYvMCKF"}
+  - {"name": "Kruder & Dorfmeister", "id": "39ywlwtGw8RTGobakgb11L"}
+  - {"name": "Labrinth", "id": "2feDdbD5araYcm6JhFHHw7"}
+  - {"name": "Labyrinth Ear", "id": "51kDu9CfyGBpcgMwy8MlEd"}
+  - {"name": "LOOK MUM NO COMPUTER", "id": "24KLOfQv2HrpsCerfN6bef"}
+  - {"name": "Louisahhh", "id": "42TogPbYEXl164PrqTEVBW"}
+  - {"name": "LTJ Bukem", "id": "5Wfn5sc1w3DhMTpU7oPJZL"}
+  - {"name": "Luca Malina", "id": "7pQSXjUHAvBeqRexDFCojQ"}
+  - {"name": "Marbert Rocel", "id": "0VEzhZrWBCaoufAiZkjX3G"}
+  - {"name": "Mary J. Blige", "id": "1XkoF8ryArs86LZvFOkbyr"}
+  - {"name": "MC Spyda", "id": "2b4CwhkY6rAscPhxXVxDJl"}
+  - {"name": "Michal Prokop", "id": "4humgNNlfbHHZ7nySORCeO"}
+  - {"name": "Mirwais", "id": "0Ohm3LvFp7wzkvMeiTDPKQ"}
+  - {"name": "Moloko", "id": "4aaBjq7VqqQvpSF69GglvO"}
+  - {"name": "Mount Sims", "id": "2UyhhfLOvfLs7ZhzsAaNC3"}
+  - {"name": "Mydy Rabycad", "id": "4xrKDM7KjC81IJWQb84Zhm"}
+  - {"name": "New Young Pony Club", "id": "3kdrMtLybQIl93rXJlvF3w"}
+  - {"name": "Nick Murphy", "id": "2Q0MyH5YMI5HPQjFjlq5g3"}
+  - {"name": "Nightmares On Wax", "id": "4tNxq9NGKTKaX8OkZBLgf0"}
+  - {"name": "Nina Simone", "id": "7G1GBhoKtEPnP86X2PvEYO"}
+  - {"name": "NOVEMBER KID", "id": "4gFiVj1eoR6KQPQyFZgXRM"}
+  - {"name": "Paul Oakenfold", "id": "5MO2kbaGGA2a8kL4c9qqHq"}
+  - {"name": "Pharrell Williams", "id": "2RdwBSPQiwcmiDo9kixcl8"}
+  - {"name": "Platinum Doug", "id": "2cJ4ytkNhoJDlMJzLwrSE2"}
+  - {"name": "Pomplamoose", "id": "5dHfLBNU8zoypgKefzEB1c"}
+  - {"name": "Postmodern Jukebox", "id": "5HYNPEO2NNBONQkp3Mvwvc"}
+  - {"name": "Robyn", "id": "6UE7nl9mha6s8z0wFQFIZ2"}
+  - {"name": "Roni Size", "id": "5UjqeSp9dX6Nrge7WdDukr"}
+  - {"name": "Róisín Murphy", "id": "3qwabfaWewpfli7hMNM3O8"}
+  - {"name": "Slaptop", "id": "5NFB7dL4b4ZtcMAk2wCOoi"}
+  - {"name": "Sleaford Mods", "id": "0otAqZw8htTsGHfqR491Yh"}
+  - {"name": "Sonny Boy Williamson II", "id": "69VgCcXFV59QuQWEXSTxfK"}
+  - {"name": "Stamina MC", "id": "4Dj3ahDCFjotIV1O5Ung6o"}
+  - {"name": "The Horrorist", "id": "0eTwmq4HHLdpFC4Yf38uuu"}
+  - {"name": "The Neptunes", "id": "0KuF7reCTOZwV7YJnHQqgr"}
+  - {"name": "The Notorious B.I.G.", "id": "5me0Irg2ANcsgc93uaYrpb"}
+  - {"name": "The Offspring", "id": "5LfGQac0EIXyAN8aUwmNAQ"}
+  - {"name": "The Puppini Sisters", "id": "1svaANJTE5KrG16fTGDqOs"}
+  - {"name": "The Streets", "id": "4GvOygVQquMaPm8oAc0vXi"}
+  - {"name": "The Supermen Lovers", "id": "08dJ0NJ9jMf8qdLmdhQ2yA"}
+  - {"name": "Tiggs Da Author", "id": "0S2dfczvN0sOxEw559snHT"}
+  - {"name": "Timo Maas", "id": "1nN9sUUgtCl0Z9ciCLc48Q"}
+  - {"name": "Tori Amos", "id": "1KsASRNugxU85T0u6zSg32"}
+  - {"name": "Transglobal Underground", "id": "1J3SQiv951KEbTdyDHFWVQ"}
+  - {"name": "Whilk & Misky", "id": "6m9a3tDNWDe6bVR2csIjEv"}
+---
+
+# The owner's Spotify library
+
+6514 songs (2029 liked, 303 reviewed on the site), 55 playlists, 115 saved albums and 91 followed artists. Derived by scripts/spotify_history.py; never edit by hand.

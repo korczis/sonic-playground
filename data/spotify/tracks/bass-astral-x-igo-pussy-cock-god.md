@@ -1,0 +1,20 @@
+---
+schema: "spotify-track/v1"
+id: "bass-astral-x-igo-pussy-cock-god"
+title: "Pussy Cock & God"
+artists: ["Bass Astral x Igo"]
+album: "Discobolus"
+duration: "4:41"
+explicit: true
+spotify: {"track": "5SmPIkENC3tSQ87JI5DOU7", "album": "3fP6HlLd41jhNl6J25fdbf", "artists": ["34eIzSQthbDc6GrEUyYb7N"]}
+keys: {"fold": "bassastralxigo|pussycockgod"}
+status: "missing"
+liked: true
+sources: ["web-player:2026-11-14"]
+---
+
+# Pussy Cock & God · Bass Astral x Igo
+
+From the album *Discobolus*, 4:41.
+A liked song.
+No review yet.

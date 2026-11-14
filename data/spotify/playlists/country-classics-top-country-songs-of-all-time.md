@@ -1,0 +1,147 @@
+---
+schema: "spotify-playlist/v1"
+id: "country-classics-top-country-songs-of-all-time"
+name: "Country Classics 🤠 Top Country Songs of All Time"
+kind: "followed"
+description: "Public Playlist"
+expected: 132
+retrieved: 132
+read: "2026-11-14"
+tracks:
+  - {"n": 1, "track": "randy-travis-forever-and-ever-amen"}
+  - {"n": 2, "track": "dolly-parton-jolene"}
+  - {"n": 3, "track": "dan-shay-tequila"}
+  - {"n": 4, "track": "zach-bryan-i-remember-everything-feat-kacey-musgraves"}
+  - {"n": 5, "track": "blake-shelton-god-s-country"}
+  - {"n": 6, "track": "nitty-gritty-dirt-band-fishin-in-the-dark"}
+  - {"n": 7, "track": "bebe-rexha-meant-to-be-feat-florida-georgia-line"}
+  - {"n": 8, "track": "hunter-hayes-wanted"}
+  - {"n": 9, "track": "jason-aldean-big-green-tractor"}
+  - {"n": 10, "track": "bailey-zimmerman-fall-in-love"}
+  - {"n": 11, "track": "luke-combs-fast-car"}
+  - {"n": 12, "track": "trace-adkins-you-re-gonna-miss-this"}
+  - {"n": 13, "track": "willie-nelson-on-the-road-again-live"}
+  - {"n": 14, "track": "alan-jackson-it-s-five-o-clock-somewhere"}
+  - {"n": 15, "track": "brett-eldredge-beat-of-the-music"}
+  - {"n": 16, "track": "brooks-dunn-neon-moon"}
+  - {"n": 17, "track": "gabby-barrett-i-hope"}
+  - {"n": 18, "track": "reba-mcentire-fancy"}
+  - {"n": 19, "track": "hannah-harper-9-to-5-live-from-dollywood"}
+  - {"n": 20, "track": "eric-church-springsteen"}
+  - {"n": 21, "track": "zach-bryan-oklahoma-smokeshow"}
+  - {"n": 22, "track": "john-denver-take-me-home-country-roads-original-version"}
+  - {"n": 23, "track": "blake-shelton-boys-round-here-feat-pistol-annies-friends"}
+  - {"n": 24, "track": "kacey-musgraves-slow-burn"}
+  - {"n": 25, "track": "zac-brown-band-colder-weather"}
+  - {"n": 26, "track": "little-big-town-girl-crush"}
+  - {"n": 27, "track": "dan-shay-10-000-hours-with-justin-bieber"}
+  - {"n": 28, "track": "patsy-cline-crazy"}
+  - {"n": 29, "track": "dwight-yoakam-honky-tonk-man"}
+  - {"n": 30, "track": "john-michael-montgomery-sold-the-grundy-county-auction-incident"}
+  - {"n": 31, "track": "miranda-lambert-the-house-that-built-me"}
+  - {"n": 32, "track": "tim-mcgraw-live-like-you-were-dying"}
+  - {"n": 33, "track": "dolly-parton-islands-in-the-stream"}
+  - {"n": 34, "track": "the-judds-grandpa-tell-me-bout-the-good-old-days"}
+  - {"n": 35, "track": "zach-bryan-heading-south"}
+  - {"n": 36, "track": "the-chicks-wide-open-spaces"}
+  - {"n": 37, "track": "mel-mcdaniel-louisiana-saturday-night"}
+  - {"n": 38, "track": "randy-travis-deeper-than-the-holler"}
+  - {"n": 39, "track": "kenny-rogers-coward-of-the-county"}
+  - {"n": 40, "track": "beyonce-ii-most-wanted"}
+  - {"n": 41, "track": "bailey-zimmerman-rock-and-a-hard-place"}
+  - {"n": 42, "track": "shaboozey-a-bar-song-tipsy"}
+  - {"n": 43, "track": "sam-hunt-body-like-a-back-road"}
+  - {"n": 44, "track": "hank-williams-i-m-so-lonesome-i-could-cry"}
+  - {"n": 45, "track": "the-chicks-landslide"}
+  - {"n": 46, "track": "neil-young-casting-me-away-from-you"}
+  - {"n": 47, "track": "tracy-lawrence-time-marches-on"}
+  - {"n": 48, "track": "morgan-wallen-last-night"}
+  - {"n": 49, "track": "jason-aldean-don-t-you-wanna-stay-with-kelly-clarkson"}
+  - {"n": 50, "track": "the-charlie-daniels-band-the-devil-went-down-to-georgia-6gracp"}
+  - {"n": 51, "track": "dierks-bentley-5-1-5-0"}
+  - {"n": 52, "track": "johnny-cash-hurt"}
+  - {"n": 53, "track": "dan-shay-speechless"}
+  - {"n": 54, "track": "johnny-cash-ring-of-fire-remastered"}
+  - {"n": 55, "track": "bailey-zimmerman-religiously"}
+  - {"n": 56, "track": "hunter-hayes-invisible"}
+  - {"n": 57, "track": "dolly-parton-9-to-5"}
+  - {"n": 58, "track": "lady-a-need-you-now"}
+  - {"n": 59, "track": "billy-ray-cyrus-achy-breaky-heart"}
+  - {"n": 60, "track": "george-strait-amarillo-by-morning"}
+  - {"n": 61, "track": "jason-aldean-you-make-it-easy"}
+  - {"n": 62, "track": "rascal-flatts-what-hurts-the-most"}
+  - {"n": 63, "track": "leann-rimes-how-do-i-live"}
+  - {"n": 64, "track": "dolly-parton-i-will-always-love-you"}
+  - {"n": 65, "track": "rascal-flatts-life-is-a-highway"}
+  - {"n": 66, "track": "linda-ronstadt-crazy"}
+  - {"n": 67, "track": "reba-mcentire-the-night-the-lights-went-out-in-georgia"}
+  - {"n": 68, "track": "zac-brown-band-toes"}
+  - {"n": 69, "track": "shania-twain-man-i-feel-like-a-woman"}
+  - {"n": 70, "track": "johnny-lee-lookin-for-love"}
+  - {"n": 71, "track": "shenandoah-two-dozen-roses"}
+  - {"n": 72, "track": "dwight-yoakam-guitars-cadillacs"}
+  - {"n": 73, "track": "lynyrd-skynyrd-sweet-home-alabama"}
+  - {"n": 74, "track": "toby-keith-should-ve-been-a-cowboy"}
+  - {"n": 75, "track": "bailey-zimmerman-holy-smokes"}
+  - {"n": 76, "track": "hunter-hayes-21"}
+  - {"n": 77, "track": "florida-georgia-line-cruise"}
+  - {"n": 78, "track": "ashley-monroe-hands-on-you"}
+  - {"n": 79, "track": "merle-haggard-mama-tried"}
+  - {"n": 80, "track": "kenny-rogers-the-gambler"}
+  - {"n": 81, "track": "waylon-jennings-luckenbach-texas-back-to-the-basics-of-love-feat-willie-nelson"}
+  - {"n": 82, "track": "randy-travis-three-wooden-crosses"}
+  - {"n": 83, "track": "eric-church-drink-in-my-hand"}
+  - {"n": 84, "track": "chris-stapleton-you-should-probably-leave"}
+  - {"n": 85, "track": "faith-hill-this-kiss"}
+  - {"n": 86, "track": "kacey-musgraves-follow-your-arrow"}
+  - {"n": 87, "track": "luke-bryan-rain-is-a-good-thing"}
+  - {"n": 88, "track": "darius-rucker-wagon-wheel"}
+  - {"n": 89, "track": "randy-travis-diggin-up-bones"}
+  - {"n": 90, "track": "john-anderson-black-sheep"}
+  - {"n": 91, "track": "waylon-jennings-theme-from-the-dukes-of-hazzard-good-ol-boys"}
+  - {"n": 92, "track": "johnny-cash-i-walk-the-line-single-version"}
+  - {"n": 93, "track": "dwight-yoakam-fast-as-you"}
+  - {"n": 94, "track": "cole-swindell-she-had-me-at-heads-carolina"}
+  - {"n": 95, "track": "carrie-underwood-before-he-cheats"}
+  - {"n": 96, "track": "zac-brown-band-chicken-fried"}
+  - {"n": 97, "track": "taylor-swift-love-story-taylors-version"}
+  - {"n": 98, "track": "hunter-hayes-rescue"}
+  - {"n": 99, "track": "darius-rucker-alright"}
+  - {"n": 100, "track": "beyonce-texas-hold-em"}
+  - {"n": 101, "track": "tim-mcgraw-something-like-that"}
+  - {"n": 102, "track": "dierks-bentley-what-was-i-thinkin"}
+  - {"n": 103, "track": "dasha-austin-boots-stop-workin"}
+  - {"n": 104, "track": "zach-bryan-something-in-the-orange"}
+  - {"n": 105, "track": "chris-stapleton-tennessee-whiskey"}
+  - {"n": 106, "track": "jason-aldean-dirt-road-anthem"}
+  - {"n": 107, "track": "tammy-wynette-stand-by-your-man"}
+  - {"n": 108, "track": "faith-hill-the-way-you-love-me"}
+  - {"n": 109, "track": "wynonna-no-one-else-on-earth"}
+  - {"n": 110, "track": "george-strait-all-my-ex-s-live-in-texas"}
+  - {"n": 111, "track": "the-charlie-daniels-band-the-devil-went-down-to-georgia"}
+  - {"n": 112, "track": "mel-mcdaniel-baby-s-got-her-blue-jeans-on"}
+  - {"n": 113, "track": "patsy-cline-walkin-after-midnight"}
+  - {"n": 114, "track": "buck-owens-my-heart-skips-a-beat"}
+  - {"n": 115, "track": "lefty-frizzell-long-black-veil"}
+  - {"n": 116, "track": "taylor-swift-our-song"}
+  - {"n": 117, "track": "hunter-hayes-everybody-s-got-somebody-but-me-feat-jason-mraz-encore"}
+  - {"n": 118, "track": "john-michael-montgomery-i-can-love-you-like-that"}
+  - {"n": 119, "track": "kacey-musgraves-butterflies"}
+  - {"n": 120, "track": "john-michael-montgomery-be-my-baby-tonight"}
+  - {"n": 121, "track": "chris-stapleton-white-horse"}
+  - {"n": 122, "track": "brett-eldredge-mean-to-me"}
+  - {"n": 123, "track": "carrie-underwood-jesus-take-the-wheel"}
+  - {"n": 124, "track": "luke-combs-ain-t-no-love-in-oklahoma-from-twisters-the-album"}
+  - {"n": 125, "track": "trisha-yearwood-she-s-in-love-with-the-boy-single-version"}
+  - {"n": 126, "track": "bailey-zimmerman-fall-in-love"}
+  - {"n": 127, "track": "don-williams-i-believe-in-you"}
+  - {"n": 128, "track": "waylon-jennings-mammas-don-t-let-your-babies-grow-up-to-be-cowboys"}
+  - {"n": 129, "track": "buck-owens-i-ve-got-a-tiger-by-the-tail"}
+  - {"n": 130, "track": "the-everly-brothers-bye-bye-love"}
+  - {"n": 131, "track": "hank-thompson-the-wild-side-of-life"}
+  - {"n": 132, "track": "dwight-yoakam-a-thousand-miles-from-nowhere"}
+---
+
+# Country Classics 🤠 Top Country Songs of All Time
+
+A playlist the owner follows: 132 of 132 items read on 2026-11-14, 0 of them reviewed on the site.

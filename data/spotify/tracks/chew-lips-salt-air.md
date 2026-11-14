@@ -1,0 +1,19 @@
+---
+schema: "spotify-track/v1"
+id: "chew-lips-salt-air"
+title: "Salt Air"
+artists: ["Chew Lips"]
+album: "Kitsuné: Salt Air (Bonus Track Version)"
+duration: "2:54"
+spotify: {"track": "5EYWXZOHlb9sPplvP4d7L6", "album": "0g6eM4cM6muY6RduLeFO9w", "artists": ["2GUPq2sUqFNcvAoFxBsUDR"]}
+keys: {"fold": "chewlips|saltair"}
+status: "missing"
+liked: true
+sources: ["web-player:2026-11-14"]
+---
+
+# Salt Air · Chew Lips
+
+From the album *Kitsuné: Salt Air (Bonus Track Version)*, 2:54.
+A liked song.
+No review yet.
