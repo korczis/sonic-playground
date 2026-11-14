@@ -9,6 +9,8 @@ spotify: {"track": "6xyYawB1MHnhqW15YomUY6", "album": "1OHfZyU9lbgxNloanfhKd4", 
 keys: {"fold": "timetosleep|lungomare"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 5, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Lungo Mare*, 4:08.
 A liked song.
+Top tracks of the month (read 2026-11-14): #5.
 No review yet.

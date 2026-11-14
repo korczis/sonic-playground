@@ -9,6 +9,8 @@ spotify: {"track": "1WDtuoricpzxXBifSuWx0y", "album": "04X6SiqkYtSHq3TN8JtEJ9", 
 keys: {"fold": "purplediscomachine|takeiteasy"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 41, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Soulmatic*, 4:46.
 A liked song.
+Top tracks of the month (read 2026-11-14): #41.
 No review yet.

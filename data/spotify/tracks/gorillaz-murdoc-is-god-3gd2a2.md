@@ -9,6 +9,8 @@ spotify: {"track": "3gD2a26toPaegZ5TfSuqjQ", "album": "2w4tLG1JH25BysuILfkI0x", 
 keys: {"fold": "gorillaz|murdocisgod"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 15, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *D-Sides [Special Edition]*, 2:26.
 A liked song.
+Top tracks of the month (read 2026-11-14): #15.
 No review yet.

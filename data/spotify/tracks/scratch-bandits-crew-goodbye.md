@@ -9,6 +9,8 @@ spotify: {"track": "2G6dtpFgHX75Ei0ros3opC", "album": "2hZXssp37i6Z8LnmCRuEQl", 
 keys: {"fold": "scratchbanditscrew|goodbye"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 46, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Stereo 7*, 4:11.
 A liked song.
+Top tracks of the month (read 2026-11-14): #46.
 No review yet.

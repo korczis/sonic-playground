@@ -11,6 +11,8 @@ status: "missing"
 liked: true
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 595}
+top:
+  - {"range": "month", "rank": 34, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,5 +20,6 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Best Of*, 3:33.
 A liked song.
+Top tracks of the month (read 2026-11-14): #34.
 In My Top Songs of All the Time (#595).
 No review yet.

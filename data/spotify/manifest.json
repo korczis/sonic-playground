@@ -2,6 +2,7 @@
  "schema": "spotify-manifest/v1",
  "description": "The owner's Spotify history: public identity and relationships (ADR 0007). Derived by scripts/spotify_history.py build --write; never edited by hand.",
  "sources": [
+  "web-player:2026-11-14",
   "web-player:2026-11-14"
  ],
  "records": {
@@ -25,7 +26,7 @@
  "tables": {
   "tracks": {
    "path": "data/spotify/tables/tracks.jsonl",
-   "rows": 6514,
+   "rows": 6516,
    "key": "id",
    "join": {
     "spotify_track": "Spotify track id",
@@ -63,7 +64,7 @@
   },
   "albums": {
    "path": "data/spotify/tables/albums.jsonl",
-   "rows": 4717,
+   "rows": 4718,
    "key": "spotify_album",
    "join": {
     "name": "tracks.album"
@@ -76,13 +77,13 @@
   "use": "templates/page.html"
  },
  "counts": {
-  "tracks": 6514,
+  "tracks": 6516,
   "liked": 2029,
   "reviewed": 303,
   "playlists": 55,
   "memberships": 7922,
   "artists": 4825,
-  "albums": 4717,
+  "albums": 4718,
   "playlists_by_kind": {
    "liked": 1,
    "own": 11,

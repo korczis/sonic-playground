@@ -13,6 +13,8 @@ yearbooks:
   - {"year": 2018, "n": 58}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 242}
+top:
+  - {"range": "month", "rank": 3, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -20,6 +22,7 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Intuitive - EP*, 3:44.
 A liked song.
+Top tracks of the month (read 2026-11-14): #3.
 Your Top Songs 2018: #58.
 In My Top Songs of All the Time (#242).
 No review yet.

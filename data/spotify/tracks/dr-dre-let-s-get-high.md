@@ -10,6 +10,8 @@ spotify: {"track": "5PtZZkNYizyl4tq4Ru6pCL", "album": "7q2B4M5EiBkqrlsNW8lB7N", 
 keys: {"fold": "drdre|letsgethigh"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 17, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -17,4 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *2001*, 2:27.
 A liked song.
+Top tracks of the month (read 2026-11-14): #17.
 No review yet.

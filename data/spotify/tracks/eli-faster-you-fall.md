@@ -11,6 +11,8 @@ keys: {"fold": "eli|fasteryoufall", "musicbrainz": "1fa780a4-abad-48c4-8425-b8d6
 review: "eli-faster-you-fall.md"
 status: "present"
 liked: true
+top:
+  - {"range": "month", "rank": 37, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -18,4 +20,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *One Popular Guy*, 3:22.
 A liked song.
+Top tracks of the month (read 2026-11-14): #37.
 Reviewed: content/eli-faster-you-fall.md.

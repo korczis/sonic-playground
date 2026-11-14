@@ -9,6 +9,8 @@ spotify: {"track": "4vD6cfCdAVFGZ3ttf8kE3u", "album": "72MUV9NdRSGxBQrkZfUKvG", 
 keys: {"fold": "fischerspooner|naturaldisaster"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 32, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *#1*, 4:46.
 A liked song.
+Top tracks of the month (read 2026-11-14): #32.
 No review yet.

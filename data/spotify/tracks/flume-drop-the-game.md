@@ -9,6 +9,8 @@ spotify: {"track": "06WnUZymWyJamDivTWqJZA", "album": "5I0kS30hvtI7a1LFEhaPve", 
 keys: {"fold": "flume|dropthegame"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 24, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Lockjaw*, 3:41.
 A liked song.
+Top tracks of the month (read 2026-11-14): #24.
 No review yet.

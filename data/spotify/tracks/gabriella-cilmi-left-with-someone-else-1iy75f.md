@@ -17,6 +17,8 @@ yearbooks:
 playlists:
   - {"playlist": "best-of-the-best", "n": 80}
   - {"playlist": "my-top-songs-of-all-the-time", "n": 29}
+top:
+  - {"range": "month", "rank": 18, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -24,6 +26,7 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Sting*, 3:15.
 A liked song.
+Top tracks of the month (read 2026-11-14): #18.
 Your Top Songs 2016: #29.
 Your Top Songs 2019: #36.
 In Best of the Best (#80); My Top Songs of All the Time (#29).

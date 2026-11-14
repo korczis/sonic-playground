@@ -9,6 +9,8 @@ spotify: {"track": "0qLLGw4flGdBsIKYpYszIq", "album": "5jEBgUyhPLu3QUoZvbRdCa", 
 keys: {"fold": "joegoddard|sheburns"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 1, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Taking Over*, 8:00.
 A liked song.
+Top tracks of the month (read 2026-11-14): #1.
 No review yet.

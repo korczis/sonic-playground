@@ -206,8 +206,11 @@ def ingest_snapshot(path: Path, plain: Path | None = None) -> Path:
     out = {"schema": SNAPSHOT_SCHEMA, "captured": captured,
            "source": data.get("source", "open.spotify.com, the owner's logged-in web player (rendered page)"),
            "library": data.get("library", []), "playlists": playlists}
+    if data.get("top"):
+        out["top"] = data["top"]
     SNAPSHOTS.mkdir(parents=True, exist_ok=True)
-    target = SNAPSHOTS / f"web-{captured}.json"
+    suffix = "-top" if data.get("top") and not playlists else ""
+    target = SNAPSHOTS / f"web-{captured}{suffix}.json"
     target.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     commit_private(f"snapshot: web player {captured}")
     return target
@@ -304,7 +307,7 @@ def model(snaps: list[dict], export: dict | None = None) -> dict:
                             "album": item.get("album"), "duration": item.get("duration"),
                             "explicit": bool(item.get("explicit")), "track_id": item.get("track_id"),
                             "album_id": item.get("album_id"), "artist_ids": item.get("artist_ids") or [],
-                            "liked": False, "liked_added": None, "playlists": [], "sources": set()}
+                            "liked": False, "liked_added": None, "playlists": [], "top": [], "sources": set()}
         else:  # fill what an earlier source lacked
             for f in ("album", "duration", "album_id"):
                 s[f] = s[f] or item.get(f)
@@ -379,10 +382,28 @@ def model(snaps: list[dict], export: dict | None = None) -> dict:
             ts = (e.get("ts") or "")[:19]
             pr["first"] = min(filter(None, (pr["first"], ts)), default=None)
             pr["last"] = max(filter(None, (pr["last"], ts)), default=None)
+    # Top lists last: their rows carry no track id and join the songs the playlists named.
+    top_artists: list[dict] = []
+    for snap in ordered:
+        top = snap.get("top")
+        if not top:
+            continue
+        tag = f"web-player:{snap['captured']}"
+        rng = {"short_term": "month", "medium_term": "half-year", "long_term": "all-time"}.get(top.get("range", ""), "month")
+        for it in snapshot_items(top.get("tracks", [])):
+            if it.get("unavailable"):
+                continue
+            s = song_for(it)
+            s["sources"].add(tag)
+            s["top"] = [t for t in s["top"] if t["range"] != rng] + [{"range": rng, "rank": it["n"], "read": snap["captured"]}]
+        top_artists = [a for a in top_artists if a["range"] != rng] + [
+            {"range": rng, "rank": a["rank"], "name": a["name"], **({"id": a["id"]} if id_of(a.get("id"), "artist") else {}),
+             "read": snap["captured"]} for a in top.get("artists", [])]
     # Newer snapshots of a playlist replace older ones (one playlist, its latest reading).
     latest: dict[str, dict] = {}
     for pl in playlists:
         latest[pl["uri"] or pl["name"]] = pl
+    library["top_artists"] = top_artists
     return {"songs": songs, "playlists": list(latest.values()), "library": library,
             "plays": dict(plays), "sources": sources, "self": self_name}
 
@@ -464,6 +485,7 @@ def song_meta(s: dict, m: dict, private: bool) -> dict:
             "spotify": ids or None, "keys": join_keys(s), "review": s.get("review"), "status": s.get("status"),
             "liked": s["liked"], "yearbooks": sorted(yearbooks, key=lambda y: y["year"]) or None,
             "playlists": sorted(member, key=lambda e: (e["playlist"], e["n"])) or None,
+            "top": sorted(s.get("top") or [], key=lambda t: t["range"]) or None,
             "sources": sorted(s["sources"])}
     if private:
         meta["added"] = s["liked_added"]
@@ -477,6 +499,8 @@ def song_body(meta: dict, m: dict) -> str:
     if meta.get("album"):
         lines.append(f"From the album *{meta['album']}*" + (f", {meta['duration']}." if meta.get("duration") else "."))
     lines.append("A liked song." if meta["liked"] else "Not among the liked songs.")
+    for t in meta.get("top") or []:
+        lines.append(f"Top tracks of the {t['range']} (read {t['read']}): #{t['rank']}.")
     for y in meta.get("yearbooks") or []:
         lines.append(f"Your Top Songs {y['year']}: #{y['n']}.")
     if meta.get("playlists"):
@@ -534,7 +558,8 @@ def library_meta(m: dict) -> dict:
             "sources": m["sources"],
             "playlists": [{"kind": k, "ids": v} for k, v in kinds.items()] or None,
             "albums": sorted(m["library"]["albums"].values(), key=lambda a: (a["name"] or "").lower()) or None,
-            "artists": sorted(m["library"]["artists"].values(), key=lambda a: (a["name"] or "").lower()) or None}
+            "artists": sorted(m["library"]["artists"].values(), key=lambda a: (a["name"] or "").lower()) or None,
+            "top_artists": sorted(m["library"].get("top_artists") or [], key=lambda a: (a["range"], a["rank"])) or None}
 
 
 def index_json(m: dict) -> dict:
@@ -596,6 +621,9 @@ def tables(m: dict) -> dict[Path, str]:
             aid = s["artist_ids"][i] if i < len(s["artist_ids"]) else None
             a = artists.setdefault(aid or cat.fold(name), {"id": cat.slugify(name) or "artist", "name": name, "spotify_artist": aid,
                                                            "tracks": 0, "liked": 0, "reviewed": 0, "followed": False})
+            for t in m["library"].get("top_artists") or []:
+                if (aid and t.get("id") == aid) or cat.fold(t["name"]) == cat.fold(name):
+                    a[f"top_{t['range'].replace('-', '_')}"] = t["rank"]
             a["tracks"] += 1
             a["liked"] += s["liked"]
             a["reviewed"] += bool(s.get("review"))

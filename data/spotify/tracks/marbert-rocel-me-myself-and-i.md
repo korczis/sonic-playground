@@ -9,6 +9,8 @@ spotify: {"track": "65EBidBsMldKVOy5qBG9F9", "album": "2TXW6slePRiTf4OHii3xVF", 
 keys: {"fold": "marbertrocel|memyselfandi"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 29, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *In the Beginning*, 4:25.
 A liked song.
+Top tracks of the month (read 2026-11-14): #29.
 No review yet.

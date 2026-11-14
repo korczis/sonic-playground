@@ -9,6 +9,8 @@ spotify: {"track": "4ZT1uxsSobXt3Th3QTe6ou", "album": "3RcPifoLGQLHKLgoQIQmvc", 
 keys: {"fold": "belleruche|clockwatching"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 22, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *270 Stories*, 4:31.
 A liked song.
+Top tracks of the month (read 2026-11-14): #22.
 No review yet.

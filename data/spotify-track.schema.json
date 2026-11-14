@@ -160,6 +160,36 @@
      "pattern": "^Q\\d+$"
     }
    }
+  },
+  "top": {
+   "type": "array",
+   "description": "The owner's top tracks as the profile showed them: the range, the rank and the day it was read.",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "range",
+     "rank",
+     "read"
+    ],
+    "properties": {
+     "range": {
+      "type": "string",
+      "enum": [
+       "month",
+       "half-year",
+       "all-time"
+      ]
+     },
+     "rank": {
+      "type": "integer"
+     },
+     "read": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     }
+    }
+   }
   }
  }
 }

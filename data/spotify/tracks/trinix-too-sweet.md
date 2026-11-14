@@ -9,6 +9,8 @@ spotify: {"track": "4Z3F8VnLHzcIRNDRRJmr8P", "album": "2SPkdaGAzaDdftkh0EvyMJ", 
 keys: {"fold": "trinix|toosweet"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 4, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Too Sweet*, 2:44.
 A liked song.
+Top tracks of the month (read 2026-11-14): #4.
 No review yet.

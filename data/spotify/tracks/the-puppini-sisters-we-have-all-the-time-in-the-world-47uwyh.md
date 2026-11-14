@@ -9,6 +9,8 @@ spotify: {"track": "47UWYhWimZsfVqNwfWQstZ", "album": "6jfP2zf5d6xlyb0ZfusmEs", 
 keys: {"fold": "thepuppinisisters|wehaveallthetimeintheworld"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 16, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Rise And Fall Of Ruby Woo*, 4:03.
 A liked song.
+Top tracks of the month (read 2026-11-14): #16.
 No review yet.

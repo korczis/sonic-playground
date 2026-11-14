@@ -12,6 +12,8 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "eurythmics-sweet-dreams-ibiza-deep-summer-remix-2015", "n": 102}
+top:
+  - {"range": "month", "rank": 20, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -19,5 +21,6 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Sugar (feat. Francesco Yates)*, 3:39.
 A liked song.
+Top tracks of the month (read 2026-11-14): #20.
 In Eurythmics - Sweet Dreams (Ibiza Deep Summer Remix 2015) (#102).
 Reviewed: content/robin-schulz-francesco-yates-sugar.md.

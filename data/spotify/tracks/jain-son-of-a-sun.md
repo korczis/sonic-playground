@@ -13,6 +13,8 @@ yearbooks:
   - {"year": 2019, "n": 54}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 330}
+top:
+  - {"range": "month", "rank": 13, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -20,6 +22,7 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Zanaka - EP*, 3:31.
 A liked song.
+Top tracks of the month (read 2026-11-14): #13.
 Your Top Songs 2019: #54.
 In My Top Songs of All the Time (#330).
 No review yet.

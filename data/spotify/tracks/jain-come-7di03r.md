@@ -10,6 +10,8 @@ keys: {"fold": "jain|come", "isrc": "FR9W11502680", "musicbrainz": "26a6365b-cfb
 review: "jain-come.md"
 status: "present"
 liked: true
+top:
+  - {"range": "month", "rank": 43, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -17,4 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Hope - EP*, 2:42.
 A liked song.
+Top tracks of the month (read 2026-11-14): #43.
 Reviewed: content/jain-come.md.

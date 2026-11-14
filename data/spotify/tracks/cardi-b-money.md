@@ -14,6 +14,8 @@ yearbooks:
   - {"year": 2021, "n": 25}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 470}
+top:
+  - {"range": "month", "rank": 45, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -21,6 +23,7 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Pride Party*, 3:03.
 A liked song.
+Top tracks of the month (read 2026-11-14): #45.
 Your Top Songs 2021: #25.
 In My Top Songs of All the Time (#470).
 No review yet.

@@ -14,6 +14,8 @@ yearbooks:
   - {"year": 2021, "n": 58}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 423}
+top:
+  - {"range": "month", "rank": 23, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -21,6 +23,7 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Swim*, 5:15.
 A liked song.
+Top tracks of the month (read 2026-11-14): #23.
 Your Top Songs 2020: #62.
 Your Top Songs 2021: #58.
 In My Top Songs of All the Time (#423).

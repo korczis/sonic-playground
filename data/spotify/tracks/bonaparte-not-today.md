@@ -10,6 +10,8 @@ keys: {"fold": "bonaparte|nottoday", "musicbrainz": "c932bc6e-13d6-4791-af8c-ab6
 review: "bonaparte-acid-pauli-not-today.md"
 status: "present"
 liked: true
+top:
+  - {"range": "month", "rank": 26, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -17,4 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Good Morning / Not Today*, 5:18.
 A liked song.
+Top tracks of the month (read 2026-11-14): #26.
 Reviewed: content/bonaparte-acid-pauli-not-today.md.

@@ -9,6 +9,8 @@ spotify: {"track": "3GDvtBfRkOOIR0gDx1qyXj", "album": "1vYDlDjuYapfyX2DpdrziG", 
 keys: {"fold": "gorillaz|gorillazaretenspotifyradioshow17"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 49, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Gorillaz Are Ten - Spotify Radio Show 1*, 1:12.
 A liked song.
+Top tracks of the month (read 2026-11-14): #49.
 No review yet.

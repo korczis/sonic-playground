@@ -9,6 +9,8 @@ spotify: {"track": "5oPetiXxyczinXVQrhTIxQ", "album": "4eqJ2bgFYVtM6JaZCLlONE", 
 keys: {"fold": "gorillaz|dirtyharry"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 10, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Dirty Harry*, 3:51.
 A liked song.
+Top tracks of the month (read 2026-11-14): #10.
 No review yet.

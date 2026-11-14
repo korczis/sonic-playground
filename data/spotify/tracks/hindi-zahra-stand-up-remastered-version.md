@@ -10,6 +10,8 @@ keys: {"fold": "hindizahra|standup", "isrc": "FR9W10902933", "musicbrainz": "575
 review: "hindi-zahra_stand-up.md"
 status: "present"
 liked: true
+top:
+  - {"range": "month", "rank": 7, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -17,4 +19,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Handmade*, 4:39.
 A liked song.
+Top tracks of the month (read 2026-11-14): #7.
 Reviewed: content/hindi-zahra_stand-up.md.

@@ -9,6 +9,8 @@ spotify: {"track": "2k6hpKTyubRVOmQR11ViY3", "album": "0bUTHlWbkSQysoM3VsWldT", 
 keys: {"fold": "gorillaz|demondays"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 48, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Demon Days*, 4:28.
 A liked song.
+Top tracks of the month (read 2026-11-14): #48.
 No review yet.

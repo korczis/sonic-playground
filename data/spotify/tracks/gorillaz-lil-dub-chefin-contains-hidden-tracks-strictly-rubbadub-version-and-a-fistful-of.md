@@ -9,6 +9,8 @@ spotify: {"track": "5Wqbsm4BdgipmNpP8LxUGL", "album": "0yPLNfI8WPJWFoJugr0KAv", 
 keys: {"fold": "gorillaz|lildubchefincontainshiddentracksstrictlyrubbadubversionandafistfulofpeanutsversioncontainshiddentracksstrictlyrubbadubversionversion"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 27, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Laika Come Home*, 18:01.
 A liked song.
+Top tracks of the month (read 2026-11-14): #27.
 No review yet.

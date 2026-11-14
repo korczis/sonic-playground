@@ -9,6 +9,8 @@ spotify: {"track": "1WK85H8s5hfb0dhuarL7ke", "album": "77tEvVdkY9b4d8YIVAXVph", 
 keys: {"fold": "weareenfantterrible|filthylove"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 42, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Explicit Pictures*, 3:19.
 A liked song.
+Top tracks of the month (read 2026-11-14): #42.
 No review yet.

@@ -9,6 +9,8 @@ spotify: {"track": "2SnuxrxzAEu9EWgEvtH7pp", "album": "01HZZKZQMQ4h25qsOsBIrK", 
 keys: {"fold": "belleruche|itllcomeyamwhoremix"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 25, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Northern Girls*, 7:27.
 A liked song.
+Top tracks of the month (read 2026-11-14): #25.
 No review yet.

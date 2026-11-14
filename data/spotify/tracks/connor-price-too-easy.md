@@ -9,6 +9,8 @@ spotify: {"track": "7EQjPEL70tzjlTgCgU0QrV", "album": "7DhG7Pwl4OremQ50PKSnYk", 
 keys: {"fold": "connorprice|tooeasy"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 9, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *ICONIC*, 2:13.
 A liked song.
+Top tracks of the month (read 2026-11-14): #9.
 No review yet.

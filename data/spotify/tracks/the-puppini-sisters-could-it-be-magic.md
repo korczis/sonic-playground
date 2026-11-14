@@ -9,6 +9,8 @@ spotify: {"track": "2eyo7YlQZLxRQG76LbdtU9", "album": "6jfP2zf5d6xlyb0ZfusmEs", 
 keys: {"fold": "thepuppinisisters|coulditbemagic"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 33, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Rise And Fall Of Ruby Woo*, 3:33.
 A liked song.
+Top tracks of the month (read 2026-11-14): #33.
 No review yet.

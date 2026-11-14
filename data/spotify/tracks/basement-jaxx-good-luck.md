@@ -9,6 +9,8 @@ spotify: {"track": "76qqmbeHyPhP2SjrO4jBZS", "album": "7Ed7XnDGooooAKya8nhWbo", 
 keys: {"fold": "basementjaxx|goodluck"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 44, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Kish Kash*, 4:42.
 A liked song.
+Top tracks of the month (read 2026-11-14): #44.
 No review yet.

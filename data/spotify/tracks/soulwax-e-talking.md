@@ -9,6 +9,8 @@ spotify: {"track": "0PyY0xuVcLt2qaEe5hrtRi", "album": "5ftdUoPzoh1y5bIroXw68G", 
 keys: {"fold": "soulwax|etalking"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 36, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Nite Versions*, 6:07.
 A liked song.
+Top tracks of the month (read 2026-11-14): #36.
 No review yet.

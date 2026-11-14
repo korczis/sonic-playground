@@ -12,6 +12,8 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 13}
+top:
+  - {"range": "month", "rank": 35, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -19,5 +21,6 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Plastic Love*, 4:20.
 A liked song.
+Top tracks of the month (read 2026-11-14): #35.
 Your Top Songs 2022: #13.
 Reviewed: content/say-yes-dog_a-friend.md.

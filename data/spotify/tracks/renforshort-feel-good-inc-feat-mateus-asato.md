@@ -12,6 +12,8 @@ status: "missing"
 liked: true
 playlists:
   - {"playlist": "rachel-k-collier-mix", "n": 5}
+top:
+  - {"range": "month", "rank": 14, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -19,5 +21,6 @@ sources: ["web-player:2026-11-14"]
 
 From the album *feel good inc. (feat. Mateus Asato)*, 3:19.
 A liked song.
+Top tracks of the month (read 2026-11-14): #14.
 In Rachel K Collier Mix (#5).
 No review yet.

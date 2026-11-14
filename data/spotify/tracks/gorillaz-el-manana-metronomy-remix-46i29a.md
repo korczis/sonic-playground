@@ -9,6 +9,8 @@ spotify: {"track": "46I29AkoUxzgCt7LnoXXf6", "album": "2w4tLG1JH25BysuILfkI0x", 
 keys: {"fold": "gorillaz|elmananametronomyremix"}
 status: "missing"
 liked: true
+top:
+  - {"range": "month", "rank": 21, "read": "2026-11-14"}
 sources: ["web-player:2026-11-14"]
 ---
 
@@ -16,4 +18,5 @@ sources: ["web-player:2026-11-14"]
 
 From the album *D-Sides [Special Edition]*, 5:44.
 A liked song.
+Top tracks of the month (read 2026-11-14): #21.
 No review yet.

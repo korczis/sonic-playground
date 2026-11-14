@@ -1,10 +1,10 @@
 ---
 schema: "spotify-library/v1"
 id: "library"
-songs: 6514
+songs: 6516
 liked: 2029
 reviewed: 303
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-14"]
 playlists:
   - {"kind": "liked", "ids": ["liked-songs"]}
   - {"kind": "own", "ids": ["angry-ego", "best-of-the-best", "discover-weekly", "liked-from-radio", "my-playlist-10", "my-playlist-11", "my-playlist-5", "my-playlist-9", "my-shazam-tracks", "my-top-songs-of-all-the-time", "sonic-playground"]}
@@ -219,8 +219,59 @@ artists:
   - {"name": "Tori Amos", "id": "1KsASRNugxU85T0u6zSg32"}
   - {"name": "Transglobal Underground", "id": "1J3SQiv951KEbTdyDHFWVQ"}
   - {"name": "Whilk & Misky", "id": "6m9a3tDNWDe6bVR2csIjEv"}
+top_artists:
+  - {"range": "month", "rank": 1, "name": "Gorillaz", "id": "3AA28KZvwAUcZuOKwyblJQ", "read": "2026-11-14"}
+  - {"range": "month", "rank": 2, "name": "Belleruche", "id": "4N9nNkpjGuBlGWnYubQI8t", "read": "2026-11-14"}
+  - {"range": "month", "rank": 3, "name": "Moloko", "id": "4aaBjq7VqqQvpSF69GglvO", "read": "2026-11-14"}
+  - {"range": "month", "rank": 4, "name": "The Puppini Sisters", "id": "1svaANJTE5KrG16fTGDqOs", "read": "2026-11-14"}
+  - {"range": "month", "rank": 5, "name": "Nightmares On Wax", "id": "4tNxq9NGKTKaX8OkZBLgf0", "read": "2026-11-14"}
+  - {"range": "month", "rank": 6, "name": "D12", "id": "5Qi4Bb7a8C0a00NZcA77L0", "read": "2026-11-14"}
+  - {"range": "month", "rank": 7, "name": "Fischerspooner", "id": "5R7K1GezC0jy24v1R2n4x3", "read": "2026-11-14"}
+  - {"range": "month", "rank": 8, "name": "Pilocka Krach", "id": "72gQuI1GHmsUXIfe863TC7", "read": "2026-11-14"}
+  - {"range": "month", "rank": 9, "name": "Dr. Dre", "id": "6DPYiyq5kWVQS4RGwxzPC7", "read": "2026-11-14"}
+  - {"range": "month", "rank": 10, "name": "The Supermen Lovers", "id": "08dJ0NJ9jMf8qdLmdhQ2yA", "read": "2026-11-14"}
+  - {"range": "month", "rank": 11, "name": "K.Flay", "id": "0pCNk4D3E2xtszsm6hMsWr", "read": "2026-11-14"}
+  - {"range": "month", "rank": 12, "name": "Miss Kittin", "id": "3QhNv79NoIvarU6N57GBzL", "read": "2026-11-14"}
+  - {"range": "month", "rank": 13, "name": "Oliver Koletzki", "id": "1WjBIvYAnZTkTh5UiZNwlR", "read": "2026-11-14"}
+  - {"range": "month", "rank": 14, "name": "Gorgon City", "id": "4VNQWV2y1E97Eqo2D5UTjx", "read": "2026-11-14"}
+  - {"range": "month", "rank": 15, "name": "Hindi Zahra", "id": "6QncudMSOiKxYRIKRDks6S", "read": "2026-11-14"}
+  - {"range": "month", "rank": 16, "name": "Basement Jaxx", "id": "4YrKBkKSVeqDamzBPWVnSJ", "read": "2026-11-14"}
+  - {"range": "month", "rank": 17, "name": "Purple Disco Machine", "id": "2WBJQGf1bT1kxuoqziH5g4", "read": "2026-11-14"}
+  - {"range": "month", "rank": 18, "name": "Jain", "id": "2HHmvvSQ44ePDH7IKVzgK0", "read": "2026-11-14"}
+  - {"range": "month", "rank": 19, "name": "Apocalyptica", "id": "4Lm0pUvmisUHMdoky5ch2I", "read": "2026-11-14"}
+  - {"range": "month", "rank": 20, "name": "Florence + The Machine", "id": "1moxjboGR7GNWYIMWsRjgG", "read": "2026-11-14"}
+  - {"range": "month", "rank": 21, "name": "Gin Wigmore", "id": "4Gzfk9Lxm67nBs7E9BZjzG", "read": "2026-11-14"}
+  - {"range": "month", "rank": 22, "name": "The Prodigy", "id": "4k1ELeJKT1ISyDv8JivPpB", "read": "2026-11-14"}
+  - {"range": "month", "rank": 23, "name": "Daft Punk", "id": "4tZwfgrHOc3mvqYlEYSvVi", "read": "2026-11-14"}
+  - {"range": "month", "rank": 24, "name": "Ben Khan", "id": "2YwPMfgNYeDjbkGI7PwZ3K", "read": "2026-11-14"}
+  - {"range": "month", "rank": 25, "name": "Dada Life", "id": "00sAT5YX8W3xNd1EuqyHw9", "read": "2026-11-14"}
+  - {"range": "month", "rank": 26, "name": "Karel Vlach se svým orchestrem", "id": "7LhVzOpBT3AWjxSIhGS3oJ", "read": "2026-11-14"}
+  - {"range": "month", "rank": 27, "name": "Tweak", "id": "2DhhkzN5EhX79GGrBbftgM", "read": "2026-11-14"}
+  - {"range": "month", "rank": 28, "name": "Flume", "id": "6nxWCVXbOlEVRexSbLsTer", "read": "2026-11-14"}
+  - {"range": "month", "rank": 29, "name": "Bronski Beat", "id": "2wpWOzQE5TpA0dVnh5YD08", "read": "2026-11-14"}
+  - {"range": "month", "rank": 30, "name": "Waldeck", "id": "6596yDTd94cIC3dlBptxDH", "read": "2026-11-14"}
+  - {"range": "month", "rank": 31, "name": "Marbert Rocel", "id": "0VEzhZrWBCaoufAiZkjX3G", "read": "2026-11-14"}
+  - {"range": "month", "rank": 32, "name": "Zwicker", "id": "1oojcp861zYKDzhR9bAp2K", "read": "2026-11-14"}
+  - {"range": "month", "rank": 33, "name": "Say Yes Dog", "id": "039HWymb5EJiSHhtlJctsi", "read": "2026-11-14"}
+  - {"range": "month", "rank": 34, "name": "Mount Sims", "id": "2UyhhfLOvfLs7ZhzsAaNC3", "read": "2026-11-14"}
+  - {"range": "month", "rank": 35, "name": "Her", "id": "1T2WeXEi0XlZiPpjjDAY0L", "read": "2026-11-14"}
+  - {"range": "month", "rank": 36, "name": "Emika", "id": "50Gx1SNB4vH2V7peIiYD4S", "read": "2026-11-14"}
+  - {"range": "month", "rank": 37, "name": "Jan Blomqvist", "id": "5wMlMjOLeJfS5DfxqGfm83", "read": "2026-11-14"}
+  - {"range": "month", "rank": 38, "name": "DJ Fresh", "id": "6r20qOqY7qDWI0PPTxVMlC", "read": "2026-11-14"}
+  - {"range": "month", "rank": 39, "name": "Arctic Monkeys", "id": "7Ln80lUS6He07XvHI8qqHH", "read": "2026-11-14"}
+  - {"range": "month", "rank": 40, "name": "Kelis", "id": "0IF46mUS8NXjgHabxk2MCM", "read": "2026-11-14"}
+  - {"range": "month", "rank": 41, "name": "Christopher Schwarzwälder", "id": "11i3tISGuOUmWFuXTRNrtD", "read": "2026-11-14"}
+  - {"range": "month", "rank": 42, "name": "Parra for Cuva", "id": "238y1dKPtMeFEpX3Y6H1Vr", "read": "2026-11-14"}
+  - {"range": "month", "rank": 43, "name": "La Roux", "id": "3K2zB87GZv1krx031en5VA", "read": "2026-11-14"}
+  - {"range": "month", "rank": 44, "name": "Whilk & Misky", "id": "6m9a3tDNWDe6bVR2csIjEv", "read": "2026-11-14"}
+  - {"range": "month", "rank": 45, "name": "The Cat Empire", "id": "023YMawCG3OvACmRjWxLWC", "read": "2026-11-14"}
+  - {"range": "month", "rank": 46, "name": "AYYBO", "id": "0YVquC9RaJLYFNmlJFzkTV", "read": "2026-11-14"}
+  - {"range": "month", "rank": 47, "name": "Kalabrese", "id": "2MUENaxB93ZPNclZIDEMMV", "read": "2026-11-14"}
+  - {"range": "month", "rank": 48, "name": "Klyne", "id": "3q4qbeWVDpN7LcwU6db2a7", "read": "2026-11-14"}
+  - {"range": "month", "rank": 49, "name": "Claptone", "id": "4mncDFjVLUa3s025Tct3Ry", "read": "2026-11-14"}
+  - {"range": "month", "rank": 50, "name": "Felix Da Housecat", "id": "4rC8J4M4aOqsQSCP4yoyJI", "read": "2026-11-14"}
 ---
 
 # The owner's Spotify library
 
-6514 songs (2029 liked, 303 reviewed on the site), 55 playlists, 115 saved albums and 91 followed artists. Derived by scripts/spotify_history.py; never edit by hand.
+6516 songs (2029 liked, 303 reviewed on the site), 55 playlists, 115 saved albums and 91 followed artists. Derived by scripts/spotify_history.py; never edit by hand.
