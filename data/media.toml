@@ -25,3 +25,12 @@ image_kb = 300
 format = "jpeg"
 quality = 85
 card_kb = 180
+
+[youtube]
+# The stills YouTube serves for every video (i.ytimg.com/vi/<id>/<file>.jpg), smallest first. A page
+# offers them as one srcset and says how wide it shows the still (`sizes`); the browser takes the
+# smallest that is sharp at the screen's density ({{ <still … /> }}, templates/components.html).
+# mqdefault is 16:9 and has no letterbox; hqdefault is 4:3 with black bars above and below a 16:9
+# video, which a 4:3 box (a list row) used to show. Measured 2026-11-14 on five videos: mqdefault
+# 9 kB, hqdefault 19 kB on average. sddefault and maxresdefault are absent for some videos (404).
+stills = [{ file = "mqdefault", width = 320, height = 180 }, { file = "hqdefault", width = 480, height = 360 }]

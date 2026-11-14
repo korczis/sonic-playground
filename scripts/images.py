@@ -94,6 +94,11 @@ def render(src: str, cfg: dict) -> dict:
             "variants": variants}
 
 
+# The settings of data/media.toml that templates and scripts read from the manifest, so a page never
+# loads the TOML itself: the <picture> formats, the card width, the social card and the YouTube stills.
+CARRIED = ("formats", "card_width", "social", "youtube")
+
+
 def load_manifest() -> dict:
     if MANIFEST.exists():
         return json.loads(MANIFEST.read_text(encoding="utf-8"))
@@ -101,9 +106,9 @@ def load_manifest() -> dict:
 
 
 def dump(images: dict, cfg: dict) -> str:
+    carried = {key: cfg[key] for key in CARRIED}
     return json.dumps({"schema": "sonic-images/v1", "generated_by": "scripts/images.py",
-                       "formats": cfg["formats"], "card_width": cfg["card_width"], "social": cfg["social"],
-                       "images": images},
+                       **carried, "images": images},
                       indent=1, sort_keys=True) + "\n"
 
 
@@ -130,9 +135,9 @@ def problems(cfg: dict) -> list[str]:
                         out.append(f"{rel} weighs {nbytes // 1024} kB, over the budget of "
                                    f"{cfg['budget']['image_kb']} kB (data/media.toml): lower quality or width")
     manifest = load_manifest()
-    if (manifest.get("formats") != cfg["formats"] or manifest.get("card_width") != cfg["card_width"]
-            or manifest.get("social") != cfg["social"]):
-        out.append("static/data/images.json does not carry data/media.toml's formats, card_width and social; run python3 scripts/images.py")
+    stale = [key for key in CARRIED if manifest.get(key) != cfg[key]]
+    if stale:
+        out.append(f"static/data/images.json does not carry data/media.toml's {', '.join(stale)}; run python3 scripts/images.py")
     for src in sorted(set(images) - set(used)):
         out.append(f"{src} is in the manifest but nothing shows it; run python3 scripts/images.py")
     recorded = {rows[2] for e in images.values() for rs in e["variants"].values() for rows in rs}

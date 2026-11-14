@@ -4,13 +4,13 @@ version: 1
 kind: rule
 title: A page shows derived, sized images within the budget, never a source
 description: Every local image the content shows (a figure, a review's cover_image) is served as AVIF and WebP variants rendered by scripts/images.py at the widths of data/media.toml; every <img> carries its width and height; no image a built page references weighs more than data/media.toml budget.image_kb.
-statement: Show a local image only through the figure component or a card still, both of which read the derived variants (static/data/images.json, written by scripts/images.py from data/media.toml); give every <img> its width and height; keep scripts/images.py --check and scripts/check-built.py green; change widths, formats, qualities or the budget in data/media.toml, never per image.
+statement: Show a local image only through the figure component or a card still, both of which read the derived variants (static/data/images.json, written by scripts/images.py from data/media.toml); show a YouTube still or a track's thumbnail only through the still component, which offers the stills of data/media.toml [youtube] as a srcset with sizes; give every <img> its width and height; keep scripts/images.py --check and scripts/check-built.py green; change widths, formats, qualities or the budget in data/media.toml, never per image.
 status: active
 class: blocking
 depends_on: [project.site-static-serverless@1, project.ui-components@1]
 tags: [performance, images, media, quality]
 x-majordomus:
-  tests: [scripts/images.py, scripts/check-built.py]
+  tests: [scripts/images.py, scripts/check-built.py, scripts/check-components.py]
 ---
 
 # Rationale
@@ -20,6 +20,12 @@ The baseline measurement of production on 2026-11-12 (10c73fa) found the welcome
 at full size into a 720 px column, with no width or height, so both pages shifted as they loaded
 (CLS 0.098 and 0.095). Review stills (cover_image) of up to 1.4 MB were shown in 160 px cards.
 A rule that only advised "optimise images" had nothing to check; this one is a gate.
+
+On 2026-11-14 every YouTube still was the 480x360 `hqdefault.jpg`, whatever its box: a 64x48
+archive row, a 96x54 connection, the blurred track header. The archive moved 4879 kB of stills
+when scrolled to the end; `hqdefault` is 4:3 with black bars baked in, which the 4:3 rows showed.
+With the stills of `data/media.toml [youtube]` as a srcset and each box's `sizes`, the archive
+moves 2521 kB and the bars are gone; a track page on a desktop 182 kB -> 118 kB.
 
 # Required behaviour
 
@@ -31,6 +37,10 @@ A rule that only advised "optimise images" had nothing to check; this one is a g
   what is missing or stale and removes only its own files that nothing references.
 - The figure component renders a `<picture>` of every format and width with `width`/`height`;
   `scripts/catalog.py` gives a card the smallest variant at least `card_width` wide.
+- A YouTube still or a track's thumbnail is written only by the `still` component: `src` is the
+  smallest still of `data/media.toml [youtube]`, `srcset` names them all with their widths, and
+  the caller's `sizes` says how wide the box is (a blurred background says the smallest). The
+  browser takes the smallest still that is sharp at the screen's density.
 - Every `<img>` of a built page has `width` and `height` (an image positioned over a box still
   states them: the check cannot tell, and the cost is two attributes).
 
@@ -40,7 +50,9 @@ A rule that only advised "optimise images" had nothing to check; this one is a g
 variants, a stale manifest (source or parameters changed), a missing or altered variant, a variant
 over the budget, an orphan derived file, and a manifest that does not carry the parameters.
 `scripts/check-built.py` (CI, after `zola build`) refuses any `<img>` without width and height and
-any image a page references that weighs more than `budget.image_kb`, whatever produced it.
+any image a page references that weighs more than `budget.image_kb`, whatever produced it, and
+any YouTube still without `srcset` and `sizes`. `scripts/check-components.py` (pre-commit) refuses
+a template or review that writes a YouTube still or a thumbnail `src` outside `still`.
 
 # Verification
 
