@@ -64,6 +64,11 @@ class Refs(HTMLParser):
         self.controls: list[dict] = []   # open <a href> / <button>: their name so far
         self.hidden: list[str] = []      # open elements inside a hidden subtree (hidden, aria-hidden)
         self.unnamed: list[str] = []
+        # aria-labelledby names a control by other elements' text: an id names nothing until it is
+        # resolved, so the text of every element with an id is kept and the check waits for the end.
+        self.open_ids: list[tuple[str, str]] = []  # (tag, id) of open elements that carry an id
+        self.texts: dict[str, str] = {}
+        self.labelled: list[tuple[str, list[str]]] = []  # (control, referenced ids), still unnamed
         self.unsized: list[str] = []
         self.unsourced: list[str] = []
 
@@ -75,16 +80,31 @@ class Refs(HTMLParser):
         if tag in ("a", "button") and self.controls and self.controls[-1]["tag"] == tag:
             c = self.controls.pop()
             if not c["name"].strip() and not c["hidden"]:
-                self.unnamed.append(c["desc"])
+                if c["labelledby"]:
+                    self.labelled.append((c["desc"], c["labelledby"]))
+                else:
+                    self.unnamed.append(c["desc"])
+        if self.open_ids and self.open_ids[-1][0] == tag:
+            self.open_ids.pop()
 
     def handle_data(self, data):
         if self.in_title:
             self.title += data
         for c in self.controls:
             c["name"] += data
+        for _, ident in self.open_ids:
+            self.texts[ident] = self.texts.get(ident, "") + data
+
+    def close(self) -> None:
+        super().close()
+        for desc, ids in self.labelled:
+            if not "".join(self.texts.get(i, "") for i in ids).strip():
+                self.unnamed.append(desc)
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if a.get("id") and tag not in VOID:
+            self.open_ids.append((tag, a.get("id") or ""))
         if tag == "title":
             self.in_title = True
         name = a.get("property") or a.get("name")
@@ -102,9 +122,10 @@ class Refs(HTMLParser):
         if concealed and tag not in VOID:
             self.hidden.append(tag)
         if (tag == "a" and a.get("href") is not None) or tag == "button":
-            named = " ".join(filter(None, [a.get("aria-label"), a.get("aria-labelledby"), a.get("title")]))
+            named = " ".join(filter(None, [a.get("aria-label"), a.get("title")]))
             hidden = concealed and (a.get("tabindex") == "-1" or len(self.hidden) > 1 or "hidden" in a)
             self.controls.append({"tag": tag, "name": named, "hidden": hidden,
+                                  "labelledby": (a.get("aria-labelledby") or "").split(),
                                   "desc": f"<{tag} {'href=' + (a.get('href') or '')[:60] if tag == 'a' else 'class=' + (a.get('class') or '')[:40]}>"})
         if tag == "img" and a.get("alt"):
             for c in self.controls:
@@ -166,6 +187,7 @@ def main() -> int:
         parser = Refs()
         # A feed carries its entries' HTML escaped inside the XML: unescape it to parse it.
         parser.feed(html.unescape(text) if file.suffix == ".xml" else text)
+        parser.close()
         if parser.iframes and file.suffix == ".html":
             problems.append(f"{rel}: raw <iframe> (use the video component or a link)")
         if file.suffix == ".html" and "<html" in text[:300]:

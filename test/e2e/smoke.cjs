@@ -49,12 +49,14 @@ if (flag('--artifact') && flag('--as')) {
 const revision = !root && process.env.REVISION ? process.env.REVISION : '';
 
 // In the page: every chart holder with the number of series ECharts built for it. A series type
-// the custom build (data/echarts.json) lacks is dropped silently, so 0 means a missing module.
+// the custom build (data/echarts.json) lacks is dropped silently, so 0 means a missing module,
+// and -1 a holder no chart was made for (a form renamed away): it stays in the list, so a check
+// of every chart fails on it (it was filtered out, which let a lost chart pass; a review, 2026-11-14).
 function seriesBuilt() {
   return [...document.querySelectorAll('[data-chart]')].map((el) => {
     const chart = window.echarts && window.echarts.getInstanceByDom(el);
     return { id: el.id, built: chart ? chart.getModel().getSeriesCount() : -1 };
-  }).filter((c) => c.built !== -1);
+  });
 }
 
 // A URL of the site, past the CDN cache when a revision is known (production only).
@@ -1327,9 +1329,6 @@ async function shot(page, name) {
       check(/\/concept\/[a-z0-9-]+\/$/.test(href || '') && (await link.getAttribute('title') || '').length > 40,
         'education: a concept named in the prose links to its page, its definition as the tooltip');
       // The listening guide's seek: the player starts the track at the time asked.
-      await page.evaluate((src) => window.Sonic.catalog().then((c) => window.SonicPlayer.seek(c.tracks.find((t) => t.source === src), '1:05')), teacher.source);
-      const src = await page.waitForSelector('#player-panel iframe', { timeout: 10000 }).then((e) => e.getAttribute('src')).catch(() => '');
-      check(/[?&]start=65(&|$)/.test(src), 'education: the listening guide seeks the player to its time (1:05 = 65 s)');
       await link.click();
       await page.waitForFunction(() => /\/concept\//.test(location.pathname) && !!document.querySelector('main p[lang]'), null, { timeout: 15000 })
         .then(() => check(true, 'education: the concept link opens the concept page (router)'))
@@ -1349,6 +1348,33 @@ async function shot(page, name) {
     }
   }
 
+  // The listening guide seeks the player through a real guide button, as a reader does: the first
+  // teaching review whose guide has a timed point is opened, its button clicked, the player starts
+  // the track there (calling SonicPlayer.seek directly passed with the button's dispatch deleted;
+  // a review, 2026-11-14).
+  {
+    const { context, page } = await open(browser, 'about:blank', desktop, 'light', {}, true);
+    // Few guides carry times (3 of 321 on 2026-11-14): the review is found in the content's front
+    // matter (an `at = "m:ss"` inside extra.learning.listen_for), not by opening pages.
+    const content = path.join(__dirname, '..', '..', 'content');
+    const timed = fs.readdirSync(content).filter((f) => f.endsWith('.md') && !f.endsWith('.cs.md'))
+      .filter((f) => /listen_for\s*=\s*\[[^\]]*\bat\s*=\s*"\d/.test(fs.readFileSync(path.join(content, f), 'utf8')));
+    const found = catalog.tracks.find((t) => t.youtube && timed.includes(t.source)) || null;
+    if (found) await page.goto(at(found.path), { waitUntil: 'load' });
+    if (!found) {
+      check(false, 'education: some teaching review has a timed listening point to seek');
+    } else {
+      const guide = page.locator(`[data-seek="${found.source}"]`).first();
+      const when = (await guide.getAttribute('data-seek-at')) || '0:00';
+      const seconds = when.split(':').reduce((acc, part) => acc * 60 + Number(part), 0);
+      await guide.click();
+      const src = await page.waitForSelector('#player-panel iframe', { timeout: 10000 }).then((e) => e.getAttribute('src')).catch(() => '');
+      check(new RegExp(`[?&]start=${seconds}(&|$)`).test(src) && src.includes(found.youtube),
+        `education: a listening guide button seeks the player to its time (${found.source} ${when} = ${seconds} s)`);
+    }
+    await context.close();
+  }
+
   // Yearbooks (ADR 0005): when the corpus has any, the list and each year serve, every reviewed
   // item links to its review, and the counts are the catalogue's.
   if (catalog.yearbooks && catalog.yearbooks.length) {
@@ -1356,9 +1382,19 @@ async function shot(page, name) {
     check((await page.locator('[data-yearbook]').count()) === catalog.yearbooks.length, `yearbooks: the list shows all ${catalog.yearbooks.length}`);
     for (const b of catalog.yearbooks) {
       await page.goto(at(`yearbook/${b.year}/`), { waitUntil: 'load' });
-      const rows = await page.locator('#yearbook-list > li').count();
-      const playable = await page.locator('#yearbook-list [data-track]').count();
-      check(rows === b.items && playable === b.present, `yearbook ${b.year}: ${b.items} items in order, ${b.present} playable reviews`);
+      // In order, each item what the catalogue says: a review's row (its source, linking to its
+      // page) or the item's own row. Counts alone passed a list rendered in reverse.
+      const expected = b.tracks.map((i) => (i.source && catalog.lookup[i.source] !== undefined
+        ? `${i.source} ${catalog.tracks[catalog.lookup[i.source]].path}` : `n-${i.n}`));
+      const shown = await page.locator('#yearbook-list > li').evaluateAll((lis, site) => lis.map((li) => {
+        if (!li.dataset.source) return li.id;
+        const a = li.querySelector('a[href]');
+        const rel = a && a.href.startsWith(site) ? a.href.slice(site.length).split(/[?#]/)[0] : '';
+        return `${li.dataset.source} ${rel.replace(/^cs\//, '')}`;
+      }), base);
+      const first = shown.findIndex((x, k) => x !== expected[k]);
+      check(shown.length === b.items && first < 0,
+        `yearbook ${b.year}: ${b.items} items in order, each linked to its review` + (first < 0 ? '' : ` (item ${first + 1}: ${shown[first]} where ${expected[first]})`));
     }
     check(errors.length === 0, `yearbooks: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();

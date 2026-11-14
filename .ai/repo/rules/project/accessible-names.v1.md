@@ -30,6 +30,11 @@ card is a mutation the check reports on 2543 pages.
 - A control the browser fills when it appears (the player's title, the explorer's "more") stays
   inside a `hidden` subtree until then.
 
+- `aria-labelledby` names a control only through the text of the elements it references. The check
+  resolves the ids at the end of the page and refuses a reference to nothing or to empty elements;
+  it used to count the id itself as the name (a review of the gates, 2026-11-14;
+  `test/test_check_built.py`).
+
 # Failure behaviour
 
 `scripts/check-built.py` (CI, after `zola build`) refuses any `<a href>` or `<button>` of a built

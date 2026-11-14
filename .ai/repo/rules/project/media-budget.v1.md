@@ -44,6 +44,10 @@ moves 2521 kB and the bars are gone; a track page on a desktop 182 kB -> 118 kB.
 - Every `<img>` of a built page has `width` and `height` (an image positioned over a box still
   states them: the check cannot tell, and the cost is two attributes).
 
+- Every derived variant carries the sha256 of its bytes in the manifest; `--check` compares content,
+  not only existence and length (a variant overwritten with as many other bytes passed until
+  2026-11-14). A manifest without hashes is backfilled from the files, never re-encoded.
+
 # Failure behaviour
 
 `scripts/images.py --check` (pre-commit, CI, no encoder needed) refuses a shown source without

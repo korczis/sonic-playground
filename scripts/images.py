@@ -89,7 +89,7 @@ def render(src: str, cfg: dict) -> dict:
             subprocess.run(["magick", f"{path}[0]", "-auto-orient", "-resize", f"{w}x", "-strip",
                             "-quality", str(cfg["quality"][fmt]), str(out)], check=True)
             h = round(h0 * w / w0)
-            variants.setdefault(fmt, []).append([w, h, rel, out.stat().st_size])
+            variants.setdefault(fmt, []).append([w, h, rel, out.stat().st_size, digest(out)])
     return {"width": w0, "height": h0, "sha256": digest(path), "params": params_hash(cfg),
             "variants": variants}
 
@@ -127,10 +127,16 @@ def problems(cfg: dict) -> list[str]:
             out.append(f"{src}: its variants are stale (the source or data/media.toml changed); run python3 scripts/images.py")
         else:
             for fmt, rows in entry["variants"].items():
-                for w, _h, rel, nbytes in rows:
+                for w, _h, rel, nbytes, *hashed in rows:
                     f = STATIC / rel
+                    # The content, not only the size: a variant overwritten with as many other
+                    # bytes passed when only existence and length were compared (a review, 2026-11-14).
                     if not f.is_file() or f.stat().st_size != nbytes:
                         out.append(f"{rel} is missing or not the file the manifest records")
+                    elif not hashed:
+                        out.append(f"{rel} has no content hash in the manifest; run python3 scripts/images.py")
+                    elif digest(f) != hashed[0]:
+                        out.append(f"{rel} is not the file the manifest records (its content changed)")
                     elif nbytes > limit:
                         out.append(f"{rel} weighs {nbytes // 1024} kB, over the budget of "
                                    f"{cfg['budget']['image_kb']} kB (data/media.toml): lower quality or width")
@@ -171,6 +177,12 @@ def main() -> int:
         entry = old.get(src)
         fresh = (entry and entry["sha256"] == digest(STATIC / src) and entry["params"] == params_hash(cfg)
                  and all((STATIC / r[2]).is_file() for rs in entry["variants"].values() for r in rs))
+        if fresh and entry:
+            # A manifest written before content hashes: record each kept file's hash, no re-encode.
+            for rs in entry["variants"].values():
+                for r in rs:
+                    if len(r) == 4:
+                        r.append(digest(STATIC / r[2]))
         images[src] = entry if fresh else render(src, cfg)
         if not fresh:
             print(f"images: rendered {src}")
