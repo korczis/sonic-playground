@@ -26,6 +26,9 @@ in a real browser:
 
 # Required behaviour
 
+- `static/js/explorer.js` ignores its review index when it arrives after the explorer unmounted.
+  A late answer used to write the left page's `?q=` into the next page's URL (a third review,
+  2026-11-14); the smoke test delays the index across a navigation.
 - `static/js/router.js` numbers each navigation, aborts the previous request, and drops a response
   or a failure that is not the latest.
 - `static/js/player.js` takes a token in `load()` and checks it when the API arrives and when it

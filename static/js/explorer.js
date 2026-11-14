@@ -42,11 +42,13 @@ window.Sonic.module('explorer', function mount() {
   // The words of every review (static/data/search.json, derived by scripts/catalog.py), loaded
   // once, on the first query; until it arrives the query matches the card text only.
   var reviewIndex = 'idle';
+  var alive = true;
   function loadReviews() {
     var url = document.body.getAttribute('data-search');
     if (reviewIndex !== 'idle' || !url || !window.fetch) return;
     reviewIndex = 'loading';
     fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
+      if (!alive) return; // the explorer was left: its late answer must not touch the next page
       if (!data || !data.tracks) { reviewIndex = 'failed'; return; }
       items.forEach(function (it) { it.review = data.tracks[it.source] || ''; });
       reviewIndex = 'ready';
@@ -216,6 +218,7 @@ window.Sonic.module('explorer', function mount() {
   load();
   document.documentElement.dataset.explorerState = 'ready';
   return function unmount() {
+    alive = false;
     clearTimeout(timer);
     cleanup.forEach(function (fn) { fn(); });
     document.documentElement.dataset.explorerState = '';
