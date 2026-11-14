@@ -52,7 +52,10 @@ When the owner asks for a year's (or every year's) Top Songs, or a new year's pl
    - once a wave is merged in the primary checkout (which holds the private store, so its
      pre-push gate refuses stale records), `npm run derive` re-resolves the Spotify records
      too and prints "spotify-history: N songs, X record(s) changed, Y removed"; commit
-     `data/spotify` with the catalogue and push. If a `data/backlog/yearbook-*.toml` changes or
+     `data/spotify` with the catalogue and push: `git merge --no-ff --no-commit <branch> && npm
+     run derive && git add -A data/spotify content static/data && git commit` (a merge commit
+     is judged like any commit, so a merge committed before the derive is refused and left
+     staged). If a `data/backlog/yearbook-*.toml` changes or
      "removed" is non-zero, stop and hand the output to the Spotify history lane. Announce
      before merging on the primary checkout's main: two lanes merge there.
 7. **Prove and deploy.** `npm run derive && bash scripts/verify.sh`, commit (`feat(content): …`),
