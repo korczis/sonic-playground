@@ -20,6 +20,7 @@ import re
 import sys
 import tomllib
 import urllib.error
+import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -30,7 +31,15 @@ FRONT = re.compile(r"\A\+\+\+\r?\n(.*?)\r?\n\+\+\+\r?\n?(.*)\Z", re.S)
 # Front matter keys whose URLs another probe owns.
 OWNED_ELSEWHERE = {"extra.youtube"}  # scripts/probe-videos.py
 # Hosts that refuse automated requests while serving people; asked, but a 403/429 is not "dead".
-GUARDED = ("discogs.com", "x.com", "twitter.com", "instagram.com", "facebook.com")
+# juno.co.uk answers 403 to every automated request, its home page included (2026-11-15).
+GUARDED = ("discogs.com", "x.com", "twitter.com", "instagram.com", "facebook.com", "juno.co.uk")
+
+
+def guarded(url: str) -> bool:
+    """The URL's host is a guarded host or one of its subdomains (not merely a string that
+    contains one: dropbox.com is not x.com, nor is a path that mentions discogs.com)."""
+    host = (urllib.parse.urlsplit(url).hostname or "").lower()
+    return any(host == h or host.endswith("." + h) for h in GUARDED)
 
 
 def front_urls(value: object, key: str = "") -> list[str]:
@@ -85,7 +94,7 @@ def main() -> int:
     with ThreadPoolExecutor(max_workers=8) as pool:
         codes = dict(zip(found, pool.map(probe, found)))
     dead = {u: c for u, c in codes.items()
-            if (c == 0 or c >= 400) and not (c in (403, 429) and any(h in u for h in GUARDED))}
+            if (c == 0 or c >= 400) and not (c in (403, 429) and guarded(u))}
     if args.json:
         print(json.dumps({"probed": len(found), "dead": [{"url": u, "status": c, "in": found[u]}
                                                          for u, c in sorted(dead.items())]}, indent=1))

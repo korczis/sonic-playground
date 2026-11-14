@@ -63,6 +63,27 @@ class ProbeLinks(unittest.TestCase):
         self.assertEqual(probe_links.front_urls(tomllib.loads(REVIEW.split("+++")[1])),
                          ["https://example.org/dead-citation"])
 
+    def test_a_guarded_host_is_matched_by_host_not_by_substring(self):
+        for url in ("https://www.discogs.com/release/1", "https://x.com/a", "https://www.juno.co.uk/reviews/x/"):
+            self.assertTrue(probe_links.guarded(url), url)
+        for url in ("https://www.dropbox.com/s/a", "https://www.netflix.com/title/1",
+                    "https://example.org/see-discogs.com", "https://notjuno.co.uk/"):
+            self.assertFalse(probe_links.guarded(url), url)
+
+    def test_a_guarded_hosts_refusal_is_not_dead_but_its_404_is(self):
+        found = {"https://www.juno.co.uk/r/": ["a.md"], "https://www.dropbox.com/s/": ["b.md"],
+                 "https://www.discogs.com/gone": ["c.md"]}
+        codes = {"https://www.juno.co.uk/r/": 403, "https://www.dropbox.com/s/": 403,
+                 "https://www.discogs.com/gone": 404}
+        out = io.StringIO()
+        with mock.patch.object(probe_links, "links", lambda: found), \
+                mock.patch.object(probe_links, "probe", codes.__getitem__), \
+                mock.patch.object(sys, "argv", ["probe-links.py"]), redirect_stdout(out):
+            self.assertEqual(probe_links.main(), 1)
+        self.assertNotIn("juno", out.getvalue())
+        self.assertIn("dead (403): https://www.dropbox.com/s/", out.getvalue())
+        self.assertIn("dead (404): https://www.discogs.com/gone", out.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()
