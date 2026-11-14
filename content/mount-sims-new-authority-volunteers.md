@@ -14,7 +14,7 @@ release_year = "2010"
 country = "US"
 musicbrainz = { recording = "64d82cc0-4b72-44c3-9825-1ad8901904d2", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "8ea51318-bd5a-433d-aa3a-cfe12d5f4aab" }
 album = "Happily Ever After... Again"
-publisher = "Hungry Eye Records"
+publisher = "Punch Records"
 youtube = "https://www.youtube.com/embed/29DgtaAEdYo"
 connections = [
   { source = "mount-sims-grave.md", why = "Another song from Happily Ever After... Again, the same 2010 release and the same dark turn." },
