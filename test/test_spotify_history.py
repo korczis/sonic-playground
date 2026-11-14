@@ -179,6 +179,30 @@ class Derived(unittest.TestCase):
         self.assertTrue(any("'added' is private" in e or "unknown key 'added'" in e for e in errors), errors[:3])
 
 
+class Crawl(unittest.TestCase):
+    """scripts/spotify-web-crawl.js, the repeatable snapshot: valid JavaScript that reads the
+    rendered page only (ADR 0007: never the session's credentials, never Spotify's API)."""
+    path = ROOT / "scripts" / "spotify-web-crawl.js"
+
+    def test_it_parses(self):
+        import shutil
+        import subprocess
+        if not shutil.which("node"):
+            self.skipTest("node is not installed")
+        r = subprocess.run(["node", "--check", str(self.path)], capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+
+    def test_it_never_touches_credentials_or_the_api(self):
+        code = self.path.read_text(encoding="utf-8").lower()
+        for banned in ("authorization", "bearer", "api.spotify.com", "accounts.spotify.com", "fetch(",
+                       "xmlhttprequest", "document.cookie", "/api/token"):
+            self.assertNotIn(banned, code, f"the crawl must not use {banned}")
+
+    def test_it_writes_the_snapshot_schema(self):
+        code = self.path.read_text(encoding="utf-8")
+        self.assertIn(f"schema: '{sh.SNAPSHOT_SCHEMA}'", code)
+
+
 class Gate(unittest.TestCase):
     def test_private_keys_are_found_anywhere(self):
         self.assertEqual(sh.find_private_keys({"a": [{"added": 1}], "plays": {}}), ["a[0].added", "plays"])
