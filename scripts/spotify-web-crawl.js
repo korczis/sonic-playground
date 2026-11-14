@@ -18,7 +18,10 @@
 // - the app restores a playlist's scroll position, so the scan starts from the top;
 // - a grid's aria-label may carry trailing spaces, so names are compared trimmed;
 // - the top-tracks page renders no track links, so its title comes from the cell text;
-// - an empty playlist has no grid, and is kept with no items.
+// - an empty playlist has no grid, and is kept with no items;
+// - a row that loads too slowly for the sweep is fetched by a targeted scroll to its position;
+// - a playlist without a name of its own ("Playlist • <owner>") is kept; only the entries the
+//   library marks "This playlist is not available" are skipped.
 (function () {
   'use strict';
   const STORE = 'sonicSnapshot';
@@ -70,6 +73,34 @@
       last = rows.size;
       if (sc) sc.scrollTop += sc.clientHeight * 0.5;
       await sleep(450);
+    }
+    // Targeted top-up: a row that loaded too slowly for the sweep is scrolled to on its own and
+    // read once it renders (the second crawl missed 160 liked songs without this).
+    if (sc && rows.size < total) {
+      // Measure data rows only (the header row is shorter), then seek until the row renders.
+      const dataRows = () => [...grid.querySelectorAll('[role="row"][aria-rowindex]')].filter((r) => +r.getAttribute('aria-rowindex') > 1);
+      const heights = dataRows().map((r) => r.getBoundingClientRect().height).sort((x, y) => x - y);
+      const rowH = heights[Math.floor(heights.length / 2)] || 56;
+      const seek = async (n) => {
+        for (let t = 0; t < 8; t++) {
+          const shown = dataRows().map((r) => +r.getAttribute('aria-rowindex'));
+          const lo = Math.min(...shown);
+          const hi = Math.max(...shown);
+          if (n + 1 >= lo && n + 1 <= hi) return;
+          sc.scrollTop += (n + 1 - (lo + hi) / 2) * rowH;
+          await sleep(500);
+        }
+      };
+      for (let pass = 0; pass < 3 && rows.size < total; pass++) {
+        for (let n = 1; n <= total; n++) {
+          if (rows.has(n + 1)) continue;
+          await seek(n);
+          await sleep(pass ? 900 : 300);
+          const r = grid.querySelector(`[role="row"][aria-rowindex="${n + 1}"]`);
+          const item = r && read(r, [...r.querySelectorAll('[role="gridcell"]')], head);
+          if (item) rows.set(n + 1, { n, ...item });
+        }
+      }
     }
     for (let n = 1; n <= total; n++) if (!rows.has(n + 1)) rows.set(n + 1, { n, unavailable: true });
     return { expected: total, items: [...rows.values()].sort((a, b) => a.n - b.n) };
@@ -166,7 +197,7 @@
       crawl.progress = 'library';
       const lib = await library();
       const targets = [{ uri: 'spotify:collection:tracks', name: 'Liked Songs', path: '/collection/tracks' }]
-        .concat(lib.filter((x) => (x.uri || '').includes(':playlist:') && !/^Playlist •/.test(x.name || ''))
+        .concat(lib.filter((x) => (x.uri || '').includes(':playlist:') && !/This playlist is not available/i.test((x.name || '') + ' ' + (x.sub || '')))
           .map((x) => ({ uri: x.uri, name: x.name, sub: x.sub, path: '/playlist/' + x.uri.split(':')[2] })));
       const playlists = [];
       for (const [k, t] of targets.entries()) {
