@@ -366,6 +366,8 @@ artists = ["Björk Guðmundsdóttir", "Trio Gudmundar Ingólfssonar"]
 album = "Gling-Gló"
 duration = "2:58"
 spotify = "3EY3eSCDYtA7c0fizDXs0b"
+review = "bjork-kata-rokkar.md"
+note = "the reviewed recording: Gling-Gló, credited to Björk Guðmundsdóttir & Trio Gudmundar Ingólfssonar"
 
 [[track]]
 n = 46
@@ -446,6 +448,8 @@ artists = ["Jo.Ke", "Nu"]
 album = "We Love The Sun"
 duration = "9:22"
 spotify = "2u2aognU8U2C3bPJO5pVmz"
+review = "nu-jo-ke-who-loves-the-sun.md"
+note = "the reviewed recording: same release and length, the artists listed in the other order"
 
 [[track]]
 n = 56

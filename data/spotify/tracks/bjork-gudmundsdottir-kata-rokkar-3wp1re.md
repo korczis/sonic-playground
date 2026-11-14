@@ -6,8 +6,9 @@ artists: ["Björk Guðmundsdóttir", "Trio Gudmundar Ingólfssonar"]
 album: "Gling-Gló"
 duration: "2:58"
 spotify: {"track": "3wP1reik9nojpqnbFuoeOu", "album": "4wurP9wwl9yxkETucs0khh", "artists": ["3HDfNAh4MpiptvaJP9We0w", "070ehnzbED2hs8ZNTembCh"]}
-keys: {"fold": "bjorkgudmundsdottir|katarokkar"}
-status: "missing"
+keys: {"fold": "bjorkgudmundsdottir|katarokkar", "isrc": "GBBTF0300193", "musicbrainz": "b7e0a1ba-471a-4e11-b2dd-cbd7be1aec62"}
+review: "bjork-kata-rokkar.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2019, "n": 31}
@@ -23,4 +24,4 @@ From the album *Gling-Gló*, 2:58.
 Not among the liked songs.
 Your Top Songs 2019: #31.
 In Best of the Best (#7); My Top Songs of All the Time (#308).
-No review yet.
+Reviewed: content/bjork-kata-rokkar.md.

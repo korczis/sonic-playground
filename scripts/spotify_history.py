@@ -430,13 +430,33 @@ def assign_ids(m: dict) -> None:
         pl["id"] = base if names[base] == 1 else f"{base}-{names[base]}"
 
 
+def playlist_overrides() -> dict:
+    """The owner's review=/skip= decisions in data/backlog/*.toml (ADR 0005), keyed by the
+    item's Spotify id and by its folded main artist and song: a record of the same recording
+    resolves the way its yearbook or playlist item does."""
+    out: dict = {}
+    for path in sorted(cat.BACKLOG.glob("*.toml")):
+        for it in cat.tomllib.loads(path.read_text(encoding="utf-8")).get("track", []):
+            decision = {k: it[k] for k in ("review", "skip") if it.get(k)}
+            if not decision:
+                continue
+            if it.get("spotify"):
+                out[it["spotify"]] = decision
+            if it.get("artists") and it.get("title"):
+                out[(cat.fold(it["artists"][0]), cat.fold(cat.song(it["title"])))] = decision
+    return out
+
+
 def resolve_reviews(m: dict) -> None:
     errors: list[str] = []
     tracks = [t for t in (cat.load_track(p, errors) for p in cat.review_files()) if t]
     index = cat.identity_index(tracks)
     extra = {t.source: t.full_extra for t in tracks}
+    overrides = playlist_overrides()
     for s in m["songs"].values():
-        r = cat.resolve_item({"title": s["title"], "artists": s["artists"]}, index)
+        first = cat.fold(s["artists"][0]) if s["artists"] else ""
+        forced = overrides.get(s["track_id"] or "") or overrides.get((first, cat.fold(cat.song(s["title"]))))
+        r = cat.resolve_item({"title": s["title"], "artists": s["artists"], **(forced or {})}, index)
         s["review"] = r["source"] if r["status"] == "present" else None
         s["status"] = r["status"]
         x = extra.get(s["review"] or "", {})

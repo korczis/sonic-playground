@@ -6,8 +6,9 @@ artists: ["Marcus Marr", "Nick Murphy"]
 album: "The Trouble With Us"
 duration: "3:42"
 spotify: {"track": "60bBoLe9ocxO3zrb0mRO4k", "album": "69iXRLZZYM0V0FMuJh2sMv", "artists": ["6l5dAUNRhHnRSPPmRJSKQr", "2Q0MyH5YMI5HPQjFjlq5g3"]}
-keys: {"fold": "marcusmarr|thetroublewithus"}
-status: "missing"
+keys: {"fold": "marcusmarr|thetroublewithus", "isrc": "USCJ71501360", "musicbrainz": "7e69a75c-00c4-4c49-97a6-b14d55cd3eac"}
+review: "marcus-marr-nick-murphy-the-trouble-with-us.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2017, "n": 98}
@@ -22,4 +23,4 @@ From the album *The Trouble With Us*, 3:42.
 Not among the liked songs.
 Your Top Songs 2017: #98.
 In My Top Songs of All the Time (#189).
-No review yet.
+Reviewed: content/marcus-marr-nick-murphy-the-trouble-with-us.md.

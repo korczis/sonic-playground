@@ -6,8 +6,9 @@ artists: ["Pharrell Williams"]
 album: "G I R L"
 duration: "3:52"
 spotify: {"track": "5b88tNINg4Q4nrRbrCXUmg", "album": "0lrmy4pJINsFzycJvttX2W", "artists": ["2RdwBSPQiwcmiDo9kixcl8"]}
-keys: {"fold": "pharrellwilliams|happyfromdespicableme2"}
-status: "missing"
+keys: {"fold": "pharrellwilliams|happyfromdespicableme2", "isrc": "USQ4E1300686", "musicbrainz": "f367ad6e-efd5-4496-aba5-21a4edcd82c6"}
+review: "pharrell-williams-happy.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2016, "n": 47}
@@ -23,4 +24,4 @@ From the album *G I R L*, 3:52.
 A liked song.
 Your Top Songs 2016: #47.
 In Best of the Best (#37); My Top Songs of All the Time (#47).
-No review yet.
+Reviewed: content/pharrell-williams-happy.md.

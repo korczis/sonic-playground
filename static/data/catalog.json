@@ -17,7 +17,7 @@
   "concept_terms": 61,
   "instrument_terms": 60,
   "yearbooks": 7,
-  "recurring": 42,
+  "recurring": 43,
   "translations": {
    "cs": {
     "reviews": 283,
@@ -2306,9 +2306,9 @@
    "file": "data/backlog/yearbook-2022.toml",
    "expected": 99,
    "items": 99,
-   "songs": 11,
-   "present": 11,
-   "missing": 88,
+   "songs": 12,
+   "present": 12,
+   "missing": 87,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -2331,6 +2331,10 @@
     },
     {
      "term": "Deluxe",
+     "count": 1
+    },
+    {
+     "term": "Funky Fat & Digitaria",
      "count": 1
     },
     {
@@ -2361,11 +2365,15 @@
    "genres": [
     {
      "term": "electronic",
-     "count": 6
+     "count": 7
     },
     {
      "term": "dance",
      "count": 4
+    },
+    {
+     "term": "house",
+     "count": 3
     },
     {
      "term": "synth-pop",
@@ -2376,7 +2384,7 @@
      "count": 2
     },
     {
-     "term": "house",
+     "term": "funk",
      "count": 2
     },
     {
@@ -2401,10 +2409,6 @@
     },
     {
      "term": "dub",
-     "count": 1
-    },
-    {
-     "term": "electropop",
      "count": 1
     }
    ],
@@ -2735,8 +2739,8 @@
      "n": 47,
      "title": "You Bring Me Down",
      "artist": "Digitaria, Funky Fat",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "funky-fat-and-digitaria-you-bring-me-down.md"
     },
     {
      "n": 48,
@@ -3925,15 +3929,19 @@
    "file": "data/backlog/yearbook-2020.toml",
    "expected": 100,
    "items": 100,
-   "songs": 14,
-   "present": 14,
-   "missing": 86,
+   "songs": 16,
+   "present": 16,
+   "missing": 84,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
    "artists": [
     {
      "term": "Alif Tree",
+     "count": 1
+    },
+    {
+     "term": "Björk",
      "count": 1
     },
     {
@@ -3975,16 +3983,12 @@
     {
      "term": "Nicolas Jaar",
      "count": 1
-    },
-    {
-     "term": "Nouvelle Vague",
-     "count": 1
     }
    ],
    "genres": [
     {
      "term": "electronic",
-     "count": 6
+     "count": 7
     },
     {
      "term": "soul",
@@ -3992,6 +3996,10 @@
     },
     {
      "term": "dance",
+     "count": 3
+    },
+    {
+     "term": "downtempo",
      "count": 3
     },
     {
@@ -4003,11 +4011,19 @@
      "count": 2
     },
     {
-     "term": "downtempo",
+     "term": "deep house",
      "count": 2
     },
     {
      "term": "experimental",
+     "count": 2
+    },
+    {
+     "term": "jazz",
+     "count": 2
+    },
+    {
+     "term": "pop",
      "count": 2
     },
     {
@@ -4017,18 +4033,6 @@
     {
      "term": "synth-pop",
      "count": 2
-    },
-    {
-     "term": "80s",
-     "count": 1
-    },
-    {
-     "term": "bossa nova",
-     "count": 1
-    },
-    {
-     "term": "contemporary",
-     "count": 1
     }
    ],
    "tracks": [
@@ -4344,8 +4348,8 @@
      "n": 45,
      "title": "Kata rokkar",
      "artist": "Björk Guðmundsdóttir, Trio Gudmundar Ingólfssonar",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "bjork-kata-rokkar.md"
     },
     {
      "n": 46,
@@ -4414,8 +4418,8 @@
      "n": 55,
      "title": "Who Loves The Sun",
      "artist": "Jo.Ke, Nu",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "nu-jo-ke-who-loves-the-sun.md"
     },
     {
      "n": 56,
@@ -4740,15 +4744,19 @@
    "file": "data/backlog/yearbook-2019.toml",
    "expected": 100,
    "items": 100,
-   "songs": 13,
-   "present": 13,
-   "missing": 87,
+   "songs": 14,
+   "present": 14,
+   "missing": 86,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
    "artists": [
     {
      "term": "Alif Tree",
+     "count": 1
+    },
+    {
+     "term": "Björk",
      "count": 1
     },
     {
@@ -4790,10 +4798,6 @@
     {
      "term": "Portugal. The Man",
      "count": 1
-    },
-    {
-     "term": "Say Yes Dog",
-     "count": 1
     }
    ],
    "genres": [
@@ -4810,6 +4814,10 @@
      "count": 4
     },
     {
+     "term": "jazz",
+     "count": 4
+    },
+    {
      "term": "dance",
      "count": 3
     },
@@ -4818,11 +4826,11 @@
      "count": 3
     },
     {
-     "term": "jazz",
-     "count": 3
+     "term": "indie",
+     "count": 2
     },
     {
-     "term": "indie",
+     "term": "pop",
      "count": 2
     },
     {
@@ -4839,10 +4847,6 @@
     },
     {
      "term": "experimental",
-     "count": 1
-    },
-    {
-     "term": "folk",
      "count": 1
     }
    ],
@@ -5061,8 +5065,8 @@
      "n": 31,
      "title": "Kata Rokkar",
      "artist": "Björk Guðmundsdóttir, Trio Gudmundar Ingólfssonar",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "bjork-kata-rokkar.md"
     },
     {
      "n": 32,
@@ -5555,9 +5559,9 @@
    "file": "data/backlog/yearbook-2018.toml",
    "expected": 100,
    "items": 100,
-   "songs": 16,
-   "present": 17,
-   "missing": 83,
+   "songs": 17,
+   "present": 18,
+   "missing": 82,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -5583,6 +5587,10 @@
      "count": 1
     },
     {
+     "term": "Branko, SKIP&DIE, Fellow",
+     "count": 1
+    },
+    {
      "term": "Chet Faker",
      "count": 1
     },
@@ -5605,16 +5613,16 @@
     {
      "term": "Jorge Ben Jor",
      "count": 1
-    },
-    {
-     "term": "Michelle Gurevich",
-     "count": 1
     }
    ],
    "genres": [
     {
      "term": "electronic",
-     "count": 7
+     "count": 8
+    },
+    {
+     "term": "dance",
+     "count": 3
     },
     {
      "term": "deep house",
@@ -5625,11 +5633,11 @@
      "count": 3
     },
     {
-     "term": "blues",
-     "count": 2
+     "term": "world",
+     "count": 3
     },
     {
-     "term": "dance",
+     "term": "blues",
      "count": 2
     },
     {
@@ -5650,10 +5658,6 @@
     },
     {
      "term": "r&b",
-     "count": 2
-    },
-    {
-     "term": "world",
      "count": 2
     },
     {
@@ -5694,8 +5698,8 @@
      "n": 5,
      "title": "Made of Gold (feat. SKIP&DIE & Fellow)",
      "artist": "Branko, SKIP&DIE, Fellow, SKIP, DIE",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "branko-skip-die-fellow-made-of-gold.md"
     },
     {
      "n": 6,
@@ -6370,9 +6374,9 @@
    "file": "data/backlog/yearbook-2017.toml",
    "expected": 100,
    "items": 100,
-   "songs": 91,
-   "present": 94,
-   "missing": 6,
+   "songs": 93,
+   "present": 96,
+   "missing": 4,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -6429,15 +6433,15 @@
    "genres": [
     {
      "term": "electronic",
-     "count": 43
+     "count": 45
     },
     {
      "term": "deep house",
-     "count": 25
+     "count": 26
     },
     {
      "term": "soul",
-     "count": 23
+     "count": 24
     },
     {
      "term": "pop",
@@ -6445,7 +6449,7 @@
     },
     {
      "term": "house",
-     "count": 17
+     "count": 18
     },
     {
      "term": "world",
@@ -6726,8 +6730,8 @@
      "n": 36,
      "title": "Around - Solomun Vox",
      "artist": "Noir, Haze, Solomun",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "noir-haze-solomun-around-solomun-vox.md"
     },
     {
      "n": 37,
@@ -7160,8 +7164,8 @@
      "n": 98,
      "title": "The Trouble With Us",
      "artist": "Marcus Marr, Nick Murphy",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "marcus-marr-nick-murphy-the-trouble-with-us.md"
     },
     {
      "n": 99,
@@ -8006,6 +8010,7 @@
   "alif-tree_forgotten-places.md",
   "asaf-avidan-the-mojos-reckoning-song-one-day.md",
   "ben-khan-savage.md",
+  "bjork-kata-rokkar.md",
   "bronski-beat_small_town_boy.md",
   "chet-faker-gold.md",
   "claptone-clap-your-hands-say-yeah-ghost.md",
@@ -14802,6 +14807,10 @@
     {
      "year": 2019,
      "n": 22
+    },
+    {
+     "year": 2020,
+     "n": 55
     }
    ],
    "langs": [
@@ -14920,7 +14929,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2017,
+     "n": 36
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -17546,7 +17560,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2017,
+     "n": 98
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -28539,7 +28558,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2018,
+     "n": 5
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -36659,7 +36683,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2022,
+     "n": 47
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -41297,7 +41326,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2019,
+     "n": 31
+    },
+    {
+     "year": 2020,
+     "n": 45
+    }
+   ],
    "langs": [
     "en",
     "cs"

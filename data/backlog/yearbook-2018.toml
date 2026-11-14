@@ -46,6 +46,8 @@ artists = ["Branko", "SKIP&DIE", "Fellow", "SKIP", "DIE"]
 album = "ATLAS"
 duration = "4:02"
 spotify = "5P1AcGHeJh0r7R9Fj34b2E"
+review = "branko-skip-die-fellow-made-of-gold.md"
+note = "the reviewed recording: same release (ATLAS), the featured artists credited apart"
 
 [[track]]
 n = 6
