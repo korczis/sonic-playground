@@ -6,8 +6,9 @@ artists: ["Ultraísta", "Four Tet"]
 album: "Ultraísta (Deluxe)"
 duration: "6:06"
 spotify: {"track": "3ruo6JHTVOwkw0oXboVUyi", "album": "3bADpiI4ewRROUjQuUGEqW", "artists": ["2f88S1uYsEwP0n4x36wvG7", "7Eu1txygG6nJttLHbZdQOh"]}
-keys: {"fold": "ultraista|smalltalkfourtetremix"}
-status: "missing"
+keys: {"fold": "ultraista|smalltalkfourtetremix", "musicbrainz": "5c21b4b7-bce4-41aa-911f-f5f928829f83"}
+review: "ultraista-smalltalk.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2019, "n": 18}
@@ -22,4 +23,4 @@ From the album *Ultraísta (Deluxe)*, 6:06.
 Not among the liked songs.
 Your Top Songs 2019: #18.
 In My Top Songs of All the Time (#296).
-No review yet.
+Reviewed: content/ultraista-smalltalk.md.
