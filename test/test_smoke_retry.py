@@ -54,9 +54,16 @@ class RetryPolicy(unittest.TestCase):
             ["HTTP 404: https://korczis.github.io/sonic-playground/missing.js"],
             ["HTTP 500: https://korczis.github.io/sonic-playground/"],
             ["console error: Uncaught TypeError"],
-            [PAGE, "console error: Uncaught TypeError"],
         ):
             self.assertIsNone(retry_after({"stalled": False, "errors": errors}, True), errors)
+
+    def test_a_hosts_answer_for_a_sub_resource_retries_with_its_consequences(self):
+        # run 43636079537: 503 for js/core.js, then the TypeError its absence caused
+        errors = ["HTTP 503: https://korczis.github.io/sonic-playground/js/core.js?h=b45765ad41e6dbbd96f7",
+                  "uncaught: TypeError: Cannot read properties of undefined (reading 'module')"]
+        self.assertGreater(retry_after({"stalled": False, "errors": errors}, True), 0)
+        self.assertIsNone(retry_after({"stalled": False, "errors": errors}, False))
+        self.assertIsNone(retry_after({"stalled": False, "errors": errors}, True, 4))
 
     def test_a_clean_page_is_not_retried(self):
         self.assertIsNone(retry_after({"stalled": False, "errors": []}, True))
