@@ -2860,9 +2860,9 @@
    "file": "data/backlog/yearbook-2022.toml",
    "expected": 99,
    "items": 99,
-   "songs": 93,
-   "present": 93,
-   "missing": 6,
+   "songs": 94,
+   "present": 94,
+   "missing": 5,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -2919,7 +2919,7 @@
    "genres": [
     {
      "term": "electronic",
-     "count": 47
+     "count": 48
     },
     {
      "term": "house",
@@ -2939,7 +2939,7 @@
     },
     {
      "term": "funk",
-     "count": 10
+     "count": 11
     },
     {
      "term": "cover",
@@ -3251,8 +3251,8 @@
      "n": 41,
      "title": "Fresh and Foolish",
      "artist": "Kalabrese, Palinstar",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "kalabrese-sarah-palin-fresh-and-foolish-feat-sarah-palin.md"
     },
     {
      "n": 42,
@@ -27878,6 +27878,10 @@
     {
      "year": 2020,
      "n": 39
+    },
+    {
+     "year": 2022,
+     "n": 41
     }
    ],
    "langs": [
