@@ -45,6 +45,10 @@ reachability, a shell compared with a reload, and a fetch that fails once and th
   position and restores it after the page mounts, and the explorer keeps its open results
   (`explorerLimit`) in the entry. The smoke test opens 72 results, scrolls, opens a review and goes
   Back (the old code reset to 24 at the top).
+- The position is saved while the reader scrolls (debounced), not only when a link is followed:
+  Back and Forward leave a page through native history with no moment to save it. A fifth review
+  found Forward returning to the top; the smoke test reads a review to 900 px, then goes Back and
+  Forward (the old code returned 0).
 
 # Failure behaviour
 

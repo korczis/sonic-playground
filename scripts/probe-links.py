@@ -3,7 +3,9 @@
 
 Internal links are proved offline on every build (Zola's link checker, scripts/check-built.py);
 external ones can only be proved by asking the web, which changes on its own. This asks every
-http(s) URL linked from content/ and reports the ones that do not answer, so a dead or invented
+http(s) URL of content/: the links of the bodies and every URL of the front matter (the cited
+sources, extra.sources[].url, are most of them; extra.youtube is probe-videos.py's), and reports
+the ones that do not answer, so a dead or invented
 link (two were found on 2026-11-12: codecandflexor.com, northernlite.com/remix) is fixed instead
 of shipped. Runs weekly in .github/workflows/content-health.yml, beside probe-videos.py.
 
@@ -16,6 +18,7 @@ import argparse
 import json
 import re
 import sys
+import tomllib
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -23,17 +26,36 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 LINK = re.compile(r"\]\((https?://[^)\s]+)\)|href=\"(https?://[^\"]+)\"")
+FRONT = re.compile(r"\A\+\+\+\r?\n(.*?)\r?\n\+\+\+\r?\n?(.*)\Z", re.S)
+# Front matter keys whose URLs another probe owns.
+OWNED_ELSEWHERE = {"extra.youtube"}  # scripts/probe-videos.py
 # Hosts that refuse automated requests while serving people; asked, but a 403/429 is not "dead".
 GUARDED = ("discogs.com", "x.com", "twitter.com", "instagram.com", "facebook.com")
 
 
-def links() -> dict[str, list[str]]:
+def front_urls(value: object, key: str = "") -> list[str]:
+    """Every http(s) string of a parsed front matter, with the dotted key it sits under."""
+    if isinstance(value, dict):
+        return [u for k, v in value.items() for u in front_urls(v, f"{key}.{k}" if key else k)]
+    if isinstance(value, list):
+        return [u for v in value for u in front_urls(v, key)]
+    if isinstance(value, str) and re.match(r"https?://", value) and key not in OWNED_ELSEWHERE:
+        return [value]
+    return []
+
+
+def links(root: Path = ROOT) -> dict[str, list[str]]:
     found: dict[str, list[str]] = {}
-    for path in sorted((ROOT / "content").rglob("*.md")):
+    for path in sorted((root / "content").rglob("*.md")):
         text = path.read_text(encoding="utf-8")
-        body = "\n".join(l for l in text.splitlines() if not l.startswith("[//]: #"))
+        match = FRONT.match(text)
+        front, rest = (match.group(1), match.group(2)) if match else ("", text)
+        where = path.relative_to(root).as_posix()
+        for url in front_urls(tomllib.loads(front)) if front else []:
+            found.setdefault(url, []).append(where)
+        body = "\n".join(l for l in rest.splitlines() if not l.startswith("[//]: #"))
         for a, b in LINK.findall(body):
-            found.setdefault(a or b, []).append(path.relative_to(ROOT).as_posix())
+            found.setdefault(a or b, []).append(where)
     return found
 
 

@@ -47,6 +47,12 @@ nothing.
   `data/derived/jsonld.json`; concept pages, the glossary, the listening guide, references and
   connections are derived from the front matter by the templates.
 
+- Every cited source is asked weekly. `scripts/probe-links.py` (content-health) probes every
+  http(s) URL of the front matter, `extra.sources[].url` above all, as well as the body links;
+  `extra.youtube` belongs to `probe-videos.py`. Until 2026-11-14 it read only the bodies: 8 of
+  808 URLs. `test/test_probe_links.py` proves every cited source is enumerated and that a dead
+  citation fails the probe.
+
 # Failure behaviour
 
 The catalogue check fails, so the pre-commit hook and the gate refuse the change.
