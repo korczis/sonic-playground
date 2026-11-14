@@ -5,12 +5,16 @@
 //   Sonic.module('explorer', function mount() { ...; return function unmount() { ... }; });
 //
 // Sonic.catalog() is the derived catalogue (static/data/catalog.json), fetched once and shared.
+// Sonic.playIndex() is its projection for the player, the track menu and the random button
+// (static/data/play.json, scripts/catalog.py PLAY_FIELDS): the same tracks in the same shape with
+// only what they read; the catalogue itself serves when it is already loaded.
 // Sonic.emit(name, detail) / Sonic.on(name, fn) is a tiny event bus on document.
 (function () {
   'use strict';
   var modules = [];
   var mounted = [];
   var catalogPromise = null;
+  var playPromise = null;
   var body = document.body;
 
   function mountOne(entry) {
@@ -50,6 +54,16 @@
         });
       }
       return catalogPromise;
+    },
+    playIndex: function () {
+      if (catalogPromise) return catalogPromise;
+      if (!playPromise) {
+        playPromise = fetch(body.getAttribute('data-play-index')).then(function (r) {
+          if (!r.ok) throw new Error('play index: HTTP ' + r.status);
+          return r.json();
+        });
+      }
+      return playPromise;
     },
     emit: function (name, detail) { document.dispatchEvent(new CustomEvent(name, { detail: detail })); },
     on: function (name, fn) {
