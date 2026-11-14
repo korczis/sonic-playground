@@ -23,7 +23,7 @@
       <li class="flex items-center gap-3 py-3 text-sm text-gray-500 dark:text-gray-400" id="n-{{ i.n }}" data-yearbook-item="{{ i.status }}">
         <span class="w-10 shrink-0 text-center font-mono text-xs">#{{ i.n }}</span>
         <span class="min-w-0 flex-1"><span class="block truncate text-gray-700 dark:text-gray-300">{{ i.title }}</span><span class="block truncate text-xs">{{ i.artist }}</span></span>
-        <span class="shrink-0 rounded bg-gray-100 px-2 py-0.5 text-xs dark:bg-gray-700" data-i18n="yearbook.status.{{ i.status }}">{{ l["yearbook.status." ~ i.status] }}</span>
+        <span class="shrink-0 rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-300" data-i18n="yearbook.status.{{ i.status }}">{{ l["yearbook.status." ~ i.status] }}</span>
       </li>
       {%- endif %}
       {%- endfor %}
@@ -34,7 +34,7 @@
       <h2 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.numbers" l={l} /> }}</h2>
       <dl class="grid grid-cols-2 gap-3">
         {%- for k in ["items", "songs", "present", "missing"] %}
-        <div class="rounded-lg bg-gray-50 p-3 dark:bg-gray-700"><dt class="text-xs text-gray-500 dark:text-gray-400" data-i18n="yearbook.k.{{ k }}">{{ l["yearbook.k." ~ k] }}</dt><dd class="text-2xl font-bold text-gray-900 dark:text-white">{{ b[k] }}</dd></div>
+        <div class="rounded-lg bg-gray-50 p-3 dark:bg-gray-700"><dt class="text-xs text-gray-600 dark:text-gray-300" data-i18n="yearbook.k.{{ k }}">{{ l["yearbook.k." ~ k] }}</dt><dd class="text-2xl font-bold text-gray-900 dark:text-white">{{ b[k] }}</dd></div>
         {%- endfor %}
       </dl>
     </div>
