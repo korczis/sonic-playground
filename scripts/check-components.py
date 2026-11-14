@@ -8,7 +8,9 @@
     classes) that appears in two different template files is a component waiting to be
     extracted; the same line twice in one file is reported too;
   - one formatter: no template fills an interface string's {placeholders} itself
-    (replace(from="{…")); the `tr` component does, plural forms included.
+    (replace(from="{…")); the `tr` component does, plural forms included;
+  - one still: no template or review writes a YouTube still (i.ytimg.com) or a track's thumbnail
+    as an <img> src itself; the `still` component does, with the srcset data/media.toml names.
 
     python3 scripts/check-components.py     exit 1 on any finding
 """
@@ -28,6 +30,8 @@ MIN_LINE = 100
 IGNORE = re.compile(r"^\s*(\{%|\{#|</|<!--|\{\{\s*<)")  # a component call is reuse, not duplication
 FORMAT = re.compile(r'replace\(from="\{')
 TR_DEFINITION = re.compile(r"\{%\s*component\s+tr\(")
+STILL = re.compile(r'i\.ytimg\.com|src="\{\{[^"]*thumb')
+STILL_DEFINITION = re.compile(r"\{%\s*component\s+still\((.*?)\{%\s*endcomponent\s+still\s*%\}", re.S)
 
 
 def main() -> int:
@@ -66,6 +70,17 @@ def main() -> int:
             if FORMAT.search(line) and not TR_DEFINITION.search(line):
                 problems.append(f"{path.relative_to(ROOT).as_posix()}:{number} formats an interface string "
                                 f"by hand (replace(from=\"{{…\")); use {{{{ <tr key=… l={{l}} vars=… /> }}}}")
+
+    # One still: a YouTube still or a track's thumbnail reaches an <img> only through `still`, which
+    # offers every still data/media.toml [youtube] names as a srcset sized for the page.
+    for path in sources:
+        text = path.read_text(encoding="utf-8")
+        if path.name == "components.html":
+            text = STILL_DEFINITION.sub(lambda m: "\n" * m.group(0).count("\n"), text)
+        for number, line in enumerate(text.splitlines(), 1):
+            if STILL.search(line):
+                problems.append(f"{path.relative_to(ROOT).as_posix()}:{number} writes a still by hand; "
+                                f"use <img {{{{ <still t={{t}} sizes=\"…\" /> }}}} …>")
 
     for p in problems:
         print(f"check-components: {p}", file=sys.stderr)

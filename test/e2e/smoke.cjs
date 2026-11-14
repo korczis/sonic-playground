@@ -937,6 +937,32 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // YouTube stills (rule project.media-budget): a row offers the stills of data/media.toml
+  // [youtube] as a srcset and the browser takes the smallest sharp one, never the 4:3 hqdefault
+  // with its bars for a 64 px row. A still that fails (a video removed from YouTube) becomes the
+  // placeholder with its srcset dropped as well, so no other still of the lost video is tried.
+  {
+    const still = '[data-track] img[data-thumb][srcset]';
+    const { context, page } = await open(browser, at('archive/'), desktop);
+    const row = page.locator(still).first();
+    await row.evaluate((img) => img.decode().catch(() => {}));
+    const picked = await row.evaluate((img) => img.currentSrc.split('/').pop());
+    check(picked === 'mqdefault.jpg', `stills: a 64 px archive row loads mqdefault.jpg (${picked})`);
+    await context.close();
+
+    const lost = await browser.newContext({ viewport: desktop });
+    if (root) await lost.route(`${base}**`, fromArtifact);
+    await lost.route('https://i.ytimg.com/**', (route) => route.fulfill({ status: 404, body: '' }));
+    const gone = await lost.newPage();
+    await gone.goto(at('archive/'), { waitUntil: 'load' });
+    const placeholder = await gone.waitForFunction((sel) => {
+      const img = document.querySelector(sel.replace('[srcset]', ''));
+      return img && img.dataset.thumbFailed === 'true' && !img.hasAttribute('srcset') && !img.hasAttribute('src');
+    }, still, { timeout: 5000 }).then(() => true, () => false);
+    check(placeholder, 'stills: a lost still becomes the placeholder, its src and srcset both dropped');
+    await lost.close();
+  }
+
   // The educational layer (ADR 0004): a review that teaches shows its guide, concepts, sources
   // and connections from the front matter; its structured data is an Article and a
   // LearningResource; concepts link to their pages; the glossary lists every concept; a

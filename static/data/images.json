@@ -1260,5 +1260,19 @@
   "card_kb": 180,
   "format": "jpeg",
   "quality": 85
+ },
+ "youtube": {
+  "stills": [
+   {
+    "file": "mqdefault",
+    "height": 180,
+    "width": 320
+   },
+   {
+    "file": "hqdefault",
+    "height": 360,
+    "width": 480
+   }
+  ]
  }
 }

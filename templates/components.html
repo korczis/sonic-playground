@@ -82,7 +82,6 @@
 {% component track_card(t, l, heading="h3") %}
 {%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
 {%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
-{%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 <article class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
   data-track
   data-source="{{ t.source }}"
@@ -93,8 +92,8 @@
   data-text="{{ t.artist | lower }} {{ t.track | lower }} {{ desc | lower }}{% for kind, terms in t.facets %} {{ terms | join(sep=' ') }}{% endfor %}">
   <div class="relative">
     <a href="{{ href }}" class="relative block aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
-      {%- if thumb %}
-      <img src="{{ thumb }}" alt="" data-thumb loading="lazy" decoding="async" width="480" height="360" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">
+      {%- if t.thumbnail %}
+      <img {{ <still t={t} sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw" /> }} alt="" data-thumb loading="lazy" decoding="async" width="480" height="360" class="h-full w-full object-cover transition duration-300 group-hover:scale-105">
       {%- else %}
       <span class="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary-600 via-primary-800 to-pink-800 text-white/70">{{ <icon name="music" cls="h-10 w-10" /> }}</span>
       {%- endif %}
@@ -119,15 +118,14 @@
 {% component track_row(t, l, note="") %}
 {%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
 {%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
-{%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 {%- set label = t.artist ~ " – " ~ t.track -%}
 <li class="flex items-center gap-2 py-3 sm:py-4" data-track data-source="{{ t.source }}">
   {%- if t.youtube %}
   <button type="button" data-play="{{ t.source }}" class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-primary-700 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-300 dark:text-primary-400 dark:hover:bg-gray-700" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": label} } /> }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}"><span data-icon-play>{{ <icon name="play" cls="h-5 w-5" /> }}</span><span data-icon-pause>{{ <icon name="pause" cls="h-5 w-5" /> }}</span></button>
   {%- else %}<span class="w-10 shrink-0"></span>{%- endif %}
   <a href="{{ href }}" class="flex min-w-0 flex-1 items-center gap-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-300 dark:focus:ring-primary-800">
-    {%- if thumb %}
-    <img class="h-12 w-16 shrink-0 rounded object-cover" data-thumb src="{{ thumb }}" alt="" loading="lazy" width="64" height="48">
+    {%- if t.thumbnail %}
+    <img class="h-12 w-16 shrink-0 rounded object-cover" data-thumb {{ <still t={t} sizes="64px" /> }} alt="" loading="lazy" width="64" height="48">
     {%- else %}
     <span class="flex h-12 w-16 shrink-0 items-center justify-center rounded bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" /> }}</span>
     {%- endif %}
@@ -181,6 +179,23 @@
 {%- endif -%}
 {% endcomponent track_actions %}
 
+{#- A track's still, as the <img> attributes: for a YouTube still, src and the srcset of every
+    still data/media.toml [youtube] names, with sizes, the width the page shows it at; the browser
+    takes the smallest one sharp at the screen's density. A local cover (extra.cover_image) is
+    its derived card still. t is a catalogue track, or id a bare YouTube id ({{ <video/> }}).
+    Call inside the tag: <img {{ <still t={t} sizes="64px" /> }} alt="" width=… height=…>.
+    scripts/check-components.py refuses a YouTube still or a thumbnail written any other way. -#}
+{% component still(sizes, t={}, id="") %}
+{%- set media = load_data(path="static/data/images.json") -%}
+{%- set stills = media.youtube.stills -%}{%- set smallest = stills | first -%}
+{%- if id %}{% set yt = id %}{% elif t.thumbnail_local %}{% set yt = "" %}{% else %}{% set yt = t.youtube %}{% endif -%}
+{%- if yt -%}
+src="https://i.ytimg.com/vi/{{ yt }}/{{ smallest.file }}.jpg" srcset="{% for s in stills %}https://i.ytimg.com/vi/{{ yt }}/{{ s.file }}.jpg {{ s.width }}w{% if not loop.last %}, {% endif %}{% endfor %}" sizes="{{ sizes }}"
+{%- else -%}
+src="{{ get_url(path=t.thumbnail) }}"
+{%- endif -%}
+{% endcomponent still %}
+
 {#- Privacy-friendly video: a still and a play button. Play sends it to the bottom-bar player
     (static/js/player.js), which keeps playing while the reader browses: it plays this one video
     now (the queue after it is kept); the radio and the queue are separate controls. Without
@@ -188,7 +203,7 @@
 {% component video(id, title, source="") %}
 <div class="relative aspect-video w-full overflow-hidden rounded-lg bg-gray-900" data-video="{{ id }}" data-video-title="{{ title }}">
   <a href="https://www.youtube.com/watch?v={{ id }}" class="group absolute inset-0 flex items-center justify-center" {% if source %}data-play="{{ source }}"{% else %}data-play-video="{{ id }}" data-play-title="{{ title }}"{% endif %} aria-label="{{ title }}">
-    <img src="https://i.ytimg.com/vi/{{ id }}/hqdefault.jpg" alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-80 transition group-hover:opacity-100" loading="lazy" width="480" height="360">
+    <img {{ <still id={id} sizes="(min-width: 1024px) 800px, 100vw" /> }} alt="" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-80 transition group-hover:opacity-100" loading="lazy" width="480" height="360">
     <span class="relative inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition group-hover:scale-110 group-focus:ring-4 group-focus:ring-primary-300">{{ <icon name="play" cls="ml-1 h-8 w-8" /> }}</span>
   </a>
 </div>
@@ -307,12 +322,11 @@
     The article card that follows overlaps it (-mt-24). -#}
 {% component track_hero(t, home, l, lead="") %}
 {%- set tc = load_data(path="static/data/catalog.json") -%}
-{%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 {%- set genre = t.facets.genre | first -%}
 {%- set gk = "term.genre." ~ genre -%}{%- if gk in l %}{% set glabel = l[gk] %}{% else %}{% set glabel = genre %}{% endif -%}
 <header class="relative isolate overflow-hidden bg-gray-900">
-  {%- if thumb %}
-  <img src="{{ thumb }}" alt="" width="480" height="360" data-thumb class="absolute inset-0 -z-10 h-full w-full scale-110 object-cover opacity-60 blur-sm" fetchpriority="high">
+  {%- if t.thumbnail %}
+  <img {{ <still t={t} sizes="160px" /> }} alt="" width="480" height="360" data-thumb class="absolute inset-0 -z-10 h-full w-full scale-110 object-cover opacity-60 blur-sm" fetchpriority="high">
   {%- endif %}
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/75 to-primary-900/40" aria-hidden="true"></div>
   <div class="px-4 pb-32 pt-6 sm:pt-10 lg:pb-36 xl:px-8">
@@ -390,12 +404,11 @@
 {% component related_card(t, shared, score, l) %}
 {%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
 {%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
-{%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 {%- set label = t.artist ~ " – " ~ t.track -%}
 <article class="flex flex-col gap-4 sm:flex-row" data-track data-source="{{ t.source }}">
   <div class="relative shrink-0 sm:w-44">
     <a href="{{ href }}" class="block overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700" tabindex="-1" aria-hidden="true">
-      {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="352" height="198" class="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105">{% else %}<span class="flex aspect-video items-center justify-center bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" cls="h-8 w-8" /> }}</span>{% endif %}
+      {%- if t.thumbnail %}<img {{ <still t={t} sizes="(min-width: 640px) 176px, 100vw" /> }} alt="" data-thumb loading="lazy" width="352" height="198" class="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105">{% else %}<span class="flex aspect-video items-center justify-center bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" cls="h-8 w-8" /> }}</span>{% endif %}
     </a>
     {%- if t.youtube %}{{ <track_actions source={t.source} label={label} l={l} /> }}{% endif %}
   </div>
@@ -447,7 +460,7 @@
         {%- set_global shown = shown + 1 %}
         {%- set label = t.artist ~ " – " ~ t.track %}
         <button type="button" data-track data-source="{{ t.source }}" data-play="{{ t.source }}" class="group relative aspect-square overflow-hidden rounded-xl shadow-xl shadow-black/40 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:ring-white/40 focus:outline-none focus:ring-4 focus:ring-primary-500{% if shown % 3 == 2 %} translate-y-5 hover:translate-y-4{% endif %}{% if shown > 6 %} hidden sm:block{% endif %}" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": label} } /> }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">
-          <img src="https://i.ytimg.com/vi/{{ t.youtube }}/mqdefault.jpg" alt="" data-thumb loading="lazy" width="320" height="180" class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
+          <img {{ <still t={t} sizes="(min-width: 1024px) 160px, 33vw" /> }} alt="" data-thumb loading="lazy" width="320" height="180" class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
           <span class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent"></span>
           <span class="absolute bottom-1.5 left-1.5 right-1.5 truncate text-left text-[11px] font-semibold text-white sm:text-xs">{{ t.artist }}</span>
           <span class="absolute inset-0 flex items-center justify-center opacity-0 transition group-hover:opacity-100 group-focus:opacity-100"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span></span>
@@ -460,7 +473,7 @@
       {%- if l.lang in deep.langs %}{% set deep_href = get_url(path="@/" ~ deep.source, lang=l.lang) %}{% else %}{% set deep_href = get_url(path="@/" ~ deep.source, lang=deep.langs | first) %}{% endif %}
       <div class="relative z-10 mx-auto -mt-6 flex max-w-sm items-center gap-3 rounded-2xl bg-gray-900/70 p-3 shadow-2xl shadow-black/50 ring-1 ring-white/15 backdrop-blur-md sm:-mt-10 lg:absolute lg:-bottom-10 lg:-left-10 lg:mt-0" data-track data-source="{{ deep.source }}" data-playlist>
         <button type="button" data-play="{{ deep.source }}" class="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-500" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": deep.artist ~ " – " ~ deep.track} } /> }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": deep.artist ~ " – " ~ deep.track} | json_encode }}">
-          <img src="https://i.ytimg.com/vi/{{ deep.youtube }}/mqdefault.jpg" alt="" loading="lazy" width="320" height="180" class="h-full w-full object-cover">
+          <img {{ <still t={deep} sizes="56px" /> }} alt="" loading="lazy" width="320" height="180" class="h-full w-full object-cover">
           <span class="absolute inset-0 flex items-center justify-center bg-gray-950/40 text-white">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span>
         </button>
         <div class="min-w-0 flex-1">
@@ -480,11 +493,10 @@
 {% component featured_track(t, l) %}
 {%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
 {%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
-{%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif -%}
 <section aria-labelledby="featured-title" class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" data-playlist id="featured" data-featured="{{ t.source }}">
   <div class="grid lg:grid-cols-2" data-track data-source="{{ t.source }}">
     <a href="{{ href }}" class="group relative block aspect-video overflow-hidden bg-gray-900 lg:aspect-auto lg:min-h-80" tabindex="-1" aria-hidden="true">
-      {%- if thumb %}<img src="{{ thumb }}" alt="" width="480" height="360" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100">
+      {%- if t.thumbnail %}<img {{ <still t={t} sizes="(min-width: 1024px) 50vw, 100vw" /> }} alt="" width="480" height="360" data-thumb class="absolute inset-0 h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-105 group-hover:opacity-100">
       {%- else %}<span class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-700 via-primary-900 to-pink-900 text-white/70">{{ <icon name="music" cls="h-20 w-20" /> }}</span>{% endif %}
       <span class="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></span>
       <span class="absolute bottom-4 left-4 inline-flex items-center rounded-md bg-primary-700 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-white">{{ <icon name="sparkles" cls="mr-1.5 h-3.5 w-3.5" /> }}{{ <tx key="home.latest" l={l} /> }}</span>
@@ -593,8 +605,7 @@
 {%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
 {%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
 <a href="{{ href }}" class="flex gap-3 rounded-lg border border-gray-200 bg-white p-3 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" data-track data-source="{{ t.source }}">
-  {%- if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif %}
-  {%- if thumb %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="96" height="54" class="h-14 w-24 shrink-0 rounded object-cover">{% else %}<span class="flex h-14 w-24 shrink-0 items-center justify-center rounded bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" /> }}</span>{% endif %}
+  {%- if t.thumbnail %}<img {{ <still t={t} sizes="96px" /> }} alt="" data-thumb loading="lazy" width="96" height="54" class="h-14 w-24 shrink-0 rounded object-cover">{% else %}<span class="flex h-14 w-24 shrink-0 items-center justify-center rounded bg-gradient-to-br from-primary-600 to-pink-800 text-white/70">{{ <icon name="music" /> }}</span>{% endif %}
   <span class="min-w-0"><span class="block truncate text-sm font-semibold text-gray-900 dark:text-white">{{ t.artist }} – {{ t.track }}</span><span class="mt-0.5 block text-sm text-gray-600 dark:text-gray-300">{{ why }}</span></span>
 </a>
 {% endcomponent connection_card %}
@@ -605,7 +616,7 @@
 <a href="{{ get_url(path='@/yearbook/' ~ b.year ~ '.md', lang=l.lang) }}" class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800" data-yearbook="{{ b.year }}">
   <div class="grid aspect-[2/1] grid-cols-4 gap-0.5 bg-gray-100 dark:bg-gray-700">
     {%- set_global shown = 0 %}
-    {%- for i in b.tracks %}{% if shown < 8 and i.source and i.source in catalog.lookup %}{% set t = catalog.tracks[catalog.lookup[i.source]] %}{% if t.thumbnail %}{% set_global shown = shown + 1 %}{% if t.thumbnail_local %}{% set thumb = get_url(path=t.thumbnail) %}{% else %}{% set thumb = t.thumbnail %}{% endif %}<img src="{{ thumb }}" alt="" data-thumb loading="lazy" width="160" height="90" class="h-full w-full object-cover">{% endif %}{% endif %}{% endfor %}
+    {%- for i in b.tracks %}{% if shown < 8 and i.source and i.source in catalog.lookup %}{% set t = catalog.tracks[catalog.lookup[i.source]] %}{% if t.thumbnail %}{% set_global shown = shown + 1 %}<img {{ <still t={t} sizes="120px" /> }} alt="" data-thumb loading="lazy" width="160" height="90" class="h-full w-full object-cover">{% endif %}{% endif %}{% endfor %}
   </div>
   <div class="p-4">
     <p class="text-3xl font-extrabold tracking-tight text-gray-900 group-hover:text-primary-700 dark:text-white">{{ b.year }}</p>

@@ -86,6 +86,8 @@
   function fallback(img) {
     if (img.dataset.thumbFailed) return;
     img.dataset.thumbFailed = 'true';
+    // Both: with a srcset left, the browser would pick another still of the same lost video.
+    img.removeAttribute('srcset');
     img.removeAttribute('src');
     img.alt = '';
     img.classList.add('invisible');

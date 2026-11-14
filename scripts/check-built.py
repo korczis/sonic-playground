@@ -62,6 +62,7 @@ class Refs(HTMLParser):
         self.hidden: list[str] = []      # open elements inside a hidden subtree (hidden, aria-hidden)
         self.unnamed: list[str] = []
         self.unsized: list[str] = []
+        self.unsourced: list[str] = []
 
     def handle_endtag(self, tag):
         if tag == "title":
@@ -105,6 +106,11 @@ class Refs(HTMLParser):
                 c["name"] += a["alt"]
         if tag == "img" and not (a.get("width") and a.get("height")):
             self.unsized.append(a.get("src") or "?")
+        # A YouTube still offers every still data/media.toml [youtube] names, sized for the page
+        # (the `still` component): one fixed file is either blurry or several times the bytes.
+        if tag == "img" and (a.get("src") or "").startswith("https://i.ytimg.com/") \
+                and not (a.get("srcset") and a.get("sizes")):
+            self.unsourced.append(a.get("src") or "?")
         if tag in ("img", "source"):
             src = a.get("src")
             if src:
@@ -175,6 +181,9 @@ def main() -> int:
         if file.suffix == ".html":
             for src in sorted(set(parser.unsized)):
                 problems.append(f"{rel}: <img src={src}> has no width and height (the page shifts as it loads)")
+            for src in sorted(set(parser.unsourced))[:5]:
+                problems.append(f"{rel}: <img src={src}> is a YouTube still without srcset and sizes "
+                                f"(use the still component)")
             for raw in sorted(set(parser.images)):
                 target = urlsplit(urljoin(here, raw))
                 if (target.scheme, target.netloc) == (site.scheme, site.netloc) and target.path.startswith(prefix):
