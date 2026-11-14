@@ -53,9 +53,13 @@ data export arrives, and to refresh the records after the library changes.
    streaming history in up to 30), unpack it, then run
    `python3 scripts/spotify_history.py import-export <folder>`. The plays go into the private
    records only.
-5. **Derive.** `python3 scripts/spotify_history.py build` reports, and `build --write` writes
-   the records, removes leftovers and writes the yearbooks. Then run `npm run derive` so that
-   the catalogue picks up the yearbooks.
+5. **Derive.** `npm run derive` runs `scripts/spotify_history.py build --write --if-sources` and
+   then the catalogue. It writes the records, removes leftovers and writes the yearbooks, and
+   the catalogue picks the yearbooks up. Where the private store is absent (any checkout but
+   the owner's) the first step does nothing. Where it is present, every content change re-resolves
+   the records too. That matters because new reviews turn records from missing to present, and
+   the pre-push gate refuses stale records. `python3 scripts/spotify_history.py build` without
+   `--write` only reports.
 6. **Resolve and write.** `python3 scripts/spotify.py coverage` shows each yearbook's missing and
    ambiguous items. An ambiguous item gets `review =` and a non-song gets `skip =` in its
    yearbook file, never a guess. Missing songs go to skill add-song

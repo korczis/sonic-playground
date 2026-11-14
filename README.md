@@ -94,7 +94,7 @@ can all parse it. The repository is public, so the split is strict:
 # scripts/spotify-web-crawl.js in the logged-in web player: SonicCrawl.run(), then download()
 python3 scripts/spotify_history.py ingest-snapshot ~/Downloads/<snapshot>.json   # private store
 python3 scripts/spotify_history.py import-export <unpacked export folder>          # private store
-npm run spotify:build    # every record and yearbook, then the catalogue
+npm run derive           # the records and yearbooks (where the private store exists), then the catalogue
 npm run spotify:check    # the gate: schemas, references, nothing private, records current
 npm run spotify:stats
 ```

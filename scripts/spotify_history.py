@@ -808,6 +808,11 @@ def tracked(path: str) -> list[str]:
     return [line for line in out.stdout.splitlines() if line]
 
 
+def has_sources() -> bool:
+    """The private store holds something to derive from (the owner's machine)."""
+    return (SNAPSHOTS.exists() and any(SNAPSHOTS.glob("*.json"))) or (EXPORTS.exists() and any(EXPORTS.glob("*.json")))
+
+
 def check() -> list[str]:
     errors: list[str] = []
     rel = PRIVATE.relative_to(ROOT).as_posix()
@@ -865,10 +870,10 @@ def check() -> list[str]:
             report = build(write=False)
             if report["changed"] or report["removed"]:
                 errors.append(f"data/spotify: {report['changed']} record(s) stale, {report['removed']} leftover: "
-                              "run python3 scripts/spotify_history.py build --write")
+                              "run npm run derive (or python3 scripts/spotify_history.py build --write)")
             stale = [b["file"] for b in report["yearbooks"] if b["changed"]]
             if stale:
-                errors.append(f"yearbooks stale: {', '.join(stale)}: run python3 scripts/spotify_history.py build --write")
+                errors.append(f"yearbooks stale: {', '.join(stale)}: run npm run derive")
         except HistoryError as exc:
             errors.append(str(exc))
     return errors
@@ -950,6 +955,8 @@ def main() -> int:
     e.add_argument("folder", type=Path)
     b = sub.add_parser("build", help="derive every record (and the yearbooks) from the private store")
     b.add_argument("--write", action="store_true")
+    b.add_argument("--if-sources", action="store_true",
+                   help="do nothing when there is no private source (a checkout without the store): npm run derive")
     sub.add_parser("stats", help="what the committed history holds")
     args = ap.parse_args()
     try:
@@ -965,7 +972,15 @@ def main() -> int:
         elif args.cmd == "import-export":
             print(json.dumps(import_export(args.folder), indent=1))
         elif args.cmd == "build":
-            print(json.dumps(build(args.write), indent=1, ensure_ascii=False))
+            if args.if_sources and not has_sources():
+                print("spotify-history: no private source here; records left as committed")
+                return 0
+            report = build(args.write)
+            if args.if_sources:  # under npm run derive: one line, like the catalogue's
+                print(f"spotify-history: {report['songs']} songs, {report['changed']} record(s) changed, "
+                      f"{report['removed']} removed" + (" (written)" if report["written"] else ""))
+            else:
+                print(json.dumps(report, indent=1, ensure_ascii=False))
         elif args.cmd == "stats":
             print(json.dumps(stats(), indent=1))
         else:
