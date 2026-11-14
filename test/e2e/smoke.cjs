@@ -221,6 +221,12 @@ async function visit(context, rel) {
   return { errors, stalled };
 }
 
+// The sweep's parallel pages: SMOKE_WORKERS, else the machine's cores less two, never fewer than the
+// six the CI runner always had and never more than sixteen (each is a browser context). Every page
+// is still visited, scrolled and waited for; only more of them at once.
+const SWEEP_WORKERS = Number(process.env.SMOKE_WORKERS)
+  || Math.min(16, Math.max(6, require('node:os').cpus().length - 2));
+
 async function sweep(browser) {
   const xml = root ? fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8')
     : await (await get(at('sitemap.xml'))).text();
@@ -246,9 +252,9 @@ async function sweep(browser) {
     }
     await context.close();
   }
-  await Promise.all(Array.from({ length: 6 }, worker));
+  await Promise.all(Array.from({ length: SWEEP_WORKERS }, worker));
   check(urls.length > 0 && failed.length === 0,
-    `sweep: ${urls.length} sitemap pages, every one free of console errors, warnings and failed requests` +
+    `sweep: ${urls.length} sitemap pages (${SWEEP_WORKERS} at a time), every one free of console errors, warnings and failed requests` +
     (failed.length ? `\n     ${failed.slice(0, 20).join('\n     ')}` : ''));
 }
 
