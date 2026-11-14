@@ -35,6 +35,10 @@ were typed by hand would drift from the playlists; resolved and derived they can
   token once, and names Spotify's policy when a playlist is refused; without authorisation it
   says how to authorise. Tests: `test/test_spotify.py` (`Http`, `Identity`, `Derivation`).
 
+- The smoke test compares each yearbook page with the catalogue item by item: in order, a review's
+  row with its source and a link to its page, or the item's own row. Two counts passed a list
+  rendered in reverse (a review of the gates, 2026-11-14).
+
 # Failure behaviour
 
 The catalogue check fails, so the pre-commit hook and the gate refuse the change.

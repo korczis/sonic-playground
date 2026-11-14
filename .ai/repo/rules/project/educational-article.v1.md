@@ -53,6 +53,10 @@ nothing.
   808 URLs. `test/test_probe_links.py` proves every cited source is enumerated and that a dead
   citation fails the probe.
 
+- The smoke test proves the listening guide through a real timed guide button (the review is found
+  in the content's front matter), not by calling the player: the direct call passed with the
+  button's dispatch deleted. On 2026-11-14 only 3 of 321 guides carried a time.
+
 # Failure behaviour
 
 The catalogue check fails, so the pre-commit hook and the gate refuse the change.
