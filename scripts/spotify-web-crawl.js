@@ -166,7 +166,7 @@
       crawl.progress = 'library';
       const lib = await library();
       const targets = [{ uri: 'spotify:collection:tracks', name: 'Liked Songs', path: '/collection/tracks' }]
-        .concat(lib.filter((x) => (x.uri || '').includes(':playlist:') && !/^Playlist •/.test(x.name || ''))
+        .concat(lib.filter((x) => (x.uri || '').includes(':playlist:') && !/This playlist is not available/i.test((x.name || '') + ' ' + (x.sub || '')))
           .map((x) => ({ uri: x.uri, name: x.name, sub: x.sub, path: '/playlist/' + x.uri.split(':')[2] })));
       const playlists = [];
       for (const [k, t] of targets.entries()) {

@@ -198,6 +198,13 @@ class Crawl(unittest.TestCase):
                        "xmlhttprequest", "document.cookie", "/api/token"):
             self.assertNotIn(banned, code, f"the crawl must not use {banned}")
 
+    def test_a_playlist_without_a_name_of_its_own_is_kept(self):
+        # The library shows such a playlist as "Playlist • <owner>"; only the unavailable ones
+        # ("This playlist is not available") are skipped (the second crawl, 2026-11-14).
+        code = self.path.read_text(encoding="utf-8")
+        self.assertIn("This playlist is not available", code)
+        self.assertNotIn("/^Playlist •/", code)
+
     def test_it_writes_the_snapshot_schema(self):
         code = self.path.read_text(encoding="utf-8")
         self.assertIn(f"schema: '{sh.SNAPSHOT_SCHEMA}'", code)
