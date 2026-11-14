@@ -2412,9 +2412,9 @@
    "file": "data/backlog/yearbook-2022.toml",
    "expected": 99,
    "items": 99,
-   "songs": 53,
-   "present": 53,
-   "missing": 46,
+   "songs": 54,
+   "present": 54,
+   "missing": 45,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -2471,11 +2471,11 @@
    "genres": [
     {
      "term": "electronic",
-     "count": 30
+     "count": 31
     },
     {
      "term": "house",
-     "count": 16
+     "count": 17
     },
     {
      "term": "deep house",
@@ -3020,8 +3020,8 @@
      "n": 72,
      "title": "Garden",
      "artist": "TEED",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "totally-enormous-extinct-dinosaurs-garden.md"
     },
     {
      "n": 73,
@@ -44116,7 +44116,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2022,
+     "n": 72
+    }
+   ],
    "langs": [
     "en",
     "cs"

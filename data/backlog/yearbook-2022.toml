@@ -584,6 +584,8 @@ artists = ["TEED"]
 album = "Trouble"
 duration = "4:35"
 spotify = "1Wrmm4XppIEegxMsU8utlv"
+review = "totally-enormous-extinct-dinosaurs-garden.md"
+note = "the reviewed song: TEED is Totally Enormous Extinct Dinosaurs, same official video G-1HNnxb0WE; this is the album recording on Trouble (MusicBrainz 6471b5db-9657-4ee4-a20a-a3ae95af6710, 4:35), the review cites the 2010 EP recording (eee65136-f6f8-4464-9e7e-4b2c7ecdb4f6, 4:28): one song, one review"
 
 [[track]]
 n = 73
