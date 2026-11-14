@@ -37,7 +37,7 @@ class RetryPolicy(unittest.TestCase):
             self.assertGreater(retry_after({"stalled": False, "errors": errors}, True), 0)
 
     def test_a_live_host_gets_three_retries_with_growing_pauses(self):
-        # run 43610981553: one page answered 503 twice, 200 a minute later
+        # one pause per retry, each longer than the last, then the failure stands
         pauses = [retry_after({"stalled": False, "errors": [PAGE]}, True, n) for n in (1, 2, 3)]
         self.assertEqual(pauses, sorted(pauses))
         self.assertLess(pauses[0], pauses[-1])

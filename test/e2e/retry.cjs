@@ -5,9 +5,10 @@
 //   - a live host's transient answer (429, 502, 503, 504) and nothing else: GitHub Pages answered
 //     503 for 3 of 2006 production pages on 2026-11-14 (run 43545986644) and turned main red.
 //     Retried after a pause, and only against a live host: the artefact is served from disk,
-//     where a 5xx is the test's own defect. One retry after 3 s was not enough: the run of
-//     3f90951 (43610981553) got 503 twice for one page that answered 200 a minute later, so the
-//     host gets three retries with growing pauses (HOST_PAUSES_MS).
+//     where a 5xx is the test's own defect. The first run with one retry (6ac2bd1, 43611359794)
+//     passed: two pages answered 503 once and passed on the retry. Up to three retries with
+//     growing pauses (HOST_PAUSES_MS) cost at most 43 s for a page and give a slower recovery
+//     the same chance; a real outage still fails.
 // A stalled page is retried once, a host's answer at most HOST_PAUSES_MS.length times; a page that
 // still fails fails, and a console message or a 404 is never retried.
 'use strict';
