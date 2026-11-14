@@ -16,10 +16,10 @@ cd "$work"
 python3 scripts/track.py resolve "Bakermat - The River" --offline >/dev/null && {
   echo "FAIL: an existing track was not reported"; exit 1; } || [ $? = 3 ]
 
-python3 scripts/track.py new "Moderat - A New Error" --offline \
+python3 scripts/track.py new "Fixture Artist - Fixture Song" --offline \
   --youtube "https://youtu.be/dQw4w9WgXcQ" --genre electronic techno --sentiment hypnotic \
   --date 2026-01-02 --description "A slow-burning electronic piece with a hypnotic pulse." >/dev/null
-file=content/moderat-a-new-error.md
+file=content/fixture-artist-fixture-song.md
 [ -f "$file" ] || { echo "FAIL: $file not written"; exit 1; }
 
 if python3 scripts/catalog.py >/dev/null 2>&1; then
@@ -56,7 +56,7 @@ url = "https://www.discogs.com/artist/1121428-Moderat"
 kind = "database"
 """
 # The written review names its recording and has the contract's length (data/review.toml).
-body += "\nModerat let A New Error grow from a single pulse. " + " ".join(f"detail{i}" for i in range(320)) + "\n"
+body += "\nFixture Artist let Fixture Song grow from a single pulse. " + " ".join(f"detail{i}" for i in range(320)) + "\n"
 open(path, "w", encoding="utf-8").write("+++" + fm + "+++" + body)
 EOF2
 python3 scripts/track.py check "$file" >/dev/null
@@ -66,7 +66,7 @@ if python3 scripts/catalog.py >/dev/null 2>&1; then
   echo "FAIL: a review without its Czech translation passed the contract"; exit 1
 fi
 python3 scripts/translate.py scaffold "$file" >/dev/null
-cs=content/moderat-a-new-error.cs.md
+cs=content/fixture-artist-fixture-song.cs.md
 if python3 scripts/translate.py check "$cs" >/dev/null 2>&1; then
   echo "FAIL: an untranslated scaffold passed the contract"; exit 1
 fi
@@ -80,7 +80,7 @@ fm = re.sub(r'TODO\(translate\) [^"]*', lambda m: f"Česká věta číslo {next(
 lines = []
 for line in body.replace("TODO(translate)", "").splitlines():
     if line.strip() and not line.startswith(("#", "{{")):
-        line = "Skladba Moderat A New Error roste z jediného pulzu, který se nemění. " + "příklad " * (len(line.split()) // 1)
+        line = "Skladba Fixture Artist Fixture Song roste z jediného pulzu, který se nemění. " + "příklad " * (len(line.split()) // 1)
     lines.append(line)
 open(path, "w", encoding="utf-8").write("+++" + fm + "+++" + "\n".join(lines) + "\n")
 EOF3
@@ -89,11 +89,11 @@ python3 scripts/catalog.py >/dev/null
 python3 - <<'EOF'
 import json
 c = json.load(open("static/data/catalog.json"))
-t = c["tracks"][c["lookup"]["moderat-a-new-error.md"]]
-assert (t["artist"], t["track"]) == ("Moderat", "A New Error"), t
+t = c["tracks"][c["lookup"]["fixture-artist-fixture-song.md"]]
+assert (t["artist"], t["track"]) == ("Fixture Artist", "Fixture Song"), t
 assert t["youtube"] == "dQw4w9WgXcQ"
 assert t["related"], "no related tracks"
-assert t["langs"] == ["en", "cs"] and t["i18n"]["cs"]["path"] == "cs/moderat-a-new-error/", t["langs"]
+assert t["langs"] == ["en", "cs"] and t["i18n"]["cs"]["path"] == "cs/fixture-artist-fixture-song/", t["langs"]
 print("ok   add-song: skeleton refused until written, taught and translated, then integrated in both languages with",
       len(t["related"]), "related tracks")
 EOF

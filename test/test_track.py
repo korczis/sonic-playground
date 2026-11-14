@@ -165,13 +165,13 @@ class NewArticle(unittest.TestCase):
         return capture(track.new, text, namespace(**kw))
 
     def test_written_article_meets_the_contract_once_written(self):
-        code, plan = self.run_new("Moderat - A New Error", youtube="https://youtu.be/dQw4w9WgXcQ")
+        code, plan = self.run_new("Fixture Artist - Fixture Song", youtube="https://youtu.be/dQw4w9WgXcQ")
         self.assertEqual(code, 0)
-        self.assertEqual(plan["file"], "content/moderat-a-new-error.md")
+        self.assertEqual(plan["file"], "content/fixture-artist-fixture-song.md")
         text = plan["preview"]
         self.assertIn('youtube = "https://www.youtube.com/embed/dQw4w9WgXcQ"', text)
         with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp) / "moderat-a-new-error.md"
+            path = Path(tmp) / "fixture-artist-fixture-song.md"
             path.write_text(text, encoding="utf-8")
             old = cat.CONTENT
             cat.CONTENT = Path(tmp)
@@ -179,11 +179,13 @@ class NewArticle(unittest.TestCase):
                 errors = []
                 cat.load_track(path, errors)
                 self.assertTrue(any("TODO(write)" in e for e in errors), "skeleton is unfinished")
-                path.write_text(text.replace("TODO(write): ", "Written prose. ") + "\n" + PROSE + "\n", encoding="utf-8")
+                prose = PROSE.replace("Moderat built A New Error", "Fixture Artist built Fixture Song")
+                written = text.replace("TODO(write): ", "Written prose. ")
+                path.write_text(written + "\n" + prose + "\n", encoding="utf-8")
                 errors = []
                 result = cat.load_track(path, errors)
                 self.assertEqual(errors, [])
-                self.assertEqual((result.artist, result.track), ("Moderat", "A New Error"))
+                self.assertEqual((result.artist, result.track), ("Fixture Artist", "Fixture Song"))
             finally:
                 cat.CONTENT = old
 
