@@ -147,7 +147,7 @@
 </script>
 {% block head_extra %}{% endblock head_extra %}
 </head>
-<body class="bg-gray-50 antialiased dark:bg-gray-900" data-base-url="{{ config.base_url }}" data-catalog="{{ get_url(path='data/catalog.json', cachebust=true) }}" data-search="{% if lang == config.default_language %}{{ get_url(path='data/search.json', cachebust=true) }}{% else %}{{ get_url(path='data/search.' ~ lang ~ '.json', cachebust=true) }}{% endif %}" data-echarts="{{ get_url(path=vendor.libs.echarts.js) }}" data-i18n-bundle="{{ get_url(path='data/i18n.json', cachebust=true) }}">
+<body class="bg-gray-50 antialiased dark:bg-gray-900" data-base-url="{{ config.base_url }}" data-catalog="{{ get_url(path='data/catalog.json', cachebust=true) }}" data-play-index="{{ get_url(path='data/play.json', cachebust=true) }}" data-search="{% if lang == config.default_language %}{{ get_url(path='data/search.json', cachebust=true) }}{% else %}{{ get_url(path='data/search.' ~ lang ~ '.json', cachebust=true) }}{% endif %}" data-echarts="{{ get_url(path=vendor.libs.echarts.js) }}" data-i18n-bundle="{{ get_url(path='data/i18n.json', cachebust=true) }}">
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-gray-900 focus:shadow" data-i18n="site.skip">{{ l["site.skip"] }}</a>
 {% include "partials/nav.html" %}
 <div id="shell" class="flex overflow-hidden bg-gray-50 pt-16 dark:bg-gray-900">

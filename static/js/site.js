@@ -147,7 +147,7 @@
     random.classList.remove('hidden');
     random.addEventListener('click', function () {
       random.disabled = true;
-      window.Sonic.catalog().then(function (c) {
+      window.Sonic.playIndex().then(function (c) {
         random.disabled = false;
         var here = window.location.pathname;
         var pick;

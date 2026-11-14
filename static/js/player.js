@@ -549,7 +549,7 @@
   // Autoplay (on by default, the owner's wish of 2026-11-12): when the queue runs out, a random
   // track that has not played yet in this queue follows, announced in a toast.
   function autoplayNext() {
-    Sonic.catalog().then(function (c) {
+    Sonic.playIndex().then(function (c) {
       var seen = {};
       state.queue.forEach(function (q) { seen[keyOf(q)] = true; });
       var pool = c.tracks.filter(function (t) { return t.youtube && !seen[t.source]; });
@@ -638,7 +638,7 @@
       playNow({ youtube: d.playVideo, track: d.playTitle || Sonic.t('player.video'), artist: '' });
       return;
     }
-    Sonic.catalog().then(function (c) {
+    Sonic.playIndex().then(function (c) {
       var bySource = {};
       c.tracks.forEach(function (t) { bySource[t.source] = t; });
       if (d.seek) { seekTrack(bySource[d.seek], d.seekAt || '0:00'); return; }

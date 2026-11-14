@@ -41,6 +41,12 @@ CONTENT = ROOT / "content"
 STATIC = ROOT / "static"
 OUTPUT = STATIC / "data" / "catalog.json"
 SEARCH = STATIC / "data" / "search.json"
+PLAY = STATIC / "data" / "play.json"
+# The player's index (static/data/play.json): a projection of each catalogue track onto what the
+# player, the track menu and the random button read, in the catalogue's own shape (a field here
+# is that field of catalog.json, related items keep only their source, i18n only each path). The
+# first play of a page without charts loads this (~20 kB gzip), not the catalogue (~160 kB).
+PLAY_FIELDS = ("source", "path", "artist", "track", "youtube")
 VIDEO_STATUS = ROOT / "data" / "videos.json"  # written by scripts/probe-videos.py --write
 MEDIA = STATIC / "data" / "images.json"  # written by scripts/images.py (data/media.toml)
 
@@ -1018,6 +1024,21 @@ def render_search(catalog: dict, lang: str = "") -> str:
                        "tracks": index}, ensure_ascii=False, indent=0) + "\n"
 
 
+def play_track(t: dict) -> dict:
+    """One catalogue track projected onto the player's index (PLAY_FIELDS, related sources, paths)."""
+    out = {k: t.get(k) for k in PLAY_FIELDS}
+    out["related"] = [{"source": r["source"]} for r in t.get("related", [])]
+    out["i18n"] = {lang: {"path": v.get("path")} for lang, v in (t.get("i18n") or {}).items()}
+    return out
+
+
+def render_play(catalog: dict) -> str:
+    """static/data/play.json (sonic-play/v1): every track as play_track projects it."""
+    return json.dumps({"schema": "sonic-play/v1", "generated_by": "scripts/catalog.py",
+                       "tracks": [play_track(t) for t in catalog["tracks"]]},
+                      ensure_ascii=False, separators=(",", ":")) + "\n"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     parser.add_argument("--check", action="store_true",
@@ -1028,7 +1049,7 @@ def main() -> int:
     catalog = build(errors)
     pages = yearbook_pages(catalog)
     leftovers = [p for p in YEARBOOK_PAGES.glob("*.md") if p not in pages] if YEARBOOK_PAGES.exists() else []
-    outputs = {**pages, OUTPUT: render(catalog), SEARCH: render_search(catalog),
+    outputs = {**pages, OUTPUT: render(catalog), PLAY: render_play(catalog), SEARCH: render_search(catalog),
                **{SEARCH.with_name(f"search.{lang}.json"): render_search(catalog, lang) for lang in LANGUAGES},
                JSONLD: json.dumps(catalog["_jsonld"], ensure_ascii=False, indent=1, sort_keys=True) + "\n"}
     count = catalog["stats"]["tracks"]

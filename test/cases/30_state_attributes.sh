@@ -21,5 +21,15 @@ clash = sorted(flags & selected)
 if clash:
     print("FAIL: state flags on <html> also used as element selectors:", ", ".join("data-" + c for c in clash))
     sys.exit(1)
-print(f"ok   state flags on <html> ({len(flags)}) never collide with element selectors")
+# The same holds for <body>: its data-* attributes carry configuration (the URLs of the derived
+# data), and a delegated handler that looks for the closest [data-x] reaches <body> from every
+# element. 2026-11-14: <body data-play="…play.json"> made the player treat every click on the page
+# as Play and cancel it (the autoplay switch, the queue's controls).
+tag = re.search(r"<body\b[^>]*>", Path("templates/base.html").read_text(), re.S)
+body = set(re.findall(r"\sdata-([a-z0-9-]+)=", tag.group(0))) if tag else set()
+clash = sorted(body & selected)
+if clash:
+    print("FAIL: attributes on <body> also used as element selectors:", ", ".join("data-" + c for c in clash))
+    sys.exit(1)
+print(f"ok   state flags on <html> ({len(flags)}) and attributes on <body> ({len(body)}) never collide with element selectors")
 PY

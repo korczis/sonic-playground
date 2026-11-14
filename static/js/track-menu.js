@@ -34,7 +34,7 @@
   }
   /** @param {HTMLElement} from @param {string} source */
   function open(from, source) {
-    Sonic.catalog().then(function (c) {
+    Sonic.playIndex().then(function (c) {
       var t = c.tracks.find(function (x) { return x.source === source; });
       if (!t) return;
       close(false);

@@ -367,6 +367,21 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // The first play reads the player's index (static/data/play.json, a projection of the
+  // catalogue), never the catalogue: on a page without charts, Play fetches play.json only.
+  {
+    const { context, page } = await open(browser, 'about:blank', desktop, 'light', {}, true);
+    const data = [];
+    page.on('request', (r) => { if (/data\/(catalog|play)\.json/.test(r.url())) data.push(new URL(r.url()).pathname.split('/').pop()); });
+    await page.goto(at(`genre/${catalog.facets.genre[0].slug}/`), { waitUntil: 'load' });
+    await page.locator('#term-grid [data-track] [data-play]').first().click();
+    const started = await page.waitForFunction(() => window.SonicPlayer && window.SonicPlayer.state().queue.length > 0, null, { timeout: 15000 })
+      .then(() => true, () => false);
+    check(started && data.includes('play.json') && !data.includes('catalog.json'),
+      `player: the first play on a genre page reads play.json, not the catalogue (${data.join(', ') || 'nothing'})`);
+    await context.close();
+  }
+
   // Track page: video and related tracks.
   {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);

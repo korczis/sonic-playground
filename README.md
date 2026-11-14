@@ -15,7 +15,7 @@ English at the root and in Czech under `/cs/`; the language switch opens a page'
 
 | Source (written) | Derived by | Result |
 | --- | --- | --- |
-| `content/<artist>-<track>.md` front matter | `scripts/catalog.py` | `static/data/catalog.json` (inferred artist/track, URL, thumbnail, facets, related tracks, review outline, statistics) and `search.json` |
+| `content/<artist>-<track>.md` front matter | `scripts/catalog.py` | `static/data/catalog.json` (inferred artist/track, URL, thumbnail, facets, related tracks, review outline, statistics), `search.json`, and `play.json`: the catalogue projected onto what the player, track menu and random button read (`PLAY_FIELDS`, ~22 kB gzip against ~160 kB) |
 | `data/track.schema.json` | `scripts/catalog.py` (validator) | the content contract every article must meet |
 | a YouTube link or "Artist - Track" | `scripts/track.py new` | a new article from `archetypes/track.md` with the derived outline and `data/review.toml` guidance |
 | `data/backlog/*.toml` (the owner's playlists and yearbooks) | `scripts/catalog.py`, `scripts/backlog.py` | yearbook pages, counts and each song's years; the songs not reviewed yet, in batches for `/add-song` |

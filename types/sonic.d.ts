@@ -48,6 +48,8 @@ interface SonicApi {
   unmountAll(): void;
   mountAll(): void;
   catalog(): Promise<SonicCatalog>;
+  /** static/data/play.json: the catalogue's tracks projected onto what the player reads. */
+  playIndex(): Promise<{ tracks: SonicTrack[] }>;
   emit(name: string, detail?: unknown): void;
   on(name: string, fn: (event: Event) => void): () => void;
   script(src: string): Promise<unknown>;
