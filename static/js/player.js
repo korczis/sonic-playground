@@ -66,6 +66,9 @@
   var pendingStart = 0;
   var resumeFor = '';      // the track pendingStart belongs to (review D1: never another track's)
   var pendingVideo = null; // chosen while the API was still getting ready (review D2)
+  // Every load() takes a token and Close takes a new one: a load whose API arrives after Close (or
+  // after a newer load) is dropped, so a dismissed player never starts playing on its own.
+  var loadToken = 0;
   var seeking = false;
   var undo = null;         // the queue before the last destructive action
   var queueSig = '';
@@ -336,7 +339,9 @@
     resumeFor = '';
     started = true;
     paint();
+    var token = ++loadToken;
     api().then(function () {
+      if (token !== loadToken) return;
       if (!yt) {
         // The frame is built here, not by the API: the API's own `allow` list names features
         // (web-share) that some browsers do not know and warn about in the console
@@ -362,7 +367,7 @@
                 pendingVideo = null;
                 if (p.autoplay) yt.loadVideoById({ videoId: p.id, startSeconds: p.start });
                 else yt.cueVideoById({ videoId: p.id, startSeconds: p.start });
-              } else if (autoplay) yt.playVideo();
+              } else if (autoplay && current()) yt.playVideo();
               paint();
             },
             onStateChange: function (e) {
@@ -382,6 +387,7 @@
       }
       if (!ticker) ticker = setInterval(tick, 500);
     }).catch(function () {
+      if (token !== loadToken) return;
       // The API could not load (offline, blocked): open the video on YouTube instead.
       window.open('https://www.youtube.com/watch?v=' + t.youtube, '_blank', 'noopener');
     });
@@ -595,6 +601,8 @@
   function stop(quiet) {
     var had = state.queue.length > 0;
     if (had && !quiet) snapshot();
+    loadToken += 1;
+    pendingVideo = null;
     if (yt && ready) yt.stopVideo();
     var focusWasInside = bar.contains(document.activeElement);
     state.queue = [];
