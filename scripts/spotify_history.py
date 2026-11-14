@@ -777,8 +777,10 @@ def build(write: bool, snaps: list[dict] | None = None, export: dict | None = No
             books.append(spotify.write_yearbook(year, pl["name"], source,
                                                 yearbook_items(pl, m), pl.get("expected"), write))
     private_commit = commit_private(f"build: {len(m['songs'])} songs, {len(m['playlists'])} playlists") if write else None
+    public = [p for p in changed + removed if not p.is_relative_to(PRIVATE)]
     return {"songs": len(m["songs"]), "playlists": len(m["playlists"]), "changed": len(changed),
-            "removed": len(removed), "yearbooks": books, "written": write, "private_commit": private_commit}
+            "removed": len(removed), "yearbooks": books, "written": write, "private_commit": private_commit,
+            "stale": sorted(p.relative_to(ROOT).as_posix() for p in public)}
 
 
 # --- The gate. --------------------------------------------------------------------------------
@@ -869,8 +871,13 @@ def check() -> list[str]:
         try:
             report = build(write=False)
             if report["changed"] or report["removed"]:
-                errors.append(f"data/spotify: {report['changed']} record(s) stale, {report['removed']} leftover: "
-                              "run npm run derive (or python3 scripts/spotify_history.py build --write)")
+                named = report["stale"][:10]
+                more = len(report["stale"]) - len(named)
+                errors.append(
+                    f"data/spotify: {report['changed']} record(s) stale, {report['removed']} leftover"
+                    + (f": {', '.join(named)}" + (f" and {more} more" if more else "") if named else " (private records only)")
+                    + ". This checkout holds the private store, so the records must match the reviews: a new or merged"
+                    " review changes their status. Run npm run derive, commit data/spotify, then push.")
             stale = [b["file"] for b in report["yearbooks"] if b["changed"]]
             if stale:
                 errors.append(f"yearbooks stale: {', '.join(stale)}: run npm run derive")
