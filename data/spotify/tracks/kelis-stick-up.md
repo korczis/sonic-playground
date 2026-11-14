@@ -6,8 +6,9 @@ artists: ["Kelis"]
 album: "Tasty"
 duration: "3:51"
 spotify: {"track": "3xTgNbWCVjXxRrGCuzUE9C", "album": "61PSy6UJB26jzBvnLOgLzI", "artists": ["0IF46mUS8NXjgHabxk2MCM"]}
-keys: {"fold": "kelis|stickup"}
-status: "missing"
+keys: {"fold": "kelis|stickup", "isrc": "USAR10301298", "musicbrainz": "20ccad7f-3bc2-4b76-b08f-4fb2e2be09c4"}
+review: "kelis-stick-up.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 67}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2020: #67.
 Your Top Songs 2021: #39.
 In My Top Songs of All the Time (#428).
-No review yet.
+Reviewed: content/kelis-stick-up.md.

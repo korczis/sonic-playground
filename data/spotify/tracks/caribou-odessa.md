@@ -6,8 +6,9 @@ artists: ["Caribou"]
 album: "Swim"
 duration: "5:15"
 spotify: {"track": "305tGJy16yTTFe6Ya9nMKJ", "album": "1lL2AaLIWqdM0UArMxAPkp", "artists": ["4aEnNH9PuU1HF3TsZTru54"]}
-keys: {"fold": "caribou|odessa"}
-status: "missing"
+keys: {"fold": "caribou|odessa", "isrc": "DED621000414", "musicbrainz": "913a3e4e-595c-405a-a66f-62faae38ff1b"}
+review: "caribou-odessa.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 62}
@@ -27,4 +28,4 @@ Top tracks of the month (read 2026-11-14): #23.
 Your Top Songs 2020: #62.
 Your Top Songs 2021: #58.
 In My Top Songs of All the Time (#423).
-No review yet.
+Reviewed: content/caribou-odessa.md.

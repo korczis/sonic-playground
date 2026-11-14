@@ -6,8 +6,9 @@ artists: ["The Avener", "Ane Brun"]
 album: "We Go Deep, Saison 3 (Mixed by The Avener)"
 duration: "5:48"
 spotify: {"track": "2X7LXwFW35TwAKTIJocAA5", "album": "0u3UuEQh2KHCciTXSzUINj", "artists": ["0e6qzpphJHtObTSwD75mi0", "2L3kwZFd16zjHz9a5kEPAm"]}
-keys: {"fold": "theavener|toletmyselfgodonriminisweethomeversion"}
-status: "missing"
+keys: {"fold": "theavener|toletmyselfgodonriminisweethomeversion", "isrc": "FRV601500139", "musicbrainz": "70590519-5391-4a6c-97c9-84e428245839"}
+review: "the-avener-ane-brun-to-let-myself-go-don-rimini-sweet-home-version.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 44}
@@ -22,4 +23,4 @@ From the album *We Go Deep, Saison 3 (Mixed by The Avener)*, 5:48.
 A liked song.
 Your Top Songs 2020: #44.
 In My Top Songs of All the Time (#409).
-No review yet.
+Reviewed: content/the-avener-ane-brun-to-let-myself-go-don-rimini-sweet-home-version.md.

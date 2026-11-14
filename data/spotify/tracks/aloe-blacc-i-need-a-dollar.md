@@ -6,8 +6,9 @@ artists: ["Aloe Blacc"]
 album: "Good Things"
 duration: "4:03"
 spotify: {"track": "6q1qACcezH6eH77Xljh5QV", "album": "6G9PvX9f6Dq26JzsiVHIdl", "artists": ["0id62QV2SZZfvBn9xpmuCl"]}
-keys: {"fold": "aloeblacc|ineedadollar"}
-status: "missing"
+keys: {"fold": "aloeblacc|ineedadollar", "isrc": "US2S71046001", "musicbrainz": "d4de0528-c75b-4527-b016-6e2b8ba82b83"}
+review: "aloe-blacc-i-need-a-dollar.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 36}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2020: #36.
 Your Top Songs 2021: #45.
 In My Top Songs of All the Time (#403).
-No review yet.
+Reviewed: content/aloe-blacc-i-need-a-dollar.md.

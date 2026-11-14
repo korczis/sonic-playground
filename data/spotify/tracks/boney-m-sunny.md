@@ -6,8 +6,9 @@ artists: ["Boney M."]
 album: "Take The Heat Off Me"
 duration: "4:02"
 spotify: {"track": "3pf96IFggfQuT6Gafqx2rt", "album": "1KQUrny9y5zGpktF6hAGd4", "artists": ["54R6Y0I7jGUCveDTtI21nb"]}
-keys: {"fold": "boneym|sunny"}
-status: "missing"
+keys: {"fold": "boneym|sunny", "musicbrainz": "7ec76953-ec7d-4c69-9cb6-a12c3c23cf90"}
+review: "boney-m-sunny.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2020, "n": 63}
@@ -26,4 +27,4 @@ Not among the liked songs.
 Your Top Songs 2020: #63.
 Your Top Songs 2021: #87.
 In Jamiroquai Radio (#46); LOVE ME LOVE ME!! SAY THAT YOU LOVE ME!! (#27); My Top Songs of All the Time (#424).
-No review yet.
+Reviewed: content/boney-m-sunny.md.

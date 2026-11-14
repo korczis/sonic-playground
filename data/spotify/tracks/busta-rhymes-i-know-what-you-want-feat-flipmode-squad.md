@@ -7,8 +7,9 @@ album: "It Ain't Safe No More. . ."
 duration: "5:24"
 explicit: true
 spotify: {"track": "0YImOCkIJ2PWhCXaURCZnY", "album": "3cBk22r1tb6omRQ4jr6SE8", "artists": ["1YfEcTuGvBQ8xSD1f53UnK", "4iHNK0tOyZPYnBU7nGAgpQ", "7JXCJDLGh1k9cg6JbYCpYl"]}
-keys: {"fold": "bustarhymes|iknowwhatyouwant"}
-status: "missing"
+keys: {"fold": "bustarhymes|iknowwhatyouwant", "isrc": "USJAY0200450", "musicbrainz": "7631143c-9840-4388-9cc3-725edc9f3900"}
+review: "busta-rhymes-mariah-carey-flipmode-squad-i-know-what-you-want-feat-flipmode-squad.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 40}
@@ -24,4 +25,4 @@ From the album *It Ain't Safe No More. . .*, 5:24.
 A liked song.
 Your Top Songs 2020: #40.
 In Back to life, Back to reality (#44); My Top Songs of All the Time (#406).
-No review yet.
+Reviewed: content/busta-rhymes-mariah-carey-flipmode-squad-i-know-what-you-want-feat-flipmode-squad.md.

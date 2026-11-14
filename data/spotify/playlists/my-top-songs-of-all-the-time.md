@@ -607,4 +607,4 @@ tracks:
 
 # My Top Songs of All the Time
 
-A playlist of the owner's: 596 of 596 items read on 2026-11-14, 346 of them reviewed on the site.
+A playlist of the owner's: 596 of 596 items read on 2026-11-14, 387 of them reviewed on the site.

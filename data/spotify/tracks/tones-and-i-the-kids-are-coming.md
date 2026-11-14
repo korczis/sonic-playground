@@ -6,8 +6,9 @@ artists: ["Tones And I"]
 album: "The Kids Are Coming"
 duration: "3:24"
 spotify: {"track": "76bvw5EDyhm1b3dfsOToYG", "album": "2pJXQvY0YeDvVJ9gMU9G7j", "artists": ["2NjfBq1NflQcKSeiDooVjY"]}
-keys: {"fold": "tonesandi|thekidsarecoming"}
-status: "missing"
+keys: {"fold": "tonesandi|thekidsarecoming", "isrc": "AUBM01900171", "musicbrainz": "a666263f-d687-4a1e-a06b-df21ab207920"}
+review: "tones-and-i-the-kids-are-coming.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 42}
@@ -27,4 +28,4 @@ Your Top Songs 2020: #42.
 Your Top Songs 2021: #16.
 Your Top Songs 2022: #95.
 In Best of the Best (#53); My Top Songs of All the Time (#407).
-No review yet.
+Reviewed: content/tones-and-i-the-kids-are-coming.md.

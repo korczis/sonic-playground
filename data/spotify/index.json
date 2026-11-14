@@ -1,7 +1,7 @@
 {
  "liked": 2029,
  "playlists": 55,
- "reviewed": 472,
+ "reviewed": 518,
  "reviews": {
   "2raumwohnung-somebody-lonely-and-me-nacht.md": {
    "liked": true,
@@ -104,6 +104,18 @@
    "track": "4aeBHbD86BXtc63YGWuy5B",
    "yearbooks": [
     2022
+   ]
+  },
+  "aloe-blacc-i-need-a-dollar.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "aloe-blacc-i-need-a-dollar"
+   ],
+   "track": "6q1qACcezH6eH77Xljh5QV",
+   "yearbooks": [
+    2020,
+    2021
    ]
   },
   "alok-zeeba-bruno-martini-hear-me-now.md": {
@@ -211,6 +223,18 @@
    ],
    "track": "2jTkp5akY8h9WrDBu9JSDl",
    "yearbooks": []
+  },
+  "aphex-twin-windowlicker.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "aphex-twin-windowlicker"
+   ],
+   "track": "60Pe9j2pCBa4Zp4ztf5nhd",
+   "yearbooks": [
+    2020,
+    2021
+   ]
   },
   "arctic-monkeys-do-i-wanna-know.md": {
    "liked": false,
@@ -337,6 +361,19 @@
    "track": "6hph3AtlYSki64xnAPIfi6",
    "yearbooks": [
     2016
+   ]
+  },
+  "azealia-banks-lazy-jay-212.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "azealia-banks-212",
+    "azealia-banks-212-6no1mk"
+   ],
+   "track": "16EMONl2vH3rt9f4ehTG8g",
+   "yearbooks": [
+    2020,
+    2021
    ]
   },
   "bakermat-the-river.md": {
@@ -501,6 +538,18 @@
    ],
    "track": "5H5I4hdgjJBQPEUJZofiRU",
    "yearbooks": []
+  },
+  "boney-m-sunny.md": {
+   "liked": false,
+   "playlists": 3,
+   "records": [
+    "boney-m-sunny"
+   ],
+   "track": "3pf96IFggfQuT6Gafqx2rt",
+   "yearbooks": [
+    2020,
+    2021
+   ]
   },
   "boogie-belgique-forever-and-ever.md": {
    "liked": true,
@@ -684,6 +733,17 @@
     2021
    ]
   },
+  "busta-rhymes-gimme-some-more.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "busta-rhymes-gimme-some-more"
+   ],
+   "track": "47wZfF4OdME3xkIPhhpSSF",
+   "yearbooks": [
+    2020
+   ]
+  },
   "busta-rhymes-jamal-put-your-hands-where-my-eyes-could-see-feat-jamal.md": {
    "liked": true,
    "playlists": 1,
@@ -694,6 +754,17 @@
    "yearbooks": [
     2020,
     2021
+   ]
+  },
+  "busta-rhymes-mariah-carey-flipmode-squad-i-know-what-you-want-feat-flipmode-squad.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "busta-rhymes-i-know-what-you-want-feat-flipmode-squad"
+   ],
+   "track": "0YImOCkIJ2PWhCXaURCZnY",
+   "yearbooks": [
+    2020
    ]
   },
   "c2c-feat-pigeon-john-because-of-you.md": {
@@ -744,6 +815,32 @@
    ],
    "track": "4Oun2ylbjFKMPTiaSbbCih",
    "yearbooks": []
+  },
+  "caribou-odessa.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "caribou-odessa",
+    "caribou-odessa-3iwh1d",
+    "caribou-odessa-original-mix"
+   ],
+   "track": "305tGJy16yTTFe6Ya9nMKJ",
+   "yearbooks": [
+    2020,
+    2021,
+    2022
+   ]
+  },
+  "cassius-toop-toop.md": {
+   "liked": false,
+   "playlists": 2,
+   "records": [
+    "cassius-toop-toop"
+   ],
+   "track": "7cHhpJV9fC2AqgdiLvq1AO",
+   "yearbooks": [
+    2020
+   ]
   },
   "charlie-straight-platonic-johny.md": {
    "liked": true,
@@ -831,6 +928,18 @@
    "yearbooks": [
     2017,
     2019
+   ]
+  },
+  "clara-moto-gone-by-the-morning-radio-edit.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "clara-moto-gone-by-the-morning-radio-edit"
+   ],
+   "track": "0Fo7oInW6xd1Gh5Mij7qeQ",
+   "yearbooks": [
+    2020,
+    2021
    ]
   },
   "clawfinger-biggest-the-best.md": {
@@ -944,6 +1053,17 @@
     2016
    ]
   },
+  "daft-punk-funk-ad.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "daft-punk-funk-ad"
+   ],
+   "track": "0cjavaamK4gxP9iZYw5I2X",
+   "yearbooks": [
+    2020
+   ]
+  },
   "daft-punk-giorgio-by-moroder.md": {
    "liked": true,
    "playlists": 1,
@@ -1024,6 +1144,17 @@
     2021
    ]
   },
+  "deluxe-pretty-flaws.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "deluxe-pretty-flaws"
+   ],
+   "track": "1yibWhxefvqJQfcNKS9m4l",
+   "yearbooks": [
+    2020
+   ]
+  },
   "depeche-mode-wrong-live-in-barcelona.md": {
    "liked": true,
    "playlists": 1,
@@ -1058,6 +1189,18 @@
    "track": "06TgKY3VqiUG9JQ6OdR4rU",
    "yearbooks": [
     2016
+   ]
+  },
+  "dj-marky-stamina-mc-xrs-stamina-mc-carol-carolina-bela-lk-original-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "dj-marky-lk-original-mix"
+   ],
+   "track": "2EiazSYyCSlBEKED2EvysD",
+   "yearbooks": [
+    2020,
+    2021
    ]
   },
   "dj-patife-sambassim-dj-patife-remix.md": {
@@ -1161,6 +1304,17 @@
    ],
    "track": "0LVaveDmmoMEKhBGhVhfoI",
    "yearbooks": []
+  },
+  "elephanz-maryland.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "elephanz-maryland"
+   ],
+   "track": "2VXhNd2IzaR9ZtndCUq7hu",
+   "yearbooks": [
+    2020
+   ]
   },
   "eli-faster-you-fall.md": {
    "liked": true,
@@ -1317,6 +1471,17 @@
     2016
    ]
   },
+  "format-b-fran-liquid-feat-fran-original-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "format-b-liquid-feat-fran-original-mix"
+   ],
+   "track": "0ivz4BSlYuiXGmji7U8ab3",
+   "yearbooks": [
+    2020
+   ]
+  },
   "fort-minor-remember-the-name.md": {
    "liked": true,
    "playlists": 0,
@@ -1429,6 +1594,17 @@
     2019
    ]
   },
+  "galt-macdermot-coffee-cold.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "galt-macdermot-coffee-cold"
+   ],
+   "track": "6MN6yRVriszuyAVlyF8ndB",
+   "yearbooks": [
+    2020
+   ]
+  },
   "gaullin-julian-perretta-seven-nation-army.md": {
    "liked": true,
    "playlists": 1,
@@ -1438,6 +1614,18 @@
    "track": "4SCbD68sf3dBfaE2X8uDSP",
    "yearbooks": [
     2022
+   ]
+  },
+  "general-elektriks-whisper-to-me.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "general-elektriks-whisper-to-me"
+   ],
+   "track": "6gil7rvxOOGsUMebzJtCqI",
+   "yearbooks": [
+    2020,
+    2021
    ]
   },
   "gin-wigmore-black-sheep.md": {
@@ -1673,6 +1861,28 @@
     2020
    ]
   },
+  "guts-patrice-the-studio-school-voices-nyc-want-it-back.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "guts-want-it-back"
+   ],
+   "track": "7eN0Sdh3AE1VKKLSsFwKBh",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "gym-your-woman.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "gym-your-woman"
+   ],
+   "track": "0dkduFMGQsmTd5D8CoGDYl",
+   "yearbooks": [
+    2020
+   ]
+  },
   "henri-pierre-noel-the-reflex-a-fifth-of-beethoven-the-reflex-re-vision.md": {
    "liked": false,
    "playlists": 1,
@@ -1730,6 +1940,18 @@
    "track": "6vPBfCMBFRNtR0G4jNJbHD",
    "yearbooks": [
     2020
+   ]
+  },
+  "her-zefire-queens-live-at-gaite-lyrique-paris.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "her-queens-live-at-gaite-lyrique-paris"
+   ],
+   "track": "2gQxfc9Os8q6afe3jjfs44",
+   "yearbooks": [
+    2020,
+    2021
    ]
   },
   "him-self-her-kieran-fowkes-compuphonic-gone-too-long-compuphonic-remix.md": {
@@ -2003,6 +2225,19 @@
     2017
    ]
   },
+  "jan-blomqvist-dark-noise.md": {
+   "liked": true,
+   "playlists": 3,
+   "records": [
+    "jan-blomqvist-dark-noise",
+    "jan-blomqvist-dark-noise-7mjzdn"
+   ],
+   "track": "0U7AyaPfu0EjCizzhMbQl2",
+   "yearbooks": [
+    2020,
+    2021
+   ]
+  },
   "john-newman-kove-love-me-again-kove-remix.md": {
    "liked": true,
    "playlists": 1,
@@ -2087,6 +2322,17 @@
     2022
    ]
   },
+  "kalabrese-khan-desperate-man-feat-khan.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "kalabrese-desperate-man-feat-khan"
+   ],
+   "track": "5mx2ZxKOejA8cHnreNPDfP",
+   "yearbooks": [
+    2020
+   ]
+  },
   "kant-leo-stannard-close-to-the-wire-club-remix.md": {
    "liked": true,
    "playlists": 1,
@@ -2138,6 +2384,18 @@
    ],
    "track": "7jr2617hq8udFrycxR3ilu",
    "yearbooks": [
+    2021
+   ]
+  },
+  "kelis-stick-up.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "kelis-stick-up"
+   ],
+   "track": "3xTgNbWCVjXxRrGCuzUE9C",
+   "yearbooks": [
+    2020,
     2021
    ]
   },
@@ -3171,6 +3429,19 @@
    "track": "1HQtWfXS21n8yYJWw7Xf2x",
    "yearbooks": []
   },
+  "nina-simone-sinnerman.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "nina-simone-sinnerman",
+    "nina-simone-sinnerman-75lnie"
+   ],
+   "track": "5xRP5iyVdGglqlY4Vcjhkx",
+   "yearbooks": [
+    2020,
+    2021
+   ]
+  },
   "noir-haze-solomun-around-solomun-vox.md": {
    "liked": true,
    "playlists": 1,
@@ -3199,6 +3470,17 @@
     "nouvelle-vague-too-drunk-to-fuck-7eupso"
    ],
    "track": "5cgfva649kw89xznFpWCFd",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "noze-dop-in-the-back-of-my-ship.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "noze-in-the-back-of-my-ship"
+   ],
+   "track": "39CTejZlgjqTKkkHRoI9QI",
    "yearbooks": [
     2020
    ]
@@ -3261,6 +3543,17 @@
    "track": "7wTmnOSpVJcIzj5FIz2I04",
    "yearbooks": [
     2017
+   ]
+  },
+  "parson-jones-make-and-model.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "parson-jones-make-and-model"
+   ],
+   "track": "79NQ3vJtnne2jCKr9zSvW3",
+   "yearbooks": [
+    2020
    ]
   },
   "patti-smith-smells-like-teen-spirit.md": {
@@ -3427,6 +3720,19 @@
     2022
    ]
   },
+  "queen-another-one-bites-the-dust-remastered-2011.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "queen-another-one-bites-the-dust-remastered-2011",
+    "queen-another-one-bites-the-dust-remastered-2011-5vdp5u"
+   ],
+   "track": "57JVGBtBLCfHw2muk5416J",
+   "yearbooks": [
+    2020,
+    2021
+   ]
+  },
   "recable-big-jet-plane-recable-remix.md": {
    "liked": true,
    "playlists": 1,
@@ -3513,6 +3819,17 @@
    "track": "2ro5zWnmxIrBa0tl1TiUWN",
    "yearbooks": []
   },
+  "ryan-gosling-emma-stone-city-of-stars-from-la-la-land-soundtrack.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "ryan-gosling-city-of-stars-from-la-la-land-soundtrack"
+   ],
+   "track": "6XQHlsNu6so4PdglFkJQRJ",
+   "yearbooks": [
+    2020
+   ]
+  },
   "sante-richard-judge-awake.md": {
    "liked": true,
    "playlists": 2,
@@ -3522,6 +3839,96 @@
    "track": "1potXpkyQVqdPsWYRTzYc9",
    "yearbooks": [
     2017
+   ]
+  },
+  "say-yes-dog-deep-space.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-deep-space"
+   ],
+   "track": "6fOGZ9hY8rkobJSO3TQXbA",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "say-yes-dog-feel-better.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-feel-better"
+   ],
+   "track": "0VxmXSMb4X69RWFW8BwgRA",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "say-yes-dog-focus.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-focus"
+   ],
+   "track": "4IMslvlcy5zjLeNZAGwRuq",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "say-yes-dog-girlfriend.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-girlfriend"
+   ],
+   "track": "6nPjXRdflfYvhwLMS1Xdxs",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "say-yes-dog-lies.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-lies"
+   ],
+   "track": "0Zzur28YBbI93bgjo0YdNR",
+   "yearbooks": [
+    2020,
+    2021,
+    2022
+   ]
+  },
+  "say-yes-dog-plastik.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-plastik"
+   ],
+   "track": "4dzsCGwg0eaboDEnkx5acR",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "say-yes-dog-stronger.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-stronger"
+   ],
+   "track": "6L3J9yrifGuFcz157aKQfo",
+   "yearbooks": [
+    2020
+   ]
+  },
+  "say-yes-dog-talk.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "say-yes-dog-talk"
+   ],
+   "track": "160Pfm5KaKwtA1VgREDyfz",
+   "yearbooks": [
+    2020
    ]
   },
   "say-yes-dog_a-friend.md": {
@@ -3582,6 +3989,17 @@
    "yearbooks": [
     2021,
     2022
+   ]
+  },
+  "slackwax-anna-leyne-close-to-my-fire.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "slackwax-close-to-my-fire"
+   ],
+   "track": "6rFayWHp3FHxUVyNzrLirb",
+   "yearbooks": [
+    2020
    ]
   },
   "sleaford-mods-tweet-tweet-tweet.md": {
@@ -3685,6 +4103,17 @@
     2022
    ]
   },
+  "super-flu-solomun-mygut-solomun-remix.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "super-flu-mygut-solomun-remix"
+   ],
+   "track": "0WhgArpfTbGnIPFFaWiUqa",
+   "yearbooks": [
+    2020
+   ]
+  },
   "swing-republic-the-mills-brothers-moanin-for-you.md": {
    "liked": true,
    "playlists": 1,
@@ -3725,6 +4154,17 @@
    "track": "6ZEVMb0NsZX2ubSVwYYczv",
    "yearbooks": [
     2016
+   ]
+  },
+  "the-avener-ane-brun-to-let-myself-go-don-rimini-sweet-home-version.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "the-avener-to-let-myself-go-don-rimini-sweet-home-version"
+   ],
+   "track": "2X7LXwFW35TwAKTIJocAA5",
+   "yearbooks": [
+    2020
    ]
   },
   "the-avener-ane-brun-to-let-myself-go.md": {
@@ -3805,6 +4245,17 @@
    "track": "0tj2O9CiHkOdyEvKDwrDVG",
    "yearbooks": [
     2021
+   ]
+  },
+  "the-source-candi-staton-the-rhythm-masters-for-seven-music-promotions-you-got-the-love-feat-candi-staton-new-voyager-radio-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "the-source-you-got-the-love-feat-candi-staton-new-voyager-radio-mix"
+   ],
+   "track": "1OjfJDyOysrg3KnR2s3l21",
+   "yearbooks": [
+    2020
    ]
   },
   "the-supermen-lovers-herr-styler-cristine-c-est-bon.md": {
@@ -3991,6 +4442,19 @@
     "tones-and-i-dance-monkey"
    ],
    "track": "2XU0oxnq2qxCpomAAuJY8K",
+   "yearbooks": [
+    2020,
+    2021,
+    2022
+   ]
+  },
+  "tones-and-i-the-kids-are-coming.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "tones-and-i-the-kids-are-coming"
+   ],
+   "track": "76bvw5EDyhm1b3dfsOToYG",
    "yearbooks": [
     2020,
     2021,
@@ -4450,6 +4914,7 @@
    "rank": 23,
    "read": "2026-11-14",
    "record": "caribou-odessa",
+   "review": "caribou-odessa.md",
    "title": "Odessa"
   },
   {
@@ -4536,6 +5001,7 @@
    "rank": 31,
    "read": "2026-11-14",
    "record": "queen-another-one-bites-the-dust-remastered-2011-5vdp5u",
+   "review": "queen-another-one-bites-the-dust-remastered-2011.md",
    "title": "Another One Bites The Dust - Remastered 2011"
   },
   {

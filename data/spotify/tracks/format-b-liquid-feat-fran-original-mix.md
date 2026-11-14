@@ -6,8 +6,9 @@ artists: ["Format:B", "Fran"]
 album: "Restless"
 duration: "6:43"
 spotify: {"track": "0ivz4BSlYuiXGmji7U8ab3", "album": "041Yxs8Ct1SSy3LSR0MH4N", "artists": ["5Am25tT39BPzreHngMkuux", "2gct3VkeQT2IuGNFNJVj1J"]}
-keys: {"fold": "formatb|liquid"}
-status: "missing"
+keys: {"fold": "formatb|liquid", "musicbrainz": "8af992d6-d2ee-4324-b107-1c5b926d4ac3"}
+review: "format-b-fran-liquid-feat-fran-original-mix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 15}
@@ -22,4 +23,4 @@ From the album *Restless*, 6:43.
 A liked song.
 Your Top Songs 2020: #15.
 In My Top Songs of All the Time (#385).
-No review yet.
+Reviewed: content/format-b-fran-liquid-feat-fran-original-mix.md.

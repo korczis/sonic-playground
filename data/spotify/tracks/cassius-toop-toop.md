@@ -6,8 +6,9 @@ artists: ["Cassius"]
 album: "15 Again (Deluxe Edition)"
 duration: "2:47"
 spotify: {"track": "7cHhpJV9fC2AqgdiLvq1AO", "album": "3XG5dH7LcDZlkOWmtvLzXB", "artists": ["4sf3QZW8a3xZ14IGsOAzoy"]}
-keys: {"fold": "cassius|tooptoop"}
-status: "missing"
+keys: {"fold": "cassius|tooptoop", "isrc": "FR01Q0600001", "musicbrainz": "75a79609-a78c-496b-a420-f51342407817"}
+review: "cassius-toop-toop.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2020, "n": 14}
@@ -23,4 +24,4 @@ From the album *15 Again (Deluxe Edition)*, 2:47.
 Not among the liked songs.
 Your Top Songs 2020: #14.
 In Best of the Best (#23); My Top Songs of All the Time (#384).
-No review yet.
+Reviewed: content/cassius-toop-toop.md.

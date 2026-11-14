@@ -6,8 +6,9 @@ artists: ["General Elektriks"]
 album: "To Be a Stranger"
 duration: "4:36"
 spotify: {"track": "6gil7rvxOOGsUMebzJtCqI", "album": "3st5rs9gI7aQ42QzoJQw2w", "artists": ["5ly9gfnncBXv77g2zuRG9m"]}
-keys: {"fold": "generalelektriks|whispertome"}
-status: "missing"
+keys: {"fold": "generalelektriks|whispertome", "musicbrainz": "12edf62a-5ff3-4051-9e96-de91eb7cc009"}
+review: "general-elektriks-whisper-to-me.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 50}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2020: #50.
 Your Top Songs 2021: #90.
 In My Top Songs of All the Time (#415).
-No review yet.
+Reviewed: content/general-elektriks-whisper-to-me.md.

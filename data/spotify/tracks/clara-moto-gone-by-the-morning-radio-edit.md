@@ -7,7 +7,8 @@ album: "Gone by the Morning (Radio Edit)"
 duration: "3:15"
 spotify: {"track": "0Fo7oInW6xd1Gh5Mij7qeQ", "album": "07Zcqagv5BUbZpg1bVltgz", "artists": ["3tR4rvObgBkSOntrW3j8WS"]}
 keys: {"fold": "claramoto|gonebythemorning"}
-status: "missing"
+review: "clara-moto-gone-by-the-morning-radio-edit.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 22}
@@ -25,4 +26,4 @@ A liked song.
 Your Top Songs 2020: #22.
 Your Top Songs 2021: #59.
 In Best of the Best (#65); My Top Songs of All the Time (#392).
-No review yet.
+Reviewed: content/clara-moto-gone-by-the-morning-radio-edit.md.

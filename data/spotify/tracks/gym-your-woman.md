@@ -6,8 +6,9 @@ artists: ["GYM"]
 album: "Your Woman - Single"
 duration: "4:16"
 spotify: {"track": "0dkduFMGQsmTd5D8CoGDYl", "album": "5NSTHbwUCyyLnFrIc5upY0", "artists": ["2UWdLS7J6sXqLKo3W8EgCC"]}
-keys: {"fold": "gym|yourwoman"}
-status: "missing"
+keys: {"fold": "gym|yourwoman", "isrc": "FR9W11413172", "musicbrainz": "e1f45d37-cba2-4440-b3dd-54eb75a3b8ab"}
+review: "gym-your-woman.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 38}
@@ -23,4 +24,4 @@ From the album *Your Woman - Single*, 4:16.
 A liked song.
 Your Top Songs 2020: #38.
 In Best of the Best (#9); My Top Songs of All the Time (#405).
-No review yet.
+Reviewed: content/gym-your-woman.md.

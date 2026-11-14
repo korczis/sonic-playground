@@ -6,8 +6,9 @@ artists: ["Jan Blomqvist"]
 album: "Remote Control"
 duration: "8:27"
 spotify: {"track": "0U7AyaPfu0EjCizzhMbQl2", "album": "35I5XwG6ZrpAM2RlYTgdXS", "artists": ["5wMlMjOLeJfS5DfxqGfm83"]}
-keys: {"fold": "janblomqvist|darknoise"}
-status: "missing"
+keys: {"fold": "janblomqvist|darknoise", "isrc": "NLF711600263", "musicbrainz": "81ebeba8-304d-4568-909b-e04f26033fad"}
+review: "jan-blomqvist-dark-noise.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2020, "n": 17}
@@ -25,4 +26,4 @@ Not among the liked songs.
 Your Top Songs 2020: #17.
 Your Top Songs 2021: #97.
 In Liked from Radio (#4); My Top Songs of All the Time (#387).
-No review yet.
+Reviewed: content/jan-blomqvist-dark-noise.md.
