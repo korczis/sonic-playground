@@ -59,17 +59,44 @@
     return true;
   }
 
+  // Only the latest navigation lands: an earlier click whose page arrives later (a slow
+  // connection) is dropped and its request aborted, never committed over the newer page.
+  var navigation = 0;
+  // Back and Forward return the reader to where they were: each entry keeps its scroll position
+  // (window and #main-content), saved when the page is left and restored after the page mounts.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  function scrollPosition() {
+    var main = document.getElementById('main-content');
+    return { x: window.scrollX, y: window.scrollY, main: main ? main.scrollTop : 0 };
+  }
+  function remember() {
+    history.replaceState(Object.assign({}, history.state || {}, { sonic: true, scroll: scrollPosition() }), '');
+  }
+  function restore(at) {
+    var main = document.getElementById('main-content');
+    if (main) main.scrollTop = at.main || 0;
+    window.scrollTo(at.x || 0, at.y || 0);
+  }
+  var inflight = /** @type {AbortController | null} */ (null);
   function go(url, push) {
+    var mine = ++navigation;
+    if (push) remember();
+    if (inflight) inflight.abort();
+    inflight = new AbortController();
     document.documentElement.dataset.navigatingState = 'true';
-    return fetch(url.href, { headers: { Accept: 'text/html' } }).then(function (r) {
+    return fetch(url.href, { headers: { Accept: 'text/html' }, signal: inflight.signal }).then(function (r) {
       if (!r.ok && r.status !== 404) throw new Error('HTTP ' + r.status);
       return r.text();
     }).then(function (html) {
+      if (mine !== navigation) return;
       var doc = new DOMParser().parseFromString(html, 'text/html');
       if (push) history.pushState({ sonic: true }, '', url.href);
       if (!swap(doc)) throw new Error('no #main-content');
       current = location.pathname;
-      if (url.hash) {
+      var saved = !push && history.state && history.state.scroll;
+      if (saved) {
+        // Restored after the page mounts (below): the explorer unfolds its results first.
+      } else if (url.hash) {
         var target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
         if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
       } else {
@@ -79,6 +106,7 @@
       // tooltips included) and Popper then measures detached elements. #main-content holds no
       // Flowbite component; anything that needs one belongs outside it.
       Sonic.mountAll();
+      if (saved) restore(saved);
       var main = document.getElementById('main');
       if (main) main.focus({ preventScroll: true });
       var live = document.getElementById('route-announcer');
@@ -86,6 +114,7 @@
       document.documentElement.dataset.navigatingState = '';
       Sonic.emit('sonic:navigated', { url: location.href });
     }).catch(function () {
+      if (mine !== navigation) return; // superseded (aborted or late): the newer one decides
       location.href = url.href; // anything unexpected: an ordinary page load
     });
   }

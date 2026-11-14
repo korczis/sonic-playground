@@ -52,6 +52,7 @@ class Refs(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.urls: list[str] = []
         self.links: list[str] = []  # every <a href>: what a reader can follow
+        self.alternates: dict[str, str] = {}  # hreflang -> the page in that language
         self.redirect = False
         self.iframes = 0
         self.meta: dict[str, str] = {}
@@ -91,6 +92,8 @@ class Refs(HTMLParser):
             self.meta[name] = a.get("content") or ""
         if tag == "link" and a.get("rel") == "canonical":
             self.canonical = a.get("href") or ""
+        if tag == "link" and a.get("rel") == "alternate" and a.get("hreflang") and a.get("href"):
+            self.alternates[a.get("hreflang") or ""] = a.get("href") or ""
         if tag == "iframe":
             self.iframes += 1
         if tag == "h1":
@@ -154,6 +157,9 @@ def main() -> int:
     # concept pages after the first 24 tracks had no pager, 2026-11-14: 26 pages nobody reached).
     reached: set[Path] = set()
     pages: set[Path] = set()
+    # Identity: a page is its own canonical URL (page 2 of a listing used to name page 1, which
+    # tells a search engine to drop it), and its language counterparts name it back.
+    alternates: dict[str, dict[str, str]] = {}
     for file in files:
         rel = file.relative_to(public).as_posix()
         text = file.read_text(encoding="utf-8", errors="replace")
@@ -221,6 +227,9 @@ def main() -> int:
                 problems.append(f"{rel}: {raw} does not exist in the build")
         if file.suffix == ".html" and file.name == "index.html" and not parser.redirect:
             pages.add(file)
+            if parser.canonical and parser.canonical != here:
+                problems.append(f"{rel}: canonical {parser.canonical} is not the page itself ({here})")
+            alternates[here] = {lang: url for lang, url in parser.alternates.items() if lang != "x-default"}
         if file.suffix == ".html":
             for raw in set(parser.links):
                 target = urlsplit(urljoin(here, raw))
@@ -232,6 +241,11 @@ def main() -> int:
                     local = local / "index.html" if path.endswith("/") or local.is_dir() else local
                     if local != file:
                         reached.add(local)
+    for url, named in sorted(alternates.items()):
+        for lang, other in sorted(named.items()):
+            if other != url and other in alternates and url not in alternates[other].values():
+                problems.append(f"{url[len(base):] or '/'}: names {other} as its {lang} counterpart, "
+                                f"which does not name it back (hreflang must be reciprocal)")
     for orphan in sorted(pages - reached - {public / "index.html"}):
         problems.append(f"{orphan.parent.relative_to(public).as_posix()}/: no page links to it "
                         f"(a listing without its pager, a page outside every menu)")

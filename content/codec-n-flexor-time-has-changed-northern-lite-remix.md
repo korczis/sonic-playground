@@ -21,8 +21,7 @@ connections = [
   { source = "codec-flexor-time-has-changed-original.md", why = "The original version of the same song, which opens the same 2004 remix EP." },
   { source = "northern-lite-trusting-blind.md", why = "A track by the remixers themselves, the Erfurt band Northern Lite, in their own darker electronic style." },
 ]
-# TODO(owner): the video id was a placeholder ("sample-video-id")
-# youtube = "https://www.youtube.com/embed/<id>"
+youtube = "https://www.youtube.com/embed/vAmTht5tECs"
 
 [extra.credits]
 remixers = ["Northern Lite"]

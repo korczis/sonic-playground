@@ -90,7 +90,13 @@
             el.src = src;
             el.async = true;
             el.onload = resolve;
-            el.onerror = function () { reject(new Error('script failed: ' + src)); };
+            // A failed load is forgotten with its element, so the next call tries again (as the
+            // data fetches do): one lost request used to leave the player and the charts dead.
+            el.onerror = function () {
+              delete loading[src];
+              el.remove();
+              reject(new Error('script failed: ' + src));
+            };
             document.head.appendChild(el);
           });
         }

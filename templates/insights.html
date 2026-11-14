@@ -6,7 +6,7 @@
 {%- set s = catalog.stats %}
 {{ <page_header title={l["menu.insights"]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["menu.insights"], "", "menu.insights"]]} lead_key="insights.lead" l={l} /> }}
 <div class="space-y-4 px-4 pt-6 xl:px-8">
-  <section aria-label="Totals" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
+  <section aria-label="{{ <tr key="landmark.totals" l={l} /> }}" data-i18n-aria-label="landmark.totals" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
     {{ <stat_card value={s.tracks} label={l["stat.tracks"]} lkey="stat.tracks" icon_name="music" href={get_url(path="@/pages/archive.md", lang=lang)} /> }}
     {{ <stat_card value={s.videos} label={l["stat.videos"]} lkey="stat.videos" icon_name="play" /> }}
     {{ <stat_card value={(s.words / 1000) | round | int ~ "k"} label={l["stat.words"]} lkey="stat.words" icon_name="archive" /> }}
@@ -14,7 +14,7 @@
   </section>
   {%- if s.yearbooks > 0 %}
   {#- The yearbooks (ADR 0005): derived from data/backlog/, absent until one is imported. -#}
-  <section aria-label="Yearbooks" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
+  <section aria-label="{{ <tr key="menu.yearbooks" l={l} /> }}" data-i18n-aria-label="menu.yearbooks" class="grid grid-cols-2 gap-4 xl:grid-cols-4">
     {{ <stat_card value={s.yearbooks} label={l["stat.yearbooks"]} lkey="stat.yearbooks" icon_name="calendar" href={get_url(path="@/yearbook/_index.md", lang=lang)} /> }}
     {{ <stat_card value={s.recurring} label={l["stat.recurring"]} lkey="stat.recurring" icon_name="radio" /> }}
     {{ <stat_card value={s.concept_terms} label={l["stat.concepts"]} lkey="stat.concepts" icon_name="book" href={get_url(path=lp ~ "concept", trailing_slash=true)} /> }}

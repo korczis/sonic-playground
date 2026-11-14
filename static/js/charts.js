@@ -35,7 +35,8 @@ window.Sonic.module('charts', function mount() {
     return document.documentElement.classList.contains('dark') ? PALETTE.dark : PALETTE.light;
   }
   function label(kind, term) { return window.Sonic.term(kind, term); }
-  function go(url) { window.location.href = url; }
+  // Through the router, so the player keeps playing (rule project.navigation-integrity).
+  function go(url) { if (window.SonicRouter) window.SonicRouter.go(url); else window.location.href = url; }
 
   function axisStyle(p) {
     return {
@@ -66,7 +67,7 @@ window.Sonic.module('charts', function mount() {
           series: [{ type: 'bar', name: t('chart.tracks'), data: months.map(function (m) { return m.count; }),
             barMaxWidth: 48, itemStyle: { color: p.single, borderRadius: [4, 4, 0, 0] } }],
         },
-        onClick: function (e) { go(base + '/archive/#m-' + months[e.dataIndex].month); },
+        onClick: function (e) { go(base + '/' + window.Sonic.localPath('archive/') + '#m-' + months[e.dataIndex].month); },
       };
     },
     facet: function (kind) {

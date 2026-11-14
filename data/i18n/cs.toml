@@ -342,3 +342,14 @@
 "yearbook.status.skipped" = "Není píseň"
 "yearbook.status.uncertain" = "Nečitelné"
 "yearbook.status.present" = "Recenzováno"
+
+# Landmark and region names (aria-label): what a screen reader announces when it lists them.
+"landmark.glance" = "Katalog v kostce"
+"landmark.track_list" = "Seznam skladeb"
+"landmark.neighbours" = "Sousední skladby"
+"landmark.about_track" = "O této skladbě"
+"landmark.totals" = "Souhrn"
+"landmark.breadcrumb" = "Drobečková navigace"
+"landmark.main" = "Hlavní"
+"landmark.sidebar" = "Postranní panel"
+"landmark.site" = "Web"

@@ -476,6 +476,200 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // Close before the YouTube API arrives: nothing plays afterwards (an independent review,
+  // 2026-11-14: the API's arrival used to build the player and start the closed track hidden).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    let release;
+    const gate = new Promise((r) => { release = r; });
+    let asked;
+    const requested = new Promise((r) => { asked = r; });
+    await context.route('https://www.youtube.com/iframe_api', async (r) => {
+      asked();
+      await gate;
+      await r.fulfill({ status: 200, contentType: 'text/javascript', body: FAKE_IFRAME_API });
+    });
+    await context.route('https://www.youtube-nocookie.com/**', (r) => r.fulfill({ status: 200,
+      contentType: 'text/html', body: '<!doctype html><title>fake player</title>' }));
+    const page = await context.newPage();
+    await page.goto(at(sample.path), { waitUntil: 'load' });
+    await page.click('[data-video] [data-play]');
+    await Promise.race([requested, new Promise((r) => setTimeout(r, 10000))]);
+    await page.evaluate(() => { const b = document.querySelector('[data-player-close]'); if (b) b.click(); });
+    release();
+    await page.waitForFunction(() => window.YT && window.YT.Player, null, { timeout: 5000 }).catch(() => {});
+    await page.waitForTimeout(500);
+    const played = await page.evaluate(() => (window.__yt ? window.__yt.calls.filter((c) => c[0] === 'play' || c[0] === 'load').length : 0));
+    const frame = await page.locator('iframe#player-video').count();
+    check(played === 0 && frame === 0, `player: closed before the YouTube API arrives, nothing plays afterwards (${played} play calls, ${frame} frame)`);
+    await context.close();
+  }
+
+  // A script that failed to load is asked for again: the first YouTube API request fails (the
+  // player opens the video on YouTube instead), the next Play loads the API and plays here. A
+  // cached rejection used to leave the player dead until a reload.
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    let asked = 0;
+    await context.route('https://www.youtube.com/iframe_api', (r) => (asked++ === 0 ? r.abort()
+      : r.fulfill({ status: 200, contentType: 'text/javascript', body: FAKE_IFRAME_API })));
+    await context.route('https://www.youtube-nocookie.com/**', (r) => r.fulfill({ status: 200,
+      contentType: 'text/html', body: '<!doctype html><title>fake player</title>' }));
+    await context.route('https://www.youtube.com/watch**', (r) => r.fulfill({ status: 200, contentType: 'text/html', body: '' }));
+    const page = await context.newPage();
+    await page.goto(at(sample.path), { waitUntil: 'load' });
+    await page.click('[data-video] [data-play]');
+    await page.waitForTimeout(800);
+    await page.locator('[aria-labelledby="related-title"] [data-play]').first().click();
+    const recovered = await page.waitForFunction(() => window.__yt && window.__yt.calls.some((c) => c[0] === 'play' || c[0] === 'load'),
+      null, { timeout: 10000 }).then(() => true, () => false);
+    check(recovered && asked >= 2, `player: after the YouTube API failed to load once, the next Play loads it and plays (${asked} requests)`);
+    await context.close();
+  }
+
+  // Back keeps the reader's place: on home, "Show more" twice and a scroll down, a review, Back;
+  // as many results are open and the page is where it was (it used to reset to 24, at the top).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    const page = await context.newPage();
+    await page.goto(at(''), { waitUntil: 'load' });
+    const open = () => page.evaluate(() => document.querySelectorAll('#explorer-grid [data-track]:not([data-overflow]):not([hidden])').length);
+    for (let i = 0; i < 2; i++) await page.click('[data-explorer-more]');
+    const where = () => page.evaluate(() => ({ y: Math.round(window.scrollY), main: Math.round((document.getElementById('main-content') || {}).scrollTop || 0) }));
+    const card = page.locator('#explorer-grid [data-track]:not([data-overflow]) h3 a').nth(40);
+    await card.scrollIntoViewIfNeeded();
+    const before = { open: await open(), at: await where() };
+    await card.click();
+    await page.waitForFunction(() => document.documentElement.dataset.navigatingState === '' && !document.getElementById('explorer-grid'), null, { timeout: 10000 }).catch(() => {});
+    await page.goBack();
+    await page.waitForFunction(() => !!document.getElementById('explorer-grid') && document.documentElement.dataset.navigatingState === '', null, { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(400);
+    const after = { open: await open(), at: await where() };
+    const near = Math.abs(after.at.y - before.at.y) <= 40 && Math.abs(after.at.main - before.at.main) <= 40;
+    check(before.open > 48 && after.open === before.open && (before.at.y + before.at.main) > 400 && near,
+      `router: Back keeps the reader's place (${after.open} of ${before.open} results open, at ${JSON.stringify(after.at)} of ${JSON.stringify(before.at)})`);
+    await context.close();
+  }
+
+  // Only the latest navigation lands: the archive is clicked first and answers slowly, a genre page
+  // second and fast; the genre page stays (the slower, older page used to be committed over it).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    await context.route(/\/archive\/(\?.*)?$/, async (route) => {
+      await new Promise((r) => setTimeout(r, 2000));
+      await route.fallback().catch(() => {});
+    });
+    const page = await context.newPage();
+    await page.goto(at(sample.path), { waitUntil: 'load' });
+    const genre = `genre/${catalog.facets.genre[0].slug}/`;
+    await page.evaluate(([a, b]) => {
+      for (const href of [a, b]) {
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = href;
+        document.getElementById('main-content').appendChild(link);
+      }
+      const [first, second] = document.querySelectorAll('#main-content > a:nth-last-of-type(-n+2)');
+      first.click();
+      setTimeout(() => second.click(), 100);
+    }, [new URL('archive/', base).href, new URL(genre, base).href]);
+    await page.waitForTimeout(3000);
+    const landed = await page.evaluate(() => ({ path: location.pathname, canonical: (document.querySelector('link[rel="canonical"]') || {}).href || '' }));
+    check(landed.path.endsWith('/' + genre) && landed.canonical.endsWith('/' + genre),
+      `router: a slower, earlier navigation never lands over the latest one (${landed.path})`);
+    await context.close();
+  }
+
+  // A left explorer's late answer never touches the next page: the review index of a search on
+  // home arrives after the reader went to the archive (it used to write ?q= into the archive URL).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    let released = false;
+    await context.route(/\/data\/search\.json/, async (route) => {
+      await new Promise((r) => setTimeout(r, 2000));
+      released = true;
+      await route.fallback().catch(() => {});
+    });
+    const page = await context.newPage();
+    await page.goto(at('?q=syncopation'), { waitUntil: 'load' });
+    await page.evaluate((href) => window.SonicRouter.go(href), new URL('archive/', base).href);
+    await page.waitForFunction(() => location.pathname.endsWith('/archive/'), null, { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(2600);
+    const after = await page.evaluate(() => ({ path: location.pathname, search: location.search }));
+    check(released && after.path.endsWith('/archive/') && !after.search.includes('q='),
+      `explorer: a search answered after leaving home leaves the next page's URL alone (${after.path}${after.search})`);
+    await context.close();
+  }
+
+  // Strings rendered before the language bundle arrives render again when it does: no raw key
+  // (explorer.more, explorer.status_all) stays on a page whose bundle was slow.
+  {
+    const strings = (root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
+      : await (await get(at('data/i18n.json'))).json()).locales;
+    const keys = [...new Set(Object.values(strings).flatMap((loc) => Object.keys(loc.strings)))].filter((k) => k.includes('.'));
+    for (const rel of ['', 'cs/']) {
+      const context = await browser.newContext({ viewport: desktop });
+      if (root) await context.route(`${base}**`, fromArtifact);
+      await context.route(/\/data\/i18n\.json/, async (route) => {
+        await new Promise((r) => setTimeout(r, 1500));
+        await route.fallback().catch(() => {});
+      });
+      const page = await context.newPage();
+      await page.goto(at(rel), { waitUntil: 'load' });
+      await page.waitForFunction(() => document.documentElement.dataset.i18nState === 'ready', null, { timeout: 15000 }).catch(() => {});
+      await page.waitForTimeout(300);
+      const raw = await page.evaluate((ks) => {
+        const text = document.body.innerText;
+        return ks.filter((k) => new RegExp('(^|[^\\w.])' + k.replace(/\./g, '\\.') + '($|[^\\w.])').test(text));
+      }, keys);
+      check(raw.length === 0, `i18n: with a slow bundle no raw key stays on /${rel} (${raw.slice(0, 4).join(', ') || 'none'})`);
+      await context.close();
+    }
+  }
+
+  // A chart is navigation like a link: through the router, so the player keeps playing, and into
+  // the page's language (a chart click used to reload the page and open the English archive).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    await fakeYouTube(context);
+    const page = await context.newPage();
+    const czech = sample.i18n && sample.i18n.cs ? sample.i18n.cs.path : 'cs/' + sample.path;
+    await page.goto(at(czech), { waitUntil: 'load' });
+    await page.click('[data-video] [data-play]');
+    await page.waitForSelector('iframe#player-video', { timeout: 15000 }).catch(() => {});
+    await page.evaluate(() => { window.__notReloaded = true; });
+    await page.evaluate((href) => window.SonicRouter.go(href), new URL('cs/insights/', base).href);
+    await page.waitForFunction(() => location.pathname.endsWith('/cs/insights/'), null, { timeout: 10000 }).catch(() => {});
+    await page.locator('#chart-months').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => {
+      const el = document.getElementById('chart-months');
+      return el && window.echarts && window.echarts.getInstanceByDom(el);
+    }, null, { timeout: 20000 }).catch(() => {});
+    const point = await page.evaluate(() => {
+      const el = document.getElementById('chart-months');
+      const chart = window.echarts.getInstanceByDom(el);
+      const data = chart.getOption().series[0].data;
+      const i = data.length - 1;
+      const [x, top] = chart.convertToPixel({ seriesIndex: 0 }, [i, data[i]]);
+      const [, bottom] = chart.convertToPixel({ seriesIndex: 0 }, [i, 0]);
+      const box = el.getBoundingClientRect();
+      return { x: box.left + x, y: box.top + (top + bottom) / 2 };
+    }).catch(() => null);
+    if (point) await page.mouse.click(point.x, point.y);
+    await page.waitForFunction(() => location.pathname.endsWith('/archive/'), null, { timeout: 10000 }).catch(() => {});
+    const after = await page.evaluate(() => ({ path: location.pathname, hash: location.hash, kept: window.__notReloaded === true,
+      frame: !!document.querySelector('iframe#player-video') }));
+    check(!!point && after.path.endsWith('/cs/archive/') && after.hash.startsWith('#m-') && after.kept && after.frame,
+      `charts: a bar opens the month in the page's language without a reload, the player playing on (${after.path}${after.hash}, reload ${!after.kept})`);
+    await context.close();
+  }
+
   // Track page: video and related tracks.
   {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);

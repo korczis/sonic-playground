@@ -267,7 +267,7 @@ src="{{ get_url(path=t.thumbnail) }}"
     content, plain text (lead). -#}
 {% component page_header(title, crumbs=[], kicker="", lead="", lead_key="", lead_vars={}, l={}) %}
 <div class="border-b border-gray-200 bg-white px-4 py-5 xl:px-8 dark:border-gray-700 dark:bg-gray-800">
-  <nav class="mb-3 flex" aria-label="Breadcrumb">
+  <nav class="mb-3 flex" aria-label="Breadcrumb" data-i18n-aria-label="landmark.breadcrumb">
     <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 md:space-x-2">
       {%- for c in crumbs %}
       <li class="inline-flex items-center">
@@ -346,7 +346,7 @@ src="{{ get_url(path=t.thumbnail) }}"
   {%- endif %}
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/75 to-primary-900/40" aria-hidden="true"></div>
   <div class="px-4 pb-32 pt-6 sm:pt-10 lg:pb-36 xl:px-8">
-    <nav class="mb-8 flex" aria-label="Breadcrumb">
+    <nav class="mb-8 flex" aria-label="Breadcrumb" data-i18n-aria-label="landmark.breadcrumb">
       <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 text-sm md:space-x-2">
         <li class="inline-flex items-center"><a href="{{ home }}" class="inline-flex items-center font-medium text-gray-300 hover:text-white">{{ <icon name="home" cls="mr-1.5 h-4 w-4" /> }}{{ <tx key="site.home" l={l} /> }}</a></li>
         <li class="inline-flex items-center text-gray-400"><svg class="mx-1 h-3 w-3" aria-hidden="true" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg><a href="{% if l.lang in tc.lang_terms and genre not in tc.lang_terms[l.lang]['genre'] %}{{ get_taxonomy_url(kind='genre', term=genre, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind='genre', term=genre, lang=l.lang) }}{% endif %}" class="inline-flex items-center font-medium text-gray-300 hover:text-white">{{ glabel }}</a></li>

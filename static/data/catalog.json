@@ -5,7 +5,7 @@
  "stats": {
   "tracks": 283,
   "artists": 222,
-  "videos": 277,
+  "videos": 279,
   "videos_gone": 3,
   "words": 185799,
   "median_words": 639,
@@ -31230,8 +31230,8 @@
      "vocals"
     ]
    },
-   "youtube": null,
-   "thumbnail": "",
+   "youtube": "vAmTht5tECs",
+   "thumbnail": "https://i.ytimg.com/vi/vAmTht5tECs/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 777,
    "extra": {
@@ -32537,7 +32537,7 @@
      "guitar"
     ]
    },
-   "youtube": null,
+   "youtube": "WFXW7GIrjIY",
    "thumbnail": "images/derived/thumbnails/mickey-avalon-eli-ultra-violence-480.webp",
    "thumbnail_local": true,
    "words": 763,

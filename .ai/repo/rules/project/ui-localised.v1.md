@@ -23,6 +23,16 @@ language only cannot be linked, shared or found in the other (ADR 0006).
 
 # Required behaviour
 
+- What assistive technology reads (aria-label, aria-description, title, alt, placeholder) comes from
+  a string, never typed in one language: Czech pages announced "Breadcrumb", "Main" and "Site"
+  (a review, 2026-11-14). `scripts/check-components.py` refuses a literal value outside a comment.
+  Exception, until the owner decides: the Flowbite Pro verifier recognises the shell by the
+  literal English `aria-label="Sidebar"` and `"Breadcrumb"`. Those two stay literal with
+  `data-i18n-aria-label`, so `i18n.js` translates them in the browser.
+- A module that renders strings in the browser re-renders on `sonic:locale`, which `i18n.js`
+  emits on a change of language and also when the bundle first arrives. A slow bundle used to
+  leave `explorer.more` and `explorer.status_all` on the home page (a review, 2026-11-14). The
+  smoke test delays the bundle and refuses any raw key left in the page's text, in both languages.
 - Strings: `data/i18n/en.toml` (default, `config.toml default_language`) and every other locale
   file, flat keys, `{name}` placeholders identical across locales.
 - Plurals (CLDR): every locale declares `"locale.plural"`, its rule for integer counts (category
