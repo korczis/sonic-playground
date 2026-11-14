@@ -46,6 +46,16 @@
     doc.querySelectorAll('link[data-locale-href]').forEach(function (link) {
       document.head.appendChild(document.importNode(link, true));
     });
+    // The persistent shell's destinations that depend on the page's language (data-follows-page:
+    // the logo, the search form, the feed): the new page's, as a reload would render them.
+    document.querySelectorAll('[data-follows-page]').forEach(function (el) {
+      var twin = doc.querySelector('[data-follows-page="' + el.getAttribute('data-follows-page') + '"]');
+      if (!twin) return;
+      ['href', 'action'].forEach(function (name) {
+        var value = twin.getAttribute(name);
+        if (value !== null) el.setAttribute(name, value);
+      });
+    });
     return true;
   }
 

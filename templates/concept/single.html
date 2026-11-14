@@ -33,6 +33,7 @@
       {{ <play_all target="term-grid" l={l} lkey="tax.play" vars={ {"term": tl} } /> }}
     </div>
     {{ <term_grid pages={pages} catalog={catalog} l={l} heading="h3" /> }}
+    {{ <pager paginator={paginator} l={l} /> }}
   </section>
 </div>
 {%- endblock content %}

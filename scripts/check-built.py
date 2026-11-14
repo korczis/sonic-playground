@@ -51,6 +51,8 @@ class Refs(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.urls: list[str] = []
+        self.links: list[str] = []  # every <a href>: what a reader can follow
+        self.redirect = False
         self.iframes = 0
         self.meta: dict[str, str] = {}
         self.canonical = ""
@@ -111,6 +113,11 @@ class Refs(HTMLParser):
         if tag == "img" and (a.get("src") or "").startswith("https://i.ytimg.com/") \
                 and not (a.get("srcset") and a.get("sizes")):
             self.unsourced.append(a.get("src") or "?")
+        href = a.get("href")
+        if tag == "a" and href:
+            self.links.append(href)
+        if tag == "meta" and (a.get("http-equiv") or "").lower() == "refresh":
+            self.redirect = True
         if tag in ("img", "source"):
             src = a.get("src")
             if src:
@@ -143,6 +150,10 @@ def main() -> int:
     origin = f"{site.scheme}://{site.netloc}"
     problems: list[str] = []
     files = sorted(public.rglob("*.html")) + sorted(public.rglob("*.xml"))
+    # Reachability: every page is linked from another page, or a reader cannot get to it (the
+    # concept pages after the first 24 tracks had no pager, 2026-11-14: 26 pages nobody reached).
+    reached: set[Path] = set()
+    pages: set[Path] = set()
     for file in files:
         rel = file.relative_to(public).as_posix()
         text = file.read_text(encoding="utf-8", errors="replace")
@@ -208,6 +219,22 @@ def main() -> int:
                 local = local / "index.html"
             if not local.is_file():
                 problems.append(f"{rel}: {raw} does not exist in the build")
+        if file.suffix == ".html" and file.name == "index.html" and not parser.redirect:
+            pages.add(file)
+        if file.suffix == ".html":
+            for raw in set(parser.links):
+                target = urlsplit(urljoin(here, raw))
+                if (target.scheme, target.netloc) != (site.scheme, site.netloc):
+                    continue
+                path = prefix if target.path == prefix.rstrip("/") else target.path
+                if path.startswith(prefix):
+                    local = public / unquote(path[len(prefix):])
+                    local = local / "index.html" if path.endswith("/") or local.is_dir() else local
+                    if local != file:
+                        reached.add(local)
+    for orphan in sorted(pages - reached - {public / "index.html"}):
+        problems.append(f"{orphan.parent.relative_to(public).as_posix()}/: no page links to it "
+                        f"(a listing without its pager, a page outside every menu)")
     for p in problems:
         print(f"check-built: {p}", file=sys.stderr)
     print(f"check-built: {len(files)} pages and feeds, {len(problems)} problem(s)")

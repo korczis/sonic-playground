@@ -453,6 +453,29 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // A failed index is forgotten: the first play.json answers 503 (GitHub Pages does, 2026-11-14),
+  // the first Play fails, the second plays. A cached rejection left Play dead until a reload.
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    await fakeYouTube(context);
+    let answered = 0;
+    await context.route(/\/data\/play\.json/, (route) => (answered++ === 0
+      ? route.fulfill({ status: 503, body: '' }) : route.fallback()));
+    const page = await context.newPage();
+    await page.goto(at(`genre/${catalog.facets.genre[0].slug}/`), { waitUntil: 'load' });
+    const play = page.locator('#term-grid [data-track] [data-play]').first();
+    const queued = () => page.waitForFunction(() => window.SonicPlayer && window.SonicPlayer.state().queue.length > 0,
+      null, { timeout: 5000 }).then(() => true, () => false);
+    await play.click();
+    const first = await queued();
+    await play.click();
+    const second = await queued();
+    check(!first && second && answered >= 2,
+      `player: after a failed play index the next Play asks again and plays (first ${first}, then ${second}, ${answered} requests)`);
+    await context.close();
+  }
+
   // Track page: video and related tracks.
   {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);
@@ -904,6 +927,22 @@ async function shot(page, name) {
         check(await page.evaluate(() => window.__notReloaded === true) && new URL(page.url()).pathname.endsWith('/' + both.path)
           && await page.getAttribute('#topbar-search', 'placeholder') === d['nav.search_placeholder'],
           `i18n: the switch opens the ${bundle.default} counterpart without a reload, the navbar follows`);
+        // The shell after the switch is the shell a reload renders: every link and form outside the
+        // page's content points where it would (the logo, search and feed stayed in the old
+        // language, found by an independent review on 2026-11-14).
+        const shell = () => page.evaluate(() => [...document.querySelectorAll('[href], [action]')]
+          .filter((el) => !el.closest('#main-content') && !el.closest('#player'))
+          .map((el) => `${el.tagName.toLowerCase()}${el.id ? '#' + el.id : ''} ${el.getAttribute('href') || el.getAttribute('action')}`)
+          .sort());
+        const switched = await shell();
+        await page.reload({ waitUntil: 'load' });
+        const reloaded = await shell();
+        // Compared as multisets: the sidebar's home link must not hide a stale logo with the same URL.
+        const left = switched.slice();
+        const stale = reloaded.filter((x) => { const i = left.indexOf(x); if (i < 0) return true; left.splice(i, 1); return false; });
+        check(reloaded.length > 5 && stale.length === 0,
+          `i18n: after the switch every link and form of the shell points where a reload points it (${reloaded.length})` +
+          (stale.length ? ' — a reload has ' + stale.slice(0, 4).join(' | ') : ''));
         // Every term the page shows is its label in the page's language: a term page's and a concept
         // page's heading, the cards of a facet's list, the archive's genre notes.
         const term = (catalog.lang_terms[other].genre || []).find((g) => s['term.genre.' + g] && s['term.genre.' + g] !== g);

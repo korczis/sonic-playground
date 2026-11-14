@@ -17,12 +17,6 @@
     <a href="{{ term.permalink }}atom.xml" class="{{ btn }}">{{ <icon name="rss" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.feed" l={l} /> }}</a>
   </div>
   {{ <term_grid pages={pages} catalog={catalog} l={l} heading="h2" /> }}
-  {%- if paginator and paginator.number_pagers > 1 %}
-  <nav aria-label="Pages" class="flex items-center justify-between">
-    {%- if paginator.previous %}<a href="{{ paginator.previous }}" class="{{ btn }}">{{ <tx key="tax.prev" l={l} /> }}</a>{% else %}<span></span>{% endif %}
-    <span class="text-sm text-gray-500 dark:text-gray-400">{{ <tx key="tax.page" l={l} vars={ {"i": paginator.current_index, "total": paginator.number_pagers} } /> }}</span>
-    {%- if paginator.next %}<a href="{{ paginator.next }}" class="{{ btn }}">{{ <tx key="tax.next" l={l} /> }}</a>{% else %}<span></span>{% endif %}
-  </nav>
-  {%- endif %}
+  {{ <pager paginator={paginator} l={l} /> }}
 </div>
 {%- endblock content %}
