@@ -476,6 +476,66 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // Close before the YouTube API arrives: nothing plays afterwards (an independent review,
+  // 2026-11-14: the API's arrival used to build the player and start the closed track hidden).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    let release;
+    const gate = new Promise((r) => { release = r; });
+    let asked;
+    const requested = new Promise((r) => { asked = r; });
+    await context.route('https://www.youtube.com/iframe_api', async (r) => {
+      asked();
+      await gate;
+      await r.fulfill({ status: 200, contentType: 'text/javascript', body: FAKE_IFRAME_API });
+    });
+    await context.route('https://www.youtube-nocookie.com/**', (r) => r.fulfill({ status: 200,
+      contentType: 'text/html', body: '<!doctype html><title>fake player</title>' }));
+    const page = await context.newPage();
+    await page.goto(at(sample.path), { waitUntil: 'load' });
+    await page.click('[data-video] [data-play]');
+    await Promise.race([requested, new Promise((r) => setTimeout(r, 10000))]);
+    await page.evaluate(() => { const b = document.querySelector('[data-player-close]'); if (b) b.click(); });
+    release();
+    await page.waitForFunction(() => window.YT && window.YT.Player, null, { timeout: 5000 }).catch(() => {});
+    await page.waitForTimeout(500);
+    const played = await page.evaluate(() => (window.__yt ? window.__yt.calls.filter((c) => c[0] === 'play' || c[0] === 'load').length : 0));
+    const frame = await page.locator('iframe#player-video').count();
+    check(played === 0 && frame === 0, `player: closed before the YouTube API arrives, nothing plays afterwards (${played} play calls, ${frame} frame)`);
+    await context.close();
+  }
+
+  // Only the latest navigation lands: the archive is clicked first and answers slowly, a genre page
+  // second and fast; the genre page stays (the slower, older page used to be committed over it).
+  {
+    const context = await browser.newContext({ viewport: desktop });
+    if (root) await context.route(`${base}**`, fromArtifact);
+    await context.route(/\/archive\/(\?.*)?$/, async (route) => {
+      await new Promise((r) => setTimeout(r, 2000));
+      await route.fallback().catch(() => {});
+    });
+    const page = await context.newPage();
+    await page.goto(at(sample.path), { waitUntil: 'load' });
+    const genre = `genre/${catalog.facets.genre[0].slug}/`;
+    await page.evaluate(([a, b]) => {
+      for (const href of [a, b]) {
+        const link = document.createElement('a');
+        link.href = href;
+        link.textContent = href;
+        document.getElementById('main-content').appendChild(link);
+      }
+      const [first, second] = document.querySelectorAll('#main-content > a:nth-last-of-type(-n+2)');
+      first.click();
+      setTimeout(() => second.click(), 100);
+    }, [new URL('archive/', base).href, new URL(genre, base).href]);
+    await page.waitForTimeout(3000);
+    const landed = await page.evaluate(() => ({ path: location.pathname, canonical: (document.querySelector('link[rel="canonical"]') || {}).href || '' }));
+    check(landed.path.endsWith('/' + genre) && landed.canonical.endsWith('/' + genre),
+      `router: a slower, earlier navigation never lands over the latest one (${landed.path})`);
+    await context.close();
+  }
+
   // Track page: video and related tracks.
   {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);

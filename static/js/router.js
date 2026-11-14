@@ -59,12 +59,20 @@
     return true;
   }
 
+  // Only the latest navigation lands: an earlier click whose page arrives later (a slow
+  // connection) is dropped and its request aborted, never committed over the newer page.
+  var navigation = 0;
+  var inflight = /** @type {AbortController | null} */ (null);
   function go(url, push) {
+    var mine = ++navigation;
+    if (inflight) inflight.abort();
+    inflight = new AbortController();
     document.documentElement.dataset.navigatingState = 'true';
-    return fetch(url.href, { headers: { Accept: 'text/html' } }).then(function (r) {
+    return fetch(url.href, { headers: { Accept: 'text/html' }, signal: inflight.signal }).then(function (r) {
       if (!r.ok && r.status !== 404) throw new Error('HTTP ' + r.status);
       return r.text();
     }).then(function (html) {
+      if (mine !== navigation) return;
       var doc = new DOMParser().parseFromString(html, 'text/html');
       if (push) history.pushState({ sonic: true }, '', url.href);
       if (!swap(doc)) throw new Error('no #main-content');
@@ -86,6 +94,7 @@
       document.documentElement.dataset.navigatingState = '';
       Sonic.emit('sonic:navigated', { url: location.href });
     }).catch(function () {
+      if (mine !== navigation) return; // superseded (aborted or late): the newer one decides
       location.href = url.href; // anything unexpected: an ordinary page load
     });
   }
