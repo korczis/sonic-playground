@@ -102,7 +102,8 @@ def load_manifest() -> dict:
 
 def dump(images: dict, cfg: dict) -> str:
     return json.dumps({"schema": "sonic-images/v1", "generated_by": "scripts/images.py",
-                       "formats": cfg["formats"], "card_width": cfg["card_width"], "images": images},
+                       "formats": cfg["formats"], "card_width": cfg["card_width"], "social": cfg["social"],
+                       "images": images},
                       indent=1, sort_keys=True) + "\n"
 
 
@@ -129,8 +130,9 @@ def problems(cfg: dict) -> list[str]:
                         out.append(f"{rel} weighs {nbytes // 1024} kB, over the budget of "
                                    f"{cfg['budget']['image_kb']} kB (data/media.toml): lower quality or width")
     manifest = load_manifest()
-    if manifest.get("formats") != cfg["formats"] or manifest.get("card_width") != cfg["card_width"]:
-        out.append("static/data/images.json does not carry data/media.toml's formats and card_width; run python3 scripts/images.py")
+    if (manifest.get("formats") != cfg["formats"] or manifest.get("card_width") != cfg["card_width"]
+            or manifest.get("social") != cfg["social"]):
+        out.append("static/data/images.json does not carry data/media.toml's formats, card_width and social; run python3 scripts/images.py")
     for src in sorted(set(images) - set(used)):
         out.append(f"{src} is in the manifest but nothing shows it; run python3 scripts/images.py")
     recorded = {rows[2] for e in images.values() for rs in e["variants"].values() for rows in rs}

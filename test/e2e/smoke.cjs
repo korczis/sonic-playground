@@ -873,6 +873,9 @@ async function shot(page, name) {
     }
   }
 
+  // The card format: data/media.toml [social], carried by static/data/images.json.
+  const social = (root ? JSON.parse(fs.readFileSync(path.join(root, 'data/images.json'), 'utf8'))
+    : await (await get(at('data/images.json'))).json()).social;
   // Every page's social card is served as an image (Open Graph / X); checked on the home page and
   // a track, here and against production (rule project.social-preview).
   {
@@ -890,11 +893,14 @@ async function shot(page, name) {
         how = body ? 'in the artefact' : 'missing from the artefact';
       } else {
         const res = await page.request.get(og + (revision ? '?v=' + revision : ''));
-        body = res.status() === 200 && (res.headers()['content-type'] || '').startsWith('image/png') ? await res.body() : null;
+        body = res.status() === 200 && (res.headers()['content-type'] || '').startsWith('image/' + social.format) ? await res.body() : null;
         how = `HTTP ${res.status()}`;
       }
-      const png = !!body && body.length > 10000 && body.slice(1, 4).toString() === 'PNG';
-      check(png && og === tw, `social card of /${rel}: ${og.split('/').pop()} is a PNG (${how})`);
+      // The bytes are the format data/media.toml [social] names: JPEG FF D8 FF, PNG 89 'PNG', WebP 'RIFF'.
+      const magic = { jpeg: (b) => b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff, png: (b) => b.slice(1, 4).toString() === 'PNG',
+        webp: (b) => b.slice(0, 4).toString() === 'RIFF' }[social.format];
+      const ok = !!body && body.length > 10000 && !!magic && magic(body);
+      check(ok && og === tw, `social card of /${rel}: ${og.split('/').pop()} is a ${social.format.toUpperCase()} (${how})`);
     }
     await context.close();
   }

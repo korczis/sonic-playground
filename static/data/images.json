@@ -1255,5 +1255,10 @@
    "width": 500
   }
  },
- "schema": "sonic-images/v1"
+ "schema": "sonic-images/v1",
+ "social": {
+  "card_kb": 180,
+  "format": "jpeg",
+  "quality": 85
+ }
 }

@@ -24,13 +24,17 @@ share specific without a hand-made image.
 
 - `templates/base.html` derives the title and description of every page class (track, page,
   taxonomy, term, 404) from its data and the interface strings (`seo.*`), and points `og:image`
-  and `twitter:image` at `og/<page path slugified>.png` ("home" for the root).
+  and `twitter:image` at `og/<page path slugified>.<ext>` ("home" for the root), in the format,
+  quality and size budget of `data/media.toml` `[social]` (JPEG, `card_kb`), carried to the
+  renderer and the template by `static/data/images.json`.
 - `scripts/og.cjs` renders one card per sitemap page (and the 404) in the build, in CI before the
   deploy; `scripts/verify.sh` runs it whenever a browser is available.
 - `scripts/check-built.py` refuses a page with any of the tags missing or empty, an `og:image`
   that is not an absolute URL of the site or not a file of the build, or `og:image` and
   `twitter:image` that differ.
-- The smoke test fetches the home and a track card as PNG, before the deploy and in production.
+- The smoke test fetches the home and a track card and checks their bytes are that format, before
+  the deploy and in production; `scripts/check-built.py` refuses a card of another extension or over
+  `card_kb`.
 
 # Failure behaviour
 

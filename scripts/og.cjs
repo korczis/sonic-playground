@@ -3,7 +3,7 @@
 //   node scripts/og.cjs <public dir> [<key>...]
 //
 // For every page of <public dir>/sitemap.xml (and the 404 page) it renders a 1200x630 card in a
-// headless browser and writes <public dir>/og/<key>.png, where <key> is the page path slugified
+// headless browser and writes <public dir>/og/<key>.<ext>, where <key> is the page path slugified
 // ("home" for the root) — the same key templates/base.html derives for og:image. A track's card
 // shows its still, artist, track and genres; any other page shows its title, its description and
 // a mosaic of the newest stills; the home page of each language, the one most shared, gets its
@@ -38,6 +38,9 @@ const host = new URL(base).host + prefix.replace(/\/$/, '');
 const i18n = JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'));
 const strings = i18n.locales[i18n.default].strings;
 const only = new Set(process.argv.slice(3));
+// The card's format and quality: data/media.toml [social], carried by static/data/images.json.
+const social = JSON.parse(fs.readFileSync(path.join(root, 'data/images.json'), 'utf8')).social;
+const ext = social.format === 'jpeg' ? 'jpg' : social.format;
 const icon = 'data:image/svg+xml;base64,' + fs.readFileSync(path.join(root, 'favicon.svg')).toString('base64');
 
 function key(pagePath) {
@@ -180,7 +183,8 @@ function homeCard(code) {
           }
         });
       }
-      await page.screenshot({ path: path.join(out, k + '.png'), type: 'png' });
+      await page.screenshot({ path: path.join(out, k + '.' + ext), type: social.format,
+        ...(social.format === 'jpeg' ? { quality: social.quality } : {}) });
       written += 1;
     }
     await page.close();
