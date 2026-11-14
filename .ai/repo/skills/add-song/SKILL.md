@@ -42,6 +42,9 @@ link. Not for bulk imports (run the engine in a loop and review each article).
 3. **Research.** Before choosing facets or writing, establish the facts: release year, album,
    label, the artist's context, what the track sounds like (listen notes, credible reviews). Only
    facts you can source go in; unknown facts are left out, never guessed.
+   Never download, rip or locally analyse a recording or its video (no yt-dlp, no captions,
+   no spectrograms or loudness measurements): how a track sounds comes from cited sources
+   only, and where no source describes a passage the review says so and describes less.
 4. **Facets.** `python3 scripts/track.py vocab --limit 40` shows the vocabulary. Pick 2-4
    genres and 2-4 feelings, preferring existing terms; `scripts/track.py suggest --genre ...
    --sentiment ...` names the nearest existing term for each new one and previews the related
