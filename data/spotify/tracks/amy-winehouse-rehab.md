@@ -6,8 +6,9 @@ artists: ["Amy Winehouse"]
 album: "Back To Black (Deluxe Edition)"
 duration: "3:34"
 spotify: {"track": "3N4DI1vuTSX1tz7fa2NQZw", "album": "0E4xv5gPjykrwBgBZzI8XG", "artists": ["6Q192DXotxtaysaqNPy5yR"]}
-keys: {"fold": "amywinehouse|rehab"}
-status: "missing"
+keys: {"fold": "amywinehouse|rehab", "isrc": "GBUM70603730", "musicbrainz": "873eba85-b721-4728-be2e-96ce94cccb8b"}
+review: "amy-winehouse-rehab.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 49}
@@ -22,4 +23,4 @@ From the album *Back To Black (Deluxe Edition)*, 3:34.
 A liked song.
 Your Top Songs 2021: #49.
 In My Top Songs of All the Time (#488).
-No review yet.
+Reviewed: content/amy-winehouse-rehab.md.

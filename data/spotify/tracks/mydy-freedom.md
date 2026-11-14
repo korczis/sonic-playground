@@ -7,7 +7,8 @@ album: "Freedom"
 duration: "2:35"
 spotify: {"track": "1VkbrCNADFv6zPyH6Jkvor", "album": "4zKJFmj1NjIYLjULU6V7gl", "artists": ["7GN9rolXcH2J97qcogmz8s"]}
 keys: {"fold": "mydy|freedom"}
-status: "missing"
+review: "mydy-freedom.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 11}
@@ -23,4 +24,4 @@ From the album *Freedom*, 2:35.
 A liked song.
 Your Top Songs 2020: #11.
 In Best of the Best (#50); My Top Songs of All the Time (#381).
-No review yet.
+Reviewed: content/mydy-freedom.md.

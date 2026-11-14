@@ -6,8 +6,9 @@ artists: ["Jojo Effect"]
 album: "Not With Me"
 duration: "5:15"
 spotify: {"track": "1vjhjnYGhIODZsDnMjfdpw", "album": "6mSaWj1RTbzwgPLuKcCD2S", "artists": ["3kHTdAZm5aaYxF2WowH1nL"]}
-keys: {"fold": "jojoeffect|thebeatgoeson"}
-status: "missing"
+keys: {"fold": "jojoeffect|thebeatgoeson", "musicbrainz": "161653e5-42b5-4234-9c82-4feb6232c35e"}
+review: "jojo-effect-the-beat-goes-on.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2021, "n": 77}
@@ -23,4 +24,4 @@ From the album *Not With Me*, 5:15.
 Not among the liked songs.
 Your Top Songs 2021: #77.
 In Best of the Best (#82); My Top Songs of All the Time (#505).
-No review yet.
+Reviewed: content/jojo-effect-the-beat-goes-on.md.

@@ -6,8 +6,9 @@ artists: ["Billie Eilish"]
 album: "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?"
 duration: "3:13"
 spotify: {"track": "4SSnFejRGlZikf02HLewEF", "album": "0S0KGZnfBGSIssfF54WSJh", "artists": ["6qqNVTkY8uBg9cP3Jd7DAH"]}
-keys: {"fold": "billieeilish|buryafriend"}
-status: "missing"
+keys: {"fold": "billieeilish|buryafriend", "isrc": "USUM71900770", "musicbrainz": "4d82c5eb-9cfe-4dd6-b147-b57cc17a809d"}
+review: "billie-eilish-bury-a-friend.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 6}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2020: #6.
 Your Top Songs 2021: #8.
 In My Top Songs of All the Time (#376).
-No review yet.
+Reviewed: content/billie-eilish-bury-a-friend.md.

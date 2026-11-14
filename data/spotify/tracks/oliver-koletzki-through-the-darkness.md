@@ -6,8 +6,9 @@ artists: ["Oliver Koletzki"]
 album: "The Arc of Tension"
 duration: "5:48"
 spotify: {"track": "3DrhMn4HRNus2uqguX17Rl", "album": "6m8yu8ytRnnxy395MbA80U", "artists": ["1WjBIvYAnZTkTh5UiZNwlR"]}
-keys: {"fold": "oliverkoletzki|throughthedarkness"}
-status: "missing"
+keys: {"fold": "oliverkoletzki|throughthedarkness", "musicbrainz": "c9e2060e-e5d4-4546-ba25-9a35d2592e88"}
+review: "oliver-koletzki-through-the-darkness.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2021, "n": 68}
@@ -22,4 +23,4 @@ From the album *The Arc of Tension*, 5:48.
 Not among the liked songs.
 Your Top Songs 2021: #68.
 In My Top Songs of All the Time (#499).
-No review yet.
+Reviewed: content/oliver-koletzki-through-the-darkness.md.

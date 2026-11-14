@@ -6,8 +6,9 @@ artists: ["DJ Disse", "Will Buhrkall"]
 album: "When I'm Bored I Change Colour (Deluxe)"
 duration: "6:19"
 spotify: {"track": "10OC1oEUtH63ESbyVjpWae", "album": "4osIIlcGcGLVnbuwyqLake", "artists": ["4kg2lRWVK6LDOwPfhQrhsn", "00TGKOQwBvn9dgItEShRjV"]}
-keys: {"fold": "djdisse|breakonthrough"}
-status: "missing"
+keys: {"fold": "djdisse|breakonthrough", "musicbrainz": "0f1d4313-6854-43e8-8dbb-44ab23cfef7c"}
+review: "dj-disse-will-buhrkall-break-on-through.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 75}
@@ -22,4 +23,4 @@ From the album *When I'm Bored I Change Colour (Deluxe)*, 6:19.
 A liked song.
 Your Top Songs 2021: #75.
 In My Top Songs of All the Time (#504).
-No review yet.
+Reviewed: content/dj-disse-will-buhrkall-break-on-through.md.

@@ -6,8 +6,9 @@ artists: ["Kelis"]
 album: "Tasty"
 duration: "3:23"
 spotify: {"track": "7h1kWdBH8pV84RNP2foaf5", "album": "61PSy6UJB26jzBvnLOgLzI", "artists": ["0IF46mUS8NXjgHabxk2MCM"]}
-keys: {"fold": "kelis|sugarhoneyicedtea"}
-status: "missing"
+keys: {"fold": "kelis|sugarhoneyicedtea", "isrc": "USAR10301295", "musicbrainz": "1c688def-53a8-4df9-8cd3-e97433d39f31"}
+review: "kelis-sugar-honey-iced-tea.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 55}
@@ -22,4 +23,4 @@ From the album *Tasty*, 3:23.
 A liked song.
 Your Top Songs 2021: #55.
 In My Top Songs of All the Time (#494).
-No review yet.
+Reviewed: content/kelis-sugar-honey-iced-tea.md.

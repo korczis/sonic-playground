@@ -6,8 +6,9 @@ artists: ["Bronski Beat", "Arnaud Rebotini"]
 album: "The Age Of Consent (Remastered & Expanded)"
 duration: "5:36"
 spotify: {"track": "7fyu9Wz66k5n5tcFnkYDXo", "album": "7yNG62qNEJZTAlNPFrGLMq", "artists": ["2wpWOzQE5TpA0dVnh5YD08", "4qnTdOhzCAvoRf8PObGr1h"]}
-keys: {"fold": "bronskibeat|smalltownboyarnaudrebotiniremix"}
-status: "missing"
+keys: {"fold": "bronskibeat|smalltownboyarnaudrebotiniremix", "musicbrainz": "63d6bae5-3e90-40ff-8f39-d1a4721fcbc9"}
+review: "bronski-beat-arnaud-rebotini-smalltown-boy-arnaud-rebotini-remix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 5}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2020: #5.
 Your Top Songs 2021: #99.
 In My Top Songs of All the Time (#375).
-No review yet.
+Reviewed: content/bronski-beat-arnaud-rebotini-smalltown-boy-arnaud-rebotini-remix.md.

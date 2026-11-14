@@ -6,8 +6,9 @@ artists: ["DRAMAS"]
 album: "Dramas"
 duration: "3:27"
 spotify: {"track": "74wwi110AMErv5uf0WnciB", "album": "28T59rrvIaxtsPhxmzrIzj", "artists": ["7wwQRdYt302AuynW8ioIgS"]}
-keys: {"fold": "dramas|bloodbath"}
-status: "missing"
+keys: {"fold": "dramas|bloodbath", "musicbrainz": "b1a9a52e-7dff-426b-8ab1-4291f2b0fa19"}
+review: "dramas-bloodbath.md"
+status: "present"
 liked: false
 playlists:
   - {"playlist": "best-of-the-best", "n": 96}
@@ -20,4 +21,4 @@ sources: ["web-player:2026-11-14"]
 From the album *Dramas*, 3:27.
 Not among the liked songs.
 In Best of the Best (#96); My Top Songs of All the Time (#591).
-No review yet.
+Reviewed: content/dramas-bloodbath.md.

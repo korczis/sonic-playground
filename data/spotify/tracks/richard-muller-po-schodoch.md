@@ -6,8 +6,9 @@ artists: ["Richard Muller", "Banket"]
 album: "Bioelektrovízia"
 duration: "3:09"
 spotify: {"track": "23jdbqqdziTkAVbYVnIuRk", "album": "5gKt3BTvFk2TTDmM1vWp4A", "artists": ["2jldyAonkBDiBG0cNtLgZz", "5oFCXf4qzdeuFEz1BMb9so"]}
-keys: {"fold": "richardmuller|poschodoch"}
-status: "missing"
+keys: {"fold": "richardmuller|poschodoch", "musicbrainz": "614fcc3f-3d4a-47e1-90be-7ef271db7fe1"}
+review: "richard-muller-banket-po-schodoch.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2021, "n": 89}
@@ -22,4 +23,4 @@ From the album *Bioelektrovízia*, 3:09.
 Not among the liked songs.
 Your Top Songs 2021: #89.
 In My Top Songs of All the Time (#513).
-No review yet.
+Reviewed: content/richard-muller-banket-po-schodoch.md.

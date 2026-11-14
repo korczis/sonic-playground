@@ -2044,4 +2044,4 @@ tracks:
 
 # Liked Songs
 
-The liked songs: 2029 of 2031 items read on 2026-11-14, 274 of them reviewed on the site.
+The liked songs: 2029 of 2031 items read on 2026-11-14, 306 of them reviewed on the site.

@@ -6,8 +6,9 @@ artists: ["Amy Winehouse"]
 album: "Back To Black"
 duration: "3:33"
 spotify: {"track": "4osg3vT6sXv6wNxm9Z6ucQ", "album": "097eYvf9NKjFnv4xA9s2oV", "artists": ["6Q192DXotxtaysaqNPy5yR"]}
-keys: {"fold": "amywinehouse|rehab"}
-status: "missing"
+keys: {"fold": "amywinehouse|rehab", "isrc": "GBUM70603730", "musicbrainz": "873eba85-b721-4728-be2e-96ce94cccb8b"}
+review: "amy-winehouse-rehab.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Back To Black*, 3:33.
 A liked song.
-No review yet.
+Reviewed: content/amy-winehouse-rehab.md.

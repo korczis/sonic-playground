@@ -6,8 +6,9 @@ artists: ["Brodinski", "Louisahhh"]
 album: "Bromance #1 - Single"
 duration: "5:11"
 spotify: {"track": "5Ku0pfmAZUyEbO5grfQsyP", "album": "50jBbRc85Two6YRoGbsGWt", "artists": ["0ZurilbRp6KwW6dpaw4pEK", "42TogPbYEXl164PrqTEVBW"]}
-keys: {"fold": "brodinski|letthebeatcontrolyourbody"}
-status: "missing"
+keys: {"fold": "brodinski|letthebeatcontrolyourbody", "isrc": "FR8Q11100153", "musicbrainz": "8ae44f44-ce0b-4592-b769-2863a9b23fe0"}
+review: "brodinski-louisahhh-let-the-beat-control-your-body.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2020, "n": 12}
@@ -25,4 +26,4 @@ A liked song.
 Your Top Songs 2020: #12.
 Your Top Songs 2021: #70.
 In Best of the Best (#21); My Top Songs of All the Time (#382).
-No review yet.
+Reviewed: content/brodinski-louisahhh-let-the-beat-control-your-body.md.

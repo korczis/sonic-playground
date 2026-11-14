@@ -6,8 +6,9 @@ artists: ["The Colorist Orchestra", "Emilíana Torrini"]
 album: "The Colorist & Emiliana Torrini"
 duration: "2:46"
 spotify: {"track": "0CNG7yB98CAfH7NDAtBheY", "album": "308EQ717rquoukYqREg2uC", "artists": ["1AQqTYQoz0RHAEUz75nE2D", "08j69Ndyx1P7RLO3Janb5P"]}
-keys: {"fold": "thecoloristorchestra|jungledrum"}
-status: "missing"
+keys: {"fold": "thecoloristorchestra|jungledrum", "musicbrainz": "c72fc8b2-b967-4523-aa47-063f1f43cc75"}
+review: "the-colorist-orchestra-emiliana-torrini-jungle-drum.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 40}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2021: #40.
 Your Top Songs 2022: #96.
 In My Top Songs of All the Time (#482).
-No review yet.
+Reviewed: content/the-colorist-orchestra-emiliana-torrini-jungle-drum.md.

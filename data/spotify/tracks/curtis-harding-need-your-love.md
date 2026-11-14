@@ -7,8 +7,9 @@ album: "Face Your Fear"
 duration: "2:57"
 explicit: true
 spotify: {"track": "3zYQ1KXzqBWRsxIqdVMoYF", "album": "3Can2qB9S1pOcElpkfExB1", "artists": ["0CUpzKPDfIVzYqMn47jiV3"]}
-keys: {"fold": "curtisharding|needyourlove"}
-status: "missing"
+keys: {"fold": "curtisharding|needyourlove", "isrc": "USEP41726019", "musicbrainz": "2f63f048-68a9-4dc3-8aa0-eb87e5f224d7"}
+review: "curtis-harding-need-your-love.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 88}
@@ -26,4 +27,4 @@ A liked song.
 Your Top Songs 2021: #88.
 Your Top Songs 2022: #51.
 In Best of the Best (#95); My Top Songs of All the Time (#512).
-No review yet.
+Reviewed: content/curtis-harding-need-your-love.md.

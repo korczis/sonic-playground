@@ -6,8 +6,9 @@ artists: ["Pupkulies & Rebecca"]
 album: "Looking for the Sea"
 duration: "3:33"
 spotify: {"track": "32w1T02SEa3WVJIukZjvEe", "album": "7e00Ls1IiRJSXyaT5deW6Z", "artists": ["0LtDMZWibqA2ET2EG6ny0K"]}
-keys: {"fold": "pupkuliesrebecca|foudetoi"}
-status: "missing"
+keys: {"fold": "pupkuliesrebecca|foudetoi", "musicbrainz": "e761cbd7-1e38-496e-8ded-caeba1b3123a"}
+review: "pupkulies-rebecca-fou-de-toi.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 52}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2021: #52.
 Your Top Songs 2022: #88.
 In My Top Songs of All the Time (#491).
-No review yet.
+Reviewed: content/pupkulies-rebecca-fou-de-toi.md.

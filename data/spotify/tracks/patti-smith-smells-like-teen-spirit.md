@@ -6,8 +6,9 @@ artists: ["Patti Smith"]
 album: "Twelve"
 duration: "6:31"
 spotify: {"track": "05Umbh1rVwvTUWHnhRcENn", "album": "3hlHi5Mz5hRao09uUvT0ta", "artists": ["0vYkHhJ48Bs3jWcvZXvOrP"]}
-keys: {"fold": "pattismith|smellsliketeenspirit"}
-status: "missing"
+keys: {"fold": "pattismith|smellsliketeenspirit", "isrc": "USSM10700245", "musicbrainz": "849a119a-b38b-4b90-9168-072bcb86265c"}
+review: "patti-smith-smells-like-teen-spirit.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 51}
@@ -22,4 +23,4 @@ From the album *Twelve*, 6:31.
 A liked song.
 Your Top Songs 2021: #51.
 In My Top Songs of All the Time (#490).
-No review yet.
+Reviewed: content/patti-smith-smells-like-teen-spirit.md.
