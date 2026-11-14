@@ -12,7 +12,7 @@ instrument = ["vocals", "drum machine", "bass", "synthesizer"]
 [extra]
 country = "BR"
 publisher = "Trama"
-album = "Cool Steps Drum 'N' Bass Grooves"
+album = "Cool Steps: Drum 'N' Bass Grooves"
 release_year = "2001"
 youtube = "https://www.youtube.com/embed/4_1Yd01wiAg"
 connections = [
@@ -115,7 +115,7 @@ The secret of the track's calm is its {{ <concept_link name="bassline" /> }}. Wh
 
 ## Artistic Context
 
-DJ Patife, born Wagner Ribeiro de Souza in São Paulo in 1976, started as a resident at the city's Arena Music Hall and hosted the radio show Bassline on Energia 97 from 1999. With contemporaries such as DJ Marky and the Drumagick duo he put Brazilian drum and bass on the international map: his first album, Sounds of Drum'n'bass, was praised by Muzik and Mixmag in 2000, and three of his tracks appeared on V Recordings' Brazil EP. His Sambassim remix was released by the São Paulo label Trama and collected on his 2001 mixed compilation Cool Steps – Drum'n'bass Grooves; DJ Marky made his own remix of the song as well. Fernanda Porto, born in Serra Negra in 1965, went on to release her debut album in 2002 on Trama; it sold more than 100,000 copies in Brazil and earned her a Latin Grammy nomination for Best New Artist.
+DJ Patife, born Wagner Ribeiro de Souza in São Paulo in 1976, started as a resident at the city's Arena Music Hall and hosted the radio show Bassline on Energia 97 from 1999. With contemporaries such as DJ Marky and the Drumagick duo he put Brazilian drum and bass on the international map: his first album, Sounds of Drum'n'bass, was praised by Muzik and Mixmag in 2000, and three of his tracks appeared on V Recordings' Brazil EP. His Sambassim remix was released by the São Paulo label Trama and collected on his 2001 mixed compilation Cool Steps: Drum 'N' Bass Grooves; DJ Marky made his own remix of the song as well. Fernanda Porto, born in Serra Negra in 1965, went on to release her debut album in 2002 on Trama; it sold more than 100,000 copies in Brazil and earned her a Latin Grammy nomination for Best New Artist.
 
 ## Impact and Reception
 

@@ -10,7 +10,7 @@ concept = ["swing", "featured artist"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "4b8396504968"
+of = "e22b7091ddbf"
 
 [extra]
 connections = [
@@ -92,7 +92,7 @@ Kredit „feat. Zeebee“ z písně dělá lekci o tom, že {{ <concept_link nam
 
 ## Ohlas a dopad
 
-**„Midsummer Night Blues“** nikdy nebyla singlem v hitparádách, ale zůstala součástí kánonu Ballroom: v roce 2015 se znovu objevila na kompilaci FIP, Vol. 1 francouzské rozhlasové stanice a ve verzi se zpěvačkou Patrizií Ferrarou na kolekci k 20. výročí labelu Dope Noir v roce 2022. Ballroom Stories bylo nominováno na rakouskou hudební cenu Amadeus Austrian Music Award.
+**„Midsummer Night Blues“** nikdy nebyla singlem v hitparádách, ale zůstala součástí kánonu Ballroom: v roce 2015 se znovu objevila na kompilaci FIP, Vol. 1 stanice FIP ze skupiny Radio France a ve verzi se zpěvačkou Patrizií Ferrarou na kolekci k 20. výročí labelu Dope Noir v roce 2022. Ballroom Stories bylo nominováno na rakouskou hudební cenu Amadeus Austrian Music Award.
 
 ## Závěrem
 

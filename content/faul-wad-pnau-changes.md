@@ -67,6 +67,12 @@ publisher = "Wikipedia"
 kind = "encyclopedia"
 
 [[extra.sources]]
+title = "Pnau (album)"
+url = "https://en.wikipedia.org/wiki/Pnau_(album)"
+publisher = "Wikipedia"
+kind = "encyclopedia"
+
+[[extra.sources]]
 title = "Changes (radio mix)"
 url = "https://musicbrainz.org/recording/ec5b8597-8b1e-4665-a19d-f1070dcd8721"
 publisher = "MusicBrainz"
@@ -123,7 +129,7 @@ The track has two hooks that answer each other. The sampled refrain is the vocal
 
 ## Artistic Context
 
-Faul & Wad Ad are the Paris DJs Maxime Ledu (Faul) and Camil Meyer (Wad Ad), who met in high school and began producing during their study time. In 2013 they heard Pnau's Baby and released their adaptation online in May; the official single, credited to Faul & Wad Ad vs. Pnau and released by Four Music, followed on 15 November 2013. Baby itself had been the second single from Pnau's self-titled third album, released in March 2008 and peaking at number 34 in Australia. Pnau began as the duo of Nick Littlemore and Peter Mayes; Littlemore is also one half of Empire of the Sun, and the pair later made the Elton John remix album Good Morning to the Night.
+Faul & Wad Ad are the Paris DJs Maxime Ledu (Faul) and Camil Meyer (Wad Ad), who met in high school and began producing during their study time. In 2013 they heard Pnau's Baby and released their adaptation online in May; the official single, credited to Faul & Wad Ad vs. Pnau and released by Four Music, followed on 15 November 2013. Baby itself had come out as a single on 3 March 2008, the second from Pnau's self-titled third album of November 2007, and peaked at number 34 in Australia. Pnau began as the duo of Nick Littlemore and Peter Mayes; Littlemore is also one half of Empire of the Sun, and the pair later made the Elton John remix album Good Morning to the Night.
 
 ## Impact and Reception
 

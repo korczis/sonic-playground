@@ -1,5 +1,5 @@
 +++
-title = "Gorillaz, Neneh Cherry - Kids with Guns"
+title = "Gorillaz, Neneh Cherry - Kids With Guns"
 date = "2026-11-12"
 description = "A cold, clanking Gorillaz track from Demon Days where Damon Albarn's weary vocal and Neneh Cherry's spectral backing turn a nursery-rhyme melody into a quiet alarm about children and violence."
 
@@ -68,7 +68,7 @@ kind = "encyclopedia"
 
 ## Genre and Mood
 
-**Gorillaz** and **Neneh Cherry** trade in unease on **Kids with Guns**, a track that combines alternative rock, electronic textures and art-pop strangeness. Its mood is haunting, dark and quietly provocative: it does not shout its warning, it lets the dread seep in. That restraint is what makes it linger long after louder songs fade.
+**Gorillaz** and **Neneh Cherry** trade in unease on **Kids With Guns**, a track that combines alternative rock, electronic textures and art-pop strangeness. Its mood is haunting, dark and quietly provocative: it does not shout its warning, it lets the dread seep in. That restraint is what makes it linger long after louder songs fade.
 
 ## Song Summary
 
@@ -104,12 +104,12 @@ The rhythm is built on the {{ <concept_link name="drum machine" /> }} and progra
 
 Neneh Cherry appears as a {{ <concept_link name="featured artist" /> }} in an unusual way. She has no verse of her own; instead she sings additional vocals that double and haunt Albarn's lead. The Swedish singer of Buffalo Stance lends the track a second, spectral presence rather than a guest spot, and the song is credited to both.
 
-Kids with Guns never had an animated promo. The video used for it, including on The Singles Collection DVD, is a {{ <concept_link name="live recording" /> }} from the Demon Days Live shows at the Manchester Opera House in November 2005, where the screens behind the band showed a slideshow of guns in red, white and black. For a band that usually hid behind cartoons, it is a rare look at the people making the music.
+Kids With Guns never had an animated promo. The video used for it, including on The Singles Collection DVD, is a {{ <concept_link name="live recording" /> }} from the Demon Days Live shows at the Manchester Opera House in November 2005, where the screens behind the band showed a slideshow of guns in red, white and black. For a band that usually hid behind cartoons, it is a rare look at the people making the music.
 
 ## Artistic Context
 
-"Kids with Guns" comes from *Demon Days*, the 2005 second album by Gorillaz, the virtual band created by Damon Albarn and artist Jamie Hewlett. The record, produced with Danger Mouse, is dark and socially aware, and on this track Albarn plays guitars and keyboards himself. It was released on 10 April 2006 as a double A-side with "El Mañana", the fourth and final single from the album. Hewlett's animated characters gave the band a cartoon face, but songs like this one showed how serious the music behind them could be.
+"Kids With Guns" comes from *Demon Days*, the 2005 second album by Gorillaz, the virtual band created by Damon Albarn and artist Jamie Hewlett. The record, produced with Danger Mouse, is dark and socially aware, and on this track Albarn plays guitars and keyboards himself. It was released on 10 April 2006 as a double A-side with "El Mañana", the fourth and final single from the album. Hewlett's animated characters gave the band a cartoon face, but songs like this one showed how serious the music behind them could be.
 
 ## Impact and Reception
 
-*Demon Days* was one of the most successful albums of its era, though the "Kids with Guns" / "El Mañana" single reached only number 27 in the UK, well below its predecessors. A Hot Chip remix later appeared on The Inbetweeners soundtrack in 2009. It is here because it shows Gorillaz at their most serious, using a simple, chilling hook to say something real. Listen closely; the details matter.
+*Demon Days* was one of the most successful albums of its era, though the "Kids With Guns" / "El Mañana" single reached only number 27 in the UK, well below its predecessors. A Hot Chip remix later appeared on The Inbetweeners soundtrack in 2009. It is here because it shows Gorillaz at their most serious, using a simple, chilling hook to say something real. Listen closely; the details matter.

@@ -1,7 +1,7 @@
 +++
 title = "Lucky Luke - Cooler Than Me"
 date = "2024-10-08"
-description = "Electro-house přepracování debutového hitu Mika Posnera z roku 2010 od litevského producenta Lucky Luke z roku 2019, vydané u Columbia/B1: píseň o pocitu odstrčení proměněná v uvolněnou klubovou hymnu, která se o rok později stala rádiovým hitem ve Francii."
+description = "Deephousové přepracování debutového hitu Mika Posnera z roku 2010 od litevského producenta Lucky Luke z roku 2019, vydané u Columbia/B1: píseň o pocitu odstrčení proměněná v uvolněnou klubovou hymnu, která se o rok později stala rádiovým hitem ve Francii."
 
 [taxonomies]
 genre = ["deep house", "electronic", "remix"]
@@ -10,7 +10,7 @@ concept = ["cover version", "music video"]
 instrument = ["vocals", "synthesizer"]
 
 [extra.translation]
-of = "0d67f06ca6f9"
+of = "d831791df5ec"
 
 [extra]
 connections = [
@@ -35,7 +35,7 @@ questions = ["Mike Posner napsal píseň o pocitu odstrčení od dívky, která 
 
 ## O skladbě
 
-„Cooler than Me“ byl debutovým singlem Mika Posnera v dubnu 2010; nahrál ho na levný mikrofon ve svém pokoji na univerzitní koleji, produkoval ho Gigamesh a dosáhl 6. místa v Billboard Hot 100. Posner řekl, že je o dívce z jeho ročníku, do které byl zakoukaný, a o typu dívky, kterou zná každý, té, co si myslí, že je víc cool než vy: chtěl zachytit okamžik, kdy se cítíte odstrčení. Lucky Luke, litevský producent Lukas Kemesis, narozený v roce 1999, ji v roce 2019 přepracoval do podoby, kterou francouzský tisk nazval „relecture électro“ (elektronické přečtení), zachoval melodii i hook a postavil pod ně hladké, rytmické housové podloží.
+„Cooler Than Me“ byl debutovým singlem Mika Posnera v dubnu 2010; nahrál ho na levný mikrofon ve svém pokoji na univerzitní koleji, produkoval ho Gigamesh a dosáhl 6. místa v Billboard Hot 100. Posner řekl, že je o dívce z jeho ročníku, do které byl zakoukaný, a o typu dívky, kterou zná každý, té, co si myslí, že je víc cool než vy: chtěl zachytit okamžik, kdy se cítíte odstrčení. Lucky Luke, litevský producent Lukas Kemesis, narozený v roce 1999, ji v roce 2019 přepracoval do podoby, kterou francouzský tisk nazval „relecture électro“ (elektronické přečtení), zachoval melodii i hook a postavil pod ně hladké, rytmické housové podloží.
 
 ## Hudební rozbor
 

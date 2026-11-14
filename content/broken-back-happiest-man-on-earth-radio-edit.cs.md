@@ -10,7 +10,7 @@ concept = ["radio edit", "drum machine", "remix"]
 instrument = ["acoustic guitar", "vocals", "drum machine"]
 
 [extra.translation]
-of = "33e9579d271c"
+of = "9926204e337f"
 
 [extra]
 connections = [
@@ -76,4 +76,4 @@ Broken Back je umělecké jméno Jérôma Fagneta, který se narodil v roce 1990
 
 ## Ohlas a dopad
 
-Happiest Man on Earth byl prvním singlem Broken Back a představil ho i mimo Francii: Atwood Magazine ho označil za jednu z prvních pohodových letních písní roku 2015 a zařadil ho někam mezi Vance Joye a Bon Iver s nádechem Milky Chance. EP dosáhlo 135. místa ve francouzském albovém žebříčku a jeho stejnojmenné debutové album následovalo v roce 2016 se singlem Halcyon Birds a dosáhlo 75. místa. V roce 2017 byl nominován na Victoires de la musique jako koncertní objev roku. Píseň je tu proto, že je prostě radost ji slyšet: skromná, hřejivá a tiše nadějná. Pusťte si ji ráno a nechte ji určit tón celého dne.
+Happiest Man on Earth byl prvním singlem Broken Back a představil ho i mimo Francii: Atwood Magazine ho označil za jednu z prvních pohodových letních písní roku 2015 a zařadil ho někam mezi Vance Joye a Bon Iver s nádechem Milky Chance. EP dosáhlo 135. místa ve francouzském albovém žebříčku; jeho stejnojmenné debutové album se singlem Halcyon Birds následovalo v roce 2016 a ve stejném žebříčku dosáhlo 75. místa. V roce 2017 byl nominován na Victoires de la musique jako koncertní objev roku. Píseň je tu proto, že je prostě radost ji slyšet: skromná, hřejivá a tiše nadějná. Pusťte si ji ráno a nechte ji určit tón celého dne.

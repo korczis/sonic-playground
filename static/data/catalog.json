@@ -7,7 +7,7 @@
   "artists": 222,
   "videos": 277,
   "videos_gone": 3,
-  "words": 185649,
+  "words": 185799,
   "median_words": 639,
   "first": "2024-10-01",
   "last": "2026-11-12",
@@ -384,7 +384,7 @@
   },
   {
    "name": "musical breakdown",
-   "share": 0.82,
+   "share": 0.83,
    "position": 0.39,
    "subsections": [
     "intro",
@@ -2387,7 +2387,7 @@
    {
     "term": "hip-hop",
     "slug": "hip-hop",
-    "count": 15
+    "count": 16
    },
    {
     "term": "indie pop",
@@ -2465,11 +2465,6 @@
     "count": 7
    },
    {
-    "term": "indie rock",
-    "slug": "indie-rock",
-    "count": 7
-   },
-   {
     "term": "industrial",
     "slug": "industrial",
     "count": 7
@@ -2482,6 +2477,11 @@
    {
     "term": "acoustic",
     "slug": "acoustic",
+    "count": 6
+   },
+   {
+    "term": "indie rock",
+    "slug": "indie-rock",
     "count": 6
    },
    {
@@ -4456,7 +4456,7 @@
    "count": 1
   },
   {
-   "term": "Clea Vincent",
+   "term": "Cléa Vincent",
    "slug": "clea-vincent",
    "count": 1
   },
@@ -4701,7 +4701,7 @@
    "count": 1
   },
   {
-   "term": "Ivy Levan, CADRÉ",
+   "term": "Ivy Levan, Cadre",
    "slug": "ivy-levan-cadre",
    "count": 1
   },
@@ -8284,7 +8284,7 @@
    "youtube": "f5IruTV-LGQ",
    "thumbnail": "https://i.ytimg.com/vi/f5IruTV-LGQ/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 539,
+   "words": 573,
    "extra": {
     "album": "Caravelle",
     "publisher": "Hamburger Records / Ekler'O'Shock",
@@ -9842,7 +9842,7 @@
    "youtube": "FrzOPJyXYIM",
    "thumbnail": "https://i.ytimg.com/vi/FrzOPJyXYIM/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 557,
+   "words": 556,
    "extra": {
     "album": "UltraSex",
     "publisher": "Emperor Norton Records",
@@ -10165,7 +10165,7 @@
    "track": "No Yellow Lines",
    "inferred": "title: artist - track",
    "date": "2026-11-12",
-   "description": "A night drive with the headlights off: grinding analogue bass, clipped drum machines and Mount Sims' cool, menacing croon from the darker side of electroclash.",
+   "description": "A night drive with the headlights off: grinding analogue bass, clipped drum machines and Mount Sims's cool, menacing croon from the darker side of electroclash.",
    "facets": {
     "genre": [
      "electroclash",
@@ -10193,7 +10193,7 @@
    "youtube": "ApH1k54daoI",
    "thumbnail": "https://i.ytimg.com/vi/ApH1k54daoI/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 641,
+   "words": 650,
    "extra": {
     "album": "Wild Light",
     "publisher": "International DeeJay Gigolo Records",
@@ -10527,7 +10527,7 @@
    "youtube": "8DQgkRyzg9I",
    "thumbnail": "https://i.ytimg.com/vi/8DQgkRyzg9I/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 596,
+   "words": 609,
    "extra": {
     "album": "Happily Ever After",
     "publisher": "Hungry Eye Records",
@@ -10984,7 +10984,7 @@
    "youtube": "NqGQIO2m3YQ",
    "thumbnail": "https://i.ytimg.com/vi/NqGQIO2m3YQ/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 662,
+   "words": 663,
    "extra": {
     "album": "New Decadence",
     "release_year": "2016",
@@ -12324,7 +12324,7 @@
    "youtube": "kwg0GIQ3qXA",
    "thumbnail": "https://i.ytimg.com/vi/kwg0GIQ3qXA/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 558,
+   "words": 575,
    "extra": {
     "album": "Independence",
     "publisher": "BreakBeat Culture",
@@ -12407,7 +12407,7 @@
    "track": "Waiting",
    "inferred": "front matter: extra.artist",
    "date": "2026-11-12",
-   "description": "A slow, stripped-down slice of dark electronic R&B from the Eindhoven duo Klyne, where Nick Klein's soft, close-miked voice drifts over sparse beats and muted synths; the new song on their 2015 Closer EP.",
+   "description": "A slow, stripped-down slice of dark electronic R&B from the Dutch duo Klyne, where Nick Klein's soft, close-miked voice drifts over sparse beats and muted synths; the new song on their 2015 Closer EP.",
    "facets": {
     "genre": [
      "electronic",
@@ -12432,7 +12432,7 @@
    "youtube": "pPlB54eJPMI",
    "thumbnail": "https://i.ytimg.com/vi/pPlB54eJPMI/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 552,
+   "words": 554,
    "extra": {
     "album": "Closer",
     "publisher": "Aesop",
@@ -12501,7 +12501,7 @@
    "i18n": {
     "cs": {
      "title": "Klyne - Waiting",
-     "description": "Pomalý, osekaný kousek temného elektronického R&B od dua Klyne z Eindhovenu, v němž měkký hlas Nicka Kleina, nahraný těsně u mikrofonu, pluje nad řídkými beaty a tlumenými syntezátory; nová píseň na jejich EP Closer z roku 2015.",
+     "description": "Pomalý, osekaný kousek temného elektronického R&B od nizozemského dua Klyne, v němž měkký hlas Nicka Kleina, nahraný těsně u mikrofonu, pluje nad řídkými beaty a tlumenými syntezátory; nová píseň na jejich EP Closer z roku 2015.",
      "path": "cs/klyne-waiting/"
     }
    }
@@ -14902,8 +14902,8 @@
   {
    "source": "ivy-levan-cadre-like-a-glove.md",
    "path": "ivy-levan-cadre-like-a-glove/",
-   "title": "Ivy Levan, CADRÉ - Like A Glove",
-   "artist": "Ivy Levan, CADRÉ",
+   "title": "Ivy Levan, Cadre - Like A Glove",
+   "artist": "Ivy Levan, Cadre",
    "track": "Like A Glove",
    "inferred": "title: artist - track",
    "date": "2026-11-12",
@@ -14998,7 +14998,7 @@
    ],
    "i18n": {
     "cs": {
-     "title": "Ivy Levan, CADRÉ - Like A Glove",
+     "title": "Ivy Levan, Cadre - Like A Glove",
      "description": "Kouřový, nafoukaný vokál Ivy Levan se vine nad uhlazeným popovým beatem s těžkou basou, s rapovou slokou od Cadre: skladba z jejího „swamp-hopového“ debutu z roku 2015, která odpovídá svému názvu, sevřená, temná a šitá na míru.",
      "path": "cs/ivy-levan-cadre-like-a-glove/"
     }
@@ -15890,9 +15890,9 @@
   {
    "source": "gotan-project-la-viguela.md",
    "path": "gotan-project-la-viguela/",
-   "title": "Gotan Project - La vigüela",
+   "title": "Gotan Project - La Vigüela",
    "artist": "Gotan Project",
-   "track": "La vigüela",
+   "track": "La Vigüela",
    "inferred": "title: artist - track",
    "date": "2026-11-12",
    "description": "Bandoneon, guitar and Cristina Vilallonga's voice drifting over a slow electronic pulse, La Vigüela is Gotan Project's tango heading out into the open pampas.",
@@ -15987,7 +15987,7 @@
    ],
    "i18n": {
     "cs": {
-     "title": "Gotan Project - La vigüela",
+     "title": "Gotan Project - La Vigüela",
      "description": "Bandoneon, kytara a hlas Cristiny Vilallongy plující nad pomalým elektronickým pulzem: La Vigüela je tango Gotan Project, které vyráží do otevřených pamp.",
      "path": "cs/gotan-project-la-viguela/"
     }
@@ -15996,9 +15996,9 @@
   {
    "source": "gorillaz-neneh-cherry-kids-with-guns.md",
    "path": "gorillaz-neneh-cherry-kids-with-guns/",
-   "title": "Gorillaz, Neneh Cherry - Kids with Guns",
+   "title": "Gorillaz, Neneh Cherry - Kids With Guns",
    "artist": "Gorillaz, Neneh Cherry",
-   "track": "Kids with Guns",
+   "track": "Kids With Guns",
    "inferred": "title: artist - track",
    "date": "2026-11-12",
    "description": "A cold, clanking Gorillaz track from Demon Days where Damon Albarn's weary vocal and Neneh Cherry's spectral backing turn a nursery-rhyme melody into a quiet alarm about children and violence.",
@@ -16099,7 +16099,7 @@
    ],
    "i18n": {
     "cs": {
-     "title": "Gorillaz, Neneh Cherry - Kids with Guns",
+     "title": "Gorillaz, Neneh Cherry - Kids With Guns",
      "description": "Chladná, řinčivá skladba Gorillaz z alba Demon Days, v níž unavený vokál Damona Albarna a přízračný doprovod Neneh Cherry mění melodii jako z dětské říkanky v tichý poplach kvůli dětem a násilí.",
      "path": "cs/gorillaz-neneh-cherry-kids-with-guns/"
     }
@@ -16163,6 +16163,17 @@
      ]
     },
     {
+     "source": "pigeon-the-bomb.md",
+     "score": 0.3721,
+     "shared": [
+      "concept:hook",
+      "genre:alternative",
+      "genre:electronic",
+      "genre:hip-hop",
+      "instrument:vocals"
+     ]
+    },
+    {
      "source": "mickey-avalon-eli-ultraviolence.md",
      "score": 0.3721,
      "shared": [
@@ -16183,18 +16194,6 @@
       "instrument:synthesizer",
       "instrument:vocals",
       "sentiment:playful"
-     ]
-    },
-    {
-     "source": "awolnation-sail.md",
-     "score": 0.3404,
-     "shared": [
-      "concept:hook",
-      "concept:music video",
-      "genre:alternative",
-      "genre:electronic",
-      "instrument:synthesizer",
-      "instrument:vocals"
      ]
     }
    ],
@@ -16954,11 +16953,12 @@
    "related": [
     {
      "source": "pigeon-the-bomb.md",
-     "score": 0.4054,
+     "score": 0.5758,
      "shared": [
       "concept:hook",
       "concept:sampling",
       "genre:alternative",
+      "genre:hip-hop",
       "instrument:vocals",
       "sentiment:bold",
       "sentiment:defiant"
@@ -17055,7 +17055,7 @@
    "thumbnail_local": false,
    "words": 593,
    "extra": {
-    "album": "Blood To Bone",
+    "album": "Blood to Bone",
     "publisher": "Universal Music",
     "release_year": "2015",
     "country": "NZ"
@@ -17178,7 +17178,7 @@
    "thumbnail_local": false,
    "words": 656,
    "extra": {
-    "album": "Blood To Bone",
+    "album": "Blood to Bone",
     "publisher": "Island",
     "release_year": "2015",
     "country": "NZ"
@@ -17968,7 +17968,7 @@
    "track": "Cry Me A River (Live Version)",
    "inferred": "front matter: extra.artist",
    "date": "2026-11-12",
-   "description": "A sixteen-year-old Gabriella Cilmi takes Justin Timberlake's 2002 break-up hit into smoky, live soul territory with a three-piece band: a 2008 B-side recorded by Xenomania, her husky voice carrying all the hurt.",
+   "description": "A sixteen-year-old Gabriella Cilmi takes Justin Timberlake's 2002 break-up hit into smoky, live soul territory, backed only by guitar and bass: a 2008 B-side recorded by Xenomania, her husky voice carrying all the hurt.",
    "facets": {
     "genre": [
      "soul",
@@ -17994,7 +17994,7 @@
    "youtube": "pKXDpgT7a8c",
    "thumbnail": "https://i.ytimg.com/vi/pKXDpgT7a8c/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 612,
+   "words": 615,
    "extra": {
     "album": "Lessons To Be Learned",
     "publisher": "Island",
@@ -18063,7 +18063,7 @@
    "i18n": {
     "cs": {
      "title": "Gabriella Cilmi - Cry Me A River (Live Version)",
-     "description": "Šestnáctiletá Gabriella Cilmi přenáší rozchodový hit Justina Timberlakea z roku 2002 s trojčlennou kapelou na kouřové, živé soulové území: B-strana z roku 2008, kterou nahráli Xenomania, a její chraplavý hlas nese všechnu bolest.",
+     "description": "Šestnáctiletá Gabriella Cilmi přenáší rozchodový hit Justina Timberlakea z roku 2002 jen za doprovodu kytary a basy na kouřové, živé soulové území: B-strana z roku 2008, kterou nahráli Xenomania, a její chraplavý hlas nese všechnu bolest.",
      "path": "cs/gabriella-cilmi-cry-me-a-river-live-version/"
     }
    }
@@ -18295,7 +18295,7 @@
    "track": "The Creep (Capri Mix)",
    "inferred": "title: artist - track",
    "date": "2026-11-12",
-   "description": "A long, prowling electro mix that keeps its shadows close: The Creep in its Capri Mix stretches Mount Sims' sly menace over six and a half minutes of pulsing synths.",
+   "description": "A long, prowling electro mix that keeps its shadows close: The Creep in its Capri Mix stretches Mount Sims's sly menace over six and a half minutes of pulsing synths.",
    "facets": {
     "genre": [
      "electro",
@@ -18322,7 +18322,7 @@
    "youtube": "tlhSx-PEg-0",
    "thumbnail": "https://i.ytimg.com/vi/tlhSx-PEg-0/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 619,
+   "words": 629,
    "extra": {
     "album": "The Creep",
     "publisher": "Kompute Musik",
@@ -18582,16 +18582,6 @@
      ]
     },
     {
-     "source": "pigeon-the-bomb.md",
-     "score": 0.2667,
-     "shared": [
-      "concept:hook",
-      "genre:alternative",
-      "genre:indie rock",
-      "instrument:vocals"
-     ]
-    },
-    {
      "source": "glass-animals-gooey.md",
      "score": 0.26,
      "shared": [
@@ -18599,6 +18589,16 @@
       "genre:alternative",
       "genre:indie pop",
       "instrument:bass",
+      "instrument:vocals"
+     ]
+    },
+    {
+     "source": "electric-guest-this-head-i-hold.md",
+     "score": 0.2128,
+     "shared": [
+      "genre:alternative",
+      "genre:indie pop",
+      "instrument:drums",
       "instrument:vocals"
      ]
     }
@@ -18783,6 +18783,17 @@
    },
    "related": [
     {
+     "source": "pigeon-the-bomb.md",
+     "score": 0.3256,
+     "shared": [
+      "concept:sampling",
+      "genre:electronic",
+      "genre:hip-hop",
+      "instrument:sampler",
+      "sentiment:energetic"
+     ]
+    },
+    {
      "source": "pilocka-krach_la_luna-y-el-sol.md",
      "score": 0.3256,
      "shared": [
@@ -18813,17 +18824,6 @@
       "instrument:drum machine",
       "instrument:synthesizer",
       "sentiment:energetic"
-     ]
-    },
-    {
-     "source": "caravan-palace-lone-digger.md",
-     "score": 0.2308,
-     "shared": [
-      "concept:swing",
-      "genre:electronic",
-      "instrument:synthesizer",
-      "sentiment:energetic",
-      "sentiment:vibrant"
      ]
     }
    ],
@@ -18884,7 +18884,7 @@
    "youtube": "AZKUj_iytuw",
    "thumbnail": "https://i.ytimg.com/vi/AZKUj_iytuw/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 775,
+   "words": 781,
    "extra": {
     "album": "Changes",
     "publisher": "Four Music",
@@ -19357,18 +19357,19 @@
      ]
     },
     {
-     "source": "nappy-roots-good-day.md",
-     "score": 0.3158,
+     "source": "pigeon-the-bomb.md",
+     "score": 0.3421,
      "shared": [
       "concept:hook",
+      "concept:sampling",
       "genre:hip-hop",
-      "genre:rap",
-      "instrument:vocals"
+      "instrument:vocals",
+      "sentiment:bold"
      ]
     },
     {
-     "source": "n-e-r-d-clipse-loser.md",
-     "score": 0.2857,
+     "source": "nappy-roots-good-day.md",
+     "score": 0.3158,
      "shared": [
       "concept:hook",
       "genre:hip-hop",
@@ -19661,7 +19662,7 @@
    "youtube": "M7VTByl6WqA",
    "thumbnail": "https://i.ytimg.com/vi/M7VTByl6WqA/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 845,
+   "words": 846,
    "extra": {
     "album": "Random Access Memories",
     "publisher": "Columbia",
@@ -20698,7 +20699,7 @@
    "thumbnail_local": false,
    "words": 815,
    "extra": {
-    "album": "Cool Steps Drum 'N' Bass Grooves",
+    "album": "Cool Steps: Drum 'N' Bass Grooves",
     "publisher": "Trama",
     "release_year": "2001",
     "country": "BR"
@@ -21116,9 +21117,9 @@
   {
    "source": "clea-vincent-all-that-she-wants.md",
    "path": "clea-vincent-all-that-she-wants/",
-   "title": "Clea Vincent - All that she wants",
-   "artist": "Clea Vincent",
-   "track": "All that she wants",
+   "title": "Cléa Vincent - All That She Wants",
+   "artist": "Cléa Vincent",
+   "track": "All That She Wants",
    "inferred": "title: artist - track",
    "date": "2026-11-12",
    "description": "Cléa Vincent turns Ace of Base's 1992 hit into breezy, homespun French synth-pop, trading its reggae-pop strut for a dreamy, lo-fi groove closer to hip-hop and R&B.",
@@ -21218,7 +21219,7 @@
    ],
    "i18n": {
     "cs": {
-     "title": "Clea Vincent - All that she wants",
+     "title": "Cléa Vincent - All That She Wants",
      "description": "Cléa Vincent mění hit Ace of Base z roku 1992 ve vzdušný, domácky vyrobený francouzský synth-pop a místo jeho reggae-popového vykračování nabízí snový lo-fi groove, který má blíž k hip-hopu a R&B.",
      "path": "cs/clea-vincent-all-that-she-wants/"
     }
@@ -21589,7 +21590,7 @@
    "youtube": "JOq0cY_q33A",
    "thumbnail": "https://i.ytimg.com/vi/JOq0cY_q33A/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 582,
+   "words": 590,
    "extra": {
     "album": "Sputnik II",
     "publisher": "Bramar Records",
@@ -21812,7 +21813,7 @@
    "youtube": "j01T8N7wVK0",
    "thumbnail": "https://i.ytimg.com/vi/j01T8N7wVK0/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 668,
+   "words": 673,
    "extra": {
     "album": "Dear Misfortune, Mother of Joy",
     "release_year": "2015",
@@ -23060,7 +23061,7 @@
    "youtube": "889H0Am7vFo",
    "thumbnail": "https://i.ytimg.com/vi/889H0Am7vFo/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 654,
+   "words": 651,
    "extra": {
     "album": "Feel The Vibe",
     "release_year": "2004",
@@ -25094,7 +25095,7 @@
    "youtube": "gwqi9IoJGk4",
    "thumbnail": "https://i.ytimg.com/vi/gwqi9IoJGk4/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 883,
+   "words": 884,
    "extra": {
     "album": "Let's Make Love",
     "publisher": "Six Degrees Records",
@@ -25182,7 +25183,7 @@
    "description": "The Los Angeles rapper Pigeon John opens his 2010 album Dragon Slayer with The Bomb, a bright, bouncing single co-produced with General Elektriks' Hervé Salters from sampled live instrumentation rather than old records.",
    "facets": {
     "genre": [
-     "indie rock",
+     "hip-hop",
      "electronic",
      "alternative"
     ],
@@ -25214,47 +25215,48 @@
    "related": [
     {
      "source": "gin-wigmore-suffa-logic-willing-to-die.md",
-     "score": 0.4054,
+     "score": 0.5758,
      "shared": [
       "concept:hook",
       "concept:sampling",
       "genre:alternative",
+      "genre:hip-hop",
       "instrument:vocals",
       "sentiment:bold",
       "sentiment:defiant"
      ]
     },
     {
-     "source": "acraze-do-it-to-it.md",
-     "score": 0.3415,
-     "shared": [
-      "concept:hook",
-      "concept:sampling",
-      "genre:electronic",
-      "instrument:sampler",
-      "instrument:vocals",
-      "sentiment:energetic"
-     ]
-    },
-    {
-     "source": "lipka_no-more-beer.md",
-     "score": 0.3077,
+     "source": "mickey-avalon-eli-ultraviolence.md",
+     "score": 0.4444,
      "shared": [
       "concept:hook",
       "genre:alternative",
       "genre:electronic",
+      "genre:hip-hop",
       "instrument:vocals"
      ]
     },
     {
-     "source": "big-data-joywave-dangerous.md",
-     "score": 0.3043,
+     "source": "gorillaz-19-2000-soulchild-remix.md",
+     "score": 0.3721,
      "shared": [
       "concept:hook",
       "genre:alternative",
       "genre:electronic",
+      "genre:hip-hop",
+      "instrument:vocals"
+     ]
+    },
+    {
+     "source": "drake-the-throne-pop-style.md",
+     "score": 0.3421,
+     "shared": [
+      "concept:hook",
+      "concept:sampling",
+      "genre:hip-hop",
       "instrument:vocals",
-      "sentiment:energetic"
+      "sentiment:bold"
      ]
     }
    ],
@@ -25459,6 +25461,17 @@
      ]
     },
     {
+     "source": "pigeon-the-bomb.md",
+     "score": 0.3409,
+     "shared": [
+      "concept:hook",
+      "concept:sampling",
+      "genre:electronic",
+      "genre:hip-hop",
+      "instrument:vocals"
+     ]
+    },
+    {
      "source": "dj-s-k-t-must-be-a-reason-radio-edit.md",
      "score": 0.26,
      "shared": [
@@ -25467,16 +25480,6 @@
       "genre:electronic",
       "instrument:vocals",
       "sentiment:uplifting"
-     ]
-    },
-    {
-     "source": "chet-faker-talk-is-cheap.md",
-     "score": 0.2553,
-     "shared": [
-      "concept:hook",
-      "genre:electronic",
-      "genre:soul",
-      "instrument:vocals"
      ]
     }
    ],
@@ -25856,13 +25859,24 @@
    "youtube": null,
    "thumbnail": "images/derived/thumbnails/mickey-avalon-eli-ultra-violence-480.webp",
    "thumbnail_local": true,
-   "words": 757,
+   "words": 763,
    "extra": {
     "album": "Speak of the Devil",
     "release_year": "2020",
     "country": "US"
    },
    "related": [
+    {
+     "source": "pigeon-the-bomb.md",
+     "score": 0.4444,
+     "shared": [
+      "concept:hook",
+      "genre:alternative",
+      "genre:electronic",
+      "genre:hip-hop",
+      "instrument:vocals"
+     ]
+    },
     {
      "source": "lipka_no-more-beer.md",
      "score": 0.4167,
@@ -25892,17 +25906,6 @@
       "concept:hook",
       "genre:alternative",
       "genre:hip-hop",
-      "instrument:vocals",
-      "sentiment:intense"
-     ]
-    },
-    {
-     "source": "awolnation-sail.md",
-     "score": 0.3333,
-     "shared": [
-      "concept:hook",
-      "genre:alternative",
-      "genre:electronic",
       "instrument:vocals",
       "sentiment:intense"
      ]
@@ -26073,7 +26076,7 @@
    "youtube": "lJwarj6LErI",
    "thumbnail": "images/derived/thumbnails/eli-faster-you-fall-480.webp",
    "thumbnail_local": true,
-   "words": 726,
+   "words": 734,
    "extra": {
     "album": "One Popular Guy",
     "release_year": "2012",
@@ -26284,7 +26287,7 @@
    "youtube": "XZRJeOvT2xI",
    "thumbnail": "images/derived/thumbnails/moisture-headman-480.webp",
    "thumbnail_local": true,
-   "words": 609,
+   "words": 608,
    "extra": {
     "album": "ON (Deluxe Edition)",
     "publisher": "Relish",
@@ -26396,7 +26399,7 @@
    "youtube": "rJyyP8lkneg",
    "thumbnail": "images/derived/thumbnails/bonaparte-acid-pauli-not-today-480.webp",
    "thumbnail_local": true,
-   "words": 782,
+   "words": 791,
    "extra": {
     "album": "Good Morning / Not Today",
     "release_year": "2020",
@@ -26828,7 +26831,7 @@
    "youtube": "hcttROHKCNE",
    "thumbnail": "images/derived/thumbnails/car-idle-eyes-480.webp",
    "thumbnail_local": true,
-   "words": 586,
+   "words": 581,
    "extra": {
     "publisher": "Kill The DJ",
     "release_year": "2014"
@@ -27162,7 +27165,7 @@
    "youtube": "2dmRpoG2hao",
    "thumbnail": "images/derived/thumbnails/northern-lite-trusting-blind-480.webp",
    "thumbnail_local": true,
-   "words": 679,
+   "words": 684,
    "extra": {
     "publisher": "1st Decade Records",
     "release_year": "2001",
@@ -27264,7 +27267,7 @@
    "youtube": "zrCrEje1lz4",
    "thumbnail": "https://i.ytimg.com/vi/zrCrEje1lz4/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 538,
+   "words": 543,
    "extra": {
     "album": "Mafia Klvb",
     "publisher": "Greatest Hits International",
@@ -27345,7 +27348,7 @@
    "track": "Elevator",
    "inferred": "front matter: extra.artist",
    "date": "2024-10-11",
-   "description": "A laid-back fusion of dub, reggae and deep electronic beats from East Germany: JPattersson's 2016 Elevator, the title track of an EP that also carries its own dub version and two remixes.",
+   "description": "A laid-back fusion of dub, reggae and deep electronic beats from East Germany: JPattersson's 2016 Elevator, the opening track of the EP Rühn, which also carries its own dub version and two remixes.",
    "facets": {
     "genre": [
      "dub",
@@ -27368,7 +27371,7 @@
    "youtube": "zvf2J2Jh5aw",
    "thumbnail": "https://i.ytimg.com/vi/zvf2J2Jh5aw/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 574,
+   "words": 582,
    "extra": {
     "album": "Rühn",
     "publisher": "Acker Records",
@@ -27434,7 +27437,7 @@
    "i18n": {
     "cs": {
      "title": "JPattersson - Elevator",
-     "description": "Pohodová fúze dubu, reggae a hlubokých elektronických beatů z východního Německa: Elevator od JPatterssona z roku 2016, titulní skladba EP, na kterém je i její vlastní dubová verze a dva remixy.",
+     "description": "Pohodová fúze dubu, reggae a hlubokých elektronických beatů z východního Německa: Elevator od JPatterssona z roku 2016, úvodní skladba EP Rühn, na kterém je i její vlastní dubová verze a dva remixy.",
      "path": "cs/jpatterson-elevator/"
     }
    }
@@ -27466,7 +27469,7 @@
    "youtube": null,
    "thumbnail": "images/derived/thumbnails/inigo-montoya-es-480.webp",
    "thumbnail_local": true,
-   "words": 926,
+   "words": 934,
    "extra": {
     "release_year": "2020",
     "country": "FR"
@@ -28749,7 +28752,7 @@
    "track": "Cooler Than Me",
    "inferred": "front matter: extra.artist",
    "date": "2024-10-08",
-   "description": "The Lithuanian producer Lucky Luke's 2019 electro-house reworking of Mike Posner's 2010 debut hit, released on Columbia/B1: a song about feeling snubbed, turned into a laid-back club anthem that became a radio hit in France a year later.",
+   "description": "The Lithuanian producer Lucky Luke's 2019 deep house reworking of Mike Posner's 2010 debut hit, released on Columbia/B1: a song about feeling snubbed, turned into a laid-back club anthem that became a radio hit in France a year later.",
    "facets": {
     "genre": [
      "deep house",
@@ -28842,7 +28845,7 @@
    "i18n": {
     "cs": {
      "title": "Lucky Luke - Cooler Than Me",
-     "description": "Electro-house přepracování debutového hitu Mika Posnera z roku 2010 od litevského producenta Lucky Luke z roku 2019, vydané u Columbia/B1: píseň o pocitu odstrčení proměněná v uvolněnou klubovou hymnu, která se o rok později stala rádiovým hitem ve Francii.",
+     "description": "Deephousové přepracování debutového hitu Mika Posnera z roku 2010 od litevského producenta Lucky Luke z roku 2019, vydané u Columbia/B1: píseň o pocitu odstrčení proměněná v uvolněnou klubovou hymnu, která se o rok později stala rádiovým hitem ve Francii.",
      "path": "cs/lucky-luke-cooler-than-me/"
     }
    }
@@ -30516,7 +30519,7 @@
    "youtube": "uE9HBMnHpb4",
    "thumbnail": "https://i.ytimg.com/vi/uE9HBMnHpb4/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 567,
+   "words": 565,
    "extra": {
     "album": "Discolight",
     "publisher": "Greatest Hits International",
@@ -31041,7 +31044,7 @@
    "youtube": "dUgzGxYmCwg",
    "thumbnail": "images/derived/thumbnails/waldeck-zeebee-midsummer-night-blues-480.webp",
    "thumbnail_local": true,
-   "words": 782,
+   "words": 784,
    "extra": {
     "album": "Ballroom Stories",
     "publisher": "Dope Noir Records",
@@ -31254,7 +31257,7 @@
    "youtube": "UbQgXeY_zi4",
    "thumbnail": "https://i.ytimg.com/vi/UbQgXeY_zi4/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 676,
+   "words": 682,
    "extra": {
     "album": "<|°_°|> (Robot Face)",
     "publisher": "Café de la Danse / Wagram Music",
@@ -31757,11 +31760,13 @@
      ]
     },
     {
-     "source": "pigeon-the-bomb.md",
-     "score": 0.2174,
+     "source": "pomplamoose-harder-better-faster-stronger.md",
+     "score": 0.1887,
      "shared": [
-      "genre:alternative",
-      "genre:indie rock",
+      "concept:music video",
+      "concept:vocal harmony",
+      "instrument:drums",
+      "instrument:guitar",
       "sentiment:energetic"
      ]
     }
@@ -32519,15 +32524,14 @@
      ]
     },
     {
-     "source": "caravan-palace-lone-digger.md",
-     "score": 0.28,
+     "source": "pigeon-the-bomb.md",
+     "score": 0.2955,
      "shared": [
       "concept:hook",
-      "concept:music video",
       "genre:electronic",
-      "instrument:synthesizer",
-      "instrument:vocals",
-      "sentiment:playful"
+      "genre:hip-hop",
+      "instrument:sampler",
+      "instrument:vocals"
      ]
     }
    ],
@@ -36203,6 +36207,17 @@
    },
    "related": [
     {
+     "source": "pigeon-the-bomb.md",
+     "score": 0.3256,
+     "shared": [
+      "concept:sampling",
+      "genre:electronic",
+      "genre:hip-hop",
+      "instrument:vocals",
+      "sentiment:energetic"
+     ]
+    },
+    {
      "source": "tum-rakak-deluxe.md",
      "score": 0.2708,
      "shared": [
@@ -36233,16 +36248,6 @@
       "instrument:vocals",
       "sentiment:energetic",
       "sentiment:nostalgic"
-     ]
-    },
-    {
-     "source": "c2c-feat-pigeon-john-because-of-you.md",
-     "score": 0.2308,
-     "shared": [
-      "concept:sampling",
-      "genre:electronic",
-      "genre:hip-hop",
-      "instrument:vocals"
      ]
     }
    ],
@@ -36623,7 +36628,7 @@
    "youtube": "9Ihx9Wm5bN4",
    "thumbnail": "https://i.ytimg.com/vi/9Ihx9Wm5bN4/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 590,
+   "words": 587,
    "extra": {
     "album": "Lipka",
     "publisher": "Evidence Music",
@@ -36815,9 +36820,9 @@
   {
    "source": "chris-lorenzo-and-the-streets_take-me-as-i-am.md",
    "path": "chris-lorenzo-and-the-streets-take-me-as-i-am/",
-   "title": "Chris Lorenzo & The Streets - Take Me as I Am",
+   "title": "Chris Lorenzo & The Streets - Take Me As I Am",
    "artist": "Chris Lorenzo & The Streets",
-   "track": "Take Me as I Am",
+   "track": "Take Me As I Am",
    "inferred": "title: artist - track",
    "date": "2024-10-01",
    "description": "Birmingham bass producer Chris Lorenzo and The Streets' Mike Skinner meet on a fast, ferocious slice of drum and bass: tight drums, tearing bass synths and Skinner's dry, conversational vocal.",
@@ -36847,7 +36852,7 @@
    "youtube": "uNWXwgYuKL8",
    "thumbnail": "https://i.ytimg.com/vi/uNWXwgYuKL8/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 594,
+   "words": 592,
    "extra": {
     "album": "Take Me As I Am",
     "release_year": "2019",
@@ -36914,7 +36919,7 @@
    ],
    "i18n": {
     "cs": {
-     "title": "Chris Lorenzo & The Streets - Take Me as I Am",
+     "title": "Chris Lorenzo & The Streets - Take Me As I Am",
      "description": "Basový producent z Birminghamu Chris Lorenzo a Mike Skinner z The Streets se potkávají v rychlém, zuřivém kousku drum and bass: sevřené bicí, trhající basové syntezátory a Skinnerův suchý, hovorový zpěv.",
      "path": "cs/chris-lorenzo-and-the-streets-take-me-as-i-am/"
     }

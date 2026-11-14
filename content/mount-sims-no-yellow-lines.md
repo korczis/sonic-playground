@@ -1,7 +1,7 @@
 +++
 title = "Mount Sims - No Yellow Lines"
 date = "2026-11-12"
-description = "A night drive with the headlights off: grinding analogue bass, clipped drum machines and Mount Sims' cool, menacing croon from the darker side of electroclash."
+description = "A night drive with the headlights off: grinding analogue bass, clipped drum machines and Mount Sims's cool, menacing croon from the darker side of electroclash."
 
 [taxonomies]
 genre = ["electroclash", "electronic", "post-punk"]
@@ -58,6 +58,13 @@ title = "No Yellow Lines (recording)"
 url = "https://musicbrainz.org/recording/df8f2c4d-3657-4632-a615-c42ed79241de"
 publisher = "MusicBrainz"
 kind = "database"
+
+[[extra.sources]]
+title = "Mount Sims - Wild Light (LP, GIGOLO 139)"
+url = "https://www.discogs.com/release/411706"
+publisher = "Discogs"
+kind = "database"
+year = "2004"
 +++
 
 ## Genre and Mood
@@ -104,7 +111,7 @@ All three belong to the toolkit of {{ <concept_link name="electroclash" /> }}, t
 
 ## Artistic Context
 
-Mount Sims is the alias of Matthew Sims, an American producer and vocalist born in Milwaukee and based in Berlin, whose 2002 debut UltraSex placed him in the electroclash movement around DJ Hell's International DeeJay Gigolo label; the Ink 19 review calls Hell his mentor. No Yellow Lines first appeared in November 2003 on the label compilation *International DeeJay Gigolos CD Seven*, and then on Wild Light, the follow-up album released in 2005, which the same review describes as moving from club grooves to the back alleys: a post-punk, new-wave, rock-tinged record. It trades the camp and glitter of the scene for something closer to post-punk and industrial grit.
+Mount Sims is the alias of Matthew Sims, an American producer and vocalist born in Milwaukee and based in Berlin, whose 2002 debut UltraSex placed him in the electroclash movement around DJ Hell's International DeeJay Gigolo label; the Ink 19 review calls Hell his mentor. No Yellow Lines first appeared in November 2003 on the label compilation *International DeeJay Gigolos CD Seven*, and then on Wild Light, the follow-up album first released on vinyl in 2004 and on CD in February 2005, which the same review describes as moving from club grooves to the back alleys: a post-punk, new-wave, rock-tinged record. It trades the camp and glitter of the scene for something closer to post-punk and industrial grit.
 
 ## Impact and Reception
 

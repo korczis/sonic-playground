@@ -32,7 +32,7 @@ level = "introductory"
 objectives = [
   "Describe what post-punk brings to electronic music: tension, darkness and detached vocals over machine rhythm.",
   "Trace an artist's path from early-2000s electroclash to a darker, heavier sound.",
-  "Explain how a reissued album with a new track list can become a new work.",
+  "Explain how a companion album that shares some songs with an earlier one can still be a new work.",
 ]
 listen_for = [
   { part = "the intro", what = "A hard, steady pattern and a growling synth setting the tone at once: no warm-up, just intent." },
@@ -42,7 +42,7 @@ listen_for = [
 ]
 questions = [
   "Electroclash was known for irony. Is there any irony left in Hellbent, or has it been replaced by something else?",
-  "Happily Ever After...Again kept some songs from the 2008 album and added others, including this one. When does a reissue become a new album?",
+  "Happily Ever After...Again kept some songs from the 2008 album and added others, including this one. When does a companion release become an album of its own?",
   "What makes a song sound 'post-punk' even when it is made mostly with electronic instruments?",
 ]
 

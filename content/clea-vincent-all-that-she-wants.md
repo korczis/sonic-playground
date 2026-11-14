@@ -1,5 +1,5 @@
 +++
-title = "Clea Vincent - All that she wants"
+title = "Cléa Vincent - All That She Wants"
 date = "2026-11-12"
 description = "Cléa Vincent turns Ace of Base's 1992 hit into breezy, homespun French synth-pop, trading its reggae-pop strut for a dreamy, lo-fi groove closer to hip-hop and R&B."
 
@@ -67,7 +67,7 @@ kind = "encyclopedia"
 
 ## Genre and Mood
 
-**Cléa Vincent** takes on **All that she wants**, the Ace of Base hit, and turns it into a homespun cover of breezy French synth-pop. It is playful and dreamy, steeped in nostalgia for early-nineties radio but delivered with an indie, bedroom-pop lightness that makes it feel brand new.
+**Cléa Vincent** takes on **All That She Wants**, the Ace of Base hit, and turns it into a homespun cover of breezy French synth-pop. It is playful and dreamy, steeped in nostalgia for early-nineties radio but delivered with an indie, bedroom-pop lightness that makes it feel brand new.
 
 ## Song Summary
 

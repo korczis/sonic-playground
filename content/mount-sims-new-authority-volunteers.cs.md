@@ -10,7 +10,7 @@ concept = ["post-punk", "electroclash"]
 instrument = ["vocals", "guitar"]
 
 [extra.translation]
-of = "cdfe2edfb998"
+of = "402838b8ffeb"
 
 [extra]
 connections = [
@@ -59,7 +59,7 @@ Píseň utne stejně náhle, jako začala, a neklid zůstane viset ve vzduchu.
 
 ## Pojmy v centru pozornosti
 
-New Authority Volunteers patří k pozdnímu {{ <concept_link name="post-punk" text="post-punku" lang="cs" /> }}, tradici, která navázala na punk chladnější, experimentálnější hudbou: výrazný rytmus, napjaté kytary, odtažité vokály a temná témata. Mount Sims k ní dospěl postupně; už jeho album Wild Light z roku 2005 čerpalo z darkwave a post-punku a v některých písních na něm hrál na baskytaru David J z Bauhaus, a nahrávky, které následovaly, zašly ještě dál.
+New Authority Volunteers patří k pozdnímu {{ <concept_link name="post-punk" text="post-punku" lang="cs" /> }}, tradici, která navázala na punk chladnější, experimentálnější hudbou: výrazný rytmus, napjaté kytary, odtažité vokály a temná témata. Mount Sims k ní dospěl postupně; už jeho album Wild Light z roku 2004 čerpalo z darkwave a post-punku a v některých písních na něm hrál na baskytaru David J z Bauhaus, a nahrávky, které následovaly, zašly ještě dál.
 
 Zajímavé na písni je to, čím není. Mount Sims se proslavil v {{ <concept_link name="electroclash" text="electroclashi" lang="cs" /> }}, scéně, která oživila electro 80. let s chladným, ironickým ostřím, a jeho debut UltraSex u International DeeJay Gigolo byl jednou z jejích nahrávek. Chladný hlas je tu stejný, ale lesk je pryč; poslouchejte, jak přednes, který nad syntezátory zněl hravě, zní nad kytarami výhrůžně.
 

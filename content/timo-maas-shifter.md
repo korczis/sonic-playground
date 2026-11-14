@@ -98,7 +98,7 @@ The track strips back toward its core elements, bringing the energy down for the
 
 The credit "featuring MC Chickaboo" makes Shifter a lesson in the {{ <concept_link name="featured artist" /> }} in dance music. A producer's track becomes a single when a vocalist joins it; here the guest is an MC, whose rhythmic delivery comes from club culture rather than from pop singing. Loud is full of such pairings: Kelis sings on "Help Me", Finley Quaye appears on "Caravan".
 
-Wikipedia lists {{ <concept_link name="breakbeat" /> }} among the album's genres. A breakbeat replaces the even, four-to-the-floor kick of house with syncopated drum patterns descended from funk breaks; it was the sound of British big beat and of DJs who, like Maas, moved between house and breaks. Compare the breakbeat energy of {{ <track_link source="adam-freeland-do-you.md" /> }}.
+Wikipedia lists {{ <concept_link name="breakbeat" /> }} among the album's genres. A breakbeat replaces the even, four-on-the-floor kick of house with syncopated drum patterns descended from funk breaks; it was the sound of British big beat and of DJs who, like Maas, moved between house and breaks. Compare the breakbeat energy of {{ <track_link source="adam-freeland-do-you.md" /> }}.
 
 ## Artistic Context
 

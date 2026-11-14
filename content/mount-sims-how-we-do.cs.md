@@ -10,7 +10,7 @@ concept = ["electroclash", "minor key", "synthesizer"]
 instrument = ["synthesizer", "drum machine", "vocals"]
 
 [extra.translation]
-of = "06a89726a34e"
+of = "048d06660e04"
 
 [extra]
 connections = [
@@ -73,4 +73,4 @@ Místo kapely tvoří nástrojové obsazení {{ <concept_link name="synthesizer"
 
 ## Umělecký kontext
 
-Mount Sims je Matthew Sims, rodák z Milwaukee, který později žil v Berlíně, DJ, performer a producent, jenž dříve hrál v americké alternativní rockové kapele Citizen King. *UltraSex* vyšlo 3. září 2002 u International DeeJay Gigolo Records v Evropě a u Emperor Norton Records v USA; „How We Do“ je 5. skladbou evropské edice a úvodní skladbou americké. Jeho temnější druhé album *Wild Light* následovalo u Gigola v roce 2005 a později spolupracoval s The Knife a Planningtorock na opeře *Tomorrow, In a Year*.
+Mount Sims je Matthew Sims, rodák z Milwaukee, který později žil v Berlíně, DJ, performer a producent, jenž dříve hrál v americké alternativní rockové kapele Citizen King. *UltraSex* vyšlo 3. září 2002 u International DeeJay Gigolo Records v Evropě a u Emperor Norton Records v USA; „How We Do“ je 5. skladbou evropské edice a úvodní skladbou americké. Jeho temnější druhé album *Wild Light* následovalo u Gigola v roce 2004 a později spolupracoval s The Knife a Planningtorock na opeře *Tomorrow, In a Year*.

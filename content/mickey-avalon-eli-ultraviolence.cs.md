@@ -10,7 +10,7 @@ concept = ["hook", "call and response"]
 instrument = ["vocals", "guitar"]
 
 [extra.translation]
-of = "33d6b8b429f6"
+of = "bcace3297fb0"
 
 [extra]
 connections = [
@@ -46,23 +46,23 @@ Píseň začíná refrénem, myšlenkou, že nic na tomhle světě není zadarmo
 
 ## Rozbor zvuku
 
-### Úvod: uhrančivá atmosféra
+### Úvod: nejdřív refrén
 
 Skladba začíná refrénem nad beatem vedeným kytarou a ponaučení tak předkládá dřív než příběh.
 
-### První sloka: syrový a drsný text
+### První sloka: Pete a Jimmy vyrážejí
 
 Avalon vypráví první kapitolu, cinkavá kytara visí za ním, zatímco Pete a Jimmy vyrážejí pick-upem na cestu.
 
-### Refrén: výbušná energie
+### Refrén: verš, který si zapamatuje každý
 
 Refrén se vrací, krátký a opakovaný, verš, který si zapamatuje každý.
 
-### Most: přemýšlivá intenzita
+### Otázky a odpovědi: životy plynoucí kolem
 
 Pasáž otázek a odpovědí příběh zpomalí: každý verš zazní a pak se ozvěnou vrátí, chvíle zamyšlení nad životy, které jako by plynuly kolem.
 
-### Poslední refrén: chaotické vyvrcholení
+### Poslední refrén: beze změny
 
 Po poslední kapitole, útěku, se refrén vrátí ještě jednou, beze změny, jako by příběh nikoho nic nenaučil.
 

@@ -69,7 +69,11 @@ The band went on to a long career: albums from *Reach the Sun* in 2004 to *Unise
 
 ## About the Track: "Trusting Blind"
 
-**Trusting Blind** was among the band's first releases, issued in 2001 on 1st Decade Records alongside a remix package and the singles "Ways Ain't Working" and "Treat Me Better"; it was later included on their 2004 album *Reach the Sun*. It catches Northern Lite at the turning point between their techno roots and the song-based electronic pop of their later albums.
+**Trusting Blind** was among the band's first releases, issued in 2001 on 1st Decade Records alongside a remix package and the singles "Ways Ain't Working" and "Treat Me Better"; it was later included on their 2004 album *Reach the Sun*.
+
+## Song Summary
+
+The track catches Northern Lite at the turning point between their techno roots and the song-based electronic pop of their later albums. It rests on a steady bassline that anchors layers of ambient synths and melodies, evolving from a calm, reflective opening into a more intense, rhythmic pulse.
 
 ### Symbolism in "Trusting Blind"
 
@@ -77,31 +81,27 @@ The title's idea of trust without guarantees fits a track that asks for patience
 
 ### Mood and Atmosphere
 
-The mood is **introspective** and quietly uplifting. The track begins with soft, otherworldly pads; as the rhythm develops, a deep bassline and ethereal synths create an atmosphere that is haunting and hopeful at once, balancing tension and release.
-
-## Song Summary
-
-The track rests on a steady bassline that anchors layers of ambient synths and melodies, evolving from a calm, reflective opening into a more intense, rhythmic pulse.
+The mood is **introspective** and quietly uplifting. The soft, otherworldly pads of the opening, then the deep bassline and ethereal synths that arrive as the rhythm develops, create an atmosphere that is haunting and hopeful at once, balancing tension and release.
 
 ## Musical Composition
 
-### Intro: Contemplative Soundscapes
+### Intro: Ambient Pads
 
 The song begins with soft, ambient pads, inviting the listener into a reflective space.
 
-### First Build: Hypnotic Groove
+### First Build: The Bassline Enters
 
 As the bassline kicks in, the rhythm becomes more pronounced, and the groove pulls the track forward.
 
-### Midsection: Layers of Complexity
+### Midsection: Layered Synths
 
 In the heart of the song, layered synths and melodies create depth over a driving beat.
 
-### Bridge: Calm and Reflection
+### Breakdown: A Brief Calm
 
 A brief moment of calm lets the ambient textures take over before the rhythm returns.
 
-### Final Build: Driving Rhythm and Ethereal Conclusion
+### Final Build: The Most Intense Passage and the Close
 
 As the track nears its end, the rhythm and melodies build to its most intense passage before an ethereal close.
 

@@ -1,5 +1,5 @@
 +++
-title = "Chris Lorenzo & The Streets - Take Me as I Am"
+title = "Chris Lorenzo & The Streets - Take Me As I Am"
 date = "2024-10-01"
 description = "Basový producent z Birminghamu Chris Lorenzo a Mike Skinner z The Streets se potkávají v rychlém, zuřivém kousku drum and bass: sevřené bicí, trhající basové syntezátory a Skinnerův suchý, hovorový zpěv."
 
@@ -10,7 +10,7 @@ concept = ["breakbeat", "bassline"]
 instrument = ["vocals", "synthesizer", "drums"]
 
 [extra.translation]
-of = "d9e68fc3d1a6"
+of = "c39be1d83a57"
 
 [extra]
 connections = [
@@ -31,31 +31,31 @@ questions = ["Skinnerův hlas je uvolněný, zatímco beat je zběsilý. Působ�
 
 ## Žánr a nálada
 
-**Take Me as I Am** od **Chris Lorenzo & The Streets** je rychlý, drsný kus britské klubové hudby: v jádru drum and bass, s basově těžkou suverénností scén Midlands, ze kterých Lorenzo vzešel. Nálada je spíš vzdorná než měkká, odmítnutí být kýmkoli jiným než sebou.
+**Take Me As I Am** od **Chris Lorenzo & The Streets** je rychlý, drsný kus britské klubové hudby: v jádru drum and bass, s basově těžkou suverénností scén Midlands, ze kterých Lorenzo vzešel. Nálada je spíš vzdorná než měkká, odmítnutí být kýmkoli jiným než sebou.
 
 ## O skladbě
 
 Chris Lorenzo staví skladbu ze sevřených bicích a basových syntezátorů, které podle slov Dancing Astronaut trhají reproduktory. Nad tím Mike Skinner z The Streets podává svůj suchý, ledabylý zpěv, hovorový a neuhlazený, takže naléhavost dodává beat a charakter hlas. Nejvíc utkví právě ten kontrast: zběsilý rytmus pod mužem, který zní, jako by k vám mluvil přes stůl.
 
-## Rozbor textu
+## Hudební rozbor
 
-### Sloka 1: přijetí autenticity
+### Sloka 1: napůl mluvená
 
 Skinner začíná ve svém známém rejstříku, napůl mluveném, spíš pozorování než výstup, a beat pod ním už jede plnou rychlostí.
 
-### Refrén: pozvánka k opravdovosti
+### Refrén: název jako hook
 
 Hookem je název: krátká fráze opakovaná jako požadavek být přijat celý, jediná chvíle, kdy se zpěv stane něčím, co můžete zpívat s ním.
 
-### Sloka 2: jak zvládat životní výzvy
+### Sloka 2: autobiografická váha
 
 Druhá sloka drží stejný prostý, přímý tón. Přišla pár týdnů poté, co Skinner časopisu Q řekl, jak působení v The Streets na vrcholu jejich slávy ovlivnilo jeho duševní pohodu, což dodává prosbě v názvu autobiografickou váhu.
 
-### Most: síla ve společenství
+### Přijetí: nahrávka pro scénu
 
 Skladbu při vydání přivítala komunita osobností britské klubové a grimeové scény, od Skepty po DJ Grindaha z Kurupt FM, a zní jako nahrávka udělaná pro tohle publikum.
 
-### Poslední refrén: výzva k činu
+### Poslední refrén: požadavek se opakuje
 
 Poslední návrat názvu dopadá nad stejně neúprosným beatem; nic se nevyřeší, požadavek se prostě opakuje.
 

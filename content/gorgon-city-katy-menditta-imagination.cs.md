@@ -10,7 +10,7 @@ concept = ["house groove", "hook", "remix"]
 instrument = ["vocals", "synthesizer", "drum machine"]
 
 [extra.translation]
-of = "07330aeba136"
+of = "ff11ae0ffc4d"
 
 [extra]
 connections = [
@@ -71,7 +71,7 @@ Prvky odpadávají jeden po druhém, až zbudou jen bicí a doznívající konec
 
 ## Pojmy v centru pozornosti
 
-{{ <concept_link name="house groove" text="House groove" lang="cs" /> }} se drží na 122 BPM: rovnoměrný kopák na každou dobu (four-to-the-floor), ostré hi-haty s nádechem garage a basa, která poskakuje mezi dobami. Je to klasické tempo vokálního house, dost rychlé na tanec a dost pomalé na to, aby nad ním zpěvák mohl přirozeně frázovat. Poslouchejte, jak málo se bicí mezi slokou a refrénem mění; vzlet přichází z akordů a hlasu, ne z beatu.
+{{ <concept_link name="house groove" text="House groove" lang="cs" /> }} se drží na 122 BPM: rovnoměrný kopák na každou dobu (four-on-the-floor), ostré hi-haty s nádechem garage a basa, která poskakuje mezi dobami. Je to klasické tempo vokálního house, dost rychlé na tanec a dost pomalé na to, aby nad ním zpěvák mohl přirozeně frázovat. Poslouchejte, jak málo se bicí mezi slokou a refrénem mění; vzlet přichází z akordů a hlasu, ne z beatu.
 
 Skladba je postavená kolem {{ <concept_link name="hook" text="hooku" lang="cs" /> }}, ne kolem dropu. Gorgon City ji napsali s Mendittou, Emeli Sandé a producentským duem Mojam, tedy Mustafou Omerem a Jamesem Murrayem, a chová se jako píseň: měkký, lehce zadýchaný verš refrénu se vrací jako myšlenka, které se nemůžete zbavit, a aranžmá mu pokaždé udělá místo.
 

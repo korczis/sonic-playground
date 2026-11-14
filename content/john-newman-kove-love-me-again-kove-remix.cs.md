@@ -10,7 +10,7 @@ concept = ["remix", "breakbeat", "chord progression"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "38b2d7b44877"
+of = "41f8b47bc6eb"
 
 [extra]
 connections = [
@@ -24,7 +24,7 @@ listen_for = [
   { part = "drop", what = "Rychlé breakbeaty a hluboká basa přicházejí pod vokálním hookem; to je chvíle, kdy se z písně stává drum and bass." },
   { part = "breakdown", what = "Bicí odpadnou a Newmanův syrový hlas nese akordy sám; prosvítá soul originálu." },
 ]
-questions = ["Originál je popová píseň inspirovaná northern soulem. Proč se procítěný hlas k drum and bass tak dobře hodí?", "Akordy písně nikdy nedopadnou na základní akord své stupnice. Jak to nechává prosbu nerozřešenou?", "Je tenhle remix pořád písní Johna Newmana, nebo se stal Koveovou?"]
+questions = ["Originál je popová píseň inspirovaná northern soulem. Proč se procítěný hlas k drum and bass tak dobře hodí?", "Postup nikdy nezahraje F, základní akord svého předznamenání. Jak to nechává prosbu nerozřešenou?", "Je tenhle remix pořád písní Johna Newmana, nebo se stal Koveovou?"]
 +++
 
 ## Žánr a nálada

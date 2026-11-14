@@ -10,7 +10,7 @@ concept = ["melisma", "verse-chorus form"]
 instrument = ["vocals", "trumpet", "keyboards", "drums", "bass"]
 
 [extra.translation]
-of = "21faba42ffbe"
+of = "ecd994cbe8b4"
 
 [extra]
 connections = [
@@ -78,15 +78,15 @@ Karaköy plyne v tempu chůze s poskakujícím pocitem a její příběh je pros
 
 ## Rozbor zvuku
 
-### Úvod: zachycení tepu města
+### Úvod: groove v tempu chůze
 
 Skladba začíná lehkým, poskakujícím groovem v tempu procházky, ne tanečního parketu. Nic není přeplněné; prostor zůstává hlasu.
 
-### Střední část: kulturní fúze
+### Refrén: trubky a zdobené běhy
 
 V refrénu se ke kapele přidávají trubky měkkého tónu a Sciubbin hlas se nad ně zvedá. Její zdobené běhy, několik tónů ohnutých přes jedinou slabiku, jsou nejosobitější barvou skladby.
 
-### Finále: oslava života
+### Závěrečná část: stejné nespěchavé tempo
 
 Poslední část si drží stejné nespěchavé tempo. Skladba nevybuchne; nechá vrchol nést hlas a pak odkráčí.
 

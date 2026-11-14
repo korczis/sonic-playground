@@ -88,7 +88,7 @@ This version of "Moisture" sits between **deep house**, nu-disco and **electroni
 
 ## About the Artists
 
-**Headman** is the alias of Robi Insinna, a producer, DJ and designer from the Zurich electronic scene who founded the label Relish Records. His music blends house, pop, disco and rock and is associated with the nu-disco movement; his debut *It Rough* (2003) and *Catch Me* (2008) came out on the Munich label Gomma, and he has remixed Franz Ferdinand, The Gossip, Roxy Music, Zombie Nation and Tiga. **Luca Santucci** sings on Moisture and wrote its lyrics; Insinna composed, arranged and produced it.
+**Headman** is the alias of Robi Insinna, a producer, DJ and designer from the Zurich electronic scene who founded the label Relish. His music blends house, pop, disco and rock and is associated with the nu-disco movement; his debut *It Rough* (2003) and *Catch Me* (2008) came out on the Munich label Gomma, and he has remixed Franz Ferdinand, The Gossip, Roxy Music, Zombie Nation and Tiga. **Luca Santucci** sings on Moisture and wrote its lyrics; Insinna composed, arranged and produced it.
 
 ## Song Summary
 

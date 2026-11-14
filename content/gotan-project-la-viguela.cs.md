@@ -1,5 +1,5 @@
 +++
-title = "Gotan Project - La vigüela"
+title = "Gotan Project - La Vigüela"
 date = "2026-11-12"
 description = "Bandoneon, kytara a hlas Cristiny Vilallongy plující nad pomalým elektronickým pulzem: La Vigüela je tango Gotan Project, které vyráží do otevřených pamp."
 
@@ -10,7 +10,7 @@ concept = ["groove", "live recording"]
 instrument = ["bandoneon", "guitar", "vocals", "programmed beats"]
 
 [extra.translation]
-of = "b0ed06482905"
+of = "26b3c0923ad2"
 
 [extra]
 connections = [

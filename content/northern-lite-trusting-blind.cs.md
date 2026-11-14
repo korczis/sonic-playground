@@ -10,7 +10,7 @@ concept = ["synthesizer", "bassline", "build-up"]
 instrument = ["synthesizer", "bass"]
 
 [extra.translation]
-of = "069e9af6c3e2"
+of = "d0f4c2d80df0"
 
 [extra]
 connections = [
@@ -39,7 +39,11 @@ Kapela pak měla dlouhou kariéru: alba od *Reach the Sun* z roku 2004 po *Unise
 
 ## O nahrávce: „Trusting Blind“
 
-**Trusting Blind** patřila k prvním vydáním kapely: vyšla v roce 2001 na 1st Decade Records spolu s balíkem remixů a singly „Ways Ain't Working“ a „Treat Me Better“ a později byla zařazena na jejich album *Reach the Sun* z roku 2004. Zachycuje Northern Lite v bodě obratu mezi technovými kořeny a písňovým elektronickým popem jejich pozdějších alb.
+**Trusting Blind** patřila k prvním vydáním kapely: vyšla v roce 2001 na 1st Decade Records spolu s balíkem remixů a singly „Ways Ain't Working“ a „Treat Me Better“ a později byla zařazena na jejich album *Reach the Sun* z roku 2004.
+
+## O skladbě
+
+Skladba zachycuje Northern Lite v bodě obratu mezi technovými kořeny a písňovým elektronickým popem jejich pozdějších alb. Spočívá na stálé basové lince, která ukotvuje vrstvy ambientních syntezátorů a melodií, a vyvíjí se od klidného, přemýšlivého úvodu k intenzivnějšímu, rytmickému pulzu.
 
 ### Symbolika „Trusting Blind“
 
@@ -47,31 +51,27 @@ Myšlenka důvěry bez záruk z názvu sedí ke skladbě, která žádá trpěli
 
 ### Nálada a atmosféra
 
-Nálada je **introspektivní** a tiše povznášející. Skladba začíná měkkými, nadpozemskými plochami; jak se rozvíjí rytmus, hluboká basová linka a éterické syntezátory vytvářejí atmosféru zároveň uhrančivou i nadějnou, která vyvažuje napětí a uvolnění.
-
-## O skladbě
-
-Skladba spočívá na stálé basové lince, která ukotvuje vrstvy ambientních syntezátorů a melodií, a vyvíjí se od klidného, přemýšlivého úvodu k intenzivnějšímu, rytmickému pulzu.
+Nálada je **introspektivní** a tiše povznášející. Měkké, nadpozemské plochy úvodu a pak hluboká basová linka a éterické syntezátory, které přicházejí s rozvojem rytmu, vytvářejí atmosféru zároveň uhrančivou i nadějnou, která vyvažuje napětí a uvolnění.
 
 ## Hudební kompozice
 
-### Úvod: zamyšlené zvukové krajiny
+### Úvod: ambientní plochy
 
 Píseň začíná měkkými ambientními plochami, které posluchače zvou do přemýšlivého prostoru.
 
-### První gradace: hypnotický groove
+### První gradace: nástup basové linky
 
 Jakmile nastoupí basová linka, rytmus se zvýrazní a groove táhne skladbu kupředu.
 
-### Prostřední část: vrstvy složitosti
+### Prostřední část: vrstvené syntezátory
 
 V srdci písně vytvářejí vrstvené syntezátory a melodie hloubku nad hnaným beatem.
 
-### Most: klid a zamyšlení
+### Breakdown: krátký klid
 
 Krátká chvíle klidu nechá vládnout ambientním texturám, než se rytmus vrátí.
 
-### Závěrečná gradace: hnaný rytmus a éterické zakončení
+### Závěrečná gradace: nejintenzivnější pasáž a závěr
 
 Jak se skladba blíží ke konci, rytmus a melodie gradují k její nejintenzivnější pasáži, než přijde éterické zakončení.
 

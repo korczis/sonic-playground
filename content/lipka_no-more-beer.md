@@ -80,27 +80,27 @@ The premise is simple and very funny: a voice addresses the party people, apolog
 
 ## Lyrics Breakdown
 
-### Intro: A Toast to the Night
+### Intro: Walking into the Party
 
 The track opens with the music already playing, as if we have walked into the party, before the first voice interrupts it.
 
-### Verse 1: Reflecting on Good Times
+### Verse 1: The Polite Interruption
 
 The voice greets the party people, admits they are having fun and asks the DJ to stop the music for a moment. The comedy is in the politeness.
 
-### Chorus: The Bittersweet Goodbye
+### Chorus: The Announcement
 
 The announcement arrives and becomes the hook: the beer is running out, repeated until the line is both refrain and punchline.
 
-### Verse 2: Embracing New Beginnings
+### Verse 2: Questions and Answers
 
 Two voices trade questions and answers about where the beer might still be, a little comic scene in the middle of the song.
 
-### Bridge: A Moment of Reflection
+### Reprise: The Party Interrupted Again
 
 The opening address returns, the party interrupted once again, as if the bad news needs repeating for those who did not hear it.
 
-### Final Chorus: Celebration of Life
+### Final Chorus: Still Running Out
 
 The refrain closes the song, the party still going and the beer still running out.
 

@@ -10,11 +10,11 @@ concept = ["electroclash", "loop"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "0c0e98cf7b20"
+of = "118f9d1bc8b3"
 
 [extra]
 connections = [
-  { source = "future-forward-society-mount-sims-the-creep.md", why = "Pozdější spolupráce týchž partnerů u Kompute Musik, vydaná v roce 2008 pod jménem Future Forward Society." },
+  { source = "future-forward-society-mount-sims-the-creep.md", why = "Pozdější singl Mounta Simse u Kompute Musik, vydaný v roce 2008 a připsaný Future Forward Society." },
   { source = "mount-sims-good-service.md", why = "Mount Sims ve svých vlastních electroclashových letech: chladný, odtažitý hlas, který přináší i do této spolupráce." },
 ]
 
@@ -72,7 +72,7 @@ Skladba je studií toho, co umí {{ <concept_link name="loop" lang="cs" /> }}. N
 
 ## Umělecký kontext
 
-Mount Sims je umělecké jméno Matthewa Simse, amerického DJe, producenta a performera z Milwaukee, později usazeného v Berlíně, který zpíval v alternativní rockové kapele Citizen King, než se obrátil k elektronické hudbě. Po albech UltraSex a temnějším Wild Light (2005), obou u Gigolo, se posunul k post-punku a dark wave. „Time for Livin“ nese copyright Kompute Musik z roku 2006 a na digitální služby se dostala v roce 2010; o Future Forward se kromě jeho vydání s ním mnoho zdokumentovaného neví, mezi ta vydání patří i The Creep z roku 2008, připsaná Future Forward Society.
+Mount Sims je umělecké jméno Matthewa Simse, amerického DJe, producenta a performera z Milwaukee, později usazeného v Berlíně, který zpíval v alternativní rockové kapele Citizen King, než se obrátil k elektronické hudbě. Po albech UltraSex a temnějším Wild Light (2004), obou u Gigolo, se posunul k post-punku a dark wave. „Time for Livin“ nese copyright Kompute Musik z roku 2006 a na digitální služby se dostala v roce 2010; o Future Forward se kromě jeho vydání s ním mnoho zdokumentovaného neví, mezi ta vydání patří i The Creep z roku 2008, připsaná Future Forward Society.
 
 ## Ohlas a dopad
 

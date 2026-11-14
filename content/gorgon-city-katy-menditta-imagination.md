@@ -107,7 +107,7 @@ The elements peel away one by one until only drums and a fading vocal tail remai
 
 ## Concepts in Focus
 
-The {{ <concept_link name="house groove" /> }} sits at 122 BPM: a steady four-to-the-floor kick, crisp, garage-tinged hats and a bass that bounces between the beats. It is the classic tempo of vocal house, fast enough to dance to and slow enough for a singer to phrase naturally over it. Listen to how the drums barely change from verse to chorus; the lift comes from the chords and the voice, not from the beat.
+The {{ <concept_link name="house groove" /> }} sits at 122 BPM: a steady four-on-the-floor kick, crisp, garage-tinged hats and a bass that bounces between the beats. It is the classic tempo of vocal house, fast enough to dance to and slow enough for a singer to phrase naturally over it. Listen to how the drums barely change from verse to chorus; the lift comes from the chords and the voice, not from the beat.
 
 The track is built around the {{ <concept_link name="hook" /> }}, not around a drop. Gorgon City wrote it with Menditta, Emeli Sandé and the production duo Mojam, Mustafa Omer and James Murray, and it behaves like a song: the soft, slightly breathy chorus line returns like a thought you cannot shake, and the arrangement makes room for it each time.
 

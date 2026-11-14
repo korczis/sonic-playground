@@ -23,7 +23,7 @@ connections = [
 ]
 
 [extra.credits]
-writers = ["Polo & Pan"]
+writers = ["Paul Armand-Delille", "Alexandre Grynszpan"]
 producers = ["Raphaël Hamburger", "Matthieu Gazier"]
 vocals = ["Armand Penicaut", "Victoria Lafaurie"]
 
@@ -36,7 +36,7 @@ objectives = [
 ]
 listen_for = [
   { part = "the intro", what = "A gentle rhythm and airy textures, inviting rather than insistent, like a breeze moving through foliage." },
-  { part = "the vocals", what = "Two voices, Armand Penicaut and Victoria Lafaurie, soft and breathy, more atmosphere than statement." },
+  { part = "the vocals", what = "Two guest voices, Armand Penicaut and Victoria Lafaurie, soft and breathy, more atmosphere than statement." },
   { part = "the main groove", what = "The swaying, tropical-tinged beat with bright melodic figures bouncing over it, light on its feet and made for moving slowly." },
 ]
 questions = [
@@ -58,6 +58,13 @@ publisher = "Wikipédia"
 kind = "encyclopedia"
 
 [[extra.sources]]
+title = "Polo & Pan - Caravelle"
+url = "https://www.qobuz.com/ie-en/album/caravelle-polo-pan/0060255764514"
+publisher = "Qobuz"
+kind = "database"
+year = "2017"
+
+[[extra.sources]]
 title = "POLO & PAN - Canopée (official video)"
 url = "https://www.youtube.com/watch?v=f5IruTV-LGQ"
 publisher = "Ekler'O'Shock"
@@ -71,7 +78,7 @@ year = "2018"
 
 ## Song Summary
 
-The song is a fantasy of escape into nature, a romantic daydream far from modern life. The Parisian duo builds it from a lazy, swaying groove, soft duet vocals by Armand Penicaut and Victoria Lafaurie and a bright palette of percussive melodies, the mix of house-based electronics, tropical sounds and music from around the world that defines their style.
+The song is a fantasy of escape into nature, a romantic daydream far from modern life. The Parisian duo builds it from a lazy, swaying groove, soft duet vocals by two guest singers, Armand Penicaut and Victoria Lafaurie, and a bright palette of percussive melodies, the mix of house-based electronics, tropical sounds and music from around the world that defines their style.
 
 ## Musical Breakdown
 
@@ -107,7 +114,7 @@ The song also shows how a {{ <concept_link name="music video" /> }} can arrive l
 
 ## Artistic Context
 
-Polo & Pan are the Paris duo of Paul Armand-Delille (Polocorp) and Alexandre Grynszpan (Peter Pan), who met at the Paris bar Le Baron in 2012 and began by mixing other people's songs before making their own. After the EPs Rivolta, Dorothy and Plage Isolée, the Canopée EP of 2016 gave them their first charting song, produced like their other releases with Raphaël Hamburger of Hamburger Records and Matthieu Gazier of Ekler'O'Shock. The song then featured on their debut album Caravelle, released on 19 May 2017 and certified gold in France.
+Polo & Pan are the Paris duo of Paul Armand-Delille (Polocorp) and Alexandre Grynszpan (Peter Pan), who met at the Paris bar Le Baron in 2012 and began by mixing other people's songs before making their own. The two of them are credited as Canopée's composers and lyricists, but neither sings on it: the voices belong to Armand Penicaut and Victoria Lafaurie, not to Paul Armand-Delille. After the EPs Rivolta, Dorothy and Plage Isolée, the Canopée EP of 2016 gave them their first charting song, produced like their other releases with Raphaël Hamburger of Hamburger Records and Matthieu Gazier of Ekler'O'Shock. The song then featured on their debut album Caravelle, released on 19 May 2017 and certified gold in France.
 
 ## Impact and Reception
 

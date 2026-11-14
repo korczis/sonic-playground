@@ -10,7 +10,7 @@ concept = ["verse-chorus form", "hook"]
 instrument = ["vocals", "synthesizer"]
 
 [extra.translation]
-of = "4ff879c2941f"
+of = "5529fce0f239"
 
 [extra]
 connections = [
@@ -47,23 +47,23 @@ Píseň je postavená v klasickém popovém tvaru kolem nekonvenčního vypravě
 
 ## Rozbor zvuku
 
-### Úvod: energický puls
+### Úvod: elektronický puls Acid Pauliho
 
 „Not Today“ začíná elektronickým pulsem Acid Pauliho, groovem, který udá tón dřív, než nastoupí hlas.
 
-### První sloka: podmanivý zpěv
+### První sloka: řada otázek
 
 Jundt podává první sloku jako řadu otázek o tom, kdo škody dopustil, napůl zpívanou a napůl deklamovanou, sebevědomou a sarkastickou spíš než truchlivou.
 
-### Refrén: hymna odolnosti
+### Předrefrén a refrén: odmítnutí
 
 Když předrefrén vrátí posluchači jeho prosbu o záchranu, dopadne refrén: název, opakovaný, s lhostejným „no, no“. Je to odmítnutí zpívané jako párty pokřik.
 
-### Most: chvíle zamyšlení
+### Třetí sloka: stín ve svědomí
 
 Krátká třetí sloka změní úhel pohledu: vypravěč slibuje, že zůstane jako stín ve svědomí posluchače a bude ho sledovat, než se vrátí předrefrén a refrén.
 
-### Závěrečný refrén: radostné vyvrcholení
+### Závěrečný refrén: jen dvě slova
 
 Refrén se na konci několikrát opakuje, až zbude jen název, argument písně zúžený na svá dvě slova.
 

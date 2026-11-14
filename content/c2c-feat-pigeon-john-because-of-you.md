@@ -84,29 +84,29 @@ kind = "database"
 
 *Because of You* is built around its title, a phrase addressed to someone who has made a difference. A contemporary review of the album called the track Gorillaz-esque, and the comparison fits: it has the same mix of hip-hop rhythm, pop hook and cartoon brightness. What sets it apart is how the music is made, by four DJs cutting and layering records by hand.
 
-## Lyrics Breakdown
+## Sound Breakdown
 
-### Intro: Setting the Vibe
+### Intro: The Groove
 
 The song opens on the groove, a beat with the slightly rough, hand-placed feel of sounds cut from records. It sets a welcoming tone before the voice comes in.
 
-### Verse 1: Recognizing the Impact of Others
+### Verse 1: A Relaxed, Melodic Delivery
 
 Pigeon John's delivery is relaxed and melodic, between rapping and singing. The beat leaves him room, so the verse feels conversational rather than crowded.
 
-### Chorus: The Heartfelt Declaration
+### Chorus: The Hook
 
 The chorus is where Pigeon John sings "because of you", the hook the whole track hangs on. Short and repeated, it is the part a listener takes away.
 
-### Verse 2: Embracing the Journey
+### Verse 2: The Same Easy Voice
 
 The second verse continues in the same easy voice while the beat keeps its forward motion.
 
-### Bridge: A Moment of Reflection
+### Instrumental Break: The Turntables Step Forward
 
 Between the vocal sections the turntables step forward: this is where C2C's craft is easiest to hear, as fragments are cut, repeated and re-placed against the groove.
 
-### Final Chorus: A Joyful Celebration
+### Final Chorus: The Same Bright Note
 
 The final chorus returns the hook and closes the track on the same bright note it began with.
 

@@ -10,7 +10,7 @@ concept = ["post-punk", "electroclash"]
 instrument = ["vocals", "synthesizer"]
 
 [extra.translation]
-of = "47575e6caa56"
+of = "d6c4a88f1d7d"
 
 [extra]
 connections = [
@@ -19,14 +19,14 @@ connections = [
 ]
 
 [extra.learning]
-objectives = ["Popsat, co post-punk přináší elektronické hudbě: napětí, temnotu a odtažitý zpěv nad strojovým rytmem.", "Vystopovat cestu umělce od electroclashe z počátku let 2000–2009 k temnějšímu, těžšímu zvuku.", "Vysvětlit, jak se znovu vydané album s novým seznamem skladeb může stát novým dílem."]
+objectives = ["Popsat, co post-punk přináší elektronické hudbě: napětí, temnotu a odtažitý zpěv nad strojovým rytmem.", "Vystopovat cestu umělce od electroclashe z počátku let 2000–2009 k temnějšímu, těžšímu zvuku.", "Vysvětlit, jak se doprovodné album, které sdílí některé písně s dřívějším, přesto může stát novým dílem."]
 listen_for = [
   { part = "úvod", what = "Tvrdý, pravidelný vzorec a vrčící syntezátor okamžitě udají tón: žádné zahřívání, jen odhodlání." },
   { part = "první sloka", what = "Simsův zpěv nastupuje s kamennou hrozivostí a nese se těsně nad beatem." },
   { part = "refrén", what = "Hook udeří se zvláštní silou a název zazní jako přísaha." },
   { part = "závěr", what = "Skladba se utne, místo aby odezněla, a to s délkou hluboko pod čtyři minuty." },
 ]
-questions = ["Electroclash byl známý svou ironií. Zbyla v Hellbent nějaká ironie, nebo ji nahradilo něco jiného?", "Happily Ever After...Again ponechalo některé písně z alba z roku 2008 a přidalo jiné, včetně této. Kdy se reedice stává novým albem?", "Díky čemu zní píseň „post-punkově“, i když je vytvořená převážně elektronickými nástroji?"]
+questions = ["Electroclash byl známý svou ironií. Zbyla v Hellbent nějaká ironie, nebo ji nahradilo něco jiného?", "Happily Ever After...Again ponechalo některé písně z alba z roku 2008 a přidalo jiné, včetně této. Kdy se doprovodné vydání stává samostatným albem?", "Díky čemu zní píseň „post-punkově“, i když je vytvořená převážně elektronickými nástroji?"]
 +++
 
 ## Žánr a nálada

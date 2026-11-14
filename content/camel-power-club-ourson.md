@@ -18,6 +18,9 @@ publisher = "Bramar Records"
 youtube = "https://www.youtube.com/embed/JOq0cY_q33A"
 artist = "Camel Power Club"
 track = "Ourson"
+samples = [
+  { artist = "Son House", track = "Grinnin' in Your Face" },
+]
 connections = [
   { source = "waldeck-memories.md", why = "European downtempo that also places vintage voices and textures inside a slow, warm electronic frame." },
   { source = "kazy-lambist-doing-yoga.md", why = "French electronic pop of the same years with the same soft, sunny, unhurried mood." },
@@ -60,6 +63,12 @@ publisher = "Camel Power Club (Bandcamp)"
 kind = "artist"
 
 [[extra.sources]]
+title = "Sputnik II - Ourson"
+url = "https://camelpowerclub.bandcamp.com/track/ourson"
+publisher = "Camel Power Club (Bandcamp)"
+kind = "artist"
+
+[[extra.sources]]
 title = "Ourson"
 url = "https://musicbrainz.org/recording/29f1f0cc-9162-4e78-9b9c-8e79c4886589"
 publisher = "MusicBrainz"
@@ -96,7 +105,7 @@ The elements fade out softly, ending as quietly and modestly as the track began.
 
 ## Concepts in Focus
 
-Ourson is a small, clear lesson in {{ <concept_link name="sampling" /> }}. Its credits list Son House as a sampled artist: one of the founding voices of Delta blues, recorded in the 1930s and again after his rediscovery in the 1960s. A sample carries its history with it, and here the history is the point. The rough, field-recorded quality of an old blues voice sounds even older against the clean, soft production around it.
+Ourson is a small, clear lesson in {{ <concept_link name="sampling" /> }}. Its credits name Son House, giving him the lyrics from his "Grinnin' in Your Face": he is one of the founding voices of Delta blues, recorded in the 1930s and again after his rediscovery in the 1960s. A sample carries its history with it, and here the history is the point. The rough, field-recorded quality of an old blues voice sounds even older against the clean, soft production around it.
 
 The track is also built on the {{ <concept_link name="loop" /> }}. Instead of verses and choruses it repeats a short melodic idea and changes what surrounds it, adding the beat, letting the voice in, shifting the colour briefly in the middle. Listen for how little actually changes and how that sameness becomes calming rather than boring; it is the same principle that drives house and hip-hop, applied at a nap's pace.
 

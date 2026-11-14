@@ -66,7 +66,7 @@ kind = "database"
 
 ## Song Summary
 
-This is the original, long version, the one that circulated in clubs from the summer of 2004 before the vocal single existed. Without a sung topline to lean on, it does everything with groove and patience: a pumping four-to-the-floor kick, a rolling bassline, filtered layers that open and close, and builds that keep promising more and then deliver it. Seven minutes long, it is a DJ's tool and a crowd's release at the same time.
+This is the original, long version, the one that circulated in clubs from the summer of 2004 before the vocal single existed. Without a sung topline to lean on, it does everything with groove and patience: a pumping four-on-the-floor kick, a rolling bassline, filtered layers that open and close, and builds that keep promising more and then deliver it. Seven minutes long, it is a DJ's tool and a crowd's release at the same time.
 
 ## Musical Breakdown
 
@@ -84,7 +84,7 @@ Bass and harmonic layers arrive behind a closed filter, muffled at first, then s
 
 The full groove locks in: driving, bouncy and bright, with the hook riding on top of the bass. This is the stretch that made the record a peak-time favourite.
 
-### Bridge
+### Breakdown
 
 A breakdown strips the beat away, leaving the melodic layers hanging in the air while the tension builds for the return.
 
@@ -108,4 +108,4 @@ Axwell is the Swedish producer Axel Hedfors, later one third of Swedish House Ma
 
 ## Impact and Reception
 
-The 2005 single reached number one on the UK dance chart and number 16 on the UK Singles Chart, it also reached number 4 on the French club chart, and the track became one of the records that made Axwell a headline name long before Swedish House Mafia filled stadiums. Two decades on it still sounds like a warm-up for something big. Turn it up loud, and give it the full seven minutes.
+The 2005 single reached number one on the UK dance chart, number 16 on the UK Singles Chart and number 4 on the French club chart, and the track became one of the records that made Axwell a headline name long before Swedish House Mafia filled stadiums. Two decades on it still sounds like a warm-up for something big. Turn it up loud, and give it the full seven minutes.

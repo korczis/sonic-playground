@@ -10,7 +10,7 @@ concept = ["swing", "hook", "music video"]
 instrument = ["vocals", "violin", "trombone", "guitar", "synthesizer", "bass"]
 
 [extra.translation]
-of = "4b1c75f9de44"
+of = "181f3dcccf80"
 
 [extra]
 connections = [
@@ -35,7 +35,7 @@ questions = ["Swing byl taneční hudbou 30. let. Proč by na něj klubové publ
 
 ## O skladbě
 
-Lone Digger je krátká, 3:50, a stvořená pro pohyb. Údaje na albu ukazují, jak kapela pracuje: všech pět členů programuje a hraje na syntezátory a navíc každý přináší akustickou barvu, Arnaud Vial na kytaru, Antoine Toustou na pozoun, Hugues Payen na housle, Charles Delaporte na basu a Paul-Marie Barbier na klavír, klávesy a vibrafon, přičemž zpívá Zoé Colotis. Nezapomenutelným detailem je tření mezi těmito živými jazzovými zvuky a tvrdým, rovným elektronickým beatem pod nimi.
+Lone Digger je krátká, 3:50, a stvořená pro pohyb. Údaje na albu ukazují, jak kapela pracuje: čtyři ze šesti uvedených členů programují a hrají na syntezátory a navíc každý z nich přináší akustickou barvu, Arnaud Vial na kytaru, Antoine Toustou na pozoun, Hugues Payen na housle a Charles Delaporte na basu, zatímco Paul-Marie Barbier hraje na klavír, klávesy a vibrafon a Zoé Colotis zpívá. Nezapomenutelným detailem je tření mezi těmito živými jazzovými zvuky a tvrdým, rovným elektronickým beatem pod nimi.
 
 ## Hudební rozbor
 

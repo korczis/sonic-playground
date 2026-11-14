@@ -1,5 +1,5 @@
 +++
-title = "Clea Vincent - All that she wants"
+title = "Cléa Vincent - All That She Wants"
 date = "2026-11-12"
 description = "Cléa Vincent mění hit Ace of Base z roku 1992 ve vzdušný, domácky vyrobený francouzský synth-pop a místo jeho reggae-popového vykračování nabízí snový lo-fi groove, který má blíž k hip-hopu a R&B."
 
@@ -10,7 +10,7 @@ concept = ["cover version", "groove", "hook"]
 instrument = ["vocals", "keyboard", "synthesizer", "drum machine"]
 
 [extra.translation]
-of = "b53693007d4b"
+of = "20490ef06240"
 
 [extra]
 connections = [
@@ -31,7 +31,7 @@ questions = ["Vincent řekla, že k písni přistupovala spíš jako k hip-hopu 
 
 ## Žánr a nálada
 
-**Cléa Vincent** se pouští do **All that she wants**, hitu Ace of Base, a mění ho v domácky vyrobenou coververzi ve vzdušném francouzském synth-popu. Je hravá a snová, nasáklá nostalgií po rádiu počátku devadesátých let, ale podaná s indie lehkostí bedroom popu, díky níž zní úplně nově.
+**Cléa Vincent** se pouští do **All That She Wants**, hitu Ace of Base, a mění ho v domácky vyrobenou coververzi ve vzdušném francouzském synth-popu. Je hravá a snová, nasáklá nostalgií po rádiu počátku devadesátých let, ale podaná s indie lehkostí bedroom popu, díky níž zní úplně nově.
 
 ## O skladbě
 

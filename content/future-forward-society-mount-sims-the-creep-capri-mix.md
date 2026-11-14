@@ -1,7 +1,7 @@
 +++
 title = "Future Forward Society, Mount Sims - The Creep (Capri Mix)"
 date = "2026-11-12"
-description = "A long, prowling electro mix that keeps its shadows close: The Creep in its Capri Mix stretches Mount Sims' sly menace over six and a half minutes of pulsing synths."
+description = "A long, prowling electro mix that keeps its shadows close: The Creep in its Capri Mix stretches Mount Sims's sly menace over six and a half minutes of pulsing synths."
 
 [taxonomies]
 genre = ["electro", "electroclash", "electronic"]
@@ -19,7 +19,7 @@ youtube = "https://www.youtube.com/embed/tlhSx-PEg-0"
 connections = [
   { source = "future-forward-society-mount-sims-the-creep.md", why = "The same track in its main version, the reference point for everything the Capri Mix stretches and rearranges." },
   { source = "future-forward-society-mount-sims-the-creep-hv-thrillseeker-mix.md", why = "Another alternative version from the same 2008 Kompute Musik release, aimed at a different kind of club moment." },
-  { source = "future-forward-mount-sims-time-for-livin.md", why = "A second collaboration between Future Forward and Mount Sims from the same period." },
+  { source = "future-forward-mount-sims-time-for-livin.md", why = "Mount Sims on an earlier Kompute Musik single, from 2006, credited to Future Forward rather than Future Forward Society." },
 ]
 
 [extra.learning]
@@ -53,6 +53,27 @@ title = "Mount Sims"
 url = "https://en.wikipedia.org/wiki/Mount_Sims"
 publisher = "Wikipedia"
 kind = "encyclopedia"
+
+[[extra.sources]]
+title = "The Creep - EP"
+url = "https://www.deezer.com/album/6262053"
+publisher = "Deezer"
+kind = "database"
+year = "2008"
+
+[[extra.sources]]
+title = "Future Forward, Mount Sims - Time For Livin (KOM015)"
+url = "https://www.discogs.com/release/888867"
+publisher = "Discogs"
+kind = "database"
+year = "2006"
+
+[[extra.sources]]
+title = "Mount Sims - Wild Light (LP, GIGOLO 139)"
+url = "https://www.discogs.com/release/411706"
+publisher = "Discogs"
+kind = "database"
+year = "2004"
 +++
 
 ## Genre and Mood
@@ -61,7 +82,7 @@ kind = "encyclopedia"
 
 ## Song Summary
 
-The title promises something unsettling, and the mix delivers it slowly. Rather than a pop song, this version is a DJ tool with a personality: a steady pulse, sinister synth lines and fragments of Mount Sims' cool, insinuating presence woven through more than six minutes. The memorable detail is the restraint. The tension is built, held and released by small moves, never by a big drop.
+The title promises something unsettling, and the mix delivers it slowly. Rather than a pop song, this version is a DJ tool with a personality: a steady pulse, sinister synth lines and fragments of Mount Sims's cool, insinuating presence woven through more than six minutes. The memorable detail is the restraint. The tension is built, held and released by small moves, never by a big drop.
 
 ## Musical Breakdown
 
@@ -99,7 +120,7 @@ Everything melodic is made with the {{ <concept_link name="synthesizer" /> }}: t
 
 ## Artistic Context
 
-Mount Sims is the alias of Matthew Sims, a producer and performer born in Milwaukee and based in Berlin. His debut *UltraSex* (2002) came out on DJ Hell's electroclash label International DeeJay Gigolo Records in Europe (Emperor Norton in the US), followed by *Wild Light* (2005) on Gigolo; he later collaborated with The Knife and Planningtorock on the electronic opera *Tomorrow, In a Year* (2010). "The Creep" was released on 5 May 2008 on Kompute Musik; the same pairing also produced "Time for Livin". The release came with alternative versions, the Capri Mix and the HV Thrillseeker Mix among them, aimed squarely at club play.
+Mount Sims is the alias of Matthew Sims, a producer and performer born in Milwaukee and based in Berlin. His debut *UltraSex* (2002) came out on DJ Hell's electroclash label International DeeJay Gigolo Records in Europe (Emperor Norton in the US), followed by *Wild Light* (2004) on Gigolo; he later collaborated with The Knife and Planningtorock on the electronic opera *Tomorrow, In a Year* (2010). "The Creep" was released on 5 May 2008 on Kompute Musik, which two years earlier had put out "Time for Livin", credited to Future Forward featuring Mount Sims. The release came with alternative versions, the Capri Mix and the HV Thrillseeker Mix among them, aimed squarely at club play.
 
 ## Impact and Reception
 

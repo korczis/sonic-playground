@@ -10,7 +10,7 @@ concept = ["bassline", "remix", "build-up"]
 instrument = ["vocals", "synthesizer"]
 
 [extra.translation]
-of = "534bef1801f8"
+of = "0f8551c97329"
 
 [extra]
 connections = [
@@ -76,7 +76,7 @@ The Creep vyšla také jako malá lekce o tom, co je {{ <concept_link name="remi
 
 ## Umělecký kontext
 
-The Creep vyšla u Kompute Musik 5. května 2008 jako EP připsané Future Forward Society a Mount Sims, s HV Thrillseeker Mixem a Capri Mixem vedle originálu. Mount Sims je Matthew Sims, americký DJ, producent a performer z Milwaukee, později usazený v Berlíně, který zpíval v alternativní rockové kapele Citizen King, než se obrátil k elektronické hudbě. Jeho alba UltraSex (2002) a Wild Light (2005) u International DeeJay Gigolo z něj udělala jedno ze jmen electroclashové scény a do roku 2008 se jeho tvorba posunula k temnějšímu, náladovějšímu území ovlivněnému post-punkem a dark wave, které sdílí i tato spolupráce. O Future Forward Society se kromě jejích vydání s ním mnoho zdokumentovaného neví.
+The Creep vyšla u Kompute Musik 5. května 2008 jako EP připsané Future Forward Society a Mount Sims, s HV Thrillseeker Mixem a Capri Mixem vedle originálu. Mount Sims je Matthew Sims, americký DJ, producent a performer z Milwaukee, později usazený v Berlíně, který zpíval v alternativní rockové kapele Citizen King, než se obrátil k elektronické hudbě. Jeho alba UltraSex (2002) a Wild Light (2004) u International DeeJay Gigolo z něj udělala jedno ze jmen electroclashové scény a do roku 2008 se jeho tvorba posunula k temnějšímu, náladovějšímu území ovlivněnému post-punkem a dark wave, které sdílí i tato spolupráce. O Future Forward Society se kromě jejích vydání s ním mnoho zdokumentovaného neví.
 
 ## Ohlas a dopad
 

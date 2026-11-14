@@ -10,7 +10,7 @@ concept = ["drum machine", "synthesizer", "distortion", "electroclash"]
 instrument = ["synthesizer", "drum machine", "vocals"]
 
 [extra.translation]
-of = "c82fe194e68d"
+of = "d0b0362e2ace"
 
 [extra]
 connections = [
@@ -73,7 +73,7 @@ Všechny tři patří do nástrojové výbavy {{ <concept_link name="electroclas
 
 ## Umělecký kontext
 
-Mount Sims je pseudonym Matthewa Simse, amerického producenta a zpěváka narozeného v Milwaukee a žijícího v Berlíně, jehož debut UltraSex z roku 2002 ho zařadil do electroclashového hnutí kolem labelu International DeeJay Gigolo DJ Hella; recenze Ink 19 označuje Hella za jeho mentora. No Yellow Lines se poprvé objevila v listopadu 2003 na labelové kompilaci *International DeeJay Gigolos CD Seven* a pak na Wild Light, navazujícím albu vydaném v roce 2005, o kterém tatáž recenze píše, že se přesouvá od klubových grooveů do zapadlých uliček: post-punková, novovlnná deska s nádechem rocku. Vyměňuje camp a třpyt scény za něco bližšího post-punku a industriální drsnosti.
+Mount Sims je pseudonym Matthewa Simse, amerického producenta a zpěváka narozeného v Milwaukee a žijícího v Berlíně, jehož debut UltraSex z roku 2002 ho zařadil do electroclashového hnutí kolem labelu International DeeJay Gigolo DJ Hella; recenze Ink 19 označuje Hella za jeho mentora. No Yellow Lines se poprvé objevila v listopadu 2003 na labelové kompilaci *International DeeJay Gigolos CD Seven* a pak na Wild Light, navazujícím albu, které vyšlo nejprve na vinylu v roce 2004 a na CD v únoru 2005 a o kterém tatáž recenze píše, že se přesouvá od klubových grooveů do zapadlých uliček: post-punková, novovlnná deska s nádechem rocku. Vyměňuje camp a třpyt scény za něco bližšího post-punku a industriální drsnosti.
 
 ## Ohlas a dopad
 

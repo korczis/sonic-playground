@@ -74,7 +74,7 @@ year = "2015"
 
 ## Song Summary
 
-Lone Digger is short, 3:50, and built for movement. The album credits show how the band works: all five members program and play synths, and on top of that each brings an acoustic colour, Arnaud Vial on guitar, Antoine Toustou on trombone, Hugues Payen on violin, Charles Delaporte on bass and Paul-Marie Barbier on piano, keyboards and vibraphone, with Zoé Colotis singing. The memorable detail is the friction between those live jazz sounds and the hard, straight electronic beat beneath them.
+Lone Digger is short, 3:50, and built for movement. The album credits show how the band works: four of the six credited members program and play synths, and on top of that each of them brings an acoustic colour, Arnaud Vial on guitar, Antoine Toustou on trombone, Hugues Payen on violin and Charles Delaporte on bass, while Paul-Marie Barbier plays piano, keyboards and vibraphone and Zoé Colotis sings. The memorable detail is the friction between those live jazz sounds and the hard, straight electronic beat beneath them.
 
 ## Musical Breakdown
 

@@ -10,7 +10,7 @@ concept = ["verse-chorus form", "hook"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "1de57325c535"
+of = "2722e27087fb"
 
 [extra]
 connections = [
@@ -43,25 +43,25 @@ Píseň stojí mezi **rockem**, **hip-hopem** a **popem**: retro svou personou, 
 
 Píseň má jen pár drobných dílů: jeden refrén postavený na titulní frázi a jednu krátkou sloku, v níž se vypravěč chlubí, že jeho pronásledování nelze uniknout. Obojí se vrací dvakrát. Je to píseň postoje, ne vyprávění, a její půvab spočívá v tom, jak se stejných pár veršů podává znovu a znovu se stále větší chutí.
 
-## Rozbor zvuku
+## Stavba písně
 
-### Úvod: uhrančivý začátek
+### Začátek: rovnou refrén
 
 Ve stavbě písně není žádné samostatné instrumentální představení: začíná rovnou refrénem, takže hook je první, co uslyšíte.
 
-### První sloka: citová ozvěna
+### První sloka: krátké chvástání
 
 Sloka je krátké, opakované chvástání: vypravěč říká svému cíli, že nemá šanci, a připisuje to svému umění se slovy a svým rukám. Je to chvástavost, ne zranitelnost.
 
-### Refrén: dynamická intenzita
+### Refrén: střed písně
 
-Refrén se vrací, na titulní verš odpovídá tvrzení, že ať je jakkoli rychlá, on je chytí všechny. Je středem písně.
+Refrén se vrací, na titulní verš odpovídá tvrzení, že ať je jakkoli rychlá, on ji chytí. Je středem písně.
 
-### Most: přemýšlivý klid
+### Druhá sloka: sloka se vrací
 
 Píseň nemá samostatný most: po druhém refrénu se prostě vrátí sloka a odvede práci, kterou by udělal most, když refrénu dá něco, odkud se může vrátit.
 
-### Závěrečný refrén: vrcholné uvolnění
+### Závěrečný refrén: poslední slovo
 
 Refrén píseň uzavírá, poslední slovo v honičce, o které vypravěč tvrdí, že ji už vyhrál.
 

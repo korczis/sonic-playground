@@ -10,7 +10,7 @@ concept = ["sampling", "four-on-the-floor", "hook"]
 instrument = ["vocals", "saxophone", "synthesizer", "drum machine"]
 
 [extra.translation]
-of = "c884d10fbb67"
+of = "ac89c723221d"
 
 [extra]
 connections = [
@@ -81,7 +81,7 @@ Skladba má dva hooky, které si navzájem odpovídají. Samplovaný refrén je 
 
 ## Umělecký kontext
 
-Faul & Wad Ad jsou pařížští DJové Maxime Ledu (Faul) a Camil Meyer (Wad Ad), kteří se poznali na střední škole a začali produkovat ve volném čase při studiu. V roce 2013 zaslechli Baby od Pnau a v květnu vydali svou úpravu na internetu; oficiální singl, připsaný Faul & Wad Ad vs. Pnau a vydaný labelem Four Music, následoval 15. listopadu 2013. Samotná Baby byla druhým singlem z eponymního třetího alba Pnau, vyšla v březnu 2008 a v Austrálii dosáhla 34. místa. Pnau začínali jako duo Nicka Littlemorea a Petera Mayese; Littlemore je také jednou polovinou Empire of the Sun a dvojice později natočila remixové album Eltona Johna Good Morning to the Night.
+Faul & Wad Ad jsou pařížští DJové Maxime Ledu (Faul) a Camil Meyer (Wad Ad), kteří se poznali na střední škole a začali produkovat ve volném čase při studiu. V roce 2013 zaslechli Baby od Pnau a v květnu vydali svou úpravu na internetu; oficiální singl, připsaný Faul & Wad Ad vs. Pnau a vydaný labelem Four Music, následoval 15. listopadu 2013. Samotná Baby vyšla jako singl 3. března 2008, druhý z eponymního třetího alba Pnau z listopadu 2007, a v Austrálii dosáhla 34. místa. Pnau začínali jako duo Nicka Littlemorea a Petera Mayese; Littlemore je také jednou polovinou Empire of the Sun a dvojice později natočila remixové album Eltona Johna Good Morning to the Night.
 
 ## Ohlas a dopad
 

@@ -1,7 +1,7 @@
 +++
 title = "JPattersson - Elevator"
 date = "2024-10-11"
-description = "Pohodová fúze dubu, reggae a hlubokých elektronických beatů z východního Německa: Elevator od JPatterssona z roku 2016, titulní skladba EP, na kterém je i její vlastní dubová verze a dva remixy."
+description = "Pohodová fúze dubu, reggae a hlubokých elektronických beatů z východního Německa: Elevator od JPatterssona z roku 2016, úvodní skladba EP Rühn, na kterém je i její vlastní dubová verze a dva remixy."
 
 [taxonomies]
 genre = ["dub", "reggae", "electronic"]
@@ -9,7 +9,7 @@ sentiment = ["relaxed", "groovy", "uplifting"]
 concept = ["dub", "remix", "bassline"]
 
 [extra.translation]
-of = "064a738127d2"
+of = "b08ec35f2f22"
 
 [extra]
 connections = [
@@ -38,7 +38,7 @@ Skladba **Elevator** od **JPatterssona** přináší hladkou směs vlivů **dubu
 
 ## O skladbě
 
-„Elevator“ stojí na hluboké basové lince prosycené dubem, nad níž se vrství jemné melodie. Souhra reggae rytmu a elektronické produkce dodává skladbě pocit groovu i lehkosti a nespěchavé tempo udržuje náladu hřejivou. Je to titulní skladba EP Rühn, které vydal label Acker Records 22. července 2016 a na kterém je také „Elevator Dub“ a remixy od Dole & Kom a Mollono.Bass.
+„Elevator“ stojí na hluboké basové lince prosycené dubem, nad níž se vrství jemné melodie. Souhra reggae rytmu a elektronické produkce dodává skladbě pocit groovu i lehkosti a nespěchavé tempo udržuje náladu hřejivou. Otevírá EP Rühn, které vydal label Acker Records 22. července 2016 a na kterém žádná skladba „Rühn“ není: obě strany patří Elevator, po originálu následuje „Elevator Dub“ a remixy od Dole & Kom a Mollono.Bass.
 
 ## Rozbor zvuku
 

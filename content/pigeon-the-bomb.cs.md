@@ -4,7 +4,7 @@ date = "2024-11-05"
 description = "Losangeleský raper Pigeon John otevírá své album Dragon Slayer z roku 2010 skladbou The Bomb, jasným, poskakujícím singlem, který koprodukoval s Hervém Saltersem z General Elektriks a postavil ze samplů živě nahraných nástrojů, ne starých desek."
 
 [taxonomies]
-genre = ["indie rock", "electronic", "alternative"]
+genre = ["hip-hop", "electronic", "alternative"]
 sentiment = ["energetic", "defiant", "bold"]
 concept = ["sampling", "hook"]
 instrument = ["vocals", "sampler"]

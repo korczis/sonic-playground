@@ -1,5 +1,5 @@
 +++
-title = "Gorillaz, Neneh Cherry - Kids with Guns"
+title = "Gorillaz, Neneh Cherry - Kids With Guns"
 date = "2026-11-12"
 description = "Chladná, řinčivá skladba Gorillaz z alba Demon Days, v níž unavený vokál Damona Albarna a přízračný doprovod Neneh Cherry mění melodii jako z dětské říkanky v tichý poplach kvůli dětem a násilí."
 
@@ -10,7 +10,7 @@ concept = ["drum machine", "featured artist", "live recording"]
 instrument = ["vocals", "guitar", "keyboard", "drums", "drum machine"]
 
 [extra.translation]
-of = "ef8de60e142f"
+of = "ab40d7964392"
 
 [extra]
 connections = [
@@ -31,7 +31,7 @@ questions = ["Albarn řekl, že téma nebral jako problém, ale jako součást z
 
 ## Žánr a nálada
 
-**Gorillaz** a **Neneh Cherry** obchodují s neklidem ve skladbě **Kids with Guns**, která spojuje alternativní rock, elektronické textury a art popovou podivnost. Nálada je uhrančivá, temná a tiše provokativní: své varování nekřičí, nechává hrůzu pomalu prosakovat. Právě ta zdrženlivost způsobuje, že v hlavě zůstává dlouho poté, co hlasitější písně odezní.
+**Gorillaz** a **Neneh Cherry** obchodují s neklidem ve skladbě **Kids With Guns**, která spojuje alternativní rock, elektronické textury a art popovou podivnost. Nálada je uhrančivá, temná a tiše provokativní: své varování nekřičí, nechává hrůzu pomalu prosakovat. Právě ta zdrženlivost způsobuje, že v hlavě zůstává dlouho poté, co hlasitější písně odezní.
 
 ## O skladbě
 
@@ -67,12 +67,12 @@ Rytmus stojí na {{ <concept_link name="drum machine" text="bicím automatu" lan
 
 Neneh Cherry se tu objevuje jako {{ <concept_link name="featured artist" text="hostující umělkyně" lang="cs" /> }} neobvyklým způsobem. Nemá žádnou vlastní sloku; místo toho zpívá doplňkové vokály, které Albarnův hlavní hlas zdvojují a strašidelně provázejí. Švédská zpěvačka, známá písní Buffalo Stance, propůjčuje skladbě druhou, přízračnou přítomnost spíš než hostující výstup, a píseň je připsána oběma.
 
-Kids with Guns nikdy neměla animovaný klip. Video, které se k ní používá, i na DVD The Singles Collection, je {{ <concept_link name="live recording" lang="cs" /> }} z koncertů Demon Days Live v manchesterské Opera House v listopadu 2005, kde plátna za kapelou promítala sled obrázků zbraní v červené, bílé a černé. U kapely, která se obvykle schovávala za kreslené postavičky, je to vzácný pohled na lidi, kteří hudbu tvoří.
+Kids With Guns nikdy neměla animovaný klip. Video, které se k ní používá, i na DVD The Singles Collection, je {{ <concept_link name="live recording" lang="cs" /> }} z koncertů Demon Days Live v manchesterské Opera House v listopadu 2005, kde plátna za kapelou promítala sled obrázků zbraní v červené, bílé a černé. U kapely, která se obvykle schovávala za kreslené postavičky, je to vzácný pohled na lidi, kteří hudbu tvoří.
 
 ## Umělecký kontext
 
-„Kids with Guns“ pochází z *Demon Days*, druhého alba Gorillaz z roku 2005; Gorillaz jsou virtuální kapela, kterou vytvořili Damon Albarn a výtvarník Jamie Hewlett. Deska, produkovaná s Danger Mousem, je temná a společensky angažovaná a v této skladbě hraje Albarn sám na kytary a klávesy. Vyšla 10. dubna 2006 jako dvojitá A-strana s „El Mañana“, čtvrtý a poslední singl z alba. Hewlettovy animované postavy daly kapele kreslenou tvář, ale písně jako tahle ukázaly, jak vážná může být hudba za nimi.
+„Kids With Guns“ pochází z *Demon Days*, druhého alba Gorillaz z roku 2005; Gorillaz jsou virtuální kapela, kterou vytvořili Damon Albarn a výtvarník Jamie Hewlett. Deska, produkovaná s Danger Mousem, je temná a společensky angažovaná a v této skladbě hraje Albarn sám na kytary a klávesy. Vyšla 10. dubna 2006 jako dvojitá A-strana s „El Mañana“, čtvrtý a poslední singl z alba. Hewlettovy animované postavy daly kapele kreslenou tvář, ale písně jako tahle ukázaly, jak vážná může být hudba za nimi.
 
 ## Ohlas a dopad
 
-*Demon Days* bylo jedním z nejúspěšnějších alb své doby, singl „Kids with Guns“ / „El Mañana“ však v Británii dosáhl jen 27. místa, hluboko pod svými předchůdci. Remix od Hot Chip se později, v roce 2009, objevil na soundtracku k seriálu The Inbetweeners. Je tu proto, že ukazuje Gorillaz v jejich nejvážnější podobě, jak prostým, mrazivým hookem říkají něco skutečného. Poslouchejte pozorně; na detailech záleží.
+*Demon Days* bylo jedním z nejúspěšnějších alb své doby, singl „Kids With Guns“ / „El Mañana“ však v Británii dosáhl jen 27. místa, hluboko pod svými předchůdci. Remix od Hot Chip se později, v roce 2009, objevil na soundtracku k seriálu The Inbetweeners. Je tu proto, že ukazuje Gorillaz v jejich nejvážnější podobě, jak prostým, mrazivým hookem říkají něco skutečného. Poslouchejte pozorně; na detailech záleží.
