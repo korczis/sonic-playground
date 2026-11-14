@@ -334,6 +334,8 @@ artists = ["Kalabrese", "Palinstar"]
 album = "Independent Dancer"
 duration = "4:57"
 spotify = "5XUKTrnL8ybaNsgfxCgrGK"
+review = "kalabrese-sarah-palin-fresh-and-foolish-feat-sarah-palin.md"
+note = "the reviewed recording: the same Spotify album (6aGKLN1RkJ9LlnWjEJK77i, Independent Dancer) at 4:57 as the 2019 item; Spotify re-credits the singer as Palinstar under a new track id, a rename, not a new recording"
 
 [[track]]
 n = 42
