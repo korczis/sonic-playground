@@ -6,8 +6,9 @@ artists: ["Utah Jazz"]
 album: "Vintage"
 duration: "6:25"
 spotify: {"track": "0oFrgQsespoo1VdDVtuwHE", "album": "5crenUgZVGijzjjL2N3Uje", "artists": ["1qDIEHxFTJPRYmLO40RL5e"]}
-keys: {"fold": "utahjazz|takenomore"}
-status: "missing"
+keys: {"fold": "utahjazz|takenomore", "musicbrainz": "1658381d-fc0b-46ec-b395-3ea8f0d75919"}
+review: "utah-jazz-take-no-more.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 66}
@@ -22,4 +23,4 @@ From the album *Vintage*, 6:25.
 Not among the liked songs.
 Your Top Songs 2022: #66.
 In My Top Songs of All the Time (#574).
-No review yet.
+Reviewed: content/utah-jazz-take-no-more.md.

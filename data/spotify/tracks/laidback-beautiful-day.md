@@ -6,8 +6,9 @@ artists: ["Laidback"]
 album: "Kumharas Ibiza Vol.2 (Compiled By DJ Malte M.V.T.)"
 duration: "6:58"
 spotify: {"track": "3SJY53oFCra9sKQYyWrhtI", "album": "4NFiOreB7a7H0nBhNHkzSm", "artists": ["4kVFOtOkF3GKDMwaJdsMXs"]}
-keys: {"fold": "laidback|beautifulday"}
-status: "missing"
+keys: {"fold": "laidback|beautifulday", "musicbrainz": "55057ac9-be9c-4a1b-9df9-a72f71c7317b"}
+review: "laidback-beautiful-day.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 32}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2021: #32.
 Your Top Songs 2022: #97.
 In My Top Songs of All the Time (#476).
-No review yet.
+Reviewed: content/laidback-beautiful-day.md.

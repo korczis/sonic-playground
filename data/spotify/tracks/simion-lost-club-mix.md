@@ -6,8 +6,9 @@ artists: ["Simion", "Roland Clark"]
 album: "Buddha Bar Clubbing by Ravin"
 duration: "6:09"
 spotify: {"track": "6sEzseJe6Df8gAtBmk3nUl", "album": "2AjjtbXtsRAm48cb0u5UET", "artists": ["1mLfBZATn3vvx8EotaA8je", "4OGlp2UdUQGPJVbvJ82Cz5"]}
-keys: {"fold": "simion|lostclubmix"}
-status: "missing"
+keys: {"fold": "simion|lostclubmix", "musicbrainz": "9df3d0d5-61cc-426b-9b31-c0bbc0858e85"}
+review: "simion-roland-clark-lost-club-mix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 36}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2021: #36.
 Your Top Songs 2022: #83.
 In My Top Songs of All the Time (#480).
-No review yet.
+Reviewed: content/simion-roland-clark-lost-club-mix.md.

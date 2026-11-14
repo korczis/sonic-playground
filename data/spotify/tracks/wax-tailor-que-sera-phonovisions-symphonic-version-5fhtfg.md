@@ -6,8 +6,9 @@ artists: ["Wax Tailor"]
 album: "Phonovisions Symphonic Orchestra"
 duration: "3:22"
 spotify: {"track": "5fHTFglZ8qwLDQ6zSUQGy6", "album": "5xBOIeXSazGn1GBGtoLGr2", "artists": ["3qwxSif06Qwzykdln8ZGfG"]}
-keys: {"fold": "waxtailor|queseraphonovisionssymphonicversion"}
-status: "missing"
+keys: {"fold": "waxtailor|queseraphonovisionssymphonicversion", "musicbrainz": "ab260e76-e62b-4d53-9a8a-70a2f2e7079a"}
+review: "wax-tailor-que-sera-phonovisions-symphonic-version.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Phonovisions Symphonic Orchestra*, 3:22.
 A liked song.
-No review yet.
+Reviewed: content/wax-tailor-que-sera-phonovisions-symphonic-version.md.

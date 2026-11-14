@@ -6,8 +6,9 @@ artists: ["Lana Del Rey", "Solomun"]
 album: "Solomun - Selected Remixes 2009-2015"
 duration: "8:07"
 spotify: {"track": "1bmKwuKJXqQRlFBPqLwkcQ", "album": "6sg8VycxgdytzAadd96qbo", "artists": ["00FQb4jTyendYWaN8pK0wa", "5wJK4kQAkVGjqM9x46KQOC"]}
-keys: {"fold": "lanadelrey|westcoastsolomunremix"}
-status: "missing"
+keys: {"fold": "lanadelrey|westcoastsolomunremix", "isrc": "DEDH71140003", "musicbrainz": "9690ff18-2fdf-40fb-9e2d-f64ac37b7268"}
+review: "lana-del-rey-solomun-west-coast-solomun-remix.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2021, "n": 17}
@@ -22,4 +23,4 @@ From the album *Solomun - Selected Remixes 2009-2015*, 8:07.
 Not among the liked songs.
 Your Top Songs 2021: #17.
 In My Top Songs of All the Time (#464).
-No review yet.
+Reviewed: content/lana-del-rey-solomun-west-coast-solomun-remix.md.

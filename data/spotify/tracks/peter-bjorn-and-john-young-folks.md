@@ -6,8 +6,9 @@ artists: ["Peter Bjorn and John"]
 album: "Writer's Block"
 duration: "4:36"
 spotify: {"track": "4dyx5SzxPPaD8xQIid5Wjj", "album": "5g4E06cxsFEMFE9hSekAt2", "artists": ["6u11Qbko2N2hP4lTBYjX86"]}
-keys: {"fold": "peterbjornandjohn|youngfolks"}
-status: "missing"
+keys: {"fold": "peterbjornandjohn|youngfolks", "isrc": "SEBPA0600024", "musicbrainz": "e30269b3-eb85-4881-a0fc-ef18be37e89b"}
+review: "peter-bjorn-and-john-young-folks.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 86}
@@ -23,4 +24,4 @@ From the album *Writer's Block*, 4:36.
 A liked song.
 Your Top Songs 2022: #86.
 In Best of the Best (#11); My Top Songs of All the Time (#590).
-No review yet.
+Reviewed: content/peter-bjorn-and-john-young-folks.md.

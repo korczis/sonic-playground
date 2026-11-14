@@ -6,8 +6,9 @@ artists: ["Tim Love Lee"]
 album: "Tim Love Lee: Fully Bearded (15 Years of Tummy Touch Records in Dub)"
 duration: "5:06"
 spotify: {"track": "2z5DwRWcmvwmlJWRUKaCJk", "album": "1KZgl58SHBh2mrcW2w2RUO", "artists": ["3Fg68JvQMqTN7OziRNvQgM"]}
-keys: {"fold": "timlovelee|dubcherie"}
-status: "missing"
+keys: {"fold": "timlovelee|dubcherie", "musicbrainz": "811214fa-7463-4787-8c2e-f0a3f331a66c"}
+review: "tim-love-lee-dub-cherie.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 69}
@@ -22,4 +23,4 @@ From the album *Tim Love Lee: Fully Bearded (15 Years of Tummy Touch Records in 
 Not among the liked songs.
 Your Top Songs 2022: #69.
 In My Top Songs of All the Time (#577).
-No review yet.
+Reviewed: content/tim-love-lee-dub-cherie.md.

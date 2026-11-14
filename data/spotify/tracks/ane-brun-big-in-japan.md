@@ -6,8 +6,9 @@ artists: ["Ane Brun"]
 album: "Changing of the Seasons"
 duration: "3:09"
 spotify: {"track": "7lhqX9jwTQchUhC5lEOnzK", "album": "42eIbe1tAwMozC4WD5MsCb", "artists": ["2L3kwZFd16zjHz9a5kEPAm"]}
-keys: {"fold": "anebrun|biginjapan"}
-status: "missing"
+keys: {"fold": "anebrun|biginjapan", "isrc": "SEVVQ0800301", "musicbrainz": "b101e0d7-db2b-488e-869f-c10f6793bc2c"}
+review: "ane-brun-big-in-japan.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 2}
@@ -22,4 +23,4 @@ From the album *Changing of the Seasons*, 3:09.
 A liked song.
 Your Top Songs 2021: #2.
 In My Top Songs of All the Time (#455).
-No review yet.
+Reviewed: content/ane-brun-big-in-japan.md.

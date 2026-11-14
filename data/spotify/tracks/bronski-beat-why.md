@@ -6,8 +6,9 @@ artists: ["Bronski Beat"]
 album: "The Age of Consent"
 duration: "4:03"
 spotify: {"track": "7vOLJwP5O0woITaIQWOoUX", "album": "6OMYQUITdN6wBaWfEtgooI", "artists": ["2wpWOzQE5TpA0dVnh5YD08"]}
-keys: {"fold": "bronskibeat|why"}
-status: "missing"
+keys: {"fold": "bronskibeat|why", "musicbrainz": "d18698d5-b46f-49f1-9ae3-3af23dce17ee"}
+review: "bronski-beat-why.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 5}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2021: #5.
 Your Top Songs 2022: #54.
 In My Top Songs of All the Time (#458).
-No review yet.
+Reviewed: content/bronski-beat-why.md.

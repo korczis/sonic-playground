@@ -6,8 +6,9 @@ artists: ["Marcus Worgull"]
 album: "Love Song"
 duration: "6:27"
 spotify: {"track": "6MWIaTPMTBItxX83g2RukN", "album": "6MrtOgbJZNXYfifA8bKrfo", "artists": ["4N2PiVgTuh2rxhc3HGVKAG"]}
-keys: {"fold": "marcusworgull|lovesong"}
-status: "missing"
+keys: {"fold": "marcusworgull|lovesong", "isrc": "DEEC31810043", "musicbrainz": "7459b644-3c0f-4da6-9e47-e7ea4b846a19"}
+review: "marcus-worgull-love-song.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 98}
@@ -22,4 +23,4 @@ From the album *Love Song*, 6:27.
 A liked song.
 Your Top Songs 2022: #98.
 In My Top Songs of All the Time (#594).
-No review yet.
+Reviewed: content/marcus-worgull-love-song.md.

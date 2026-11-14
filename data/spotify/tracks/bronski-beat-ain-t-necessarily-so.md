@@ -6,8 +6,9 @@ artists: ["Bronski Beat"]
 album: "The Very Best Of Jimmy Somerville, Bronski Beat & The Communards"
 duration: "4:06"
 spotify: {"track": "5h5uqSntGsIoNOinbk48iC", "album": "1B167z084g8Q52jRazKLVZ", "artists": ["2wpWOzQE5TpA0dVnh5YD08"]}
-keys: {"fold": "bronskibeat|aintnecessarilyso"}
-status: "missing"
+keys: {"fold": "bronskibeat|aintnecessarilyso", "musicbrainz": "222eecf1-da19-453a-b569-c065b4891930"}
+review: "bronski-beat-ain-t-necessarily-so.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 33}
@@ -22,4 +23,4 @@ From the album *The Very Best Of Jimmy Somerville, Bronski Beat & The Communards
 A liked song.
 Your Top Songs 2021: #33.
 In My Top Songs of All the Time (#477).
-No review yet.
+Reviewed: content/bronski-beat-ain-t-necessarily-so.md.

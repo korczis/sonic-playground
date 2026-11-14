@@ -6,8 +6,9 @@ artists: ["Bronski Beat"]
 album: "The Age Of Consent (Remastered & Expanded)"
 duration: "2:45"
 spotify: {"track": "6Z0csFlyJnQqqwREJeBsXL", "album": "7yNG62qNEJZTAlNPFrGLMq", "artists": ["2wpWOzQE5TpA0dVnh5YD08"]}
-keys: {"fold": "bronskibeat|smalltownboyreprise2014"}
-status: "missing"
+keys: {"fold": "bronskibeat|smalltownboyreprise2014", "isrc": "GBAAP1812355", "musicbrainz": "ab3faf3a-271c-47a1-ba35-7a7c134aee7a"}
+review: "bronski-beat-smalltown-boy-reprise-2014.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 37}
@@ -22,4 +23,4 @@ From the album *The Age Of Consent (Remastered & Expanded)*, 2:45.
 A liked song.
 Your Top Songs 2021: #37.
 In My Top Songs of All the Time (#481).
-No review yet.
+Reviewed: content/bronski-beat-smalltown-boy-reprise-2014.md.

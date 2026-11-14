@@ -6,8 +6,9 @@ artists: ["Marc Moulin"]
 album: "Top Secret"
 duration: "6:32"
 spotify: {"track": "5J75csVihxemZailkLFMEF", "album": "2MLayMtI79WoqjtvDqpTBh", "artists": ["6n6ot5JVa8YO9z82eNbvd8"]}
-keys: {"fold": "marcmoulin|intothedark"}
-status: "missing"
+keys: {"fold": "marcmoulin|intothedark", "isrc": "BEI010111301", "musicbrainz": "53c2d52d-6116-4c07-8d0e-dca94926681d"}
+review: "marc-moulin-into-the-dark.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 65}
@@ -22,4 +23,4 @@ From the album *Top Secret*, 6:32.
 Not among the liked songs.
 Your Top Songs 2022: #65.
 In My Top Songs of All the Time (#573).
-No review yet.
+Reviewed: content/marc-moulin-into-the-dark.md.

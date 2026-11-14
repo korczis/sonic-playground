@@ -1,7 +1,7 @@
 {
  "liked": 2029,
  "playlists": 55,
- "reviewed": 370,
+ "reviewed": 419,
  "reviews": {
   "2raumwohnung-somebody-lonely-and-me-nacht.md": {
    "liked": true,
@@ -94,6 +94,18 @@
     2017
    ]
   },
+  "alligator-rafale.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "alligator-rafale",
+    "alligator-rafale-6meqmx"
+   ],
+   "track": "4aeBHbD86BXtc63YGWuy5B",
+   "yearbooks": [
+    2022
+   ]
+  },
   "alok-zeeba-bruno-martini-hear-me-now.md": {
    "liked": false,
    "playlists": 1,
@@ -132,6 +144,28 @@
    "track": "4SyowQi18ym4zJGJDBnsTj",
    "yearbooks": [
     2016
+   ]
+  },
+  "andy-bey-celestial-blues.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "andy-bey-celestial-blues"
+   ],
+   "track": "1QR3PGFme0LiPUEtmWxXm7",
+   "yearbooks": [
+    2022
+   ]
+  },
+  "ane-brun-big-in-japan.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "ane-brun-big-in-japan"
+   ],
+   "track": "7lhqX9jwTQchUhC5lEOnzK",
+   "yearbooks": [
+    2021
    ]
   },
   "angus-julia-stone-big-jet-plane.md": {
@@ -454,6 +488,18 @@
     2022
    ]
   },
+  "booka-shade-body-language-interpretation.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "booka-shade-body-language-interpretation",
+    "booka-shade-body-language-interpretation-6sybfn"
+   ],
+   "track": "1ABwlOhYanbuafWx1yvx0T",
+   "yearbooks": [
+    2021
+   ]
+  },
   "branko-skip-die-fellow-made-of-gold.md": {
    "liked": true,
    "playlists": 2,
@@ -475,6 +521,18 @@
    "track": "1JXRCUZPk98Jh1WnZRK0w9",
    "yearbooks": []
   },
+  "brodka-kamp-dancing-shoes-kamp-remix.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "brodka-dancing-shoes-kamp-remix",
+    "brodka-dancing-shoes-kamp-remix-4ead5x"
+   ],
+   "track": "2eM9vj5So8nwcIU0snJ9bc",
+   "yearbooks": [
+    2022
+   ]
+  },
   "broken-back-happiest-man-on-earth-radio-edit.md": {
    "liked": true,
    "playlists": 2,
@@ -486,6 +544,51 @@
     2017
    ]
   },
+  "bronski-beat-ain-t-necessarily-so.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "bronski-beat-ain-t-necessarily-so"
+   ],
+   "track": "5h5uqSntGsIoNOinbk48iC",
+   "yearbooks": [
+    2021
+   ]
+  },
+  "bronski-beat-i-feel-love.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "bronski-beat-i-feel-love"
+   ],
+   "track": "3oDtHLkS4k687WbPCd7EdN",
+   "yearbooks": [
+    2021
+   ]
+  },
+  "bronski-beat-smalltown-boy-reprise-2014.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "bronski-beat-smalltown-boy-reprise-2014"
+   ],
+   "track": "6Z0csFlyJnQqqwREJeBsXL",
+   "yearbooks": [
+    2021
+   ]
+  },
+  "bronski-beat-why.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "bronski-beat-why"
+   ],
+   "track": "7vOLJwP5O0woITaIQWOoUX",
+   "yearbooks": [
+    2021,
+    2022
+   ]
+  },
   "bronski-beat_small_town_boy.md": {
    "liked": false,
    "playlists": 1,
@@ -495,6 +598,17 @@
    "track": "5vmRQ3zELMLUQPo2FLQ76x",
    "yearbooks": [
     2020,
+    2021
+   ]
+  },
+  "buddy-rich-big-band-the-beat-goes-on-live-at-the-chez-club-hollywood-1967.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "buddy-rich-big-band-the-beat-goes-on-live-at-the-chez-club-hollywood-1967"
+   ],
+   "track": "4RvQSYyiyhdgQ4lJlVZZZa",
+   "yearbooks": [
     2021
    ]
   },
@@ -526,6 +640,17 @@
    ],
    "track": "3Y91fIpStxQrUaXuaTbGVv",
    "yearbooks": []
+  },
+  "cardi-b-money.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "cardi-b-money"
+   ],
+   "track": "0th8A1tMdGYG5ivorx6FVJ",
+   "yearbooks": [
+    2021
+   ]
   },
   "cardi-b-wap-feat-megan-thee-stallion.md": {
    "liked": true,
@@ -631,6 +756,17 @@
    "track": "1t2DuK4AAnNbaiQl7QKFKA",
    "yearbooks": [
     2017,
+    2022
+   ]
+  },
+  "clement-bazin-come-to-this.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "clement-bazin-come-to-this"
+   ],
+   "track": "2YSO6wetDA5bC9IAj0K0HN",
+   "yearbooks": [
     2022
    ]
   },
@@ -889,6 +1025,17 @@
    "track": "0scFkQkZhWVCImZ3FiWM9q",
    "yearbooks": []
   },
+  "ephemerals-wolfgang-valbrun-you-made-us-change.md": {
+   "liked": false,
+   "playlists": 0,
+   "records": [
+    "ephemerals-you-made-us-change-3bu9t1"
+   ],
+   "track": "3BU9t17L9vZssJIEz6eHhi",
+   "yearbooks": [
+    2022
+   ]
+  },
   "fatboy-slim-bird-of-pray.md": {
    "liked": false,
    "playlists": 1,
@@ -978,6 +1125,17 @@
    "track": "4iFbpj8YwYkgJdbI5hFFlt",
    "yearbooks": [
     2016
+   ]
+  },
+  "fm-laeti-sanctuary.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "fm-laeti-sanctuary"
+   ],
+   "track": "7pVwjQPcMQEOMeXdG5uYoN",
+   "yearbooks": [
+    2022
    ]
   },
   "format-b-chunky-radio-edit.md": {
@@ -1904,6 +2062,18 @@
     2022
    ]
   },
+  "kruder-dorfmeister-johnson.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "kruder-dorfmeister-johnson"
+   ],
+   "track": "522A3dgrvWe27tK3L3gbYF",
+   "yearbooks": [
+    2021,
+    2022
+   ]
+  },
   "kutiman-inner-galactic-lovers.md": {
    "liked": true,
    "playlists": 2,
@@ -1938,6 +2108,18 @@
     2017
    ]
   },
+  "laidback-beautiful-day.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "laidback-beautiful-day"
+   ],
+   "track": "3SJY53oFCra9sKQYyWrhtI",
+   "yearbooks": [
+    2021,
+    2022
+   ]
+  },
   "lamomali-m-toumani-diabate-amadou-mariam-l-ame-au-mali.md": {
    "liked": false,
    "playlists": 1,
@@ -1947,6 +2129,18 @@
    "track": "0tZnCHPbUWtafdlafpE6Cs",
    "yearbooks": [
     2017
+   ]
+  },
+  "lana-del-rey-solomun-west-coast-solomun-remix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "lana-del-rey-west-coast-solomun-remix",
+    "lana-del-rey-west-coast-solomun-remix-6xrz6r"
+   ],
+   "track": "1bmKwuKJXqQRlFBPqLwkcQ",
+   "yearbooks": [
+    2021
    ]
   },
   "las-aves-n-e-m.md": {
@@ -2075,6 +2269,17 @@
     2022
    ]
   },
+  "luiz-henrique-mas-que-nada.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "luiz-henrique-mas-que-nada"
+   ],
+   "track": "4X24gbKkMyC1VlNFog3EUD",
+   "yearbooks": [
+    2021
+   ]
+  },
   "lulu-rouge-sweeter-than-sweet.md": {
    "liked": true,
    "playlists": 0,
@@ -2105,6 +2310,17 @@
    "track": "2zIMWCgHcKPvpDGIiUwLQ7",
    "yearbooks": []
   },
+  "mama-tiefschwarz-solomun-corporate-butcher-solomun-remix.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "mama-corporate-butcher-solomun-remix"
+   ],
+   "track": "1qnkW5FcYBpuG50FDLGQ9Y",
+   "yearbooks": [
+    2022
+   ]
+  },
   "mando-diao-dance-with-somebody-radio-version.md": {
    "liked": true,
    "playlists": 1,
@@ -2127,6 +2343,17 @@
    "yearbooks": [
     2019,
     2020
+   ]
+  },
+  "marc-moulin-into-the-dark.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "marc-moulin-into-the-dark"
+   ],
+   "track": "5J75csVihxemZailkLFMEF",
+   "yearbooks": [
+    2022
    ]
   },
   "marcu-rares_camimosa.md": {
@@ -2160,6 +2387,17 @@
     2017
    ]
   },
+  "marcus-worgull-love-song.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "marcus-worgull-love-song"
+   ],
+   "track": "6MWIaTPMTBItxX83g2RukN",
+   "yearbooks": [
+    2022
+   ]
+  },
   "marek-hemmann-gemini.md": {
    "liked": true,
    "playlists": 1,
@@ -2182,6 +2420,17 @@
     2022
    ]
   },
+  "mark-farina-kaskade-dream-machine-kaskade-mix.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "mark-farina-dream-machine-kaskade-mix"
+   ],
+   "track": "7wlDCYTcXbNYF9RsKN5lpp",
+   "yearbooks": [
+    2022
+   ]
+  },
   "martin-waslewski-gerd.md": {
    "liked": true,
    "playlists": 1,
@@ -2190,6 +2439,17 @@
     "martin-waslewski-gerd-original-mix"
    ],
    "track": "6lC9bFA7J6buL5kctIDy1Y",
+   "yearbooks": [
+    2022
+   ]
+  },
+  "mat-joe-david-keno-shamoozey-early-morning.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "mat-joe-early-morning"
+   ],
+   "track": "4lwEWqDRT2pylNGMAcIEPe",
    "yearbooks": [
     2022
    ]
@@ -2216,6 +2476,19 @@
     2022
    ]
   },
+  "melissa-laveaux-kouzen.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "melissa-laveaux-kouzen",
+    "melissa-laveaux-kouzen-5xm25d"
+   ],
+   "track": "1oZSL8eGsxMsX0nLbq0vr8",
+   "yearbooks": [
+    2021,
+    2022
+   ]
+  },
   "melissa-laveaux-needle-in-the-hay.md": {
    "liked": true,
    "playlists": 1,
@@ -2225,6 +2498,17 @@
    "track": "4TCcDD97LU6rBUnYhjGmR8",
    "yearbooks": [
     2022
+   ]
+  },
+  "method-man-mary-j-blige-i-ll-be-there-for-you-you-re-all-i-need-to-get-by-puff-daddy-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "method-man-i-ll-be-there-for-you-you-re-all-i-need-to-get-by-puff-daddy-mix"
+   ],
+   "track": "6C3yPXYG2NJYlIYVe5J7hv",
+   "yearbooks": [
+    2021
    ]
   },
   "metronomy-love-letters-soulwax-remix.md": {
@@ -2327,6 +2611,18 @@
     "moderat-a-new-error"
    ],
    "track": "1fmoCZ6mtMiqA5GHWPcZz9",
+   "yearbooks": [
+    2022
+   ]
+  },
+  "monterosso-huacachina.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "monterosso-huacachina",
+    "monterosso-huacachina-4zz592"
+   ],
+   "track": "3zRhKaZXEUGrJqMGN5KtXy",
    "yearbooks": [
     2022
    ]
@@ -2530,6 +2826,17 @@
     2020
    ]
   },
+  "nicolas-repac-swinging-in-the-rain.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "nicolas-repac-swinging-in-the-rain"
+   ],
+   "track": "0tjZZfltCs26FapwZJPo9G",
+   "yearbooks": [
+    2022
+   ]
+  },
   "niklas-ibach-hungry-remix.md": {
    "liked": true,
    "playlists": 2,
@@ -2630,6 +2937,17 @@
     2022
    ]
   },
+  "ooft-love-soulsaving-original-mix.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "ooft-love-soulsaving-original-mix"
+   ],
+   "track": "1x8qfecQ6n3Wa4mS10vx0D",
+   "yearbooks": [
+    2022
+   ]
+  },
   "paloma-faith-upside-down.md": {
    "liked": true,
    "playlists": 1,
@@ -2651,6 +2969,17 @@
    "track": "0pUhDn6UZH1RlhjyxA7R9f",
    "yearbooks": [
     2017
+   ]
+  },
+  "peter-bjorn-and-john-young-folks.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "peter-bjorn-and-john-young-folks"
+   ],
+   "track": "4dyx5SzxPPaD8xQIid5Wjj",
+   "yearbooks": [
+    2022
    ]
   },
   "pharrell-williams-happy.md": {
@@ -2748,6 +3077,18 @@
     2019
    ]
   },
+  "postmodern-jukebox-kenton-closer.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "postmodern-jukebox-closer",
+    "postmodern-jukebox-closer-0e32w7"
+   ],
+   "track": "0DkhVg4yXKcey52K1hGI1W",
+   "yearbooks": [
+    2021
+   ]
+  },
   "recable-big-jet-plane-recable-remix.md": {
    "liked": true,
    "playlists": 1,
@@ -2780,6 +3121,17 @@
    "track": "0Rz1KXsP4bhGxs0ffySSSn",
    "yearbooks": [
     2016
+   ]
+  },
+  "rodriguez-rich-folks-hoax.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "rodriguez-rich-folks-hoax"
+   ],
+   "track": "3S36aqn9EqvHkRCAa86oiF",
+   "yearbooks": [
+    2021
    ]
   },
   "roisin-murphy-primitive.md": {
@@ -2857,6 +3209,18 @@
     2022
    ]
   },
+  "simion-roland-clark-lost-club-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "simion-lost-club-mix"
+   ],
+   "track": "6sEzseJe6Df8gAtBmk3nUl",
+   "yearbooks": [
+    2021,
+    2022
+   ]
+  },
   "sleaford-mods-tweet-tweet-tweet.md": {
    "liked": true,
    "playlists": 0,
@@ -2900,6 +3264,29 @@
     2017
    ]
   },
+  "son-of-dave-devil-take-my-soul.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "son-of-dave-devil-take-my-soul",
+    "son-of-dave-devil-take-my-soul-4f2r5t"
+   ],
+   "track": "0bPZyMEy94ui7CYxqQJUb3",
+   "yearbooks": [
+    2022
+   ]
+  },
+  "stepart-pupajim-another-night.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "stepart-another-night"
+   ],
+   "track": "5ew3JElU38PsjOTu7M713y",
+   "yearbooks": [
+    2022
+   ]
+  },
   "stimming-david-christensen-bernd-ruf-november-morning.md": {
    "liked": false,
    "playlists": 0,
@@ -2909,6 +3296,17 @@
    "track": "0OWFGKd8SGwrsyYNF6vUgk",
    "yearbooks": [
     2022
+   ]
+  },
+  "swing-republic-the-mills-brothers-moanin-for-you.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "swing-republic-moanin-for-you"
+   ],
+   "track": "0gEw6pgw9tPQPwOXHbNez7",
+   "yearbooks": [
+    2021
    ]
   },
   "sworn-virgins-burning-off-my-clothes.md": {
@@ -3020,6 +3418,17 @@
     2016
    ]
   },
+  "the-weeknd-blinding-lights.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "the-weeknd-blinding-lights"
+   ],
+   "track": "0VjIjW4GlUZAMYd2vXMi3b",
+   "yearbooks": [
+    2021
+   ]
+  },
   "the-xx-crystalised.md": {
    "liked": true,
    "playlists": 0,
@@ -3050,6 +3459,17 @@
    "track": "06VFJ6o6ywoSdrSWMZMIoN",
    "yearbooks": [
     2017
+   ]
+  },
+  "tim-love-lee-dub-cherie.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "tim-love-lee-dub-cherie"
+   ],
+   "track": "2z5DwRWcmvwmlJWRUKaCJk",
+   "yearbooks": [
+    2022
    ]
   },
   "timmy-trumpet-gabry-ponte-mad-world.md": {
@@ -3106,6 +3526,17 @@
     2017
    ]
   },
+  "tom-fire-linval-thompson-no-food-feat-linval-thompson.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "tom-fire-no-food-feat-linval-thompson"
+   ],
+   "track": "7wz1dRobFzMRMPFSTKfStq",
+   "yearbooks": [
+    2022
+   ]
+  },
   "totally-enormous-extinct-dinosaurs-garden.md": {
    "liked": false,
    "playlists": 1,
@@ -3153,6 +3584,17 @@
     2022
    ]
   },
+  "utah-jazz-take-no-more.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "utah-jazz-take-no-more"
+   ],
+   "track": "0oFrgQsespoo1VdDVtuwHE",
+   "yearbooks": [
+    2022
+   ]
+  },
   "vitalic-cocaine.md": {
    "liked": true,
    "playlists": 0,
@@ -3182,6 +3624,18 @@
    ],
    "track": "7l3vWdbYRnYVmlBED0FJlw",
    "yearbooks": []
+  },
+  "wax-tailor-que-sera-phonovisions-symphonic-version.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "wax-tailor-que-sera-phonovisions-symphonic-version",
+    "wax-tailor-que-sera-phonovisions-symphonic-version-5fhtfg"
+   ],
+   "track": "5IAExP6GYabtfwK72JkXBk",
+   "yearbooks": [
+    2021
+   ]
   },
   "whilk-and-miskey-darklands.md": {
    "liked": true,
@@ -3756,6 +4210,7 @@
    "rank": 45,
    "read": "2026-11-14",
    "record": "cardi-b-money",
+   "review": "cardi-b-money.md",
    "title": "Money"
   },
   {

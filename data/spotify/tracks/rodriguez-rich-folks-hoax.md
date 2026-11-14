@@ -6,8 +6,9 @@ artists: ["Rodríguez"]
 album: "Cold Fact"
 duration: "3:05"
 spotify: {"track": "3S36aqn9EqvHkRCAa86oiF", "album": "3q90UAYeHLvAtnowiQlmgp", "artists": ["5PrHzxc3kFm4hIrGNmelpX"]}
-keys: {"fold": "rodriguez|richfolkshoax"}
-status: "missing"
+keys: {"fold": "rodriguez|richfolkshoax", "isrc": "USDEA0803611", "musicbrainz": "84a96ac4-adbe-4c18-9c49-6f03b9cf5dbf"}
+review: "rodriguez-rich-folks-hoax.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 21}
@@ -22,4 +23,4 @@ From the album *Cold Fact*, 3:05.
 A liked song.
 Your Top Songs 2021: #21.
 In My Top Songs of All the Time (#467).
-No review yet.
+Reviewed: content/rodriguez-rich-folks-hoax.md.
