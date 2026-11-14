@@ -23,6 +23,7 @@
 'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
+const { retryAfter } = require('./retry.cjs');
 
 let chromium;
 try {
@@ -239,13 +240,15 @@ async function sweep(browser) {
     while (next < urls.length) {
       const loc = urls[next++];
       const rel = loc.startsWith(base) ? loc.slice(base.length) : loc;
-      // A page whose deadline passes is loaded once more: a stalled third-party response (a
-      // YouTube still on a CI machine, 2026-11-12) is not a defect of the site, a page that
-      // stalls twice is. Errors (a console message, a 404) are never retried.
+      // A stalled page, or a live host's transient answer, is loaded once more (test/e2e/retry.cjs);
+      // a page that fails twice fails, and a console message or a 404 is never retried.
       let result = await visit(context, rel);
-      if (result.stalled) {
+      const pause = retryAfter(result, !root);
+      if (pause !== null) {
+        const why = result.stalled ? 'stalled' : `host answered ${result.errors[0].split(':')[0]}`;
+        await new Promise((r) => setTimeout(r, pause));
         const again = await visit(context, rel);
-        if (!again.stalled && !again.errors.length) notices.add(`stalled once, passed on retry: /${rel}`);
+        if (!again.stalled && !again.errors.length) notices.add(`${why} once, passed on retry: /${rel}`);
         result = again;
       }
       if (result.errors.length) failed.push(`${rel || '/'}: ${result.errors.join(' | ')}`);
