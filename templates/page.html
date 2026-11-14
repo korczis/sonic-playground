@@ -12,7 +12,7 @@
 {%- if track %}
 {{ <track_hero t={track} home={home} l={l} lead={lead} /> }}
 {%- else %}
-{{ <page_header title={page.title} crumbs={[[l["site.home"], home, "site.home"], [page.title, "", ""]]} lead={lead} /> }}
+{{ <page_header title={page.title} crumbs={[[l["site.home"], home, "site.home"], [page.title, "", ""]]} lead={lead} l={l} /> }}
 {%- endif %}
 <div class="relative z-10 grid grid-cols-1 gap-4 px-4 xl:grid-cols-3 xl:px-8{% if track %} -mt-24{% else %} pt-6{% endif %}">
   <div class="min-w-0 space-y-4 xl:col-span-2">
@@ -99,7 +99,7 @@
     {%- endif %}
 
     {%- if page.lower or page.higher %}
-    <nav aria-label="Neighbouring tracks" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <nav aria-label="{{ <tr key="landmark.neighbours" l={l} /> }}" data-i18n-aria-label="landmark.neighbours" class="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {%- if page.higher %}
       <a href="{{ page.higher.permalink }}" class="{{ card }} group flex items-center gap-3 p-4 hover:bg-gray-50 dark:hover:bg-gray-700">
         <span class="text-gray-500 transition group-hover:-translate-x-1 dark:text-gray-400">{{ <icon name="arrow-left" /> }}</span>
@@ -117,7 +117,7 @@
   </div>
 
   {%- if track %}
-  <aside class="space-y-4 xl:sticky xl:top-20 xl:self-start" aria-label="About this track">
+  <aside class="space-y-4 xl:sticky xl:top-20 xl:self-start" aria-label="{{ <tr key="landmark.about_track" l={l} /> }}" data-i18n-aria-label="landmark.about_track">
     <div class="{{ card }} p-4 sm:p-6">
       <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="track.facets" l={l} /> }}</h2>
       {%- for kind in catalog.facet_names %}

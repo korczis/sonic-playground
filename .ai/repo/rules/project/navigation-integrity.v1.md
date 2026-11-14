@@ -38,6 +38,13 @@ reachability, a shell compared with a reload, and a fetch that fails once and th
   `data-follows-page="<name>"`; `static/js/router.js` copies those attributes from the incoming page.
 - A data fetch (the catalogue, the play index) forgets a rejection; the play index falls back from
   a failed catalogue to `play.json`.
+- A script load (`Sonic.script`: the YouTube API, ECharts) forgets a rejection with its element, so
+  the next Play or chart asks again. A fourth review (2026-11-14) found the same cached rejection
+  there; the smoke test fails the first YouTube API request and expects the next Play to play.
+- Back and Forward return the reader to where they were. The router keeps each entry's scroll
+  position and restores it after the page mounts, and the explorer keeps its open results
+  (`explorerLimit`) in the entry. The smoke test opens 72 results, scrolls, opens a review and goes
+  Back (the old code reset to 24 at the top).
 
 # Failure behaviour
 

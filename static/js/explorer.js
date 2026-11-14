@@ -152,7 +152,7 @@ window.Sonic.module('explorer', function mount() {
   }
 
   function load() {
-    limit = PAGE;
+    limit = (history.state && history.state.explorerLimit) || PAGE;
     var params = new URLSearchParams(window.location.search);
     query.value = params.get('q') || '';
     sort.value = params.get('sort') || 'new';
@@ -176,6 +176,8 @@ window.Sonic.module('explorer', function mount() {
     more.addEventListener('click', function () {
       limit += PAGE;
       render(false);
+      // Kept in this history entry: Back from a review shows as many results as were open.
+      history.replaceState(Object.assign({}, history.state || {}, { explorerLimit: limit }), '');
     });
   }
   if (reset) {

@@ -62,9 +62,25 @@
   // Only the latest navigation lands: an earlier click whose page arrives later (a slow
   // connection) is dropped and its request aborted, never committed over the newer page.
   var navigation = 0;
+  // Back and Forward return the reader to where they were: each entry keeps its scroll position
+  // (window and #main-content), saved when the page is left and restored after the page mounts.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  function scrollPosition() {
+    var main = document.getElementById('main-content');
+    return { x: window.scrollX, y: window.scrollY, main: main ? main.scrollTop : 0 };
+  }
+  function remember() {
+    history.replaceState(Object.assign({}, history.state || {}, { sonic: true, scroll: scrollPosition() }), '');
+  }
+  function restore(at) {
+    var main = document.getElementById('main-content');
+    if (main) main.scrollTop = at.main || 0;
+    window.scrollTo(at.x || 0, at.y || 0);
+  }
   var inflight = /** @type {AbortController | null} */ (null);
   function go(url, push) {
     var mine = ++navigation;
+    if (push) remember();
     if (inflight) inflight.abort();
     inflight = new AbortController();
     document.documentElement.dataset.navigatingState = 'true';
@@ -77,7 +93,10 @@
       if (push) history.pushState({ sonic: true }, '', url.href);
       if (!swap(doc)) throw new Error('no #main-content');
       current = location.pathname;
-      if (url.hash) {
+      var saved = !push && history.state && history.state.scroll;
+      if (saved) {
+        // Restored after the page mounts (below): the explorer unfolds its results first.
+      } else if (url.hash) {
         var target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
         if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
       } else {
@@ -87,6 +106,7 @@
       // tooltips included) and Popper then measures detached elements. #main-content holds no
       // Flowbite component; anything that needs one belongs outside it.
       Sonic.mountAll();
+      if (saved) restore(saved);
       var main = document.getElementById('main');
       if (main) main.focus({ preventScroll: true });
       var live = document.getElementById('route-announcer');

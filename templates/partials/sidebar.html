@@ -7,9 +7,9 @@
 {%- set badge = "ml-auto shrink-0 rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600 dark:bg-gray-700 dark:text-gray-300" -%}
 {%- set heading = "px-2 pb-1 pt-4 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400" -%}
 {%- set sub = "flex items-center rounded-lg py-1.5 pl-3 pr-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" -%}
-<aside id="sidebar" class="fixed left-0 top-0 z-20 flex h-full w-64 shrink-0 -translate-x-full flex-col pt-16 transition-transform lg:translate-x-0" aria-label="Sidebar">
+<aside id="sidebar" class="fixed left-0 top-0 z-20 flex h-full w-64 shrink-0 -translate-x-full flex-col pt-16 transition-transform lg:translate-x-0" aria-label="Sidebar" data-i18n-aria-label="landmark.sidebar">
   <div class="relative flex min-h-0 flex-1 flex-col border-r border-gray-200 bg-white pt-0 dark:border-gray-700 dark:bg-gray-800">
-    <nav class="flex flex-1 flex-col overflow-y-auto pb-6 pt-4" aria-label="Site">
+    <nav class="flex flex-1 flex-col overflow-y-auto pb-6 pt-4" aria-label="{{ <tr key="landmark.site" l={l} /> }}" data-i18n-aria-label="landmark.site">
       <div class="flex-1 space-y-1 px-3">
         <form class="mb-2 lg:hidden" role="search" action="{{ get_url(path='@/_index.md', lang=lang) }}" method="get">
           <label for="mobile-search" class="sr-only" data-i18n="nav.search_label">{{ l["nav.search_label"] }}</label>
