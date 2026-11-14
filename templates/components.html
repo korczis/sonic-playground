@@ -72,7 +72,7 @@
 {%- set k = "term." ~ kind ~ "." ~ term %}<a href="{% if l.lang in tc.lang_terms and term not in tc.lang_terms[l.lang][kind] %}{{ get_taxonomy_url(kind=kind, term=term, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind=kind, term=term, lang=l.lang) }}{% endif %}" class="inline-flex items-center rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{% if k in l %}{{ l[k] }}{% else %}{{ term }}{% endif %}</a>
 {% endfor -%}
 {%- for r in ranked[:limit] -%}
-{%- set k = "term." ~ kind ~ "." ~ r.term %}<a href="{% if l.lang in tc.lang_terms and r.term not in tc.lang_terms[l.lang][kind] %}{{ get_taxonomy_url(kind=kind, term=r.term, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind=kind, term=r.term, lang=l.lang) }}{% endif %}" class="inline-flex items-center gap-1.5 rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{% if k in l %}{{ l[k] }}{% else %}{{ r.term }}{% endif %}<span class="opacity-70">{{ r.count }}</span></a>
+{%- set k = "term." ~ kind ~ "." ~ r.term %}<a href="{% if l.lang in tc.lang_terms and r.term not in tc.lang_terms[l.lang][kind] %}{{ get_taxonomy_url(kind=kind, term=r.term, lang=tc.languages | first) }}{% else %}{{ get_taxonomy_url(kind=kind, term=r.term, lang=l.lang) }}{% endif %}" class="inline-flex items-center gap-1.5 rounded-md px-2.5 py-0.5 text-{{ size }} font-medium {{ tone }}">{% if k in l %}{{ l[k] }}{% else %}{{ r.term }}{% endif %}<span class="font-normal tabular-nums">{{ r.count }}</span></a>
 {% endfor -%}
 {% endcomponent facet_badges %}
 
@@ -392,7 +392,7 @@ src="{{ get_url(path=t.thumbnail) }}"
     <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-2">
       <a href="{{ <share_href net="linkedin" url={url} text={text} /> }}" target="_blank" rel="noopener noreferrer" class="{{ btn }} bg-[#0A66C2] text-white hover:bg-[#0A66C2]/90 focus:ring-[#0A66C2]/50">{{ <brand_icon name="linkedin" cls="mr-2 h-4 w-4" /> }}{{ <tx key="share.linkedin" l={l} /> }}</a>
       <a href="{{ <share_href net="x" url={url} text={text} /> }}" target="_blank" rel="noopener noreferrer" class="{{ btn }} bg-white text-gray-900 hover:bg-gray-100 focus:ring-gray-500">{{ <brand_icon name="x" cls="mr-2 h-4 w-4" /> }}{{ <tx key="share.x" l={l} /> }}</a>
-      <a href="{{ <share_href net="facebook" url={url} text={text} /> }}" target="_blank" rel="noopener noreferrer" class="{{ btn }} bg-[#1877F2] text-white hover:bg-[#1877F2]/90 focus:ring-[#1877F2]/50">{{ <brand_icon name="facebook" cls="mr-2 h-4 w-4" /> }}{{ <tx key="share.facebook" l={l} /> }}</a>
+      <a href="{{ <share_href net="facebook" url={url} text={text} /> }}" target="_blank" rel="noopener noreferrer" class="{{ btn }} bg-[#0866FF] text-white hover:bg-[#0866FF]/90 focus:ring-[#0866FF]/50">{{ <brand_icon name="facebook" cls="mr-2 h-4 w-4" /> }}{{ <tx key="share.facebook" l={l} /> }}</a>
       <button type="button" data-copy-link="{{ url }}" class="{{ btn }} border border-white/30 text-white hover:bg-white/10 focus:ring-gray-700"><span data-copy-idle>{{ <icon name="copy" cls="mr-2 h-4 w-4" /> }}</span><span data-copy-done hidden class="text-green-400">{{ <icon name="check" cls="mr-2 h-4 w-4" /> }}</span><span data-copy-label data-i18n="share.copy">{{ l["share.copy"] }}</span></button>
     </div>
   </div>
