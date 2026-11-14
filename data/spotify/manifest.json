@@ -92,5 +92,14 @@
    "followed": 27
   }
  },
- "private": "data/spotify/private/ (ignored; its own local git repository): raw sources, dates added, plays"
+ "private": "data/spotify/private/ (ignored; its own local git repository): raw sources, dates added, plays",
+ "schemas": {
+  "track": "data/spotify-track.schema.json",
+  "playlist": "data/spotify-playlist.schema.json",
+  "library": "data/spotify-library.schema.json",
+  "index": "data/spotify-index.schema.json",
+  "tables": "data/spotify-tables.schema.json",
+  "manifest": "data/spotify-manifest.schema.json",
+  "web-snapshot": "data/spotify-web-snapshot.schema.json"
+ }
 }

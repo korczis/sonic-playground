@@ -15,6 +15,7 @@ provenance:
     - session:e290e809-a468-45bf-91be-e27d9cc26bab
     - file:scripts/spotify_history.py
     - file:.ai/repo/knowledge/curated/owner-answers-2026-11-14.md
+    - file:.ai/repo/knowledge/curated/spotify-history-format.md
 ---
 
 # 7. The owner's Spotify history is one record per song, public identity and relationships, private time
@@ -57,6 +58,21 @@ be fully taken back. Spotify exposes the library through two channels:
   schema, refuses a private key in a public record and private data tracked by git, checks
   that every relationship resolves, and, where the private sources exist, that the records are
   current.
+
+## Scope and localisation
+
+- **Scope.** The web player's library, every playlist with its items in order, the saved albums,
+  the followed artists, and the profile's top tracks and artists. Every play comes with the data
+  export, and only into the private records. The full map of what is covered and missed is
+  knowledge `spotify-history-format`.
+- **Localisation.** Records and tables are language-neutral data (English keys, Spotify's own
+  names, ISO dates). Bodies are English summaries. What the site shows from them is localised
+  through `data/i18n/` like every other string (ADR 0006).
+- **Formalised.** Every derived file has a schema (`data/spotify-*.schema.json`), and so does the
+  private snapshot. `--check` validates them, the table rows and their foreign keys, and
+  `ingest-snapshot` refuses a snapshot that is not `spotify-web-snapshot/v1`.
+- **Integrated.** Review pages read `index.json` (liked, playlists, the recording's Spotify
+  link). The landing's "On repeat this month" shows the reviewed top tracks in rank order.
 
 ## Alternatives rejected
 

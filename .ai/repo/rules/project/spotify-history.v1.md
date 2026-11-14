@@ -27,7 +27,12 @@ source. A private field that slipped into a public record would be published for
 - No public record has a key from the private set: `added`, `plays`, `ts`, `played`, `ip_addr`,
   `user`, `user_id`, `owner_id`, `username`, `email`, `playlist_id`, `conn_country`,
   `platform`.
-- `.gitignore` ignores `/data/spotify/private/`, and git tracks nothing under it.
+- `index.json`, `manifest.json` and every row of `tables/*.jsonl` validate against
+  `data/spotify-{index,manifest,tables}.schema.json`. The tables' foreign keys resolve
+  (membership to track and playlist, track to its record), and no row has a private key.
+- A private snapshot validates against `data/spotify-web-snapshot.schema.json`;
+  `ingest-snapshot` refuses one that does not.
+- `.gitignore` ignores `/data/spotify/private`, and git tracks nothing under it.
 - Where the private sources exist, a build changes nothing: the committed records and the
   yearbooks they write are current.
 - A snapshot is read from the rendered web player; the owner's session credentials are never

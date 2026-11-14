@@ -45,6 +45,9 @@
 "home.learn_text" = { one = "{n} pojem z rytmu, harmonie, zvuku nebo produkce, vysvětlený a slyšitelný ve skladbách; recenze s průvodcem poslechem: {t}.", few = "{n} pojmy z rytmu, harmonie, zvuku a produkce, vysvětlené a slyšitelné ve skladbách; recenze s průvodcem poslechem: {t}.", other = "{n} pojmů z rytmu, harmonie, zvuku a produkce, vysvětlených a slyšitelných ve skladbách; recenze s průvodcem poslechem: {t}." }
 "home.learn_cta" = "Otevřít slovník pojmů"
 "home.recent" = "Nově publikované"
+"home.on_repeat" = "Tento měsíc pořád dokola"
+"home.on_repeat_caption" = "Moje nejposlouchanější skladby na Spotify za tento měsíc, které tu mají recenzi, ke dni {date}."
+"home.on_repeat_play" = { one = "Přehrát {n}", few = "Přehrát všechny {n}", other = "Přehrát všech {n}" }
 "home.recent_all" = "Celý archiv →"
 "home.recent_play" = "Přehrát tyto"
 "home.recurring" = { one = "Rok co rok zpátky: {n} skladba", few = "Rok co rok zpátky: {n} skladby", other = "Rok co rok zpátky: {n} skladeb" }

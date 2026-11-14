@@ -2806,5 +2806,535 @@
   }
  },
  "schema": "spotify-index/v1",
- "songs": 6516
+ "songs": 6516,
+ "top": [
+  {
+   "artists": [
+    "Joe Goddard",
+    "Mara Carlyle"
+   ],
+   "range": "month",
+   "rank": 1,
+   "read": "2026-11-14",
+   "record": "joe-goddard-she-burns",
+   "title": "She Burns"
+  },
+  {
+   "artists": [
+    "Dan Kanvis"
+   ],
+   "range": "month",
+   "rank": 2,
+   "read": "2026-11-14",
+   "record": "dan-kanvis-skeleton",
+   "title": "Skeleton"
+  },
+  {
+   "artists": [
+    "Thylacine",
+    "Camille Després"
+   ],
+   "range": "month",
+   "rank": 3,
+   "read": "2026-11-14",
+   "record": "thylacine-no-mic-stand",
+   "title": "No Mic Stand"
+  },
+  {
+   "artists": [
+    "Trinix",
+    "The Macarons Project"
+   ],
+   "range": "month",
+   "rank": 4,
+   "read": "2026-11-14",
+   "record": "trinix-too-sweet",
+   "title": "Too Sweet"
+  },
+  {
+   "artists": [
+    "Time To Sleep"
+   ],
+   "range": "month",
+   "rank": 5,
+   "read": "2026-11-14",
+   "record": "time-to-sleep-lungo-mare",
+   "title": "Lungo Mare"
+  },
+  {
+   "artists": [
+    "Nôze",
+    "Wareika"
+   ],
+   "range": "month",
+   "rank": 6,
+   "read": "2026-11-14",
+   "record": "noze-exodus-3058eh",
+   "title": "Exodus"
+  },
+  {
+   "artists": [
+    "Hindi Zahra"
+   ],
+   "range": "month",
+   "rank": 7,
+   "read": "2026-11-14",
+   "record": "hindi-zahra-stand-up-remastered-version",
+   "review": "hindi-zahra_stand-up.md",
+   "title": "Stand Up - Remastered Version"
+  },
+  {
+   "artists": [
+    "Bleu Azur"
+   ],
+   "range": "month",
+   "rank": 8,
+   "read": "2026-11-14",
+   "record": "bleu-azur-just-the-two-of-us",
+   "title": "Just the Two of Us"
+  },
+  {
+   "artists": [
+    "Connor Price",
+    "Nic D"
+   ],
+   "range": "month",
+   "rank": 9,
+   "read": "2026-11-14",
+   "record": "connor-price-too-easy",
+   "title": "Too Easy"
+  },
+  {
+   "artists": [
+    "Gorillaz",
+    "Bootie Brown"
+   ],
+   "range": "month",
+   "rank": 10,
+   "read": "2026-11-14",
+   "record": "gorillaz-dirty-harry-5opeti",
+   "title": "Dirty Harry"
+  },
+  {
+   "artists": [
+    "Gorillaz"
+   ],
+   "range": "month",
+   "rank": 11,
+   "read": "2026-11-14",
+   "record": "gorillaz-spitting-out-the-demons-5umnpt",
+   "title": "Spitting out the Demons"
+  },
+  {
+   "artists": [
+    "FRENCHGRL"
+   ],
+   "range": "month",
+   "rank": 12,
+   "read": "2026-11-14",
+   "record": "frenchgrl-seven-nation-army",
+   "title": "Seven Nation Army"
+  },
+  {
+   "artists": [
+    "Jain"
+   ],
+   "range": "month",
+   "rank": 13,
+   "read": "2026-11-14",
+   "record": "jain-son-of-a-sun",
+   "title": "Son of a Sun"
+  },
+  {
+   "artists": [
+    "renforshort",
+    "Mateus Asato"
+   ],
+   "range": "month",
+   "rank": 14,
+   "read": "2026-11-14",
+   "record": "renforshort-feel-good-inc-feat-mateus-asato",
+   "title": "feel good inc. (feat. Mateus Asato)"
+  },
+  {
+   "artists": [
+    "Gorillaz"
+   ],
+   "range": "month",
+   "rank": 15,
+   "read": "2026-11-14",
+   "record": "gorillaz-murdoc-is-god-3gd2a2",
+   "title": "Murdoc Is God"
+  },
+  {
+   "artists": [
+    "The Puppini Sisters"
+   ],
+   "range": "month",
+   "rank": 16,
+   "read": "2026-11-14",
+   "record": "the-puppini-sisters-we-have-all-the-time-in-the-world-47uwyh",
+   "title": "We Have All The Time In The World"
+  },
+  {
+   "artists": [
+    "Dr. Dre",
+    "Hittman",
+    "Ms. Roq",
+    "Kurupt"
+   ],
+   "range": "month",
+   "rank": 17,
+   "read": "2026-11-14",
+   "record": "dr-dre-let-s-get-high",
+   "title": "Let's Get High"
+  },
+  {
+   "artists": [
+    "Gabriella Cilmi"
+   ],
+   "range": "month",
+   "rank": 18,
+   "read": "2026-11-14",
+   "record": "gabriella-cilmi-left-with-someone-else-1iy75f",
+   "review": "gabriella-cilmi-left-with-someone-else.md",
+   "title": "Left With Someone Else"
+  },
+  {
+   "artists": [
+    "Gorillaz",
+    "Hot Chip"
+   ],
+   "range": "month",
+   "rank": 19,
+   "read": "2026-11-14",
+   "record": "gorillaz-kids-with-guns-hot-chip-remix",
+   "title": "Kids with Guns - Hot Chip Remix"
+  },
+  {
+   "artists": [
+    "Robin Schulz",
+    "Francesco Yates"
+   ],
+   "range": "month",
+   "rank": 20,
+   "read": "2026-11-14",
+   "record": "robin-schulz-sugar-feat-francesco-yates",
+   "review": "robin-schulz-francesco-yates-sugar.md",
+   "title": "Sugar (feat. Francesco Yates)"
+  },
+  {
+   "artists": [
+    "Gorillaz",
+    "Metronomy"
+   ],
+   "range": "month",
+   "rank": 21,
+   "read": "2026-11-14",
+   "record": "gorillaz-el-manana-metronomy-remix-46i29a",
+   "title": "El Mañana - Metronomy Remix"
+  },
+  {
+   "artists": [
+    "Belleruche"
+   ],
+   "range": "month",
+   "rank": 22,
+   "read": "2026-11-14",
+   "record": "belleruche-clockwatching-4zt1ux",
+   "title": "Clockwatching"
+  },
+  {
+   "artists": [
+    "Caribou"
+   ],
+   "range": "month",
+   "rank": 23,
+   "read": "2026-11-14",
+   "record": "caribou-odessa",
+   "title": "Odessa"
+  },
+  {
+   "artists": [
+    "Flume",
+    "Chet Faker"
+   ],
+   "range": "month",
+   "rank": 24,
+   "read": "2026-11-14",
+   "record": "flume-drop-the-game",
+   "title": "Drop The Game"
+  },
+  {
+   "artists": [
+    "Belleruche",
+    "Yam Who?"
+   ],
+   "range": "month",
+   "rank": 25,
+   "read": "2026-11-14",
+   "record": "belleruche-it-ll-come-yam-who-remix",
+   "title": "It'll Come - Yam Who? Remix"
+  },
+  {
+   "artists": [
+    "Bonaparte",
+    "Acid Pauli"
+   ],
+   "range": "month",
+   "rank": 26,
+   "read": "2026-11-14",
+   "record": "bonaparte-not-today",
+   "review": "bonaparte-acid-pauli-not-today.md",
+   "title": "Not Today"
+  },
+  {
+   "artists": [
+    "Gorillaz",
+    "Space Monkeyz"
+   ],
+   "range": "month",
+   "rank": 27,
+   "read": "2026-11-14",
+   "record": "gorillaz-lil-dub-chefin-contains-hidden-tracks-strictly-rubbadub-version-and-a-fistful-of",
+   "title": "Lil' Dub Chefin (Contains Hidden Tracks 'Strictly Rubbadub Version' and 'A Fistful of Peanuts Version') - Contains Hidden Tracks 'Strictly Rubbadub (Version; Version"
+  },
+  {
+   "artists": [
+    "The Puppini Sisters"
+   ],
+   "range": "month",
+   "rank": 28,
+   "read": "2026-11-14",
+   "record": "the-puppini-sisters-spooky",
+   "title": "Spooky"
+  },
+  {
+   "artists": [
+    "Marbert Rocel"
+   ],
+   "range": "month",
+   "rank": 29,
+   "read": "2026-11-14",
+   "record": "marbert-rocel-me-myself-and-i",
+   "title": "Me, Myself and I"
+  },
+  {
+   "artists": [
+    "Belleruche"
+   ],
+   "range": "month",
+   "rank": 30,
+   "read": "2026-11-14",
+   "record": "belleruche-eastern-city-lights-bonus-track",
+   "title": "Eastern City Lights (Bonus Track)"
+  },
+  {
+   "artists": [
+    "Queen"
+   ],
+   "range": "month",
+   "rank": 31,
+   "read": "2026-11-14",
+   "record": "queen-another-one-bites-the-dust-remastered-2011-5vdp5u",
+   "title": "Another One Bites The Dust - Remastered 2011"
+  },
+  {
+   "artists": [
+    "Fischerspooner"
+   ],
+   "range": "month",
+   "rank": 32,
+   "read": "2026-11-14",
+   "record": "fischerspooner-natural-disaster",
+   "title": "Natural Disaster"
+  },
+  {
+   "artists": [
+    "The Puppini Sisters"
+   ],
+   "range": "month",
+   "rank": 33,
+   "read": "2026-11-14",
+   "record": "the-puppini-sisters-could-it-be-magic",
+   "title": "Could It Be Magic"
+  },
+  {
+   "artists": [
+    "Pilocka Krach"
+   ],
+   "range": "month",
+   "rank": 34,
+   "read": "2026-11-14",
+   "record": "pilocka-krach-my-name-is-fame-5zp2ab",
+   "title": "My Name is Fame"
+  },
+  {
+   "artists": [
+    "Say Yes Dog"
+   ],
+   "range": "month",
+   "rank": 35,
+   "read": "2026-11-14",
+   "record": "say-yes-dog-a-friend",
+   "review": "say-yes-dog_a-friend.md",
+   "title": "A Friend"
+  },
+  {
+   "artists": [
+    "Soulwax"
+   ],
+   "range": "month",
+   "rank": 36,
+   "read": "2026-11-14",
+   "record": "soulwax-e-talking",
+   "title": "E Talking"
+  },
+  {
+   "artists": [
+    "Eli"
+   ],
+   "range": "month",
+   "rank": 37,
+   "read": "2026-11-14",
+   "record": "eli-faster-you-fall",
+   "review": "eli-faster-you-fall.md",
+   "title": "Faster You Fall"
+  },
+  {
+   "artists": [
+    "Daniel Landa"
+   ],
+   "range": "month",
+   "rank": 38,
+   "read": "2026-11-14",
+   "record": "daniel-landa-motylek",
+   "title": "Motýlek"
+  },
+  {
+   "artists": [
+    "Lucian",
+    "Makaw"
+   ],
+   "range": "month",
+   "rank": 39,
+   "read": "2026-11-14",
+   "record": "lucian-eye-of-the-storm",
+   "title": "Eye of the Storm"
+  },
+  {
+   "artists": [
+    "Apocalyptica"
+   ],
+   "range": "month",
+   "rank": 40,
+   "read": "2026-11-14",
+   "record": "apocalyptica-battery-remastered",
+   "title": "Battery - Remastered"
+  },
+  {
+   "artists": [
+    "Purple Disco Machine",
+    "Crush Club"
+   ],
+   "range": "month",
+   "rank": 41,
+   "read": "2026-11-14",
+   "record": "purple-disco-machine-take-it-easy-feat-crush-club",
+   "title": "Take It Easy (feat. Crush Club)"
+  },
+  {
+   "artists": [
+    "We Are Enfant Terrible"
+   ],
+   "range": "month",
+   "rank": 42,
+   "read": "2026-11-14",
+   "record": "we-are-enfant-terrible-filthy-love",
+   "title": "Filthy Love"
+  },
+  {
+   "artists": [
+    "Jain"
+   ],
+   "range": "month",
+   "rank": 43,
+   "read": "2026-11-14",
+   "record": "jain-come-7di03r",
+   "review": "jain-come.md",
+   "title": "Come"
+  },
+  {
+   "artists": [
+    "Basement Jaxx",
+    "Lisa Kekaula"
+   ],
+   "range": "month",
+   "rank": 44,
+   "read": "2026-11-14",
+   "record": "basement-jaxx-good-luck",
+   "title": "Good Luck"
+  },
+  {
+   "artists": [
+    "Cardi B"
+   ],
+   "range": "month",
+   "rank": 45,
+   "read": "2026-11-14",
+   "record": "cardi-b-money",
+   "title": "Money"
+  },
+  {
+   "artists": [
+    "Scratch Bandits Crew"
+   ],
+   "range": "month",
+   "rank": 46,
+   "read": "2026-11-14",
+   "record": "scratch-bandits-crew-goodbye",
+   "title": "Goodbye"
+  },
+  {
+   "artists": [
+    "Whilk & Misky"
+   ],
+   "range": "month",
+   "rank": 47,
+   "read": "2026-11-14",
+   "record": "whilk-misky-darklands-2u85ig",
+   "review": "whilk-and-miskey-darklands.md",
+   "title": "Darklands"
+  },
+  {
+   "artists": [
+    "Gorillaz"
+   ],
+   "range": "month",
+   "rank": 48,
+   "read": "2026-11-14",
+   "record": "gorillaz-demon-days",
+   "title": "Demon Days"
+  },
+  {
+   "artists": [
+    "Gorillaz"
+   ],
+   "range": "month",
+   "rank": 49,
+   "read": "2026-11-14",
+   "record": "gorillaz-gorillaz-are-ten-spotify-radio-show-1-7",
+   "title": "Gorillaz Are Ten - Spotify Radio Show 1 (7)"
+  },
+  {
+   "artists": [
+    "Jonas Aden"
+   ],
+   "range": "month",
+   "rank": 50,
+   "read": "2026-11-14",
+   "record": "jonas-aden-young-god",
+   "title": "Young God"
+  }
+ ]
 }
