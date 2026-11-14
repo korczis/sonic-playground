@@ -1,0 +1,215 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://korczis.github.io/sonic-playground/schema/spotify-tables.v1.json",
+ "title": "The rows of the joinable tables (data/spotify/tables/*.jsonl)",
+ "description": "One JSON object per line. Keys and foreign keys are in data/spotify/manifest.json; nullable columns carry no type. Derived by scripts/spotify_history.py.",
+ "$defs": {
+  "tracks": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "title",
+    "artists",
+    "liked",
+    "status",
+    "key_fold",
+    "record"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "title": {
+     "type": "string"
+    },
+    "artists": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "album": {},
+    "duration": {},
+    "explicit": {
+     "type": "boolean"
+    },
+    "spotify_track": {},
+    "spotify_album": {},
+    "spotify_artists": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "pattern": "^[0-9A-Za-z]{22}$"
+     }
+    },
+    "liked": {
+     "type": "boolean"
+    },
+    "review": {},
+    "status": {
+     "type": "string"
+    },
+    "key_fold": {
+     "type": "string",
+     "minLength": 1
+    },
+    "key_isrc": {
+     "type": "string"
+    },
+    "key_musicbrainz": {
+     "type": "string"
+    },
+    "key_wikidata": {
+     "type": "string"
+    },
+    "yearbook_years": {
+     "type": "array",
+     "items": {
+      "type": "integer"
+     }
+    },
+    "playlist_count": {
+     "type": "integer"
+    },
+    "record": {
+     "type": "string",
+     "pattern": "^data/spotify/tracks/.+\\.md$"
+    }
+   }
+  },
+  "playlists": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "name",
+    "kind",
+    "items",
+    "available",
+    "read",
+    "record"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "name": {
+     "type": "string"
+    },
+    "kind": {
+     "type": "string",
+     "enum": [
+      "liked",
+      "own",
+      "yearbook",
+      "made-for-you",
+      "followed"
+     ]
+    },
+    "year": {},
+    "items": {
+     "type": "integer"
+    },
+    "available": {
+     "type": "integer"
+    },
+    "read": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "record": {
+     "type": "string",
+     "pattern": "^data/spotify/playlists/.+\\.md$"
+    }
+   }
+  },
+  "memberships": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "track",
+    "playlist",
+    "kind",
+    "n"
+   ],
+   "properties": {
+    "track": {
+     "type": "string",
+     "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "playlist": {
+     "type": "string",
+     "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "kind": {
+     "type": "string"
+    },
+    "n": {
+     "type": "integer"
+    },
+    "year": {}
+   }
+  },
+  "artists": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "id",
+    "name",
+    "tracks",
+    "liked",
+    "reviewed"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "name": {},
+    "spotify_artist": {},
+    "tracks": {
+     "type": "integer"
+    },
+    "liked": {
+     "type": "integer"
+    },
+    "reviewed": {
+     "type": "integer"
+    },
+    "followed": {
+     "type": "boolean"
+    },
+    "top_month": {
+     "type": "integer"
+    },
+    "top_half_year": {
+     "type": "integer"
+    },
+    "top_all_time": {
+     "type": "integer"
+    }
+   }
+  },
+  "albums": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "name",
+    "tracks"
+   ],
+   "properties": {
+    "name": {},
+    "spotify_album": {},
+    "artist": {},
+    "tracks": {
+     "type": "integer"
+    },
+    "saved": {
+     "type": "boolean"
+    }
+   }
+  }
+ }
+}

@@ -150,6 +150,13 @@
 "other": "{n} pojmů z rytmu, harmonie, zvuku a produkce, vysvětlených a slyšitelných ve skladbách; recenze s průvodcem poslechem: {t}."
 },
 "home.learn_title": "Učte se při poslechu",
+"home.on_repeat": "Tento měsíc pořád dokola",
+"home.on_repeat_caption": "Moje nejposlouchanější skladby na Spotify za tento měsíc, které tu mají recenzi, ke dni {date}.",
+"home.on_repeat_play": {
+"few": "Přehrát všechny {n}",
+"one": "Přehrát {n}",
+"other": "Přehrát všech {n}"
+},
 "home.read": "Číst recenzi",
 "home.recent": "Nově publikované",
 "home.recent_all": "Celý archiv →",
@@ -935,6 +942,12 @@
 "other": "{n} concepts of rhythm, harmony, sound and production, explained and heard in the tracks; reviews with a listening guide: {t}."
 },
 "home.learn_title": "Learn while you listen",
+"home.on_repeat": "On repeat this month",
+"home.on_repeat_caption": "My most played tracks on Spotify this month that have a review here, as of {date}.",
+"home.on_repeat_play": {
+"one": "Play {n}",
+"other": "Play all {n}"
+},
 "home.read": "Read the review",
 "home.recent": "Recently published",
 "home.recent_all": "The whole archive →",

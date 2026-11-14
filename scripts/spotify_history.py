@@ -209,6 +209,9 @@ def ingest_snapshot(path: Path, plain: Path | None = None) -> Path:
            "library": data.get("library", []), "playlists": playlists}
     if data.get("top"):
         out["top"] = data["top"]
+    problems = cat.validate(out, schema("web-snapshot"))
+    if problems:
+        raise HistoryError(f"{path}: not a spotify-web-snapshot/v1: " + "; ".join(problems[:5]))
     SNAPSHOTS.mkdir(parents=True, exist_ok=True)
     suffix = "-top" if data.get("top") and not playlists else ""
     target = SNAPSHOTS / f"web-{captured}{suffix}.json"
@@ -598,8 +601,17 @@ def index_json(m: dict) -> dict:
         r["yearbooks"] = sorted({y["year"] for y in meta.get("yearbooks") or []} | set(r["yearbooks"]))
         r["playlists"] += len(meta.get("playlists") or [])
     lib = library_meta(m)
+    top = []
+    for s in m["songs"].values():
+        for t in s.get("top") or []:
+            entry = {"range": t["range"], "rank": t["rank"], "read": t["read"], "record": s["id"],
+                     "title": s["title"], "artists": s["artists"]}
+            if s.get("review"):
+                entry["review"] = s["review"]
+            top.append(entry)
     return {"schema": "spotify-index/v1", "songs": lib["songs"], "liked": lib["liked"], "reviewed": lib["reviewed"],
-            "playlists": len(m["playlists"]), "reviews": by_review}
+            "playlists": len(m["playlists"]), "reviews": by_review,
+            "top": sorted(top, key=lambda e: (e["range"], e["rank"]))}
 
 
 def records(m: dict, private: bool) -> dict[Path, str]:
@@ -699,6 +711,7 @@ def tables(m: dict) -> dict[Path, str]:
                    "artists": len(artists), "albums": len(albums),
                    "playlists_by_kind": {k: sum(1 for p in pls if p["kind"] == k) for k in KINDS}},
         "private": "data/spotify/private/ (ignored; its own local git repository): raw sources, dates added, plays",
+        "schemas": {k: f"data/spotify-{k}.schema.json" for k in ("track", "playlist", "library", "index", "tables", "manifest", "web-snapshot")},
     }
     out[BASE / "manifest.json"] = json.dumps(manifest, ensure_ascii=False, indent=1) + "\n"
     return out
@@ -841,8 +854,13 @@ def check() -> list[str]:
             errors += [f"data/spotify/library.md: '{k}' is private (ADR 0007)" for k in find_private_keys(meta)]
         except HistoryError as exc:
             errors.append(str(exc))
+    errors += check_derived()
     # With the private sources present (the owner's machine), the records must be current.
     if SNAPSHOTS.exists() and any(SNAPSHOTS.glob("*.json")):
+        snap_schema = schema("web-snapshot")
+        for path in sorted(SNAPSHOTS.glob("*.json")):
+            for p in cat.validate(json.loads(path.read_text(encoding="utf-8")), snap_schema)[:5]:
+                errors.append(f"private snapshot {path.name}: {p}")
         try:
             report = build(write=False)
             if report["changed"] or report["removed"]:
@@ -853,6 +871,53 @@ def check() -> list[str]:
                 errors.append(f"yearbooks stale: {', '.join(stale)}: run python3 scripts/spotify_history.py build --write")
         except HistoryError as exc:
             errors.append(str(exc))
+    return errors
+
+
+def check_derived() -> list[str]:
+    """index.json, manifest.json and every table row against their schemas, and the foreign keys
+    between the tables and the records."""
+    errors: list[str] = []
+    idx_path, man_path = BASE / "index.json", BASE / "manifest.json"
+    if not idx_path.exists():
+        return errors
+    sch_index, sch_tables, sch_manifest = schema("index"), schema("tables"), schema("manifest")
+    idx = json.loads(idx_path.read_text(encoding="utf-8"))
+    errors += [f"data/spotify/index.json: {p}" for p in cat.validate(idx, sch_index)]
+    for review, entry in (idx.get("reviews") or {}).items():
+        errors += [f"data/spotify/index.json reviews[{review}]: {p}"
+                   for p in cat.validate(entry, sch_index["$defs"]["review"], "", sch_index)]
+        if not (cat.CONTENT / review).is_file():
+            errors.append(f"data/spotify/index.json: review {review} does not exist")
+    if man_path.exists():
+        errors += [f"data/spotify/manifest.json: {p}" for p in cat.validate(json.loads(man_path.read_text(encoding="utf-8")), sch_manifest)]
+    else:
+        errors.append("data/spotify/manifest.json: missing (build --write derives it)")
+    rows: dict[str, list] = {}
+    for name in ("tracks", "playlists", "memberships", "artists", "albums"):
+        path = BASE / "tables" / f"{name}.jsonl"
+        if not path.exists():
+            errors.append(f"data/spotify/tables/{name}.jsonl: missing (build --write derives it)")
+            continue
+        rows[name] = []
+        for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError as exc:
+                errors.append(f"data/spotify/tables/{name}.jsonl:{n}: not JSON ({exc.msg})")
+                continue
+            for p in cat.validate(row, sch_tables["$defs"][name], "", sch_tables):
+                errors.append(f"data/spotify/tables/{name}.jsonl:{n}: {p}")
+            errors += [f"data/spotify/tables/{name}.jsonl:{n}: '{k}' is private (ADR 0007)" for k in find_private_keys(row)]
+            rows[name].append(row)
+    if "tracks" in rows and "playlists" in rows and "memberships" in rows:
+        tids, pids = {r["id"] for r in rows["tracks"]}, {r["id"] for r in rows["playlists"]}
+        for n, e in enumerate(rows["memberships"], start=1):
+            if e.get("track") not in tids or e.get("playlist") not in pids:
+                errors.append(f"data/spotify/tables/memberships.jsonl:{n}: foreign key {e.get('track')} / {e.get('playlist')} resolves to no row")
+        for r in rows["tracks"]:
+            if not (ROOT / r["record"]).is_file():
+                errors.append(f"data/spotify/tables/tracks.jsonl: {r['id']} names no record {r['record']}")
     return errors
 
 

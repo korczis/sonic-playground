@@ -49,6 +49,9 @@
 "home.learn_text" = { one = "{n} concept of rhythm, harmony, sound or production, explained and heard in the tracks; reviews with a listening guide: {t}.", other = "{n} concepts of rhythm, harmony, sound and production, explained and heard in the tracks; reviews with a listening guide: {t}." }
 "home.learn_cta" = "Open the glossary"
 "home.recent" = "Recently published"
+"home.on_repeat" = "On repeat this month"
+"home.on_repeat_caption" = "My most played tracks on Spotify this month that have a review here, as of {date}."
+"home.on_repeat_play" = { one = "Play {n}", other = "Play all {n}" }
 "home.recent_all" = "The whole archive →"
 "home.recent_play" = "Play these"
 "home.recurring" = { one = "Back year after year: {n} song", other = "Back year after year: {n} songs" }

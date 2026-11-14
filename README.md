@@ -99,7 +99,13 @@ npm run spotify:stats
 ```
 
 A review page reads `index.json`: a song the owner liked or keeps in playlists says so in its
-details, and its Spotify link opens the recording itself rather than a search.
+details, and its Spotify link opens the recording itself rather than a search. The landing's "On
+repeat this month" shows the owner's reviewed top tracks in rank order.
+
+Every file has a schema (`data/spotify-{track,playlist,library,index,tables,manifest,web-snapshot}.schema.json`),
+and `data/spotify/manifest.json` maps the tables, their keys and their foreign keys for
+integration and joining. The knowledge record `spotify-history-format` sets out the format, the
+scope and the localisation.
 
 ## Translate a page
 

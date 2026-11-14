@@ -33,6 +33,26 @@
       {%- for t in catalog.tracks %}{% if t.source != featured.source and shown < 4 %}{% set_global shown = shown + 1 %}{{ <track_card t={t} l={l} heading="h3" /> }}{% endif %}{% endfor %}
     </div>
   </section>
+  {#- On repeat: the owner's top tracks of the month that have a review, in rank order (the
+      Spotify history, data/spotify/index.json, ADR 0007). Shown once one of them is reviewed. -#}
+  {%- set sp_index = load_data(path="data/spotify/index.json", required=false) -%}
+  {%- set_global repeat_n = 0 %}{% set_global repeat_read = "" %}
+  {%- if sp_index and sp_index.top %}{% for e in sp_index.top %}{% if e.range == "month" and e.review and e.review in catalog.lookup and repeat_n < 8 %}{% set_global repeat_n = repeat_n + 1 %}{% set_global repeat_read = e.read %}{% endif %}{% endfor %}{% endif %}
+  {%- if repeat_n > 0 %}
+  <section aria-labelledby="home-repeat" class="space-y-3" data-on-repeat>
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <div>
+        <h2 id="home-repeat" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="home.on_repeat" l={l} /> }}</h2>
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">{{ <tx key="home.on_repeat_caption" l={l} vars={ {"date": repeat_read} } /> }}</p>
+      </div>
+      {{ <play_all target="home-repeat-grid" l={l} lkey="home.on_repeat_play" vars={ {"n": repeat_n} } /> }}
+    </div>
+    <div id="home-repeat-grid" data-playlist class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      {%- set_global shown = 0 %}
+      {%- for e in sp_index.top %}{% if e.range == "month" and e.review and e.review in catalog.lookup and shown < 8 %}{% set_global shown = shown + 1 %}{{ <track_card t={catalog.tracks[catalog.lookup[e.review]]} l={l} heading="h3" /> }}{% endif %}{% endfor %}
+    </div>
+  </section>
+  {%- endif %}
   {%- if catalog.yearbooks | length > 0 %}
   <section aria-labelledby="home-yearbooks" class="space-y-3">
     <div class="flex items-end justify-between gap-3">

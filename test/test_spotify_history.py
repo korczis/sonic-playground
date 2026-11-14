@@ -155,6 +155,30 @@ class Overrides(unittest.TestCase):
                          "the owner's review= in yearbook-2019.toml, keyed by artist and song")
 
 
+class Derived(unittest.TestCase):
+    def test_a_broken_foreign_key_or_a_private_column_is_refused(self):
+        import shutil
+        import tempfile
+        if not (sh.BASE / "index.json").exists():
+            self.skipTest("no committed history")
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            shutil.copy(sh.BASE / "index.json", base / "index.json")
+            shutil.copy(sh.BASE / "manifest.json", base / "manifest.json")
+            shutil.copytree(sh.BASE / "tables", base / "tables")
+            with open(base / "tables" / "memberships.jsonl", "a", encoding="utf-8") as f:
+                f.write(json.dumps({"track": "no-such-track", "playlist": "liked-songs", "kind": "liked", "n": 1}) + "\n")
+                f.write(json.dumps({"track": "no-such-track", "playlist": "x", "kind": "own", "n": 2, "added": "2026"}) + "\n")
+            saved = sh.BASE
+            sh.BASE = base
+            try:
+                errors = sh.check_derived()
+            finally:
+                sh.BASE = saved
+        self.assertTrue(any("foreign key no-such-track" in e for e in errors), errors[:3])
+        self.assertTrue(any("'added' is private" in e or "unknown key 'added'" in e for e in errors), errors[:3])
+
+
 class Gate(unittest.TestCase):
     def test_private_keys_are_found_anywhere(self):
         self.assertEqual(sh.find_private_keys({"a": [{"added": 1}], "plays": {}}), ["a[0].added", "plays"])
