@@ -34,7 +34,11 @@ source. A private field that slipped into a public record would be published for
   `ingest-snapshot` refuses one that does not.
 - `.gitignore` ignores `/data/spotify/private`, and git tracks nothing under it.
 - Where the private sources exist, a build changes nothing: the committed records and the
-  yearbooks they write are current.
+  yearbooks they write are current. This currency check is local by design. The private store
+  never leaves the owner's machine, so CI and every checkout without it check structure and
+  privacy only. On the machine that holds it, a merged or new review changes a record's
+  status, so `npm run derive` (which runs the history build first) belongs between such a
+  merge and its push. The refusal names the stale records.
 - A snapshot is read from the rendered web player; the owner's session credentials are never
   read or used.
 

@@ -59,7 +59,9 @@ data export arrives, and to refresh the records after the library changes.
    the owner's) the first step does nothing. Where it is present, every content change re-resolves
    the records too. That matters because new reviews turn records from missing to present, and
    the pre-push gate refuses stale records. `python3 scripts/spotify_history.py build` without
-   `--write` only reports.
+   `--write` only reports. The pre-push gate names any stale record. Only the machine holding
+   the private store can see staleness (CI cannot), so whoever merges content there runs
+   `npm run derive` before pushing.
 6. **Resolve and write.** `python3 scripts/spotify.py coverage` shows each yearbook's missing and
    ambiguous items. An ambiguous item gets `review =` and a non-song gets `skip =` in its
    yearbook file, never a guess. Missing songs go to skill add-song
