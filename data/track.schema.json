@@ -243,8 +243,8 @@
       "properties": {
        "source": {
         "type": "string",
-        "pattern": "^[a-z0-9-]+\\.md$",
-        "description": "Another review (content/<file>)."
+        "pattern": "^[a-z0-9_-]+\\.md$",
+        "description": "Another review (content/<file>); any review file name, older ones included (some carry underscores)."
        },
        "why": {
         "type": "string",
