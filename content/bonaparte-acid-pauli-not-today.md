@@ -88,23 +88,23 @@ The song is built in a classic pop shape around an unconventional narrator. The 
 
 ## Sound Breakdown
 
-### Intro: Energetic Pulse
+### Intro: Acid Pauli's Electronic Pulse
 
 "Not Today" opens with Acid Pauli's electronic pulse, a groove that sets the tone before the voice enters.
 
-### First Verse: Captivating Vocals
+### First Verse: A String of Questions
 
 Jundt delivers the first verse as a string of questions about who let the damage happen, half sung and half declaimed, confident and sardonic rather than mournful.
 
-### Chorus: An Anthem of Resilience
+### Pre-Chorus and Chorus: The Refusal
 
 After the pre-chorus throws the plea for rescue back at the listener, the refrain lands: the title, repeated, with a shrugging "no, no". It is a refusal sung like a party chant.
 
-### Bridge: A Moment of Reflection
+### Third Verse: A Shadow in the Conscience
 
 A short third verse changes the angle: the narrator promises to stay on as a shadow in the listener's conscience, watching, before the pre-chorus and refrain return.
 
-### Final Chorus: A Joyful Climax
+### Final Chorus: Down to Two Words
 
 The refrain is repeated several times at the end until the title is all that is left, the song's argument reduced to its two words.
 

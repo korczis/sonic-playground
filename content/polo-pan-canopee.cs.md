@@ -10,7 +10,7 @@ concept = ["groove", "music video"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "0a802bdcd8d4"
+of = "550769993d40"
 
 [extra]
 connections = [
@@ -22,7 +22,7 @@ connections = [
 objectives = ["Popsat, jak Polo & Pan mísí elektronickou hudbu vycházející z house s tropickými zvuky a hudbou z celého světa.", "Slyšet, jak uvolněný, pohupující se groove dokáže nést náladu útěku, a ne klubu.", "Vysvětlit, jak videoklip vydaný dva roky po písni jí může dát druhý život."]
 listen_for = [
   { part = "úvod", what = "Jemný rytmus a vzdušné textury, spíš zvoucí než naléhavé, jako vánek, který prochází listím." },
-  { part = "zpěv", what = "Dva hlasy, Armand Penicaut a Victoria Lafaurie, měkké a dechové, spíš atmosféra než výpověď." },
+  { part = "zpěv", what = "Dva hostující hlasy, Armand Penicaut a Victoria Lafaurie, měkké a dechové, spíš atmosféra než výpověď." },
   { part = "hlavní groove", what = "Pohupující se beat s tropickým nádechem, nad kterým poskakují jasné melodické motivy, lehký v kroku a stvořený pro pomalý pohyb." },
 ]
 questions = ["Canopée znamená korunové patro lesa. Jak vás hudba přiměje představit si místo, kde jste nikdy nebyli?", "Je hudba inspirovaná dalekými místy poctou, fantazií, nebo obojím?", "Proč by duo pařížských DJů dělalo hudbu, která zní jako útěk z města?"]
@@ -34,7 +34,7 @@ questions = ["Canopée znamená korunové patro lesa. Jak vás hudba přiměje p
 
 ## O skladbě
 
-Píseň je fantazií o útěku do přírody, romantickým sněním daleko od moderního života. Pařížské duo ji staví z líného, pohupujícího se grooveu, měkkých duetových vokálů Armanda Penicauta a Victorie Lafaurie a jasné palety perkusivních melodií, ze směsi elektroniky vycházející z house, tropických zvuků a hudby z celého světa, která definuje jejich styl.
+Píseň je fantazií o útěku do přírody, romantickým sněním daleko od moderního života. Pařížské duo ji staví z líného, pohupujícího se grooveu, měkkých duetových vokálů dvou hostujících zpěváků, Armanda Penicauta a Victorie Lafaurie, a jasné palety perkusivních melodií, ze směsi elektroniky vycházející z house, tropických zvuků a hudby z celého světa, která definuje jejich styl.
 
 ## Hudební rozbor
 
@@ -70,7 +70,7 @@ Píseň také ukazuje, jak {{ <concept_link name="music video" lang="cs" /> }} m
 
 ## Umělecký kontext
 
-Polo & Pan jsou pařížské duo Paula Armand-Delilla (Polocorp) a Alexandra Grynszpana (Peter Pan), kteří se potkali v roce 2012 v pařížském baru Le Baron a začínali mixováním písní jiných lidí, než začali dělat vlastní. Po EP Rivolta, Dorothy a Plage Isolée jim EP Canopée z roku 2016 přineslo první píseň v hitparádě, produkovanou stejně jako jejich další nahrávky s Raphaëlem Hamburgerem z Hamburger Records a Matthieuem Gazierem z Ekler'O'Shock. Píseň se pak objevila na jejich debutovém albu Caravelle, vydaném 19. května 2017 a ve Francii oceněném zlatou deskou.
+Polo & Pan jsou pařížské duo Paula Armand-Delilla (Polocorp) a Alexandra Grynszpana (Peter Pan), kteří se potkali v roce 2012 v pařížském baru Le Baron a začínali mixováním písní jiných lidí, než začali dělat vlastní. Oba jsou uvedeni jako autoři hudby i textu Canopée, ale ani jeden z nich v ní nezpívá: hlasy patří Armandu Penicautovi a Victorii Lafaurie, ne Paulu Armand-Delillovi. Po EP Rivolta, Dorothy a Plage Isolée jim EP Canopée z roku 2016 přineslo první píseň v hitparádě, produkovanou stejně jako jejich další nahrávky s Raphaëlem Hamburgerem z Hamburger Records a Matthieuem Gazierem z Ekler'O'Shock. Píseň se pak objevila na jejich debutovém albu Caravelle, vydaném 19. května 2017 a ve Francii oceněném zlatou deskou.
 
 ## Ohlas a dopad
 

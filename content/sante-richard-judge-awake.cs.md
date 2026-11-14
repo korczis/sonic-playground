@@ -10,7 +10,7 @@ concept = ["house groove", "featured artist", "remix"]
 instrument = ["vocals", "keyboard", "synthesizer", "drum machine"]
 
 [extra.translation]
-of = "e9dee58ef5c5"
+of = "cf83b841759a"
 
 [extra]
 connections = [
@@ -74,13 +74,13 @@ Prvky se jeden po druhém stahují, až zůstane jen rytmus, připravený na dal
 
 Awake stojí na {{ <concept_link name="house groove" text="house groovu" lang="cs" /> }}: kopák na každou dobu, hi-haty mezi nimi a hluboký, valivý bas, který udržuje tělo v pohybu. Thump ji popsal jako emotivní, texturovanou cestu s hypnotickými klávesami, melancholickým zpěvem a valivými perkusemi postavenými na groovu. Groove dává skladbě její funkci na parketu, zatímco pomalu se měnící akordy jí dávají temnotu.
 
-Lidský prvek přináší {{ <concept_link name="featured artist" lang="cs" /> }}. Santé kvůli spolupráci se zpěvákem J.U.D.G.E. (Richardem Judgem) speciálně přiletěl do Londýna a Thump napsal, že jeho hlas dodal hloubku producentově temnější studiové tváři. V klubové hudbě hostující zpěvák často promění nástroj pro DJe v píseň: tady se vokální fráze vracejí jako mantra a dávají aranžmá oblouk příběhu.
+Lidský prvek přináší {{ <concept_link name="featured artist" lang="cs" /> }}. Santé kvůli spolupráci se zpěvákem J.U.D.G.E (Richardem Judgem) speciálně přiletěl do Londýna a Thump napsal, že jeho hlas dodal hloubku producentově temnější studiové tváři. V klubové hudbě hostující zpěvák často promění nástroj pro DJe v píseň: tady se vokální fráze vracejí jako mantra a dávají aranžmá oblouk příběhu.
 
 EP také ukazuje, co dokáže balíček {{ <concept_link name="remix" text="remixů" lang="cs" /> }}. Francouzský techno producent Agoria vytvořil progresivní přepracování s burcujícím syntezátorovým vzorcem a ostrými kopáky, švýcarský producent Pablo Nouvelle něžnou, downtempovou verzi: jeden vokál, tři velmi odlišné noci. Další německou deep housovou desku postavenou na hostujícím hlasu uslyšíte v {{ <track_link source="claptone-clap-your-hands-say-yeah-ghost.md" lang="cs" /> }}.
 
 ## Umělecký kontext
 
-Santé je německý DJ a producent, který vede vlastní label Avotre. Awake, nahraná s J.U.D.G.E. v Londýně, navázala na jeho debutové album Current a vyšla u Avotre koncem roku 2014 jako třískladbové Awake EP s katalogovým číslem AVOTRE 013, s remixy od Agorii a Pabla Nouvelle; Thump, který ji premiérově uvedl, ohlásil i vydání u Ultra Records v prosinci 2014. Recenzenti si všimli, jak vydání ukazuje šéfa labelu sahajícího po hlubších odstínech house a techna se silným vokálem uprostřed, a Thump ji nazval jeho dosud nejpřesvědčivější klubovou skladbou.
+Santé je německý DJ a producent, který vede vlastní label Avotre. Awake, nahraná s J.U.D.G.E v Londýně, navázala na jeho debutové album Current a vyšla u Avotre koncem roku 2014 jako třískladbové Awake EP s katalogovým číslem AVOTRE 013, s remixy od Agorii a Pabla Nouvelle; Thump, který ji premiérově uvedl, ohlásil i vydání u Ultra Records v prosinci 2014. Recenzenti si všimli, jak vydání ukazuje šéfa labelu sahajícího po hlubších odstínech house a techna se silným vokálem uprostřed, a Thump ji nazval jeho dosud nejpřesvědčivější klubovou skladbou.
 
 ## Ohlas a dopad
 

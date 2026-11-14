@@ -10,7 +10,7 @@ concept = ["sampling", "loop"]
 instrument = ["vocals", "guitar", "sampler"]
 
 [extra.translation]
-of = "80a35d1b7854"
+of = "c5a8c40355f6"
 
 [extra]
 connections = [
@@ -59,7 +59,7 @@ Prvky jemně odeznívají a skladba končí stejně tiše a skromně, jak začal
 
 ## Pojmy v centru pozornosti
 
-Ourson je malou, jasnou lekcí {{ <concept_link name="sampling" lang="cs" /> }}. Údaje o skladbě uvádějí Son House jako samplovaného umělce: jeden ze zakladatelských hlasů delta blues, nahrávaný ve 30. letech a znovu po svém znovuobjevení v 60. letech. Sampl s sebou nese svou historii a tady je ta historie podstatou. Drsná kvalita starého bluesového hlasu, jako by nahraného v terénu, zní proti čisté, měkké produkci kolem něj ještě starší.
+Ourson je malou, jasnou lekcí {{ <concept_link name="sampling" lang="cs" /> }}. Údaje o skladbě uvádějí Son House a připisují mu text z jeho písně „Grinnin' in Your Face“: je jedním ze zakladatelských hlasů delta blues a nahrával ve 30. letech a znovu po svém znovuobjevení v 60. letech. Sampl s sebou nese svou historii a tady je ta historie podstatou. Drsná kvalita starého bluesového hlasu, jako by nahraného v terénu, zní proti čisté, měkké produkci kolem něj ještě starší.
 
 Skladba také stojí na {{ <concept_link name="loop" text="smyčce" lang="cs" /> }}. Místo slok a refrénů opakuje krátký melodický nápad a mění to, co ho obklopuje: přidá beat, pustí dovnitř hlas, uprostřed nakrátko posune barvu. Poslouchejte, jak málo se ve skutečnosti mění a jak se ta stejnost stává uklidňující, a ne nudnou; je to tentýž princip, který pohání house a hip-hop, jen v tempu odpoledního zdřímnutí.
 

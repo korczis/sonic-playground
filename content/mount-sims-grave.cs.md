@@ -10,12 +10,12 @@ concept = ["electroclash", "synthesizer"]
 instrument = ["vocals", "synthesizer", "drums"]
 
 [extra.translation]
-of = "854921d0b07e"
+of = "318dd51a3c60"
 
 [extra]
 connections = [
   { source = "mount-sims-toby-dammit-what-s-the-big-deal.md", why = "Další skladba z téhož alba Happily Ever After, s hostujícím bubeníkem místo Andrého Langa." },
-  { source = "mount-sims-the-bitten-bite-back.md", why = "Ze stejného alba a zároveň úvodní skladba jeho reedice Happily Ever After... Again z roku 2010, kde po ní následuje Grave." },
+  { source = "mount-sims-the-bitten-bite-back.md", why = "Ze stejného alba a zároveň úvodní skladba doprovodného alba Happily Ever After... Again z roku 2010, kde po ní následuje Grave." },
   { source = "mount-sims-how-we-do.md", why = "Starší electroclashový singl Mount Sims, klubový zvuk, od kterého se na Happily Ever After vzdálil." },
 ]
 
@@ -71,7 +71,7 @@ Mount Sims vzešel z {{ <concept_link name="electroclash" text="electroclashe" l
 
 ## Umělecký kontext
 
-Matthew Sims, který nahrává jako Mount Sims nebo Mt. Sims, se narodil v Milwaukee ve Wisconsinu a žije v Berlíně. Happily Ever After, které v říjnu 2008 vydal Hungry Eye Records, produkoval a mixoval Thomas Stern z Crime & the City Solution a album zkoumá posedlost, izolaci, horor a šílenství; Grave je jeho druhá skladba, kterou Sims napsal, nahrál a produkoval, a objevila se také na A Grave E.P. a na reedici Happily Ever After... Again z roku 2010 u italského labelu Punch Records. Sims také spolupracoval s The Knife a Planningtorock na opeře Tomorrow, In a Year.
+Matthew Sims, který nahrává jako Mount Sims nebo Mt. Sims, se narodil v Milwaukee ve Wisconsinu a žije v Berlíně. Happily Ever After, které v říjnu 2008 vydal Hungry Eye Records, produkoval a mixoval Thomas Stern z Crime & the City Solution a album zkoumá posedlost, izolaci, horor a šílenství; Grave je jeho druhá skladba, kterou Sims napsal, nahrál a produkoval, a objevila se také na A Grave E.P. a na Happily Ever After... Again, doprovodném albu z roku 2010 u italského labelu Punch Records, které s albem z roku 2008 sdílí jen tři ze svých čtrnácti skladeb. Sims také spolupracoval s The Knife a Planningtorock na opeře Tomorrow, In a Year.
 
 ## Ohlas a dopad
 

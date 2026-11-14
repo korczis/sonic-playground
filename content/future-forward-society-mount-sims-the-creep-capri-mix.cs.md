@@ -10,13 +10,13 @@ concept = ["alternate version", "breakdown", "synthesizer"]
 instrument = ["synthesizer", "drum machine", "vocals"]
 
 [extra.translation]
-of = "69bb3a43dd8c"
+of = "27d0c9132696"
 
 [extra]
 connections = [
   { source = "future-forward-society-mount-sims-the-creep.md", why = "Tatáž skladba v hlavní verzi, výchozí bod pro všechno, co Capri Mix natahuje a přeskupuje." },
   { source = "future-forward-society-mount-sims-the-creep-hv-thrillseeker-mix.md", why = "Další alternativní verze z téhož vydání Kompute Musik z roku 2008, mířící na jiný druh klubové chvíle." },
-  { source = "future-forward-mount-sims-time-for-livin.md", why = "Druhá spolupráce Future Forward a Mount Sims z téhož období." },
+  { source = "future-forward-mount-sims-time-for-livin.md", why = "Mount Sims na dřívějším singlu téhož labelu z roku 2006, který však nese jméno Future Forward, nikoli Future Forward Society." },
 ]
 
 [extra.learning]
@@ -74,7 +74,7 @@ Všechno melodické vzniká na {{ <concept_link name="synthesizer" text="syntez�
 
 ## Umělecký kontext
 
-Mount Sims je pseudonym Matthewa Simse, producenta a performera narozeného v Milwaukee a usazeného v Berlíně. Jeho debut *UltraSex* (2002) vyšel v Evropě na electroclashovém labelu DJ Hella International DeeJay Gigolo Records (v USA u Emperor Norton) a po něm *Wild Light* (2005) opět u Gigolo; později spolupracoval s The Knife a Planningtorock na elektronické opeře *Tomorrow, In a Year* (2010). „The Creep“ vyšla 5. května 2008 u Kompute Musik; stejná dvojice vytvořila také „Time for Livin“. Vydání doprovázely alternativní verze, mimo jiné Capri Mix a HV Thrillseeker Mix, mířící přímo na hraní v klubech.
+Mount Sims je pseudonym Matthewa Simse, producenta a performera narozeného v Milwaukee a usazeného v Berlíně. Jeho debut *UltraSex* (2002) vyšel v Evropě na electroclashovém labelu DJ Hella International DeeJay Gigolo Records (v USA u Emperor Norton) a po něm *Wild Light* (2004) opět u Gigolo; později spolupracoval s The Knife a Planningtorock na elektronické opeře *Tomorrow, In a Year* (2010). „The Creep“ vyšla 5. května 2008 u Kompute Musik, který o dva roky dříve vydal „Time for Livin“, připsanou Future Forward s Mount Sims jako hostem. Vydání doprovázely alternativní verze, mimo jiné Capri Mix a HV Thrillseeker Mix, mířící přímo na hraní v klubech.
 
 ## Ohlas a dopad
 

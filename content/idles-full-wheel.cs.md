@@ -10,7 +10,7 @@ concept = ["riff", "call and response", "live recording"]
 instrument = ["vocals", "guitar", "bass", "drums"]
 
 [extra.translation]
-of = "24808f2f2028"
+of = "ba2d87d1c000"
 
 [extra]
 connections = [

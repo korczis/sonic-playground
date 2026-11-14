@@ -115,15 +115,15 @@ Karaköy moves at a walking pace with a skipping feel, and its story is simple: 
 
 ## Sound Breakdown
 
-### Intro: Capturing the City’s Pulse
+### Intro: A Walking-Pace Groove
 
 The track begins with a light, skipping groove at the pace of a stroll rather than a dance floor. Nothing is crowded; the space is left for the voice.
 
-### Midsection: A Cultural Fusion
+### Chorus: Trumpets and Ornamented Runs
 
 In the chorus, soft-toned trumpets join the band and Sciubba's voice lifts above them. Her ornamented runs, several notes bent across a single syllable, are the song's most distinctive colour.
 
-### Finale: A Celebration of Life
+### Final Section: The Same Unhurried Pace
 
 The last part keeps the same unhurried pace. The song does not explode; it lets the voice carry its peak and then walks off.
 

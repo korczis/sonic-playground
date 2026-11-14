@@ -8,7 +8,7 @@ genre = ["electronic", "ambient", "experimental"]
 sentiment = ["mysterious", "hypnotic", "reflective"]
 
 [extra.translation]
-of = "fd028c1ee413"
+of = "b8585644cbc0"
 +++
 
 > **„Inigo Montoya - .E.S“** vtahuje posluchače do podmanivého světa

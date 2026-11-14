@@ -2257,7 +2257,7 @@
       "@id": "https://korczis.github.io/sonic-playground/axwell-feel-the-vibe/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/axwell-feel-the-vibe/",
-     "wordCount": 578
+     "wordCount": 574
     }
    ]
   },
@@ -3654,7 +3654,7 @@
       "@id": "https://korczis.github.io/sonic-playground/bonaparte-acid-pauli-not-today/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/bonaparte-acid-pauli-not-today/",
-     "wordCount": 673
+     "wordCount": 679
     }
    ]
   },
@@ -3847,7 +3847,7 @@
       "@id": "https://korczis.github.io/sonic-playground/brazilian-girls-karakoy/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/brazilian-girls-karakoy/",
-     "wordCount": 802
+     "wordCount": 806
     }
    ]
   },
@@ -3952,7 +3952,7 @@
       "@id": "https://korczis.github.io/sonic-playground/broken-back-happiest-man-on-earth-radio-edit/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/broken-back-happiest-man-on-earth-radio-edit/",
-     "wordCount": 594
+     "wordCount": 596
     }
    ]
   },
@@ -4152,7 +4152,7 @@
       "@id": "https://korczis.github.io/sonic-playground/c2c-feat-pigeon-john-because-of-you/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/c2c-feat-pigeon-john-because-of-you/",
-     "wordCount": 549
+     "wordCount": 551
     }
    ]
   },
@@ -4212,6 +4212,12 @@
       },
       {
        "@type": "CreativeWork",
+       "name": "Sputnik II - Ourson",
+       "publisher": "Camel Power Club (Bandcamp)",
+       "url": "https://camelpowerclub.bandcamp.com/track/ourson"
+      },
+      {
+       "@type": "CreativeWork",
        "name": "Ourson",
        "publisher": "MusicBrainz",
        "url": "https://musicbrainz.org/recording/29f1f0cc-9162-4e78-9b9c-8e79c4886589"
@@ -4244,7 +4250,7 @@
       "@id": "https://korczis.github.io/sonic-playground/camel-power-club-ourson/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/camel-power-club-ourson/",
-     "wordCount": 514
+     "wordCount": 524
     }
    ]
   },
@@ -4338,7 +4344,7 @@
       "@id": "https://korczis.github.io/sonic-playground/car-idle-eyes/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/car-idle-eyes/",
-     "wordCount": 522
+     "wordCount": 517
     }
    ]
   },
@@ -4436,7 +4442,7 @@
       "@id": "https://korczis.github.io/sonic-playground/caravan-palace-lone-digger/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/caravan-palace-lone-digger/",
-     "wordCount": 618
+     "wordCount": 624
     }
    ]
   },
@@ -5038,7 +5044,7 @@
       "name": "Take Me As I Am"
      },
      "isrcCode": "FR96X1965659",
-     "name": "Take Me as I Am",
+     "name": "Take Me As I Am",
      "sameAs": [
       "https://musicbrainz.org/recording/07003922-ecef-4412-a3d1-82a75edbdd99",
       "https://www.youtube.com/watch?v=uNWXwgYuKL8"
@@ -5088,7 +5094,7 @@
      "datePublished": "2024-10-01",
      "description": "Basový producent z Birminghamu Chris Lorenzo a Mike Skinner z The Streets se potkávají v rychlém, zuřivém kousku drum and bass: sevřené bicí, trhající basové syntezátory a Skinnerův suchý, hovorový zpěv.",
      "educationalLevel": "introductory",
-     "headline": "Chris Lorenzo & The Streets - Take Me as I Am",
+     "headline": "Chris Lorenzo & The Streets - Take Me As I Am",
      "inLanguage": "cs",
      "isPartOf": {
       "@type": "WebSite",
@@ -5112,7 +5118,7 @@
       "@id": "https://korczis.github.io/sonic-playground/chris-lorenzo-and-the-streets-take-me-as-i-am/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/chris-lorenzo-and-the-streets-take-me-as-i-am/",
-     "wordCount": 525
+     "wordCount": 523
     }
    ]
   },
@@ -5429,7 +5435,7 @@
      "@type": "MusicRecording",
      "byArtist": {
       "@type": "MusicGroup",
-      "name": "Clea Vincent",
+      "name": "Cléa Vincent",
       "sameAs": "https://musicbrainz.org/artist/90024c0b-daa5-485c-818c-c600522ce1b8"
      },
      "datePublished": "2014",
@@ -5443,7 +5449,7 @@
       "name": "Non mais oui"
      },
      "isrcCode": "FR6V82187692",
-     "name": "All that she wants",
+     "name": "All That She Wants",
      "sameAs": [
       "https://musicbrainz.org/recording/ef9243a8-1667-4cf5-b5bf-2a81789aced7",
       "https://www.youtube.com/watch?v=PXPDQ58xsTo"
@@ -5486,7 +5492,7 @@
      "datePublished": "2026-11-12",
      "description": "Cléa Vincent mění hit Ace of Base z roku 1992 ve vzdušný, domácky vyrobený francouzský synth-pop a místo jeho reggae-popového vykračování nabízí snový lo-fi groove, který má blíž k hip-hopu a R&B.",
      "educationalLevel": "introductory",
-     "headline": "Clea Vincent - All that she wants",
+     "headline": "Cléa Vincent - All That She Wants",
      "inLanguage": "cs",
      "isPartOf": {
       "@type": "WebSite",
@@ -7121,7 +7127,7 @@
      ],
      "inAlbum": {
       "@type": "MusicAlbum",
-      "name": "Cool Steps Drum 'N' Bass Grooves"
+      "name": "Cool Steps: Drum 'N' Bass Grooves"
      },
      "name": "Sambassim (DJ Patife Remix)",
      "sameAs": [
@@ -7771,7 +7777,7 @@
       "@id": "https://korczis.github.io/sonic-playground/eli-faster-you-fall/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/eli-faster-you-fall/",
-     "wordCount": 644
+     "wordCount": 645
     }
    ]
   },
@@ -7934,6 +7940,12 @@
       },
       {
        "@type": "CreativeWork",
+       "name": "Pnau (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Pnau_(album)"
+      },
+      {
+       "@type": "CreativeWork",
        "name": "Changes (radio mix)",
        "publisher": "MusicBrainz",
        "url": "https://musicbrainz.org/recording/ec5b8597-8b1e-4665-a19d-f1070dcd8721"
@@ -7971,7 +7983,7 @@
       "@id": "https://korczis.github.io/sonic-playground/faul-wad-pnau-changes/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/faul-wad-pnau-changes/",
-     "wordCount": 656
+     "wordCount": 659
     }
    ]
   },
@@ -9411,6 +9423,27 @@
        "name": "Mount Sims",
        "publisher": "Wikipedia",
        "url": "https://en.wikipedia.org/wiki/Mount_Sims"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "The Creep - EP",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/6262053"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Future Forward, Mount Sims - Time For Livin (KOM015)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/888867"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Mount Sims - Wild Light (LP, GIGOLO 139)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/411706"
       }
      ],
      "datePublished": "2026-11-12",
@@ -9445,7 +9478,7 @@
       "@id": "https://korczis.github.io/sonic-playground/future-forward-society-mount-sims-the-creep-capri-mix/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/future-forward-society-mount-sims-the-creep-capri-mix/",
-     "wordCount": 535
+     "wordCount": 545
     }
    ]
   },
@@ -9797,7 +9830,7 @@
       }
      ],
      "datePublished": "2026-11-12",
-     "description": "Šestnáctiletá Gabriella Cilmi přenáší rozchodový hit Justina Timberlakea z roku 2002 s trojčlennou kapelou na kouřové, živé soulové území: B-strana z roku 2008, kterou nahráli Xenomania, a její chraplavý hlas nese všechnu bolest.",
+     "description": "Šestnáctiletá Gabriella Cilmi přenáší rozchodový hit Justina Timberlakea z roku 2002 jen za doprovodu kytary a basy na kouřové, živé soulové území: B-strana z roku 2008, kterou nahráli Xenomania, a její chraplavý hlas nese všechnu bolest.",
      "educationalLevel": "introductory",
      "headline": "Gabriella Cilmi - Cry Me A River (Live Version)",
      "inLanguage": "cs",
@@ -9823,7 +9856,7 @@
       "@id": "https://korczis.github.io/sonic-playground/gabriella-cilmi-cry-me-a-river-live-version/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gabriella-cilmi-cry-me-a-river-live-version/",
-     "wordCount": 537
+     "wordCount": 545
     }
    ]
   },
@@ -10510,7 +10543,7 @@
      ],
      "inAlbum": {
       "@type": "MusicAlbum",
-      "name": "Blood To Bone"
+      "name": "Blood to Bone"
      },
      "isrcCode": "AUUM71500267",
      "name": "New Rush",
@@ -10542,7 +10575,7 @@
       {
        "@type": "CreativeWork",
        "datePublished": "2015",
-       "name": "Gin Wigmore - Blood To Bone",
+       "name": "Gin Wigmore - Blood to Bone",
        "publisher": "Discogs",
        "url": "https://www.discogs.com/release/7658171-Gin-Wigmore-Blood-To-Bone"
       }
@@ -10688,7 +10721,7 @@
      ],
      "inAlbum": {
       "@type": "MusicAlbum",
-      "name": "Blood To Bone"
+      "name": "Blood to Bone"
      },
      "isrcCode": "AUUM71500271",
      "name": "Written In The Water",
@@ -11558,7 +11591,7 @@
       "name": "Demon Days"
      },
      "isrcCode": "GBAYE0500170",
-     "name": "Kids with Guns",
+     "name": "Kids With Guns",
      "sameAs": [
       "https://musicbrainz.org/recording/806d8ff3-d1d4-4178-a524-623b87ca0c62",
       "https://www.youtube.com/watch?v=VCkFSe3voRc"
@@ -11600,7 +11633,7 @@
      "datePublished": "2026-11-12",
      "description": "Chladná, řinčivá skladba Gorillaz z alba Demon Days, v níž unavený vokál Damona Albarna a přízračný doprovod Neneh Cherry mění melodii jako z dětské říkanky v tichý poplach kvůli dětem a násilí.",
      "educationalLevel": "introductory",
-     "headline": "Gorillaz, Neneh Cherry - Kids with Guns",
+     "headline": "Gorillaz, Neneh Cherry - Kids With Guns",
      "inLanguage": "cs",
      "isPartOf": {
       "@type": "WebSite",
@@ -11655,7 +11688,7 @@
       "name": "Lunático"
      },
      "isrcCode": "FR99S0500025",
-     "name": "La vigüela",
+     "name": "La Vigüela",
      "sameAs": [
       "https://musicbrainz.org/recording/dc55f73f-2b3f-4003-99be-136adbfd2fe3",
       "https://www.youtube.com/watch?v=4_fTkErd820"
@@ -11691,7 +11724,7 @@
      "datePublished": "2026-11-12",
      "description": "Bandoneon, kytara a hlas Cristiny Vilallongy plující nad pomalým elektronickým pulzem: La Vigüela je tango Gotan Project, které vyráží do otevřených pamp.",
      "educationalLevel": "introductory",
-     "headline": "Gotan Project - La vigüela",
+     "headline": "Gotan Project - La Vigüela",
      "inLanguage": "cs",
      "isPartOf": {
       "@type": "WebSite",
@@ -12870,7 +12903,7 @@
       "@id": "https://korczis.github.io/sonic-playground/hrdvision-nsd-discolight/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/hrdvision-nsd-discolight/",
-     "wordCount": 503
+     "wordCount": 501
     }
    ]
   },
@@ -13406,7 +13439,7 @@
      "@type": "MusicRecording",
      "byArtist": {
       "@type": "MusicGroup",
-      "name": "Ivy Levan, CADRÉ",
+      "name": "Ivy Levan, Cadre",
       "sameAs": "https://musicbrainz.org/artist/dc8fc7a6-5dba-4d27-91cc-5a71fa86c69f"
      },
      "datePublished": "2015",
@@ -13463,7 +13496,7 @@
      "datePublished": "2026-11-12",
      "description": "Kouřový, nafoukaný vokál Ivy Levan se vine nad uhlazeným popovým beatem s těžkou basou, s rapovou slokou od Cadre: skladba z jejího „swamp-hopového“ debutu z roku 2015, která odpovídá svému názvu, sevřená, temná a šitá na míru.",
      "educationalLevel": "introductory",
-     "headline": "Ivy Levan, CADRÉ - Like A Glove",
+     "headline": "Ivy Levan, Cadre - Like A Glove",
      "inLanguage": "cs",
      "isPartOf": {
       "@type": "WebSite",
@@ -14956,7 +14989,7 @@
       }
      ],
      "datePublished": "2024-10-11",
-     "description": "Pohodová fúze dubu, reggae a hlubokých elektronických beatů z východního Německa: Elevator od JPatterssona z roku 2016, titulní skladba EP, na kterém je i její vlastní dubová verze a dva remixy.",
+     "description": "Pohodová fúze dubu, reggae a hlubokých elektronických beatů z východního Německa: Elevator od JPatterssona z roku 2016, úvodní skladba EP Rühn, na kterém je i její vlastní dubová verze a dva remixy.",
      "educationalLevel": "introductory",
      "headline": "JPattersson - Elevator",
      "inLanguage": "cs",
@@ -14987,7 +15020,7 @@
       "@id": "https://korczis.github.io/sonic-playground/jpatterson-elevator/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/jpatterson-elevator/",
-     "wordCount": 519
+     "wordCount": 525
     }
    ]
   },
@@ -16504,7 +16537,7 @@
       }
      ],
      "datePublished": "2026-11-12",
-     "description": "Pomalý, osekaný kousek temného elektronického R&B od dua Klyne z Eindhovenu, v němž měkký hlas Nicka Kleina, nahraný těsně u mikrofonu, pluje nad řídkými beaty a tlumenými syntezátory; nová píseň na jejich EP Closer z roku 2015.",
+     "description": "Pomalý, osekaný kousek temného elektronického R&B od nizozemského dua Klyne, v němž měkký hlas Nicka Kleina, nahraný těsně u mikrofonu, pluje nad řídkými beaty a tlumenými syntezátory; nová píseň na jejich EP Closer z roku 2015.",
      "educationalLevel": "introductory",
      "headline": "Klyne - Waiting",
      "inLanguage": "cs",
@@ -16530,7 +16563,7 @@
       "@id": "https://korczis.github.io/sonic-playground/klyne-waiting/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/klyne-waiting/",
-     "wordCount": 475
+     "wordCount": 479
     }
    ]
   },
@@ -16883,6 +16916,18 @@
       },
       {
        "@type": "CreativeWork",
+       "name": "Sian Evans",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/239568"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mark Morrison (3)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/597741"
+      },
+      {
+       "@type": "CreativeWork",
        "name": "Independence (release)",
        "publisher": "MusicBrainz",
        "url": "https://musicbrainz.org/release/4a5d9775-752f-4727-b03d-ba4616a3ca17"
@@ -16915,7 +16960,7 @@
       "@id": "https://korczis.github.io/sonic-playground/kosheen-addict/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/kosheen-addict/",
-     "wordCount": 506
+     "wordCount": 522
     }
    ]
   },
@@ -17269,6 +17314,13 @@
        "name": "Electroclash",
        "publisher": "Wikipedia",
        "url": "https://en.wikipedia.org/wiki/Electroclash"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "100 Greatest Songs of the 00's #85 Ladytron – Seventeen",
+       "publisher": "Arctic Reviews",
+       "url": "https://arcticreviews.co.uk/2023/03/11/100-greatest-songs-of-the-00s-85-ladytron-seventeen"
       }
      ],
      "datePublished": "2024-10-01",
@@ -18095,7 +18147,7 @@
       }
      ],
      "datePublished": "2024-10-08",
-     "description": "Electro-house přepracování debutového hitu Mika Posnera z roku 2010 od litevského producenta Lucky Luke z roku 2019, vydané u Columbia/B1: píseň o pocitu odstrčení proměněná v uvolněnou klubovou hymnu, která se o rok později stala rádiovým hitem ve Francii.",
+     "description": "Deephousové přepracování debutového hitu Mika Posnera z roku 2010 od litevského producenta Lucky Luke z roku 2019, vydané u Columbia/B1: píseň o pocitu odstrčení proměněná v uvolněnou klubovou hymnu, která se o rok později stala rádiovým hitem ve Francii.",
      "educationalLevel": "introductory",
      "headline": "Lucky Luke - Cooler Than Me",
      "inLanguage": "cs",
@@ -18402,7 +18454,7 @@
       "@id": "https://korczis.github.io/sonic-playground/mafia-klvb-credit-card/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/mafia-klvb-credit-card/",
-     "wordCount": 451
+     "wordCount": 455
     }
    ]
   },
@@ -19631,7 +19683,7 @@
       "@id": "https://korczis.github.io/sonic-playground/mickey-avalon-eli-ultraviolence/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/mickey-avalon-eli-ultraviolence/",
-     "wordCount": 692
+     "wordCount": 698
     }
    ]
   },
@@ -20034,7 +20086,7 @@
       "@id": "https://korczis.github.io/sonic-playground/moisture-lucca-santucci-headman-club-version/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/moisture-lucca-santucci-headman-club-version/",
-     "wordCount": 548
+     "wordCount": 547
     }
    ]
   },
@@ -20309,7 +20361,7 @@
       "@id": "https://korczis.github.io/sonic-playground/mount-sims-grave/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/mount-sims-grave/",
-     "wordCount": 552
+     "wordCount": 566
     }
    ]
   },
@@ -20640,6 +20692,20 @@
        "name": "New Authority Volunteers",
        "publisher": "The Orchard",
        "url": "https://www.youtube.com/watch?v=29DgtaAEdYo"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Mount Sims - Wild Light (LP, GIGOLO 139)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/411706"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Mt. Sims - Happily Ever After...Again (CD, PUNCH 030)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2280157"
       }
      ],
      "datePublished": "2026-11-12",
@@ -20732,6 +20798,13 @@
        "name": "No Yellow Lines (recording)",
        "publisher": "MusicBrainz",
        "url": "https://musicbrainz.org/recording/df8f2c4d-3657-4632-a615-c42ed79241de"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Mount Sims - Wild Light (LP, GIGOLO 139)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/411706"
       }
      ],
      "datePublished": "2026-11-12",
@@ -20771,7 +20844,7 @@
       "@id": "https://korczis.github.io/sonic-playground/mount-sims-no-yellow-lines/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/mount-sims-no-yellow-lines/",
-     "wordCount": 577
+     "wordCount": 588
     }
    ]
   },
@@ -21145,7 +21218,7 @@
       "@id": "https://korczis.github.io/sonic-playground/mount-sims-together-alone/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/mount-sims-together-alone/",
-     "wordCount": 522
+     "wordCount": 521
     }
    ]
   },
@@ -22592,7 +22665,7 @@
      },
      "datePublished": "2010",
      "genre": [
-      "indie rock",
+      "hip-hop",
       "electronic",
       "alternative"
      ],
@@ -22922,6 +22995,13 @@
       },
       {
        "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Polo & Pan - Caravelle",
+       "publisher": "Qobuz",
+       "url": "https://www.qobuz.com/ie-en/album/caravelle-polo-pan/0060255764514"
+      },
+      {
+       "@type": "CreativeWork",
        "datePublished": "2018",
        "name": "POLO & PAN - Canopée (official video)",
        "publisher": "Ekler'O'Shock",
@@ -22955,7 +23035,7 @@
       "@id": "https://korczis.github.io/sonic-playground/polo-pan-canopee/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/polo-pan-canopee/",
-     "wordCount": 495
+     "wordCount": 526
     }
    ]
   },
@@ -26334,7 +26414,7 @@
       "@id": "https://korczis.github.io/sonic-playground/waldeck-zeebee-midsummer-night-blues/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/waldeck-zeebee-midsummer-night-blues/",
-     "wordCount": 702
+     "wordCount": 705
     }
    ]
   },
@@ -29288,7 +29368,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/axwell-feel-the-vibe/",
-     "wordCount": 654
+     "wordCount": 651
     }
    ]
   },
@@ -30643,7 +30723,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/bonaparte-acid-pauli-not-today/",
-     "wordCount": 782
+     "wordCount": 791
     }
    ]
   },
@@ -30830,7 +30910,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/brazilian-girls-karakoy/",
-     "wordCount": 883
+     "wordCount": 884
     }
    ]
   },
@@ -30932,7 +31012,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/broken-back-happiest-man-on-earth-radio-edit/",
-     "wordCount": 668
+     "wordCount": 673
     }
    ]
   },
@@ -31186,6 +31266,12 @@
       },
       {
        "@type": "CreativeWork",
+       "name": "Sputnik II - Ourson",
+       "publisher": "Camel Power Club (Bandcamp)",
+       "url": "https://camelpowerclub.bandcamp.com/track/ourson"
+      },
+      {
+       "@type": "CreativeWork",
        "name": "Ourson",
        "publisher": "MusicBrainz",
        "url": "https://musicbrainz.org/recording/29f1f0cc-9162-4e78-9b9c-8e79c4886589"
@@ -31215,7 +31301,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/camel-power-club-ourson/",
-     "wordCount": 582
+     "wordCount": 590
     }
    ]
   },
@@ -31306,7 +31392,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/car-idle-eyes/",
-     "wordCount": 586
+     "wordCount": 581
     }
    ]
   },
@@ -31401,7 +31487,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/caravan-palace-lone-digger/",
-     "wordCount": 676
+     "wordCount": 682
     }
    ]
   },
@@ -31985,7 +32071,7 @@
       "name": "Take Me As I Am"
      },
      "isrcCode": "FR96X1965659",
-     "name": "Take Me as I Am",
+     "name": "Take Me As I Am",
      "sameAs": [
       "https://musicbrainz.org/recording/07003922-ecef-4412-a3d1-82a75edbdd99",
       "https://www.youtube.com/watch?v=uNWXwgYuKL8"
@@ -32035,7 +32121,7 @@
      "datePublished": "2024-10-01",
      "description": "Birmingham bass producer Chris Lorenzo and The Streets' Mike Skinner meet on a fast, ferocious slice of drum and bass: tight drums, tearing bass synths and Skinner's dry, conversational vocal.",
      "educationalLevel": "introductory",
-     "headline": "Chris Lorenzo & The Streets - Take Me as I Am",
+     "headline": "Chris Lorenzo & The Streets - Take Me As I Am",
      "inLanguage": "en",
      "isPartOf": {
       "@type": "WebSite",
@@ -32056,7 +32142,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/chris-lorenzo-and-the-streets-take-me-as-i-am/",
-     "wordCount": 594
+     "wordCount": 592
     }
    ]
   },
@@ -32364,7 +32450,7 @@
      "@type": "MusicRecording",
      "byArtist": {
       "@type": "MusicGroup",
-      "name": "Clea Vincent",
+      "name": "Cléa Vincent",
       "sameAs": "https://musicbrainz.org/artist/90024c0b-daa5-485c-818c-c600522ce1b8"
      },
      "datePublished": "2014",
@@ -32378,7 +32464,7 @@
       "name": "Non mais oui"
      },
      "isrcCode": "FR6V82187692",
-     "name": "All that she wants",
+     "name": "All That She Wants",
      "sameAs": [
       "https://musicbrainz.org/recording/ef9243a8-1667-4cf5-b5bf-2a81789aced7",
       "https://www.youtube.com/watch?v=PXPDQ58xsTo"
@@ -32421,7 +32507,7 @@
      "datePublished": "2026-11-12",
      "description": "Cléa Vincent turns Ace of Base's 1992 hit into breezy, homespun French synth-pop, trading its reggae-pop strut for a dreamy, lo-fi groove closer to hip-hop and R&B.",
      "educationalLevel": "introductory",
-     "headline": "Clea Vincent - All that she wants",
+     "headline": "Cléa Vincent - All That She Wants",
      "inLanguage": "en",
      "isPartOf": {
       "@type": "WebSite",
@@ -33615,7 +33701,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/daft-punk-pharrell-williams-nile-rodgers-get-lucky-radio-edit/",
-     "wordCount": 845
+     "wordCount": 846
     }
    ]
   },
@@ -34005,7 +34091,7 @@
      ],
      "inAlbum": {
       "@type": "MusicAlbum",
-      "name": "Cool Steps Drum 'N' Bass Grooves"
+      "name": "Cool Steps: Drum 'N' Bass Grooves"
      },
      "name": "Sambassim (DJ Patife Remix)",
      "sameAs": [
@@ -34634,7 +34720,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/eli-faster-you-fall/",
-     "wordCount": 726
+     "wordCount": 734
     }
    ]
   },
@@ -34794,6 +34880,12 @@
       },
       {
        "@type": "CreativeWork",
+       "name": "Pnau (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Pnau_(album)"
+      },
+      {
+       "@type": "CreativeWork",
        "name": "Changes (radio mix)",
        "publisher": "MusicBrainz",
        "url": "https://musicbrainz.org/recording/ec5b8597-8b1e-4665-a19d-f1070dcd8721"
@@ -34828,7 +34920,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/faul-wad-pnau-changes/",
-     "wordCount": 775
+     "wordCount": 781
     }
    ]
   },
@@ -36226,10 +36318,31 @@
        "name": "Mount Sims",
        "publisher": "Wikipedia",
        "url": "https://en.wikipedia.org/wiki/Mount_Sims"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "The Creep - EP",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/6262053"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Future Forward, Mount Sims - Time For Livin (KOM015)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/888867"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Mount Sims - Wild Light (LP, GIGOLO 139)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/411706"
       }
      ],
      "datePublished": "2026-11-12",
-     "description": "A long, prowling electro mix that keeps its shadows close: The Creep in its Capri Mix stretches Mount Sims' sly menace over six and a half minutes of pulsing synths.",
+     "description": "A long, prowling electro mix that keeps its shadows close: The Creep in its Capri Mix stretches Mount Sims's sly menace over six and a half minutes of pulsing synths.",
      "educationalLevel": "intermediate",
      "headline": "Future Forward Society, Mount Sims - The Creep (Capri Mix)",
      "inLanguage": "en",
@@ -36257,7 +36370,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/future-forward-society-mount-sims-the-creep-capri-mix/",
-     "wordCount": 619
+     "wordCount": 629
     }
    ]
   },
@@ -36600,7 +36713,7 @@
       }
      ],
      "datePublished": "2026-11-12",
-     "description": "A sixteen-year-old Gabriella Cilmi takes Justin Timberlake's 2002 break-up hit into smoky, live soul territory with a three-piece band: a 2008 B-side recorded by Xenomania, her husky voice carrying all the hurt.",
+     "description": "A sixteen-year-old Gabriella Cilmi takes Justin Timberlake's 2002 break-up hit into smoky, live soul territory, backed only by guitar and bass: a 2008 B-side recorded by Xenomania, her husky voice carrying all the hurt.",
      "educationalLevel": "introductory",
      "headline": "Gabriella Cilmi - Cry Me A River (Live Version)",
      "inLanguage": "en",
@@ -36623,7 +36736,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/gabriella-cilmi-cry-me-a-river-live-version/",
-     "wordCount": 612
+     "wordCount": 615
     }
    ]
   },
@@ -37289,7 +37402,7 @@
      ],
      "inAlbum": {
       "@type": "MusicAlbum",
-      "name": "Blood To Bone"
+      "name": "Blood to Bone"
      },
      "isrcCode": "AUUM71500267",
      "name": "New Rush",
@@ -37321,7 +37434,7 @@
       {
        "@type": "CreativeWork",
        "datePublished": "2015",
-       "name": "Gin Wigmore - Blood To Bone",
+       "name": "Gin Wigmore - Blood to Bone",
        "publisher": "Discogs",
        "url": "https://www.discogs.com/release/7658171-Gin-Wigmore-Blood-To-Bone"
       }
@@ -37461,7 +37574,7 @@
      ],
      "inAlbum": {
       "@type": "MusicAlbum",
-      "name": "Blood To Bone"
+      "name": "Blood to Bone"
      },
      "isrcCode": "AUUM71500271",
      "name": "Written In The Water",
@@ -38304,7 +38417,7 @@
       "name": "Demon Days"
      },
      "isrcCode": "GBAYE0500170",
-     "name": "Kids with Guns",
+     "name": "Kids With Guns",
      "sameAs": [
       "https://musicbrainz.org/recording/806d8ff3-d1d4-4178-a524-623b87ca0c62",
       "https://www.youtube.com/watch?v=VCkFSe3voRc"
@@ -38346,7 +38459,7 @@
      "datePublished": "2026-11-12",
      "description": "A cold, clanking Gorillaz track from Demon Days where Damon Albarn's weary vocal and Neneh Cherry's spectral backing turn a nursery-rhyme melody into a quiet alarm about children and violence.",
      "educationalLevel": "introductory",
-     "headline": "Gorillaz, Neneh Cherry - Kids with Guns",
+     "headline": "Gorillaz, Neneh Cherry - Kids With Guns",
      "inLanguage": "en",
      "isPartOf": {
       "@type": "WebSite",
@@ -38398,7 +38511,7 @@
       "name": "Lunático"
      },
      "isrcCode": "FR99S0500025",
-     "name": "La vigüela",
+     "name": "La Vigüela",
      "sameAs": [
       "https://musicbrainz.org/recording/dc55f73f-2b3f-4003-99be-136adbfd2fe3",
       "https://www.youtube.com/watch?v=4_fTkErd820"
@@ -38434,7 +38547,7 @@
      "datePublished": "2026-11-12",
      "description": "Bandoneon, guitar and Cristina Vilallonga's voice drifting over a slow electronic pulse, La Vigüela is Gotan Project's tango heading out into the open pampas.",
      "educationalLevel": "introductory",
-     "headline": "Gotan Project - La vigüela",
+     "headline": "Gotan Project - La Vigüela",
      "inLanguage": "en",
      "isPartOf": {
       "@type": "WebSite",
@@ -39574,7 +39687,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/hrdvision-nsd-discolight/",
-     "wordCount": 567
+     "wordCount": 565
     }
    ]
   },
@@ -40080,7 +40193,7 @@
       "url": "https://korczis.github.io/sonic-playground/"
      },
      "url": "https://korczis.github.io/sonic-playground/inigo-montoya-es/",
-     "wordCount": 926
+     "wordCount": 934
     }
    ]
   },
@@ -40092,7 +40205,7 @@
      "@type": "MusicRecording",
      "byArtist": {
       "@type": "MusicGroup",
-      "name": "Ivy Levan, CADRÉ",
+      "name": "Ivy Levan, Cadre",
       "sameAs": "https://musicbrainz.org/artist/dc8fc7a6-5dba-4d27-91cc-5a71fa86c69f"
      },
      "datePublished": "2015",
@@ -40149,7 +40262,7 @@
      "datePublished": "2026-11-12",
      "description": "Ivy Levan's smoky, swaggering vocal slinks over a sleek, bass-heavy pop beat, with a rap verse from Cadre: a track from her 2015 'swamp-hop' debut that fits its title, tight, dark and made to measure.",
      "educationalLevel": "introductory",
-     "headline": "Ivy Levan, CADRÉ - Like A Glove",
+     "headline": "Ivy Levan, Cadre - Like A Glove",
      "inLanguage": "en",
      "isPartOf": {
       "@type": "WebSite",
@@ -41594,7 +41707,7 @@
       }
      ],
      "datePublished": "2024-10-11",
-     "description": "A laid-back fusion of dub, reggae and deep electronic beats from East Germany: JPattersson's 2016 Elevator, the title track of an EP that also carries its own dub version and two remixes.",
+     "description": "A laid-back fusion of dub, reggae and deep electronic beats from East Germany: JPattersson's 2016 Elevator, the opening track of the EP Rühn, which also carries its own dub version and two remixes.",
      "educationalLevel": "introductory",
      "headline": "JPattersson - Elevator",
      "inLanguage": "en",
@@ -41622,7 +41735,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/jpatterson-elevator/",
-     "wordCount": 574
+     "wordCount": 582
     }
    ]
   },
@@ -43094,7 +43207,7 @@
       }
      ],
      "datePublished": "2026-11-12",
-     "description": "A slow, stripped-down slice of dark electronic R&B from the Eindhoven duo Klyne, where Nick Klein's soft, close-miked voice drifts over sparse beats and muted synths; the new song on their 2015 Closer EP.",
+     "description": "A slow, stripped-down slice of dark electronic R&B from the Dutch duo Klyne, where Nick Klein's soft, close-miked voice drifts over sparse beats and muted synths; the new song on their 2015 Closer EP.",
      "educationalLevel": "introductory",
      "headline": "Klyne - Waiting",
      "inLanguage": "en",
@@ -43117,7 +43230,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/klyne-waiting/",
-     "wordCount": 552
+     "wordCount": 554
     }
    ]
   },
@@ -43461,6 +43574,18 @@
       },
       {
        "@type": "CreativeWork",
+       "name": "Sian Evans",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/239568"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mark Morrison (3)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/597741"
+      },
+      {
+       "@type": "CreativeWork",
        "name": "Independence (release)",
        "publisher": "MusicBrainz",
        "url": "https://musicbrainz.org/release/4a5d9775-752f-4727-b03d-ba4616a3ca17"
@@ -43490,7 +43615,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/kosheen-addict/",
-     "wordCount": 558
+     "wordCount": 575
     }
    ]
   },
@@ -43835,6 +43960,13 @@
        "name": "Electroclash",
        "publisher": "Wikipedia",
        "url": "https://en.wikipedia.org/wiki/Electroclash"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "100 Greatest Songs of the 00's #85 Ladytron – Seventeen",
+       "publisher": "Arctic Reviews",
+       "url": "https://arcticreviews.co.uk/2023/03/11/100-greatest-songs-of-the-00s-85-ladytron-seventeen"
       }
      ],
      "datePublished": "2024-10-01",
@@ -44196,7 +44328,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/lipka-no-more-beer/",
-     "wordCount": 590
+     "wordCount": 587
     }
    ]
   },
@@ -44634,7 +44766,7 @@
       }
      ],
      "datePublished": "2024-10-08",
-     "description": "The Lithuanian producer Lucky Luke's 2019 electro-house reworking of Mike Posner's 2010 debut hit, released on Columbia/B1: a song about feeling snubbed, turned into a laid-back club anthem that became a radio hit in France a year later.",
+     "description": "The Lithuanian producer Lucky Luke's 2019 deep house reworking of Mike Posner's 2010 debut hit, released on Columbia/B1: a song about feeling snubbed, turned into a laid-back club anthem that became a radio hit in France a year later.",
      "educationalLevel": "introductory",
      "headline": "Lucky Luke - Cooler Than Me",
      "inLanguage": "en",
@@ -44929,7 +45061,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/mafia-klvb-credit-card/",
-     "wordCount": 538
+     "wordCount": 543
     }
    ]
   },
@@ -45847,7 +45979,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/michelle-gurevich-first-six-months-of-love/",
-     "wordCount": 662
+     "wordCount": 663
     }
    ]
   },
@@ -46119,7 +46251,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/mickey-avalon-eli-ultraviolence/",
-     "wordCount": 757
+     "wordCount": 763
     }
    ]
   },
@@ -46510,7 +46642,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/moisture-lucca-santucci-headman-club-version/",
-     "wordCount": 609
+     "wordCount": 608
     }
    ]
   },
@@ -46776,7 +46908,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/mount-sims-grave/",
-     "wordCount": 596
+     "wordCount": 609
     }
    ]
   },
@@ -47098,6 +47230,20 @@
        "name": "New Authority Volunteers",
        "publisher": "The Orchard",
        "url": "https://www.youtube.com/watch?v=29DgtaAEdYo"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Mount Sims - Wild Light (LP, GIGOLO 139)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/411706"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Mt. Sims - Happily Ever After...Again (CD, PUNCH 030)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2280157"
       }
      ],
      "datePublished": "2026-11-12",
@@ -47187,10 +47333,17 @@
        "name": "No Yellow Lines (recording)",
        "publisher": "MusicBrainz",
        "url": "https://musicbrainz.org/recording/df8f2c4d-3657-4632-a615-c42ed79241de"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Mount Sims - Wild Light (LP, GIGOLO 139)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/411706"
       }
      ],
      "datePublished": "2026-11-12",
-     "description": "A night drive with the headlights off: grinding analogue bass, clipped drum machines and Mount Sims' cool, menacing croon from the darker side of electroclash.",
+     "description": "A night drive with the headlights off: grinding analogue bass, clipped drum machines and Mount Sims's cool, menacing croon from the darker side of electroclash.",
      "educationalLevel": "introductory",
      "headline": "Mount Sims - No Yellow Lines",
      "inLanguage": "en",
@@ -47223,7 +47376,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/mount-sims-no-yellow-lines/",
-     "wordCount": 641
+     "wordCount": 650
     }
    ]
   },
@@ -47585,7 +47738,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/mount-sims-together-alone/",
-     "wordCount": 557
+     "wordCount": 556
     }
    ]
   },
@@ -48421,7 +48574,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/northern-lite-trusting-blind/",
-     "wordCount": 679
+     "wordCount": 684
     }
    ]
   },
@@ -48987,7 +49140,7 @@
      },
      "datePublished": "2010",
      "genre": [
-      "indie rock",
+      "hip-hop",
       "electronic",
       "alternative"
      ],
@@ -49308,6 +49461,13 @@
       },
       {
        "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Polo & Pan - Caravelle",
+       "publisher": "Qobuz",
+       "url": "https://www.qobuz.com/ie-en/album/caravelle-polo-pan/0060255764514"
+      },
+      {
+       "@type": "CreativeWork",
        "datePublished": "2018",
        "name": "POLO & PAN - Canopée (official video)",
        "publisher": "Ekler'O'Shock",
@@ -49338,7 +49498,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/polo-pan-canopee/",
-     "wordCount": 539
+     "wordCount": 573
     }
    ]
   },
@@ -52609,7 +52769,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/waldeck-zeebee-midsummer-night-blues/",
-     "wordCount": 782
+     "wordCount": 784
     }
    ]
   },

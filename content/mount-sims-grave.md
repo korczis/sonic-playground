@@ -20,7 +20,7 @@ track = "Grave"
 youtube = "https://www.youtube.com/embed/8DQgkRyzg9I"
 connections = [
   { source = "mount-sims-toby-dammit-what-s-the-big-deal.md", why = "Another track from the same album, Happily Ever After, with a guest drummer in place of André Lang." },
-  { source = "mount-sims-the-bitten-bite-back.md", why = "From the same album, and the opener of its 2010 reissue Happily Ever After... Again, where Grave follows it." },
+  { source = "mount-sims-the-bitten-bite-back.md", why = "From the same album, and the opener of the 2010 companion album Happily Ever After... Again, where Grave follows it." },
   { source = "mount-sims-how-we-do.md", why = "Mount Sims' earlier electroclash single, the club sound he moved away from on Happily Ever After." },
 ]
 
@@ -110,7 +110,7 @@ The {{ <concept_link name="synthesizer" /> }} sets the temperature. Cold, murky 
 
 ## Artistic Context
 
-Matthew Sims, who records as Mount Sims or Mt. Sims, was born in Milwaukee, Wisconsin, and is based in Berlin. Happily Ever After, released by Hungry Eye Records in October 2008, was produced and mixed by Thomas Stern of Crime & the City Solution and explores obsession, isolation, horror and madness; Grave is its second track, written, performed and produced by Sims, and it also appeared on A Grave E.P. and on the 2010 reissue Happily Ever After... Again on the Italian label Punch Records. Sims has also worked with The Knife and Planningtorock on the opera Tomorrow, In a Year.
+Matthew Sims, who records as Mount Sims or Mt. Sims, was born in Milwaukee, Wisconsin, and is based in Berlin. Happily Ever After, released by Hungry Eye Records in October 2008, was produced and mixed by Thomas Stern of Crime & the City Solution and explores obsession, isolation, horror and madness; Grave is its second track, written, performed and produced by Sims, and it also appeared on A Grave E.P. and on Happily Ever After... Again, a 2010 companion album on the Italian label Punch Records that shares only three of its fourteen tracks with the 2008 record. Sims has also worked with The Knife and Planningtorock on the opera Tomorrow, In a Year.
 
 ## Impact and Reception
 

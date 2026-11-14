@@ -1,5 +1,5 @@
 +++
-title = "Ivy Levan, CADRÉ - Like A Glove"
+title = "Ivy Levan, Cadre - Like A Glove"
 date = "2026-11-12"
 description = "Kouřový, nafoukaný vokál Ivy Levan se vine nad uhlazeným popovým beatem s těžkou basou, s rapovou slokou od Cadre: skladba z jejího „swamp-hopového“ debutu z roku 2015, která odpovídá svému názvu, sevřená, temná a šitá na míru."
 
@@ -10,7 +10,7 @@ concept = ["featured artist", "hook"]
 instrument = ["vocals", "synthesizer"]
 
 [extra.translation]
-of = "6ee65218c883"
+of = "a801a73916d7"
 
 [extra]
 connections = [

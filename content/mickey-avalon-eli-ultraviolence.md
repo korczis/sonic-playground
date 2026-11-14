@@ -92,23 +92,23 @@ The song opens on its refrain, the idea that nothing in this world is free and y
 
 ## Sound Breakdown
 
-### Intro: Haunting Atmosphere
+### Intro: The Refrain First
 
 The track starts with its refrain, setting the moral before the story, over the guitar-led beat.
 
-### First Verse: Raw and Gritty Lyrics
+### First Verse: Pete and Jimmy Set Off
 
 Avalon tells the first chapter, the jangly guitar hanging behind him, as Pete and Jimmy set off in the truck.
 
-### Chorus: Explosive Energy
+### Chorus: The Line Everyone Remembers
 
 The refrain returns, short and repeated, the line everyone remembers.
 
-### Bridge: Reflective Intensity
+### Call and Response: Lives Passing By
 
 The call-and-response passage slows the story down: each line is sung and then echoed, a moment of reflection on lives that feel like they are passing by.
 
-### Final Chorus: Chaotic Climax
+### Final Chorus: Unchanged
 
 After the last chapter, the getaway, the refrain comes back one more time, unchanged, as if the story had taught nobody anything.
 

@@ -41,7 +41,7 @@ listen_for = [
 ]
 questions = [
   "The original is a northern-soul-inspired pop song. Why does a soulful voice suit drum and bass so well?",
-  "The song's chords never land on the home chord of their scale. How does that keep the plea unresolved?",
+  "The progression never plays F, the home chord of its key signature. How does that keep the plea unresolved?",
   "Is this remix still a John Newman song, or has it become Kove's?",
 ]
 

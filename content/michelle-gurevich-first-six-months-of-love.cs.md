@@ -10,7 +10,7 @@ concept = ["synthesizer", "drum machine"]
 instrument = ["vocals", "synthesizer", "keyboard", "drum machine"]
 
 [extra.translation]
-of = "30f103df9782"
+of = "15edf3b1589a"
 
 [extra]
 connections = [

@@ -55,6 +55,20 @@ url = "https://www.youtube.com/watch?v=29DgtaAEdYo"
 publisher = "The Orchard"
 kind = "video"
 year = "2010"
+
+[[extra.sources]]
+title = "Mount Sims - Wild Light (LP, GIGOLO 139)"
+url = "https://www.discogs.com/release/411706"
+publisher = "Discogs"
+kind = "database"
+year = "2004"
+
+[[extra.sources]]
+title = "Mt. Sims - Happily Ever After...Again (CD, PUNCH 030)"
+url = "https://www.discogs.com/release/2280157"
+publisher = "Discogs"
+kind = "database"
+year = "2010"
 +++
 
 ## Genre and Mood
@@ -87,7 +101,7 @@ The song cuts off with the same abruptness it began with, leaving the unease han
 
 ## Concepts in Focus
 
-New Authority Volunteers is late-period {{ <concept_link name="post-punk" /> }}, the tradition that followed punk with colder, more experimental music: prominent rhythm, tense guitars, detached vocals and dark themes. Mount Sims arrived there gradually; his 2005 album Wild Light already drew on dark wave and post-punk, with David J of Bauhaus playing bass on some songs, and the records that followed went further.
+New Authority Volunteers is late-period {{ <concept_link name="post-punk" /> }}, the tradition that followed punk with colder, more experimental music: prominent rhythm, tense guitars, detached vocals and dark themes. Mount Sims arrived there gradually; his 2004 album Wild Light already drew on dark wave and post-punk, with David J of Bauhaus playing bass on some songs, and the records that followed went further.
 
 What makes the song interesting is what it is not. Mount Sims made his name in {{ <concept_link name="electroclash" /> }}, the scene that revived 1980s electro with a cool, ironic edge, and his debut UltraSex on International DeeJay Gigolo was one of its records. Here the cool voice is the same, but the gloss is gone; listen to how a delivery that sounded playful over synths sounds threatening over guitars.
 

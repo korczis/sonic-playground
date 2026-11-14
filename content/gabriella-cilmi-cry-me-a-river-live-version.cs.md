@@ -1,7 +1,7 @@
 +++
 title = "Gabriella Cilmi - Cry Me A River (Live Version)"
 date = "2026-11-12"
-description = "Šestnáctiletá Gabriella Cilmi přenáší rozchodový hit Justina Timberlakea z roku 2002 s trojčlennou kapelou na kouřové, živé soulové území: B-strana z roku 2008, kterou nahráli Xenomania, a její chraplavý hlas nese všechnu bolest."
+description = "Šestnáctiletá Gabriella Cilmi přenáší rozchodový hit Justina Timberlakea z roku 2002 jen za doprovodu kytary a basy na kouřové, živé soulové území: B-strana z roku 2008, kterou nahráli Xenomania, a její chraplavý hlas nese všechnu bolest."
 
 [taxonomies]
 genre = ["soul", "cover", "pop"]
@@ -10,7 +10,7 @@ concept = ["cover version", "live recording"]
 instrument = ["vocals", "guitar", "bass"]
 
 [extra.translation]
-of = "71facfd4f76d"
+of = "98070b3aece3"
 
 [extra]
 connections = [
@@ -69,11 +69,11 @@ Kapela se usadí a ona nechá poslední verš viset ve vzduchu, tichý konec, kt
 
 Tohle je {{ <concept_link name="cover version" lang="cs" /> }}, která zachovává každé slovo a mění význam. Timberlakeův originál byl obecně vnímán jako píseň o jeho rozchodu s Britney Spears, zpívaná mužem, který jde dál. V ústech dospívající zpěvačky s hlasem stvořeným pro blues znějí tytéž verše méně jako čestné kolo vítěze a víc jako někdo, kdo přesvědčuje sám sebe. Poslouchejte s originálem po ruce a uslyšíte dva úplně odlišné rozchody.
 
-Je to také {{ <concept_link name="live recording" lang="cs" /> }}, kterou pořídil produkční tým Xenomania, jemuž je připsáno nahrání i mix, s trojčlennou kapelou hrající společně. Smyslem živé nahrávky je to, co neopravuje: lehce roztřepený okraj hlasu, způsob, jakým kapela dýchá se zpěvačkou, improvizované vsuvky v posledních refrénech, které by se ve studiu plánovaly a tady jsou spontánní.
+Je to také {{ <concept_link name="live recording" lang="cs" /> }}, kterou pořídil produkční tým Xenomania, jemuž je připsáno nahrání i mix, při níž zpěvačka a dva hudebníci, na kytaru a na basu, hráli společně. Smyslem živé nahrávky je to, co neopravuje: lehce roztřepený okraj hlasu, způsob, jakým kapela dýchá se zpěvačkou, improvizované vsuvky v posledních refrénech, které by se ve studiu plánovaly a tady jsou spontánní.
 
 ## Umělecký kontext
 
-Gabriella Cilmi se narodila v roce 1991 v Dandenongu, předměstí Melbourne, a vyrůstala na Nině Simone, Janis Joplin, Led Zeppelin a Suzi Quatro. Smlouvu s Island Records UK podepsala poté, co ji jeden manažer Warneru slyšel zpívat „Jumpin' Jack Flash“ na pouličním festivalu v Melbourne, a své debutové album Lessons To Be Learned vydala v březnu 2008, v šestnácti letech. Tato živá Cry Me A River se poprvé objevila 21. července 2008 na australském CD singlu „Don't Wanna Go to Bed Now“ vedle živé „Sweet About Me“ a pak byla přidána jako bonusová skladba do digitálních edic alba.
+Gabriella Cilmi se narodila v roce 1991 v Dandenongu, předměstí Melbourne, a vyrůstala na Nině Simone, Janis Joplin, Led Zeppelin a Suzi Quatro. Smlouvu s Island Records UK podepsala poté, co ji jeden manažer Warneru slyšel zpívat „Jumpin' Jack Flash“ na pouličním festivalu v Melbourne, a své debutové album Lessons To Be Learned vydala v březnu 2008, v šestnácti letech. Tato živá Cry Me A River se poprvé objevila 21. července 2008 na australském CD singlu „Don't Wanna Go To Bed Now“ vedle živé „Sweet About Me“ a pak byla přidána jako bonusová skladba do digitálních edic alba.
 
 ## Ohlas a dopad
 

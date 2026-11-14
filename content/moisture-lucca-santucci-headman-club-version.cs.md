@@ -10,7 +10,7 @@ concept = ["extended mix", "alternate version", "groove"]
 instrument = ["vocals", "synthesizer", "bass", "drum machine"]
 
 [extra.translation]
-of = "6fd0a7713c16"
+of = "17ac4b0dd57d"
 
 [extra]
 connections = [
@@ -39,7 +39,7 @@ Tato verze „Moisture“ stojí mezi **deep house**, nu-discem a **elektronicko
 
 ## O interpretech
 
-**Headman** je pseudonym Robiho Insinny, producenta, DJe a designéra z curyšské elektronické scény, který založil label Relish Records. Jeho hudba mísí house, pop, disco a rock a spojuje se s hnutím nu-disco; jeho debut *It Rough* (2003) a *Catch Me* (2008) vyšly u mnichovského labelu Gomma a remixoval Franz Ferdinand, The Gossip, Roxy Music, Zombie Nation a Tigu. **Luca Santucci** v Moisture zpívá a napsal její text; Insinna ji složil, zaranžoval a produkoval.
+**Headman** je pseudonym Robiho Insinny, producenta, DJe a designéra z curyšské elektronické scény, který založil label Relish. Jeho hudba mísí house, pop, disco a rock a spojuje se s hnutím nu-disco; jeho debut *It Rough* (2003) a *Catch Me* (2008) vyšly u mnichovského labelu Gomma a remixoval Franz Ferdinand, The Gossip, Roxy Music, Zombie Nation a Tigu. **Luca Santucci** v Moisture zpívá a napsal její text; Insinna ji složil, zaranžoval a produkoval.
 
 ## O skladbě
 

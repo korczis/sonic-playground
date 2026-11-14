@@ -138,7 +138,7 @@ The credit "feat. Zeebee" makes this a lesson in the {{ <concept_link name="feat
 
 ## Impact and Reception
 
-**"Midsummer Night Blues"** was never a chart single, but it remained part of the Ballroom canon: it reappeared on the French radio station's compilation FIP, Vol. 1 in 2015 and, in a version with the singer Patrizia Ferrara, on Dope Noir's 20th-anniversary collection in 2022. Ballroom Stories was nominated for an Amadeus Austrian Music Award.
+**"Midsummer Night Blues"** was never a chart single, but it remained part of the Ballroom canon: it reappeared in 2015 on FIP, Vol. 1, a compilation from the Radio France station FIP, and, in a version with the singer Patrizia Ferrara, on Dope Noir's 20th-anniversary collection in 2022. Ballroom Stories was nominated for an Amadeus Austrian Music Award.
 
 ## Conclusion
 

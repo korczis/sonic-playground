@@ -68,7 +68,7 @@ kind = "database"
 
 **Original Version**
 
-{{ <video id="uwStEf7rNoE" title="C.A.R - Idle Eyes (Roman Flügel Remix) (another video)" /> }}
+{{ <video id="uwStEf7rNoE" title="C.A.R. - Idle Eyes" /> }}
 
 With its delicate, almost haunting quality, this remix amplifies the mysterious and introspective vibe of the original, a minimalist track where every sound feels deliberate. Roman Flügel, one of the most respected names of German electronic music, makes a remix that is as spacious as it is hypnotic, distant and intimately close at the same time.
 

@@ -23,8 +23,8 @@ connections = [
 
 [extra.credits]
 producers = ["Santé"]
-featuring = ["J.U.D.G.E."]
-vocals = ["J.U.D.G.E."]
+featuring = ["J.U.D.G.E"]
+vocals = ["J.U.D.G.E"]
 remixers = ["Agoria", "Pablo Nouvelle"]
 
 [extra.learning]
@@ -118,14 +118,14 @@ Elements are pulled back one by one until only the rhythm remains, ready for the
 
 Awake runs on a {{ <concept_link name="house groove" /> }}: kick on every beat, hi-hats between them, and a deep, rolling bass that keeps the body moving. Thump described it as an emotive, textured journey with hypnotic keys, melancholic vocals and rolling, groove-based percussion. The groove gives the track its dance-floor function, while the slowly changing chords give it its darkness.
 
-The human element comes from a {{ <concept_link name="featured artist" /> }}. Santé flew to London specially to work with the vocalist J.U.D.G.E. (Richard Judge), and Thump wrote that his voice added depth to the producer's darker studio persona. In club music a guest singer often turns a tool into a song: here the vocal phrases return like a mantra and give the arrangement the arc of a story.
+The human element comes from a {{ <concept_link name="featured artist" /> }}. Santé flew to London specially to work with the vocalist J.U.D.G.E (Richard Judge), and Thump wrote that his voice added depth to the producer's darker studio persona. In club music a guest singer often turns a tool into a song: here the vocal phrases return like a mantra and give the arrangement the arc of a story.
 
 The EP also shows what a {{ <concept_link name="remix" /> }} package can do. The French techno producer Agoria made a progressive rework with a rousing synth pattern and crisp kick drums, and the Swiss producer Pablo Nouvelle a tender, downtempo version: one vocal, three very different nights. For another German deep house record built on a guest voice, listen to {{ <track_link source="claptone-clap-your-hands-say-yeah-ghost.md" /> }}.
 
 ## Artistic Context
 
-Santé is a German DJ and producer who runs his own label, Avotre. Awake, recorded with J.U.D.G.E. in London, followed his debut album Current and came out on Avotre in late 2014 as the three-track Awake EP, catalogue number AVOTRE 013, with remixes by Agoria and Pablo Nouvelle; Thump, which premiered it, announced a release through Ultra Records in December 2014 as well. Reviewers noted how the release showed the label boss reaching for deeper shades of house and techno with a strong vocal at its centre, and Thump called it his most compelling club track yet.
+Santé is a German DJ and producer who runs his own label, Avotre. Awake, recorded with J.U.D.G.E in London, followed his debut album Current and came out on Avotre in late 2014 as the three-track Awake EP, catalogue number AVOTRE 013, with remixes by Agoria and Pablo Nouvelle; Thump, which premiered it, announced a release through Ultra Records in December 2014 as well. Reviewers noted how the release showed the label boss reaching for deeper shades of house and techno with a strong vocal at its centre, and Thump called it his most compelling club track yet.
 
 ## Impact and Reception
 
-Awake became one of Santé's best-known productions: after Agoria's remix, Mixmag reported, it found its way into sets by Dixon, Claptone and others. It is a track DJs could play both in peak hours and in more reflective moments, and it introduced many listeners to J.U.D.G.E.'s voice. It earns its place here for that rare balance of club power and soul. Play it as the night turns into morning.
+Awake became one of Santé's best-known productions: after Agoria's remix, Mixmag reported, it found its way into sets by Dixon, Claptone and others. It is a track DJs could play both in peak hours and in more reflective moments, and it introduced many listeners to J.U.D.G.E's voice. It earns its place here for that rare balance of club power and soul. Play it as the night turns into morning.

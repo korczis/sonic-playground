@@ -1,5 +1,5 @@
 +++
-title = "Gotan Project - La vigüela"
+title = "Gotan Project - La Vigüela"
 date = "2026-11-12"
 description = "Bandoneon, guitar and Cristina Vilallonga's voice drifting over a slow electronic pulse, La Vigüela is Gotan Project's tango heading out into the open pampas."
 

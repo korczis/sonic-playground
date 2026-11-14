@@ -11,7 +11,7 @@ concept = ["turntablism", "sampling", "hook"]
 instrument = ["turntables", "vocals"]
 
 [extra.translation]
-of = "00a6fdb6a32d"
+of = "37dd4a1ccdd7"
 
 [extra]
 connections = [
@@ -37,29 +37,29 @@ questions = ["Pokud každý zvuk pochází z desky, kdo je autorem písně: DJov
 
 *Because of You* je postavená kolem svého názvu, fráze adresované někomu, kdo něco změnil. Dobová recenze alba označila skladbu za podobnou Gorillaz a to přirovnání sedí: má stejnou směs hip-hopového rytmu, popového hooku a kreslené jasnosti. Odlišuje ji způsob, jakým hudba vzniká: čtyři DJové ručně stříhají a vrství desky.
 
-## Rozbor textu
+## Rozbor zvuku
 
-### Úvod: nastolení atmosféry
+### Úvod: groove
 
 Píseň začíná groovem, beatem s trochu drsným, ručně skládaným pocitem zvuků vystřižených z desek. Nastolí vlídný tón ještě předtím, než přijde hlas.
 
-### Sloka 1: uznání vlivu druhých
+### Sloka 1: uvolněný, melodický přednes
 
 Přednes Pigeon Johna je uvolněný a melodický, na pomezí rapu a zpěvu. Beat mu nechává prostor, takže sloka působí jako rozhovor, ne jako tlačenice.
 
-### Refrén: upřímné vyznání
+### Refrén: hook
 
 V refrénu Pigeon John zpívá „because of you“, hook, na kterém visí celá skladba. Krátký a opakovaný je tím, co si posluchač odnese.
 
-### Sloka 2: přijetí cesty
+### Sloka 2: stejně lehký hlas
 
 Druhá sloka pokračuje stejně lehkým hlasem a beat si drží svůj pohyb vpřed.
 
-### Most: chvíle zamyšlení
+### Instrumentální mezihra: gramofony vystupují dopředu
 
 Mezi vokálními částmi vystupují dopředu gramofony: tady je řemeslo C2C slyšet nejsnáz, jak se útržky stříhají, opakují a znovu umísťují proti groovu.
 
-### Závěrečný refrén: radostná oslava
+### Závěrečný refrén: stejně jasný tón
 
 Závěrečný refrén vrací hook a uzavírá skladbu stejně jasným tónem, jakým začala.
 

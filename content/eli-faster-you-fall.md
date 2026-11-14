@@ -77,25 +77,25 @@ The song sits between **rock**, **hip-hop** and **pop**: retro in its persona, m
 
 The song is tiny in its parts: one refrain, built on the title phrase, and one short verse in which the narrator boasts that his pursuit cannot be escaped. Both come back twice. It is a song of attitude rather than storytelling, and its pleasure lies in how the same few lines are delivered again and again with growing relish.
 
-## Sound Breakdown
+## Song Structure
 
-### Intro: Haunting Opener
+### Opening: Straight into the Refrain
 
 There is no separate instrumental statement in the song's structure: it opens straight on the refrain, so the hook is the first thing you hear.
 
-### First Verse: Emotional Resonance
+### First Verse: A Short Boast
 
 The verse is a short boast, repeated: the narrator tells his target she has no chance, crediting his way with words and his hands. It is swagger, not vulnerability.
 
-### Chorus: Dynamic Intensity
+### Chorus: The Centre of the Song
 
-The refrain returns, the title line answered by the claim that however fast she gets, he catches them all. It is the centre of the song.
+The refrain returns, the title line answered by the claim that however fast she gets, he catches her. It is the centre of the song.
 
-### Bridge: Reflective Calm
+### Second Verse: The Verse Returns
 
 The song has no separate bridge: after the second chorus the verse simply comes back, doing the work a bridge would do by giving the refrain something to return from.
 
-### Final Chorus: Climactic Release
+### Final Chorus: The Last Word
 
 The refrain closes the song, the last word on a chase that the narrator insists he has already won.
 

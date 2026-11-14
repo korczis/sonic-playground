@@ -1,5 +1,5 @@
 +++
-title = "Ivy Levan, CADRÉ - Like A Glove"
+title = "Ivy Levan, Cadre - Like A Glove"
 date = "2026-11-12"
 description = "Ivy Levan's smoky, swaggering vocal slinks over a sleek, bass-heavy pop beat, with a rap verse from Cadre: a track from her 2015 'swamp-hop' debut that fits its title, tight, dark and made to measure."
 

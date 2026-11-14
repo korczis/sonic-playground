@@ -64,6 +64,18 @@ kind = "review"
 year = "2012"
 
 [[extra.sources]]
+title = "Sian Evans"
+url = "https://www.discogs.com/artist/239568"
+publisher = "Discogs"
+kind = "database"
+
+[[extra.sources]]
+title = "Mark Morrison (3)"
+url = "https://www.discogs.com/artist/597741"
+publisher = "Discogs"
+kind = "database"
+
+[[extra.sources]]
 title = "Independence (release)"
 url = "https://musicbrainz.org/release/4a5d9775-752f-4727-b03d-ba4616a3ca17"
 publisher = "MusicBrainz"
@@ -112,7 +124,7 @@ The arrangement is a long {{ <concept_link name="build-up" /> }} without a relea
 
 ## Artistic Context
 
-Kosheen formed in Bristol around singer-songwriter Sian Evans and the producers Markee Ledge and Darren Beale, who also worked as Markee Substance and Darren Decoder, and broke through with their 2001 debut *Resist*, which reached number eight in the UK and leaned on drum and bass. *Independence*, their fourth album, was first announced for May 2012 and finally released in autumn 2012; it followed Evans' success on DJ Fresh's UK number one "Louder" and opens with "Addict", credited to all three founding members.
+Kosheen formed in Bristol around singer-songwriter Sian Evans and the producers Markee Ledge and Darren Beale, who also worked as Markee Substance and Darren Decoder, and broke through with their 2001 debut *Resist*, which reached number eight in the UK and leaned on drum and bass. *Independence*, their fourth album, was first announced for May 2012 and finally released in autumn 2012; it followed Evans' success on DJ Fresh's UK number one "Louder" and opens with "Addict", credited to all three founding members. The writing credit uses legal names: Sian Powell is Sian Evans and Mark Morrison is Markee Ledge.
 
 ## Impact and Reception
 

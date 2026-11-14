@@ -71,27 +71,27 @@ year = "2022"
 
 ## Sound Breakdown
 
-### Intro: Setting the Tone
+### Intro: The Production Frames the Voices
 
 The track sets its tone from the start, Felix Zoepf and Pilocka Krach's production framing the voices before they take over.
 
-### Verse One: The Hard Truth
+### Verse One: The Character's World
 
 The verse builds the character's world, the underground lifestyle the album promises.
 
-### Chorus: The Catchy Hook
+### Chorus: The Title Phrase
 
 The title phrase anchors the song, the credit card returning as its central image.
 
-### Verse Two: Diving Deeper
+### Guests: Pilocka Krach and Mommo G
 
 Pilocka Krach and Mommo G are credited alongside Mafia Klvb, so the song is shared between the persona and its guests.
 
-### Bridge: Moment of Reflection
+### Guitar: Billie Mendrix
 
 Billie Mendrix is credited on guitar for this track, a played instrument inside an electronic production.
 
-### Final Chorus: The Climax
+### Final Chorus: The Last Word
 
 The song ends where it began, on its title and its attitude, the last word of a short debut.
 

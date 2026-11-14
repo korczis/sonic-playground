@@ -47,14 +47,14 @@ the familiar and the unknown.
 ## Song Summary
 
 **".E.S"** stands out with its intricate composition and emotional undertones.
-Montoya's use of minimalist beats and atmospheric sounds results in a track that
+Inigo Montoya's use of minimalist beats and atmospheric sounds results in a track that
 encourages introspection without overwhelming the listener. The layers of **synths**
 and **modulated tones** create a fluid soundscape that ebbs and flows, guiding the
 listener through a meditative experience.
 
 The interplay of contrasting elements—delicate **melodies** and more unsettling
 **ambient effects**—reflects the tension between tranquility and unease, much like
-the complexities of human thought and emotion. Montoya's subtle shifts in tone and
+the complexities of human thought and emotion. The band's subtle shifts in tone and
 texture within the track keep it evolving, ensuring the listener remains engaged
 throughout the journey.
 
@@ -71,7 +71,7 @@ mystery, hinting at the introspective journey to come.
 
 As the song progresses, more layers of **electronic beats** and **ambient sounds** begin
 to merge, adding complexity to the initial simplicity. Each sound seems to emerge from
-the background, creating a sense of depth and immersion. Montoya’s use of **sound design**
+the background, creating a sense of depth and immersion. the band's use of **sound design**
 here is key—each element contributes to an overarching feeling of being suspended in a
 vast, sonic landscape.
 
@@ -79,7 +79,7 @@ vast, sonic landscape.
 
 In the chorus, the track reaches its most **hypnotic** state. Repeating rhythmic motifs
 become more pronounced, pulling the listener deeper into the soundscape. The progression
-is subtle but noticeable, as Montoya builds the intensity gradually while maintaining
+is subtle but noticeable, as the band builds the intensity gradually while maintaining
 the track’s meditative quality.
 
 ### Bridge: A Moment of Reflection
@@ -87,13 +87,13 @@ the track’s meditative quality.
 Midway through, the track shifts into a more introspective, quieter section. The
 rhythm slows, and more ambient elements take the forefront. This pause feels like a
 moment of contemplation—a space to reflect before the track resumes its journey. It
-is here that Montoya’s talent for creating emotional depth through minimalism shines,
+is here that the band's talent for creating emotional depth through minimalism shines,
 as the absence of complexity allows for a more personal connection to the music.
 
 ### Climax: Emotional Expansion
 
 Toward the end of the track, **".E.S"** builds to a quiet but powerful emotional
-climax. Montoya introduces more intricate **synth patterns**, with the rhythm becoming
+climax. The band introduces more intricate **synth patterns**, with the rhythm becoming
 more dynamic yet maintaining the track’s contemplative mood. This gradual expansion of
 sound mirrors the emotional journey of introspection—starting from simplicity and
 growing into something more profound and complex.
@@ -107,12 +107,12 @@ track ends where it started rather than on a final peak.
 
 ## Artistic Context
 
-Inigo Montoya’s music often delves into the exploration of
-**emotion** and **identity**, and **".E.S"** is no exception. His ability
+Inigo Montoya's music often delves into the exploration of
+**emotion** and **identity**, and **".E.S"** is no exception. Their ability
 to blend genres such as **ambient**, **electronic**, and **experimental**
-into a cohesive sonic experience showcases his talent for pushing the boundaries
-of traditional electronic music. **".E.S"** is part of Montoya's ongoing evolution
-as an artist, reflecting his penchant for creating reflective and immersive music
+into a cohesive sonic experience showcases their talent for pushing the boundaries
+of traditional electronic music. **".E.S"** is part of Inigo Montoya's ongoing evolution
+as a band, reflecting their penchant for creating reflective and immersive music
 that transcends conventional genre definitions.
 
 ## Impact and Reception
@@ -133,5 +133,5 @@ rich track that takes listeners on a reflective journey. Through
 its blend of **ambient** textures, **electronic beats**, and subtle
 sonic layering, the song invites introspection while providing a
 hypnotic and contemplative experience. It is a perfect example of how
-Montoya’s music blends experimental elements with emotional depth,
+Inigo Montoya's music blends experimental elements with emotional depth,
 offering a space for reflection on life’s fleeting moments.

@@ -4,7 +4,7 @@ date = "2024-11-05"
 description = "The Los Angeles rapper Pigeon John opens his 2010 album Dragon Slayer with The Bomb, a bright, bouncing single co-produced with General Elektriks' Hervé Salters from sampled live instrumentation rather than old records."
 
 [taxonomies]
-genre = ["indie rock", "electronic", "alternative"]
+genre = ["hip-hop", "electronic", "alternative"]
 sentiment = ["energetic", "defiant", "bold"]
 concept = ["sampling", "hook"]
 instrument = ["vocals", "sampler"]

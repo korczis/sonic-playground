@@ -1,7 +1,7 @@
 +++
 title = "Gabriella Cilmi - Cry Me A River (Live Version)"
 date = "2026-11-12"
-description = "A sixteen-year-old Gabriella Cilmi takes Justin Timberlake's 2002 break-up hit into smoky, live soul territory with a three-piece band: a 2008 B-side recorded by Xenomania, her husky voice carrying all the hurt."
+description = "A sixteen-year-old Gabriella Cilmi takes Justin Timberlake's 2002 break-up hit into smoky, live soul territory, backed only by guitar and bass: a 2008 B-side recorded by Xenomania, her husky voice carrying all the hurt."
 
 [taxonomies]
 genre = ["soul", "cover", "pop"]
@@ -114,11 +114,11 @@ The band settles and she lets the final line hang, a quiet ending that feels mor
 
 This is a {{ <concept_link name="cover version" /> }} that keeps every word and changes the meaning. Timberlake's original was widely heard as a song about his break-up with Britney Spears, sung by a man moving on. In the mouth of a teenage female singer with a voice built for blues, the same lines sound less like a victory lap and more like someone convincing herself. Listen with the original nearby and hear two completely different break-ups.
 
-It is also a {{ <concept_link name="live recording" /> }}, made by the production team Xenomania, who are credited with recording and mixing it, with a three-piece band playing together. The point of a live take is what it does not fix: a slightly ragged edge in the voice, the way the band breathes with the singer, the ad-libs in the last choruses that would be planned in a studio and are spontaneous here.
+It is also a {{ <concept_link name="live recording" /> }}, made by the production team Xenomania, who are credited with recording and mixing it, with the singer, her guitarist and her bassist playing together. The point of a live take is what it does not fix: a slightly ragged edge in the voice, the way the band breathes with the singer, the ad-libs in the last choruses that would be planned in a studio and are spontaneous here.
 
 ## Artistic Context
 
-Gabriella Cilmi was born in 1991 in Dandenong, a suburb of Melbourne, and grew up on Nina Simone, Janis Joplin, Led Zeppelin and Suzi Quatro. Signed to Island Records UK after a Warner executive heard her sing "Jumpin' Jack Flash" at a Melbourne street festival, she released her debut album Lessons To Be Learned in March 2008, at sixteen. This live Cry Me A River first appeared on the Australian CD single of "Don't Wanna Go to Bed Now" on 21 July 2008, beside a live "Sweet About Me", and was then added as a bonus track to digital editions of the album.
+Gabriella Cilmi was born in 1991 in Dandenong, a suburb of Melbourne, and grew up on Nina Simone, Janis Joplin, Led Zeppelin and Suzi Quatro. Signed to Island Records UK after a Warner executive heard her sing "Jumpin' Jack Flash" at a Melbourne street festival, she released her debut album Lessons To Be Learned in March 2008, at sixteen. This live Cry Me A River first appeared on the Australian CD single of "Don't Wanna Go To Bed Now" on 21 July 2008, beside a live "Sweet About Me", and was then added as a bonus track to digital editions of the album.
 
 ## Impact and Reception
 

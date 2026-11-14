@@ -10,7 +10,7 @@ concept = ["remix", "four-on-the-floor"]
 instrument = ["synthesizer"]
 
 [extra.translation]
-of = "dc519e86a835"
+of = "74f38cc09af6"
 
 [extra]
 connections = [
@@ -30,7 +30,7 @@ questions = ["Dvanáctipalcová deska nese čtyři remixy, ale ne originál. Co 
 
 ## Žánr a nálada
 
-**Hrdvsion** přepracovává **Discolight** berlínské umělkyně **Pilocka Krach** v klubovou skladbu, která má house a disco v názvu a techno v kostech. Remix je pulzující a energický, spíš stálý než výbušný, a pohlcující tak, jak bývají dlouhé, trpělivé taneční skladby.
+**Hrdvsion** přepracovává **Discolight** berlínské umělkyně **Pilocka Krach** v klubovou skladbu, která má disco v názvu a techno v kostech. Remix je pulzující a energický, spíš stálý než výbušný, a pohlcující tak, jak bývají dlouhé, trpělivé taneční skladby.
 
 ## O skladbě
 

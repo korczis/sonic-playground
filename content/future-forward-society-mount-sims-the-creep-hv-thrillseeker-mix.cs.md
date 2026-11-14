@@ -10,7 +10,7 @@ concept = ["alternate version", "extended mix", "breakdown"]
 instrument = ["synthesizer", "drum machine"]
 
 [extra.translation]
-of = "74ecd3eb18a9"
+of = "90be69f80281"
 
 [extra]
 connections = [
@@ -77,7 +77,7 @@ Napětí vrcholí v pasáži, které se říká {{ <concept_link name="breakdown
 
 ## Umělecký kontext
 
-The Creep vyšla 5. května 2008 u labelu Kompute Musik, připsaná Mount Sims a Future Forward Society, v několika verzích, mezi nimi tento HV Thrillseeker Mix a Capri Mix. Mount Sims je americký umělec Matthew Sims, rodák z Milwaukee, který hrál v alternativní rockové kapele Citizen King, než se přestěhoval do Los Angeles a poté do Berlína. Jeho první dvě alba, UltraSex (2002) a Wild Light (2005), vyšla u International DeeJay Gigolo Records, labelu v samém srdci electroclashe, a Wild Light se už obracelo k temnějším zvukům dark wave a post-punku. V roce 2008, kdy vyšla The Creep, se také připojil k The Silures, kapele, kterou založili Vitalic a Linda Lamb. Uhlazené, temné electro gigolovských let tehdy už splývalo s technem a tento mix stojí přesně na té hranici.
+The Creep vyšla 5. května 2008 u labelu Kompute Musik, připsaná Mount Sims a Future Forward Society, v několika verzích, mezi nimi tento HV Thrillseeker Mix a Capri Mix. Mount Sims je americký umělec Matthew Sims, rodák z Milwaukee, který hrál v alternativní rockové kapele Citizen King, než se přestěhoval do Los Angeles a poté do Berlína. Jeho první dvě alba, UltraSex (2002) a Wild Light (2004), vyšla u International DeeJay Gigolo Records, labelu v samém srdci electroclashe, a Wild Light se už obracelo k temnějším zvukům dark wave a post-punku. V roce 2008, kdy vyšla The Creep, se také připojil k The Silures, kapele, kterou založili Vitalic a Linda Lamb. Uhlazené, temné electro gigolovských let tehdy už splývalo s technem a tento mix stojí přesně na té hranici.
 
 ## Ohlas a dopad
 

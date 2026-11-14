@@ -10,7 +10,7 @@ concept = ["stage persona", "featured artist"]
 instrument = ["vocals", "guitar"]
 
 [extra.translation]
-of = "6246e3d0d363"
+of = "ee80f3146b54"
 
 [extra]
 connections = [
@@ -41,27 +41,27 @@ questions = ["Mafia Klvb se prezentují jako postavy s přehnanými jmény. Měn
 
 ## Rozbor zvuku
 
-### Úvod: nastavení tónu
+### Úvod: produkce orámuje hlasy
 
 Skladba nastaví svůj tón hned od začátku; produkce Felixe Zoepfa a Pilocka Krach orámuje hlasy dřív, než převezmou vládu.
 
-### Sloka 1: tvrdá pravda
+### Sloka 1: svět postavy
 
 Sloka buduje svět postavy, undergroundový životní styl, který album slibuje.
 
-### Refrén: chytlavý hook
+### Refrén: titulní fráze
 
 Titulní fráze píseň ukotvuje a kreditní karta se vrací jako její ústřední obraz.
 
-### Sloka 2: ponor hlouběji
+### Hosté: Pilocka Krach a Mommo G
 
 Vedle Mafia Klvb jsou uvedeny Pilocka Krach a Mommo G, takže si píseň dělí persona a její hosté.
 
-### Most: chvíle zamyšlení
+### Kytara: Billie Mendrix
 
 Kredity této skladby připisují kytaru Billie Mendrix, hraný nástroj uvnitř elektronické produkce.
 
-### Závěrečný refrén: vyvrcholení
+### Závěrečný refrén: poslední slovo
 
 Píseň končí tam, kde začala, u svého názvu a svého postoje, poslední slovo krátkého debutu.
 

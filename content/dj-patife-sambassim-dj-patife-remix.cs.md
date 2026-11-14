@@ -10,7 +10,7 @@ concept = ["remix", "breakbeat", "bassline"]
 instrument = ["vocals", "drum machine", "bass", "synthesizer"]
 
 [extra.translation]
-of = "a9ff216ff781"
+of = "21a7a69208b3"
 
 [extra]
 connections = [
@@ -75,7 +75,7 @@ Tajemstvím klidu celé skladby je její {{ <concept_link name="bassline" lang="
 
 ## Umělecký kontext
 
-DJ Patife, vlastním jménem Wagner Ribeiro de Souza, narozený v roce 1976 v São Paulu, začínal jako rezident v tamním Arena Music Hall a od roku 1999 uváděl na stanici Energia 97 rozhlasový pořad Bassline. Spolu se současníky, jako jsou DJ Marky a duo Drumagick, zapsal brazilský drum and bass na mezinárodní mapu: jeho první album Sounds of Drum'n'bass v roce 2000 chválily časopisy Muzik a Mixmag a tři jeho skladby vyšly na Brazil EP labelu V Recordings. Jeho remix Sambassim vydal label Trama ze São Paula a zařadil ho na Patifeho mixovanou kompilaci Cool Steps – Drum'n'bass Grooves z roku 2001; svůj vlastní remix písně natočil i DJ Marky. Fernanda Porto, narozená v roce 1965 v Serra Negra, vydala v roce 2002 u labelu Trama debutové album; v Brazílii se ho prodalo přes 100 000 kusů a vyneslo jí nominaci na Latin Grammy v kategorii nejlepší nový umělec.
+DJ Patife, vlastním jménem Wagner Ribeiro de Souza, narozený v roce 1976 v São Paulu, začínal jako rezident v tamním Arena Music Hall a od roku 1999 uváděl na stanici Energia 97 rozhlasový pořad Bassline. Spolu se současníky, jako jsou DJ Marky a duo Drumagick, zapsal brazilský drum and bass na mezinárodní mapu: jeho první album Sounds of Drum'n'bass v roce 2000 chválily časopisy Muzik a Mixmag a tři jeho skladby vyšly na Brazil EP labelu V Recordings. Jeho remix Sambassim vydal label Trama ze São Paula a zařadil ho na Patifeho mixovanou kompilaci Cool Steps: Drum 'N' Bass Grooves z roku 2001; svůj vlastní remix písně natočil i DJ Marky. Fernanda Porto, narozená v roce 1965 v Serra Negra, vydala v roce 2002 u labelu Trama debutové album; v Brazílii se ho prodalo přes 100 000 kusů a vyneslo jí nominaci na Latin Grammy v kategorii nejlepší nový umělec.
 
 ## Ohlas a dopad
 

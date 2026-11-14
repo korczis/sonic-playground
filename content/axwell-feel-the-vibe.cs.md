@@ -10,7 +10,7 @@ concept = ["four-on-the-floor", "filter sweep", "breakdown"]
 instrument = ["kick drum", "bass", "synthesizer"]
 
 [extra.translation]
-of = "213a8c510f09"
+of = "744efe9a6e4b"
 
 [extra]
 connections = [
@@ -52,7 +52,7 @@ Basa a harmonické vrstvy přicházejí za zavřeným filtrem, nejdřív tlumen�
 
 Plný groove zapadne: hnaný, pružný a jasný, s hookem, který se veze nad basou. Právě tenhle úsek udělal z desky oblíbenou skladbu vrcholu večera.
 
-### Most
+### Breakdown
 
 Breakdown odstraní beat a melodické vrstvy nechá viset ve vzduchu, zatímco napětí roste k návratu.
 
@@ -76,4 +76,4 @@ Axwell je švédský producent Axel Hedfors, později jedna třetina Swedish Hou
 
 ## Ohlas a dopad
 
-Singl z roku 2005 dosáhl prvního místa v britském tanečním žebříčku a 16. místa v britské hitparádě singlů, ve francouzském klubovém žebříčku se dostal na 4. místo a skladba se stala jednou z desek, které z Axwella udělaly hlavní jméno dávno předtím, než Swedish House Mafia plnili stadiony. Ani po dvou desetiletích nepřestala znít jako rozehřívačka před něčím velkým. Pusťte si ji nahlas a dopřejte jí celých sedm minut.
+Singl z roku 2005 dosáhl prvního místa v britském tanečním žebříčku, 16. místa v britské hitparádě singlů a 4. místa ve francouzském klubovém žebříčku. Skladba se stala jednou z desek, které z Axwella udělaly hlavní jméno dávno předtím, než Swedish House Mafia plnili stadiony. Ani po dvou desetiletích nepřestala znít jako rozehřívačka před něčím velkým. Pusťte si ji nahlas a dopřejte jí celých sedm minut.

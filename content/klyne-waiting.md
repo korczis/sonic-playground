@@ -1,7 +1,7 @@
 +++
 title = "Klyne - Waiting"
 date = "2026-11-12"
-description = "A slow, stripped-down slice of dark electronic R&B from the Eindhoven duo Klyne, where Nick Klein's soft, close-miked voice drifts over sparse beats and muted synths; the new song on their 2015 Closer EP."
+description = "A slow, stripped-down slice of dark electronic R&B from the Dutch duo Klyne, where Nick Klein's soft, close-miked voice drifts over sparse beats and muted synths; the new song on their 2015 Closer EP."
 
 [taxonomies]
 genre = ["electronic", "r&b", "downtempo"]
@@ -106,7 +106,7 @@ The song's {{ <concept_link name="verse-chorus form" /> }} is all there, but eve
 
 ## Artistic Context
 
-Klyne are a duo from Eindhoven in the Netherlands: vocalist Nick Klein and producer Ferdous Dehzad. They first put "Paralyzed" on SoundCloud under Klein's name in 2015, then released it, with "Entropy" as a double A-side, as their debut single on the British label Aesop. "Waiting" was the new song on the four-track Closer EP, released by Aesop on 20 November 2015 next to "Closer", "Paralyzed" and "Entropy", and issued in France by Because Music. Their sound sits in the mid-2010s wave of minimal, late-night electronic soul, where producers stripped R&B down to its bones and let the space do the talking.
+Klyne are a Dutch duo, vocalist Nick Klein and producer Ferdous Dehzad, raised in a village near Eindhoven. They first put "Paralyzed" on SoundCloud under Klein's name in 2015, then released it, with "Entropy" as a double A-side, as their debut single on the British label Aesop. "Waiting" was the new song on the four-track Closer EP, released by Aesop on 20 November 2015 next to "Closer", "Paralyzed" and "Entropy", and issued in France by Because Music. Their sound sits in the mid-2010s wave of minimal, late-night electronic soul, where producers stripped R&B down to its bones and let the space do the talking.
 
 ## Impact and Reception
 

@@ -10,7 +10,7 @@ concept = ["call and response", "hook"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "e339e539ecf4"
+of = "cd6f3b621714"
 
 [extra]
 connections = [
@@ -37,27 +37,27 @@ Výchozí situace je prostá a velmi vtipná: hlas oslovuje účastníky večír
 
 ## Rozbor textu
 
-### Úvod: přípitek noci
+### Úvod: příchod na večírek
 
 Skladba začíná hudbou, která už hraje, jako bychom vešli na večírek, než ji přeruší první hlas.
 
-### Sloka 1: vzpomínka na dobré časy
+### Sloka 1: zdvořilé přerušení
 
 Hlas zdraví účastníky večírku, připouští, že se baví, a žádá DJe, aby na chvíli zastavil hudbu. Komika spočívá ve zdvořilosti.
 
-### Refrén: hořkosladké loučení
+### Refrén: oznámení
 
 Přichází oznámení a stává se hookem: dochází pivo, opakováno tak dlouho, až je ten verš zároveň refrénem i pointou.
 
-### Sloka 2: vstříc novým začátkům
+### Sloka 2: otázky a odpovědi
 
 Dva hlasy si vyměňují otázky a odpovědi o tom, kde by pivo ještě mohlo být; uprostřed písně vzniká malá komická scénka.
 
-### Most: chvíle zamyšlení
+### Repríza: večírek znovu přerušen
 
 Úvodní oslovení se vrací a večírek je přerušen znovu, jako by špatnou zprávu bylo třeba zopakovat pro ty, kdo ji neslyšeli.
 
-### Závěrečný refrén: oslava života
+### Závěrečný refrén: pivo pořád dochází
 
 Píseň uzavírá refrén; večírek pořád běží a pivo pořád dochází.
 

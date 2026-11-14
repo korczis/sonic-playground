@@ -115,7 +115,7 @@ The {{ <concept_link name="drum machine" /> }} is what makes the song's distance
 
 ## Artistic Context
 
-Mount Sims is the project of Matthew Sims, a Milwaukee native and former member of the alternative rock band Citizen King, who moved to Los Angeles around 2002 and later to Berlin; he writes, performs and produces almost everything himself, and Mickey Petralia mixed most of UltraSex. The album came out in 2002 on International DeeJay Gigolo Records in Europe and on Emperor Norton Records in the United States, on 1 October 2002. The two editions differ: Together Alone is track two of the American CD and is not on the German Gigolo CD, which is why it is the US release that MusicBrainz links here.
+Mount Sims is the project of Matthew Sims, a Milwaukee native and former member of the alternative rock band Citizen King, who moved to Los Angeles around 2002 and later to Berlin; he writes, performs and produces almost everything himself, and Mickey Petralia mixed most of UltraSex. The album came out in 2002, on International DeeJay Gigolo Records in Europe and on 1 October on Emperor Norton Records in the United States. The two editions differ: Together Alone is track two of the American CD and is not on the German Gigolo CD, which is why it is the US release that MusicBrainz links here.
 
 ## Impact and Reception
 

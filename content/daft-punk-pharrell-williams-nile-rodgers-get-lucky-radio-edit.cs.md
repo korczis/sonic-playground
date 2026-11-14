@@ -10,7 +10,7 @@ concept = ["chord progression", "riff", "vocoder", "radio edit"]
 instrument = ["guitar", "bass", "drums", "vocals", "vocoder", "synthesizer", "keyboard"]
 
 [extra.translation]
-of = "abc160d29294"
+of = "392b143796b5"
 
 [extra]
 connections = [

@@ -73,6 +73,13 @@ title = "Electroclash"
 url = "https://en.wikipedia.org/wiki/Electroclash"
 publisher = "Wikipedia"
 kind = "encyclopedia"
+
+[[extra.sources]]
+title = "100 Greatest Songs of the 00's #85 Ladytron – Seventeen"
+url = "https://arcticreviews.co.uk/2023/03/11/100-greatest-songs-of-the-00s-85-ladytron-seventeen"
+publisher = "Arctic Reviews"
+kind = "article"
+year = "2023"
 +++
 
 ## Genre and Mood

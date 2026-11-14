@@ -1,7 +1,7 @@
 +++
 title = "Klyne - Waiting"
 date = "2026-11-12"
-description = "Pomalý, osekaný kousek temného elektronického R&B od dua Klyne z Eindhovenu, v němž měkký hlas Nicka Kleina, nahraný těsně u mikrofonu, pluje nad řídkými beaty a tlumenými syntezátory; nová píseň na jejich EP Closer z roku 2015."
+description = "Pomalý, osekaný kousek temného elektronického R&B od nizozemského dua Klyne, v němž měkký hlas Nicka Kleina, nahraný těsně u mikrofonu, pluje nad řídkými beaty a tlumenými syntezátory; nová píseň na jejich EP Closer z roku 2015."
 
 [taxonomies]
 genre = ["electronic", "r&b", "downtempo"]
@@ -10,7 +10,7 @@ concept = ["synthesizer", "verse-chorus form"]
 instrument = ["vocals", "synthesizer"]
 
 [extra.translation]
-of = "8d3a63069112"
+of = "b4975d7b3b8e"
 
 [extra]
 connections = [
@@ -70,7 +70,7 @@ Zvuk Klyne formuje {{ <concept_link name="synthesizer" lang="cs" /> }}, použit�
 
 ## Umělecký kontext
 
-Klyne jsou duo z nizozemského Eindhovenu: zpěvák Nick Klein a producent Ferdous Dehzad. „Paralyzed“ nejprve v roce 2015 zveřejnili na SoundCloudu pod Kleinovým jménem a pak ho, s „Entropy“ jako druhou áčkovou stranou, vydali jako svůj debutový singl u britského labelu Aesop. „Waiting“ byla novou písní na čtyřskladbovém EP Closer, které Aesop vydal 20. listopadu 2015 vedle „Closer“, „Paralyzed“ a „Entropy“ a které ve Francii vydal Because Music. Jejich zvuk patří k vlně minimalistického nočního elektronického soulu poloviny 2010s, kdy producenti osekali R&B až na kost a nechali mluvit prostor.
+Klyne jsou nizozemské duo zpěváka Nicka Kleina a producenta Ferdouse Dehzada, kteří vyrostli ve vesnici nedaleko Eindhovenu. „Paralyzed“ nejprve v roce 2015 zveřejnili na SoundCloudu pod Kleinovým jménem a pak ho, s „Entropy“ jako druhou áčkovou stranou, vydali jako svůj debutový singl u britského labelu Aesop. „Waiting“ byla novou písní na čtyřskladbovém EP Closer, které Aesop vydal 20. listopadu 2015 vedle „Closer“, „Paralyzed“ a „Entropy“ a které ve Francii vydal Because Music. Jejich zvuk patří k vlně minimalistického nočního elektronického soulu poloviny 2010s, kdy producenti osekali R&B až na kost a nechali mluvit prostor.
 
 ## Ohlas a dopad
 

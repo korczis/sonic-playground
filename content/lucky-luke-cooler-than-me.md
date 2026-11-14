@@ -1,7 +1,7 @@
 +++
 title = "Lucky Luke - Cooler Than Me"
 date = "2024-10-08"
-description = "The Lithuanian producer Lucky Luke's 2019 electro-house reworking of Mike Posner's 2010 debut hit, released on Columbia/B1: a song about feeling snubbed, turned into a laid-back club anthem that became a radio hit in France a year later."
+description = "The Lithuanian producer Lucky Luke's 2019 deep house reworking of Mike Posner's 2010 debut hit, released on Columbia/B1: a song about feeling snubbed, turned into a laid-back club anthem that became a radio hit in France a year later."
 
 [taxonomies]
 genre = ["deep house", "electronic", "remix"]
@@ -70,7 +70,7 @@ kind = "database"
 
 ## Song Summary
 
-Mike Posner's "Cooler than Me" was his debut single in April 2010, recorded in his university dorm room on a cheap microphone and produced by Gigamesh; it reached number six on the Billboard Hot 100. Posner said it was about a girl in his class he had a crush on and about a type of girl everyone knows, the one who thinks she is cooler than you: he wanted to capture the moment of feeling snubbed. Lucky Luke, the Lithuanian producer Lukas Kemesis, born in 1999, reworked it in 2019 as what the French press called a "relecture électro", keeping the melody and the hook and building a smooth, rhythmic house bed beneath them.
+Mike Posner's "Cooler Than Me" was his debut single in April 2010, recorded in his university dorm room on a cheap microphone and produced by Gigamesh; it reached number six on the Billboard Hot 100. Posner said it was about a girl in his class he had a crush on and about a type of girl everyone knows, the one who thinks she is cooler than you: he wanted to capture the moment of feeling snubbed. Lucky Luke, the Lithuanian producer Lukas Kemesis, born in 1999, reworked it in 2019 as what the French press called a "relecture électro", keeping the melody and the hook and building a smooth, rhythmic house bed beneath them.
 
 ## Musical Breakdown
 

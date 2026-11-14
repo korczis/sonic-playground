@@ -16,7 +16,7 @@ album = "Time for Livin"
 publisher = "Kompute Musik"
 youtube = "https://www.youtube.com/embed/yi-OEnpax_w"
 connections = [
-  { source = "future-forward-society-mount-sims-the-creep.md", why = "A later Kompute Musik collaboration between the same partners, released in 2008 under the name Future Forward Society." },
+  { source = "future-forward-society-mount-sims-the-creep.md", why = "A later Kompute Musik single with Mount Sims, released in 2008 and credited to Future Forward Society." },
   { source = "mount-sims-good-service.md", why = "Mount Sims in his own electroclash years, the cool, detached voice he brings to this collaboration." },
 ]
 
@@ -100,7 +100,7 @@ The track is a study in the {{ <concept_link name="loop" /> }}. Nothing is devel
 
 ## Artistic Context
 
-Mount Sims is the stage name of Matthew Sims, an American DJ, producer and performance artist from Milwaukee, later based in Berlin, who sang in the alternative rock band Citizen King before turning to electronic music. After UltraSex and the darker Wild Light (2005), both on Gigolo, he moved towards post-punk and dark wave. "Time for Livin" carries a 2006 copyright from Kompute Musik and reached digital services in 2010; little is documented about Future Forward beyond its releases with him, including The Creep, credited to Future Forward Society, in 2008.
+Mount Sims is the stage name of Matthew Sims, an American DJ, producer and performance artist from Milwaukee, later based in Berlin, who sang in the alternative rock band Citizen King before turning to electronic music. After UltraSex and the darker Wild Light (2004), both on Gigolo, he moved towards post-punk and dark wave. "Time for Livin" carries a 2006 copyright from Kompute Musik and reached digital services in 2010; little is documented about Future Forward beyond its releases with him, including The Creep, credited to Future Forward Society, in 2008.
 
 ## Impact and Reception
 

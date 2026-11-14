@@ -129,11 +129,11 @@ The video at the top of this page is a {{ <concept_link name="live recording" />
 
 ## Overall Vibe
 
-“The Wheel” captures IDLES' ability to make raw pain into a collective release. Its **raw**, **introspective** and **empowering** charge comes from refusing to choose between confession and celebration.
+"The Wheel" captures IDLES' ability to make raw pain into a collective release. Its **raw**, **introspective** and **empowering** charge comes from refusing to choose between confession and celebration.
 
 ## Conclusion
 
-In "The Wheel," **IDLES** tell one of the hardest stories on Crawler as loudly as they can, with a riff that never lets go and a call for a hallelujah that makes the audience part of it. It is a must-listen for anyone who wants to hear how modern punk handles real damage.
+In "The Wheel", **IDLES** tell one of the hardest stories on Crawler as loudly as they can, with a riff that never lets go and a call for a hallelujah that makes the audience part of it. It is a must-listen for anyone who wants to hear how modern punk handles real damage.
 
 ## Full Lyrics
 

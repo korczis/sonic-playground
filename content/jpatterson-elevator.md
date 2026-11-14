@@ -1,7 +1,7 @@
 +++
 title = "JPattersson - Elevator"
 date = "2024-10-11"
-description = "A laid-back fusion of dub, reggae and deep electronic beats from East Germany: JPattersson's 2016 Elevator, the title track of an EP that also carries its own dub version and two remixes."
+description = "A laid-back fusion of dub, reggae and deep electronic beats from East Germany: JPattersson's 2016 Elevator, the opening track of the EP Rühn, which also carries its own dub version and two remixes."
 
 [taxonomies]
 genre = ["dub", "reggae", "electronic"]
@@ -76,7 +76,7 @@ year = "2016"
 
 ## Song Summary
 
-"Elevator" is built on a deep, dub-infused bassline with soft melodies layered above. The interplay between reggae rhythm and electronic production makes the track feel both groovy and effortless, and its unhurried tempo keeps the mood warm. It is the title track of the Rühn EP, released by Acker Records on 22 July 2016, which also includes an "Elevator Dub" and remixes by Dole & Kom and Mollono.Bass.
+"Elevator" is built on a deep, dub-infused bassline with soft melodies layered above. The interplay between reggae rhythm and electronic production makes the track feel both groovy and effortless, and its unhurried tempo keeps the mood warm. It opens the Rühn EP, released by Acker Records on 22 July 2016, a record with no track called "Rühn": every side is Elevator, the original followed by an "Elevator Dub" and remixes by Dole & Kom and Mollono.Bass.
 
 ## Sound Breakdown
 

@@ -10,7 +10,7 @@ concept = ["electroclash", "drum machine"]
 instrument = ["vocals", "synthesizer", "drum machine"]
 
 [extra.translation]
-of = "01f29d08f010"
+of = "92f47e4de56c"
 
 [extra]
 connections = [
@@ -70,7 +70,7 @@ Together Alone je klasický {{ <concept_link name="electroclash" lang="cs" /> }}
 
 ## Umělecký kontext
 
-Mount Sims je projekt Matthewa Simse, rodáka z Milwaukee a bývalého člena alternativní rockové kapely Citizen King, který se kolem roku 2002 přestěhoval do Los Angeles a později do Berlína; téměř všechno si sám píše, hraje a produkuje a většinu UltraSex smíchal Mickey Petralia. Album vyšlo v roce 2002 v Evropě u International DeeJay Gigolo Records a ve Spojených státech u Emperor Norton Records, 1. října 2002. Obě edice se liší: Together Alone je druhou skladbou amerického CD a na německém CD od Gigolo není, a proto je sem v MusicBrainz připojeno právě americké vydání.
+Mount Sims je projekt Matthewa Simse, rodáka z Milwaukee a bývalého člena alternativní rockové kapely Citizen King, který se kolem roku 2002 přestěhoval do Los Angeles a později do Berlína; téměř všechno si sám píše, hraje a produkuje a většinu UltraSex smíchal Mickey Petralia. Album vyšlo v roce 2002, v Evropě u International DeeJay Gigolo Records a ve Spojených státech 1. října u Emperor Norton Records. Obě edice se liší: Together Alone je druhou skladbou amerického CD a na německém CD od Gigolo není, a proto je sem v MusicBrainz připojeno právě americké vydání.
 
 ## Ohlas a dopad
 

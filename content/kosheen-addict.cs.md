@@ -10,7 +10,7 @@ concept = ["bassline", "build-up"]
 instrument = ["vocals", "bass", "drums"]
 
 [extra.translation]
-of = "bb14c4c3b2d6"
+of = "a28edb0efd40"
 
 [extra]
 connections = [
@@ -69,7 +69,7 @@ Aranžmá je jedna dlouhá {{ <concept_link name="build-up" lang="cs" /> }} bez 
 
 ## Umělecký kontext
 
-Kosheen vznikli v Bristolu kolem zpěvačky a písničkářky Sian Evans a producentů Markee Ledge a Darrena Bealea, kteří působili také jako Markee Substance a Darren Decoder, a prorazili debutem *Resist* z roku 2001, který dosáhl 8. místa ve Velké Británii a opíral se o drum and bass. *Independence*, jejich čtvrté album, bylo nejprve ohlášeno na květen 2012 a nakonec vyšlo na podzim 2012; přišlo po úspěchu Evans na britské jedničce „Louder“ od DJ Fresh a otevírá ho „Addict“, připsaná všem třem zakládajícím členům.
+Kosheen vznikli v Bristolu kolem zpěvačky a písničkářky Sian Evans a producentů Markee Ledge a Darrena Bealea, kteří působili také jako Markee Substance a Darren Decoder, a prorazili debutem *Resist* z roku 2001, který dosáhl 8. místa ve Velké Británii a opíral se o drum and bass. *Independence*, jejich čtvrté album, bylo nejprve ohlášeno na květen 2012 a nakonec vyšlo na podzim 2012; přišlo po úspěchu Evans na britské jedničce „Louder“ od DJ Fresh a otevírá ho „Addict“, připsaná všem třem zakládajícím členům. Autorské údaje uvádějí občanská jména: Sian Powell je Sian Evans a Mark Morrison je Markee Ledge.
 
 ## Ohlas a dopad
 

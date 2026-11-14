@@ -68,7 +68,7 @@ year = "2015"
 
 ## Genre and Mood
 
-**Hrdvsion** reworks **Discolight** by the Berlin artist **Pilocka Krach** as a club track with house and disco in its title and techno in its bones. The remix is vibrant and energetic, steady rather than explosive, and immersive in the way long, patient dance tracks are.
+**Hrdvsion** reworks **Discolight** by the Berlin artist **Pilocka Krach** as a club track with disco in its title and techno in its bones. The remix is vibrant and energetic, steady rather than explosive, and immersive in the way long, patient dance tracks are.
 
 ## Song Summary
 

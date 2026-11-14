@@ -10,7 +10,7 @@ concept = ["remix", "bassline", "build-up"]
 instrument = ["synthesizer", "bass", "keyboard", "vocals"]
 
 [extra.translation]
-of = "7c47b85a0b39"
+of = "256976ccf865"
 
 [extra]
 connections = [
@@ -33,7 +33,7 @@ questions = ["Vokál C.A.R. bývá popisován jako prázdně hledící. Působí
 
 **Původní verze**
 
-{{ <video id="uwStEf7rNoE" title="C.A.R - Idle Eyes (Roman Flügel Remix) (jiné video)" /> }}
+{{ <video id="uwStEf7rNoE" title="C.A.R. - Idle Eyes" /> }}
 
 Svou jemnou, skoro uhrančivou povahou tento remix zesiluje tajemnou a introspektivní atmosféru originálu; je to minimalistická skladba, v níž každý zvuk působí záměrně. Roman Flügel, jedno z nejuznávanějších jmen německé elektronické hudby, vytváří remix stejně prostorný jako hypnotický, vzdálený a zároveň důvěrně blízký.
 
