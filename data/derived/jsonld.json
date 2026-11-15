@@ -3543,6 +3543,221 @@
     }
    ]
   },
+  "asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Asaf Avidan & the Mojos, Wankelmut",
+      "sameAs": "https://musicbrainz.org/artist/f21d9cba-dafc-494e-ace9-e9ed33fec536"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "house",
+      "minimal",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "One Day / Reckoning Song (Wankelmut Remix)"
+     },
+     "isrcCode": "DEQ321200132",
+     "name": "One Day / Reckoning Song (Wankelmut Remix) [Radio Edit]",
+     "sameAs": [
+      "https://musicbrainz.org/recording/dfdc6856-f3e4-477c-bad7-f32e1da82d28",
+      "https://www.youtube.com/watch?v=YRom6y1E8p8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "One Day / Reckoning Song",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/One_Day_/_Reckoning_Song"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "One Day / Reckoning Song",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/One_Day_/_Reckoning_Song"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Wankelmut",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Wankelmut"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "One Day / Reckoning Song (Wankelmut remix, radio edit)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/dfdc6856-f3e4-477c-bad7-f32e1da82d28"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Asaf Avidan, The Mojos - One Day / Reckoning Song (Videoclip Day Version)",
+       "publisher": "wankelmutVEVO",
+       "url": "https://www.youtube.com/watch?v=YRom6y1E8p8"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Rádiová verze remixu, který berlínský student filozofie udělal z písně Reckoning Song Asafa Avidana, aniž by se ptal: rozstříhaný, profiltrovaný a postavený na prostém groovu ve čtyřčtvrťovém taktu se v roce 2012 dostal ze SoundCloudu na první místa po celé Evropě.",
+     "educationalLevel": "introductory",
+     "headline": "Asaf Avidan & the Mojos, Wankelmut - One Day / Reckoning Song (Wankelmut Remix) [Radio Edit]",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/",
+     "wordCount": 493
+    }
+   ]
+  },
+  "ash-naila-sing-it-back.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ash-naila-sing-it-back/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ash, Naila",
+      "sameAs": "https://musicbrainz.org/artist/cb816ea6-cd19-4259-9a74-71e28023f559"
+     },
+     "datePublished": "2018",
+     "genre": [
+      "deep house",
+      "cover",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sing It Back (feat. Naila)"
+     },
+     "name": "Sing It Back",
+     "sameAs": [
+      "https://musicbrainz.org/recording/069ee866-e918-4291-b3ae-4b52756d5e24",
+      "https://www.youtube.com/watch?v=GzVR5PNK2SA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/ash-naila-sing-it-back/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ash-naila-sing-it-back/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "World Artist Spotlight #1: Ash",
+       "publisher": "90.3 FM The Core",
+       "url": "https://www.thecore.fm/public/pages/posts/world-artist-spotlight-1-ash"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Sing It Back (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/78de033b-3bcc-493a-bb5e-cc2291b1adea"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Sing It Back",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/165169422"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sing It Back (Moloko song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sing_It_Back"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Sing It Back (credits)",
+       "publisher": "YouTube (Ash - Topic)",
+       "url": "https://www.youtube.com/watch?v=GzVR5PNK2SA"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Producent Ash, rodák z Káhiry usazený v Montrealu, a zpěvačka Naila předělávají Sing It Back, píseň, kterou Róisín Murphy a Mark Brydon napsali v roce 1998 pro Moloko, na deep house: skladba vyšla v únoru 2018 na Ashově vlastním labelu a dostala se do žebříčku nejšazamovanějších písní v Řecku.",
+     "educationalLevel": "introductory",
+     "headline": "Ash, Naila - Sing It Back",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/ash-naila-sing-it-back/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/ash-naila-sing-it-back/",
+     "wordCount": 488
+    }
+   ]
+  },
   "asian-dub-foundation-fly-over.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -4440,6 +4655,131 @@
     }
    ]
   },
+  "bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Bakermat, GoldFish, Marie Plassard",
+      "sameAs": "https://musicbrainz.org/artist/df60a241-e8df-4917-82db-1f1a8ecd7cc3"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "melodic house",
+      "deep house",
+      "house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Games (feat. Marie Plassard)"
+     },
+     "name": "Games Continued (feat. Marie Plassard) - Radio Edit",
+     "sameAs": [
+      "https://musicbrainz.org/recording/e45f3846-f221-423f-a73e-285e6dcb5b10",
+      "https://www.youtube.com/watch?v=1std7tlQW7U"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Bakermat",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Bakermat"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Goldfish (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Goldfish_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Bakermat - Games (Dirty Soul, DIRTY118D)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/8107415"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Bakermat - Games EP (promo)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/8280688"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Games Continued (radio edit)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/e45f3846-f221-423f-a73e-285e6dcb5b10"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Bakermat & Goldfish feat. Marie Plassard - Games Continued",
+       "publisher": "YouTube (Bakermat)",
+       "url": "https://www.youtube.com/watch?v=1std7tlQW7U"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Games Continued - Bakermat and Goldfish feat. Marie Plassard (AUDIO)",
+       "publisher": "YouTube (GoldFishLive)",
+       "url": "https://www.youtube.com/watch?v=H7-XOXaXVXs"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Rádiová verze Games Continued, spolupráce nizozemského producenta Bakermata a jihoafrického dua GoldFish s pařížskou zpěvačkou Marie Plassard z roku 2016: druhá píseň Bakermatova EP Games, kterou si Corona vybrala jako hymnu svých Sunsets pro ten rok.",
+     "educationalLevel": "introductory",
+     "headline": "Bakermat, GoldFish, Marie Plassard - Games Continued (feat. Marie Plassard) - Radio Edit",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/",
+     "wordCount": 484
+    }
+   ]
+  },
   "bakermat-the-river.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -5246,6 +5586,126 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/belako-sinnerman/",
      "wordCount": 535
+    }
+   ]
+  },
+  "belleruche-anything-you-want-not-that.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/belleruche-anything-you-want-not-that/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Belleruche",
+      "sameAs": "https://musicbrainz.org/artist/abb5de38-d3ab-40f0-b98b-87ab0fd779e6"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "trip-hop",
+      "soul",
+      "blues"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Express"
+     },
+     "isrcCode": "GBEUE0801283",
+     "name": "Anything You Want - Not That",
+     "sameAs": [
+      "https://musicbrainz.org/recording/13dbe596-a8d2-477d-9e74-ef7c768e2b9d",
+      "https://www.youtube.com/watch?v=mEfuToVUAY8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/belleruche-anything-you-want-not-that/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/belleruche-anything-you-want-not-that/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Belleruche",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Belleruche"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "The Express",
+       "publisher": "Bandcamp (Belleruche)",
+       "url": "https://belleruche.bandcamp.com/album/the-express"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Belleruche - Anything You Want (Not That)",
+       "publisher": "YouTube (Tru Thoughts Records)",
+       "url": "https://www.youtube.com/watch?v=mEfuToVUAY8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Anything You Want (Not That)",
+       "publisher": "YouTube (Belleruche - Topic, provided by Dig Dis)",
+       "url": "https://www.youtube.com/watch?v=OqlszT6wH4Q"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Anything You Want (Not That) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/13dbe596-a8d2-477d-9e74-ef7c768e2b9d"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Anything You Want (Not That) (Hint remix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9ca069f1-d52a-46db-ab33-a75dcd4c7815"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Píseň Anything You Want (Not That) otevírala druhé album skupiny Belleruche, The Express (Tru Thoughts, 2008), a byla jeho prvním singlem: kouřový hlas Kathrin deBoer nad drsnějším beatem, k tomu kytara Rickyho Fabulouse a gramofony, na které hraje DJ Modest.",
+     "educationalLevel": "introductory",
+     "headline": "Belleruche - Anything You Want - Not That",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "turntablism",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/turntablism/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/belleruche-anything-you-want-not-that/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/belleruche-anything-you-want-not-that/",
+     "wordCount": 466
     }
    ]
   },
@@ -6541,6 +7001,111 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/bob-moses-tearing-me-up/",
      "wordCount": 597
+    }
+   ]
+  },
+  "bobby-hebb-sunny.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/bobby-hebb-sunny/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Bobby Hebb",
+      "sameAs": "https://musicbrainz.org/artist/d21d85ff-c0d5-4c50-a1be-93438e5d7c60"
+     },
+     "datePublished": "1966",
+     "genre": [
+      "soul",
+      "r&b",
+      "jazz"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sunny"
+     },
+     "isrcCode": "USPR36660028",
+     "name": "Sunny",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3cbc49f1-2225-4c6f-afce-8d85e8ee228a",
+      "https://www.youtube.com/watch?v=RmNqmZZk0Ow"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/bobby-hebb-sunny/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/bobby-hebb-sunny/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Sunny (Bobby Hebb song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sunny_(Bobby_Hebb_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bobby Hebb",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Bobby_Hebb"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1966",
+       "name": "Bobby Hebb - Sunny",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2337756"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sunny",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3cbc49f1-2225-4c6f-afce-8d85e8ee228a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sunny",
+       "publisher": "YouTube (Bobby Hebb - Topic)",
+       "url": "https://www.youtube.com/watch?v=RmNqmZZk0Ow"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Vlastní nahrávka Sunny od Bobbyho Hebba z roku 1966, písně, kterou napsal po bratrově smrti: hit z druhého místa, který s každým cyklem stoupá o půltón, a jedna z nejnahrávanějších písní století.",
+     "educationalLevel": "intermediate",
+     "headline": "Bobby Hebb - Sunny",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "chord progression",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/chord-progression/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/bobby-hebb-sunny/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/bobby-hebb-sunny/",
+     "wordCount": 498
     }
    ]
   },
@@ -15534,6 +16099,127 @@
     }
    ]
   },
+  "dirty-doering-casino-aquatique.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dirty-doering-casino-aquatique/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dirty Doering",
+      "sameAs": "https://musicbrainz.org/artist/57343d6b-80e0-4c50-a50b-51cf750a2d80"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "tech house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Casino Aquatique"
+     },
+     "name": "Casino Aquatique",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b81ddbb9-dfb4-403b-8fdf-ef95df380f63",
+      "https://www.youtube.com/watch?v=O-YWW9I7LUY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/dirty-doering-casino-aquatique/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dirty-doering-casino-aquatique/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Dirty Doering - Casino Aquatique",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3551420-Dirty-Doering-Casino-Aquatique"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Casino aquatique",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/b81ddbb9-dfb4-403b-8fdf-ef95df380f63"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Casino Aquatique (in We Are Katermukke: Dirty Doering)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a6b5b590-2ddb-4d7e-ba32-7e564bfd3fb3"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Casino Aquatique (in WE ARE KATERMUKKE: Animal Trainer)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a64f2bde-dd3f-4969-a874-2cdbf75141bb"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dirty Doering",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Dirty_Doering"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Katermukke",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/labels/7214"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Katermukke - Electronic Music Label Berlin",
+       "publisher": "Katermukke",
+       "url": "https://www.katermukke.com/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Casino Aquatique",
+       "publisher": "YouTube (Dirty Doering - Topic)",
+       "url": "https://www.youtube.com/watch?v=O-YWW9I7LUY"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Katalogové číslo KATER001: tech house, kterým začal Katermukke, berlínský label, jejž v roce 2011 založil Dirty Doering, bývalý rezident Bar 25, a který DJ mixy labelu nesly ještě o osm let později.",
+     "educationalLevel": "introductory",
+     "headline": "Dirty Doering - Casino Aquatique",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/club-culture/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dj-mix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/dirty-doering-casino-aquatique/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/dirty-doering-casino-aquatique/",
+     "wordCount": 491
+    }
+   ]
+  },
   "dj-disse-will-buhrkall-break-on-through.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -18514,6 +19200,116 @@
     }
    ]
   },
+  "estelle-kanye-west-american-boy-feat-kanye-west.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/estelle-kanye-west-american-boy-feat-kanye-west/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Estelle, Kanye West",
+      "sameAs": "https://musicbrainz.org/artist/4c7a5854-6b75-4623-a684-6a3d785d9015"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "r&b",
+      "disco",
+      "funk",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Shine"
+     },
+     "name": "American Boy (feat. Kanye West)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/192333bd-5f71-4d0e-9356-f4bf2ff848c5",
+      "https://www.youtube.com/watch?v=Ic5vxw3eijY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/estelle-kanye-west-american-boy-feat-kanye-west/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/estelle-kanye-west-american-boy-feat-kanye-west/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "American Boy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/American_Boy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Shine (Estelle album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Shine_(Estelle_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Estelle (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Estelle_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "American Boy (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/192333bd-5f71-4d0e-9356-f4bf2ff848c5"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Estelle - American Boy [Feat. Kanye West] [Video]",
+       "publisher": "Estelle",
+       "url": "https://www.youtube.com/watch?v=Ic5vxw3eijY"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Estellin vzdušný R&B a disco-funkový hit o zamilování do amerického nápadníka, který will.i.am postavil na instrumentálu své vlastní skladby Impatient a doplnil ho sloka Kanyeho Westa; vystoupal na první místo v Británii a získal cenu Grammy.",
+     "educationalLevel": "introductory",
+     "headline": "Estelle, Kanye West - American Boy (feat. Kanye West)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/estelle-kanye-west-american-boy-feat-kanye-west/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/estelle-kanye-west-american-boy-feat-kanye-west/",
+     "wordCount": 526
+    }
+   ]
+  },
   "etienne-de-crecy-alex-gopher-asher-roth-smile-feat-alex-gopher-asher-roth-vocal-mix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -20122,6 +20918,111 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/fkj-lying-together/",
      "wordCount": 569
+    }
+   ]
+  },
+  "flume-chet-faker-drop-the-game.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-drop-the-game/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Flume, Chet Faker",
+      "sameAs": "https://musicbrainz.org/artist/35fd8d42-b4a6-4414-9827-8766bd0daa3c"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "soul",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lockjaw"
+     },
+     "isrcCode": "AUFF01300488",
+     "name": "Drop the Game",
+     "sameAs": [
+      "https://musicbrainz.org/recording/76c02aec-49c9-44f2-acca-3d923a3fc7a8",
+      "https://www.youtube.com/watch?v=6vopR3ys8Kw"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/flume-chet-faker-drop-the-game/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-drop-the-game/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Drop the Game",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Drop_the_Game"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lockjaw (EP)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lockjaw_(EP)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Storyboard P",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Storyboard_P"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Drop the Game (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/76c02aec-49c9-44f2-acca-3d923a3fc7a8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume & Chet Faker - Drop the Game [Official Music Video]",
+       "publisher": "Future Classic",
+       "url": "https://www.youtube.com/watch?v=6vopR3ys8Kw"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Pomalý singl, při kterém se kývá hlavou, ze společného EP Flumea a Cheta Fakera Lockjaw: Fakerův žhavý hlas nad Flumeovými svištícími syntezátory a hlubokou basou, s videoklipem brooklynského tanečníka Storyboarda P.",
+     "educationalLevel": "introductory",
+     "headline": "Flume, Chet Faker - Drop the Game",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-drop-the-game/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/flume-chet-faker-drop-the-game/",
+     "wordCount": 474
     }
    ]
   },
@@ -21959,6 +22860,117 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gabriella-cilmi-left-with-someone-else/",
      "wordCount": 543
+    }
+   ]
+  },
+  "gabriella-cilmi-sweet-about-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gabriella-cilmi-sweet-about-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gabriella Cilmi",
+      "sameAs": "https://musicbrainz.org/artist/72ae6caf-4f9f-407e-8c70-8cd195df955c"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "pop",
+      "soul",
+      "jazz"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lessons to Be Learned"
+     },
+     "isrcCode": "GBUM70709626",
+     "name": "Sweet About Me",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3d675c06-2d9a-400f-8c53-2383c4094393",
+      "https://www.youtube.com/watch?v=qvuyYj5ROmk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gabriella-cilmi-sweet-about-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gabriella-cilmi-sweet-about-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Sweet About Me",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sweet_About_Me"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Gabriella Cilmi: 'Sweet About Me'",
+       "publisher": "Digital Spy",
+       "url": "https://www.digitalspy.com/music/single-reviews/a90790/gabriella-cilmi-sweet-about-me-90790/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Gabriella Cilmi - 'Sweet About Me'",
+       "publisher": "BBC Radio 1 Chart Blog",
+       "url": "https://www.bbc.co.uk/blogs/chartblog/2008/03/gabriella_cilmi_sweet_about_me.shtml"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lessons to Be Learned",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lessons_to_Be_Learned"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sweet About Me (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3d675c06-2d9a-400f-8c53-2383c4094393"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Swingující pop s retro nádechem a jemnými elektronickými prvky od týmu Xenomania a šestnáctiletá Gabriella Cilmi, jejíž hlas jeden kritik označil za sladký a drsný zároveň: její průlom a jednička v Austrálii.",
+     "educationalLevel": "introductory",
+     "headline": "Gabriella Cilmi - Sweet About Me",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "swing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/swing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gabriella-cilmi-sweet-about-me/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gabriella-cilmi-sweet-about-me/",
+     "wordCount": 510
     }
    ]
   },
@@ -24413,6 +25425,143 @@
     }
    ]
   },
+  "gotan-project-santa-maria-del-buen-ayre.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gotan-project-santa-maria-del-buen-ayre/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gotan Project",
+      "sameAs": "https://musicbrainz.org/artist/66cc244d-6f96-4668-a6e9-0f9cd5acc940"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "tango",
+      "electronic",
+      "downtempo",
+      "dub"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "La Revancha del Tango"
+     },
+     "isrcCode": "FR99S9900014",
+     "name": "Santa María (del Buen Ayre)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/631439aa-26e4-4513-a1e0-a87f12b4d838",
+      "https://www.youtube.com/watch?v=XwSMe42WZ9I"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gotan-project-santa-maria-del-buen-ayre/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gotan-project-santa-maria-del-buen-ayre/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Gotan Project",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gotan_Project"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "La Revancha del Tango",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/La_Revancha_del_Tango"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gotan Project",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/Gotan_Project"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Buenos Aires",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Review of Gotan Project - La Revancha del Tango",
+       "publisher": "BBC Music",
+       "url": "https://www.bbc.co.uk/music/reviews/5d25/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Gotan Project - Santa María (Del Buen Ayre) / Chunga's Revenge",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/33377"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Gotan Project - La Revancha Del Tango",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/18672"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Santa María (del Buen Ayre) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/631439aa-26e4-4513-a1e0-a87f12b4d838"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Gotan Project - Santa Maria (Del Buen Ayre) (Official Lyric Video)",
+       "publisher": "Gotan Project",
+       "url": "https://www.youtube.com/watch?v=XwSMe42WZ9I"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Skladba z debutového alba Gotan Project La Revancha del Tango, která dovedla elektro-tango do kina, pojmenovaná podle prvního jména Buenos Aires a slyšená ve filmech Agent bez minulosti, Zatancujeme si? a Zatím spolu, zatím živí.",
+     "educationalLevel": "introductory",
+     "headline": "Gotan Project - Santa María (del Buen Ayre)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/soundtrack/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dub",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dub/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gotan-project-santa-maria-del-buen-ayre/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gotan-project-santa-maria-del-buen-ayre/",
+     "wordCount": 498
+    }
+   ]
+  },
   "gregory-porter-do-not-lose-your-steam.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -24613,6 +25762,122 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/groove-armada-superstylin/",
      "wordCount": 642
+    }
+   ]
+  },
+  "groovejuice-cafe-prague-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/groovejuice-cafe-prague-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Groovejuice",
+      "sameAs": "https://musicbrainz.org/artist/055165b5-e3a1-4834-82b1-27933e934c55"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "tech house",
+      "minimal",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Café Prague"
+     },
+     "name": "Cafe Prague - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/fcd262fb-1a21-4975-95d2-522891bbd0d5",
+      "https://www.youtube.com/watch?v=__IQiYpf-dI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/groovejuice-cafe-prague-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/groovejuice-cafe-prague-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Groovejuice - Café Prague",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2224441"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "120db Records",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/166112"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Café Prague (Remixes)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/db6c3986-8aca-4a01-b242-21c60df1c934"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Groovejuice - Cafe Prague (2010 Original)",
+       "publisher": "120dB Records",
+       "url": "https://www.youtube.com/watch?v=oq3zqIgHmfQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Laserkraft 3D",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Laserkraft_3D"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Café Prague (Original Mix)",
+       "publisher": "YouTube (Groovejuice - Topic)",
+       "url": "https://www.youtube.com/watch?v=__IQiYpf-dI"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Původní mix skladby Café Prague, singlu, který Niels Reinhard vydal v roce 2010 jako Groovejuice na mannheimském labelu 120dB Records: tech house, který label nabízel díky hypnotickému jazzovému klavíru a virblu ve stylu Gena Krupy.",
+     "educationalLevel": "introductory",
+     "headline": "Groovejuice - Cafe Prague - Original Mix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "house groove",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/house-groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/club-culture/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/groovejuice-cafe-prague-original-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/groovejuice-cafe-prague-original-mix/",
+     "wordCount": 444
     }
    ]
   },
@@ -29911,6 +31176,104 @@
     }
    ]
   },
+  "johnny-cash-hurt.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/johnny-cash-hurt/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Johnny Cash",
+      "sameAs": "https://musicbrainz.org/artist/d43d12a1-2dc9-4257-a2fd-0a3bb1081b86"
+     },
+     "datePublished": "2002",
+     "genre": [
+      "country",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "American IV: The Man Comes Around"
+     },
+     "isrcCode": "USDJ20200650",
+     "name": "Hurt",
+     "sameAs": [
+      "https://musicbrainz.org/recording/25d8de5e-3662-4ffd-8dea-511a696ac3e7",
+      "https://www.youtube.com/watch?v=8AHCfZTRGiI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/johnny-cash-hurt/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/johnny-cash-hurt/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Hurt (Nine Inch Nails song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hurt_(Nine_Inch_Nails_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "American IV: The Man Comes Around",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/American_IV:_The_Man_Comes_Around"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hurt (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/25d8de5e-3662-4ffd-8dea-511a696ac3e7"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Johnny Cash - Hurt (Official Music Video)",
+       "publisher": "YouTube (JohnnyCashVEVO)",
+       "url": "https://www.youtube.com/watch?v=8AHCfZTRGiI"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Coververze písně, kterou Trent Reznor napsal pro Nine Inch Nails, nahraná Johnnym Cashem v roce 2002 pro album American IV: The Man Comes Around v produkci Ricka Rubina: střídmá pozdní nahrávka, jejíž videoklip od Marka Romanka, natočený pár měsíců před Cashovou smrtí, NME vyhlásil nejlepším všech dob.",
+     "educationalLevel": "introductory",
+     "headline": "Johnny Cash - Hurt",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/johnny-cash-hurt/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/johnny-cash-hurt/",
+     "wordCount": 485
+    }
+   ]
+  },
   "jojo-effect-the-beat-goes-on.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -31418,6 +32781,120 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/kalabrese-sarah-palin-kafi-lied/",
      "wordCount": 444
+    }
+   ]
+  },
+  "kalabrese-stone-on-your-back.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kalabrese-stone-on-your-back/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kalabrese",
+      "sameAs": "https://musicbrainz.org/artist/b3e30b52-3cae-4e70-a369-dede1d3546c1"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "ballad",
+      "bossa nova"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Independent Dancer"
+     },
+     "isrcCode": "DEM091300020",
+     "name": "Stone on Your Back",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ad32a2fa-2b0c-4e51-bc21-d2205acd7147",
+      "https://www.youtube.com/watch?v=uO9Dl-2-Rss"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/kalabrese-stone-on-your-back/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kalabrese-stone-on-your-back/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Independent Dancer",
+       "publisher": "Rumpelmusig",
+       "url": "https://rumpelmusig.bandcamp.com/album/independent-dancer"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Album Review: Independent Dancer - Kalabrese",
+       "publisher": "BlackPlastic",
+       "url": "https://www.blackplastic.co.uk/alternative-electronic-music-b/2013/4/29/album-review-independent-dancer-kalabrese"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Kalabrese - Remixes EP",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/15392"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Khan of Finland",
+       "publisher": "transmediale",
+       "url": "https://archive.transmediale.de/node/25085"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Stone on Your Back (credits)",
+       "publisher": "YouTube (Kalabrese - Topic)",
+       "url": "https://www.youtube.com/watch?v=4lo7464MzLw"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kalabrese - Stone On Your Back",
+       "publisher": "Rumpelmusig",
+       "url": "https://www.youtube.com/watch?v=uO9Dl-2-Rss"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Osmá skladba alba Independent Dancer, které curyšský producent Kalabrese vydal v roce 2013 na svém labelu Rumpelmusig: vzdušná balada nad lehkým rytmem bossa novy, s violoncellem Dominika Löhrera a neklidným klavírem pod písní o tlaku ctižádosti.",
+     "educationalLevel": "introductory",
+     "headline": "Kalabrese - Stone on Your Back",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "syncopation",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/syncopation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/kalabrese-stone-on-your-back/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/kalabrese-stone-on-your-back/",
+     "wordCount": 474
     }
    ]
   },
@@ -33287,6 +34764,123 @@
     }
    ]
   },
+  "klyne-closer.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/klyne-closer/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Klyne",
+      "sameAs": "https://musicbrainz.org/artist/0b58106c-e4e1-4b84-bf93-ee8364bff0a2"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "synth-pop",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Closer"
+     },
+     "name": "Closer",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8e626e30-32c7-4af3-9b96-528f854cce0b",
+      "https://www.youtube.com/watch?v=oRpRtvuziS4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/klyne-closer/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/klyne-closer/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Klyne - Closer",
+       "publisher": "Piccadilly Records",
+       "url": "https://www.piccadillyrecords.com/counter/product.php?pid=106539"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Klyne",
+       "publisher": "Wikipedia",
+       "url": "https://nl.wikipedia.org/wiki/Klyne"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Closer (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/8e626e30-32c7-4af3-9b96-528f854cce0b"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Klyne - Closer/Paralyzed",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/8059605"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Klyne - Closer",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/54265972"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Klyne - Closer (Official Video)",
+       "publisher": "Klyne",
+       "url": "https://www.youtube.com/watch?v=oRpRtvuziS4"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Druhý singl dua Klyne je sevřený kus elektronického popu, staccatové syntezátorové linky pod procítěným hlasem Nicka Kleina, o honbě za celoživotní touhou navzdory strachu, že osud už je rozhodnutý.",
+     "educationalLevel": "introductory",
+     "headline": "Klyne - Closer",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/klyne-closer/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/klyne-closer/",
+     "wordCount": 487
+    }
+   ]
+  },
   "klyne-entropy.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -34782,6 +36376,123 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/kygo-maty-noyes-stay/",
      "wordCount": 605
+    }
+   ]
+  },
+  "l-e-j-hanging-tree.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/l-e-j-hanging-tree/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "L.E.J",
+      "sameAs": "https://musicbrainz.org/artist/dba8b662-4d39-4881-9c87-d306183aac12"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "cover",
+      "pop",
+      "orchestral"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "En attendant l'album"
+     },
+     "isrcCode": "FRPJW1500510",
+     "name": "Hanging Tree",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d6e923a1-3ef5-4e36-877d-6ffffe7c0eee",
+      "https://www.youtube.com/watch?v=hzvmebyt_iU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/l-e-j-hanging-tree/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/l-e-j-hanging-tree/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "L.E.J",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/L.E.J"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "L.E.J",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/L.E.J"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "L.E.J - En Attendant L'Album...",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/7839468"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hanging Tree",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/d6e923a1-3ef5-4e36-877d-6ffffe7c0eee"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "L.E.J - Hanging Tree (Clip Officiel)",
+       "publisher": "LEJVEVO",
+       "url": "https://www.youtube.com/watch?v=hzvmebyt_iU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Hanging Tree (The Hunger Games song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Hanging_Tree_(The_Hunger_Games_song)"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Tři kamarádky ze Saint-Denis zpívají vražednou baladu z Hunger Games se smyčcovým souborem a doprovodným sborem: coververze, která otevírá album L.E.J En attendant l'album z roku 2015 a poprvé zazněla na pařížské premiéře filmu Síla vzdoru 2. část.",
+     "educationalLevel": "introductory",
+     "headline": "L.E.J - Hanging Tree",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/soundtrack/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/l-e-j-hanging-tree/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/l-e-j-hanging-tree/",
+     "wordCount": 440
     }
    ]
   },
@@ -41024,6 +42735,140 @@
     }
    ]
   },
+  "micatone-plastic-bags-magazines.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/micatone-plastic-bags-magazines/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Micatone",
+      "sameAs": "https://musicbrainz.org/artist/ca30be07-e94e-4bd8-a022-1dfbc462905b"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "nu-jazz",
+      "house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Is You Is"
+     },
+     "isrcCode": "DEP960300024",
+     "name": "Plastic Bags & Magazines",
+     "sameAs": [
+      "https://musicbrainz.org/recording/02554840-3130-4989-91c8-1567324432c1",
+      "https://www.youtube.com/watch?v=Fm1Mbul1nhg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/micatone-plastic-bags-magazines/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/micatone-plastic-bags-magazines/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Micatone - Is You Is",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/142145"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Micatone - Plastic Bags & Magazines",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/159438"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Is You Is",
+       "publisher": "Micatone",
+       "url": "https://micatone.bandcamp.com/album/is-you-is"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Wie man guten Beat kocht",
+       "publisher": "Jazzzeitung",
+       "url": "https://www.jazzzeitung.de/jazz/2003/09/portrait-micatone.shtml"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Micatone",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Micatone"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Gilles Peterson - Broken Folk Funk Latin Soul",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/109762"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Bags & Magazines (recordings)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/artist/ca30be07-e94e-4bd8-a022-1dfbc462905b/recordings"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Tiefschwarz - Misch Masch",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/337717"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Micatone - Plastic Bags & Magazines",
+       "publisher": "Sonar Kollektiv",
+       "url": "https://www.youtube.com/watch?v=Fm1Mbul1nhg"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Druhá skladba alba Is You Is, které berlínská kapela Micatone vydala v roce 2003 na labelu Sonar Kollektiv: píseň, kterou zpívá Lisa Bassenge nad skutečnými nástroji s trochou pomoci strojů, vydaná také jako dvanáctipalcový singl s remixem od Tiefschwarz pro kluby.",
+     "educationalLevel": "introductory",
+     "headline": "Micatone - Plastic Bags & Magazines",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/micatone-plastic-bags-magazines/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/micatone-plastic-bags-magazines/",
+     "wordCount": 496
+    }
+   ]
+  },
   "michael-jackson-billie-jean.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -41203,6 +43048,131 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/michelle-gurevich-first-six-months-of-love/",
      "wordCount": 593
+    }
+   ]
+  },
+  "michelle-gurevich-left-you-at-the-farm.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michelle-gurevich-left-you-at-the-farm/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Michelle Gurevich",
+      "sameAs": "https://musicbrainz.org/artist/7413ccd4-a9e9-4965-8506-49e580dda6d5"
+     },
+     "datePublished": "2007",
+     "genre": [
+      "singer-songwriter",
+      "art pop",
+      "chanson"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Party Girl"
+     },
+     "name": "Left You At The Farm",
+     "sameAs": [
+      "https://musicbrainz.org/recording/79078407-5d30-4f31-ad8f-c0dc35633294"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/michelle-gurevich-left-you-at-the-farm/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/michelle-gurevich-left-you-at-the-farm/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Left You at The Farm",
+       "publisher": "Bandcamp (Michelle Gurevich)",
+       "url": "https://michellegurevich.bandcamp.com/track/left-you-at-the-farm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Party Girl",
+       "publisher": "Bandcamp (Michelle Gurevich)",
+       "url": "https://michellegurevich.bandcamp.com/album/party-girl"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Chinawoman - Party Girl (self-released CD)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/1971269"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Chinawoman - Party Girl (Exotica Frontier, Front 5)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2875769"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Left You At The Farm (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/79078407-5d30-4f31-ad8f-c0dc35633294"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Left You At The Farm (Stefan Baghiu Edit)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4bd9c0e9-1bf0-4a85-92a9-e740334596d5"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Michelle Gurevich",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Michelle_Gurevich"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Left You At The Farm je doma nahraná balada z Party Girl, debutu, který Michelle Gurevich v roce 2007 natočila jako Chinawoman doma v Montrealu: píseň o slibu zůstat až do konce a o odchodu místo něj.",
+     "educationalLevel": "introductory",
+     "headline": "Michelle Gurevich - Left You At The Farm",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "lo-fi",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/lo-fi/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/michelle-gurevich-left-you-at-the-farm/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/michelle-gurevich-left-you-at-the-farm/",
+     "wordCount": 455
     }
    ]
   },
@@ -50643,6 +52613,148 @@
     }
    ]
   },
+  "purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Purple Disco Machine, Boris Dlugosch, Karen Harding",
+      "sameAs": "https://musicbrainz.org/artist/dc71939a-416f-4804-b031-5749287943f9"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "house",
+      "nu-disco",
+      "disco"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Soulmatic"
+     },
+     "isrcCode": "AUDCB1701094",
+     "name": "Love for Days (feat. Karen Harding)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a6711807-4a80-4f7c-8eea-ecf6c608cab5",
+      "https://www.youtube.com/watch?v=JwIbSuYHqV8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Purple Disco Machine - Soulmatic (Sweat It Out!, SWEATA016)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/11263109"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Love for Days (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a6711807-4a80-4f7c-8eea-ecf6c608cab5"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Love For Days (remix single)",
+       "publisher": "Bandcamp (Purple Disco Machine)",
+       "url": "https://purplediscomachine.bandcamp.com/album/love-for-days"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Purple Disco Machine - Love For Days [Official Music Video]",
+       "publisher": "YouTube (pdmVEVO)",
+       "url": "https://www.youtube.com/watch?v=JwIbSuYHqV8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Purple Disco Machine",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Purple_Disco_Machine"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Purple Disco Machine/Diskografie",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Purple_Disco_Machine/Diskografie"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Boris Dlugosch",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Boris_Dlugosch"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Boris Dlugosch",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Boris_Dlugosch"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Karen Harding",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Karen_Harding"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Karen Poole",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Karen_Poole"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Love for Days je vokální house píseň, kterou Purple Disco Machine natočil s hamburským producentem Borisem Dlugoschem a anglickou zpěvačkou Karen Harding pro své debutové album Soulmatic z roku 2017; později ji remixovali Kenny Dope, Lee Foss a Motez.",
+     "educationalLevel": "introductory",
+     "headline": "Purple Disco Machine, Boris Dlugosch, Karen Harding - Love for Days (feat. Karen Harding)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/",
+     "wordCount": 525
+    }
+   ]
+  },
   "purple-disco-machine-lorenz-rhode-music-in-you-feat-lorenz-rhode.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -52028,6 +54140,124 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/ron-flatter-nick-d-lite-jetlands/",
      "wordCount": 479
+    }
+   ]
+  },
+  "ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ronald Christoph, Orlando",
+      "sameAs": "https://musicbrainz.org/artist/e3b0406a-6085-46d1-9c92-2ef1dbcd00ef"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "tech house",
+      "techno",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Take Off, Baby!"
+     },
+     "isrcCode": "DEPL91207021",
+     "name": "Take Off, Baby! feat. Orlando - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2ffff329-5ac8-49cb-ab04-67e6aa5bf38f",
+      "https://www.youtube.com/watch?v=2X1GGqiGKQk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Ronald Christoph - Take Off, Baby!",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3537537"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ronald Christoph",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/790319"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Take Off, Baby! (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/302528c3-57ab-44e4-a738-6f1bacc0f888"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Orlando (Belgian tech house singer)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/artist/d38a18f1-ab19-4704-8eee-16d89149a0ad"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Various - Saint-Germain-Des-Prés Café - 14",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/4339294"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Take Off, Baby! feat. Orlando (Original Mix)",
+       "publisher": "YouTube (Ronald Christoph - Topic)",
+       "url": "https://www.youtube.com/watch?v=2X1GGqiGKQk"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Původní mix skladby Take Off, Baby!, singlu berlínského producenta Ronalda Christopha s belgickým zpěvákem Orlandem z roku 2012, který label EVAMORE MUSIC vydal na vinylu i ke stažení: skoro sedm minut klubové hudby, která se později ve zkrácené podobě dostala na pařížskou lounge kompilaci.",
+     "educationalLevel": "introductory",
+     "headline": "Ronald Christoph, Orlando - Take Off, Baby! feat. Orlando - Original Mix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/club-culture/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/",
+     "wordCount": 432
     }
    ]
   },
@@ -56236,6 +58466,125 @@
     }
    ]
   },
+  "spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Spada, Hosie Neal, Bakermat",
+      "sameAs": "https://musicbrainz.org/artist/320ceeb4-a285-4d64-a41d-2de86c4505cc"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "deep house",
+      "house",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Feels Like Home (Red Velvet Dress)"
+     },
+     "name": "Feels Like Home (Red Velvet Dress) - Bakermat Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a28bb548-00dd-4b01-b358-941a69529a02",
+      "https://www.youtube.com/watch?v=6TB-RYFeYbU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Feels Like Home (Red Velvet Dress) (feat. Hosie Neal) (Bakermat Remix)",
+       "publisher": "YouTube (Spada - Topic, provided by Hysterical)",
+       "url": "https://www.youtube.com/watch?v=6TB-RYFeYbU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Feel at Home in Red Velvet Dress | BAKERMAT REMIX",
+       "publisher": "YouTube (EGO TV)",
+       "url": "https://www.youtube.com/watch?v=3oL_aNyz-zI"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Feels Like Home (Red Velvet Dress) (Bakermat remix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a28bb548-00dd-4b01-b358-941a69529a02"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Spada Ft. Hosie Neal - Feels Like Home (Red Velvet Dress) (promo)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6424797"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Spada delivers an exclusive mix in honor of the iTunes release of 'Sun Sun Sun'",
+       "publisher": "EARMILK",
+       "url": "https://earmilk.com/2015/04/23/spada-delivers-an-exclusive-mix-in-honor-of-the-itunes-release-of-sun-sun-sun"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bakermat",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Bakermat"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Plný remix písně Feels Like Home (Red Velvet Dress) od nizozemského producenta Bakermata: vokální skladba italského producenta Spady s newyorským hlasem Hosie Neal z roku 2014, vydaná u Hysterical, značky labelu Ego, vedle rádiové verze téhož remixu.",
+     "educationalLevel": "introductory",
+     "headline": "Spada, Hosie Neal, Bakermat - Feels Like Home (Red Velvet Dress) - Bakermat Remix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/",
+     "wordCount": 495
+    }
+   ]
+  },
   "spada-hosie-neal-feels-like-home-red-velvet-dress-video-edit.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -58065,6 +60414,141 @@
     }
    ]
   },
+  "terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Terranova, Nicolette Krebitz, Udo Kier",
+      "sameAs": "https://musicbrainz.org/artist/00950dec-8f3a-4a17-9717-e7872a954d8b"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "house",
+      "tech house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hotel Amour - Nightporter"
+     },
+     "isrcCode": "DEU671200150",
+     "name": "Prayer (feat. Nicolette Krebitz, Udo Kier) - Gui Boratto Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7ea3eae6-627e-42d7-b3ed-9cedfc20c6c1",
+      "https://www.youtube.com/watch?v=glg_nHtpnXk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Terranova - Hotel Amour (Nightporter)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3806060-Terranova-Hotel-Amour-Nightporter"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Prayer (Gui Boratto mix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7ea3eae6-627e-42d7-b3ed-9cedfc20c6c1"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Prayer (Gui Boratto Mix) (in Michael Mayer: TSUGi 56)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/d1b4f9bc-1922-4682-9c1a-38bc65920025"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Hotel Amour by Terranova",
+       "publisher": "Kompakt",
+       "url": "https://kompakt.fm/releases/hotel_amour"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Terranova - Prayer (Official Video) 'Hotel Amour' Album",
+       "publisher": "Kompakt",
+       "url": "https://www.youtube.com/watch?v=vANJv-xKZhI"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Terranova (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Terranova_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gui Boratto",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gui_Boratto"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nicolette Krebitz",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Nicolette_Krebitz"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Udo Kier",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Udo_Kier"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Remix Guie Boratta z písně Prayer, skladby Terranovy s hlasy herců Nicolette Krebitz a Udo Kiera: úvodní skladba remixového alba Hotel Amour (Nightporter), které Kompakt vydal v roce 2012, natažená z pěti minut na téměř sedm.",
+     "educationalLevel": "introductory",
+     "headline": "Terranova, Nicolette Krebitz, Udo Kier - Prayer (feat. Nicolette Krebitz, Udo Kier) - Gui Boratto Mix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dj-mix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/",
+     "wordCount": 493
+    }
+   ]
+  },
   "tez-cadey-feat-nina-k-lucas-cab-canavaral-nina-k-lucas-cab-canavaral-why-don-t-you-do-right-tez-cadey-remix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -59863,6 +62347,133 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/the-supermen-lovers-moments/",
      "wordCount": 521
+    }
+   ]
+  },
+  "the-supermen-lovers-say-no-more.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-supermen-lovers-say-no-more/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Supermen Lovers",
+      "sameAs": "https://musicbrainz.org/artist/0df6d50f-7e43-4c6a-8220-61932b67c9c5"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "house",
+      "disco",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Between The Ages"
+     },
+     "isrcCode": "FR0ML1100810",
+     "name": "Say No More",
+     "sameAs": [
+      "https://musicbrainz.org/recording/1345967a-740a-4780-b88b-1169735aeeae",
+      "https://www.youtube.com/watch?v=tUKLctrU2d4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-supermen-lovers-say-no-more/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-supermen-lovers-say-no-more/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Supermen Lovers",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Supermen_Lovers"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "The Supermen Lovers - Between The Ages",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3913521"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "The Supermen Lovers - Fantasma Disco EP",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3657209"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say No More (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/1345967a-740a-4780-b88b-1169735aeeae"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "The Supermen Lovers: Say No More (NSFW)",
+       "publisher": "Gizmodo",
+       "url": "https://gizmodo.com/the-supermen-lovers-say-no-more-nsfw-5903542"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "The Supermen Lovers - Say No More (video)",
+       "publisher": "La Tebwa",
+       "url": "https://www.youtube.com/watch?v=Ee9-4WErXAc"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say No More (Fantasma Disco)",
+       "publisher": "The Supermen Lovers - Topic",
+       "url": "https://www.youtube.com/watch?v=_qz3uQuh6GM"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "The Supermen Lovers - Say no more",
+       "publisher": "La Tebwa",
+       "url": "https://www.youtube.com/watch?v=tUKLctrU2d4"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Skladba ze třetího alba The Supermen Lovers Between the Ages, kterou složil a produkoval Guillaume Atlan; otevírala EP Fantasma Disco s remixy od Jupitera a A.N.D.Y. a dočkala se videoklipu, na kterém pracovalo téměř dvacet designérů.",
+     "educationalLevel": "introductory",
+     "headline": "The Supermen Lovers - Say No More",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-supermen-lovers-say-no-more/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-supermen-lovers-say-no-more/",
+     "wordCount": 448
     }
    ]
   },
@@ -62667,6 +65278,138 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/tum-rakak-deluxe/",
      "wordCount": 700
+    }
+   ]
+  },
+  "tweak-fathorn.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/tweak-fathorn/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Tweak",
+      "sameAs": "https://musicbrainz.org/artist/1756db99-9747-44db-a6f2-3037aa37ef8d"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "nu-jazz",
+      "downtempo",
+      "breakbeat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hybrid Organics (Expanded)"
+     },
+     "name": "Fathorn",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9a256e7d-3faf-4b83-97d4-420b8827bf47",
+      "https://www.youtube.com/watch?v=ACfcU63_aJc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/tweak-fathorn/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/tweak-fathorn/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Tweak - Hybrid Organics (Straight Ahead, SAR 022 CD)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/50947"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Various - Straight Ahead (Straight Ahead, sar 020)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/138914"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Straight Ahead (label profile)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/2447"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Fathorn (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9a256e7d-3faf-4b83-97d4-420b8827bf47"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Fathorn (Raw Deal's Freedom Time mix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/0c6d1ed5-913f-42bf-90f6-2189cf4a22d1"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Tweak - Hybrid Organic (Expanded) Teaser",
+       "publisher": "YouTube (Cyril Boehler)",
+       "url": "https://www.youtube.com/watch?v=uyn1vZb9sTI"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Fathorn",
+       "publisher": "YouTube (TWEAK - Topic, provided by iMusician Digital AG)",
+       "url": "https://www.youtube.com/watch?v=ACfcU63_aJc"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Robert Morgenthaler",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Robert_Morgenthaler"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Fathorn otevírá Hybrid Organics, album švýcarského producenta Cyrila Boehlera alias Tweak z roku 2001, vydané curyšským labelem Straight Ahead: naprogramované nu jazzové beaty s alpským rohem, na který hraje jazzový pozounista Robert Morgenthaler.",
+     "educationalLevel": "introductory",
+     "headline": "Tweak - Fathorn",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/tweak-fathorn/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/tweak-fathorn/",
+     "wordCount": 455
     }
    ]
   },
@@ -68459,6 +71202,215 @@
     }
    ]
   },
+  "asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Asaf Avidan & the Mojos, Wankelmut",
+      "sameAs": "https://musicbrainz.org/artist/f21d9cba-dafc-494e-ace9-e9ed33fec536"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "house",
+      "minimal",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "One Day / Reckoning Song (Wankelmut Remix)"
+     },
+     "isrcCode": "DEQ321200132",
+     "name": "One Day / Reckoning Song (Wankelmut Remix) [Radio Edit]",
+     "sameAs": [
+      "https://musicbrainz.org/recording/dfdc6856-f3e4-477c-bad7-f32e1da82d28",
+      "https://www.youtube.com/watch?v=YRom6y1E8p8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "One Day / Reckoning Song",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/One_Day_/_Reckoning_Song"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "One Day / Reckoning Song",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/One_Day_/_Reckoning_Song"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Wankelmut",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Wankelmut"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "One Day / Reckoning Song (Wankelmut remix, radio edit)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/dfdc6856-f3e4-477c-bad7-f32e1da82d28"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Asaf Avidan, The Mojos - One Day / Reckoning Song (Videoclip Day Version)",
+       "publisher": "wankelmutVEVO",
+       "url": "https://www.youtube.com/watch?v=YRom6y1E8p8"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The radio edit of the remix a Berlin philosophy student made of Asaf Avidan's Reckoning Song without asking: cut, filtered and set on a simple four-four groove, it went from SoundCloud to number one across Europe in 2012.",
+     "educationalLevel": "introductory",
+     "headline": "Asaf Avidan & the Mojos, Wankelmut - One Day / Reckoning Song (Wankelmut Remix) [Radio Edit]",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit/",
+     "wordCount": 535
+    }
+   ]
+  },
+  "ash-naila-sing-it-back.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ash-naila-sing-it-back/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ash, Naila",
+      "sameAs": "https://musicbrainz.org/artist/cb816ea6-cd19-4259-9a74-71e28023f559"
+     },
+     "datePublished": "2018",
+     "genre": [
+      "deep house",
+      "cover",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sing It Back (feat. Naila)"
+     },
+     "name": "Sing It Back",
+     "sameAs": [
+      "https://musicbrainz.org/recording/069ee866-e918-4291-b3ae-4b52756d5e24",
+      "https://www.youtube.com/watch?v=GzVR5PNK2SA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ash-naila-sing-it-back/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ash-naila-sing-it-back/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "World Artist Spotlight #1: Ash",
+       "publisher": "90.3 FM The Core",
+       "url": "https://www.thecore.fm/public/pages/posts/world-artist-spotlight-1-ash"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Sing It Back (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/78de033b-3bcc-493a-bb5e-cc2291b1adea"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Sing It Back",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/165169422"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sing It Back (Moloko song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sing_It_Back"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Sing It Back (credits)",
+       "publisher": "YouTube (Ash - Topic)",
+       "url": "https://www.youtube.com/watch?v=GzVR5PNK2SA"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The Cairo-born, Montreal-based producer Ash and the singer Naila remake Sing It Back, the 1998 song Róisín Murphy and Mark Brydon wrote for Moloko, as a deep house track: released in February 2018 on Ash's own label, it charted on Greece's most Shazamed songs.",
+     "educationalLevel": "introductory",
+     "headline": "Ash, Naila - Sing It Back",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/ash-naila-sing-it-back/",
+     "wordCount": 539
+    }
+   ]
+  },
   "asian-dub-foundation-fly-over.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -69329,6 +72281,128 @@
     }
    ]
   },
+  "bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Bakermat, GoldFish, Marie Plassard",
+      "sameAs": "https://musicbrainz.org/artist/df60a241-e8df-4917-82db-1f1a8ecd7cc3"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "melodic house",
+      "deep house",
+      "house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Games (feat. Marie Plassard)"
+     },
+     "name": "Games Continued (feat. Marie Plassard) - Radio Edit",
+     "sameAs": [
+      "https://musicbrainz.org/recording/e45f3846-f221-423f-a73e-285e6dcb5b10",
+      "https://www.youtube.com/watch?v=1std7tlQW7U"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Bakermat",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Bakermat"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Goldfish (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Goldfish_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Bakermat - Games (Dirty Soul, DIRTY118D)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/8107415"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Bakermat - Games EP (promo)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/8280688"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Games Continued (radio edit)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/e45f3846-f221-423f-a73e-285e6dcb5b10"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Bakermat & Goldfish feat. Marie Plassard - Games Continued",
+       "publisher": "YouTube (Bakermat)",
+       "url": "https://www.youtube.com/watch?v=1std7tlQW7U"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Games Continued - Bakermat and Goldfish feat. Marie Plassard (AUDIO)",
+       "publisher": "YouTube (GoldFishLive)",
+       "url": "https://www.youtube.com/watch?v=H7-XOXaXVXs"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The radio edit of Games Continued, the 2016 collaboration of the Dutch producer Bakermat and the South African duo GoldFish with the Parisian singer Marie Plassard: the second song of Bakermat's Games EP, chosen as Corona's Sunsets anthem that year.",
+     "educationalLevel": "introductory",
+     "headline": "Bakermat, GoldFish, Marie Plassard - Games Continued (feat. Marie Plassard) - Radio Edit",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/bakermat-goldfish-marie-plassard-games-continued-feat-marie-plassard-radio-edit/",
+     "wordCount": 517
+    }
+   ]
+  },
   "bakermat-the-river.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -70114,6 +73188,123 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/belako-sinnerman/",
      "wordCount": 600
+    }
+   ]
+  },
+  "belleruche-anything-you-want-not-that.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/belleruche-anything-you-want-not-that/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Belleruche",
+      "sameAs": "https://musicbrainz.org/artist/abb5de38-d3ab-40f0-b98b-87ab0fd779e6"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "trip-hop",
+      "soul",
+      "blues"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Express"
+     },
+     "isrcCode": "GBEUE0801283",
+     "name": "Anything You Want - Not That",
+     "sameAs": [
+      "https://musicbrainz.org/recording/13dbe596-a8d2-477d-9e74-ef7c768e2b9d",
+      "https://www.youtube.com/watch?v=mEfuToVUAY8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/belleruche-anything-you-want-not-that/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/belleruche-anything-you-want-not-that/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Belleruche",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Belleruche"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "The Express",
+       "publisher": "Bandcamp (Belleruche)",
+       "url": "https://belleruche.bandcamp.com/album/the-express"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Belleruche - Anything You Want (Not That)",
+       "publisher": "YouTube (Tru Thoughts Records)",
+       "url": "https://www.youtube.com/watch?v=mEfuToVUAY8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Anything You Want (Not That)",
+       "publisher": "YouTube (Belleruche - Topic, provided by Dig Dis)",
+       "url": "https://www.youtube.com/watch?v=OqlszT6wH4Q"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Anything You Want (Not That) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/13dbe596-a8d2-477d-9e74-ef7c768e2b9d"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Anything You Want (Not That) (Hint remix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9ca069f1-d52a-46db-ab33-a75dcd4c7815"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Anything You Want (Not That) opened Belleruche's second album The Express (Tru Thoughts, 2008) and was its first single: Kathrin deBoer's smoky voice over a tougher-edged beat, with Ricky Fabulous on guitar and DJ Modest on turntables.",
+     "educationalLevel": "introductory",
+     "headline": "Belleruche - Anything You Want - Not That",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "turntablism",
+       "url": "https://korczis.github.io/sonic-playground/concept/turntablism/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/belleruche-anything-you-want-not-that/",
+     "wordCount": 500
     }
    ]
   },
@@ -71373,6 +74564,108 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/bob-moses-tearing-me-up/",
      "wordCount": 658
+    }
+   ]
+  },
+  "bobby-hebb-sunny.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/bobby-hebb-sunny/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Bobby Hebb",
+      "sameAs": "https://musicbrainz.org/artist/d21d85ff-c0d5-4c50-a1be-93438e5d7c60"
+     },
+     "datePublished": "1966",
+     "genre": [
+      "soul",
+      "r&b",
+      "jazz"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sunny"
+     },
+     "isrcCode": "USPR36660028",
+     "name": "Sunny",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3cbc49f1-2225-4c6f-afce-8d85e8ee228a",
+      "https://www.youtube.com/watch?v=RmNqmZZk0Ow"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/bobby-hebb-sunny/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/bobby-hebb-sunny/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Sunny (Bobby Hebb song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sunny_(Bobby_Hebb_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bobby Hebb",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Bobby_Hebb"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1966",
+       "name": "Bobby Hebb - Sunny",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2337756"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sunny",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3cbc49f1-2225-4c6f-afce-8d85e8ee228a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sunny",
+       "publisher": "YouTube (Bobby Hebb - Topic)",
+       "url": "https://www.youtube.com/watch?v=RmNqmZZk0Ow"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Bobby Hebb's own 1966 recording of Sunny, the song he wrote after his brother's death: a number two hit that climbs a half step with every cycle, and one of the most recorded songs of the century.",
+     "educationalLevel": "intermediate",
+     "headline": "Bobby Hebb - Sunny",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "chord progression",
+       "url": "https://korczis.github.io/sonic-playground/concept/chord-progression/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/bobby-hebb-sunny/",
+     "wordCount": 524
     }
    ]
   },
@@ -80123,6 +83416,124 @@
     }
    ]
   },
+  "dirty-doering-casino-aquatique.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dirty-doering-casino-aquatique/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dirty Doering",
+      "sameAs": "https://musicbrainz.org/artist/57343d6b-80e0-4c50-a50b-51cf750a2d80"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "tech house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Casino Aquatique"
+     },
+     "name": "Casino Aquatique",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b81ddbb9-dfb4-403b-8fdf-ef95df380f63",
+      "https://www.youtube.com/watch?v=O-YWW9I7LUY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dirty-doering-casino-aquatique/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dirty-doering-casino-aquatique/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Dirty Doering - Casino Aquatique",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3551420-Dirty-Doering-Casino-Aquatique"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Casino aquatique",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/b81ddbb9-dfb4-403b-8fdf-ef95df380f63"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Casino Aquatique (in We Are Katermukke: Dirty Doering)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a6b5b590-2ddb-4d7e-ba32-7e564bfd3fb3"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Casino Aquatique (in WE ARE KATERMUKKE: Animal Trainer)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a64f2bde-dd3f-4969-a874-2cdbf75141bb"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dirty Doering",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Dirty_Doering"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Katermukke",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/labels/7214"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Katermukke - Electronic Music Label Berlin",
+       "publisher": "Katermukke",
+       "url": "https://www.katermukke.com/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Casino Aquatique",
+       "publisher": "YouTube (Dirty Doering - Topic)",
+       "url": "https://www.youtube.com/watch?v=O-YWW9I7LUY"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Catalogue number KATER001: the tech house track that opened Katermukke, the Berlin label Dirty Doering, a former Bar 25 resident, founded in 2011, and that the label's DJ mixes still carried eight years later.",
+     "educationalLevel": "introductory",
+     "headline": "Dirty Doering - Casino Aquatique",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/dj-mix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/dirty-doering-casino-aquatique/",
+     "wordCount": 541
+    }
+   ]
+  },
   "dj-disse-will-buhrkall-break-on-through.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -83025,6 +86436,113 @@
     }
    ]
   },
+  "estelle-kanye-west-american-boy-feat-kanye-west.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/estelle-kanye-west-american-boy-feat-kanye-west/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Estelle, Kanye West",
+      "sameAs": "https://musicbrainz.org/artist/4c7a5854-6b75-4623-a684-6a3d785d9015"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "r&b",
+      "disco",
+      "funk",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Shine"
+     },
+     "name": "American Boy (feat. Kanye West)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/192333bd-5f71-4d0e-9356-f4bf2ff848c5",
+      "https://www.youtube.com/watch?v=Ic5vxw3eijY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/estelle-kanye-west-american-boy-feat-kanye-west/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/estelle-kanye-west-american-boy-feat-kanye-west/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "American Boy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/American_Boy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Shine (Estelle album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Shine_(Estelle_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Estelle (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Estelle_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "American Boy (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/192333bd-5f71-4d0e-9356-f4bf2ff848c5"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Estelle - American Boy [Feat. Kanye West] [Video]",
+       "publisher": "Estelle",
+       "url": "https://www.youtube.com/watch?v=Ic5vxw3eijY"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Estelle's breezy R&B and disco-funk hit about falling for an American suitor, built by will.i.am on the instrumental of his own Impatient and joined by a Kanye West verse; it went to number one in Britain and won a Grammy.",
+     "educationalLevel": "introductory",
+     "headline": "Estelle, Kanye West - American Boy (feat. Kanye West)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/estelle-kanye-west-american-boy-feat-kanye-west/",
+     "wordCount": 553
+    }
+   ]
+  },
   "etienne-de-crecy-alex-gopher-asher-roth-smile-feat-alex-gopher-asher-roth-vocal-mix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -84588,6 +88106,108 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/fkj-lying-together/",
      "wordCount": 642
+    }
+   ]
+  },
+  "flume-chet-faker-drop-the-game.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-drop-the-game/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Flume, Chet Faker",
+      "sameAs": "https://musicbrainz.org/artist/35fd8d42-b4a6-4414-9827-8766bd0daa3c"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "soul",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lockjaw"
+     },
+     "isrcCode": "AUFF01300488",
+     "name": "Drop the Game",
+     "sameAs": [
+      "https://musicbrainz.org/recording/76c02aec-49c9-44f2-acca-3d923a3fc7a8",
+      "https://www.youtube.com/watch?v=6vopR3ys8Kw"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-drop-the-game/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-drop-the-game/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Drop the Game",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Drop_the_Game"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lockjaw (EP)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lockjaw_(EP)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Storyboard P",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Storyboard_P"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Drop the Game (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/76c02aec-49c9-44f2-acca-3d923a3fc7a8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume & Chet Faker - Drop the Game [Official Music Video]",
+       "publisher": "Future Classic",
+       "url": "https://www.youtube.com/watch?v=6vopR3ys8Kw"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The slow, head-nodding single of Flume and Chet Faker's joint EP Lockjaw: Faker's sultry voice over Flume's swishing synths and deep bass, with a video of the Brooklyn dancer Storyboard P.",
+     "educationalLevel": "introductory",
+     "headline": "Flume, Chet Faker - Drop the Game",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/flume-chet-faker-drop-the-game/",
+     "wordCount": 517
     }
    ]
   },
@@ -86371,6 +89991,114 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/gabriella-cilmi-left-with-someone-else/",
      "wordCount": 633
+    }
+   ]
+  },
+  "gabriella-cilmi-sweet-about-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gabriella-cilmi-sweet-about-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gabriella Cilmi",
+      "sameAs": "https://musicbrainz.org/artist/72ae6caf-4f9f-407e-8c70-8cd195df955c"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "pop",
+      "soul",
+      "jazz"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lessons to Be Learned"
+     },
+     "isrcCode": "GBUM70709626",
+     "name": "Sweet About Me",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3d675c06-2d9a-400f-8c53-2383c4094393",
+      "https://www.youtube.com/watch?v=qvuyYj5ROmk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gabriella-cilmi-sweet-about-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gabriella-cilmi-sweet-about-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Sweet About Me",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sweet_About_Me"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Gabriella Cilmi: 'Sweet About Me'",
+       "publisher": "Digital Spy",
+       "url": "https://www.digitalspy.com/music/single-reviews/a90790/gabriella-cilmi-sweet-about-me-90790/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Gabriella Cilmi - 'Sweet About Me'",
+       "publisher": "BBC Radio 1 Chart Blog",
+       "url": "https://www.bbc.co.uk/blogs/chartblog/2008/03/gabriella_cilmi_sweet_about_me.shtml"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lessons to Be Learned",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lessons_to_Be_Learned"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sweet About Me (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3d675c06-2d9a-400f-8c53-2383c4094393"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Xenomania's swinging, retro-sounding pop with subtle electro touches, and a sixteen-year-old Gabriella Cilmi singing it in a voice a critic called sweet and coarse at once: her breakthrough, a number one in Australia.",
+     "educationalLevel": "introductory",
+     "headline": "Gabriella Cilmi - Sweet About Me",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "swing",
+       "url": "https://korczis.github.io/sonic-playground/concept/swing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gabriella-cilmi-sweet-about-me/",
+     "wordCount": 549
     }
    ]
   },
@@ -88753,6 +92481,140 @@
     }
    ]
   },
+  "gotan-project-santa-maria-del-buen-ayre.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gotan-project-santa-maria-del-buen-ayre/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gotan Project",
+      "sameAs": "https://musicbrainz.org/artist/66cc244d-6f96-4668-a6e9-0f9cd5acc940"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "tango",
+      "electronic",
+      "downtempo",
+      "dub"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "La Revancha del Tango"
+     },
+     "isrcCode": "FR99S9900014",
+     "name": "Santa María (del Buen Ayre)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/631439aa-26e4-4513-a1e0-a87f12b4d838",
+      "https://www.youtube.com/watch?v=XwSMe42WZ9I"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gotan-project-santa-maria-del-buen-ayre/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gotan-project-santa-maria-del-buen-ayre/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Gotan Project",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gotan_Project"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "La Revancha del Tango",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/La_Revancha_del_Tango"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gotan Project",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/Gotan_Project"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Buenos Aires",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Buenos_Aires"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Review of Gotan Project - La Revancha del Tango",
+       "publisher": "BBC Music",
+       "url": "https://www.bbc.co.uk/music/reviews/5d25/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Gotan Project - Santa María (Del Buen Ayre) / Chunga's Revenge",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/33377"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Gotan Project - La Revancha Del Tango",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/18672"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Santa María (del Buen Ayre) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/631439aa-26e4-4513-a1e0-a87f12b4d838"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Gotan Project - Santa Maria (Del Buen Ayre) (Official Lyric Video)",
+       "publisher": "Gotan Project",
+       "url": "https://www.youtube.com/watch?v=XwSMe42WZ9I"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The track of Gotan Project's debut album La Revancha del Tango that took electro-tango into the cinema, named after the first name of Buenos Aires and heard in The Bourne Identity, Shall We Dance? and Knight and Day.",
+     "educationalLevel": "introductory",
+     "headline": "Gotan Project - Santa María (del Buen Ayre)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/concept/soundtrack/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dub",
+       "url": "https://korczis.github.io/sonic-playground/concept/dub/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gotan-project-santa-maria-del-buen-ayre/",
+     "wordCount": 542
+    }
+   ]
+  },
   "gregory-porter-do-not-lose-your-steam.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -88947,6 +92809,119 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/groove-armada-superstylin/",
      "wordCount": 740
+    }
+   ]
+  },
+  "groovejuice-cafe-prague-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/groovejuice-cafe-prague-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Groovejuice",
+      "sameAs": "https://musicbrainz.org/artist/055165b5-e3a1-4834-82b1-27933e934c55"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "tech house",
+      "minimal",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Café Prague"
+     },
+     "name": "Cafe Prague - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/fcd262fb-1a21-4975-95d2-522891bbd0d5",
+      "https://www.youtube.com/watch?v=__IQiYpf-dI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/groovejuice-cafe-prague-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/groovejuice-cafe-prague-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Groovejuice - Café Prague",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2224441"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "120db Records",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/166112"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Café Prague (Remixes)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/db6c3986-8aca-4a01-b242-21c60df1c934"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Groovejuice - Cafe Prague (2010 Original)",
+       "publisher": "120dB Records",
+       "url": "https://www.youtube.com/watch?v=oq3zqIgHmfQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Laserkraft 3D",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Laserkraft_3D"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Café Prague (Original Mix)",
+       "publisher": "YouTube (Groovejuice - Topic)",
+       "url": "https://www.youtube.com/watch?v=__IQiYpf-dI"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The original mix of Café Prague, the 2010 single Niels Reinhard released as Groovejuice on the Mannheim label 120dB Records: a tech house track that the label sold on its hypnotic jazz piano and snare drums in the style of Gene Krupa.",
+     "educationalLevel": "introductory",
+     "headline": "Groovejuice - Cafe Prague - Original Mix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "house groove",
+       "url": "https://korczis.github.io/sonic-playground/concept/house-groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/groovejuice-cafe-prague-original-mix/",
+     "wordCount": 524
     }
    ]
   },
@@ -94092,6 +98067,101 @@
     }
    ]
   },
+  "johnny-cash-hurt.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/johnny-cash-hurt/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Johnny Cash",
+      "sameAs": "https://musicbrainz.org/artist/d43d12a1-2dc9-4257-a2fd-0a3bb1081b86"
+     },
+     "datePublished": "2002",
+     "genre": [
+      "country",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "American IV: The Man Comes Around"
+     },
+     "isrcCode": "USDJ20200650",
+     "name": "Hurt",
+     "sameAs": [
+      "https://musicbrainz.org/recording/25d8de5e-3662-4ffd-8dea-511a696ac3e7",
+      "https://www.youtube.com/watch?v=8AHCfZTRGiI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/johnny-cash-hurt/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/johnny-cash-hurt/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Hurt (Nine Inch Nails song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hurt_(Nine_Inch_Nails_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "American IV: The Man Comes Around",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/American_IV:_The_Man_Comes_Around"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hurt (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/25d8de5e-3662-4ffd-8dea-511a696ac3e7"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Johnny Cash - Hurt (Official Music Video)",
+       "publisher": "YouTube (JohnnyCashVEVO)",
+       "url": "https://www.youtube.com/watch?v=8AHCfZTRGiI"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Johnny Cash's 2002 cover of the song Trent Reznor wrote for Nine Inch Nails, produced by Rick Rubin for American IV: The Man Comes Around: a sparse late recording whose video by Mark Romanek, filmed months before Cash's death, NME named the greatest of all time.",
+     "educationalLevel": "introductory",
+     "headline": "Johnny Cash - Hurt",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/johnny-cash-hurt/",
+     "wordCount": 514
+    }
+   ]
+  },
   "jojo-effect-the-beat-goes-on.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -95557,6 +99627,117 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/kalabrese-sarah-palin-kafi-lied/",
      "wordCount": 496
+    }
+   ]
+  },
+  "kalabrese-stone-on-your-back.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kalabrese-stone-on-your-back/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kalabrese",
+      "sameAs": "https://musicbrainz.org/artist/b3e30b52-3cae-4e70-a369-dede1d3546c1"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "ballad",
+      "bossa nova"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Independent Dancer"
+     },
+     "isrcCode": "DEM091300020",
+     "name": "Stone on Your Back",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ad32a2fa-2b0c-4e51-bc21-d2205acd7147",
+      "https://www.youtube.com/watch?v=uO9Dl-2-Rss"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kalabrese-stone-on-your-back/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kalabrese-stone-on-your-back/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Independent Dancer",
+       "publisher": "Rumpelmusig",
+       "url": "https://rumpelmusig.bandcamp.com/album/independent-dancer"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Album Review: Independent Dancer - Kalabrese",
+       "publisher": "BlackPlastic",
+       "url": "https://www.blackplastic.co.uk/alternative-electronic-music-b/2013/4/29/album-review-independent-dancer-kalabrese"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Kalabrese - Remixes EP",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/15392"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Khan of Finland",
+       "publisher": "transmediale",
+       "url": "https://archive.transmediale.de/node/25085"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Stone on Your Back (credits)",
+       "publisher": "YouTube (Kalabrese - Topic)",
+       "url": "https://www.youtube.com/watch?v=4lo7464MzLw"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kalabrese - Stone On Your Back",
+       "publisher": "Rumpelmusig",
+       "url": "https://www.youtube.com/watch?v=uO9Dl-2-Rss"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The eighth track of Independent Dancer, the 2013 album of the Zurich producer Kalabrese on his label Rumpelmusig: an airy ballad over a light bossa nova rhythm, with cello by Dominik Löhrer and an uneasy piano under a song about the stresses of ambition.",
+     "educationalLevel": "introductory",
+     "headline": "Kalabrese - Stone on Your Back",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "syncopation",
+       "url": "https://korczis.github.io/sonic-playground/concept/syncopation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/kalabrese-stone-on-your-back/",
+     "wordCount": 476
     }
    ]
   },
@@ -97372,6 +101553,120 @@
     }
    ]
   },
+  "klyne-closer.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/klyne-closer/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Klyne",
+      "sameAs": "https://musicbrainz.org/artist/0b58106c-e4e1-4b84-bf93-ee8364bff0a2"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "synth-pop",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Closer"
+     },
+     "name": "Closer",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8e626e30-32c7-4af3-9b96-528f854cce0b",
+      "https://www.youtube.com/watch?v=oRpRtvuziS4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/klyne-closer/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/klyne-closer/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Klyne - Closer",
+       "publisher": "Piccadilly Records",
+       "url": "https://www.piccadillyrecords.com/counter/product.php?pid=106539"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Klyne",
+       "publisher": "Wikipedia",
+       "url": "https://nl.wikipedia.org/wiki/Klyne"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Closer (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/8e626e30-32c7-4af3-9b96-528f854cce0b"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Klyne - Closer/Paralyzed",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/8059605"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Klyne - Closer",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/54265972"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Klyne - Closer (Official Video)",
+       "publisher": "Klyne",
+       "url": "https://www.youtube.com/watch?v=oRpRtvuziS4"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Klyne's second single is a compact slice of electronic pop, staccato synth lines under Nick Klein's soulful voice, about chasing a lifelong desire past the fear that fate has already decided.",
+     "educationalLevel": "introductory",
+     "headline": "Klyne - Closer",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/klyne-closer/",
+     "wordCount": 541
+    }
+   ]
+  },
   "klyne-entropy.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -98825,6 +103120,120 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/kygo-maty-noyes-stay/",
      "wordCount": 678
+    }
+   ]
+  },
+  "l-e-j-hanging-tree.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/l-e-j-hanging-tree/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "L.E.J",
+      "sameAs": "https://musicbrainz.org/artist/dba8b662-4d39-4881-9c87-d306183aac12"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "cover",
+      "pop",
+      "orchestral"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "En attendant l'album"
+     },
+     "isrcCode": "FRPJW1500510",
+     "name": "Hanging Tree",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d6e923a1-3ef5-4e36-877d-6ffffe7c0eee",
+      "https://www.youtube.com/watch?v=hzvmebyt_iU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/l-e-j-hanging-tree/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/l-e-j-hanging-tree/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "L.E.J",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/L.E.J"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "L.E.J",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/L.E.J"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "L.E.J - En Attendant L'Album...",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/7839468"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hanging Tree",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/d6e923a1-3ef5-4e36-877d-6ffffe7c0eee"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "L.E.J - Hanging Tree (Clip Officiel)",
+       "publisher": "LEJVEVO",
+       "url": "https://www.youtube.com/watch?v=hzvmebyt_iU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Hanging Tree (The Hunger Games song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Hanging_Tree_(The_Hunger_Games_song)"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Three friends from Saint-Denis sing the Hunger Games murder ballad with a string section and a backing choir: the cover that opens L.E.J's 2015 album En attendant l'album, first sung at the Paris premiere of Mockingjay Part 2.",
+     "educationalLevel": "introductory",
+     "headline": "L.E.J - Hanging Tree",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/concept/soundtrack/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/l-e-j-hanging-tree/",
+     "wordCount": 477
     }
    ]
   },
@@ -104893,6 +109302,137 @@
     }
    ]
   },
+  "micatone-plastic-bags-magazines.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/micatone-plastic-bags-magazines/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Micatone",
+      "sameAs": "https://musicbrainz.org/artist/ca30be07-e94e-4bd8-a022-1dfbc462905b"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "nu-jazz",
+      "house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Is You Is"
+     },
+     "isrcCode": "DEP960300024",
+     "name": "Plastic Bags & Magazines",
+     "sameAs": [
+      "https://musicbrainz.org/recording/02554840-3130-4989-91c8-1567324432c1",
+      "https://www.youtube.com/watch?v=Fm1Mbul1nhg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/micatone-plastic-bags-magazines/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/micatone-plastic-bags-magazines/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Micatone - Is You Is",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/142145"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Micatone - Plastic Bags & Magazines",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/159438"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Is You Is",
+       "publisher": "Micatone",
+       "url": "https://micatone.bandcamp.com/album/is-you-is"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Wie man guten Beat kocht",
+       "publisher": "Jazzzeitung",
+       "url": "https://www.jazzzeitung.de/jazz/2003/09/portrait-micatone.shtml"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Micatone",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Micatone"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Gilles Peterson - Broken Folk Funk Latin Soul",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/109762"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Bags & Magazines (recordings)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/artist/ca30be07-e94e-4bd8-a022-1dfbc462905b/recordings"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Tiefschwarz - Misch Masch",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/337717"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Micatone - Plastic Bags & Magazines",
+       "publisher": "Sonar Kollektiv",
+       "url": "https://www.youtube.com/watch?v=Fm1Mbul1nhg"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The second track of Is You Is, the 2003 album of the Berlin band Micatone on Sonar Kollektiv: a song sung by Lisa Bassenge over real instruments with a little help from machines, also released as a 12-inch single with a Tiefschwarz remix for the clubs.",
+     "educationalLevel": "introductory",
+     "headline": "Micatone - Plastic Bags & Magazines",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/micatone-plastic-bags-magazines/",
+     "wordCount": 550
+    }
+   ]
+  },
   "michael-jackson-billie-jean.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -105066,6 +109606,128 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/michelle-gurevich-first-six-months-of-love/",
      "wordCount": 663
+    }
+   ]
+  },
+  "michelle-gurevich-left-you-at-the-farm.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michelle-gurevich-left-you-at-the-farm/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Michelle Gurevich",
+      "sameAs": "https://musicbrainz.org/artist/7413ccd4-a9e9-4965-8506-49e580dda6d5"
+     },
+     "datePublished": "2007",
+     "genre": [
+      "singer-songwriter",
+      "art pop",
+      "chanson"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Party Girl"
+     },
+     "name": "Left You At The Farm",
+     "sameAs": [
+      "https://musicbrainz.org/recording/79078407-5d30-4f31-ad8f-c0dc35633294"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michelle-gurevich-left-you-at-the-farm/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/michelle-gurevich-left-you-at-the-farm/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Left You at The Farm",
+       "publisher": "Bandcamp (Michelle Gurevich)",
+       "url": "https://michellegurevich.bandcamp.com/track/left-you-at-the-farm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Party Girl",
+       "publisher": "Bandcamp (Michelle Gurevich)",
+       "url": "https://michellegurevich.bandcamp.com/album/party-girl"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Chinawoman - Party Girl (self-released CD)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/1971269"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Chinawoman - Party Girl (Exotica Frontier, Front 5)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2875769"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Left You At The Farm (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/79078407-5d30-4f31-ad8f-c0dc35633294"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Left You At The Farm (Stefan Baghiu Edit)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4bd9c0e9-1bf0-4a85-92a9-e740334596d5"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Michelle Gurevich",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Michelle_Gurevich"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Left You At The Farm is a home-recorded ballad from Party Girl, the 2007 debut Michelle Gurevich made as Chinawoman at home in Montreal: a song about a promise to stay until the end, and leaving instead.",
+     "educationalLevel": "introductory",
+     "headline": "Michelle Gurevich - Left You At The Farm",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "lo-fi",
+       "url": "https://korczis.github.io/sonic-playground/concept/lo-fi/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/michelle-gurevich-left-you-at-the-farm/",
+     "wordCount": 506
     }
    ]
   },
@@ -114245,6 +118907,145 @@
     }
    ]
   },
+  "purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Purple Disco Machine, Boris Dlugosch, Karen Harding",
+      "sameAs": "https://musicbrainz.org/artist/dc71939a-416f-4804-b031-5749287943f9"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "house",
+      "nu-disco",
+      "disco"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Soulmatic"
+     },
+     "isrcCode": "AUDCB1701094",
+     "name": "Love for Days (feat. Karen Harding)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a6711807-4a80-4f7c-8eea-ecf6c608cab5",
+      "https://www.youtube.com/watch?v=JwIbSuYHqV8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Purple Disco Machine - Soulmatic (Sweat It Out!, SWEATA016)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/11263109"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Love for Days (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a6711807-4a80-4f7c-8eea-ecf6c608cab5"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Love For Days (remix single)",
+       "publisher": "Bandcamp (Purple Disco Machine)",
+       "url": "https://purplediscomachine.bandcamp.com/album/love-for-days"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Purple Disco Machine - Love For Days [Official Music Video]",
+       "publisher": "YouTube (pdmVEVO)",
+       "url": "https://www.youtube.com/watch?v=JwIbSuYHqV8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Purple Disco Machine",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Purple_Disco_Machine"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Purple Disco Machine/Diskografie",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Purple_Disco_Machine/Diskografie"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Boris Dlugosch",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Boris_Dlugosch"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Boris Dlugosch",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Boris_Dlugosch"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Karen Harding",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Karen_Harding"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Karen Poole",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Karen_Poole"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Love for Days is the vocal house song Purple Disco Machine made with the Hamburg producer Boris Dlugosch and the English singer Karen Harding for his 2017 debut album Soulmatic, later remixed by Kenny Dope, Lee Foss and Motez.",
+     "educationalLevel": "introductory",
+     "headline": "Purple Disco Machine, Boris Dlugosch, Karen Harding - Love for Days (feat. Karen Harding)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/purple-disco-machine-boris-dlugosch-karen-harding-love-for-days-feat-karen-harding/",
+     "wordCount": 547
+    }
+   ]
+  },
   "purple-disco-machine-lorenz-rhode-music-in-you-feat-lorenz-rhode.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -115591,6 +120392,121 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/ron-flatter-nick-d-lite-jetlands/",
      "wordCount": 519
+    }
+   ]
+  },
+  "ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ronald Christoph, Orlando",
+      "sameAs": "https://musicbrainz.org/artist/e3b0406a-6085-46d1-9c92-2ef1dbcd00ef"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "tech house",
+      "techno",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Take Off, Baby!"
+     },
+     "isrcCode": "DEPL91207021",
+     "name": "Take Off, Baby! feat. Orlando - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2ffff329-5ac8-49cb-ab04-67e6aa5bf38f",
+      "https://www.youtube.com/watch?v=2X1GGqiGKQk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Ronald Christoph - Take Off, Baby!",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3537537"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ronald Christoph",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/790319"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Take Off, Baby! (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/302528c3-57ab-44e4-a738-6f1bacc0f888"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Orlando (Belgian tech house singer)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/artist/d38a18f1-ab19-4704-8eee-16d89149a0ad"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Various - Saint-Germain-Des-Prés Café - 14",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/4339294"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Take Off, Baby! feat. Orlando (Original Mix)",
+       "publisher": "YouTube (Ronald Christoph - Topic)",
+       "url": "https://www.youtube.com/watch?v=2X1GGqiGKQk"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The original mix of Take Off, Baby!, the 2012 single of the Berlin producer Ronald Christoph with the Belgian singer Orlando, released on vinyl and as a download by EVAMORE MUSIC: almost seven minutes of club music that later travelled, shortened, onto a Paris lounge compilation.",
+     "educationalLevel": "introductory",
+     "headline": "Ronald Christoph, Orlando - Take Off, Baby! feat. Orlando - Original Mix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/ronald-christoph-orlando-take-off-baby-feat-orlando-original-mix/",
+     "wordCount": 482
     }
    ]
   },
@@ -119688,6 +124604,122 @@
     }
    ]
   },
+  "spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Spada, Hosie Neal, Bakermat",
+      "sameAs": "https://musicbrainz.org/artist/320ceeb4-a285-4d64-a41d-2de86c4505cc"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "deep house",
+      "house",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Feels Like Home (Red Velvet Dress)"
+     },
+     "name": "Feels Like Home (Red Velvet Dress) - Bakermat Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a28bb548-00dd-4b01-b358-941a69529a02",
+      "https://www.youtube.com/watch?v=6TB-RYFeYbU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Feels Like Home (Red Velvet Dress) (feat. Hosie Neal) (Bakermat Remix)",
+       "publisher": "YouTube (Spada - Topic, provided by Hysterical)",
+       "url": "https://www.youtube.com/watch?v=6TB-RYFeYbU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Feel at Home in Red Velvet Dress | BAKERMAT REMIX",
+       "publisher": "YouTube (EGO TV)",
+       "url": "https://www.youtube.com/watch?v=3oL_aNyz-zI"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Feels Like Home (Red Velvet Dress) (Bakermat remix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a28bb548-00dd-4b01-b358-941a69529a02"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Spada Ft. Hosie Neal - Feels Like Home (Red Velvet Dress) (promo)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6424797"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Spada delivers an exclusive mix in honor of the iTunes release of 'Sun Sun Sun'",
+       "publisher": "EARMILK",
+       "url": "https://earmilk.com/2015/04/23/spada-delivers-an-exclusive-mix-in-honor-of-the-itunes-release-of-sun-sun-sun"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bakermat",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Bakermat"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The Dutch producer Bakermat's full remix of Feels Like Home (Red Velvet Dress), Italian producer Spada's 2014 vocal song with the New York singer Hosie Neal, released on Ego's Hysterical imprint beside a radio edit of the same remix.",
+     "educationalLevel": "introductory",
+     "headline": "Spada, Hosie Neal, Bakermat - Feels Like Home (Red Velvet Dress) - Bakermat Remix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix/",
+     "wordCount": 525
+    }
+   ]
+  },
   "spada-hosie-neal-feels-like-home-red-velvet-dress-video-edit.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -121472,6 +126504,138 @@
     }
    ]
   },
+  "terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Terranova, Nicolette Krebitz, Udo Kier",
+      "sameAs": "https://musicbrainz.org/artist/00950dec-8f3a-4a17-9717-e7872a954d8b"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "house",
+      "tech house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hotel Amour - Nightporter"
+     },
+     "isrcCode": "DEU671200150",
+     "name": "Prayer (feat. Nicolette Krebitz, Udo Kier) - Gui Boratto Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7ea3eae6-627e-42d7-b3ed-9cedfc20c6c1",
+      "https://www.youtube.com/watch?v=glg_nHtpnXk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Terranova - Hotel Amour (Nightporter)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3806060-Terranova-Hotel-Amour-Nightporter"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Prayer (Gui Boratto mix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7ea3eae6-627e-42d7-b3ed-9cedfc20c6c1"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Prayer (Gui Boratto Mix) (in Michael Mayer: TSUGi 56)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/d1b4f9bc-1922-4682-9c1a-38bc65920025"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Hotel Amour by Terranova",
+       "publisher": "Kompakt",
+       "url": "https://kompakt.fm/releases/hotel_amour"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Terranova - Prayer (Official Video) 'Hotel Amour' Album",
+       "publisher": "Kompakt",
+       "url": "https://www.youtube.com/watch?v=vANJv-xKZhI"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Terranova (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Terranova_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gui Boratto",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gui_Boratto"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nicolette Krebitz",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Nicolette_Krebitz"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Udo Kier",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Udo_Kier"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Gui Boratto's remix of Prayer, the Terranova song with the voices of the actors Nicolette Krebitz and Udo Kier: the opening track of Kompakt's 2012 remix album Hotel Amour (Nightporter), stretched from five minutes to almost seven.",
+     "educationalLevel": "introductory",
+     "headline": "Terranova, Nicolette Krebitz, Udo Kier - Prayer (feat. Nicolette Krebitz, Udo Kier) - Gui Boratto Mix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/dj-mix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/terranova-nicolette-krebitz-udo-kier-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix/",
+     "wordCount": 518
+    }
+   ]
+  },
   "tez-cadey-feat-nina-k-lucas-cab-canavaral-nina-k-lucas-cab-canavaral-why-don-t-you-do-right-tez-cadey-remix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -123219,6 +128383,130 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/the-supermen-lovers-moments/",
      "wordCount": 566
+    }
+   ]
+  },
+  "the-supermen-lovers-say-no-more.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-supermen-lovers-say-no-more/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Supermen Lovers",
+      "sameAs": "https://musicbrainz.org/artist/0df6d50f-7e43-4c6a-8220-61932b67c9c5"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "house",
+      "disco",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Between The Ages"
+     },
+     "isrcCode": "FR0ML1100810",
+     "name": "Say No More",
+     "sameAs": [
+      "https://musicbrainz.org/recording/1345967a-740a-4780-b88b-1169735aeeae",
+      "https://www.youtube.com/watch?v=tUKLctrU2d4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-supermen-lovers-say-no-more/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-supermen-lovers-say-no-more/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Supermen Lovers",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Supermen_Lovers"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "The Supermen Lovers - Between The Ages",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3913521"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "The Supermen Lovers - Fantasma Disco EP",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3657209"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say No More (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/1345967a-740a-4780-b88b-1169735aeeae"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "The Supermen Lovers: Say No More (NSFW)",
+       "publisher": "Gizmodo",
+       "url": "https://gizmodo.com/the-supermen-lovers-say-no-more-nsfw-5903542"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "The Supermen Lovers - Say No More (video)",
+       "publisher": "La Tebwa",
+       "url": "https://www.youtube.com/watch?v=Ee9-4WErXAc"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say No More (Fantasma Disco)",
+       "publisher": "The Supermen Lovers - Topic",
+       "url": "https://www.youtube.com/watch?v=_qz3uQuh6GM"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "The Supermen Lovers - Say no more",
+       "publisher": "La Tebwa",
+       "url": "https://www.youtube.com/watch?v=tUKLctrU2d4"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "A track from The Supermen Lovers' third album Between the Ages, composed and produced by Guillaume Atlan, which led the Fantasma Disco EP with remixes by Jupiter and A.N.D.Y. and a video drawn by nearly twenty designers.",
+     "educationalLevel": "introductory",
+     "headline": "The Supermen Lovers - Say No More",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-supermen-lovers-say-no-more/",
+     "wordCount": 467
     }
    ]
   },
@@ -125945,6 +131233,135 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/tum-rakak-deluxe/",
      "wordCount": 791
+    }
+   ]
+  },
+  "tweak-fathorn.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/tweak-fathorn/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Tweak",
+      "sameAs": "https://musicbrainz.org/artist/1756db99-9747-44db-a6f2-3037aa37ef8d"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "nu-jazz",
+      "downtempo",
+      "breakbeat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hybrid Organics (Expanded)"
+     },
+     "name": "Fathorn",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9a256e7d-3faf-4b83-97d4-420b8827bf47",
+      "https://www.youtube.com/watch?v=ACfcU63_aJc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/tweak-fathorn/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/tweak-fathorn/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Tweak - Hybrid Organics (Straight Ahead, SAR 022 CD)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/50947"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Various - Straight Ahead (Straight Ahead, sar 020)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/138914"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Straight Ahead (label profile)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/2447"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2001",
+       "name": "Fathorn (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9a256e7d-3faf-4b83-97d4-420b8827bf47"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Fathorn (Raw Deal's Freedom Time mix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/0c6d1ed5-913f-42bf-90f6-2189cf4a22d1"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Tweak - Hybrid Organic (Expanded) Teaser",
+       "publisher": "YouTube (Cyril Boehler)",
+       "url": "https://www.youtube.com/watch?v=uyn1vZb9sTI"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Fathorn",
+       "publisher": "YouTube (TWEAK - Topic, provided by iMusician Digital AG)",
+       "url": "https://www.youtube.com/watch?v=ACfcU63_aJc"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Robert Morgenthaler",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Robert_Morgenthaler"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Fathorn opens Hybrid Organics, the 2001 album of the Swiss producer Cyril Boehler as Tweak on Zürich's Straight Ahead label: programmed nu-jazz beats with an alphorn played by the jazz trombonist Robert Morgenthaler.",
+     "educationalLevel": "introductory",
+     "headline": "Tweak - Fathorn",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/tweak-fathorn/",
+     "wordCount": 475
     }
    ]
   },
