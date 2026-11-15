@@ -8,6 +8,10 @@
     "echarts": {
       "version": "6.1.0",
       "js": "vendor/echarts-6.1.0.custom.min.js"
+    },
+    "p5": {
+      "version": "2.3.4",
+      "js": "vendor/p5-2.3.4.min.js"
     }
   }
 }

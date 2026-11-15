@@ -1,0 +1,31 @@
+{#- The fullscreen visualiser (static/js/visualizer.js), outside #main-content like the player so
+    the router never swaps it. It lies over the page and under the player (z 35: the queue and the
+    video panel are at 40, the bar at 50), so the playing video is never covered. By default it is
+    the picture alone; the toolbar (a Pro glass card, the hero's style) shows while the pointer
+    moves or a key is pressed and fades after a few seconds. The strings are interface keys. -#}
+{%- set chip = "rounded-lg px-3 py-1.5 text-xs font-medium text-gray-200 ring-1 ring-inset ring-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400 aria-pressed:bg-white aria-pressed:text-gray-900" %}
+{%- set round = "inline-flex h-9 w-9 items-center justify-center rounded-full text-gray-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400 aria-pressed:bg-white aria-pressed:text-gray-900" %}
+<div id="visualizer-full" hidden tabindex="-1" role="dialog" aria-modal="false" aria-label="{{ l["viz.region"] }}" data-i18n-aria-label="viz.region" data-controls="shown" class="group fixed inset-0 z-[35] bg-black outline-none data-[controls=hidden]:cursor-none">
+  <div data-visualizer-stage class="absolute inset-0"></div>
+  <div class="pointer-events-none absolute inset-x-0 top-0 flex flex-col items-center gap-2 p-3 max-sm:items-start max-sm:pr-[10rem] transition-opacity duration-500 group-data-[controls=hidden]:opacity-0 sm:p-4">
+    <div role="toolbar" aria-label="{{ l["viz.controls"] }}" data-i18n-aria-label="viz.controls" class="pointer-events-auto flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-2xl bg-gray-900/70 p-2 shadow-2xl shadow-black/50 ring-1 ring-white/15 backdrop-blur-md group-data-[controls=hidden]:pointer-events-none">
+      {%- for mode in ["tunnel", "nebula", "aurora", "bloom", "bars", "warp", "plasma"] %}
+      <button type="button" data-viz-mode="{{ mode }}" aria-pressed="false" class="{{ chip }}" data-i18n="viz.mode.{{ mode }}">{{ l["viz.mode." ~ mode] }}</button>
+      {%- endfor %}
+      <span class="mx-1 hidden h-6 w-px bg-white/15 sm:block" aria-hidden="true"></span>
+      <button type="button" data-viz-cycle aria-pressed="true" class="{{ chip }}" data-i18n="viz.cycle">{{ l["viz.cycle"] }}</button>
+      <button type="button" data-viz-fullscreen class="{{ round }}" aria-label="{{ l["viz.fullscreen"] }}" data-i18n-aria-label="viz.fullscreen" title="{{ l["viz.fullscreen"] }}" data-i18n-title="viz.fullscreen">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H4m0 0v4m0-4 5 5m7-5h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5m7 5h4m0 0v-4m0 4-5-5"/></svg>
+      </button>
+      <button type="button" data-viz-close class="{{ round }}" aria-label="{{ l["viz.close"] }}" data-i18n-aria-label="viz.close" title="{{ l["viz.close"] }}" data-i18n-title="viz.close">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+      </button>
+    </div>
+    <div class="pointer-events-auto flex max-w-full flex-wrap items-center justify-center gap-1.5 rounded-xl bg-gray-900/60 px-2 py-1.5 ring-1 ring-white/10 backdrop-blur group-data-[controls=hidden]:pointer-events-none">
+      <span data-viz-status data-i18n="viz.status_clock" class="px-2 text-xs text-gray-300" aria-live="polite">{{ l["viz.status_clock"] }}</span>
+      <button type="button" data-viz-source="tab" aria-pressed="false" class="{{ chip }}" data-i18n="viz.source.tab">{{ l["viz.source.tab"] }}</button>
+      <button type="button" data-viz-source="mic" aria-pressed="false" class="{{ chip }}" data-i18n="viz.source.mic">{{ l["viz.source.mic"] }}</button>
+      <button type="button" data-viz-source="clock" aria-pressed="true" class="{{ chip }}" data-i18n="viz.source.clock">{{ l["viz.source.clock"] }}</button>
+    </div>
+  </div>
+</div>

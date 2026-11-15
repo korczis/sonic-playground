@@ -325,6 +325,22 @@ async function sweep(browser) {
     (failed.length ? `\n     ${failed.slice(0, 20).join('\n     ')}` : ''));
 }
 
+// How much of a canvas is lit: the share of a 64x36 sample brighter than near-black. A picture
+// that draws nothing (a mode that throws, p5 never loaded) is 0.
+function litShare(selector) {
+  const c = document.querySelector(selector);
+  if (!c) return -1;
+  const g = document.createElement('canvas');
+  g.width = 64;
+  g.height = 36;
+  const x = g.getContext('2d');
+  x.drawImage(c, 0, 0, 64, 36);
+  const d = x.getImageData(0, 0, 64, 36).data;
+  let lit = 0;
+  for (let i = 0; i < d.length; i += 4) if (d[i] + d[i + 1] + d[i + 2] > 60) lit++;
+  return lit / (64 * 36);
+}
+
 // YouTube's terms: the playing video is never hidden. A 5x5 grid over its box, edges included
 // (3 % in), must each hit the video itself, not a panel, sheet, backdrop or toast stacked over
 // it, and the box must be on screen; a covered video passed every earlier check because they
@@ -389,6 +405,30 @@ async function shot(page, name) {
   {
     const { context, response, page } = await open(browser, at(`nope-${Date.now()}/`), desktop);
     check(response.status() === 404 && (await page.locator('h1').textContent()).includes('skipped'), '404 page served for an unknown path');
+    await context.close();
+  }
+
+  // The landing hero: the visualiser draws behind it, the mosaic turns a tile within a few
+  // seconds while nobody points at it, and "Play the newest" still names the nine newest.
+  {
+    const { context, page, errors } = await open(browser, at(''), desktop);
+    const tiles = () => page.evaluate(() => [...document.querySelectorAll('#hero-mosaic > [data-track]')].map((t) => t.dataset.source).join(','));
+    const before = await tiles();
+    await page.waitForFunction(() => Number(document.querySelector('#main [data-visualizer]')?.getAttribute('data-visualizer-frame') || 0) > 30, null, { timeout: 15000 }).catch(() => {});
+    check(await page.evaluate(litShare, '#main [data-visualizer] canvas') > 0, 'hero: the visualiser draws behind the hero');
+    await page.waitForFunction((b) => [...document.querySelectorAll('#hero-mosaic > [data-track]')].map((t) => t.dataset.source).join(',') !== b, before, { timeout: 12000 }).catch(() => {});
+    check(await tiles() !== before, 'hero: the mosaic turns a tile while nobody points at it');
+    const newest = catalog.tracks.filter((t) => t.youtube).slice(0, 9).map((t) => t.source).join(',');
+    check(await page.evaluate(() => [...document.querySelectorAll('#hero-newest [data-track]')].map((t) => t.dataset.source).join(',')) === newest,
+      'hero: "Play the newest" plays the nine newest, whatever the mosaic shows');
+    check(errors.length === 0, `hero: no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // A negative control for litShare: a blank canvas is not a picture.
+  {
+    const { context, page } = await open(browser, at(''), desktop);
+    check(await page.evaluate(() => { const c = document.createElement('canvas'); c.id = 'blank-control'; c.width = 64; c.height = 36; document.body.appendChild(c); return true; })
+      && await page.evaluate(litShare, '#blank-control') === 0, 'visualiser check: a blank canvas counts as unlit (negative control)');
     await context.close();
   }
 
@@ -929,6 +969,26 @@ async function shot(page, name) {
     await card(4, '[data-queue]').click();
     await until({ q: [S[0], S[2], S[3], S[1], S[4]] }, 'player: queued while the panel is open');
     await videoSeen(page, 'player (desktop, queue open, toast shown)');
+    // The visualiser, opened from the queue's tools over a playing video: each mode draws, the
+    // video stays uncovered, the toolbar fades when the pointer rests, Escape closes it and its
+    // ?viz leaves the URL, and the queue is as it was.
+    await page.click('#player-queue [data-visualizer-open]');
+    await page.waitForFunction(() => document.documentElement.getAttribute('data-visualizer') === 'open');
+    check(new URL(page.url()).searchParams.has('viz'), 'visualiser: opening it puts ?viz in the URL');
+    for (const mode of await page.evaluate(() => window.SonicVisualizer.modes())) {
+      await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
+      const from = Number(await page.getAttribute('[data-visualizer-stage]', 'data-visualizer-frame') || 0);
+      await page.waitForFunction((f) => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0) > f + 40, from, { timeout: 15000 }).catch(() => {});
+      check(await page.evaluate(litShare, '[data-visualizer-stage] canvas') > 0, `visualiser: ${mode} draws`);
+      await videoSeen(page, `visualiser (${mode}, desktop, queue open)`);
+    }
+    check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser: nothing listens until the reader asks');
+    await page.waitForFunction(() => document.getElementById('visualizer-full').getAttribute('data-controls') === 'hidden', null, { timeout: 8000 }).catch(() => {});
+    check(await page.getAttribute('#visualizer-full', 'data-controls') === 'hidden', 'visualiser: the toolbar fades while the pointer rests');
+    await page.keyboard.press('Escape');
+    check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer') && document.getElementById('visualizer-full').hidden), 'visualiser: Escape closes it');
+    check(!new URL(page.url()).searchParams.has('viz'), 'visualiser: closing it takes ?viz out of the URL');
+    if (!(await page.isVisible('#player-queue'))) await page.click('[data-player-queue]');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-down]`);
     await until({ q: [S[0], S[2], S[3], S[4], S[1]] }, 'player: a queued track moves down');
     check(await page.evaluate((src) => { const r = document.activeElement && document.activeElement.closest('[data-queue-row]');

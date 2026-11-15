@@ -15,6 +15,7 @@
   "search": "m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z",
   "shuffle": "M16 4h4v4m0-4-5 5M4 20l7-7m9 3v4h-4m4 0-5-5M4 4l5 5",
   "play": "M8 18V6l10 6-10 6Z",
+  "waves": "M3 12h1m3-4v8m4-12v16m4-10v4m4-7v10m2-5h1",
   "calendar": "M4 10h16M8 4v3m8-3v3M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z",
   "clock": "M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
   "link": "M13.2 10.8a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5l.9-.9m-.3-4.7a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5l-.9.9",
@@ -446,16 +447,16 @@ src="{{ get_url(path=t.thumbnail) }}"
   <div class="hero-blob absolute -right-24 -top-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-pink-500/25 blur-3xl" aria-hidden="true"></div>
   <div class="hero-blob hero-blob-alt absolute -bottom-48 left-1/4 -z-10 h-[30rem] w-[30rem] rounded-full bg-primary-500/25 blur-3xl" aria-hidden="true"></div>
   <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgb(255_255_255/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.04)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden="true"></div>
-  <div class="absolute inset-x-0 bottom-0 -z-10 flex h-44 items-end justify-center gap-1 px-4 opacity-40 lg:h-56" aria-hidden="true">
-    {%- for i in range(end=64) %}<span class="eq-bar w-1.5 rounded-t bg-gradient-to-t from-primary-500 to-pink-400 sm:w-2" style="--i: {{ i }}"></span>{% endfor %}
-  </div>
+  <div data-hero-backdrop class="absolute inset-0 -z-10 opacity-35 mix-blend-soft-light" aria-hidden="true"></div>
+  {{ <visualizer mode="aurora" cycle={true} cls="absolute inset-0 -z-10 opacity-40 mix-blend-screen" /> }}
+  <button type="button" data-visualizer-open class="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-inset ring-white/20 backdrop-blur hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary-500 sm:right-4 sm:top-4" aria-label="{{ <tr key="viz.open" l={l} /> }}" data-i18n-aria-label="viz.open" title="{{ <tr key="viz.open" l={l} /> }}" data-i18n-title="viz.open">{{ <icon name="waves" /> }}</button>
   <div class="grid items-center gap-12 px-4 pb-32 pt-10 sm:pt-16 lg:min-h-[40rem] lg:grid-cols-12 lg:pb-36 xl:px-8">
     <div class="lg:col-span-7">
       <p class="mb-6 inline-flex flex-wrap items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-primary-100 ring-1 ring-inset ring-white/20 backdrop-blur"><span class="relative mr-2 flex h-2.5 w-2.5" aria-hidden="true"><span class="hero-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span><span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-pink-500"></span></span>{{ <tx key="home.eyebrow" l={l} vars={eyebrow_vars} /> }}</p>
       <h1 class="mb-6 text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl xl:text-7xl 2xl:text-8xl"><span class="block">{{ <tx key="home.headline" l={l} /> }}</span><span class="block bg-gradient-to-r from-primary-300 via-pink-300 to-amber-200 bg-clip-text pb-2 text-transparent">{{ <tx key="home.headline_accent" l={l} /> }}</span></h1>
       <p class="mb-8 max-w-2xl text-lg font-normal text-gray-300 sm:text-xl">{{ <tx key="home.lead" l={l} vars={lead_vars} /> }}</p>
       <div class="flex flex-col gap-3 sm:flex-row">
-        <button type="button" data-play-all="hero-mosaic" class="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary-600 to-pink-600 px-6 py-3.5 text-center text-base font-semibold text-white shadow-lg shadow-pink-900/40 hover:from-primary-500 hover:to-pink-500 focus:outline-none focus:ring-4 focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-5 w-5" /> }}{{ <tx key="home.cta_play" l={l} /> }}</button>
+        <button type="button" data-play-all="hero-newest" class="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary-600 to-pink-600 px-6 py-3.5 text-center text-base font-semibold text-white shadow-lg shadow-pink-900/40 hover:from-primary-500 hover:to-pink-500 focus:outline-none focus:ring-4 focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-5 w-5" /> }}{{ <tx key="home.cta_play" l={l} /> }}</button>
         <a href="{{ primary_href }}" class="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/5 px-6 py-3.5 text-center text-base font-medium text-white backdrop-blur hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-gray-700">{{ <tx key="home.cta_explore" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-5 w-5" /> }}</a>
         <a href="{{ secondary_href }}" class="inline-flex items-center justify-center px-2 py-3.5 text-center text-base font-medium text-gray-300 underline-offset-4 hover:text-white hover:underline">{{ <tx key="home.cta_why" l={l} /> }}</a>
       </div>
@@ -474,16 +475,27 @@ src="{{ get_url(path=t.thumbnail) }}"
         {%- for t in tracks %}
         {%- if t.youtube and shown < 9 %}
         {%- set_global shown = shown + 1 %}
-        {%- set label = t.artist ~ " – " ~ t.track %}
-        <button type="button" data-track data-source="{{ t.source }}" data-play="{{ t.source }}" class="group relative aspect-square overflow-hidden rounded-xl shadow-xl shadow-black/40 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:ring-white/40 focus:outline-none focus:ring-4 focus:ring-primary-500{% if shown % 3 == 2 %} translate-y-5 hover:translate-y-4{% endif %}{% if shown > 6 %} hidden sm:block{% endif %}" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": label} } /> }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">
-          <img {{ <still t={t} sizes="(min-width: 1024px) 160px, 33vw" /> }} alt="" data-thumb loading="lazy" width="320" height="180" class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
-          <span class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent"></span>
-          <span class="absolute bottom-1.5 left-1.5 right-1.5 truncate text-left text-[11px] font-semibold text-white sm:text-xs">{{ t.artist }}</span>
-          <span class="absolute inset-0 flex items-center justify-center opacity-0 transition group-hover:opacity-100 group-focus:opacity-100"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span></span>
-        </button>
+        {{ <hero_tile t={t} l={l} shown={shown} /> }}
         {%- endif %}
         {%- endfor %}
       </div>
+      {#- What "Play the newest" plays: the nine newest, whatever the turning mosaic shows. -#}
+      <div id="hero-newest" hidden>
+        {%- set_global listed = 0 %}
+        {%- for t in tracks %}{% if t.youtube and listed < 9 %}{% set_global listed = listed + 1 %}<span data-track data-source="{{ t.source }}"></span>{% endif %}{% endfor %}
+      </div>
+      {#- The tiles that turn into the mosaic, one every few seconds (static/js/hero.js). -#}
+      <template data-hero-pool>
+        {%- set_global pooled = 0 %}
+        {%- for t in tracks %}
+        {%- if t.youtube %}
+        {%- set_global pooled = pooled + 1 %}
+        {%- if pooled > 9 and pooled <= 36 %}
+        {{ <hero_tile t={t} l={l} shown={1} /> }}
+        {%- endif %}
+        {%- endif %}
+        {%- endfor %}
+      </template>
       {%- if deep %}
       {#- The longest review: a glass card over the mosaic that plays it and links to it. -#}
       {%- if l.lang in deep.langs %}{% set deep_href = get_url(path="@/" ~ deep.source, lang=l.lang) %}{% else %}{% set deep_href = get_url(path="@/" ~ deep.source, lang=deep.langs | first) %}{% endif %}
@@ -504,6 +516,25 @@ src="{{ get_url(path=t.thumbnail) }}"
   </div>
 </header>
 {% endcomponent site_hero %}
+
+{#- A tile of the landing mosaic: a still that plays its track on a click. `shown` (1-9) sets its
+    offset and whether a phone shows it; the pool's tiles take the place of the one they replace. -#}
+{% component hero_tile(t, l, shown) %}
+{%- set label = t.artist ~ " – " ~ t.track %}
+<button type="button" data-track data-source="{{ t.source }}" data-play="{{ t.source }}" class="group relative aspect-square overflow-hidden rounded-xl shadow-xl shadow-black/40 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1 hover:ring-white/40 focus:outline-none focus:ring-4 focus:ring-primary-500{% if shown % 3 == 2 %} translate-y-5 hover:translate-y-4{% endif %}{% if shown > 6 %} hidden sm:block{% endif %}" aria-label="{{ <tr key="card.play" l={l} vars={ {"label": label} } /> }}" data-i18n-aria-label="card.play" data-i18n-vars="{{ {"label": label} | json_encode }}">
+  <img {{ <still t={t} sizes="(min-width: 1024px) 160px, 33vw" /> }} alt="" data-thumb loading="lazy" width="320" height="180" class="h-full w-full object-cover transition duration-500 group-hover:scale-110">
+  <span class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-transparent to-transparent"></span>
+  <span class="absolute bottom-1.5 left-1.5 right-1.5 truncate text-left text-[11px] font-semibold text-white sm:text-xs">{{ t.artist }}</span>
+  <span class="absolute inset-0 flex items-center justify-center opacity-0 transition group-hover:opacity-100 group-focus:opacity-100"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg">{{ <icon name="play" cls="ml-0.5 h-5 w-5" /> }}</span></span>
+</button>
+{% endcomponent hero_tile %}
+
+{#- The visualiser (static/js/visualizer.js) in any box: a p5 picture of what is playing, in one
+    of its modes, optionally changing mode every 40 s. Decorative (aria-hidden); it stays empty
+    for readers who ask for reduced motion. The full-screen picture is partials/visualizer.html. -#}
+{% component visualizer(mode, cls, cycle=false) %}
+<div data-visualizer="{{ mode }}"{% if cycle %} data-visualizer-cycle{% endif %} class="pointer-events-none {{ cls }}" aria-hidden="true"></div>
+{% endcomponent visualizer %}
 
 {#- Featured track (Publisher "featured post"): the newest review with a picture, large. -#}
 {% component featured_track(t, l) %}
