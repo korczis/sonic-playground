@@ -6,8 +6,9 @@ artists: ["Mount Sims"]
 album: "UltraSex"
 duration: "4:51"
 spotify: {"track": "50i9vPCkHgEEfNuMsj01ji", "album": "6IvwFVN9YI9Bokka32c80b", "artists": ["2UyhhfLOvfLs7ZhzsAaNC3"]}
-keys: {"fold": "mountsims|blacksunglasses"}
-status: "missing"
+keys: {"fold": "mountsims|blacksunglasses", "musicbrainz": "5d54701b-4459-4218-939c-e0311708a1e4"}
+review: "mount-sims-black-sunglasses.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2016, "n": 19}
@@ -26,4 +27,4 @@ Your Top Songs 2016: #19.
 Your Top Songs 2020: #32.
 Your Top Songs 2021: #15.
 In My Top Songs of All the Time (#19).
-No review yet.
+Reviewed: content/mount-sims-black-sunglasses.md.

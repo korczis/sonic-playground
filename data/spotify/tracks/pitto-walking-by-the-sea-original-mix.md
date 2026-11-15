@@ -6,8 +6,9 @@ artists: ["Pitto"]
 album: "Objects In A Mirror Are Closer Than They Appear"
 duration: "5:15"
 spotify: {"track": "3rjZzxVyOJyVVjvYeFA8nu", "album": "2pTF9EtqiTuIlsrIXCei5k", "artists": ["4qGSmvW1ZXE9qeXUdoFuTG"]}
-keys: {"fold": "pitto|walkingbythesea"}
-status: "missing"
+keys: {"fold": "pitto|walkingbythesea", "musicbrainz": "00cbebc6-58be-40be-adb0-50dbbe6ce869"}
+review: "pitto-walking-by-the-sea.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 96}
@@ -23,4 +24,4 @@ From the album *Objects In A Mirror Are Closer Than They Appear*, 5:15.
 A liked song.
 Your Top Songs 2019: #96.
 In Best of the Best (#25); My Top Songs of All the Time (#369).
-No review yet.
+Reviewed: content/pitto-walking-by-the-sea.md.

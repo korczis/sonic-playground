@@ -6,8 +6,9 @@ artists: ["Nonku Phiri"]
 album: "Things We Do on the Weekend"
 duration: "4:12"
 spotify: {"track": "00d03eGeoWTaFLJ1AshFWE", "album": "4EVhaZdfFvoQmtzxFVFlbL", "artists": ["3bvppKM40kKBkO2zZECrBV"]}
-keys: {"fold": "nonkuphiri|thingswedoontheweekend"}
-status: "missing"
+keys: {"fold": "nonkuphiri|thingswedoontheweekend", "musicbrainz": "f9091daa-70a6-4ad4-b6d1-74e0fdc2cd65"}
+review: "nonku-phiri-things-we-do-on-the-weekend.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 83}
@@ -22,4 +23,4 @@ From the album *Things We Do on the Weekend*, 4:12.
 A liked song.
 Your Top Songs 2018: #83.
 In My Top Songs of All the Time (#267).
-No review yet.
+Reviewed: content/nonku-phiri-things-we-do-on-the-weekend.md.

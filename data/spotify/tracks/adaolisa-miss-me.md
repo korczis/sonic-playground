@@ -7,7 +7,8 @@ album: "Miss Me"
 duration: "2:58"
 spotify: {"track": "4m7YrGPVCE2PE2tntZS8Y3", "album": "0m1jaOFxVEimjUANcOSM2E", "artists": ["2WlLxOuhMiMtXh8KIL7T5k", "5MFBYebwzR6jmzclB0hbTM"]}
 keys: {"fold": "adaolisa|missme"}
-status: "missing"
+review: "adaolisa-madl-miss-me.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 57}
@@ -22,4 +23,4 @@ From the album *Miss Me*, 2:58.
 A liked song.
 Your Top Songs 2021: #57.
 In My Top Songs of All the Time (#496).
-No review yet.
+Reviewed: content/adaolisa-madl-miss-me.md.
