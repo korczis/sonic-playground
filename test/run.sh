@@ -22,6 +22,9 @@ unset $(git rev-parse --local-env-vars)
 BOUND="${MJ_CASE_TIMEOUT:-600}"
 report="${MJ_TEST_REPORT:-}"
 [ -n "$report" ] && : > "$report"
+# The report is this run's. A case that runs the runner itself (67) would inherit the variable,
+# truncate the file and leave only its own rows: on 2026-11-15 a 10-case run reported 2.
+unset MJ_TEST_REPORT
 
 cases=()
 if [ "$#" -eq 0 ]; then
@@ -56,5 +59,9 @@ for file in "${cases[@]}"; do
   fi
 done
 
+if [ -n "$report" ] && [ "$(wc -l < "$report")" -ne "${#cases[@]}" ]; then
+  echo "run.sh: the report holds $(wc -l < "$report" | tr -d ' ') row(s) for ${#cases[@]} case(s)" >&2
+  exit 1
+fi
 [ "$failed" -eq 0 ] || { echo "run.sh: $failed of ${#cases[@]} case(s) failed" >&2; exit 1; }
 echo "run.sh: ${#cases[@]} case(s) passed"
