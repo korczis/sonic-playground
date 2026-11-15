@@ -23068,6 +23068,121 @@
     }
    ]
   },
+  "gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gak, Babs, Mysonne, Lord Tariq, Cuban Linx",
+      "sameAs": "https://musicbrainz.org/artist/c5028308-353d-49c1-b8a5-dd623c09abbd"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Pow Europe"
+     },
+     "isrcCode": "FR9W11003435",
+     "name": "Coo Coo",
+     "sameAs": [
+      "https://musicbrainz.org/recording/eac3466c-c653-4698-954f-79764f001d93"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Coo Coo (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/eac3466c-c653-4698-954f-79764f001d93"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Pow Europe (CD release, ZINCD004)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/3708134c-81bc-446c-92e7-7eb28076b19c"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gak, le rappeur niçois, sort \"Pow Europe\" sous label américain",
+       "publisher": "franceinfo Culture",
+       "url": "https://www.franceinfo.fr/culture/musique/electro/gak-le-rappeur-nicois-sort-quot-pow-europequot-sous-label-americain_3285255.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Gak : 06, appel entrant",
+       "publisher": "Abcdr du Son",
+       "url": "https://www.abcdrduson.com/interviews/gak-touche-noire/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Pow Europe",
+       "publisher": "Spotify",
+       "url": "https://open.spotify.com/album/6A6722lu450i01qI0rGOB4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "DJ Whoo Kid",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/DJ_Whoo_Kid"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lord Tariq and Peter Gunz",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lord_Tariq_and_Peter_Gunz"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Cuban Link",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Cuban_Link"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Skladba z dvojalba Pow Europe, které v roce 2010 vydal rapper z Nice Gak společně s DJ Whoo Kidem; jako hosté jsou uvedeni Babs, Mysonne, Lord Tariq a Cuban Link. Vydání je dobře zdokumentované, o samotné skladbě však žádný zdroj nic neříká.",
+     "headline": "Gak, Babs, Mysonne, Lord Tariq, Cuban Linx - Coo Coo",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/",
+     "wordCount": 576
+    }
+   ]
+  },
   "galt-macdermot-coffee-cold.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -34075,6 +34190,143 @@
     }
    ]
   },
+  "kilian-finn-free-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kilian-finn-free-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kilian & Finn",
+      "sameAs": "https://musicbrainz.org/artist/eba52f9e-721d-4c6e-bf47-250755e85865"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "dance",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Free"
+     },
+     "name": "Free - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f62f616b-8d0e-40ae-b83c-37402ecafb5b",
+      "https://www.youtube.com/watch?v=khghkX1b25s"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/kilian-finn-free-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kilian-finn-free-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Free (feat. Newshoes) - EP",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/de/album/free-feat-newshoes-ep/899126631"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Free (Radio Mix)",
+       "publisher": "YouTube (Kilian&Finn - Topic)",
+       "url": "https://www.youtube.com/watch?v=-hnAbaTUd74"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Free(feat. NewShoes) - EP (Bang Record)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/it/album/free-feat-newshoes-ep/923562372"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Free (Remix) [feat. Newshoes] - Single (FuturePlay)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/fr/album/free-remix-feat-newshoes-single/1444447605"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "KILIAN&FINN feat. NewShoes - Free (Original Mix)",
+       "publisher": "YouTube (FuturePlay)",
+       "url": "https://www.youtube.com/watch?v=khghkX1b25s"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Free (Original Mix) by KILIAN&FINN feat. NewShoes",
+       "publisher": "Hype Machine",
+       "url": "https://hypem.com/track/23h3e/KILIAN&FINN%20feat.%20NewShoes%20-%20Free%20%28Original%20Mix%29"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Get ready to Shake to KILIAN&FINN's Human Movement remix",
+       "publisher": "EARMILK",
+       "url": "https://earmilk.com/2014/11/25/get-ready-to-shake-to-kilianfinns-human-movement-remix/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Sommertraum, Vol. 1",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/de/album/sommertraum-vol-1/1025656747"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Free (Kilian & Finn feat. NewShoes)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/f62f616b-8d0e-40ae-b83c-37402ecafb5b"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Původní mix skladby Free, singlu německého dua Kilian & Finn z roku 2014 s hostujícím hlasem NewShoes, který vyšel na labelu Exposure Music, jejž duo vedlo, spolu s rádiovou verzí a dvěma remixy od LCAW.",
+     "headline": "Kilian & Finn - Free - Original Mix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/kilian-finn-free-original-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/kilian-finn-free-original-mix/",
+     "wordCount": 458
+    }
+   ]
+  },
   "klangkarusell-moments.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -34260,6 +34512,129 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/klangkarussell-we-want-your-soul/",
      "wordCount": 610
+    }
+   ]
+  },
+  "klangkuenstler-alice-phoebe-lou-amsterdam.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/klangkuenstler-alice-phoebe-lou-amsterdam/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Klangkuenstler, Alice Phoebe Lou",
+      "sameAs": "https://musicbrainz.org/artist/dc60d275-d4d1-4bf2-b32c-4aa2332d7459"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "tech house",
+      "electro-house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "That's Me"
+     },
+     "isrcCode": "GBGNS1401230",
+     "name": "Amsterdam",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8d29cdc4-6aad-4488-8fec-f7a9f4609042"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/klangkuenstler-alice-phoebe-lou-amsterdam/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/klangkuenstler-alice-phoebe-lou-amsterdam/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "KlangKuenstler - That's Me",
+       "publisher": "Sunday Best (Bandcamp)",
+       "url": "https://sundaybest.bandcamp.com/album/thats-me"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Amsterdam feat. Alice Phoebe Lou",
+       "publisher": "Sunday Best (Bandcamp)",
+       "url": "https://sundaybest.bandcamp.com/track/amsterdam-feat-alice-phoebe-lou"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Amsterdam (That's Me)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/8d29cdc4-6aad-4488-8fec-f7a9f4609042"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Amsterdam (work)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/work/01b25600-50f7-4ca4-be99-f3fb321266af"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Klangkuenstler - Das bin ich",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/eb0bbb36-3a8d-4873-926a-cc40c680fa03"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "KlangKuenstler",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/KlangKuenstler"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Alice Phoebe Lou",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Alice_Phoebe_Lou"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Amsterdam (Alice Phoebe Lou, Orbit)",
+       "publisher": "YouTube (Alice Phoebe Lou - Topic)",
+       "url": "https://www.youtube.com/watch?v=TM0cLpxTMN4"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Jedna ze dvou písní debutového alba That's Me (2014) producenta KlangKuenstler, které zpívá v Kapském Městě narozená Alice Phoebe Lou a které s ním také napsala; delší, starší nahrávka vyšla na německém vydání alba, Das bin ich.",
+     "headline": "Klangkuenstler, Alice Phoebe Lou - Amsterdam",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/klangkuenstler-alice-phoebe-lou-amsterdam/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/klangkuenstler-alice-phoebe-lou-amsterdam/",
+     "wordCount": 481
     }
    ]
   },
@@ -35360,6 +35735,156 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/knopfauge-saschienne/",
      "wordCount": 541
+    }
+   ]
+  },
+  "kollektiv-turmstrasse-grillen-im-garten-gerberei-version.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kollektiv Turmstrasse",
+      "sameAs": "https://musicbrainz.org/artist/68205877-7c7b-45c7-adb6-2edb9b380e2f"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "tech house",
+      "minimal",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Musik Gewinnt Freunde Collection"
+     },
+     "isrcCode": "DELF21302307",
+     "name": "Grillen im Garten - Gerberei Version",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6d240842-21c2-4b2f-bc5d-f3d1b117851c"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Kollektiv Turmstrasse - Musik Gewinnt Freunde Collection",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/4846874-Kollektiv-Turmstrasse-Musik-Gewinnt-Freunde-Collection"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Grillen Im Garten (Gerberei version)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/6d240842-21c2-4b2f-bc5d-f3d1b117851c"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Grillen im Garten (Gerberei Version)",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/en/track/68485989"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Kollektiv Turmstraße - Grillen Im Park",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/970072-Kollektiv-Turmstra%C3%9Fe-Grillen-Im-Park"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Grillen im Park (Ostwind Records, OW010)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/a7552b93-84f3-496b-ad5b-11257814ebf8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Various - Living For The Night (Gerberei 15)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/92d69723-f610-40a1-8152-49d94054c632"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Kollektiv Turmstrasse - Grillen Im Park (Remixes)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2308621"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Grillen im Park (Bart Skils Remix)",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/en/track/67435712"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Grillen Im Garten (Original Mix)",
+       "publisher": "YouTube (Kollektiv Turmstrasse - Topic)",
+       "url": "https://www.youtube.com/watch?v=MpWDJyObVGM"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kollektiv Turmstrasse",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/213601"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kollektiv Turmstraße",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kollektiv_Turmstra%C3%9Fe"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Musik Gewinnt Freunde Collection",
+       "publisher": "Last.fm",
+       "url": "https://www.last.fm/music/Kollektiv+Turmstrasse/Musik+Gewinnt+Freunde+Collection"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Sedmiminutová verze klubové skladby Grillen im Garten od Kollektiv Turmstrasse, sedmá z jedenácti skladeb kompilace Musik Gewinnt Freunde Collection, digitálního výběru skladeb hamburského dua, který v roce 2013 vydal label Musik Gewinnt Freunde.",
+     "headline": "Kollektiv Turmstrasse - Grillen im Garten - Gerberei Version",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/",
+     "wordCount": 529
     }
    ]
   },
@@ -42057,6 +42582,138 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/max-manie-dance-radio-edit/",
      "wordCount": 454
+    }
+   ]
+  },
+  "me-her-david-keno-walking-boots.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/me-her-david-keno-walking-boots/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "ME & her, David Keno",
+      "sameAs": "https://musicbrainz.org/artist/3598d83b-85aa-471c-b837-35dd3910cb34"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "deep house",
+      "tech house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Alpine Grooves, Vol. 7 (Kristallhütte)"
+     },
+     "isrcCode": "ES84B1310228",
+     "name": "Walking Boots",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2ba1013a-47cd-4ec5-8751-8d196874e70a",
+      "https://www.youtube.com/watch?v=qJFMYBHRzIg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/me-her-david-keno-walking-boots/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/me-her-david-keno-walking-boots/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Various - Kitties Go Deep Vol. 2",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6316672-Various-Kitties-Go-Deep-Vol-2"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Me & Her, David Keno - Walking Boots (Original Mix) (Bloomingdale 2014)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6316685-Me-Her-David-Keno-Walking-Boots-Original-Mix-"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Various - Suara #BeatportDecade Deep House",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6316737-Various-Suara-BeatportDecade-Deep-House"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Various - Alpine Grooves Volume VII",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/11522590-Various-Alpine-Grooves-Volume-VII"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "David Keno",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/394051"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Me & Her",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/4045859"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "ME & her & David Keno - Walking Boots (Original Mix) [Suara]",
+       "publisher": "YouTube (Suara Music)",
+       "url": "https://www.youtube.com/watch?v=qJFMYBHRzIg"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Walking Boots",
+       "publisher": "YouTube (David Keno - Topic)",
+       "url": "https://www.youtube.com/watch?v=5QnoubsNAE8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Walking Boots (Alpine Grooves, Vol. 7)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2ba1013a-47cd-4ec5-8751-8d196874e70a"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Deep house skladba, kterou ME & her a ve Švýcarsku narozený producent David Keno společně napsali a produkovali. Poprvé vyšla v únoru 2014 na kompilaci Kitties Go Deep Vol. 2 labelu Suara; zde zní tak, jak ji label licencoval rakouské kompilaci Alpine Grooves, Vol. 7 (Kristallhütte).",
+     "headline": "ME & her, David Keno - Walking Boots",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/club-culture/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/me-her-david-keno-walking-boots/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/me-her-david-keno-walking-boots/",
+     "wordCount": 567
     }
    ]
   },
@@ -53359,6 +54016,109 @@
     }
    ]
   },
+  "qodes-poison.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/qodes-poison/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Qodës",
+      "sameAs": "https://musicbrainz.org/artist/fd33be3f-1f72-4808-9672-7f6b5d642af8"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "deep house",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Poison"
+     },
+     "isrcCode": "TCAEH1947034",
+     "name": "Poison",
+     "sameAs": [
+      "https://musicbrainz.org/recording/87773c4e-4270-49db-9c5c-d83960a3f77f",
+      "https://www.youtube.com/watch?v=9ay1nB2i9dE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/qodes-poison/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/qodes-poison/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Q o d ë s ft. ATHENA - Poison",
+       "publisher": "SoundCloud",
+       "url": "https://soundcloud.com/qodesmusic/q-o-d-e-s-athena-poison"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Poison - Single",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/ro/album/poison-single/1470671172"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Poison (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/87773c4e-4270-49db-9c5c-d83960a3f77f"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Q o d ë s ft. ATHENA - Poison",
+       "publisher": "Q o d ë s (YouTube)",
+       "url": "https://www.youtube.com/watch?v=9ay1nB2i9dE"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Deephousový singl Poison od Qodës, na němž hostuje ATHENA; poprvé se objevil na SoundCloudu v roce 2018 a na streamovacích službách vyšel v roce 2019. Vydání je zdokumentované, samotnou skladbu však žádný zdroj nepopisuje.",
+     "headline": "Qodës - Poison",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "extended mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/extended-mix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/qodes-poison/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/qodes-poison/",
+     "wordCount": 433
+    }
+   ]
+  },
   "queen-another-one-bites-the-dust-remastered-2011.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -56275,6 +57035,132 @@
     }
    ]
   },
+  "say-yes-dog-into-you.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-into-you/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Say Yes Dog",
+      "sameAs": "https://musicbrainz.org/artist/98671aa3-48d2-497f-8dcf-dd33542f7dc1"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "synth-pop",
+      "electro-pop",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Voyage"
+     },
+     "name": "Into You",
+     "sameAs": [
+      "https://musicbrainz.org/recording/19d7d5f5-877d-4152-b19a-4edf45150199",
+      "https://www.youtube.com/watch?v=wdAIqE-i4I0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/say-yes-dog-into-you/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-into-you/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "soundmag.de",
+       "url": "https://www.soundmag.de/reviews/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "MusikBlog",
+       "url": "https://www.musikblog.de/2019/05/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "Bedroomdisco",
+       "url": "https://www.bedroomdisco.de/2019/05/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage (LP, SYDVOYAGE 002)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/13978778"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog - Into You (credits)",
+       "publisher": "Shazam",
+       "url": "https://www.shazam.com/song/1458013157/into-you"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog - Into You (lyrics)",
+       "publisher": "Musixmatch",
+       "url": "https://www.musixmatch.com/lyrics/Say-Yes-Dog/Into-You"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Into You (Voyage, provided to YouTube by The Orchard Enterprises)",
+       "publisher": "YouTube (Say Yes Dog - Topic)",
+       "url": "https://www.youtube.com/watch?v=wdAIqE-i4I0"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Say_Yes_Dog"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Osmá skladba alba Voyage, které Say Yes Dog vydali v roce 2019: noční píseň o zamilování. Žádná recenze ji nevyzdvihuje, a tak se tato stránka opírá o recenze alba, jeho kredity a publikovaný text.",
+     "educationalLevel": "introductory",
+     "headline": "Say Yes Dog - Into You",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "verse-chorus form",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/verse-chorus-form/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-into-you/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/say-yes-dog-into-you/",
+     "wordCount": 456
+    }
+   ]
+  },
   "say-yes-dog-lies.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -56384,6 +57270,132 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/say-yes-dog-lies/",
      "wordCount": 520
+    }
+   ]
+  },
+  "say-yes-dog-my-soul.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-my-soul/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Say Yes Dog",
+      "sameAs": "https://musicbrainz.org/artist/98671aa3-48d2-497f-8dcf-dd33542f7dc1"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "synth-pop",
+      "electro-pop",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Voyage"
+     },
+     "name": "My Soul",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d556bf77-f450-418a-b09f-25e032ef4e12",
+      "https://www.youtube.com/watch?v=SAua9z79t30"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/say-yes-dog-my-soul/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-my-soul/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "soundmag.de",
+       "url": "https://www.soundmag.de/reviews/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "MusikBlog",
+       "url": "https://www.musikblog.de/2019/05/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "Bedroomdisco",
+       "url": "https://www.bedroomdisco.de/2019/05/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage (LP, SYDVOYAGE 002)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/13978778"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog - My Soul (credits)",
+       "publisher": "Shazam",
+       "url": "https://www.shazam.com/song/1458012834/my-soul"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog - My Soul (lyrics)",
+       "publisher": "Musixmatch",
+       "url": "https://www.musixmatch.com/lyrics/Say-Yes-Dog/My-Soul"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "My Soul (Voyage, provided to YouTube by The Orchard Enterprises)",
+       "publisher": "YouTube (Say Yes Dog - Topic)",
+       "url": "https://www.youtube.com/watch?v=SAua9z79t30"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Say_Yes_Dog"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Druhá skladba alba Voyage, které Say Yes Dog vydali v roce 2019: milostná píseň, jejíž refrén tvoří jediný opakovaný verš. Žádná recenze ji nevyzdvihuje, a tak se tato stránka opírá o recenze alba, jeho kredity a publikovaný text.",
+     "educationalLevel": "introductory",
+     "headline": "Say Yes Dog - My Soul",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-my-soul/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/say-yes-dog-my-soul/",
+     "wordCount": 464
     }
    ]
   },
@@ -58138,6 +59150,124 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/smoke-city-underwater-love/",
      "wordCount": 512
+    }
+   ]
+  },
+  "soeren-lindberg-janine-delon-one-last-dance-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/soeren-lindberg-janine-delon-one-last-dance-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Soeren Lindberg, Janine Delon",
+      "sameAs": "https://musicbrainz.org/artist/b6079798-4582-43f3-91af-3f7bfd258d4d"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "house",
+      "deep house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "One Last Dance"
+     },
+     "name": "One Last Dance - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f66472b1-32ad-44ba-aaa0-b6b885c611e3",
+      "https://www.youtube.com/watch?v=4gNcwe-Izk8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/soeren-lindberg-janine-delon-one-last-dance-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/soeren-lindberg-janine-delon-one-last-dance-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "One Last Dance (feat. Janine Delon) - Single",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/gb/album/one-last-dance-feat-janine-delon-single/839624380"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "One Last Dance (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/935355e9-d3f4-4ea5-bb02-28f724095b7a"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "One Last Dance (Original Mix), from Deep Down Lake",
+       "publisher": "Release - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=4gNcwe-Izk8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "One Last Dance, from Sommertanz, Vol. 1",
+       "publisher": "Soeren Lindberg - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=lELrJUHsM0Y"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fadersport",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/207470-Fadersport"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Fadersport, Vol. 4",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/de/album/fadersport-vol-4/1060171274"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Deep Deep Deep (Deep House Tracks Directly from the Clubs)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/de/album/deep-deep-deep-deep-house-tracks-directly-from-the-clubs/1062896633"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Původní verze One Last Dance o délce 4:48, singlu Soerena Lindberga z roku 2014, který vyšel u hamburského vydavatelství Fadersport a na němž hostuje Janine Delon; později se objevil na více než tuctu housových kompilací. Vydání je zdokumentované, jeho zvuk ne.",
+     "headline": "Soeren Lindberg, Janine Delon - One Last Dance - Original Mix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/soeren-lindberg-janine-delon-one-last-dance-original-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/soeren-lindberg-janine-delon-one-last-dance-original-mix/",
+     "wordCount": 500
     }
    ]
   },
@@ -61745,6 +62875,107 @@
     }
    ]
   },
+  "the-hanging-tree-the-hanging-tree.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-hanging-tree-the-hanging-tree/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Hanging Tree"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "cover",
+      "soundtrack"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Hanging Tree"
+     },
+     "name": "The Hanging Tree",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=_ABCB0YNfOE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-hanging-tree-the-hanging-tree/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-hanging-tree-the-hanging-tree/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "The Hanging Tree - Single by The Hanging Tree",
+       "publisher": "Spotify",
+       "url": "https://open.spotify.com/album/53MUe4l43EuzKOgqSqbeXo"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "The Hanging Tree (Hanging Tree - Topic, Blue Charts Records)",
+       "publisher": "YouTube (Hanging Tree - Topic)",
+       "url": "https://www.youtube.com/watch?v=_ABCB0YNfOE"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Hanging Tree (The Hunger Games song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Hanging_Tree_(The_Hunger_Games_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Blue Charts Records",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/4600701"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Nejde o filmovou nahrávku: singl s písní z Hunger Games: Síla vzdoru 1. část z roku 2014, vydaný pod jménem interpreta The Hanging Tree u Blue Charts Records tři dny po singlu ze soundtracku, se stejnou uváděnou délkou a bez jména účinkujících.",
+     "educationalLevel": "introductory",
+     "headline": "The Hanging Tree - The Hanging Tree",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sound-alike recording",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sound-alike-recording/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/soundtrack/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-hanging-tree-the-hanging-tree/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-hanging-tree-the-hanging-tree/",
+     "wordCount": 496
+    }
+   ]
+  },
   "the-horroris-one-night-in-nyc.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -64963,6 +66194,118 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/totally-enormous-extinct-dinosaurs-garden/",
      "wordCount": 487
+    }
+   ]
+  },
+  "touch-go-tango-in-harlem.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/touch-go-tango-in-harlem/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Touch & Go",
+      "sameAs": "https://musicbrainz.org/artist/83a554c5-4fd3-4ec8-9dd5-15989850ea17"
+     },
+     "datePublished": "1999",
+     "genre": [
+      "lounge",
+      "jazz",
+      "big beat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "I Find You Very Attractive"
+     },
+     "isrcCode": "GBBLK9900236",
+     "name": "Tango In Harlem",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3461d894-5cf3-469d-a937-8d6131a1a54e",
+      "https://www.youtube.com/watch?v=nTNRKrqKhQk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/touch-go-tango-in-harlem/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/touch-go-tango-in-harlem/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Touch & Go",
+       "publisher": "acidjazz.ru",
+       "url": "https://www.acidjazz.ru/en/artists/touch-and-go"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Touch and Go (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Touch_and_Go_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1999",
+       "name": "Touch And Go - I Find You Very Attractive (CD, Europe, 1999)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3931243"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Touch & Go - Tango In Harlem (lyrics and writers)",
+       "publisher": "Musixmatch",
+       "url": "https://www.musixmatch.com/lyrics/Touch-Go/Tango-In-Harlem"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1999",
+       "name": "Tango In Harlem (I Find You Very Attractive, provided to YouTube by Universal Music Group)",
+       "publisher": "YouTube (Touch & Go - Topic)",
+       "url": "https://www.youtube.com/watch?v=nTNRKrqKhQk"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Tango in Harlem",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3461d894-5cf3-469d-a937-8d6131a1a54e"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Skladba z debutového alba Touch & Go I Find You Very Attractive z roku 1999, kterou napsali David Lowe a zpěvačka Julia Lara Fischer: zasněžená historka z Harlemu vyprávěná nad retro-lounge jazzem projektu, později uváděná jako singl z roku 2001.",
+     "educationalLevel": "introductory",
+     "headline": "Touch & Go - Tango In Harlem",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "spoken word",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/spoken-word/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/touch-go-tango-in-harlem/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/touch-go-tango-in-harlem/",
+     "wordCount": 533
     }
    ]
   },
@@ -90760,6 +92103,118 @@
     }
    ]
   },
+  "gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gak, Babs, Mysonne, Lord Tariq, Cuban Linx",
+      "sameAs": "https://musicbrainz.org/artist/c5028308-353d-49c1-b8a5-dd623c09abbd"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Pow Europe"
+     },
+     "isrcCode": "FR9W11003435",
+     "name": "Coo Coo",
+     "sameAs": [
+      "https://musicbrainz.org/recording/eac3466c-c653-4698-954f-79764f001d93"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Coo Coo (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/eac3466c-c653-4698-954f-79764f001d93"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Pow Europe (CD release, ZINCD004)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/3708134c-81bc-446c-92e7-7eb28076b19c"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gak, le rappeur niçois, sort \"Pow Europe\" sous label américain",
+       "publisher": "franceinfo Culture",
+       "url": "https://www.franceinfo.fr/culture/musique/electro/gak-le-rappeur-nicois-sort-quot-pow-europequot-sous-label-americain_3285255.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Gak : 06, appel entrant",
+       "publisher": "Abcdr du Son",
+       "url": "https://www.abcdrduson.com/interviews/gak-touche-noire/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Pow Europe",
+       "publisher": "Spotify",
+       "url": "https://open.spotify.com/album/6A6722lu450i01qI0rGOB4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "DJ Whoo Kid",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/DJ_Whoo_Kid"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lord Tariq and Peter Gunz",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lord_Tariq_and_Peter_Gunz"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Cuban Link",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Cuban_Link"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "A track from Pow Europe, the 2010 double album of the Nice rapper Gak with DJ Whoo Kid, crediting Babs, Mysonne, Lord Tariq and Cuban Link as guests; the release is documented, the track itself is not.",
+     "headline": "Gak, Babs, Mysonne, Lord Tariq, Cuban Linx - Coo Coo",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gak-babs-mysonne-lord-tariq-cuban-linx-coo-coo/",
+     "wordCount": 625
+    }
+   ]
+  },
   "galt-macdermot-coffee-cold.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -101452,6 +102907,140 @@
     }
    ]
   },
+  "kilian-finn-free-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kilian-finn-free-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kilian & Finn",
+      "sameAs": "https://musicbrainz.org/artist/eba52f9e-721d-4c6e-bf47-250755e85865"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "dance",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Free"
+     },
+     "name": "Free - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f62f616b-8d0e-40ae-b83c-37402ecafb5b",
+      "https://www.youtube.com/watch?v=khghkX1b25s"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kilian-finn-free-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kilian-finn-free-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Free (feat. Newshoes) - EP",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/de/album/free-feat-newshoes-ep/899126631"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Free (Radio Mix)",
+       "publisher": "YouTube (Kilian&Finn - Topic)",
+       "url": "https://www.youtube.com/watch?v=-hnAbaTUd74"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Free(feat. NewShoes) - EP (Bang Record)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/it/album/free-feat-newshoes-ep/923562372"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Free (Remix) [feat. Newshoes] - Single (FuturePlay)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/fr/album/free-remix-feat-newshoes-single/1444447605"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "KILIAN&FINN feat. NewShoes - Free (Original Mix)",
+       "publisher": "YouTube (FuturePlay)",
+       "url": "https://www.youtube.com/watch?v=khghkX1b25s"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Free (Original Mix) by KILIAN&FINN feat. NewShoes",
+       "publisher": "Hype Machine",
+       "url": "https://hypem.com/track/23h3e/KILIAN&FINN%20feat.%20NewShoes%20-%20Free%20%28Original%20Mix%29"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Get ready to Shake to KILIAN&FINN's Human Movement remix",
+       "publisher": "EARMILK",
+       "url": "https://earmilk.com/2014/11/25/get-ready-to-shake-to-kilianfinns-human-movement-remix/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Sommertraum, Vol. 1",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/de/album/sommertraum-vol-1/1025656747"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Free (Kilian & Finn feat. NewShoes)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/f62f616b-8d0e-40ae-b83c-37402ecafb5b"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The original mix of Free, the 2014 single by the German duo Kilian & Finn featuring the singer NewShoes, released on Exposure Music, the label the duo ran, alongside a radio mix and two remixes by LCAW.",
+     "headline": "Kilian & Finn - Free - Original Mix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/kilian-finn-free-original-mix/",
+     "wordCount": 473
+    }
+   ]
+  },
   "klangkarusell-moments.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -101631,6 +103220,126 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/klangkarussell-we-want-your-soul/",
      "wordCount": 681
+    }
+   ]
+  },
+  "klangkuenstler-alice-phoebe-lou-amsterdam.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/klangkuenstler-alice-phoebe-lou-amsterdam/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Klangkuenstler, Alice Phoebe Lou",
+      "sameAs": "https://musicbrainz.org/artist/dc60d275-d4d1-4bf2-b32c-4aa2332d7459"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "tech house",
+      "electro-house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "That's Me"
+     },
+     "isrcCode": "GBGNS1401230",
+     "name": "Amsterdam",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8d29cdc4-6aad-4488-8fec-f7a9f4609042"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/klangkuenstler-alice-phoebe-lou-amsterdam/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/klangkuenstler-alice-phoebe-lou-amsterdam/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "KlangKuenstler - That's Me",
+       "publisher": "Sunday Best (Bandcamp)",
+       "url": "https://sundaybest.bandcamp.com/album/thats-me"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Amsterdam feat. Alice Phoebe Lou",
+       "publisher": "Sunday Best (Bandcamp)",
+       "url": "https://sundaybest.bandcamp.com/track/amsterdam-feat-alice-phoebe-lou"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Amsterdam (That's Me)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/8d29cdc4-6aad-4488-8fec-f7a9f4609042"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Amsterdam (work)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/work/01b25600-50f7-4ca4-be99-f3fb321266af"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Klangkuenstler - Das bin ich",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/eb0bbb36-3a8d-4873-926a-cc40c680fa03"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "KlangKuenstler",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/KlangKuenstler"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Alice Phoebe Lou",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Alice_Phoebe_Lou"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Amsterdam (Alice Phoebe Lou, Orbit)",
+       "publisher": "YouTube (Alice Phoebe Lou - Topic)",
+       "url": "https://www.youtube.com/watch?v=TM0cLpxTMN4"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "One of two songs on KlangKuenstler's 2014 debut album That's Me sung by the Cape Town-born singer Alice Phoebe Lou, who wrote it with him; a longer earlier recording appears on the album's German edition, Das bin ich.",
+     "headline": "Klangkuenstler, Alice Phoebe Lou - Amsterdam",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/klangkuenstler-alice-phoebe-lou-amsterdam/",
+     "wordCount": 509
     }
    ]
   },
@@ -102698,6 +104407,153 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/knopfauge-saschienne/",
      "wordCount": 602
+    }
+   ]
+  },
+  "kollektiv-turmstrasse-grillen-im-garten-gerberei-version.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kollektiv Turmstrasse",
+      "sameAs": "https://musicbrainz.org/artist/68205877-7c7b-45c7-adb6-2edb9b380e2f"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "tech house",
+      "minimal",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Musik Gewinnt Freunde Collection"
+     },
+     "isrcCode": "DELF21302307",
+     "name": "Grillen im Garten - Gerberei Version",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6d240842-21c2-4b2f-bc5d-f3d1b117851c"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Kollektiv Turmstrasse - Musik Gewinnt Freunde Collection",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/4846874-Kollektiv-Turmstrasse-Musik-Gewinnt-Freunde-Collection"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Grillen Im Garten (Gerberei version)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/6d240842-21c2-4b2f-bc5d-f3d1b117851c"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Grillen im Garten (Gerberei Version)",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/en/track/68485989"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Kollektiv Turmstraße - Grillen Im Park",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/970072-Kollektiv-Turmstra%C3%9Fe-Grillen-Im-Park"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Grillen im Park (Ostwind Records, OW010)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/a7552b93-84f3-496b-ad5b-11257814ebf8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Various - Living For The Night (Gerberei 15)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/92d69723-f610-40a1-8152-49d94054c632"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Kollektiv Turmstrasse - Grillen Im Park (Remixes)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2308621"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Grillen im Park (Bart Skils Remix)",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/en/track/67435712"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Grillen Im Garten (Original Mix)",
+       "publisher": "YouTube (Kollektiv Turmstrasse - Topic)",
+       "url": "https://www.youtube.com/watch?v=MpWDJyObVGM"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kollektiv Turmstrasse",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/213601"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kollektiv Turmstraße",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kollektiv_Turmstra%C3%9Fe"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Musik Gewinnt Freunde Collection",
+       "publisher": "Last.fm",
+       "url": "https://www.last.fm/music/Kollektiv+Turmstrasse/Musik+Gewinnt+Freunde+Collection"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "A seven-minute version of Grillen im Garten, a club track by Kollektiv Turmstrasse, the seventh of eleven tracks on Musik Gewinnt Freunde Collection, a 2013 digital compilation of the Hamburg duo's tracks released by the label Musik Gewinnt Freunde.",
+     "headline": "Kollektiv Turmstrasse - Grillen im Garten - Gerberei Version",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/kollektiv-turmstrasse-grillen-im-garten-gerberei-version/",
+     "wordCount": 549
     }
    ]
   },
@@ -109209,6 +111065,135 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/max-manie-dance-radio-edit/",
      "wordCount": 495
+    }
+   ]
+  },
+  "me-her-david-keno-walking-boots.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/me-her-david-keno-walking-boots/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "ME & her, David Keno",
+      "sameAs": "https://musicbrainz.org/artist/3598d83b-85aa-471c-b837-35dd3910cb34"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "deep house",
+      "tech house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Alpine Grooves, Vol. 7 (Kristallhütte)"
+     },
+     "isrcCode": "ES84B1310228",
+     "name": "Walking Boots",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2ba1013a-47cd-4ec5-8751-8d196874e70a",
+      "https://www.youtube.com/watch?v=qJFMYBHRzIg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/me-her-david-keno-walking-boots/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/me-her-david-keno-walking-boots/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Various - Kitties Go Deep Vol. 2",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6316672-Various-Kitties-Go-Deep-Vol-2"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Me & Her, David Keno - Walking Boots (Original Mix) (Bloomingdale 2014)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6316685-Me-Her-David-Keno-Walking-Boots-Original-Mix-"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Various - Suara #BeatportDecade Deep House",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6316737-Various-Suara-BeatportDecade-Deep-House"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Various - Alpine Grooves Volume VII",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/11522590-Various-Alpine-Grooves-Volume-VII"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "David Keno",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/394051"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Me & Her",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/4045859"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "ME & her & David Keno - Walking Boots (Original Mix) [Suara]",
+       "publisher": "YouTube (Suara Music)",
+       "url": "https://www.youtube.com/watch?v=qJFMYBHRzIg"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Walking Boots",
+       "publisher": "YouTube (David Keno - Topic)",
+       "url": "https://www.youtube.com/watch?v=5QnoubsNAE8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Walking Boots (Alpine Grooves, Vol. 7)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2ba1013a-47cd-4ec5-8751-8d196874e70a"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "A deep house track that ME & her and the Swiss-born producer David Keno wrote and produced together, first released on Suara's Kitties Go Deep Vol. 2 in February 2014 and heard here as it was licensed to the Austrian compilation Alpine Grooves, Vol. 7 (Kristallhütte).",
+     "headline": "ME & her, David Keno - Walking Boots",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/me-her-david-keno-walking-boots/",
+     "wordCount": 593
     }
    ]
   },
@@ -120202,6 +122187,106 @@
     }
    ]
   },
+  "qodes-poison.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/qodes-poison/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Qodës",
+      "sameAs": "https://musicbrainz.org/artist/fd33be3f-1f72-4808-9672-7f6b5d642af8"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "deep house",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Poison"
+     },
+     "isrcCode": "TCAEH1947034",
+     "name": "Poison",
+     "sameAs": [
+      "https://musicbrainz.org/recording/87773c4e-4270-49db-9c5c-d83960a3f77f",
+      "https://www.youtube.com/watch?v=9ay1nB2i9dE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/qodes-poison/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/qodes-poison/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Q o d ë s ft. ATHENA - Poison",
+       "publisher": "SoundCloud",
+       "url": "https://soundcloud.com/qodesmusic/q-o-d-e-s-athena-poison"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Poison - Single",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/ro/album/poison-single/1470671172"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Poison (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/87773c4e-4270-49db-9c5c-d83960a3f77f"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Q o d ë s ft. ATHENA - Poison",
+       "publisher": "Q o d ë s (YouTube)",
+       "url": "https://www.youtube.com/watch?v=9ay1nB2i9dE"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Qodës's deep house single Poison, with ATHENA as featured artist, first shared on SoundCloud in 2018 and released on streaming services in 2019; the release is documented, the track itself is not described.",
+     "headline": "Qodës - Poison",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "extended mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/extended-mix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/qodes-poison/",
+     "wordCount": 470
+    }
+   ]
+  },
   "queen-another-one-bites-the-dust-remastered-2011.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -123037,6 +125122,129 @@
     }
    ]
   },
+  "say-yes-dog-into-you.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-into-you/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Say Yes Dog",
+      "sameAs": "https://musicbrainz.org/artist/98671aa3-48d2-497f-8dcf-dd33542f7dc1"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "synth-pop",
+      "electro-pop",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Voyage"
+     },
+     "name": "Into You",
+     "sameAs": [
+      "https://musicbrainz.org/recording/19d7d5f5-877d-4152-b19a-4edf45150199",
+      "https://www.youtube.com/watch?v=wdAIqE-i4I0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-into-you/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-into-you/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "soundmag.de",
+       "url": "https://www.soundmag.de/reviews/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "MusikBlog",
+       "url": "https://www.musikblog.de/2019/05/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "Bedroomdisco",
+       "url": "https://www.bedroomdisco.de/2019/05/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage (LP, SYDVOYAGE 002)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/13978778"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog - Into You (credits)",
+       "publisher": "Shazam",
+       "url": "https://www.shazam.com/song/1458013157/into-you"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog - Into You (lyrics)",
+       "publisher": "Musixmatch",
+       "url": "https://www.musixmatch.com/lyrics/Say-Yes-Dog/Into-You"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Into You (Voyage, provided to YouTube by The Orchard Enterprises)",
+       "publisher": "YouTube (Say Yes Dog - Topic)",
+       "url": "https://www.youtube.com/watch?v=wdAIqE-i4I0"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Say_Yes_Dog"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The eighth track of Say Yes Dog's 2019 album Voyage, a night-time song about falling for someone; no review singles it out, so this page rests on the album's reviews, its credits and the published lyric.",
+     "educationalLevel": "introductory",
+     "headline": "Say Yes Dog - Into You",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "verse-chorus form",
+       "url": "https://korczis.github.io/sonic-playground/concept/verse-chorus-form/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/say-yes-dog-into-you/",
+     "wordCount": 506
+    }
+   ]
+  },
   "say-yes-dog-lies.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -123143,6 +125351,129 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/say-yes-dog-lies/",
      "wordCount": 554
+    }
+   ]
+  },
+  "say-yes-dog-my-soul.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-my-soul/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Say Yes Dog",
+      "sameAs": "https://musicbrainz.org/artist/98671aa3-48d2-497f-8dcf-dd33542f7dc1"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "synth-pop",
+      "electro-pop",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Voyage"
+     },
+     "name": "My Soul",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d556bf77-f450-418a-b09f-25e032ef4e12",
+      "https://www.youtube.com/watch?v=SAua9z79t30"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-my-soul/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/say-yes-dog-my-soul/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "soundmag.de",
+       "url": "https://www.soundmag.de/reviews/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "MusikBlog",
+       "url": "https://www.musikblog.de/2019/05/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage",
+       "publisher": "Bedroomdisco",
+       "url": "https://www.bedroomdisco.de/2019/05/say-yes-dog-voyage/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Say Yes Dog - Voyage (LP, SYDVOYAGE 002)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/13978778"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog - My Soul (credits)",
+       "publisher": "Shazam",
+       "url": "https://www.shazam.com/song/1458012834/my-soul"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog - My Soul (lyrics)",
+       "publisher": "Musixmatch",
+       "url": "https://www.musixmatch.com/lyrics/Say-Yes-Dog/My-Soul"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "My Soul (Voyage, provided to YouTube by The Orchard Enterprises)",
+       "publisher": "YouTube (Say Yes Dog - Topic)",
+       "url": "https://www.youtube.com/watch?v=SAua9z79t30"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Say Yes Dog",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Say_Yes_Dog"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The second track of Say Yes Dog's 2019 album Voyage, a love song whose refrain is one repeated line; no review singles it out, so this page rests on the album's reviews, its credits and the published lyric.",
+     "educationalLevel": "introductory",
+     "headline": "Say Yes Dog - My Soul",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/say-yes-dog-my-soul/",
+     "wordCount": 511
     }
    ]
   },
@@ -124852,6 +127183,121 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/smoke-city-underwater-love/",
      "wordCount": 546
+    }
+   ]
+  },
+  "soeren-lindberg-janine-delon-one-last-dance-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/soeren-lindberg-janine-delon-one-last-dance-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Soeren Lindberg, Janine Delon",
+      "sameAs": "https://musicbrainz.org/artist/b6079798-4582-43f3-91af-3f7bfd258d4d"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "house",
+      "deep house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "One Last Dance"
+     },
+     "name": "One Last Dance - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f66472b1-32ad-44ba-aaa0-b6b885c611e3",
+      "https://www.youtube.com/watch?v=4gNcwe-Izk8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/soeren-lindberg-janine-delon-one-last-dance-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/soeren-lindberg-janine-delon-one-last-dance-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "One Last Dance (feat. Janine Delon) - Single",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/gb/album/one-last-dance-feat-janine-delon-single/839624380"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "One Last Dance (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/935355e9-d3f4-4ea5-bb02-28f724095b7a"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "One Last Dance (Original Mix), from Deep Down Lake",
+       "publisher": "Release - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=4gNcwe-Izk8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "One Last Dance, from Sommertanz, Vol. 1",
+       "publisher": "Soeren Lindberg - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=lELrJUHsM0Y"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fadersport",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/207470-Fadersport"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Fadersport, Vol. 4",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/de/album/fadersport-vol-4/1060171274"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Deep Deep Deep (Deep House Tracks Directly from the Clubs)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/de/album/deep-deep-deep-deep-house-tracks-directly-from-the-clubs/1062896633"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The 4:48 Original Mix of One Last Dance, Soeren Lindberg's 2014 single on the Hamburg label Fadersport with Janine Delon as featured artist, later collected on more than a dozen house compilations; the release is documented, its sound is not.",
+     "headline": "Soeren Lindberg, Janine Delon - One Last Dance - Original Mix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/soeren-lindberg-janine-delon-one-last-dance-original-mix/",
+     "wordCount": 540
     }
    ]
   },
@@ -128366,6 +130812,104 @@
     }
    ]
   },
+  "the-hanging-tree-the-hanging-tree.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-hanging-tree-the-hanging-tree/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Hanging Tree"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "cover",
+      "soundtrack"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Hanging Tree"
+     },
+     "name": "The Hanging Tree",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=_ABCB0YNfOE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-hanging-tree-the-hanging-tree/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-hanging-tree-the-hanging-tree/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "The Hanging Tree - Single by The Hanging Tree",
+       "publisher": "Spotify",
+       "url": "https://open.spotify.com/album/53MUe4l43EuzKOgqSqbeXo"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "The Hanging Tree (Hanging Tree - Topic, Blue Charts Records)",
+       "publisher": "YouTube (Hanging Tree - Topic)",
+       "url": "https://www.youtube.com/watch?v=_ABCB0YNfOE"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Hanging Tree (The Hunger Games song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Hanging_Tree_(The_Hunger_Games_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Blue Charts Records",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/4600701"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Not the film recording: a 2014 single of the Mockingjay song released under the artist name The Hanging Tree by Blue Charts Records, three days after the soundtrack single, with the same listed length and no performer named.",
+     "educationalLevel": "introductory",
+     "headline": "The Hanging Tree - The Hanging Tree",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sound-alike recording",
+       "url": "https://korczis.github.io/sonic-playground/concept/sound-alike-recording/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/concept/soundtrack/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-hanging-tree-the-hanging-tree/",
+     "wordCount": 539
+    }
+   ]
+  },
   "the-horroris-one-night-in-nyc.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -131494,6 +134038,115 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/totally-enormous-extinct-dinosaurs-garden/",
      "wordCount": 559
+    }
+   ]
+  },
+  "touch-go-tango-in-harlem.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/touch-go-tango-in-harlem/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Touch & Go",
+      "sameAs": "https://musicbrainz.org/artist/83a554c5-4fd3-4ec8-9dd5-15989850ea17"
+     },
+     "datePublished": "1999",
+     "genre": [
+      "lounge",
+      "jazz",
+      "big beat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "I Find You Very Attractive"
+     },
+     "isrcCode": "GBBLK9900236",
+     "name": "Tango In Harlem",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3461d894-5cf3-469d-a937-8d6131a1a54e",
+      "https://www.youtube.com/watch?v=nTNRKrqKhQk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/touch-go-tango-in-harlem/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/touch-go-tango-in-harlem/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Touch & Go",
+       "publisher": "acidjazz.ru",
+       "url": "https://www.acidjazz.ru/en/artists/touch-and-go"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Touch and Go (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Touch_and_Go_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1999",
+       "name": "Touch And Go - I Find You Very Attractive (CD, Europe, 1999)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3931243"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Touch & Go - Tango In Harlem (lyrics and writers)",
+       "publisher": "Musixmatch",
+       "url": "https://www.musixmatch.com/lyrics/Touch-Go/Tango-In-Harlem"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1999",
+       "name": "Tango In Harlem (I Find You Very Attractive, provided to YouTube by Universal Music Group)",
+       "publisher": "YouTube (Touch & Go - Topic)",
+       "url": "https://www.youtube.com/watch?v=nTNRKrqKhQk"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Tango in Harlem",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3461d894-5cf3-469d-a937-8d6131a1a54e"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "An album track from Touch & Go's 1999 debut I Find You Very Attractive, written by David Lowe and its vocalist Julia Lara Fischer: a snowbound Harlem anecdote told over the project's retro-lounge jazz, later listed as a 2001 single.",
+     "educationalLevel": "introductory",
+     "headline": "Touch & Go - Tango In Harlem",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "spoken word",
+       "url": "https://korczis.github.io/sonic-playground/concept/spoken-word/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/touch-go-tango-in-harlem/",
+     "wordCount": 587
     }
    ]
   },
