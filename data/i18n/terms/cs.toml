@@ -10,6 +10,7 @@
 [genre]
 "80s" = "osmdesátky"
 "acid house" = "acid house"
+"acid jazz" = "acid jazz"
 "acoustic" = "akustická hudba"
 "afrobeat" = "afrobeat"
 "alternative" = "alternativa"
@@ -91,6 +92,7 @@
 "neoclassical" = "neoklasika"
 "new wave" = "nová vlna"
 "novelty" = "recesistická píseň"
+"nu-disco" = "nu-disco"
 "nu-jazz" = "nu jazz"
 "orchestral" = "orchestrální hudba"
 "party" = "párty"
@@ -275,6 +277,7 @@
 "handclaps" = "tleskání"
 "harmonica" = "foukací harmonika"
 "harpsichord" = "cembalo"
+"hi-hat" = "hi-hat"
 "horns" = "žestě"
 "keyboard" = "klávesy"
 "keyboards" = "klávesové nástroje"
