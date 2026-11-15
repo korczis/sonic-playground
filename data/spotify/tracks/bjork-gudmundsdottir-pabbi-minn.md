@@ -6,8 +6,9 @@ artists: ["Björk Guðmundsdóttir", "Trio Gudmundar Ingólfssonar"]
 album: "Gling-Gló"
 duration: "2:42"
 spotify: {"track": "3ZBQwjnpO28X5GWlTIwGxU", "album": "4wurP9wwl9yxkETucs0khh", "artists": ["3HDfNAh4MpiptvaJP9We0w", "070ehnzbED2hs8ZNTembCh"]}
-keys: {"fold": "bjorkgudmundsdottir|pabbiminn"}
-status: "missing"
+keys: {"fold": "bjorkgudmundsdottir|pabbiminn", "isrc": "GBBTF0300194", "musicbrainz": "bba5a8ba-462b-45ca-b79b-c3a725b4f655"}
+review: "bjork-gudmundsdottir-trio-gudmundar-ingolfssonar-pabbi-minn.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2019, "n": 91}
@@ -22,4 +23,4 @@ From the album *Gling-Gló*, 2:42.
 Not among the liked songs.
 Your Top Songs 2019: #91.
 In My Top Songs of All the Time (#365).
-No review yet.
+Reviewed: content/bjork-gudmundsdottir-trio-gudmundar-ingolfssonar-pabbi-minn.md.

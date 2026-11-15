@@ -7,7 +7,8 @@ album: "Manila"
 duration: "3:39"
 spotify: {"track": "3IA673ONFVihQa0c8h94BI", "album": "2FW5JL8xKwAV8jTLyyqU9C", "artists": ["0JZtncBXHHyl21TEUkaK0U"]}
 keys: {"fold": "seelenluft|seelenluftmanila"}
-status: "missing"
+review: "seelenluft-seelenluft-manila-radio-edit.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 24}
@@ -22,4 +23,4 @@ From the album *Manila*, 3:39.
 A liked song.
 Your Top Songs 2018: #24.
 In My Top Songs of All the Time (#211).
-No review yet.
+Reviewed: content/seelenluft-seelenluft-manila-radio-edit.md.

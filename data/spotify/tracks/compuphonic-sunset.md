@@ -6,8 +6,9 @@ artists: ["Compuphonic", "Marques Toliver"]
 album: "Sunset"
 duration: "6:12"
 spotify: {"track": "5AheUFhxRKox7XvuGlbh1U", "album": "6fN1Tv7InyxEhGK0aufKwL", "artists": ["7GZ8Tz3F5bLPTJYNSwiunY", "5zrD2ZqM6SB5XRJJwTroAu"]}
-keys: {"fold": "compuphonic|sunset"}
-status: "missing"
+keys: {"fold": "compuphonic|sunset", "musicbrainz": "2811053c-80b3-4722-b8e2-c4dde38a71b9"}
+review: "compuphonic-marques-toliver-sunset.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 95}
@@ -22,4 +23,4 @@ From the album *Sunset*, 6:12.
 A liked song.
 Your Top Songs 2019: #95.
 In My Top Songs of All the Time (#368).
-No review yet.
+Reviewed: content/compuphonic-marques-toliver-sunset.md.

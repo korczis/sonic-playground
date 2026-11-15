@@ -50,7 +50,7 @@ kind = "encyclopedia"
 
 [[extra.sources]]
 title = "DJ Nordic playlist, 12 July 2015"
-url = "https://serato.com/playlists/id:5137077/7-12-15"
+url = "https://web.archive.org/web/20210301140850/https://serato.com/playlists/id:5137077/7-12-15"
 publisher = "Serato"
 kind = "database"
 year = "2015"

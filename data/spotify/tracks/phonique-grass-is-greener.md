@@ -7,7 +7,8 @@ album: "Green Supreme"
 duration: "7:28"
 spotify: {"track": "7t1NrQeTNSz1uoDqO2sg4o", "album": "0YXLrDoQ8WGvdvZsFTuoJp", "artists": ["3pVm0ttbAah6dTDher8dSz", "5847veqMua8u2rRExUaTX6"]}
 keys: {"fold": "phonique|grassisgreener"}
-status: "missing"
+review: "phonique-antonia-vai-grass-is-greener.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 31}
@@ -22,4 +23,4 @@ From the album *Green Supreme*, 7:28.
 A liked song.
 Your Top Songs 2018: #31.
 In My Top Songs of All the Time (#218).
-No review yet.
+Reviewed: content/phonique-antonia-vai-grass-is-greener.md.

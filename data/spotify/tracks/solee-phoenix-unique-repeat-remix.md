@@ -6,8 +6,9 @@ artists: ["Solee", "Unique Repeat"]
 album: "Phoenix (Remixes)"
 duration: "8:27"
 spotify: {"track": "0qZpqoCudAZALDllBsHjFb", "album": "7AYobDfruUZX6ivQ3lMZ92", "artists": ["0r0m8up7CjS8TJodH2HX7C", "0fliTYhNmbPCIVbn2LRr9n"]}
-keys: {"fold": "solee|phoenixuniquerepeatremix"}
-status: "missing"
+keys: {"fold": "solee|phoenixuniquerepeatremix", "isrc": "DEH741413454", "musicbrainz": "3083360b-64a4-4289-8d78-8b9958b4b7f3"}
+review: "solee-unique-repeat-phoenix-unique-repeat-remix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 84}
@@ -24,4 +25,4 @@ From the album *Phoenix (Remixes)*, 8:27.
 A liked song.
 Your Top Songs 2019: #84.
 In Berlin Electronic Underground (#20); Liked from Radio (#3); My Top Songs of All the Time (#358).
-No review yet.
+Reviewed: content/solee-unique-repeat-phoenix-unique-repeat-remix.md.

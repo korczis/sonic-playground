@@ -6,8 +6,9 @@ artists: ["Marbert Rocel"]
 album: "Small Hours"
 duration: "6:23"
 spotify: {"track": "0lI4NU85a2bxlPVfzjOuTc", "album": "55xGku4FdXIMYiTlvmM7gt", "artists": ["0VEzhZrWBCaoufAiZkjX3G"]}
-keys: {"fold": "marbertrocel|songforyou"}
-status: "missing"
+keys: {"fold": "marbertrocel|songforyou", "musicbrainz": "e360d68e-2ebc-4af7-8b61-30ac73cc42b5"}
+review: "marbert-rocel-song-for-you.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 33}
@@ -22,4 +23,4 @@ From the album *Small Hours*, 6:23.
 A liked song.
 Your Top Songs 2018: #33.
 In My Top Songs of All the Time (#220).
-No review yet.
+Reviewed: content/marbert-rocel-song-for-you.md.

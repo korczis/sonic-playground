@@ -6,8 +6,9 @@ artists: ["Marek Hemmann"]
 album: "Bittersweet"
 duration: "5:35"
 spotify: {"track": "6xzLyquEsfD7BVwoPBI6ic", "album": "7EBL8MeJgvvwNs211UhtEA", "artists": ["7tL5UmgvPx6TqKyf0Sjjw6"]}
-keys: {"fold": "marekhemmann|hooray"}
-status: "missing"
+keys: {"fold": "marekhemmann|hooray", "isrc": "DEDU61300040", "musicbrainz": "f9afcec0-ac41-42da-ba14-17d07b3b6e90"}
+review: "marek-hemmann-hooray.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 81}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2019: #81.
 Your Top Songs 2022: #35.
 In My Top Songs of All the Time (#355).
-No review yet.
+Reviewed: content/marek-hemmann-hooray.md.

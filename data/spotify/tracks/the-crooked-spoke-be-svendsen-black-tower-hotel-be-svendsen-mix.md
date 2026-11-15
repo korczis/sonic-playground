@@ -6,8 +6,9 @@ artists: ["The Crooked Spoke"]
 album: "Catchpenny & Cosmos"
 duration: "7:22"
 spotify: {"track": "2gOCNhq2NjeifowcwN6xqQ", "album": "0lX7USUizmWMmUaC84Ydds", "artists": ["4S7WUzzSHxbiLKZoerZqIU"]}
-keys: {"fold": "thecrookedspoke|besvendsenblacktowerhotelbesvendsenmix"}
-status: "missing"
+keys: {"fold": "thecrookedspoke|besvendsenblacktowerhotelbesvendsenmix", "musicbrainz": "1f749483-984c-4702-9d24-cabb8cc2e4df"}
+review: "the-crooked-spoke-be-svendsen-black-tower-hotel-be-svendsen-mix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 99}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2019: #99.
 Your Top Songs 2020: #76.
 In My Top Songs of All the Time (#371).
-No review yet.
+Reviewed: content/the-crooked-spoke-be-svendsen-black-tower-hotel-be-svendsen-mix.md.

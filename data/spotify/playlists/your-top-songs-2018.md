@@ -113,4 +113,4 @@ tracks:
 
 # Your Top Songs 2018
 
-The annual Top Songs: 100 of 100 items read on 2026-11-14, 19 of them reviewed on the site.
+The annual Top Songs: 100 of 100 items read on 2026-11-14, 41 of them reviewed on the site.

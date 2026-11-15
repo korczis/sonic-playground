@@ -77,4 +77,4 @@ tracks:
 
 # LOVE ME LOVE ME!! SAY THAT YOU LOVE ME!!
 
-A playlist the owner follows: 66 of 66 items read on 2026-11-14, 1 of them reviewed on the site.
+A playlist the owner follows: 66 of 66 items read on 2026-11-14, 2 of them reviewed on the site.

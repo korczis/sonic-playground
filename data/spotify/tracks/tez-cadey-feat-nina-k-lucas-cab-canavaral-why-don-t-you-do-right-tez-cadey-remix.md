@@ -6,8 +6,9 @@ artists: ["Tez Cadey feat. Nina K Lucas & Cab Canavaral", "Nina K Lucas", "Cab C
 album: "Cab Canavaral Remixed"
 duration: "3:14"
 spotify: {"track": "0DkbV3l5GsPJZ9dBGeqkrn", "album": "5L7Lvubrpelf0tCSOcLn85", "artists": ["3E1ymIfRQZfGjuqg4WVtFK", "3u8NLSIRyu59pNZV73NEft", "66XLCMrjNyunAgGjvCVWGn"]}
-keys: {"fold": "tezcadeyfeatninaklucascabcanavaral|whydontyoudorighttezcadeyremix"}
-status: "missing"
+keys: {"fold": "tezcadeyfeatninaklucascabcanavaral|whydontyoudorighttezcadeyremix", "musicbrainz": "935f9cfb-901a-4a63-8d36-627eb0fa3e41"}
+review: "tez-cadey-feat-nina-k-lucas-cab-canavaral-nina-k-lucas-cab-canavaral-why-don-t-you-do-right-tez-cadey-remix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 23}
@@ -22,4 +23,4 @@ From the album *Cab Canavaral Remixed*, 3:14.
 A liked song.
 Your Top Songs 2018: #23.
 In My Top Songs of All the Time (#210).
-No review yet.
+Reviewed: content/tez-cadey-feat-nina-k-lucas-cab-canavaral-nina-k-lucas-cab-canavaral-why-don-t-you-do-right-tez-cadey-remix.md.

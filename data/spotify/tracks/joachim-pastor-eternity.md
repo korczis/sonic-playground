@@ -6,8 +6,9 @@ artists: ["Joachim Pastor"]
 album: "Eternity"
 duration: "6:20"
 spotify: {"track": "1fhcMMxjn3Gvin19Akf3Ig", "album": "4lJ51mNG9ZXfGyLzLSKwy6", "artists": ["6eNOjuJSfKkAvbiGW90AkZ"]}
-keys: {"fold": "joachimpastor|eternity"}
-status: "missing"
+keys: {"fold": "joachimpastor|eternity", "isrc": "DEAA21600018", "musicbrainz": "430ad811-18f5-4b0b-95a5-3a29762270c3"}
+review: "joachim-pastor-eternity.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 86}
@@ -24,4 +25,4 @@ From the album *Eternity*, 6:20.
 A liked song.
 Your Top Songs 2019: #86.
 In Berlin Electronic Underground (#78); Liked from Radio (#1); My Top Songs of All the Time (#360).
-No review yet.
+Reviewed: content/joachim-pastor-eternity.md.

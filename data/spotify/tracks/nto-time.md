@@ -6,8 +6,9 @@ artists: ["NTO"]
 album: "Time"
 duration: "6:04"
 spotify: {"track": "7hofL9YADeFqnsFdDrxdbs", "album": "2UGcV9CH96FKcHaaZ7f5l6", "artists": ["7ry8L53T4oJtSIogGYuioq"]}
-keys: {"fold": "nto|time"}
-status: "missing"
+keys: {"fold": "nto|time", "musicbrainz": "49749ac7-34d0-4bb9-b4e6-804d76babf55"}
+review: "nto-time.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 89}
@@ -23,4 +24,4 @@ From the album *Time*, 6:04.
 A liked song.
 Your Top Songs 2019: #89.
 In Liked from Radio (#5); My Top Songs of All the Time (#363).
-No review yet.
+Reviewed: content/nto-time.md.

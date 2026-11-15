@@ -6,8 +6,9 @@ artists: ["Red Axes"]
 album: "Caminho De Dreyfus"
 duration: "5:16"
 spotify: {"track": "1N3j0EkMaQg5AEh8txQUtn", "album": "1qOJIxFcn0KSWeCLqxYTYg", "artists": ["5Owm9QgL9BSCRQKTX6T08G"]}
-keys: {"fold": "redaxes|caminhodedreyfus"}
-status: "missing"
+keys: {"fold": "redaxes|caminhodedreyfus", "musicbrainz": "2f9d2e8b-37e7-42e5-b020-4008adeea3c7"}
+review: "red-axes-caminho-de-dreyfus.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 26}
@@ -23,4 +24,4 @@ From the album *Caminho De Dreyfus*, 5:16.
 A liked song.
 Your Top Songs 2018: #26.
 In Best of the Best (#47); My Top Songs of All the Time (#213).
-No review yet.
+Reviewed: content/red-axes-caminho-de-dreyfus.md.

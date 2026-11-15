@@ -6,8 +6,9 @@ artists: ["Parra for Cuva", "Anna Naklab"]
 album: "Fading Nights"
 duration: "7:05"
 spotify: {"track": "6RqNzlRmo0PnQNKm8ub69O", "album": "51ICSJv35BaLYkYHVKJfkA", "artists": ["238y1dKPtMeFEpX3Y6H1Vr", "6vNe5MINTo5QZyR08sBOBA"]}
-keys: {"fold": "parraforcuva|fadingnights"}
-status: "missing"
+keys: {"fold": "parraforcuva|fadingnights", "isrc": "QMSNZ1307533", "musicbrainz": "c1a9046d-8d8d-428e-8697-f99ba9c425ed"}
+review: "parra-for-cuva-anna-naklab-fading-nights.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 7}
@@ -23,4 +24,4 @@ From the album *Fading Nights*, 7:05.
 A liked song.
 Your Top Songs 2022: #7.
 In Best of the Best (#77); My Top Songs of All the Time (#525).
-No review yet.
+Reviewed: content/parra-for-cuva-anna-naklab-fading-nights.md.
