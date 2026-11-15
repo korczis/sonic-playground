@@ -6,8 +6,9 @@ artists: ["Her", "AnnenMayKantereit", "Roméo Elvis"]
 album: "Her"
 duration: "3:38"
 spotify: {"track": "1y5FGDQHfDOSIRye0jkoBt", "album": "1aCQ7OUfO1P6FbTe8x0s0N", "artists": ["1T2WeXEi0XlZiPpjjDAY0L", "23xqmJEN3oVxwzqtNIyR5m", "2pHk4wAmL7ofTAuvCIUWtv"]}
-keys: {"fold": "her|onon"}
-status: "missing"
+keys: {"fold": "her|onon", "isrc": "FR91J1700004", "musicbrainz": "10052960-63e7-4b37-9fda-d29206290ab2"}
+review: "her-annenmaykantereit-romeo-elvis-on-on.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 63}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2019: #63.
 Your Top Songs 2021: #82.
 In My Top Songs of All the Time (#338).
-No review yet.
+Reviewed: content/her-annenmaykantereit-romeo-elvis-on-on.md.

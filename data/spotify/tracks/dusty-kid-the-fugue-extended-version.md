@@ -6,8 +6,9 @@ artists: ["Dusty Kid"]
 album: "A Raver's Diary - Singles & B-Sides"
 duration: "10:05"
 spotify: {"track": "14DbTmAlicuVtDHjzFr48n", "album": "36Lh088mWw01VHgwSJlO4k", "artists": ["6JGLndnzrQrIFkd8NFha3C"]}
-keys: {"fold": "dustykid|thefugue"}
-status: "missing"
+keys: {"fold": "dustykid|thefugue", "musicbrainz": "766c582f-d570-4081-9ee1-99c8b15c9bf7"}
+review: "dusty-kid-the-fugue-extended-version.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 51}
@@ -22,4 +23,4 @@ From the album *A Raver's Diary - Singles & B-Sides*, 10:05.
 A liked song.
 Your Top Songs 2019: #51.
 In My Top Songs of All the Time (#327).
-No review yet.
+Reviewed: content/dusty-kid-the-fugue-extended-version.md.

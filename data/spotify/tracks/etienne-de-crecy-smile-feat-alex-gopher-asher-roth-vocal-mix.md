@@ -6,8 +6,9 @@ artists: ["Etienne de Crécy", "Alex Gopher", "Asher Roth"]
 album: "Smile (Vocal Mix)"
 duration: "3:26"
 spotify: {"track": "4SpXkrjuPnyErjE504cnFE", "album": "1l6IawD5t3FmxKYwJiUC3D", "artists": ["78YRbJhMi5kXKruiQGCJo7", "0ADS8B9CUYtbFLvjT99Ktw", "1wgY8huggK60P5nvYrwcYT"]}
-keys: {"fold": "etiennedecrecy|smilevocalmix"}
-status: "missing"
+keys: {"fold": "etiennedecrecy|smilevocalmix", "musicbrainz": "7a602a42-ab47-40f2-b97d-3bfc0b4c4e15"}
+review: "etienne-de-crecy-alex-gopher-asher-roth-smile-feat-alex-gopher-asher-roth-vocal-mix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 64}
@@ -22,4 +23,4 @@ From the album *Smile (Vocal Mix)*, 3:26.
 A liked song.
 Your Top Songs 2019: #64.
 In My Top Songs of All the Time (#339).
-No review yet.
+Reviewed: content/etienne-de-crecy-alex-gopher-asher-roth-smile-feat-alex-gopher-asher-roth-vocal-mix.md.

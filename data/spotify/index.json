@@ -1,7 +1,7 @@
 {
  "liked": 2029,
  "playlists": 55,
- "reviewed": 568,
+ "reviewed": 613,
  "reviews": {
   "2raumwohnung-somebody-lonely-and-me-nacht.md": {
    "liked": true,
@@ -35,6 +35,17 @@
     2017
    ]
   },
+  "agoria-noemie-remedy.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "agoria-remedy"
+   ],
+   "track": "6sH7LTzonbkNleLPvk1Yie",
+   "yearbooks": [
+    2019
+   ]
+  },
   "alec-troniq-gabriel-vitel-faces.md": {
    "liked": true,
    "playlists": 1,
@@ -44,6 +55,17 @@
    "track": "1sZgoeJtLh1yqmCFuGhCI4",
    "yearbooks": [
     2022
+   ]
+  },
+  "alec-troniq-gabriel-vitel-old-tortures.md": {
+   "liked": true,
+   "playlists": 3,
+   "records": [
+    "alec-troniq-old-tortures"
+   ],
+   "track": "4TWPlBaYKnjls3KpOjcaBX",
+   "yearbooks": [
+    2019
    ]
   },
   "alice-russell-high-up-on-the-hook.md": {
@@ -490,6 +512,17 @@
     2021
    ]
   },
+  "bjork-it-s-oh-so-quiet.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "bjork-it-s-oh-so-quiet"
+   ],
+   "track": "3CMVjlbvNJMHDfYPX7xCpi",
+   "yearbooks": [
+    2019
+   ]
+  },
   "bjork-kata-rokkar.md": {
    "liked": true,
    "playlists": 5,
@@ -934,6 +967,17 @@
     2020
    ]
   },
+  "chaim-meital-de-razon-love-rehab.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "chaim-love-rehab"
+   ],
+   "track": "0QqexX8RENBLirZ8W1qMvY",
+   "yearbooks": [
+    2019
+   ]
+  },
   "charlie-straight-platonic-johny.md": {
    "liked": true,
    "playlists": 1,
@@ -1007,6 +1051,18 @@
    "track": "53DY1QzeCfP50ZA0G30L6h",
    "yearbooks": [
     2022
+   ]
+  },
+  "christopher-schwarzwalder-iannis-ritter-high-original-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "christopher-schwarzwalder-high-original-mix"
+   ],
+   "track": "0k0vu2jd7Hf3SrTRPDFMsM",
+   "yearbooks": [
+    2019,
+    2020
    ]
   },
   "claap-s-a-n-t-a-n-a-dimanche.md": {
@@ -1235,6 +1291,17 @@
     2022
    ]
   },
+  "david-guetta-bebe-rexha-j-balvin-say-my-name.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "david-guetta-say-my-name"
+   ],
+   "track": "0YammaEkYSeo9vQYZ1OwS6",
+   "yearbooks": [
+    2019
+   ]
+  },
   "david-lynch-karen-o-pinky-s-dream-trentemoller-remix-instrumental.md": {
    "liked": true,
    "playlists": 1,
@@ -1352,6 +1419,17 @@
     2022
    ]
   },
+  "dop-close-up.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "dop-close-up"
+   ],
+   "track": "4wLEoEi6OlZ7K3D6inaUks",
+   "yearbooks": [
+    2019
+   ]
+  },
   "drake-the-throne-pop-style.md": {
    "liked": true,
    "playlists": 1,
@@ -1386,6 +1464,17 @@
    "track": "7v1Q35VP8jWCwzJObk5eRP",
    "yearbooks": [
     2017
+   ]
+  },
+  "dusty-kid-the-fugue-extended-version.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "dusty-kid-the-fugue-extended-version"
+   ],
+   "track": "14DbTmAlicuVtDHjzFr48n",
+   "yearbooks": [
+    2019
    ]
   },
   "earl-zinger-on-my-way-home.md": {
@@ -1450,6 +1539,39 @@
     2019
    ]
   },
+  "emika-destiny-killer.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "emika-destiny-killer"
+   ],
+   "track": "7aVNYMYivI1iJVw0F5T6Ey",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "emika-miracles-prelude.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "emika-miracles-prelude"
+   ],
+   "track": "6LjPFFHYDN6V8KLT9HWvTI",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "emika-miracles.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "emika-miracles"
+   ],
+   "track": "5Phlm0Kx2sr0znfvuQ6X1o",
+   "yearbooks": [
+    2019
+   ]
+  },
   "emika-my-heart-bleeds-melody.md": {
    "liked": true,
    "playlists": 1,
@@ -1457,6 +1579,50 @@
     "emika-my-heart-bleeds-melody"
    ],
    "track": "4DxwubEmUsN2EBXTEQeAdh",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "emika-rache.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "emika-rache"
+   ],
+   "track": "0con0vWIq7YI1GaVNrhPTH",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "emika-serious-trouble.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "emika-serious-trouble"
+   ],
+   "track": "5N2Gv7l1WNmc4VB0D9V8i3",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "emika-what-s-the-cure.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "emika-what-s-the-cure"
+   ],
+   "track": "6TsMXRJsp6Qvwxum95d4Vu",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "emika-without-expression.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "emika-without-expression"
+   ],
+   "track": "4eB4uoGVVTg7gtScG9zsxW",
    "yearbooks": [
     2019
    ]
@@ -1470,6 +1636,17 @@
    "track": "3BU9t17L9vZssJIEz6eHhi",
    "yearbooks": [
     2022
+   ]
+  },
+  "etienne-de-crecy-alex-gopher-asher-roth-smile-feat-alex-gopher-asher-roth-vocal-mix.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "etienne-de-crecy-smile-feat-alex-gopher-asher-roth-vocal-mix"
+   ],
+   "track": "4SpXkrjuPnyErjE504cnFE",
+   "yearbooks": [
+    2019
    ]
   },
   "eurythmics-annie-lennox-dave-stewart-sweet-dreams-are-made-of-this-2005-remaster.md": {
@@ -2065,6 +2242,18 @@
     2019
    ]
   },
+  "her-annenmaykantereit-romeo-elvis-on-on.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "her-on-on"
+   ],
+   "track": "1y5FGDQHfDOSIRye0jkoBt",
+   "yearbooks": [
+    2019,
+    2021
+   ]
+  },
   "her-five-minutes.md": {
    "liked": true,
    "playlists": 3,
@@ -2113,6 +2302,19 @@
     2020
    ]
   },
+  "her-quite-like.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "her-quite-like"
+   ],
+   "track": "1dSRuZuKGJLb34w9nFnoTj",
+   "yearbooks": [
+    2019,
+    2020,
+    2021
+   ]
+  },
   "her-zefire-queens-live-at-gaite-lyrique-paris.md": {
    "liked": true,
    "playlists": 1,
@@ -2157,6 +2359,18 @@
    "track": "4AgRNjbPzEtWu91uHrDPRb",
    "yearbooks": [
     2017
+   ]
+  },
+  "hindi-zahra-imik-si-mik-remastered-version.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "hindi-zahra-imik-si-mik-remastered-version",
+    "hindi-zahra-imik-si-mik-remastered-version-725xsr"
+   ],
+   "track": "3r3PT5TiwoZwQuZ9xnTKhf",
+   "yearbooks": [
+    2019
    ]
   },
   "hindi-zahra-music-remastered-version.md": {
@@ -2339,6 +2553,17 @@
     2017
    ]
   },
+  "jain-on-my-way.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "jain-on-my-way"
+   ],
+   "track": "0occFly3Mc8koSIdVsObkZ",
+   "yearbooks": [
+    2019
+   ]
+  },
   "jain-so-peaceful.md": {
    "liked": false,
    "playlists": 1,
@@ -2348,6 +2573,17 @@
    "track": "0MZG9BTLqN6D6mBnyNQfUr",
    "yearbooks": [
     2017
+   ]
+  },
+  "jain-son-of-a-sun.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "jain-son-of-a-sun"
+   ],
+   "track": "6L57eOHgtM5RoucZEythR0",
+   "yearbooks": [
+    2019
    ]
   },
   "james-newton-howard-jennifer-lawrence-the-hanging-tree-rebel-remix.md": {
@@ -2562,6 +2798,17 @@
    "track": "0FuwDI2j2NmUj5YO3Oj6xq",
    "yearbooks": [
     2016
+   ]
+  },
+  "katalyst-stephanie-mckay-day-into-night.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "katalyst-day-into-night-53aw96"
+   ],
+   "track": "53aW96vcdQskIrg0jtja5P",
+   "yearbooks": [
+    2019
    ]
   },
   "kav-verhouzer-bullysongs-get-what-you-came-for.md": {
@@ -3116,6 +3363,28 @@
     2021
    ]
   },
+  "marbert-rocel-my-bed.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "marbert-rocel-my-bed"
+   ],
+   "track": "3fQ9CYlh69aJzkRCDr3pnT",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "marc-houle-miss-kittin-where-is-kittin.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "marc-houle-where-is-kittin"
+   ],
+   "track": "5xMQ15omNGJHTvZgsL5MPS",
+   "yearbooks": [
+    2019
+   ]
+  },
   "marc-moulin-into-the-dark.md": {
    "liked": false,
    "playlists": 1,
@@ -3256,6 +3525,17 @@
    "track": "4lwEWqDRT2pylNGMAcIEPe",
    "yearbooks": [
     2022
+   ]
+  },
+  "matzak-forensic-not-safe-for-work-feat-forensic.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "matzak-not-safe-for-work-feat-forensic"
+   ],
+   "track": "3irrmtSq2sdb1LwdufT4lz",
+   "yearbooks": [
+    2019
    ]
   },
   "max-manie-dance-radio-edit.md": {
@@ -3428,6 +3708,17 @@
    "track": "1fmoCZ6mtMiqA5GHWPcZz9",
    "yearbooks": [
     2022
+   ]
+  },
+  "monkey-safari-new-day.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "monkey-safari-new-day"
+   ],
+   "track": "7548lIowWrwIbVIbAOSewT",
+   "yearbooks": [
+    2019
    ]
   },
   "monterosso-huacachina.md": {
@@ -3650,6 +3941,17 @@
     2016
    ]
   },
+  "nicola-cruz-cumbia-del-olvido.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "nicola-cruz-cumbia-del-olvido"
+   ],
+   "track": "6qINThmTDYBm8twguFRueG",
+   "yearbooks": [
+    2019
+   ]
+  },
   "nicolas-jaar-time-for-us.md": {
    "liked": true,
    "playlists": 3,
@@ -3823,6 +4125,29 @@
     2021
    ]
   },
+  "nteibint-tella-the-owner.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "nteibint-the-owner"
+   ],
+   "track": "18MiFGI5knNI9PDNNVoO44",
+   "yearbooks": [
+    2019,
+    2022
+   ]
+  },
+  "nu-dance-in-my-pants.md": {
+   "liked": false,
+   "playlists": 1,
+   "records": [
+    "nu-dance-in-my-pants"
+   ],
+   "track": "4x84WG5Gs5MZUADW6ZZRO8",
+   "yearbooks": [
+    2019
+   ]
+  },
   "nu-jo-ke-who-loves-the-sun.md": {
    "liked": true,
    "playlists": 3,
@@ -3835,6 +4160,28 @@
     2017,
     2019,
     2020
+   ]
+  },
+  "oliver-koletzki-fran-arrow-and-bow-original-version.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "oliver-koletzki-arrow-and-bow-original-version"
+   ],
+   "track": "4Prk3d2tits1xGs5deDAxo",
+   "yearbooks": [
+    2019
+   ]
+  },
+  "oliver-koletzki-fran-hypnotized.md": {
+   "liked": true,
+   "playlists": 3,
+   "records": [
+    "oliver-koletzki-hypnotized"
+   ],
+   "track": "0V2GX0aukyZMt6nSMxfOJk",
+   "yearbooks": [
+    2019
    ]
   },
   "oliver-koletzki-through-the-darkness.md": {
@@ -4162,6 +4509,17 @@
    "track": "7K3Ybx5RxcRSwetU2H6NoL",
    "yearbooks": []
   },
+  "ron-flatter-nick-d-lite-jetlands.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "ron-flatter-jetlands"
+   ],
+   "track": "1Yf98TVe3AOClCCbbQnQjr",
+   "yearbooks": [
+    2019
+   ]
+  },
   "roseaux-walking-on-the-moon.md": {
    "liked": true,
    "playlists": 1,
@@ -4200,6 +4558,18 @@
    "track": "1potXpkyQVqdPsWYRTzYc9",
    "yearbooks": [
     2017
+   ]
+  },
+  "sascha-braemer-no-home.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "sascha-braemer-no-home",
+    "sascha-braemer-no-home-5664qo"
+   ],
+   "track": "24Fwm0Z4yUOQjYLo1CtUpR",
+   "yearbooks": [
+    2019
    ]
   },
   "say-yes-dog-around-my-neck.md": {
@@ -4508,6 +4878,17 @@
     2020
    ]
   },
+  "spada-hosie-neal-feels-like-home-red-velvet-dress-video-edit.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "spada-feels-like-home-red-velvet-dress-video-edit"
+   ],
+   "track": "1f0wtb8kqg9mEZ13R8XmK8",
+   "yearbooks": [
+    2019
+   ]
+  },
   "stee-downes-asunder.md": {
    "liked": false,
    "playlists": 1,
@@ -4528,6 +4909,17 @@
    "track": "5ew3JElU38PsjOTu7M713y",
    "yearbooks": [
     2022
+   ]
+  },
+  "stereoclip-shivering-sense.md": {
+   "liked": true,
+   "playlists": 3,
+   "records": [
+    "stereoclip-shivering-sense"
+   ],
+   "track": "6oVbWcRJhtEWytRCB4Gqer",
+   "yearbooks": [
+    2019
    ]
   },
   "stimming-david-christensen-bernd-ruf-november-morning.md": {
@@ -4683,6 +5075,17 @@
    "track": "0tj2O9CiHkOdyEvKDwrDVG",
    "yearbooks": [
     2021
+   ]
+  },
+  "the-roots-jill-scott-you-got-me-featuring-jill-scott-live-1999.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "the-roots-you-got-me-featuring-jill-scott-live-1999"
+   ],
+   "track": "71he7ShvDkKna60RozMqyN",
+   "yearbooks": [
+    2019
    ]
   },
   "the-source-candi-staton-the-rhythm-masters-for-seven-music-promotions-you-got-the-love-feat-candi-staton-new-voyager-radio-mix.md": {
@@ -4884,6 +5287,18 @@
     2022
    ]
   },
+  "tom-misch-de-la-soul-it-runs-through-me.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "tom-misch-it-runs-through-me",
+    "tom-misch-it-runs-through-me-feat-de-la-soul"
+   ],
+   "track": "0p92TJPcRHCbcSk3wCwWBz",
+   "yearbooks": [
+    2019
+   ]
+  },
   "tones-and-i-dance-monkey.md": {
    "liked": true,
    "playlists": 1,
@@ -4931,6 +5346,18 @@
    "track": "4g0pltSum7wtswhKjrnJM9",
    "yearbooks": [
     2022
+   ]
+  },
+  "tricky-francesca-belmonte-nicotine-love.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "tricky-nicotine-love",
+    "tricky-nicotine-love-3z0ghe"
+   ],
+   "track": "2kh7yj7uppzfby3a0hpGuv",
+   "yearbooks": [
+    2019
    ]
   },
   "trinidad-senolia-you-showed-me-edit.md": {
@@ -5011,6 +5438,17 @@
     2017
    ]
   },
+  "waldeck-patrizia-ferrara-never-let-you-go.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "waldeck-never-let-you-go"
+   ],
+   "track": "5IK9dSUSzioE9lilLi4AEi",
+   "yearbooks": [
+    2019
+   ]
+  },
   "waldeck-zeebee-midsummer-night-blues.md": {
    "liked": true,
    "playlists": 1,
@@ -5019,6 +5457,17 @@
    ],
    "track": "7l3vWdbYRnYVmlBED0FJlw",
    "yearbooks": []
+  },
+  "wax-tailor-charlotte-savary-our-dance.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "wax-tailor-our-dance"
+   ],
+   "track": "35Dznxpk4j0A6hGayXWy6Z",
+   "yearbooks": [
+    2019
+   ]
   },
   "wax-tailor-que-sera-phonovisions-symphonic-version.md": {
    "liked": true,
@@ -5109,6 +5558,17 @@
    "track": "6vbmvfKJg6MghZhVmCpV9D",
    "yearbooks": [
     2017
+   ]
+  },
+  "y-akoto-diamonds.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "y-akoto-diamonds"
+   ],
+   "track": "0aBZ8AFkFpfdCl1wDHORNC",
+   "yearbooks": [
+    2019
    ]
   },
   "yoko-duo-stimming-close-these-curtains-stimming-remix.md": {
@@ -5277,6 +5737,7 @@
    "rank": 13,
    "read": "2026-11-14",
    "record": "jain-son-of-a-sun",
+   "review": "jain-son-of-a-sun.md",
    "title": "Son of a Sun"
   },
   {

@@ -6,8 +6,9 @@ artists: ["Agoria", "NOEMIE"]
 album: "Drift"
 duration: "2:58"
 spotify: {"track": "6sH7LTzonbkNleLPvk1Yie", "album": "19CdRE2crueB37VIhTg7W0", "artists": ["4lu50np3LdTkRL09T7x8UP", "7gmBCPfdEiZGywHfJJYYQX"]}
-keys: {"fold": "agoria|remedy"}
-status: "missing"
+keys: {"fold": "agoria|remedy", "isrc": "FR00Y1800022", "musicbrainz": "2e795662-3840-4f2b-8174-67c931f5d5d1"}
+review: "agoria-noemie-remedy.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 34}
@@ -22,4 +23,4 @@ From the album *Drift*, 2:58.
 A liked song.
 Your Top Songs 2019: #34.
 In My Top Songs of All the Time (#311).
-No review yet.
+Reviewed: content/agoria-noemie-remedy.md.

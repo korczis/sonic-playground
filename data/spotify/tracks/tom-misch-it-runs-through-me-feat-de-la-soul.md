@@ -6,8 +6,9 @@ artists: ["Tom Misch", "De La Soul"]
 album: "Geography"
 duration: "4:21"
 spotify: {"track": "0vMctOnb4YNIvbqgkbWNDy", "album": "0hDnsNkxpMDZrpBlGjldtW", "artists": ["1uiEZYehlNivdK3iQyAbye", "1Z8ODXyhEBi3WynYw0Rya6"]}
-keys: {"fold": "tommisch|itrunsthroughme"}
-status: "missing"
+keys: {"fold": "tommisch|itrunsthroughme", "isrc": "GBKPL1790989", "musicbrainz": "f8df2856-377c-4f1f-83ff-b1c66881a4a5"}
+review: "tom-misch-de-la-soul-it-runs-through-me.md"
+status: "present"
 liked: false
 playlists:
   - {"playlist": "kitchen-swagger", "n": 41}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14"]
 From the album *Geography*, 4:21.
 Not among the liked songs.
 In Kitchen Swagger (#41).
-No review yet.
+Reviewed: content/tom-misch-de-la-soul-it-runs-through-me.md.

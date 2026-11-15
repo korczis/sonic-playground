@@ -6,8 +6,9 @@ artists: ["Wax Tailor", "Charlotte Savary"]
 album: "Tales of the Forgotten Melodies"
 duration: "4:24"
 spotify: {"track": "35Dznxpk4j0A6hGayXWy6Z", "album": "7uOZSuwhnIq4sAfANX0vn2", "artists": ["3qwxSif06Qwzykdln8ZGfG", "00iD8QRcuTSSKAhaFU1MOp"]}
-keys: {"fold": "waxtailor|ourdance"}
-status: "missing"
+keys: {"fold": "waxtailor|ourdance", "musicbrainz": "ef19da67-e027-4ab9-8735-03dc0b43bd9d"}
+review: "wax-tailor-charlotte-savary-our-dance.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 42}
@@ -22,4 +23,4 @@ From the album *Tales of the Forgotten Melodies*, 4:24.
 A liked song.
 Your Top Songs 2019: #42.
 In My Top Songs of All the Time (#318).
-No review yet.
+Reviewed: content/wax-tailor-charlotte-savary-our-dance.md.

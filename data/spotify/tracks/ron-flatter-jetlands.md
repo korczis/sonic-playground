@@ -6,8 +6,9 @@ artists: ["Ron Flatter", "Nick D-Lite"]
 album: "Jetlands und Wolken"
 duration: "7:52"
 spotify: {"track": "1Yf98TVe3AOClCCbbQnQjr", "album": "0kkirkkfkfETZ9l8smC255", "artists": ["0HZ3FXXgXyKoMHKwKSZOpq", "19dDTE8Nf3oeBy96ljknGy"]}
-keys: {"fold": "ronflatter|jetlands"}
-status: "missing"
+keys: {"fold": "ronflatter|jetlands", "musicbrainz": "db6b3ec2-f02b-4852-badd-6363e013a126"}
+review: "ron-flatter-nick-d-lite-jetlands.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 72}
@@ -22,4 +23,4 @@ From the album *Jetlands und Wolken*, 7:52.
 A liked song.
 Your Top Songs 2019: #72.
 In My Top Songs of All the Time (#347).
-No review yet.
+Reviewed: content/ron-flatter-nick-d-lite-jetlands.md.

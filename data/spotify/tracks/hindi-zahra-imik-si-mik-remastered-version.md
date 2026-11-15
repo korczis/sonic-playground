@@ -6,8 +6,9 @@ artists: ["Hindi Zahra"]
 album: "Handmade"
 duration: "3:55"
 spotify: {"track": "3r3PT5TiwoZwQuZ9xnTKhf", "album": "7q12ksUpGeI7Pe1LRfKsfL", "artists": ["6QncudMSOiKxYRIKRDks6S"]}
-keys: {"fold": "hindizahra|imiksimik"}
-status: "missing"
+keys: {"fold": "hindizahra|imiksimik", "isrc": "FR9W10907802"}
+review: "hindi-zahra-imik-si-mik-remastered-version.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 35}
@@ -23,4 +24,4 @@ From the album *Handmade*, 3:55.
 A liked song.
 Your Top Songs 2019: #35.
 In Best of the Best (#78); My Top Songs of All the Time (#312).
-No review yet.
+Reviewed: content/hindi-zahra-imik-si-mik-remastered-version.md.

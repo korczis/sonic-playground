@@ -6,8 +6,9 @@ artists: ["Björk"]
 album: "Post"
 duration: "3:38"
 spotify: {"track": "3CMVjlbvNJMHDfYPX7xCpi", "album": "2lYwBB5l7GqgyHFTHz0Itd", "artists": ["7w29UYBi0qsHi5RTcv3lmA"]}
-keys: {"fold": "bjork|itsohsoquiet"}
-status: "missing"
+keys: {"fold": "bjork|itsohsoquiet", "isrc": "GBAKY9500010", "musicbrainz": "21b06466-19bd-4089-808e-5bb762dab782"}
+review: "bjork-it-s-oh-so-quiet.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 60}
@@ -22,4 +23,4 @@ From the album *Post*, 3:38.
 A liked song.
 Your Top Songs 2019: #60.
 In My Top Songs of All the Time (#335).
-No review yet.
+Reviewed: content/bjork-it-s-oh-so-quiet.md.

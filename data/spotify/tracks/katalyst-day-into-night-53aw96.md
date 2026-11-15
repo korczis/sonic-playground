@@ -6,8 +6,9 @@ artists: ["Katalyst", "Stephanie McKay"]
 album: "Deep Impressions"
 duration: "3:38"
 spotify: {"track": "53aW96vcdQskIrg0jtja5P", "album": "6hrzkk5YZeyBlGHkc1f56c", "artists": ["5yAyZa2e9KTHLsxSOMDmrC", "08YadB7oKIN5eIRT7y6xLN"]}
-keys: {"fold": "katalyst|dayintonight"}
-status: "missing"
+keys: {"fold": "katalyst|dayintonight", "musicbrainz": "9f7f48f6-9e9a-4f65-8d55-d342e8c1ca92"}
+review: "katalyst-stephanie-mckay-day-into-night.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2019, "n": 59}
@@ -22,4 +23,4 @@ From the album *Deep Impressions*, 3:38.
 Not among the liked songs.
 Your Top Songs 2019: #59.
 In My Top Songs of All the Time (#334).
-No review yet.
+Reviewed: content/katalyst-stephanie-mckay-day-into-night.md.

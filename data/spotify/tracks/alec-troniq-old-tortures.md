@@ -6,8 +6,9 @@ artists: ["Alec Troniq", "GABRIEL VITEL"]
 album: "The Aviating"
 duration: "8:48"
 spotify: {"track": "4TWPlBaYKnjls3KpOjcaBX", "album": "4gSJzDHKILotDwmE1YSZA3", "artists": ["7gY2UGpmfLNKfezQPuG7Hx", "1cdGFmm7cm0yvD7mA40R8x"]}
-keys: {"fold": "alectroniq|oldtortures"}
-status: "missing"
+keys: {"fold": "alectroniq|oldtortures", "musicbrainz": "76501b29-569e-4e30-ab3c-abb07c04068b"}
+review: "alec-troniq-gabriel-vitel-old-tortures.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 53}
@@ -24,4 +25,4 @@ From the album *The Aviating*, 8:48.
 A liked song.
 Your Top Songs 2019: #53.
 In Berlin Electronic Underground (#128); Best of the Best (#57); My Top Songs of All the Time (#329).
-No review yet.
+Reviewed: content/alec-troniq-gabriel-vitel-old-tortures.md.

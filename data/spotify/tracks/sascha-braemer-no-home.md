@@ -6,8 +6,9 @@ artists: ["Sascha Braemer"]
 album: "No Home"
 duration: "3:26"
 spotify: {"track": "24Fwm0Z4yUOQjYLo1CtUpR", "album": "7pBM8RCv3EUjOK4Zqbqh7a", "artists": ["3egW8Pgmbjm5vS4EPXZond"]}
-keys: {"fold": "saschabraemer|nohome"}
-status: "missing"
+keys: {"fold": "saschabraemer|nohome", "musicbrainz": "10c7331d-0c15-40a6-a998-9fb776e4b2bd"}
+review: "sascha-braemer-no-home.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *No Home*, 3:26.
 A liked song.
-No review yet.
+Reviewed: content/sascha-braemer-no-home.md.

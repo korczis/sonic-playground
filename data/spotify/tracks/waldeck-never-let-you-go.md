@@ -6,8 +6,9 @@ artists: ["Waldeck", "Patrizia Ferrara"]
 album: "Atlantic Ballroom"
 duration: "3:11"
 spotify: {"track": "5IK9dSUSzioE9lilLi4AEi", "album": "5OibdNiyEx8gxw9ASUAkwI", "artists": ["6596yDTd94cIC3dlBptxDH", "6ZkbsY4MO4EahWrRQBRKLM"]}
-keys: {"fold": "waldeck|neverletyougo"}
-status: "missing"
+keys: {"fold": "waldeck|neverletyougo", "isrc": "ATW631803301", "musicbrainz": "8f13277b-ab79-4164-a148-a49febb27cc5"}
+review: "waldeck-patrizia-ferrara-never-let-you-go.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 37}
@@ -23,4 +24,4 @@ From the album *Atlantic Ballroom*, 3:11.
 A liked song.
 Your Top Songs 2019: #37.
 In Liked from Radio (#10); My Top Songs of All the Time (#313).
-No review yet.
+Reviewed: content/waldeck-patrizia-ferrara-never-let-you-go.md.

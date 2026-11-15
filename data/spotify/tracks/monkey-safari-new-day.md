@@ -6,8 +6,9 @@ artists: ["Monkey Safari"]
 album: "HI"
 duration: "8:17"
 spotify: {"track": "7548lIowWrwIbVIbAOSewT", "album": "1w8HTBenAX5NyBQaG3q1UK", "artists": ["5zovXI5By2gUhdr7EByjLa"]}
-keys: {"fold": "monkeysafari|newday"}
-status: "missing"
+keys: {"fold": "monkeysafari|newday", "musicbrainz": "ec9d5b73-a757-4226-a903-1c0f756421d4"}
+review: "monkey-safari-new-day.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 49}
@@ -23,4 +24,4 @@ From the album *HI*, 8:17.
 A liked song.
 Your Top Songs 2019: #49.
 In Liked from Radio (#8); My Top Songs of All the Time (#325).
-No review yet.
+Reviewed: content/monkey-safari-new-day.md.

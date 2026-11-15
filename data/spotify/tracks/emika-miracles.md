@@ -6,8 +6,9 @@ artists: ["Emika"]
 album: "DREI"
 duration: "3:14"
 spotify: {"track": "5Phlm0Kx2sr0znfvuQ6X1o", "album": "7jNBAhp5DxAPFhkkLkuxeG", "artists": ["50Gx1SNB4vH2V7peIiYD4S"]}
-keys: {"fold": "emika|miracles"}
-status: "missing"
+keys: {"fold": "emika|miracles", "musicbrainz": "0f0b6bac-0a10-4508-821e-cc4acf9d1d8d"}
+review: "emika-miracles.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 41}
@@ -23,4 +24,4 @@ From the album *DREI*, 3:14.
 A liked song.
 Your Top Songs 2019: #41.
 In Best of the Best (#40); My Top Songs of All the Time (#317).
-No review yet.
+Reviewed: content/emika-miracles.md.

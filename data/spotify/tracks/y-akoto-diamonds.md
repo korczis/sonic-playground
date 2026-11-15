@@ -6,8 +6,9 @@ artists: ["Y'akoto"]
 album: "Babyblues"
 duration: "3:44"
 spotify: {"track": "0aBZ8AFkFpfdCl1wDHORNC", "album": "4TmR0aYCOQ9M0ZRM8q8riP", "artists": ["2JehOBriwVSalkeqL3noMM"]}
-keys: {"fold": "yakoto|diamonds"}
-status: "missing"
+keys: {"fold": "yakoto|diamonds", "isrc": "DEA621100235", "musicbrainz": "6d64ad01-4d65-449b-b6b1-52dea1591612"}
+review: "y-akoto-diamonds.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 52}
@@ -22,4 +23,4 @@ From the album *Babyblues*, 3:44.
 A liked song.
 Your Top Songs 2019: #52.
 In My Top Songs of All the Time (#328).
-No review yet.
+Reviewed: content/y-akoto-diamonds.md.

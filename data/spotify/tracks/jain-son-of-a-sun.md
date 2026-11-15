@@ -6,8 +6,9 @@ artists: ["Jain"]
 album: "Zanaka - EP"
 duration: "3:31"
 spotify: {"track": "6L57eOHgtM5RoucZEythR0", "album": "5zmVLSG3K4emQxXTJ6j1mF", "artists": ["2HHmvvSQ44ePDH7IKVzgK0"]}
-keys: {"fold": "jain|sonofasun"}
-status: "missing"
+keys: {"fold": "jain|sonofasun", "isrc": "FR9W11504988", "musicbrainz": "9e541e57-1ccf-45a1-8661-4dd90316e372"}
+review: "jain-son-of-a-sun.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 54}
@@ -25,4 +26,4 @@ A liked song.
 Top tracks of the month (read 2026-11-14): #13.
 Your Top Songs 2019: #54.
 In My Top Songs of All the Time (#330).
-No review yet.
+Reviewed: content/jain-son-of-a-sun.md.

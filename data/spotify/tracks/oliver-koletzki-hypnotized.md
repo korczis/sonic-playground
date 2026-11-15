@@ -6,8 +6,9 @@ artists: ["Oliver Koletzki", "Fran"]
 album: "Großstadtmärchen"
 duration: "5:40"
 spotify: {"track": "0V2GX0aukyZMt6nSMxfOJk", "album": "6mM6lqJGzNcEB1PBwZHYAo", "artists": ["1WjBIvYAnZTkTh5UiZNwlR", "2gct3VkeQT2IuGNFNJVj1J"]}
-keys: {"fold": "oliverkoletzki|hypnotized"}
-status: "missing"
+keys: {"fold": "oliverkoletzki|hypnotized", "isrc": "DEKN60900180", "musicbrainz": "5d65495d-9d74-45e1-99d7-2722b939f66a"}
+review: "oliver-koletzki-fran-hypnotized.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 74}
@@ -24,4 +25,4 @@ From the album *Großstadtmärchen*, 5:40.
 A liked song.
 Your Top Songs 2019: #74.
 In Best of the Best (#63); Chill (#99); My Top Songs of All the Time (#349).
-No review yet.
+Reviewed: content/oliver-koletzki-fran-hypnotized.md.

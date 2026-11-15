@@ -6,8 +6,9 @@ artists: ["dOP"]
 album: "Close Up"
 duration: "5:39"
 spotify: {"track": "4wLEoEi6OlZ7K3D6inaUks", "album": "0s00uKrgUlKfMswpc2Chb4", "artists": ["1HX7ovHKJG8M8cUoSvH6UB"]}
-keys: {"fold": "dop|closeup"}
-status: "missing"
+keys: {"fold": "dop|closeup", "musicbrainz": "aa1de95a-3f00-4ab2-a561-18f0c0899c77"}
+review: "dop-close-up.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 56}
@@ -22,4 +23,4 @@ From the album *Close Up*, 5:39.
 A liked song.
 Your Top Songs 2019: #56.
 In My Top Songs of All the Time (#332).
-No review yet.
+Reviewed: content/dop-close-up.md.

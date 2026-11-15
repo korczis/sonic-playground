@@ -6,8 +6,9 @@ artists: ["Chaim", "Meital De Razon"]
 album: "Love Rehab"
 duration: "7:40"
 spotify: {"track": "0QqexX8RENBLirZ8W1qMvY", "album": "7dAxRaeGVamTt5urf9UURz", "artists": ["2XMpXAQ0B1J95en60YGE3V", "3C6fgm5KQCsHFw2FU4jdL0"]}
-keys: {"fold": "chaim|loverehab"}
-status: "missing"
+keys: {"fold": "chaim|loverehab", "musicbrainz": "94266e6a-6b24-4f74-8342-c01f8254f51d"}
+review: "chaim-meital-de-razon-love-rehab.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 62}
@@ -22,4 +23,4 @@ From the album *Love Rehab*, 7:40.
 A liked song.
 Your Top Songs 2019: #62.
 In My Top Songs of All the Time (#337).
-No review yet.
+Reviewed: content/chaim-meital-de-razon-love-rehab.md.
