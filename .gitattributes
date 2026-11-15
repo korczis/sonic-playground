@@ -1,0 +1,10 @@
+# Files the derive writes (npm run derive, npm run css, scripts/i18n.py, scripts/images.py,
+# scripts/vendor.mjs). `merge=derived` is the attribute Majordomus reads (lib/check.sh, I2114):
+# a task that changes a canonical input is admitted with the projections its derive rewrote, so a
+# task scoped to `styles` or `data/i18n` no longer needs `static` in its scope. A projection
+# committed without any canonical change is still refused. No merge driver is configured, so git
+# merges these files as text, as before; resolve a conflict by re-running the derive.
+static/css/app.css merge=derived
+static/data/*.json merge=derived
+data/derived/** merge=derived
+content/yearbook/** merge=derived
