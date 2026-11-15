@@ -107,6 +107,14 @@ class ProbeLinks(unittest.TestCase):
             self.assertEqual(probe_links.probe("https://en.wikipedia.org/wiki/A", sleep=waits.append), 200)
         self.assertEqual(waits, [7.0, 4.0])
 
+    def test_a_url_is_asked_as_a_browser_sends_it(self):
+        self.assertEqual(probe_links.as_uri("https://en.wikipedia.org/wiki/Lunático"),
+                         "https://en.wikipedia.org/wiki/Lun%C3%A1tico")
+        for url in ("https://en.wikipedia.org/wiki/%C3%B7_(album)", "https://www.last.fm/music/S.R.+Krebs/+wiki",
+                    "https://serato.com/playlists/id:5137077/7-12-15", "https://x.example/a?b=c&d=e%20f"):
+            self.assertEqual(probe_links.as_uri(url), url)
+        self.assertEqual(probe_links.as_uri("https://bücher.example/a#top"), "https://xn--bcher-kva.example/a")
+
     def test_a_retry_after_is_bounded(self):
         answers = iter([(429, 3600.0)] * (probe_links.RETRIES + 1))
         waits = []

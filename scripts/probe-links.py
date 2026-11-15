@@ -79,8 +79,21 @@ def links(root: Path = ROOT) -> dict[str, list[str]]:
     return found
 
 
+def as_uri(url: str) -> str:
+    """The URL as ASCII, the way a browser sends it: an IDNA host, a percent-encoded path and
+    query. urllib refuses a raw "https://en.wikipedia.org/wiki/Lunático" (the first CI run
+    counted it unreachable), while every reader's browser opens it."""
+    parts = urllib.parse.urlsplit(url)
+    host = (parts.hostname or "").encode("idna").decode("ascii")
+    netloc = host + (f":{parts.port}" if parts.port else "")
+    safe = "/%:@!$&'()*+,;=-._~"
+    return urllib.parse.urlunsplit((parts.scheme, netloc, urllib.parse.quote(parts.path, safe=safe),
+                                    urllib.parse.quote(parts.query, safe=safe + "?"), ""))
+
+
 def ask(url: str) -> tuple[int, float | None]:
     """The status one request gets, and the Retry-After it carries (seconds), if any."""
+    url = as_uri(url)
     headers = {"User-Agent": "Mozilla/5.0 (sonic-playground link probe)"}
     for method in ("HEAD", "GET"):
         try:
