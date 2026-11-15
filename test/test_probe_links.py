@@ -63,27 +63,56 @@ class ProbeLinks(unittest.TestCase):
         self.assertEqual(probe_links.front_urls(tomllib.loads(REVIEW.split("+++")[1])),
                          ["https://example.org/dead-citation"])
 
-    def test_a_guarded_host_is_matched_by_host_not_by_substring(self):
-        for url in ("https://www.discogs.com/release/1", "https://x.com/a", "https://www.juno.co.uk/reviews/x/"):
-            self.assertTrue(probe_links.guarded(url), url)
-        for url in ("https://www.dropbox.com/s/a", "https://www.netflix.com/title/1",
-                    "https://example.org/see-discogs.com", "https://notjuno.co.uk/"):
-            self.assertFalse(probe_links.guarded(url), url)
-
-    def test_a_guarded_hosts_refusal_is_not_dead_but_its_404_is(self):
-        found = {"https://www.juno.co.uk/r/": ["a.md"], "https://www.dropbox.com/s/": ["b.md"],
-                 "https://www.discogs.com/gone": ["c.md"]}
-        codes = {"https://www.juno.co.uk/r/": 403, "https://www.dropbox.com/s/": 403,
-                 "https://www.discogs.com/gone": 404}
+    def test_a_refusal_is_about_the_client_and_fails_nothing(self):
+        found = {"https://earmilk.com/a": ["a.md"], "https://en.wikipedia.org/wiki/A": ["b.md"],
+                 "https://ok.example/": ["c.md"]}
+        codes = {"https://earmilk.com/a": 403, "https://en.wikipedia.org/wiki/A": 429,
+                 "https://ok.example/": 200}
         out = io.StringIO()
         with mock.patch.object(probe_links, "links", lambda: found), \
                 mock.patch.object(probe_links, "probe", codes.__getitem__), \
                 mock.patch.object(sys, "argv", ["probe-links.py"]), redirect_stdout(out):
-            self.assertEqual(probe_links.main(), 1)
-        self.assertNotIn("juno", out.getvalue())
-        self.assertIn("dead (403): https://www.dropbox.com/s/", out.getvalue())
-        self.assertIn("dead (404): https://www.discogs.com/gone", out.getvalue())
+            self.assertEqual(probe_links.main(), 0)
+        self.assertIn("refused (403) by earmilk.com: 1 link(s)", out.getvalue())
+        self.assertIn("refused (429) by en.wikipedia.org: 1 link(s)", out.getvalue())
+        self.assertIn("3 external links, 0 dead, 2 refused", out.getvalue())
 
+    def test_what_a_removed_page_answers_is_dead(self):
+        for code in (0, 404, 410, 400, 500, 503):
+            self.assertEqual(probe_links.verdict(code), "dead", code)
+        for code in (200, 204, 301, 302):
+            self.assertEqual(probe_links.verdict(code), "ok", code)
+
+    def test_one_host_is_asked_one_request_at_a_time(self):
+        lock, active, most = __import__("threading").Lock(), [0], [0]
+        def one(url):
+            with lock:
+                active[0] += 1
+                most[0] = max(most[0], active[0])
+            __import__("time").sleep(0.01)
+            with lock:
+                active[0] -= 1
+            return 200
+        urls = [f"https://en.wikipedia.org/wiki/{i}" for i in range(12)]
+        gaps = []
+        codes = probe_links.probe_all(urls, one, sleep=gaps.append)
+        self.assertEqual(set(codes.values()), {200})
+        self.assertEqual(most[0], 1)
+        self.assertEqual(gaps, [probe_links.PACE_S] * 11)
+
+    def test_a_429_is_asked_again_after_its_retry_after(self):
+        answers = iter([(429, 7.0), (429, None), (200, None)])
+        waits = []
+        with mock.patch.object(probe_links, "ask", lambda url: next(answers)):
+            self.assertEqual(probe_links.probe("https://en.wikipedia.org/wiki/A", sleep=waits.append), 200)
+        self.assertEqual(waits, [7.0, 4.0])
+
+    def test_a_retry_after_is_bounded(self):
+        answers = iter([(429, 3600.0)] * (probe_links.RETRIES + 1))
+        waits = []
+        with mock.patch.object(probe_links, "ask", lambda url: next(answers)):
+            self.assertEqual(probe_links.probe("https://x.example/", sleep=waits.append), 429)
+        self.assertEqual(waits, [probe_links.RETRY_CAP_S] * probe_links.RETRIES)
 
 if __name__ == "__main__":
     unittest.main()

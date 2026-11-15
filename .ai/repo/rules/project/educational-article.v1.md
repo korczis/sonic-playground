@@ -51,7 +51,10 @@ nothing.
   http(s) URL of the front matter, `extra.sources[].url` above all, as well as the body links;
   `extra.youtube` belongs to `probe-videos.py`. Until 2026-11-14 it read only the bodies: 8 of
   808 URLs. `test/test_probe_links.py` proves every cited source is enumerated and that a dead
-  citation fails the probe.
+  citation fails the probe. Dead is what a removed page answers (404, 410, another 4xx, a 5xx,
+  nothing); a refusal (401, 403, a 429 that outlives its Retry-After) is about the client and is
+  listed by host without failing. One host is asked one request at a time: the first CI run
+  (43655799611) counted 104 of its 141 "dead" from Wikipedia's 429 to parallel requests.
 
 - The smoke test proves the listening guide through a real timed guide button (the review is found
   in the content's front matter), not by calling the player: the direct call passed with the
