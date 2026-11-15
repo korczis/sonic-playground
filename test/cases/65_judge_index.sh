@@ -6,6 +6,10 @@
 # - a catalogue that lists a review the commit lacks must be refused, although the review exists
 #   (untracked) in the working tree, where `git diff --quiet` never looks.
 set -euo pipefail
+# A hook (pre-push in a linked worktree) exports an absolute GIT_DIR; inherited here, the
+# scratch repository's git init and commit would act on the calling repository instead
+# (2026-11-15: core.bare=true and a moved main). Drop git's whole local environment first.
+unset $(git rev-parse --local-env-vars)
 root=$(cd "$(dirname "$0")/../.." && pwd)
 work=$(mktemp -d "${TMPDIR:-/tmp}/judge-index.XXXXXX")
 trap 'rm -rf "$work"' EXIT
