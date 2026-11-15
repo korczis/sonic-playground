@@ -7,7 +7,8 @@ album: "Igor"
 duration: "4:02"
 spotify: {"track": "70YPpGSz7Tuoal0uuMA7kY", "album": "4lkrKVqB5ERtViqPY8xVXO", "artists": ["0IdWDfZKQzBnWOWVHj7KCp"]}
 keys: {"fold": "stereofysh|therace"}
-status: "missing"
+review: "stereofysh-the-race-radio-edit.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 61}
@@ -22,4 +23,4 @@ From the album *Igor*, 4:02.
 A liked song.
 Your Top Songs 2018: #61.
 In My Top Songs of All the Time (#245).
-No review yet.
+Reviewed: content/stereofysh-the-race-radio-edit.md.

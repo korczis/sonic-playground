@@ -6,8 +6,9 @@ artists: ["Purple Disco Machine"]
 album: "Soulmatic"
 duration: "4:16"
 spotify: {"track": "2Qw4nXX0eCRLRIX8BT19p2", "album": "04X6SiqkYtSHq3TN8JtEJ9", "artists": ["2WBJQGf1bT1kxuoqziH5g4"]}
-keys: {"fold": "purplediscomachine|bodyfunk"}
-status: "missing"
+keys: {"fold": "purplediscomachine|bodyfunk", "isrc": "AUDCB1701047", "musicbrainz": "901465e4-328f-4f47-adbc-d6cdbc4d1dd0"}
+review: "purple-disco-machine-body-funk.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 80}
@@ -22,4 +23,4 @@ From the album *Soulmatic*, 4:16.
 A liked song.
 Your Top Songs 2018: #80.
 In My Top Songs of All the Time (#264).
-No review yet.
+Reviewed: content/purple-disco-machine-body-funk.md.

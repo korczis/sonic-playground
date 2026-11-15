@@ -6,8 +6,9 @@ artists: ["KlangTherapeuten", "Melokind"]
 album: "Perlentaucher"
 duration: "7:33"
 spotify: {"track": "4ag3ZlCnlAO5gkJNq9kraF", "album": "7uzoD2lMjgWvZQmzv9C9nI", "artists": ["54gKd6ck4Kz5pigQLZUbkW", "7lzYA6Ju09G9hcMA6RVelF"]}
-keys: {"fold": "klangtherapeuten|perlentauchermelokindremix"}
-status: "missing"
+keys: {"fold": "klangtherapeuten|perlentauchermelokindremix", "isrc": "DEH741305505", "musicbrainz": "7094b35a-efe1-4e13-b931-b01f9456f76c"}
+review: "klangtherapeuten-melokind-perlentaucher-melokind-remix.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2018, "n": 63}
@@ -22,4 +23,4 @@ From the album *Perlentaucher*, 7:33.
 Not among the liked songs.
 Your Top Songs 2018: #63.
 In My Top Songs of All the Time (#247).
-No review yet.
+Reviewed: content/klangtherapeuten-melokind-perlentaucher-melokind-remix.md.

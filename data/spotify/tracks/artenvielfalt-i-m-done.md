@@ -6,8 +6,9 @@ artists: ["Artenvielfalt", "The Project", "Miss NatNat"]
 album: "I'm Done"
 duration: "3:39"
 spotify: {"track": "6t7l5pp8OWQESVp8mv1hFO", "album": "4KC75d2GUTParusDIziYEx", "artists": ["24UYDc2E1voY9bVDxPpiLL", "5Oduhm4YxSZ9vHGOKXNs4C", "4F0YeUFtxwQbJu5hUcvFCR"]}
-keys: {"fold": "artenvielfalt|imdone"}
-status: "missing"
+keys: {"fold": "artenvielfalt|imdone", "isrc": "QMSNZ1312886", "musicbrainz": "c2427360-f3a1-41e5-906f-7cee1ac3f7d6"}
+review: "artenvielfalt-the-project-miss-natnat-i-m-done.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 44}
@@ -23,4 +24,4 @@ From the album *I'm Done*, 3:39.
 A liked song.
 Your Top Songs 2018: #44.
 In Best of the Best (#98); My Top Songs of All the Time (#230).
-No review yet.
+Reviewed: content/artenvielfalt-the-project-miss-natnat-i-m-done.md.

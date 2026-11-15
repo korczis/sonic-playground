@@ -6,8 +6,9 @@ artists: ["Wamdue Project", "Jonathan Mendelsohn"]
 album: "Fierce Angel Presents Wamdue Project - Forgiveness, Vol. 1"
 duration: "8:19"
 spotify: {"track": "3JTt46DscHqBhpPYN0j6zI", "album": "3OzFVc6KftxlwKXyzcEQeu", "artists": ["2U33UlGhnPqg3B5xJTn3zm", "5d1oOpLkM76Tgr2zWMTYkm"]}
-keys: {"fold": "wamdueproject|forgivenessextendedoriginal"}
-status: "missing"
+keys: {"fold": "wamdueproject|forgivenessextendedoriginal", "musicbrainz": "6680fad7-c757-4f49-bb92-c7455c6f04de"}
+review: "wamdue-project-jonathan-mendelsohn-forgiveness-extended-original.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 78}
@@ -22,4 +23,4 @@ From the album *Fierce Angel Presents Wamdue Project - Forgiveness, Vol. 1*, 8:1
 A liked song.
 Your Top Songs 2018: #78.
 In My Top Songs of All the Time (#262).
-No review yet.
+Reviewed: content/wamdue-project-jonathan-mendelsohn-forgiveness-extended-original.md.

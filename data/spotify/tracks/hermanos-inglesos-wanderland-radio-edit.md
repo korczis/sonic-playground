@@ -7,7 +7,8 @@ album: "Wanderland"
 duration: "3:34"
 spotify: {"track": "3WpoNywb1eZ9EWZ1MYVtca", "album": "0khGXNipMtNgsAPhXDynOj", "artists": ["5qRupOBfjmAEIZ1WLvlEhd", "0g1YVFIhLugOG7Bk5WrIqv"]}
 keys: {"fold": "hermanosinglesos|wanderland"}
-status: "missing"
+review: "hermanos-inglesos-meme-wanderland-radio-edit.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 43}
@@ -22,4 +23,4 @@ From the album *Wanderland*, 3:34.
 A liked song.
 Your Top Songs 2018: #43.
 In My Top Songs of All the Time (#229).
-No review yet.
+Reviewed: content/hermanos-inglesos-meme-wanderland-radio-edit.md.

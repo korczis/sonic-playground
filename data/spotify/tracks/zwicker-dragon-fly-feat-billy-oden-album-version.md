@@ -6,8 +6,9 @@ artists: ["Zwicker"]
 album: "Songs of Lucid Dreamers"
 duration: "5:12"
 spotify: {"track": "61g4d5MtGKssH3biH9JOeH", "album": "4iFB9Rdi4ee0guYK6l8JRj", "artists": ["1oojcp861zYKDzhR9bAp2K"]}
-keys: {"fold": "zwicker|dragonfly"}
-status: "missing"
+keys: {"fold": "zwicker|dragonfly", "musicbrainz": "f605c31e-d1bd-41a2-b361-d9b751dc1e6f"}
+review: "zwicker-dragon-fly-feat-billy-oden-album-version.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 49}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2018: #49.
 Your Top Songs 2019: #58.
 In My Top Songs of All the Time (#234).
-No review yet.
+Reviewed: content/zwicker-dragon-fly-feat-billy-oden-album-version.md.

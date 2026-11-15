@@ -7,7 +7,8 @@ album: "Opportunity"
 duration: "5:35"
 spotify: {"track": "2z38occQCtnSiGovrCFbAW", "album": "0Iz0RGAELd6saukK3Px64H", "artists": ["42Cxt8vXx98Cvdj85iGzTW"]}
 keys: {"fold": "brasstronaut|opportunity"}
-status: "missing"
+review: "brasstronaut-opportunity-original-mix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 72}
@@ -22,4 +23,4 @@ From the album *Opportunity*, 5:35.
 A liked song.
 Your Top Songs 2018: #72.
 In My Top Songs of All the Time (#256).
-No review yet.
+Reviewed: content/brasstronaut-opportunity-original-mix.md.

@@ -7,7 +7,8 @@ album: "Six o'clock E.P. (Incl. Remix by Basti Grub)"
 duration: "6:23"
 spotify: {"track": "35ZlQDq1yR3amRoDg8Yptq", "album": "0vRYIRTrWFNv7FZKWUpQSh", "artists": ["7JlIc6aw1PyoBKQg9c1EnJ"]}
 keys: {"fold": "paji|sixoclock"}
-status: "missing"
+review: "paji-six-o-clock-original-mix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 57}
@@ -22,4 +23,4 @@ From the album *Six o'clock E.P. (Incl. Remix by Basti Grub)*, 6:23.
 A liked song.
 Your Top Songs 2018: #57.
 In My Top Songs of All the Time (#241).
-No review yet.
+Reviewed: content/paji-six-o-clock-original-mix.md.

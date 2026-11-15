@@ -6,8 +6,9 @@ artists: ["Daso"]
 album: "Meine Idee"
 duration: "7:55"
 spotify: {"track": "2KUcdsb8TLCtj4RtULT4Sw", "album": "490ZaAYx9IrP99pwgtU0je", "artists": ["70PpOSePHXISY6UFBJt3K0"]}
-keys: {"fold": "daso|meine"}
-status: "missing"
+keys: {"fold": "daso|meine", "musicbrainz": "d62aca22-793d-457f-92a2-66350ee73243"}
+review: "daso-meine.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 51}
@@ -22,4 +23,4 @@ From the album *Meine Idee*, 7:55.
 A liked song.
 Your Top Songs 2018: #51.
 In My Top Songs of All the Time (#236).
-No review yet.
+Reviewed: content/daso-meine.md.

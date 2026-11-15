@@ -6,8 +6,9 @@ artists: ["Solee"]
 album: "The Seven Year Itch"
 duration: "8:27"
 spotify: {"track": "4isxMquXplgA0jimVb0OHB", "album": "11M83W43hrIJDqMxYVhD4E", "artists": ["0r0m8up7CjS8TJodH2HX7C"]}
-keys: {"fold": "solee|sommerliebe"}
-status: "missing"
+keys: {"fold": "solee|sommerliebe", "isrc": "DEH741306898", "musicbrainz": "32ac5a7c-7ad5-4c52-9b44-659c17bc8a4a"}
+review: "solee-sommerliebe.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 65}
@@ -22,4 +23,4 @@ From the album *The Seven Year Itch*, 8:27.
 A liked song.
 Your Top Songs 2018: #65.
 In My Top Songs of All the Time (#249).
-No review yet.
+Reviewed: content/solee-sommerliebe.md.
