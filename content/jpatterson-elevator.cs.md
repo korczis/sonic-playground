@@ -9,7 +9,7 @@ sentiment = ["relaxed", "groovy", "uplifting"]
 concept = ["dub", "remix", "bassline"]
 
 [extra.translation]
-of = "b08ec35f2f22"
+of = "21d6a61e9c58"
 
 [extra]
 connections = [
@@ -60,4 +60,4 @@ Všechno stojí na {{ <concept_link name="bassline" text="basové lince" lang="c
 
 ## Vydání a remixy
 
-Elevator vyšla na EP Rühn (Acker Records, Německo, 2016), které napsal JPattersson a na jedné desce spojuje originál, jeho dubovou verzi a oba remixy. Zde vložené video nahrál kanál Music SENSES, nikoli sám umělec. Elevator se později znovu objevila na kompilaci labelu 3000° One World Our Future a v roce 2022 jako singl u labelu Gans Anders Festival. Je to slunečná skladba bez tlaku: pusťte si ji, nechte bas pracovat a užijte si jízdu.
+Elevator vyšla na EP Rühn (Acker Records, Německo, 2016), které napsal JPattersson a na jedné desce spojuje originál, jeho dubovou verzi a oba remixy. Zde vložená nahrávka je vlastní upload labelu s verzí z EP, na kanálu umělce. Elevator se později znovu objevila na kompilaci labelu 3000° One World Our Future a v roce 2022 jako singl u labelu Gans Anders Festival. Je to slunečná skladba bez tlaku: pusťte si ji, nechte bas pracovat a užijte si jízdu.

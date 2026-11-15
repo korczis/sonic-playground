@@ -16,7 +16,7 @@ track = "Elevator"
 album = "Rühn"
 publisher = "Acker Records"
 musicbrainz = { recording = "4a680eaf-4182-4c8f-9464-ba5d9a896e26", artist = "2185c865-ac87-4807-bb43-f90a1ad9cdde", release = "4b401add-3af1-4787-b92d-188994cc1824" }
-youtube = "https://www.youtube.com/embed/zvf2J2Jh5aw"
+youtube = "https://www.youtube.com/embed/_pcjaY_Y46Y"
 connections = [
   { source = "dj-fitchie-joe-dukie-midnight-marauders.md", why = "Another unhurried dub record built around a deep, patient bassline, from the other side of the world." },
   { source = "groove-armada-superstylin.md", why = "Another track that carries dub and reggae into electronic dance music, with the bassline at the centre." },
@@ -98,4 +98,4 @@ Everything rests on the {{ <concept_link name="bassline" /> }}. In dub and regga
 
 ## Release and Remixes
 
-Elevator was released on the Rühn EP (Acker Records, Germany, 2016), written by JPattersson, with the original, its dub, and the two remixes on one record. The video embedded here was uploaded by the channel Music SENSES rather than by the artist. Elevator later reappeared on the 3000° compilation One World Our Future, and in 2022 as a single on the Gans Anders Festival label. It is a sunny, low-pressure track: put it on, let the bass do the work, and enjoy the ride.
+Elevator was released on the Rühn EP (Acker Records, Germany, 2016), written by JPattersson, with the original, its dub, and the two remixes on one record. The recording embedded here is the label's own upload of the EP version, on the artist's channel. Elevator later reappeared on the 3000° compilation One World Our Future, and in 2022 as a single on the Gans Anders Festival label. It is a sunny, low-pressure track: put it on, let the bass do the work, and enjoy the ride.
