@@ -6,8 +6,9 @@ artists: ["Queen vs The Miami Project"]
 album: "Another One Bites The Dust"
 duration: "5:35"
 spotify: {"track": "4cNQ8AVhfVG4rMAzBPnGGV", "album": "2n1Az4Mwhf0jWdlflSdWx9", "artists": ["2YOWSQQzKRsipesbtg9z99"]}
-keys: {"fold": "queenvsthemiamiproject|anotheronebitesthedustaskillzremix"}
-status: "missing"
+keys: {"fold": "queenvsthemiamiproject|anotheronebitesthedustaskillzremix", "musicbrainz": "0b0c029f-badb-4ddf-a6eb-b1234b862e62"}
+review: "queen-the-miami-project-another-one-bites-the-dust-a-skillz-remix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2016, "n": 96}
@@ -22,4 +23,4 @@ From the album *Another One Bites The Dust*, 5:35.
 A liked song.
 Your Top Songs 2016: #96.
 In My Top Songs of All the Time (#96).
-No review yet.
+Reviewed: content/queen-the-miami-project-another-one-bites-the-dust-a-skillz-remix.md.

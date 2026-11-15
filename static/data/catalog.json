@@ -8037,9 +8037,9 @@
    "file": "data/backlog/yearbook-2016.toml",
    "expected": 101,
    "items": 101,
-   "songs": 88,
-   "present": 89,
-   "missing": 12,
+   "songs": 90,
+   "present": 91,
+   "missing": 10,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -8103,6 +8103,10 @@
      "count": 14
     },
     {
+     "term": "pop",
+     "count": 13
+    },
+    {
      "term": "dance",
      "count": 12
     },
@@ -8111,19 +8115,15 @@
      "count": 12
     },
     {
-     "term": "pop",
+     "term": "funk",
      "count": 12
     },
     {
-     "term": "deep house",
-     "count": 10
-    },
-    {
-     "term": "funk",
-     "count": 10
-    },
-    {
      "term": "soul",
+     "count": 11
+    },
+    {
+     "term": "deep house",
      "count": 10
     },
     {
@@ -8139,8 +8139,8 @@
      "count": 8
     },
     {
-     "term": "indie pop",
-     "count": 6
+     "term": "rock",
+     "count": 7
     }
    ],
    "tracks": [
@@ -8470,8 +8470,8 @@
      "n": 47,
      "title": "Happy - From \"Despicable Me 2\"",
      "artist": "Pharrell Williams",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "pharrell-williams-happy.md"
     },
     {
      "n": 48,
@@ -8813,8 +8813,8 @@
      "n": 96,
      "title": "Another One Bites The Dust - A Skillz Remix",
      "artist": "Queen vs The Miami Project",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "queen-the-miami-project-another-one-bites-the-dust-a-skillz-remix.md"
     },
     {
      "n": 97,
@@ -53042,7 +53042,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2016,
+     "n": 96
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -53382,7 +53387,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2016,
+     "n": 47
+    }
+   ],
    "langs": [
     "en",
     "cs"
