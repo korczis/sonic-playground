@@ -6,8 +6,9 @@ artists: ["Belleruche"]
 album: "The Express"
 duration: "3:22"
 spotify: {"track": "4QHlOijwbOACRSWo6qIFLA", "album": "7rTE0Hf09rVbdYyZe6nyM5", "artists": ["4N9nNkpjGuBlGWnYubQI8t"]}
-keys: {"fold": "belleruche|anythingyouwantnotthat"}
-status: "missing"
+keys: {"fold": "belleruche|anythingyouwantnotthat", "isrc": "GBEUE0801283", "musicbrainz": "13dbe596-a8d2-477d-9e74-ef7c768e2b9d"}
+review: "belleruche-anything-you-want-not-that.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Express*, 3:22.
 A liked song.
-No review yet.
+Reviewed: content/belleruche-anything-you-want-not-that.md.

@@ -6,8 +6,9 @@ artists: ["Gabriella Cilmi"]
 album: "Lessons To Be Learned"
 duration: "3:21"
 spotify: {"track": "2BkdnK1Sl8pDlgeaHcXvzn", "album": "4Bc2LrXbkvNCH99ZSFzhhD", "artists": ["5v2GEv1pQaCp6oeOQROdKE"]}
-keys: {"fold": "gabriellacilmi|sweetaboutme"}
-status: "missing"
+keys: {"fold": "gabriellacilmi|sweetaboutme", "isrc": "GBUM70709626", "musicbrainz": "3d675c06-2d9a-400f-8c53-2383c4094393"}
+review: "gabriella-cilmi-sweet-about-me.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2016, "n": 22}
@@ -26,4 +27,4 @@ Not among the liked songs.
 Your Top Songs 2016: #22.
 Your Top Songs 2017: #12.
 In Best of the Best (#5); My Shazam Tracks (#10); My Top Songs of All the Time (#22).
-No review yet.
+Reviewed: content/gabriella-cilmi-sweet-about-me.md.

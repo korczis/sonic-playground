@@ -7,8 +7,9 @@ album: "Shine"
 duration: "4:44"
 explicit: true
 spotify: {"track": "41on8RwRh22IHcChAN2gm8", "album": "1fpyVGMhF1vdl4XTFo1IH0", "artists": ["5T0MSzX9RC5NA6gAI6irSn", "5K4W6rqBFWDnAN6FQUkS6x"]}
-keys: {"fold": "estelle|americanboy"}
-status: "missing"
+keys: {"fold": "estelle|americanboy", "musicbrainz": "192333bd-5f71-4d0e-9356-f4bf2ff848c5"}
+review: "estelle-kanye-west-american-boy-feat-kanye-west.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2016, "n": 21}
@@ -24,4 +25,4 @@ From the album *Shine*, 4:44.
 A liked song.
 Your Top Songs 2016: #21.
 In Best of the Best (#19); My Top Songs of All the Time (#21).
-No review yet.
+Reviewed: content/estelle-kanye-west-american-boy-feat-kanye-west.md.

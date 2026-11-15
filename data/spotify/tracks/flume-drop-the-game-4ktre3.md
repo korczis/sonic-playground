@@ -6,8 +6,9 @@ artists: ["Flume", "Chet Faker"]
 album: "Lockjaw"
 duration: "3:41"
 spotify: {"track": "4KtrE35pTuqwNc22QP58RT", "album": "5I0kS30hvtI7a1LFEhaPve", "artists": ["6nxWCVXbOlEVRexSbLsTer", "6UcJxoeHWWWyT5HZP064om"]}
-keys: {"fold": "flume|dropthegame"}
-status: "missing"
+keys: {"fold": "flume|dropthegame", "isrc": "AUFF01300488", "musicbrainz": "76c02aec-49c9-44f2-acca-3d923a3fc7a8"}
+review: "flume-chet-faker-drop-the-game.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2016, "n": 20}
@@ -27,4 +28,4 @@ Your Top Songs 2016: #20.
 Your Top Songs 2017: #69.
 Your Top Songs 2018: #52.
 In Best of the Best (#76); My Top Songs of All the Time (#20).
-No review yet.
+Reviewed: content/flume-chet-faker-drop-the-game.md.

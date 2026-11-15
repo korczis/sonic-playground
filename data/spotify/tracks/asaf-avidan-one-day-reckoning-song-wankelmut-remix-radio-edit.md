@@ -6,8 +6,9 @@ artists: ["Asaf Avidan", "The Mojos", "Wankelmut"]
 album: "One Day / Reckoning Song (Wankelmut Remix)"
 duration: "3:35"
 spotify: {"track": "5bGG1abhVIUm6EAa36ipRX", "album": "6ZtATnsRYU8ZP4JD0dH0fs", "artists": ["7t51dSX8ZkKC7VoKRd0lME", "5abaNg0SJPEF7EST0RjY9F", "01e2lCvLZ4fLUIRy68nptH"]}
-keys: {"fold": "asafavidan|onedayreckoningsongwankelmutremix"}
-status: "missing"
+keys: {"fold": "asafavidan|onedayreckoningsongwankelmutremix", "isrc": "DEQ321200132", "musicbrainz": "dfdc6856-f3e4-477c-bad7-f32e1da82d28"}
+review: "asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *One Day / Reckoning Song (Wankelmut Remix)*, 3:35.
 A liked song.
-No review yet.
+Reviewed: content/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md.

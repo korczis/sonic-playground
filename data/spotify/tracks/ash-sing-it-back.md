@@ -6,8 +6,9 @@ artists: ["Ash", "Naila"]
 album: "Sing It Back (feat. Naila)"
 duration: "4:12"
 spotify: {"track": "0afBI0cb2U0swk3Ufrh56t", "album": "33Qh7aJ6qewZtlu3JBo62E", "artists": ["4nkuNzBcYGlNmAqFWbHLqS", "7vwmGnGMM1UsrIz3vEfNz0"]}
-keys: {"fold": "ash|singitback"}
-status: "missing"
+keys: {"fold": "ash|singitback", "musicbrainz": "069ee866-e918-4291-b3ae-4b52756d5e24"}
+review: "ash-naila-sing-it-back.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2018, "n": 90}
@@ -23,4 +24,4 @@ From the album *Sing It Back (feat. Naila)*, 4:12.
 Not among the liked songs.
 Your Top Songs 2018: #90.
 In Best of the Best (#69); My Top Songs of All the Time (#273).
-No review yet.
+Reviewed: content/ash-naila-sing-it-back.md.

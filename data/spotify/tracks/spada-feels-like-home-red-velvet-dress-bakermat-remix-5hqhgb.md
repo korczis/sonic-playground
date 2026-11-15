@@ -6,8 +6,9 @@ artists: ["Spada", "Hosie Neal", "Bakermat"]
 album: "Feels Like Home (Red Velvet Dress)"
 duration: "6:20"
 spotify: {"track": "5HQHgB1bGkLBLKavhtqOiS", "album": "0AVlbfDcr3g5yCBLtOpLiV", "artists": ["2hPCF7VDHhihvNdobslOHw", "5kWSWbowVWPjhGuGosmFCb", "3MyFDtqB80WZvbtCZRsekM"]}
-keys: {"fold": "spada|feelslikehomeredvelvetdressbakermatremix"}
-status: "missing"
+keys: {"fold": "spada|feelslikehomeredvelvetdressbakermatremix", "musicbrainz": "a28bb548-00dd-4b01-b358-941a69529a02"}
+review: "spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2018, "n": 93}
@@ -22,4 +23,4 @@ From the album *Feels Like Home (Red Velvet Dress)*, 6:20.
 Not among the liked songs.
 Your Top Songs 2018: #93.
 In My Top Songs of All the Time (#276).
-No review yet.
+Reviewed: content/spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix.md.
