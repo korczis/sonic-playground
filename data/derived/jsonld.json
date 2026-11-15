@@ -32020,7 +32020,7 @@
      "name": "Elevator",
      "sameAs": [
       "https://musicbrainz.org/recording/4a680eaf-4182-4c8f-9464-ba5d9a896e26",
-      "https://www.youtube.com/watch?v=zvf2J2Jh5aw"
+      "https://www.youtube.com/watch?v=_pcjaY_Y46Y"
      ]
     },
     {
@@ -32090,7 +32090,7 @@
       "@id": "https://korczis.github.io/sonic-playground/jpatterson-elevator/#review"
      },
      "url": "https://korczis.github.io/sonic-playground/cs/jpatterson-elevator/",
-     "wordCount": 525
+     "wordCount": 529
     }
    ]
   },
@@ -100799,7 +100799,7 @@
      "name": "Elevator",
      "sameAs": [
       "https://musicbrainz.org/recording/4a680eaf-4182-4c8f-9464-ba5d9a896e26",
-      "https://www.youtube.com/watch?v=zvf2J2Jh5aw"
+      "https://www.youtube.com/watch?v=_pcjaY_Y46Y"
      ]
     },
     {
@@ -100866,7 +100866,7 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/jpatterson-elevator/",
-     "wordCount": 582
+     "wordCount": 585
     }
    ]
   },
