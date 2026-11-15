@@ -22,6 +22,7 @@ const MANIFEST = join(ROOT, 'static/data/vendor.json');
 const LIBS = {
   flowbite: { bundle: 'dist/flowbite.min.js', licence: 'LICENSE.md', ext: 'min.js' },
   echarts: { build: true, licence: 'LICENSE', ext: 'custom.min.js' },
+  p5: { bundle: 'lib/p5.min.js', licence: 'license.txt', ext: 'min.js' },
 };
 
 // What charts.js would show for each ECharts module: a series type, an option key, a renderer.

@@ -1,0 +1,55 @@
+{#- The fullscreen visualiser (static/js/visualizer.js), outside #main-content like the player so
+    the router never swaps it. It lies over the page and under the player (z 35: the queue and the
+    video panel are at 40, the bar at 50), so the playing video is never covered; opening it closes
+    the queue. By default it is the picture alone. A pointer move or a key shows a small cluster at
+    the top left (the mode's name, settings, full screen, close), away from the video's corner on a
+    phone, and it fades after a few seconds; the modes and the sound sources wait behind settings.
+    Pro glass surfaces, the hero's style; every string is an interface key. -#}
+{%- set chip = "rounded-lg px-3 py-2.5 text-sm font-medium text-gray-200 ring-1 ring-inset ring-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400 aria-checked:bg-white aria-checked:text-gray-900" %}
+{%- set round = "inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400 aria-expanded:bg-white aria-expanded:text-gray-900" %}
+<div id="visualizer-full" hidden tabindex="-1" role="dialog" aria-modal="false" aria-label="{{ l["viz.region"] }}" data-i18n-aria-label="viz.region" data-controls="shown" class="group fixed inset-0 z-[35] bg-black outline-none data-[controls=hidden]:cursor-none">
+  <div data-visualizer-stage class="absolute inset-0"></div>
+  <p data-viz-live class="sr-only" aria-live="polite"></p>
+  <div class="pointer-events-none absolute left-0 top-0 flex max-w-full flex-col items-start gap-2 p-3 transition-opacity duration-500 group-data-[controls=hidden]:opacity-0 sm:p-4">
+    <div class="pointer-events-auto flex items-center gap-1 rounded-full bg-gray-900/70 py-1 pl-4 pr-1 shadow-2xl shadow-black/50 ring-1 ring-white/15 backdrop-blur-md group-data-[controls=hidden]:pointer-events-none">
+      <span data-viz-name class="mr-1 text-sm font-semibold text-white">{{ l["viz.mode.tunnel"] }}</span>
+      <button type="button" data-viz-settings aria-expanded="false" aria-controls="visualizer-settings" class="{{ round }}" aria-label="{{ l["viz.settings"] }}" data-i18n-aria-label="viz.settings" title="{{ l["viz.settings"] }}" data-i18n-title="viz.settings">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4"/></svg>
+      </button>
+      <button type="button" data-viz-fullscreen class="{{ round }}" aria-label="{{ l["viz.fullscreen"] }}" data-i18n-aria-label="viz.fullscreen" title="{{ l["viz.fullscreen"] }}" data-i18n-title="viz.fullscreen">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H4m0 0v4m0-4 5 5m7-5h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5m7 5h4m0 0v-4m0 4-5-5"/></svg>
+      </button>
+      <button type="button" data-viz-close class="{{ round }}" aria-label="{{ l["viz.close"] }}" data-i18n-aria-label="viz.close" title="{{ l["viz.close"] }}" data-i18n-title="viz.close">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/></svg>
+      </button>
+    </div>
+    <div id="visualizer-settings" hidden class="pointer-events-auto w-[min(26rem,calc(100vw-1.5rem))] space-y-4 rounded-2xl bg-gray-900/80 p-4 shadow-2xl shadow-black/50 ring-1 ring-white/15 backdrop-blur-md group-data-[controls=hidden]:pointer-events-none">
+      <div>
+        <p id="viz-modes-label" class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400" data-i18n="viz.modes">{{ l["viz.modes"] }}</p>
+        <div role="radiogroup" aria-labelledby="viz-modes-label" class="flex flex-wrap gap-1.5">
+          <button type="button" role="radio" data-viz-mode="tunnel" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.tunnel">{{ l["viz.mode.tunnel"] }}</button>
+          <button type="button" role="radio" data-viz-mode="nebula" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.nebula">{{ l["viz.mode.nebula"] }}</button>
+          <button type="button" role="radio" data-viz-mode="aurora" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.aurora">{{ l["viz.mode.aurora"] }}</button>
+          <button type="button" role="radio" data-viz-mode="bloom" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.bloom">{{ l["viz.mode.bloom"] }}</button>
+          <button type="button" role="radio" data-viz-mode="bars" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.bars">{{ l["viz.mode.bars"] }}</button>
+          <button type="button" role="radio" data-viz-mode="warp" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.warp">{{ l["viz.mode.warp"] }}</button>
+          <button type="button" role="radio" data-viz-mode="plasma" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.plasma">{{ l["viz.mode.plasma"] }}</button>
+        </div>
+        <label class="mt-3 inline-flex cursor-pointer items-center gap-3">
+          <input type="checkbox" data-viz-cycle class="peer sr-only" checked>
+          <span class="relative h-5 w-9 shrink-0 rounded-full bg-gray-600 after:absolute after:start-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-all peer-checked:bg-primary-600 peer-checked:after:translate-x-full peer-focus:ring-2 peer-focus:ring-primary-400" aria-hidden="true"></span>
+          <span class="text-sm text-gray-200" data-i18n="viz.cycle">{{ l["viz.cycle"] }}</span>
+        </label>
+      </div>
+      <div>
+        <p id="viz-sources-label" class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400" data-i18n="viz.sources">{{ l["viz.sources"] }}</p>
+        <div role="radiogroup" aria-labelledby="viz-sources-label" class="flex flex-wrap gap-1.5">
+          <button type="button" role="radio" data-viz-source="tab" aria-checked="false" class="{{ chip }}" data-i18n="viz.source.tab">{{ l["viz.source.tab"] }}</button>
+          <button type="button" role="radio" data-viz-source="mic" aria-checked="false" class="{{ chip }}" data-i18n="viz.source.mic">{{ l["viz.source.mic"] }}</button>
+          <button type="button" role="radio" data-viz-source="clock" aria-checked="true" class="{{ chip }}" data-i18n="viz.source.clock">{{ l["viz.source.clock"] }}</button>
+        </div>
+        <p data-viz-status data-i18n="viz.status_clock" class="mt-2 text-xs text-gray-400">{{ l["viz.status_clock"] }}</p>
+      </div>
+    </div>
+  </div>
+</div>

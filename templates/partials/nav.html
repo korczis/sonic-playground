@@ -27,6 +27,10 @@
           <span class="sr-only" data-i18n="nav.random">{{ l["nav.random"] }}</span>{{ <icon name="shuffle" /> }}
         </button>
         <div id="tooltip-random" role="tooltip" class="{{ tip }}"><span data-i18n="nav.random_tip">{{ l["nav.random_tip"] }}</span><div class="tooltip-arrow" data-popper-arrow></div></div>
+        <button type="button" data-visualizer-open aria-haspopup="dialog" aria-controls="visualizer-full" data-tooltip-target="tooltip-visualizer" class="{{ btn }} hidden sm:inline-flex">
+          <span class="sr-only" data-i18n="viz.open">{{ l["viz.open"] }}</span>{{ <icon name="waves" /> }}
+        </button>
+        <div id="tooltip-visualizer" role="tooltip" class="{{ tip }}"><span data-i18n="viz.region">{{ l["viz.region"] }}</span><div class="tooltip-arrow" data-popper-arrow></div></div>
         <a href="{{ get_url(path=lp ~ 'atom.xml', trailing_slash=false) }}" data-follows-page="feed" data-tooltip-target="tooltip-feed" class="{{ btn }} hidden sm:block">
           <span class="sr-only" data-i18n="nav.feed">{{ l["nav.feed"] }}</span>{{ <icon name="rss" /> }}
         </a>
