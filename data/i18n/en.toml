@@ -262,6 +262,7 @@
 "player.toast_list" = { one = "Queue replaced: {n} track", other = "Queue replaced: {n} tracks" }
 "player.toast_cleared" = "Queue cleared"
 "player.toast_shuffled" = "Up next shuffled"
+"player.toast_moved" = "Moved in the queue: {track}"
 "player.undo" = "Undo"
 "player.toast_undone" = "Restored"
 "player.toast_closed" = "Player closed"
@@ -277,6 +278,7 @@
 "seo.home_title" = "Skip the algorithm. Keep the music."
 "seo.home_description" = "{tracks} tracks from {artists} artists, hand-picked by a person and each one explained: a review, a listening guide and the story behind it. Free, no sign-up, no ads."
 "action.play" = "Play"
+"action.pause" = "Pause"
 "action.play_next" = "Play next"
 "action.queue" = "Add to queue"
 "action.queued" = "In the queue"
