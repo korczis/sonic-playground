@@ -361,7 +361,10 @@
 
 "viz.region" = "Vizualizace"
 "viz.open" = "Otevřít vizualizaci"
-"viz.controls" = "Ovládání vizualizace"
+"viz.settings" = "Nastavení vizualizace"
+"viz.modes" = "Obraz"
+"viz.sources" = "Zvuk"
+"viz.status_mode" = "Obraz: {name}"
 "viz.mode.tunnel" = "Tunel"
 "viz.mode.nebula" = "Mlhovina"
 "viz.mode.aurora" = "Polární záře"

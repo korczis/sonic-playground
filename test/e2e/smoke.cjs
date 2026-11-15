@@ -341,6 +341,19 @@ function litShare(selector) {
   return lit / (64 * 36);
 }
 
+// The visualiser's cluster (settings, full screen, close) is on top of everything at its own
+// centre; the open queue used to lie over Close on phones and at 1280x720 (a review, 2026-11-15).
+async function vizControlsOnTop(page, what) {
+  // The cluster shows on a pointer move (it fades, and lets clicks through, while the pointer rests).
+  await page.mouse.move(40, 40);
+  await page.mouse.move(48, 44);
+  await page.waitForFunction(() => document.getElementById('visualizer-full').getAttribute('data-controls') === 'shown');
+  const covered = await page.evaluate(() => [...document.querySelectorAll('#visualizer-full [data-viz-settings], #visualizer-full [data-viz-fullscreen], #visualizer-full [data-viz-close]')]
+    .map((b) => { const r = b.getBoundingClientRect(); const e = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return e && b.contains(e) ? null : (e ? e.id || e.tagName.toLowerCase() : 'nothing'); }).filter(Boolean));
+  check(covered.length === 0, `${what}: the visualiser's controls are on top${covered.length ? ' (under ' + [...new Set(covered)].join(', ') + ')' : ''}`);
+}
+
 // YouTube's terms: the playing video is never hidden. A 5x5 grid over its box, edges included
 // (3 % in), must each hit the video itself, not a panel, sheet, backdrop or toast stacked over
 // it, and the box must be on screen; a covered video passed every earlier check because they
@@ -422,6 +435,17 @@ async function shot(page, name) {
     check(await page.evaluate(() => [...document.querySelectorAll('#hero-newest [data-track]')].map((t) => t.dataset.source).join(',')) === newest,
       'hero: "Play the newest" plays the nine newest, whatever the mosaic shows');
     check(errors.length === 0, `hero: no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // Reduced motion: the hero draws nothing, and the full-screen picture is a calm mode that does
+  // not change by itself (it used to run Warp at full pace with the 40 s cycle on).
+  {
+    const { context, page } = await open(browser, at(''), desktop, 'light', { reducedMotion: 'reduce' });
+    await page.waitForTimeout(2000);
+    check(await page.evaluate(() => !document.querySelector('#main [data-visualizer] canvas')), 'visualiser (reduced motion): the hero draws nothing');
+    await page.evaluate(() => window.SonicVisualizer.open());
+    check(await page.evaluate(() => window.SonicVisualizer.mode() === 'aurora' && !document.querySelector('#visualizer-full [data-viz-cycle]').checked),
+      'visualiser (reduced motion): a calm mode that does not change by itself');
     await context.close();
   }
   // A negative control for litShare: a blank canvas is not a picture.
@@ -982,12 +1006,24 @@ async function shot(page, name) {
       check(await page.evaluate(litShare, '[data-visualizer-stage] canvas') > 0, `visualiser: ${mode} draws`);
       await videoSeen(page, `visualiser (${mode}, desktop, queue open)`);
     }
+    check(!(await page.isVisible('#player-queue')), 'visualiser: opening it closes the queue');
+    await vizControlsOnTop(page, 'visualiser (desktop)');
     check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser: nothing listens until the reader asks');
     await page.waitForFunction(() => document.getElementById('visualizer-full').getAttribute('data-controls') === 'hidden', null, { timeout: 8000 }).catch(() => {});
     check(await page.getAttribute('#visualizer-full', 'data-controls') === 'hidden', 'visualiser: the toolbar fades while the pointer rests');
     await page.keyboard.press('Escape');
     check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer') && document.getElementById('visualizer-full').hidden), 'visualiser: Escape closes it');
     check(!new URL(page.url()).searchParams.has('viz'), 'visualiser: closing it takes ?viz out of the URL');
+    check(await page.evaluate(() => document.activeElement && document.activeElement.matches('[data-player-queue]')),
+      'visualiser: closing it returns focus to the queue button it was opened from');
+    // Escape closes the topmost layer only: the queue reopened over it first, then the picture.
+    await page.evaluate(() => window.SonicVisualizer.open('bars'));
+    await page.click('[data-player-queue]');
+    await page.keyboard.press('Escape');
+    check(await page.evaluate(() => document.getElementById('player-queue').hidden && document.documentElement.getAttribute('data-visualizer') === 'open'),
+      'visualiser: Escape with the queue open closes the queue and keeps the picture');
+    await page.keyboard.press('Escape');
+    check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer')), 'visualiser: the next Escape closes the picture');
     if (!(await page.isVisible('#player-queue'))) await page.click('[data-player-queue]');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-down]`);
     await until({ q: [S[0], S[2], S[3], S[4], S[1]] }, 'player: a queued track moves down');
@@ -1212,6 +1248,24 @@ async function shot(page, name) {
       'player (phone): previous is in the bar and repeat in the queue panel');
     check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'player (phone): no horizontal overflow');
     await shot(page, 'player-phone-queue');
+    await page.click('#player-queue [data-visualizer-open]');
+    await page.waitForFunction(() => document.documentElement.getAttribute('data-visualizer') === 'open');
+    await page.mouse.move(20, 20);
+    await vizControlsOnTop(page, 'visualiser (phone, opened from the queue)');
+    await videoSeen(page, 'visualiser (phone, opened from the queue)');
+    await page.click('#visualizer-full [data-viz-settings]');
+    check(await page.isVisible('#visualizer-settings') && await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
+      'visualiser (phone): the settings open within the screen');
+    await page.keyboard.press('Escape');
+    check(await page.evaluate(() => document.getElementById('visualizer-settings').hidden && document.documentElement.getAttribute('data-visualizer') === 'open'),
+      'visualiser (phone): Escape closes the settings first');
+    await page.keyboard.press('Escape');
+    check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer')), 'visualiser (phone): then the picture');
+    check(await page.evaluate(() => {
+      const mark = document.querySelector('nav a[href]').getBoundingClientRect();
+      return [...document.querySelectorAll('nav button, nav a')].filter((b) => b.offsetParent && b !== document.querySelector('nav a[href]'))
+        .every((b) => { const r = b.getBoundingClientRect(); return r.left >= mark.right || r.top >= mark.bottom || r.right <= mark.left; });
+    }), 'nav (phone): no button lies over the site name');
     await page.keyboard.press('Escape');
     await cards.nth(2).locator('[data-track-menu]').click();
     await page.waitForSelector('#track-menu:not([hidden])', { timeout: 5000 });

@@ -31,10 +31,8 @@ class Visualizer(unittest.TestCase):
         drawn = set(re.findall(r"^    ([a-z]+): function \(p, a, s\)", JS, re.M))
         self.assertEqual(set(modes()), drawn)
 
-    def test_the_toolbar_offers_exactly_the_modes(self):
-        listed = re.search(r'{%- for mode in \[([^\]]*)\] %}', SHELL)
-        assert listed is not None, "the toolbar lists its modes in one loop"
-        self.assertEqual(re.findall(r'"([a-z]+)"', listed.group(1)), modes())
+    def test_the_settings_offer_exactly_the_modes(self):
+        self.assertEqual(re.findall(r'data-viz-mode="([a-z]+)"', SHELL), modes())
 
     def test_every_mode_has_a_label_in_each_locale(self):
         for locale in ("en", "cs"):
@@ -61,7 +59,7 @@ class Visualizer(unittest.TestCase):
         # getDisplayMedia / getUserMedia run only in listen(), and listen() is called only from
         # the toolbar's click handler (or by a caller of the public API): nothing asks on load.
         handler = JS.index("s.addEventListener('click'")
-        handler_end = JS.index("s.addEventListener('keydown'")
+        handler_end = JS.index("s.addEventListener('change'")
         self.assertEqual(JS.count("getDisplayMedia("), 1)
         self.assertEqual(JS.count("getUserMedia("), 1)
         calls = [m.start() for m in re.finditer(r"(?<![\w.])(?<!function )listen\(", JS)]

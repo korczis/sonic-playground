@@ -448,8 +448,8 @@ src="{{ get_url(path=t.thumbnail) }}"
   <div class="hero-blob hero-blob-alt absolute -bottom-48 left-1/4 -z-10 h-[30rem] w-[30rem] rounded-full bg-primary-500/25 blur-3xl" aria-hidden="true"></div>
   <div class="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgb(255_255_255/0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255/0.04)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" aria-hidden="true"></div>
   <div data-hero-backdrop class="absolute inset-0 -z-10 opacity-35 mix-blend-soft-light" aria-hidden="true"></div>
-  {{ <visualizer mode="aurora" cycle={true} cls="absolute inset-0 -z-10 opacity-40 mix-blend-screen" /> }}
-  <button type="button" data-visualizer-open class="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-inset ring-white/20 backdrop-blur hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary-500 sm:right-4 sm:top-4" aria-label="{{ <tr key="viz.open" l={l} /> }}" data-i18n-aria-label="viz.open" title="{{ <tr key="viz.open" l={l} /> }}" data-i18n-title="viz.open">{{ <icon name="waves" /> }}</button>
+  {{ <visualizer mode="aurora" modes="aurora nebula plasma" media="(min-width: 1024px)" cycle={true} cls="absolute inset-0 -z-10 opacity-30 mix-blend-screen [mask-image:linear-gradient(to_right,transparent_0%,transparent_45%,black_75%)]" /> }}
+  <button type="button" data-visualizer-open aria-haspopup="dialog" aria-controls="visualizer-full" class="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-inset ring-white/20 backdrop-blur hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary-500 sm:right-4 sm:top-4" aria-label="{{ <tr key="viz.open" l={l} /> }}" data-i18n-aria-label="viz.open" title="{{ <tr key="viz.open" l={l} /> }}" data-i18n-title="viz.open">{{ <icon name="waves" /> }}</button>
   <div class="grid items-center gap-12 px-4 pb-32 pt-10 sm:pt-16 lg:min-h-[40rem] lg:grid-cols-12 lg:pb-36 xl:px-8">
     <div class="lg:col-span-7">
       <p class="mb-6 inline-flex flex-wrap items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-primary-100 ring-1 ring-inset ring-white/20 backdrop-blur"><span class="relative mr-2 flex h-2.5 w-2.5" aria-hidden="true"><span class="hero-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span><span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-pink-500"></span></span>{{ <tx key="home.eyebrow" l={l} vars={eyebrow_vars} /> }}</p>
@@ -530,10 +530,10 @@ src="{{ get_url(path=t.thumbnail) }}"
 {% endcomponent hero_tile %}
 
 {#- The visualiser (static/js/visualizer.js) in any box: a p5 picture of what is playing, in one
-    of its modes, optionally changing mode every 40 s. Decorative (aria-hidden); it stays empty
-    for readers who ask for reduced motion. The full-screen picture is partials/visualizer.html. -#}
-{% component visualizer(mode, cls, cycle=false) %}
-<div data-visualizer="{{ mode }}"{% if cycle %} data-visualizer-cycle{% endif %} class="pointer-events-none {{ cls }}" aria-hidden="true"></div>
+    of its modes, optionally changing mode every 40 s among `modes`, drawn only where the `media`
+    query matches. Decorative (aria-hidden); it stays empty for readers who ask for reduced motion. The full-screen picture is partials/visualizer.html. -#}
+{% component visualizer(mode, cls, cycle=false, modes="", media="") %}
+<div data-visualizer="{{ mode }}"{% if cycle %} data-visualizer-cycle{% endif %}{% if modes %} data-visualizer-modes="{{ modes }}"{% endif %}{% if media %} data-visualizer-media="{{ media }}"{% endif %} class="pointer-events-none {{ cls }}" aria-hidden="true"></div>
 {% endcomponent visualizer %}
 
 {#- Featured track (Publisher "featured post"): the newest review with a picture, large. -#}

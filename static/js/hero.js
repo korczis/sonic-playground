@@ -66,7 +66,15 @@
       out.replaceWith(next);
       requestAnimationFrame(function () { requestAnimationFrame(function () { next.style.opacity = '1'; }); });
       leaving.className = incoming.className;
+      leaving.removeAttribute('data-now-playing');
       waiting.push(leaving);
+      // The incoming tile shows whether it is the track playing now, as every card does.
+      var now = '';
+      try {
+        var st = window.SonicPlayer ? window.SonicPlayer.state() : null;
+        now = st && st.queue[st.index] ? st.queue[st.index].source : '';
+      } catch (e) { now = ''; }
+      next.toggleAttribute('data-now-playing', !!now && document.documentElement.getAttribute('data-player-state') !== '' && next.dataset.source === now);
       blend(next);
     }
 

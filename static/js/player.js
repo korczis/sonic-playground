@@ -822,5 +822,6 @@
   window.SonicPlayer = { moveTo: moveTo, playNow: playNow, playNext: playNext, toggleQueued: toggleQueued, playList: playList,
     remove: remove, move: move, clear: clear, shuffle: shuffle, next: next, prev: prev, toggle: toggle,
     stop: stop, jump: jump, undo: restore, seek: seekTrack, notify: function (text) { toast(text); }, placeToast: placeToast,
+    queue: function (open) { setQueueOpen(!!open); },
     state: function () { return JSON.parse(JSON.stringify(state)); } };
 })();

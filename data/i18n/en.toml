@@ -365,7 +365,10 @@
 
 "viz.region" = "Visualiser"
 "viz.open" = "Open the visualiser"
-"viz.controls" = "Visualiser controls"
+"viz.settings" = "Visualiser settings"
+"viz.modes" = "Picture"
+"viz.sources" = "Sound"
+"viz.status_mode" = "Picture: {name}"
 "viz.mode.tunnel" = "Tunnel"
 "viz.mode.nebula" = "Nebula"
 "viz.mode.aurora" = "Aurora"

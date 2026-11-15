@@ -83,6 +83,7 @@ interface Window {
     jump(index: number): void;
     undo(): void;
     notify(text: string): void;
+    queue?(open: boolean): void;
     /** Move a shown toast off the playing video (it measures the video's box). */
     placeToast(): void;
     seek(track: unknown, at: string): void;

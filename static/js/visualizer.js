@@ -16,10 +16,12 @@
 // analysis {bands, wave, level, bass, mid, high, beat, t}, so the seven of them share one engine.
 //
 // Fullscreen: SonicVisualizer.open() lays the picture over the page below the player (z 35,
-// under the queue and panels at 40 and the bar at 50), with no chrome. Moving the pointer or
-// pressing a key shows the controls for a few seconds; Escape closes; the arrow keys change the
-// mode; F asks the browser for real fullscreen. The open state and mode live in the URL
-// (?viz=<mode>), so a link opens the same picture.
+// under the queue and panels at 40 and the bar at 50), with no chrome; it closes the queue and
+// makes the page under it inert. Moving the pointer or pressing a key shows a small cluster for a
+// few seconds (the mode's name, settings, full screen, close); the modes and the sources wait
+// behind settings. Escape closes the topmost layer; the arrow keys change the mode; F asks the
+// browser for real fullscreen; focus returns to the opener. The open state and mode live in the
+// URL (?viz=<mode>). Reduced motion: a calm mode, slowed, that never changes by itself.
 (function () {
   'use strict';
   var Sonic = window.Sonic;
@@ -137,7 +139,7 @@
     engine.mid = mid / 20;
     engine.high = high / (BANDS - 28);
     var now = performance.now();
-    engine.beat = engine.bass > engine.bassAvg * 1.3 + 0.05 && now - engine.lastBeat > 240;
+    engine.beat = !reduced && engine.bass > engine.bassAvg * 1.3 + 0.05 && now - engine.lastBeat > 240;
     if (engine.beat) engine.lastBeat = now;
     engine.bassAvg = engine.bassAvg * 0.96 + engine.bass * 0.04;
     return engine;
@@ -400,18 +402,22 @@
 
   /**
    * A picture in an element. The returned handle changes the mode and removes the sketch.
-   * @param {HTMLElement} el @param {{mode: string, cycle: boolean, fps: number, density: number}} opt
+   * opt.modes: the modes the cycle walks (all by default); opt.slow: time runs at that fraction
+   * (reduced motion); opt.onMode: told when the cycle changes the mode by itself.
+   * @param {HTMLElement} el
+   * @param {{mode: string, cycle: boolean, fps: number, density: number, modes?: string[], slow?: number, onMode?: (m: string) => void}} opt
    */
   function sketch(el, opt) {
-    var state = { mode: opt.mode, cycle: opt.cycle, started: performance.now(), fade: 0, t: 0, visible: true };
-    // An embedded picture draws only while it is on screen.
+    var ring = opt.modes && opt.modes.length ? opt.modes : MODES;
+    var state = { mode: opt.mode, cycle: opt.cycle, started: performance.now(), fade: 0, visible: true };
+    var scratch = {};
+    var instance = null;
+    var gone = false;
+    // A picture draws only while it is on screen.
     var seen = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
       state.visible = entries[0].isIntersecting;
     }) : null;
     if (seen) seen.observe(el);
-    var scratch = {};
-    var instance = null;
-    var gone = false;
     var handle = {
       mode: function (m) {
         if (MODES.indexOf(m) < 0) return;
@@ -423,7 +429,6 @@
       },
       get: function () { return state.mode; },
       cycle: function (on) { state.cycle = on; state.started = performance.now(); },
-      canvas: function () { return instance ? instance.canvas : null; },
       remove: function () {
         gone = true;
         if (seen) seen.disconnect();
@@ -453,10 +458,13 @@
         p.draw = function () {
           if (document.hidden || !state.visible) return;
           var a = analyse();
-          scratch.t = (performance.now() - state.started) / 1000;
-          if (state.cycle && scratch.t > 40) {
-            handle.mode(MODES[(MODES.indexOf(state.mode) + 1) % MODES.length]);
+          var age = (performance.now() - state.started) / 1000;
+          scratch.t = age * (opt.slow || 1);
+          if (state.cycle && age > 40) {
+            var next = ring[(ring.indexOf(state.mode) + 1) % ring.length];
+            handle.mode(next);
             scratch.t = 0;
+            if (opt.onMode) opt.onMode(next);
           }
           DRAW[state.mode](p, a, scratch);
           // A change of mode fades in from black rather than cutting.
@@ -479,8 +487,23 @@
 
   var full = null;
   var hideTimer = 0;
+  var opener = null;
+  var CALM = 'aurora';
 
   function shell() { return document.getElementById('visualizer-full'); }
+  function settings() { return document.getElementById('visualizer-settings'); }
+  function isOpen() { var s = shell(); return !!s && !s.hidden; }
+  // Literal keys, so scripts/i18n.py sees each one in use.
+  var LABELS = {
+    tunnel: function () { return Sonic.t('viz.mode.tunnel'); },
+    nebula: function () { return Sonic.t('viz.mode.nebula'); },
+    aurora: function () { return Sonic.t('viz.mode.aurora'); },
+    bloom: function () { return Sonic.t('viz.mode.bloom'); },
+    bars: function () { return Sonic.t('viz.mode.bars'); },
+    warp: function () { return Sonic.t('viz.mode.warp'); },
+    plasma: function () { return Sonic.t('viz.mode.plasma'); },
+  };
+  function label(mode) { return LABELS[mode] ? LABELS[mode]() : mode; }
 
   function showControls() {
     var s = shell();
@@ -488,7 +511,9 @@
     s.setAttribute('data-controls', 'shown');
     clearTimeout(hideTimer);
     hideTimer = window.setTimeout(function () {
-      if (!s.contains(document.activeElement) || document.activeElement === s) s.setAttribute('data-controls', 'hidden');
+      var panel = settings();
+      var busy = (panel && !panel.hidden) || (s.contains(document.activeElement) && document.activeElement !== s);
+      if (!busy) s.setAttribute('data-controls', 'hidden');
     }, 2600);
   }
 
@@ -498,17 +523,47 @@
     history.replaceState(history.state, '', u.pathname + u.search + u.hash);
   }
 
+  /** Say the mode to assistive technology and in the cluster. */
+  function announceMode(mode) {
+    var s = shell();
+    if (!s) return;
+    var live = s.querySelector('[data-viz-live]');
+    if (live) live.textContent = Sonic.t('viz.status_mode', { name: label(mode) });
+  }
+
+  /** The page under the picture is out of reach while it is open; the player stays usable. */
+  function setInert(on) {
+    ['shell', 'main-content'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.toggleAttribute('inert', on);
+    });
+    var nav = document.querySelector('body > nav, nav[aria-label]');
+    if (nav) nav.toggleAttribute('inert', on);
+  }
+
   /** @param {string=} mode */
   function open(mode) {
     var s = shell();
     if (!s) return;
     var p = prefs();
-    var m = MODES.indexOf(mode || '') >= 0 ? mode : p.mode;
+    var explicit = MODES.indexOf(mode || '') >= 0;
+    // Reduced motion: a calm mode, slowed, that never changes by itself.
+    var m = explicit ? mode : (reduced ? CALM : p.mode);
+    if (!isOpen()) opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    // The queue would lie over the controls; the video panel stays where it is.
+    if (window.SonicPlayer && window.SonicPlayer.queue) window.SonicPlayer.queue(false);
     s.hidden = false;
     document.documentElement.setAttribute('data-visualizer', 'open');
+    setInert(true);
     var stage = /** @type {HTMLElement} */ (s.querySelector('[data-visualizer-stage]'));
     if (full) full.mode(m);
-    else full = sketch(stage, { mode: m, cycle: p.cycle, fps: reduced ? 20 : 60, density: Math.min(1.5, window.devicePixelRatio || 1) });
+    else {
+      full = sketch(stage, {
+        mode: m, cycle: p.cycle && !reduced, fps: reduced ? 24 : 60, slow: reduced ? 0.3 : 1,
+        density: Math.min(1.5, window.devicePixelRatio || 1),
+        onMode: function (next) { setUrl(next); syncControls(); announceMode(next); },
+      });
+    }
     syncControls();
     setUrl(m);
     s.focus();
@@ -521,20 +576,48 @@
     if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
     if (full) full.remove();
     full = null;
+    var panel = settings();
+    if (panel) panel.hidden = true;
     s.hidden = true;
     document.documentElement.removeAttribute('data-visualizer');
+    setInert(false);
     setUrl('');
+    // Focus returns to what opened it; opened from the queue (which it closed), to the queue's
+    // button; otherwise to the nav's opener.
+    var back = opener && document.contains(opener) ? opener : null;
+    if (back && back.closest('#player-queue')) back = document.querySelector('[data-player-queue]');
+    if (!back || back.offsetParent === null) back = document.querySelector('nav [data-visualizer-open]');
+    opener = null;
+    if (back instanceof HTMLElement) back.focus();
   }
 
-  function step(by) {
-    if (!full) return;
-    var m = MODES[(MODES.indexOf(full.get()) + by + MODES.length) % MODES.length];
+  function choose(m) {
+    if (!full || MODES.indexOf(m) < 0) return;
     full.mode(m);
     var p = prefs();
     p.mode = m;
     savePrefs(p);
     setUrl(m);
     syncControls();
+    announceMode(m);
+  }
+  function step(by) {
+    if (full) choose(MODES[(MODES.indexOf(full.get()) + by + MODES.length) % MODES.length]);
+  }
+
+  function toggleSettings(show) {
+    var s = shell();
+    var panel = settings();
+    if (!s || !panel) return;
+    var on = show === undefined ? panel.hidden : show;
+    panel.hidden = !on;
+    var btn = s.querySelector('[data-viz-settings]');
+    if (btn) btn.setAttribute('aria-expanded', String(on));
+    if (on) {
+      var checked = /** @type {HTMLElement | null} */ (panel.querySelector('[data-viz-mode][aria-checked="true"]'));
+      if (checked) checked.focus();
+    } else if (btn instanceof HTMLElement) btn.focus();
+    showControls();
   }
 
   // The controls reflect the state; the strings are interface keys (data/i18n).
@@ -542,98 +625,148 @@
     var s = shell();
     if (!s) return;
     var mode = full ? full.get() : prefs().mode;
+    var name = s.querySelector('[data-viz-name]');
+    if (name) {
+      name.setAttribute('data-i18n', 'viz.mode.' + mode);
+      var text = label(mode);
+      if (text !== 'viz.mode.' + mode) name.textContent = text;
+    }
     s.querySelectorAll('[data-viz-mode]').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-viz-mode') === mode));
+      b.setAttribute('aria-checked', String(b.getAttribute('data-viz-mode') === mode));
     });
     s.querySelectorAll('[data-viz-source]').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-viz-source') === engine.source));
+      b.setAttribute('aria-checked', String(b.getAttribute('data-viz-source') === engine.source));
     });
-    var cyc = s.querySelector('[data-viz-cycle]');
-    if (cyc) cyc.setAttribute('aria-pressed', String(prefs().cycle));
-    var label = s.querySelector('[data-viz-status]');
-    if (label) {
+    var cyc = /** @type {HTMLInputElement | null} */ (s.querySelector('[data-viz-cycle]'));
+    if (cyc) cyc.checked = prefs().cycle && !reduced;
+    var status = s.querySelector('[data-viz-status]');
+    if (status) {
       // data-i18n lets i18n.js translate it again when the bundle arrives or the language changes.
       var key = engine.source === 'tab' ? 'viz.status_tab'
         : engine.source === 'mic' ? 'viz.status_mic' : 'viz.status_clock';
-      var text = engine.source === 'tab' ? Sonic.t('viz.status_tab')
+      var said = engine.source === 'tab' ? Sonic.t('viz.status_tab')
         : engine.source === 'mic' ? Sonic.t('viz.status_mic') : Sonic.t('viz.status_clock');
-      label.setAttribute('data-i18n', key);
-      if (text !== key) label.textContent = text;
+      status.setAttribute('data-i18n', key);
+      if (said !== key) status.textContent = said;
     }
   }
-  function announce() { syncControls(); }
+  function announce() {
+    syncControls();
+    var s = shell();
+    var live = s && s.querySelector('[data-viz-live]');
+    var status = s && s.querySelector('[data-viz-status]');
+    if (live && status && isOpen()) live.textContent = status.textContent;
+  }
+
+  function toggleFullscreen() {
+    if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+    else document.documentElement.requestFullscreen().catch(function () {});
+  }
 
   function wire() {
     var s = shell();
     if (!s || s.getAttribute('data-wired')) return;
     s.setAttribute('data-wired', '1');
     s.addEventListener('pointermove', showControls);
+    s.addEventListener('focusin', showControls);
     s.addEventListener('click', function (e) {
       var t = /** @type {HTMLElement} */ (e.target);
       var btn = /** @type {HTMLElement | null} */ (t.closest('button'));
       if (!btn) { showControls(); return; }
       var mode = btn.getAttribute('data-viz-mode');
       var source = btn.getAttribute('data-viz-source');
-      if (mode && full) {
-        full.mode(mode);
-        var p = prefs();
-        p.mode = mode;
-        savePrefs(p);
-        setUrl(mode);
-      } else if (source === 'clock') {
-        stopAudio();
-      } else if (source === 'tab' || source === 'mic') {
+      if (mode) choose(mode);
+      else if (source === 'clock') stopAudio();
+      else if (source === 'tab' || source === 'mic') {
+        // A refusal is said beside the buttons that asked, not in a toast over them.
         listen(source).catch(function () {
-          if (window.SonicPlayer) window.SonicPlayer.notify(Sonic.t('viz.denied'));
+          var status = s.querySelector('[data-viz-status]');
+          var live = s.querySelector('[data-viz-live]');
+          if (status) { status.setAttribute('data-i18n', 'viz.denied'); status.textContent = Sonic.t('viz.denied'); }
+          if (live) live.textContent = Sonic.t('viz.denied');
         });
-      } else if (btn.hasAttribute('data-viz-cycle')) {
-        var q = prefs();
-        q.cycle = !q.cycle;
-        savePrefs(q);
-        if (full) full.cycle(q.cycle);
-      } else if (btn.hasAttribute('data-viz-fullscreen')) {
-        if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
-        else document.documentElement.requestFullscreen().catch(function () {});
-      } else if (btn.hasAttribute('data-viz-close')) {
-        close();
-        return;
-      }
+      } else if (btn.hasAttribute('data-viz-settings')) { toggleSettings(); return; }
+      else if (btn.hasAttribute('data-viz-fullscreen')) toggleFullscreen();
+      else if (btn.hasAttribute('data-viz-close')) { close(); return; }
       syncControls();
       showControls();
     });
-    s.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') { e.preventDefault(); close(); }
-      else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
-      else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
-      else if ((e.key === 'f' || e.key === 'F') && !e.metaKey && !e.ctrlKey) {
-        e.preventDefault();
-        if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
-        else document.documentElement.requestFullscreen().catch(function () {});
-      }
-      showControls();
+    s.addEventListener('change', function (e) {
+      var t = /** @type {HTMLInputElement} */ (e.target);
+      if (!t.hasAttribute('data-viz-cycle')) return;
+      var q = prefs();
+      q.cycle = t.checked;
+      savePrefs(q);
+      if (full) full.cycle(q.cycle && !reduced);
     });
   }
+
+  // While it is open, one handler on the document, ahead of the player's: Escape closes the
+  // topmost layer only (the queue, then the settings, then the picture), and the arrows and F
+  // work wherever focus is, except in a field. A key typed into a field is never taken.
+  document.addEventListener('keydown', function (e) {
+    if (!isOpen()) return;
+    var t = /** @type {HTMLElement} */ (e.target);
+    if (t && t.closest && t.closest('input:not([type=checkbox]):not([type=range]), textarea, select, [contenteditable="true"]')) return;
+    var queue = document.getElementById('player-queue');
+    if (e.key === 'Escape') {
+      if (queue && !queue.hidden) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var panel = settings();
+      if (panel && !panel.hidden) toggleSettings(false); else close();
+      return;
+    }
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (t && t.closest && t.closest('#player, #player-queue')) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+    else if (e.key === 'f' || e.key === 'F') { e.preventDefault(); toggleFullscreen(); }
+    else return;
+    showControls();
+  }, true);
 
   // Any [data-visualizer-open] button opens the picture (the nav, the queue's tools, the hero).
   document.addEventListener('click', function (e) {
     var t = /** @type {HTMLElement} */ (e.target);
-    var opener = t.closest && t.closest('[data-visualizer-open]');
-    if (!opener) return;
+    var button = t.closest && t.closest('[data-visualizer-open]');
+    if (!button) return;
     e.preventDefault();
-    open(opener.getAttribute('data-visualizer-open') || undefined);
+    open(button.getAttribute('data-visualizer-open') || undefined);
+  });
+
+  // A navigation (the player's title, Back) changes the page under it: the picture closes first.
+  Sonic.on('sonic:navigated', function () {
+    if (!isOpen()) return;
+    var keep = opener;
+    close();
+    opener = keep && document.contains(keep) ? keep : null;
   });
 
   // ---- Embedded pictures (the landing hero): a page module, so the router mounts it. ----------
+  // [data-visualizer-modes] limits the modes it walks; [data-visualizer-media] the screens it is
+  // drawn on (p5 is 1 MB: the hero asks for wide screens only). It starts once the page is idle.
 
   Sonic.module('visualizer', function mount() {
     var handles = [];
-    document.querySelectorAll('#main [data-visualizer]').forEach(function (node) {
-      var el = /** @type {HTMLElement} */ (node);
-      if (reduced) return;
-      var mode = el.getAttribute('data-visualizer') || prefs().mode;
-      handles.push(sketch(el, { mode: mode, cycle: el.hasAttribute('data-visualizer-cycle'), fps: 30, density: 1 }));
+    var idle = /** @type {any} */ (window).requestIdleCallback || function (fn) { return setTimeout(fn, 1200); };
+    var cancelled = false;
+    if (reduced) return null;
+    idle(function () {
+      if (cancelled) return;
+      document.querySelectorAll('#main [data-visualizer]').forEach(function (node) {
+        var el = /** @type {HTMLElement} */ (node);
+        var media = el.getAttribute('data-visualizer-media');
+        if (media && !window.matchMedia(media).matches) return;
+        var modes = (el.getAttribute('data-visualizer-modes') || '').split(/\s+/).filter(function (m) { return MODES.indexOf(m) >= 0; });
+        var mode = el.getAttribute('data-visualizer') || modes[0] || prefs().mode;
+        handles.push(sketch(el, { mode: mode, cycle: el.hasAttribute('data-visualizer-cycle'), modes: modes, fps: 30, density: 1 }));
+      });
     });
-    return function unmount() { handles.forEach(function (h) { h.remove(); }); };
+    return function unmount() {
+      cancelled = true;
+      handles.forEach(function (h) { h.remove(); });
+    };
   });
 
   wire();
@@ -645,7 +778,7 @@
     open: open,
     close: close,
     mode: function () { return full ? full.get() : null; },
-    set: function (m) { if (full) { full.mode(m); setUrl(m); syncControls(); } },
+    set: choose,
     source: function () { return engine.source; },
     listen: listen,
     stop: stopAudio,
