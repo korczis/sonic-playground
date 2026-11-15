@@ -17,7 +17,7 @@
   "concept_terms": 61,
   "instrument_terms": 73,
   "yearbooks": 7,
-  "recurring": 84,
+  "recurring": 85,
   "translations": {
    "cs": {
     "reviews": 483,
@@ -2860,9 +2860,9 @@
    "file": "data/backlog/yearbook-2022.toml",
    "expected": 99,
    "items": 99,
-   "songs": 94,
-   "present": 94,
-   "missing": 5,
+   "songs": 95,
+   "present": 95,
+   "missing": 4,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -2919,7 +2919,7 @@
    "genres": [
     {
      "term": "electronic",
-     "count": 48
+     "count": 49
     },
     {
      "term": "house",
@@ -3076,8 +3076,8 @@
      "n": 16,
      "title": "On The Streets - Kollektiv Turmstrasse Let Freedom",
      "artist": "Federleicht, Kollektiv Turmstrasse",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "kollektiv-turmstrasse_on-the-streets-let-freedom.md"
     },
     {
      "n": 17,
@@ -6113,9 +6113,9 @@
    "file": "data/backlog/yearbook-2018.toml",
    "expected": 100,
    "items": 100,
-   "songs": 17,
-   "present": 18,
-   "missing": 82,
+   "songs": 18,
+   "present": 19,
+   "missing": 81,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -6172,7 +6172,7 @@
    "genres": [
     {
      "term": "electronic",
-     "count": 8
+     "count": 9
     },
     {
      "term": "dance",
@@ -6280,8 +6280,8 @@
      "n": 9,
      "title": "On The Streets - Kollektiv Turmstrasse Let Freedom",
      "artist": "Federleicht, Kollektiv Turmstrasse",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "kollektiv-turmstrasse_on-the-streets-let-freedom.md"
     },
     {
      "n": 10,
@@ -8609,6 +8609,7 @@
   "kelis-stick-up.md",
   "klangkarusell-moments.md",
   "klangkuenstler-alice-phoebe-lou-man-on-the-moon.md",
+  "kollektiv-turmstrasse_on-the-streets-let-freedom.md",
   "kruder-dorfmeister-johnson.md",
   "laidback-beautiful-day.md",
   "marbert-rocel-hush-now.md",
@@ -67500,7 +67501,16 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2018,
+     "n": 9
+    },
+    {
+     "year": 2022,
+     "n": 16
+    }
+   ],
    "langs": [
     "en",
     "cs"

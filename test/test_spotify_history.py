@@ -245,6 +245,15 @@ class Currency(unittest.TestCase):
         self.assertTrue(errs and "data/spotify/tracks/x.md" in errs[0], errs)
 
 
+class BacklogSchema(unittest.TestCase):
+    def test_an_override_may_name_a_review_with_an_underscore(self):
+        schema = json.loads((ROOT / "data" / "backlog.schema.json").read_text(encoding="utf-8"))
+        item = schema["$defs"]["item"]
+        ok = {"n": 1, "title": "t", "artists": ["a"], "review": "kollektiv-turmstrasse_on-the-streets-let-freedom.md"}
+        self.assertEqual(sh.cat.validate(ok, item, "", schema), [])
+        self.assertNotEqual(sh.cat.validate({**ok, "review": "Bad Name.md"}, item, "", schema), [])
+
+
 class Gate(unittest.TestCase):
     def test_private_keys_are_found_anywhere(self):
         self.assertEqual(sh.find_private_keys({"a": [{"added": 1}], "plays": {}}), ["a[0].added", "plays"])

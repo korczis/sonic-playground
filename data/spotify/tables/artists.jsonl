@@ -1419,7 +1419,7 @@
 {"followed": false, "id": "feathered-sun", "liked": 1, "name": "FEATHERED SUN", "reviewed": 0, "spotify_artist": "7bfe7ceWNJ3OjzmnzcMpdu", "tracks": 1}
 {"followed": false, "id": "fedde-le-grand", "liked": 0, "name": "Fedde Le Grand", "reviewed": 0, "spotify_artist": "7dc6hUwyuIhrZdh80eaCEE", "tracks": 1}
 {"followed": false, "id": "federica-lorusso", "liked": 0, "name": "Federica Lorusso", "reviewed": 0, "spotify_artist": "1JOPMuWBt9w57vIPKeJLsJ", "tracks": 1}
-{"followed": false, "id": "federleicht", "liked": 2, "name": "Federleicht", "reviewed": 0, "spotify_artist": "6CF6FtPmm6JIU72Ax5JWqn", "tracks": 2}
+{"followed": false, "id": "federleicht", "liked": 2, "name": "Federleicht", "reviewed": 1, "spotify_artist": "6CF6FtPmm6JIU72Ax5JWqn", "tracks": 2}
 {"followed": false, "id": "feiertag", "liked": 0, "name": "Feiertag", "reviewed": 0, "spotify_artist": "1GLnhRhNDXOofP7IlDxT5q", "tracks": 1}
 {"followed": false, "id": "feist", "liked": 3, "name": "Feist", "reviewed": 2, "spotify_artist": "6CWTBjOJK75cTE8Xv8u1kj", "tracks": 5}
 {"followed": false, "id": "fejka", "liked": 0, "name": "Fejká", "reviewed": 0, "spotify_artist": "0VWvUvjaHaW1OeXtcVISu9", "tracks": 3}
@@ -2355,7 +2355,7 @@
 {"followed": false, "id": "koko", "liked": 1, "name": "KOKO", "reviewed": 0, "spotify_artist": "7spLPNSfl7XOyBemar1Cqn", "tracks": 1}
 {"followed": false, "id": "kol-sova", "liked": 0, "name": "Kol Sova", "reviewed": 0, "spotify_artist": "5oIpTWc6hqFddZ5jWboQdP", "tracks": 1}
 {"followed": false, "id": "kollektiv-ost", "liked": 1, "name": "Kollektiv Ost", "reviewed": 0, "spotify_artist": "3G5wjUV0bhx9pIIUrGUabR", "tracks": 2}
-{"followed": true, "id": "kollektiv-turmstrasse", "liked": 3, "name": "Kollektiv Turmstrasse", "reviewed": 0, "spotify_artist": "1oXiuCd5F0DcnmXH5KaM6N", "tracks": 6}
+{"followed": true, "id": "kollektiv-turmstrasse", "liked": 3, "name": "Kollektiv Turmstrasse", "reviewed": 1, "spotify_artist": "1oXiuCd5F0DcnmXH5KaM6N", "tracks": 6}
 {"followed": false, "id": "kollmorgen", "liked": 0, "name": "Kollmorgen", "reviewed": 0, "spotify_artist": "0FNHm2kz0iLZt5hHW1Mg7j", "tracks": 1}
 {"followed": false, "id": "kolter", "liked": 0, "name": "Kolter", "reviewed": 0, "spotify_artist": "2Invsp3HSrAeJy4u7Retry", "tracks": 2}
 {"followed": false, "id": "kom", "liked": 0, "name": "Kom", "reviewed": 0, "spotify_artist": "0jW97PVstoxkki0LtQbr3v", "tracks": 1}
