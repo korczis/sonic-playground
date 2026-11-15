@@ -7,7 +7,8 @@ album: "On The Streets - The Remixes X-Tra 10"
 duration: "8:15"
 spotify: {"track": "2LPeSaWnm1GccUli5vBD9T", "album": "3ub6t7pkqj9SY8fAAcKxbz", "artists": ["6CF6FtPmm6JIU72Ax5JWqn", "1oXiuCd5F0DcnmXH5KaM6N"]}
 keys: {"fold": "federleicht|onthestreetskollektivturmstrasseletfreedom"}
-status: "missing"
+review: "kollektiv-turmstrasse_on-the-streets-let-freedom.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2018, "n": 9}
@@ -24,4 +25,4 @@ A liked song.
 Your Top Songs 2018: #9.
 Your Top Songs 2022: #16.
 In My Top Songs of All the Time (#199).
-No review yet.
+Reviewed: content/kollektiv-turmstrasse_on-the-streets-let-freedom.md.

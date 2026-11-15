@@ -30,7 +30,7 @@
     "spotify": {"type": "string", "pattern": "^[0-9A-Za-z]{22}$", "description": "Spotify track id (a public catalogue id)."},
     "isrc": {"type": "string", "pattern": "^[A-Z]{2}[A-Z0-9]{3}\\d{7}$"},
     "uncertain": {"type": "boolean", "description": "The item could not be read completely; it is never resolved by guess."},
-    "review": {"type": "string", "pattern": "^[a-z0-9-]+\\.md$", "description": "Identity override: this item is that review."},
+    "review": {"type": "string", "pattern": "^[a-z0-9_-]+\\.md$", "description": "Identity override: this item is that review (any review file name, underscores included: 22 older reviews use one)."},
     "skip": {"type": "string", "minLength": 5, "description": "Why this item gets no review (not a song, unavailable, ...)."},
     "note": {"type": "string"}
    }
