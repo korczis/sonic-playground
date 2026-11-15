@@ -1,0 +1,11 @@
+term = "record producer"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Record_producer"
+see_also = ["mixing", "remix"]
+
+[en]
+definition = "The person who shapes a recording from idea to finished track: choosing the sound, the arrangement and the performances, and often writing, programming or playing parts. In R&B, hip-hop and electronic music the producer frequently builds the whole instrumental, and is sometimes credited as an artist beside the singer."
+
+[cs]
+term = "hudební producent"
+definition = "Člověk, který dává nahrávce podobu od nápadu po hotovou skladbu: volí zvuk, aranžmá i podobu výkonů a často sám píše, programuje nebo hraje jednotlivé party. V R&B, hip-hopu a elektronické hudbě producent často vytváří celý instrumentál a někdy bývá uveden jako interpret vedle zpěváka."

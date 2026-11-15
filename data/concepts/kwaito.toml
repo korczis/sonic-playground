@@ -1,0 +1,11 @@
+term = "kwaito"
+category = "genre-history"
+wikipedia = "https://en.wikipedia.org/wiki/Kwaito"
+see_also = ["house groove", "bassline", "loop", "drum machine"]
+
+[en]
+definition = "A South African genre that emerged in Soweto and the Johannesburg townships between the late 1980s and the 1990s: house music slowed down, with deep synthesised basslines, drum machines, catchy melodic and percussive loops and vocals often delivered in a conversational or narrative style. It became the sound of the generation that came of age after apartheid."
+
+[cs]
+term = "kwaito"
+definition = "Jihoafrický žánr, který vznikl v Sowetu a v johannesburských townshipech mezi koncem 80. a 90. lety: zpomalený house s hlubokými syntetickými basovými linkami, bicími automaty, chytlavými melodickými a perkusními smyčkami a zpěvem, který často spíš vypráví nebo mluví. Stal se zvukem generace, která dospěla po konci apartheidu."

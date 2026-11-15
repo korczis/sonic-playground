@@ -288,6 +288,100 @@
     }
    ]
   },
+  "adaolisa-madl-miss-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/adaolisa-madl-miss-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "adaolisa, madL"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "r&b",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Miss Me"
+     },
+     "name": "Miss Me"
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/adaolisa-madl-miss-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/adaolisa-madl-miss-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Neues von DRAMAS, Klitclique, Voodoo Jürgens u.v.m.",
+       "publisher": "FM4 Soundpark",
+       "url": "https://fm4.orf.at/stories/2993685/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Neue Musik von My Ugly Clementine, Tizudemjay, Buntspecht u.v.m.",
+       "publisher": "FM4 Soundpark",
+       "url": "https://fm4.orf.at/stories/2994554/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "FM4 Soundpark Act of the Month: Adaolisa",
+       "publisher": "Austrian Music Export",
+       "url": "https://www.musicexport.at/fm4-soundpark-adaolisa/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Adaolisa",
+       "publisher": "Austrian Music Export",
+       "url": "https://www.musicexport.at/artist/adaolisa/"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Miss Me je singl vídeňské R&B zpěvačky adaolisa, tehdy uváděné jako Ada, a jejího producenta madL z roku 2019: hluboká, chytlavá píseň, kterou FM4 slyšelo jako svěží a křupavou a která do popředí staví hlas silné, nezávislé ženy.",
+     "educationalLevel": "introductory",
+     "headline": "adaolisa, madL - Miss Me",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/adaolisa-madl-miss-me/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/adaolisa-madl-miss-me/",
+     "wordCount": 487
+    }
+   ]
+  },
   "agoria-noemie-remedy.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -44310,6 +44404,116 @@
     }
    ]
   },
+  "mount-sims-black-sunglasses.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mount-sims-black-sunglasses/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mount Sims",
+      "sameAs": "https://musicbrainz.org/artist/09fd9dc8-9426-41be-84b0-c0319ea5e11e"
+     },
+     "datePublished": "2002",
+     "genre": [
+      "electroclash",
+      "electro",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "UltraSex"
+     },
+     "name": "Black Sunglasses",
+     "sameAs": [
+      "https://musicbrainz.org/recording/5d54701b-4459-4218-939c-e0311708a1e4",
+      "https://www.youtube.com/watch?v=D2UxaEC_gs8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mount-sims-black-sunglasses/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mount-sims-black-sunglasses/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Mount Sims - Ultra Sex",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/mount_sims-ultra_sex"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Mount Sims - UltraSex (US edition)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/59272-Mount-Sims-UltraSex"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "UltraSex",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/UltraSex"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mount Sims",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mount_Sims"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Black Sunglasses",
+       "publisher": "Mount Sims - Topic",
+       "url": "https://www.youtube.com/watch?v=D2UxaEC_gs8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ultra Sex (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/179ab818-e5cb-4b31-a4a4-5f76d0daaa89"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Jedna z temných a intenzivních skladeb americké edice UltraSex, debutu, který Mount Sims vydal v roce 2002 u Emperor Norton: podle recenze časopisu Exclaim! staromódní elektronika spojená s vrstvami moderního techna.",
+     "educationalLevel": "introductory",
+     "headline": "Mount Sims - Black Sunglasses",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/electroclash/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "mixing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/mixing/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mount-sims-black-sunglasses/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mount-sims-black-sunglasses/",
+     "wordCount": 505
+    }
+   ]
+  },
   "mount-sims-good-service.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -47599,6 +47803,132 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/noir-haze-solomun-around-solomun-vox/",
      "wordCount": 546
+    }
+   ]
+  },
+  "nonku-phiri-things-we-do-on-the-weekend.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nonku-phiri-things-we-do-on-the-weekend/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Nonku Phiri",
+      "sameAs": "https://musicbrainz.org/artist/e59273ef-4023-47b7-8657-3c8ad0510379"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "r&b",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Things We Do on the Weekend"
+     },
+     "name": "Things We Do on the Weekend",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f9091daa-70a6-4ad4-b6d1-74e0fdc2cd65",
+      "https://www.youtube.com/watch?v=kEqErEO1z9g"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/nonku-phiri-things-we-do-on-the-weekend/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/nonku-phiri-things-we-do-on-the-weekend/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Nonku Phiri Makes Stunning Debut With 'Things We Do On The Weekend'",
+       "publisher": "Okayafrica",
+       "url": "https://www.okayafrica.com/nonku-phiri-things-we-do-on-the-weekend/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Nonku Phiri: Things We Do On The Weekend",
+       "publisher": "Texx and the City",
+       "url": "https://texxandthecity.com/2015/04/nonku-phiri-things-we-do-on-the-weekend/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Nonku Phiri Shares Things We Do On The Weekend",
+       "publisher": "Think In Electronic",
+       "url": "https://www.thinkinelectronic.com/2015/04/nonku-phiri-shares-things-we-do-on.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nonku Phiri",
+       "publisher": "Music In Africa",
+       "url": "https://www.musicinafrica.net/directory/nonku-phiri"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Nonku Phiri reloaded",
+       "publisher": "Mail & Guardian",
+       "url": "https://mg.co.za/friday/2018-07-27-nonku-phiri-reloaded/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Nonku Phiri - Things We Do On The Weekend",
+       "publisher": "Nonku Phiri",
+       "url": "https://www.youtube.com/watch?v=kEqErEO1z9g"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Things We Do on the Weekend (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/f9091daa-70a6-4ad4-b6d1-74e0fdc2cd65"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kwaito",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kwaito"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Debutový sólový singl Nonku Phiri z roku 2015, který produkoval Narch Beats z PHFat: žhavý příběh o vztahu, který se pokazil, zasazený do zamlžených beatů, cvakavých perkusí a hlubokého beatu postaveného na basech, jenž vyrostl z jamování nad starým kwaitem.",
+     "educationalLevel": "introductory",
+     "headline": "Nonku Phiri - Things We Do on the Weekend",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "kwaito",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/kwaito/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/loop/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/nonku-phiri-things-we-do-on-the-weekend/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/nonku-phiri-things-we-do-on-the-weekend/",
+     "wordCount": 494
     }
    ]
   },
@@ -51255,6 +51585,133 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/pischinger-dermota-anne-eck-can-t-breathe/",
      "wordCount": 453
+    }
+   ]
+  },
+  "pitto-walking-by-the-sea.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/pitto-walking-by-the-sea/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Pitto",
+      "sameAs": "https://musicbrainz.org/artist/5deb2589-e581-4ff3-ad34-7cc644b952f1"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "indie pop",
+      "electro-pop",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Objects In A Mirror Are Closer Than They Appear"
+     },
+     "name": "Walking By The Sea",
+     "sameAs": [
+      "https://musicbrainz.org/recording/00cbebc6-58be-40be-adb0-50dbbe6ce869",
+      "https://www.youtube.com/watch?v=6d1VGwEhgBE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/pitto-walking-by-the-sea/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/pitto-walking-by-the-sea/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Objects In A Mirror Are Closer Than They Appear",
+       "publisher": "Green",
+       "url": "https://greenrcrds.bandcamp.com/album/objects-in-a-mirror-are-closer-than-they-appear"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Pitto - Objects In A Mirror Are Closer Than They Appear",
+       "publisher": "muno.pl",
+       "url": "https://muno.pl/news/pitto-objects-in-a-mirror-are-closer-than-they-appear-pitto-16-05-2011/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Walking By The Sea Original Mix",
+       "publisher": "YouTube (provided by Base79)",
+       "url": "https://www.youtube.com/watch?v=6d1VGwEhgBE"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Pitto - Walking by the Sea - Official Video",
+       "publisher": "Pitto",
+       "url": "https://www.youtube.com/watch?v=Y-gHzfqM6FM"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Walking By The Sea (Breaking Up The Static)",
+       "publisher": "YouTube (provided by !K7 Music)",
+       "url": "https://www.youtube.com/watch?v=QIGOq88JhnE"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "The architect behind Studio Stekker",
+       "publisher": "ADAM Audio",
+       "url": "https://www.adam-audio.com/blog/the-architect-behind-studio-stekker/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Pitto Feat. Woodie S - Shadows",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5826213-Pitto-Feat-Woodie-S-Shadows"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Walking By The Sea (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/00cbebc6-58be-40be-adb0-50dbbe6ce869"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Skladba, kterou Pitto zpívá sám, z jeho debutového alba vydaného v roce 2011 u Green: label v ní slyšel hudbu od srdce a polská recenze ji označila za jedinou výjimku na zasněné desce, indie pop s nábojem a zásobou pozitivní energie.",
+     "educationalLevel": "introductory",
+     "headline": "Pitto - Walking By The Sea",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/pitto-walking-by-the-sea/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/pitto-walking-by-the-sea/",
+     "wordCount": 493
     }
    ]
   },
@@ -65510,6 +65967,116 @@
     }
    ]
   },
+  "urban-species-destructive.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/urban-species-destructive/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Urban Species",
+      "sameAs": "https://musicbrainz.org/artist/e2a02b0b-ce39-46d8-82fb-2a0fdeff929e"
+     },
+     "datePublished": "1998",
+     "genre": [
+      "hip-hop",
+      "acid jazz",
+      "trip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Blanket"
+     },
+     "name": "Destructive",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2a8a72ff-0f52-41ab-b46e-96ed4302d6db",
+      "https://www.youtube.com/watch?v=rncz96Lrrjc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/urban-species-destructive/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/urban-species-destructive/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Throwback Review: Urban Species - Blanket",
+       "publisher": "Useless Randomness",
+       "url": "https://uselessrandomness.wordpress.com/2009/09/12/throwback-review-urban-species-blanket/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Urban Species",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Urban_Species"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Galliano (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Galliano_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Destructive (Provided to YouTube by Universal Music Group)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=rncz96Lrrjc"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Urban Species - Destructive (description on the band's channel UrbanSpeciesTV)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=n4kd1bwLwiA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Destructive (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2a8a72ff-0f52-41ab-b46e-96ed4302d6db"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Destructive je druhá skladba alba Blanket, které v roce 1998 vydala hip-hopová skupina Urban Species z Tottenhamu: jazzový beat s lehkou kytarou, který začíná skromně a do refrénu naroste ve zvukovou stěnu; refrén zpívají Elisabeth Troy a Jeffrey Darnell, smyčce aranžoval Everton Nelson.",
+     "educationalLevel": "introductory",
+     "headline": "Urban Species - Destructive",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/urban-species-destructive/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/urban-species-destructive/",
+     "wordCount": 494
+    }
+   ]
+  },
   "utah-jazz-take-no-more.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -68034,6 +68601,97 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/adam-freeland-do-you/",
      "wordCount": 628
+    }
+   ]
+  },
+  "adaolisa-madl-miss-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/adaolisa-madl-miss-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "adaolisa, madL"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "r&b",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Miss Me"
+     },
+     "name": "Miss Me"
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/adaolisa-madl-miss-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/adaolisa-madl-miss-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Neues von DRAMAS, Klitclique, Voodoo Jürgens u.v.m.",
+       "publisher": "FM4 Soundpark",
+       "url": "https://fm4.orf.at/stories/2993685/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Neue Musik von My Ugly Clementine, Tizudemjay, Buntspecht u.v.m.",
+       "publisher": "FM4 Soundpark",
+       "url": "https://fm4.orf.at/stories/2994554/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "FM4 Soundpark Act of the Month: Adaolisa",
+       "publisher": "Austrian Music Export",
+       "url": "https://www.musicexport.at/fm4-soundpark-adaolisa/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Adaolisa",
+       "publisher": "Austrian Music Export",
+       "url": "https://www.musicexport.at/artist/adaolisa/"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Miss Me is a 2019 single by the Viennese R&B singer adaolisa, then billed as Ada, and her producer madL: a deep, catchy song that FM4 heard as fresh and crisp, putting the voice of a strong, independent woman in front.",
+     "educationalLevel": "introductory",
+     "headline": "adaolisa, madL - Miss Me",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/adaolisa-madl-miss-me/",
+     "wordCount": 538
     }
    ]
   },
@@ -110832,6 +111490,113 @@
     }
    ]
   },
+  "mount-sims-black-sunglasses.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mount-sims-black-sunglasses/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mount Sims",
+      "sameAs": "https://musicbrainz.org/artist/09fd9dc8-9426-41be-84b0-c0319ea5e11e"
+     },
+     "datePublished": "2002",
+     "genre": [
+      "electroclash",
+      "electro",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "UltraSex"
+     },
+     "name": "Black Sunglasses",
+     "sameAs": [
+      "https://musicbrainz.org/recording/5d54701b-4459-4218-939c-e0311708a1e4",
+      "https://www.youtube.com/watch?v=D2UxaEC_gs8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mount-sims-black-sunglasses/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mount-sims-black-sunglasses/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Mount Sims - Ultra Sex",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/mount_sims-ultra_sex"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Mount Sims - UltraSex (US edition)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/59272-Mount-Sims-UltraSex"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "UltraSex",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/UltraSex"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mount Sims",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mount_Sims"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Black Sunglasses",
+       "publisher": "Mount Sims - Topic",
+       "url": "https://www.youtube.com/watch?v=D2UxaEC_gs8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ultra Sex (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/179ab818-e5cb-4b31-a4a4-5f76d0daaa89"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "One of the dark and intense tracks of the American edition of UltraSex, Mount Sims' 2002 debut on Emperor Norton: old-school electronics combined with modern techno layers, in the words of Exclaim's review.",
+     "educationalLevel": "introductory",
+     "headline": "Mount Sims - Black Sunglasses",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/concept/electroclash/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "mixing",
+       "url": "https://korczis.github.io/sonic-playground/concept/mixing/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mount-sims-black-sunglasses/",
+     "wordCount": 547
+    }
+   ]
+  },
   "mount-sims-good-service.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -114028,6 +114793,129 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/noir-haze-solomun-around-solomun-vox/",
      "wordCount": 623
+    }
+   ]
+  },
+  "nonku-phiri-things-we-do-on-the-weekend.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nonku-phiri-things-we-do-on-the-weekend/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Nonku Phiri",
+      "sameAs": "https://musicbrainz.org/artist/e59273ef-4023-47b7-8657-3c8ad0510379"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "r&b",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Things We Do on the Weekend"
+     },
+     "name": "Things We Do on the Weekend",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f9091daa-70a6-4ad4-b6d1-74e0fdc2cd65",
+      "https://www.youtube.com/watch?v=kEqErEO1z9g"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nonku-phiri-things-we-do-on-the-weekend/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/nonku-phiri-things-we-do-on-the-weekend/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Nonku Phiri Makes Stunning Debut With 'Things We Do On The Weekend'",
+       "publisher": "Okayafrica",
+       "url": "https://www.okayafrica.com/nonku-phiri-things-we-do-on-the-weekend/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Nonku Phiri: Things We Do On The Weekend",
+       "publisher": "Texx and the City",
+       "url": "https://texxandthecity.com/2015/04/nonku-phiri-things-we-do-on-the-weekend/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Nonku Phiri Shares Things We Do On The Weekend",
+       "publisher": "Think In Electronic",
+       "url": "https://www.thinkinelectronic.com/2015/04/nonku-phiri-shares-things-we-do-on.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nonku Phiri",
+       "publisher": "Music In Africa",
+       "url": "https://www.musicinafrica.net/directory/nonku-phiri"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Nonku Phiri reloaded",
+       "publisher": "Mail & Guardian",
+       "url": "https://mg.co.za/friday/2018-07-27-nonku-phiri-reloaded/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Nonku Phiri - Things We Do On The Weekend",
+       "publisher": "Nonku Phiri",
+       "url": "https://www.youtube.com/watch?v=kEqErEO1z9g"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Things We Do on the Weekend (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/f9091daa-70a6-4ad4-b6d1-74e0fdc2cd65"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kwaito",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kwaito"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Nonku Phiri's 2015 debut solo single, produced by Narch Beats of PHFat: a sultry tale of a fling gone wrong, set to hazy beats, click percussion and a deep, bass-rooted beat grown from jams on old-school kwaito.",
+     "educationalLevel": "introductory",
+     "headline": "Nonku Phiri - Things We Do on the Weekend",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "kwaito",
+       "url": "https://korczis.github.io/sonic-playground/concept/kwaito/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/concept/loop/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/nonku-phiri-things-we-do-on-the-weekend/",
+     "wordCount": 537
     }
    ]
   },
@@ -117585,6 +118473,130 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/pischinger-dermota-anne-eck-can-t-breathe/",
      "wordCount": 521
+    }
+   ]
+  },
+  "pitto-walking-by-the-sea.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/pitto-walking-by-the-sea/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Pitto",
+      "sameAs": "https://musicbrainz.org/artist/5deb2589-e581-4ff3-ad34-7cc644b952f1"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "indie pop",
+      "electro-pop",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Objects In A Mirror Are Closer Than They Appear"
+     },
+     "name": "Walking By The Sea",
+     "sameAs": [
+      "https://musicbrainz.org/recording/00cbebc6-58be-40be-adb0-50dbbe6ce869",
+      "https://www.youtube.com/watch?v=6d1VGwEhgBE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/pitto-walking-by-the-sea/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/pitto-walking-by-the-sea/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Objects In A Mirror Are Closer Than They Appear",
+       "publisher": "Green",
+       "url": "https://greenrcrds.bandcamp.com/album/objects-in-a-mirror-are-closer-than-they-appear"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Pitto - Objects In A Mirror Are Closer Than They Appear",
+       "publisher": "muno.pl",
+       "url": "https://muno.pl/news/pitto-objects-in-a-mirror-are-closer-than-they-appear-pitto-16-05-2011/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Walking By The Sea Original Mix",
+       "publisher": "YouTube (provided by Base79)",
+       "url": "https://www.youtube.com/watch?v=6d1VGwEhgBE"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Pitto - Walking by the Sea - Official Video",
+       "publisher": "Pitto",
+       "url": "https://www.youtube.com/watch?v=Y-gHzfqM6FM"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Walking By The Sea (Breaking Up The Static)",
+       "publisher": "YouTube (provided by !K7 Music)",
+       "url": "https://www.youtube.com/watch?v=QIGOq88JhnE"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "The architect behind Studio Stekker",
+       "publisher": "ADAM Audio",
+       "url": "https://www.adam-audio.com/blog/the-architect-behind-studio-stekker/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Pitto Feat. Woodie S - Shadows",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5826213-Pitto-Feat-Woodie-S-Shadows"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Walking By The Sea (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/00cbebc6-58be-40be-adb0-50dbbe6ce869"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "The track on which Pitto sings himself, from his 2011 debut album on Green: the label heard heartfelt music in it, and a Polish review called it the one exception on a dreamy record, indie pop with a kick and a store of positive energy.",
+     "educationalLevel": "introductory",
+     "headline": "Pitto - Walking By The Sea",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/pitto-walking-by-the-sea/",
+     "wordCount": 546
     }
    ]
   },
@@ -131456,6 +132468,113 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/ultraista-smalltalk/",
      "wordCount": 578
+    }
+   ]
+  },
+  "urban-species-destructive.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/urban-species-destructive/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Urban Species",
+      "sameAs": "https://musicbrainz.org/artist/e2a02b0b-ce39-46d8-82fb-2a0fdeff929e"
+     },
+     "datePublished": "1998",
+     "genre": [
+      "hip-hop",
+      "acid jazz",
+      "trip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Blanket"
+     },
+     "name": "Destructive",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2a8a72ff-0f52-41ab-b46e-96ed4302d6db",
+      "https://www.youtube.com/watch?v=rncz96Lrrjc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/urban-species-destructive/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/urban-species-destructive/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Throwback Review: Urban Species - Blanket",
+       "publisher": "Useless Randomness",
+       "url": "https://uselessrandomness.wordpress.com/2009/09/12/throwback-review-urban-species-blanket/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Urban Species",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Urban_Species"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Galliano (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Galliano_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Destructive (Provided to YouTube by Universal Music Group)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=rncz96Lrrjc"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Urban Species - Destructive (description on the band's channel UrbanSpeciesTV)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=n4kd1bwLwiA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Destructive (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2a8a72ff-0f52-41ab-b46e-96ed4302d6db"
+      }
+     ],
+     "datePublished": "2026-11-15",
+     "description": "Destructive is the second track of Blanket, the 1998 album by the Tottenham hip-hop group Urban Species: a jazzy beat with light guitar that starts small and swells into a wall of sound by its chorus, sung by Elisabeth Troy and Jeffrey Darnell, with strings arranged by Everton Nelson.",
+     "educationalLevel": "introductory",
+     "headline": "Urban Species - Destructive",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/urban-species-destructive/",
+     "wordCount": 532
     }
    ]
   },
