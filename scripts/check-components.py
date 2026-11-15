@@ -37,7 +37,10 @@ STILL = re.compile(r'i\.ytimg\.com|src="\{\{[^"]*thumb')
 SPOKEN = re.compile(r'\s(aria-label|aria-description|title|alt|placeholder)="([^"{]+)"')
 # The Flowbite Pro verifier (~/.claude/skills/flowbite-pro/verify.mjs) recognises the Pro shell by
 # these English landmark names in the template; they stay literal and i18n.js translates them in
-# the browser, so each must carry its data-i18n-aria-label. An owner decision may lift this.
+# the browser, so each must carry its data-i18n-aria-label. The Majordomus half (the kit's
+# recognition of localised landmarks) is issue I4594 in prismatic-majordomus (milestone
+# one-kit-on-every-surface, korczis/prismatic-majordomus#3034); the verify.mjs half is the
+# owner's. Once both accept a localised name, this set and its exemption go.
 PRO_ANCHORS = {"Sidebar", "Breadcrumb"}
 COMMENT = re.compile(r"\{#.*?#\}", re.S)
 STILL_DEFINITION = re.compile(r"\{%\s*component\s+still\((.*?)\{%\s*endcomponent\s+still\s*%\}", re.S)
