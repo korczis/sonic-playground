@@ -32,7 +32,9 @@ git checkout -q -- data/media.toml
 rm content/zz-fixture-draft.md
 
 review=$(git ls-files 'content/*.md' \
-  | grep -v -e '\.cs\.md$' -e '_index' -e '^content/pages/' -e '^content/yearbook/' | head -1)
+  | grep -v -e '\.cs\.md$' -e '_index' -e '^content/pages/' -e '^content/yearbook/' | sed -n 1p)
+# sed reads all of its input: `head -1` exits early, and once the list outgrew the pipe buffer
+# grep died of SIGPIPE and pipefail failed the case (2026-11-15, after 562 reviews).
 git rm -q --cached "$review"
 if judge; then
   echo "FAIL judge-index: a catalogue listing $review passed although the commit lacks it" >&2
