@@ -558,9 +558,16 @@ async function shot(page, name) {
 
   // Forward keeps the reader's place too: home, a review read down to 900 px, Back, Forward; the
   // review returns where it was left (only pushed navigations used to save, so it came back at 0).
+  // Home is scrolled just before Forward and the review is served 400 ms late, so a save still
+  // pending from home fires after Forward has switched entries and before the review mounts: it
+  // used to land in the review's entry (CI, run 43669472966: 0 of 900; here 120 of 900).
   {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
+    await context.route((u) => u.pathname.endsWith('/' + sample.path), async (r) => {
+      await new Promise((ok) => setTimeout(ok, 400));
+      return r.fallback();
+    });
     const page = await context.newPage();
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate((href) => window.SonicRouter.go(href), new URL(sample.path, base).href);
@@ -570,6 +577,7 @@ async function shot(page, name) {
     const left = await page.evaluate(() => Math.round(window.scrollY));
     await page.goBack();
     await page.waitForFunction(() => !!document.getElementById('explorer-grid') && document.documentElement.dataset.navigatingState === '', null, { timeout: 10000 }).catch(() => {});
+    await page.evaluate(() => window.scrollTo(0, 120));
     await page.goForward();
     await page.waitForFunction((p) => location.pathname.endsWith('/' + p) && document.documentElement.dataset.navigatingState === '', sample.path, { timeout: 10000 }).catch(() => {});
     await page.waitForTimeout(400);
