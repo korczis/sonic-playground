@@ -5,6 +5,10 @@
 # refuses: the merge must be refused through the real pre-merge-commit, and (negative control)
 # without that hook the same merge goes through, which is the gap it closes.
 set -euo pipefail
+# A hook (pre-push in a linked worktree) exports an absolute GIT_DIR; inherited here, the
+# scratch repository's git init and commit would act on the calling repository instead
+# (2026-11-15: core.bare=true and a moved main). Drop git's whole local environment first.
+unset $(git rev-parse --local-env-vars)
 root=$(cd "$(dirname "$0")/../.." && pwd)
 work=$(mktemp -d "${TMPDIR:-/tmp}/merge-commit.XXXXXX")
 trap 'rm -rf "$work"' EXIT
