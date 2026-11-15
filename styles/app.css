@@ -69,7 +69,13 @@
      every control of each page class at phone width. One rule here, never per component. */
   :where(a[href], button, [role='button'], select, summary, input:not([type='checkbox'], [type='radio'])) {
     min-height: 1.5rem;
+  }
+  /* A breadcrumb link can be one short word ("r&b"): it is a control on its own, so it is at
+     least as wide as it is tall. Not a min-width in the rule above: in a flex row min-width
+     replaces the automatic minimum and let the nav's drawer toggle shrink (review 2026-11-15). */
+  :where([data-i18n-aria-label='landmark.breadcrumb'] a[href]) {
     min-width: 1.5rem;
+    justify-content: center;
   }
 
   [hidden] {
@@ -180,14 +186,39 @@ html[data-player-view-state="mini"] #player-panel {
   }
 }
 
-/* The playing video is never covered (YouTube's terms): whatever opens over the page moves it,
-   and test/e2e/smoke.cjs hit-tests its centre in each of these states. These rules come after
-   the size rules above on purpose: at equal specificity the later rule wins, and the queue rule
-   once came first, so the default small video sat under the open queue (2026-11-15). */
+/* The playing video is never covered (YouTube's terms). Whatever opens over the page moves it,
+   is bounded so it ends where the video starts, or (the toast) is placed by player.js around the
+   video's measured box; test/e2e/smoke.cjs hit-tests a 5x5 grid over the video in each state,
+   in both languages, at 320 to 1440 px and in landscape. These rules come after the size rules
+   above on purpose: at equal specificity the later rule wins, and the queue rule once came first,
+   so the default small video sat under the open queue (2026-11-15). Heights are bounds, never a
+   fixed budget for a header whose height depends on the language and the repeat state: an
+   independent review measured a Czech queue header covering 38 % of the video. */
+#player-queue,
+#player-queue > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+#player-queue [data-player-list] {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: none;
+}
+#player-queue {
+  max-height: calc(100vh - 6.25rem);
+  max-height: calc(100dvh - 6.25rem);
+}
+/* Above the menu's backdrop (z 65; dimming on a phone, transparent but click-catching wider),
+   below the menu itself (z 70). */
+html[data-track-menu-state="open"] #player-panel {
+  z-index: 66;
+}
 @media (min-width: 640px) {
-  /* The open queue sits at the right edge; the video moves beside it. */
+  /* The open queue sits at the right edge; the video moves beside it and narrows to fit. */
   html[data-player-queue-state="open"] #player-panel {
     right: 26rem;
+    max-width: calc(100vw - 27.25rem);
   }
 }
 @media (max-width: 639.98px) {
@@ -201,21 +232,15 @@ html[data-player-view-state="mini"] #player-panel {
     width: 9rem;
     padding: 0;
   }
-  /* Above the menu's dimming backdrop (z 65), below the menu itself (z 70). */
-  html[data-track-menu-state="open"] #player-panel {
-    z-index: 66;
-  }
-  /* What sits at the bottom ends below the moved video (top 4.5rem + 9rem at 16:9 + a gap). */
+  /* What sits at the bottom ends below the moved video: its top 4.5rem, its height 9rem at 16:9
+     (5.0625rem), a gap; the queue also above the bar (5.5rem and its border). */
   html[data-player-panel-state="shown"] #track-menu {
-    max-height: calc(100vh - 10.75rem);
+    max-height: calc(100vh - 10.25rem);
+    max-height: calc(100dvh - 10.25rem);
   }
-  html[data-player-panel-state="shown"] [data-player-list] {
-    max-height: min(20rem, calc(100vh - 28rem));
-  }
-  /* The toast drops below the moved video. */
-  html[data-player-queue-state="open"] #player-toast,
-  html[data-track-menu-state="open"] #player-toast {
-    top: 10.75rem;
+  html[data-player-panel-state="shown"] #player-queue {
+    max-height: calc(100vh - 15.75rem - 1px);
+    max-height: calc(100dvh - 15.75rem - 1px);
   }
 }
 

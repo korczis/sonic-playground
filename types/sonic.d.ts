@@ -83,6 +83,8 @@ interface Window {
     jump(index: number): void;
     undo(): void;
     notify(text: string): void;
+    /** Move a shown toast off the playing video (it measures the video's box). */
+    placeToast(): void;
     seek(track: unknown, at: string): void;
     state(): { queue: SonicQueueItem[]; index: number; time: number; repeat: string; view: string; video: string; autoplay: boolean };
   };

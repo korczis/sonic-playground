@@ -30,6 +30,7 @@
   var el = {
     video: document.getElementById('player-video'),
     panel: $('#player-panel'),
+    bar: $('#player'),
     title: /** @type {HTMLAnchorElement} */ ($('[data-player-title]')),
     artist: $('[data-player-artist]'),
     thumb: /** @type {HTMLImageElement} */ ($('[data-player-thumb]')),
@@ -113,18 +114,36 @@
   // The toast is a live region that is always rendered (a region that appears with its text is
   // often not announced); it is shown and hidden by data-shown. With an undo snapshot it offers
   // Undo for six seconds.
-  /** @param {string} text @param {boolean} [canUndo] */
-  function toast(text, canUndo) {
+  // A note (soft) never replaces a toast that still offers Undo: the reader would lose the undo.
+  /** @param {string} text @param {boolean} [canUndo] @param {boolean} [soft] */
+  function toast(text, canUndo, soft) {
+    if (soft && undo && el.toast.dataset.shown === 'true') return;
     if (!canUndo) undo = null;
     el.toastText.textContent = text;
     el.undo.hidden = !canUndo;
     el.toast.dataset.shown = 'true';
+    placeToast();
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function () {
       el.toast.dataset.shown = 'false';
       el.toastText.textContent = '';
       undo = null;
     }, canUndo ? 6000 : 3000);
+  }
+  // The toast sits near the top; where the docked video is there (a phone with the queue or the
+  // track menu open, a short landscape screen), it moves below the video, or above it when there
+  // is no room below. Measured, not assumed: the video's box depends on the width, the height,
+  // its size and what is open (YouTube's terms: never covered).
+  function placeToast() {
+    var box = el.toast;
+    box.style.top = '';
+    if (box.dataset.shown !== 'true' || el.panel.hidden) return;
+    var v = el.panel.getBoundingClientRect();
+    var t = box.getBoundingClientRect();
+    if (t.bottom <= v.top || t.top >= v.bottom || t.right <= v.left || t.left >= v.right) return;
+    var bar = el.bar.hidden ? window.innerHeight : el.bar.getBoundingClientRect().top;
+    var below = v.bottom + 8;
+    box.style.top = (below + t.height <= bar - 8 ? below : Math.max(8, v.top - t.height - 8)) + 'px';
   }
   function snapshot() {
     undo = { queue: state.queue.slice(), index: state.index };
@@ -446,7 +465,7 @@
     var pos = state.queue.length ? state.index + 1 : 0;
     state.queue.splice(pos, 0, item(t));
     jump(pos);
-    toast(Sonic.t('player.toast_playing', { track: t.track }));
+    toast(Sonic.t('player.toast_playing', { track: t.track }), false, true);
   }
   /** The listening guide: the track at a time, whether or not it is the one playing. */
   function seekTrack(t, at) {
@@ -467,7 +486,7 @@
   function playNext(t) {
     if (!t || !t.youtube) return;
     var at = indexOf(keyOf(t));
-    if (at >= 0 && at === state.index) { toast(Sonic.t('player.toast_playing', { track: t.track })); return; }
+    if (at >= 0 && at === state.index) { toast(Sonic.t('player.toast_playing', { track: t.track }), false, true); return; }
     if (at >= 0) take(at);
     if (!state.queue.length) { playNow(t); return; }
     state.queue.splice(state.index + 1, 0, item(t));
@@ -531,14 +550,16 @@
     state.queue[i] = state.queue[j];
     state.queue[j] = t;
     save(); paint();
-    toast(Sonic.t('player.toast_moved', { track: t.track }));
+    toast(Sonic.t('player.toast_moved', { track: t.track }), false, true);
   }
   /** Move an upcoming track to another upcoming position (a drag in the queue panel). */
   function moveTo(from, to) {
     var n = state.queue.length;
     if (from === to || from <= state.index || to <= state.index || from >= n || to >= n) return;
-    state.queue.splice(to, 0, state.queue.splice(from, 1)[0]);
+    var moved = state.queue.splice(from, 1)[0];
+    state.queue.splice(to, 0, moved);
     save(); paint();
+    toast(Sonic.t('player.toast_moved', { track: moved.track }), false, true);
   }
   /** Flush the queue: everything but the current track goes. */
   function clear() {
@@ -608,11 +629,12 @@
     save(); paint();
     (view === 'mini' ? el.expand : el.minimise).focus();
   }
-  function setVideo(size) { state.video = size; save(); paint(); }
+  function setVideo(size) { state.video = size; save(); paint(); placeToast(); }
   function setQueueOpen(open) {
     el.queuePanel.hidden = !open;
     el.queueButton.setAttribute('aria-expanded', String(open));
     html.dataset.playerQueueState = open ? 'open' : '';
+    placeToast();
   }
   function stop(quiet) {
     var had = state.queue.length > 0;
@@ -692,10 +714,13 @@
   });
 
   el.toggle.addEventListener('click', toggle);
-  // A skip the reader asked for is announced; an automatic advance shows in the bar only.
-  function announceCurrent() { var t = current(); if (t) toast(Sonic.t('player.toast_playing', { track: t.track })); }
-  el.next.addEventListener('click', function () { var was = state.index; next(); if (state.index !== was) announceCurrent(); });
-  el.prev.addEventListener('click', function () { var was = state.index; prev(); if (state.index !== was) announceCurrent(); });
+  // A skip the reader asked for (button or Shift+N/P) is announced; an automatic advance shows
+  // in the bar only, and the system's media controls show the track themselves.
+  function announceCurrent() { var t = current(); if (t) toast(Sonic.t('player.toast_playing', { track: t.track }), false, true); }
+  function skipNext() { var was = state.index; next(); if (state.index !== was) announceCurrent(); }
+  function skipPrev() { var was = state.index; prev(); if (state.index !== was) announceCurrent(); }
+  el.next.addEventListener('click', skipNext);
+  el.prev.addEventListener('click', skipPrev);
   el.repeat.forEach(function (b) { b.addEventListener('click', cycleRepeat); });
   el.shuffle.addEventListener('click', shuffle);
   el.autoplay.addEventListener('change', function () {
@@ -727,13 +752,14 @@
     if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
     var onButton = t && /^(BUTTON|A)$/.test(t.tagName);
     if ((e.key === ' ' && !onButton) || e.key === 'k' || e.key === 'K') { e.preventDefault(); toggle(); }
-    else if (e.shiftKey && (e.key === 'N' || e.key === 'n')) { e.preventDefault(); next(); }
-    else if (e.shiftKey && (e.key === 'P' || e.key === 'p')) { e.preventDefault(); prev(); }
+    else if (e.shiftKey && (e.key === 'N' || e.key === 'n')) { e.preventDefault(); skipNext(); }
+    else if (e.shiftKey && (e.key === 'P' || e.key === 'p')) { e.preventDefault(); skipPrev(); }
     else if ((e.key === 'q' || e.key === 'Q') && !e.shiftKey && state.view !== 'mini') setQueueOpen(el.queuePanel.hidden);
   });
   // The position is saved when the page goes away, not only every few seconds.
   var flush = function () { if (yt && ready && yt.getCurrentTime) { state.time = yt.getCurrentTime() || 0; save(); } };
   window.addEventListener('pagehide', flush);
+  window.addEventListener('resize', placeToast);
   document.addEventListener('visibilitychange', function () { if (document.hidden) flush(); });
   if ('mediaSession' in navigator) {
     try {
@@ -795,6 +821,6 @@
 
   window.SonicPlayer = { moveTo: moveTo, playNow: playNow, playNext: playNext, toggleQueued: toggleQueued, playList: playList,
     remove: remove, move: move, clear: clear, shuffle: shuffle, next: next, prev: prev, toggle: toggle,
-    stop: stop, jump: jump, undo: restore, seek: seekTrack, notify: function (text) { toast(text); },
+    stop: stop, jump: jump, undo: restore, seek: seekTrack, notify: function (text) { toast(text); }, placeToast: placeToast,
     state: function () { return JSON.parse(JSON.stringify(state)); } };
 })();
