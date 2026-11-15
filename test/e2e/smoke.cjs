@@ -580,7 +580,8 @@ async function shot(page, name) {
     await page.evaluate(() => window.scrollTo(0, 120));
     await page.goForward();
     await page.waitForFunction((p) => location.pathname.endsWith('/' + p) && document.documentElement.dataset.navigatingState === '', sample.path, { timeout: 10000 }).catch(() => {});
-    await page.waitForTimeout(400);
+    // Waits for the place rather than a fixed time, so a slow restore is told from a missing one.
+    await page.waitForFunction((y) => Math.abs(window.scrollY - y) <= 40, left, { timeout: 3000 }).catch(() => {});
     const back = await page.evaluate(() => Math.round(window.scrollY));
     check(left >= 850 && Math.abs(back - left) <= 40, `router: Forward returns to where the page was left (${back} of ${left})`);
     await context.close();
