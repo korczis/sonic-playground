@@ -75,8 +75,15 @@
   // The position is kept in the current entry while the reader scrolls (debounced), not only when
   // a link is followed: Back and Forward leave a page through native history, with no moment to
   // save it, so Forward used to return to the top.
+  // A pending save belongs to the entry it was scrolled in. Back and Forward switch the entry
+  // before the router hears of it, so popstate drops the pending save (it would write the old
+  // page's position into the new entry: Forward came back at 0 on CI, run 43669472966), and while
+  // a page is being fetched the document on screen still belongs to the previous entry, so its
+  // scrolling is not saved at all.
   var saving = /** @type {ReturnType<typeof setTimeout> | undefined} */ (undefined);
+  var moving = false;
   function keep() {
+    if (moving) return;
     clearTimeout(saving);
     saving = setTimeout(remember, 150);
   }
@@ -92,7 +99,9 @@
   var inflight = /** @type {AbortController | null} */ (null);
   function go(url, push) {
     var mine = ++navigation;
+    clearTimeout(saving);
     if (push) remember();
+    moving = true;
     if (inflight) inflight.abort();
     inflight = new AbortController();
     document.documentElement.dataset.navigatingState = 'true';
@@ -119,6 +128,7 @@
       // Flowbite component; anything that needs one belongs outside it.
       Sonic.mountAll();
       if (saved) restore(saved);
+      moving = false;
       var main = document.getElementById('main');
       if (main) main.focus({ preventScroll: true });
       var live = document.getElementById('route-announcer');
@@ -127,6 +137,7 @@
       Sonic.emit('sonic:navigated', { url: location.href });
     }).catch(function () {
       if (mine !== navigation) return; // superseded (aborted or late): the newer one decides
+      moving = false;
       location.href = url.href; // anything unexpected: an ordinary page load
     });
   }
@@ -160,6 +171,7 @@
   window.SonicRouter = { go: function (href) { go(new URL(href, location.href), true); } };
 
   window.addEventListener('popstate', function () {
+    clearTimeout(saving);
     // The same page with other query parameters is the explorer's own history; it handles it.
     if (location.pathname === current) return;
     go(new URL(location.href), false);
