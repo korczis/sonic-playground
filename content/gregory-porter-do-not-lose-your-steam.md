@@ -55,7 +55,7 @@ kind = "encyclopedia"
 
 [[extra.sources]]
 title = "Gregory Porter – Don't Lose Your Steam"
-url = "https://www.recordoftheday.com/on-the-move/record/gregory-porter/dont-lose-your-steam"
+url = "https://web.archive.org/web/20260203043817/https://www.recordoftheday.com/on-the-move/record/gregory-porter/dont-lose-your-steam"
 publisher = "Record of the Day"
 kind = "article"
 year = "2016"

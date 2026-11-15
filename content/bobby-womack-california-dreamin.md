@@ -74,7 +74,7 @@ year = "2022"
 
 [[extra.sources]]
 title = "Song title 871 - California Dreamin'"
-url = "https://tsort.info/music/z7tqz1.htm"
+url = "https://web.archive.org/web/20260608052958/https://tsort.info/music/z7tqz1.htm"
 publisher = "tsort.info"
 kind = "database"
 
