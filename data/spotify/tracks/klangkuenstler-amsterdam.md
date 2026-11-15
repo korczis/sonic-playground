@@ -6,8 +6,9 @@ artists: ["Klangkuenstler", "Alice Phoebe Lou"]
 album: "That's Me"
 duration: "5:11"
 spotify: {"track": "2J5Go5skiXpGqyk9DvK9ay", "album": "44GPSnDUbxDxIiiN60Dmzx", "artists": ["7dFRwLjKxcqEm4KTVu3Lu3", "03uMw43UVu9MsQCcHVSGjX"]}
-keys: {"fold": "klangkuenstler|amsterdam"}
-status: "missing"
+keys: {"fold": "klangkuenstler|amsterdam", "isrc": "GBGNS1401230", "musicbrainz": "8d29cdc4-6aad-4488-8fec-f7a9f4609042"}
+review: "klangkuenstler-alice-phoebe-lou-amsterdam.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 90}
@@ -22,4 +23,4 @@ From the album *That's Me*, 5:11.
 A liked song.
 Your Top Songs 2019: #90.
 In My Top Songs of All the Time (#364).
-No review yet.
+Reviewed: content/klangkuenstler-alice-phoebe-lou-amsterdam.md.

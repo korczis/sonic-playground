@@ -6,8 +6,9 @@ artists: ["Say Yes Dog"]
 album: "Voyage"
 duration: "3:39"
 spotify: {"track": "2pB6k4zoEPVHfXXXoIOKoT", "album": "3a6hyrB5jzOJfWE34qIsdR", "artists": ["039HWymb5EJiSHhtlJctsi"]}
-keys: {"fold": "sayyesdog|mysoul"}
-status: "missing"
+keys: {"fold": "sayyesdog|mysoul", "musicbrainz": "d556bf77-f450-418a-b09f-25e032ef4e12"}
+review: "say-yes-dog-my-soul.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2020, "n": 56}
@@ -22,4 +23,4 @@ From the album *Voyage*, 3:39.
 Not among the liked songs.
 Your Top Songs 2020: #56.
 In My Top Songs of All the Time (#420).
-No review yet.
+Reviewed: content/say-yes-dog-my-soul.md.

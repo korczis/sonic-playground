@@ -6,8 +6,9 @@ artists: ["Kollektiv Turmstrasse"]
 album: "Musik Gewinnt Freunde Collection"
 duration: "7:02"
 spotify: {"track": "3WTSVuJewaXTakNZlSiIMx", "album": "2fcg5kyeeckgBfmADxLJWD", "artists": ["1oXiuCd5F0DcnmXH5KaM6N"]}
-keys: {"fold": "kollektivturmstrasse|grillenimgartengerbereiversion"}
-status: "missing"
+keys: {"fold": "kollektivturmstrasse|grillenimgartengerbereiversion", "isrc": "DELF21302307", "musicbrainz": "6d240842-21c2-4b2f-bc5d-f3d1b117851c"}
+review: "kollektiv-turmstrasse-grillen-im-garten-gerberei-version.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 83}
@@ -22,4 +23,4 @@ From the album *Musik Gewinnt Freunde Collection*, 7:02.
 A liked song.
 Your Top Songs 2021: #83.
 In My Top Songs of All the Time (#508).
-No review yet.
+Reviewed: content/kollektiv-turmstrasse-grillen-im-garten-gerberei-version.md.

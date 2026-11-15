@@ -1,0 +1,11 @@
+term = "sound-alike recording"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Sound-alike"
+see_also = ["cover version"]
+
+[en]
+definition = "A recording made to imitate a popular record or artist as closely as possible, often released under a name close to the original's so that it is found alongside the hit."
+
+[cs]
+term = "zvuková napodobenina"
+definition = "Nahrávka, která co nejvěrněji napodobuje populární desku nebo interpreta. Často vychází pod jménem podobným originálu, aby ji posluchači našli vedle hitu."
