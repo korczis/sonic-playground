@@ -1,7 +1,7 @@
 {
  "liked": 2029,
  "playlists": 55,
- "reviewed": 565,
+ "reviewed": 566,
  "reviews": {
   "2raumwohnung-somebody-lonely-and-me-nacht.md": {
    "liked": true,
@@ -2539,14 +2539,16 @@
   },
   "kalabrese-sarah-palin-fresh-and-foolish-feat-sarah-palin.md": {
    "liked": true,
-   "playlists": 2,
+   "playlists": 3,
    "records": [
+    "kalabrese-fresh-and-foolish",
     "kalabrese-fresh-and-foolish-feat-sarah-palin"
    ],
-   "track": "43335d4chxjzyIpiq4RXCu",
+   "track": "5XUKTrnL8ybaNsgfxCgrGK",
    "yearbooks": [
     2019,
-    2020
+    2020,
+    2022
    ]
   },
   "kant-leo-stannard-close-to-the-wire-club-remix.md": {
