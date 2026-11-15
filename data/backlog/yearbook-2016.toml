@@ -382,6 +382,8 @@ artists = ["Pharrell Williams"]
 album = "G I R L"
 duration = "3:52"
 spotify = "5b88tNINg4Q4nrRbrCXUmg"
+review = "pharrell-williams-happy.md"
+note = "the reviewed recording: album G I R L like the review (ISRC USQ4E1300686, MusicBrainz f367ad6e, on both the soundtrack and G I R L); the 'From Despicable Me 2' suffix is only a title; video ZbZSe6N_BXs"
 
 [[track]]
 n = 48
@@ -774,6 +776,8 @@ artists = ["Queen vs The Miami Project"]
 album = "Another One Bites The Dust"
 duration = "5:35"
 spotify = "4cNQ8AVhfVG4rMAzBPnGGV"
+review = "queen-the-miami-project-another-one-bites-the-dust-a-skillz-remix.md"
+note = "the reviewed recording: the same A Skillz remix (album Another One Bites The Dust, 5:35, video phLCxwkgo1Q); Spotify credits 'Queen vs The Miami Project' as one artist, the review 'Queen, The Miami Project'"
 
 [[track]]
 n = 97
