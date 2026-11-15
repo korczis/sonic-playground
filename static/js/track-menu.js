@@ -55,6 +55,8 @@
       /** @type {HTMLAnchorElement} */ (item('open')).href = url;
       menu.hidden = false;
       backdrop.hidden = false;
+      // On a phone the menu is a bottom sheet: the docked video moves to the top (styles/app.css).
+      document.documentElement.dataset.trackMenuState = 'open';
       from.setAttribute('aria-expanded', 'true');
       place();
       var first = items().filter(function (e) { return !e.hidden; })[0];
@@ -66,6 +68,7 @@
     if (menu.hidden) return;
     menu.hidden = true;
     backdrop.hidden = true;
+    document.documentElement.dataset.trackMenuState = 'closed';
     if (trigger) {
       trigger.setAttribute('aria-expanded', 'false');
       if (refocus) trigger.focus();

@@ -9,6 +9,7 @@
 "404.back": "Zpět do průzkumníku",
 "404.text": "Na této adrese nic není. Prohledejte hřiště nebo začněte v průzkumníku.",
 "404.title": "Tahle skladba přeskočila",
+"action.pause": "Pozastavit",
 "action.play": "Přehrát",
 "action.play_all_hint": "Nahradí frontu těmito skladbami",
 "action.play_next": "Přehrát jako další",
@@ -289,6 +290,7 @@
 "one": "Fronta nahrazena: {n} skladba",
 "other": "Fronta nahrazena: {n} skladeb"
 },
+"player.toast_moved": "Přesunuto ve frontě: {track}",
 "player.toast_next": "Hraje jako další: {track}",
 "player.toast_playing": "Právě hraje: {track}",
 "player.toast_removed": "Odebráno z fronty: {track}",
@@ -855,6 +857,7 @@
 "404.back": "Back to the explorer",
 "404.text": "There is nothing at this address. Search the playground or start from the explorer.",
 "404.title": "This track skipped",
+"action.pause": "Pause",
 "action.play": "Play",
 "action.play_all_hint": "Replaces the queue with these tracks",
 "action.play_next": "Play next",
@@ -1113,6 +1116,7 @@
 "one": "Queue replaced: {n} track",
 "other": "Queue replaced: {n} tracks"
 },
+"player.toast_moved": "Moved in the queue: {track}",
 "player.toast_next": "Plays next: {track}",
 "player.toast_playing": "Playing now: {track}",
 "player.toast_removed": "Removed from the queue: {track}",

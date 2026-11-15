@@ -258,6 +258,7 @@
 "player.toast_list" = { one = "Fronta nahrazena: {n} skladba", few = "Fronta nahrazena: {n} skladby", other = "Fronta nahrazena: {n} skladeb" }
 "player.toast_cleared" = "Fronta vyprázdněna"
 "player.toast_shuffled" = "Další na řadě zamíchány"
+"player.toast_moved" = "Přesunuto ve frontě: {track}"
 "player.undo" = "Zpět"
 "player.toast_undone" = "Obnoveno"
 "player.toast_closed" = "Přehrávač zavřen"
@@ -273,6 +274,7 @@
 "seo.home_title" = "Vypněte algoritmus. Hudba zůstane."
 "seo.home_description" = "{tracks} skladeb od {artists} interpretů, ručně vybraných a vysvětlených: recenze, průvodce poslechem a příběh, který za každou stojí. Zdarma, bez registrace, bez reklam."
 "action.play" = "Přehrát"
+"action.pause" = "Pozastavit"
 "action.play_next" = "Přehrát jako další"
 "action.queue" = "Přidat do fronty"
 "action.queued" = "Ve frontě"

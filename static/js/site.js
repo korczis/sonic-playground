@@ -8,9 +8,14 @@
   // --- Theme: flip the class and remember the choice. ----------------------------------------
   var toggle = document.getElementById('theme-toggle');
   if (toggle) {
+    // A two-state control says which state it is in: pressed while dark mode is on.
+    var themeToggle = toggle;
+    var mark = function () { themeToggle.setAttribute('aria-pressed', String(root.classList.contains('dark'))); };
+    mark();
     toggle.addEventListener('click', function () {
       var dark = !root.classList.contains('dark');
       root.classList.toggle('dark', dark);
+      mark();
       try { localStorage.setItem('color-theme', dark ? 'dark' : 'light'); } catch (e) {}
       document.dispatchEvent(new Event('dark-mode'));
     });

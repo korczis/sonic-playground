@@ -325,6 +325,23 @@ async function sweep(browser) {
     (failed.length ? `\n     ${failed.slice(0, 20).join('\n     ')}` : ''));
 }
 
+// YouTube's terms: the playing video is never hidden. Its centre and four inset corners must
+// each hit the video itself, not a panel, sheet, backdrop or toast stacked over it; a covered
+// video passed every earlier check because they compared boxes of two panels, not what is on top
+// (2026-11-15: the open queue covered the default small video on every desktop).
+async function videoSeen(page, what) {
+  const hits = await page.evaluate(() => {
+    const panel = document.getElementById('player-panel');
+    const r = panel.getBoundingClientRect();
+    const points = [[0.5, 0.5], [0.15, 0.15], [0.85, 0.15], [0.15, 0.85], [0.85, 0.85]];
+    return points.map(([x, y]) => {
+      const e = document.elementFromPoint(r.left + r.width * x, r.top + r.height * y);
+      return e && panel.contains(e) ? '' : (e ? e.id || e.tagName.toLowerCase() : 'off screen');
+    }).filter(Boolean);
+  });
+  check(hits.length === 0, `${what}: the playing video is not covered${hits.length ? ' (under ' + [...new Set(hits)].join(', ') + ')' : ''}`);
+}
+
 async function shot(page, name) {
   if (!process.env.SCREENSHOT_DIR) return;
   fs.mkdirSync(process.env.SCREENSHOT_DIR, { recursive: true });
@@ -898,12 +915,14 @@ async function shot(page, name) {
 
     await page.click('[data-player-queue]');
     check(await page.isVisible('#player-queue'), 'player: the queue panel opens');
+    await videoSeen(page, 'player (desktop, small video, queue open)');
     const rows = async (kind) => page.locator(`#player-queue [data-queue-row="${kind}"]`).evaluateAll((els) => els.map((e) => e.dataset.source));
     check(JSON.stringify(await rows('now')) === JSON.stringify([S[3]]) && JSON.stringify(await rows('next')) === JSON.stringify([S[1]])
       && JSON.stringify(await rows('played')) === JSON.stringify([S[2], S[0]]),
       'player: the queue panel shows now playing, up next and played');
     await card(4, '[data-queue]').click();
     await until({ q: [S[0], S[2], S[3], S[1], S[4]] }, 'player: queued while the panel is open');
+    await videoSeen(page, 'player (desktop, queue open, toast shown)');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-down]`);
     await until({ q: [S[0], S[2], S[3], S[4], S[1]] }, 'player: a queued track moves down');
     check(await page.evaluate((src) => { const r = document.activeElement && document.activeElement.closest('[data-queue-row]');
@@ -1013,6 +1032,10 @@ async function shot(page, name) {
     const [small, large] = [Math.min(before, after), Math.max(before, after)];
     check(before < 250 && small >= 200 && large > 300,
       `player: the video starts small and toggles larger (${Math.round(small)} ↔ ${Math.round(large)} px), never hidden`);
+    await page.click('[data-player-queue]');
+    await page.evaluate(() => window.SonicPlayer.notify('A toast while the large video and the queue are open'));
+    await videoSeen(page, 'player (desktop, large video, queue open, toast shown)');
+    await page.keyboard.press('Escape');
     await page.click('[data-player-size]');
     await page.click('[data-player-minimise]');
     const mini = await page.evaluate(() => ({ view: document.documentElement.dataset.playerViewState,
@@ -1117,6 +1140,10 @@ async function shot(page, name) {
     const v = await box('#player-panel');
     const overlap = !(q.r <= v.l || v.r <= q.l || q.b <= v.t || v.b <= q.t);
     check(!overlap, 'player (phone): the open queue and the video do not overlap');
+    await page.evaluate(() => window.SonicPlayer.notify('A toast while the queue is open'));
+    await videoSeen(page, 'player (phone, queue open, toast shown)');
+    check(await page.isVisible('#player-queue [data-player-repeat]') && await page.isVisible('#player [data-player-prev]'),
+      'player (phone): previous is in the bar and repeat in the queue panel');
     check(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'player (phone): no horizontal overflow');
     await shot(page, 'player-phone-queue');
     await page.keyboard.press('Escape');
@@ -1125,12 +1152,47 @@ async function shot(page, name) {
     const sheet = await box('#track-menu');
     check(Math.round(sheet.l) === 0 && Math.round(sheet.r) === 390 && Math.abs(sheet.b - 844) < 2,
       'track menu (phone): a bottom sheet across the screen');
+    await videoSeen(page, 'track menu (phone, sheet open)');
     await shot(page, 'track-menu-phone');
     await page.keyboard.press('Escape');
     await page.click('[data-player-minimise]');
     const pill = await box('#player');
     check(pill.r <= 390 && pill.l >= 0 && pill.b - pill.t < 70, 'player (phone): minimised to a pill');
     check(errors.length === 0, `player (phone): no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+
+  // A short phone (375x667): the queue and the track menu still end below the moved video.
+  {
+    const { context, page, errors } = await open(browser, at(''), { width: 375, height: 667 }, 'light', {}, true);
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
+    const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
+    await cards.nth(0).locator('[data-play]').click();
+    for (let i = 1; i <= 6; i++) await cards.nth(i).locator('[data-queue]').click();
+    await page.waitForFunction(() => window.SonicPlayer.state().queue.length === 7, null, { timeout: 10000 });
+    await page.waitForSelector('#player-panel iframe', { timeout: 30000 }).catch(() => {});
+    await page.click('[data-player-queue]');
+    await page.evaluate(() => window.SonicPlayer.notify('A toast while the queue is open'));
+    await videoSeen(page, 'player (short phone, queue of 7 open, toast shown)');
+    await page.keyboard.press('Escape');
+    await cards.nth(2).locator('[data-track-menu]').click();
+    await page.waitForSelector('#track-menu:not([hidden])', { timeout: 5000 });
+    await videoSeen(page, 'track menu (short phone, sheet open)');
+    check(errors.length === 0, `player (short phone): no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+
+  // A review page's labelled Play button is a Pause button while its own track plays.
+  {
+    const { context, page, errors } = await open(browser, at(sample.path), desktop, 'light', {}, true);
+    const bar = page.locator('main [data-track-actions]').filter({ has: page.locator('[data-play-radio]') }).first();
+    const label = () => bar.locator('[data-play]').evaluate((b) => b.innerText.trim());
+    const idle = await label();
+    await bar.locator('[data-play]').click();
+    await page.waitForFunction(() => document.documentElement.dataset.playerState === 'playing', null, { timeout: 30000 }).catch(() => {});
+    const playing = await label();
+    check(idle !== playing && playing.length > 0, `track page: the Play button reads ${JSON.stringify(playing)} while its track plays (was ${JSON.stringify(idle)})`);
+    check(errors.length === 0, `track page player: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
 

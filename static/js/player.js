@@ -36,7 +36,8 @@
     toggle: $('[data-player-toggle]'),
     prev: /** @type {HTMLButtonElement} */ ($('[data-player-prev]')),
     next: /** @type {HTMLButtonElement} */ ($('[data-player-next]')),
-    repeat: $('[data-player-repeat]'),
+    // The bar's repeat button, and on a phone the queue panel's (the bar has no room for it).
+    repeat: /** @type {NodeListOf<HTMLButtonElement>} */ (document.querySelectorAll('[data-player-repeat]')),
     seek: /** @type {HTMLInputElement} */ ($('[data-player-seek]')),
     time: $('[data-player-time]'),
     duration: $('[data-player-duration]'),
@@ -165,10 +166,15 @@
     el.autoplay.checked = state.autoplay;
     el.queueCount.textContent = String(upcoming());
     el.queueCount.hidden = upcoming() === 0;
-    el.repeat.dataset.on = String(state.repeat !== 'off');
-    el.repeat.setAttribute('aria-label', repeatLabel());
-    el.repeat.title = repeatLabel();
-    /** @type {HTMLElement} */ (el.repeat.querySelector('[data-icon-repeat-one]')).hidden = state.repeat !== 'one';
+    el.repeat.forEach(function (b) {
+      b.dataset.on = String(state.repeat !== 'off');
+      b.setAttribute('aria-label', repeatLabel());
+      b.title = repeatLabel();
+      var one = /** @type {HTMLElement | null} */ (b.querySelector('[data-icon-repeat-one]'));
+      if (one) one.hidden = state.repeat !== 'one';
+      var text = b.querySelector('[data-player-repeat-text]');
+      if (text) text.textContent = repeatLabel();
+    });
     var small = state.video === 'small';
     el.size.dataset.on = String(small);
     var sizeLabel = small ? Sonic.t('player.video_large') : Sonic.t('player.video_small');
@@ -317,6 +323,11 @@
     /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-track]')).forEach(function (card) {
       card.toggleAttribute('data-now-playing', !!now && card.dataset.source === now);
     });
+    // A track page's labelled buttons sit in no card: they follow their own play button.
+    /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-track-actions]')).forEach(function (bar) {
+      var play = /** @type {HTMLElement | null} */ (bar.querySelector('[data-play]'));
+      bar.toggleAttribute('data-now-playing', !!now && !!play && play.dataset.play === now);
+    });
     /** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('[data-queue]')).forEach(function (b) {
       var queued = indexOf(b.dataset.queue) > state.index;
       b.setAttribute('aria-pressed', String(queued));
@@ -435,6 +446,7 @@
     var pos = state.queue.length ? state.index + 1 : 0;
     state.queue.splice(pos, 0, item(t));
     jump(pos);
+    toast(Sonic.t('player.toast_playing', { track: t.track }));
   }
   /** The listening guide: the track at a time, whether or not it is the one playing. */
   function seekTrack(t, at) {
@@ -455,7 +467,7 @@
   function playNext(t) {
     if (!t || !t.youtube) return;
     var at = indexOf(keyOf(t));
-    if (at >= 0 && at === state.index) return;
+    if (at >= 0 && at === state.index) { toast(Sonic.t('player.toast_playing', { track: t.track })); return; }
     if (at >= 0) take(at);
     if (!state.queue.length) { playNow(t); return; }
     state.queue.splice(state.index + 1, 0, item(t));
@@ -519,6 +531,7 @@
     state.queue[i] = state.queue[j];
     state.queue[j] = t;
     save(); paint();
+    toast(Sonic.t('player.toast_moved', { track: t.track }));
   }
   /** Move an upcoming track to another upcoming position (a drag in the queue panel). */
   function moveTo(from, to) {
@@ -679,9 +692,11 @@
   });
 
   el.toggle.addEventListener('click', toggle);
-  el.next.addEventListener('click', next);
-  el.prev.addEventListener('click', prev);
-  el.repeat.addEventListener('click', cycleRepeat);
+  // A skip the reader asked for is announced; an automatic advance shows in the bar only.
+  function announceCurrent() { var t = current(); if (t) toast(Sonic.t('player.toast_playing', { track: t.track })); }
+  el.next.addEventListener('click', function () { var was = state.index; next(); if (state.index !== was) announceCurrent(); });
+  el.prev.addEventListener('click', function () { var was = state.index; prev(); if (state.index !== was) announceCurrent(); });
+  el.repeat.forEach(function (b) { b.addEventListener('click', cycleRepeat); });
   el.shuffle.addEventListener('click', shuffle);
   el.autoplay.addEventListener('change', function () {
     state.autoplay = el.autoplay.checked;
