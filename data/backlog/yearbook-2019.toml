@@ -362,6 +362,8 @@ artists = ["James Newton Howard", "Jennifer Lawrence"]
 album = "The Hunger Games: Mockingjay Pt. 1 (Original Motion Picture Score)"
 duration = "3:38"
 spotify = "416MsJxvxSKY96DCmbJIRs"
+review = "james-newton-howard-jennifer-lawrence-the-hanging-tree.md"
+note = "the reviewed recording: same credits, the same score album (The Hunger Games: Mockingjay Pt. 1) and 3:38 as 2017 #34 and 2018 #88, which resolve to this review; Spotify re-lists it under another track id with the soundtrack suffix; official video F3hTW9e20d8"
 
 [[track]]
 n = 45

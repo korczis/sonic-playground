@@ -225,6 +225,26 @@ class Derive(unittest.TestCase):
                 sh.SNAPSHOTS, sh.EXPORTS = saved
 
 
+class Currency(unittest.TestCase):
+    """Only committed records are judged for currency (the private store is shared by worktrees)."""
+    def _check_with(self, report):
+        if not sh.has_sources():
+            self.skipTest("no private source here")
+        saved = sh.build
+        sh.build = lambda write=False, **kw: report
+        try:
+            return [e for e in sh.check() if "stale" in e]
+        finally:
+            sh.build = saved
+
+    def test_private_only_staleness_does_not_refuse(self):
+        self.assertEqual(self._check_with({"changed": 4, "removed": 0, "stale": [], "yearbooks": []}), [])
+
+    def test_a_stale_committed_record_is_named(self):
+        errs = self._check_with({"changed": 1, "removed": 0, "stale": ["data/spotify/tracks/x.md"], "yearbooks": []})
+        self.assertTrue(errs and "data/spotify/tracks/x.md" in errs[0], errs)
+
+
 class Gate(unittest.TestCase):
     def test_private_keys_are_found_anywhere(self):
         self.assertEqual(sh.find_private_keys({"a": [{"added": 1}], "plays": {}}), ["a[0].added", "plays"])

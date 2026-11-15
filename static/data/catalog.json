@@ -5298,9 +5298,9 @@
    "file": "data/backlog/yearbook-2019.toml",
    "expected": 100,
    "items": 100,
-   "songs": 35,
-   "present": 35,
-   "missing": 65,
+   "songs": 36,
+   "present": 36,
+   "missing": 64,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -5400,7 +5400,7 @@
      "count": 4
     },
     {
-     "term": "blues",
+     "term": "ballad",
      "count": 2
     }
    ],
@@ -5710,8 +5710,8 @@
      "n": 44,
      "title": "The Hanging Tree - From \"The Hunger Games: Mockingjay\" Soundtrack",
      "artist": "James Newton Howard, Jennifer Lawrence",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "james-newton-howard-jennifer-lawrence-the-hanging-tree.md"
     },
     {
      "n": 45,
@@ -45246,6 +45246,10 @@
     {
      "year": 2018,
      "n": 88
+    },
+    {
+     "year": 2019,
+     "n": 44
     }
    ],
    "langs": [
