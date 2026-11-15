@@ -5,8 +5,8 @@
  "stats": {
   "tracks": 629,
   "artists": 488,
-  "videos": 620,
-  "videos_gone": 3,
+  "videos": 622,
+  "videos_gone": 0,
   "words": 364163,
   "median_words": 546,
   "first": "2024-10-01",
@@ -76660,7 +76660,7 @@
     "concept": [],
     "instrument": []
    },
-   "youtube": null,
+   "youtube": "nsQy4Ob_dX0",
    "thumbnail": "images/derived/thumbnails/inigo-montoya-es-480.webp",
    "thumbnail_local": true,
    "words": 934,
@@ -76706,7 +76706,7 @@
      ]
     }
    ],
-   "video_gone": true,
+   "video_gone": false,
    "edu": [
     "musicbrainz"
    ],
@@ -79975,8 +79975,8 @@
      "vocals"
     ]
    },
-   "youtube": null,
-   "thumbnail": "",
+   "youtube": "yZ4s4tGvsuM",
+   "thumbnail": "https://i.ytimg.com/vi/yZ4s4tGvsuM/hqdefault.jpg",
    "thumbnail_local": false,
    "words": 658,
    "extra": {
@@ -80029,7 +80029,7 @@
      ]
     }
    ],
-   "video_gone": true,
+   "video_gone": false,
    "edu": [
     "concept",
     "learning",
@@ -81719,7 +81719,7 @@
      ]
     }
    ],
-   "video_gone": true,
+   "video_gone": false,
    "edu": [
     "concept",
     "learning",
