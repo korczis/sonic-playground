@@ -8037,9 +8037,9 @@
    "file": "data/backlog/yearbook-2016.toml",
    "expected": 101,
    "items": 101,
-   "songs": 90,
-   "present": 91,
-   "missing": 10,
+   "songs": 91,
+   "present": 92,
+   "missing": 9,
    "ambiguous": 0,
    "skipped": 0,
    "uncertain": 0,
@@ -8211,8 +8211,8 @@
      "n": 10,
      "title": "Reckoning Song (One Day)",
      "artist": "Asaf Avidan & the Mojos",
-     "status": "missing",
-     "source": null
+     "status": "present",
+     "source": "asaf-avidan-the-mojos-reckoning-song-one-day.md"
     },
     {
      "n": 11,
@@ -68940,6 +68940,10 @@
     "musicbrainz"
    ],
    "yearbooks": [
+    {
+     "year": 2016,
+     "n": 10
+    },
     {
      "year": 2021,
      "n": 26

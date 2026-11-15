@@ -86,6 +86,8 @@ artists = ["Asaf Avidan & the Mojos"]
 album = "The Reckoning"
 duration = "2:46"
 spotify = "40H0KbZ0fdOrHipLTTRuTr"
+review = "asaf-avidan-the-mojos-reckoning-song-one-day.md"
+note = "the reviewed recording (The Reckoning, video w0HHzYPu0_o, MusicBrainz 04bc55b8): the catalogue infers the review's song as 'Reckoning Song' without the '(One Day)' subtitle, so the folded match missed it; the only such item in the backlog (scanned 2026-11-15)"
 
 [[track]]
 n = 11
