@@ -325,19 +325,25 @@ async function sweep(browser) {
     (failed.length ? `\n     ${failed.slice(0, 20).join('\n     ')}` : ''));
 }
 
-// YouTube's terms: the playing video is never hidden. Its centre and four inset corners must
-// each hit the video itself, not a panel, sheet, backdrop or toast stacked over it; a covered
-// video passed every earlier check because they compared boxes of two panels, not what is on top
-// (2026-11-15: the open queue covered the default small video on every desktop).
+// YouTube's terms: the playing video is never hidden. A 5x5 grid over its box, edges included
+// (3 % in), must each hit the video itself, not a panel, sheet, backdrop or toast stacked over
+// it, and the box must be on screen; a covered video passed every earlier check because they
+// compared boxes of two panels, not what is on top (2026-11-15: the open queue covered the
+// default small video on every desktop; then a review found a 3 % strip the corners missed).
 async function videoSeen(page, what) {
   const hits = await page.evaluate(() => {
     const panel = document.getElementById('player-panel');
     const r = panel.getBoundingClientRect();
-    const points = [[0.5, 0.5], [0.15, 0.15], [0.85, 0.15], [0.15, 0.85], [0.85, 0.85]];
-    return points.map(([x, y]) => {
+    if (r.width < 100 || r.left < 0 || r.top < 0 || r.right > innerWidth || r.bottom > innerHeight) {
+      return [`off screen (${Math.round(r.left)},${Math.round(r.top)} ${Math.round(r.width)}x${Math.round(r.height)})`];
+    }
+    const at = [0.03, 0.25, 0.5, 0.75, 0.97];
+    const out = [];
+    for (const x of at) for (const y of at) {
       const e = document.elementFromPoint(r.left + r.width * x, r.top + r.height * y);
-      return e && panel.contains(e) ? '' : (e ? e.id || e.tagName.toLowerCase() : 'off screen');
-    }).filter(Boolean);
+      if (!(e && panel.contains(e))) out.push(e ? e.id || e.tagName.toLowerCase() : 'nothing');
+    }
+    return out;
   });
   check(hits.length === 0, `${what}: the playing video is not covered${hits.length ? ' (under ' + [...new Set(hits)].join(', ') + ')' : ''}`);
 }
@@ -1162,9 +1168,12 @@ async function shot(page, name) {
     await context.close();
   }
 
-  // A short phone (375x667): the queue and the track menu still end below the moved video.
-  {
-    const { context, page, errors } = await open(browser, at(''), { width: 375, height: 667 }, 'light', {}, true);
+  // Short phones, both languages, repeat off and on (its label is longer and can wrap the queue
+  // header): the queue and the track menu still end below the moved video.
+  for (const [vp, lang, repeat] of [[{ width: 375, height: 667 }, '', false], [{ width: 375, height: 667 }, 'cs/', true],
+    [{ width: 320, height: 568 }, '', true], [{ width: 320, height: 568 }, 'cs/', false]]) {
+    const name = `${vp.width}x${vp.height} ${lang ? 'cs' : 'en'}${repeat ? ', repeat on' : ''}`;
+    const { context, page, errors } = await open(browser, at(lang), vp, 'light', {}, true);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
     await cards.nth(0).locator('[data-play]').click();
@@ -1172,13 +1181,61 @@ async function shot(page, name) {
     await page.waitForFunction(() => window.SonicPlayer.state().queue.length === 7, null, { timeout: 10000 });
     await page.waitForSelector('#player-panel iframe', { timeout: 30000 }).catch(() => {});
     await page.click('[data-player-queue]');
-    await page.evaluate(() => window.SonicPlayer.notify('A toast while the queue is open'));
-    await videoSeen(page, 'player (short phone, queue of 7 open, toast shown)');
+    if (repeat) await page.click('#player-queue [data-player-repeat]'); // shows its own toast
+    else await page.evaluate(() => window.SonicPlayer.notify('A toast while the queue is open'));
+    await videoSeen(page, `player (${name}, queue of 7 open, toast shown)`);
     await page.keyboard.press('Escape');
     await cards.nth(2).locator('[data-track-menu]').click();
     await page.waitForSelector('#track-menu:not([hidden])', { timeout: 5000 });
-    await videoSeen(page, 'track menu (short phone, sheet open)');
-    check(errors.length === 0, `player (short phone): no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await videoSeen(page, `track menu (${name}, sheet open)`);
+    check(errors.length === 0, `player (${name}): no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+
+  // Between phone and desktop, and on a landscape phone: the video beside the open queue stays
+  // whole and on screen, the queue's header stays on screen, and a toast moves off the video.
+  for (const vp of [{ width: 700, height: 800 }, { width: 667, height: 375 }, { width: 844, height: 390 }]) {
+    const name = `${vp.width}x${vp.height}`;
+    const { context, page, errors } = await open(browser, at(''), vp, 'light', {}, true);
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
+    const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
+    await cards.nth(0).locator('[data-play]').click();
+    await cards.nth(1).locator('[data-queue]').click();
+    await page.waitForSelector('#player-panel iframe', { timeout: 30000 }).catch(() => {});
+    if (await page.evaluate(() => document.documentElement.dataset.playerVideoState !== 'large')) await page.click('[data-player-size]');
+    await page.evaluate(() => window.SonicPlayer.notify('A toast over a large video'));
+    await videoSeen(page, `player (${name}, large video, toast shown)`);
+    await page.click('[data-player-queue]');
+    await page.evaluate(() => window.SonicPlayer.notify('A toast with the queue open'));
+    await videoSeen(page, `player (${name}, large video, queue open, toast shown)`);
+    const qTop = await page.evaluate(() => document.getElementById('player-queue').getBoundingClientRect().top);
+    check(qTop >= 0, `player (${name}): the open queue's header is on screen (top ${Math.round(qTop)})`);
+    check(errors.length === 0, `player (${name}): no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+
+  // Desktop: the track menu never lands on the docked video, opened from the card nearest to it.
+  {
+    const { context, page, errors } = await open(browser, at(''), desktop, 'light', {}, true);
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
+    const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
+    await cards.nth(0).locator('[data-play]').click();
+    await page.waitForSelector('#player-panel iframe', { timeout: 30000 }).catch(() => {});
+    const nearest = await page.evaluate(() => {
+      const v = document.getElementById('player-panel').getBoundingClientRect();
+      let best = -1, dist = Infinity;
+      document.querySelectorAll('#explorer-grid [data-track]:not([hidden]) [data-track-menu]').forEach((b, i) => {
+        const r = b.getBoundingClientRect();
+        if (r.bottom <= 0 || r.top >= innerHeight) return;
+        const d = Math.hypot(r.left - v.left, r.top - v.top);
+        if (d < dist) { dist = d; best = i; }
+      });
+      return best;
+    });
+    await page.locator('#explorer-grid [data-track]:not([hidden]) [data-track-menu]').nth(Math.max(0, nearest)).click();
+    await page.waitForSelector('#track-menu:not([hidden])', { timeout: 5000 });
+    await videoSeen(page, 'track menu (desktop, opened from the card nearest the video)');
+    check(errors.length === 0, `track menu (desktop): no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
 

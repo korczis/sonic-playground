@@ -28,7 +28,15 @@
     var h = menu.offsetHeight;
     var left = Math.min(Math.max(8, r.right - w), window.innerWidth - w - 8);
     var below = r.bottom + 6;
-    var top = below + h > window.innerHeight - 8 ? Math.max(8, r.top - h - 6) : below;
+    var above = Math.max(8, r.top - h - 6);
+    var fits = below + h <= window.innerHeight - 8;
+    // Never over the playing video (YouTube's terms): try below, then above, then beside it.
+    var panel = document.getElementById('player-panel');
+    var v = panel && !panel.hidden ? panel.getBoundingClientRect() : null;
+    /** @param {number} x @param {number} y */
+    var clear = function (x, y) { return !v || x + w <= v.left || x >= v.right || y + h <= v.top || y >= v.bottom; };
+    var top = fits && clear(left, below) ? below : clear(left, above) ? above : fits ? below : above;
+    if (!clear(left, top) && v) left = Math.max(8, v.left - w - 8);
     menu.style.left = left + 'px';
     menu.style.top = top + 'px';
   }
@@ -57,6 +65,7 @@
       backdrop.hidden = false;
       // On a phone the menu is a bottom sheet: the docked video moves to the top (styles/app.css).
       document.documentElement.dataset.trackMenuState = 'open';
+      if (window.SonicPlayer && window.SonicPlayer.placeToast) window.SonicPlayer.placeToast();
       from.setAttribute('aria-expanded', 'true');
       place();
       var first = items().filter(function (e) { return !e.hidden; })[0];
@@ -69,6 +78,7 @@
     menu.hidden = true;
     backdrop.hidden = true;
     document.documentElement.dataset.trackMenuState = 'closed';
+    if (window.SonicPlayer && window.SonicPlayer.placeToast) window.SonicPlayer.placeToast();
     if (trigger) {
       trigger.setAttribute('aria-expanded', 'false');
       if (refocus) trigger.focus();
