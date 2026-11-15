@@ -870,12 +870,15 @@ def check() -> list[str]:
                 errors.append(f"private snapshot {path.name}: {p}")
         try:
             report = build(write=False)
-            if report["changed"] or report["removed"]:
+            # Only the committed records are judged. The private records are local derived state,
+            # and the linked worktrees share one store, so a derive in one worktree rewrites them
+            # for another branch's state (it refused a push over 4 private records, 2026-11-15).
+            if report["stale"]:
                 named = report["stale"][:10]
                 more = len(report["stale"]) - len(named)
                 errors.append(
-                    f"data/spotify: {report['changed']} record(s) stale, {report['removed']} leftover"
-                    + (f": {', '.join(named)}" + (f" and {more} more" if more else "") if named else " (private records only)")
+                    f"data/spotify: {len(report['stale'])} committed record(s) stale or leftover: {', '.join(named)}"
+                    + (f" and {more} more" if more else "")
                     + ". This checkout holds the private store, so the records must match the reviews: a new or merged"
                     " review changes their status. Run npm run derive, commit data/spotify, then push.")
             stale = [b["file"] for b in report["yearbooks"] if b["changed"]]

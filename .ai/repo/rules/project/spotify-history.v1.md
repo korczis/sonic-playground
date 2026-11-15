@@ -38,7 +38,8 @@ source. A private field that slipped into a public record would be published for
   never leaves the owner's machine, so CI and every checkout without it check structure and
   privacy only. On the machine that holds it, a merged or new review changes a record's
   status, so `npm run derive` (which runs the history build first) belongs between such a
-  merge and its push. The refusal names the stale records.
+  merge and its push. The refusal names the stale records. Only the committed records are
+  judged: the private records are local derived state, and the linked worktrees share one store.
 - A snapshot is read from the rendered web player; the owner's session credentials are never
   read or used.
 
