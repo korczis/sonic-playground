@@ -14,7 +14,7 @@ release_year = "2008"
 album = "Lessons to Be Learned"
 publisher = "Island"
 country = "AU"
-youtube = "https://www.youtube.com/embed/iO66qZmGoEA"
+youtube = "https://www.youtube.com/embed/bkWd5siT5g8"
 connections = [
   { source = "gabriella-cilmi-cry-me-a-river-live-version.md", why = "Cilmi's officially released live version of the same cover, the recording that appeared on her 2008 single and album." },
   { source = "nouvelle-vague-too-drunk-to-fuck.md", why = "Another cover that keeps a famous song's words and melody but moves it into a completely different genre and mood." },
@@ -112,7 +112,7 @@ Timberlake's "Cry Me a River" was the second single from his debut solo album *J
 
 ## Music Video
 
-The embedded video is a lyric-caption upload from a third-party covers channel rather than an official music video, so the performance is carried by the audio alone, which suits a cover built entirely on a voice.
+There is no music video for this cover. The embedded upload is the album track as Universal Music delivers it to YouTube, a still image over the audio, so the performance is carried by the sound alone, which suits a cover built entirely on a voice.
 
 ## Legacy
 

@@ -10,7 +10,7 @@ concept = ["cover version", "live recording"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "14f96a00e320"
+of = "2696601bd500"
 
 [extra]
 connections = [
@@ -79,7 +79,7 @@ Timberlakeova „Cry Me a River“ byla druhým singlem z jeho debutového sólo
 
 ## Videoklip
 
-Vložené video je nahrávka s titulky textu z kanálu třetí strany zaměřeného na coververze, ne oficiální videoklip, takže provedení nese jen zvuk, což se hodí ke coververzi postavené výhradně na hlase.
+K této coververzi videoklip neexistuje. Vložená nahrávka je skladba z alba, jak ji Universal Music dodává na YouTube, statický obrázek nad zvukem, takže provedení nese jen zvuk, což se hodí ke coververzi postavené výhradně na hlase.
 
 ## Odkaz
 
