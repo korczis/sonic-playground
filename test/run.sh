@@ -11,6 +11,13 @@
 # scripts/verify.sh runs it; a case that fails fails the gate.
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# A case builds its scratch repositories with plain git. Inside a hook of a linked worktree git
+# exports an absolute GIT_DIR, which a case would inherit: on 2026-11-15 case 66, run by the
+# pre-push gate, re-initialised the real repository (core.bare=true, core.hooksPath into a
+# deleted temp directory, local main moved to a fixture commit). Every variable git itself names
+# as repository-local is dropped, so a case finds its repository only from its own directory.
+# shellcheck disable=SC2046
+unset $(git rev-parse --local-env-vars)
 
 BOUND="${MJ_CASE_TIMEOUT:-600}"
 report="${MJ_TEST_REPORT:-}"
