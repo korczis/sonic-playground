@@ -14,7 +14,7 @@ release_year = "1996"
 country = "US"
 publisher = "Things To Come Records"
 musicbrainz = { recording = "5fd0514c-f058-44e1-ab59-85d27ecd3547", artist = "82a9c1a0-c772-4941-8e41-c43a2b554017", release = "54e6cdda-9ff0-4c15-aecf-8cd977b0f630" }
-youtube = "https://www.youtube.com/embed/oVgjC5Gw8y0"
+youtube = "https://www.youtube.com/embed/yZ4s4tGvsuM"
 connections = [
   { source = "miss-kittin-frank-sinatra.md", why = "Another deadpan spoken story of nightlife over a cold machine beat, from the same turn-of-the-millennium club underground." },
   { source = "mount-sims-how-we-do.md", why = "Another American artist whose dark, voice-led electronic records found their audience in German clubs." },

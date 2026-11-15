@@ -1,9 +1,5 @@
 {
  "schema": "sonic-videos/v1",
  "generated_by": "scripts/probe-videos.py",
- "gone": {
-  "cK54zeNP-ZU": "inigo-montoya-es.md",
-  "jICyqacTGBM": "timo-maas-shifter.md",
-  "oVgjC5Gw8y0": "the-horroris-one-night-in-nyc.md"
- }
+ "gone": {}
 }

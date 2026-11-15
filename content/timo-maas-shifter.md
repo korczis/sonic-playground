@@ -15,7 +15,6 @@ country = "DE"
 album = "Loud"
 publisher = "Perfecto / Kinetic"
 musicbrainz = { recording = "f9014ca1-9132-4d46-9eab-c216d77e58c7", artist = "71348eeb-0c15-4718-b0ca-5775f78ad5f8", release = "3ae1ca2a-88cf-4dc6-9276-7d16a2ab95b2" }
-youtube = "https://www.youtube.com/embed/jICyqacTGBM"
 connections = [
   { source = "adam-freeland-do-you.md", why = "Another early-2000s record from the breakbeat side of club music, where broken drums replace the straight house kick." },
   { source = "fatboy-slim-bird-of-pray.md", why = "Another big, breakbeat-driven British-scene record of the same years, built for festival-sized crowds." },
