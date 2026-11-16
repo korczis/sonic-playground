@@ -376,6 +376,7 @@
 "viz.mode.bars" = "Spectrum"
 "viz.mode.warp" = "Warp"
 "viz.mode.plasma" = "Plasma"
+"viz.background" = "Behind the pages while music plays"
 "viz.cycle" = "Change every 40 s"
 "viz.fullscreen" = "Fill the screen (F)"
 "viz.close" = "Close the visualiser (Esc)"

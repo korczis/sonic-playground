@@ -31,13 +31,13 @@
   var BANDS = 48;
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /** @returns {{mode: string, cycle: boolean}} */
+  /** @returns {{mode: string, cycle: boolean, bg: boolean}} */
   function prefs() {
     try {
       var p = JSON.parse(localStorage.getItem(STORE) || '{}');
-      return { mode: MODES.indexOf(p.mode) >= 0 ? p.mode : MODES[0], cycle: p.cycle !== false };
+      return { mode: MODES.indexOf(p.mode) >= 0 ? p.mode : MODES[0], cycle: p.cycle !== false, bg: p.bg !== false };
     } catch (e) {
-      return { mode: MODES[0], cycle: true };
+      return { mode: MODES[0], cycle: true, bg: true };
     }
   }
   function savePrefs(p) {
@@ -568,6 +568,7 @@
     setUrl(m);
     s.focus();
     showControls();
+    syncBackground();
   }
 
   function close() {
@@ -582,6 +583,7 @@
     document.documentElement.removeAttribute('data-visualizer');
     setInert(false);
     setUrl('');
+    syncBackground();
     // Focus returns to what opened it; opened from the queue (which it closed), to the queue's
     // button; otherwise to the nav's opener.
     var back = opener && document.contains(opener) ? opener : null;
@@ -639,6 +641,8 @@
     });
     var cyc = /** @type {HTMLInputElement | null} */ (s.querySelector('[data-viz-cycle]'));
     if (cyc) cyc.checked = prefs().cycle && !reduced;
+    var bgSwitch = /** @type {HTMLInputElement | null} */ (s.querySelector('[data-viz-bg]'));
+    if (bgSwitch) { bgSwitch.checked = prefs().bg && !reduced; bgSwitch.disabled = reduced; }
     var status = s.querySelector('[data-viz-status]');
     if (status) {
       // data-i18n lets i18n.js translate it again when the bundle arrives or the language changes.
@@ -693,11 +697,16 @@
     });
     s.addEventListener('change', function (e) {
       var t = /** @type {HTMLInputElement} */ (e.target);
-      if (!t.hasAttribute('data-viz-cycle')) return;
       var q = prefs();
-      q.cycle = t.checked;
-      savePrefs(q);
-      if (full) full.cycle(q.cycle && !reduced);
+      if (t.hasAttribute('data-viz-cycle')) {
+        q.cycle = t.checked;
+        savePrefs(q);
+        if (full) full.cycle(q.cycle && !reduced);
+      } else if (t.hasAttribute('data-viz-bg')) {
+        q.bg = t.checked;
+        savePrefs(q);
+        syncBackground();
+      }
     });
   }
 
@@ -743,6 +752,34 @@
     opener = keep && document.contains(keep) ? keep : null;
   });
 
+  // ---- Behind every page while the player plays (the owner, 2026-11-16). --------------------
+  // #visualizer-bg lies behind the page's content (styles/app.css blends it into the theme: as
+  // darker tints on light, as light on dark) and draws a calm mode only while the player plays,
+  // the switch in the settings is on, motion is welcome, the full screen is closed and the tab
+  // is visible; it fades out otherwise and its sketch is removed once the fade is over.
+
+  var bgHandle = null;
+  var bgTimer = 0;
+  function bgWanted() {
+    return !reduced && prefs().bg && playing() && !isOpen() && !document.hidden;
+  }
+  function syncBackground() {
+    var layer = document.getElementById('visualizer-bg');
+    if (!layer) return;
+    var want = bgWanted();
+    document.documentElement.toggleAttribute('data-visualizer-bg', want);
+    clearTimeout(bgTimer);
+    if (want && !bgHandle) {
+      bgHandle = sketch(layer, { mode: 'aurora', cycle: true, modes: ['aurora', 'nebula'], fps: 30, density: 1 });
+    } else if (!want && bgHandle) {
+      bgTimer = window.setTimeout(function () {
+        if (bgHandle && !bgWanted()) { bgHandle.remove(); bgHandle = null; }
+      }, 900);
+    }
+  }
+  new MutationObserver(syncBackground).observe(document.documentElement, { attributes: true, attributeFilter: ['data-player-state'] });
+  document.addEventListener('visibilitychange', syncBackground);
+
   // ---- Embedded pictures (the landing hero): a page module, so the router mounts it. ----------
   // [data-visualizer-modes] limits the modes it walks; [data-visualizer-media] the screens it is
   // drawn on (p5 is 1 MB: the hero asks for wide screens only). It starts once the page is idle.
@@ -770,6 +807,7 @@
   });
 
   wire();
+  syncBackground();
   var asked = new URL(location.href).searchParams.get('viz');
   if (asked && MODES.indexOf(asked) >= 0) open(asked);
 
@@ -782,5 +820,6 @@
     source: function () { return engine.source; },
     listen: listen,
     stop: stopAudio,
+    background: function () { return !!bgHandle && document.documentElement.hasAttribute('data-visualizer-bg'); },
   };
 })();

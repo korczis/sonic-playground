@@ -1024,6 +1024,24 @@ async function shot(page, name) {
       'visualiser: Escape with the queue open closes the queue and keeps the picture');
     await page.keyboard.press('Escape');
     check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer')), 'visualiser: the next Escape closes the picture');
+    // Behind every page while the player plays (the owner, 2026-11-16): the layer draws while
+    // playing, never covers the video, rests while paused and obeys the settings' switch.
+    await page.evaluate(() => window.__yt.fire(1));
+    await page.waitForFunction(() => Number(document.getElementById('visualizer-bg').getAttribute('data-visualizer-frame') || 0) > 20, null, { timeout: 15000 }).catch(() => {});
+    check(await page.evaluate(() => window.SonicVisualizer.background()) && await page.evaluate(litShare, '#visualizer-bg canvas') > 0,
+      'visualiser: it draws behind the page while the player plays');
+    await videoSeen(page, 'visualiser behind the page (desktop, playing)');
+    // It lies under the page (a negative z-index in the root stacking context) and never takes a
+    // click; elementFromPoint cannot judge it, since it skips pointer-events: none.
+    check(await page.evaluate(() => { const c = getComputedStyle(document.getElementById('visualizer-bg')); return Number(c.zIndex) < 0 && c.pointerEvents === 'none' && c.position === 'fixed'; }),
+      'visualiser: the background picture lies under the page and takes no clicks');
+    await page.evaluate(() => window.__yt.fire(2));
+    await page.waitForFunction(() => !window.SonicVisualizer.background(), null, { timeout: 5000 }).catch(() => {});
+    check(await page.evaluate(() => !window.SonicVisualizer.background() && !document.documentElement.hasAttribute('data-visualizer-bg')), 'visualiser: the background rests while the player is paused');
+    await page.evaluate(() => { localStorage.setItem('sonic.visualizer', JSON.stringify({ bg: false })); window.__yt.fire(1); });
+    await page.waitForTimeout(600);
+    check(await page.evaluate(() => !window.SonicVisualizer.background()), 'visualiser: the settings\' switch keeps the background off');
+    await page.evaluate(() => localStorage.removeItem('sonic.visualizer'));
     if (!(await page.isVisible('#player-queue'))) await page.click('[data-player-queue]');
     await page.click(`#player-queue [data-queue-row="next"][data-source="${S[1]}"] [data-player-down]`);
     await until({ q: [S[0], S[2], S[3], S[4], S[1]] }, 'player: a queued track moves down');

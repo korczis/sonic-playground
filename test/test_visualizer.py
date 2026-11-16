@@ -67,6 +67,16 @@ class Visualizer(unittest.TestCase):
         for at in calls:
             self.assertTrue(handler < at < handler_end, JS[at - 80:at + 20])
 
+    def test_the_background_layer_is_behind_everything_and_inert(self):
+        layer = re.search(r'<div id="visualizer-bg"[^>]*>', SHELL)
+        assert layer is not None, "partials/visualizer.html holds #visualizer-bg"
+        self.assertIn('aria-hidden="true"', layer.group(0))
+        self.assertIn("pointer-events-none", layer.group(0))
+        self.assertIn("-z-10", layer.group(0))
+        css = (ROOT / "styles/app.css").read_text(encoding="utf-8")
+        self.assertIn("html[data-visualizer-bg] #visualizer-bg", css)
+        self.assertRegex(css, r"prefers-reduced-motion: reduce\)\s*\{\s*#visualizer-bg \{ display: none; \}")
+
 
 if __name__ == "__main__":
     unittest.main()
