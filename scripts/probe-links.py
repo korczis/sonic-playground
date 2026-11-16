@@ -120,16 +120,23 @@ def ask(url: str) -> tuple[int, float | None]:
 
 def probe(url: str, sleep: Callable[[float], None] = time.sleep) -> int:
     """The status of the URL; a 429 or 503 is asked again after its Retry-After, and any other
-    5xx or no answer once more after SECOND_LOOK_S."""
+    5xx or no answer once more after SECOND_LOOK_S, and that second answer is read the same way
+    (a 503 to the second look is retried too; peer review, 2026-11-16)."""
+    code = patient(url, sleep)
+    if code == 0 or (code >= 500 and code != 503):
+        sleep(SECOND_LOOK_S)
+        code = patient(url, sleep)
+    return code
+
+
+def patient(url: str, sleep: Callable[[float], None]) -> int:
+    """One answer, a 429 or 503 asked again after its Retry-After (bounded)."""
     code, after = ask(url)
     for attempt in range(RETRIES):
         if code not in (429, 503):
             break
         sleep(min(after if after is not None else 2.0 * 2 ** attempt, RETRY_CAP_S))
         code, after = ask(url)
-    if code == 0 or (code >= 500 and code != 503):
-        sleep(SECOND_LOOK_S)
-        code, _ = ask(url)
     return code
 
 

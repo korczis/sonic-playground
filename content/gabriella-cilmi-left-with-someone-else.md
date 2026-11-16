@@ -53,8 +53,8 @@ publisher = "Wikipedia"
 kind = "encyclopedia"
 
 [[extra.sources]]
-title = "Gabriella Cilmi - The Sting"
-url = "https://pennyblackmusic.co.uk/Home/Details?id=21618"
+title = "Gabriella Cilmi - The Sting (archived)"
+url = "https://web.archive.org/web/20211021185918/https://pennyblackmusic.co.uk/Home/Details?id=21618"
 publisher = "Penny Black Music"
 kind = "review"
 year = "2013"
