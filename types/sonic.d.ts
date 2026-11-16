@@ -98,6 +98,7 @@ interface Window {
     source(): string;
     listen(kind: 'tab' | 'mic'): Promise<void>;
     stop(): void;
+    background(): boolean;
   };
   echarts: any;
   p5: any;

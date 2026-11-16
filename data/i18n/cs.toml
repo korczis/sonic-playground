@@ -372,6 +372,7 @@
 "viz.mode.bars" = "Spektrum"
 "viz.mode.warp" = "Warp"
 "viz.mode.plasma" = "Plazma"
+"viz.background" = "Za stránkami, když hraje hudba"
 "viz.cycle" = "Střídat po 40 s"
 "viz.fullscreen" = "Přes celou obrazovku (F)"
 "viz.close" = "Zavřít vizualizaci (Esc)"

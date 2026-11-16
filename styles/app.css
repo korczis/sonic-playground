@@ -321,3 +321,28 @@ html[data-track-menu-state="open"] #player-panel {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* The visualiser behind every page while the player plays (static/js/visualizer.js). The page's
+   own surfaces turn transparent so it shows between the cards; the cards, the bar and the
+   panels stay opaque. On light the picture is inverted and multiplied (its black vanishes into
+   the page, its light becomes a faint tint); on dark it is screened (its black vanishes, its
+   light glows). It fades in and out with the player. */
+#visualizer-bg {
+  opacity: 0;
+  transition: opacity 700ms ease;
+  filter: invert(1) hue-rotate(180deg);
+  mix-blend-mode: multiply;
+}
+html.dark #visualizer-bg {
+  filter: none;
+  mix-blend-mode: screen;
+}
+html[data-visualizer-bg] #visualizer-bg { opacity: 0.22; }
+html.dark[data-visualizer-bg] #visualizer-bg { opacity: 0.35; }
+html[data-visualizer-bg] #shell,
+html[data-visualizer-bg] #main-content {
+  background-color: transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  #visualizer-bg { display: none; }
+}

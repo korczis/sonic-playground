@@ -1,3 +1,6 @@
+{#- Behind every page while the player plays (static/js/visualizer.js syncBackground; the blend
+    into the theme is styles/app.css). Decorative and never in front of anything. -#}
+<div id="visualizer-bg" aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10"></div>
 {#- The fullscreen visualiser (static/js/visualizer.js), outside #main-content like the player so
     the router never swaps it. It lies over the page and under the player (z 35: the queue and the
     video panel are at 40, the bar at 50), so the playing video is never covered; opening it closes
@@ -35,10 +38,15 @@
           <button type="button" role="radio" data-viz-mode="warp" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.warp">{{ l["viz.mode.warp"] }}</button>
           <button type="button" role="radio" data-viz-mode="plasma" aria-checked="false" class="{{ chip }}" data-i18n="viz.mode.plasma">{{ l["viz.mode.plasma"] }}</button>
         </div>
-        <label class="mt-3 inline-flex cursor-pointer items-center gap-3">
+        <label class="mt-3 flex cursor-pointer items-center gap-3">
           <input type="checkbox" data-viz-cycle class="peer sr-only" checked>
           <span class="relative h-5 w-9 shrink-0 rounded-full bg-gray-600 after:absolute after:start-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-all peer-checked:bg-primary-600 peer-checked:after:translate-x-full peer-focus:ring-2 peer-focus:ring-primary-400" aria-hidden="true"></span>
           <span class="text-sm text-gray-200" data-i18n="viz.cycle">{{ l["viz.cycle"] }}</span>
+        </label>
+        <label class="mt-3 flex cursor-pointer items-center gap-3">
+          <input type="checkbox" data-viz-bg class="peer sr-only" checked>
+          <span class="relative h-5 w-9 shrink-0 rounded-full bg-gray-600 after:absolute after:start-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-all peer-checked:bg-primary-600 peer-checked:after:translate-x-full peer-focus:ring-2 peer-focus:ring-primary-400 peer-disabled:opacity-40" aria-hidden="true"></span>
+          <span class="text-sm text-gray-200" data-i18n="viz.background">{{ l["viz.background"] }}</span>
         </label>
       </div>
       <div>
