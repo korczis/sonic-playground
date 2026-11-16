@@ -80,6 +80,32 @@ class ProbeLinks(unittest.TestCase):
     def test_what_a_removed_page_answers_is_dead(self):
         for code in (0, 404, 410, 400, 500, 503):
             self.assertEqual(probe_links.verdict(code), "dead", code)
+        for code in (401, 403, 406, 429):
+            self.assertEqual(probe_links.verdict(code), "refused", code)
+
+    def test_a_passing_5xx_or_silence_is_asked_once_more(self):
+        # Run 43899814144: cultureaddicts.com 500 and lunakafe.com no answer, both 200 later.
+        for first in (0, 500, 502):
+            answers = iter([(first, None), (200, None)])
+            waits = []
+            with mock.patch.object(probe_links, "ask", lambda url: next(answers)):
+                self.assertEqual(probe_links.probe("https://x.example/a", sleep=waits.append), 200, first)
+            self.assertEqual(waits, [probe_links.SECOND_LOOK_S], first)
+
+    def test_a_lasting_5xx_is_still_dead_and_a_removed_page_is_not_asked_twice(self):
+        asked = []
+        def ask(url):
+            asked.append(url)
+            return (500, None)
+        with mock.patch.object(probe_links, "ask", ask):
+            code = probe_links.probe("https://x.example/a", sleep=lambda s: None)
+        self.assertEqual(probe_links.verdict(code), "dead")
+        self.assertEqual(len(asked), 2)
+        for gone in (404, 410):
+            asked.clear()
+            with mock.patch.object(probe_links, "ask", lambda url, g=gone: asked.append(url) or (g, None)):
+                self.assertEqual(probe_links.probe("https://x.example/a", sleep=lambda s: None), gone)
+            self.assertEqual(len(asked), 1, gone)
         for code in (200, 204, 301, 302):
             self.assertEqual(probe_links.verdict(code), "ok", code)
 

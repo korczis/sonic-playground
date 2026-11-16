@@ -39,12 +39,18 @@ OWNED_ELSEWHERE = {"extra.youtube"}  # scripts/probe-videos.py
 # never fails the probe. Dead is what a removed page or domain answers: 404, 410, any other
 # 4xx, a 5xx, or nothing at all. The first run on CI (43655799611) found 141 "dead" of 1960:
 # 104 were Wikipedia's 429 to eight parallel requests, about 30 were bot walls' 403.
-REFUSED = (401, 403, 429)
+# last.fm answers 406 to CI's addresses (run 43899814144, five pages) and 200 to this same probe
+# from a home address, so 406 is a refusal too.
+REFUSED = (401, 403, 406, 429)
 # Requests to one host go one at a time with this gap; hosts are asked in parallel.
 PACE_S = 0.3
 # A 429 or 503 is asked again after its Retry-After (bounded), this many times.
 RETRIES = 3
 RETRY_CAP_S = 30.0
+# Any other 5xx, or no answer at all, is asked once more after this pause before it counts as
+# dead: in run 43899814144 cultureaddicts.com answered 500 and lunakafe.com nothing, and both
+# answered 200 to the same probe minutes later. A 404 or 410 is a removed page and is not asked.
+SECOND_LOOK_S = 15.0
 
 
 def verdict(code: int) -> str:
@@ -113,13 +119,17 @@ def ask(url: str) -> tuple[int, float | None]:
 
 
 def probe(url: str, sleep: Callable[[float], None] = time.sleep) -> int:
-    """The status of the URL; a 429 or 503 is asked again after its Retry-After."""
+    """The status of the URL; a 429 or 503 is asked again after its Retry-After, and any other
+    5xx or no answer once more after SECOND_LOOK_S."""
     code, after = ask(url)
     for attempt in range(RETRIES):
         if code not in (429, 503):
             break
         sleep(min(after if after is not None else 2.0 * 2 ** attempt, RETRY_CAP_S))
         code, after = ask(url)
+    if code == 0 or (code >= 500 and code != 503):
+        sleep(SECOND_LOOK_S)
+        code, _ = ask(url)
     return code
 
 
