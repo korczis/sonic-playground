@@ -4,8 +4,9 @@
 // the page renders: the library grid, every playlist's rows, the profile's top lists. It never
 // reads the session's credentials and never calls Spotify's API.
 //
-//   1. In the tab: run this file, then `await SonicCrawl.run()` (minutes; progress in
-//      SonicCrawl.progress). The result goes to localStorage key "sonicSnapshot".
+//   1. In the tab: run this file, then `await SonicCrawl.run()` (an hour or more for a large
+//      library; progress in SonicCrawl.progress, mirrored to localStorage "sonicCrawlProgress"
+//      for any tab of the origin). The result goes to localStorage key "sonicSnapshot".
 //   2. Chrome allows one automatic download per tab, so in a fresh tab on the same origin
 //      (https://open.spotify.com/robots.txt) run this file and `SonicCrawl.download()`. It saves
 //      sonic-spotify-snapshot-<day>.json and clears the key.
@@ -96,9 +97,14 @@
           if (rows.has(n + 1)) continue;
           await seek(n);
           await sleep(pass ? 900 : 300);
-          const r = grid.querySelector(`[role="row"][aria-rowindex="${n + 1}"]`);
-          const item = r && read(r, [...r.querySelectorAll('[role="gridcell"]')], head);
-          if (item) rows.set(n + 1, { n, ...item });
+          // Read every row the seek rendered, not only the one sought: the third crawl
+          // (2026-11-17) spent over 45 minutes on 2,031 liked songs reading one row per seek.
+          for (const r of dataRows()) {
+            const i = +r.getAttribute('aria-rowindex');
+            if (rows.has(i)) continue;
+            const item = read(r, [...r.querySelectorAll('[role="gridcell"]')], head);
+            if (item) rows.set(i, { n: i - 1, ...item });
+          }
         }
       }
     }
@@ -190,8 +196,16 @@
     return { range: 'short_term', label: 'this month', tracks, artists };
   }
 
+  // Progress is mirrored to localStorage so another tab on the same origin can follow the crawl:
+  // the injecting tool can lose its handle on the crawling tab (third crawl, 2026-11-17).
+  const PROGRESS = 'sonicCrawlProgress';
+  const state = { value: 'idle' };
   const crawl = {
-    progress: 'idle',
+    get progress() { return state.value; },
+    set progress(v) {
+      state.value = v;
+      try { localStorage.setItem(PROGRESS, JSON.stringify({ progress: v, at: new Date().toISOString() })); } catch (e) { /* storage full */ }
+    },
     /** The whole snapshot: library, liked songs, every playlist, the top lists. */
     async run() {
       crawl.progress = 'library';

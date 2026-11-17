@@ -205,6 +205,19 @@ class Crawl(unittest.TestCase):
         self.assertIn("This playlist is not available", code)
         self.assertNotIn("/^Playlist •/", code)
 
+    def test_the_top_up_reads_every_row_a_seek_renders(self):
+        # Reading only the sought row took over 45 minutes on 2,031 liked songs (third crawl,
+        # 2026-11-17); every row the seek brought into view is read.
+        code = self.path.read_text(encoding="utf-8")
+        top_up = code[code.index("await seek(n);"):code.index("unavailable: true")]
+        self.assertIn("for (const r of dataRows())", top_up)
+
+    def test_progress_is_visible_from_another_tab(self):
+        # The injecting tool can lose its handle on the crawling tab (third crawl, 2026-11-17).
+        code = self.path.read_text(encoding="utf-8")
+        self.assertIn("'sonicCrawlProgress'", code)
+        self.assertIn("localStorage.setItem(PROGRESS", code)
+
     def test_it_writes_the_snapshot_schema(self):
         code = self.path.read_text(encoding="utf-8")
         self.assertIn(f"schema: '{sh.SNAPSHOT_SCHEMA}'", code)
