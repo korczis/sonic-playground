@@ -90,7 +90,8 @@ jobs:
 
   verify:
     name: Verify production
-    timeout-minutes: 25
+    # The same full sweep, against the live host; it grows with the site like the CI gate.
+    timeout-minutes: 40
     needs: deploy
     runs-on: ubuntu-latest
     env:
