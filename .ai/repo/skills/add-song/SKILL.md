@@ -92,7 +92,10 @@ link. Not for bulk imports (run the engine in a loop and review each article).
 
 `python3 scripts/backlog.py` lists the songs of `data/backlog/*.toml` (the owner's playlists,
 transcribed) that have no review: a song, not a recording (version suffixes and featured
-artists folded, remixes kept), each once. `--batches N` splits it; each batch goes to one
+artists folded, remixes kept), each once. `--source spotify` lists the songs of the owner's
+Spotify history (ADR 0007) the owner chose (current top tracks, liked songs, own playlists),
+strongest choice first, without interludes and continuous mixes; `--limit N` takes the head of
+the list for one wave. `--batches N` splits it; each batch goes to one
 `song-writer` agent (`.claude/agents/song-writer.md`) running this procedure in one shared
 worktree, creating only its own files. The integrator then runs `npm run derive` and the gate
 once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 agents):
