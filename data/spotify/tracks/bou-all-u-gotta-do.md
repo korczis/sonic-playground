@@ -6,8 +6,9 @@ artists: ["Bou"]
 album: "All U Gotta Do"
 duration: "3:45"
 spotify: {"track": "1Uk6kqbSTNFBqXACE4Vv6A", "album": "5eBnGbTjE9gIFh7IC01EEI", "artists": ["35dxfY1wywqVRUEaVuMm13"]}
-keys: {"fold": "bou|allugottado"}
-status: "missing"
+keys: {"fold": "bou|allugottado", "isrc": "US39N2203366", "musicbrainz": "8778cf10-c687-48ab-b552-bfba142a909d"}
+review: "bou-all-u-gotta-do.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *All U Gotta Do*, 3:45.
 A liked song.
-No review yet.
+Reviewed: content/bou-all-u-gotta-do.md.

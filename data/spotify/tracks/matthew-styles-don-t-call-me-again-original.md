@@ -6,7 +6,7 @@ artists: ["Matthew Styles"]
 album: "Sample & Hold EP"
 duration: "7:31"
 spotify: {"track": "4ByXoKIEvhdNKiEy6UhXgT", "album": "76mbJ1v2jM9A5T9LfS2RPu", "artists": ["3euKW1vT1WLKuhGiW2Wyo8"]}
-keys: {"fold": "matthewstyles|dontcallmeagainoriginal"}
+keys: {"fold": "matthewstyles|dontcallmeagain"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

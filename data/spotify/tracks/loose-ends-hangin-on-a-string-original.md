@@ -6,7 +6,7 @@ artists: ["Loose Ends"]
 album: "Tighten Up Vol I"
 duration: "5:50"
 spotify: {"track": "65vIOWAPl3elRBhgUTWraU", "album": "5d9AC2a39URW3KudFjLo9Z", "artists": ["4q3lWHEW55hoLJNzZskFVo"]}
-keys: {"fold": "looseends|hanginonastringoriginal"}
+keys: {"fold": "looseends|hanginonastring"}
 status: "missing"
 liked: false
 playlists:

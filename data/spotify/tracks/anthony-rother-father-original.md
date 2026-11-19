@@ -6,7 +6,7 @@ artists: ["Anthony Rother"]
 album: "Popkiller"
 duration: "6:33"
 spotify: {"track": "37wWrejU41DEs1xtVpBmv9", "album": "5g7cjC2m0gHpANpEVFeDS2", "artists": ["5eWbdoIDCRxrPyiv7TEtw8"]}
-keys: {"fold": "anthonyrother|fatheroriginal", "musicbrainz": "9673cbcb-fd35-4850-8a25-0e214b731bdd"}
+keys: {"fold": "anthonyrother|father", "musicbrainz": "9673cbcb-fd35-4850-8a25-0e214b731bdd"}
 review: "anthony-rother-father-original.md"
 status: "present"
 liked: true

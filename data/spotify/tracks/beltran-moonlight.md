@@ -7,7 +7,8 @@ album: "Moonlight"
 duration: "5:37"
 spotify: {"track": "39JDdezxhax7XyjkRpM6Ds", "album": "5IQW0dQVimAiqZopb4JBng", "artists": ["1jgSqmZTBltb5O2L7ErmEP", "2AasvmwafZPTgQANaoLoQY"]}
 keys: {"fold": "beltran|moonlight"}
-status: "missing"
+review: "beltran-mandragora-moonlight.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Moonlight*, 5:37.
 A liked song.
-No review yet.
+Reviewed: content/beltran-mandragora-moonlight.md.

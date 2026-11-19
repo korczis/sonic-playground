@@ -7,8 +7,9 @@ album: "Discobolus"
 duration: "4:41"
 explicit: true
 spotify: {"track": "5SmPIkENC3tSQ87JI5DOU7", "album": "3fP6HlLd41jhNl6J25fdbf", "artists": ["34eIzSQthbDc6GrEUyYb7N"]}
-keys: {"fold": "bassastralxigo|pussycockgod"}
-status: "missing"
+keys: {"fold": "bassastralxigo|pussycockgod", "musicbrainz": "b7dfa2df-7081-4b73-ba4e-11086bbca5bd"}
+review: "bass-astral-x-igo-pussy-cock-god.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Discobolus*, 4:41.
 A liked song.
-No review yet.
+Reviewed: content/bass-astral-x-igo-pussy-cock-god.md.

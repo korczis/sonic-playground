@@ -6,7 +6,7 @@ artists: ["unders"]
 album: "Syria"
 duration: "8:03"
 spotify: {"track": "3rkge8kur9i26zpByFKvBu", "album": "63QglWXaVZfTcFOKvgIi54", "artists": ["58wDbO29TUyzGTz7gZqOue"]}
-keys: {"fold": "unders|syriaoriginal"}
+keys: {"fold": "unders|syria"}
 status: "missing"
 liked: false
 playlists:

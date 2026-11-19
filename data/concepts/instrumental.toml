@@ -1,0 +1,11 @@
+term = "instrumental"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Instrumental"
+see_also = ["remix", "alternate version", "dub"]
+
+[en]
+definition = "A version of a song without its lead vocal, often released beside the vocal version on a single or remix EP for DJs, producers and rappers to use. With the words gone, the beat, the bass and the arrangement carry the track alone."
+
+[cs]
+term = "instrumentální verze"
+definition = "Verze písně bez hlavního zpěvu, často vydávaná vedle vokální verze na singlu nebo remixovém EP pro DJe, producenty a rappery. Bez slov nese skladbu sám beat, basa a aranžmá."

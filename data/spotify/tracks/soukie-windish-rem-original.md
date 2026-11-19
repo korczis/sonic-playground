@@ -6,7 +6,7 @@ artists: ["Soukie & Windish"]
 album: "Shift Work Sleep Disorder (Original)"
 duration: "7:16"
 spotify: {"track": "6OY5IcTAiy22YBADZ03AQC", "album": "1ZehFFMFtR6HoRBaQYrhDs", "artists": ["7lzMA6rrygV5XWmV44iFte"]}
-keys: {"fold": "soukiewindish|remoriginal"}
+keys: {"fold": "soukiewindish|rem"}
 status: "missing"
 liked: false
 playlists:

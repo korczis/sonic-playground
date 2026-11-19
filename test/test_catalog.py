@@ -202,6 +202,8 @@ class Contract(unittest.TestCase):
                 "Time - 2011 Remastered Version": "Time", "Battery - Remastered": "Battery",
                 "Song (2009 Digital Remaster)": "Song", "Makeba - Radio Edit": "Makeba",
                 "Hello - Single Version": "Hello",
+                "Seven Nation Army - Remasterisée": "Seven Nation Army",
+                "The beat goes on - Original": "The beat goes on",
                 "Eastern City Lights (Bonus Track)": "Eastern City Lights",
                 "Crazy (Noze Remix) - Mixed": "Crazy (Noze Remix)"}
         for title, expected in same.items():

@@ -7,8 +7,9 @@ album: "Back To Black"
 duration: "4:00"
 explicit: true
 spotify: {"track": "2s4BsyV3KhhrtsdtNfzoqb", "album": "097eYvf9NKjFnv4xA9s2oV", "artists": ["6Q192DXotxtaysaqNPy5yR"]}
-keys: {"fold": "amywinehouse|backtoblack"}
-status: "missing"
+keys: {"fold": "amywinehouse|backtoblack", "isrc": "GBUM70607752", "musicbrainz": "a2af7af7-e9af-4e62-bfe4-45d792fa1f2f"}
+review: "amy-winehouse-back-to-black.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Back To Black*, 4:00.
 A liked song.
-No review yet.
+Reviewed: content/amy-winehouse-back-to-black.md.

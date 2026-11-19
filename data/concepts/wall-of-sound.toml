@@ -1,0 +1,11 @@
+term = "wall of sound"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Wall_of_Sound"
+see_also = ["reverb", "record producer"]
+
+[en]
+definition = "A production style associated with Phil Spector in the early 1960s: many instruments doubling the same parts, recorded together and soaked in echo, so that the arrangement blends into one dense, booming mass behind the voice. Girl-group records of that decade made it famous, and later producers borrow it to sound grand and nostalgic at once."
+
+[cs]
+term = "wall of sound"
+definition = "Produkční styl spojovaný s Philem Spectorem na začátku šedesátých let: mnoho nástrojů zdvojuje tytéž party, nahrávají se společně a utápějí se v ozvěně, takže aranžmá splyne v jednu hutnou, dunivou masu za hlasem. Proslavily ho nahrávky dívčích skupin té dekády a pozdější producenti si ho půjčují, aby zněli velkolepě a zároveň nostalgicky."

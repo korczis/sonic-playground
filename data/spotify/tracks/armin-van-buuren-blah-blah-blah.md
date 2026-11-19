@@ -6,8 +6,9 @@ artists: ["Armin van Buuren"]
 album: "Balance"
 duration: "3:03"
 spotify: {"track": "0WQf8kcrI1yb6l2vpKjsOI", "album": "5cqwXF2j9LkvFInBFlnQd3", "artists": ["0SfsnGyD8FpIN4U4WCkBZ5"]}
-keys: {"fold": "arminvanbuuren|blahblahblah"}
-status: "missing"
+keys: {"fold": "arminvanbuuren|blahblahblah", "musicbrainz": "ab2538ee-f61f-4f46-bef6-97747c982686"}
+review: "armin-van-buuren-blah-blah-blah.md"
+status: "present"
 liked: false
 playlists:
   - {"playlist": "eurythmics-sweet-dreams-ibiza-deep-summer-remix-2015", "n": 180}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14"]
 From the album *Balance*, 3:03.
 Not among the liked songs.
 In Eurythmics - Sweet Dreams (Ibiza Deep Summer Remix 2015) (#180).
-No review yet.
+Reviewed: content/armin-van-buuren-blah-blah-blah.md.

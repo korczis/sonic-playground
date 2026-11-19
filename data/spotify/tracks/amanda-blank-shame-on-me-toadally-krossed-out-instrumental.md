@@ -7,7 +7,8 @@ album: "Shame on Me (Remixes)"
 duration: "4:05"
 spotify: {"track": "6asEPn8YxufZuWdo0i239e", "album": "0c0yiDW15dIdNDZjAHQtUW", "artists": ["6cMBAd7j8KLD9TnjfwQ91E"]}
 keys: {"fold": "amandablank|shameonmetoadallykrossedoutinstrumental"}
-status: "missing"
+review: "amanda-blank-shame-on-me-toadally-krossed-out-instrumental.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Shame on Me (Remixes)*, 4:05.
 A liked song.
-No review yet.
+Reviewed: content/amanda-blank-shame-on-me-toadally-krossed-out-instrumental.md.

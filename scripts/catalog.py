@@ -250,8 +250,8 @@ BACKLOG_SCHEMA = json.loads((ROOT / "data" / "backlog.schema.json").read_text(en
 # Version suffixes that do not make another song; a remix, a mix of another artist, a live take of
 # a different arrangement stays a song of its own. The phrase is the whole of a bracket or follows
 # " - ": "[Moodymann Edit]" is another artist's edit, "- Edit" and "(Edit)" are versions.
-_VERSION = (r"(?:(?:\d{4} )?(?:digital )?remaster(?:ed)?(?: version)?(?: \d{4})?|radio edit|"
-            r"radio version|radio mix|original mix|extended (?:version|mix)|album version|"
+_VERSION = (r"(?:(?:\d{4} )?(?:digital )?remaster(?:ed|isée|isé|izado)?(?: version)?(?: \d{4})?|radio edit|"
+            r"radio version|radio mix|original mix|original|extended (?:version|mix)|album version|"
             r"single version|bonus track|mixed|edit)")
 VERSION = re.compile(rf"\s*(?:-\s*{_VERSION}|\(\s*{_VERSION}\s*\)|\[\s*{_VERSION}\s*\])\s*$", re.I)
 FEAT = re.compile(r"\s*[\(\[]?\s*\b(?:feat\.?|featuring|ft\.)\s+[^\)\]]*[\)\]]?", re.I)

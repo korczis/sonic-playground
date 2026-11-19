@@ -6,8 +6,9 @@ artists: ["Avia"]
 album: "I see that now..."
 duration: "3:51"
 spotify: {"track": "08raIuZXkS7rw59NnSSstf", "album": "3mG0XK8rKgG9Uxa1DOfYb8", "artists": ["08E1gIXEm5SDflPh1tGQ2Z"]}
-keys: {"fold": "avia|whyshouldicry"}
-status: "missing"
+keys: {"fold": "avia|whyshouldicry", "musicbrainz": "a24371d9-d085-49db-ac8f-b57e48f88292"}
+review: "avia-why-should-i-cry.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *I see that now...*, 3:51.
 A liked song.
-No review yet.
+Reviewed: content/avia-why-should-i-cry.md.
