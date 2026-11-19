@@ -74,7 +74,9 @@ jobs:
   site:
     name: Validate, build and test in a browser
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # The smoke test sweeps every sitemap page (3,300+ and growing with each content wave): at
+    # 717 reviews it outgrew 20 minutes on the 4-core runner (run 44569679140).
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
