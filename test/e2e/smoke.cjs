@@ -99,9 +99,11 @@ function check(ok, what) {
 
 // Every step has a deadline (a production run once hung for 45 minutes in the sweep: a
 // page.evaluate and fetch have none of their own). The watchdog ends a stuck run with the last
-// check that passed and the pages still in flight, so the cause is in the log.
+// check that passed and the pages still in flight, so the cause is in the log. 35 minutes: the
+// sweep of every sitemap page (3,300+ at 717 reviews) outgrew 15 on CI's runner (run 44584448724),
+// and the CI and production jobs that run it allow 50 and 55.
 const inFlight = new Set();
-const WATCHDOG = Number(process.env.SMOKE_TIMEOUT_MS || 15 * 60 * 1000);
+const WATCHDOG = Number(process.env.SMOKE_TIMEOUT_MS || 35 * 60 * 1000);
 setTimeout(() => {
   console.error(`smoke: watchdog: no result after ${WATCHDOG / 1000} s; last check: ${last}; ` +
     `in flight: ${[...inFlight].join(', ') || 'none'}`);
