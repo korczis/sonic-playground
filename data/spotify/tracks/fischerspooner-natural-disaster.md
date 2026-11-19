@@ -6,8 +6,9 @@ artists: ["Fischerspooner"]
 album: "#1"
 duration: "4:46"
 spotify: {"track": "4vD6cfCdAVFGZ3ttf8kE3u", "album": "72MUV9NdRSGxBQrkZfUKvG", "artists": ["5R7K1GezC0jy24v1R2n4x3"]}
-keys: {"fold": "fischerspooner|naturaldisaster"}
-status: "missing"
+keys: {"fold": "fischerspooner|naturaldisaster", "isrc": "USFS20200017", "musicbrainz": "8bf185e8-ef38-40c8-9901-c11d3a47e8ce"}
+review: "fischerspooner-natural-disaster.md"
+status: "present"
 liked: true
 top:
   - {"range": "month", "rank": 32, "read": "2026-11-14"}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14"]
 From the album *#1*, 4:46.
 A liked song.
 Top tracks of the month (read 2026-11-14): #32.
-No review yet.
+Reviewed: content/fischerspooner-natural-disaster.md.

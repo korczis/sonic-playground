@@ -6,7 +6,7 @@ artists: ["Carl Carlton"]
 album: "Carl Carlton (Expanded Edition)"
 duration: "3:55"
 spotify: {"track": "2R0zbd80CqwoB0ORDCqDoK", "album": "47PRIVK9fSdMzABbJFbQes", "artists": ["6gYjIUFuKIBVJfxXnmrd5P"]}
-keys: {"fold": "carlcarlton|shesabadmamajamashesbuiltshesstackedsingleversion"}
+keys: {"fold": "carlcarlton|shesabadmamajamashesbuiltshesstacked"}
 status: "missing"
 liked: false
 playlists:

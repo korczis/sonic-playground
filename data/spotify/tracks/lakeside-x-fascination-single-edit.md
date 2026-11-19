@@ -6,7 +6,7 @@ artists: ["Lakeside X"]
 album: "Fascination"
 duration: "4:13"
 spotify: {"track": "6jtRP4TXBW1jNmTFkyuNau", "album": "2fyyTZsuPjAUDnA8bdyk2r", "artists": ["6Djl8XZQPIzkWdHyaJtvEg"]}
-keys: {"fold": "lakesidex|fascinationsingle"}
+keys: {"fold": "lakesidex|fascinationsingleedit"}
 status: "missing"
 liked: false
 playlists:

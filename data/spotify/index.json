@@ -1,7 +1,7 @@
 {
  "liked": 2029,
  "playlists": 55,
- "reviewed": 753,
+ "reviewed": 815,
  "reviews": {
   "2raumwohnung-somebody-lonely-and-me-nacht.md": {
    "liked": true,
@@ -70,9 +70,10 @@
   },
   "alec-troniq-gabriel-vitel-mind-doodles.md": {
    "liked": true,
-   "playlists": 1,
+   "playlists": 2,
    "records": [
-    "alec-troniq-mind-doodles"
+    "alec-troniq-mind-doodles",
+    "gabriel-vitel-mind-doodles"
    ],
    "track": "1DiCxg8SOTYBBTFVc7ddEw",
    "yearbooks": [
@@ -163,12 +164,14 @@
    ]
   },
   "alok-zeeba-bruno-martini-hear-me-now.md": {
-   "liked": false,
-   "playlists": 1,
+   "liked": true,
+   "playlists": 2,
    "records": [
-    "alok-hear-me-now-39cmb3"
+    "alok-hear-me-now",
+    "alok-hear-me-now-39cmb3",
+    "alok-hear-me-now-6onyqk"
    ],
-   "track": "39cmB3ZoTOLwOTq7tMNqKa",
+   "track": "1a5Yu5L18qNxVhXx38njON",
    "yearbooks": [
     2022
    ]
@@ -290,6 +293,15 @@
     2020,
     2021
    ]
+  },
+  "apocalyptica-battery.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "apocalyptica-battery-bonus-track"
+   ],
+   "track": "3FqPQVeuVLgW8TxmRReLks",
+   "yearbooks": []
   },
   "arctic-monkeys-do-i-wanna-know.md": {
    "liked": false,
@@ -508,6 +520,16 @@
     2016
    ]
   },
+  "basement-jaxx-good-luck.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "basement-jaxx-good-luck",
+    "basement-jaxx-good-luck-feat-lisa-kekaula"
+   ],
+   "track": "76qqmbeHyPhP2SjrO4jBZS",
+   "yearbooks": []
+  },
   "bassement-freaks-soul-intoxication.md": {
    "liked": true,
    "playlists": 1,
@@ -582,6 +604,27 @@
     2018
    ]
   },
+  "belleruche-clockwatching.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "belleruche-clockwatching",
+    "belleruche-clockwatching-3tnmzp",
+    "belleruche-clockwatching-4zt1ux"
+   ],
+   "track": "37V5dI8CtGk4O9IwF8VwEM",
+   "yearbooks": []
+  },
+  "belleruche-eastern-city-lights.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "belleruche-eastern-city-lights",
+    "belleruche-eastern-city-lights-4e4szk"
+   ],
+   "track": "2aI9dEjfbJfGB1e5c8fMHD",
+   "yearbooks": []
+  },
   "belleruche-reach-for-the-bottle.md": {
    "liked": true,
    "playlists": 1,
@@ -592,6 +635,15 @@
    "yearbooks": [
     2020
    ]
+  },
+  "belleruche-yam-who-it-ll-come-yam-who-remix.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "belleruche-it-ll-come-yam-who-remix"
+   ],
+   "track": "2SnuxrxzAEu9EWgEvtH7pp",
+   "yearbooks": []
   },
   "ben-khan-savage.md": {
    "liked": true,
@@ -687,6 +739,15 @@
    "yearbooks": [
     2017
    ]
+  },
+  "bleu-azur-just-the-two-of-us.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "bleu-azur-just-the-two-of-us"
+   ],
+   "track": "5hvznt8954z2jvpp5pAIDC",
+   "yearbooks": []
   },
   "blondie-call-me.md": {
    "liked": true,
@@ -1353,6 +1414,15 @@
     2019
    ]
   },
+  "connor-price-nic-d-too-easy.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "connor-price-too-easy"
+   ],
+   "track": "7EQjPEL70tzjlTgCgU0QrV",
+   "yearbooks": []
+  },
   "console-a-homeless-ghost.md": {
    "liked": true,
    "playlists": 1,
@@ -1499,6 +1569,24 @@
    "yearbooks": [
     2016
    ]
+  },
+  "dan-kanvis-skeleton.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "dan-kanvis-skeleton"
+   ],
+   "track": "3MTvmA9c690UirlXChumNz",
+   "yearbooks": []
+  },
+  "daniel-landa-motylek.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "daniel-landa-motylek"
+   ],
+   "track": "0t1sq9sEIhfeoK9AvT0zMX",
+   "yearbooks": []
   },
   "dapayk-padberg-caro-island.md": {
    "liked": false,
@@ -1685,6 +1773,15 @@
     2019
    ]
   },
+  "dr-dre-let-s-get-high.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "dr-dre-let-s-get-high"
+   ],
+   "track": "5PtZZkNYizyl4tq4Ru6pCL",
+   "yearbooks": []
+  },
   "drake-the-throne-pop-style.md": {
    "liked": true,
    "playlists": 1,
@@ -1709,6 +1806,15 @@
     2021,
     2022
    ]
+  },
+  "dreadzone-iron-shirt.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "dreadzone-iron-shirt"
+   ],
+   "track": "3LHlJJaYA1jJZrQQdHIh4P",
+   "yearbooks": []
   },
   "dusty-kid-nemur-walls-of-guitars-extended-version.md": {
    "liked": true,
@@ -2042,6 +2148,15 @@
    "track": "3vyKSb9sAdXl0kQ1KnS9fY",
    "yearbooks": []
   },
+  "fischerspooner-natural-disaster.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "fischerspooner-natural-disaster"
+   ],
+   "track": "4vD6cfCdAVFGZ3ttf8kE3u",
+   "yearbooks": []
+  },
   "fkj-lying-together.md": {
    "liked": true,
    "playlists": 1,
@@ -2144,6 +2259,15 @@
    "yearbooks": [
     2018
    ]
+  },
+  "frenchgrl-seven-nation-army.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "frenchgrl-seven-nation-army"
+   ],
+   "track": "17emD1W6tF5p3u5vf2uxwl",
+   "yearbooks": []
   },
   "frivolous-wasting-time.md": {
    "liked": true,
@@ -2515,6 +2639,17 @@
     2016
    ]
   },
+  "gorillaz-bootie-brown-dirty-harry.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "gorillaz-dirty-harry",
+    "gorillaz-dirty-harry-5opeti",
+    "gorillaz-dirty-harry-feat-bootie-brown"
+   ],
+   "track": "4YyDH4Omf3cusOZnHO9Jsd",
+   "yearbooks": []
+  },
   "gorillaz-de-la-soul-feel-good-inc.md": {
    "liked": true,
    "playlists": 2,
@@ -2526,6 +2661,45 @@
    "yearbooks": [
     2021
    ]
+  },
+  "gorillaz-demon-days.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "gorillaz-demon-days"
+   ],
+   "track": "2k6hpKTyubRVOmQR11ViY3",
+   "yearbooks": []
+  },
+  "gorillaz-el-manana-metronomy-remix.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "gorillaz-el-manana-metronomy-remix",
+    "gorillaz-el-manana-metronomy-remix-46i29a"
+   ],
+   "track": "2jweCZQQx4j4Eal5mn24ws",
+   "yearbooks": []
+  },
+  "gorillaz-hot-chip-kids-with-guns-hot-chip-remix.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "gorillaz-kids-with-guns-hot-chip-remix",
+    "gorillaz-kids-with-guns-hot-chip-remix-5fcrwf"
+   ],
+   "track": "1X4RqFAShNL8aHfUIpjIVr",
+   "yearbooks": []
+  },
+  "gorillaz-murdoc-is-god.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "gorillaz-murdoc-is-god",
+    "gorillaz-murdoc-is-god-3gd2a2"
+   ],
+   "track": "2O7GmJrKjSxpkjjD20ljCf",
+   "yearbooks": []
   },
   "gorillaz-neneh-cherry-kids-with-guns.md": {
    "liked": true,
@@ -2539,6 +2713,16 @@
    "yearbooks": [
     2016
    ]
+  },
+  "gorillaz-spitting-out-the-demons.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "gorillaz-spitting-out-the-demons",
+    "gorillaz-spitting-out-the-demons-5umnpt"
+   ],
+   "track": "087otJT7SXmRp9UQMAC1y8",
+   "yearbooks": []
   },
   "gotan-project-la-viguela.md": {
    "liked": true,
@@ -3111,6 +3295,15 @@
     2019
    ]
   },
+  "joe-goddard-mara-carlyle-she-burns.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "joe-goddard-she-burns"
+   ],
+   "track": "0qLLGw4flGdBsIKYpYszIq",
+   "yearbooks": []
+  },
   "john-newman-kove-love-me-again-kove-remix.md": {
    "liked": true,
    "playlists": 1,
@@ -3147,6 +3340,16 @@
    "yearbooks": [
     2021
    ]
+  },
+  "jonas-aden-young-god.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "jonas-aden-young-god",
+    "jonas-aden-young-god-extended-mix"
+   ],
+   "track": "00kxmCrREn08uWfQnIx7Lv",
+   "yearbooks": []
   },
   "jorge-ben-jr_take-it-easy-my-brother-charles.md": {
    "liked": true,
@@ -3414,6 +3617,15 @@
    "yearbooks": [
     2018
    ]
+  },
+  "king-krule-easy-easy.md": {
+   "liked": false,
+   "playlists": 4,
+   "records": [
+    "king-krule-easy-easy"
+   ],
+   "track": "08ZsI74y3P6mQw8En1c6tQ",
+   "yearbooks": []
   },
   "klangkarusell-moments.md": {
    "liked": true,
@@ -3695,6 +3907,25 @@
     2017
    ]
   },
+  "la-roux-bulletproof.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "la-roux-bulletproof",
+    "la-roux-bulletproof-3kmraz"
+   ],
+   "track": "0SyxZC4wlqAwf20cHE6Xon",
+   "yearbooks": []
+  },
+  "la-roux-in-for-the-kill.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "la-roux-in-for-the-kill"
+   ],
+   "track": "6yRraj2ghJiIcVbQ6Vb59Q",
+   "yearbooks": []
+  },
   "labyrinth-ear-navy-light.md": {
    "liked": true,
    "playlists": 1,
@@ -3866,6 +4097,15 @@
    "yearbooks": [
     2021
    ]
+  },
+  "lucian-makaw-eye-of-the-storm.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "lucian-eye-of-the-storm"
+   ],
+   "track": "17XzWfClQ8333rHsIfYuCz",
+   "yearbooks": []
   },
   "lucky-luke-cooler-than-me.md": {
    "liked": true,
@@ -4230,6 +4470,15 @@
     2018
    ]
   },
+  "meg-myers-curbstomp.md": {
+   "liked": false,
+   "playlists": 3,
+   "records": [
+    "meg-myers-curbstomp"
+   ],
+   "track": "1HtrQWNpyEbGMEiwCjmPdi",
+   "yearbooks": []
+  },
   "melissa-laveaux-generous-bones.md": {
    "liked": false,
    "playlists": 2,
@@ -4423,6 +4672,15 @@
    "yearbooks": [
     2022
    ]
+  },
+  "moisture-lucca-santucci-headman-club-version.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "headman-moisture-headman-club-version-bonus-track"
+   ],
+   "track": "7MQISmF9JZI49VOodLfTi7",
+   "yearbooks": []
   },
   "monkey-safari-new-day.md": {
    "liked": true,
@@ -4667,6 +4925,15 @@
    "yearbooks": [
     2016
    ]
+  },
+  "nick-monaco-david-marston-pussy.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "nick-monaco-pussy"
+   ],
+   "track": "5Z3KP0QDKsUwgskRrd09oq",
+   "yearbooks": []
   },
   "nicola-cruz-cumbia-del-olvido.md": {
    "liked": true,
@@ -5001,6 +5268,15 @@
     2022
    ]
   },
+  "ornette-noze-crazy-noze-remix-extended-club-version.md": {
+   "liked": true,
+   "playlists": 2,
+   "records": [
+    "ornette-crazy-noze-remix-extended-club-version-mixed"
+   ],
+   "track": "0teTGbhoPnNBNoPEWl8bST",
+   "yearbooks": []
+  },
   "pablo-nouvelle-fiona-daniel-is-it-ok.md": {
    "liked": true,
    "playlists": 1,
@@ -5168,6 +5444,25 @@
    "yearbooks": [
     2018
    ]
+  },
+  "pigeon-the-bomb.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "pigeon-john-the-bomb-single-version"
+   ],
+   "track": "2JUoEXXQxjjBfISZxycyFt",
+   "yearbooks": []
+  },
+  "pilocka-krach-my-name-is-fame.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "pilocka-krach-my-name-is-fame",
+    "pilocka-krach-my-name-is-fame-5zp2ab"
+   ],
+   "track": "5qnsUIlVizeOkG87tompze",
+   "yearbooks": []
   },
   "pilocka-krach_la_luna-y-el-sol.md": {
    "liked": true,
@@ -5344,6 +5639,15 @@
     2018
    ]
   },
+  "purple-disco-machine-crush-club-take-it-easy-feat-crush-club.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "purple-disco-machine-take-it-easy-feat-crush-club"
+   ],
+   "track": "1WDtuoricpzxXBifSuWx0y",
+   "yearbooks": []
+  },
   "purple-disco-machine-lorenz-rhode-music-in-you-feat-lorenz-rhode.md": {
    "liked": true,
    "playlists": 1,
@@ -5424,6 +5728,15 @@
     2018
    ]
   },
+  "renforshort-feel-good-inc.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "renforshort-feel-good-inc-feat-mateus-asato"
+   ],
+   "track": "2GzlTbrFF2V6MwRDfBnYhf",
+   "yearbooks": []
+  },
   "richard-muller-banket-po-schodoch.md": {
    "liked": true,
    "playlists": 2,
@@ -5452,10 +5765,11 @@
   },
   "robin-schulz-francesco-yates-sugar.md": {
    "liked": true,
-   "playlists": 3,
+   "playlists": 4,
    "records": [
     "robin-schulz-sugar-feat-francesco-yates",
-    "robin-schulz-sugar-feat-francesco-yates-5tf1vv"
+    "robin-schulz-sugar-feat-francesco-yates-5tf1vv",
+    "robin-schulz-sugar-feat-francesco-yates-extended-mix"
    ],
    "track": "3NFuE3uDOr6QUw9UZ9HzKo",
    "yearbooks": [
@@ -5771,6 +6085,15 @@
     2019
    ]
   },
+  "scratch-bandits-crew-goodbye.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "scratch-bandits-crew-goodbye"
+   ],
+   "track": "2G6dtpFgHX75Ei0ros3opC",
+   "yearbooks": []
+  },
   "seelenluft-horse-with-no-name.md": {
    "liked": false,
    "playlists": 1,
@@ -5961,6 +6284,15 @@
     2020
    ]
   },
+  "soulwax-e-talking.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "soulwax-e-talking"
+   ],
+   "track": "0PyY0xuVcLt2qaEe5hrtRi",
+   "yearbooks": []
+  },
   "spada-hosie-neal-bakermat-feels-like-home-red-velvet-dress-bakermat-remix.md": {
    "liked": false,
    "playlists": 1,
@@ -6124,6 +6456,15 @@
     2019
    ]
   },
+  "tears-for-fears-mad-world.md": {
+   "liked": true,
+   "playlists": 1,
+   "records": [
+    "tears-for-fears-mad-world"
+   ],
+   "track": "0Qv7xi6uPSqH2k82tOkGSt",
+   "yearbooks": []
+  },
   "teemid-joie-tan-crazy-radio-mix.md": {
    "liked": true,
    "playlists": 1,
@@ -6269,6 +6610,36 @@
     "the-police-roxanne"
    ],
    "track": "3EYOJ48Et32uATr9ZmLnAo",
+   "yearbooks": []
+  },
+  "the-puppini-sisters-could-it-be-magic.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-puppini-sisters-could-it-be-magic",
+    "the-puppini-sisters-could-it-be-magic-2s4ait"
+   ],
+   "track": "2eyo7YlQZLxRQG76LbdtU9",
+   "yearbooks": []
+  },
+  "the-puppini-sisters-spooky.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-puppini-sisters-spooky",
+    "the-puppini-sisters-spooky-5nfaff"
+   ],
+   "track": "3tVO5FbAn0z7US3gIvNhhd",
+   "yearbooks": []
+  },
+  "the-puppini-sisters-we-have-all-the-time-in-the-world.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-puppini-sisters-we-have-all-the-time-in-the-world",
+    "the-puppini-sisters-we-have-all-the-time-in-the-world-47uwyh"
+   ],
+   "track": "3lpxRmhkguqlCVPDfXbhks",
    "yearbooks": []
   },
   "the-retrosettes-sister-band-you-got-the-love.md": {
@@ -6449,6 +6820,15 @@
     2022
    ]
   },
+  "time-to-sleep-lungo-mare.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "time-to-sleep-lungo-mare"
+   ],
+   "track": "6xyYawB1MHnhqW15YomUY6",
+   "yearbooks": []
+  },
   "timmy-trumpet-gabry-ponte-mad-world.md": {
    "liked": true,
    "playlists": 2,
@@ -6620,6 +7000,15 @@
     2021
    ]
   },
+  "trinix-the-macarons-project-too-sweet.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "trinix-too-sweet"
+   ],
+   "track": "4Z3F8VnLHzcIRNDRRJmr8P",
+   "yearbooks": []
+  },
   "tubbe-in-berlin.md": {
    "liked": true,
    "playlists": 3,
@@ -6786,6 +7175,15 @@
     2021
    ]
   },
+  "we-are-enfant-terrible-filthy-love.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "we-are-enfant-terrible-filthy-love"
+   ],
+   "track": "1WK85H8s5hfb0dhuarL7ke",
+   "yearbooks": []
+  },
   "weval-the-most.md": {
    "liked": true,
    "playlists": 1,
@@ -6927,7 +7325,7 @@
   }
  },
  "schema": "spotify-index/v1",
- "songs": 6560,
+ "songs": 6558,
  "top": [
   {
    "artists": [
@@ -6938,6 +7336,7 @@
    "rank": 1,
    "read": "2026-11-14",
    "record": "joe-goddard-she-burns",
+   "review": "joe-goddard-mara-carlyle-she-burns.md",
    "title": "She Burns"
   },
   {
@@ -6948,6 +7347,7 @@
    "rank": 2,
    "read": "2026-11-14",
    "record": "dan-kanvis-skeleton",
+   "review": "dan-kanvis-skeleton.md",
    "title": "Skeleton"
   },
   {
@@ -6971,6 +7371,7 @@
    "rank": 4,
    "read": "2026-11-14",
    "record": "trinix-too-sweet",
+   "review": "trinix-the-macarons-project-too-sweet.md",
    "title": "Too Sweet"
   },
   {
@@ -6981,6 +7382,7 @@
    "rank": 5,
    "read": "2026-11-14",
    "record": "time-to-sleep-lungo-mare",
+   "review": "time-to-sleep-lungo-mare.md",
    "title": "Lungo Mare"
   },
   {
@@ -7014,6 +7416,7 @@
    "rank": 8,
    "read": "2026-11-14",
    "record": "bleu-azur-just-the-two-of-us",
+   "review": "bleu-azur-just-the-two-of-us.md",
    "title": "Just the Two of Us"
   },
   {
@@ -7025,6 +7428,7 @@
    "rank": 9,
    "read": "2026-11-14",
    "record": "connor-price-too-easy",
+   "review": "connor-price-nic-d-too-easy.md",
    "title": "Too Easy"
   },
   {
@@ -7036,6 +7440,7 @@
    "rank": 10,
    "read": "2026-11-14",
    "record": "gorillaz-dirty-harry-5opeti",
+   "review": "gorillaz-bootie-brown-dirty-harry.md",
    "title": "Dirty Harry"
   },
   {
@@ -7046,6 +7451,7 @@
    "rank": 11,
    "read": "2026-11-14",
    "record": "gorillaz-spitting-out-the-demons-5umnpt",
+   "review": "gorillaz-spitting-out-the-demons.md",
    "title": "Spitting out the Demons"
   },
   {
@@ -7056,6 +7462,7 @@
    "rank": 12,
    "read": "2026-11-14",
    "record": "frenchgrl-seven-nation-army",
+   "review": "frenchgrl-seven-nation-army.md",
    "title": "Seven Nation Army"
   },
   {
@@ -7078,6 +7485,7 @@
    "rank": 14,
    "read": "2026-11-14",
    "record": "renforshort-feel-good-inc-feat-mateus-asato",
+   "review": "renforshort-feel-good-inc.md",
    "title": "feel good inc. (feat. Mateus Asato)"
   },
   {
@@ -7088,6 +7496,7 @@
    "rank": 15,
    "read": "2026-11-14",
    "record": "gorillaz-murdoc-is-god-3gd2a2",
+   "review": "gorillaz-murdoc-is-god.md",
    "title": "Murdoc Is God"
   },
   {
@@ -7098,6 +7507,7 @@
    "rank": 16,
    "read": "2026-11-14",
    "record": "the-puppini-sisters-we-have-all-the-time-in-the-world-47uwyh",
+   "review": "the-puppini-sisters-we-have-all-the-time-in-the-world.md",
    "title": "We Have All The Time In The World"
   },
   {
@@ -7111,6 +7521,7 @@
    "rank": 17,
    "read": "2026-11-14",
    "record": "dr-dre-let-s-get-high",
+   "review": "dr-dre-let-s-get-high.md",
    "title": "Let's Get High"
   },
   {
@@ -7133,6 +7544,7 @@
    "rank": 19,
    "read": "2026-11-14",
    "record": "gorillaz-kids-with-guns-hot-chip-remix",
+   "review": "gorillaz-hot-chip-kids-with-guns-hot-chip-remix.md",
    "title": "Kids with Guns - Hot Chip Remix"
   },
   {
@@ -7156,6 +7568,7 @@
    "rank": 21,
    "read": "2026-11-14",
    "record": "gorillaz-el-manana-metronomy-remix-46i29a",
+   "review": "gorillaz-el-manana-metronomy-remix.md",
    "title": "El Mañana - Metronomy Remix"
   },
   {
@@ -7166,6 +7579,7 @@
    "rank": 22,
    "read": "2026-11-14",
    "record": "belleruche-clockwatching-4zt1ux",
+   "review": "belleruche-clockwatching.md",
    "title": "Clockwatching"
   },
   {
@@ -7200,6 +7614,7 @@
    "rank": 25,
    "read": "2026-11-14",
    "record": "belleruche-it-ll-come-yam-who-remix",
+   "review": "belleruche-yam-who-it-ll-come-yam-who-remix.md",
    "title": "It'll Come - Yam Who? Remix"
   },
   {
@@ -7233,6 +7648,7 @@
    "rank": 28,
    "read": "2026-11-14",
    "record": "the-puppini-sisters-spooky",
+   "review": "the-puppini-sisters-spooky.md",
    "title": "Spooky"
   },
   {
@@ -7253,8 +7669,9 @@
    "range": "month",
    "rank": 30,
    "read": "2026-11-14",
-   "record": "belleruche-eastern-city-lights-bonus-track",
-   "title": "Eastern City Lights (Bonus Track)"
+   "record": "belleruche-eastern-city-lights-4e4szk",
+   "review": "belleruche-eastern-city-lights.md",
+   "title": "Eastern City Lights"
   },
   {
    "artists": [
@@ -7275,6 +7692,7 @@
    "rank": 32,
    "read": "2026-11-14",
    "record": "fischerspooner-natural-disaster",
+   "review": "fischerspooner-natural-disaster.md",
    "title": "Natural Disaster"
   },
   {
@@ -7285,6 +7703,7 @@
    "rank": 33,
    "read": "2026-11-14",
    "record": "the-puppini-sisters-could-it-be-magic",
+   "review": "the-puppini-sisters-could-it-be-magic.md",
    "title": "Could It Be Magic"
   },
   {
@@ -7295,6 +7714,7 @@
    "rank": 34,
    "read": "2026-11-14",
    "record": "pilocka-krach-my-name-is-fame-5zp2ab",
+   "review": "pilocka-krach-my-name-is-fame.md",
    "title": "My Name is Fame"
   },
   {
@@ -7316,6 +7736,7 @@
    "rank": 36,
    "read": "2026-11-14",
    "record": "soulwax-e-talking",
+   "review": "soulwax-e-talking.md",
    "title": "E Talking"
   },
   {
@@ -7337,6 +7758,7 @@
    "rank": 38,
    "read": "2026-11-14",
    "record": "daniel-landa-motylek",
+   "review": "daniel-landa-motylek.md",
    "title": "Motýlek"
   },
   {
@@ -7348,6 +7770,7 @@
    "rank": 39,
    "read": "2026-11-14",
    "record": "lucian-eye-of-the-storm",
+   "review": "lucian-makaw-eye-of-the-storm.md",
    "title": "Eye of the Storm"
   },
   {
@@ -7357,8 +7780,9 @@
    "range": "month",
    "rank": 40,
    "read": "2026-11-14",
-   "record": "apocalyptica-battery-remastered",
-   "title": "Battery - Remastered"
+   "record": "apocalyptica-battery-bonus-track",
+   "review": "apocalyptica-battery.md",
+   "title": "Battery - Bonus Track"
   },
   {
    "artists": [
@@ -7369,6 +7793,7 @@
    "rank": 41,
    "read": "2026-11-14",
    "record": "purple-disco-machine-take-it-easy-feat-crush-club",
+   "review": "purple-disco-machine-crush-club-take-it-easy-feat-crush-club.md",
    "title": "Take It Easy (feat. Crush Club)"
   },
   {
@@ -7379,6 +7804,7 @@
    "rank": 42,
    "read": "2026-11-14",
    "record": "we-are-enfant-terrible-filthy-love",
+   "review": "we-are-enfant-terrible-filthy-love.md",
    "title": "Filthy Love"
   },
   {
@@ -7401,6 +7827,7 @@
    "rank": 44,
    "read": "2026-11-14",
    "record": "basement-jaxx-good-luck",
+   "review": "basement-jaxx-good-luck.md",
    "title": "Good Luck"
   },
   {
@@ -7422,6 +7849,7 @@
    "rank": 46,
    "read": "2026-11-14",
    "record": "scratch-bandits-crew-goodbye",
+   "review": "scratch-bandits-crew-goodbye.md",
    "title": "Goodbye"
   },
   {
@@ -7443,6 +7871,7 @@
    "rank": 48,
    "read": "2026-11-14",
    "record": "gorillaz-demon-days",
+   "review": "gorillaz-demon-days.md",
    "title": "Demon Days"
   },
   {
@@ -7463,6 +7892,7 @@
    "rank": 50,
    "read": "2026-11-14",
    "record": "jonas-aden-young-god",
+   "review": "jonas-aden-young-god.md",
    "title": "Young God"
   }
  ]

@@ -6,7 +6,7 @@ artists: ["Sister Sledge"]
 album: "We Are Family (1995 Remaster)"
 duration: "4:26"
 spotify: {"track": "7mimnm2QlSzW3J38FRMETP", "album": "4GSidaoqyGNwaG5mNKmuLT", "artists": ["6gkWznnJkdkwRPVcmnrays"]}
-keys: {"fold": "sistersledge|thinkingofyou1995"}
+keys: {"fold": "sistersledge|thinkingofyou"}
 status: "missing"
 liked: false
 playlists:

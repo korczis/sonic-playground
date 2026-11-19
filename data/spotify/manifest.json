@@ -26,7 +26,7 @@
  "tables": {
   "tracks": {
    "path": "data/spotify/tables/tracks.jsonl",
-   "rows": 6560,
+   "rows": 6558,
    "key": "id",
    "join": {
     "spotify_track": "Spotify track id",
@@ -64,7 +64,7 @@
   },
   "albums": {
    "path": "data/spotify/tables/albums.jsonl",
-   "rows": 4747,
+   "rows": 4746,
    "key": "spotify_album",
    "join": {
     "name": "tracks.album"
@@ -77,13 +77,13 @@
   "use": "templates/page.html"
  },
  "counts": {
-  "tracks": 6560,
+  "tracks": 6558,
   "liked": 2029,
-  "reviewed": 753,
+  "reviewed": 815,
   "playlists": 55,
   "memberships": 7973,
   "artists": 4849,
-  "albums": 4747,
+  "albums": 4746,
   "playlists_by_kind": {
    "liked": 1,
    "own": 11,

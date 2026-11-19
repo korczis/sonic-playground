@@ -6,7 +6,7 @@ artists: ["Boz Scaggs"]
 album: "Silk Degrees (2023 Remaster)"
 duration: "5:17"
 spotify: {"track": "5QhikAUv91oMAaFnfKz22u", "album": "1iIyo1JkpnNz83Mf4I9AiI", "artists": ["46njgd2Rq9tZc4ZjeQMgbh"]}
-keys: {"fold": "bozscaggs|lowdown2023"}
+keys: {"fold": "bozscaggs|lowdown"}
 status: "missing"
 liked: false
 playlists:

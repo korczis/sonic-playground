@@ -1,0 +1,11 @@
+term = "guitar solo"
+category = "performance"
+wikipedia = "https://en.wikipedia.org/wiki/Guitar_solo"
+see_also = ["riff", "distortion"]
+
+[en]
+definition = "A passage in which the guitar steps out of the accompaniment and carries the melody alone, improvised or composed, usually between sections of a song; a showcase of tone and phrasing borrowed from blues and rock."
+
+[cs]
+term = "kytarové sólo"
+definition = "Pasáž, v níž kytara vystoupí z doprovodu a sama nese melodii, improvizovanou nebo složenou, obvykle mezi částmi písně; přehlídka tónu a frázování převzatá z blues a rocku."

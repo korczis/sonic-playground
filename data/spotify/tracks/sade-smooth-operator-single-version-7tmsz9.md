@@ -6,7 +6,7 @@ artists: ["Sade"]
 album: "The Best of Sade"
 duration: "4:18"
 spotify: {"track": "7tmsZ9v0TgXO6UIxeCtjh6", "album": "3uSWaQxJAdm5MWKQkQJNoK", "artists": ["47zz7sob9NUcODy0BTDvKx"]}
-keys: {"fold": "sade|smoothoperatorsingleversion"}
+keys: {"fold": "sade|smoothoperator"}
 status: "missing"
 liked: false
 playlists:

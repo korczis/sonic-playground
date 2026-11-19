@@ -6,7 +6,7 @@ artists: ["Michael Jackson"]
 album: "Bad (Remastered)"
 duration: "4:58"
 spotify: {"track": "76HKOVWqsEg26SECtmw7Rz", "album": "3Us57CjssWnHjTUIXBuIeH", "artists": ["3fMbdgg4jU18AjLCKBhRSm"]}
-keys: {"fold": "michaeljackson|thewayyoumakemefeel2012"}
+keys: {"fold": "michaeljackson|thewayyoumakemefeel"}
 status: "missing"
 liked: false
 playlists:

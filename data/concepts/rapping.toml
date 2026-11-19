@@ -1,0 +1,11 @@
+term = "rapping"
+category = "performance"
+wikipedia = "https://en.wikipedia.org/wiki/Rapping"
+see_also = ["spoken word", "featured artist"]
+
+[en]
+definition = "Delivering words rhythmically over a beat, closer to speech than to song: the rapper's flow places syllables and rhymes against the pulse. Born in hip-hop, it now turns up as a single verse inside pop, rock and dance songs."
+
+[cs]
+term = "rap"
+definition = "Rytmický přednes textu přes beat, bližší řeči než zpěvu: rapperův flow rozmisťuje slabiky a rýmy proti pulzu. Vznikl v hip-hopu a dnes se objevuje i jako jediná sloka uvnitř popových, rockových a tanečních písní."

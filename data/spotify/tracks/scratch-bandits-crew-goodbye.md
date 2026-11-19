@@ -6,8 +6,9 @@ artists: ["Scratch Bandits Crew"]
 album: "Stereo 7"
 duration: "4:11"
 spotify: {"track": "2G6dtpFgHX75Ei0ros3opC", "album": "2hZXssp37i6Z8LnmCRuEQl", "artists": ["0YJxNQtyb8jlldIC1DTkIf"]}
-keys: {"fold": "scratchbanditscrew|goodbye"}
-status: "missing"
+keys: {"fold": "scratchbanditscrew|goodbye", "musicbrainz": "5715d748-c5bd-4d03-9397-c5b6d3f4745b"}
+review: "scratch-bandits-crew-goodbye.md"
+status: "present"
 liked: true
 top:
   - {"range": "month", "rank": 46, "read": "2026-11-14"}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14"]
 From the album *Stereo 7*, 4:11.
 A liked song.
 Top tracks of the month (read 2026-11-14): #46.
-No review yet.
+Reviewed: content/scratch-bandits-crew-goodbye.md.

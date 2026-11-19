@@ -6,7 +6,7 @@ artists: ["Kollektiv Ost", "Sascha Braemer"]
 album: "I Love Mukke (DJ Mix)"
 duration: "5:30"
 spotify: {"track": "7vAXEdFMppOqqB6n7CVCyy", "album": "0ShoqlANRn9ifUTOP3anxR", "artists": ["3G5wjUV0bhx9pIIUrGUabR", "3egW8Pgmbjm5vS4EPXZond"]}
-keys: {"fold": "kollektivost|powersaschabraemerremixmixed"}
+keys: {"fold": "kollektivost|powersaschabraemerremix"}
 status: "missing"
 liked: false
 playlists:

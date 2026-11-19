@@ -6,7 +6,7 @@ artists: ["Moderat", "Siriusmo", "Solomun"]
 album: "Eating Hooks (Siriusmo Remix - Solomun Edit)"
 duration: "7:02"
 spotify: {"track": "6fgmNIMwDdLQrNzu4U8pcU", "album": "10FLwqO8TP7EL3pYM0aF59", "artists": ["2exkZbmNqMKnT8LRWuxWgy", "22680B8sUdq6bL6nQaJfwg", "5wJK4kQAkVGjqM9x46KQOC"]}
-keys: {"fold": "moderat|eatinghookssiriusmoremixsolomun"}
+keys: {"fold": "moderat|eatinghookssiriusmoremixsolomunedit"}
 status: "missing"
 liked: false
 playlists:

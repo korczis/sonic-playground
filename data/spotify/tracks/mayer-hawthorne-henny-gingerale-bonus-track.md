@@ -6,7 +6,7 @@ artists: ["Mayer Hawthorne"]
 album: "How Do You Do"
 duration: "4:14"
 spotify: {"track": "22WRYBnzXfM9g7uNd5w79q", "album": "5pFEKvjZm4W8NSAS5VzmiR", "artists": ["4d53BMrRlQkrQMz5d59f2O"]}
-keys: {"fold": "mayerhawthorne|hennygingeralebonustrack"}
+keys: {"fold": "mayerhawthorne|hennygingerale"}
 status: "missing"
 liked: false
 playlists:

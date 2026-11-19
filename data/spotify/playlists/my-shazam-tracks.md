@@ -46,4 +46,4 @@ tracks:
 
 # My Shazam Tracks
 
-A playlist of the owner's: 35 of 35 items read on 2026-11-14, 10 of them reviewed on the site.
+A playlist of the owner's: 35 of 35 items read on 2026-11-14, 18 of them reviewed on the site.

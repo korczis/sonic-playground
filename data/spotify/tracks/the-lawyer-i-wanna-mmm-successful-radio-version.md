@@ -6,7 +6,7 @@ artists: ["The Lawyer"]
 album: "I Wanna MMM..."
 duration: "3:35"
 spotify: {"track": "4veHeaa5OFBgKy5h7DwFDi", "album": "4nVFvTFrGkiwP8gv3qTT2n", "artists": ["1o3xEAqXYTqPZEHTJCtZw5"]}
-keys: {"fold": "thelawyer|iwannammmsuccessful"}
+keys: {"fold": "thelawyer|iwannammmsuccessfulradioversion"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

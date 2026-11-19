@@ -7,8 +7,9 @@ album: "2001"
 duration: "2:27"
 explicit: true
 spotify: {"track": "5PtZZkNYizyl4tq4Ru6pCL", "album": "7q2B4M5EiBkqrlsNW8lB7N", "artists": ["6DPYiyq5kWVQS4RGwxzPC7", "3np2OYRZAgI4e6lxeGmGr8", "1MKz2ieT8BYrOWEs4OG8un", "6NyJIFHAePjHR1pFxwisqz"]}
-keys: {"fold": "drdre|letsgethigh"}
-status: "missing"
+keys: {"fold": "drdre|letsgethigh", "isrc": "USIR19915079", "musicbrainz": "2c7961a3-533f-41f3-a053-29d09584c869"}
+review: "dr-dre-let-s-get-high.md"
+status: "present"
 liked: true
 top:
   - {"range": "month", "rank": 17, "read": "2026-11-14"}
@@ -20,4 +21,4 @@ sources: ["web-player:2026-11-14"]
 From the album *2001*, 2:27.
 A liked song.
 Top tracks of the month (read 2026-11-14): #17.
-No review yet.
+Reviewed: content/dr-dre-let-s-get-high.md.

@@ -6,7 +6,7 @@ artists: ["Michael Jackson"]
 album: "Off the Wall"
 duration: "3:39"
 spotify: {"track": "7oOOI85fVQvVnK5ynNMdW7", "album": "2ZytN2cY4Zjrr9ukb2rqTP", "artists": ["3fMbdgg4jU18AjLCKBhRSm"]}
-keys: {"fold": "michaeljackson|rockwithyousingleversion"}
+keys: {"fold": "michaeljackson|rockwithyou"}
 status: "missing"
 liked: false
 playlists:

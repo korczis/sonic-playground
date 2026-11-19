@@ -6,7 +6,7 @@ artists: ["Marc Romboy", "Stephan Bodzin", "Adriatique"]
 album: "Atlas (Adriatique Remix Radio Edit)"
 duration: "3:59"
 spotify: {"track": "7hWJIMTg4vfiFy6VQosiVj", "album": "72zCHikgvgd9eeX4oQwY5R", "artists": ["623ecFS6T9xsx9Rb98eii5", "2nq2BeSbzExGAv3Y4HgUf7", "02DWGcShQivFepRvGJ7xhB"]}
-keys: {"fold": "marcromboy|atlasadriatiqueremix"}
+keys: {"fold": "marcromboy|atlasadriatiqueremixradioedit"}
 status: "missing"
 liked: false
 playlists:

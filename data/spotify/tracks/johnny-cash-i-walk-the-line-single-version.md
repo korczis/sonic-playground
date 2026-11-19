@@ -6,7 +6,7 @@ artists: ["Johnny Cash", "The Tennessee Two"]
 album: "Johnny Cash with His Hot and Blue Guitar (2017 Definitive Expanded Remastered Edition)"
 duration: "2:43"
 spotify: {"track": "6uya0AiJA1Avd4DY2XFlVm", "album": "17zRiRHTZcE86qmVnsy25L", "artists": ["6kACVPfCOnqzgfEF5ryl0x", "3iGdenNgbzOak86BHrx0Nt"]}
-keys: {"fold": "johnnycash|iwalkthelinesingleversion"}
+keys: {"fold": "johnnycash|iwalktheline"}
 status: "missing"
 liked: false
 playlists:

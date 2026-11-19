@@ -6,7 +6,7 @@ artists: ["Tom Odell", "Zwette"]
 album: "Another Love (Zwette Edit)"
 duration: "6:34"
 spotify: {"track": "5snyhxAh55A2wlNRH7VVZJ", "album": "3Bi2XO3N9AL5f7VvVmyVna", "artists": ["2txHhyCwHjUEpJjWrEyqyX", "6J2749jPHYhAZUq79rsNi0"]}
-keys: {"fold": "tomodell|anotherlovezwette"}
+keys: {"fold": "tomodell|anotherlovezwetteedit"}
 status: "missing"
 liked: false
 playlists:

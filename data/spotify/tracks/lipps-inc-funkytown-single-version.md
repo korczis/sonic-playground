@@ -6,7 +6,7 @@ artists: ["Lipps Inc."]
 album: "Shrek 2 (Original Motion Picture Soundtrack)"
 duration: "3:59"
 spotify: {"track": "571HXOyjpcQzZz9Edv2Jdx", "album": "009d83fu2guwouIwqr7i9E", "artists": ["0lwRI7lvmlRY5DiA5Xa6wQ"]}
-keys: {"fold": "lippsinc|funkytownsingleversion"}
+keys: {"fold": "lippsinc|funkytown"}
 status: "missing"
 liked: false
 playlists:

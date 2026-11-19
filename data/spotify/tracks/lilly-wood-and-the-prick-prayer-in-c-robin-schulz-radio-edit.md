@@ -6,7 +6,7 @@ artists: ["Lilly Wood and The Prick", "Robin Schulz"]
 album: "Prayer"
 duration: "3:09"
 spotify: {"track": "0uVyZywUNOp6S0dU5r8TS8", "album": "1SrvubPy1Dg2BWJyTMcmgr", "artists": ["50OApTJurDusIo9dGTqSU4", "3t5xRXzsuZmMDkQzgOX35S"]}
-keys: {"fold": "lillywoodandtheprick|prayerincrobinschulz", "isrc": "DEA621400286", "musicbrainz": "92a3c7fe-d3a0-40da-901b-1df9cb170cd0"}
+keys: {"fold": "lillywoodandtheprick|prayerincrobinschulzradioedit", "isrc": "DEA621400286", "musicbrainz": "92a3c7fe-d3a0-40da-901b-1df9cb170cd0"}
 review: "lilly-wood-and-the-prick-robin-schulz-prayer-in-c-robin-schulz-radio-edit.md"
 status: "present"
 liked: true

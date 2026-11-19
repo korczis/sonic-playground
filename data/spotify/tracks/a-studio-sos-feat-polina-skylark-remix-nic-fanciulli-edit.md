@@ -6,7 +6,7 @@ artists: ["A'Studio", "Polina", "Skylark (Nic Fanciulli & Andy Chatterley)", "Ni
 album: "SOS (Skylark Remix - Nic Fanciulli Edit)"
 duration: "3:24"
 spotify: {"track": "2kX1q43CjN75TjgB5uKHkk", "album": "1coPpRvvCAQptxY0hzewZc", "artists": ["58gyHFyLoEM1rVTrPTa4vE", "3LqQZv1icUTJ56zXR7VbjA", "2htUOCNnhl8FMojiiygTBQ", "7btR5VXutQv39SDEzcfXEk"]}
-keys: {"fold": "astudio|sosskylarkremixnicfanciulli"}
+keys: {"fold": "astudio|sosskylarkremixnicfanciulliedit"}
 status: "missing"
 liked: false
 playlists:

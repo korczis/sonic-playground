@@ -6,7 +6,7 @@ artists: ["Elephanz"]
 album: "Elephanz"
 duration: "3:19"
 spotify: {"track": "0Nbgl52I1fn25YImv3M9N8", "album": "2hjg6fnfe3QLx2RMxNZmEB", "artists": ["2CD8tl357w6zYA3XYuOJPO"]}
-keys: {"fold": "elephanz|bullittbonustrack"}
+keys: {"fold": "elephanz|bullitt"}
 status: "missing"
 liked: false
 playlists:

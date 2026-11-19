@@ -1,0 +1,11 @@
+term = "b-side"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/A-side_and_B-side"
+see_also = ["alternate version", "remix"]
+
+[en]
+definition = "The secondary track of a single, originally the reverse side of a vinyl record. B-sides often hold songs left off an album, experiments or versions, and later collections gather them, so a track can find its audience years after the single it was hidden on."
+
+[cs]
+term = "B-strana"
+definition = "Vedlejší skladba singlu, původně zadní strana gramofonové desky. Na B-stranách často vycházejí písně, které se nevešly na album, pokusy nebo jiné verze; pozdější výběry je pak sbírají, takže skladba může najít posluchače i roky po singlu, na němž byla schovaná."

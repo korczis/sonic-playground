@@ -6,7 +6,7 @@ artists: ["Vijay & Sofia Zlatko", "Guitk"]
 album: "Labour"
 duration: "4:36"
 spotify: {"track": "0Uqkaa7W6GaIxM065uyofw", "album": "3pIEddIS40QDwbf9gpH2gE", "artists": ["23BtKJexFLn0Ri6s7BEC4d", "6idiMykt5CGq3Jlvj8Fjmb"]}
-keys: {"fold": "vijaysofiazlatko|labourextendedmix"}
+keys: {"fold": "vijaysofiazlatko|labour"}
 status: "missing"
 liked: false
 playlists:

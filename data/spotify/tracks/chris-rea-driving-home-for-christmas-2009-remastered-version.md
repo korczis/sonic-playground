@@ -6,7 +6,7 @@ artists: ["Chris Rea"]
 album: "Dancing with Strangers (Deluxe Edition, 2019 Remaster)"
 duration: "4:03"
 spotify: {"track": "66mB55sZuDHlXt3vAcVkXf", "album": "5tR0alqUd1KMW37vPnsOC4", "artists": ["5KEG7G8LDYlHgFDqZyEEs2"]}
-keys: {"fold": "chrisrea|drivinghomeforchristmas2009"}
+keys: {"fold": "chrisrea|drivinghomeforchristmas"}
 status: "missing"
 liked: false
 playlists:

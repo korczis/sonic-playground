@@ -47,8 +47,9 @@ npm run derive && bash scripts/verify.sh
 ```
 
 Many songs at once: `python3 scripts/backlog.py` lists what the owner's playlists hold and the
-journal does not; `--batches N` splits it for N `song-writer` agents (`.claude/agents/`), each
-running the same skill.
+journal does not; `--source spotify` ranks the owner's Spotify picks without a review (top
+tracks, liked songs, own playlists); `--limit N` takes one wave and `--batches N` splits it for N
+`song-writer` agents (`.claude/agents/`), each running the same skill.
 
 ## Every review teaches
 

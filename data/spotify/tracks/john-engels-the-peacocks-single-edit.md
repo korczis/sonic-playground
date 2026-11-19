@@ -6,7 +6,7 @@ artists: ["John Engels", "Benjamin Herman", "Joris Teepe"]
 album: "The Peacocks"
 duration: "3:09"
 spotify: {"track": "6axejDXkOwDHgp7HMwWNXb", "album": "22WyPgbJNJCoWQLfnPAEgd", "artists": ["1TM3URtJJzkpQkF4Oxn0ce", "1dZtTzcPTFBsbmqNohoKUR", "6O2Rqtez6yYTnUjW7804Nz"]}
-keys: {"fold": "johnengels|thepeacockssingle"}
+keys: {"fold": "johnengels|thepeacockssingleedit"}
 status: "missing"
 liked: false
 playlists:

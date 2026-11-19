@@ -6,7 +6,7 @@ artists: ["Solee"]
 album: "What Remains Are the Memories"
 duration: "7:32"
 spotify: {"track": "2Fk848uLAOfeI0lm1JIMzs", "album": "5sOqcpHjxPNLspKUS8czou", "artists": ["0r0m8up7CjS8TJodH2HX7C"]}
-keys: {"fold": "solee|historyclub"}
+keys: {"fold": "solee|historyclubedit"}
 status: "missing"
 liked: false
 playlists:

@@ -6,8 +6,9 @@ artists: ["La Roux", "GAMPER & DADONI"]
 album: "Bulletproof"
 duration: "2:42"
 spotify: {"track": "0SyxZC4wlqAwf20cHE6Xon", "album": "5TSSlGJmfkBNC4M3uoMswL", "artists": ["3K2zB87GZv1krx031en5VA", "6HQ6vf4AloXyVNdyJhrX1J"]}
-keys: {"fold": "laroux|bulletproof"}
-status: "missing"
+keys: {"fold": "laroux|bulletproof", "isrc": "GBUM70903779", "musicbrainz": "bf3e215f-40b3-495c-b782-42bf65e5e254"}
+review: "la-roux-bulletproof.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Bulletproof*, 2:42.
 A liked song.
-No review yet.
+Reviewed: content/la-roux-bulletproof.md.

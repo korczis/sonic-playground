@@ -92,7 +92,10 @@ link. Not for bulk imports (run the engine in a loop and review each article).
 
 `python3 scripts/backlog.py` lists the songs of `data/backlog/*.toml` (the owner's playlists,
 transcribed) that have no review: a song, not a recording (version suffixes and featured
-artists folded, remixes kept), each once. `--batches N` splits it; each batch goes to one
+artists folded, remixes kept), each once. `--source spotify` lists the songs of the owner's
+Spotify history (ADR 0007) the owner chose (current top tracks, liked songs, own playlists),
+strongest choice first, without interludes and continuous mixes; `--limit N` takes the head of
+the list for one wave. `--batches N` splits it; each batch goes to one
 `song-writer` agent (`.claude/agents/song-writer.md`) running this procedure in one shared
 worktree, creating only its own files. The integrator then runs `npm run derive` and the gate
 once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 agents):
@@ -103,6 +106,9 @@ once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 a
   Prefer the artist's channel, VEVO, the label, then "- Topic"; a third-party channel only when
   its upload is the official video, and say so in the report.
 - No official upload at all: create the page from the name; it shows the derived artwork.
+- A batch row's `why` (top rank, liked, playlists) orders the wave and never enters the prose:
+  "here because it is among the owner's most played tracks this month" is stale within weeks
+  and says nothing about the music (wave 12, 2026-11-19: eleven pages had it removed).
 - A row that is not a song (an interview, a skit) or whose artist is unclear is skipped and
   reported for the owner, never guessed.
 

@@ -6,8 +6,9 @@ artists: ["Basement Jaxx"]
 album: "The Singles"
 duration: "3:31"
 spotify: {"track": "0UyQ9TuZ1lG6eJi4eRKDfO", "album": "7cQ3HqZc1Rz1H6Wcm0IhW4", "artists": ["4YrKBkKSVeqDamzBPWVnSJ"]}
-keys: {"fold": "basementjaxx|goodluck"}
-status: "missing"
+keys: {"fold": "basementjaxx|goodluck", "isrc": "GBBKS0300096", "musicbrainz": "90fa0d63-fcbb-4447-bf3d-5aa16ecd9a8b"}
+review: "basement-jaxx-good-luck.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Singles*, 3:31.
 A liked song.
-No review yet.
+Reviewed: content/basement-jaxx-good-luck.md.

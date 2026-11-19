@@ -6,7 +6,7 @@ artists: ["CHIC"]
 album: "C'est Chic (2018 Remaster)"
 duration: "6:53"
 spotify: {"track": "7ooheiWgbyNtGOBTPbjNoq", "album": "4a1EmaXGBiQ61Y4m6SNcYi", "artists": ["0Xf8oDAJYd2D0k3NLI19OV"]}
-keys: {"fold": "chic|iwantyourlove2018"}
+keys: {"fold": "chic|iwantyourlove"}
 status: "missing"
 liked: false
 playlists:

@@ -6,7 +6,7 @@ artists: ["Kollektiv Ost"]
 album: "The Ultimate Warlord (Edit)"
 duration: "6:20"
 spotify: {"track": "0jgdgNdZ6g4xvh7ELR3JFs", "album": "0xKeJPqQNK92VEzlAEFCHs", "artists": ["3G5wjUV0bhx9pIIUrGUabR"]}
-keys: {"fold": "kollektivost|theultimatewarlord"}
+keys: {"fold": "kollektivost|theultimatewarlordedit"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

@@ -1,0 +1,11 @@
+term = "concept album"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Concept_album"
+see_also = ["interlude", "stage persona"]
+
+[en]
+definition = "An album whose songs are tied together by one idea, story or world rather than collected as separate tracks. The order matters, songs refer to each other, and the last track often answers the first."
+
+[cs]
+term = "koncepční album"
+definition = "Album, jehož písně spojuje jedna myšlenka, příběh nebo svět, a ne jen sbírka samostatných skladeb. Záleží na pořadí, písně na sebe odkazují a poslední skladba často odpovídá té první."

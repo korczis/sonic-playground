@@ -6,7 +6,7 @@ artists: ["Noir", "Haze", "Solomun"]
 album: "DJ-Kicks (Moodymann) [DJ Mix]"
 duration: "3:20"
 spotify: {"track": "3D4ye4jul39kOoubzM0wVW", "album": "4Ys4Dxj8SKCEJEmYmmvfOE", "artists": ["2rHW9XpYMGsHj7BmAOSmr9", "3KtSWjt8eZtwHjUYPB5OSb", "5wJK4kQAkVGjqM9x46KQOC"]}
-keys: {"fold": "noir|aroundsolomunvoxmoodymanneditmixed", "isrc": "DEG931691542", "musicbrainz": "f658304c-921b-46c3-a501-f45f8b97d740"}
+keys: {"fold": "noir|aroundsolomunvoxmoodymannedit", "isrc": "DEG931691542", "musicbrainz": "f658304c-921b-46c3-a501-f45f8b97d740"}
 review: "noir-haze-solomun-around-solomun-vox-moodymann-edit-mixed.md"
 status: "present"
 liked: true

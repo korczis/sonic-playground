@@ -6,8 +6,9 @@ artists: ["Headman", "Luca Santucci"]
 album: "ON (Deluxe Edition)"
 duration: "5:20"
 spotify: {"track": "7MQISmF9JZI49VOodLfTi7", "album": "4sFnLmjJg6p8kVKy4ENRle", "artists": ["4N27gbr3lsECGMfz8RVv64", "0EEJrs1V9J59T6VGTPqqWI"]}
-keys: {"fold": "headman|moistureheadmanclubversionbonustrack"}
-status: "missing"
+keys: {"fold": "headman|moistureheadmanclubversion", "musicbrainz": "ddbc68c0-29d2-4cf3-8d72-844cd399994a"}
+review: "moisture-lucca-santucci-headman-club-version.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *ON (Deluxe Edition)*, 5:20.
 A liked song.
-No review yet.
+Reviewed: content/moisture-lucca-santucci-headman-club-version.md.

@@ -6,7 +6,7 @@ artists: ["Kosheen"]
 album: "Resist (2021 Remaster)"
 duration: "3:23"
 spotify: {"track": "1fiAUsp78LbIuQHhIqZ3ZF", "album": "49SANqFzC6Z64X4ZgdYqzt", "artists": ["5squ8uM6fhMQY71t9xobJC"]}
-keys: {"fold": "kosheen|catch2021"}
+keys: {"fold": "kosheen|catch"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

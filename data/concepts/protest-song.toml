@@ -1,0 +1,11 @@
+term = "protest song"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Protest_song"
+see_also = ["music video", "spoken word"]
+
+[en]
+definition = "A song that takes a stand against something in public life: a war, an injustice, a government. Protest songs run from folk and spirituals to soul, punk and hip-hop, and the strongest often hide a hard message inside a melody people want to sing."
+
+[cs]
+term = "protestní píseň"
+definition = "Píseň, která se staví proti něčemu ve veřejném životě: proti válce, nespravedlnosti nebo vládě. Protestní písně sahají od folku a spirituálů po soul, punk a hip-hop a ty nejsilnější často schovávají tvrdé poselství do melodie, kterou si lidé chtějí zpívat."

@@ -6,7 +6,7 @@ artists: ["Van Halen"]
 album: "1984 (Remastered)"
 duration: "4:01"
 spotify: {"track": "7N3PAbqfTjSEU1edb2tY8j", "album": "3REUXdj5OPKhuDTrTtCBU0", "artists": ["2cnMpRsOVqtPMfq7YiFE6K"]}
-keys: {"fold": "vanhalen|jump2015"}
+keys: {"fold": "vanhalen|jump"}
 status: "missing"
 liked: false
 playlists:

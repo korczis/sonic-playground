@@ -6,7 +6,7 @@ artists: ["Bobby \"Blue\" Bland"]
 album: "Dreamer"
 duration: "3:53"
 spotify: {"track": "4qYHnP5AmKzXbJhciPV8si", "album": "5OkHt7JZ6HSkJH359y2H31", "artists": ["48nwxUvPJZkm8uPa7xMzmj"]}
-keys: {"fold": "bobbybluebland|aintnoloveintheheartofthecitysingleversion"}
+keys: {"fold": "bobbybluebland|aintnoloveintheheartofthecity"}
 status: "missing"
 liked: false
 playlists:

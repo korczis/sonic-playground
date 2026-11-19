@@ -248,10 +248,12 @@ def headings(body: str) -> list[tuple[int, str]]:
 BACKLOG = ROOT / "data" / "backlog"
 BACKLOG_SCHEMA = json.loads((ROOT / "data" / "backlog.schema.json").read_text(encoding="utf-8"))
 # Version suffixes that do not make another song; a remix, a mix of another artist, a live take of
-# a different arrangement stays a song of its own.
-VERSION = re.compile(
-    r"\s*(?:-\s*)?(?:\(|\[)?\b(?:remaster(?:ed)?(?: version)?(?: \d{4})?|radio edit|radio version|"
-    r"radio mix|original mix|extended version|album version|edit)\b(?:\)|\])?\s*$", re.I)
+# a different arrangement stays a song of its own. The phrase is the whole of a bracket or follows
+# " - ": "[Moodymann Edit]" is another artist's edit, "- Edit" and "(Edit)" are versions.
+_VERSION = (r"(?:(?:\d{4} )?(?:digital )?remaster(?:ed)?(?: version)?(?: \d{4})?|radio edit|"
+            r"radio version|radio mix|original mix|extended (?:version|mix)|album version|"
+            r"single version|bonus track|mixed|edit)")
+VERSION = re.compile(rf"\s*(?:-\s*{_VERSION}|\(\s*{_VERSION}\s*\)|\[\s*{_VERSION}\s*\])\s*$", re.I)
 FEAT = re.compile(r"\s*[\(\[]?\s*\b(?:feat\.?|featuring|ft\.)\s+[^\)\]]*[\)\]]?", re.I)
 
 
@@ -283,7 +285,14 @@ def identity_index(tracks: list) -> dict:
         if "," not in artist:
             by_key[(fold(artist.split(" feat")[0]), fold(song(track)))].add(source)
         by_key[(fold(artist), fold(song(track)))].add(source)
+        by_key[(credit(artist.split(", ")), fold(song(track)))].add(source)
     return {"isrc": by_isrc, "key": by_key}
+
+
+def credit(artists: list[str]) -> str:
+    """A credit of several artists in any order: "Alok, Zeeba, Bruno Martini" is the credit
+    "Alok, Bruno Martini, Zeeba"."""
+    return "&".join(sorted(fold(a) for a in artists))
 
 
 def resolve_item(item: dict, index: dict) -> dict:
@@ -301,7 +310,8 @@ def resolve_item(item: dict, index: dict) -> dict:
         return {"status": "present", "source": next(iter(index["isrc"][item["isrc"]])), "by": "isrc"}
     found: set = set()
     for key in ((fold(item["artists"][0]), fold(song(item["title"]))),
-                (fold(", ".join(item["artists"])), fold(song(item["title"])))):
+                (fold(", ".join(item["artists"])), fold(song(item["title"]))),
+                (credit(item["artists"]), fold(song(item["title"])))):
         found |= index["key"].get(key, set())
     if len(found) == 1:
         return {"status": "present", "source": next(iter(found)), "by": "artist and song"}

@@ -6,7 +6,7 @@ artists: ["Midnight Oil"]
 album: "Essential Oils"
 duration: "5:11"
 spotify: {"track": "15WcMKwcAj1fZOytj6vuva", "album": "6uNRClJFgtpoSaAS6jUeeV", "artists": ["72KyoXzp0NOQij6OcmZUxk"]}
-keys: {"fold": "midnightoil|thedeadheart2007"}
+keys: {"fold": "midnightoil|thedeadheart"}
 status: "missing"
 liked: false
 playlists:

@@ -1,0 +1,11 @@
+term = "kick drum"
+category = "rhythm"
+wikipedia = "https://en.wikipedia.org/wiki/Bass_drum"
+see_also = ["four-on-the-floor", "drum machine", "roland tr-808"]
+
+[en]
+definition = "The lowest drum of a kit, struck with a foot pedal, or its programmed counterpart in a drum machine. In electronic dance music the kick marks the beat and carries much of a track's weight: how long, deep and hard it sounds can matter as much as any melody."
+
+[cs]
+term = "kopák"
+definition = "Basový buben, nejhlubší buben bicí soupravy, na který se hraje nožním pedálem, nebo jeho naprogramovaný protějšek v bicím automatu. V elektronické taneční hudbě vyznačuje dobu a nese velkou část váhy skladby: jak dlouze, hluboce a tvrdě zní, může znamenat stejně mnoho jako kterákoli melodie."

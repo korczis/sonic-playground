@@ -6,7 +6,7 @@ artists: ["Pet Shop Boys"]
 album: "Ultimate"
 duration: "5:00"
 spotify: {"track": "2c9IfN9RKljRGNY0Nmrqjw", "album": "0BAfuhzkGjckMhsL2gVbzR", "artists": ["2ycnb8Er79LoH2AsR5ldjh"]}
-keys: {"fold": "petshopboys|itsasin2001"}
+keys: {"fold": "petshopboys|itsasin"}
 status: "missing"
 liked: false
 playlists:

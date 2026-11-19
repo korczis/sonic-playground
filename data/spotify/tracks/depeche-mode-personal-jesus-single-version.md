@@ -6,7 +6,7 @@ artists: ["Depeche Mode"]
 album: "The Singles 86-98"
 duration: "3:46"
 spotify: {"track": "3iIzhkT9iUP0tCVEhqMlXL", "album": "61h3VS8XDROIpvQznjTPTT", "artists": ["762310PdDnwsDxAQxzQkfX"]}
-keys: {"fold": "depechemode|personaljesussingleversion"}
+keys: {"fold": "depechemode|personaljesus"}
 status: "missing"
 liked: false
 playlists:

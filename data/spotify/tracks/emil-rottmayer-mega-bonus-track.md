@@ -6,7 +6,7 @@ artists: ["Emil Rottmayer"]
 album: "Descend"
 duration: "6:11"
 spotify: {"track": "4GaRLUzF5K7q5DHYx7yvD8", "album": "7J9QkaeZsFbYJx4DBFvzYc", "artists": ["2UuvaSzB0VNumArR71ReMT"]}
-keys: {"fold": "emilrottmayer|megabonustrack"}
+keys: {"fold": "emilrottmayer|mega"}
 status: "missing"
 liked: false
 playlists:

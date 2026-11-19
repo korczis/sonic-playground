@@ -6,7 +6,7 @@ artists: ["Trisha Yearwood"]
 album: "Prizefighter: Hit After Hit"
 duration: "4:08"
 spotify: {"track": "2ulBBx6YQ3qY3ci34RadtN", "album": "3uv9CneS6dRiW20j3chkMM", "artists": ["3XlIhgydjvC4EniPFZT20j"]}
-keys: {"fold": "trishayearwood|shesinlovewiththeboysingleversion"}
+keys: {"fold": "trishayearwood|shesinlovewiththeboy"}
 status: "missing"
 liked: false
 playlists:
