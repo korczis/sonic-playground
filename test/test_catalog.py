@@ -197,6 +197,27 @@ class Contract(unittest.TestCase):
         self.assertTrue(any("a paragraph is copied" in p for p in problems))
         self.assertEqual(catalog.uniqueness([a]), [])
 
+    def test_a_version_is_the_same_song_a_remix_is_not(self):
+        same = {"Sugar (feat. Francesco Yates) - Extended Mix": "Sugar",
+                "Time - 2011 Remastered Version": "Time", "Battery - Remastered": "Battery",
+                "Song (2009 Digital Remaster)": "Song", "Makeba - Radio Edit": "Makeba",
+                "Hello - Single Version": "Hello",
+                "Eastern City Lights (Bonus Track)": "Eastern City Lights",
+                "Crazy (Noze Remix) - Mixed": "Crazy (Noze Remix)"}
+        for title, expected in same.items():
+            self.assertEqual(catalog.song(title), expected, title)
+        self.assertEqual(catalog.song("Around (Solomun Vox) [Moodymann Edit] - Mixed"),
+                         "Around (Solomun Vox) [Moodymann Edit]")
+        for title in ("Kids with Guns - Hot Chip Remix", "Odessa (Junior Boys Mix)",
+                      "Around - Moodymann Edit"):
+            self.assertEqual(catalog.song(title), title)
+
+    def test_a_credit_matches_in_any_order(self):
+        index = catalog.identity_index([{"source": "alok-hear-me-now.md", "track": "Hear Me Now",
+                                         "artist": "Alok, Zeeba, Bruno Martini"}])
+        item = {"title": "Hear Me Now", "artists": ["Alok", "Bruno Martini", "Zeeba"]}
+        self.assertEqual(catalog.resolve_item(item, index)["source"], "alok-hear-me-now.md")
+
     def test_artist_override(self):
         track, errors = self.load(title="Lulu's Theme", extra='artist = "Lulu Rouge"\n', name="x.md")
         self.assertEqual(errors, [])

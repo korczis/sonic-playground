@@ -6,7 +6,7 @@ artists: ["Tontario"]
 album: "Solitude EP"
 duration: "7:46"
 spotify: {"track": "75vKkm3kSSBDpXtgsrTpfF", "album": "27UQ1hKgEmSxF9FroPEH57", "artists": ["3xsaixRLT6xSUDjtLehSyj"]}
-keys: {"fold": "tontario|passingextendedmix"}
+keys: {"fold": "tontario|passing"}
 status: "missing"
 liked: false
 playlists:

@@ -6,7 +6,7 @@ artists: ["Evelyn \"Champagne\" King"]
 album: "The Best Of Evelyn \"Champagne\" King"
 duration: "3:40"
 spotify: {"track": "2RCOWNCxDIphjhqTtkwtwR", "album": "6W7na0F9qczswPzdb42rZO", "artists": ["4JCt4xrbbBB9blkKwNlcJ7"]}
-keys: {"fold": "evelynchampagneking|lovecomedownsingleversion"}
+keys: {"fold": "evelynchampagneking|lovecomedown"}
 status: "missing"
 liked: false
 playlists:

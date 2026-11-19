@@ -6,7 +6,7 @@ artists: ["Marco V"]
 album: "Chester"
 duration: "5:26"
 spotify: {"track": "5ku6rzHFgd9iOKN5yEb606", "album": "1HnDZeu8XMi5B3FUFTzstN", "artists": ["24xpaWFyBOwoB8lBBolWzv"]}
-keys: {"fold": "marcov|chesterextendedmix"}
+keys: {"fold": "marcov|chester"}
 status: "missing"
 liked: false
 playlists:

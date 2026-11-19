@@ -7,8 +7,9 @@ album: "Chcíply dobrý víly"
 duration: "2:48"
 explicit: true
 spotify: {"track": "0t1sq9sEIhfeoK9AvT0zMX", "album": "054tNAG4r4Gv9KkhCjBTSG", "artists": ["3o13BpwuBBj106YoNIoUrW"]}
-keys: {"fold": "daniellanda|motylek"}
-status: "missing"
+keys: {"fold": "daniellanda|motylek", "musicbrainz": "fda87bb3-3dc6-4246-9ad0-6e223847645e"}
+review: "daniel-landa-motylek.md"
+status: "present"
 liked: true
 top:
   - {"range": "month", "rank": 38, "read": "2026-11-14"}
@@ -20,4 +21,4 @@ sources: ["web-player:2026-11-14"]
 From the album *Chcíply dobrý víly*, 2:48.
 A liked song.
 Top tracks of the month (read 2026-11-14): #38.
-No review yet.
+Reviewed: content/daniel-landa-motylek.md.

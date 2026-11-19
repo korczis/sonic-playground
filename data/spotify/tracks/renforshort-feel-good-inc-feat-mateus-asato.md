@@ -7,8 +7,9 @@ album: "feel good inc. (feat. Mateus Asato)"
 duration: "3:19"
 explicit: true
 spotify: {"track": "2GzlTbrFF2V6MwRDfBnYhf", "album": "6l38zfFKDZrmrU2jXqW3GQ", "artists": ["3GYvf7puxwkr51EYoD9E7D", "4en3qu5SDsPtBcTkXasukc"]}
-keys: {"fold": "renforshort|feelgoodinc"}
-status: "missing"
+keys: {"fold": "renforshort|feelgoodinc", "isrc": "USUM72023000", "musicbrainz": "5aa43f16-6001-45f9-93d7-7fe768d3ec9c"}
+review: "renforshort-feel-good-inc.md"
+status: "present"
 liked: true
 playlists:
   - {"playlist": "rachel-k-collier-mix", "n": 5}
@@ -23,4 +24,4 @@ From the album *feel good inc. (feat. Mateus Asato)*, 3:19.
 A liked song.
 Top tracks of the month (read 2026-11-14): #14.
 In Rachel K Collier Mix (#5).
-No review yet.
+Reviewed: content/renforshort-feel-good-inc.md.

@@ -106,6 +106,9 @@ once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 a
   Prefer the artist's channel, VEVO, the label, then "- Topic"; a third-party channel only when
   its upload is the official video, and say so in the report.
 - No official upload at all: create the page from the name; it shows the derived artwork.
+- A batch row's `why` (top rank, liked, playlists) orders the wave and never enters the prose:
+  "here because it is among the owner's most played tracks this month" is stale within weeks
+  and says nothing about the music (wave 12, 2026-11-19: eleven pages had it removed).
 - A row that is not a song (an interview, a skit) or whose artist is unclear is skipped and
   reported for the owner, never guessed.
 

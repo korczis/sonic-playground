@@ -6,7 +6,7 @@ artists: ["El Último De La Fila"]
 album: "Astronomía Razonable"
 duration: "3:38"
 spotify: {"track": "0NyrO5UIOAb6u3Ys0ob8Oz", "album": "1IxY9bcAPSu0ENtX3oLRlS", "artists": ["2jMYTBTCSNYaCYy54mLc6I"]}
-keys: {"fold": "elultimodelafila|comounburroamarradoenlapuertadelbaile2008"}
+keys: {"fold": "elultimodelafila|comounburroamarradoenlapuertadelbaile"}
 status: "missing"
 liked: false
 playlists:

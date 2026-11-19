@@ -6,7 +6,7 @@ artists: ["The Monkees"]
 album: "More of The Monkees (Deluxe Edition)"
 duration: "2:47"
 spotify: {"track": "3G7tRC24Uh09Hmp1KZ7LQ2", "album": "50zHjIiTOZM232gnWvOydX", "artists": ["320EPCSEezHt1rtbfwH6Ck"]}
-keys: {"fold": "themonkees|imabeliever2006"}
+keys: {"fold": "themonkees|imabeliever"}
 status: "missing"
 liked: false
 playlists:

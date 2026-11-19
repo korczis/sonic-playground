@@ -6,8 +6,9 @@ artists: ["Belleruche"]
 album: "270 Stories"
 duration: "4:33"
 spotify: {"track": "37V5dI8CtGk4O9IwF8VwEM", "album": "3RcPifoLGQLHKLgoQIQmvc", "artists": ["4N9nNkpjGuBlGWnYubQI8t"]}
-keys: {"fold": "belleruche|clockwatching"}
-status: "missing"
+keys: {"fold": "belleruche|clockwatching", "isrc": "FR6F31394370", "musicbrainz": "2e89c91a-afa9-4a91-8c08-5e44a6f85c7d"}
+review: "belleruche-clockwatching.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *270 Stories*, 4:33.
 A liked song.
-No review yet.
+Reviewed: content/belleruche-clockwatching.md.

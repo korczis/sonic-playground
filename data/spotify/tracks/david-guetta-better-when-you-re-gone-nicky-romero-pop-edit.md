@@ -6,7 +6,7 @@ artists: ["David Guetta", "Brooks", "Loote", "Nicky Romero"]
 album: "Better When You're Gone (Nicky Romero Pop Edit)"
 duration: "3:03"
 spotify: {"track": "5qaPTVfyLoX9cqd0aLQwBB", "album": "3McCXxskilWRHgKJriQVhD", "artists": ["1Cs0zKBU1kc0i8ypK3B9ai", "4mHAu7NX2UNsnGXjviBD9e", "00TKPo9MxwZ0j4ooveIxWZ", "5ChF3i92IPZHduM7jN3dpg"]}
-keys: {"fold": "davidguetta|betterwhenyouregonenickyromeropop"}
+keys: {"fold": "davidguetta|betterwhenyouregonenickyromeropopedit"}
 status: "missing"
 liked: false
 playlists:

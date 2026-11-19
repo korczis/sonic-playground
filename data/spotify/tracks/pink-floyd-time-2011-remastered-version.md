@@ -6,7 +6,7 @@ artists: ["Pink Floyd"]
 album: "The Dark Side of the Moon"
 duration: "6:53"
 spotify: {"track": "23W5DHu31ZLW9q0p2wQxfN", "album": "4LH4d3cOWNNsVw41Gqt2kv", "artists": ["0k17h0D3J5VfsdmQ1iZtE9"]}
-keys: {"fold": "pinkfloyd|time2011"}
+keys: {"fold": "pinkfloyd|time"}
 status: "missing"
 liked: false
 playlists:

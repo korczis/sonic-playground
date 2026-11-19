@@ -6,7 +6,7 @@ artists: ["Jill Scott"]
 album: "Who Is Jill Scott?: Words and Sounds, Vol. 1 (2020 Remastered)"
 duration: "5:54"
 spotify: {"track": "6ViADpw0xrJxEXA64PROAb", "album": "6VVXWjCLIOSAN5Z0xYGuSa", "artists": ["6AVLthptCPhfrxlHadOBJD"]}
-keys: {"fold": "jillscott|itslove2020"}
+keys: {"fold": "jillscott|itslove"}
 status: "missing"
 liked: false
 playlists:

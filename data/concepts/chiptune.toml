@@ -1,0 +1,11 @@
+term = "chiptune"
+category = "timbre"
+wikipedia = "https://en.wikipedia.org/wiki/Chiptune"
+see_also = ["synthesizer", "lo-fi"]
+
+[en]
+definition = "Music made with, or imitating, the sound chips of old game consoles and home computers such as the Game Boy and the NES: thin square-wave melodies, buzzing bass and bleeping noise, the sound of 8-bit video games turned into an instrument."
+
+[cs]
+term = "chiptune"
+definition = "Hudba vytvořená zvukovými čipy starých herních konzolí a domácích počítačů, jako jsou Game Boy a NES, nebo hudba, která je napodobuje: tenké melodie z pravoúhlých vln, bzučivá basa a pípavý šum, zvuk osmibitových videoher proměněný v nástroj."

@@ -36,4 +36,4 @@ tracks:
 
 # Sonic Playground
 
-A playlist of the owner's: 25 of 25 items read on 2026-11-14, 23 of them reviewed on the site.
+A playlist of the owner's: 25 of 25 items read on 2026-11-14, 24 of them reviewed on the site.

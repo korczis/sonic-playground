@@ -6,7 +6,7 @@ artists: ["Moloko", "The All Seeing I"]
 album: "All Back to the Mine"
 duration: "4:29"
 spotify: {"track": "22tymVMhOYGAnHGqaGSbIM", "album": "5nRHZFtRPSrKni8vVkLNlO", "artists": ["4aaBjq7VqqQvpSF69GglvO", "0A0yu52zNGKe2rtr9wHfkD"]}
-keys: {"fold": "moloko|indigoallseeingiglamoloko"}
+keys: {"fold": "moloko|indigoallseeingiglamolokoedit"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

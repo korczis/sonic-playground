@@ -6,7 +6,7 @@ artists: ["Yazoo"]
 album: "Essential: Eighties"
 duration: "2:56"
 spotify: {"track": "2pNrFj3AYoCU1uQTvJmtw3", "album": "0YPugIAB3jrt4uPAm0FKMl", "artists": ["1G1mX30GpUJqOr1QU2eBSs"]}
-keys: {"fold": "yazoo|dontgo2008"}
+keys: {"fold": "yazoo|dontgo"}
 status: "missing"
 liked: false
 playlists:

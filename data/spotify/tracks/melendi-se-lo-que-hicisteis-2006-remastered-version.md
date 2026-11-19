@@ -6,7 +6,7 @@ artists: ["Melendi"]
 album: "Sin Noticias De Holanda"
 duration: "3:48"
 spotify: {"track": "15BdyloOmohWRWcnO4QILo", "album": "3iQWCOqfiOEh5bXqbGD9oB", "artists": ["1EXjXQpDx2pROygh8zvHs4"]}
-keys: {"fold": "melendi|seloquehicisteis2006"}
+keys: {"fold": "melendi|seloquehicisteis"}
 status: "missing"
 liked: false
 playlists:

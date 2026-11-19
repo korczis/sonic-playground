@@ -6,7 +6,7 @@ artists: ["Kool & The Gang"]
 album: "The Very Best Of Kool & The Gang"
 duration: "3:32"
 spotify: {"track": "1OsCKwNZxph96EkNusILRy", "album": "1rDjSDjjzVfpnsb3GgREFf", "artists": ["3VNITwohbvU5Wuy5PC6dsI"]}
-keys: {"fold": "koolthegang|getdownonitsingleversion"}
+keys: {"fold": "koolthegang|getdownonit"}
 status: "missing"
 liked: false
 playlists:

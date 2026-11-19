@@ -6,7 +6,7 @@ artists: ["The Notorious B.I.G."]
 album: "Life After Death (25th Anniversary Super Deluxe Edition)"
 duration: "4:33"
 spotify: {"track": "2aNE22PeaRWCw0ctPbOtpE", "album": "6gW08XWRBd2Wnszyo5ZI6l", "artists": ["5me0Irg2ANcsgc93uaYrpb"]}
-keys: {"fold": "thenotoriousbig|skysthelimitinstrumental2014"}
+keys: {"fold": "thenotoriousbig|skysthelimitinstrumental"}
 status: "missing"
 liked: false
 playlists:

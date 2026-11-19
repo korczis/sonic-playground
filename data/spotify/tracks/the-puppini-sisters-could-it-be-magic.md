@@ -6,8 +6,9 @@ artists: ["The Puppini Sisters"]
 album: "The Rise And Fall Of Ruby Woo"
 duration: "3:33"
 spotify: {"track": "2eyo7YlQZLxRQG76LbdtU9", "album": "6jfP2zf5d6xlyb0ZfusmEs", "artists": ["1svaANJTE5KrG16fTGDqOs"]}
-keys: {"fold": "thepuppinisisters|coulditbemagic"}
-status: "missing"
+keys: {"fold": "thepuppinisisters|coulditbemagic", "isrc": "GBUM70705981", "musicbrainz": "9a3bdfa5-2806-4a09-a208-7ca2c6962c94"}
+review: "the-puppini-sisters-could-it-be-magic.md"
+status: "present"
 liked: true
 top:
   - {"range": "month", "rank": 33, "read": "2026-11-14"}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14"]
 From the album *The Rise And Fall Of Ruby Woo*, 3:33.
 A liked song.
 Top tracks of the month (read 2026-11-14): #33.
-No review yet.
+Reviewed: content/the-puppini-sisters-could-it-be-magic.md.

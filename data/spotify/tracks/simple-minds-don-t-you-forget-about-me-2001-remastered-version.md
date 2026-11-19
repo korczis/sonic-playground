@@ -6,7 +6,7 @@ artists: ["Simple Minds"]
 album: "Once Upon A Time"
 duration: "4:20"
 spotify: {"track": "7jtGa7FmUx7YxTbiy6tEsX", "album": "4u3BD1dgoKM7dhuNteRaSM", "artists": ["6hN9F0iuULZYWXppob22Aj"]}
-keys: {"fold": "simpleminds|dontyouforgetaboutme2001"}
+keys: {"fold": "simpleminds|dontyouforgetaboutme"}
 status: "missing"
 liked: false
 playlists:

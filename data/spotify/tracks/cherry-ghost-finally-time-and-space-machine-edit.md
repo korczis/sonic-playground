@@ -6,7 +6,7 @@ artists: ["Cherry Ghost"]
 album: "We Sleep on Stones"
 duration: "6:42"
 spotify: {"track": "4lyXsg6ZRuF9aBAokpiUM9", "album": "4vtsRlTCHkZBrKeSiEelmj", "artists": ["2f7VJ37O9YUj6kpMKph9YC"]}
-keys: {"fold": "cherryghost|finallytimeandspacemachine"}
+keys: {"fold": "cherryghost|finallytimeandspacemachineedit"}
 status: "missing"
 liked: false
 playlists:

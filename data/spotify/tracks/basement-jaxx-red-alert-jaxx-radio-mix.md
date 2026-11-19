@@ -6,7 +6,7 @@ artists: ["Basement Jaxx", "Blu James"]
 album: "Red Alert"
 duration: "3:38"
 spotify: {"track": "0Z3Y5cWOPaXIBI08KKDVTO", "album": "60O0wPhfgkZGGKTJho6bHS", "artists": ["4YrKBkKSVeqDamzBPWVnSJ", "7al6k3rnK5Nx516gKPl6Gw"]}
-keys: {"fold": "basementjaxx|redalertjaxx"}
+keys: {"fold": "basementjaxx|redalertjaxxradiomix"}
 status: "missing"
 liked: false
 playlists:

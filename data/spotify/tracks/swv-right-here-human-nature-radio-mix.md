@@ -6,7 +6,7 @@ artists: ["SWV"]
 album: "It's About Time"
 duration: "3:46"
 spotify: {"track": "7tUEDtHchueeUJTfEFEhii", "album": "2BBrAtWY0c6dPio5b2JYFK", "artists": ["2NmK5FyrQ18HOPXq1UBzqa"]}
-keys: {"fold": "swv|rightherehumannature"}
+keys: {"fold": "swv|rightherehumannatureradiomix"}
 status: "missing"
 liked: false
 playlists:

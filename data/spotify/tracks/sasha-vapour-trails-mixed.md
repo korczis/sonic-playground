@@ -6,7 +6,7 @@ artists: ["Sasha"]
 album: "Late Night Tales Presents Sasha: Scene Delete (DJ Mix)"
 duration: "3:08"
 spotify: {"track": "1DaLIQRi1sPZNf823oyjMN", "album": "72WDNVEo1JMT8iukXXv1Mj", "artists": ["6u4jLGLPuarS3i2XWHVxoS"]}
-keys: {"fold": "sasha|vapourtrailsmixed"}
+keys: {"fold": "sasha|vapourtrails"}
 status: "missing"
 liked: false
 playlists:

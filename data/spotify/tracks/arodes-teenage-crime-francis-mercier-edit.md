@@ -6,7 +6,7 @@ artists: ["Arodes", "Emvafaya", "Francis Mercier", "Darla Jade"]
 album: "Teenage Crime (Francis Mercier Edit)"
 duration: "3:24"
 spotify: {"track": "3purp0mi18IzqJHsVNteqU", "album": "3QQ5gY6mPuIiEEHYZzzcGG", "artists": ["4p2f8wUtltMAFuIJB4NR47", "2Qxoz7pk5wTD18PSPt3oiq", "44qAhQu52dYKcHOFQd3esf", "615ZycClQL8KQ8qzZiuP8T"]}
-keys: {"fold": "arodes|teenagecrimefrancismercier"}
+keys: {"fold": "arodes|teenagecrimefrancismercieredit"}
 status: "missing"
 liked: false
 playlists:

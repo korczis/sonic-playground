@@ -7,7 +7,8 @@ album: "Fame"
 duration: "3:30"
 spotify: {"track": "5qnsUIlVizeOkG87tompze", "album": "1fz44Um6FX68ZoNCx4GcMF", "artists": ["72gQuI1GHmsUXIfe863TC7"]}
 keys: {"fold": "pilockakrach|mynameisfame"}
-status: "missing"
+review: "pilocka-krach-my-name-is-fame.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Fame*, 3:30.
 A liked song.
-No review yet.
+Reviewed: content/pilocka-krach-my-name-is-fame.md.

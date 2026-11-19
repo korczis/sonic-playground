@@ -6,7 +6,7 @@ artists: ["Talking Heads"]
 album: "Speaking in Tongues (Deluxe Version)"
 duration: "4:56"
 spotify: {"track": "6aBUnkXuCEQQHAlTokv9or", "album": "4sLCQxMRfn3gAHrBNZtbTH", "artists": ["2x9SpqnPi8rlE9pjHBwmSC"]}
-keys: {"fold": "talkingheads|thismustbetheplacenaivemelody2005"}
+keys: {"fold": "talkingheads|thismustbetheplacenaivemelody"}
 status: "missing"
 liked: false
 playlists:

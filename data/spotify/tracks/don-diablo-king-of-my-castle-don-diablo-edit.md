@@ -6,7 +6,7 @@ artists: ["Don Diablo", "Keanu Silva"]
 album: "King Of My Castle (Don Diablo Edit)"
 duration: "2:53"
 spotify: {"track": "3OqotgIbr6T2z37np0Lekw", "album": "0gPsK5ociyyzUPy2cZO5BI", "artists": ["1l2ekx5skC4gJH8djERwh1", "1zLMhO4zzzxt5PMV4wMS3y"]}
-keys: {"fold": "dondiablo|kingofmycastledondiablo"}
+keys: {"fold": "dondiablo|kingofmycastledondiabloedit"}
 status: "missing"
 liked: false
 playlists:

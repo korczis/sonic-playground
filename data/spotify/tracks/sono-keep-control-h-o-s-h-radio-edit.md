@@ -6,7 +6,7 @@ artists: ["Sono"]
 album: "Keep Control"
 duration: "3:40"
 spotify: {"track": "56BHVarnApieoxoBhul4Cf", "album": "655tgczHzfEnxTNk93pWru", "artists": ["7vBGVjjUKLWS8zLNSYwVVC"]}
-keys: {"fold": "sono|keepcontrolhosh"}
+keys: {"fold": "sono|keepcontrolhoshradioedit"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

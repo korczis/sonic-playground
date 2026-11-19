@@ -6,7 +6,7 @@ artists: ["CHIC"]
 album: "The Chic Organization 1977-1979 (2018 Remaster)"
 duration: "8:06"
 spotify: {"track": "4N3stlRuz5cBNI4J4vDJ18", "album": "3Jhtxnrjbk5oxleA3oafAy", "artists": ["0Xf8oDAJYd2D0k3NLI19OV"]}
-keys: {"fold": "chic|goodtimes2018"}
+keys: {"fold": "chic|goodtimes"}
 status: "missing"
 liked: false
 playlists:

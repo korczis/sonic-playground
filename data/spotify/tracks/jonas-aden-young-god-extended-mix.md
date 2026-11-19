@@ -6,8 +6,9 @@ artists: ["Jonas Aden"]
 album: "Young God"
 duration: "3:56"
 spotify: {"track": "6MqyjgDc0JwgcmfRA1VNKI", "album": "6f0zntYhxUO7psHj5xuKU1", "artists": ["1qq5e02CcWNFqZMbmdrIcj"]}
-keys: {"fold": "jonasaden|younggodextendedmix"}
-status: "missing"
+keys: {"fold": "jonasaden|younggod", "isrc": "USLZJ1628732", "musicbrainz": "cd862a37-0997-4f98-912b-34296d6fbce6"}
+review: "jonas-aden-young-god.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Young God*, 3:56.
 A liked song.
-No review yet.
+Reviewed: content/jonas-aden-young-god.md.

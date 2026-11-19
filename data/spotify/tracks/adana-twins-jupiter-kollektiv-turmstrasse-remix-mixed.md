@@ -6,7 +6,7 @@ artists: ["Adana Twins", "Kollektiv Turmstrasse"]
 album: "Watergate 27 (Mixed Tracks)"
 duration: "3:08"
 spotify: {"track": "7bHJ643aEH88ShBViy0v3e", "album": "5pJIOqcaV4RURHcsZX2n1R", "artists": ["2JnkjHtuUjz83gkEx8QMS4", "1oXiuCd5F0DcnmXH5KaM6N"]}
-keys: {"fold": "adanatwins|jupiterkollektivturmstrasseremixmixed"}
+keys: {"fold": "adanatwins|jupiterkollektivturmstrasseremix"}
 status: "missing"
 liked: false
 playlists:

@@ -6,7 +6,7 @@ artists: ["Roxette"]
 album: "A Collection of Roxette Hits! Their 20 Greatest Songs!"
 duration: "4:01"
 spotify: {"track": "0RaEqkxeaUFwNhvcD9pAit", "album": "1nQK4dpultSS3YeHfYrgEW", "artists": ["2SHhfs4BiDxGQ3oxqf0UHY"]}
-keys: {"fold": "roxette|joyridesingleversion"}
+keys: {"fold": "roxette|joyride"}
 status: "missing"
 liked: false
 playlists:

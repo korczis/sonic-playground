@@ -6,7 +6,7 @@ artists: ["Queen"]
 album: "The Works (Deluxe Edition)"
 duration: "4:18"
 spotify: {"track": "3O9ubwAvJgybdwfoAEMMaS", "album": "3AAxdMZmzwyUyzoTO1iKiV", "artists": ["1dfeR4HaWDbWqFHLkxsg1d"]}
-keys: {"fold": "queen|iwanttobreakfreesingleversion"}
+keys: {"fold": "queen|iwanttobreakfree"}
 status: "missing"
 liked: false
 playlists:
