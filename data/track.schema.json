@@ -120,6 +120,12 @@
      "type": "string",
      "pattern": "^\\d{1,2}/\\d{1,2}$"
     },
+    "titles": {
+     "type": "array",
+     "items": {"type": "string", "minLength": 1},
+     "uniqueItems": true,
+     "description": "Other titles the recording is released under (a sourced abbreviation or a reissue's title); playlist items match them as they match the track."
+    },
     "isrc": {
      "type": "string",
      "pattern": "^[A-Z]{2}[A-Z0-9]{3}\\d{7}$",

@@ -11,6 +11,7 @@ instrument = ["vocals"]
 
 [extra]
 release_year = "1996"
+titles = ["One Night In NYC"]
 country = "US"
 publisher = "Things To Come Records"
 musicbrainz = { recording = "5fd0514c-f058-44e1-ab59-85d27ecd3547", artist = "82a9c1a0-c772-4941-8e41-c43a2b554017", release = "54e6cdda-9ff0-4c15-aecf-8cd977b0f630" }

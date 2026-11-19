@@ -109,6 +109,9 @@ once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 a
 - A batch row's `why` (top rank, liked, playlists) orders the wave and never enters the prose:
   "here because it is among the owner's most played tracks this month" is stale within weeks
   and says nothing about the music (wave 12, 2026-11-19: eleven pages had it removed).
+- A backlog song that already has a page under another credit or title: the lead artist and
+  song match it when only one page fits; a sourced other title ("One Night In NYC" for
+  "One Night In New York City") goes in `extra.titles`, never a second page.
 - A row that is not a song (an interview, a skit) or whose artist is unclear is skipped and
   reported for the owner, never guessed.
 

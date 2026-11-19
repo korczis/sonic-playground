@@ -466,6 +466,16 @@ def write_extra(file: Path, path: str, updates: dict, quiet: bool = False) -> in
 MB = "https://musicbrainz.org/ws/2/"
 MB_AGENT = "sonic-playground/1.0 (+https://github.com/korczis/sonic-playground)"
 MB_CACHE = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache")) / "sonic-playground" / "musicbrainz.json"
+
+
+def mb_cache() -> dict:
+    """The MusicBrainz cache; a missing or unreadable file is an empty cache, never an error."""
+    try:
+        return json.loads(MB_CACHE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
 _mb_last = [0.0]
 
 
@@ -475,7 +485,7 @@ def mb_get(url: str, args) -> dict:
     if getattr(args, "mb_fixture", None):
         data = json.loads(Path(args.mb_fixture).read_text(encoding="utf-8"))
         return data.get(url, {})
-    cache = json.loads(MB_CACHE.read_text(encoding="utf-8")) if MB_CACHE.exists() else {}
+    cache = mb_cache()
     if url in cache:
         return cache[url]
     wait = 1.1 - (time.monotonic() - _mb_last[0])
@@ -497,9 +507,11 @@ def mb_get(url: str, args) -> dict:
                 break
             raise
     _mb_last[0] = time.monotonic()
-    cache[url] = data
     MB_CACHE.parent.mkdir(parents=True, exist_ok=True)
-    MB_CACHE.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+    cache = {**mb_cache(), url: data}  # what writers running beside this one saved meanwhile
+    tmp = MB_CACHE.with_name(f"{MB_CACHE.name}.{os.getpid()}.tmp")
+    tmp.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+    os.replace(tmp, MB_CACHE)  # atomic: a reader never sees half a file
     return data
 
 

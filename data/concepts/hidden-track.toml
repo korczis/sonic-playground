@@ -1,0 +1,11 @@
+term = "hidden track"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Hidden_track"
+see_also = ["b-side", "interlude", "concept album"]
+
+[en]
+definition = "A recording placed on an album without its own listing, usually after the last listed song and a stretch of silence, or folded into the same CD track. Hidden tracks were a surprise for listeners who let the record play on; streaming services often split them out as separate tracks, so the same song can sit inside a long medley on CD and stand alone online."
+
+[cs]
+term = "skrytá skladba"
+definition = "Nahrávka umístěná na albu bez vlastního uvedení v seznamu skladeb, obvykle za poslední uvedenou písní a úsekem ticha, nebo vložená do téže stopy CD. Skryté skladby byly překvapením pro posluchače, kteří nechali desku hrát dál; streamovací služby je často oddělují jako samostatné skladby, takže tatáž píseň může být na CD součástí dlouhého medley a online stát sama."

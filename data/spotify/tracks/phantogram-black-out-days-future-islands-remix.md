@@ -7,7 +7,8 @@ album: "Black Out Days (Future Islands Remix)"
 duration: "4:08"
 spotify: {"track": "3kxkjirben9RVm9NqYa6rm", "album": "0IzpAGRpjLqIQLt4FvmW7m", "artists": ["1l9d7B8W0IHy3LqWsxP2SH", "1WvvwcQx0tj6NdDhZZ2zZz"]}
 keys: {"fold": "phantogram|blackoutdaysfutureislandsremix"}
-status: "missing"
+review: "phantogram-future-islands-black-out-days-future-islands-remix.md"
+status: "present"
 liked: true
 playlists:
   - {"playlist": "chill", "n": 245}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14"]
 From the album *Black Out Days (Future Islands Remix)*, 4:08.
 A liked song.
 In Chill (#245).
-No review yet.
+Reviewed: content/phantogram-future-islands-black-out-days-future-islands-remix.md.

@@ -7,8 +7,9 @@ album: "Every Where Is Some Where"
 duration: "3:08"
 explicit: true
 spotify: {"track": "4q604hQba5940BbOoaenmz", "album": "5ddpf5pxYjw9ob4DjPLuiz", "artists": ["0pCNk4D3E2xtszsm6hMsWr"]}
-keys: {"fold": "kflay|bloodinthecut"}
-status: "missing"
+keys: {"fold": "kflay|bloodinthecut", "isrc": "USUM71607030", "musicbrainz": "70f0fb6e-e3c8-4788-a1e7-65d49ad36a1e"}
+review: "k-flay-blood-in-the-cut.md"
+status: "present"
 liked: true
 playlists:
   - {"playlist": "written-by-jt-daly", "n": 3}
@@ -20,4 +21,4 @@ sources: ["web-player:2026-11-14"]
 From the album *Every Where Is Some Where*, 3:08.
 A liked song.
 In Written By JT Daly (#3).
-No review yet.
+Reviewed: content/k-flay-blood-in-the-cut.md.

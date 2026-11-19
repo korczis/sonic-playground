@@ -218,6 +218,24 @@ class Contract(unittest.TestCase):
         item = {"title": "Hear Me Now", "artists": ["Alok", "Bruno Martini", "Zeeba"]}
         self.assertEqual(catalog.resolve_item(item, index)["source"], "alok-hear-me-now.md")
 
+    def test_the_lead_artist_is_a_last_resort(self):
+        index = catalog.identity_index([{"source": "stimming.md", "track": "November Morning",
+                                         "artist": "Stimming, David Christensen, Bernd Ruf"}])
+        item = {"title": "November Morning", "artists": ["Stimming"]}
+        self.assertEqual(catalog.resolve_item(item, index)["by"], "lead artist and song")
+        index = catalog.identity_index([
+            {"source": "a.md", "track": "Song", "artist": "Lead, One"},
+            {"source": "b.md", "track": "Song", "artist": "Lead, Two"}])
+        self.assertEqual(catalog.resolve_item({"title": "Song", "artists": ["Lead"]}, index)["status"],
+                         "missing")
+
+    def test_another_title_of_the_recording_matches(self):
+        track, errors = self.load(extra='titles = ["The Stream"]\n', name="x.md")
+        self.assertEqual(errors, [])
+        index = catalog.identity_index([track])
+        item = {"title": "The Stream", "artists": [track.artist]}
+        self.assertEqual(catalog.resolve_item(item, index)["status"], "present")
+
     def test_artist_override(self):
         track, errors = self.load(title="Lulu's Theme", extra='artist = "Lulu Rouge"\n', name="x.md")
         self.assertEqual(errors, [])
