@@ -6,7 +6,7 @@ artists: ["Röyksopp"]
 album: "Rising Urge (Lost Tapes) [Original]"
 duration: "5:06"
 spotify: {"track": "4D2zAaCFuDMlIboD7UH8X5", "album": "2d6veFrbZmMkQucorw6HhG", "artists": ["5nPOO9iTcrs9k6yFffPxjH"]}
-keys: {"fold": "royksopp|risingurgelosttapesoriginal"}
+keys: {"fold": "royksopp|risingurgelosttapes"}
 status: "missing"
 liked: false
 playlists:

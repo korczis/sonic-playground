@@ -6,7 +6,7 @@ artists: ["Kollektiv Turmstrasse"]
 album: "Rebellion Der Träumer"
 duration: "4:14"
 spotify: {"track": "1ntjI7YpXzUMVJodJXuQ4Y", "album": "4XYA69iFOf2AvQ3wFc16GM", "artists": ["1oXiuCd5F0DcnmXH5KaM6N"]}
-keys: {"fold": "kollektivturmstrasse|schwindeligoriginal"}
+keys: {"fold": "kollektivturmstrasse|schwindelig"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

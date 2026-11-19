@@ -6,7 +6,7 @@ artists: ["Pilocka Krach", "The Lost Amigos", "Sunru", "Nereo II"]
 album: "One Day Left"
 duration: "7:00"
 spotify: {"track": "6XgyVJPRAFCPPop0kTh0gt", "album": "0pRHN9U3ddUmCcQBQFFHSa", "artists": ["72gQuI1GHmsUXIfe863TC7", "4IS89PCga3j0go9bYo5GyA", "34G5EivHpN1pxe77vjKjV7", "3XGe4tCDEn6BWr6O6jwf8W"]}
-keys: {"fold": "pilockakrach|onedayleftoriginal"}
+keys: {"fold": "pilockakrach|onedayleft"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

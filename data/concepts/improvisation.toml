@@ -1,0 +1,11 @@
+term = "improvisation"
+category = "performance"
+wikipedia = "https://en.wikipedia.org/wiki/Jazz_improvisation"
+see_also = ["swing", "call and response", "guitar solo"]
+
+[en]
+definition = "Inventing music while playing it. In jazz the band states a written theme, then soloists take turns improvising over its chord changes, each for a set number of choruses, before the theme returns."
+
+[cs]
+term = "improvizace"
+definition = "Vymýšlení hudby přímo při hraní. V jazzu kapela zahraje napsané téma, pak se sólisté střídají v improvizaci nad jeho akordy, každý po určitý počet chorusů, a nakonec se téma vrátí."

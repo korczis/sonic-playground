@@ -6,8 +6,9 @@ artists: ["Blue Harlem"]
 album: "Talk to Me"
 duration: "3:34"
 spotify: {"track": "76mLHbwlratkkdZIhWNxPh", "album": "7tuadIRZpGHMY09YcdyNmk", "artists": ["0Tlr99AfynQKne0alCDv90"]}
-keys: {"fold": "blueharlem|nobodybutme"}
-status: "missing"
+keys: {"fold": "blueharlem|nobodybutme", "musicbrainz": "d22d9d22-5b04-4ba2-8a61-92ff18bf4d27"}
+review: "blue-harlem-nobody-but-me.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Talk to Me*, 3:34.
 A liked song.
-No review yet.
+Reviewed: content/blue-harlem-nobody-but-me.md.

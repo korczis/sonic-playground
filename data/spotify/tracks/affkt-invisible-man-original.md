@@ -6,7 +6,7 @@ artists: ["AFFKT", "Thomas Gandey"]
 album: "Invisible Man / Overnight Sensation"
 duration: "6:58"
 spotify: {"track": "4Ro7rQHX8BGyUtLRrWI7vI", "album": "0iz8yGEhow7RtdA27VQUCm", "artists": ["1VCo9PBRImHKuQyiubNSqF", "3sL1rpCWTOOABA0CKuyQcM"]}
-keys: {"fold": "affkt|invisiblemanoriginal"}
+keys: {"fold": "affkt|invisibleman"}
 status: "missing"
 liked: false
 playlists:

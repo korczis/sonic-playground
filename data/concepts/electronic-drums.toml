@@ -1,0 +1,11 @@
+term = "electronic drums"
+category = "technology"
+wikipedia = "https://en.wikipedia.org/wiki/Electronic_drum"
+see_also = ["drum machine", "synthesizer"]
+
+[en]
+definition = "Pads struck like drums that trigger an electronic sound generator instead of a resonating shell. The first commercial model, the Pollard Syndrum, appeared in 1976, and such pads gave late-1970s records their synthetic, quickly decaying tom tones."
+
+[cs]
+term = "elektronické bicí"
+definition = "Pady, do kterých se bije jako do bubnů a které místo rezonujícího těla spouštějí elektronický generátor zvuku. První komerční model, Pollard Syndrum, se objevil v roce 1976 a takové pady daly nahrávkám konce 70. let jejich syntetické, rychle doznívající tóny tomů."

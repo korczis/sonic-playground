@@ -6,8 +6,9 @@ artists: ["Be Svendsen"]
 album: "Masquerade"
 duration: "6:35"
 spotify: {"track": "035ka3msQuwEei5OJJ9SWM", "album": "0SDFeXV1TUjQDKXyhmXgVx", "artists": ["4BaLB5aiExO29BEGVUisru"]}
-keys: {"fold": "besvendsen|letthemnotweep"}
-status: "missing"
+keys: {"fold": "besvendsen|letthemnotweep", "musicbrainz": "3091e45e-15c3-46e8-ac30-bc539bd8f6f8"}
+review: "be-svendsen-let-them-not-weep.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Masquerade*, 6:35.
 A liked song.
-No review yet.
+Reviewed: content/be-svendsen-let-them-not-weep.md.
