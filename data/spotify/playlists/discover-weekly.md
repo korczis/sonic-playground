@@ -13,4 +13,4 @@ tracks:
 
 # Discover Weekly
 
-A playlist of the owner's: 2 of 2 items read on 2026-11-14, 1 of them reviewed on the site.
+A playlist of the owner's: 2 of 2 items read on 2026-11-14, 2 of them reviewed on the site.

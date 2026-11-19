@@ -276,17 +276,20 @@ def identity_index(tracks: list) -> dict:
     artist alone when a review has one artist and for the whole credit always."""
     by_isrc: dict[str, set] = defaultdict(set)
     by_key: dict[tuple, set] = defaultdict(set)
+    by_lead: dict[tuple, set] = defaultdict(set)  # the review's first artist; a last resort
     for t in tracks:
         source, artist, track = (t.source, t.artist, t.track) if isinstance(t, Track) else (
             t["source"], t["artist"], t["track"])
         extra = t.full_extra if isinstance(t, Track) else {}
         if extra.get("isrc"):
             by_isrc[extra["isrc"]].add(source)
-        if "," not in artist:
-            by_key[(fold(artist.split(" feat")[0]), fold(song(track)))].add(source)
-        by_key[(fold(artist), fold(song(track)))].add(source)
-        by_key[(credit(artist.split(", ")), fold(song(track)))].add(source)
-    return {"isrc": by_isrc, "key": by_key}
+        for name in (track, *extra.get("titles", ())):
+            if "," not in artist:
+                by_key[(fold(artist.split(" feat")[0]), fold(song(name)))].add(source)
+            by_key[(fold(artist), fold(song(name)))].add(source)
+            by_key[(credit(artist.split(", ")), fold(song(name)))].add(source)
+            by_lead[(fold(artist.split(", ")[0].split(" feat")[0]), fold(song(name)))].add(source)
+    return {"isrc": by_isrc, "key": by_key, "lead": by_lead}
 
 
 def credit(artists: list[str]) -> str:
@@ -313,6 +316,10 @@ def resolve_item(item: dict, index: dict) -> dict:
                 (fold(", ".join(item["artists"])), fold(song(item["title"]))),
                 (credit(item["artists"]), fold(song(item["title"])))):
         found |= index["key"].get(key, set())
+    if not found:  # "Stimming - November Morning" is the review "Stimming, David Christensen, ..."
+        lead = index.get("lead", {}).get((fold(item["artists"][0]), fold(song(item["title"]))), set())
+        if len(lead) == 1:
+            return {"status": "present", "source": next(iter(lead)), "by": "lead artist and song"}
     if len(found) == 1:
         return {"status": "present", "source": next(iter(found)), "by": "artist and song"}
     if len(found) > 1:

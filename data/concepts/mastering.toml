@@ -1,0 +1,11 @@
+term = "mastering"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Audio_mastering"
+see_also = ["mixing", "remastering", "compression"]
+
+[en]
+definition = "The last stage of making a record, after mixing: a mastering engineer adjusts the finished stereo track's overall loudness, tonal balance and dynamics so that it translates well on any speaker and sits consistently beside the other tracks of a release. Mastering changes the whole sound at once, never the balance between instruments, and is often done by a specialist who did not work on the recording."
+
+[cs]
+term = "mastering"
+definition = "Poslední fáze vzniku nahrávky, po mixu: mastering inženýr upraví celkovou hlasitost, zvukové vyvážení a dynamiku hotové stereofonní skladby tak, aby dobře zněla na jakýchkoli reproduktorech a souzněla s ostatními skladbami vydání. Mastering mění celý zvuk najednou, nikdy ne poměr mezi nástroji, a často ho dělá specialista, který na nahrávce samotné nepracoval."
