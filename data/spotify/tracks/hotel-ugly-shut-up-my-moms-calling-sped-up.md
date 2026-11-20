@@ -6,8 +6,9 @@ artists: ["Hotel Ugly"]
 album: "Shut up My Moms Calling (Sped up)"
 duration: "2:15"
 spotify: {"track": "31mzt4ZV8C0f52pIz1NSwd", "album": "0h2GcVhEPwh1mrRg3MSa3A", "artists": ["35WVTyRnKAoaGExqgktVyb"]}
-keys: {"fold": "hotelugly|shutupmymomscallingspedup"}
-status: "missing"
+keys: {"fold": "hotelugly|shutupmymomscallingspedup", "musicbrainz": "47f3e1fb-1952-4e2c-8858-3fb47369ade5"}
+review: "hotel-ugly-shut-up-my-moms-calling-sped-up.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Shut up My Moms Calling (Sped up)*, 2:15.
 A liked song.
-No review yet.
+Reviewed: content/hotel-ugly-shut-up-my-moms-calling-sped-up.md.

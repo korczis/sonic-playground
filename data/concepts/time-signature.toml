@@ -1,0 +1,11 @@
+term = "time signature"
+category = "rhythm"
+wikipedia = "https://en.wikipedia.org/wiki/Time_signature"
+see_also = ["syncopation", "riff", "half-time"]
+
+[en]
+definition = "The way music is counted: how many beats make up one bar and which note value counts as a beat. Most pop is in 4/4, four even beats with stress on the first; a meter such as 5/4 or 7/8 groups the beats unevenly, and a part played in one grouping can be set against drums that keep another."
+
+[cs]
+term = "taktové označení"
+definition = "Způsob, jakým se hudba počítá: kolik dob tvoří jeden takt a která notová hodnota je dobou. Většina popu je ve 4/4, ve čtyřech rovnoměrných dobách s důrazem na první; metrum jako 5/4 nebo 7/8 seskupuje doby nerovnoměrně a part hraný v jednom seskupení může stát proti bicím, které drží jiné."

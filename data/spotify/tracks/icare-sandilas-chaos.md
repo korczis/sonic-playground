@@ -6,8 +6,9 @@ artists: ["Icare Sandilas"]
 album: "Chaos"
 duration: "3:21"
 spotify: {"track": "3nqkWMcVZ0aR7J3GdnvORL", "album": "6TWkAOca0jpIE6tRzY8Ilq", "artists": ["6Jx5WE8A0eq0ByRqipIliK"]}
-keys: {"fold": "icaresandilas|chaos"}
-status: "missing"
+keys: {"fold": "icaresandilas|chaos", "musicbrainz": "6df5e68d-12ea-4ac7-9e26-76fb62eca25c"}
+review: "icare-sandilas-chaos.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Chaos*, 3:21.
 A liked song.
-No review yet.
+Reviewed: content/icare-sandilas-chaos.md.
