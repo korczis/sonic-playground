@@ -7,7 +7,8 @@ album: "No Time Wasted EP"
 duration: "3:18"
 spotify: {"track": "5IDra44Yb9g0GHzZCn1vX4", "album": "0nkR8z6xccpfgSNMRmKcf8", "artists": ["1P0crNTkAtkSEDCGsbd2JJ", "6GtSGYa3VBAwkNG6aVAzwR"]}
 keys: {"fold": "danieledimartino|wasted"}
-status: "missing"
+review: "daniele-di-martino-tylr-wasted-radio-edit.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *No Time Wasted EP*, 3:18.
 A liked song.
-No review yet.
+Reviewed: content/daniele-di-martino-tylr-wasted-radio-edit.md.

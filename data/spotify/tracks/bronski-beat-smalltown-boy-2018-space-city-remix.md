@@ -6,8 +6,9 @@ artists: ["Bronski Beat", "Space City"]
 album: "Smalltown Boy 2k18, Pt. 2 (Remixes)"
 duration: "7:59"
 spotify: {"track": "0hUh39T2u4whx21mNaXWfy", "album": "2eK5OgsVvW9DRdmxBoMHDg", "artists": ["2wpWOzQE5TpA0dVnh5YD08", "67Eo5aKEg9NatYlGTiDzAX"]}
-keys: {"fold": "bronskibeat|smalltownboy2018spacecityremix"}
-status: "missing"
+keys: {"fold": "bronskibeat|smalltownboy2018spacecityremix", "musicbrainz": "9da10fce-af1f-4ef0-b4f6-f14e68b76eca"}
+review: "bronski-beat-space-city-smalltown-boy-2018-space-city-remix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Smalltown Boy 2k18, Pt. 2 (Remixes)*, 7:59.
 A liked song.
-No review yet.
+Reviewed: content/bronski-beat-space-city-smalltown-boy-2018-space-city-remix.md.

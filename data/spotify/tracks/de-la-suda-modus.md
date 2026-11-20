@@ -7,7 +7,8 @@ album: "Modus"
 duration: "3:32"
 spotify: {"track": "2tVimIvA2lVMJ7pzoA8c8Y", "album": "5VUO0cP826HM8SmCqGKi13", "artists": ["6KkJJndH3kIHROh1c9y1av"]}
 keys: {"fold": "delasuda|modus"}
-status: "missing"
+review: "de-la-suda-modus.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Modus*, 3:32.
 A liked song.
-No review yet.
+Reviewed: content/de-la-suda-modus.md.

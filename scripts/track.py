@@ -670,7 +670,7 @@ def main() -> int:
     p_vocab.add_argument("--limit", type=int, default=0)
     p_sug = sub.add_parser("suggest", help="normalise terms, nearest existing ones, related tracks")
     for f in cat.FACETS:
-        p_sug.add_argument(f"--{f}", nargs="+")
+        p_sug.add_argument(f"--{f}", nargs="+", action="extend")
     sub.add_parser("outline", help="the review outline the corpus shares")
     args = parser.parse_args()
 
