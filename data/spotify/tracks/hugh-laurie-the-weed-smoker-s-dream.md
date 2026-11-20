@@ -6,8 +6,9 @@ artists: ["Hugh Laurie"]
 album: "Didn't It Rain"
 duration: "4:17"
 spotify: {"track": "2czGiDWKJzX6t14YF7kHCi", "album": "2nu30dx4AwX9LBFytWz1YN", "artists": ["5WM5zPOswRcPu07rxP2dQv"]}
-keys: {"fold": "hughlaurie|theweedsmokersdream"}
-status: "missing"
+keys: {"fold": "hughlaurie|theweedsmokersdream", "isrc": "GBAHT1300132", "musicbrainz": "efce2e62-e059-44a8-a940-16b29b3e24a4"}
+review: "hugh-laurie-the-weed-smoker-s-dream.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Didn't It Rain*, 4:17.
 A liked song.
-No review yet.
+Reviewed: content/hugh-laurie-the-weed-smoker-s-dream.md.

@@ -76,3 +76,15 @@ n = 12
 title = "Bla Bla Bla ( Gigi Dag & Luca Noise Bla Bla Ton Mix )"
 artists = ["GIGI D'AGOSTINO", "LENTOVIOLENTO", "Luca Noise"]
 review = "gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix.md"
+
+[[track]]
+n = 13
+title = "Ed-Ucation"
+artists = ["Dr. Dre"]
+skip = "a spoken comedy skit on the album 2001, not a song"
+
+[[track]]
+n = 14
+title = "How Big, How Blue, How Beautiful - Demo / Bonus Track"
+artists = ["Florence + The Machine"]
+review = "florence-the-machine-how-big-how-blue-how-beautiful-demo.md"
