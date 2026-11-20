@@ -6,8 +6,9 @@ artists: ["JPattersson"]
 album: "Mood"
 duration: "5:58"
 spotify: {"track": "5mecWI2mP42cxzmtCDX8ox", "album": "2a1RS4RZ2kf518vpKMeu93", "artists": ["3Rn7rHuGSE7KzIwVFz2qHK"]}
-keys: {"fold": "jpattersson|goodbyemonkeyisland"}
-status: "missing"
+keys: {"fold": "jpattersson|goodbyemonkeyisland", "musicbrainz": "997ef6f2-9702-47f2-9e9f-73c1f76bb4df"}
+review: "jpattersson-good-bye-monkey-island.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Mood*, 5:58.
 A liked song.
-No review yet.
+Reviewed: content/jpattersson-good-bye-monkey-island.md.

@@ -7,7 +7,8 @@ album: "7 Years of Lower East"
 duration: "7:07"
 spotify: {"track": "4vMBnRWAg3BDS49YGOLJ4k", "album": "5WakTWFd6yosBESvDpqysA", "artists": ["2ILE4pYYPywzrVMwhYO4ux", "1wKZsOvoorMdplAAo26rII"]}
 keys: {"fold": "johnnymikes|darknesseveryday"}
-status: "missing"
+review: "johnny-mikes-michael-b-darkness-everyday.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *7 Years of Lower East*, 7:07.
 A liked song.
-No review yet.
+Reviewed: content/johnny-mikes-michael-b-darkness-everyday.md.

@@ -6,8 +6,9 @@ artists: ["Ian Brown"]
 album: "My Way"
 duration: "4:57"
 spotify: {"track": "1oUMuCGxDSueetfnrdSpUr", "album": "7CYQZRIR0O6YnMTtqssxDn", "artists": ["3s398TKZNahAURRacx7oIT"]}
-keys: {"fold": "ianbrown|stellify"}
-status: "missing"
+keys: {"fold": "ianbrown|stellify", "isrc": "GBUM70909308", "musicbrainz": "10f74f29-35b2-4a0d-95b3-9af07c8a2495"}
+review: "ian-brown-stellify.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *My Way*, 4:57.
 A liked song.
-No review yet.
+Reviewed: content/ian-brown-stellify.md.

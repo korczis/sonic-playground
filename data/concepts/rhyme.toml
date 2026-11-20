@@ -1,0 +1,11 @@
+term = "rhyme"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Rhyme"
+see_also = ["hook", "rapping"]
+
+[en]
+definition = "The repetition of the same or similar sounds at the ends of words, usually at the ends of lines. In songs rhyme marks where a line closes, makes words easier to remember and sets up expectation; a writer can play with it by bending a word, borrowing one from another language or forcing an unlikely match."
+
+[cs]
+term = "rým"
+definition = "Opakování stejných nebo podobných hlásek na koncích slov, obvykle na koncích veršů. V písni rým ukazuje, kde se verš uzavírá, usnadňuje zapamatování slov a buduje očekávání; autor si s ním může hrát, když slovo ohne, vypůjčí si ho z jiného jazyka nebo vynutí nečekanou shodu."

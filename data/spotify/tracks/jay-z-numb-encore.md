@@ -7,8 +7,9 @@ album: "Numb / Encore: MTV Ultimate Mash-Ups Presents Collision Course"
 duration: "3:25"
 explicit: true
 spotify: {"track": "5sNESr6pQfIhL3krM8CtZn", "album": "4lhyg7YGQagE8FT8cZBqyw", "artists": ["3nFkdlSjzX9mRTtwJOzDYB", "6XyY86QOPPrYVGvF9ch6wz"]}
-keys: {"fold": "jayz|numbencore"}
-status: "missing"
+keys: {"fold": "jayz|numbencore", "isrc": "USWB10403681", "musicbrainz": "daccb724-8023-432a-854c-e0accb6c8678"}
+review: "jay-z-linkin-park-numb-encore.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Numb / Encore: MTV Ultimate Mash-Ups Presents Collision Course*, 3:25.
 A liked song.
-No review yet.
+Reviewed: content/jay-z-linkin-park-numb-encore.md.

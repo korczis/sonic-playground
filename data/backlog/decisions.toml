@@ -88,3 +88,15 @@ n = 14
 title = "How Big, How Blue, How Beautiful - Demo / Bonus Track"
 artists = ["Florence + The Machine"]
 review = "florence-the-machine-how-big-how-blue-how-beautiful-demo.md"
+
+[[track]]
+n = 15
+title = "Time Again - Jan Blomqvist Club Mix"
+artists = ["Jan Blomqvist"]
+review = "jan-blomqvist-time-again.md"
+
+[[track]]
+n = 16
+title = "I Got You (I Feel Good)"
+artists = ["James Brown", "James Brown & The Famous Flames"]
+review = "james-brown-the-famous-flames-i-got-you-i-feel-good.md"
