@@ -23,7 +23,7 @@
 'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
-const { retryAfter } = require('./retry.cjs');
+const { retryAfter, HOST_PAUSES_MS } = require('./retry.cjs');
 
 let chromium;
 try {
@@ -289,7 +289,19 @@ async function wcag(browser, viewport, reviews) {
         await contexts[scheme].addInitScript((s) => { try { localStorage.setItem('color-theme', s); } catch (e) { /* private mode */ } }, scheme);
       }
       const page = await contexts[scheme].newPage();
-      await page.goto(at(rel), { waitUntil: 'load' });
+      // A live host can answer a page deployed seconds ago with its own 404 page (run 44733721568:
+      // GitHub's 404 for /mood/positive/ failed axe on lang, alt and link names). Not this site's
+      // page, so it is loaded again after the host's pauses; a page still not served fails as such.
+      let response = await page.goto(at(rel), { waitUntil: 'load' });
+      for (let attempt = 0; !root && response && response.status() !== 200 && attempt < HOST_PAUSES_MS.length; attempt++) {
+        await new Promise((r) => setTimeout(r, HOST_PAUSES_MS[attempt]));
+        response = await page.goto(at(rel), { waitUntil: 'load' });
+      }
+      if (!response || response.status() !== 200) {
+        found.push(`${scheme} /${rel}: HTTP ${response ? response.status() : 'no response'}, not checked`);
+        await page.close();
+        continue;
+      }
       await page.addScriptTag({ content: axe });
       const violations = await page.evaluate(async (tags) => {
         const r = await window.axe.run(document, { runOnly: { type: 'tag', values: tags }, resultTypes: ['violations'] });
