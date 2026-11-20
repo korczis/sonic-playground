@@ -1,0 +1,11 @@
+term = "bonus track"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Bonus_track"
+see_also = ["b-side", "deep cut", "hidden track"]
+
+[en]
+definition = "A track added to one edition of an album beyond its standard track list: a deluxe or regional edition, a retailer's exclusive or a later reissue. Bonus tracks often come from the same sessions with a different producer or a looser brief, so they show what an album left out and why."
+
+[cs]
+term = "bonusová skladba"
+definition = "Skladba přidaná do jednoho vydání alba nad rámec jeho standardního seznamu skladeb: do rozšířené (deluxe) nebo regionální edice, do exkluzivního vydání pro určitého prodejce či do pozdější reedice. Bonusové skladby často pocházejí ze stejných nahrávacích sezení, ale s jiným producentem nebo volnějším zadáním, takže ukazují, co album vynechalo a proč."

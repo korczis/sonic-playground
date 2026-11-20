@@ -64,3 +64,15 @@ n = 10
 title = "A Style Suite - Gambafreaks vs Farolfi Mix"
 artists = ["Farolfi&gambafreaks", "Moloko +"]
 review = "farolfi-gambafreaks-vs-moloko-a-style-suite-gambafreaks-vs-farolfi-mix.md"
+
+[[track]]
+n = 11
+title = "Big Ego's - Instrumental Version"
+artists = ["Dr. Dre"]
+review = "dr-dre-big-ego-s.md"
+
+[[track]]
+n = 12
+title = "Bla Bla Bla ( Gigi Dag & Luca Noise Bla Bla Ton Mix )"
+artists = ["GIGI D'AGOSTINO", "LENTOVIOLENTO", "Luca Noise"]
+review = "gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix.md"

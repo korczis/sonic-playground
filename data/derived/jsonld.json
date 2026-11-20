@@ -5944,6 +5944,137 @@
     }
    ]
   },
+  "apocalyptica-seek-and-destroy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/apocalyptica-seek-and-destroy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Apocalyptica",
+      "sameAs": "https://musicbrainz.org/artist/788ad31c-bf0c-4a31-83f8-b8b130d79c76"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "cover",
+      "neoclassical",
+      "symphonic metal"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plays Metallica by Four Cellos (2016 Remastered Version)"
+     },
+     "isrcCode": "DERK41600025",
+     "name": "Seek and Destroy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7fd0c214-e769-477f-a145-6c0fbdd6e334",
+      "https://www.youtube.com/watch?v=9Y6iN99OFIo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/apocalyptica-seek-and-destroy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/apocalyptica-seek-and-destroy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Plays Metallica by Four Cellos",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plays_Metallica_by_Four_Cellos"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Seek & Destroy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Seek_%26_Destroy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Apocalyptica: Plays Metallica By Four Cellos album review",
+       "publisher": "Louder",
+       "url": "https://www.loudersound.com/reviews/apocalyptica-plays-metallica-by-four-cellos-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "APOCALYPTICA Releases New Video For Cover Of METALLICA's 'Battery'",
+       "publisher": "Blabbermouth",
+       "url": "https://blabbermouth.net/news/apocalyptica-releases-new-video-for-cover-of-metallicas-battery"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "APOCALYPTICA Covers METALLICA's 'Seek & Destroy' At Switzerland's SONISPHERE: Pro-Shot Footage",
+       "publisher": "Blabbermouth",
+       "url": "https://blabbermouth.net/news/apocalyptica-covers-metallicas-seek-destroy-at-switzerlands-sonisphere-pro-shot-footage"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "CD Review: Apocalyptica - Plays Metallica By Four Cellos (re-mastered)",
+       "publisher": "Reflections of Darkness",
+       "url": "https://www.reflectionsofdarkness.com/review-flash/19456-cd-review-apocalyptica-plays-metallica-by-four-cellos-re-mastered"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plays Metallica by Four Cellos (2016 digital release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/e14a61c4-d29f-4826-8d9b-8ca90b663bc0"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Apocalyptica - 'Seek & Destroy' (Bonus)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=9Y6iN99OFIo"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Seek & Destroy, píseň Metallicy z alba Kill 'Em All, v podání čtyř violoncell Apocalyptiky: dosud nevydaná bonusová nahrávka, která poprvé vyšla v roce 2016 na remasterovaném albu Plays Metallica by Four Cellos.",
+     "educationalLevel": "introductory",
+     "headline": "Apocalyptica - Seek and Destroy",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "instrumental",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/instrumental/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "riff",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/riff/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/apocalyptica-seek-and-destroy/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/apocalyptica-seek-and-destroy/",
+     "wordCount": 504
+    }
+   ]
+  },
   "aquarius-heaven-can-t-buy-love.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -12550,6 +12681,122 @@
     }
    ]
   },
+  "belleruche-bam-bam-sound-afan-bam-bam-sound-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Belleruche, Bam Bam Sound"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "electronic",
+      "trip-hop",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "16 Minutes"
+     },
+     "name": "Afan - Bam Bam Sound Remix",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=ngfBPTRc6nQ"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Belleruche - 16 Minutes",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/4163167-Belleruche-16-Minutes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "16 Minutes",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/866781782"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bam Bam Sound",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/3475296-Bam-Bam-Sound"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Rollerchain",
+       "publisher": "Bandcamp (Belleruche)",
+       "url": "https://belleruche.bandcamp.com/album/rollerchain"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Belleruche, Rollerchain : le cardiochoc",
+       "publisher": "La Toile de Pandore",
+       "url": "https://web.archive.org/web/20260611225820/http://www.latoiledepandore.com/2012/06/belleruche-rollerchain-le-cardiochoc.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Belleruche - Afan - Bam Bam Sound Remix",
+       "publisher": "YouTube (TruThoughtsJukeBox)",
+       "url": "https://www.youtube.com/watch?v=ngfBPTRc6nQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Belleruche",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Belleruche"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Bam Bam Sound, dvojice DJů rezidentně hrajících v londýnském Big Chill Baru, natahují Afan, záblesk syntezátorů a bicích o délce 2:20, z temnějšího čtvrtého alba Belleruche Rollerchain, na téměř pět minut pro singl 16 Minutes (Tru Thoughts, 2012).",
+     "educationalLevel": "introductory",
+     "headline": "Belleruche, Bam Bam Sound - Afan - Bam Bam Sound Remix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/b-side/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/",
+     "wordCount": 468
+    }
+   ]
+  },
   "belleruche-clockwatching.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -14201,6 +14448,132 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/ben-khan-monsoon-daydream/",
      "wordCount": 492
+    }
+   ]
+  },
+  "ben-khan-our-father.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ben-khan-our-father/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ben Khan",
+      "sameAs": "https://musicbrainz.org/artist/9dabeeb9-7766-468c-856b-e924058d69d6"
+     },
+     "datePublished": "2018",
+     "genre": [
+      "electro-pop",
+      "funk",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Ben Khan"
+     },
+     "name": "our father",
+     "sameAs": [
+      "https://musicbrainz.org/recording/357ee0cb-c223-4de1-8acd-dacb1c62f1ff",
+      "https://www.youtube.com/watch?v=S7Cs2RyPViM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/ben-khan-our-father/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ben-khan-our-father/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Album Review: Ben Khan - Ben Khan",
+       "publisher": "The National Student",
+       "url": "https://web.archive.org/web/20190716063529/https://www.thenationalstudent.com/Music/2018-08-11/album_review_ben_khan_ben_khan.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Ben Khan - Ben Khan",
+       "publisher": "Written in Music",
+       "url": "https://writteninmusic.com/albumrecensie/ben-khan-ben-khan/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Album Review: Ben Khan (Self-Titled)",
+       "publisher": "The Indiependent",
+       "url": "https://indiependent.co.uk/?p=29530"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Ben Khan - Ben Khan",
+       "publisher": "The Music",
+       "url": "https://themusic.com.au/reviews/ben-khan-ben-khan-donald-finlayson/rrWhoKOipaQ/07-08-18"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Ben Khan details self-titled debut album with new track 'ruby'",
+       "publisher": "DIY",
+       "url": "https://diymag.com/news/ben-khan-debut-album-announcement-interview-ruby-listen"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ben Khan (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/a982f3ed-d0c7-4586-b8e0-3b38bc1b9a3e"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "our father (Provided to YouTube)",
+       "publisher": "YouTube (Ben Khan - Topic)",
+       "url": "https://www.youtube.com/watch?v=S7Cs2RyPViM"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Devátá skladba debutového alba Bena Khana z roku 2018: krátká, dunivá píseň, kterou jeden recenzent slyšel jako experimentální funk ve stylu Prince a jiný jako Khanovu výpověď o náboženství.",
+     "educationalLevel": "introductory",
+     "headline": "Ben Khan - our father",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "kick drum",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/kick-drum/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "distortion",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/distortion/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "mixing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/mixing/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/ben-khan-our-father/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/ben-khan-our-father/",
+     "wordCount": 481
     }
    ]
   },
@@ -29935,6 +30308,141 @@
     }
    ]
   },
+  "d12-bitch.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-bitch/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "D12 World"
+     },
+     "isrcCode": "USIR10400115",
+     "name": "Bitch",
+     "sameAs": [
+      "https://musicbrainz.org/recording/734b93b7-c64b-47ba-b648-4e22d5de1c89",
+      "https://www.youtube.com/watch?v=6x9PWTQMvzY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/d12-bitch/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-bitch/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Superman (Eminem song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Superman_(Eminem_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Luis Resto (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Luis_Resto_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Eminem's band could use a little more Eminem, a little better math",
+       "publisher": "Chicago Maroon",
+       "url": "https://chicagomaroon.com/?p=11912"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Immaturity makes this World go round",
+       "publisher": "Indiana Daily Student",
+       "url": "https://www.idsnews.com/article/2004/05/immaturity-makes-this-world-go-round"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Plugged In",
+       "url": "https://www.pluggedin.com/album-reviews/d12-d12world/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bitch (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/734b93b7-c64b-47ba-b648-4e22d5de1c89"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Bitch (Provided to YouTube by Universal Music Group, credits)",
+       "publisher": "YouTube (D12 - Topic)",
+       "url": "https://www.youtube.com/watch?v=6x9PWTQMvzY"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Bitch, třináctá skladba alba D12 World z roku 2004, je Eminemova produkce s Luisem Restem a se zpěvem, který kredity připisují Deanně Johnson; jednomu recenzentovi se líbila Eminemova potrhlá sloka, druhý píseň označil za misogynní hymnu a třetí tvrdil, že lépe zněla jako Superman.",
+     "educationalLevel": "intermediate",
+     "headline": "D12 - Bitch",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-bitch/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/d12-bitch/",
+     "wordCount": 460
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -30425,6 +30933,138 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/dada-life-don-t-stop/",
      "wordCount": 465
+    }
+   ]
+  },
+  "dada-life-everything-is-free.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dada-life-everything-is-free/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dada Life",
+      "sameAs": "https://musicbrainz.org/artist/5b3cc848-942f-4363-8e89-b63a13c3fd0e"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "electro-house",
+      "electronic",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Rules of Dada"
+     },
+     "isrcCode": "SE22J1200124",
+     "name": "Everything Is Free",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3d1582ac-5a8e-45c6-898b-f95443d832f7",
+      "https://www.youtube.com/watch?v=VRJhBhlsNNA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/dada-life-everything-is-free/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dada-life-everything-is-free/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Rules of Dada",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Rules_of_Dada"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dada Life",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dada_Life"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life - The Rules of Dada (Album Review) [So Much Dada]",
+       "publisher": "Your EDM",
+       "url": "https://newstaging.youredm.com/?p=4043"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life: The Rules of Dada album review",
+       "publisher": "Dancing Astronaut",
+       "url": "https://dancingastronaut.com/2012/10/dada-life-the-rules-of-dada-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Music Review: Dada Life - The Rules of Dada via So Much Dada",
+       "publisher": "Magnetic Magazine",
+       "url": "https://magneticmag.com/2012/10/music-review-dada-life-the-rules-of-dada-via-so-much-dada/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "The Rules of Dada reviewed: bubbling over with bangers",
+       "publisher": "Elektro Daily",
+       "url": "https://elektrodaily.com/the-rules-of-dada-reviewed-bubbling-over-with-bangers/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Everything Is Free (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3d1582ac-5a8e-45c6-898b-f95443d832f7"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life - Everything Is Free",
+       "publisher": "Dada Life (YouTube)",
+       "url": "https://www.youtube.com/watch?v=VRJhBhlsNNA"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Devátá skladba alba The Rules of Dada od Dada Life z roku 2012: ženský hlas nad obří basovou linkou, leady s ohýbanou výškou tónu a dvě velké gradace, večírková hymna alba v novějším electro house stylu dua.",
+     "educationalLevel": "introductory",
+     "headline": "Dada Life - Everything Is Free",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "drop",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/drop/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/dada-life-everything-is-free/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/dada-life-everything-is-free/",
+     "wordCount": 481
     }
    ]
   },
@@ -36051,6 +36691,122 @@
     }
    ]
   },
+  "dj-fresh-tc-gold-dust-tc-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dj-fresh-tc-gold-dust-tc-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "DJ Fresh, TC",
+      "sameAs": "https://musicbrainz.org/artist/77049387-0580-4a3a-a05f-d12b5d6b5042"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "drum and bass",
+      "remix",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gold Dust (Shy FX Re-Edit)"
+     },
+     "name": "Gold Dust - TC Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3e09a588-1eea-44b7-bac7-c154489551d0",
+      "https://www.youtube.com/watch?v=hq3gKHuwrR4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/dj-fresh-tc-gold-dust-tc-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dj-fresh-tc-gold-dust-tc-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Gold Dust (DJ Fresh song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gold_Dust_(DJ_Fresh_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "TC (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/TC_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "DJ Fresh - Gold Dust (MOS252EP)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/9047454"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "DJ Fresh – Gold Dust (Shy FX Re-Edit)",
+       "publisher": "Dancing Astronaut",
+       "url": "https://dancingastronaut.com/2012/12/dj-fresh-gold-dust-shy-fx-re-edit/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gold Dust (TC remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3e09a588-1eea-44b7-bac7-c154489551d0"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "DJ Fresh - Gold Dust [TC Remix]",
+       "publisher": "YouTube (DJ Fresh)",
+       "url": "https://www.youtube.com/watch?v=hq3gKHuwrR4"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Remix skladby Gold Dust od DJ Freshe, který vytvořil TC, drum and bassový producent, zpěvák a DJ z bristolské čtvrti St Paul's: druhá ze šesti skladeb digitálního vydání Ministry of Sound z roku 2012, v jehož čele stojí re-edit Shy FX.",
+     "educationalLevel": "intermediate",
+     "headline": "DJ Fresh, TC - Gold Dust - TC Remix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/dj-fresh-tc-gold-dust-tc-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/dj-fresh-tc-gold-dust-tc-remix/",
+     "wordCount": 526
+    }
+   ]
+  },
   "dj-hell-electronic-germany.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -39703,6 +40459,144 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/dreadzone-king-dub-rock/",
      "wordCount": 508
+    }
+   ]
+  },
+  "dreadzone-once-upon-a-time-in-jamaica.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dreadzone-once-upon-a-time-in-jamaica/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dreadzone",
+      "sameAs": "https://musicbrainz.org/artist/a10ca116-02af-4989-9a91-fb25585216f7"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "dub",
+      "breakbeat",
+      "reggae"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Once Upon a Time"
+     },
+     "name": "Once Upon A Time (In Jamaica)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/5fc50a75-4889-4484-9002-fcea3109f7c3",
+      "https://www.youtube.com/watch?v=F3KIulyKDWg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/dreadzone-once-upon-a-time-in-jamaica/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dreadzone-once-upon-a-time-in-jamaica/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time (In Jamaica) (single review)",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/3249"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time (Functional Records)",
+       "publisher": "Rebel Base",
+       "url": "https://www.rebelbase.be/reviews/detail/dreadzone---once-upon-a-time-functional-records"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - One love, one style",
+       "publisher": "Rebel Base",
+       "url": "https://rebelbase.be/interviews/detail/dreadzone---one-love-one-style-072005"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/537135"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time (In Jamaica) (12-inch)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/528039"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time (In Jamaica) (CD single)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3522025"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dreadzone",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dreadzone"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Once Upon a Time (In Jamaica) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/5fc50a75-4889-4484-9002-fcea3109f7c3"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Once Upon A Time (In Jamaica)",
+       "publisher": "YouTube (Dreadzone - Topic)",
+       "url": "https://www.youtube.com/watch?v=F3KIulyKDWg"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Titulní skladba alba Once Upon a Time, které Dreadzone vydali v roce 2005: jamajský veterán Earl Sixteen v ní zpívá nad breakbeatem a dubem londýnské kapely a belgická reggae recenze v ní slyšela procházku dějinami jamajské hudby.",
+     "educationalLevel": "introductory",
+     "headline": "Dreadzone - Once Upon A Time (In Jamaica)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "dub",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dub/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "off-beat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/off-beat/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/dreadzone-once-upon-a-time-in-jamaica/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/dreadzone-once-upon-a-time-in-jamaica/",
+     "wordCount": 500
     }
    ]
   },
@@ -47044,6 +47938,125 @@
     }
    ]
   },
+  "fischerspooner-all-we-are.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-all-we-are/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Fischerspooner",
+      "sameAs": "https://musicbrainz.org/artist/a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "art pop",
+      "electro-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Odyssey"
+     },
+     "isrcCode": "USFS20400011",
+     "name": "All We Are",
+     "sameAs": [
+      "https://musicbrainz.org/recording/78194328-5909-429e-80b8-06c0335d4ebb",
+      "https://www.youtube.com/watch?v=uPUIo1pvrw8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/fischerspooner-all-we-are/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-all-we-are/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's Odyssey Out Now",
+       "publisher": "Jackson Free Press",
+       "url": "https://www.mississippifreepress.org/fischerspooners-odyssey-out-now/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Odyssey (Fischerspooner album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Odyssey_(Fischerspooner_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/fischerspooner-odyssey-2495905588.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's Odyssey takes listener on a voyage",
+       "publisher": "The Daily Cardinal",
+       "url": "https://www.dailycardinal.com/article/2005/04/fischerspooners-odyssey-takes-listener-on-a-voyage"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner - Odyssey",
+       "publisher": "Scene Point Blank",
+       "url": "https://www.scenepointblank.com/reviews/fischerspooner/odyssey"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fischerspooner",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fischerspooner"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "All We Are (Fischerspooner - Topic)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=uPUIo1pvrw8"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Nejakustičtější skladba alba Odyssey (2005) od Fischerspooner: pomalu se rozhořívající píseň postavená na opakovaných minimalistických vzorcích po vzoru Philipa Glasse, první ze spoluprací alba s Lindou Perry.",
+     "educationalLevel": "introductory",
+     "headline": "Fischerspooner - All We Are",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "ostinato",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/ostinato/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-all-we-are/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/fischerspooner-all-we-are/",
+     "wordCount": 484
+    }
+   ]
+  },
   "fischerspooner-emerge.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -47835,6 +48848,103 @@
     }
    ]
   },
+  "florence-the-machine-hiding.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-hiding/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Florence + The Machine",
+      "sameAs": "https://musicbrainz.org/artist/5fee3020-513b-48c2-b1f7-4681b01db0c6"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "alternative",
+      "indie rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "How Big, How Blue, How Beautiful (Deluxe)"
+     },
+     "isrcCode": "GBUM71500290",
+     "name": "Hiding",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2513b948-f237-4bfd-b91c-e912bf8c5c8a",
+      "https://www.youtube.com/watch?v=nJeNjZqlcDE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/florence-the-machine-hiding/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-hiding/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "How Big, How Blue, How Beautiful",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/How_Big,_How_Blue,_How_Beautiful"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "James Ford (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/James_Ford_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lungs (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lungs_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hiding (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2513b948-f237-4bfd-b91c-e912bf8c5c8a"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Bonusová skladba rozšířeného vydání How Big, How Blue, How Beautiful z roku 2015 a jediná píseň této edice, kterou produkoval James Ford, producent Dog Days Are Over, a ne Markus Dravs, producent alba.",
+     "educationalLevel": "introductory",
+     "headline": "Florence + The Machine - Hiding",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "bonus track",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bonus-track/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-hiding/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/florence-the-machine-hiding/",
+     "wordCount": 470
+    }
+   ]
+  },
   "flume-chet-faker-drop-the-game.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -47937,6 +49047,127 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/flume-chet-faker-drop-the-game/",
      "wordCount": 474
+    }
+   ]
+  },
+  "flume-chet-faker-this-song-is-not-about-a-girl.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-this-song-is-not-about-a-girl/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Flume, Chet Faker",
+      "sameAs": "https://musicbrainz.org/artist/35fd8d42-b4a6-4414-9827-8766bd0daa3c"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "nu-disco",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lockjaw"
+     },
+     "isrcCode": "AUFF01300490",
+     "name": "This Song Is Not About a Girl",
+     "sameAs": [
+      "https://musicbrainz.org/recording/db0e5918-9083-4c65-b870-b2b62c1622af",
+      "https://www.youtube.com/watch?v=dKAbjLO1bUw"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/flume-chet-faker-this-song-is-not-about-a-girl/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-this-song-is-not-about-a-girl/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Lockjaw (EP)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lockjaw_(EP)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume & Chet Faker - \"This Song Is Not About a Girl\"",
+       "publisher": "EARMILK",
+       "url": "https://earmilk.com/2013/11/25/flume-chet-faker-this-song-is-not-about-a-girl"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "EP Review: Flume and Chet Faker - 'Lockjaw'",
+       "publisher": "Renowned for Sound",
+       "url": "https://renownedforsound.com/?p=21009"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume & Chet Faker - This Song Is Not About A Girl",
+       "publisher": "Indie Shuffle",
+       "url": "https://www.indieshuffle.com/flume-chet-faker-this-song-is-not-about-a-girl/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume and Chet Faker - Lockjaw (user review)",
+       "publisher": "Sputnikmusic",
+       "url": "https://www.sputnikmusic.com/review/59984/Flume-and-Chet-Faker-Lockjaw"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "This Song Is Not About a Girl (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/db0e5918-9083-4c65-b870-b2b62c1622af"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume & Chet Faker - This Song Is Not About A Girl",
+       "publisher": "Future Classic",
+       "url": "https://www.youtube.com/watch?v=dKAbjLO1bUw"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Závěrečná skladba EP Lockjaw, které Flume a Chet Faker vydali v roce 2013, se odvrací od pomalého soulu Drop the Game k rychlejšímu groovu s nádechem disca, který podle slov jednoho recenzenta graduje k euforii, aniž by ztratil svou zadumanou hranu.",
+     "educationalLevel": "introductory",
+     "headline": "Flume, Chet Faker - This Song Is Not About a Girl",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bassline/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-this-song-is-not-about-a-girl/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/flume-chet-faker-this-song-is-not-about-a-girl/",
+     "wordCount": 446
     }
    ]
   },
@@ -52766,6 +53997,124 @@
     }
    ]
   },
+  "gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gigi D'Agostino & Lento Violento",
+      "sameAs": "https://musicbrainz.org/artist/57c1e5ea-e08f-413a-bcb1-f4e4b675bead"
+     },
+     "datePublished": "2020",
+     "genre": [
+      "dance",
+      "electronic",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Slowerland"
+     },
+     "name": "Bla Bla Bla (Bla Bla Ton Mix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/67ca8499-042d-46e6-b7fd-f2f796d3718c",
+      "https://www.youtube.com/watch?v=bfVfogLVPgk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Slowerland (release, track list and credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/969a4c88-d1e7-4107-8ce2-4986da88db8f"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Lento Violento & Astro Musico - Slower Land 2",
+       "publisher": "IDP Records",
+       "url": "https://idprecords.com/news/lento-violento-astro-musico-slower-land-2"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bla Bla Bla (Gigi D'Agostino song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Bla_Bla_Bla_(Gigi_D%27Agostino_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bla Bla Bla (Gigi D'Agostino)",
+       "publisher": "Wikipedia (Italian)",
+       "url": "https://it.wikipedia.org/wiki/Bla_Bla_Bla_(Gigi_D%27Agostino)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gigi D'Agostino",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gigi_D%27Agostino"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lento Violento (artist)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/artist/97d1d892-1262-4150-8ee4-30b39cdf8695"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Gigi D'Agostino & Lento Violento - Bla Bla Bla (Bla Bla Ton Mix Gigi Dag & Luca Noise)",
+       "publisher": "GIGI D'AGOSTINO (YouTube)",
+       "url": "https://www.youtube.com/watch?v=bfVfogLVPgk"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Přepracování hitu Gigiho D'Agostina z roku 1999, dlouhé pouhé 2:14: Bla Bla Ton Mix, který vytvořili Gigi Dag s Lucou Noisem a který v roce 2020 vyšel na albu Slowerland pod společným jménem Gigi D'Agostino & Lento Violento.",
+     "educationalLevel": "introductory",
+     "headline": "Gigi D'Agostino & Lento Violento - Bla Bla Bla (Bla Bla Ton Mix)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/",
+     "wordCount": 482
+    }
+   ]
+  },
   "giles-lamb-mairi-campbell-peter-nicholson-guido-de-groot-dead-island-trailer-theme-original-soundtrack.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -53139,6 +54488,124 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gin-wigmore-devil-in-me/",
      "wordCount": 534
+    }
+   ]
+  },
+  "gin-wigmore-dirty-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-dirty-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gin Wigmore",
+      "sameAs": "https://musicbrainz.org/artist/cb0b7933-a5bc-48dc-a36b-00315d12ca8c"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "rock",
+      "blues",
+      "alternative rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gravel & Wine"
+     },
+     "isrcCode": "AUUM71101242",
+     "name": "Dirty Love",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b170f9a8-86f6-4689-83c1-b25233d2411c",
+      "https://www.youtube.com/watch?v=K9cWfTyzDrU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gin-wigmore-dirty-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-dirty-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Gravel & Wine",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gravel_%26_Wine"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gin Wigmore",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gin_Wigmore"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mike Viola",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mike_Viola"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Gin Wigmore – “Gravel and Wine” (2011)",
+       "publisher": "Femme Metal Webzine",
+       "url": "https://www.femmemetalwebzine.net/indie-zone/gin-wigmore-gravel-and-wine-2011/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Gin Wigmore Shines On New Album",
+       "publisher": "Music Collision",
+       "url": "https://musiccollision2.blogspot.com/2013/04/gin-wigmore-shines-on-new-album.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dirty Love (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/b170f9a8-86f6-4689-83c1-b25233d2411c"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dirty Love (Provided to YouTube)",
+       "publisher": "YouTube (Gin Wigmore - Topic)",
+       "url": "https://www.youtube.com/watch?v=K9cWfTyzDrU"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Rockově bluesová skladba kratší než tři minuty z alba Gin Wigmore Gravel & Wine z roku 2011, kterou napsala s Mikem Violou a produkoval Butch Walker a o níž jeden recenzent napsal, že by se neztratila ve filmu o Jamesi Bondovi.",
+     "educationalLevel": "introductory",
+     "headline": "Gin Wigmore - Dirty Love",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "blues",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/blues/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-dirty-love/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gin-wigmore-dirty-love/",
+     "wordCount": 482
     }
    ]
   },
@@ -54211,6 +55678,145 @@
     }
    ]
   },
+  "glasser-tremel-astronomer-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/glasser-tremel-astronomer-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Glasser",
+      "sameAs": "https://musicbrainz.org/artist/ff2039e0-a4b3-4c6e-ad23-949f8ec63ffc"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "electronic",
+      "remix",
+      "art pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Tremel"
+     },
+     "isrcCode": "GB6HK0900006",
+     "name": "Tremel (Astronomer Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/80b3a830-b8ff-4993-80ba-63ca8432f18c",
+      "https://www.youtube.com/watch?v=vCkCaF1L1D0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/glasser-tremel-astronomer-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/glasser-tremel-astronomer-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Glasser, “Tremel” (Astronomer Remix) MP3",
+       "publisher": "The FADER",
+       "url": "https://www.thefader.com/2010/03/01/glasser-tremel-astronomer-remix-mp3"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Nialler9's Best Remixes of 2010",
+       "publisher": "Nialler9",
+       "url": "https://nialler9.com/nialler9s-top-remixes-2010/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Glasser - Tremel (12-inch)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2203088"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Glasser - Tremel (digital single)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/8611057"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Astronomer",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/1521599"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Glasser - Ring",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/glasser-ring"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Glasser (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Glasser_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Tremel (single)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/c4b07e45-60d6-4fdb-9bb6-67e34fa6c331"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Tremel (Astronomer Remix) (Provided to YouTube by Beggars Group Digital)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=vCkCaF1L1D0"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Devítiminutový remix, který uzavírá singl Tremel od Glasser, vydaný v roce 2010 u Young Turks: producent Astronomer podle The FADER píseň Cameron Mesirow zesílil laserovými syntezátorovými údery, zatímco její hlas pluje nad nimi.",
+     "educationalLevel": "introductory",
+     "headline": "Glasser - Tremel (Astronomer Remix)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/b-side/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/glasser-tremel-astronomer-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/glasser-tremel-astronomer-remix/",
+     "wordCount": 462
+    }
+   ]
+  },
   "glasser-tremel.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -54737,6 +56343,124 @@
     }
    ]
   },
+  "gorgon-city-tish-hyman-6am.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorgon-city-tish-hyman-6am/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorgon City, Tish Hyman",
+      "sameAs": "https://musicbrainz.org/artist/ba8aaa28-2de4-4d5c-824e-1e9d49235c55"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "house",
+      "deep house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sirens"
+     },
+     "name": "6AM",
+     "sameAs": [
+      "https://musicbrainz.org/recording/290e0351-27a6-47c1-b8f8-6e64e9d5a270",
+      "https://www.youtube.com/watch?v=w7xReIq6eTU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorgon-city-tish-hyman-6am/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorgon-city-tish-hyman-6am/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Gorgon City Tap Tish Hyman on Soulful Track \"6AM\"",
+       "publisher": "Broadly (Vice)",
+       "url": "https://www.vice.com/en/article/xykj3z/gorgon-citys-tap-tish-hyman-on-soulful-track-6am"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Gorgon City – Sirens",
+       "publisher": "EarMilk",
+       "url": "https://earmilk.com/?p=221441"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Album Review: Gorgon City 'Sirens'",
+       "publisher": "Skiddle",
+       "url": "https://www.skiddle.com/news/all/Album-Review-Gorgon-City-aposSirensapos-/23657/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sirens (Gorgon City album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sirens_(Gorgon_City_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorgon City",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gorgon_City"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "6AM (Gorgon City - Topic, provided by Universal Music Group)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=w7xReIq6eTU"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Nejklubovější skladba debutu Sirens od Gorgon City z roku 2014: klasický vokální house s panovačnou basovou linkou, který nese napůl rapovaná, napůl zpívaná sloka zpěvačky a raperky Tish Hyman z Bronxu.",
+     "educationalLevel": "introductory",
+     "headline": "Gorgon City, Tish Hyman - 6AM",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/rapping/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorgon-city-tish-hyman-6am/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorgon-city-tish-hyman-6am/",
+     "wordCount": 490
+    }
+   ]
+  },
   "gorgon-city-zak-abel-dj-anna-unmissable-dj-anna-remix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -54832,6 +56556,116 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gorgon-city-zak-abel-dj-anna-unmissable-dj-anna-remix/",
      "wordCount": 579
+    }
+   ]
+  },
+  "gorillaz-12d3.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-12d3/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "alternative",
+      "acoustic",
+      "trip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "G-Sides"
+     },
+     "isrcCode": "GBAYE0000883",
+     "name": "12D3",
+     "sameAs": [
+      "https://musicbrainz.org/recording/45878cf3-1360-44d5-8a0c-27f11a18800a",
+      "https://www.youtube.com/watch?v=nWIWAOhpcpQ"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-12d3/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-12d3/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "G-Sides",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/G-Sides"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Tomorrow Comes Today",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Tomorrow_Comes_Today"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Gorillaz: G-Sides",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/review/gorillaz-gsides/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gorillaz"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "12D3 (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/45878cf3-1360-44d5-8a0c-27f11a18800a"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Závěrečná skladba prvního EP Gorillaz Tomorrow Comes Today (2000), později poslední píseň výběru B-stran G-Sides: akustická kytara, klavír a hřejivé harmonie s nádechem gospelu od kreslené kapely.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - 12D3",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/b-side/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-12d3/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-12d3/",
+     "wordCount": 485
     }
    ]
   },
@@ -56350,6 +58184,239 @@
     }
    ]
   },
+  "gravagerz-chihiro.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gravagerz-chihiro/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gravagerz",
+      "sameAs": "https://musicbrainz.org/artist/092b4d23-acf7-4d98-aabd-6162264ead2a"
+     },
+     "datePublished": "2024",
+     "genre": [
+      "house",
+      "electronic",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Chihiro"
+     },
+     "isrcCode": "CA5KR2471178",
+     "name": "Chihiro",
+     "sameAs": [
+      "https://musicbrainz.org/recording/29c7943b-001c-427d-9ef3-deb0dd93790c",
+      "https://www.youtube.com/watch?v=vfoHYqX6VDU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gravagerz-chihiro/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gravagerz-chihiro/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Chihiro (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Chihiro_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "GRAVAGERZ (artist page)",
+       "publisher": "Insomniac",
+       "url": "https://www.insomniac.com/music/artists/gravagerz/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gravagerz",
+       "publisher": "SPIN Artist Agency",
+       "url": "https://www.spinartistagency.com/gravagerz"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Gravagerz - Chihiro (single)",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/605058302"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "billie eilish - chihiro (gravagerz remix) extended mix",
+       "publisher": "Bandcamp",
+       "url": "https://gravagerz.bandcamp.com/track/billie-eilish-chihiro-gravagerz-remix-extended-mix"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Chihiro (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/29c7943b-001c-427d-9ef3-deb0dd93790c"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Gravagerz - Chihiro (Official Music Video)",
+       "publisher": "Gravagerz",
+       "url": "https://www.youtube.com/watch?v=vfoHYqX6VDU"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Housová verze písně Chihiro od Billie Eilish, kterou Gravagerz začal jako remix na SoundCloudu, se rozšířila po TikToku a Instagramu a v červnu 2024 vyšla jako jeho vlastní dvouminutová coververze s vyměněným zpěvem, vydaná pod jeho jménem.",
+     "educationalLevel": "introductory",
+     "headline": "Gravagerz - Chihiro",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "self-release",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/self-release/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gravagerz-chihiro/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gravagerz-chihiro/",
+     "wordCount": 465
+    }
+   ]
+  },
+  "gray-one-spliff.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gray-one-spliff/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gray",
+      "sameAs": "https://musicbrainz.org/artist/88793b09-3f5f-407e-a6fd-71bccccb0715"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "drum and bass",
+      "jungle",
+      "reggae"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Rubadub"
+     },
+     "isrcCode": "GB8KE1955986",
+     "name": "One Spliff",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9683801f-0714-4915-9861-fff68402f1c6",
+      "https://www.youtube.com/watch?v=ZVvmTWQQkV4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gray-one-spliff/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gray-one-spliff/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Gray: interview",
+       "publisher": "Goat Shed",
+       "url": "https://web.archive.org/web/20250708014836/https://goatshedmusic.com/gray-interview/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "The gospel of Gray: music always finds a way to bring people together",
+       "publisher": "UKF",
+       "url": "https://ukf.com/read/the-gospel-of-gray-music-always-finds-a-way-to-bring-people-together/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Road runners: Aries & Kelvin 373 tell the Born On Road story",
+       "publisher": "UKF",
+       "url": "https://ukf.com/read/road-runners-aries-kelvin-373-tell-the-born-on-road-story/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Rubadub EP (release and track list)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/ae0ebc71-073e-4e61-850e-6cbcb9ba8946"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "One Spliff (Gray - Topic)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=ZVvmTWQQkV4"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Druhá skladba Grayova debutového EP Rubadub z roku 2019 u bristolského labelu Born On Road: drum and bass zakořeněný v junglu, který Gray zrychlil poté, co ho label poprvé slyšel, a jedna ze dvou písní, na kterých podle něj stojí jeho kariéra.",
+     "educationalLevel": "introductory",
+     "headline": "Gray - One Spliff",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/club-culture/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gray-one-spliff/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gray-one-spliff/",
+     "wordCount": 458
+    }
+   ]
+  },
   "gregory-porter-do-not-lose-your-steam.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -56452,6 +58519,303 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gregory-porter-do-not-lose-your-steam/",
      "wordCount": 581
+    }
+   ]
+  },
+  "gridlok-insecticide-vip.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gridlok-insecticide-vip/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gridlok",
+      "sameAs": "https://musicbrainz.org/artist/e344e84e-684b-4666-9a71-acecafce82de"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "drum and bass",
+      "neurofunk",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Audio Presents RAMlife Drum & Bass"
+     },
+     "isrcCode": "GBBZH1500018",
+     "name": "Insecticide VIP",
+     "sameAs": [
+      "https://musicbrainz.org/recording/79c0ee01-491b-4651-8202-cacc51d8889c",
+      "https://www.youtube.com/watch?v=sOJRaChC_og"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gridlok-insecticide-vip/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gridlok-insecticide-vip/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Audio - RAMLIFE Drum & Bass (RAMMLP21D)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6685519"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gridlok - Insecticide / Dirtball (P51UK-24)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3288486"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gridlok",
+       "publisher": "Dachstock",
+       "url": "https://www.dachstock.ch/artist/gridlok"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gridlok",
+       "publisher": "Drop The Bass",
+       "url": "https://origin.dropthebass.co/artists/gridlok"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Neural Injection #002",
+       "publisher": "Salacious Sound",
+       "url": "https://salacioussound.com/?p=18984"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Download Gridlok's \"51 Is A Number\" Mix",
+       "publisher": "Complex",
+       "url": "https://www.complex.com/music/2013/08/gridlok-51-is-a-number-mix"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "What Does “VIP Mix / VIP Edit” Mean In DJ Set Tracklists?",
+       "publisher": "DJGear2K",
+       "url": "https://djgear2k.com/what-does-vip-mix-mean-in-dj-sets/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "RAM Records",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/RAM_Records"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Insecticide (VIP) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/79c0ee01-491b-4651-8202-cacc51d8889c"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Gridlok - Insecticide VIP (RAMLIFE Exclusive)",
+       "publisher": "YouTube (RAM Records)",
+       "url": "https://www.youtube.com/watch?v=Ai9l6K9ZnX8"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Gridlokovo vlastní přepracování skladby Insecticide, kterou v roce 2011 vydal u labelu Project 51 a kterou jeden životopis nazval nejděsivější skladbou toho roku; vyšlo v roce 2015 jako exkluzivita na kompilaci RAMLIFE Drum & Bass od RAM Records, kterou smíchal Audio.",
+     "educationalLevel": "intermediate",
+     "headline": "Gridlok - Insecticide VIP",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "vip mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vip-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gridlok-insecticide-vip/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gridlok-insecticide-vip/",
+     "wordCount": 459
+    }
+   ]
+  },
+  "groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Groove Armada, Brodanse, Cari Golden, Darkovski",
+      "sameAs": "https://musicbrainz.org/artist/35723b60-732e-4bd8-957f-320b416e7b7f"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "deep house",
+      "chillout",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sweat (Remixes)"
+     },
+     "isrcCode": "NLF711401150",
+     "name": "Sweat - Darkovski Extended Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/18109141-8038-4dcc-93c0-c02b3f18eec2",
+      "https://www.youtube.com/watch?v=Q-MbmwGFsY0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Groove Armada & Brodanse Feat. Cari Golden - Sweat (12-inch)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/4982654"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Groove Armada & Brodanse Feat. Cari Golden - Sweat (Armada)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5125373"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Groove Armada, Brodanse & Cari Golden - Sweat \"The Remixes\"",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5316224"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Groove Armada & Brodanse Feat. Cari Golden - Sweat (Remixes)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5564349"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Darkovski",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/3488602"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Brodanse",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/3045550"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Groove Armada & Brodanse - Advancing Man feat. Kevin Knapp",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/groove-armada-brodanse-advancing-man-feat-kevin-knapp"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Groove Armada - Little Black Book",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/376e2962-259c-426c-88ea-c92391b92e49"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Groove Armada",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Groove_Armada"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sweat (Darkovski remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/18109141-8038-4dcc-93c0-c02b3f18eec2"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Sweat (Darkovski Extended Remix) (Provided to YouTube by Armada)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=Q-MbmwGFsY0"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Šestapůlminutový remix od Darkovského ke skladbě Sweat, společné nahrávce Groove Armada a londýnských bratrů Brodanse z roku 2013, kterou zpívá Cari Golden; vyšel v roce 2014 mezi remixy, které Discogs uvádí jako vítěze soutěže na Beatportu.",
+     "educationalLevel": "introductory",
+     "headline": "Groove Armada, Brodanse, Cari Golden, Darkovski - Sweat - Darkovski Extended Remix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "extended mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/extended-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/",
+     "wordCount": 528
     }
    ]
   },
@@ -56669,6 +59033,225 @@
     }
    ]
   },
+  "gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gucci Mane, Bruno Mars, Kodak Black",
+      "sameAs": "https://musicbrainz.org/artist/36494952-f434-45d8-a958-8b4acdbcf8a8"
+     },
+     "datePublished": "2018",
+     "genre": [
+      "hip-hop",
+      "pop",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Evil Genius"
+     },
+     "isrcCode": "USAT21811087",
+     "name": "Wake Up in the Sky",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7a4eb25f-ffe0-4065-b9d6-ff343e822901",
+      "https://www.youtube.com/watch?v=U68MJz9DrI4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Wake Up in the Sky",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Wake_Up_in_the_Sky"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Gucci Mane - Evil Genius",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/gucci_mane-evil_genius"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Wake Up in the Sky (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7a4eb25f-ffe0-4065-b9d6-ff343e822901"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Gucci Mane, Bruno Mars, Kodak Black - Wake Up in The Sky [Official Music Video]",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=U68MJz9DrI4"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Singl Gucci Mane z alba Evil Genius z roku 2018: Bruno Mars zpívá hedvábný R&B hook, ke slokám Gucci Mane a Kodaka Blacka přichází trapový beat a celá zastřená, oslavná píseň je o tom, jak je člověku dobře.",
+     "educationalLevel": "introductory",
+     "headline": "Gucci Mane, Bruno Mars, Kodak Black - Wake Up in the Sky",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/",
+     "wordCount": 511
+    }
+   ]
+  },
+  "gusgus-magnified-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gusgus-magnified-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "GusGus",
+      "sameAs": "https://musicbrainz.org/artist/f5cff7b2-b19d-4934-8525-b17248b30ab3"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "electronic",
+      "house",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Arabian Horse"
+     },
+     "name": "Magnified Love",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f9d91dd6-ddf5-48ba-83a3-b019ac54081a",
+      "https://www.youtube.com/watch?v=TzJYpJKQtUc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gusgus-magnified-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gusgus-magnified-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gus Gus: Arabian Horse",
+       "publisher": "Textura",
+       "url": "https://web.archive.org/web/20160912210744/http://textura.org/archives/g/gusgus_arabianhorse.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "GusGus - Arabian Horse",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gus-gus-arabian-horse-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gus Gus - Arabian Horse",
+       "publisher": "musicOMH",
+       "url": "https://www.musicomh.com/reviews/albums/gus-gus-arabian-horse"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "GusGus - Arabian Horse (credits)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2879598-GusGus-Arabian-Horse"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "GusGus - Magnified Love / Within You Dubs",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2844206-GusGus-Magnified-Love-Within-You-Dubs"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Arabian Horse (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Arabian_Horse_(album)"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Daníel Ágúst prosebně zpívá nad taneční elektronikou GusGus z období Kompaktu na albu Arabian Horse (2011): jeden kritik slyšel v refrénu Tainted Love od Soft Cell, druhý jediný přešlap alba.",
+     "educationalLevel": "introductory",
+     "headline": "GusGus - Magnified Love",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gusgus-magnified-love/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gusgus-magnified-love/",
+     "wordCount": 478
+    }
+   ]
+  },
   "gusgus-over.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -56786,6 +59369,137 @@
     }
    ]
   },
+  "guti-no-promises-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/guti-no-promises-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Guti",
+      "sameAs": "https://musicbrainz.org/artist/8177d014-b596-4645-bd29-81c40a452d8d"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "tech house",
+      "minimal",
+      "house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Patio De Juegos"
+     },
+     "name": "No Promises - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8516bba2-0513-475c-b88c-8e750237d84d",
+      "https://www.youtube.com/watch?v=mc3n2jEaRN8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/guti-no-promises-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/guti-no-promises-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Patio De Juegos, by Guti",
+       "publisher": "Bandcamp (Guti / Desolat)",
+       "url": "https://gutidesolat.bandcamp.com/album/patio-de-juegos"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Guti - Patio De Juegos (DESOLAT LP 004)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2842775"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Argentinian EDM Sensation Guti Talks Jazz, Tango, and Writing Music for Movies",
+       "publisher": "Miami New Times",
+       "url": "https://www.miaminewtimes.com/music/argentinian-edm-sensation-guti-talks-jazz-tango-and-writing-music-for-movies-6444611/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Guti: Patio de Juegos",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/143674-guti-patio-de-juegos-2496002919.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album Review: Guti - Patio de Juegos",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-guti-patio-de-juegos/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Loco Dice",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Loco_Dice"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "No Promises (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/8516bba2-0513-475c-b88c-8e750237d84d"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "No Promises (Original Mix) (Provided to YouTube by Label Worx)",
+       "publisher": "YouTube (Release - Topic)",
+       "url": "https://www.youtube.com/watch?v=mc3n2jEaRN8"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "No Promises, které Guti natočil s Ryanem Crossonem z Visionquest pro své debutové album Patio De Juegos z roku 2011 u labelu Desolat Loca Diceho, je šest minut toho, co poznámky k albu nazvaly opravdu hnacím groovem pro taneční parket.",
+     "educationalLevel": "introductory",
+     "headline": "Guti - No Promises - Original Mix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "mastering",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/mastering/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/guti-no-promises-original-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/guti-no-promises-original-mix/",
+     "wordCount": 453
+    }
+   ]
+  },
   "guts-patrice-the-studio-school-voices-nyc-want-it-back.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -56889,6 +59603,126 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/guts-patrice-the-studio-school-voices-nyc-want-it-back/",
      "wordCount": 522
+    }
+   ]
+  },
+  "guts-what-is-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/guts-what-is-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Guts",
+      "sameAs": "https://musicbrainz.org/artist/a1f8f29c-4163-48d1-9469-35f74e61ee4e"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "hip-hop",
+      "electronic",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Paradise for All"
+     },
+     "isrcCode": "FR4EO1100018",
+     "name": "What Is Love",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2e6fbfb0-aa36-4ab0-a7ce-2d1d1ada165e",
+      "https://www.youtube.com/watch?v=2j7xQIf4Tb8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/guts-what-is-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/guts-what-is-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Guts - Paradise for All",
+       "publisher": "Heavenly Sweetness",
+       "url": "https://www.heavenly-sweetness.com/?p=1207"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Paradise for All by Guts",
+       "publisher": "Rush Hour",
+       "url": "https://rushhour.nl/record/cd/paradise-all"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Guts (musicien)",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/Guts_(musicien)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Retrospective 1992 - 2012 (track list and annotation)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/185c6ad6-de09-49a4-8040-c90fc3930652"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "What Is Love (recording and releases)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2e6fbfb0-aa36-4ab0-a7ce-2d1d1ada165e"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Akai MPC",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Akai_MPC"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Guts - What Is Love (Official Audio)",
+       "publisher": "Heavenly Sweetness (YouTube)",
+       "url": "https://www.youtube.com/watch?v=2j7xQIf4Tb8"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Šestá skladba alba Paradise for All, které v roce 2012 vydal francouzský beatmaker Guts usazený na Baleárských ostrovech: kus, který později datoval do roku 2002 a podle svého výčtu ho vytvořil na MPC 4000 s kontrabasem a pianem Rhodes.",
+     "educationalLevel": "introductory",
+     "headline": "Guts - What Is Love",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sequencer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sequencer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/guts-what-is-love/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/guts-what-is-love/",
+     "wordCount": 453
     }
    ]
   },
@@ -110906,6 +113740,134 @@
     }
    ]
   },
+  "apocalyptica-seek-and-destroy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/apocalyptica-seek-and-destroy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Apocalyptica",
+      "sameAs": "https://musicbrainz.org/artist/788ad31c-bf0c-4a31-83f8-b8b130d79c76"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "cover",
+      "neoclassical",
+      "symphonic metal"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plays Metallica by Four Cellos (2016 Remastered Version)"
+     },
+     "isrcCode": "DERK41600025",
+     "name": "Seek and Destroy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7fd0c214-e769-477f-a145-6c0fbdd6e334",
+      "https://www.youtube.com/watch?v=9Y6iN99OFIo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/apocalyptica-seek-and-destroy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/apocalyptica-seek-and-destroy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Plays Metallica by Four Cellos",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plays_Metallica_by_Four_Cellos"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Seek & Destroy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Seek_%26_Destroy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Apocalyptica: Plays Metallica By Four Cellos album review",
+       "publisher": "Louder",
+       "url": "https://www.loudersound.com/reviews/apocalyptica-plays-metallica-by-four-cellos-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "APOCALYPTICA Releases New Video For Cover Of METALLICA's 'Battery'",
+       "publisher": "Blabbermouth",
+       "url": "https://blabbermouth.net/news/apocalyptica-releases-new-video-for-cover-of-metallicas-battery"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "APOCALYPTICA Covers METALLICA's 'Seek & Destroy' At Switzerland's SONISPHERE: Pro-Shot Footage",
+       "publisher": "Blabbermouth",
+       "url": "https://blabbermouth.net/news/apocalyptica-covers-metallicas-seek-destroy-at-switzerlands-sonisphere-pro-shot-footage"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "CD Review: Apocalyptica - Plays Metallica By Four Cellos (re-mastered)",
+       "publisher": "Reflections of Darkness",
+       "url": "https://www.reflectionsofdarkness.com/review-flash/19456-cd-review-apocalyptica-plays-metallica-by-four-cellos-re-mastered"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plays Metallica by Four Cellos (2016 digital release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/e14a61c4-d29f-4826-8d9b-8ca90b663bc0"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Apocalyptica - 'Seek & Destroy' (Bonus)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=9Y6iN99OFIo"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Apocalyptica's four-cello version of Seek & Destroy, the Metallica song from Kill 'Em All, first released in 2016 as a never-before-heard bonus recording on the remastered Plays Metallica by Four Cellos.",
+     "educationalLevel": "introductory",
+     "headline": "Apocalyptica - Seek and Destroy",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "instrumental",
+       "url": "https://korczis.github.io/sonic-playground/concept/instrumental/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "riff",
+       "url": "https://korczis.github.io/sonic-playground/concept/riff/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/apocalyptica-seek-and-destroy/",
+     "wordCount": 540
+    }
+   ]
+  },
   "aquarius-heaven-can-t-buy-love.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -117341,6 +120303,119 @@
     }
    ]
   },
+  "belleruche-bam-bam-sound-afan-bam-bam-sound-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Belleruche, Bam Bam Sound"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "electronic",
+      "trip-hop",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "16 Minutes"
+     },
+     "name": "Afan - Bam Bam Sound Remix",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=ngfBPTRc6nQ"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Belleruche - 16 Minutes",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/4163167-Belleruche-16-Minutes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "16 Minutes",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/866781782"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bam Bam Sound",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/3475296-Bam-Bam-Sound"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Rollerchain",
+       "publisher": "Bandcamp (Belleruche)",
+       "url": "https://belleruche.bandcamp.com/album/rollerchain"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Belleruche, Rollerchain : le cardiochoc",
+       "publisher": "La Toile de Pandore",
+       "url": "https://web.archive.org/web/20260611225820/http://www.latoiledepandore.com/2012/06/belleruche-rollerchain-le-cardiochoc.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Belleruche - Afan - Bam Bam Sound Remix",
+       "publisher": "YouTube (TruThoughtsJukeBox)",
+       "url": "https://www.youtube.com/watch?v=ngfBPTRc6nQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Belleruche",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Belleruche"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Bam Bam Sound, a DJ pair resident at London's Big Chill Bar, stretch Afan, a 2:20 flash of synth and drums from Belleruche's darker fourth album Rollerchain, to almost five minutes for the 16 Minutes single (Tru Thoughts, 2012).",
+     "educationalLevel": "introductory",
+     "headline": "Belleruche, Bam Bam Sound - Afan - Bam Bam Sound Remix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/concept/b-side/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/belleruche-bam-bam-sound-afan-bam-bam-sound-remix/",
+     "wordCount": 519
+    }
+   ]
+  },
   "belleruche-clockwatching.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -118953,6 +122028,129 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/ben-khan-monsoon-daydream/",
      "wordCount": 540
+    }
+   ]
+  },
+  "ben-khan-our-father.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ben-khan-our-father/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ben Khan",
+      "sameAs": "https://musicbrainz.org/artist/9dabeeb9-7766-468c-856b-e924058d69d6"
+     },
+     "datePublished": "2018",
+     "genre": [
+      "electro-pop",
+      "funk",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Ben Khan"
+     },
+     "name": "our father",
+     "sameAs": [
+      "https://musicbrainz.org/recording/357ee0cb-c223-4de1-8acd-dacb1c62f1ff",
+      "https://www.youtube.com/watch?v=S7Cs2RyPViM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ben-khan-our-father/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ben-khan-our-father/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Album Review: Ben Khan - Ben Khan",
+       "publisher": "The National Student",
+       "url": "https://web.archive.org/web/20190716063529/https://www.thenationalstudent.com/Music/2018-08-11/album_review_ben_khan_ben_khan.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Ben Khan - Ben Khan",
+       "publisher": "Written in Music",
+       "url": "https://writteninmusic.com/albumrecensie/ben-khan-ben-khan/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Album Review: Ben Khan (Self-Titled)",
+       "publisher": "The Indiependent",
+       "url": "https://indiependent.co.uk/?p=29530"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Ben Khan - Ben Khan",
+       "publisher": "The Music",
+       "url": "https://themusic.com.au/reviews/ben-khan-ben-khan-donald-finlayson/rrWhoKOipaQ/07-08-18"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Ben Khan details self-titled debut album with new track 'ruby'",
+       "publisher": "DIY",
+       "url": "https://diymag.com/news/ben-khan-debut-album-announcement-interview-ruby-listen"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ben Khan (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/a982f3ed-d0c7-4586-b8e0-3b38bc1b9a3e"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "our father (Provided to YouTube)",
+       "publisher": "YouTube (Ben Khan - Topic)",
+       "url": "https://www.youtube.com/watch?v=S7Cs2RyPViM"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The ninth track of Ben Khan's 2018 debut album: a short, thumping song that one reviewer heard as experimental Prince-style funk and another read as Khan's take on religion.",
+     "educationalLevel": "introductory",
+     "headline": "Ben Khan - our father",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "kick drum",
+       "url": "https://korczis.github.io/sonic-playground/concept/kick-drum/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "distortion",
+       "url": "https://korczis.github.io/sonic-playground/concept/distortion/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "mixing",
+       "url": "https://korczis.github.io/sonic-playground/concept/mixing/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/ben-khan-our-father/",
+     "wordCount": 539
     }
    ]
   },
@@ -134279,6 +137477,138 @@
     }
    ]
   },
+  "d12-bitch.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-bitch/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "D12 World"
+     },
+     "isrcCode": "USIR10400115",
+     "name": "Bitch",
+     "sameAs": [
+      "https://musicbrainz.org/recording/734b93b7-c64b-47ba-b648-4e22d5de1c89",
+      "https://www.youtube.com/watch?v=6x9PWTQMvzY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-bitch/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-bitch/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Superman (Eminem song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Superman_(Eminem_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Luis Resto (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Luis_Resto_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Eminem's band could use a little more Eminem, a little better math",
+       "publisher": "Chicago Maroon",
+       "url": "https://chicagomaroon.com/?p=11912"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Immaturity makes this World go round",
+       "publisher": "Indiana Daily Student",
+       "url": "https://www.idsnews.com/article/2004/05/immaturity-makes-this-world-go-round"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Plugged In",
+       "url": "https://www.pluggedin.com/album-reviews/d12-d12world/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bitch (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/734b93b7-c64b-47ba-b648-4e22d5de1c89"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Bitch (Provided to YouTube by Universal Music Group, credits)",
+       "publisher": "YouTube (D12 - Topic)",
+       "url": "https://www.youtube.com/watch?v=6x9PWTQMvzY"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Bitch, track 13 of D12's 2004 album D12 World, is an Eminem production with Luis Resto and a sung part credited to Deanna Johnson; one reviewer liked Eminem's silly verse, another called the song a misogynist anthem, a third said it was better as Superman.",
+     "educationalLevel": "intermediate",
+     "headline": "D12 - Bitch",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/d12-bitch/",
+     "wordCount": 497
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -134757,6 +138087,135 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/dada-life-don-t-stop/",
      "wordCount": 519
+    }
+   ]
+  },
+  "dada-life-everything-is-free.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dada-life-everything-is-free/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dada Life",
+      "sameAs": "https://musicbrainz.org/artist/5b3cc848-942f-4363-8e89-b63a13c3fd0e"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "electro-house",
+      "electronic",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Rules of Dada"
+     },
+     "isrcCode": "SE22J1200124",
+     "name": "Everything Is Free",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3d1582ac-5a8e-45c6-898b-f95443d832f7",
+      "https://www.youtube.com/watch?v=VRJhBhlsNNA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dada-life-everything-is-free/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dada-life-everything-is-free/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Rules of Dada",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Rules_of_Dada"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dada Life",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dada_Life"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life - The Rules of Dada (Album Review) [So Much Dada]",
+       "publisher": "Your EDM",
+       "url": "https://newstaging.youredm.com/?p=4043"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life: The Rules of Dada album review",
+       "publisher": "Dancing Astronaut",
+       "url": "https://dancingastronaut.com/2012/10/dada-life-the-rules-of-dada-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Music Review: Dada Life - The Rules of Dada via So Much Dada",
+       "publisher": "Magnetic Magazine",
+       "url": "https://magneticmag.com/2012/10/music-review-dada-life-the-rules-of-dada-via-so-much-dada/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "The Rules of Dada reviewed: bubbling over with bangers",
+       "publisher": "Elektro Daily",
+       "url": "https://elektrodaily.com/the-rules-of-dada-reviewed-bubbling-over-with-bangers/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Everything Is Free (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3d1582ac-5a8e-45c6-898b-f95443d832f7"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life - Everything Is Free",
+       "publisher": "Dada Life (YouTube)",
+       "url": "https://www.youtube.com/watch?v=VRJhBhlsNNA"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The ninth track of Dada Life's 2012 album The Rules of Dada: a female vocal over a monstrous bassline, pitch-bent leads and two big build-ups, the album's party anthem in the duo's newer electro-house style.",
+     "educationalLevel": "introductory",
+     "headline": "Dada Life - Everything Is Free",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "drop",
+       "url": "https://korczis.github.io/sonic-playground/concept/drop/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/dada-life-everything-is-free/",
+     "wordCount": 534
     }
    ]
   },
@@ -140233,6 +143692,119 @@
     }
    ]
   },
+  "dj-fresh-tc-gold-dust-tc-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dj-fresh-tc-gold-dust-tc-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "DJ Fresh, TC",
+      "sameAs": "https://musicbrainz.org/artist/77049387-0580-4a3a-a05f-d12b5d6b5042"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "drum and bass",
+      "remix",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gold Dust (Shy FX Re-Edit)"
+     },
+     "name": "Gold Dust - TC Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/3e09a588-1eea-44b7-bac7-c154489551d0",
+      "https://www.youtube.com/watch?v=hq3gKHuwrR4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dj-fresh-tc-gold-dust-tc-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dj-fresh-tc-gold-dust-tc-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Gold Dust (DJ Fresh song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gold_Dust_(DJ_Fresh_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "TC (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/TC_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "DJ Fresh - Gold Dust (MOS252EP)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/9047454"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "DJ Fresh – Gold Dust (Shy FX Re-Edit)",
+       "publisher": "Dancing Astronaut",
+       "url": "https://dancingastronaut.com/2012/12/dj-fresh-gold-dust-shy-fx-re-edit/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gold Dust (TC remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/3e09a588-1eea-44b7-bac7-c154489551d0"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "DJ Fresh - Gold Dust [TC Remix]",
+       "publisher": "YouTube (DJ Fresh)",
+       "url": "https://www.youtube.com/watch?v=hq3gKHuwrR4"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "TC's remix of DJ Fresh's Gold Dust, by the drum and bass producer, singer and DJ from Bristol's St Paul's: the second of six tracks on the 2012 Ministry of Sound download led by Shy FX's re-edit.",
+     "educationalLevel": "intermediate",
+     "headline": "DJ Fresh, TC - Gold Dust - TC Remix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/dj-fresh-tc-gold-dust-tc-remix/",
+     "wordCount": 549
+    }
+   ]
+  },
   "dj-hell-electronic-germany.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -143792,6 +147364,141 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/dreadzone-king-dub-rock/",
      "wordCount": 547
+    }
+   ]
+  },
+  "dreadzone-once-upon-a-time-in-jamaica.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dreadzone-once-upon-a-time-in-jamaica/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dreadzone",
+      "sameAs": "https://musicbrainz.org/artist/a10ca116-02af-4989-9a91-fb25585216f7"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "dub",
+      "breakbeat",
+      "reggae"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Once Upon a Time"
+     },
+     "name": "Once Upon A Time (In Jamaica)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/5fc50a75-4889-4484-9002-fcea3109f7c3",
+      "https://www.youtube.com/watch?v=F3KIulyKDWg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dreadzone-once-upon-a-time-in-jamaica/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dreadzone-once-upon-a-time-in-jamaica/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time (In Jamaica) (single review)",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/3249"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time (Functional Records)",
+       "publisher": "Rebel Base",
+       "url": "https://www.rebelbase.be/reviews/detail/dreadzone---once-upon-a-time-functional-records"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - One love, one style",
+       "publisher": "Rebel Base",
+       "url": "https://rebelbase.be/interviews/detail/dreadzone---one-love-one-style-072005"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/537135"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time (In Jamaica) (12-inch)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/528039"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Dreadzone - Once Upon A Time (In Jamaica) (CD single)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3522025"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dreadzone",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dreadzone"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Once Upon a Time (In Jamaica) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/5fc50a75-4889-4484-9002-fcea3109f7c3"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Once Upon A Time (In Jamaica)",
+       "publisher": "YouTube (Dreadzone - Topic)",
+       "url": "https://www.youtube.com/watch?v=F3KIulyKDWg"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The title track of Dreadzone's 2005 album Once Upon a Time, sung by the Jamaican veteran Earl Sixteen over the London band's breakbeat and dub, a song a Belgian reggae review heard as a tour through the history of Jamaican music.",
+     "educationalLevel": "introductory",
+     "headline": "Dreadzone - Once Upon A Time (In Jamaica)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "dub",
+       "url": "https://korczis.github.io/sonic-playground/concept/dub/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "off-beat",
+       "url": "https://korczis.github.io/sonic-playground/concept/off-beat/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/dreadzone-once-upon-a-time-in-jamaica/",
+     "wordCount": 539
     }
    ]
   },
@@ -150944,6 +154651,122 @@
     }
    ]
   },
+  "fischerspooner-all-we-are.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-all-we-are/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Fischerspooner",
+      "sameAs": "https://musicbrainz.org/artist/a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "art pop",
+      "electro-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Odyssey"
+     },
+     "isrcCode": "USFS20400011",
+     "name": "All We Are",
+     "sameAs": [
+      "https://musicbrainz.org/recording/78194328-5909-429e-80b8-06c0335d4ebb",
+      "https://www.youtube.com/watch?v=uPUIo1pvrw8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-all-we-are/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-all-we-are/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's Odyssey Out Now",
+       "publisher": "Jackson Free Press",
+       "url": "https://www.mississippifreepress.org/fischerspooners-odyssey-out-now/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Odyssey (Fischerspooner album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Odyssey_(Fischerspooner_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/fischerspooner-odyssey-2495905588.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's Odyssey takes listener on a voyage",
+       "publisher": "The Daily Cardinal",
+       "url": "https://www.dailycardinal.com/article/2005/04/fischerspooners-odyssey-takes-listener-on-a-voyage"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner - Odyssey",
+       "publisher": "Scene Point Blank",
+       "url": "https://www.scenepointblank.com/reviews/fischerspooner/odyssey"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fischerspooner",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fischerspooner"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "All We Are (Fischerspooner - Topic)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=uPUIo1pvrw8"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The most acoustic track on Fischerspooner's Odyssey (2005): a slow-burning song built on repeated minimal patterns after Philip Glass, the first of the album's collaborations with Linda Perry.",
+     "educationalLevel": "introductory",
+     "headline": "Fischerspooner - All We Are",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "ostinato",
+       "url": "https://korczis.github.io/sonic-playground/concept/ostinato/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/fischerspooner-all-we-are/",
+     "wordCount": 534
+    }
+   ]
+  },
   "fischerspooner-emerge.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -151714,6 +155537,100 @@
     }
    ]
   },
+  "florence-the-machine-hiding.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-hiding/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Florence + The Machine",
+      "sameAs": "https://musicbrainz.org/artist/5fee3020-513b-48c2-b1f7-4681b01db0c6"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "alternative",
+      "indie rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "How Big, How Blue, How Beautiful (Deluxe)"
+     },
+     "isrcCode": "GBUM71500290",
+     "name": "Hiding",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2513b948-f237-4bfd-b91c-e912bf8c5c8a",
+      "https://www.youtube.com/watch?v=nJeNjZqlcDE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-hiding/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-hiding/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "How Big, How Blue, How Beautiful",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/How_Big,_How_Blue,_How_Beautiful"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "James Ford (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/James_Ford_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lungs (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lungs_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hiding (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2513b948-f237-4bfd-b91c-e912bf8c5c8a"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "A bonus track of the 2015 deluxe How Big, How Blue, How Beautiful, and the only song of that edition produced by James Ford, the producer of Dog Days Are Over, rather than by the album's Markus Dravs.",
+     "educationalLevel": "introductory",
+     "headline": "Florence + The Machine - Hiding",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "bonus track",
+       "url": "https://korczis.github.io/sonic-playground/concept/bonus-track/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/florence-the-machine-hiding/",
+     "wordCount": 526
+    }
+   ]
+  },
   "flume-chet-faker-drop-the-game.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -151813,6 +155730,124 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/flume-chet-faker-drop-the-game/",
      "wordCount": 517
+    }
+   ]
+  },
+  "flume-chet-faker-this-song-is-not-about-a-girl.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-this-song-is-not-about-a-girl/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Flume, Chet Faker",
+      "sameAs": "https://musicbrainz.org/artist/35fd8d42-b4a6-4414-9827-8766bd0daa3c"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "nu-disco",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lockjaw"
+     },
+     "isrcCode": "AUFF01300490",
+     "name": "This Song Is Not About a Girl",
+     "sameAs": [
+      "https://musicbrainz.org/recording/db0e5918-9083-4c65-b870-b2b62c1622af",
+      "https://www.youtube.com/watch?v=dKAbjLO1bUw"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-this-song-is-not-about-a-girl/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/flume-chet-faker-this-song-is-not-about-a-girl/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Lockjaw (EP)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lockjaw_(EP)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume & Chet Faker - \"This Song Is Not About a Girl\"",
+       "publisher": "EARMILK",
+       "url": "https://earmilk.com/2013/11/25/flume-chet-faker-this-song-is-not-about-a-girl"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "EP Review: Flume and Chet Faker - 'Lockjaw'",
+       "publisher": "Renowned for Sound",
+       "url": "https://renownedforsound.com/?p=21009"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume & Chet Faker - This Song Is Not About A Girl",
+       "publisher": "Indie Shuffle",
+       "url": "https://www.indieshuffle.com/flume-chet-faker-this-song-is-not-about-a-girl/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume and Chet Faker - Lockjaw (user review)",
+       "publisher": "Sputnikmusic",
+       "url": "https://www.sputnikmusic.com/review/59984/Flume-and-Chet-Faker-Lockjaw"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "This Song Is Not About a Girl (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/db0e5918-9083-4c65-b870-b2b62c1622af"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Flume & Chet Faker - This Song Is Not About A Girl",
+       "publisher": "Future Classic",
+       "url": "https://www.youtube.com/watch?v=dKAbjLO1bUw"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The closing track of Flume and Chet Faker's 2013 EP Lockjaw turns away from the slow soul of Drop the Game toward a faster, disco-tinged groove that builds, in one reviewer's words, to euphoria without losing its brooding edge.",
+     "educationalLevel": "introductory",
+     "headline": "Flume, Chet Faker - This Song Is Not About a Girl",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/concept/bassline/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/flume-chet-faker-this-song-is-not-about-a-girl/",
+     "wordCount": 473
     }
    ]
   },
@@ -156516,6 +160551,121 @@
     }
    ]
   },
+  "gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gigi D'Agostino & Lento Violento",
+      "sameAs": "https://musicbrainz.org/artist/57c1e5ea-e08f-413a-bcb1-f4e4b675bead"
+     },
+     "datePublished": "2020",
+     "genre": [
+      "dance",
+      "electronic",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Slowerland"
+     },
+     "name": "Bla Bla Bla (Bla Bla Ton Mix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/67ca8499-042d-46e6-b7fd-f2f796d3718c",
+      "https://www.youtube.com/watch?v=bfVfogLVPgk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Slowerland (release, track list and credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/969a4c88-d1e7-4107-8ce2-4986da88db8f"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Lento Violento & Astro Musico - Slower Land 2",
+       "publisher": "IDP Records",
+       "url": "https://idprecords.com/news/lento-violento-astro-musico-slower-land-2"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bla Bla Bla (Gigi D'Agostino song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Bla_Bla_Bla_(Gigi_D%27Agostino_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bla Bla Bla (Gigi D'Agostino)",
+       "publisher": "Wikipedia (Italian)",
+       "url": "https://it.wikipedia.org/wiki/Bla_Bla_Bla_(Gigi_D%27Agostino)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gigi D'Agostino",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gigi_D%27Agostino"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lento Violento (artist)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/artist/97d1d892-1262-4150-8ee4-30b39cdf8695"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Gigi D'Agostino & Lento Violento - Bla Bla Bla (Bla Bla Ton Mix Gigi Dag & Luca Noise)",
+       "publisher": "GIGI D'AGOSTINO (YouTube)",
+       "url": "https://www.youtube.com/watch?v=bfVfogLVPgk"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The Bla Bla Ton Mix of Bla Bla Bla, a 2:14 reworking of Gigi D'Agostino's 1999 hit by Gigi Dag and Luca Noise, released in 2020 on Slowerland under the credit Gigi D'Agostino & Lento Violento.",
+     "educationalLevel": "introductory",
+     "headline": "Gigi D'Agostino & Lento Violento - Bla Bla Bla (Bla Bla Ton Mix)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gigi-d-agostino-lento-violento-bla-bla-bla-bla-bla-ton-mix/",
+     "wordCount": 538
+    }
+   ]
+  },
   "giles-lamb-mairi-campbell-peter-nicholson-guido-de-groot-dead-island-trailer-theme-original-soundtrack.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -156880,6 +161030,121 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/gin-wigmore-devil-in-me/",
      "wordCount": 545
+    }
+   ]
+  },
+  "gin-wigmore-dirty-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-dirty-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gin Wigmore",
+      "sameAs": "https://musicbrainz.org/artist/cb0b7933-a5bc-48dc-a36b-00315d12ca8c"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "rock",
+      "blues",
+      "alternative rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gravel & Wine"
+     },
+     "isrcCode": "AUUM71101242",
+     "name": "Dirty Love",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b170f9a8-86f6-4689-83c1-b25233d2411c",
+      "https://www.youtube.com/watch?v=K9cWfTyzDrU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-dirty-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-dirty-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Gravel & Wine",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gravel_%26_Wine"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gin Wigmore",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gin_Wigmore"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mike Viola",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mike_Viola"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Gin Wigmore – “Gravel and Wine” (2011)",
+       "publisher": "Femme Metal Webzine",
+       "url": "https://www.femmemetalwebzine.net/indie-zone/gin-wigmore-gravel-and-wine-2011/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Gin Wigmore Shines On New Album",
+       "publisher": "Music Collision",
+       "url": "https://musiccollision2.blogspot.com/2013/04/gin-wigmore-shines-on-new-album.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dirty Love (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/b170f9a8-86f6-4689-83c1-b25233d2411c"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dirty Love (Provided to YouTube)",
+       "publisher": "YouTube (Gin Wigmore - Topic)",
+       "url": "https://www.youtube.com/watch?v=K9cWfTyzDrU"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "A rock-blues number of under three minutes from Gin Wigmore's 2011 album Gravel & Wine, written with Mike Viola and produced by Butch Walker, which one reviewer said would not be out of place in a James Bond film.",
+     "educationalLevel": "introductory",
+     "headline": "Gin Wigmore - Dirty Love",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "blues",
+       "url": "https://korczis.github.io/sonic-playground/concept/blues/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gin-wigmore-dirty-love/",
+     "wordCount": 514
     }
    ]
   },
@@ -157919,6 +162184,142 @@
     }
    ]
   },
+  "glasser-tremel-astronomer-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/glasser-tremel-astronomer-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Glasser",
+      "sameAs": "https://musicbrainz.org/artist/ff2039e0-a4b3-4c6e-ad23-949f8ec63ffc"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "electronic",
+      "remix",
+      "art pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Tremel"
+     },
+     "isrcCode": "GB6HK0900006",
+     "name": "Tremel (Astronomer Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/80b3a830-b8ff-4993-80ba-63ca8432f18c",
+      "https://www.youtube.com/watch?v=vCkCaF1L1D0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/glasser-tremel-astronomer-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/glasser-tremel-astronomer-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Glasser, “Tremel” (Astronomer Remix) MP3",
+       "publisher": "The FADER",
+       "url": "https://www.thefader.com/2010/03/01/glasser-tremel-astronomer-remix-mp3"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Nialler9's Best Remixes of 2010",
+       "publisher": "Nialler9",
+       "url": "https://nialler9.com/nialler9s-top-remixes-2010/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Glasser - Tremel (12-inch)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2203088"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Glasser - Tremel (digital single)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/8611057"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Astronomer",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/1521599"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Glasser - Ring",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/glasser-ring"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Glasser (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Glasser_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Tremel (single)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/c4b07e45-60d6-4fdb-9bb6-67e34fa6c331"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Tremel (Astronomer Remix) (Provided to YouTube by Beggars Group Digital)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=vCkCaF1L1D0"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The nine-minute remix that closes Glasser's 2010 Tremel single on Young Turks: the producer Astronomer, as The FADER heard it, beefs up Cameron Mesirow's song with laser-like synth stabs while her voice floats over the top.",
+     "educationalLevel": "introductory",
+     "headline": "Glasser - Tremel (Astronomer Remix)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/concept/b-side/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/glasser-tremel-astronomer-remix/",
+     "wordCount": 505
+    }
+   ]
+  },
   "glasser-tremel.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -158430,6 +162831,121 @@
     }
    ]
   },
+  "gorgon-city-tish-hyman-6am.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorgon-city-tish-hyman-6am/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorgon City, Tish Hyman",
+      "sameAs": "https://musicbrainz.org/artist/ba8aaa28-2de4-4d5c-824e-1e9d49235c55"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "house",
+      "deep house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sirens"
+     },
+     "name": "6AM",
+     "sameAs": [
+      "https://musicbrainz.org/recording/290e0351-27a6-47c1-b8f8-6e64e9d5a270",
+      "https://www.youtube.com/watch?v=w7xReIq6eTU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorgon-city-tish-hyman-6am/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorgon-city-tish-hyman-6am/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Gorgon City Tap Tish Hyman on Soulful Track \"6AM\"",
+       "publisher": "Broadly (Vice)",
+       "url": "https://www.vice.com/en/article/xykj3z/gorgon-citys-tap-tish-hyman-on-soulful-track-6am"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Gorgon City – Sirens",
+       "publisher": "EarMilk",
+       "url": "https://earmilk.com/?p=221441"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Album Review: Gorgon City 'Sirens'",
+       "publisher": "Skiddle",
+       "url": "https://www.skiddle.com/news/all/Album-Review-Gorgon-City-aposSirensapos-/23657/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sirens (Gorgon City album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sirens_(Gorgon_City_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorgon City",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gorgon_City"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "6AM (Gorgon City - Topic, provided by Universal Music Group)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=w7xReIq6eTU"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The clubbiest track on Gorgon City's 2014 debut Sirens: classic vocal house with a bossy bassline, carried by the Bronx singer and rapper Tish Hyman's half-rapped, half-sung verse.",
+     "educationalLevel": "introductory",
+     "headline": "Gorgon City, Tish Hyman - 6AM",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/concept/rapping/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorgon-city-tish-hyman-6am/",
+     "wordCount": 535
+    }
+   ]
+  },
   "gorgon-city-zak-abel-dj-anna-unmissable-dj-anna-remix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -158522,6 +163038,113 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/gorgon-city-zak-abel-dj-anna-unmissable-dj-anna-remix/",
      "wordCount": 647
+    }
+   ]
+  },
+  "gorillaz-12d3.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-12d3/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "alternative",
+      "acoustic",
+      "trip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "G-Sides"
+     },
+     "isrcCode": "GBAYE0000883",
+     "name": "12D3",
+     "sameAs": [
+      "https://musicbrainz.org/recording/45878cf3-1360-44d5-8a0c-27f11a18800a",
+      "https://www.youtube.com/watch?v=nWIWAOhpcpQ"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-12d3/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-12d3/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "G-Sides",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/G-Sides"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Tomorrow Comes Today",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Tomorrow_Comes_Today"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Gorillaz: G-Sides",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/review/gorillaz-gsides/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gorillaz"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "12D3 (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/45878cf3-1360-44d5-8a0c-27f11a18800a"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The closing track of Gorillaz's first EP, Tomorrow Comes Today (2000), later the last song of the B-sides collection G-Sides: acoustic guitar, piano and warm, gospel-tinged harmonies from a cartoon band.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - 12D3",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/concept/b-side/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-12d3/",
+     "wordCount": 546
     }
    ]
   },
@@ -160001,6 +164624,233 @@
     }
    ]
   },
+  "gravagerz-chihiro.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gravagerz-chihiro/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gravagerz",
+      "sameAs": "https://musicbrainz.org/artist/092b4d23-acf7-4d98-aabd-6162264ead2a"
+     },
+     "datePublished": "2024",
+     "genre": [
+      "house",
+      "electronic",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Chihiro"
+     },
+     "isrcCode": "CA5KR2471178",
+     "name": "Chihiro",
+     "sameAs": [
+      "https://musicbrainz.org/recording/29c7943b-001c-427d-9ef3-deb0dd93790c",
+      "https://www.youtube.com/watch?v=vfoHYqX6VDU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gravagerz-chihiro/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gravagerz-chihiro/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Chihiro (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Chihiro_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "GRAVAGERZ (artist page)",
+       "publisher": "Insomniac",
+       "url": "https://www.insomniac.com/music/artists/gravagerz/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gravagerz",
+       "publisher": "SPIN Artist Agency",
+       "url": "https://www.spinartistagency.com/gravagerz"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Gravagerz - Chihiro (single)",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/album/605058302"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "billie eilish - chihiro (gravagerz remix) extended mix",
+       "publisher": "Bandcamp",
+       "url": "https://gravagerz.bandcamp.com/track/billie-eilish-chihiro-gravagerz-remix-extended-mix"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Chihiro (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/29c7943b-001c-427d-9ef3-deb0dd93790c"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Gravagerz - Chihiro (Official Music Video)",
+       "publisher": "Gravagerz",
+       "url": "https://www.youtube.com/watch?v=vfoHYqX6VDU"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Gravagerz's house version of Billie Eilish's Chihiro began as a SoundCloud remix, spread on TikTok and Instagram, and came out in June 2024 as his own two-minute cover with replaced vocals, released under his own name.",
+     "educationalLevel": "introductory",
+     "headline": "Gravagerz - Chihiro",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "self-release",
+       "url": "https://korczis.github.io/sonic-playground/concept/self-release/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gravagerz-chihiro/",
+     "wordCount": 508
+    }
+   ]
+  },
+  "gray-one-spliff.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gray-one-spliff/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gray",
+      "sameAs": "https://musicbrainz.org/artist/88793b09-3f5f-407e-a6fd-71bccccb0715"
+     },
+     "datePublished": "2019",
+     "genre": [
+      "drum and bass",
+      "jungle",
+      "reggae"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Rubadub"
+     },
+     "isrcCode": "GB8KE1955986",
+     "name": "One Spliff",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9683801f-0714-4915-9861-fff68402f1c6",
+      "https://www.youtube.com/watch?v=ZVvmTWQQkV4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gray-one-spliff/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gray-one-spliff/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Gray: interview",
+       "publisher": "Goat Shed",
+       "url": "https://web.archive.org/web/20250708014836/https://goatshedmusic.com/gray-interview/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "The gospel of Gray: music always finds a way to bring people together",
+       "publisher": "UKF",
+       "url": "https://ukf.com/read/the-gospel-of-gray-music-always-finds-a-way-to-bring-people-together/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Road runners: Aries & Kelvin 373 tell the Born On Road story",
+       "publisher": "UKF",
+       "url": "https://ukf.com/read/road-runners-aries-kelvin-373-tell-the-born-on-road-story/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Rubadub EP (release and track list)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/ae0ebc71-073e-4e61-850e-6cbcb9ba8946"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "One Spliff (Gray - Topic)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=ZVvmTWQQkV4"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The second track of Gray's 2019 debut EP Rubadub on the Bristol label Born On Road: a jungle-rooted drum and bass track that Gray made faster after the label first heard it, and one of the two songs he says made his career.",
+     "educationalLevel": "introductory",
+     "headline": "Gray - One Spliff",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gray-one-spliff/",
+     "wordCount": 494
+    }
+   ]
+  },
   "gregory-porter-do-not-lose-your-steam.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -160100,6 +164950,297 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/gregory-porter-do-not-lose-your-steam/",
      "wordCount": 657
+    }
+   ]
+  },
+  "gridlok-insecticide-vip.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gridlok-insecticide-vip/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gridlok",
+      "sameAs": "https://musicbrainz.org/artist/e344e84e-684b-4666-9a71-acecafce82de"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "drum and bass",
+      "neurofunk",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Audio Presents RAMlife Drum & Bass"
+     },
+     "isrcCode": "GBBZH1500018",
+     "name": "Insecticide VIP",
+     "sameAs": [
+      "https://musicbrainz.org/recording/79c0ee01-491b-4651-8202-cacc51d8889c",
+      "https://www.youtube.com/watch?v=sOJRaChC_og"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gridlok-insecticide-vip/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gridlok-insecticide-vip/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Audio - RAMLIFE Drum & Bass (RAMMLP21D)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/6685519"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gridlok - Insecticide / Dirtball (P51UK-24)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3288486"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gridlok",
+       "publisher": "Dachstock",
+       "url": "https://www.dachstock.ch/artist/gridlok"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gridlok",
+       "publisher": "Drop The Bass",
+       "url": "https://origin.dropthebass.co/artists/gridlok"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Neural Injection #002",
+       "publisher": "Salacious Sound",
+       "url": "https://salacioussound.com/?p=18984"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Download Gridlok's \"51 Is A Number\" Mix",
+       "publisher": "Complex",
+       "url": "https://www.complex.com/music/2013/08/gridlok-51-is-a-number-mix"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "What Does “VIP Mix / VIP Edit” Mean In DJ Set Tracklists?",
+       "publisher": "DJGear2K",
+       "url": "https://djgear2k.com/what-does-vip-mix-mean-in-dj-sets/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "RAM Records",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/RAM_Records"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Insecticide (VIP) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/79c0ee01-491b-4651-8202-cacc51d8889c"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Gridlok - Insecticide VIP (RAMLIFE Exclusive)",
+       "publisher": "YouTube (RAM Records)",
+       "url": "https://www.youtube.com/watch?v=Ai9l6K9ZnX8"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Gridlok's own reworking of Insecticide, the 2011 Project 51 track a bio called the creepiest of its year, released in 2015 as an exclusive on RAM Records' RAMLIFE Drum & Bass compilation mixed by Audio.",
+     "educationalLevel": "intermediate",
+     "headline": "Gridlok - Insecticide VIP",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "vip mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/vip-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gridlok-insecticide-vip/",
+     "wordCount": 491
+    }
+   ]
+  },
+  "groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Groove Armada, Brodanse, Cari Golden, Darkovski",
+      "sameAs": "https://musicbrainz.org/artist/35723b60-732e-4bd8-957f-320b416e7b7f"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "deep house",
+      "chillout",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sweat (Remixes)"
+     },
+     "isrcCode": "NLF711401150",
+     "name": "Sweat - Darkovski Extended Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/18109141-8038-4dcc-93c0-c02b3f18eec2",
+      "https://www.youtube.com/watch?v=Q-MbmwGFsY0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Groove Armada & Brodanse Feat. Cari Golden - Sweat (12-inch)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/4982654"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Groove Armada & Brodanse Feat. Cari Golden - Sweat (Armada)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5125373"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Groove Armada, Brodanse & Cari Golden - Sweat \"The Remixes\"",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5316224"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Groove Armada & Brodanse Feat. Cari Golden - Sweat (Remixes)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5564349"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Darkovski",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/3488602"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Brodanse",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/3045550"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Groove Armada & Brodanse - Advancing Man feat. Kevin Knapp",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/groove-armada-brodanse-advancing-man-feat-kevin-knapp"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Groove Armada - Little Black Book",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/376e2962-259c-426c-88ea-c92391b92e49"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Groove Armada",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Groove_Armada"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sweat (Darkovski remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/18109141-8038-4dcc-93c0-c02b3f18eec2"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Sweat (Darkovski Extended Remix) (Provided to YouTube by Armada)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=Q-MbmwGFsY0"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Darkovski's six-and-a-half-minute remix of Sweat, the 2013 collaboration of Groove Armada and the London brothers Brodanse sung by Cari Golden, issued in 2014 among the remixes Discogs notes as winners of a Beatport competition.",
+     "educationalLevel": "introductory",
+     "headline": "Groove Armada, Brodanse, Cari Golden, Darkovski - Sweat - Darkovski Extended Remix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "extended mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/extended-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/groove-armada-brodanse-cari-golden-darkovski-sweat-darkovski-extended-remix/",
+     "wordCount": 546
     }
    ]
   },
@@ -160311,6 +165452,219 @@
     }
    ]
   },
+  "gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gucci Mane, Bruno Mars, Kodak Black",
+      "sameAs": "https://musicbrainz.org/artist/36494952-f434-45d8-a958-8b4acdbcf8a8"
+     },
+     "datePublished": "2018",
+     "genre": [
+      "hip-hop",
+      "pop",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Evil Genius"
+     },
+     "isrcCode": "USAT21811087",
+     "name": "Wake Up in the Sky",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7a4eb25f-ffe0-4065-b9d6-ff343e822901",
+      "https://www.youtube.com/watch?v=U68MJz9DrI4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Wake Up in the Sky",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Wake_Up_in_the_Sky"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Gucci Mane - Evil Genius",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/gucci_mane-evil_genius"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Wake Up in the Sky (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7a4eb25f-ffe0-4065-b9d6-ff343e822901"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Gucci Mane, Bruno Mars, Kodak Black - Wake Up in The Sky [Official Music Video]",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=U68MJz9DrI4"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Gucci Mane's 2018 single from Evil Genius: Bruno Mars sings a silky R&B hook, a trap beat arrives for the verses of Gucci Mane and Kodak Black, and the whole hazy, celebratory song is about feeling good.",
+     "educationalLevel": "introductory",
+     "headline": "Gucci Mane, Bruno Mars, Kodak Black - Wake Up in the Sky",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky/",
+     "wordCount": 546
+    }
+   ]
+  },
+  "gusgus-magnified-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gusgus-magnified-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "GusGus",
+      "sameAs": "https://musicbrainz.org/artist/f5cff7b2-b19d-4934-8525-b17248b30ab3"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "electronic",
+      "house",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Arabian Horse"
+     },
+     "name": "Magnified Love",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f9d91dd6-ddf5-48ba-83a3-b019ac54081a",
+      "https://www.youtube.com/watch?v=TzJYpJKQtUc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gusgus-magnified-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gusgus-magnified-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gus Gus: Arabian Horse",
+       "publisher": "Textura",
+       "url": "https://web.archive.org/web/20160912210744/http://textura.org/archives/g/gusgus_arabianhorse.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "GusGus - Arabian Horse",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gus-gus-arabian-horse-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gus Gus - Arabian Horse",
+       "publisher": "musicOMH",
+       "url": "https://www.musicomh.com/reviews/albums/gus-gus-arabian-horse"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "GusGus - Arabian Horse (credits)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2879598-GusGus-Arabian-Horse"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "GusGus - Magnified Love / Within You Dubs",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2844206-GusGus-Magnified-Love-Within-You-Dubs"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Arabian Horse (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Arabian_Horse_(album)"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "Daníel Ágúst pleads over Kompakt-era GusGus dance-pop on Arabian Horse (2011): one critic heard Soft Cell's Tainted Love in its chorus, another the album's only misstep.",
+     "educationalLevel": "introductory",
+     "headline": "GusGus - Magnified Love",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gusgus-magnified-love/",
+     "wordCount": 531
+    }
+   ]
+  },
   "gusgus-over.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -160425,6 +165779,134 @@
     }
    ]
   },
+  "guti-no-promises-original-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/guti-no-promises-original-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Guti",
+      "sameAs": "https://musicbrainz.org/artist/8177d014-b596-4645-bd29-81c40a452d8d"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "tech house",
+      "minimal",
+      "house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Patio De Juegos"
+     },
+     "name": "No Promises - Original Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8516bba2-0513-475c-b88c-8e750237d84d",
+      "https://www.youtube.com/watch?v=mc3n2jEaRN8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/guti-no-promises-original-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/guti-no-promises-original-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Patio De Juegos, by Guti",
+       "publisher": "Bandcamp (Guti / Desolat)",
+       "url": "https://gutidesolat.bandcamp.com/album/patio-de-juegos"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Guti - Patio De Juegos (DESOLAT LP 004)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2842775"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Argentinian EDM Sensation Guti Talks Jazz, Tango, and Writing Music for Movies",
+       "publisher": "Miami New Times",
+       "url": "https://www.miaminewtimes.com/music/argentinian-edm-sensation-guti-talks-jazz-tango-and-writing-music-for-movies-6444611/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Guti: Patio de Juegos",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/143674-guti-patio-de-juegos-2496002919.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album Review: Guti - Patio de Juegos",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-guti-patio-de-juegos/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Loco Dice",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Loco_Dice"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "No Promises (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/8516bba2-0513-475c-b88c-8e750237d84d"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "No Promises (Original Mix) (Provided to YouTube by Label Worx)",
+       "publisher": "YouTube (Release - Topic)",
+       "url": "https://www.youtube.com/watch?v=mc3n2jEaRN8"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "No Promises, made with Ryan Crosson of Visionquest for Guti's 2011 debut album Patio De Juegos on Loco Dice's Desolat, is six minutes of what the album's notes called a truly driving dancefloor groove.",
+     "educationalLevel": "introductory",
+     "headline": "Guti - No Promises - Original Mix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/concept/groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "mastering",
+       "url": "https://korczis.github.io/sonic-playground/concept/mastering/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/guti-no-promises-original-mix/",
+     "wordCount": 477
+    }
+   ]
+  },
   "guts-patrice-the-studio-school-voices-nyc-want-it-back.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -160525,6 +166007,123 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/guts-patrice-the-studio-school-voices-nyc-want-it-back/",
      "wordCount": 596
+    }
+   ]
+  },
+  "guts-what-is-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/guts-what-is-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Guts",
+      "sameAs": "https://musicbrainz.org/artist/a1f8f29c-4163-48d1-9469-35f74e61ee4e"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "hip-hop",
+      "electronic",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Paradise for All"
+     },
+     "isrcCode": "FR4EO1100018",
+     "name": "What Is Love",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2e6fbfb0-aa36-4ab0-a7ce-2d1d1ada165e",
+      "https://www.youtube.com/watch?v=2j7xQIf4Tb8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/guts-what-is-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/guts-what-is-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Guts - Paradise for All",
+       "publisher": "Heavenly Sweetness",
+       "url": "https://www.heavenly-sweetness.com/?p=1207"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Paradise for All by Guts",
+       "publisher": "Rush Hour",
+       "url": "https://rushhour.nl/record/cd/paradise-all"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Guts (musicien)",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/Guts_(musicien)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Retrospective 1992 - 2012 (track list and annotation)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/185c6ad6-de09-49a4-8040-c90fc3930652"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "What Is Love (recording and releases)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2e6fbfb0-aa36-4ab0-a7ce-2d1d1ada165e"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Akai MPC",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Akai_MPC"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Guts - What Is Love (Official Audio)",
+       "publisher": "Heavenly Sweetness (YouTube)",
+       "url": "https://www.youtube.com/watch?v=2j7xQIf4Tb8"
+      }
+     ],
+     "datePublished": "2026-11-20",
+     "description": "The sixth track of Paradise for All, the 2012 album by the Balearic-based French beatmaker Guts: a piece he later dated to 2002 and listed as made on an MPC 4000, with double bass and Rhodes.",
+     "educationalLevel": "introductory",
+     "headline": "Guts - What Is Love",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sequencer",
+       "url": "https://korczis.github.io/sonic-playground/concept/sequencer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/guts-what-is-love/",
+     "wordCount": 480
     }
    ]
   },

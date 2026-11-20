@@ -6,8 +6,9 @@ artists: ["Flume", "Chet Faker"]
 album: "Lockjaw"
 duration: "4:14"
 spotify: {"track": "1yfqaP4WaUzRzadbpzRQK6", "album": "5I0kS30hvtI7a1LFEhaPve", "artists": ["6nxWCVXbOlEVRexSbLsTer", "6UcJxoeHWWWyT5HZP064om"]}
-keys: {"fold": "flume|thissongisnotaboutagirl"}
-status: "missing"
+keys: {"fold": "flume|thissongisnotaboutagirl", "isrc": "AUFF01300490", "musicbrainz": "db0e5918-9083-4c65-b870-b2b62c1622af"}
+review: "flume-chet-faker-this-song-is-not-about-a-girl.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Lockjaw*, 4:14.
 A liked song.
-No review yet.
+Reviewed: content/flume-chet-faker-this-song-is-not-about-a-girl.md.
