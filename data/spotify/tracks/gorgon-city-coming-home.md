@@ -6,8 +6,9 @@ artists: ["Gorgon City", "Maverick Sabre"]
 album: "Sirens"
 duration: "4:06"
 spotify: {"track": "0EXyyOrUClDbmydC76FBLX", "album": "1tfrh7jInz0lgBamg12OFj", "artists": ["4VNQWV2y1E97Eqo2D5UTjx", "0ukgrNYk51TkMQr0f2Br4Q"]}
-keys: {"fold": "gorgoncity|cominghome"}
-status: "missing"
+keys: {"fold": "gorgoncity|cominghome", "isrc": "GBUM71403997", "musicbrainz": "d69c533d-f7f7-4994-9831-b8ec78f80160"}
+review: "gorgon-city-coming-home.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Sirens*, 4:06.
 A liked song.
-No review yet.
+Reviewed: content/gorgon-city-coming-home.md.

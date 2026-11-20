@@ -6,8 +6,9 @@ artists: ["Gorillaz", "Miho Hatori", "Tina Weymouth"]
 album: "Gorillaz"
 duration: "3:30"
 spotify: {"track": "71koAFCnGnugRdGIDfS7f4", "album": "4tUxQkrduOE8sfgwJ5BI2F", "artists": ["3AA28KZvwAUcZuOKwyblJQ", "21StrITbN3uLjv5OdsLAja", "7fOP0dm7y70BHCUc1zr6vR"]}
-keys: {"fold": "gorillaz|192000"}
-status: "missing"
+keys: {"fold": "gorillaz|192000", "isrc": "GBAYE0001456", "musicbrainz": "b766a7b6-5b8f-4805-ae83-420231c0ec76"}
+review: "gorillaz-19-2000.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Gorillaz*, 3:30.
 A liked song.
-No review yet.
+Reviewed: content/gorillaz-19-2000.md.

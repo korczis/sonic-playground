@@ -6,8 +6,9 @@ artists: ["Apocalyptica"]
 album: "Plays Metallica by Four Cellos (2016 Remastered Version)"
 duration: "5:23"
 spotify: {"track": "2rgpBHCGZ5RLGAICSeRHUW", "album": "2CCz7Dc1OWgJvDYRteSFih", "artists": ["4Lm0pUvmisUHMdoky5ch2I"]}
-keys: {"fold": "apocalyptica|theunforgiven"}
-status: "missing"
+keys: {"fold": "apocalyptica|theunforgiven", "isrc": "DEQ121429570", "musicbrainz": "9fba4da4-9079-445f-8d23-1ad946601d04"}
+review: "apocalyptica-the-unforgiven.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Plays Metallica by Four Cellos (2016 Remastered Version)*, 5:23.
 A liked song.
-No review yet.
+Reviewed: content/apocalyptica-the-unforgiven.md.

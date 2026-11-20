@@ -1,0 +1,11 @@
+term = "phrasing"
+category = "performance"
+wikipedia = "https://en.wikipedia.org/wiki/Phrase_(music)"
+see_also = ["swing", "syncopation", "melisma"]
+
+[en]
+definition = "How a performer shapes a musical line: where words fall against the beat, which notes are stretched or clipped, where breaths go. Jazz singers often sing just behind or across the beat, so the same melody can sound relaxed, urgent or conversational."
+
+[cs]
+term = "frázování"
+definition = "Způsob, jakým interpret tvaruje hudební linku: kam vůči rytmu klade slova, které tóny protáhne nebo zkrátí a kde se nadechne. Jazzoví zpěváci často zpívají těsně za dobou nebo přes ni, a táž melodie pak může znít uvolněně, naléhavě nebo jako rozhovor."
