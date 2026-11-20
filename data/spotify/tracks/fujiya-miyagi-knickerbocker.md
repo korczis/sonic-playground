@@ -6,8 +6,9 @@ artists: ["Fujiya & Miyagi"]
 album: "Lightbulbs"
 duration: "3:20"
 spotify: {"track": "2LaxQIT4heN80xHBuKOhHY", "album": "53PUB7dV3fHgek78i7oldH", "artists": ["0j2MwhbFTvquOBhs3LeIfU"]}
-keys: {"fold": "fujiyamiyagi|knickerbocker"}
-status: "missing"
+keys: {"fold": "fujiyamiyagi|knickerbocker", "isrc": "GBRSN0700017", "musicbrainz": "e7e90f59-1a5d-48c2-9757-788bf12b86b9"}
+review: "fujiya-miyagi-knickerbocker.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Lightbulbs*, 3:20.
 A liked song.
-No review yet.
+Reviewed: content/fujiya-miyagi-knickerbocker.md.

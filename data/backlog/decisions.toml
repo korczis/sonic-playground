@@ -46,3 +46,21 @@ n = 7
 title = "Dance on Cocaine"
 artists = ["DJ Hazze"]
 skip = "unclear artist: a self-distributed release no source describes (wave 17)"
+
+[[track]]
+n = 8
+title = "3 Amp Fuse - Instrumental"
+artists = ["Belleruche"]
+review = "belleruche-3-amp-fuse.md"
+
+[[track]]
+n = 9
+title = "Fear"
+artists = ["FanEOne"]
+skip = "unavailable: no source describes the recording or the artist (wave 18)"
+
+[[track]]
+n = 10
+title = "A Style Suite - Gambafreaks vs Farolfi Mix"
+artists = ["Farolfi&gambafreaks", "Moloko +"]
+review = "farolfi-gambafreaks-vs-moloko-a-style-suite-gambafreaks-vs-farolfi-mix.md"

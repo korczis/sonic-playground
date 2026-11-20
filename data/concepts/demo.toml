@@ -1,0 +1,11 @@
+term = "demo"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Demo_(music)"
+see_also = ["alternate version", "record producer"]
+
+[en]
+definition = "A rough recording of a song made to try it out or to pitch it to a label, a producer or other musicians, usually quickly and with simpler means than the finished record. Demos that are later released let listeners hear a song before its final arrangement and production."
+
+[cs]
+term = "demo"
+definition = "Hrubá nahrávka písně pořízená na vyzkoušení nebo k nabídnutí vydavatelství, producentovi či jiným hudebníkům, obvykle rychle a jednoduššími prostředky než hotová deska. Dema vydaná později dovolují slyšet píseň dřív, než dostala konečné aranžmá a produkci."

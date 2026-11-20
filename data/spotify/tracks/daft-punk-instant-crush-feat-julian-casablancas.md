@@ -6,8 +6,9 @@ artists: ["Daft Punk", "Julian Casablancas"]
 album: "Random Access Memories"
 duration: "5:37"
 spotify: {"track": "2cGxRwrMyEAp8dEbuZaVv6", "album": "4m2880jivSbbyEGAKfITCa", "artists": ["4tZwfgrHOc3mvqYlEYSvVi", "1rAv1GhTQ2rmG94p9lU3rB"]}
-keys: {"fold": "daftpunk|instantcrush"}
-status: "missing"
+keys: {"fold": "daftpunk|instantcrush", "isrc": "USQX91300105", "musicbrainz": "dbc0da50-4bc6-4230-9e7b-136b5dc2b31a"}
+review: "daft-punk-instant-crush-feat-julian-casablancas.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Random Access Memories*, 5:37.
 A liked song.
-No review yet.
+Reviewed: content/daft-punk-instant-crush-feat-julian-casablancas.md.

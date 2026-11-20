@@ -7,8 +7,9 @@ album: "MANSA MUSA"
 duration: "3:24"
 explicit: true
 spotify: {"track": "7M2brbK9zVw52HpmxqjHck", "album": "622qjrMnxaaHIky86zkj5K", "artists": ["6x9CKUBQ96VjXxKgGE5hIw"]}
-keys: {"fold": "ero808|mansamusa"}
-status: "missing"
+keys: {"fold": "ero808|mansamusa", "isrc": "QM24S2403401", "musicbrainz": "3226717c-079c-4c10-bcc6-5052245a3e7e"}
+review: "ero808-mansa-musa.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *MANSA MUSA*, 3:24.
 A liked song.
-No review yet.
+Reviewed: content/ero808-mansa-musa.md.

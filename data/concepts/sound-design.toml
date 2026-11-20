@@ -1,0 +1,11 @@
+term = "sound design"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Sound_design"
+see_also = ["synthesizer", "bassline", "mixing"]
+
+[en]
+definition = "The craft of building the sounds themselves rather than the notes they play: shaping a bass, a drum or a texture with synthesis, sampling, filters and effects until it has its own character. In bass-led electronic music such as drum and bass or dubstep, the sound of the bassline is often the hook."
+
+[cs]
+term = "zvukový design"
+definition = "Řemeslo, které tvoří samotné zvuky, ne noty, jež hrají: basa, bicí nebo zvuková textura se syntézou, samplováním, filtry a efekty tvaruje tak dlouho, až má vlastní charakter. V elektronické hudbě postavené na basech, jako je drum and bass nebo dubstep, bývá hookem právě zvuk basové linky."

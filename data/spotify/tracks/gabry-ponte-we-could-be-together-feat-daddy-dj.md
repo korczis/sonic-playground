@@ -6,8 +6,9 @@ artists: ["Gabry Ponte", "LUM!X", "Daddy DJ"]
 album: "We Could Be Together (feat. Daddy DJ)"
 duration: "2:29"
 spotify: {"track": "3ElGRG3DqSzzkh1b2wnbzf", "album": "7xgmfo0gHFJk9DNdOfqBNn", "artists": ["5ENS85nZShljwNgg4wFD7D", "0TKFPt9w0AAEnhB9bd0pLy", "2Bc52Zzq4Hx7Dqm0Qw8bJL"]}
-keys: {"fold": "gabryponte|wecouldbetogether"}
-status: "missing"
+keys: {"fold": "gabryponte|wecouldbetogether", "isrc": "ITV952200075", "musicbrainz": "ccafe8dd-ddc2-41a0-abd3-b7570eabcc08"}
+review: "gabry-ponte-lum-x-we-could-be-together-feat-daddy-dj.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *We Could Be Together (feat. Daddy DJ)*, 2:29.
 A liked song.
-No review yet.
+Reviewed: content/gabry-ponte-lum-x-we-could-be-together-feat-daddy-dj.md.

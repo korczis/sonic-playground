@@ -1,0 +1,11 @@
+term = "self-release"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Independent_music"
+see_also = ["record producer", "b-side"]
+
+[en]
+definition = "A record put out by the artist alone, with no label in between: the artist pays for it, owns the recording and reaches listeners through a digital distributor and streaming services. The phonographic copyright line (the ℗ notice) then names the artist rather than a company."
+
+[cs]
+term = "vlastní vydání"
+definition = "Nahrávka, kterou umělec vydá sám, bez vydavatelství: sám ji zaplatí, nahrávka mu patří a k posluchačům se dostane přes digitálního distributora a streamovací služby. Údaj o právech k nahrávce (značka ℗) pak neuvádí firmu, ale samotného umělce."

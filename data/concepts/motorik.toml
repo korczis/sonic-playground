@@ -1,0 +1,11 @@
+term = "motorik"
+category = "rhythm"
+wikipedia = "https://en.wikipedia.org/wiki/Motorik"
+see_also = ["four-on-the-floor", "ostinato", "loop"]
+
+[en]
+definition = "The steady, driving 4/4 beat of 1970s German Krautrock, pioneered by the drummers of Can and Neu!: a straight, repetitive pulse that seems to keep moving forward without end, often likened to driving down a motorway. Later post-punk, indie and electronic bands borrowed it for the same hypnotic forward motion."
+
+[cs]
+term = "motorik"
+definition = "Rovnoměrný, hnací beat ve 4/4 německého krautrocku 70. let, jehož průkopníky byli bubeníci skupin Can a Neu!: přímý, opakující se puls, který jako by se bez konce posouval vpřed a často se přirovnává k jízdě po dálnici. Později si ho kvůli stejnému hypnotickému pohybu vpřed vypůjčily post-punkové, indie i elektronické kapely."

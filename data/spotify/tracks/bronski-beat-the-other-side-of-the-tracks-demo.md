@@ -7,7 +7,8 @@ album: "The Age Of Consent (Remastered & Expanded)"
 duration: "3:41"
 spotify: {"track": "7i9iJ8mZ47mZVzS8fMgES5", "album": "7yNG62qNEJZTAlNPFrGLMq", "artists": ["2wpWOzQE5TpA0dVnh5YD08"]}
 keys: {"fold": "bronskibeat|theothersideofthetracksdemo"}
-status: "missing"
+review: "bronski-beat-the-other-side-of-the-tracks-demo.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Age Of Consent (Remastered & Expanded)*, 3:41.
 A liked song.
-No review yet.
+Reviewed: content/bronski-beat-the-other-side-of-the-tracks-demo.md.
