@@ -6,7 +6,7 @@ artists: ["R3HAB", "Winona Oak"]
 album: "Thinking About You"
 duration: "2:37"
 spotify: {"track": "1ooi97uomLH2fqrxFkcpoF", "album": "7gSD0QQqhuO10GFfmUS9HG", "artists": ["6cEuCEZu7PAE9ZSzLLc2oQ", "3XC57xz74X3xUi1hv4mge1"]}
-keys: {"fold": "r3hab|thinkingaboutyouwithwinonaoak"}
+keys: {"fold": "r3hab|thinkingaboutyou"}
 status: "missing"
 liked: false
 playlists:

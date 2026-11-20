@@ -205,7 +205,8 @@ class Contract(unittest.TestCase):
                 "Seven Nation Army - Remasterisée": "Seven Nation Army",
                 "The beat goes on - Original": "The beat goes on",
                 "Eastern City Lights (Bonus Track)": "Eastern City Lights",
-                "Crazy (Noze Remix) - Mixed": "Crazy (Noze Remix)"}
+                "Crazy (Noze Remix) - Mixed": "Crazy (Noze Remix)",
+                "Giant (with Rag'n'Bone Man)": "Giant", "Dancing with Myself": "Dancing with Myself"}
         for title, expected in same.items():
             self.assertEqual(catalog.song(title), expected, title)
         self.assertEqual(catalog.song("Around (Solomun Vox) [Moodymann Edit] - Mixed"),

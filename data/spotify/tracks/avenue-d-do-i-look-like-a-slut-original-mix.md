@@ -6,8 +6,9 @@ artists: ["Avenue D"]
 album: "Do I Look Like a Slut?"
 duration: "4:55"
 spotify: {"track": "3HO7khnC1Ixt0gLNqdYUtt", "album": "3POpYIOM1cRRCJbOAHyXbz", "artists": ["07vquvD3jE2VQShcu6V4fL"]}
-keys: {"fold": "avenued|doilooklikeaslut"}
-status: "missing"
+keys: {"fold": "avenued|doilooklikeaslut", "musicbrainz": "b3eee8fd-8981-4451-8a98-3e1691d9a224"}
+review: "avenue-d-do-i-look-like-a-slut.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Do I Look Like a Slut?*, 4:55.
 A liked song.
-No review yet.
+Reviewed: content/avenue-d-do-i-look-like-a-slut.md.

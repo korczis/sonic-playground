@@ -6,8 +6,9 @@ artists: ["Chicco Secci", "Cristian Marchi"]
 album: "Remãta"
 duration: "2:49"
 spotify: {"track": "3hZFTUG0IhX7gvZl4toSFF", "album": "5B05ZbuTI9MiE8VucoZ8Ic", "artists": ["75ZfHgMEPhflnOwKuKJWnX", "1OXFVdNx1BX2z7LuKpJyBW"]}
-keys: {"fold": "chiccosecci|rematacristianmarchiradioedit"}
-status: "missing"
+keys: {"fold": "chiccosecci|rematacristianmarchiradioedit", "isrc": "NLZ541600633", "musicbrainz": "713fdefa-96cb-4137-89b9-11621ab8b62c"}
+review: "chicco-secci-cristian-marchi-remata-cristian-marchi-radio-edit.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Remãta*, 2:49.
 A liked song.
-No review yet.
+Reviewed: content/chicco-secci-cristian-marchi-remata-cristian-marchi-radio-edit.md.

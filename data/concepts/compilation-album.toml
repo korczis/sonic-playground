@@ -1,0 +1,11 @@
+term = "compilation album"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Compilation_album"
+see_also = ["b-side", "remastering"]
+
+[en]
+definition = "An album gathering recordings that first appeared elsewhere: an artist's hits, or tracks by many artists chosen around a theme, a label or a genre. Compilations of old singles have rescued many records that had been out of print for decades and given whole scenes a second audience."
+
+[cs]
+term = "kompilace"
+definition = "Album, které sdružuje nahrávky vydané původně jinde: hity jednoho interpreta nebo skladby mnoha interpretů vybrané podle tématu, labelu či žánru. Kompilace starých singlů zachránily mnoho nahrávek, které se desítky let nedaly sehnat, a celým scénám daly druhé publikum."

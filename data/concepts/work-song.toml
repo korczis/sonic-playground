@@ -1,0 +1,11 @@
+term = "work song"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Work_song"
+see_also = ["call and response", "cover version", "blues"]
+
+[en]
+definition = "A song sung to the rhythm of physical labour, to keep a group in time and make hard work bearable. African-American work songs from fields, railroads and prison farms, often led by one voice and answered by the rest, fed the blues and later rock, and some were recorded by folklorists before they passed into popular music."
+
+[cs]
+term = "pracovní píseň"
+definition = "Píseň zpívaná do rytmu fyzické práce, aby skupina držela tempo a těžká dřina byla snesitelnější. Afroamerické pracovní písně z polí, železnic a vězeňských farem, často vedené jedním hlasem, jemuž odpovídají ostatní, živily blues a později rock; některé zaznamenali folkloristé dřív, než přešly do populární hudby."

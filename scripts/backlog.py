@@ -11,7 +11,10 @@ A backlog row is a song, not a recording: "Stand Up - Remastered Version" is "St
 Radio Edit" is "Makeba", while a remix is its own song. A row is pending when no review has the
 same main artist and song (the catalogue's inferred artist and track, folded), when it is not a
 repeat of an earlier row, and when it is not marked uncertain. Spotify rows are resolved again
-against the reviews on disk, so a song written since the last derive is no longer pending.
+against the reviews on disk, so a song written since the last derive is no longer pending. An
+item that is not a song (a story reading) or that is a reviewed song under another spelling gets a
+skip= or review= decision in data/backlog/decisions.toml; the derive applies it to the Spotify
+records, and a skipped item then leaves the list (--all keeps it).
 
     python3 scripts/backlog.py                     the pending songs, in playlist order
     python3 scripts/backlog.py --json              the same as JSON (input of the skill add-song)
@@ -62,7 +65,8 @@ def spotify_rows(root: Path = SPOTIFY, everything: bool = False) -> list[dict]:
     of the owner's own choices hold the song (liked, each own playlist), then artist by artist
     (a saved album does not fill a wave with one artist), then by how many playlists hold it.
     An item outside SONG_SECONDS (an interlude, a continuous mix, a hidden-track bundle) is not a
-    song to review; --all keeps it."""
+    song to review, nor is an item skipped by a decision (data/backlog/decisions.toml); --all
+    keeps both."""
     tracks = jsonl(root / "tables" / "tracks.jsonl")
     own: dict[str, list[str]] = {}
     for m in jsonl(root / "tables" / "memberships.jsonl"):
@@ -75,6 +79,8 @@ def spotify_rows(root: Path = SPOTIFY, everything: bool = False) -> list[dict]:
     rows = []
     for t in tracks:
         if t.get("status") == "present" or not t.get("artists") or not t.get("title"):
+            continue
+        if t.get("status") == "skipped" and not everything:
             continue
         mine = sorted(set(own.get(t["id"], [])))
         rank = top.get(t["id"])

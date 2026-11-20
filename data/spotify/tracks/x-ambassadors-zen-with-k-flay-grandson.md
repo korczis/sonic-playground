@@ -7,7 +7,7 @@ album: "Zen (with K.Flay & grandson)"
 duration: "3:35"
 explicit: true
 spotify: {"track": "2loEXJRB5ExGcUHYX365R5", "album": "2JQbWWpYG6kKppiD6z2FwL", "artists": ["3NPpFNZtSTHheNBaWC82rB", "0pCNk4D3E2xtszsm6hMsWr", "4ZgQDCtRqZlhLswVS6MHN4"]}
-keys: {"fold": "xambassadors|zenwithkflaygrandson"}
+keys: {"fold": "xambassadors|zen"}
 status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]

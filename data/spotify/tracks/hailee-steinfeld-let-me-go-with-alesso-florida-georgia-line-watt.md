@@ -6,7 +6,7 @@ artists: ["Hailee Steinfeld", "Alesso", "Florida Georgia Line", "WATT"]
 album: "Let Me Go (with Alesso, Florida Georgia Line & watt)"
 duration: "2:54"
 spotify: {"track": "5Gu0PDLN4YJeW75PpBSg9p", "album": "3ggBBGRhkDVAu7pQRXRPXO", "artists": ["5p7f24Rk5HkUZsaS3BLG5F", "4AVFqumd2ogHFlRbKIjp1t", "3b8QkneNDz4JHKKKlLgYZg", "4olE3I5QU0dvSR7LIpqTXc"]}
-keys: {"fold": "haileesteinfeld|letmegowithalessofloridageorgialinewatt"}
+keys: {"fold": "haileesteinfeld|letmego"}
 status: "missing"
 liked: false
 playlists:

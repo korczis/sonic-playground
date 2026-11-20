@@ -6,7 +6,7 @@ artists: ["Calvin Harris", "Sam Smith", "David Guetta"]
 album: "Promises (with Sam Smith) [Remixes]"
 duration: "3:10"
 spotify: {"track": "3Lv3frZVXU7Q0JEFvLIzWW", "album": "7g15PlMnaKmFMUsSpR8aZt", "artists": ["7CajNmpbOovFoOoasH2HaY", "2wY79sveU1sp5g7SokKOiI", "1Cs0zKBU1kc0i8ypK3B9ai"]}
-keys: {"fold": "calvinharris|promiseswithsamsmithdavidguettaremix"}
+keys: {"fold": "calvinharris|promisesdavidguettaremix"}
 status: "missing"
 liked: false
 playlists:

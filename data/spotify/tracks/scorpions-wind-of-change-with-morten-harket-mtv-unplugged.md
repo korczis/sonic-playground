@@ -6,7 +6,7 @@ artists: ["Scorpions", "Morten Harket"]
 album: "MTV Unplugged"
 duration: "5:31"
 spotify: {"track": "4iKTbuGckmJaWQAyKDR7Q7", "album": "7HUFiEGHoty4bhJetqJa3h", "artists": ["27T030eWyCQRmDyuvr1kxY", "08t5VdmH6cpxHXUmb9bFeP"]}
-keys: {"fold": "scorpions|windofchangewithmortenharketmtvunplugged"}
+keys: {"fold": "scorpions|windofchangemtvunplugged"}
 status: "missing"
 liked: false
 playlists:

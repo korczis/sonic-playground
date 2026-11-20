@@ -254,7 +254,10 @@ _VERSION = (r"(?:(?:\d{4} )?(?:digital )?remaster(?:ed|isée|isé|izado)?(?: ver
             r"radio version|radio mix|original mix|original|extended (?:version|mix)|album version|"
             r"single version|bonus track|mixed|edit)")
 VERSION = re.compile(rf"\s*(?:-\s*{_VERSION}|\(\s*{_VERSION}\s*\)|\[\s*{_VERSION}\s*\])\s*$", re.I)
-FEAT = re.compile(r"\s*[\(\[]?\s*\b(?:feat\.?|featuring|ft\.)\s+[^\)\]]*[\)\]]?", re.I)
+# A featured artist: "feat. X" anywhere, or "(with X)" as a whole bracket ("Giant (with Rag'n'Bone
+# Man)"); a bare "with" is part of a title ("Dancing with Myself").
+FEAT = re.compile(r"\s*(?:[\(\[]?\s*\b(?:feat\.?|featuring|ft\.)\s+[^\)\]]*[\)\]]?"
+                  r"|[\(\[]\s*with\s+[^\)\]]*[\)\]])", re.I)
 
 
 def fold(text: str) -> str:

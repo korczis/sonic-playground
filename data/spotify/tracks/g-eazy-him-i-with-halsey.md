@@ -7,7 +7,7 @@ album: "The Beautiful & Damned"
 duration: "4:28"
 explicit: true
 spotify: {"track": "5k38wzpLb15YgncyWdTZE4", "album": "1VAc77UvK5wj8ZSWCo3V2b", "artists": ["02kJSzxNuaWGqwubyUba0Z", "26VFTg2z8YR0cCuwLzESi2"]}
-keys: {"fold": "geazy|himiwithhalsey"}
+keys: {"fold": "geazy|himi"}
 status: "missing"
 liked: false
 playlists:

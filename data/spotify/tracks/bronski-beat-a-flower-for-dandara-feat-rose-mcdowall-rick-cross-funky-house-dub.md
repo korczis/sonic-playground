@@ -6,8 +6,9 @@ artists: ["Bronski Beat", "Rose McDowall", "Rick Cross"]
 album: "A Flower for Dandara (feat. Rose McDowall) [Remixed]"
 duration: "7:12"
 spotify: {"track": "16NVdTBxLVS6bUfOjrfLS4", "album": "5wXDj364mVrSz20K600JW4", "artists": ["2wpWOzQE5TpA0dVnh5YD08", "7nB7XApMlQSTSJHA3so0tX", "6V4AUthMfuKyVSvMEJjB1p"]}
-keys: {"fold": "bronskibeat|aflowerfordandararickcrossfunkyhousedub"}
-status: "missing"
+keys: {"fold": "bronskibeat|aflowerfordandararickcrossfunkyhousedub", "musicbrainz": "33a6d349-1982-4e89-9121-04a1bcacdc14"}
+review: "bronski-beat-rose-mcdowall-rick-cross-a-flower-for-dandara-rick-cross-funky-house-dub.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *A Flower for Dandara (feat. Rose McDowall) [Remixed]*, 7:12.
 A liked song.
-No review yet.
+Reviewed: content/bronski-beat-rose-mcdowall-rick-cross-a-flower-for-dandara-rick-cross-funky-house-dub.md.

@@ -7,7 +7,7 @@
  "additionalProperties": false,
  "required": ["kind", "source", "track"],
  "properties": {
-  "kind": {"type": "string", "enum": ["yearbook", "playlist"], "description": "yearbook: the owner's annual Top Songs of `year`."},
+  "kind": {"type": "string", "enum": ["yearbook", "playlist", "decisions"], "description": "yearbook: the owner's annual Top Songs of `year`. decisions: no playlist, only review= and skip= decisions on items of another source (a Spotify pick that is not a song, a reviewed song under another spelling)."},
   "year": {"type": "integer", "description": "The listening year a yearbook covers (not a release year)."},
   "name": {"type": "string", "minLength": 1, "description": "The playlist's name as the source shows it."},
   "source": {"type": "string", "minLength": 10, "description": "Where the items come from (API, data export, transcription) and when."},

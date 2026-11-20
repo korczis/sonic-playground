@@ -6,7 +6,7 @@ artists: ["Zedd", "Alessia Cara"]
 album: "Stay"
 duration: "3:30"
 spotify: {"track": "0dA2Mk56wEzDgegdC6R17g", "album": "1I4W7JKzYbl8VKRfD61DIS", "artists": ["2qxJFvFYMEDqd7ui6kSAcq", "2wUjUUtkb5lvLKcGKsKqsR"]}
-keys: {"fold": "zedd|staywithalessiacara"}
+keys: {"fold": "zedd|stay"}
 status: "missing"
 liked: false
 playlists:

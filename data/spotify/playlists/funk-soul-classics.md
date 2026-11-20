@@ -92,4 +92,4 @@ tracks:
 
 # Funk & Soul Classics
 
-Made by Spotify for the owner: 80 of 80 items read on 2026-11-14, 1 of them reviewed on the site.
+Made by Spotify for the owner: 80 of 80 items read on 2026-11-14, 2 of them reviewed on the site.

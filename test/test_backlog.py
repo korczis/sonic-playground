@@ -64,6 +64,12 @@ class SpotifyRows(unittest.TestCase):
                          + [track("z-1", "Z1", ["Zed"], liked=True)])
         self.assertEqual([r["artists"][0] for r in rows][:2], ["Khan", "Zed"])
 
+    def test_a_skipped_item_needs_all(self):
+        tracks = [track("r-story", "A Story, Pt. 1", ["Reader"], liked=True, status="skipped"),
+                  track("r-song", "A Song", ["Reader"], liked=True)]
+        self.assertEqual([r["title"] for r in self.rows(tracks)], ["A Song"])
+        self.assertEqual(len(self.rows(tracks, everything=True)), 2)
+
     def test_rows_pass_the_backlog_check(self):
         rows = self.rows([track("f-mix", "Mix", ["F"], liked=True, duration="1:10:05")],
                          everything=True)
