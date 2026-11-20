@@ -94,6 +94,19 @@ title = "Helio Matheus"
 url = "https://en.wikipedia.org/wiki/Helio_Matheus"
 publisher = "Wikipedia"
 kind = "encyclopedia"
+[[extra.sources]]
+title = "Franco (Franco Scornavacca)"
+url = "https://www.discogs.com/artist/2219194"
+publisher = "Discogs"
+kind = "database"
+
+[[extra.sources]]
+title = "É o samba-rock, meu irmão!"
+url = "https://farofafa.com.br/2024/04/18/e-o-samba-rock-meu-irmao/"
+publisher = "Farofafá"
+kind = "article"
+year = "2024"
+
 +++
 
 ## Genre and Mood
@@ -118,7 +131,7 @@ The song's afterlife comes from the {{ <concept_link name="compilation album" />
 
 ## Artistic Context
 
-Samba rock, Wikipedia explains, grew from block parties in the predominantly Black neighbourhoods of São Paulo, where DJs mixed American rock and roll and soul with samba; Jorge Ben is called its father. Hélio Matheus started out in the nightclubs of Rio de Janeiro and São Paulo, recorded his first single in 1968 and composed more than 150 songs. Wikipedia names a Franco Scornavacca among the singers he wrote for; no source we found confirms that he is the Franco of this record.
+Samba rock, Wikipedia explains, grew from block parties in the predominantly Black neighbourhoods of São Paulo, where DJs mixed American rock and roll and soul with samba; Jorge Ben is called its father. Hélio Matheus started out in the nightclubs of Rio de Janeiro and São Paulo, recorded his first single in 1968 and composed more than 150 songs. Wikipedia names a Franco Scornavacca among the singers he wrote for, and Discogs credits the album Franco to Franco Scornavacca, the singer Farofafá names behind Rock Enredo.
 
 ## Impact and Reception
 

@@ -1,0 +1,11 @@
+term = "double tracking"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Double_tracking"
+see_also = ["vocal harmony", "mixing"]
+
+[en]
+definition = "Recording the same part, most often a vocal, two or more times and playing the takes together. The tiny differences between them thicken the sound, so one singer can sound fuller, softer or like a small choir; studios later built devices that imitate the effect from a single take."
+
+[cs]
+term = "zdvojování stop"
+definition = "Nahrání téhož partu, nejčastěji zpěvu, dvakrát či vícekrát a přehrávání těchto záznamů současně. Drobné rozdíly mezi nimi zvuk zahustí, takže jeden zpěvák může znít plněji, měkčeji nebo jako malý sbor; studia později sestrojila přístroje, které tento efekt napodobí z jediného záznamu."

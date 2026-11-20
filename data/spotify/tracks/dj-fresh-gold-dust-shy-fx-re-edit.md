@@ -6,8 +6,9 @@ artists: ["DJ Fresh", "SHY FX"]
 album: "Gold Dust (Shy FX Re-Edit)"
 duration: "3:02"
 spotify: {"track": "3OWEtH2GkquPRQNw1duhx8", "album": "5WtfEmFlHacTh4I4A9edox", "artists": ["6r20qOqY7qDWI0PPTxVMlC", "5oDtp2FC8VqBjTx1aT4P5j"]}
-keys: {"fold": "djfresh|golddustshyfxre"}
-status: "missing"
+keys: {"fold": "djfresh|golddustshyfxre", "isrc": "GBCEN1201407", "musicbrainz": "0575d95d-57e8-49be-b3c6-a7d674d13e1b"}
+review: "dj-fresh-shy-fx-gold-dust-shy-fx-re-edit.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Gold Dust (Shy FX Re-Edit)*, 3:02.
 A liked song.
-No review yet.
+Reviewed: content/dj-fresh-shy-fx-gold-dust-shy-fx-re-edit.md.

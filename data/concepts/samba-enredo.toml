@@ -1,0 +1,11 @@
+term = "samba-enredo"
+category = "genre-history"
+wikipedia = "https://en.wikipedia.org/wiki/Samba-enredo"
+see_also = ["syncopation", "call and response"]
+
+[en]
+definition = "The theme song of a Brazilian samba school's carnival parade. Born in Rio de Janeiro in the mid-1930s, it tells the story of the theme (enredo) the school chose for the year; the lead singer carries it, the marching members sing along, and a large percussion section of surdo, tamborim, cuíca, pandeiro and other instruments drives it."
+
+[cs]
+term = "samba-enredo"
+definition = "Ústřední píseň karnevalového průvodu brazilské školy samby. Vznikla v Riu de Janeiro v polovině třicátých let a vypráví příběh tématu (enredo), které si škola pro daný rok zvolila; nese ji hlavní zpěvák, pochodující členové zpívají s ním a pohání ji velká bicí sekce se surdem, tamborimem, cuícou, pandeirem a dalšími nástroji."

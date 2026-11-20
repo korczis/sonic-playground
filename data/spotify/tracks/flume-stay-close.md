@@ -6,8 +6,9 @@ artists: ["Flume"]
 album: "Flume"
 duration: "2:56"
 spotify: {"track": "60P6KrZ74P4BVlwQjg6IMQ", "album": "1Ya2L1SaukipRj53e0dIYc", "artists": ["6nxWCVXbOlEVRexSbLsTer"]}
-keys: {"fold": "flume|stayclose"}
-status: "missing"
+keys: {"fold": "flume|stayclose", "isrc": "AUFF00500383", "musicbrainz": "c4abc3af-7b3d-4040-b383-33937333c20e"}
+review: "flume-stay-close.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Flume*, 2:56.
 A liked song.
-No review yet.
+Reviewed: content/flume-stay-close.md.

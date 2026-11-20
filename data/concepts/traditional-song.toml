@@ -1,0 +1,11 @@
+term = "traditional song"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Folk_music"
+see_also = ["cover version", "work song"]
+
+[en]
+definition = "A song with no known author that has passed from singer to singer, by memory and performance rather than on paper, until many versions of it exist. Record sleeves credit it as \"Traditional\" or \"trad.\", and folklorists such as Francis James Child and Alan Lomax collected its variants in print and on field recordings."
+
+[cs]
+term = "lidová píseň"
+definition = "Píseň bez známého autora, která přecházela od zpěváka ke zpěvákovi, pamětí a zpěvem, ne na papíře, až z ní vzniklo mnoho verzí. Obaly desek ji uvádějí jako „Traditional“ nebo „trad.“ a folkloristé jako Francis James Child nebo Alan Lomax sbírali její varianty v tisku i v terénních nahrávkách."
