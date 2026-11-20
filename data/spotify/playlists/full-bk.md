@@ -37,4 +37,4 @@ tracks:
 
 # Full BK
 
-A playlist the owner follows: 26 of 26 items read on 2026-11-14, 13 of them reviewed on the site.
+A playlist the owner follows: 26 of 26 items read on 2026-11-14, 14 of them reviewed on the site.

@@ -6,8 +6,9 @@ artists: ["Indila"]
 album: "Mini World"
 duration: "3:33"
 spotify: {"track": "65uoaqX5qcjXZRheAj1qQT", "album": "1r7XjAgjwlakmXC2GbPXjH", "artists": ["0FEJqmeLRzsXj8hgcZaAyB"]}
-keys: {"fold": "indila|dernieredanse"}
-status: "missing"
+keys: {"fold": "indila|dernieredanse", "isrc": "FRUM71301049", "musicbrainz": "dae5f71d-6847-4683-868e-08e0fde85063"}
+review: "indila-derniere-danse.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Mini World*, 3:33.
 A liked song.
-No review yet.
+Reviewed: content/indila-derniere-danse.md.

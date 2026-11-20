@@ -6,8 +6,9 @@ artists: ["Il Divo"]
 album: "Amor & Pasion"
 duration: "3:01"
 spotify: {"track": "1zGPkySOSQ96W6GPsgxcjV", "album": "1Rz7IpFTjsDETMTfrtEz6z", "artists": ["3KNZ9AOjBajjmr6ZR2VGfl"]}
-keys: {"fold": "ildivo|quiensera"}
-status: "missing"
+keys: {"fold": "ildivo|quiensera", "musicbrainz": "5c4b5fed-5e5c-4f2b-8c18-b09f23d005fc"}
+review: "il-divo-quien-sera.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Amor & Pasion*, 3:01.
 A liked song.
-No review yet.
+Reviewed: content/il-divo-quien-sera.md.

@@ -6,8 +6,9 @@ artists: ["Jackname Trouble", "Kink"]
 album: "Light Again"
 duration: "5:48"
 spotify: {"track": "22VYGs6Dh1ccabHrVHBx4s", "album": "6YFw33FPWwRbcHG8KJayeg", "artists": ["216B4P2Uzb9v4ryz3QNAAK", "7jtMWIkGq1NqHZjGqs0Zsu"]}
-keys: {"fold": "jacknametrouble|lightagainkinkmix"}
-status: "missing"
+keys: {"fold": "jacknametrouble|lightagainkinkmix", "isrc": "PLE071000035", "musicbrainz": "d52b188d-1fc5-4f81-a8c7-7f0ddc4db7be"}
+review: "jackname-trouble-kink-light-again-kink-mix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Light Again*, 5:48.
 A liked song.
-No review yet.
+Reviewed: content/jackname-trouble-kink-light-again-kink-mix.md.
