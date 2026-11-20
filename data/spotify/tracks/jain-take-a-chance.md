@@ -6,8 +6,9 @@ artists: ["Jain"]
 album: "The Fool"
 duration: "3:24"
 spotify: {"track": "7DYmK7Yvs6aZyJ2jiit9nB", "album": "7arCig498ft2Kc7pJJFHxw", "artists": ["2HHmvvSQ44ePDH7IKVzgK0"]}
-keys: {"fold": "jain|takeachance"}
-status: "missing"
+keys: {"fold": "jain|takeachance", "isrc": "FR9W12219428", "musicbrainz": "8503cc94-7ef3-4272-b742-a2ac47cbe53a"}
+review: "jain-take-a-chance.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Fool*, 3:24.
 A liked song.
-No review yet.
+Reviewed: content/jain-take-a-chance.md.

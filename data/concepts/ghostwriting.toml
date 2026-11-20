@@ -1,0 +1,11 @@
+term = "ghostwriting"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Ghostwriter"
+see_also = ["rapping", "featured artist"]
+
+[en]
+definition = "Writing words that another artist performs as their own. In hip-hop, where a rapper is expected to write their own verses, a ghostwriter's work is often unannounced; it is known when the songwriting credits, the performer or the writer say so. A credited writer is not always a ghost: the term is about whose voice the words are heard in."
+
+[cs]
+term = "ghostwriting"
+definition = "Psaní textů, které jiný interpret přednáší jako své vlastní. V hip-hopu, kde se od rappera čeká, že si sloky píše sám, se práce ghostwritera často nezveřejňuje; ví se o ní, když ji prozradí autorské kredity, interpret nebo sám autor. Uvedený spoluautor ale nemusí být vždy „duch“: jde o to, čí hlas slova pronáší."

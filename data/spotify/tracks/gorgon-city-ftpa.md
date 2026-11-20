@@ -7,8 +7,9 @@ album: "Sirens"
 duration: "4:44"
 explicit: true
 spotify: {"track": "6ANZ5vQyqbZpBaUIXm5uyj", "album": "1tfrh7jInz0lgBamg12OFj", "artists": ["4VNQWV2y1E97Eqo2D5UTjx", "6MKNzi38fPQCFRdWOtHqTJ"]}
-keys: {"fold": "gorgoncity|ftpa"}
-status: "missing"
+keys: {"fold": "gorgoncity|ftpa", "isrc": "GBUM71404003", "musicbrainz": "42108a86-f39d-450d-9b88-2f90351027ea"}
+review: "gorgon-city-erik-hassle-ftpa.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Sirens*, 4:44.
 A liked song.
-No review yet.
+Reviewed: content/gorgon-city-erik-hassle-ftpa.md.
