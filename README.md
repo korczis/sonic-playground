@@ -170,7 +170,9 @@ errors, warnings and failed requests).
 Pushing `main` deploys: `.github/workflows/pages.yml` runs the CI gate (`ci.yml`: conventional
 commits, `majordomus doctor`, the gate above), deploys exactly the tested artefact to GitHub
 Pages, waits until production serves the commit (`revision.txt`) and runs the smoke test against
-production. Every job has a deadline (`test/cases/40_workflow_deadlines.sh`). There is no other
+production. The sitemap sweep, the longest part, runs in four parallel jobs in both places
+(`SMOKE_SHARD=k/4`; `SMOKE_SWEEP=only` skips the feature checks in shards 2-4); locally one run
+checks everything. Every job has a deadline (`test/cases/40_workflow_deadlines.sh`). There is no other
 deploy target (rule `project.deploy-gate`). `content-health.yml` probes videos and external links
 weekly.
 
