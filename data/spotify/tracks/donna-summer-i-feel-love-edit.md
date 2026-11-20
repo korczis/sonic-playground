@@ -6,8 +6,9 @@ artists: ["Donna Summer"]
 album: "I Feel Love (Remixed by Rollo / Sister Bliss and Masters At Work)"
 duration: "3:46"
 spotify: {"track": "07he9SKXdsbkqwS9XaJlrO", "album": "3ns737QR3A8j3EQvWSH8z4", "artists": ["2eogQKWWoohI3BSnoG7E2U"]}
-keys: {"fold": "donnasummer|ifeellove"}
-status: "missing"
+keys: {"fold": "donnasummer|ifeellove", "isrc": "USIR20300349", "musicbrainz": "f845c257-6ce5-4734-afab-2efd9f93b1f4"}
+review: "donna-summer-i-feel-love.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *I Feel Love (Remixed by Rollo / Sister Bliss and Masters At Work)*, 3:46.
 A liked song.
-No review yet.
+Reviewed: content/donna-summer-i-feel-love.md.

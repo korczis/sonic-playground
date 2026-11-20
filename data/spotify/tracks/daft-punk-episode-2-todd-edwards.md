@@ -7,7 +7,7 @@ album: "Daft Punk | Random Access Memories | The Collaborators"
 duration: "7:38"
 spotify: {"track": "3K6HXNtxo1A2eCthCzrwaS", "album": "3QbWxiYTlTCLjHYgrgMCfU", "artists": ["4tZwfgrHOc3mvqYlEYSvVi"]}
 keys: {"fold": "daftpunk|episode2toddedwards"}
-status: "missing"
+status: "skipped"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---

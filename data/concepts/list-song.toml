@@ -1,0 +1,11 @@
+term = "list song"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/List_song"
+see_also = ["spoken word", "hook"]
+
+[en]
+definition = "A song built wholly or in part on a list: instead of telling a story, it works through a series of items, images or names, adding one after another, often comically and sometimes with growing absurdity. The form goes back to oral poetry and the catalogue aria of comic opera."
+
+[cs]
+term = "výčtová píseň"
+definition = "Píseň postavená zcela nebo zčásti na výčtu: místo aby vyprávěla příběh, prochází řadou věcí, obrazů nebo jmen, jedno za druhým, často s humorem a někdy se stupňující absurditou. Forma sahá až k ústní poezii a ke katalogové árii komické opery."

@@ -6,8 +6,9 @@ artists: ["Dead Or Alive"]
 album: "That's The Way I Like It: The Best of Dead Or Alive"
 duration: "8:01"
 spotify: {"track": "6gIBeNdhyrT2nt1zEILoxc", "album": "1FhVoVBXXXJuZr3GwdOgPS", "artists": ["5WWSL6rElJeUk3Uc1S2RyD"]}
-keys: {"fold": "deadoralive|youspinmeroundlikearecordmurdermix"}
-status: "missing"
+keys: {"fold": "deadoralive|youspinmeroundlikearecordmurdermix", "musicbrainz": "56deacbf-8e49-47d7-98da-91917e3e5b51"}
+review: "dead-or-alive-you-spin-me-round-like-a-record-murder-mix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *That's The Way I Like It: The Best of Dead Or Alive*, 8:01.
 A liked song.
-No review yet.
+Reviewed: content/dead-or-alive-you-spin-me-round-like-a-record-murder-mix.md.

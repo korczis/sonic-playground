@@ -6,8 +6,9 @@ artists: ["Electrocute", "Paul Pm"]
 album: "Troublesome Bubblegum"
 duration: "2:48"
 spotify: {"track": "2kW4F7M9Hq5OMYHZtm6Egf", "album": "6sCQ28M7H0uXoKP66gPcE7", "artists": ["6LifNR86NfOlzjdVNuh9D1", "0uySIfKfDqneAUC5AvjM1o"]}
-keys: {"fold": "electrocute|kleinerdickerjunge"}
-status: "missing"
+keys: {"fold": "electrocute|kleinerdickerjunge", "isrc": "USRY20516883", "musicbrainz": "95b18c93-77cf-43df-bb79-8e6d0ee617ee"}
+review: "electrocute-paul-pm-kleiner-dicker-junge-feat-paul-pm.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Troublesome Bubblegum*, 2:48.
 A liked song.
-No review yet.
+Reviewed: content/electrocute-paul-pm-kleiner-dicker-junge-feat-paul-pm.md.

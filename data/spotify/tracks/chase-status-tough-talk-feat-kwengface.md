@@ -6,8 +6,9 @@ artists: ["Chase & Status", "Kwengface"]
 album: "2 RUFF, Vol. 1"
 duration: "3:20"
 spotify: {"track": "3HHJQOfgtdftxzvYPAx1ns", "album": "4SjzjaFsXvXiS7quZFzYEl", "artists": ["3jNkaOXasoc7RsxdchvEVq", "5O1YiYFy3CEWD2lkOmoerV"]}
-keys: {"fold": "chasestatus|toughtalk"}
-status: "missing"
+keys: {"fold": "chasestatus|toughtalk", "isrc": "GBUM72308794", "musicbrainz": "a25c7f03-724c-4590-89f1-959d880b4a66"}
+review: "chase-status-tough-talk.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *2 RUFF, Vol. 1*, 3:20.
 A liked song.
-No review yet.
+Reviewed: content/chase-status-tough-talk.md.

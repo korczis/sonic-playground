@@ -6,8 +6,9 @@ artists: ["Elektrisk Gønner"]
 album: "Yer Fire"
 duration: "4:01"
 spotify: {"track": "1AdnelL9b83y0vUIQ4fyE4", "album": "2smlGXwNOzERNBTpk74ZzL", "artists": ["2kGud8fxxEe5RaaRHHNAnZ"]}
-keys: {"fold": "elektriskgonner|uknowhatiwant"}
-status: "missing"
+keys: {"fold": "elektriskgonner|uknowhatiwant", "musicbrainz": "ac7eb426-cf50-467b-bb2e-8f8d4698af76"}
+review: "elektrisk-gonner-uknowhatiwant.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Yer Fire*, 4:01.
 A liked song.
-No review yet.
+Reviewed: content/elektrisk-gonner-uknowhatiwant.md.
