@@ -6,7 +6,7 @@ artists: ["Tiësto", "Mabel"]
 album: "God Is A Dancer (with Mabel)"
 duration: "2:48"
 spotify: {"track": "6fenHIxXuuzKB55wY4WCHP", "album": "2T0NPRcdhIt71ifDWm328R", "artists": ["2o5jDhtHVPhrJdv3cEQ99Z", "1MIVXf74SZHmTIp4V4paH4"]}
-keys: {"fold": "tiesto|godisadancerwithmabel"}
+keys: {"fold": "tiesto|godisadancer"}
 status: "missing"
 liked: false
 playlists:

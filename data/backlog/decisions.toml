@@ -1,0 +1,18 @@
+# Identity decisions on items of the owner's Spotify history (data/spotify/, ADR 0007) that the
+# catalogue's own resolution gets wrong: skip= for an item that is not a song, review= for a song
+# that already has a review under another spelling. The derive applies them to the Spotify
+# records, and scripts/backlog.py --source spotify then no longer lists the item.
+kind = "decisions"
+source = "Integrator decisions while writing the Spotify waves, 2026-11-20"
+
+[[track]]
+n = 1
+title = "The White City, Pt. 1"
+artists = ["Brian Blessed"]
+skip = "a story read by the actor, not a song"
+
+[[track]]
+n = 2
+title = "Idle Eyes (Roman Fluegel Remix)"
+artists = ["C.A.R."]
+review = "car-idle-eyes.md"

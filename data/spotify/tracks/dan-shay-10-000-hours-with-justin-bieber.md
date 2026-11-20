@@ -6,7 +6,7 @@ artists: ["Dan + Shay", "Justin Bieber"]
 album: "Good Things"
 duration: "2:47"
 spotify: {"track": "4j5ffIFh7bFT7GZciP1TCy", "album": "7L8IHgiomfEpxOm61vgPTm", "artists": ["7z5WFjZAIYejWy0NI5lv4T", "1uNFoZAHBGtllmzznpCI3s"]}
-keys: {"fold": "danshay|10000hourswithjustinbieber"}
+keys: {"fold": "danshay|10000hours"}
 status: "missing"
 liked: false
 playlists:

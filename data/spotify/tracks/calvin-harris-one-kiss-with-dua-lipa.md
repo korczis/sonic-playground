@@ -6,7 +6,7 @@ artists: ["Calvin Harris", "Dua Lipa"]
 album: "One Kiss (with Dua Lipa)"
 duration: "3:34"
 spotify: {"track": "7ef4DlsgrMEH11cDZd32M6", "album": "7GEzhoTiqcPYkOprWQu581", "artists": ["7CajNmpbOovFoOoasH2HaY", "6M2wZ9GZgrQXHCFfjv46we"]}
-keys: {"fold": "calvinharris|onekisswithdualipa"}
+keys: {"fold": "calvinharris|onekiss"}
 status: "missing"
 liked: false
 playlists:

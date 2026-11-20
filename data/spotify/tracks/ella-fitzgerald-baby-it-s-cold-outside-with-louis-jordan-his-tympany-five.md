@@ -6,7 +6,7 @@ artists: ["Ella Fitzgerald", "Louis Jordan & His Tympany Five"]
 album: "Ella Wishes You A Swinging Christmas (Deluxe Edition)"
 duration: "2:43"
 spotify: {"track": "5YvRS94jqY5Yj2BAiHtlaV", "album": "1hMZDDY33LgekGfWOjUFhK", "artists": ["5V0MlUE1Bft0mbLlND7FJz", "62FPyLpIhmk27hBw6RHlhh"]}
-keys: {"fold": "ellafitzgerald|babyitscoldoutsidewithlouisjordanhistympanyfive"}
+keys: {"fold": "ellafitzgerald|babyitscoldoutside"}
 status: "missing"
 liked: false
 playlists:

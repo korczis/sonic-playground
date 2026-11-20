@@ -7,8 +7,9 @@ album: "Angel De Fuego (10Th Anniversary)"
 duration: "3:43"
 explicit: true
 spotify: {"track": "36xsgGPL8pgiAO9gzMZwpl", "album": "3WDrog1yoeb0uNCHDEPtP0", "artists": ["3vrdwWVmzTsSJotjp92OPW"]}
-keys: {"fold": "carolinamarquez|thekillerssongthekillerssongclubedit"}
-status: "missing"
+keys: {"fold": "carolinamarquez|thekillerssongthekillerssongclubedit", "musicbrainz": "bfdff683-94fc-4ba1-bede-264adcc2ff1b"}
+review: "carolina-marquez-the-killer-s-song-the-killer-s-song-club-edit.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Angel De Fuego (10Th Anniversary)*, 3:43.
 A liked song.
-No review yet.
+Reviewed: content/carolina-marquez-the-killer-s-song-the-killer-s-song-club-edit.md.

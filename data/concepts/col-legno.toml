@@ -1,0 +1,11 @@
+term = "col legno"
+category = "performance"
+wikipedia = "https://en.wikipedia.org/wiki/Col_legno"
+see_also = ["riff", "syncopation"]
+
+[en]
+definition = "Italian for \"with the wood\": a string player strikes or draws the strings with the wooden stick of the bow instead of its hair. Struck (battuto), it gives a dry, clicking, almost percussive note with only a faint pitch; Holst used it for the menacing rhythm that opens Mars in The Planets."
+
+[cs]
+term = "col legno"
+definition = "Italsky „dřevem“: hráč na smyčcový nástroj udeří do strun nebo po nich táhne dřevěnou žerdí smyčce místo jejích žíní. Úderem (battuto) vzniká suchý, cvakavý, skoro bicí tón jen s nezřetelnou výškou; Holst jím rozehrál hrozivý rytmus na začátku věty Mars ze suity Planety."

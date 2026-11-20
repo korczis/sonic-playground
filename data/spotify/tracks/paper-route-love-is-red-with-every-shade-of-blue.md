@@ -6,7 +6,7 @@ artists: ["Paper Route"]
 album: "Real Emotion"
 duration: "2:33"
 spotify: {"track": "1zbjAHrFsaloYjup7AXGQR", "album": "4FBgDUQc9uZCuNwySaZPWL", "artists": ["2EoJ4ILZNAHjVtZgmWBaID"]}
-keys: {"fold": "paperroute|loveisredwitheveryshadeofblue"}
+keys: {"fold": "paperroute|loveisred"}
 status: "missing"
 liked: false
 playlists:

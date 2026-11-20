@@ -113,7 +113,9 @@ once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 a
   song match it when only one page fits; a sourced other title ("One Night In NYC" for
   "One Night In New York City") goes in `extra.titles`, never a second page.
 - A row that is not a song (an interview, a skit) or whose artist is unclear is skipped and
-  reported for the owner, never guessed.
+  reported for the owner, never guessed. Once the integrator confirms it is not a song, it gets a
+  `skip = "<reason>"` row in `data/backlog/decisions.toml` (a song reviewed under another
+  spelling gets `review = "<file>.md"` there), so the next wave does not draw it again.
 
 # Output
 

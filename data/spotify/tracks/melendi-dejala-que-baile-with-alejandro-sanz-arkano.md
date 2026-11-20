@@ -6,7 +6,7 @@ artists: ["Melendi", "Alejandro Sanz", "Arkano"]
 album: "Ahora"
 duration: "3:39"
 spotify: {"track": "2KK9N6iBAisA0booTu3bGd", "album": "2cx8aUPxZ0GvVJkJdNXeOM", "artists": ["1EXjXQpDx2pROygh8zvHs4", "5sUrlPAHlS9NEirDB8SEbF", "5ACyfaynUH9FpBaR8uZprQ"]}
-keys: {"fold": "melendi|dejalaquebailewithalejandrosanzarkano"}
+keys: {"fold": "melendi|dejalaquebaile"}
 status: "missing"
 liked: false
 playlists:

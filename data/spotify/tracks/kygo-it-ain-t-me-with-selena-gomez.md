@@ -6,7 +6,7 @@ artists: ["Kygo", "Selena Gomez"]
 album: "It Ain't Me (with Selena Gomez)"
 duration: "3:40"
 spotify: {"track": "3eR23VReFzcdmS7TYCrhCe", "album": "0IUCAsckpNyV4wHKIHQawC", "artists": ["23fqKkggKUBHNkbKtXEls4", "0C8ZW7ezQVs4URX5aX7Kqx"]}
-keys: {"fold": "kygo|itaintmewithselenagomez"}
+keys: {"fold": "kygo|itaintme"}
 status: "missing"
 liked: false
 playlists:

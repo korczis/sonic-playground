@@ -6,8 +6,9 @@ artists: ["Belleruche", "Natural Self"]
 album: "3 Amp Fuse"
 duration: "4:28"
 spotify: {"track": "6BU7RTssxvEZXpXfUiI5uu", "album": "642fVMD33jysqFSbtKNDBO", "artists": ["4N9nNkpjGuBlGWnYubQI8t", "4RUjXpY1miotoKFF76r6gm"]}
-keys: {"fold": "belleruche|13635naturalselfremix"}
-status: "missing"
+keys: {"fold": "belleruche|13635naturalselfremix", "isrc": "GBEUE1002161"}
+review: "belleruche-natural-self-13-6-35-natural-self-remix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *3 Amp Fuse*, 4:28.
 A liked song.
-No review yet.
+Reviewed: content/belleruche-natural-self-13-6-35-natural-self-remix.md.

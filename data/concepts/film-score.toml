@@ -1,0 +1,11 @@
+term = "film score"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Film_score"
+see_also = ["soundtrack", "instrumental"]
+
+[en]
+definition = "The original music a composer writes for a film, timed to its scenes and usually instrumental. A soundtrack album often sets the score beside songs, some licensed from other artists and some written for the film, so the composer of the score can also be the author of a song on the same record."
+
+[cs]
+term = "původní filmová hudba"
+definition = "Původní hudba, kterou skladatel píše pro film, načasovaná podle scén a obvykle instrumentální. Soundtrackové album často řadí tuto hudbu vedle písní, z nichž některé jsou převzaté od jiných interpretů a jiné vznikly přímo pro film, takže autor filmové hudby může být i autorem písně na téže desce."

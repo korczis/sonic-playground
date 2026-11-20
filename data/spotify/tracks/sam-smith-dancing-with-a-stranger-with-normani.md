@@ -6,7 +6,7 @@ artists: ["Sam Smith", "Normani"]
 album: "Love Goes"
 duration: "2:51"
 spotify: {"track": "3xgT3xIlFGqZjYW9QlhJWp", "album": "5XCBX16KNYsAe7V5hQV9mC", "artists": ["2wY79sveU1sp5g7SokKOiI", "2cWZOOzeOm4WmBJRnD5R7I"]}
-keys: {"fold": "samsmith|dancingwithastrangerwithnormani"}
+keys: {"fold": "samsmith|dancingwithastranger"}
 status: "missing"
 liked: false
 playlists:

@@ -6,7 +6,7 @@ artists: ["John Summit", "Mathame", "Camden Cox"]
 album: "Hungover (with Camden Cox)"
 duration: "3:40"
 spotify: {"track": "1HmeANWuuCP6ldvGgKwTLi", "album": "0zmoJBEhLPoiKBzXMeFjAm", "artists": ["7kNqXtgeIwFtelmRjWv205", "6QSwQEz8CDMg8Rqk8dEkxS", "5mNpMP01Co4vXZ3U0fWP3C"]}
-keys: {"fold": "johnsummit|hungoverwithcamdencox"}
+keys: {"fold": "johnsummit|hungover"}
 status: "missing"
 liked: false
 playlists:

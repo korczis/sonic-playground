@@ -7,7 +7,8 @@ album: "Fizzy"
 duration: "3:47"
 spotify: {"track": "3xCcqxfHLRnX6RONKrdNZY", "album": "4gaOmPs9w6ksWSYSGP1Je9", "artists": ["6bcVuNO2JKqacO1ITmA6jK"]}
 keys: {"fold": "catastrophe|smalltownboynovaversion"}
-status: "missing"
+review: "catastrophe-smalltown-boy-nova-version.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Fizzy*, 3:47.
 A liked song.
-No review yet.
+Reviewed: content/catastrophe-smalltown-boy-nova-version.md.
