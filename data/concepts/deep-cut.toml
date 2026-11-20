@@ -1,0 +1,11 @@
+term = "deep cut"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Album_track"
+see_also = ["b-side", "alternate version"]
+
+[en]
+definition = "An album track that was never released as a single and gets little or no radio play, known mostly to listeners who play the whole record. Deep cuts are often where artists take their risks, and fans and critics frequently name them as an album's hidden best."
+
+[cs]
+term = "skrytý klenot alba"
+definition = "Albová skladba, která nikdy nevyšla jako singl a v rádiu se hraje málo nebo vůbec, takže ji znají hlavně posluchači celé desky. Právě v takových skladbách interpreti často riskují a fanoušci i kritici je nezřídka označují za nejlepší, i když skryté místo alba."

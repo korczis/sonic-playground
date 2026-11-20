@@ -6,8 +6,9 @@ artists: ["Datsik", "Travis Barker", "Liinks"]
 album: "Darkstar"
 duration: "4:11"
 spotify: {"track": "654frz85ORyH9JjZjtkhv5", "album": "7FshLyKgJvzCDPwJTfHGBV", "artists": ["48q2mPVwlKnlSaCx07i6Ta", "4exLIFE8sISLr28sqG1qNX", "3tTrvuZL6yAhHb1x2iWlBY"]}
-keys: {"fold": "datsik|darkstar"}
-status: "missing"
+keys: {"fold": "datsik|darkstar", "isrc": "USYBL1600250", "musicbrainz": "6b3abf24-d5f1-47a6-88ee-7ee5a3dbacfc"}
+review: "datsik-darkstar.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Darkstar*, 4:11.
 A liked song.
-No review yet.
+Reviewed: content/datsik-darkstar.md.

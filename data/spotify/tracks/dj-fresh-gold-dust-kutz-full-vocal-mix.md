@@ -6,8 +6,9 @@ artists: ["DJ Fresh", "Kutz"]
 album: "Gold Dust (Shy FX Re-Edit)"
 duration: "5:26"
 spotify: {"track": "1dXFWwtfrshjUA07aN0kW8", "album": "5WtfEmFlHacTh4I4A9edox", "artists": ["6r20qOqY7qDWI0PPTxVMlC", "5kgljbnZnnF1LBmbRpcCcK"]}
-keys: {"fold": "djfresh|golddustkutzfullvocalmix"}
-status: "missing"
+keys: {"fold": "djfresh|golddustkutzfullvocalmix", "musicbrainz": "7234059a-3c84-437d-a47d-6c4b8b9a335b"}
+review: "dj-fresh-kutz-gold-dust-kutz-full-vocal-mix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Gold Dust (Shy FX Re-Edit)*, 5:26.
 A liked song.
-No review yet.
+Reviewed: content/dj-fresh-kutz-gold-dust-kutz-full-vocal-mix.md.

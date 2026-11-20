@@ -7,7 +7,7 @@ album: "Samba Rock Vol.1"
 duration: "2:38"
 spotify: {"track": "5LqUCmNkX0Q45kUPhssHUS", "album": "2i4f3XYYgq9PH9sd7BULSa", "artists": ["4Mtp5bwkFGezBy61GYPm8W"]}
 keys: {"fold": "chocolatedabahia|rodadesamba"}
-status: "missing"
+status: "skipped"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---

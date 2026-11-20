@@ -16,3 +16,15 @@ n = 2
 title = "Idle Eyes (Roman Fluegel Remix)"
 artists = ["C.A.R."]
 review = "car-idle-eyes.md"
+
+[[track]]
+n = 3
+title = "Roda De Samba"
+artists = ["Chocolate Da Bahia"]
+skip = "unavailable: no official upload, and no source names which 1977 recording the compilation carries (wave 15)"
+
+[[track]]
+n = 4
+title = "Time Has Changed - Northern Lite Remix"
+artists = ["Codec", "Flexor", "Northern Lite"]
+review = "codec-n-flexor-time-has-changed-northern-lite-remix.md"

@@ -1,0 +1,11 @@
+term = "pitch shifting"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Pitch_shift"
+see_also = ["auto-tune", "vocoder"]
+
+[en]
+definition = "Raising or lowering the pitch of a recorded sound, often without changing its speed. Doubled a few semitones down under the original, a voice gains a deeper, darker shadow; pushed far up or down, it stops sounding like the singer at all."
+
+[cs]
+term = "posun výšky tónu"
+definition = "Zvýšení nebo snížení výšky nahraného zvuku, často bez změny jeho tempa. Zdvojený o několik půltónů níž pod původním zpěvem dostává hlas hlubší, temnější stín; posunutý hodně nahoru či dolů přestává znít jako zpěvák sám."
