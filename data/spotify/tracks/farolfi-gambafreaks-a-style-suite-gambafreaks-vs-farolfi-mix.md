@@ -6,8 +6,9 @@ artists: ["Farolfi&gambafreaks", "Moloko +"]
 album: "a style suite"
 duration: "5:16"
 spotify: {"track": "77Ex26Sd79R49A6d6pP1sF", "album": "1GrPYl6TqXV3noWKNEgiei", "artists": ["7ezEiDWtYk3PcYq03EVc7s", "1h8THrZxJlzedZBcLHSCq2"]}
-keys: {"fold": "farolfigambafreaks|astylesuitegambafreaksvsfarolfimix"}
-status: "missing"
+keys: {"fold": "farolfigambafreaks|astylesuitegambafreaksvsfarolfimix", "musicbrainz": "0e484abd-8bad-4aff-bbbe-a555c3d40aef"}
+review: "farolfi-gambafreaks-vs-moloko-a-style-suite-gambafreaks-vs-farolfi-mix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *a style suite*, 5:16.
 A liked song.
-No review yet.
+Reviewed: content/farolfi-gambafreaks-vs-moloko-a-style-suite-gambafreaks-vs-farolfi-mix.md.

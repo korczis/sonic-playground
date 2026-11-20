@@ -3,7 +3,7 @@ schema: "spotify-library/v1"
 id: "library"
 songs: 6558
 liked: 2029
-reviewed: 1026
+reviewed: 1065
 sources: ["web-player:2026-11-14", "web-player:2026-11-14"]
 playlists:
   - {"kind": "liked", "ids": ["liked-songs"]}
@@ -273,4 +273,4 @@ top_artists:
 
 # The owner's Spotify library
 
-6558 songs (2029 liked, 1026 reviewed on the site), 55 playlists, 115 saved albums and 90 followed artists. Derived by scripts/spotify_history.py; never edit by hand.
+6558 songs (2029 liked, 1065 reviewed on the site), 55 playlists, 115 saved albums and 90 followed artists. Derived by scripts/spotify_history.py; never edit by hand.

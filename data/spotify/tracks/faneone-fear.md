@@ -7,7 +7,7 @@ album: "Fear"
 duration: "1:50"
 spotify: {"track": "0ty3b5AlmOsXdf9l7aODJ6", "album": "1aMeyVaxuL30u51ricVNAk", "artists": ["6kQPCQf0NTmbj6hwim0vkT"]}
 keys: {"fold": "faneone|fear"}
-status: "missing"
+status: "skipped"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---

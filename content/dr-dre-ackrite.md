@@ -14,7 +14,7 @@ publisher = "Aftermath Entertainment/Interscope Records"
 album = "2001"
 release_year = "1999"
 country = "US"
-musicbrainz = { recording = "7f1fe9fa-170f-4489-8b0b-448631a27737", artist = "5f6ab597-f57a-40da-be9e-adad48708203", release = "a99bc765-95ee-47fa-9880-43793e6744c9" }
+musicbrainz = { recording = "a4deeda9-94fd-49dd-a13f-1fb04131aefc", artist = "5f6ab597-f57a-40da-be9e-adad48708203", release = "ae611654-f46b-4b7e-b750-1ef8de3bbfec" }
 youtube = "https://www.youtube.com/embed/4S460AcbV6E"
 connections = [
   { source = "dr-dre-let-s-get-high.md", why = "Another track from 2001 with Hittman, produced by Dre and Mel-Man, which keeps two funk samples where Ackrite lists none." },

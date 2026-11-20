@@ -1,0 +1,11 @@
+term = "arrangement"
+category = "production"
+wikipedia = "https://en.wikipedia.org/wiki/Arrangement"
+see_also = ["record producer", "wall of sound"]
+
+[en]
+definition = "The way a song is set for the voices and instruments that perform it: who plays what, when parts enter and drop out, and which lines the horns, strings or backing singers add. The arranger is often not the songwriter, and the same song can sound like a different piece in a new arrangement."
+
+[cs]
+term = "aranžmá"
+definition = "Způsob, jakým je píseň rozepsána pro hlasy a nástroje, které ji hrají: kdo hraje co, kdy party vstupují a mizí a jaké linky přidávají žestě, smyčce nebo doprovodné vokály. Aranžér často není autorem písně a táž píseň může v novém aranžmá znít jako jiná skladba."
