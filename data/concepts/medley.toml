@@ -1,0 +1,11 @@
+term = "medley"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Medley_(music)"
+see_also = ["arrangement", "cover version"]
+
+[en]
+definition = "A piece that joins several songs, or parts of them, into one continuous performance, usually linked by short bridges or key changes. A medley can sum up a whole musical or a run of hits in a few minutes, and the arranger decides which tunes go in, in what order and how one hands over to the next."
+
+[cs]
+term = "směs"
+definition = "Skladba, která spojuje několik písní nebo jejich částí do jednoho souvislého provedení, obvykle propojeného krátkými přechody nebo změnami tóniny. Směs dokáže shrnout celý muzikál nebo řadu hitů do několika minut a aranžér rozhoduje, které melodie zazní, v jakém pořadí a jak jedna předá slovo další."

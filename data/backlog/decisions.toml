@@ -100,3 +100,9 @@ n = 16
 title = "I Got You (I Feel Good)"
 artists = ["James Brown", "James Brown & The Famous Flames"]
 review = "james-brown-the-famous-flames-i-got-you-i-feel-good.md"
+
+[[track]]
+n = 17
+title = "We Are Your Friends - Justice Vs Simian"
+artists = ["Justice", "Simian"]
+review = "justice-vs-simian_we-are-your-friends.md"

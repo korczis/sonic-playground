@@ -10,7 +10,7 @@ concept = ["featured artist", "bassline", "music video", "sampling"]
 instrument = ["vocals", "bass", "guitar"]
 
 [extra.translation]
-of = "dba26046d599"
+of = "2237796e4fef"
 
 [extra]
 connections = [
@@ -22,7 +22,7 @@ connections = [
 [extra.learning]
 objectives = ["Vysvětlit, co písni přináší hostující umělec, na příkladu sloky a smíchu De La Soul.", "Popsat, jak může basová linka nést identitu písně a jak s ní může refrén kontrastovat.", "Číst videoklip jako komentář, tady jako animovaný film o intelektuální svobodě a médiích."]
 listen_for = [
-  { part = "úvod", what = "Sampl skladby A Fistful of Peanuts, dubové verze dřívějšího singlu Gorillaz Clint Eastwood od Spacemonkeyz, ještě než začne samotná píseň." },
+  { part = "začátek videoklipu", what = "Ve videoklipu, ne v samotné písni, zazní sampl skladby A Fistful of Peanuts, dubové verze dřívějšího singlu Gorillaz Clint Eastwood od Spacemonkeyz, zatímco kamera stoupá po věži." },
   { part = "basová linka", what = "To, co Sean McCarthy nazval zabijáckou basovou linkou, riff, kterým píseň začíná." },
   { part = "refrén", what = "Refrén o větrných mlýnech, který by podle téhož recenzenta mohl být protestní hymnou šedesátých let, nesený tím, co Drowned in Sound nazval baleárskou housovou kytarou Simona Tonga." },
   { part = "rap", what = "Trugoyova sloka, napsaná noc poté, co poprvé slyšel instrumentál, a Maseův smích, kterým se podle Albarna smál hudbě, jež ten den vznikala." },
@@ -42,7 +42,7 @@ Damon Albarn píseň napsal v roce 2003 cestou na festival Coachella, poté co p
 
 ### Úvod
 
-Skladba začíná samplem A Fistful of Peanuts, dubové verze dřívějšího singlu Gorillaz Clint Eastwood od Spacemonkeyz.
+Videoklip, ne samotná píseň, začíná samplem A Fistful of Peanuts, dubové verze dřívějšího singlu Gorillaz Clint Eastwood od Spacemonkeyz.
 
 ### Basová linka
 

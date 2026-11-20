@@ -7,8 +7,9 @@ album: "D-12 World"
 duration: "4:34"
 explicit: true
 spotify: {"track": "2DrZXqZlPA8Q1CxH4CuETQ", "album": "61EgDesQnFVyYf2UneM9PQ", "artists": ["5Qi4Bb7a8C0a00NZcA77L0"]}
-keys: {"fold": "d12|getmygun"}
-status: "missing"
+keys: {"fold": "d12|getmygun", "isrc": "USIR10400121", "musicbrainz": "9c878f82-9ad2-44b4-b02a-472ff2662bfa"}
+review: "d12-get-my-gun.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *D-12 World*, 4:34.
 A liked song.
-No review yet.
+Reviewed: content/d12-get-my-gun.md.

@@ -7,7 +7,8 @@ album: "#FreeBritney"
 duration: "3:28"
 spotify: {"track": "43o6vpLN26ucRtWqu1RrBH", "album": "6SuMUPXciI4nE2gFMhH38i", "artists": ["3k4Tgw8lb1CtDAiErniQu1", "0hWL8sffP07PbVm5ilnf1o", "2QFR5zFZ22pagqAnuYPvtD"]}
 keys: {"fold": "jpolnd|toxic"}
-status: "missing"
+review: "jpolnd-rachel-k-collier-toxic.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *#FreeBritney*, 3:28.
 A liked song.
-No review yet.
+Reviewed: content/jpolnd-rachel-k-collier-toxic.md.
