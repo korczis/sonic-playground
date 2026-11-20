@@ -6,8 +6,9 @@ artists: ["Jean du Voyage", "Djéla"]
 album: "The Closest EP"
 duration: "3:35"
 spotify: {"track": "0S5uDF3pDMogZNGsZFRNkz", "album": "3GN7FSrFZDEUo1j1GbFcCw", "artists": ["6tcOJ8DRI6oaFcXgYBCnRc", "3Wbq6mJ1W7oQNe3hbbc5jk"]}
-keys: {"fold": "jeanduvoyage|theclosestghost"}
-status: "missing"
+keys: {"fold": "jeanduvoyage|theclosestghost", "isrc": "FR92U1301180", "musicbrainz": "914c20b6-4d86-4cdf-a5ed-cc668773945e"}
+review: "jean-du-voyage-the-closest-ghost.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Closest EP*, 3:35.
 A liked song.
-No review yet.
+Reviewed: content/jean-du-voyage-the-closest-ghost.md.

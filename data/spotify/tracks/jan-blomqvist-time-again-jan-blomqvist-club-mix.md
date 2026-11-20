@@ -6,8 +6,9 @@ artists: ["Jan Blomqvist"]
 album: "Time Again"
 duration: "7:08"
 spotify: {"track": "4R6IXAnUwcRZuE5oMMUEwY", "album": "62P7h2FVXiJqaHxNGVbMsB", "artists": ["5wMlMjOLeJfS5DfxqGfm83"]}
-keys: {"fold": "janblomqvist|timeagainjanblomqvistclubmix"}
-status: "missing"
+keys: {"fold": "janblomqvist|timeagainjanblomqvistclubmix", "musicbrainz": "dd86c4c0-5b2c-4651-88e3-65b8105dd738"}
+review: "jan-blomqvist-time-again.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Time Again*, 7:08.
 A liked song.
-No review yet.
+Reviewed: content/jan-blomqvist-time-again.md.

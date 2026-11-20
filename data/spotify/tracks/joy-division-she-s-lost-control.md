@@ -6,8 +6,9 @@ artists: ["Joy Division"]
 album: "TOTAL"
 duration: "4:46"
 spotify: {"track": "3XoatMhgpuxOkpb6GtQl9E", "album": "3rPC5Y8e9S6dGGkWvRYPRD", "artists": ["432R46LaYsJZV2Gmc4jUV5"]}
-keys: {"fold": "joydivision|sheslostcontrol"}
-status: "missing"
+keys: {"fold": "joydivision|sheslostcontrol", "musicbrainz": "0c3baabf-faee-453c-a85a-1f8efbe9a3b2"}
+review: "joy-division-she-s-lost-control.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *TOTAL*, 4:46.
 A liked song.
-No review yet.
+Reviewed: content/joy-division-she-s-lost-control.md.

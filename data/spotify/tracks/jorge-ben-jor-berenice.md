@@ -6,8 +6,9 @@ artists: ["Jorge Ben Jor"]
 album: "Samba Rock Vol.1"
 duration: "2:32"
 spotify: {"track": "398j1DCbstqGPzxfsKJpRD", "album": "2i4f3XYYgq9PH9sd7BULSa", "artists": ["5JYtpnUKxAzXfHEYpOeeit"]}
-keys: {"fold": "jorgebenjor|berenice"}
-status: "missing"
+keys: {"fold": "jorgebenjor|berenice", "isrc": "BRSGL7800009", "musicbrainz": "10462e14-bf49-47fb-b425-6d484e6c862f"}
+review: "jorge-ben-jor-berenice.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Samba Rock Vol.1*, 2:32.
 A liked song.
-No review yet.
+Reviewed: content/jorge-ben-jor-berenice.md.
