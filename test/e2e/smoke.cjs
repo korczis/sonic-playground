@@ -897,6 +897,12 @@ async function shot(page, name) {
     ['genres', 'genre/'], ['archive', 'archive/'], ['concepts', 'concept/'], ['concept', `concept/${(catalog.concepts.find((c) => (c.tracks || []).length) || {}).slug}/`],
     ['author', 'author/'], ['welcome', 'welcome/'], ['cs track', (sample.i18n && sample.i18n.cs && sample.i18n.cs.path) || 'cs/']]) {
     const { context, page } = await open(browser, at(rel), phone, name === 'track' ? 'dark' : 'light');
+    // Measured once the page's charts have drawn (or 5 s passed) and fonts are in: on production the
+    // genres index once measured 210 px of overflow mid-render and none a minute later (run
+    // 44753754937); the check is about the settled layout, not a frame during it.
+    await page.waitForFunction(() => !document.querySelector('[data-chart]') || Number(document.documentElement.dataset.chartsState) > 0,
+      null, { timeout: 5000 }).catch(() => {});
+    await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))));
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${name} @390px: no horizontal overflow (${overflow}px)`);
     const small = await page.evaluate((min) => [...document.querySelectorAll('button, a[href], [role=button], select, input')]
