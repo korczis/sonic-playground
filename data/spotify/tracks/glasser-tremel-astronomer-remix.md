@@ -6,8 +6,9 @@ artists: ["Glasser"]
 album: "Tremel"
 duration: "9:01"
 spotify: {"track": "44NBmc8NN8saf7kvbcM1j6", "album": "4tZp9kqmZYdV0cufBWDkfb", "artists": ["2M45qKMZX16QUyOiKyluI0"]}
-keys: {"fold": "glasser|tremelastronomerremix"}
-status: "missing"
+keys: {"fold": "glasser|tremelastronomerremix", "isrc": "GB6HK0900006", "musicbrainz": "80b3a830-b8ff-4993-80ba-63ca8432f18c"}
+review: "glasser-tremel-astronomer-remix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Tremel*, 9:01.
 A liked song.
-No review yet.
+Reviewed: content/glasser-tremel-astronomer-remix.md.

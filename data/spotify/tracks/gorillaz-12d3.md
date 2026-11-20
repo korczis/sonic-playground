@@ -6,8 +6,9 @@ artists: ["Gorillaz"]
 album: "G-Sides"
 duration: "3:24"
 spotify: {"track": "6rKgCRqE6lFxwkPEFWAJYO", "album": "6z8arLj8lWDoxk99ayMYlz", "artists": ["3AA28KZvwAUcZuOKwyblJQ"]}
-keys: {"fold": "gorillaz|12d3"}
-status: "missing"
+keys: {"fold": "gorillaz|12d3", "isrc": "GBAYE0000883", "musicbrainz": "45878cf3-1360-44d5-8a0c-27f11a18800a"}
+review: "gorillaz-12d3.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *G-Sides*, 3:24.
 A liked song.
-No review yet.
+Reviewed: content/gorillaz-12d3.md.
