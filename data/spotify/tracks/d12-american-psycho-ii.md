@@ -7,8 +7,9 @@ album: "D-12 World"
 duration: "3:44"
 explicit: true
 spotify: {"track": "2Zuv8yMOYeF2TFERAOWJgS", "album": "61EgDesQnFVyYf2UneM9PQ", "artists": ["5Qi4Bb7a8C0a00NZcA77L0", "2LiWxiQzuD9nmWQ6NCA8Gd"]}
-keys: {"fold": "d12|americanpsychoii"}
-status: "missing"
+keys: {"fold": "d12|americanpsychoii", "isrc": "USIR10400114", "musicbrainz": "f11bbfff-2ff3-4a6d-9d9c-c28794a2ebf7"}
+review: "d12-american-psycho-ii.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *D-12 World*, 3:44.
 A liked song.
-No review yet.
+Reviewed: content/d12-american-psycho-ii.md.

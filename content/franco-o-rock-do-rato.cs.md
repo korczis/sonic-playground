@@ -10,7 +10,7 @@ concept = ["compilation album", "syncopation"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "2c4838b6cd53"
+of = "a75be58b5def"
 
 [extra]
 connections = [
@@ -50,7 +50,7 @@ Druhý život písni dala {{ <concept_link name="compilation album" text="kompil
 
 ## Umělecký kontext
 
-Samba rock podle výkladu Wikipedie vyrostl z pouličních večírků v převážně černošských čtvrtích São Paula, kde DJové míchali americký rock and roll a soul se sambou; za jeho otce se považuje Jorge Ben. Hélio Matheus začínal v nočních klubech Ria de Janeiro a São Paula, první singl nahrál v roce 1968 a složil přes 150 písní. Wikipedie mezi zpěváky, pro které psal, jmenuje Franca Scornavaccu; žádný zdroj, který jsme našli, nepotvrzuje, že jde o Franca z této nahrávky.
+Samba rock podle výkladu Wikipedie vyrostl z pouličních večírků v převážně černošských čtvrtích São Paula, kde DJové míchali americký rock and roll a soul se sambou; za jeho otce se považuje Jorge Ben. Hélio Matheus začínal v nočních klubech Ria de Janeiro a São Paula, první singl nahrál v roce 1968 a složil přes 150 písní. Wikipedie mezi zpěváky, pro které psal, jmenuje Franca Scornavaccu a Discogs album Franco připisuje Francu Scornavaccovi, zpěvákovi, kterého Farofafá uvádí u písně Rock Enredo.
 
 ## Ohlas a dopad
 
