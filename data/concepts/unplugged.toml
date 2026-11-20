@@ -1,0 +1,11 @@
+term = "unplugged"
+category = "performance"
+wikipedia = "https://en.wikipedia.org/wiki/Acoustic_music"
+see_also = ["live recording", "alternate version"]
+
+[en]
+definition = "A performance or recording made with acoustic instruments, without the electric guitars, synthesizers and studio layers of the familiar version. The term spread with MTV's Unplugged series in the early 1990s; an unplugged take strips a song back to voice, wood and strings, so its melody and the singer's phrasing carry everything."
+
+[cs]
+term = "unplugged"
+definition = "Vystoupení nebo nahrávka s akustickými nástroji, bez elektrických kytar, syntezátorů a studiových vrstev známé verze. Výraz se rozšířil se sérií Unplugged stanice MTV na počátku 90. let; unplugged verze svléká píseň na hlas, dřevo a struny, takže všechno nese melodie a zpěvákovo frázování."

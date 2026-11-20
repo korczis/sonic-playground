@@ -6,8 +6,9 @@ artists: ["Habstrakt", "Unlovable"]
 album: "The One"
 duration: "3:20"
 spotify: {"track": "6g5mOmAf9UNmM0ejKoq6ZK", "album": "7jTjkekiP10wcRMtmcDLm8", "artists": ["1YYJxpOXYk1z1WtqdeLMkn", "7k7hKLT3ZWvBgC1avmIl4t"]}
-keys: {"fold": "habstrakt|theoneunlovableremix"}
-status: "missing"
+keys: {"fold": "habstrakt|theoneunlovableremix", "isrc": "CA6D21900237", "musicbrainz": "10d0c3ca-0f90-4a7f-9a78-4bb188a1b674"}
+review: "habstrakt-unlovable-the-one-unlovable-remix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The One*, 3:20.
 A liked song.
-No review yet.
+Reviewed: content/habstrakt-unlovable-the-one-unlovable-remix.md.

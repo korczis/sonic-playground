@@ -7,7 +7,8 @@ album: "Gift"
 duration: "5:10"
 spotify: {"track": "60OAbxlusT7OqV3FPsyBok", "album": "7wmQUXl6JUioVvaMyftbUp", "artists": ["3vlHafv2NilOdR9geTgKU2"]}
 keys: {"fold": "hanayo|joeletaxi"}
-status: "missing"
+review: "hanayo-joe-le-taxi.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Gift*, 5:10.
 A liked song.
-No review yet.
+Reviewed: content/hanayo-joe-le-taxi.md.

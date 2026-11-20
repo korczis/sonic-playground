@@ -1,0 +1,11 @@
+term = "coda"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Coda_(music)"
+see_also = ["arrangement", "bridge"]
+
+[en]
+definition = "A closing passage added after a piece's main material has been heard, from the Italian for tail. In a song it is often an extended ending, sometimes without words, that repeats, builds or winds down so the music can settle after the last verse or chorus."
+
+[cs]
+term = "coda"
+definition = "Závěrečný úsek připojený poté, co zazněl hlavní materiál skladby; název pochází z italského slova pro ocas. V písni to bývá prodloužený konec, někdy beze slov, který opakuje, graduje nebo doznívá, aby se hudba po poslední sloce či refrénu mohla usadit."

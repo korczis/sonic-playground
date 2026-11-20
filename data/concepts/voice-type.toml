@@ -1,0 +1,11 @@
+term = "voice type"
+category = "timbre"
+wikipedia = "https://en.wikipedia.org/wiki/Voice_type"
+see_also = ["vocal harmony", "falsetto"]
+
+[en]
+definition = "The family a singing voice belongs to, judged by its range, its weight and its colour: soprano, mezzo-soprano and alto for women, tenor, baritone and bass for men. A song written for several voice types gives each singer a part that suits the register where their voice sounds best, so the contrast between them becomes part of the music."
+
+[cs]
+term = "hlasový obor"
+definition = "Skupina, do které zpěvní hlas patří podle rozsahu, síly a barvy: soprán, mezzosoprán a alt u žen, tenor, baryton a bas u mužů. Píseň napsaná pro několik hlasových oborů dává každému zpěvákovi part v poloze, kde jeho hlas zní nejlépe, takže i kontrast mezi nimi se stává součástí hudby."
