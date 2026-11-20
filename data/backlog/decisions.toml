@@ -28,3 +28,21 @@ n = 4
 title = "Time Has Changed - Northern Lite Remix"
 artists = ["Codec", "Flexor", "Northern Lite"]
 review = "codec-n-flexor-time-has-changed-northern-lite-remix.md"
+
+[[track]]
+n = 5
+title = "Episode 2, Todd Edwards"
+artists = ["Daft Punk"]
+skip = "a spoken interview episode of The Collaborators series, not a song"
+
+[[track]]
+n = 6
+title = "Hungry - Niklas Ibach Remix"
+artists = ["Dotan"]
+review = "niklas-ibach-hungry-remix.md"
+
+[[track]]
+n = 7
+title = "Dance on Cocaine"
+artists = ["DJ Hazze"]
+skip = "unclear artist: a self-distributed release no source describes (wave 17)"

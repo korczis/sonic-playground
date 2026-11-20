@@ -7,7 +7,8 @@ album: "Disco De Ouro"
 duration: "3:43"
 spotify: {"track": "4X2v1zob0sZ7HtY2TyWiuf", "album": "0szKyWd8zRFN2jtqWnaUmW", "artists": ["5w4qi7KMTWcV7sgXgVoPwW"]}
 keys: {"fold": "elizethcardoso|eubebosim"}
-status: "missing"
+review: "elizeth-cardoso-eu-bebo-sim.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Disco De Ouro*, 3:43.
 A liked song.
-No review yet.
+Reviewed: content/elizeth-cardoso-eu-bebo-sim.md.

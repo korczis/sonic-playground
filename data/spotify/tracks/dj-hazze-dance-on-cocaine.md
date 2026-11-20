@@ -7,7 +7,7 @@ album: "Dance on Cocaine"
 duration: "2:40"
 spotify: {"track": "6Pcca89XnZTRBoBhUpxkWV", "album": "0XnDSXUWMnc9hBlMtaQ5EU", "artists": ["0KlqfJpBnPldIHJ0of0QaJ"]}
 keys: {"fold": "djhazze|danceoncocaine"}
-status: "missing"
+status: "skipped"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
