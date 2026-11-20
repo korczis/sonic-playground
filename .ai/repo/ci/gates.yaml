@@ -23,7 +23,13 @@ gates:
     job: site
     always: true
     runs: bash scripts/verify.sh
-    summary: the content contract and catalogue, the locales, unit tests, the skill cases (test/run.sh), types, assets, the zola build, the built-site check and the browser smoke test with its sitemap sweep
+    summary: the content contract and catalogue, the locales, unit tests, the skill cases (test/run.sh), types, assets, the zola build, the built-site check and the browser smoke test with the first of four shards of its sitemap sweep (SMOKE_SHARD=1/4)
+
+  - id: sweep
+    job: sweep
+    always: true
+    runs: node test/e2e/smoke.cjs --artifact public --as https://korczis.github.io/sonic-playground
+    summary: shards 2-4 of the sitemap sweep (SMOKE_SWEEP=only SMOKE_SHARD=k/4) on the artefact the site gate built, every page free of console errors, warnings and failed requests
 
 classes:
   # the pipeline itself: a change here can only be validated by running everything

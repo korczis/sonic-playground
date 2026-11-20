@@ -232,6 +232,20 @@ async function visit(context, rel) {
 const SWEEP_WORKERS = Number(process.env.SMOKE_WORKERS)
   || Math.min(16, Math.max(6, require('node:os').cpus().length - 2));
 
+// SMOKE_SHARD=k/n: the sweep visits only every n-th sitemap page from the k-th, so n jobs share
+// it (CI: .github/workflows/ci.yml and pages.yml). SMOKE_SWEEP=only skips the feature checks: a
+// shard whose job is the sweep alone. Unset, one run checks everything.
+const SHARD = (() => {
+  const m = /^(\d+)\/(\d+)$/.exec(process.env.SMOKE_SHARD || '1/1');
+  const [k, n] = m ? [Number(m[1]), Number(m[2])] : [0, 0];
+  if (!(n >= 1 && k >= 1 && k <= n)) {
+    console.error(`smoke: SMOKE_SHARD must be k/n with 1 <= k <= n, not "${process.env.SMOKE_SHARD}"`);
+    process.exit(2);
+  }
+  return { k, n };
+})();
+const SWEEP_ONLY = process.env.SMOKE_SWEEP === 'only';
+
 // Every page of the site (its sitemap), as absolute URLs.
 async function sitemap() {
   const xml = root ? fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8')
@@ -292,8 +306,17 @@ async function wcag(browser, viewport, reviews) {
     (found.length ? `\n     ${found.slice(0, 12).join('\n     ')}` : ''));
 }
 
+async function done(browser) {
+  await browser.close();
+  for (const n of notices) console.log(`note ${n}`);
+  console.log(failures.length ? `smoke: ${failures.length} failure(s)` : 'smoke: all checks passed');
+  process.exit(failures.length ? 1 : 0);
+}
+
 async function sweep(browser) {
-  const urls = await sitemap();
+  const all = await sitemap();
+  const urls = all.filter((_, i) => i % SHARD.n === SHARD.k - 1);
+  const part = SHARD.n > 1 ? `shard ${SHARD.k}/${SHARD.n}: ${urls.length} of ${all.length}` : `${urls.length}`;
   const failed = [];
   let next = 0;
   async function worker() {
@@ -323,7 +346,7 @@ async function sweep(browser) {
   }
   await Promise.all(Array.from({ length: SWEEP_WORKERS }, worker));
   check(urls.length > 0 && failed.length === 0,
-    `sweep: ${urls.length} sitemap pages (${SWEEP_WORKERS} at a time), every one free of console errors, warnings and failed requests` +
+    `sweep: ${part} sitemap pages (${SWEEP_WORKERS} at a time), every one free of console errors, warnings and failed requests` +
     (failed.length ? `\n     ${failed.slice(0, 20).join('\n     ')}` : ''));
 }
 
@@ -401,6 +424,10 @@ async function shot(page, name) {
   const browser = await chromium.launch(launch);
   const desktop = { width: 1440, height: 900 };
   const phone = { width: 390, height: 844 };
+  if (SWEEP_ONLY) {
+    await sweep(browser);
+    return done(browser);
+  }
 
   // Every page class: renders, has its H1, no console error, no failed request.
   const sample = catalog.tracks.find((t) => t.youtube && t.related.length) || catalog.tracks[0];
@@ -1664,11 +1691,7 @@ async function shot(page, name) {
 
   await wcag(browser, desktop, new Set(catalog.tracks.map((t) => t.path)));
   if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);
-
-  await browser.close();
-  for (const n of notices) console.log(`note ${n}`);
-  console.log(failures.length ? `smoke: ${failures.length} failure(s)` : 'smoke: all checks passed');
-  process.exit(failures.length ? 1 : 0);
+  return done(browser);
 })().catch((e) => {
   console.error(e);
   process.exit(1);

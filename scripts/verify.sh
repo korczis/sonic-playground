@@ -16,6 +16,7 @@
 #   PUBLIC_DIR=public scripts/verify.sh keep the tested build there (CI uploads it)
 #   SMOKE_REQUIRED=1                    fail instead of skipping when no browser is available
 #   CHROME_PATH=<binary>                the browser for step 6 (default: Playwright's chromium)
+#   SMOKE_SHARD=k/n                     step 6 sweeps only its n-th of the sitemap (CI's site job)
 set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"

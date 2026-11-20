@@ -89,11 +89,16 @@ jobs:
           error_count: 30
 
   verify:
-    name: Verify production
-    # The same full sweep, against the live host; it grows with the site like the CI gate.
-    timeout-minutes: 55
+    name: Verify production (shard ${{ matrix.shard }} of 4)
+    # The same checks against the live host, the sweep split in four like the CI gate: shard 1
+    # also runs the feature checks, the others sweep only (test/e2e/smoke.cjs SMOKE_SHARD).
+    timeout-minutes: 40
     needs: deploy
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     env:
       BASE_URL: ${{ needs.deploy.outputs.page_url }}
     steps:
@@ -112,6 +117,8 @@ jobs:
       - name: Browser smoke test against production
         env:
           REVISION: ${{ github.sha }}
+          SMOKE_SHARD: ${{ matrix.shard }}/4
+          SMOKE_SWEEP: ${{ matrix.shard == 1 && '1' || 'only' }}
         run: |
           npx playwright-core install chromium
           node test/e2e/smoke.cjs --url "$BASE_URL"

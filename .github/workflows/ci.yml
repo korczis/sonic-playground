@@ -74,9 +74,13 @@ jobs:
   site:
     name: Validate, build and test in a browser
     runs-on: ubuntu-latest
-    # The smoke test sweeps every sitemap page (3,300+ and growing with each content wave): at
-    # 717 reviews it outgrew 20 minutes on the 4-core runner (run 44569679140).
-    timeout-minutes: 50
+    # The smoke test sweeps every sitemap page (3,700+ and growing with each content wave): one
+    # job outgrew 20 minutes at 717 reviews (run 44569679140), so the sweep is split in SHARDS
+    # (test/e2e/smoke.cjs SMOKE_SHARD): this job runs the feature checks and the first shard, the
+    # job sweep the others on the very artefact this job uploads.
+    timeout-minutes: 40
+    env:
+      SMOKE_SHARD: 1/4
     steps:
       - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
@@ -97,3 +101,30 @@ jobs:
           path: public
           if-no-files-found: error
           retention-days: 7
+
+  sweep:
+    name: Sweep shard ${{ matrix.shard }} of 4
+    needs: site
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [2, 3, 4]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup
+      - name: Browser for the smoke test (Playwright's chromium, no system packages)
+        run: npx playwright-core install chromium
+      - name: Download the artefact the site job built and tested
+        uses: actions/download-artifact@v8
+        with:
+          name: site
+          path: public
+      - name: Sweep this shard of the sitemap, served as production
+        env:
+          SMOKE_SWEEP: only
+          SMOKE_SHARD: ${{ matrix.shard }}/4
+        run: |
+          base_url="$(python3 -c 'import tomllib; print(tomllib.load(open("config.toml", "rb"))["base_url"])')"
+          node test/e2e/smoke.cjs --artifact public --as "$base_url"
