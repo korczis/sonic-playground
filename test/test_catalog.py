@@ -6,6 +6,7 @@ import importlib.util
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from typing import Any
 from pathlib import Path
 
@@ -375,7 +376,7 @@ class PublicationOrder(unittest.TestCase):
 
     def test_same_day_reviews_order_by_when_they_were_added_uncommitted_first(self):
         def track(source, title, day="2026-11-22"):
-            return type("T", (), {"source": source, "title": title, "date": day})()
+            return SimpleNamespace(source=source, title=title, date=day)
         tracks = [track("a.md", "Zed"), track("b.md", "Abba"), track("new.md", "Mid"),
                   track("old.md", "Zz", "2026-11-21")]
         catalog.publication_order(tracks, {"a.md": 100, "b.md": 300, "old.md": 50})
