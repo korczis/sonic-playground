@@ -19,8 +19,9 @@
 // computer that can share one, the microphone elsewhere) or chooses a source in the settings.
 //
 // The sound is analysed once per frame into features every mode reads (SonicVizAnalysis in
-// types/sonic.d.ts): 48 log-spaced bands with automatic gain, the waveform, level and the three
-// ranges, onsets of the kick, snare and hi-hat ranges (spectral flux over an adaptive threshold)
+// types/sonic.d.ts): 48 log-spaced bands in dB with automatic gain, the waveform, level and the
+// three ranges, onsets of the kick, snare and hi-hat ranges (log-spectral flux over an adaptive
+// threshold)
 // as decaying envelopes, the overall flux and spectral centroid, a tempo from the kicks'
 // intervals with the position in the beat, and the loudness of the last seconds. That is the
 // "colour music": every mode is a function of these features and of its parameters.
@@ -123,18 +124,51 @@
     level: 0, bass: 0, mid: 0, high: 0, kick: 0, snare: 0, hat: 0, beat: false,
     flux: 0, centroid: 0, bpm: 0, phase: 0, energy: 0, t: 0, dt: 1 / 60, source: 'clock',
   };
-  var audio = { ctx: null, analyser: null, stream: null, freq: null, time: null, kind: 'clock' };
-  // An onset detector per range: the positive spectral flux of its bands over an adaptive
-  // threshold (running mean plus 1.5 standard deviations), at most one onset per `gap` seconds;
-  // its envelope decays with `tau`.
-  function detector(lo, hi, gap, tau) {
-    return { lo: lo, hi: hi, gap: gap, tau: tau, mean: 0, vari: 0.0004, last: -10 };
+  var audio = {
+    ctx: /** @type {AudioContext | null} */ (null), analyser: /** @type {AnalyserNode | null} */ (null),
+    stream: /** @type {MediaStream | null} */ (null), freq: new Float32Array(0), time: new Float32Array(0),
+    kind: 'clock', edges: /** @type {number[]} */ ([]),
+  };
+  // Band i spans 40 * 400^(i/48) to 40 * 400^((i+1)/48) Hz: log-spaced from 40 Hz to 16 kHz.
+  function bandOf(hz) { return Math.round(Math.log(hz / 40) / Math.log(400) * BANDS); }
+  // The ranges every mode reads: the bass up to 180 Hz, the mids to 3.6 kHz, the highs above.
+  var BASS_END = bandOf(180);
+  var MID_END = bandOf(3600);
+  // The picture spans RANGE dB below the loudest band of the last seconds. TILT dB per octave
+  // around 1 kHz evens out music's falling spectrum, as an analyser's slope does, so the treble
+  // moves as visibly as the bass.
+  var RANGE = 40;
+  var TILT = 3;
+  var tilt = new Float32Array(BANDS);
+  for (var ti = 0; ti < BANDS; ti++) tilt[ti] = TILT * Math.log2(40 * Math.pow(400, (ti + 0.5) / BANDS) / 1000);
+  // An onset detector per range. Its level is the mean power of every FFT bin in the range, in dB:
+  // one figure over all the range's bins, so a quiet room's noise averages out where a narrow band
+  // of one or two bins would jump by several dB from frame to frame. An onset is a rise of that
+  // level over the last 25-40 ms (one frame at 30 fps, two at 60, since the 43 ms FFT window
+  // spreads an attack over every frame it overlaps) above an adaptive threshold, the rises'
+  // running mean plus `k` standard deviations plus `min` dB, with the level `lift` dB above its
+  // own average of the last second, at most one onset per `gap` seconds; its envelope decays with
+  // `tau`. In dB a kick over a sustained bass line is a rise like any other. The earlier analysis
+  // read 8-bit levels clipped at -20 dB, whose loudest bands were pinned at the top and never
+  // rose: on a mastered mix it found none of 25 kicks and no tempo (measured 2026-11-22).
+  function detector(fromHz, toHz, gap, tau) {
+    return { from: fromHz, to: toHz, lo: bandOf(fromHz), hi: bandOf(toHz), a: 1, z: 2, gap: gap, tau: tau,
+      bins: false, k: 1.5, min: 1.2, lift: 0, level: -200, prev: -200, lag: -200, slow: -200, mean: 0, vari: 1, last: -10 };
   }
   var dsp = {
-    raw: new Float32Array(BANDS), prev: new Float32Array(BANDS), peak: 0.25,
-    kick: detector(0, 6, 0.22, 0.16), snare: detector(8, 22, 0.14, 0.12),
-    hat: detector(28, 48, 0.08, 0.06),
+    db: new Float32Array(BANDS), prevDb: new Float32Array(BANDS), primed: false, ceil: -30,
+    prev: new Float32Array(BANDS),
+    // The kick's lift and threshold are measured: a kick of a mastered mix rises 9-12 dB within
+    // 33 ms and stands 7-12 dB above the last second of its range; a room's noise stands less than
+    // 6 dB above it 99 times in 100 (2026-11-22). The kick reads its
+    // bins' power: its range has only a handful, and their mean power is the steadiest figure; the
+    // snare and the hats read their bands equally, so a loud bin (a kick's tail, the bass line)
+    // does not decide their level.
+    kick: Object.assign(detector(40, 150, 0.22, 0.16), { bins: true, k: 2.5, lift: 6 }),
+    snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2 }),
+    hat: detector(6500, 16000, 0.08, 0.06),
     kicks: /** @type {number[]} */ ([]), period: 0.5, lastKick: -10,
+    onsets: /** @type {{name: string, t: number}[]} */ ([]),
     clock: { playing: false, base: 0, at: 0, beat: -1, half: -1 },
   };
 
@@ -163,18 +197,34 @@
     audio.analyser = null;
     audio.kind = 'clock';
     dsp.kicks = [];
+    dsp.primed = false;
     A.bpm = 0;
     announce();
+  }
+
+  /** The FFT bins [first, end) of every band, flat. */
+  function bandEdges(bins, nyquist) {
+    var out = [];
+    for (var i = 0; i < BANDS; i++) {
+      var a = Math.max(1, Math.floor(40 * Math.pow(400, i / BANDS) / nyquist * bins));
+      var z = Math.max(a + 1, Math.ceil(40 * Math.pow(400, (i + 1) / BANDS) / nyquist * bins));
+      out.push(Math.min(a, bins - 1), Math.min(z, bins));
+    }
+    return out;
   }
 
   /** @param {'tab' | 'mic'} kind */
   function listen(kind) {
     var md = navigator.mediaDevices;
     if (!md) return Promise.reject(new Error('unsupported'));
+    // The sound as it is: no echo cancellation, noise suppression or automatic gain, which would
+    // flatten the very dynamics the picture follows.
+    var raw = { echoCancellation: false, noiseSuppression: false, autoGainControl: false };
     var ask = kind === 'tab'
-      ? (md.getDisplayMedia ? md.getDisplayMedia(/** @type {any} */ ({ video: true, audio: true, preferCurrentTab: true }))
+      ? (md.getDisplayMedia ? md.getDisplayMedia(/** @type {any} */ ({ video: true, audio: raw,
+        preferCurrentTab: true, selfBrowserSurface: 'include' }))
         : Promise.reject(new Error('unsupported')))
-      : md.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+      : md.getUserMedia({ audio: raw });
     return ask.then(function (stream) {
       if (!stream.getAudioTracks().length) {
         stream.getTracks().forEach(function (tr) { tr.stop(); });
@@ -184,20 +234,28 @@
       stream.getVideoTracks().forEach(function (tr) { tr.stop(); });
       if (audio.stream) audio.stream.getTracks().forEach(function (tr) { tr.stop(); });
       var AC = window.AudioContext || /** @type {any} */ (window).webkitAudioContext;
-      audio.ctx = audio.ctx || new AC();
-      if (audio.ctx.state === 'suspended') audio.ctx.resume();
-      var an = audio.ctx.createAnalyser();
+      var ctx = audio.ctx = audio.ctx || new AC();
+      if (ctx.state === 'suspended') ctx.resume();
+      var an = ctx.createAnalyser();
       an.fftSize = 2048;
-      an.smoothingTimeConstant = 0.6;
-      an.minDecibels = -90;
-      an.maxDecibels = -20;
-      audio.ctx.createMediaStreamSource(stream).connect(an);
+      // No smoothing in the analyser: the onsets read the raw spectrum; the picture smooths each
+      // band itself, quickly up and slowly down (fromAudio).
+      an.smoothingTimeConstant = 0;
+      ctx.createMediaStreamSource(stream).connect(an);
       audio.analyser = an;
-      audio.freq = new Uint8Array(an.frequencyBinCount);
-      audio.time = new Uint8Array(an.fftSize);
+      audio.freq = new Float32Array(an.frequencyBinCount);
+      audio.time = new Float32Array(an.fftSize);
+      audio.edges = bandEdges(an.frequencyBinCount, ctx.sampleRate / 2);
+      [dsp.kick, dsp.snare, dsp.hat].forEach(function (d) {
+        var bins = an.frequencyBinCount;
+        var hz = ctx.sampleRate / 2 / bins;
+        d.a = Math.min(bins - 1, Math.max(1, Math.round(d.from / hz)));
+        d.z = Math.max(d.a + 1, Math.min(bins, Math.round(d.to / hz)));
+      });
       audio.stream = stream;
       audio.kind = kind;
-      dsp.peak = 0.25;
+      dsp.primed = false;
+      dsp.ceil = -30;
       stream.getAudioTracks()[0].addEventListener('ended', stopAudio);
       announce();
     });
@@ -216,56 +274,112 @@
   /** @returns {SonicVizAnalysis} */
   function analyse() {
     var now = performance.now();
-    if (analysedAt >= 0 && now - analysedAt < 4) return A; // the sketches of one frame share it
+    // The sketches of one frame share it. Two sketches drawing at 30 fps out of step (the hero and
+    // the background) would otherwise read the spectrum twice within a few milliseconds, and the
+    // rise of an onset would be split between two near-identical frames.
+    if (analysedAt >= 0 && now - analysedAt < 12) return A;
+    // After a pause (a hidden tab, a picture off screen) the last spectrum is stale: the detectors
+    // start again from the next one rather than compare against it.
+    if (analysedAt >= 0 && now - analysedAt > 250) dsp.primed = false;
     var dt = analysedAt < 0 ? 1 / 60 : Math.min(0.1, (now - analysedAt) / 1000);
     analysedAt = now;
-    A.t = now / 1000;
+    var t = now / 1000;
+    A.t = t;
     A.dt = dt;
     A.source = audio.analyser ? /** @type {'tab' | 'mic'} */ (audio.kind) : 'clock';
     A.beat = false;
-    if (audio.analyser) fromAudio(dt); else fromClock();
-    features(dt, now / 1000, !audio.analyser);
+    if (audio.analyser) fromAudio(dt, t); else fromClock();
+    features(dt, t, !audio.analyser);
     return A;
   }
 
-  function fromAudio(dt) {
-    var an = audio.analyser;
-    an.getByteFrequencyData(audio.freq);
-    an.getByteTimeDomainData(audio.time);
-    var n = audio.freq.length;
-    var nyquist = audio.ctx.sampleRate / 2;
-    var top = 0;
-    // Log-spaced bands from 40 Hz to 16 kHz, so the bass is not one bar among a thousand.
+  /** @param {number} dt @param {number} t */
+  function fromAudio(dt, t) {
+    var an = /** @type {AnalyserNode} */ (audio.analyser);
+    an.getFloatFrequencyData(audio.freq);
+    an.getFloatTimeDomainData(audio.time);
+    var e = audio.edges;
+    var top = -200;
+    // Each band's level is the mean power of its bins in dB (a silent bin is -Infinity), tilted.
     for (var i = 0; i < BANDS; i++) {
-      var lo = 40 * Math.pow(400, i / BANDS);
-      var hi = 40 * Math.pow(400, (i + 1) / BANDS);
-      var a = Math.max(1, Math.floor(lo / nyquist * n));
-      var z = Math.max(a + 1, Math.ceil(hi / nyquist * n));
-      var peak = 0;
-      for (var k = a; k < z && k < n; k++) peak = Math.max(peak, audio.freq[k]);
-      var v = Math.pow(peak / 255, 1.6);
-      dsp.raw[i] = v;
-      if (v > top) top = v;
+      var p = 0;
+      for (var k = e[2 * i]; k < e[2 * i + 1]; k++) {
+        var d = audio.freq[k];
+        if (d > -200) p += Math.pow(10, d / 10);
+      }
+      var db = 10 * Math.log10(p / (e[2 * i + 1] - e[2 * i]) + 1e-20) + tilt[i];
+      dsp.db[i] = db;
+      if (db > top) top = db;
     }
-    // Automatic gain: the loudest band of the last seconds reaches about 0.9, so a quiet room
-    // (the microphone) moves the picture as much as a loud tab. The peak falls with a 3 s half-life.
-    dsp.peak = Math.max(top, dsp.peak * Math.pow(0.5, dt / 3), 0.08);
-    var gain = 0.9 / dsp.peak;
+    // Automatic gain in dB: the ceiling follows the loudest band up at once and falls 3 dB a
+    // second, so a quiet room (the microphone) moves the picture as much as a loud tab; it never
+    // falls below -60 dB, so silence stays dark rather than amplified into noise.
+    dsp.ceil = Math.max(top, dsp.ceil - 3 * dt, -60);
+    var floor = dsp.ceil - RANGE;
+    // The bars jump up and fall back over about a tenth of a second.
+    var fall = 1 - Math.exp(-dt / 0.12);
     for (var j = 0; j < BANDS; j++) {
-      var target = Math.min(1, dsp.raw[j] * gain);
+      var target = Math.min(1, Math.max(0, (dsp.db[j] - floor) / RANGE));
       var b = A.bands[j];
-      A.bands[j] = b + (target - b) * (target > b ? 0.65 : 0.22);
+      A.bands[j] = target > b ? b + (target - b) * 0.8 : b + (target - b) * fall;
     }
+    // The novelty: the mean rise of the bands within the picture since the last frame, per 1/60 s
+    // (so it reads the same at 30 and at 60 fps); 4 dB over every band is full novelty.
+    if (dsp.primed) {
+      var rise = 0;
+      for (var x = 0; x < BANDS; x++) rise += Math.max(0, Math.max(dsp.db[x], floor) - Math.max(dsp.prevDb[x], floor));
+      A.flux = A.flux * 0.6 + Math.min(1, rise / BANDS / 4 / (dt * 60)) * 0.4;
+    }
+    dsp.prevDb.set(dsp.db);
+    detect('kick', t, dt);
+    detect('snare', t, dt);
+    detect('hat', t, dt);
+    dsp.primed = true;
     var step = audio.time.length / A.wave.length;
     var rms = 0;
     for (var w = 0; w < A.wave.length; w++) {
-      var s = (audio.time[Math.floor(w * step)] - 128) / 128;
+      var s = audio.time[Math.floor(w * step)];
       A.wave[w] = s;
       rms += s * s;
     }
     // The waveform is gained like the bands, so a quiet source still draws a shape.
     var wg = Math.min(6, 0.5 / Math.max(0.02, Math.sqrt(rms / A.wave.length)));
-    for (var x = 0; x < A.wave.length; x++) A.wave[x] = Math.max(-1, Math.min(1, A.wave[x] * wg));
+    for (var y = 0; y < A.wave.length; y++) A.wave[y] = Math.max(-1, Math.min(1, A.wave[y] * wg));
+  }
+
+  /** @param {'kick' | 'snare' | 'hat'} name @param {number} t @param {number} dt */
+  function detect(name, t, dt) {
+    var d = dsp[name];
+    var level = 0, lvl = 0;
+    if (d.bins) {
+      for (var k = d.a; k < d.z; k++) {
+        var v = audio.freq[k];
+        if (v > -200) level += Math.pow(10, v / 10);
+      }
+      level = 10 * Math.log10(level / (d.z - d.a) + 1e-20);
+    } else {
+      for (var c = d.lo; c < d.hi; c++) level += Math.max(dsp.db[c], -160);
+      level /= d.hi - d.lo;
+    }
+    for (var b = d.lo; b < d.hi; b++) lvl += A.bands[b];
+    lvl /= d.hi - d.lo;
+    if (!dsp.primed) { d.prev = d.lag = d.slow = level; }
+    var ref = dt >= 0.025 ? d.prev : d.lag;
+    d.lag = d.prev;
+    d.prev = level;
+    // A rise counts up to 24 dB: sound after silence is one onset, not a burst that would raise
+    // the threshold for seconds.
+    var f = Math.min(24, Math.max(0, level - ref));
+    var sd = Math.sqrt(d.vari);
+    var a = 1 - Math.exp(-dt / 0.8);
+    if (f > d.mean + d.k * sd + d.min && level > d.slow + d.lift && lvl > 0.05 && t - d.last > d.gap) onset(name, t);
+    d.slow += (Math.max(level, d.slow - 24) - d.slow) * a;
+    // The running mean and variance forget over about a second, whatever the frame rate; an
+    // outlier counts as three standard deviations, so one burst does not raise the threshold for
+    // the onsets after it.
+    var diff = Math.min(f, d.mean + 3 * sd + d.min) - d.mean;
+    d.mean += a * diff;
+    d.vari = (1 - a) * (d.vari + a * diff * diff);
   }
 
   // No sound to read: a calm, honest motion driven by the player's time at 120 bpm while it
@@ -287,7 +401,7 @@
       var shape = (1 - f) * 0.75 + 0.25;
       var wobble = 0.5 + 0.5 * Math.sin(drift * (0.6 + f * 2.3) + i * 0.7)
         * Math.cos(drift * 0.37 + i * 1.3);
-      var hit = i < 8 ? A.kick * 0.5 : i < 28 ? A.snare * 0.25 : A.hat * 0.3;
+      var hit = i < BASS_END ? A.kick * 0.5 : i < MID_END ? A.snare * 0.25 : A.hat * 0.3;
       var v = gain * shape * (0.35 + 0.65 * wobble) + (on ? hit : 0);
       A.bands[i] = A.bands[i] * 0.7 + Math.min(1, v) * 0.3;
     }
@@ -303,19 +417,25 @@
   function onset(name, t) {
     dsp[name].last = t;
     A[name] = reduced ? 0.35 : 1;
+    dsp.onsets.push({ name: name, t: t });
+    if (dsp.onsets.length > 64) dsp.onsets.shift();
     if (name === 'kick') {
       A.beat = !reduced;
       if (audio.analyser) tempo(t);
     }
   }
 
-  // The tempo: the median interval between the last kicks, folded into 75-180 bpm.
+  // The tempo: the median interval between the last kicks, folded into 75-180 bpm. It is said only
+  // from six kicks on, while the intervals agree (their median deviation within 8% of the median;
+  // a played beat's is about 2%) and while the kicks fill at least 45% of the beats they span (a
+  // kick on every beat fills all, on every other half): folding squeezes any interval into that
+  // range, and kicks found at random, in a noisy room, fill about a third.
   function tempo(t) {
     var ks = dsp.kicks;
     ks.push(t);
     while (ks.length && t - ks[0] > 8) ks.shift();
     dsp.lastKick = t;
-    if (ks.length < 4) return;
+    if (ks.length < 6) return;
     var iv = [];
     for (var i = 1; i < ks.length; i++) {
       var d = ks[i] - ks[i - 1];
@@ -324,7 +444,11 @@
       iv.push(d);
     }
     iv.sort(function (a, b) { return a - b; });
-    dsp.period = dsp.period * 0.7 + iv[iv.length >> 1] * 0.3;
+    var median = iv[iv.length >> 1];
+    var dev = iv.map(function (d) { return Math.abs(d - median); }).sort(function (a, b) { return a - b; });
+    var filled = (ks.length - 1) / Math.max(1, (t - ks[0]) / median);
+    if (dev[dev.length >> 1] > median * 0.08 || filled < 0.45) { A.bpm = 0; return; }
+    dsp.period = dsp.period * 0.7 + median * 0.3;
     A.bpm = Math.round(60 / dsp.period);
   }
 
@@ -337,28 +461,18 @@
       sum += v;
       moment += v * i;
       flux += Math.max(0, v - dsp.prev[i]);
-      if (i < 8) bass += v; else if (i < 28) mid += v; else high += v;
+      if (i < BASS_END) bass += v; else if (i < MID_END) mid += v; else high += v;
     }
     A.level = sum / BANDS;
-    A.bass = bass / 8;
-    A.mid = mid / 20;
-    A.high = high / (BANDS - 28);
+    A.bass = bass / BASS_END;
+    A.mid = mid / (MID_END - BASS_END);
+    A.high = high / (BANDS - MID_END);
     A.centroid = A.centroid * 0.8 + (sum > 0.01 ? moment / sum / (BANDS - 1) : 0) * 0.2;
-    A.flux = A.flux * 0.6 + Math.min(1, flux / (BANDS * 0.08)) * 0.4;
+    // The sound's novelty is measured in dB by fromAudio; the clock's from its own bands.
+    if (clock) A.flux = A.flux * 0.6 + Math.min(1, flux / (BANDS * 0.08)) * 0.4;
     A.energy += (A.level - A.energy) * (1 - Math.exp(-dt / 4));
     ['kick', 'snare', 'hat'].forEach(function (name) {
-      var d = dsp[name];
-      if (d.last !== t) A[name] *= Math.exp(-dt / d.tau);
-      if (clock) return;
-      var f = 0, lvl = 0;
-      for (var k = d.lo; k < d.hi; k++) { f += Math.max(0, b[k] - dsp.prev[k]); lvl += b[k]; }
-      f /= d.hi - d.lo;
-      lvl /= d.hi - d.lo;
-      var threshold = d.mean + 1.5 * Math.sqrt(d.vari) + 0.015;
-      if (f > threshold && lvl > 0.08 && t - d.last > d.gap) onset(/** @type {'kick'} */ (name), t);
-      var diff = f - d.mean;
-      d.mean += 0.05 * diff;
-      d.vari = 0.95 * (d.vari + 0.05 * diff * diff);
+      if (dsp[name].last !== t) A[name] *= Math.exp(-dt / dsp[name].tau);
     });
     dsp.prev.set(b);
     if (!clock) {
@@ -1166,7 +1280,9 @@
     },
     cinema: function (on) { if (typeof on === 'boolean') setCinema(on, true); return cinema && isOpen(); },
     analysis: function () {
-      return { level: A.level, kick: A.kick, flux: A.flux, centroid: A.centroid, bpm: A.bpm, source: A.source };
+      return { level: A.level, bass: A.bass, mid: A.mid, high: A.high, kick: A.kick, snare: A.snare,
+        hat: A.hat, flux: A.flux, centroid: A.centroid, bpm: A.bpm, source: A.source,
+        bands: Array.from(A.bands), onsets: dsp.onsets.slice() };
     },
     source: function () { return audio.kind; },
     listen: listen,

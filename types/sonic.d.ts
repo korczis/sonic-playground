@@ -63,7 +63,7 @@ interface SonicApi {
 
 /** One frame's analysis of the sound (static/js/visualizer.js), read by every mode. */
 interface SonicVizAnalysis {
-  /** 48 log-spaced bands, 40 Hz to 16 kHz, 0..1, gain-normalised. */
+  /** 48 log-spaced bands, 40 Hz to 16 kHz, 0..1: the last 40 dB below the loudest band of the last seconds. */
   bands: Float32Array;
   /** 256 samples of the waveform, -1..1. */
   wave: Float32Array;
@@ -143,7 +143,12 @@ interface Window {
     param(name: string, value: number): void;
     /** Cinema (the video fills the screen, the picture around it); a boolean sets it. */
     cinema(on?: boolean): boolean;
-    analysis(): { level: number; kick: number; flux: number; centroid: number; bpm: number; source: string };
+    analysis(): {
+      level: number; bass: number; mid: number; high: number; kick: number; snare: number; hat: number;
+      flux: number; centroid: number; bpm: number; source: string; bands: number[];
+      /** The last 64 onsets, with the page time (seconds) they were found at. */
+      onsets: { name: string; t: number }[];
+    };
     source(): string;
     listen(kind: 'tab' | 'mic'): Promise<void>;
     stop(): void;

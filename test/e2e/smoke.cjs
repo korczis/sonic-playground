@@ -786,7 +786,7 @@ async function shot(page, name) {
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 30000 }).catch(() => {});
     await page.waitForFunction(() => window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 10000 }).catch(() => {});
     const a = await page.evaluate(() => window.SonicVisualizer.analysis());
-    check(a.source === 'mic' && a.level > 0.01, `visualiser: "Follow the music" falls back from a silent tab to the microphone and follows it (${JSON.stringify(a)})`);
+    check(a.source === 'mic' && a.level > 0.01, `visualiser: "Follow the music" falls back from a silent tab to the microphone and follows it (${a.source}, level ${a.level.toFixed(3)})`);
     check(await page.isHidden('#visualizer-full [data-viz-source="connect"]'), 'visualiser: listening, "Follow the music" steps aside');
     await page.waitForTimeout(1500);
     // The controls fade while the pointer rests; a move shows them, as it does for a reader.
@@ -874,6 +874,203 @@ async function shot(page, name) {
     check(tempo.a.source === 'mic' && tempo.a.bpm >= 110 && tempo.a.bpm <= 130 && /1[12]\d/.test(tempo.label),
       `visualiser: the analysis finds the tempo of the music (120 bpm pulse -> ${tempo.a.bpm} bpm, "${tempo.label}")`);
     check(errors.length === 0, `visualiser (tempo): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // The analysis follows real music, not an isolated pulse in silence: a mastered mix at 124 bpm
+  // (a sustained bass line, a chord pad and a wash of hiss under a kick on every beat, a snare on
+  // two and four and a hat on the off-beats, through a compressor), then the same mix 18 dB
+  // quieter (a quiet room, a low player volume). The kicks, snares and hats are found where they
+  // were played, nothing is found where nothing was, the tempo is 124, and the bars jump on the
+  // kick. The earlier analysis found 1 of 25 kicks of this mix and no tempo (2026-11-22).
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getDisplayMedia = undefined;
+      md.getUserMedia = async () => {
+        const ac = new AudioContext();
+        await ac.resume();
+        const out = ac.createMediaStreamDestination();
+        const comp = ac.createDynamicsCompressor();
+        comp.threshold.value = -14; comp.ratio.value = 4; comp.knee.value = 10;
+        comp.attack.value = 0.008; comp.release.value = 0.15;
+        const master = ac.createGain();
+        comp.connect(master).connect(out);
+        const bus = ac.createGain();
+        bus.gain.value = 0.4;
+        bus.connect(comp);
+        const tone = (type, hz, filter, cut, level) => {
+          const o = ac.createOscillator(); o.type = type; o.frequency.value = hz;
+          const f = ac.createBiquadFilter(); f.type = filter; f.frequency.value = cut;
+          const g = ac.createGain(); g.gain.value = level;
+          o.connect(f).connect(g).connect(bus); o.start();
+        };
+        tone('sawtooth', 55, 'lowpass', 220, 0.3);
+        [220, 277.2, 329.6, 440].forEach((hz) => tone('sawtooth', hz, 'lowpass', 2400, 0.08));
+        const noise = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+        const d = noise.getChannelData(0);
+        let seed = 7;
+        for (let i = 0; i < d.length; i++) { seed = (seed * 16807) % 2147483647; d[i] = seed / 1073741823.5 - 1; }
+        const hiss = (filter, hz, q, at, peak, len) => {
+          const s = ac.createBufferSource(); s.buffer = noise;
+          const f = ac.createBiquadFilter(); f.type = filter; f.frequency.value = hz; f.Q.value = q;
+          const g = ac.createGain();
+          if (at < 0) { s.loop = true; g.gain.value = peak; s.connect(f).connect(g).connect(bus); s.start(); return; }
+          g.gain.setValueAtTime(0, at); g.gain.linearRampToValueAtTime(peak, at + 0.002);
+          g.gain.exponentialRampToValueAtTime(0.001, at + len);
+          s.connect(f).connect(g).connect(bus); s.start(at, (at * 7.3) % 0.5, len + 0.02);
+        };
+        hiss('highpass', 5000, 0.7, -1, 0.05);
+        const period = 60 / 124;
+        const t0 = ac.currentTime + 0.3;
+        const offset = performance.now() / 1000 - ac.currentTime;
+        const quiet = t0 + 8;
+        master.gain.setValueAtTime(2.2, 0);
+        master.gain.setValueAtTime(2.2 / 8, quiet);
+        const truth = { kick: [], snare: [], hat: [], quiet: quiet + offset };
+        for (let i = 0; i * period < 16; i++) {
+          const t = t0 + i * period;
+          const k = ac.createOscillator();
+          k.frequency.setValueAtTime(150, t); k.frequency.exponentialRampToValueAtTime(45, t + 0.12);
+          const kg = ac.createGain();
+          kg.gain.setValueAtTime(0, t); kg.gain.linearRampToValueAtTime(1.2, t + 0.003);
+          kg.gain.exponentialRampToValueAtTime(0.001, t + 0.35);
+          k.connect(kg).connect(bus); k.start(t); k.stop(t + 0.4);
+          truth.kick.push(t + offset);
+          if (i % 2) { hiss('bandpass', 1800, 0.7, t, 0.9, 0.18); truth.snare.push(t + offset); }
+          hiss('highpass', 8000, 0.7, t + period / 2, 0.6, 0.05);
+          truth.hat.push(t + period / 2 + offset);
+        }
+        window.__truth = truth;
+        return out.stream;
+      };
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
+    // Every frame's bass and every onset the analysis reports, in the page's clock.
+    await page.evaluate(() => {
+      const w = /** @type {any} */ (window);
+      w.__frames = [];
+      w.__found = new Map();
+      const tick = () => {
+        const a = w.SonicVisualizer.analysis();
+        w.__frames.push({ t: performance.now() / 1000, bass: a.bass, bpm: a.bpm });
+        a.onsets.forEach((o) => w.__found.set(o.name + o.t, o));
+        if (w.__frames.length < 4000) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    await page.waitForFunction(() => window.__truth && performance.now() / 1000 > window.__truth.quiet + 7.5, null, { timeout: 30000 }).catch(() => {});
+    const run = await page.evaluate(() => ({ frames: window.__frames || [], found: Array.from((window.__found || new Map()).values()), truth: window.__truth }));
+    if (!run.truth || run.frames.length < 60) {
+      check(false, `visualiser: a mastered mix: the analysis ran (${run.frames.length} frames, ${run.truth ? 'the mix played' : 'the mix never started'})`);
+    } else {
+    // The stream's own latency (two audio contexts and a frame, about 60 ms; more on a loaded
+    // machine) is measured, not assumed: the median delay from each kick played to the nearest kick
+    // found. An onset counts within 70 ms of where it was played plus that delay. The first two
+    // seconds of each half let the automatic gain and the thresholds settle.
+    const halves = [[run.truth.kick[0] + 2, run.truth.quiet], [run.truth.quiet + 2, run.truth.quiet + 7]];
+    const delays = run.truth.kick.map((t) => run.found.filter((o) => o.name === 'kick' && o.t - t > -0.05 && o.t - t < 0.3)
+      .map((o) => o.t - t).sort((x, y) => Math.abs(x - 0.06) - Math.abs(y - 0.06))[0]).filter((x) => x !== undefined).sort((x, y) => x - y);
+    const lag = delays.length ? delays[delays.length >> 1] : 0.06;
+    const near = (x, t) => Math.abs(x - t - lag) < 0.07;
+    // A snare's noise reaches the hats' range too: an onset there on a snare is no stray.
+    const heard = { kick: run.truth.kick, snare: run.truth.snare, hat: run.truth.hat.concat(run.truth.snare) };
+    const score = (name, [from, to]) => {
+      const played = run.truth[name].filter((t) => t > from && t < to - 0.2);
+      const found = run.found.filter((o) => o.name === name && o.t > from && o.t < to).map((o) => o.t);
+      const hit = played.filter((t) => found.some((x) => near(x, t))).length;
+      const stray = found.filter((x) => !heard[name].some((t) => near(x, t))).length;
+      return { hit, played: played.length, stray };
+    };
+    // The frame rate of each half, and its longest frame: a starved browser misses onsets.
+    const pace = ([from, to]) => {
+      const ts = run.frames.map((f) => f.t).filter((t) => t > from && t < to);
+      const gap = ts.slice(1).reduce((m, t, i) => Math.max(m, t - ts[i]), 0);
+      return `${Math.round(ts.length / (to - from))} fps, longest frame ${Math.round(gap * 1000)} ms`;
+    };
+    ['loud', 'quiet'].forEach((label, h) => {
+      const s = { kick: score('kick', halves[h]), snare: score('snare', halves[h]), hat: score('hat', halves[h]) };
+      const good = (x) => x.played > 0 && x.hit >= x.played * 0.6 && x.stray <= Math.max(1, x.hit * 0.2);
+      check(good(s.kick) && good(s.snare) && good(s.hat),
+        `visualiser: a mastered mix (${label}): its kicks, snares and hats are found where they were played (${JSON.stringify(s)}; ${pace(halves[h])})`);
+    });
+    const bpm = run.frames[run.frames.length - 1].bpm;
+    check(bpm >= 121 && bpm <= 127, `visualiser: a mastered mix at 124 bpm reads as ${bpm} bpm`);
+    // The bars jump on the kick: the bass 40-120 ms after a kick stands above the bass just before it.
+    const mean = (xs) => xs.reduce((s, x) => s + x, 0) / Math.max(1, xs.length);
+    const kicks = run.truth.kick.filter((t) => t > halves[0][0] && t < halves[0][1] - 0.2);
+    const before = mean(kicks.map((t) => mean(run.frames.filter((f) => f.t > t - 0.06 && f.t <= t).map((f) => f.bass))));
+    const after = mean(kicks.map((t) => mean(run.frames.filter((f) => f.t > t + 0.04 && f.t <= t + 0.12).map((f) => f.bass))));
+    check(after - before > 0.05, `visualiser: the bass bars jump on the kick (${before.toFixed(2)} -> ${after.toFixed(2)}; latency ${Math.round(lag * 1000)} ms)`);
+    }
+    check(errors.length === 0, `visualiser (mastered mix): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // A microphone in a room with no music: its noise (pink, as a room's is) is no beat. A quiet
+  // room gives next to no onsets and a loud one (a fan, traffic) no tempo: a first version of the
+  // dB analysis found a kick about every second in both, and a tempo of 110-126 (2026-11-22).
+  for (const [label, level] of [['quiet', 0.003], ['loud', 0.03]]) {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript((level) => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getDisplayMedia = undefined;
+      md.getUserMedia = async () => {
+        const ac = new AudioContext();
+        await ac.resume();
+        // 20 s that never repeat: a looped buffer would repeat its noise, and with it a tempo.
+        const buf = ac.createBuffer(1, ac.sampleRate * 20, ac.sampleRate);
+        const d = buf.getChannelData(0);
+        let seed = 11, y = 0;
+        for (let i = 0; i < d.length; i++) {
+          seed = (seed * 16807) % 2147483647;
+          const w = seed / 1073741823.5 - 1;
+          y = 0.97 * y + 0.03 * w;
+          d[i] = (y * 6 + w * 0.3) * level;
+        }
+        const s = ac.createBufferSource();
+        s.buffer = buf;
+        const out = ac.createMediaStreamDestination();
+        s.connect(out);
+        s.start();
+        return out.stream;
+      };
+    }, level);
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
+    await page.waitForTimeout(2500);
+    await page.evaluate(() => {
+      const w = /** @type {any} */ (window);
+      w.__from = performance.now() / 1000;
+      w.__found = new Map();
+      w.__bpm = 0;
+      const tick = () => {
+        const a = w.SonicVisualizer.analysis();
+        a.onsets.forEach((o) => { if (o.t > w.__from) w.__found.set(o.name + o.t, o); });
+        w.__bpm = Math.max(w.__bpm, a.bpm);
+        if (performance.now() / 1000 - w.__from < 9) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    await page.waitForTimeout(8500);
+    const r = await page.evaluate(() => {
+      const n = { kick: 0, snare: 0, hat: 0 };
+      for (const o of window.__found.values()) n[o.name] += 1;
+      return { n, bpm: window.__bpm, source: window.SonicVisualizer.source() };
+    });
+    const total = r.n.kick + r.n.snare + r.n.hat;
+    // Music at 120 bpm has 16 kicks in 8 s; the noise of a quiet room has at most a stray few.
+    check(r.source === 'mic' && r.bpm === 0 && (label === 'loud' || total <= 4),
+      `visualiser: a ${label} room without music: no tempo${label === 'quiet' ? ', next to no onsets' : ''} (${JSON.stringify(r.n)} in 8 s, ${r.bpm} bpm)`);
+    check(errors.length === 0, `visualiser (${label} room): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
   // Without WebGL 2 a GPU mode is drawn by its p5 fallback, and the settings say so; three.js is
