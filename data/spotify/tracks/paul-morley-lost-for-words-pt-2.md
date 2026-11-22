@@ -7,7 +7,7 @@ album: "Late Night Tales: Mgmt"
 duration: "3:23"
 spotify: {"track": "6RpsjHVBgmJokFF6HNgwPN", "album": "3hL5hv0P0B0jK8T9XPadVR", "artists": ["3CUh8276o3kWZEy7PfNmQI"]}
 keys: {"fold": "paulmorley|lostforwordspt2"}
-status: "missing"
+status: "skipped"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---

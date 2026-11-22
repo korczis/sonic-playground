@@ -7,7 +7,7 @@ album: "Gorillaz Are Ten - Spotify Radio Show 3"
 duration: "0:09"
 spotify: {"track": "5Ext92rl5nx0X2rzu7oF4W", "album": "1qHKot5zKNk8e0fLkXR3xi", "artists": ["3AA28KZvwAUcZuOKwyblJQ"]}
 keys: {"fold": "gorillaz|gorillazaretenspotifyradioshow38"}
-status: "missing"
+status: "skipped"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
