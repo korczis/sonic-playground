@@ -1,0 +1,811 @@
+# The owner's Spotify yearbook 2023 ("Your Top Songs 2023"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2023
+name = "Your Top Songs 2023"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2023\", read off the rendered page on 2026-11-22 (scripts/spotify_history.py)"
+retrieved = "2026-11-22"
+expected = 100
+
+[[track]]
+n = 1
+title = "Ships"
+artists = ["Rachel K Collier"]
+album = "Ships"
+duration = "3:52"
+spotify = "3KQ70WhB1RX6VLnezrxBar"
+
+[[track]]
+n = 2
+title = "Trap"
+artists = ["Camp Claude"]
+album = "Swimming Lessons"
+duration = "2:30"
+spotify = "6yJSTJIqvDxKf4cM52M47M"
+
+[[track]]
+n = 3
+title = "DJ"
+artists = ["Amanda Blank"]
+album = "I Love You"
+duration = "2:53"
+spotify = "7MMsmGQzhfrGTRtz5uf3wD"
+
+[[track]]
+n = 4
+title = "Once Twice - Radio Edit"
+artists = ["Ryan Blyth", "Rachel K Collier"]
+album = "Once Twice"
+duration = "2:50"
+spotify = "2ro5zWnmxIrBa0tl1TiUWN"
+
+[[track]]
+n = 5
+title = "In My Mind"
+artists = ["Dynoro", "GIGI D'AGOSTINO"]
+album = "In My Mind"
+duration = "3:04"
+spotify = "0E9ZjEAyAwOXZ7wJC0PD33"
+
+[[track]]
+n = 6
+title = "Mad World"
+artists = ["Tears For Fears"]
+album = "The Hurting"
+duration = "3:35"
+spotify = "0Qv7xi6uPSqH2k82tOkGSt"
+
+[[track]]
+n = 7
+title = "Darling, You Can't Walk Away"
+artists = ["Ark Patrol"]
+album = "Ark Patrol"
+duration = "3:13"
+spotify = "6z0qzwzUwczS13yapxIkM3"
+
+[[track]]
+n = 8
+title = "Hands in the Air"
+artists = ["Pilocka Krach", "One Fine Day Kids"]
+album = "One Fine Day presents Pilocka Krach & Dear Reader feat. One Fine Day Kids"
+duration = "4:54"
+spotify = "0HIVoXPrMZQMTkfbHgY16z"
+
+[[track]]
+n = 9
+title = "Remember the Name (feat. Styles of Beyond)"
+artists = ["Fort Minor", "Styles Of Beyond"]
+album = "The Rising Tied"
+duration = "3:50"
+spotify = "6ljbkNIzfmFrGyYUTUAleN"
+
+[[track]]
+n = 10
+title = "Padam Padam"
+artists = ["Kylie Minogue"]
+album = "Tension (Deluxe)"
+duration = "2:46"
+spotify = "2GXvqITTIxsDGNxymiErSe"
+
+[[track]]
+n = 11
+title = "Hold Them Close - Rachel K Collier Remix"
+artists = ["Benin City", "Rachel K Collier", "Jo Goes Hunting"]
+album = "Hold Them Close (The Remixes)"
+duration = "3:34"
+spotify = "5WCEHZHMYPVjJTxpbqtIfx"
+
+[[track]]
+n = 12
+title = "Take Me As I Am"
+artists = ["The Streets", "Chris Lorenzo"]
+album = "None Of Us Are Getting Out Of This Life Alive"
+duration = "3:06"
+spotify = "5UjccMIJkNhont0TGSU0iD"
+review = "chris-lorenzo-and-the-streets_take-me-as-i-am.md"
+
+[[track]]
+n = 13
+title = "Oh Yeah Voll Krass - feat. Lian Ferdinand"
+artists = ["Pilocka Krach", "Lian Ferdinand"]
+album = "Oh Yeah Voll Krass / Discolight"
+duration = "3:08"
+spotify = "4zGGLcHbkSxKJ8RZbHarjM"
+
+[[track]]
+n = 14
+title = "Crystalised"
+artists = ["The xx"]
+album = "xx"
+duration = "3:21"
+spotify = "5UBBJnFxsfjFxfrtvErQoH"
+
+[[track]]
+n = 15
+title = "Roxanne"
+artists = ["The Police"]
+album = "Outlandos D'Amour (Remastered 2003)"
+duration = "3:11"
+spotify = "3EYOJ48Et32uATr9ZmLnAo"
+
+[[track]]
+n = 16
+title = "Moments"
+artists = ["Klangkarussell", "Will Heard"]
+album = "Netzwerk"
+duration = "5:01"
+spotify = "3fx25M65m6ATiKnEIDS3HK"
+
+[[track]]
+n = 17
+title = "High Enough"
+artists = ["K.Flay"]
+album = "Every Where Is Some Where"
+duration = "3:51"
+spotify = "1qwno7xb5mJe71xtMS6jl2"
+
+[[track]]
+n = 18
+title = "Waiting"
+artists = ["Klyne"]
+album = "Closer"
+duration = "3:06"
+spotify = "6Vzu9rOkP35MzJFGec29D7"
+
+[[track]]
+n = 19
+title = "Echoes"
+artists = ["Oliver Koletzki", "Fran"]
+album = "Lovestoned"
+duration = "3:51"
+spotify = "68vNMg48M2d0e53hkoiyLL"
+
+[[track]]
+n = 20
+title = "Deja vu"
+artists = ["Scarlet Pleasure"]
+album = "Limbo/Lagune"
+duration = "3:29"
+spotify = "0tingGcGmcXnRozU493hbr"
+
+[[track]]
+n = 21
+title = "Get Back In My Life"
+artists = ["Maroon 5"]
+album = "Hands All Over (Revised International Standard version)"
+duration = "3:37"
+spotify = "09UPJG2rIMO1PPhV476e09"
+
+[[track]]
+n = 22
+title = "Mount Everest"
+artists = ["Labrinth"]
+album = "Imagination & the Misfit Kid"
+duration = "2:37"
+spotify = "1ZdhOMWyFR8Iv9eylMGYg2"
+
+[[track]]
+n = 23
+title = "Toop Toop"
+artists = ["Cassius"]
+album = "15 Again (Deluxe Edition)"
+duration = "2:47"
+spotify = "7cHhpJV9fC2AqgdiLvq1AO"
+
+[[track]]
+n = 24
+title = "The One - Unlovable Remix"
+artists = ["Habstrakt", "Unlovable"]
+album = "The One"
+duration = "3:20"
+spotify = "6g5mOmAf9UNmM0ejKoq6ZK"
+
+[[track]]
+n = 25
+title = "Cooler Than Me"
+artists = ["Lucky Luke"]
+album = "Cooler Than Me"
+duration = "2:59"
+spotify = "525GY0mXYnxajolwgS8Eaz"
+
+[[track]]
+n = 26
+title = "A Friend"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "4:20"
+spotify = "3XhbiGCzShv8we87L1BjQP"
+
+[[track]]
+n = 27
+title = "For Your Love Suite 2014 full version - Chilly Remix"
+artists = ["Chilly"]
+album = "For Your Love new mix 2014"
+duration = "9:30"
+spotify = "2XUqXGx8hcxpfRc6VJOpS3"
+
+[[track]]
+n = 28
+title = "When A Fire Starts To Burn"
+artists = ["Disclosure"]
+album = "Settle (Special Edition)"
+duration = "4:44"
+spotify = "7qVLZuvzNjyiy3TVtEBwBE"
+
+[[track]]
+n = 29
+title = "Epoque"
+artists = ["Joris Delacroix"]
+album = "Night Visions"
+duration = "6:59"
+spotify = "36dRGWDdBOlsM57DqOPjSf"
+
+[[track]]
+n = 30
+title = "Wake Up in the Sky"
+artists = ["Gucci Mane", "Bruno Mars", "Kodak Black"]
+album = "Evil Genius"
+duration = "3:23"
+spotify = "2G1tXoGBaEMJ7FKGnkf6ud"
+
+[[track]]
+n = 31
+title = "Ay Caramba"
+artists = ["Pilocka Krach", "The Lost Amigos"]
+album = "Ay Caramba"
+duration = "4:15"
+spotify = "2lMDSF6Rg002zj1WQXvCeX"
+
+[[track]]
+n = 32
+title = "Same Man - Original Mix"
+artists = ["Till West", "DJ Delicious"]
+album = "Same Man"
+duration = "6:47"
+spotify = "25Kghjd8MUSlZF9U5U0iZz"
+
+[[track]]
+n = 33
+title = "Keep Me In My Plane"
+artists = ["WhoMadeWho"]
+album = "The Plot"
+duration = "3:48"
+spotify = "4UjJDdyYBdKC4AxKRdd7u7"
+
+[[track]]
+n = 34
+title = "Craving"
+artists = ["Røse", "Rachel K Collier"]
+album = "Craving"
+duration = "3:25"
+spotify = "46TBpWBda8EDFpjCoM6wlF"
+
+[[track]]
+n = 35
+title = "Express (Pilocka Krach's Night Train Express Remix)"
+artists = ["PRADA MEINHOFF", "Pilocka Krach"]
+album = "Express (Pilocka Krach's Night Train Express Remix)"
+duration = "6:25"
+spotify = "2qmKPLZNs9sNc1qGaw6fYb"
+
+[[track]]
+n = 36
+title = "Ba Ba Bounce"
+artists = ["Marbert Rocel"]
+album = "Catch a Bird"
+duration = "4:02"
+spotify = "7dNoapDbEJ7xLLRWkav5wQ"
+
+[[track]]
+n = 37
+title = "Back To Life"
+artists = ["Soul II Soul", "Caron Wheeler"]
+album = "Keep On Movin'"
+duration = "3:48"
+spotify = "7vvRkLPIvfjjmCIqNxBuEZ"
+
+[[track]]
+n = 38
+title = "Crazy"
+artists = ["Daniela Andrade"]
+album = "Crazy"
+duration = "4:02"
+spotify = "2xvNOftzz4VMyscM40yY35"
+
+[[track]]
+n = 39
+title = "Love Me Again"
+artists = ["John Newman"]
+album = "Tribute"
+duration = "3:59"
+spotify = "5TbzAWWc5eJaANpA9kfGCd"
+
+[[track]]
+n = 40
+title = "Exodus"
+artists = ["Nôze", "Wareika"]
+album = "Dring"
+duration = "4:04"
+spotify = "3058eH0LR8vfku76qexgK5"
+
+[[track]]
+n = 41
+title = "Fckrz"
+artists = ["Luca Malina"]
+album = "Fckrz"
+duration = "3:10"
+spotify = "4gdOGETp6oy2xi1A8UFrgb"
+
+[[track]]
+n = 42
+title = "Budapest"
+artists = ["Poni Hoax", "Olga Kouklaki"]
+album = "Poni Hoax"
+duration = "5:29"
+spotify = "5Ovl4pO2fwy8FH7qfuv5Pb"
+
+[[track]]
+n = 43
+title = "You Wish"
+artists = ["Nightmares On Wax"]
+album = "In A Space Outta Sound"
+duration = "3:30"
+spotify = "6G6M4fl2I0eqEQnzyTwR8m"
+
+[[track]]
+n = 44
+title = "I Need Love"
+artists = ["Hot Toddy", "Ron Basejam"]
+album = "I Need Love"
+duration = "5:31"
+spotify = "6832Wop1Jv0hzV6BSauanQ"
+
+[[track]]
+n = 45
+title = "American Boy"
+artists = ["Estelle", "Kanye West"]
+album = "Shine"
+duration = "4:44"
+spotify = "6etwirSInfuJrSOlogS6Sh"
+
+[[track]]
+n = 46
+title = "Smalltown Boy"
+artists = ["Bronski Beat"]
+album = "The Age of Consent"
+duration = "5:02"
+spotify = "5vmRQ3zELMLUQPo2FLQ76x"
+
+[[track]]
+n = 47
+title = "The End (Rachel K Collier Remix)"
+artists = ["JPOLND", "Rachel K Collier"]
+album = "The End (Rachel K Collier Remix)"
+duration = "3:14"
+spotify = "31SskiRSiKnIInqc1hVo99"
+
+[[track]]
+n = 48
+title = "Me, Myself and I"
+artists = ["Marbert Rocel"]
+album = "In the Beginning"
+duration = "4:25"
+spotify = "65EBidBsMldKVOy5qBG9F9"
+
+[[track]]
+n = 49
+title = "Stand Up - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade"
+duration = "4:39"
+spotify = "0tIaxfo2PQU0TRAEUhBRWi"
+
+[[track]]
+n = 50
+title = "One Day / Reckoning Song (Wankelmut Remix) [Radio Edit]"
+artists = ["Asaf Avidan", "The Mojos", "Wankelmut"]
+album = "One Day / Reckoning Song (Wankelmut Remix)"
+duration = "3:35"
+spotify = "5bGG1abhVIUm6EAa36ipRX"
+
+[[track]]
+n = 51
+title = "Pure Ruin"
+artists = ["Matt Lange"]
+album = "Pure Ruin"
+duration = "5:34"
+spotify = "49ScA06qwVTl6RkhpsaZGU"
+
+[[track]]
+n = 52
+title = "Pleasure Seeker"
+artists = ["CAITLIN", "Thomas Schumacher", "Elektrochemie"]
+album = "Road Less Traveled"
+duration = "7:16"
+spotify = "0CYtYG2DFM6GTMhMZI6OzU"
+
+[[track]]
+n = 53
+title = "Darker Place - Joe Goddard Remix, Radio Edit"
+artists = ["Rachel Chinouriri", "Joe Goddard"]
+album = "Four° In Winter (Deluxe)"
+duration = "2:48"
+spotify = "55KvkgRT9fqmQxqqPuaRJX"
+
+[[track]]
+n = 54
+title = "Poison"
+artists = ["Qodës"]
+album = "Poison"
+duration = "3:30"
+spotify = "0VALxgIP6H9hGv4lvQYeRW"
+
+[[track]]
+n = 55
+title = "The Player"
+artists = ["Kid Francescoli", "Julia Minkin"]
+album = "Play Me Again"
+duration = "4:04"
+spotify = "1CMYaclBw1oZTwivt0Z8Si"
+
+[[track]]
+n = 56
+title = "Sweet Dreams - Deep Summer Mix"
+artists = ["DJ Clipps", "Tasia", "Bthelick", "9Ts"]
+album = "Sweet Dreams (Deep Summer Mix)"
+duration = "5:33"
+spotify = "5nmzzk46TZ5gtzVKlVXJpA"
+
+[[track]]
+n = 57
+title = "Tearing Me Up"
+artists = ["Bob Moses"]
+album = "Days Gone By"
+duration = "7:50"
+spotify = "6NDt5z8GKIHub37hBQ4x18"
+
+[[track]]
+n = 58
+title = "Stars - People Theatre's Milky Way"
+artists = ["Bronski Beat", "People Theatre"]
+album = "The Age of Remix"
+duration = "6:52"
+spotify = "03ynXh1hoG6Fnnj6cmTRHF"
+
+[[track]]
+n = 59
+title = "Upside Down"
+artists = ["Paloma Faith"]
+album = "Do You Want the Truth or Something Beautiful?"
+duration = "3:09"
+spotify = "2pAkvdCFORWTiFJHVjojdC"
+
+[[track]]
+n = 60
+title = "The beat goes on - Original"
+artists = ["Bob Sinclar"]
+album = "III"
+duration = "2:59"
+spotify = "0JFcQm0Zjdt8FjqXHe0123"
+
+[[track]]
+n = 61
+title = "Blood In The Cut"
+artists = ["K.Flay"]
+album = "Every Where Is Some Where"
+duration = "3:08"
+spotify = "4q604hQba5940BbOoaenmz"
+
+[[track]]
+n = 62
+title = "The Time Is Now"
+artists = ["Moloko"]
+album = "Things to Make and Do"
+duration = "5:18"
+spotify = "6caODjFlH5iakvYJIrhATv"
+
+[[track]]
+n = 63
+title = "Sambassim - DJ Patife Remix"
+artists = ["DJ Patife"]
+album = "Cool Steps Drum 'n' Bass Grooves"
+duration = "3:36"
+spotify = "0IP9U6sTH3BBbmczskyxvm"
+
+[[track]]
+n = 64
+title = "Bulletproof"
+artists = ["La Roux"]
+album = "La Roux"
+duration = "3:25"
+spotify = "3kMrazSvILsgcwtidZd1Qd"
+
+[[track]]
+n = 65
+title = "Summer Light"
+artists = ["Tample"]
+album = "Summer Light"
+duration = "4:57"
+spotify = "35nWfFFkAnpVO4PeFJ2ElB"
+
+[[track]]
+n = 66
+title = "Joe Le Taxi"
+artists = ["Hanayo"]
+album = "Gift"
+duration = "5:10"
+spotify = "60OAbxlusT7OqV3FPsyBok"
+
+[[track]]
+n = 67
+title = "Sweet Dreams (Are Made Of This)"
+artists = ["Emily Browning"]
+album = "Sucker Punch (Original Motion Picture Soundtrack)"
+duration = "5:18"
+spotify = "4woy5GB7qNu0CJL6Wwp7WQ"
+
+[[track]]
+n = 68
+title = "Prokrastination"
+artists = ["Moop Mama"]
+album = "M.O.O.P.Topia"
+duration = "5:21"
+spotify = "7l0DPehrQ3M9DOgzy7dRGH"
+
+[[track]]
+n = 69
+title = "Let Them Not Weep"
+artists = ["Be Svendsen"]
+album = "Masquerade"
+duration = "6:35"
+spotify = "035ka3msQuwEei5OJJ9SWM"
+
+[[track]]
+n = 70
+title = "Smalltown Boy 2018 - Space City Remix"
+artists = ["Bronski Beat", "Space City"]
+album = "Smalltown Boy 2k18, Pt. 2 (Remixes)"
+duration = "7:59"
+spotify = "0hUh39T2u4whx21mNaXWfy"
+
+[[track]]
+n = 71
+title = "Reckoning Song"
+artists = ["Asaf Avidan", "The Mojos"]
+album = "The Reckoning"
+duration = "2:46"
+spotify = "6Wk6A8k7NjjSsPQT9Z3FXM"
+
+[[track]]
+n = 72
+title = "Don't Know What"
+artists = ["Rachel K Collier"]
+album = "Songs In The Key Of Internet"
+duration = "3:13"
+spotify = "1p0KzJhPS7dhbWDkPxNTzp"
+
+[[track]]
+n = 73
+title = "Doo uap, doo uap, doo uap"
+artists = ["Gabin"]
+album = "Gabin"
+duration = "7:21"
+spotify = "7IOzjMCsFQefRNhngW5Glo"
+
+[[track]]
+n = 74
+title = "Shut up My Moms Calling (Sped up)"
+artists = ["Hotel Ugly"]
+album = "Shut up My Moms Calling (Sped up)"
+duration = "2:15"
+spotify = "31mzt4ZV8C0f52pIz1NSwd"
+
+[[track]]
+n = 75
+title = "Drop The Game"
+artists = ["Flume", "Chet Faker"]
+album = "Lockjaw"
+duration = "3:41"
+spotify = "3wFFW1B6WAmAFGOwdEOOZR"
+
+[[track]]
+n = 76
+title = "Hey Hey (Radio Edit)"
+artists = ["Dennis Ferrer"]
+album = "Hey Hey"
+duration = "3:09"
+spotify = "1RWyjIAFlYAtBnzKVirzd7"
+
+[[track]]
+n = 77
+title = "Earthquake"
+artists = ["Rachel K Collier"]
+album = "Songs In The Key Of Internet"
+duration = "2:42"
+spotify = "4O8cwxdktKfKQSSCecwhkc"
+
+[[track]]
+n = 78
+title = "Numb / Encore"
+artists = ["JAŸ-Z", "Linkin Park"]
+album = "Numb / Encore: MTV Ultimate Mash-Ups Presents Collision Course"
+duration = "3:25"
+spotify = "5sNESr6pQfIhL3krM8CtZn"
+
+[[track]]
+n = 79
+title = "How We Do"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:54"
+spotify = "4flxgPC0426CEeSrzQIic0"
+
+[[track]]
+n = 80
+title = "Ice Cream"
+artists = ["New Young Pony Club"]
+album = "Fantastic Playroom"
+duration = "3:08"
+spotify = "02ISLTUYF5GUjKrL7zvRb9"
+
+[[track]]
+n = 81
+title = "Paralyzed"
+artists = ["Klyne"]
+album = "Klyne"
+duration = "3:06"
+spotify = "3PRhkFUJAUvacjIZIuIK2W"
+
+[[track]]
+n = 82
+title = "Reflections Are Protection"
+artists = ["La Roux"]
+album = "La Roux"
+duration = "4:19"
+spotify = "3XJThoz3nFoyHhLf5fvFNN"
+
+[[track]]
+n = 83
+title = "In Berlin"
+artists = ["Tubbe"]
+album = "Keine Arbeit lieber Tanzen"
+duration = "3:31"
+spotify = "2xoJnJ2IHqa4AHJ0d1oshJ"
+
+[[track]]
+n = 84
+title = "Darklands"
+artists = ["Whilk & Misky"]
+album = "Darklands"
+duration = "7:16"
+spotify = "2U85igyu5BUWrfqnUOQYrv"
+
+[[track]]
+n = 85
+title = "Only For You - Croquet Club Remix"
+artists = ["Mat Zo", "Rachel K Collier", "Croquet Club"]
+album = "Damage Control (10 Year Anniversary Edition)"
+duration = "4:34"
+spotify = "7mwxlXP5pqS4beumAVn4UN"
+
+[[track]]
+n = 86
+title = "Romano Hip Hop"
+artists = ["Gipsy.cz"]
+album = "Romano Hip Hop"
+duration = "2:37"
+spotify = "4SrEL1UzQLI2eK8FshH0FY"
+
+[[track]]
+n = 87
+title = "Tum Rakak"
+artists = ["Deluxe"]
+album = "Stachelight"
+duration = "4:36"
+spotify = "2C2SY9l26IT3guKqQoMMSr"
+
+[[track]]
+n = 88
+title = "You Bring Me Down"
+artists = ["Digitaria", "Funky Fat"]
+album = "Mascochist"
+duration = "5:36"
+spotify = "1IsfJhAPIA6kitJQQDCDyq"
+review = "funky-fat-and-digitaria-you-bring-me-down.md"
+
+[[track]]
+n = 89
+title = "I Wish You Well"
+artists = ["Rachel K Collier"]
+album = "Songs In The Key Of Internet"
+duration = "4:12"
+spotify = "1exuw4eDWzIGOUF1OrtvrU"
+
+[[track]]
+n = 90
+title = "Seven Nation Army"
+artists = ["The White Stripes"]
+album = "Elephant"
+duration = "3:52"
+spotify = "3dPQuX8Gs42Y7b454ybpMR"
+
+[[track]]
+n = 91
+title = "Body Language - Interpretation"
+artists = ["Booka Shade"]
+album = "Movements"
+duration = "5:00"
+spotify = "1ABwlOhYanbuafWx1yvx0T"
+
+[[track]]
+n = 92
+title = "Love Tonight (David Guetta Remix Edit)"
+artists = ["Shouse", "David Guetta"]
+album = "Love Tonight (David Guetta Remix)"
+duration = "2:38"
+spotify = "2prnn41CblB8B4yWACDljP"
+
+[[track]]
+n = 93
+title = "Microfreaking Out"
+artists = ["Rachel K Collier"]
+album = "Songs In The Key Of Internet"
+duration = "3:07"
+spotify = "0lekD3rXp1pZhsSWdysYuX"
+
+[[track]]
+n = 94
+title = "Needle in the Hay"
+artists = ["Melissa Laveaux"]
+album = "Camphor & Copper (Bonus Track Version)"
+duration = "3:24"
+spotify = "4TCcDD97LU6rBUnYhjGmR8"
+
+[[track]]
+n = 95
+title = "Time Again - Jan Blomqvist Club Mix"
+artists = ["Jan Blomqvist"]
+album = "Time Again"
+duration = "7:08"
+spotify = "4R6IXAnUwcRZuE5oMMUEwY"
+review = "jan-blomqvist-time-again.md"
+
+[[track]]
+n = 96
+title = "Perfect Fit"
+artists = ["Niko Schwind", "Heartbeat"]
+album = "Grippin' World"
+duration = "6:30"
+spotify = "7f0OpNd7yIQ4XaUEGJKlF3"
+
+[[track]]
+n = 97
+title = "Squares Into Circles - Original Mix"
+artists = ["Rachel K Collier"]
+album = "Words You Never Heard"
+duration = "4:24"
+spotify = "3vTfIbVDuxFmiw0tAmsfLv"
+
+[[track]]
+n = 98
+title = "Believer"
+artists = ["Imagine Dragons"]
+album = "Evolve"
+duration = "3:24"
+spotify = "0pqnGHJpmpxLKifKRmU6WP"
+
+[[track]]
+n = 99
+title = "Catch - 2021 Remaster"
+artists = ["Kosheen"]
+album = "Resist (2021 Remaster)"
+duration = "3:23"
+spotify = "1fiAUsp78LbIuQHhIqZ3ZF"
+
+[[track]]
+n = 100
+title = "Reality"
+artists = ["Oliver Koletzki"]
+album = "I am OK"
+duration = "5:09"
+spotify = "5wS0LGxzuldBZtD00OTYq4"

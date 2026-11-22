@@ -10,11 +10,14 @@ spotify: {"track": "1ZdhOMWyFR8Iv9eylMGYg2", "album": "0FSsRH1jeZqKbGcHwq3UO0", 
 keys: {"fold": "labrinth|mounteverest"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 22}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Mount Everest · Labrinth
 
 From the album *Imagination & the Misfit Kid*, 2:37.
 A liked song.
+Your Top Songs 2023: #22.
 No review yet.

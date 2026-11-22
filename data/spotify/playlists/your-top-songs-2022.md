@@ -33,7 +33,7 @@ tracks:
   - {"n": 22, "track": "hooverphonic-badaboum"}
   - {"n": 23, "track": "martin-waslewski-gerd"}
   - {"n": 24, "track": "ms-dynamite-dy-na-mi-tee"}
-  - {"n": 25, "track": "tones-and-i-dance-monkey"}
+  - {"n": 25, "track": "tones-and-i-dance-monkey-2xu0ox"}
   - {"n": 26, "track": "moderat-a-new-error"}
   - {"n": 27, "track": "touch-go-tango-in-harlem"}
   - {"n": 28, "track": "lipka-change"}

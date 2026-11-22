@@ -10,11 +10,14 @@ keys: {"fold": "louisahhh|likeavice", "musicbrainz": "312f8897-a93b-488f-b903-2c
 review: "louisahhh-like-a-vice-x.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 92}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Like a Vice · Louisahhh
 
 From the album *A Trap I've Built*, 5:52.
 A liked song.
+Your Top Songs 2025: #92.
 Reviewed: content/louisahhh-like-a-vice-x.md.

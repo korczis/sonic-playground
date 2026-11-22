@@ -10,11 +10,14 @@ keys: {"fold": "easter|alienbabies", "musicbrainz": "45dad2fc-e8b4-4df5-a0a9-c63
 review: "easter-alien-babies.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 85}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Alien Babies · Easter
 
 From the album *The Softest Hard*, 4:28.
 A liked song.
+Your Top Songs 2025: #85.
 Reviewed: content/easter-alien-babies.md.

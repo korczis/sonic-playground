@@ -9,11 +9,14 @@ spotify: {"track": "18uTrmsjHkhV41nQK3Q416", "album": "3wxabU9l3JMkb3UcAI7CI3", 
 keys: {"fold": "mclars|singleandfamous"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 63}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Single and Famous · MC Lars, K.Flay
 
 From the album *Single and Famous*, 3:50.
 A liked song.
+Your Top Songs 2024: #63.
 No review yet.

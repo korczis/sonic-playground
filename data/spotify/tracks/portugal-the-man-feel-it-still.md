@@ -12,12 +12,13 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2019, "n": 5}
+  - {"year": 2024, "n": 36}
 playlists:
   - {"playlist": "best-of-the-best", "n": 68}
   - {"playlist": "my-shazam-tracks", "n": 35}
   - {"playlist": "my-top-songs-of-all-the-time", "n": 286}
   - {"playlist": "sonic-playground", "n": 18}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Feel It Still · Portugal. The Man
@@ -25,5 +26,6 @@ sources: ["web-player:2026-11-14"]
 From the album *Woodstock*, 2:43.
 A liked song.
 Your Top Songs 2019: #5.
+Your Top Songs 2024: #36.
 In Best of the Best (#68); My Shazam Tracks (#35); My Top Songs of All the Time (#286); Sonic Playground (#18).
 Reviewed: content/portugal-the-man-feel-it-still.md.

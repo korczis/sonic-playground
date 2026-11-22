@@ -11,11 +11,14 @@ keys: {"fold": "avenued|2d2f", "musicbrainz": "d7ccdb25-dac2-4ea0-bc88-db4775463
 review: "avenue-d-2d2f.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 97}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # 2d2f · Avenue D
 
 From the album *Bootleg*, 2:57.
 A liked song.
+Your Top Songs 2024: #97.
 Reviewed: content/avenue-d-2d2f.md.

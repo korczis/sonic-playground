@@ -11,11 +11,14 @@ keys: {"fold": "jayz|numbencore", "isrc": "USWB10403681", "musicbrainz": "daccb7
 review: "jay-z-linkin-park-numb-encore.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 78}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Numb / Encore · JAŸ-Z, Linkin Park
 
 From the album *Numb / Encore: MTV Ultimate Mash-Ups Presents Collision Course*, 3:25.
 A liked song.
+Your Top Songs 2023: #78.
 Reviewed: content/jay-z-linkin-park-numb-encore.md.

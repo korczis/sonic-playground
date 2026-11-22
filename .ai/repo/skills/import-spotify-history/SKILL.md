@@ -46,6 +46,12 @@ data export arrives, and to refresh the records after the library changes.
    tab, so open a fresh tab at https://open.spotify.com/robots.txt, inject the script again and
    run `SonicCrawl.download()`, which saves `sonic-spotify-snapshot-<day>.json` and clears the
    key. The tool output masks 22-character ids, which is why the snapshot travels as a download.
+   **Unsaved Top Songs.** Spotify makes a "Your Top Songs <year>" playlist every December, but
+   the library holds it only if the owner saved it (2023-2025 were not, found 2026-11-22). Find
+   each one in the web player's search ("Your Top Songs <year>", Playlists; the page must say
+   "Made for <the owner>"), take its id from the URL, and run
+   `SonicCrawl.playlists(['<id>', ...])`. It writes a partial snapshot (empty library), which
+   the build merges with the others; download and ingest it as below.
 3. **Keep it private.** `python3 scripts/spotify_history.py ingest-snapshot ~/Downloads/<file>.json`
    (add `--plain <file>` when a full liked-songs reading without ids completes a short one).
    The raw file goes to `data/spotify/private/snapshots/`; delete the download afterwards.

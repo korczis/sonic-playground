@@ -10,11 +10,16 @@ keys: {"fold": "indiana|solodancing", "isrc": "GBARL1400145", "musicbrainz": "4a
 review: "indiana-solo-dancing.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 64}
+  - {"year": 2025, "n": 88}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Solo Dancing · Indiana
 
 From the album *No Romeo (Deluxe)*, 4:14.
 A liked song.
+Your Top Songs 2024: #64.
+Your Top Songs 2025: #88.
 Reviewed: content/indiana-solo-dancing.md.

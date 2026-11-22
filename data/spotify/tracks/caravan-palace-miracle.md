@@ -10,11 +10,14 @@ keys: {"fold": "caravanpalace|miracle", "isrc": "FR9W11827929", "musicbrainz": "
 review: "caravan-palace-miracle.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 82}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Miracle · Caravan Palace
 
 From the album *Chronologic*, 3:36.
 A liked song.
+Your Top Songs 2025: #82.
 Reviewed: content/caravan-palace-miracle.md.

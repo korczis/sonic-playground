@@ -9,11 +9,14 @@ spotify: {"track": "0fiTN2N5HEIefAHtm00vYG", "album": "35xfQriUFj6M2AVq78OsEq", 
 keys: {"fold": "sbtrkt|wildfire"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 45}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Wildfire · SBTRKT, Little Dragon
 
 From the album *SBTRKT (Deluxe Version)*, 3:21.
 A liked song.
+Your Top Songs 2024: #45.
 No review yet.

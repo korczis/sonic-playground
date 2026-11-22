@@ -12,9 +12,11 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 47}
+  - {"year": 2023, "n": 88}
+  - {"year": 2024, "n": 9}
 playlists:
   - {"playlist": "sonic-playground", "n": 5}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # You Bring Me Down · Digitaria, Funky Fat
@@ -22,5 +24,7 @@ sources: ["web-player:2026-11-14"]
 From the album *Mascochist*, 5:36.
 A liked song.
 Your Top Songs 2022: #47.
+Your Top Songs 2023: #88.
+Your Top Songs 2024: #9.
 In Sonic Playground (#5).
 Reviewed: content/funky-fat-and-digitaria-you-bring-me-down.md.

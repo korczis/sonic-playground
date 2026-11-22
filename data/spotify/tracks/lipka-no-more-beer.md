@@ -10,14 +10,17 @@ keys: {"fold": "lipka|nomorebeer", "musicbrainz": "27e67d4c-b36a-42bf-b106-7ebc0
 review: "lipka_no-more-beer.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2024, "n": 4}
 playlists:
   - {"playlist": "sonic-playground", "n": 2}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # No More Beer · Lipka
 
 From the album *Lipka*, 3:38.
 A liked song.
+Your Top Songs 2024: #4.
 In Sonic Playground (#2).
 Reviewed: content/lipka_no-more-beer.md.

@@ -9,11 +9,14 @@ spotify: {"track": "1oDFpECgktjKZOx4es9mpS", "album": "23erQ0RqGBQjHHUNynlclU", 
 keys: {"fold": "liljabloom|motherparovstelarscryanddanceremix"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 69}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Mother - Parov Stelars Cry and Dance Remix · Lilja Bloom, Parov Stelar
 
 From the album *Mother*, 4:47.
 A liked song.
+Your Top Songs 2024: #69.
 No review yet.

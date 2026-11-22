@@ -5,15 +5,18 @@ title: "Hoag"
 artists: ["Luke Garcia", "Th3 Oth3r"]
 album: "Dantze, Baby II"
 duration: "7:04"
-spotify: {"track": "6zFQFJjWd4evGENSuoZPmk", "album": "2rvHx1t9XlnGRB9a80lkbC", "artists": ["1iseaKQsQnlwZoNFKNHRSp", "1xPhn2JRX1nw703pS1pFI5"]}
+spotify: {"track": "49wPUQ4U5nZ80lr6iQSBLN", "album": "2rvHx1t9XlnGRB9a80lkbC", "artists": ["1iseaKQsQnlwZoNFKNHRSp", "1xPhn2JRX1nw703pS1pFI5"]}
 keys: {"fold": "lukegarcia|hoag"}
 status: "missing"
-liked: true
-sources: ["web-player:2026-11-14"]
+liked: false
+yearbooks:
+  - {"year": 2024, "n": 94}
+sources: ["web-player:2026-11-22"]
 ---
 
 # Hoag · Luke Garcia, Th3 Oth3r
 
 From the album *Dantze, Baby II*, 7:04.
-A liked song.
+Not among the liked songs.
+Your Top Songs 2024: #94.
 No review yet.
