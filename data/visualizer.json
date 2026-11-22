@@ -1,0 +1,48 @@
+{
+  "$comment": "The visualiser's modes, one list read by templates/partials/visualizer.html (load_data), static/js/visualizer.js (the JSON the template embeds), scripts/i18n.py (viz.mode.<id>, viz.hint.<id>, viz.param.<id>) and test/test_visualizer.py. Each mode is an original picture in homage to one Winamp-era visualisation, credited in its hint (viz.hint.<id>). 'engine' is p5 (static/js/viz-2d.js) or gl (three.js, static/js/viz-gl.js); a gl mode falls back to its p5 'fallback' where WebGL is missing. 'params' are the live controls, from the vocabulary below; 'defaults' overrides a parameter's default for that mode.",
+  "calm": "veil",
+  "background": ["veil", "swarm"],
+  "aliases": {
+    "tunnel": "liquid", "nebula": "swarm", "aurora": "veil", "bloom": "kaleido",
+    "bars": "tower", "warp": "starlane", "plasma": "ember"
+  },
+  "params": {
+    "speed":    { "min": 0.25, "max": 3,   "step": 0.05, "default": 1 },
+    "react":    { "min": 0,    "max": 3,   "step": 0.05, "default": 1 },
+    "hue":      { "min": 0,    "max": 360, "step": 1,    "default": 0 },
+    "trails":   { "min": 0,    "max": 1,   "step": 0.01, "default": 0.85 },
+    "warp":     { "min": 0,    "max": 2,   "step": 0.01, "default": 1 },
+    "zoom":     { "min": 0.5,  "max": 2,   "step": 0.01, "default": 1 },
+    "symmetry": { "min": 2,    "max": 12,  "step": 1,    "default": 6 },
+    "detail":   { "min": 0.25, "max": 2,   "step": 0.05, "default": 1 },
+    "density":  { "min": 0.25, "max": 2,   "step": 0.05, "default": 1 },
+    "glow":     { "min": 0,    "max": 2,   "step": 0.05, "default": 1 }
+  },
+  "modes": [
+    { "id": "liquid",    "engine": "gl", "group": "plugin", "fallback": "flux",     "params": ["warp", "trails", "react", "hue"] },
+    { "id": "patchbay",  "engine": "gl", "group": "plugin", "fallback": "kaleido",  "params": ["symmetry", "trails", "react", "speed"] },
+    { "id": "prism",     "engine": "gl", "group": "plugin", "fallback": "kaleido",  "params": ["warp", "glow", "react", "hue"] },
+    { "id": "ember",     "engine": "gl", "group": "plugin", "fallback": "swarm",    "params": ["trails", "speed", "react", "hue"] },
+    { "id": "flux",      "engine": "p5", "group": "plugin", "params": ["trails", "warp", "react", "hue"] },
+    { "id": "tidal",     "engine": "gl", "group": "plugin", "fallback": "tower",    "params": ["speed", "zoom", "react", "hue"] },
+    { "id": "tower",     "engine": "p5", "group": "plugin", "params": ["react", "detail", "glow"] },
+    { "id": "hyperloop", "engine": "gl", "group": "plugin", "fallback": "starlane", "params": ["speed", "warp", "react", "hue"] },
+    { "id": "chrome",    "engine": "gl", "group": "plugin", "fallback": "ripple",   "params": ["warp", "speed", "react", "glow"] },
+    { "id": "pocket",    "engine": "p5", "group": "plugin", "params": ["react", "detail", "hue"] },
+    { "id": "whirlpool", "engine": "gl", "group": "plugin", "fallback": "flux",     "params": ["warp", "trails", "react", "hue"] },
+    { "id": "choir",     "engine": "gl", "group": "preset", "fallback": "starlane", "params": ["density", "speed", "react", "hue"] },
+    { "id": "garden",    "engine": "gl", "group": "preset", "fallback": "kaleido",  "params": ["detail", "speed", "react", "hue"] },
+    { "id": "kaleido",   "engine": "p5", "group": "preset", "params": ["symmetry", "speed", "react", "hue"], "defaults": { "symmetry": 8 } },
+    { "id": "starlane",  "engine": "p5", "group": "preset", "params": ["speed", "density", "react", "hue"] },
+    { "id": "silk",      "engine": "gl", "group": "preset", "fallback": "veil",     "params": ["warp", "trails", "react", "hue"] },
+    { "id": "cathedral", "engine": "gl", "group": "preset", "fallback": "kaleido",  "params": ["symmetry", "zoom", "react", "hue"], "defaults": { "symmetry": 6 } },
+    { "id": "rave",      "engine": "p5", "group": "preset", "params": ["symmetry", "trails", "react", "hue"], "defaults": { "symmetry": 5 } },
+    { "id": "ripple",    "engine": "p5", "group": "preset", "params": ["speed", "detail", "react", "hue"] },
+    { "id": "veil",      "engine": "p5", "group": "preset", "params": ["speed", "glow", "react", "hue"] },
+    { "id": "reef",      "engine": "gl", "group": "preset", "fallback": "ripple", "params": ["speed", "detail", "react", "hue"] },
+    { "id": "swarm",     "engine": "p5", "group": "preset", "params": ["density", "speed", "react", "hue"] },
+    { "id": "mercury",   "engine": "gl", "group": "preset", "fallback": "veil",     "params": ["detail", "glow", "react", "hue"] },
+    { "id": "fold",      "engine": "gl", "group": "preset", "fallback": "kaleido", "params": ["detail", "speed", "react", "hue"] },
+    { "id": "moire",     "engine": "p5", "group": "preset", "params": ["detail", "speed", "react", "hue"] }
+  ]
+}

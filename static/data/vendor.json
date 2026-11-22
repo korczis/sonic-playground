@@ -12,6 +12,10 @@
     "p5": {
       "version": "2.3.4",
       "js": "vendor/p5-2.3.4.min.js"
+    },
+    "three": {
+      "version": "0.187.0",
+      "js": "vendor/three-0.187.0.custom.min.js"
     }
   }
 }

@@ -96,6 +96,13 @@
     if (main) main.scrollTop = at.main || 0;
     window.scrollTo(at.x || 0, at.y || 0);
   }
+  // A page's own query, without the keys the player (play, t) and the visualiser (viz, viz.*)
+  // keep in every URL: a link to the page on screen is the same page whatever is playing.
+  function own(search) {
+    var q = new URLSearchParams(search);
+    Array.from(q.keys()).forEach(function (k) { if (k === 'play' || k === 't' || k === 'viz' || k.indexOf('viz.') === 0) q.delete(k); });
+    return q.toString();
+  }
   var inflight = /** @type {AbortController | null} */ (null);
   function go(url, push) {
     var mine = ++navigation;
@@ -111,7 +118,10 @@
     }).then(function (html) {
       if (mine !== navigation) return;
       var doc = new DOMParser().parseFromString(html, 'text/html');
-      if (push) history.pushState({ sonic: true }, '', url.href);
+      if (push) {
+        Sonic.emit('sonic:leaving', { url: url.href });
+        history.pushState({ sonic: true }, '', url.href);
+      }
       if (!swap(doc)) throw new Error('no #main-content');
       current = location.pathname;
       var saved = !push && history.state && history.state.scroll;
@@ -150,9 +160,23 @@
     if (!a || a.target || a.hasAttribute('download') || a.getAttribute('rel') === 'external') return;
     var url = new URL(a.href, location.href);
     if (!internal(url)) return;
-    if (url.pathname === location.pathname && url.search === location.search && url.hash) return;
+    var same = url.pathname === location.pathname && own(url.search) === own(location.search);
+    // An anchor on the page on screen: the browser would load the page again, since the link
+    // lacks the player's keys; moving the hash keeps them and scrolls as an anchor does.
+    if (same && url.hash) {
+      event.preventDefault();
+      if (url.hash !== location.hash) { location.hash = url.hash; return; }
+      // The same anchor again (the skip link used twice): the browser would scroll there again.
+      var again = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (again) {
+        again.scrollIntoView();
+        if (!again.hasAttribute('tabindex') && again.tabIndex < 0) again.setAttribute('tabindex', '-1');
+        again.focus({ preventScroll: true });
+      }
+      return;
+    }
     event.preventDefault();
-    if (url.pathname === location.pathname && url.search === location.search) return;
+    if (same) return;
     go(url, true);
   });
 

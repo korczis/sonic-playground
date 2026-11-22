@@ -3,6 +3,8 @@
 #
 #   bash test/run.sh                    every case
 #   bash test/run.sh 10_add_song ...    the named cases (a name that matches nothing is an error)
+#   MJ_CASE_TIMEOUT=<seconds> bash test/run.sh
+#                                       each case's bound in wall-clock seconds (600 by default)
 #   MJ_TEST_REPORT=<file> bash test/run.sh
 #                                       also write one TSV row per case (name, PASS|FAIL|TIMEOUT,
 #                                       seconds, phase), the report `majordomus-cli evidence
@@ -55,6 +57,13 @@ for file in "${cases[@]}"; do
   [ -n "$report" ] && printf '%s\t%s\t%s\t%s\n' "$name" "$word" "$sec" serial >> "$report"
   if [ "$word" != PASS ]; then
     echo "run.sh: $name $word after ${sec}s" >&2
+    # The bound is wall-clock time, so a loaded machine can cut a sound case: 65 passed alone
+    # in 356 s (103 s of CPU) and timed out at 606 s beside another gate at load 117 on 18
+    # cores (2026-11-22). Say the load with the timeout, so the reading is attributable.
+    if [ "$word" = TIMEOUT ]; then
+      load="$(uptime | sed 's/.*load average[s]*: //')"
+      echo "run.sh: $name was cut at the ${BOUND}s bound (MJ_CASE_TIMEOUT); load averages $load on $(getconf _NPROCESSORS_ONLN 2>/dev/null || echo '?') cores" >&2
+    fi
     failed=$((failed + 1))
   fi
 done

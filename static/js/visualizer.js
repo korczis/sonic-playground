@@ -1,67 +1,144 @@
-// The visualiser: Winamp/MilkDrop-style pictures of what is playing, as one component that mounts
-// in any element marked [data-visualizer] (the landing hero) and fills the screen on request.
+// The visualiser: 25 pictures of what is playing, each an original homage to one Winamp-era
+// visualisation, as one component that mounts in any element marked [data-visualizer] (the
+// landing hero), behind every page while music plays, and full screen on request.
+//
+// The modes are one list, data/visualizer.json (embedded by templates/partials/visualizer.html as
+// #viz-conf): each has an engine, p5 (static/js/viz-2d.js) or gl (three.js, static/js/viz-gl.js),
+// a p5 fallback for a browser without WebGL 2, and the live controls (parameters) it offers. Both
+// engines and their libraries load on demand, only when a mode of theirs is shown.
 //
 // Where the sound comes from. The player is a YouTube iframe on another origin, so the page
 // cannot read its audio. There are three sources, and the controls always say which one is
 // active:
 //   tab   the reader shares this tab with its audio (getDisplayMedia); the picture follows the
-//         music exactly. Chrome and Edge only, and only after the reader agrees.
-//   mic   the microphone (getUserMedia); the picture follows the sound in the room.
-//   clock no audio: the picture follows the player's state and time only (moving while it
-//         plays, resting while it is paused), and says so.
-// Nothing asks for a permission by itself: the reader opens the controls and chooses.
+//         music exactly. Chrome and Edge on a computer, and only after the reader agrees.
+//   mic   the microphone (getUserMedia); the picture follows the sound in the room. Phones too.
+//   clock no audio: the picture follows the player's state and time only (moving at 120 bpm
+//         while it plays, resting while it is paused), and says so.
+// Nothing asks for a permission by itself: the reader presses "Follow the music" (the tab on a
+// computer that can share one, the microphone elsewhere) or chooses a source in the settings.
 //
-// The picture is drawn with p5 (loaded on demand from static/vendor, data-p5 on <body>), in
-// instance mode, one sketch per mounted element. Every mode is a pure function of the frame's
-// analysis {bands, wave, level, bass, mid, high, beat, t}, so the seven of them share one engine.
+// The sound is analysed once per frame into features every mode reads (SonicVizAnalysis in
+// types/sonic.d.ts): 48 log-spaced bands with automatic gain, the waveform, level and the three
+// ranges, onsets of the kick, snare and hi-hat ranges (spectral flux over an adaptive threshold)
+// as decaying envelopes, the overall flux and spectral centroid, a tempo from the kicks'
+// intervals with the position in the beat, and the loudness of the last seconds. That is the
+// "colour music": every mode is a function of these features and of its parameters.
 //
 // Fullscreen: SonicVisualizer.open() lays the picture over the page below the player (z 35,
 // under the queue and panels at 40 and the bar at 50), with no chrome; it closes the queue and
 // makes the page under it inert. Moving the pointer or pressing a key shows a small cluster for a
-// few seconds (the mode's name, settings, full screen, close); the modes and the sources wait
-// behind settings. Escape closes the topmost layer; the arrow keys change the mode; F asks the
-// browser for real fullscreen; focus returns to the opener. The open state and mode live in the
-// URL (?viz=<mode>). Reduced motion: a calm mode, slowed, that never changes by itself.
+// few seconds; the modes, the live controls and the sources wait behind settings, a sheet whose
+// height is bounded by the video and the bar, so it never covers the playing video. Cinema moves
+// the video to fill the screen above the bar, the picture around it and its colour glowing at the
+// video's edge, never over it (YouTube's terms forbid covering the player). Escape closes the
+// topmost layer; the arrow keys change the mode; C toggles cinema; F asks the browser for real
+// fullscreen; focus returns to the opener. Reduced motion: a calm mode, slowed, that never
+// changes by itself.
+//
+// The URL is the state (everything shareable): ?viz=<mode>, viz.<param>=<value> for every live
+// control away from its default, viz.video=cinema; the player adds play=<track>&t=<seconds>
+// (static/js/player.js). "Copy link" copies exactly that.
 (function () {
   'use strict';
   var Sonic = window.Sonic;
   var body = document.body;
-  var MODES = ['tunnel', 'nebula', 'aurora', 'bloom', 'bars', 'warp', 'plasma'];
+  var html = document.documentElement;
+  var CONF = readConf();
+  var MODES = CONF.modes.map(function (m) { return m.id; });
+  /** @type {Record<string, {id: string, engine: string, group: string, params: string[], fallback?: string, defaults?: Record<string, number>}>} */
+  var BY = {};
+  CONF.modes.forEach(function (m) { BY[m.id] = m; });
+  var PARAMS = CONF.params;
+  var CALM = CONF.calm;
   var STORE = 'sonic.visualizer';
   var BANDS = 48;
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!MODES.length) return;
 
-  /** @returns {{mode: string, cycle: boolean, bg: boolean}} */
+  function readConf() {
+    var node = document.getElementById('viz-conf');
+    try {
+      return JSON.parse(node ? node.textContent || '' : '');
+    } catch (e) {
+      return { modes: [], params: {}, aliases: {}, calm: '', background: [] }; // untested: every built page embeds a valid #viz-conf (test_visualizer.py)
+    }
+  }
+  /** A mode's id, an old id (?viz=tunnel) mapped to its successor, or null. */
+  function resolve(id) {
+    if (!id) return null;
+    var m = CONF.aliases[id] || id;
+    return BY[m] ? m : null;
+  }
+
+  /** @returns {{mode: string, cycle: boolean, bg: boolean, cinema: boolean, params: Record<string, Record<string, number>>}} */
   function prefs() {
     try {
       var p = JSON.parse(localStorage.getItem(STORE) || '{}');
-      return { mode: MODES.indexOf(p.mode) >= 0 ? p.mode : MODES[0], cycle: p.cycle !== false, bg: p.bg !== false };
+      return { mode: resolve(p.mode) || MODES[0], cycle: p.cycle !== false, bg: p.bg !== false,
+        cinema: p.cinema === true, params: p.params && typeof p.params === 'object' ? p.params : {} };
     } catch (e) {
-      return { mode: MODES[0], cycle: true, bg: true };
+      return { mode: MODES[0], cycle: true, bg: true, cinema: false, params: {} };
     }
   }
   function savePrefs(p) {
     try { localStorage.setItem(STORE, JSON.stringify(p)); } catch (e) { /* private window */ }
   }
 
-  // ---- The sound: one engine shared by every sketch. ------------------------------------------
+  /** Every parameter at the mode's default. */
+  function defaults(mode) {
+    var own = (BY[mode] && BY[mode].defaults) || {};
+    /** @type {Record<string, number>} */
+    var out = {};
+    Object.keys(PARAMS).forEach(function (k) { out[k] = k in own ? own[k] : PARAMS[k].default; });
+    return out;
+  }
+  function clampParam(k, v) {
+    var d = PARAMS[k];
+    if (!d || typeof v !== 'number' || !isFinite(v)) return null;
+    return Math.min(d.max, Math.max(d.min, v));
+  }
+  /**
+   * The mode's defaults, then the reader's saved values, then any overrides. A shared link passes
+   * shared: its picture is the sender's (the defaults and the link's own controls), never mixed
+   * with the reader's saved values (an independent review, 2026-11-22).
+   */
+  function paramsFor(mode, overrides, shared) {
+    var out = defaults(mode);
+    var saved = shared ? {} : prefs().params[mode] || {};
+    [saved, overrides || {}].forEach(function (src) {
+      Object.keys(src).forEach(function (k) {
+        var v = clampParam(k, Number(src[k]));
+        if (v !== null && BY[mode].params.indexOf(k) >= 0) out[k] = v;
+      });
+    });
+    return out;
+  }
 
-  var engine = {
-    source: 'clock',
-    ctx: null,
-    analyser: null,
-    stream: null,
-    freq: null,
-    time: null,
-    bands: new Float32Array(BANDS),
-    wave: new Float32Array(256),
-    level: 0, bass: 0, mid: 0, high: 0, beat: false,
-    bassAvg: 0.2,
-    lastBeat: 0,
-    clock: { playing: false, base: 0, at: 0 },
+  // ---- The sound: one analysis per frame, shared by every sketch. -----------------------------
+
+  /** @type {SonicVizAnalysis} */
+  var A = {
+    bands: new Float32Array(BANDS), wave: new Float32Array(256),
+    level: 0, bass: 0, mid: 0, high: 0, kick: 0, snare: 0, hat: 0, beat: false,
+    flux: 0, centroid: 0, bpm: 0, phase: 0, energy: 0, t: 0, dt: 1 / 60, source: 'clock',
+  };
+  var audio = { ctx: null, analyser: null, stream: null, freq: null, time: null, kind: 'clock' };
+  // An onset detector per range: the positive spectral flux of its bands over an adaptive
+  // threshold (running mean plus 1.5 standard deviations), at most one onset per `gap` seconds;
+  // its envelope decays with `tau`.
+  function detector(lo, hi, gap, tau) {
+    return { lo: lo, hi: hi, gap: gap, tau: tau, mean: 0, vari: 0.0004, last: -10 };
+  }
+  var dsp = {
+    raw: new Float32Array(BANDS), prev: new Float32Array(BANDS), peak: 0.25,
+    kick: detector(0, 6, 0.22, 0.16), snare: detector(8, 22, 0.14, 0.12),
+    hat: detector(28, 48, 0.08, 0.06),
+    kicks: /** @type {number[]} */ ([]), period: 0.5, lastKick: -10,
+    clock: { playing: false, base: 0, at: 0, beat: -1, half: -1 },
   };
 
-  function playing() { return document.documentElement.getAttribute('data-player-state') === 'playing'; }
+  function playing() { return html.getAttribute('data-player-state') === 'playing'; }
 
   // The player saves its time every few seconds; between saves the clock runs on its own.
   function syncClock() {
@@ -69,21 +146,24 @@
     var on = playing();
     var t = 0;
     try { t = window.SonicPlayer ? window.SonicPlayer.state().time || 0 : 0; } catch (e) { t = 0; }
-    if (on !== engine.clock.playing || Math.abs(t - clockTime()) > 6) {
-      engine.clock = { playing: on, base: on ? t : clockTime(), at: now };
+    var c = dsp.clock;
+    if (on !== c.playing || Math.abs(t - clockTime()) > 6) {
+      dsp.clock = { playing: on, base: on ? t : clockTime(), at: now, beat: c.beat, half: c.half };
     }
   }
   function clockTime() {
-    var c = engine.clock;
+    var c = dsp.clock;
     return c.playing ? c.base + (performance.now() / 1000 - c.at) : c.base;
   }
 
   /** Stop listening and return to the clock. */
   function stopAudio() {
-    if (engine.stream) engine.stream.getTracks().forEach(function (tr) { tr.stop(); });
-    engine.stream = null;
-    engine.analyser = null;
-    engine.source = 'clock';
+    if (audio.stream) audio.stream.getTracks().forEach(function (tr) { tr.stop(); });
+    audio.stream = null;
+    audio.analyser = null;
+    audio.kind = 'clock';
+    dsp.kicks = [];
+    A.bpm = 0;
     announce();
   }
 
@@ -102,55 +182,59 @@
       }
       // Only the sound is wanted; the shared picture is dropped at once.
       stream.getVideoTracks().forEach(function (tr) { tr.stop(); });
-      if (engine.stream) engine.stream.getTracks().forEach(function (tr) { tr.stop(); });
+      if (audio.stream) audio.stream.getTracks().forEach(function (tr) { tr.stop(); });
       var AC = window.AudioContext || /** @type {any} */ (window).webkitAudioContext;
-      engine.ctx = engine.ctx || new AC();
-      if (engine.ctx.state === 'suspended') engine.ctx.resume();
-      var an = engine.ctx.createAnalyser();
+      audio.ctx = audio.ctx || new AC();
+      if (audio.ctx.state === 'suspended') audio.ctx.resume();
+      var an = audio.ctx.createAnalyser();
       an.fftSize = 2048;
-      an.smoothingTimeConstant = 0.78;
-      engine.ctx.createMediaStreamSource(stream).connect(an);
-      engine.analyser = an;
-      engine.freq = new Uint8Array(an.frequencyBinCount);
-      engine.time = new Uint8Array(an.fftSize);
-      engine.stream = stream;
-      engine.source = kind;
+      an.smoothingTimeConstant = 0.6;
+      an.minDecibels = -90;
+      an.maxDecibels = -20;
+      audio.ctx.createMediaStreamSource(stream).connect(an);
+      audio.analyser = an;
+      audio.freq = new Uint8Array(an.frequencyBinCount);
+      audio.time = new Uint8Array(an.fftSize);
+      audio.stream = stream;
+      audio.kind = kind;
+      dsp.peak = 0.25;
       stream.getAudioTracks()[0].addEventListener('ended', stopAudio);
       announce();
     });
   }
-
-  // One analysis per animation frame, whoever asks first.
-  var analysedAt = -1;
-  function analyse() {
-    var frame = Math.floor(performance.now() / 8);
-    if (frame === analysedAt) return engine;
-    analysedAt = frame;
-    if (engine.analyser) fromAudio(); else fromClock();
-    var b = engine.bands;
-    var sum = 0;
-    var bass = 0, mid = 0, high = 0;
-    for (var i = 0; i < BANDS; i++) {
-      sum += b[i];
-      if (i < 8) bass += b[i]; else if (i < 28) mid += b[i]; else high += b[i];
-    }
-    engine.level = sum / BANDS;
-    engine.bass = bass / 8;
-    engine.mid = mid / 20;
-    engine.high = high / (BANDS - 28);
-    var now = performance.now();
-    engine.beat = !reduced && engine.bass > engine.bassAvg * 1.3 + 0.05 && now - engine.lastBeat > 240;
-    if (engine.beat) engine.lastBeat = now;
-    engine.bassAvg = engine.bassAvg * 0.96 + engine.bass * 0.04;
-    return engine;
+  /** The source "Follow the music" asks for: the tab where a computer can share one, else the mic. */
+  function bestSource() {
+    var md = navigator.mediaDevices;
+    var phone = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    // Only Chromium shares a tab's audio; Firefox and Safari would ask for a silent screen.
+    var brands = /** @type {any} */ (navigator).userAgentData ? /** @type {any} */ (navigator).userAgentData.brands || [] : [];
+    var chromium = brands.some(function (b) { return /Chromium/.test(b.brand); });
+    return md && md.getDisplayMedia && !phone && chromium ? 'tab' : 'mic';
   }
 
-  function fromAudio() {
-    var an = engine.analyser;
-    an.getByteFrequencyData(engine.freq);
-    an.getByteTimeDomainData(engine.time);
-    var n = engine.freq.length;
-    var nyquist = engine.ctx.sampleRate / 2;
+  var analysedAt = -1;
+  /** @returns {SonicVizAnalysis} */
+  function analyse() {
+    var now = performance.now();
+    if (analysedAt >= 0 && now - analysedAt < 4) return A; // the sketches of one frame share it
+    var dt = analysedAt < 0 ? 1 / 60 : Math.min(0.1, (now - analysedAt) / 1000);
+    analysedAt = now;
+    A.t = now / 1000;
+    A.dt = dt;
+    A.source = audio.analyser ? /** @type {'tab' | 'mic'} */ (audio.kind) : 'clock';
+    A.beat = false;
+    if (audio.analyser) fromAudio(dt); else fromClock();
+    features(dt, now / 1000, !audio.analyser);
+    return A;
+  }
+
+  function fromAudio(dt) {
+    var an = audio.analyser;
+    an.getByteFrequencyData(audio.freq);
+    an.getByteTimeDomainData(audio.time);
+    var n = audio.freq.length;
+    var nyquist = audio.ctx.sampleRate / 2;
+    var top = 0;
     // Log-spaced bands from 40 Hz to 16 kHz, so the bass is not one bar among a thousand.
     for (var i = 0; i < BANDS; i++) {
       var lo = 40 * Math.pow(400, i / BANDS);
@@ -158,289 +242,246 @@
       var a = Math.max(1, Math.floor(lo / nyquist * n));
       var z = Math.max(a + 1, Math.ceil(hi / nyquist * n));
       var peak = 0;
-      for (var k = a; k < z && k < n; k++) peak = Math.max(peak, engine.freq[k]);
-      engine.bands[i] = Math.pow(peak / 255, 1.4);
+      for (var k = a; k < z && k < n; k++) peak = Math.max(peak, audio.freq[k]);
+      var v = Math.pow(peak / 255, 1.6);
+      dsp.raw[i] = v;
+      if (v > top) top = v;
     }
-    var step = engine.time.length / engine.wave.length;
-    for (var j = 0; j < engine.wave.length; j++) {
-      engine.wave[j] = (engine.time[Math.floor(j * step)] - 128) / 128;
+    // Automatic gain: the loudest band of the last seconds reaches about 0.9, so a quiet room
+    // (the microphone) moves the picture as much as a loud tab. The peak falls with a 3 s half-life.
+    dsp.peak = Math.max(top, dsp.peak * Math.pow(0.5, dt / 3), 0.08);
+    var gain = 0.9 / dsp.peak;
+    for (var j = 0; j < BANDS; j++) {
+      var target = Math.min(1, dsp.raw[j] * gain);
+      var b = A.bands[j];
+      A.bands[j] = b + (target - b) * (target > b ? 0.65 : 0.22);
     }
+    var step = audio.time.length / A.wave.length;
+    var rms = 0;
+    for (var w = 0; w < A.wave.length; w++) {
+      var s = (audio.time[Math.floor(w * step)] - 128) / 128;
+      A.wave[w] = s;
+      rms += s * s;
+    }
+    // The waveform is gained like the bands, so a quiet source still draws a shape.
+    var wg = Math.min(6, 0.5 / Math.max(0.02, Math.sqrt(rms / A.wave.length)));
+    for (var x = 0; x < A.wave.length; x++) A.wave[x] = Math.max(-1, Math.min(1, A.wave[x] * wg));
   }
 
-  // No sound to read: a calm, honest motion driven by the player's time. It breathes at 120 bpm
-  // while the player plays and settles to a slow drift when it is paused or stopped.
+  // No sound to read: a calm, honest motion driven by the player's time at 120 bpm while it
+  // plays (a kick on every beat, a snare on two and four, hats on the eighths), settling to a slow
+  // drift when it is paused or stopped. The onsets are scheduled, not detected.
   function fromClock() {
     syncClock();
-    var on = engine.clock.playing;
+    var c = dsp.clock;
+    var on = c.playing;
     var t = clockTime();
     var drift = performance.now() / 1000;
-    var pulse = on ? Math.pow(Math.max(0, Math.cos(t * Math.PI * 2)), 6) : 0;
+    var beat = Math.floor(t * 2);
+    var half = Math.floor(t * 4);
+    if (on && beat !== c.beat) { c.beat = beat; onset('kick', A.t); if (beat % 2) onset('snare', A.t); }
+    if (on && half !== c.half) { c.half = half; onset('hat', A.t); }
     var gain = on ? 0.6 : 0.3;
     for (var i = 0; i < BANDS; i++) {
       var f = i / BANDS;
       var shape = (1 - f) * 0.75 + 0.25;
       var wobble = 0.5 + 0.5 * Math.sin(drift * (0.6 + f * 2.3) + i * 0.7)
         * Math.cos(drift * 0.37 + i * 1.3);
-      var v = gain * shape * (0.35 + 0.65 * wobble) + (i < 8 ? pulse * 0.45 : pulse * 0.08);
-      engine.bands[i] = engine.bands[i] * 0.7 + Math.min(1, v) * 0.3;
+      var hit = i < 8 ? A.kick * 0.5 : i < 28 ? A.snare * 0.25 : A.hat * 0.3;
+      var v = gain * shape * (0.35 + 0.65 * wobble) + (on ? hit : 0);
+      A.bands[i] = A.bands[i] * 0.7 + Math.min(1, v) * 0.3;
     }
-    for (var j = 0; j < engine.wave.length; j++) {
-      var x = j / engine.wave.length;
-      engine.wave[j] = gain * (Math.sin(x * 12 + drift * 3) * 0.6 + Math.sin(x * 31 - drift * 5) * 0.25)
-        * (0.6 + pulse);
+    for (var j = 0; j < A.wave.length; j++) {
+      var x = j / A.wave.length;
+      A.wave[j] = gain * (Math.sin(x * 12 + drift * 3) * 0.6 + Math.sin(x * 31 - drift * 5) * 0.25)
+        * (0.6 + A.kick * 0.8);
+    }
+    A.phase = on ? (t * 2) % 1 : 0;
+  }
+
+  /** @param {'kick' | 'snare' | 'hat'} name @param {number} t */
+  function onset(name, t) {
+    dsp[name].last = t;
+    A[name] = reduced ? 0.35 : 1;
+    if (name === 'kick') {
+      A.beat = !reduced;
+      if (audio.analyser) tempo(t);
     }
   }
 
-  // ---- The seven pictures. Each draws one frame from the analysis a. --------------------------
-
-  /** @param {any} p @param {number} n @param {number} alpha */
-  function hue(p, n, alpha) { return p.color((n % 360 + 360) % 360, 85, 100, alpha); }
-
-  var DRAW = {
-    // MilkDrop's feedback: the last frame, zoomed and turned a little, under a new waveform ring.
-    tunnel: function (p, a, s) {
-      var g = p.drawingContext;
-      var w = p.width, h = p.height;
-      g.save();
-      g.globalAlpha = 0.92;
-      g.translate(w / 2, h / 2);
-      g.rotate(0.004 + a.mid * 0.02);
-      var z = 1.025 + a.bass * 0.05;
-      g.scale(z, z);
-      g.drawImage(p.canvas, -w / 2, -h / 2, w, h);
-      g.restore();
-      p.noStroke();
-      p.fill(0, 0, 0, 0.06);
-      p.rect(0, 0, w, h);
-      p.push();
-      p.translate(w / 2, h / 2);
-      p.noFill();
-      p.strokeWeight(2 + a.bass * 4);
-      p.stroke(hue(p, s.t * 40, 0.9));
-      var r = Math.min(w, h) * (0.16 + a.level * 0.12);
-      p.beginShape();
-      for (var i = 0; i <= 128; i++) {
-        var ang = i / 128 * Math.PI * 2;
-        var v = a.wave[i * 2 % a.wave.length];
-        p.vertex(Math.cos(ang) * r * (1 + v * 0.5), Math.sin(ang) * r * (1 + v * 0.5));
-      }
-      p.endShape();
-      p.pop();
-    },
-    // Thousands of motes on a noise field, brighter and faster with the music, added as light.
-    nebula: function (p, a, s) {
-      if (!s.motes) {
-        s.motes = [];
-        for (var i = 0; i < 900; i++) s.motes.push([Math.random() * p.width, Math.random() * p.height]);
-      }
-      p.noStroke();
-      p.fill(0, 0, 0, 0.08);
-      p.rect(0, 0, p.width, p.height);
-      p.drawingContext.globalCompositeOperation = 'lighter';
-      var speed = 0.6 + a.level * 4 + (a.beat ? 3 : 0);
-      for (var k = 0; k < s.motes.length; k++) {
-        var m = s.motes[k];
-        var n = p.noise(m[0] * 0.0018, m[1] * 0.0018, s.t * 0.08);
-        var ang = n * Math.PI * 4;
-        m[0] += Math.cos(ang) * speed;
-        m[1] += Math.sin(ang) * speed;
-        if (m[0] < 0 || m[0] > p.width || m[1] < 0 || m[1] > p.height) {
-          m[0] = Math.random() * p.width;
-          m[1] = Math.random() * p.height;
-        }
-        var band = a.bands[k % BANDS];
-        p.fill(hue(p, 200 + n * 160 + s.t * 10, 0.25 + band * 0.6));
-        p.circle(m[0], m[1], 1.5 + band * 3.5);
-      }
-      p.drawingContext.globalCompositeOperation = 'source-over';
-    },
-    // Ribbons of light that the spectrum lifts, like a curtain of aurora over the horizon.
-    aurora: function (p, a, s) {
-      p.noStroke();
-      p.fill(0, 0, 0, 0.18);
-      p.rect(0, 0, p.width, p.height);
-      p.drawingContext.globalCompositeOperation = 'lighter';
-      p.noFill();
-      for (var r = 0; r < 5; r++) {
-        p.stroke(hue(p, 140 + r * 38 + s.t * 6, 0.22));
-        p.strokeWeight(18 - r * 2);
-        p.beginShape();
-        for (var i = 0; i <= 60; i++) {
-          var x = i / 60 * p.width;
-          var band = a.bands[Math.floor(i / 60 * (BANDS - 1))];
-          var y = p.height * (0.42 + r * 0.06)
-            + Math.sin(i * 0.18 + s.t * (0.4 + r * 0.13)) * p.height * 0.06
-            - band * p.height * 0.22;
-          // p5 2 renamed curveVertex to splineVertex.
-          if (p.splineVertex) p.splineVertex(x, y); else p.curveVertex(x, y);
-        }
-        p.endShape();
-      }
-      p.drawingContext.globalCompositeOperation = 'source-over';
-    },
-    // A turning flower of the spectrum, mirrored eight ways.
-    bloom: function (p, a, s) {
-      p.noStroke();
-      p.fill(0, 0, 0, 0.2);
-      p.rect(0, 0, p.width, p.height);
-      p.push();
-      p.translate(p.width / 2, p.height / 2);
-      p.rotate(s.t * 0.15);
-      p.drawingContext.globalCompositeOperation = 'lighter';
-      var base = Math.min(p.width, p.height) * 0.08;
-      var reach = Math.min(p.width, p.height) * 0.36;
-      for (var petal = 0; petal < 8; petal++) {
-        p.rotate(Math.PI / 4);
-        for (var i = 0; i < BANDS; i++) {
-          var v = a.bands[i];
-          var ang = (i / BANDS) * (Math.PI / 4);
-          var r1 = base + v * reach;
-          p.stroke(hue(p, 280 + i * 3 + s.t * 20, 0.35 + v * 0.5));
-          p.strokeWeight(2 + v * 3);
-          p.line(Math.cos(ang) * base, Math.sin(ang) * base, Math.cos(ang) * r1, Math.sin(ang) * r1);
-        }
-      }
-      p.drawingContext.globalCompositeOperation = 'source-over';
-      p.pop();
-    },
-    // Winamp's own: gradient bars with falling peak caps and a reflection on a dark floor.
-    bars: function (p, a, s) {
-      p.background(0, 0, 4);
-      if (!s.peaks) s.peaks = new Float32Array(BANDS);
-      var gap = 3;
-      var w = (p.width - gap * (BANDS + 1)) / BANDS;
-      var floor = p.height * 0.72;
-      var top = p.height * 0.62;
-      var g = p.drawingContext;
-      var grad = g.createLinearGradient(0, floor, 0, floor - top);
-      grad.addColorStop(0, '#22c55e');
-      grad.addColorStop(0.6, '#facc15');
-      grad.addColorStop(1, '#ef4444');
-      for (var i = 0; i < BANDS; i++) {
-        var v = a.bands[i];
-        var x = gap + i * (w + gap);
-        var bh = Math.max(2, v * top);
-        s.peaks[i] = Math.max(v, s.peaks[i] - 0.008);
-        g.fillStyle = grad;
-        g.fillRect(x, floor - bh, w, bh);
-        g.globalAlpha = 0.18;
-        g.fillRect(x, floor + 4, w, bh * 0.35);
-        g.globalAlpha = 1;
-        g.fillStyle = '#e5e7eb';
-        g.fillRect(x, floor - s.peaks[i] * top - 4, w, 2);
-      }
-    },
-    // Stars rushing past, faster with the level, streaking on the beat.
-    warp: function (p, a, s) {
-      if (!s.stars) {
-        s.stars = [];
-        for (var i = 0; i < 500; i++) s.stars.push([Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random()]);
-      }
-      p.noStroke();
-      p.fill(0, 0, 0, 0.35);
-      p.rect(0, 0, p.width, p.height);
-      var speed = 0.004 + a.level * 0.03 + (a.beat ? 0.02 : 0);
-      var cx = p.width / 2, cy = p.height / 2;
-      for (var k = 0; k < s.stars.length; k++) {
-        var st = s.stars[k];
-        var z0 = st[2];
-        st[2] -= speed;
-        if (st[2] <= 0.02) { st[0] = Math.random() * 2 - 1; st[1] = Math.random() * 2 - 1; st[2] = 1; continue; }
-        var x0 = cx + st[0] / z0 * cx, y0 = cy + st[1] / z0 * cy;
-        var x1 = cx + st[0] / st[2] * cx, y1 = cy + st[1] / st[2] * cy;
-        p.stroke(hue(p, 190 + a.bands[k % BANDS] * 140, 1 - st[2] * 0.8));
-        p.strokeWeight((1 - st[2]) * 3);
-        p.line(x0, y0, x1, y1);
-      }
-    },
-    // The demoscene's plasma, on a small canvas the browser smooths up to the screen.
-    plasma: function (p, a, s) {
-      var W = 96, H = 54;
-      if (!s.small) {
-        s.small = document.createElement('canvas');
-        s.small.width = W;
-        s.small.height = H;
-        s.img = s.small.getContext('2d').createImageData(W, H);
-      }
-      var d = s.img.data;
-      var t = s.t * 0.6;
-      var k1 = 0.08 + a.bass * 0.06, k2 = 0.05 + a.high * 0.08;
-      for (var y = 0; y < H; y++) {
-        for (var x = 0; x < W; x++) {
-          var v = Math.sin(x * k1 + t) + Math.sin((y * k2 + t) * 1.3)
-            + Math.sin((x + y) * 0.06 + t * 1.7) + Math.sin(Math.sqrt(x * x + y * y) * 0.09 - t);
-          var o = (y * W + x) * 4;
-          // A cosine palette of deep violet, teal and rose over black, with a soft vignette:
-          // the field glows rather than shouts, and brightens with the level.
-          var dx = x / W - 0.5, dy = y / H - 0.5;
-          var lum = (0.55 + a.level * 0.6) * (1 - Math.min(1, (dx * dx + dy * dy) * 1.6));
-          var ph = v * 0.5 + t * 0.15;
-          d[o] = lum * (90 + 80 * Math.cos(6.283 * (ph + 0.00)));
-          d[o + 1] = lum * (50 + 70 * Math.cos(6.283 * (ph + 0.33)));
-          d[o + 2] = lum * (120 + 110 * Math.cos(6.283 * (ph + 0.67)));
-          d[o + 3] = 255;
-        }
-      }
-      s.small.getContext('2d').putImageData(s.img, 0, 0);
-      var g = p.drawingContext;
-      g.imageSmoothingEnabled = true;
-      g.drawImage(s.small, 0, 0, p.width, p.height);
-    },
-  };
-
-  // ---- Sketches: one per mounted element, all reading the one engine. -------------------------
-
-  var p5Promise = null;
-  function loadP5() {
-    if (!p5Promise) {
-      var src = body.getAttribute('data-p5');
-      p5Promise = src ? Sonic.script(src) : Promise.reject(new Error('no data-p5'));
-      p5Promise.catch(function () { p5Promise = null; });
+  // The tempo: the median interval between the last kicks, folded into 75-180 bpm.
+  function tempo(t) {
+    var ks = dsp.kicks;
+    ks.push(t);
+    while (ks.length && t - ks[0] > 8) ks.shift();
+    dsp.lastKick = t;
+    if (ks.length < 4) return;
+    var iv = [];
+    for (var i = 1; i < ks.length; i++) {
+      var d = ks[i] - ks[i - 1];
+      while (d < 0.333) d *= 2;
+      while (d > 0.8) d /= 2;
+      iv.push(d);
     }
-    return p5Promise;
+    iv.sort(function (a, b) { return a - b; });
+    dsp.period = dsp.period * 0.7 + iv[iv.length >> 1] * 0.3;
+    A.bpm = Math.round(60 / dsp.period);
+  }
+
+  /** @param {number} dt @param {number} t @param {boolean} clock */
+  function features(dt, t, clock) {
+    var b = A.bands;
+    var sum = 0, bass = 0, mid = 0, high = 0, moment = 0, flux = 0;
+    for (var i = 0; i < BANDS; i++) {
+      var v = b[i];
+      sum += v;
+      moment += v * i;
+      flux += Math.max(0, v - dsp.prev[i]);
+      if (i < 8) bass += v; else if (i < 28) mid += v; else high += v;
+    }
+    A.level = sum / BANDS;
+    A.bass = bass / 8;
+    A.mid = mid / 20;
+    A.high = high / (BANDS - 28);
+    A.centroid = A.centroid * 0.8 + (sum > 0.01 ? moment / sum / (BANDS - 1) : 0) * 0.2;
+    A.flux = A.flux * 0.6 + Math.min(1, flux / (BANDS * 0.08)) * 0.4;
+    A.energy += (A.level - A.energy) * (1 - Math.exp(-dt / 4));
+    ['kick', 'snare', 'hat'].forEach(function (name) {
+      var d = dsp[name];
+      if (d.last !== t) A[name] *= Math.exp(-dt / d.tau);
+      if (clock) return;
+      var f = 0, lvl = 0;
+      for (var k = d.lo; k < d.hi; k++) { f += Math.max(0, b[k] - dsp.prev[k]); lvl += b[k]; }
+      f /= d.hi - d.lo;
+      lvl /= d.hi - d.lo;
+      var threshold = d.mean + 1.5 * Math.sqrt(d.vari) + 0.015;
+      if (f > threshold && lvl > 0.08 && t - d.last > d.gap) onset(/** @type {'kick'} */ (name), t);
+      var diff = f - d.mean;
+      d.mean += 0.05 * diff;
+      d.vari = 0.95 * (d.vari + 0.05 * diff * diff);
+    });
+    dsp.prev.set(b);
+    if (!clock) {
+      if (t - dsp.lastKick > 8) A.bpm = 0;
+      A.phase = A.bpm ? ((t - dsp.lastKick) / dsp.period) % 1 : (t * 2) % 1;
+    }
+  }
+
+  // ---- Engines and sketches. ---------------------------------------------------------------------
+
+  /** @type {Record<string, Promise<unknown> | null>} */
+  var loaders = {};
+  function load(attr) {
+    if (!loaders[attr]) {
+      var src = body.getAttribute(attr);
+      var p = src ? Sonic.script(src) : Promise.reject(new Error('no ' + attr));
+      p.catch(function () { loaders[attr] = null; });
+      loaders[attr] = p;
+    }
+    return loaders[attr];
+  }
+  function loadEngine(engine) {
+    return engine === 'gl'
+      ? load('data-three').then(function () { return load('data-viz-gl'); })
+      : load('data-p5').then(function () { return load('data-viz-2d'); });
+  }
+  // WebGL 2 is asked once, before three.js is downloaded for nothing.
+  var glState = /** @type {boolean | null} */ (null);
+  function glOk() {
+    if (glState === null) {
+      try {
+        var c = document.createElement('canvas');
+        var g = /** @type {WebGL2RenderingContext | null} */ (c.getContext('webgl2'));
+        glState = !!g;
+        var lose = g && g.getExtension('WEBGL_lose_context');
+        if (lose) lose.loseContext();
+      } catch (e) { glState = false; }
+    }
+    return glState;
+  }
+  /** The mode that actually draws: a gl mode's p5 fallback where WebGL 2 is missing. */
+  function effective(mode) {
+    var m = BY[mode];
+    return m.engine === 'gl' && !glOk() && m.fallback ? m.fallback : mode;
   }
 
   /**
-   * A picture in an element. The returned handle changes the mode and removes the sketch.
-   * opt.modes: the modes the cycle walks (all by default); opt.slow: time runs at that fraction
-   * (reduced motion); opt.onMode: told when the cycle changes the mode by itself.
+   * A picture in an element. The returned handle changes the mode and its parameters and removes
+   * the sketch. opt.modes: the modes the cycle walks (all by default); opt.slow: time runs at that
+   * fraction (reduced motion); opt.onMode: told when the cycle changes the mode by itself;
+   * opt.params: the first mode's parameters (a shared link's), else the reader's.
    * @param {HTMLElement} el
-   * @param {{mode: string, cycle: boolean, fps: number, density: number, modes?: string[], slow?: number, onMode?: (m: string) => void}} opt
+   * @param {{mode: string, cycle: boolean, fps: number, density: number, modes?: string[], slow?: number, params?: Record<string, number>, onMode?: (m: string) => void}} opt
    */
   function sketch(el, opt) {
     var ring = opt.modes && opt.modes.length ? opt.modes : MODES;
-    var state = { mode: opt.mode, cycle: opt.cycle, started: performance.now(), fade: 0, visible: true };
-    var scratch = {};
-    var instance = null;
+    var st = { mode: opt.mode, cycle: opt.cycle, started: performance.now(), visible: true, frames: 0,
+      params: opt.params || paramsFor(opt.mode) };
+    /** @type {SonicVizScratch} */
+    var scratch = { t: 0, params: st.params };
+    /** @type {{engine: string, set: (id: string) => void, remove: () => void, resize: () => void} | null} */
+    var runner = null;
+    var pending = /** @type {object | null} */ (null);
     var gone = false;
+    var cycling = false;
+    // A change of mode fades in from black rather than cutting, whatever the engine.
+    var veil = document.createElement('div');
+    veil.className = 'pointer-events-none absolute inset-0 bg-black';
+    veil.style.opacity = '0';
+    veil.setAttribute('aria-hidden', 'true');
+    el.appendChild(veil);
+    function flash() {
+      veil.style.transition = 'none';
+      veil.style.opacity = '1';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          veil.style.transition = 'opacity 600ms ease-out';
+          veil.style.opacity = '0';
+        });
+      });
+    }
     // A picture draws only while it is on screen.
     var seen = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
-      state.visible = entries[0].isIntersecting;
+      st.visible = entries[0].isIntersecting;
     }) : null;
     if (seen) seen.observe(el);
-    var handle = {
-      mode: function (m) {
-        if (MODES.indexOf(m) < 0) return;
-        state.mode = m;
-        state.started = performance.now();
-        state.fade = 1;
-        scratch = {};
-        el.setAttribute('data-visualizer-mode', m);
-      },
-      get: function () { return state.mode; },
-      cycle: function (on) { state.cycle = on; state.started = performance.now(); },
-      remove: function () {
-        gone = true;
-        if (seen) seen.disconnect();
-        if (instance) instance.remove();
-        instance = null;
-      },
-    };
-    el.setAttribute('data-visualizer-mode', state.mode);
-    loadP5().then(function () {
-      if (gone) return;
-      var P5 = /** @type {any} */ (window).p5;
-      instance = new P5(function (p) {
+    var size = el.clientWidth + 'x' + el.clientHeight;
+    var sized = 'ResizeObserver' in window ? new ResizeObserver(function () {
+      var now = el.clientWidth + 'x' + el.clientHeight;
+      if (now === size) return;
+      size = now;
+      scratch = { t: scratch.t, params: st.params };
+      if (runner) runner.resize();
+    }) : null;
+    if (sized) sized.observe(el);
+
+    /** One frame's bookkeeping, shared by both engines: null when nothing should be drawn. */
+    function step() {
+      if (gone || document.hidden || !st.visible) return null;
+      var a = analyse();
+      var age = (performance.now() - st.started) / 1000;
+      if (st.cycle && age > 40 && !cycling) {
+        cycling = true;
+        var next = ring[(ring.indexOf(st.mode) + 1) % ring.length];
+        // Not from inside the engine's own frame: the new mode may need the other engine.
+        setTimeout(function () {
+          cycling = false;
+          if (gone) return;
+          handle.mode(next);
+          if (opt.onMode) opt.onMode(next);
+        }, 0);
+      }
+      scratch.t = age * (opt.slow || 1);
+      scratch.params = st.params;
+      st.frames += 1;
+      el.setAttribute('data-visualizer-frame', String(st.frames));
+      return a;
+    }
+
+    function p5Runner(id) {
+      var cur = id;
+      var P5 = window.p5;
+      var inst = new P5(function (p) {
         p.setup = function () {
           var c = p.createCanvas(el.clientWidth || 1, el.clientHeight || 1);
           c.elt.setAttribute('aria-hidden', 'true');
@@ -450,36 +491,102 @@
           p.frameRate(opt.fps);
           p.background(0);
         };
-        p.windowResized = function () {
-          p.resizeCanvas(el.clientWidth || 1, el.clientHeight || 1);
-          p.background(0);
-          scratch = {};
-        };
         p.draw = function () {
-          if (document.hidden || !state.visible) return;
-          var a = analyse();
-          var age = (performance.now() - state.started) / 1000;
-          scratch.t = age * (opt.slow || 1);
-          if (state.cycle && age > 40) {
-            var next = ring[(ring.indexOf(state.mode) + 1) % ring.length];
-            handle.mode(next);
-            scratch.t = 0;
-            if (opt.onMode) opt.onMode(next);
-          }
-          DRAW[state.mode](p, a, scratch);
-          // A change of mode fades in from black rather than cutting.
-          if (state.fade > 0) {
-            p.noStroke();
-            p.fill(0, 0, 0, state.fade);
-            p.rect(0, 0, p.width, p.height);
-            state.fade = Math.max(0, state.fade - 0.04);
-          }
-          el.setAttribute('data-visualizer-frame', String(p.frameCount));
+          var a = step();
+          var draw = window.SonicViz2D && window.SonicViz2D[cur];
+          if (a && draw) draw(p, a, scratch);
         };
       }, el);
-    }).catch(function () {
-      el.setAttribute('data-visualizer-error', 'p5');
-    });
+      return {
+        engine: 'p5',
+        set: function (next) { cur = next; if (inst.background) inst.background(0); },
+        remove: function () { inst.remove(); },
+        resize: function () {
+          if (!inst.resizeCanvas) return;
+          inst.resizeCanvas(el.clientWidth || 1, el.clientHeight || 1);
+          inst.background(0);
+        },
+      };
+    }
+
+    function glRunner(id) {
+      var h = window.SonicVizGL && window.SonicVizGL.mount(el, { density: opt.density, fps: opt.fps });
+      if (!h) return null;
+      h.set(id);
+      var raf = 0;
+      var last = 0;
+      var gap = 1000 / opt.fps - 2;
+      function loop(now) {
+        raf = requestAnimationFrame(loop);
+        if (now - last < gap) return;
+        last = now;
+        var a = step();
+        if (a) h.frame(a, scratch);
+      }
+      raf = requestAnimationFrame(loop);
+      return {
+        engine: 'gl',
+        set: function (next) { h.set(next); },
+        remove: function () { cancelAnimationFrame(raf); h.remove(); },
+        resize: function () { h.resize(); },
+      };
+    }
+
+    function mount() {
+      var id = effective(st.mode);
+      var engine = BY[id].engine;
+      el.setAttribute('data-visualizer-engine', engine);
+      el.toggleAttribute('data-visualizer-fallback', id !== st.mode);
+      if (runner && runner.engine === engine) { runner.set(id); return; }
+      if (runner) runner.remove();
+      runner = null;
+      var token = {};
+      pending = token;
+      loadEngine(engine).then(function () {
+        if (gone || pending !== token) return;
+        pending = null;
+        var made = engine === 'gl' ? glRunner(id) : p5Runner(id);
+        if (!made) { glState = false; mount(); return; } // a context the probe allowed was refused
+        runner = made;
+        el.appendChild(veil); // above the new canvas
+      }).catch(function () {
+        if (gone || pending !== token) return;
+        if (engine === 'gl') { glState = false; mount(); return; }
+        el.setAttribute('data-visualizer-error', engine);
+      });
+    }
+
+    var handle = {
+      /** @param {string} m */
+      mode: function (m) {
+        var id = resolve(m);
+        if (!id) return;
+        st.mode = id;
+        st.started = performance.now();
+        st.params = paramsFor(id);
+        scratch = { t: 0, params: st.params };
+        el.setAttribute('data-visualizer-mode', id);
+        flash();
+        mount();
+      },
+      get: function () { return st.mode; },
+      shown: function () { return effective(st.mode); },
+      cycle: function (on) { st.cycle = on; st.started = performance.now(); },
+      params: function () { return st.params; },
+      /** @param {string} k @param {number} v */
+      param: function (k, v) { var c = clampParam(k, v); if (c !== null) st.params[k] = c; },
+      canvas: function () { return /** @type {HTMLCanvasElement | null} */ (el.querySelector('canvas')); },
+      remove: function () {
+        gone = true;
+        if (seen) seen.disconnect();
+        if (sized) sized.disconnect();
+        if (runner) runner.remove();
+        runner = null;
+        veil.remove();
+      },
+    };
+    el.setAttribute('data-visualizer-mode', st.mode);
+    mount();
     return handle;
   }
 
@@ -488,22 +595,13 @@
   var full = null;
   var hideTimer = 0;
   var opener = null;
-  var CALM = 'aurora';
+  var cinema = false;
 
   function shell() { return document.getElementById('visualizer-full'); }
   function settings() { return document.getElementById('visualizer-settings'); }
   function isOpen() { var s = shell(); return !!s && !s.hidden; }
-  // Literal keys, so scripts/i18n.py sees each one in use.
-  var LABELS = {
-    tunnel: function () { return Sonic.t('viz.mode.tunnel'); },
-    nebula: function () { return Sonic.t('viz.mode.nebula'); },
-    aurora: function () { return Sonic.t('viz.mode.aurora'); },
-    bloom: function () { return Sonic.t('viz.mode.bloom'); },
-    bars: function () { return Sonic.t('viz.mode.bars'); },
-    warp: function () { return Sonic.t('viz.mode.warp'); },
-    plasma: function () { return Sonic.t('viz.mode.plasma'); },
-  };
-  function label(mode) { return LABELS[mode] ? LABELS[mode]() : mode; }
+  // The names are composed from data/visualizer.json (scripts/i18n.py derives viz.mode.<id>).
+  function label(mode) { var key = 'viz.mode.' + mode; return Sonic.t(key); }
 
   function showControls() {
     var s = shell();
@@ -517,18 +615,42 @@
     }, 2600);
   }
 
-  function setUrl(mode) {
+  // The visualiser's keys in the URL; every other component's keys (the player's play and t, the
+  // explorer's filters) are kept. A slider moving writes at most four times a second.
+  var urlTimer = 0;
+  function setUrl() {
+    clearTimeout(urlTimer);
+    urlTimer = 0;
     var u = new URL(location.href);
-    if (mode) u.searchParams.set('viz', mode); else u.searchParams.delete('viz');
-    history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+    Array.from(u.searchParams.keys()).forEach(function (k) {
+      if (k === 'viz' || k.indexOf('viz.') === 0) u.searchParams.delete(k);
+    });
+    if (full && isOpen()) {
+      var m = full.get();
+      u.searchParams.set('viz', m);
+      var p = full.params();
+      var d = defaults(m);
+      BY[m].params.forEach(function (k) {
+        if (Math.abs(p[k] - d[k]) > 1e-9) u.searchParams.set('viz.' + k, String(+p[k].toFixed(3)));
+      });
+      if (cinema) u.searchParams.set('viz.video', 'cinema');
+    }
+    var next = u.pathname + u.search + u.hash;
+    if (next !== location.pathname + location.search + location.hash) {
+      history.replaceState(history.state, '', next);
+    }
   }
+  function setUrlSoon() { if (!urlTimer) urlTimer = window.setTimeout(setUrl, 250); }
 
-  /** Say the mode to assistive technology and in the cluster. */
-  function announceMode(mode) {
+  /** Say something to assistive technology (and, when it matters, in the player's toast). */
+  function say(text, toast) {
     var s = shell();
-    if (!s) return;
-    var live = s.querySelector('[data-viz-live]');
-    if (live) live.textContent = Sonic.t('viz.status_mode', { name: label(mode) });
+    var live = s && s.querySelector('[data-viz-live]');
+    if (live) live.textContent = text;
+    var bar = document.getElementById('player');
+    if (toast && window.SonicPlayer && window.SonicPlayer.notify && bar && !bar.hidden) {
+      window.SonicPlayer.notify(text);
+    }
   }
 
   /** The page under the picture is out of reach while it is open; the player stays usable. */
@@ -541,48 +663,113 @@
     if (nav) nav.toggleAttribute('inert', on);
   }
 
-  /** @param {string=} mode */
-  function open(mode) {
+  // Cinema: the video panel fills the screen above the bar (styles/app.css), the picture around
+  // it, and the picture's colour glows at the video's edge, pulsing with the kick.
+  var glowRaf = 0;
+  var glowCanvas = /** @type {HTMLCanvasElement | null} */ (null);
+  var glowAt = 0;
+  function applyCinema() {
+    var on = isOpen() && cinema;
+    if (on) html.setAttribute('data-viz-video', 'cinema'); else html.removeAttribute('data-viz-video');
+    var s = shell();
+    if (s) {
+      var b = s.querySelector('[data-viz-cinema]');
+      if (b) b.setAttribute('aria-pressed', String(cinema));
+      var sw = /** @type {HTMLInputElement | null} */ (s.querySelector('[data-viz-cinema-switch]'));
+      if (sw) sw.checked = cinema;
+    }
+    cancelAnimationFrame(glowRaf);
+    var panelEl = document.getElementById('player-panel');
+    if (on) glowRaf = requestAnimationFrame(glow);
+    else if (panelEl) { panelEl.style.removeProperty('--viz-glow'); panelEl.style.removeProperty('--viz-kick'); }
+    if (window.SonicPlayer && window.SonicPlayer.placeToast) window.SonicPlayer.placeToast();
+    requestAnimationFrame(function () { requestAnimationFrame(layoutSettings); });
+  }
+  function glow(now) {
+    glowRaf = requestAnimationFrame(glow);
+    var target = document.getElementById('player-panel');
+    if (!target) return;
+    target.style.setProperty('--viz-kick', A.kick.toFixed(2));
+    if (now - glowAt < 125 || !full) return;
+    glowAt = now;
+    var c = full.canvas();
+    if (!c || !c.width) return;
+    if (!glowCanvas) { glowCanvas = document.createElement('canvas'); glowCanvas.width = 4; glowCanvas.height = 4; }
+    var g = glowCanvas.getContext('2d', { willReadFrequently: true });
+    try {
+      g.drawImage(c, 0, 0, 4, 4);
+      var d = g.getImageData(0, 0, 4, 4).data;
+      var r = 0, gr = 0, bl = 0;
+      for (var i = 0; i < d.length; i += 4) { r += d[i]; gr += d[i + 1]; bl += d[i + 2]; }
+      var n = d.length / 4;
+      // Lifted towards full brightness, so a dark frame still glows in its own hue.
+      var m = Math.max(r, gr, bl, 1) / n;
+      var k = Math.min(3, 200 / m);
+      target.style.setProperty('--viz-glow', 'rgb(' + Math.round(r / n * k) + ' ' + Math.round(gr / n * k) + ' '
+        + Math.round(bl / n * k) + ' / 0.55)');
+    } catch (e) { /* a canvas the browser will not read: no glow */ }
+  }
+  function setCinema(on, quiet) {
+    cinema = on;
+    var p = prefs();
+    p.cinema = on;
+    savePrefs(p);
+    applyCinema();
+    setUrl();
+    if (!quiet) say(on ? Sonic.t('viz.cinema_on') : Sonic.t('viz.cinema_off'), false);
+  }
+
+  /** @param {string=} mode @param {{params?: Record<string, number>, cinema?: boolean}=} shared */
+  function open(mode, shared) {
     var s = shell();
     if (!s) return;
     var p = prefs();
-    var explicit = MODES.indexOf(mode || '') >= 0;
+    var explicit = resolve(mode || '');
     // Reduced motion: a calm mode, slowed, that never changes by itself.
-    var m = explicit ? mode : (reduced ? CALM : p.mode);
+    var m = explicit || (reduced ? CALM : p.mode);
     if (!isOpen()) opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     // The queue would lie over the controls; the video panel stays where it is.
     if (window.SonicPlayer && window.SonicPlayer.queue) window.SonicPlayer.queue(false);
     s.hidden = false;
-    document.documentElement.setAttribute('data-visualizer', 'open');
+    html.setAttribute('data-visualizer', 'open');
     setInert(true);
+    cinema = shared && typeof shared.cinema === 'boolean' ? shared.cinema : p.cinema;
     var stage = /** @type {HTMLElement} */ (s.querySelector('[data-visualizer-stage]'));
     if (full) full.mode(m);
     else {
       full = sketch(stage, {
         mode: m, cycle: p.cycle && !reduced, fps: reduced ? 24 : 60, slow: reduced ? 0.3 : 1,
         density: Math.min(1.5, window.devicePixelRatio || 1),
-        onMode: function (next) { setUrl(next); syncControls(); announceMode(next); },
+        params: shared && shared.params ? paramsFor(m, shared.params, true) : undefined,
+        onMode: function (next) { setUrl(); syncControls(); announceMode(next); },
       });
     }
+    applyCinema();
     syncControls();
-    setUrl(m);
+    setUrl();
     s.focus();
     showControls();
     syncBackground();
   }
 
+  function announceMode(mode) { say(Sonic.t('viz.status_mode', { name: label(mode) }), false); }
+
   function close() {
     var s = shell();
     if (!s || s.hidden) return;
     if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
-    if (full) full.remove();
+    // A picture that fails to tear down still closes: the page is never left inert under it.
+    var gone = full;
     full = null;
+    try { if (gone) gone.remove(); } catch (e) { console.error('visualizer: close', e); }
     var panel = settings();
     if (panel) panel.hidden = true;
+    html.removeAttribute('data-viz-settings');
     s.hidden = true;
-    document.documentElement.removeAttribute('data-visualizer');
+    html.removeAttribute('data-visualizer');
     setInert(false);
-    setUrl('');
+    applyCinema();
+    setUrl();
     syncBackground();
     // Focus returns to what opened it; opened from the queue (which it closed), to the queue's
     // button; otherwise to the nav's opener.
@@ -594,17 +781,37 @@
   }
 
   function choose(m) {
-    if (!full || MODES.indexOf(m) < 0) return;
-    full.mode(m);
+    var id = resolve(m);
+    if (!full || !id) return;
+    full.mode(id);
     var p = prefs();
-    p.mode = m;
+    p.mode = id;
     savePrefs(p);
-    setUrl(m);
+    setUrl();
     syncControls();
-    announceMode(m);
+    announceMode(id);
   }
   function step(by) {
     if (full) choose(MODES[(MODES.indexOf(full.get()) + by + MODES.length) % MODES.length]);
+  }
+
+  // The settings sheet ends above the video when they share a column, and above the bar: it
+  // never covers the playing video (measured, as the toast is: the video's box depends on the
+  // screen, cinema and what is open).
+  function layoutSettings() {
+    var panel = settings();
+    if (!panel || panel.hidden) return;
+    panel.style.maxHeight = '';
+    var box = panel.getBoundingClientRect();
+    var limit = window.innerHeight;
+    var bar = document.getElementById('player');
+    if (bar && !bar.hidden) limit = Math.min(limit, bar.getBoundingClientRect().top);
+    var video = document.getElementById('player-panel');
+    if (video && !video.hidden) {
+      var v = (video.firstElementChild || video).getBoundingClientRect();
+      if (v.width && v.left < box.right && v.right > box.left && v.bottom > box.top) limit = Math.min(limit, v.top);
+    }
+    panel.style.maxHeight = Math.max(96, limit - box.top - 8) + 'px';
   }
 
   function toggleSettings(show) {
@@ -613,9 +820,13 @@
     if (!s || !panel) return;
     var on = show === undefined ? panel.hidden : show;
     panel.hidden = !on;
+    if (on) html.setAttribute('data-viz-settings', 'open'); else html.removeAttribute('data-viz-settings');
     var btn = s.querySelector('[data-viz-settings]');
     if (btn) btn.setAttribute('aria-expanded', String(on));
     if (on) {
+      // Cinema makes room for the sheet beside the video on a wide screen (styles/app.css).
+      layoutSettings();
+      requestAnimationFrame(function () { requestAnimationFrame(layoutSettings); });
       var checked = /** @type {HTMLElement | null} */ (panel.querySelector('[data-viz-mode][aria-checked="true"]'));
       if (checked) checked.focus();
     } else if (btn instanceof HTMLElement) btn.focus();
@@ -636,9 +847,36 @@
     s.querySelectorAll('[data-viz-mode]').forEach(function (b) {
       b.setAttribute('aria-checked', String(b.getAttribute('data-viz-mode') === mode));
     });
-    s.querySelectorAll('[data-viz-source]').forEach(function (b) {
-      b.setAttribute('aria-checked', String(b.getAttribute('data-viz-source') === engine.source));
+    // The radio pattern: one tab stop per group, the checked radio (the first when none is).
+    s.querySelectorAll('[role=radiogroup]').forEach(function (g) {
+      var radios = g.querySelectorAll('[role=radio]');
+      var on = g.querySelector('[role=radio][aria-checked="true"]') || radios[0];
+      radios.forEach(function (r) { r.setAttribute('tabindex', r === on ? '0' : '-1'); });
     });
+    s.querySelectorAll('[data-viz-source]').forEach(function (b) {
+      var kind = b.getAttribute('data-viz-source');
+      if (kind === 'connect') /** @type {HTMLElement} */ (b).hidden = audio.kind !== 'clock';
+      else b.setAttribute('aria-checked', String(kind === audio.kind));
+    });
+    // The live controls of this mode, in its order; the others wait hidden.
+    var box = s.querySelector('[data-viz-params]');
+    var values = full ? full.params() : paramsFor(mode);
+    if (box) {
+      s.querySelectorAll('[data-viz-param-row]').forEach(function (row) {
+        /** @type {HTMLElement} */ (row).hidden = BY[mode].params.indexOf(row.getAttribute('data-viz-param-row')) < 0;
+      });
+      BY[mode].params.forEach(function (k) {
+        var row = box.querySelector('[data-viz-param-row="' + k + '"]');
+        if (!row) return;
+        if (box.lastElementChild !== row) box.appendChild(row);
+        var input = /** @type {HTMLInputElement} */ (row.querySelector('input'));
+        if (document.activeElement !== input) input.value = String(values[k]);
+        var out = row.querySelector('output');
+        if (out) out.textContent = String(+values[k].toFixed(2));
+      });
+    }
+    var fb = /** @type {HTMLElement | null} */ (s.querySelector('[data-viz-fallback]'));
+    if (fb) fb.hidden = !full || full.shown() === mode;
     var cyc = /** @type {HTMLInputElement | null} */ (s.querySelector('[data-viz-cycle]'));
     if (cyc) cyc.checked = prefs().cycle && !reduced;
     var bgSwitch = /** @type {HTMLInputElement | null} */ (s.querySelector('[data-viz-bg]'));
@@ -646,25 +884,69 @@
     var status = s.querySelector('[data-viz-status]');
     if (status) {
       // data-i18n lets i18n.js translate it again when the bundle arrives or the language changes.
-      var key = engine.source === 'tab' ? 'viz.status_tab'
-        : engine.source === 'mic' ? 'viz.status_mic' : 'viz.status_clock';
-      var said = engine.source === 'tab' ? Sonic.t('viz.status_tab')
-        : engine.source === 'mic' ? Sonic.t('viz.status_mic') : Sonic.t('viz.status_clock');
+      var key = audio.kind === 'tab' ? 'viz.status_tab'
+        : audio.kind === 'mic' ? 'viz.status_mic' : 'viz.status_clock';
+      var said = audio.kind === 'tab' ? Sonic.t('viz.status_tab')
+        : audio.kind === 'mic' ? Sonic.t('viz.status_mic') : Sonic.t('viz.status_clock');
       status.setAttribute('data-i18n', key);
       if (said !== key) status.textContent = said;
     }
+    syncTempo();
   }
+  function syncTempo() {
+    var s = shell();
+    var el = /** @type {HTMLElement | null} */ (s && s.querySelector('[data-viz-tempo]'));
+    if (!el) return;
+    el.hidden = !(audio.analyser && A.bpm);
+    if (!el.hidden) el.textContent = Sonic.t('viz.tempo', { bpm: String(A.bpm) });
+  }
+  setInterval(function () { if (isOpen()) syncTempo(); }, 1000);
   function announce() {
     syncControls();
     var s = shell();
-    var live = s && s.querySelector('[data-viz-live]');
     var status = s && s.querySelector('[data-viz-status]');
-    if (live && status && isOpen()) live.textContent = status.textContent;
+    if (status && isOpen()) say(status.textContent, false);
   }
 
   function toggleFullscreen() {
     if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
-    else document.documentElement.requestFullscreen().catch(function () {});
+    else if (html.requestFullscreen) html.requestFullscreen().catch(function () {});
+  }
+
+  function share() {
+    setUrl();
+    var url = window.SonicPlayer && window.SonicPlayer.link ? window.SonicPlayer.link() : location.href;
+    var done = function (ok) { say(ok ? Sonic.t('viz.copied') : Sonic.t('viz.copy_failed'), true); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(false); });
+    } else done(false);
+  }
+
+  /** @param {HTMLInputElement} input */
+  function setParam(input) {
+    if (!full) return;
+    var k = input.getAttribute('data-viz-param');
+    var mode = full.get();
+    full.param(k, Number(input.value));
+    var v = full.params()[k];
+    var out = shell().querySelector('[data-viz-param-value="' + k + '"]');
+    if (out) out.textContent = String(+v.toFixed(2));
+    var p = prefs();
+    p.params[mode] = p.params[mode] || {};
+    p.params[mode][k] = v;
+    savePrefs(p);
+    setUrlSoon();
+  }
+  function resetParams() {
+    if (!full) return;
+    var mode = full.get();
+    var p = prefs();
+    delete p.params[mode];
+    savePrefs(p);
+    var d = defaults(mode);
+    BY[mode].params.forEach(function (k) { full.param(k, d[k]); });
+    syncControls();
+    setUrl();
   }
 
   function wire() {
@@ -681,24 +963,37 @@
       var source = btn.getAttribute('data-viz-source');
       if (mode) choose(mode);
       else if (source === 'clock') stopAudio();
-      else if (source === 'tab' || source === 'mic') {
+      else if (source === 'tab' || source === 'mic' || source === 'connect') {
+        var kind = source === 'connect' ? bestSource() : source;
         // A refusal is said beside the buttons that asked, not in a toast over them.
-        listen(source).catch(function () {
+        listen(/** @type {'tab' | 'mic'} */ (kind)).catch(function (err) {
+          // A shared tab without its audio is not a refusal: follow the room instead.
+          if (source === 'connect' && kind === 'tab' && err && err.message === 'no-audio') return listen('mic');
+          throw err;
+        }).catch(function () {
           var status = s.querySelector('[data-viz-status]');
-          var live = s.querySelector('[data-viz-live]');
           if (status) { status.setAttribute('data-i18n', 'viz.denied'); status.textContent = Sonic.t('viz.denied'); }
-          if (live) live.textContent = Sonic.t('viz.denied');
+          say(Sonic.t('viz.denied'), source === 'connect');
         });
       } else if (btn.hasAttribute('data-viz-settings')) { toggleSettings(); return; }
+      else if (btn.hasAttribute('data-viz-cinema')) setCinema(!cinema, false);
+      else if (btn.hasAttribute('data-viz-share')) share();
+      else if (btn.hasAttribute('data-viz-reset')) resetParams();
       else if (btn.hasAttribute('data-viz-fullscreen')) toggleFullscreen();
       else if (btn.hasAttribute('data-viz-close')) { close(); return; }
       syncControls();
       showControls();
     });
+    s.addEventListener('input', function (e) {
+      var t = /** @type {HTMLInputElement} */ (e.target);
+      if (t.hasAttribute('data-viz-param')) setParam(t);
+    });
     s.addEventListener('change', function (e) {
       var t = /** @type {HTMLInputElement} */ (e.target);
       var q = prefs();
-      if (t.hasAttribute('data-viz-cycle')) {
+      if (t.hasAttribute('data-viz-param')) { setParam(t); setUrl(); }
+      else if (t.hasAttribute('data-viz-cinema-switch')) setCinema(t.checked, false);
+      else if (t.hasAttribute('data-viz-cycle')) {
         q.cycle = t.checked;
         savePrefs(q);
         if (full) full.cycle(q.cycle && !reduced);
@@ -711,12 +1006,12 @@
   }
 
   // While it is open, one handler on the document, ahead of the player's: Escape closes the
-  // topmost layer only (the queue, then the settings, then the picture), and the arrows and F
-  // work wherever focus is, except in a field. A key typed into a field is never taken.
+  // topmost layer only (the queue, then the settings, then the picture), and the arrows, C and F
+  // work wherever focus is, except in a field or on a slider. A key typed there is never taken.
   document.addEventListener('keydown', function (e) {
     if (!isOpen()) return;
     var t = /** @type {HTMLElement} */ (e.target);
-    if (t && t.closest && t.closest('input:not([type=checkbox]):not([type=range]), textarea, select, [contenteditable="true"]')) return;
+    var field = t && t.closest && t.closest('input:not([type=checkbox]), textarea, select, [contenteditable="true"]');
     var queue = document.getElementById('player-queue');
     if (e.key === 'Escape') {
       if (queue && !queue.hidden) return;
@@ -726,11 +1021,26 @@
       if (panel && !panel.hidden) toggleSettings(false); else close();
       return;
     }
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (field || e.metaKey || e.ctrlKey || e.altKey) return;
     if (t && t.closest && t.closest('#player, #player-queue')) return;
+    // On a radio the arrows move within its own group and check what they reach (the ARIA radio
+    // pattern); they never change the picture from the Sound group.
+    var radio = t && t.closest && /** @type {HTMLElement | null} */ (t.closest('#visualizer-full [role=radio]'));
+    if (radio && /^Arrow(Left|Right|Up|Down)$/.test(e.key)) {
+      e.preventDefault();
+      var group = /** @type {HTMLElement} */ (radio.closest('[role=radiogroup]'));
+      var radios = Array.prototype.slice.call(group.querySelectorAll('[role=radio]'));
+      var by = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1;
+      var next = /** @type {HTMLElement} */ (radios[(radios.indexOf(radio) + by + radios.length) % radios.length]);
+      next.focus();
+      if (!next.hasAttribute('data-viz-source') || next.getAttribute('data-viz-source') === 'clock') next.click();
+      showControls();
+      return;
+    }
     if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
     else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
     else if (e.key === 'f' || e.key === 'F') { e.preventDefault(); toggleFullscreen(); }
+    else if (e.key === 'c' || e.key === 'C') { e.preventDefault(); setCinema(!cinema, false); }
     else return;
     showControls();
   }, true);
@@ -744,6 +1054,14 @@
     open(button.getAttribute('data-visualizer-open') || undefined);
   });
 
+  // The router is about to push the next page's entry: the picture closes now, so the entry being
+  // left keeps no viz keys and Back never reopens it (an independent review, 2026-11-22).
+  Sonic.on('sonic:leaving', function () {
+    if (!isOpen()) return;
+    var keep = opener;
+    close();
+    opener = keep && document.contains(keep) ? keep : null;
+  });
   // A navigation (the player's title, Back) changes the page under it: the picture closes first.
   Sonic.on('sonic:navigated', function () {
     if (!isOpen()) return;
@@ -751,6 +1069,7 @@
     close();
     opener = keep && document.contains(keep) ? keep : null;
   });
+  window.addEventListener('resize', function () { if (isOpen()) layoutSettings(); });
 
   // ---- Behind every page while the player plays (the owner, 2026-11-16). --------------------
   // #visualizer-bg lies behind the page's content (styles/app.css blends it into the theme: as
@@ -767,22 +1086,26 @@
     var layer = document.getElementById('visualizer-bg');
     if (!layer) return;
     var want = bgWanted();
-    document.documentElement.toggleAttribute('data-visualizer-bg', want);
+    html.toggleAttribute('data-visualizer-bg', want);
     clearTimeout(bgTimer);
     if (want && !bgHandle) {
-      bgHandle = sketch(layer, { mode: 'aurora', cycle: true, modes: ['aurora', 'nebula'], fps: 30, density: 1 });
+      bgHandle = sketch(layer, { mode: CONF.background[0], cycle: true, modes: CONF.background, fps: 30, density: 1 });
     } else if (!want && bgHandle) {
       bgTimer = window.setTimeout(function () {
         if (bgHandle && !bgWanted()) { bgHandle.remove(); bgHandle = null; }
       }, 900);
     }
   }
-  new MutationObserver(syncBackground).observe(document.documentElement, { attributes: true, attributeFilter: ['data-player-state'] });
+  new MutationObserver(function () {
+    syncBackground();
+    if (isOpen()) layoutSettings();
+  }).observe(html, { attributes: true, attributeFilter: ['data-player-state', 'data-player-panel-state', 'data-player-video-state'] });
   document.addEventListener('visibilitychange', syncBackground);
 
   // ---- Embedded pictures (the landing hero): a page module, so the router mounts it. ----------
   // [data-visualizer-modes] limits the modes it walks; [data-visualizer-media] the screens it is
-  // drawn on (p5 is 1 MB: the hero asks for wide screens only). It starts once the page is idle.
+  // drawn on (the libraries are large: the hero asks for wide screens only). It starts once the
+  // page is idle.
 
   Sonic.module('visualizer', function mount() {
     var handles = [];
@@ -795,8 +1118,8 @@
         var el = /** @type {HTMLElement} */ (node);
         var media = el.getAttribute('data-visualizer-media');
         if (media && !window.matchMedia(media).matches) return;
-        var modes = (el.getAttribute('data-visualizer-modes') || '').split(/\s+/).filter(function (m) { return MODES.indexOf(m) >= 0; });
-        var mode = el.getAttribute('data-visualizer') || modes[0] || prefs().mode;
+        var modes = (el.getAttribute('data-visualizer-modes') || '').split(/\s+/).map(resolve).filter(Boolean);
+        var mode = resolve(el.getAttribute('data-visualizer')) || modes[0] || prefs().mode;
         handles.push(sketch(el, { mode: mode, cycle: el.hasAttribute('data-visualizer-cycle'), modes: modes, fps: 30, density: 1 }));
       });
     });
@@ -808,18 +1131,46 @@
 
   wire();
   syncBackground();
-  var asked = new URL(location.href).searchParams.get('viz');
-  if (asked && MODES.indexOf(asked) >= 0) open(asked);
+  // A shared link: ?viz=<mode>, its live controls and cinema.
+  (function () {
+    var q = new URL(location.href).searchParams;
+    var asked = resolve(q.get('viz'));
+    if (!asked) return;
+    /** @type {Record<string, number>} */
+    var params = {};
+    Object.keys(PARAMS).forEach(function (k) {
+      if (q.has('viz.' + k)) params[k] = Number(q.get('viz.' + k));
+    });
+    open(asked, { params: params, cinema: q.get('viz.video') === 'cinema' });
+  })();
 
   window.SonicVisualizer = {
     modes: function () { return MODES.slice(); },
-    open: open,
+    open: function (mode) { open(mode); },
     close: close,
     mode: function () { return full ? full.get() : null; },
+    shown: function () { return full ? full.shown() : null; },
+    engine: function () {
+      var st = document.querySelector('[data-visualizer-stage]');
+      return full && st ? st.getAttribute('data-visualizer-engine') : null;
+    },
     set: choose,
-    source: function () { return engine.source; },
+    params: function () { return full ? Object.assign({}, full.params()) : null; },
+    param: function (k, v) {
+      var s = shell();
+      var input = /** @type {HTMLInputElement | null} */ (s && s.querySelector('[data-viz-param="' + k + '"]'));
+      if (!full || !input) return;
+      input.value = String(v);
+      setParam(input);
+      setUrl();
+    },
+    cinema: function (on) { if (typeof on === 'boolean') setCinema(on, true); return cinema && isOpen(); },
+    analysis: function () {
+      return { level: A.level, kick: A.kick, flux: A.flux, centroid: A.centroid, bpm: A.bpm, source: A.source };
+    },
+    source: function () { return audio.kind; },
     listen: listen,
     stop: stopAudio,
-    background: function () { return !!bgHandle && document.documentElement.hasAttribute('data-visualizer-bg'); },
+    background: function () { return !!bgHandle && html.hasAttribute('data-visualizer-bg'); },
   };
 })();

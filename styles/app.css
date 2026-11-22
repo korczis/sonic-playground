@@ -346,3 +346,64 @@ html[data-visualizer-bg] #main-content {
 @media (prefers-reduced-motion: reduce) {
   #visualizer-bg { display: none; }
 }
+
+/* Cinema (the visualiser's cinema switch, html[data-viz-video="cinema"]): the video fills the
+   screen above the bar, below the visualiser's cluster, and the picture lies around it, never
+   over it (YouTube's terms). The panel itself lets clicks through; the video keeps them. The
+   picture's colour glows at the video's edge and the kick pulses it (--viz-glow and --viz-kick,
+   set on #player-panel by static/js/visualizer.js). Cinema yields while the queue or the track
+   menu is open, so their own rules above place the video beside them (an independent review
+   found the open queue covering the cinema video, 2026-11-22). With the settings open the
+   video stays large only from 1024 px, where the sheet and the video share the screen side by
+   side; narrower, the video returns to its corner, since a video squeezed beside the sheet fell
+   below YouTube's 200 px minimum. These rules come after every size rule above on purpose. */
+html[data-viz-video="cinema"]:not([data-player-queue-state="open"]):not([data-track-menu-state="open"]):not([data-viz-settings="open"]) #player-panel {
+  top: 0;
+  right: 0;
+  bottom: calc(5.5rem + 1px);
+  left: 0;
+  display: flex;
+  width: auto;
+  max-width: none;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 7.25rem 0.75rem 0.75rem;
+  pointer-events: none;
+}
+html[data-viz-video="cinema"]:not([data-player-queue-state="open"]):not([data-track-menu-state="open"]):not([data-viz-settings="open"])[data-player-view-state="mini"] #player-panel {
+  bottom: 4rem;
+}
+html[data-viz-video="cinema"]:not([data-player-queue-state="open"]):not([data-track-menu-state="open"]):not([data-viz-settings="open"]) #player-panel > div {
+  width: min(100%, calc((100vh - 13.5rem) * 16 / 9));
+  width: min(100%, calc((100dvh - 13.5rem) * 16 / 9));
+  pointer-events: auto;
+  box-shadow: 0 0 calc(1.5rem + var(--viz-kick, 0) * 3rem) calc(0.125rem + var(--viz-kick, 0) * 0.75rem)
+    var(--viz-glow, rgb(124 58 237 / 0.45));
+  transition: box-shadow 90ms linear;
+}
+@media (min-width: 1024px) {
+  html[data-viz-video="cinema"]:not([data-player-queue-state="open"]):not([data-track-menu-state="open"])[data-viz-settings="open"] #player-panel {
+    top: 0;
+    right: 0;
+    bottom: calc(5.5rem + 1px);
+    left: 0;
+    display: flex;
+    width: auto;
+    max-width: none;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+    padding: 0.75rem 0.75rem 0.75rem 32rem;
+  }
+  html[data-viz-video="cinema"]:not([data-player-queue-state="open"]):not([data-track-menu-state="open"])[data-viz-settings="open"] #player-panel > div {
+    width: min(100%, calc((100vh - 13.5rem) * 16 / 9));
+    width: min(100%, calc((100dvh - 13.5rem) * 16 / 9));
+    pointer-events: auto;
+    box-shadow: 0 0 calc(1.5rem + var(--viz-kick, 0) * 3rem) calc(0.125rem + var(--viz-kick, 0) * 0.75rem)
+      var(--viz-glow, rgb(124 58 237 / 0.45));
+    transition: box-shadow 90ms linear;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-viz-video="cinema"] #player-panel > div { transition: none; }
+}

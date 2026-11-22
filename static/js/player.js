@@ -18,6 +18,12 @@
 // the position and the view are kept in localStorage, so a reload offers to resume, paused. The
 // YouTube IFrame API (youtube-nocookie host) is loaded only when something plays; the video stays
 // visible while it plays (small at the least), as YouTube's terms require.
+//
+// The URL names what is playing: ?play=<track>&t=<seconds> (a catalogue track by its file name,
+// a loose video as yt:<id>), so the address bar is always a link to this song at this moment,
+// with the visualiser's own keys beside it. A shared link cues that track at that time, paused,
+// ahead of the reader's own queue (no third-party request until play is pressed). Only
+// replaceState: Back keeps meaning the previous page, not the previous song.
 (function () {
   'use strict';
   var Sonic = window.Sonic;
@@ -89,6 +95,36 @@
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
   }
   function current() { return state.queue[state.index] || null; }
+  // --- The URL state. --------------------------------------------------------------------------
+  var urlTime = state.time || 0; // the position the URL names, refreshed every five seconds
+  var urlHold = false;           // a shared link is being resolved: the URL is not ours to write
+  function urlKey(t) { return t.source ? t.source.replace(/\.md$/, '') : 'yt:' + t.youtube; }
+  function syncUrl() {
+    if (urlHold) return;
+    var u = new URL(location.href);
+    var t = current();
+    if (t) {
+      u.searchParams.set('play', urlKey(t));
+      var at = Math.floor(urlTime);
+      if (at > 0) u.searchParams.set('t', String(at)); else u.searchParams.delete('t');
+    } else {
+      u.searchParams.delete('play');
+      u.searchParams.delete('t');
+    }
+    var next = u.pathname + u.search + u.hash;
+    if (next !== location.pathname + location.search + location.hash) {
+      history.replaceState(history.state, '', next);
+    }
+  }
+  /** A shared time in seconds: "95", "1:35", "1:02:03", "1m", "1m35s", "1h2m3s"; else 0. */
+  function seconds(v) {
+    var s = String(v || '').trim();
+    var c = /^(?:(\d+):)?(?:(\d+):)?(\d+)$/.exec(s);
+    if (c) return c[2] !== undefined ? Number(c[1]) * 3600 + Number(c[2]) * 60 + Number(c[3])
+      : Number(c[1] || 0) * 60 + Number(c[3]);
+    var u = /^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s?)?$/.exec(s);
+    return u && s ? Number(u[1] || 0) * 3600 + Number(u[2] || 0) * 60 + Number(u[3] || 0) : 0;
+  }
   function fmt(s) {
     s = Math.max(0, Math.floor(s || 0));
     return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
@@ -137,14 +173,34 @@
   function placeToast() {
     var box = el.toast;
     box.style.top = '';
-    if (box.dataset.shown !== 'true' || el.panel.hidden) return;
-    var v = el.panel.getBoundingClientRect();
+    if (box.dataset.shown !== 'true') return;
     var t = box.getBoundingClientRect();
-    if (t.bottom <= v.top || t.top >= v.bottom || t.right <= v.left || t.left >= v.right) return;
+    var h = t.height;
+    var across = function (r) { return r.right > t.left && r.left < t.right; };
+    // Over the open visualiser it keeps below its controls (the button row and the mode's name)
+    // where it would cross them: centred, it crossed them on phones only (a review, 2026-11-22).
+    var floor = 8;
+    if (html.dataset.visualizer === 'open') {
+      document.querySelectorAll('[data-viz-cluster] > :not(#visualizer-settings)').forEach(function (r) {
+        var b = r.getBoundingClientRect();
+        if (b.height && across(b)) floor = Math.max(floor, b.bottom + 8);
+      });
+    }
+    var top = Math.max(t.top, floor);
     var bar = el.bar.hidden ? window.innerHeight : el.bar.getBoundingClientRect().top;
-    var below = v.bottom + 8;
-    box.style.top = (below + t.height <= bar - 8 ? below : Math.max(8, v.top - t.height - 8)) + 'px';
+    if (!el.panel.hidden) {
+      // The video's own box (in cinema the panel fills the screen and only its child is the video).
+      var v = (el.panel.firstElementChild || el.panel).getBoundingClientRect();
+      var onVideo = function (y) { return across(v) && y + h > v.top && y < v.bottom; };
+      if (onVideo(top)) {
+        if (v.bottom + 8 + h <= bar - 8) top = v.bottom + 8;          // below the video
+        else if (v.top - 8 - h >= floor) top = v.top - 8 - h;          // above it
+        else top = Math.max(floor, bar - h - 8 > v.bottom ? bar - h - 8 : bar + 4); // over the bar, never the video
+      }
+    }
+    if (top !== t.top) box.style.top = top + 'px';
   }
+
   function snapshot() {
     undo = { queue: state.queue.slice(), index: state.index };
   }
@@ -172,7 +228,7 @@
     html.dataset.playerViewState = state.view;
     html.dataset.playerVideoState = state.video;
     html.dataset.playerPanelState = started ? 'shown' : '';
-    el.title.textContent = t.track;
+    el.title.textContent = t.track || Sonic.t('player.video');
     el.title.href = t.path ? Sonic.base + '/' + Sonic.trackPath(t) : 'https://www.youtube.com/watch?v=' + t.youtube;
     // A loose video's title opens YouTube in a new tab: leaving the site would stop the music.
     if (t.path) { el.title.removeAttribute('target'); el.title.removeAttribute('rel'); }
@@ -210,6 +266,7 @@
     html.dataset.playerState = playing ? 'playing' : 'paused';
     markCards();
     paintQueue();
+    syncUrl();
     if ('mediaSession' in navigator && window.MediaMetadata) {
       navigator.mediaSession.metadata = new window.MediaMetadata({ title: t.track, artist: t.artist,
         album: document.title.split(' · ').pop(), artwork: t.thumbnail ? [{ src: t.thumbnail, sizes: '320x180', type: 'image/jpeg' }] : [] });
@@ -224,6 +281,7 @@
     html.dataset.playerViewState = '';
     html.dataset.playerPanelState = '';
     markCards();
+    syncUrl();
   }
   /** @param {string} cls @param {string} [text] */
   function span(cls, text) {
@@ -440,6 +498,11 @@
     }
     el.progress.style.width = duration ? (100 * time / duration).toFixed(2) + '%' : '0';
     if (Math.abs(time - state.time) >= 5) { state.time = time; save(); }
+    // The URL follows the position every five seconds while it plays, and at once after a seek.
+    if (Math.abs(time - urlTime) >= 5 || (!playing && Math.floor(time) !== Math.floor(urlTime))) {
+      urlTime = time;
+      syncUrl();
+    }
   }
 
   // --- Commands. -----------------------------------------------------------------------------
@@ -447,6 +510,7 @@
     if (i < 0 || i >= state.queue.length) return;
     state.index = i;
     state.time = 0;
+    urlTime = 0;
     save();
     load(true);
   }
@@ -471,16 +535,43 @@
   function seekTrack(t, at) {
     if (!t || !t.youtube) return;
     var parts = String(at).split(':').map(Number);
-    var seconds = parts.length === 2 ? parts[0] * 60 + parts[1] : 0;
+    var at2 = parts.length === 2 ? parts[0] * 60 + parts[1] : 0;
     var cur = current();
     if (cur && keyOf(cur) === keyOf(t) && yt && ready) {
-      yt.seekTo(seconds, true);
+      yt.seekTo(at2, true);
       if (!isPlaying()) yt.playVideo();
       return;
     }
-    pendingStart = seconds; // load() starts this track there (and only this track)
+    pendingStart = at2; // load() starts this track there (and only this track)
     resumeFor = keyOf(t);
     playNow(t);
+  }
+  /** A shared link's track, cued at its time and paused, ahead of the reader's own queue. */
+  function cueShared(t, at, quiet) {
+    var key = keyOf(t);
+    var i = indexOf(key);
+    var same = i >= 0 && i === state.index;
+    // The reader pressed play before the link resolved: the shared song plays next, at its time.
+    if (yt && !same) {
+      pendingStart = at;
+      resumeFor = key;
+      playNext(t);
+      return;
+    }
+    if (!same) {
+      if (i >= 0) take(i);
+      var pos = state.queue.length ? state.index + 1 : 0;
+      state.queue.splice(pos, 0, item(t));
+      state.index = pos;
+    }
+    state.time = at;
+    urlTime = at;
+    pendingStart = at;
+    resumeFor = key;
+    ended = false;
+    save();
+    paint();
+    if (!same && !quiet) toast(Sonic.t('player.toast_shared', { track: t.track || Sonic.t('player.video') }));
   }
   /** Play a track right after the current one (moved there when it is already queued). */
   function playNext(t) {
@@ -772,9 +863,39 @@
   // A new page: mark its cards. A reload with a saved queue: show the bar, paused (no third-party
   // request until the reader presses play).
   Sonic.on('sonic:page', markCards);
-  Sonic.on('sonic:navigated', markCards);
+  // The router pushes the link's own URL; the player's keys are written back onto it.
+  Sonic.on('sonic:navigated', function () { markCards(); syncUrl(); });
   Sonic.on('sonic:locale', function () { if (current()) paint(); });
+  var asked = new URL(location.href).searchParams;
+  var askedKey = asked.get('play') || '';
+  if (askedKey) urlHold = true;
   if (current()) { pendingStart = state.time || 0; resumeFor = keyOf(current()); paint(); }
+  if (askedKey) {
+    var askedAt = seconds(asked.get('t'));
+    var video = /^yt:([\w-]{11})$/.exec(askedKey);
+    var found = video ? Promise.resolve({ youtube: video[1], track: '', artist: '' })
+      : Sonic.playIndex().then(function (c) {
+        return c.tracks.filter(function (t) { return t.source === askedKey + '.md'; })[0] || null;
+      });
+    // The interface strings arrive on their own: the toast waits for them (sonic:locale), or it
+    // would show its key (an independent review, 2026-11-22).
+    var strings = new Promise(function (done) {
+      var settled = function () {
+        var st = html.dataset.i18nState;
+        if (st === 'ready' || st === 'failed') { observer.disconnect(); done(st); }
+      };
+      var observer = new MutationObserver(settled);
+      observer.observe(html, { attributes: true, attributeFilter: ['data-i18n-state'] });
+      Sonic.on('sonic:locale', function () { observer.disconnect(); done('ready'); });
+      settled();
+    });
+    Promise.all([found.catch(function () { return null; }), strings]).then(function (r) {
+      var t = r[0];
+      urlHold = false;
+      // Without the strings (the bundle failed) the song is still cued, without a toast of keys.
+      if (t && t.youtube) cueShared(t, askedAt, r[1] !== 'ready'); else syncUrl(); // an unknown track leaves the URL
+    });
+  }
   // Drag to reorder: the grip of an upcoming row follows the pointer (mouse, pen or touch), the
   // rows reorder live and the drop commits one moveTo. A cancelled pointer (the page scrolled, a
   // call came in) puts everything back as it was.
@@ -822,6 +943,8 @@
   window.SonicPlayer = { moveTo: moveTo, playNow: playNow, playNext: playNext, toggleQueued: toggleQueued, playList: playList,
     remove: remove, move: move, clear: clear, shuffle: shuffle, next: next, prev: prev, toggle: toggle,
     stop: stop, jump: jump, undo: restore, seek: seekTrack, notify: function (text) { toast(text); }, placeToast: placeToast,
+    /** The URL of what is playing now (?play=…&t=…, the visualiser's keys kept). */
+    link: function () { if (yt && ready && yt.getCurrentTime) urlTime = yt.getCurrentTime() || 0; syncUrl(); return location.href; },
     queue: function (open) { setQueueOpen(!!open); },
     state: function () { return JSON.parse(JSON.stringify(state)); } };
 })();

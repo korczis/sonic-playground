@@ -137,11 +137,11 @@ window.Sonic.module('explorer', function mount() {
     if (empty) empty.hidden = shown !== 0;
     grid.hidden = shown === 0;
 
-    // The explorer owns its KEYS only; another component's state in the URL (the visualiser's
-    // ?viz) is kept, or a deep link to it would be erased on the home page's first render.
-    var params = new URLSearchParams();
-    var viz = new URLSearchParams(window.location.search).get('viz');
-    if (viz) params.set('viz', viz);
+    // The explorer owns its KEYS only; every other component's state in the URL (the
+    // visualiser's viz keys, the player's play and t) is kept, or a deep link to it would be
+    // erased on the home page's first render.
+    var params = new URLSearchParams(window.location.search);
+    KEYS.forEach(function (k) { params.delete(k); });
     KEYS.forEach(function (k) {
       var v = k === 'q' ? query.value.trim() : /** @type {HTMLSelectElement} */ (form.elements.namedItem(k)).value;
       if (v && !(k === 'sort' && v === 'new')) params.set(k, v);

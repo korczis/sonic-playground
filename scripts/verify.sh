@@ -10,6 +10,11 @@
 #                                    no raw iframe, every <img> sized, no image over budget
 #   6. test/e2e/smoke.cjs            the artefact in a real browser, served as production
 #                                    (--artifact <dir> --as <base_url>), desktop and phone
+#   7. scripts/coverage.mjs          new code is tested (rule project.new-code-tested): every
+#                                    line the change adds to static/js, scripts/*.mjs|cjs and
+#                                    scripts/*.py ran under steps 2 and 6, or says why it cannot
+#                                    (the browser's coverage from step 6, Node's from every node
+#                                    run, the unit suite's from test/pycov.py)
 #
 #   scripts/verify.sh                   the full gate (the build goes to a temporary directory)
 #   scripts/verify.sh --no-browser      steps 1-5 (the pre-push hook)
@@ -31,6 +36,13 @@
 set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
+# Every temporary directory the gate makes is removed by one trap: a second `trap ... EXIT`
+# replaces the first, and three of them once left the coverage directory behind (a review,
+# 2026-11-22). The paths come from mktemp and hold no spaces.
+cleanup_paths=""
+cleanup_later() { cleanup_paths="$cleanup_paths $1"; }
+# shellcheck disable=SC2086
+trap 'rm -rf $cleanup_paths' EXIT
 
 # The pages of the built site (<public dir>/sitemap.xml) a list of changed repository paths can
 # affect, or "full: <reason>" when one of them can affect any page. Paths are classified from
@@ -117,7 +129,7 @@ plan_sweep() {
     sweep_mode="the paths SMOKE_PATHS_FILE lists"
   elif merge_base=$(git merge-base HEAD origin/main 2>/dev/null); then
     scope=$(mktemp -d "${TMPDIR:-/tmp}/sonic-scope.XXXXXX")
-    trap 'rm -rf "$scope" ${public_tmp:+"$public_tmp"}' EXIT
+    cleanup_later "$scope"
     { git -c core.quotePath=false diff --name-only --no-renames "$merge_base" --
       git -c core.quotePath=false ls-files --others --exclude-standard; } > "$scope/changed"
     changed_pages "$1" "$scope/changed" > "$scope/pages"
@@ -175,8 +187,14 @@ python3 scripts/i18n.py --check
 step "images: every shown image has current derived variants within the budget"
 python3 scripts/images.py --check
 
-step "unit tests"
-python3 -m unittest discover -s test -p 'test_*.py'
+# Coverage for step 7: Node writes its own (NODE_V8_COVERAGE, every node process from here on),
+# the unit suite runs under test/pycov.py, the smoke test writes the browser's.
+cov_dir=$(mktemp -d "${TMPDIR:-/tmp}/verify-coverage.XXXXXX")
+cleanup_later "$cov_dir"
+export NODE_V8_COVERAGE="$cov_dir/node"
+
+step "unit tests (with the coverage of scripts/*.py)"
+python3 test/pycov.py "$cov_dir/python.json"
 
 step "skill cases (test/cases)"
 bash test/run.sh
@@ -215,7 +233,7 @@ if [ -n "${PUBLIC_DIR:-}" ]; then
 else
   public=$(mktemp -d "${TMPDIR:-/tmp}/sonic-public.XXXXXX")
   public_tmp=$public
-  trap 'rm -rf "$public"' EXIT
+  cleanup_later "$public"
 fi
 
 step "zola build ($base_url; internal links are errors)"
@@ -249,7 +267,7 @@ fi
 if [ "$browser" = 1 ]; then
   step "browser smoke test on the artefact, served as $base_url"
   set +e
-  node test/e2e/smoke.cjs --artifact "$public" --as "$base_url"
+  SMOKE_COVERAGE="$cov_dir/browser.json" node test/e2e/smoke.cjs --artifact "$public" --as "$base_url"
   code=$?
   set -e
   if [ "$code" = 3 ] && [ "${SMOKE_REQUIRED:-0}" != 1 ]; then
@@ -257,6 +275,16 @@ if [ "$browser" = 1 ]; then
   elif [ "$code" != 0 ]; then
     exit "$code"
   fi
+fi
+
+step "new code is tested: every changed line ran under the tests (rule project.new-code-tested)"
+if [ "$browser" = 1 ]; then
+  # A full run without a browser reading (the smoke test skipped) is refused, never passed.
+  node scripts/coverage.mjs --browser "$cov_dir/browser.json" --node "$cov_dir/node" --python "$cov_dir/python.json"
+else
+  # Without a browser reading (--no-browser, the pre-push hook) the browser scripts are judged by
+  # the full gate; the Node and Python scripts are judged here.
+  node scripts/coverage.mjs --no-browser --node "$cov_dir/node" --python "$cov_dir/python.json"
 fi
 
 step_done
