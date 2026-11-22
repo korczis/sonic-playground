@@ -7,7 +7,8 @@ album: "Same Man"
 duration: "6:48"
 spotify: {"track": "5Ih1cAo7BQ8NgnHBJ8IUag", "album": "6m9XXQkjEenHHx3O1P2xJG", "artists": ["3tIGIHJ3XB7iLxJjuM6dQn", "5Bwa0MY2tBdOAJg8K5PLSQ"]}
 keys: {"fold": "tillwest|sameman"}
-status: "missing"
+review: "till-west-dj-delicious-same-man-original-mix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Same Man*, 6:48.
 A liked song.
-No review yet.
+Reviewed: content/till-west-dj-delicious-same-man-original-mix.md.

@@ -6,8 +6,9 @@ artists: ["Kylie Minogue"]
 album: "Tension (Deluxe)"
 duration: "2:46"
 spotify: {"track": "2GXvqITTIxsDGNxymiErSe", "album": "4VNaEhdswqNiEMAcfSav9g", "artists": ["4RVnAU35WRWra6OZ3CbbMA"]}
-keys: {"fold": "kylieminogue|padampadam"}
-status: "missing"
+keys: {"fold": "kylieminogue|padampadam", "isrc": "GB5KW2301017", "musicbrainz": "eb3747f8-2b32-498a-b165-0268b07ee768"}
+review: "kylie-minogue-padam-padam.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2023, "n": 10}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-22"]
 From the album *Tension (Deluxe)*, 2:46.
 Not among the liked songs.
 Your Top Songs 2023: #10.
-No review yet.
+Reviewed: content/kylie-minogue-padam-padam.md.

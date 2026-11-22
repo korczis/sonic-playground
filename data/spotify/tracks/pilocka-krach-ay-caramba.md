@@ -7,7 +7,8 @@ album: "Ay Caramba"
 duration: "4:15"
 spotify: {"track": "2lMDSF6Rg002zj1WQXvCeX", "album": "5F0npVH97jHQjnQgUUZBQu", "artists": ["72gQuI1GHmsUXIfe863TC7", "4IS89PCga3j0go9bYo5GyA"]}
 keys: {"fold": "pilockakrach|aycaramba"}
-status: "missing"
+review: "pilocka-krach-the-lost-amigos-ay-caramba.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2023, "n": 31}
@@ -23,4 +24,4 @@ A liked song.
 Your Top Songs 2023: #31.
 Your Top Songs 2024: #87.
 Your Top Songs 2025: #14.
-No review yet.
+Reviewed: content/pilocka-krach-the-lost-amigos-ay-caramba.md.

@@ -6,8 +6,9 @@ artists: ["Marbert Rocel"]
 album: "Catch a Bird"
 duration: "4:02"
 spotify: {"track": "7dNoapDbEJ7xLLRWkav5wQ", "album": "0j9BzWa1gmABSMuatN6kgH", "artists": ["0VEzhZrWBCaoufAiZkjX3G"]}
-keys: {"fold": "marbertrocel|bababounce"}
-status: "missing"
+keys: {"fold": "marbertrocel|bababounce", "musicbrainz": "576d0fad-7c28-4bc6-a807-fd0cd0afbfde"}
+review: "marbert-rocel-ba-ba-bounce.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2023, "n": 36}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Catch a Bird*, 4:02.
 A liked song.
 Your Top Songs 2023: #36.
-No review yet.
+Reviewed: content/marbert-rocel-ba-ba-bounce.md.

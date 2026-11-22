@@ -100,7 +100,7 @@ id = "jazz"
 en = "Jazz, swing & blues"
 cs = "Jazz, swing a blues"
 terms = ["jazz", "nu-jazz", "acid jazz", "vocal jazz", "big band", "gypsy jazz", "hard bop",
-         "easy listening", "electro-swing", "blues"]
+         "easy listening", "electro-swing", "blues", "brass band"]
 
 [[family]]
 id = "world"

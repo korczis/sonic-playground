@@ -6,8 +6,9 @@ artists: ["Moloko"]
 album: "Catalogue"
 duration: "3:42"
 spotify: {"track": "7bVx1aIaekhyUrqdQotS48", "album": "66QA9aIaKHN6Bbx6GILD3Z", "artists": ["4aaBjq7VqqQvpSF69GglvO"]}
-keys: {"fold": "moloko|thetimeisnow"}
-status: "missing"
+keys: {"fold": "moloko|thetimeisnow", "isrc": "GBBND0000549", "musicbrainz": "185e3a12-01ad-4881-93b2-49f13fbda787"}
+review: "moloko-the-time-is-now.md"
+status: "present"
 liked: false
 playlists:
   - {"playlist": "jamiroquai-radio", "n": 13}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14"]
 From the album *Catalogue*, 3:42.
 Not among the liked songs.
 In Jamiroquai Radio (#13).
-No review yet.
+Reviewed: content/moloko-the-time-is-now.md.

@@ -1775,7 +1775,7 @@ async function shot(page, name) {
     if (catalog.yearbooks && catalog.yearbooks.length) {
       const b = catalog.yearbooks[0];
       await page.goto(at(`yearbook/${b.year}/`), { waitUntil: 'load' });
-      const yf = await page.locator('aside a[href*="/genre/#family-"]').count();
+      const yf = await page.locator('aside:not(#sidebar) a[href*="/genre/#family-"]').count();
       check(yf === b.families.length, `yearbook ${b.year}: its ${b.families.length} genre families, each linking the genre index`);
     }
     if (catalog.yearbooks && catalog.yearbooks.length > 1) {

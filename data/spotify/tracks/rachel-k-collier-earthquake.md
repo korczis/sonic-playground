@@ -6,8 +6,9 @@ artists: ["Rachel K Collier"]
 album: "Songs In The Key Of Internet"
 duration: "2:42"
 spotify: {"track": "4O8cwxdktKfKQSSCecwhkc", "album": "5xHwBoACmq0b17EhEFHCeU", "artists": ["0hWL8sffP07PbVm5ilnf1o"]}
-keys: {"fold": "rachelkcollier|earthquake"}
-status: "missing"
+keys: {"fold": "rachelkcollier|earthquake", "musicbrainz": "80eac269-0607-4094-9dfa-3623d4521f7b"}
+review: "rachel-k-collier-earthquake.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2023, "n": 77}
@@ -22,4 +23,4 @@ From the album *Songs In The Key Of Internet*, 2:42.
 Not among the liked songs.
 Your Top Songs 2023: #77.
 In Rachel K Collier Mix (#1).
-No review yet.
+Reviewed: content/rachel-k-collier-earthquake.md.
