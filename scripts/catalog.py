@@ -247,9 +247,13 @@ def word_form(word: str, forms: dict) -> str:
 def search_tokens(text: str, lang: str = DEFAULT_LANG) -> list[str]:
     """The explorer's tokens of a text, as static/js/explorer.js `tokens` cuts a query: lowercase,
     the letters of SEARCH_FOLD, NFKD without its combining marks, split at every character that
-    is not a-z or 0-9, each token in its word form. Every token is kept, in order, short ones and
+    is not a-z or 0-9, each token in its word form; a possessive is its word. Every token is kept, in order, short ones and
     digits included: "TB-303" is "tb 303", and a phrase is tokens side by side."""
-    folded = MARKS.sub("", unicodedata.normalize("NFKD", text.lower().translate(SEARCH_FOLD_TABLE)))
+    # A possessive is its word ("punk's" is "punk", "dj's" "dj"), a decade its plural ("80's"
+    # is "80s"), never a token "s".
+    lower = re.sub(r"([0-9])['\u2019]s(?![a-z0-9])", r"\1s", text.lower())
+    lower = re.sub(r"(\S)['\u2019]s(?![a-z0-9])", r"\1", lower)
+    folded = MARKS.sub("", unicodedata.normalize("NFKD", lower.translate(SEARCH_FOLD_TABLE)))
     forms = SEARCH_FORMS.get(lang, {})
     return [word_form(w, forms) for w in re.split(r"[^a-z0-9]+", folded) if w]
 

@@ -55,11 +55,16 @@ window.Sonic.module('explorer', function mount() {
   // The tokens of a text exactly as scripts/catalog.py search_tokens cuts a review: lowercase,
   // the fold table's letters, no diacritics, split at everything but a-z and 0-9 (so
   // "four-on-the-floor" and "TB-303" are runs of tokens), every token kept, each in its form.
-  function tokens(text) {
-    return text.toLowerCase().replace(/[\u0080-\uffff]/g, function (c) { return FOLD[c] || c; })
+  // A possessive is its word ("punk's" is "punk", "dj's" "dj"), a decade its plural ("80's" is
+  // "80s"), never a token "s" (scripts/catalog.py search_tokens).
+  function rawTokens(text) {
+    return text.toLowerCase().replace(/([0-9])['\u2019]s(?![a-z0-9])/g, '$1s')
+      .replace(/(\S)['\u2019]s(?![a-z0-9])/g, '$1')
+      .replace(/[\u0080-\uffff]/g, function (c) { return FOLD[c] || c; })
       .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
-      .split(/[^a-z0-9]+/).filter(Boolean).map(wordForm);
+      .split(/[^a-z0-9]+/).filter(Boolean);
   }
+  function tokens(text) { return rawTokens(text).map(wordForm); }
 
   // A text as the matcher reads it: its tokens between spaces, so ' w ' is the whole word w and
   // ' w' a word that starts with w.
@@ -97,6 +102,7 @@ window.Sonic.module('explorer', function mount() {
       items.forEach(function (it) {
         it.words.review = ' ' + (data.tracks[it.source] || '') + ' ';
       });
+      known = {};
       reviewIndex = 'ready';
       document.documentElement.dataset.reviewsState = 'ready';
       render(false);
@@ -118,8 +124,8 @@ window.Sonic.module('explorer', function mount() {
   function parse(q) {
     var units = [];
     q.replace(/["“”„]([^"“”„]*)["“”„]?|[^\s"“”„]+/g, function (m, phrase) {
-      var t = tokens(phrase === undefined ? m : phrase);
-      if (t.length) units.push({ tokens: t, quoted: phrase !== undefined, open: false });
+      var raw = rawTokens(phrase === undefined ? m : phrase);
+      if (raw.length) units.push({ tokens: raw.map(wordForm), raw: raw, quoted: phrase !== undefined, open: false });
       return m;
     });
     var last = units[units.length - 1];
@@ -131,12 +137,27 @@ window.Sonic.module('explorer', function mount() {
   // description, terms) or review, so "art" is not "start" nor "artist". An open unit ("say yes
   // do"), or one no track has as whole words ("synthesiz"), is read as unfinished: its last
   // token matches the start of a word.
+  // Each unit is a list of alternatives, any of which matches. Whether some track has a unit
+  // as whole words is asked once per query text (the index does not change under it).
+  var known = {};
+  function somewhere(whole) {
+    if (!(whole in known)) {
+      known[whole] = items.some(function (it) {
+        return it.words.text.indexOf(whole) >= 0 || it.words.review.indexOf(whole) >= 0;
+      });
+    }
+    return known[whole];
+  }
   function patterns(units) {
     return units.map(function (u) {
       var whole = ' ' + u.tokens.join(' ') + ' ';
-      return !u.open && items.some(function (it) {
-        return it.words.text.indexOf(whole) >= 0 || it.words.review.indexOf(whole) >= 0;
-      }) ? whole : whole.slice(0, -1);
+      if (!u.open && somewhere(whole)) return [whole];
+      // An unfinished word also as typed: its form can be a word no word starts with ("psy" is
+      // "psie" by the -y rule, and "psychedelic" does not start with that).
+      var alts = [whole.slice(0, -1)];
+      var typed = ' ' + u.tokens.slice(0, -1).concat(u.raw[u.raw.length - 1]).join(' ');
+      if (typed !== alts[0]) alts.push(typed);
+      return alts;
     });
   }
 
@@ -156,8 +177,17 @@ window.Sonic.module('explorer', function mount() {
   // Relevance: the whole query as the title or the artist first, then side by side in either,
   // then side by side in the card's text or the review; then each unit by where it stands: the
   // title or the artist, the card's text, the review (how often).
-  function score(it, pats) {
+  function score(it, units) {
     var w = it.words;
+    // Of each unit's alternatives, the one this track holds.
+    var pats = units.map(function (alts) {
+      for (var i = 0; i < alts.length; i += 1) {
+        var p = alts[i];
+        if (w.title.indexOf(p) >= 0 || w.artist.indexOf(p) >= 0 || w.text.indexOf(p) >= 0
+          || w.review.indexOf(p) >= 0) return p;
+      }
+      return alts[0];
+    });
     var all = pats.join('').replace(/ {2}/g, ' ');
     var s = (isAll(w.title, all) || isAll(w.artist, all) ? 64 : 0)
       + (w.title.indexOf(all) >= 0 || w.artist.indexOf(all) >= 0 ? 16 : 0)
@@ -195,8 +225,8 @@ window.Sonic.module('explorer', function mount() {
     var pats = patterns(s.units);
     items.forEach(function (it) {
       var w = it.words;
-      it.hit = pats.every(function (p) {
-        return w.text.indexOf(p) >= 0 || w.review.indexOf(p) >= 0;
+      it.hit = pats.every(function (alts) {
+        return alts.some(function (p) { return w.text.indexOf(p) >= 0 || w.review.indexOf(p) >= 0; });
       });
       it.score = it.hit && pats.length ? score(it, pats) : 0;
     });
@@ -245,7 +275,9 @@ window.Sonic.module('explorer', function mount() {
     var params = new URLSearchParams(window.location.search);
     KEYS.forEach(function (k) { params.delete(k); });
     KEYS.forEach(function (k) {
-      var v = k === 'q' ? s.q : k === 'sort' ? (s.sort === byDefault(s.q) ? '' : s.sort)
+      // A sort the reader chose stays in the URL even where it is the default, so a reload
+      // or Back keeps it for the next query.
+      var v = k === 'q' ? s.q : k === 'sort' ? (s.sort === byDefault(s.q) && !chosen ? '' : s.sort)
         : /** @type {HTMLSelectElement} */ (form.elements.namedItem(k)).value;
       if (v) params.set(k, v);
     });

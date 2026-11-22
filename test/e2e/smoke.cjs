@@ -1536,6 +1536,19 @@ async function shot(page, name) {
       `search '"bass line"': the words side by side only (${phrase.length}, `
       + `unquoted ${loose.length})`);
 
+    // A word being typed matches as typed too: a form rule must not turn it into a stem no word
+    // starts with ("psy" is "psie" by the -y rule; every review saying a word in psy... shows).
+    const half = 'psy';
+    const sayHalf = Object.keys(en).filter((s) => en[s].includes(` ${half}`));
+    const halfShown = sources(await search(half));
+    check(sayHalf.length > 0 && sayHalf.every((s) => halfShown.includes(s)),
+      `search "${half}": every review with a word that starts so (${sayHalf.length} of ${halfShown.length})`);
+    // A possessive is its word: "daft punk's" finds what "daft punk" finds.
+    const possessive = await search("daft punk's");
+    const bare = await search('daft punk');
+    check(bare.length > 0 && same(possessive, bare),
+      `search "daft punk's" finds what "daft punk" finds (${possessive.length} = ${bare.length})`);
+
     // A sort the reader chooses wins over relevance and is in the URL; reset forgets it.
     await page.selectOption('#explorer-sort', 'new');
     const order = await page.locator('#explorer-grid [data-track]:not([hidden])')
@@ -1544,6 +1557,10 @@ async function shot(page, name) {
     check(url().get('sort') === 'new' && url().get('probe') === 'kept'
       && order.join() === byDate.join(),
       'search: a chosen sort (newest first) wins over relevance, in the URL beside the other keys');
+    await page.fill('#explorer-q', '');
+    await page.waitForFunction(() => !new URLSearchParams(location.search).has('q'));
+    check(url().get('sort') === 'new',
+      'search: a chosen sort stays in the URL when the query is cleared, so a reload keeps it');
     await page.click('[data-explorer-reset]');
     await search('art');
     check(await page.inputValue('#explorer-sort') === 'relevance' && !url().has('sort'),

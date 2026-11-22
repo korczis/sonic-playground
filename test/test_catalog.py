@@ -435,7 +435,8 @@ class Search(unittest.TestCase):
 
     def test_every_token_in_order(self):
         self.assertEqual(catalog.search_tokens("The TB-303, four-on-the-floor: a DJ's 1990s."),
-                         ["the", "tb", "303", "four", "on", "the", "floor", "a", "dj", "s", "1990"])
+                         ["the", "tb", "303", "four", "on", "the", "floor", "a", "dj", "1990"])
+        self.assertEqual(catalog.search_tokens("Daft Punk’s 80's"), catalog.search_tokens("daft punk 80s"))
 
     def test_folding(self):
         self.assertEqual(catalog.search_tokens("Tomas Høffding, Crécy, Straße"),
