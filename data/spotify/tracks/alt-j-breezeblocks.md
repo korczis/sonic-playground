@@ -10,14 +10,17 @@ keys: {"fold": "altj|breezeblocks", "isrc": "GBZUZ1100058", "musicbrainz": "4a15
 review: "alt-j-breezeblocks.md"
 status: "present"
 liked: false
+yearbooks:
+  - {"year": 2024, "n": 40}
 playlists:
   - {"playlist": "sonic-playground", "n": 7}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Breezeblocks · alt-J
 
 From the album *An Awesome Wave*, 3:47.
 Not among the liked songs.
+Your Top Songs 2024: #40.
 In Sonic Playground (#7).
 Reviewed: content/alt-j-breezeblocks.md.

@@ -12,9 +12,10 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 43}
+  - {"year": 2024, "n": 23}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 555}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # The Wild · Poni Hoax
@@ -22,5 +23,6 @@ sources: ["web-player:2026-11-14"]
 From the album *Tropical Suite*, 4:16.
 A liked song.
 Your Top Songs 2022: #43.
+Your Top Songs 2024: #23.
 In My Top Songs of All the Time (#555).
 Reviewed: content/poni-hoax-the-wild.md.

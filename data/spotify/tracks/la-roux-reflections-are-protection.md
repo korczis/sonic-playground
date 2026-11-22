@@ -9,11 +9,14 @@ spotify: {"track": "3XJThoz3nFoyHhLf5fvFNN", "album": "3CcCqXsbyjCDDSA3omcGoy", 
 keys: {"fold": "laroux|reflectionsareprotection"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 82}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Reflections Are Protection · La Roux
 
 From the album *La Roux*, 4:19.
 A liked song.
+Your Top Songs 2023: #82.
 No review yet.

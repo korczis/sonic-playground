@@ -77,7 +77,7 @@ tracks:
   - {"n": 68, "track": "portugal-the-man-feel-it-still"}
   - {"n": 69, "track": "ash-sing-it-back"}
   - {"n": 70, "track": "sante-awake-feat-j-u-d-g-e"}
-  - {"n": 71, "track": "scarlet-pleasure-deja-vu"}
+  - {"n": 71, "track": "scarlet-pleasure-deja-vu-4a5x60"}
   - {"n": 72, "track": "luca-malina-fckrz"}
   - {"n": 73, "track": "fergie-a-little-party-never-killed-nobody-all-we-got"}
   - {"n": 74, "track": "nils-penner-the-thing"}

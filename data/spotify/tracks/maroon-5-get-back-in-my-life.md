@@ -10,11 +10,14 @@ keys: {"fold": "maroon5|getbackinmylife", "isrc": "USUM71019660", "musicbrainz":
 review: "maroon-5-get-back-in-my-life.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 21}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Get Back In My Life · Maroon 5
 
 From the album *Hands All Over (Revised International Standard version)*, 3:37.
 A liked song.
+Your Top Songs 2023: #21.
 Reviewed: content/maroon-5-get-back-in-my-life.md.

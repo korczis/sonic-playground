@@ -10,11 +10,14 @@ keys: {"fold": "pigeonjohn|thebomb", "isrc": "USNNZ1000450", "musicbrainz": "298
 review: "pigeon-the-bomb.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 80}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # The Bomb - Single version · Pigeon John
 
 From the album *Dragon Slayer*, 3:23.
 A liked song.
+Your Top Songs 2025: #80.
 Reviewed: content/pigeon-the-bomb.md.

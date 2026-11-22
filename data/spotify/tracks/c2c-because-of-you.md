@@ -10,11 +10,14 @@ keys: {"fold": "c2c|becauseofyou", "isrc": "FR9T31200010", "musicbrainz": "5c096
 review: "c2c-feat-pigeon-john-because-of-you.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 79}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Because Of You · C2C, Pigeon John
 
 From the album *Tetra*, 3:42.
 A liked song.
+Your Top Songs 2025: #79.
 Reviewed: content/c2c-feat-pigeon-john-because-of-you.md.

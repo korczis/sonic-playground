@@ -16,8 +16,8 @@
   "mood_terms": 2,
   "concept_terms": 116,
   "instrument_terms": 84,
-  "yearbooks": 7,
-  "recurring": 102,
+  "yearbooks": 10,
+  "recurring": 138,
   "translations": {
    "cs": {
     "reviews": 1140,
@@ -5588,6 +5588,2451 @@
   "culture"
  ],
  "yearbooks": [
+  {
+   "year": 2025,
+   "name": "Your Top Songs 2025",
+   "file": "data/backlog/yearbook-2025.toml",
+   "expected": 100,
+   "items": 100,
+   "songs": 49,
+   "present": 49,
+   "missing": 51,
+   "ambiguous": 0,
+   "skipped": 0,
+   "uncertain": 0,
+   "artists": [
+    {
+     "term": "Pilocka Krach",
+     "count": 2
+    },
+    {
+     "term": "2raumwohnung",
+     "count": 1
+    },
+    {
+     "term": "AYYBO, Preme",
+     "count": 1
+    },
+    {
+     "term": "AYYBO, ero808",
+     "count": 1
+    },
+    {
+     "term": "Bakermat",
+     "count": 1
+    },
+    {
+     "term": "Beltran",
+     "count": 1
+    },
+    {
+     "term": "Brazilian Girls",
+     "count": 1
+    },
+    {
+     "term": "C2C, Pigeon John",
+     "count": 1
+    },
+    {
+     "term": "Campbell, Alcemist",
+     "count": 1
+    },
+    {
+     "term": "Caravan Palace",
+     "count": 1
+    },
+    {
+     "term": "Carte Contact",
+     "count": 1
+    },
+    {
+     "term": "Catastrophe",
+     "count": 1
+    }
+   ],
+   "genres": [
+    {
+     "term": "electronic",
+     "count": 26
+    },
+    {
+     "term": "dance",
+     "count": 8
+    },
+    {
+     "term": "house",
+     "count": 8
+    },
+    {
+     "term": "pop",
+     "count": 8
+    },
+    {
+     "term": "synth-pop",
+     "count": 8
+    },
+    {
+     "term": "soul",
+     "count": 7
+    },
+    {
+     "term": "hip-hop",
+     "count": 4
+    },
+    {
+     "term": "remix",
+     "count": 4
+    },
+    {
+     "term": "tech house",
+     "count": 4
+    },
+    {
+     "term": "alternative",
+     "count": 3
+    },
+    {
+     "term": "disco",
+     "count": 3
+    },
+    {
+     "term": "downtempo",
+     "count": 3
+    }
+   ],
+   "tracks": [
+    {
+     "n": 1,
+     "title": "Lungo Mare",
+     "artist": "Time To Sleep",
+     "status": "present",
+     "source": "time-to-sleep-lungo-mare.md"
+    },
+    {
+     "n": 2,
+     "title": "Karaköy",
+     "artist": "Brazilian Girls",
+     "status": "present",
+     "source": "brazilian-girls-karakoy.md"
+    },
+    {
+     "n": 3,
+     "title": "Prayer In C",
+     "artist": "NOVEMBER KID",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 4,
+     "title": "Time Has Changed - Northern Lite Remix",
+     "artist": "Codec, Flexor, Northern Lite",
+     "status": "present",
+     "source": "codec-n-flexor-time-has-changed-northern-lite-remix.md"
+    },
+    {
+     "n": 5,
+     "title": "Dummy – Chris Lake Remix",
+     "artist": "Portugal. The Man, Chris Lake",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 6,
+     "title": "La Luna Y El Sol",
+     "artist": "Pilocka Krach",
+     "status": "present",
+     "source": "pilocka-krach_la_luna-y-el-sol.md"
+    },
+    {
+     "n": 7,
+     "title": "Somebody lonely and me - Nacht",
+     "artist": "2raumwohnung",
+     "status": "present",
+     "source": "2raumwohnung-somebody-lonely-and-me-nacht.md"
+    },
+    {
+     "n": 8,
+     "title": "Come Online",
+     "artist": "Kid Francescoli, Julia Minkin",
+     "status": "present",
+     "source": "kid-francescoli-come-online.md"
+    },
+    {
+     "n": 9,
+     "title": "Cooler Than Me - Single Mix",
+     "artist": "Mike Posner, Gigamesh",
+     "status": "present",
+     "source": "mike-posner-gigamesh-cooler-than-me-single-mix.md"
+    },
+    {
+     "n": 10,
+     "title": "Goodbye",
+     "artist": "Scratch Bandits Crew",
+     "status": "present",
+     "source": "scratch-bandits-crew-goodbye.md"
+    },
+    {
+     "n": 11,
+     "title": "Hands in the Air",
+     "artist": "Pilocka Krach, One Fine Day Kids",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 12,
+     "title": "My Boat",
+     "artist": "Melissa Laveaux",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 13,
+     "title": "Pump Up The Jam - NightFunk Remix",
+     "artist": "Technotronic, NightFunk",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 14,
+     "title": "Ay Caramba",
+     "artist": "Pilocka Krach, The Lost Amigos",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 15,
+     "title": "7 Years",
+     "artist": "Lukas Graham",
+     "status": "present",
+     "source": "lukas-graham-7-years.md"
+    },
+    {
+     "n": 16,
+     "title": "Choses qui se passent - Pilocka Krach Remix",
+     "artist": "Roderic, Pilocka Krach, matt.i",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 17,
+     "title": "A Friend",
+     "artist": "Say Yes Dog",
+     "status": "present",
+     "source": "say-yes-dog_a-friend.md"
+    },
+    {
+     "n": 18,
+     "title": "Clarita's Song - feat. The Lost Amigos",
+     "artist": "Pilocka Krach, The Lost Amigos",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 19,
+     "title": "Oh Yeah Voll Krass - feat. Lian Ferdinand",
+     "artist": "Pilocka Krach, Lian Ferdinand",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 20,
+     "title": "Smalltown Boy - Nova Version",
+     "artist": "Catastrophe",
+     "status": "present",
+     "source": "catastrophe-smalltown-boy-nova-version.md"
+    },
+    {
+     "n": 21,
+     "title": "Trippy",
+     "artist": "Mindchatter",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 22,
+     "title": "Love Me Again",
+     "artist": "John Newman",
+     "status": "present",
+     "source": "john-newman-love-me-again.md"
+    },
+    {
+     "n": 23,
+     "title": "Amusement Park",
+     "artist": "Nicolas Michaux",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 24,
+     "title": "Blacklight Sleaze",
+     "artist": "Peace Division, Pleasant Gehman",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 25,
+     "title": "One Day Left - Original",
+     "artist": "Pilocka Krach, The Lost Amigos, Sunru, Nereo II",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 26,
+     "title": "Smack Yo'",
+     "artist": "Beltran",
+     "status": "present",
+     "source": "beltran-smack-yo.md"
+    },
+    {
+     "n": 27,
+     "title": "MANSA MUSA",
+     "artist": "ero808",
+     "status": "present",
+     "source": "ero808-mansa-musa.md"
+    },
+    {
+     "n": 28,
+     "title": "One Day Left - Roderic Remix",
+     "artist": "Pilocka Krach, The Lost Amigos, Sunru, Nereo II, Roderic",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 29,
+     "title": "Dans Ta Face",
+     "artist": "Potochkine",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 30,
+     "title": "Fresh",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 31,
+     "title": "DRENCH",
+     "artist": "AYYBO, Preme",
+     "status": "present",
+     "source": "ayybo-preme-drench.md"
+    },
+    {
+     "n": 32,
+     "title": "If This World",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 33,
+     "title": "Sun Is Dark",
+     "artist": "WILL K",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 34,
+     "title": "Magnified Love",
+     "artist": "GusGus",
+     "status": "present",
+     "source": "gusgus-magnified-love.md"
+    },
+    {
+     "n": 35,
+     "title": "Auf Wiedersehen",
+     "artist": "Mansfield.TYA, Rebeka Warrior, Carla Pallone",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 36,
+     "title": "When We Fall",
+     "artist": "You Man, Jérôme Voisin",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 37,
+     "title": "One Time",
+     "artist": "Marian Hill",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 38,
+     "title": "Take a Chance",
+     "artist": "Jain",
+     "status": "present",
+     "source": "jain-take-a-chance.md"
+    },
+    {
+     "n": 39,
+     "title": "I Wanna MMM... - Successful Radio Version",
+     "artist": "The Lawyer",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 40,
+     "title": "Down the Line - It Takes a Number",
+     "artist": "Romare",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 41,
+     "title": "Midnight Dipper - Soulwax Remix",
+     "artist": "Warmduscher, Soulwax",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 42,
+     "title": "Last Resort",
+     "artist": "Papa Roach",
+     "status": "present",
+     "source": "papa-roach-last-resort.md"
+    },
+    {
+     "n": 43,
+     "title": "Sure the Sun Will Rise",
+     "artist": "Hugo Kant",
+     "status": "present",
+     "source": "hugo-kant-sure-the-sun-will-rise.md"
+    },
+    {
+     "n": 44,
+     "title": "HYPNOSIS",
+     "artist": "AYYBO, ero808",
+     "status": "present",
+     "source": "ayybo-ero808-hypnosis.md"
+    },
+    {
+     "n": 45,
+     "title": "Cavaliers",
+     "artist": "Mansfield.TYA, Rebeka Warrior, Carla Pallone",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 46,
+     "title": "Got 2 Let U",
+     "artist": "The Knife",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 47,
+     "title": "Express (Pilocka Krach's Night Train Express Remix)",
+     "artist": "PRADA MEINHOFF, Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 48,
+     "title": "Discolight - Acid Pauli Remix",
+     "artist": "Pilocka Krach, Acid Pauli",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 49,
+     "title": "Losing My Patience",
+     "artist": "Shit Robot, Alexis Taylor",
+     "status": "present",
+     "source": "shit-robot-alexis-taylor-losing-my-patience.md"
+    },
+    {
+     "n": 50,
+     "title": "Cris en theme",
+     "artist": "Il Est Vilaine",
+     "status": "present",
+     "source": "il-est-vilaine-cris-en-theme.md"
+    },
+    {
+     "n": 51,
+     "title": "Tempête",
+     "artist": "Mansfield.TYA, Rebeka Warrior, Carla Pallone",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 52,
+     "title": "Baddest Muthafucka",
+     "artist": "Mickey Avalon",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 53,
+     "title": "Rain in the Desert",
+     "artist": "Pilocka Krach, Roderic",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 54,
+     "title": "Painting Town",
+     "artist": "Nuclear Cowboy",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 55,
+     "title": "Moments",
+     "artist": "Klangkarussell, Will Heard",
+     "status": "present",
+     "source": "klangkarusell-moments.md"
+    },
+    {
+     "n": 56,
+     "title": "La valise",
+     "artist": "Rebeka Warrior, Marlène Saldana",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 57,
+     "title": "Shadows Crawl",
+     "artist": "Torii Wolf",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 58,
+     "title": "Heads Will Roll - A-Trak Remix Radio Edit",
+     "artist": "Yeah Yeah Yeahs, A-Trak",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 59,
+     "title": "Lennon",
+     "artist": "ESSEL",
+     "status": "present",
+     "source": "essel-lennon.md"
+    },
+    {
+     "n": 60,
+     "title": "Power to the Women of the Morning Shift",
+     "artist": "Oum Shatt",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 61,
+     "title": "Palmenhaus",
+     "artist": "Roderic, Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 62,
+     "title": "Like a Dog",
+     "artist": "Carte Contact",
+     "status": "present",
+     "source": "carte-contact-like-a-dog.md"
+    },
+    {
+     "n": 63,
+     "title": "My Name Is Fame",
+     "artist": "Pilocka Krach",
+     "status": "present",
+     "source": "pilocka-krach-my-name-is-fame.md"
+    },
+    {
+     "n": 64,
+     "title": "Would You (go to bed with me?)",
+     "artist": "Campbell, Alcemist",
+     "status": "present",
+     "source": "campbell-alcemist-would-you-go-to-bed-with-me.md"
+    },
+    {
+     "n": 65,
+     "title": "G - 3rd eye",
+     "artist": "Masomenos",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 66,
+     "title": "Euro Trash Girl",
+     "artist": "Chicks On Speed",
+     "status": "present",
+     "source": "chicks-on-speed-euro-trash-girl.md"
+    },
+    {
+     "n": 67,
+     "title": "Undercover Dreamer",
+     "artist": "DRAMAS",
+     "status": "present",
+     "source": "dramas-undercover-dreamer.md"
+    },
+    {
+     "n": 68,
+     "title": "Gitarre Spielen",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 69,
+     "title": "Love Me Again - Kove Remix",
+     "artist": "John Newman, Kove",
+     "status": "present",
+     "source": "john-newman-kove-love-me-again-kove-remix.md"
+    },
+    {
+     "n": 70,
+     "title": "Cheft El Khof",
+     "artist": "Orange Blossom",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 71,
+     "title": "The River",
+     "artist": "Bakermat",
+     "status": "present",
+     "source": "bakermat-the-river.md"
+    },
+    {
+     "n": 72,
+     "title": "Chaos",
+     "artist": "Icare Sandilas",
+     "status": "present",
+     "source": "icare-sandilas-chaos.md"
+    },
+    {
+     "n": 73,
+     "title": "Salt Air",
+     "artist": "Chew Lips",
+     "status": "present",
+     "source": "chew-lips-salt-air.md"
+    },
+    {
+     "n": 74,
+     "title": "Armor",
+     "artist": "Tricky, Terra Lopez, Rituals of Mine",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 75,
+     "title": "Love Me Again - Love Thy Brother Remix",
+     "artist": "John Newman, Love Thy Brother",
+     "status": "present",
+     "source": "john-newman-love-thy-brother-love-me-again-love-thy-brother-remix.md"
+    },
+    {
+     "n": 76,
+     "title": "Love Me Again - Ejeca Remix",
+     "artist": "John Newman, Ejeca",
+     "status": "present",
+     "source": "john-newman-ejeca-love-me-again-ejeca-remix.md"
+    },
+    {
+     "n": 77,
+     "title": "Love Me Again - Gemini Remix",
+     "artist": "John Newman, Gemini",
+     "status": "present",
+     "source": "john-newman-gemini-love-me-again-gemini-remix.md"
+    },
+    {
+     "n": 78,
+     "title": "Sweeter Than Sweet (featuring Alice Carreri)",
+     "artist": "Lulu Rouge",
+     "status": "present",
+     "source": "lulu-rouge-sweeter-than-sweet.md"
+    },
+    {
+     "n": 79,
+     "title": "Because Of You",
+     "artist": "C2C, Pigeon John",
+     "status": "present",
+     "source": "c2c-feat-pigeon-john-because-of-you.md"
+    },
+    {
+     "n": 80,
+     "title": "The Bomb - Single version",
+     "artist": "Pigeon John",
+     "status": "present",
+     "source": "pigeon-the-bomb.md"
+    },
+    {
+     "n": 81,
+     "title": "This Head I Hold",
+     "artist": "Electric Guest",
+     "status": "present",
+     "source": "electric-guest-this-head-i-hold.md"
+    },
+    {
+     "n": 82,
+     "title": "Miracle",
+     "artist": "Caravan Palace",
+     "status": "present",
+     "source": "caravan-palace-miracle.md"
+    },
+    {
+     "n": 83,
+     "title": "Dogs Are In This House",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 84,
+     "title": "My Name Is Fame - Be Svendsen Remix",
+     "artist": "Pilocka Krach, Be Svendsen",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 85,
+     "title": "Alien Babies",
+     "artist": "Easter",
+     "status": "present",
+     "source": "easter-alien-babies.md"
+    },
+    {
+     "n": 86,
+     "title": "Sticks & Stones",
+     "artist": "Red Axes, Adi Scotheque",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 87,
+     "title": "megapunk",
+     "artist": "Ela Minus",
+     "status": "present",
+     "source": "ela-minus-megapunk.md"
+    },
+    {
+     "n": 88,
+     "title": "Solo Dancing",
+     "artist": "Indiana",
+     "status": "present",
+     "source": "indiana-solo-dancing.md"
+    },
+    {
+     "n": 89,
+     "title": "Alfons Trinkt Gern Schnaps",
+     "artist": "Landhouse, Raddantze",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 90,
+     "title": "Who We Are",
+     "artist": "You Man",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 91,
+     "title": "Laughter In Cairo",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 92,
+     "title": "Like a Vice",
+     "artist": "Louisahhh",
+     "status": "present",
+     "source": "louisahhh-like-a-vice-x.md"
+    },
+    {
+     "n": 93,
+     "title": "Modus",
+     "artist": "De la Suda",
+     "status": "present",
+     "source": "de-la-suda-modus.md"
+    },
+    {
+     "n": 94,
+     "title": "The Song",
+     "artist": "Stimming",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 95,
+     "title": "Burning Off My Clothes",
+     "artist": "Sworn Virgins",
+     "status": "present",
+     "source": "sworn-virgins-burning-off-my-clothes.md"
+    },
+    {
+     "n": 96,
+     "title": "Bird In A Cage",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 97,
+     "title": "Anxiety",
+     "artist": "Doechii",
+     "status": "present",
+     "source": "doechii-anxiety.md"
+    },
+    {
+     "n": 98,
+     "title": "Iron Shirt",
+     "artist": "Dreadzone",
+     "status": "present",
+     "source": "dreadzone-iron-shirt.md"
+    },
+    {
+     "n": 99,
+     "title": "Top Secret Keeper",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 100,
+     "title": "Joy",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "name": "Your Top Songs 2024",
+   "file": "data/backlog/yearbook-2024.toml",
+   "expected": 100,
+   "items": 100,
+   "songs": 68,
+   "present": 68,
+   "missing": 32,
+   "ambiguous": 0,
+   "skipped": 0,
+   "uncertain": 0,
+   "artists": [
+    {
+     "term": "Gin Wigmore",
+     "count": 2
+    },
+    {
+     "term": "K.Flay",
+     "count": 2
+    },
+    {
+     "term": "AYAWAKE & Be Svendsen",
+     "count": 1
+    },
+    {
+     "term": "Aaron Ahrends",
+     "count": 1
+    },
+    {
+     "term": "Amanda Blank",
+     "count": 1
+    },
+    {
+     "term": "Anthony Rother",
+     "count": 1
+    },
+    {
+     "term": "Arctic Monkeys",
+     "count": 1
+    },
+    {
+     "term": "Arnaud Rebotini",
+     "count": 1
+    },
+    {
+     "term": "Asaf Avidan & the Mojos, Wankelmut",
+     "count": 1
+    },
+    {
+     "term": "Avenue D",
+     "count": 1
+    },
+    {
+     "term": "Bass Astral x Igo",
+     "count": 1
+    },
+    {
+     "term": "Billie Eilish",
+     "count": 1
+    }
+   ],
+   "genres": [
+    {
+     "term": "electronic",
+     "count": 31
+    },
+    {
+     "term": "soul",
+     "count": 11
+    },
+    {
+     "term": "house",
+     "count": 10
+    },
+    {
+     "term": "dance",
+     "count": 9
+    },
+    {
+     "term": "pop",
+     "count": 8
+    },
+    {
+     "term": "alternative",
+     "count": 7
+    },
+    {
+     "term": "alternative rock",
+     "count": 7
+    },
+    {
+     "term": "blues",
+     "count": 6
+    },
+    {
+     "term": "electro",
+     "count": 6
+    },
+    {
+     "term": "indie pop",
+     "count": 6
+    },
+    {
+     "term": "electro-pop",
+     "count": 5
+    },
+    {
+     "term": "indie",
+     "count": 5
+    }
+   ],
+   "tracks": [
+    {
+     "n": 1,
+     "title": "Trusting Blind",
+     "artist": "Northern Lite",
+     "status": "present",
+     "source": "northern-lite-trusting-blind.md"
+    },
+    {
+     "n": 2,
+     "title": "Brainshaker",
+     "artist": "Anthony Rother",
+     "status": "present",
+     "source": "anthony-rother-brainshaker.md"
+    },
+    {
+     "n": 3,
+     "title": "Pussy",
+     "artist": "Nick Monaco, David Marston",
+     "status": "present",
+     "source": "nick-monaco-david-marston-pussy.md"
+    },
+    {
+     "n": 4,
+     "title": "No More Beer",
+     "artist": "Lipka",
+     "status": "present",
+     "source": "lipka_no-more-beer.md"
+    },
+    {
+     "n": 5,
+     "title": "Put It on Me",
+     "artist": "Matt Maeson",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 6,
+     "title": "Tweet Tweet Tweet - Remastered",
+     "artist": "Sleaford Mods",
+     "status": "present",
+     "source": "sleaford-mods-tweet-tweet-tweet.md"
+    },
+    {
+     "n": 7,
+     "title": "Stand Up - Remastered Version",
+     "artist": "Hindi Zahra",
+     "status": "present",
+     "source": "hindi-zahra_stand-up.md"
+    },
+    {
+     "n": 8,
+     "title": "This Baby Don’t Cry",
+     "artist": "K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 9,
+     "title": "You Bring Me Down",
+     "artist": "Digitaria, Funky Fat",
+     "status": "present",
+     "source": "funky-fat-and-digitaria-you-bring-me-down.md"
+    },
+    {
+     "n": 10,
+     "title": "Speeddance",
+     "artist": "Reptile Youth",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 11,
+     "title": "DJ",
+     "artist": "Amanda Blank",
+     "status": "present",
+     "source": "amanda-blank_dj.md"
+    },
+    {
+     "n": 12,
+     "title": "Can’t Sleep",
+     "artist": "K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 13,
+     "title": "A Friend",
+     "artist": "Say Yes Dog",
+     "status": "present",
+     "source": "say-yes-dog_a-friend.md"
+    },
+    {
+     "n": 14,
+     "title": "Navy Light",
+     "artist": "Labyrinth Ear",
+     "status": "present",
+     "source": "labyrinth-ear-navy-light.md"
+    },
+    {
+     "n": 15,
+     "title": "Discolight - Hrdvsion's NSD Mix",
+     "artist": "Pilocka Krach, Hrdvsion",
+     "status": "present",
+     "source": "hrdvision-nsd-discolight.md"
+    },
+    {
+     "n": 16,
+     "title": "Exodus",
+     "artist": "Nôze, Wareika",
+     "status": "present",
+     "source": "noze-wareika-exodus.md"
+    },
+    {
+     "n": 17,
+     "title": "Take Me Out",
+     "artist": "Franz Ferdinand",
+     "status": "present",
+     "source": "franz-ferdinand-take-me-out.md"
+    },
+    {
+     "n": 18,
+     "title": "Fckrz",
+     "artist": "Luca Malina",
+     "status": "present",
+     "source": "luca-malina-fckrz.md"
+    },
+    {
+     "n": 19,
+     "title": "High Enough - Seattle Sessions",
+     "artist": "K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 20,
+     "title": "Love Me Again",
+     "artist": "John Newman",
+     "status": "present",
+     "source": "john-newman-love-me-again.md"
+    },
+    {
+     "n": 21,
+     "title": "Faster You Fall",
+     "artist": "Eli",
+     "status": "present",
+     "source": "eli-faster-you-fall.md"
+    },
+    {
+     "n": 22,
+     "title": "Verden",
+     "artist": "MEUTE, pølaroit",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 23,
+     "title": "The Wild",
+     "artist": "Poni Hoax",
+     "status": "present",
+     "source": "poni-hoax-the-wild.md"
+    },
+    {
+     "n": 24,
+     "title": "Hands in the Air",
+     "artist": "Pilocka Krach, One Fine Day Kids",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 25,
+     "title": "Love Me Again - Gemini Remix",
+     "artist": "John Newman, Gemini",
+     "status": "present",
+     "source": "john-newman-gemini-love-me-again-gemini-remix.md"
+    },
+    {
+     "n": 26,
+     "title": "So What",
+     "artist": "K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 27,
+     "title": "Walking On the Moon",
+     "artist": "Roseaux, Aloe Blacc",
+     "status": "present",
+     "source": "roseaux-walking-on-the-moon.md"
+    },
+    {
+     "n": 28,
+     "title": "Grillen im Garten - Gerberei Version",
+     "artist": "Kollektiv Turmstrasse",
+     "status": "present",
+     "source": "kollektiv-turmstrasse-grillen-im-garten-gerberei-version.md"
+    },
+    {
+     "n": 29,
+     "title": "Drop The Game",
+     "artist": "Flume, Chet Faker",
+     "status": "present",
+     "source": "flume-chet-faker-drop-the-game.md"
+    },
+    {
+     "n": 30,
+     "title": "R U Mine?",
+     "artist": "Arctic Monkeys",
+     "status": "present",
+     "source": "arctic-monkeys-r-u-mine.md"
+    },
+    {
+     "n": 31,
+     "title": "Oh Yeah Voll Krass - feat. Lian Ferdinand",
+     "artist": "Pilocka Krach, Lian Ferdinand",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 32,
+     "title": "High Enough",
+     "artist": "K.Flay",
+     "status": "present",
+     "source": "k-flay-high-enough.md"
+    },
+    {
+     "n": 33,
+     "title": "When A Fire Starts To Burn",
+     "artist": "Disclosure",
+     "status": "present",
+     "source": "disclosure-when-a-fire-starts-to-burn.md"
+    },
+    {
+     "n": 34,
+     "title": "Roxanne",
+     "artist": "The Police",
+     "status": "present",
+     "source": "the-police-roxanne.md"
+    },
+    {
+     "n": 35,
+     "title": "Up to Us",
+     "artist": "Charles Pasi",
+     "status": "present",
+     "source": "charles-pasi-up-to-us.md"
+    },
+    {
+     "n": 36,
+     "title": "Feel It Still",
+     "artist": "Portugal. The Man",
+     "status": "present",
+     "source": "portugal-the-man-feel-it-still.md"
+    },
+    {
+     "n": 37,
+     "title": "Arrow and Bow - Marek Hemmann Remix",
+     "artist": "Oliver Koletzki, Fran",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 38,
+     "title": "Oddity",
+     "artist": "Zwicker, Olivera Stanimirov",
+     "status": "present",
+     "source": "zwicker_oddity.md"
+    },
+    {
+     "n": 39,
+     "title": "We Are Your Friends - Justice Vs Simian",
+     "artist": "Justice, Simian",
+     "status": "present",
+     "source": "justice-vs-simian_we-are-your-friends.md"
+    },
+    {
+     "n": 40,
+     "title": "Breezeblocks",
+     "artist": "alt-J",
+     "status": "present",
+     "source": "alt-j-breezeblocks.md"
+    },
+    {
+     "n": 41,
+     "title": "Tum Rakak",
+     "artist": "Deluxe",
+     "status": "present",
+     "source": "tum-rakak-deluxe.md"
+    },
+    {
+     "n": 42,
+     "title": "The Muck",
+     "artist": "K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 43,
+     "title": "Clarao Da Lua",
+     "artist": "Roseaux, Aloe Blacc",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 44,
+     "title": "Maybe, I",
+     "artist": "Des Rocs",
+     "status": "present",
+     "source": "des-rocs-maybe-i.md"
+    },
+    {
+     "n": 45,
+     "title": "Wildfire",
+     "artist": "SBTRKT, Little Dragon",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 46,
+     "title": "Somebody's Watching Me",
+     "artist": "MC Lars, K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 47,
+     "title": "Devil Take My Soul",
+     "artist": "Son Of Dave",
+     "status": "present",
+     "source": "son-of-dave-devil-take-my-soul.md"
+    },
+    {
+     "n": 48,
+     "title": "Mad Kidz",
+     "artist": "Crookers",
+     "status": "present",
+     "source": "crookers-mad-kidz.md"
+    },
+    {
+     "n": 49,
+     "title": "Seven Nation Army",
+     "artist": "The White Stripes",
+     "status": "present",
+     "source": "the-white-stripes-seven-nation-army.md"
+    },
+    {
+     "n": 50,
+     "title": "Blood In The Cut",
+     "artist": "K.Flay",
+     "status": "present",
+     "source": "k-flay-blood-in-the-cut.md"
+    },
+    {
+     "n": 51,
+     "title": "After All",
+     "artist": "Oliver Koletzki, Nörd",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 52,
+     "title": "Scarecrow",
+     "artist": "AYAWAKE, Be Svendsen",
+     "status": "present",
+     "source": "ayawake-be-svendsen-scarecrow.md"
+    },
+    {
+     "n": 53,
+     "title": "How We Do",
+     "artist": "Mount Sims",
+     "status": "present",
+     "source": "mount-sims-how-we-do.md"
+    },
+    {
+     "n": 54,
+     "title": "&Run - K.Flay Remix",
+     "artist": "Sir Sly, K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 55,
+     "title": "Trust Me When I Lie",
+     "artist": "Luca Malina",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 56,
+     "title": "Love Me Again - Kove Remix",
+     "artist": "John Newman, Kove",
+     "status": "present",
+     "source": "john-newman-kove-love-me-again-kove-remix.md"
+    },
+    {
+     "n": 57,
+     "title": "Paddling Out",
+     "artist": "Miike Snow",
+     "status": "present",
+     "source": "miike-snow-paddling-out.md"
+    },
+    {
+     "n": 58,
+     "title": "Black Out Days - Future Islands Remix",
+     "artist": "Phantogram, Future Islands",
+     "status": "present",
+     "source": "phantogram-future-islands-black-out-days-future-islands-remix.md"
+    },
+    {
+     "n": 59,
+     "title": "Heartbreak Summer",
+     "artist": "RAC, K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 60,
+     "title": "Burn It Down",
+     "artist": "GABRIEL VITEL",
+     "status": "present",
+     "source": "gabriel-vitel_burn-it-down.md"
+    },
+    {
+     "n": 61,
+     "title": "Huacachina",
+     "artist": "MonteRosso",
+     "status": "present",
+     "source": "monterosso-huacachina.md"
+    },
+    {
+     "n": 62,
+     "title": "Ice Cream",
+     "artist": "New Young Pony Club",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 63,
+     "title": "Single and Famous",
+     "artist": "MC Lars, K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 64,
+     "title": "Solo Dancing",
+     "artist": "Indiana",
+     "status": "present",
+     "source": "indiana-solo-dancing.md"
+    },
+    {
+     "n": 65,
+     "title": "Gold",
+     "artist": "Chet Faker",
+     "status": "present",
+     "source": "chet-faker-gold.md"
+    },
+    {
+     "n": 66,
+     "title": "Royal T",
+     "artist": "Crookers, Róisín Murphy",
+     "status": "present",
+     "source": "crookers-roisin-murphy-royal-t.md"
+    },
+    {
+     "n": 67,
+     "title": "All that she wants",
+     "artist": "Clea Vincent",
+     "status": "present",
+     "source": "clea-vincent-all-that-she-wants.md"
+    },
+    {
+     "n": 68,
+     "title": "Written In The Water",
+     "artist": "Gin Wigmore",
+     "status": "present",
+     "source": "gin-wigmore-written-in-the-water.md"
+    },
+    {
+     "n": 69,
+     "title": "Mother - Parov Stelars Cry and Dance Remix",
+     "artist": "Lilja Bloom, Parov Stelar",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 70,
+     "title": "Trash - Crookers Remix",
+     "artist": "The Whip, Crookers",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 71,
+     "title": "Lost N Free - Original Mix",
+     "artist": "Kruse & Nuernberg, Brolin",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 72,
+     "title": "Riders On The Storm",
+     "artist": "Sie, Courtney Gray",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 73,
+     "title": "Kill Of The Night",
+     "artist": "Gin Wigmore",
+     "status": "present",
+     "source": "gin-wigmore-kill-of-the-night.md"
+    },
+    {
+     "n": 74,
+     "title": "Come",
+     "artist": "Jain",
+     "status": "present",
+     "source": "jain-come.md"
+    },
+    {
+     "n": 75,
+     "title": "If This World",
+     "artist": "Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 76,
+     "title": "High Enough - RAC Remix",
+     "artist": "K.Flay, RAC",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 77,
+     "title": "COPYCAT",
+     "artist": "Billie Eilish",
+     "status": "present",
+     "source": "billie-eilish-copycat.md"
+    },
+    {
+     "n": 78,
+     "title": "Pleasure Seeker",
+     "artist": "CAITLIN, Thomas Schumacher, Elektrochemie",
+     "status": "present",
+     "source": "caitlin-thomas-schumacher-elektrochemie-pleasure-seeker.md"
+    },
+    {
+     "n": 79,
+     "title": "Express (Pilocka Krach's Night Train Express Remix)",
+     "artist": "PRADA MEINHOFF, Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 80,
+     "title": "Zen (with K.Flay & grandson)",
+     "artist": "X Ambassadors, K.Flay, grandson",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 81,
+     "title": "Cooler Than Me",
+     "artist": "Lucky Luke",
+     "status": "present",
+     "source": "lucky-luke-cooler-than-me.md"
+    },
+    {
+     "n": 82,
+     "title": "When I Was A Young Girl",
+     "artist": "Feist",
+     "status": "present",
+     "source": "feist-when-i-was-a-young-girl.md"
+    },
+    {
+     "n": 83,
+     "title": "Dance Monkey",
+     "artist": "Tones And I",
+     "status": "present",
+     "source": "tones-and-i-dance-monkey.md"
+    },
+    {
+     "n": 84,
+     "title": "Five Minutes",
+     "artist": "Her",
+     "status": "present",
+     "source": "her-five-minutes.md"
+    },
+    {
+     "n": 85,
+     "title": "Yes I'm Serious",
+     "artist": "K.Flay",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 86,
+     "title": "Paris 1985",
+     "artist": "Lecomte De Brégeot, Elle Valenci",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 87,
+     "title": "Ay Caramba",
+     "artist": "Pilocka Krach, The Lost Amigos",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 88,
+     "title": "Pussy Cock & God",
+     "artist": "Bass Astral x Igo",
+     "status": "present",
+     "source": "bass-astral-x-igo-pussy-cock-god.md"
+    },
+    {
+     "n": 89,
+     "title": "Your Woman",
+     "artist": "White Town",
+     "status": "present",
+     "source": "white-town-your-woman.md"
+    },
+    {
+     "n": 90,
+     "title": "Island - Nôze Remix",
+     "artist": "Dapayk & Padberg, Caro, Nôze",
+     "status": "present",
+     "source": "dapayk-padberg-caro-noze-island-noze-remix.md"
+    },
+    {
+     "n": 91,
+     "title": "One Day / Reckoning Song (Wankelmut Remix) - Radio Edit",
+     "artist": "Asaf Avidan, The Mojos, Wankelmut",
+     "status": "present",
+     "source": "asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md"
+    },
+    {
+     "n": 92,
+     "title": "Needle in the Hay",
+     "artist": "Melissa Laveaux",
+     "status": "present",
+     "source": "melissa-laveaux-needle-in-the-hay.md"
+    },
+    {
+     "n": 93,
+     "title": "Odessa",
+     "artist": "Caribou",
+     "status": "present",
+     "source": "caribou-odessa.md"
+    },
+    {
+     "n": 94,
+     "title": "Hoag",
+     "artist": "Luke Garcia, Th3 Oth3r",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 95,
+     "title": "My Click",
+     "artist": "Aaron Ahrends",
+     "status": "present",
+     "source": "aaron-ahrends-my-click.md"
+    },
+    {
+     "n": 96,
+     "title": "Body Language - Interpretation",
+     "artist": "Booka Shade",
+     "status": "present",
+     "source": "booka-shade-body-language-interpretation.md"
+    },
+    {
+     "n": 97,
+     "title": "2d2f",
+     "artist": "Avenue D",
+     "status": "present",
+     "source": "avenue-d-2d2f.md"
+    },
+    {
+     "n": 98,
+     "title": "This Head I Hold",
+     "artist": "Electric Guest",
+     "status": "present",
+     "source": "electric-guest-this-head-i-hold.md"
+    },
+    {
+     "n": 99,
+     "title": "Curiosa",
+     "artist": "Arnaud Rebotini",
+     "status": "present",
+     "source": "arnaud-rebotini-curiosa.md"
+    },
+    {
+     "n": 100,
+     "title": "Fading Nights",
+     "artist": "Parra for Cuva, Anna Naklab",
+     "status": "present",
+     "source": "parra-for-cuva-anna-naklab-fading-nights.md"
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "name": "Your Top Songs 2023",
+   "file": "data/backlog/yearbook-2023.toml",
+   "expected": 100,
+   "items": 100,
+   "songs": 68,
+   "present": 68,
+   "missing": 32,
+   "ambiguous": 0,
+   "skipped": 0,
+   "uncertain": 0,
+   "artists": [
+    {
+     "term": "K.Flay",
+     "count": 2
+    },
+    {
+     "term": "Klyne",
+     "count": 2
+    },
+    {
+     "term": "Amanda Blank",
+     "count": 1
+    },
+    {
+     "term": "Asaf Avidan & the Mojos",
+     "count": 1
+    },
+    {
+     "term": "Asaf Avidan & the Mojos, Wankelmut",
+     "count": 1
+    },
+    {
+     "term": "Be Svendsen",
+     "count": 1
+    },
+    {
+     "term": "Bob Moses",
+     "count": 1
+    },
+    {
+     "term": "Bob Sinclar",
+     "count": 1
+    },
+    {
+     "term": "Booka Shade",
+     "count": 1
+    },
+    {
+     "term": "Bronski Beat",
+     "count": 1
+    },
+    {
+     "term": "Bronski Beat, People Theatre",
+     "count": 1
+    },
+    {
+     "term": "Bronski Beat, Space City",
+     "count": 1
+    }
+   ],
+   "genres": [
+    {
+     "term": "electronic",
+     "count": 29
+    },
+    {
+     "term": "dance",
+     "count": 11
+    },
+    {
+     "term": "house",
+     "count": 10
+    },
+    {
+     "term": "deep house",
+     "count": 8
+    },
+    {
+     "term": "synth-pop",
+     "count": 8
+    },
+    {
+     "term": "pop",
+     "count": 7
+    },
+    {
+     "term": "r&b",
+     "count": 7
+    },
+    {
+     "term": "soul",
+     "count": 7
+    },
+    {
+     "term": "disco",
+     "count": 5
+    },
+    {
+     "term": "hip-hop",
+     "count": 5
+    },
+    {
+     "term": "remix",
+     "count": 5
+    },
+    {
+     "term": "alternative",
+     "count": 4
+    }
+   ],
+   "tracks": [
+    {
+     "n": 1,
+     "title": "Ships",
+     "artist": "Rachel K Collier",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 2,
+     "title": "Trap",
+     "artist": "Camp Claude",
+     "status": "present",
+     "source": "camp-claude-trap.md"
+    },
+    {
+     "n": 3,
+     "title": "DJ",
+     "artist": "Amanda Blank",
+     "status": "present",
+     "source": "amanda-blank_dj.md"
+    },
+    {
+     "n": 4,
+     "title": "Once Twice - Radio Edit",
+     "artist": "Ryan Blyth, Rachel K Collier",
+     "status": "present",
+     "source": "ryan-blyth_once-twice-feat-rachel-k-collier.md"
+    },
+    {
+     "n": 5,
+     "title": "In My Mind",
+     "artist": "Dynoro, GIGI D'AGOSTINO",
+     "status": "present",
+     "source": "dynoro-gigi-d-agostino-in-my-mind.md"
+    },
+    {
+     "n": 6,
+     "title": "Mad World",
+     "artist": "Tears For Fears",
+     "status": "present",
+     "source": "tears-for-fears-mad-world.md"
+    },
+    {
+     "n": 7,
+     "title": "Darling, You Can't Walk Away",
+     "artist": "Ark Patrol",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 8,
+     "title": "Hands in the Air",
+     "artist": "Pilocka Krach, One Fine Day Kids",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 9,
+     "title": "Remember the Name (feat. Styles of Beyond)",
+     "artist": "Fort Minor, Styles Of Beyond",
+     "status": "present",
+     "source": "fort-minor-remember-the-name.md"
+    },
+    {
+     "n": 10,
+     "title": "Padam Padam",
+     "artist": "Kylie Minogue",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 11,
+     "title": "Hold Them Close - Rachel K Collier Remix",
+     "artist": "Benin City, Rachel K Collier, Jo Goes Hunting",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 12,
+     "title": "Take Me As I Am",
+     "artist": "The Streets, Chris Lorenzo",
+     "status": "present",
+     "source": "chris-lorenzo-and-the-streets_take-me-as-i-am.md"
+    },
+    {
+     "n": 13,
+     "title": "Oh Yeah Voll Krass - feat. Lian Ferdinand",
+     "artist": "Pilocka Krach, Lian Ferdinand",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 14,
+     "title": "Crystalised",
+     "artist": "The xx",
+     "status": "present",
+     "source": "the-xx-crystalised.md"
+    },
+    {
+     "n": 15,
+     "title": "Roxanne",
+     "artist": "The Police",
+     "status": "present",
+     "source": "the-police-roxanne.md"
+    },
+    {
+     "n": 16,
+     "title": "Moments",
+     "artist": "Klangkarussell, Will Heard",
+     "status": "present",
+     "source": "klangkarusell-moments.md"
+    },
+    {
+     "n": 17,
+     "title": "High Enough",
+     "artist": "K.Flay",
+     "status": "present",
+     "source": "k-flay-high-enough.md"
+    },
+    {
+     "n": 18,
+     "title": "Waiting",
+     "artist": "Klyne",
+     "status": "present",
+     "source": "klyne-waiting.md"
+    },
+    {
+     "n": 19,
+     "title": "Echoes",
+     "artist": "Oliver Koletzki, Fran",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 20,
+     "title": "Deja vu",
+     "artist": "Scarlet Pleasure",
+     "status": "present",
+     "source": "scarlet-pleasure-deja-vu.md"
+    },
+    {
+     "n": 21,
+     "title": "Get Back In My Life",
+     "artist": "Maroon 5",
+     "status": "present",
+     "source": "maroon-5-get-back-in-my-life.md"
+    },
+    {
+     "n": 22,
+     "title": "Mount Everest",
+     "artist": "Labrinth",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 23,
+     "title": "Toop Toop",
+     "artist": "Cassius",
+     "status": "present",
+     "source": "cassius-toop-toop.md"
+    },
+    {
+     "n": 24,
+     "title": "The One - Unlovable Remix",
+     "artist": "Habstrakt, Unlovable",
+     "status": "present",
+     "source": "habstrakt-unlovable-the-one-unlovable-remix.md"
+    },
+    {
+     "n": 25,
+     "title": "Cooler Than Me",
+     "artist": "Lucky Luke",
+     "status": "present",
+     "source": "lucky-luke-cooler-than-me.md"
+    },
+    {
+     "n": 26,
+     "title": "A Friend",
+     "artist": "Say Yes Dog",
+     "status": "present",
+     "source": "say-yes-dog_a-friend.md"
+    },
+    {
+     "n": 27,
+     "title": "For Your Love Suite 2014 full version - Chilly Remix",
+     "artist": "Chilly",
+     "status": "present",
+     "source": "chilly-for-your-love-suite-2014-full-version-chilly-remix.md"
+    },
+    {
+     "n": 28,
+     "title": "When A Fire Starts To Burn",
+     "artist": "Disclosure",
+     "status": "present",
+     "source": "disclosure-when-a-fire-starts-to-burn.md"
+    },
+    {
+     "n": 29,
+     "title": "Epoque",
+     "artist": "Joris Delacroix",
+     "status": "present",
+     "source": "joris-delacroix-epoque.md"
+    },
+    {
+     "n": 30,
+     "title": "Wake Up in the Sky",
+     "artist": "Gucci Mane, Bruno Mars, Kodak Black",
+     "status": "present",
+     "source": "gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky.md"
+    },
+    {
+     "n": 31,
+     "title": "Ay Caramba",
+     "artist": "Pilocka Krach, The Lost Amigos",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 32,
+     "title": "Same Man - Original Mix",
+     "artist": "Till West, DJ Delicious",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 33,
+     "title": "Keep Me In My Plane",
+     "artist": "WhoMadeWho",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 34,
+     "title": "Craving",
+     "artist": "Røse, Rachel K Collier",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 35,
+     "title": "Express (Pilocka Krach's Night Train Express Remix)",
+     "artist": "PRADA MEINHOFF, Pilocka Krach",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 36,
+     "title": "Ba Ba Bounce",
+     "artist": "Marbert Rocel",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 37,
+     "title": "Back To Life",
+     "artist": "Soul II Soul, Caron Wheeler",
+     "status": "present",
+     "source": "soul-ii-soul-caron-wheeler-back-to-life.md"
+    },
+    {
+     "n": 38,
+     "title": "Crazy",
+     "artist": "Daniela Andrade",
+     "status": "present",
+     "source": "daniela-andrade-crazy.md"
+    },
+    {
+     "n": 39,
+     "title": "Love Me Again",
+     "artist": "John Newman",
+     "status": "present",
+     "source": "john-newman-love-me-again.md"
+    },
+    {
+     "n": 40,
+     "title": "Exodus",
+     "artist": "Nôze, Wareika",
+     "status": "present",
+     "source": "noze-wareika-exodus.md"
+    },
+    {
+     "n": 41,
+     "title": "Fckrz",
+     "artist": "Luca Malina",
+     "status": "present",
+     "source": "luca-malina-fckrz.md"
+    },
+    {
+     "n": 42,
+     "title": "Budapest",
+     "artist": "Poni Hoax, Olga Kouklaki",
+     "status": "present",
+     "source": "poni-hoax-olga-kouklaki-budapest.md"
+    },
+    {
+     "n": 43,
+     "title": "You Wish",
+     "artist": "Nightmares On Wax",
+     "status": "present",
+     "source": "nightmares-on-wax-you-wish.md"
+    },
+    {
+     "n": 44,
+     "title": "I Need Love",
+     "artist": "Hot Toddy, Ron Basejam",
+     "status": "present",
+     "source": "hot-toddy-ron-basejam-i-need-love.md"
+    },
+    {
+     "n": 45,
+     "title": "American Boy",
+     "artist": "Estelle, Kanye West",
+     "status": "present",
+     "source": "estelle-kanye-west-american-boy-feat-kanye-west.md"
+    },
+    {
+     "n": 46,
+     "title": "Smalltown Boy",
+     "artist": "Bronski Beat",
+     "status": "present",
+     "source": "bronski-beat_small_town_boy.md"
+    },
+    {
+     "n": 47,
+     "title": "The End (Rachel K Collier Remix)",
+     "artist": "JPOLND, Rachel K Collier",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 48,
+     "title": "Me, Myself and I",
+     "artist": "Marbert Rocel",
+     "status": "present",
+     "source": "marbert-rocel-me-myself-and-i.md"
+    },
+    {
+     "n": 49,
+     "title": "Stand Up - Remastered Version",
+     "artist": "Hindi Zahra",
+     "status": "present",
+     "source": "hindi-zahra_stand-up.md"
+    },
+    {
+     "n": 50,
+     "title": "One Day / Reckoning Song (Wankelmut Remix) [Radio Edit]",
+     "artist": "Asaf Avidan, The Mojos, Wankelmut",
+     "status": "present",
+     "source": "asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md"
+    },
+    {
+     "n": 51,
+     "title": "Pure Ruin",
+     "artist": "Matt Lange",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 52,
+     "title": "Pleasure Seeker",
+     "artist": "CAITLIN, Thomas Schumacher, Elektrochemie",
+     "status": "present",
+     "source": "caitlin-thomas-schumacher-elektrochemie-pleasure-seeker.md"
+    },
+    {
+     "n": 53,
+     "title": "Darker Place - Joe Goddard Remix, Radio Edit",
+     "artist": "Rachel Chinouriri, Joe Goddard",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 54,
+     "title": "Poison",
+     "artist": "Qodës",
+     "status": "present",
+     "source": "qodes-poison.md"
+    },
+    {
+     "n": 55,
+     "title": "The Player",
+     "artist": "Kid Francescoli, Julia Minkin",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 56,
+     "title": "Sweet Dreams - Deep Summer Mix",
+     "artist": "DJ Clipps, Tasia, Bthelick, 9Ts",
+     "status": "present",
+     "source": "dj-clipps-sweet-dreams-deep-summer-mix.md"
+    },
+    {
+     "n": 57,
+     "title": "Tearing Me Up",
+     "artist": "Bob Moses",
+     "status": "present",
+     "source": "bob-moses-tearing-me-up.md"
+    },
+    {
+     "n": 58,
+     "title": "Stars - People Theatre's Milky Way",
+     "artist": "Bronski Beat, People Theatre",
+     "status": "present",
+     "source": "bronski-beat-people-theatre-stars-people-theatre-s-milky-way-mix.md"
+    },
+    {
+     "n": 59,
+     "title": "Upside Down",
+     "artist": "Paloma Faith",
+     "status": "present",
+     "source": "paloma-faith-upside-down.md"
+    },
+    {
+     "n": 60,
+     "title": "The beat goes on - Original",
+     "artist": "Bob Sinclar",
+     "status": "present",
+     "source": "bob-sinclar-the-beat-goes-on.md"
+    },
+    {
+     "n": 61,
+     "title": "Blood In The Cut",
+     "artist": "K.Flay",
+     "status": "present",
+     "source": "k-flay-blood-in-the-cut.md"
+    },
+    {
+     "n": 62,
+     "title": "The Time Is Now",
+     "artist": "Moloko",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 63,
+     "title": "Sambassim - DJ Patife Remix",
+     "artist": "DJ Patife",
+     "status": "present",
+     "source": "dj-patife-sambassim-dj-patife-remix.md"
+    },
+    {
+     "n": 64,
+     "title": "Bulletproof",
+     "artist": "La Roux",
+     "status": "present",
+     "source": "la-roux-bulletproof.md"
+    },
+    {
+     "n": 65,
+     "title": "Summer Light",
+     "artist": "Tample",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 66,
+     "title": "Joe Le Taxi",
+     "artist": "Hanayo",
+     "status": "present",
+     "source": "hanayo-joe-le-taxi.md"
+    },
+    {
+     "n": 67,
+     "title": "Sweet Dreams (Are Made Of This)",
+     "artist": "Emily Browning",
+     "status": "present",
+     "source": "emily-browning-sweet-dreams-are-made-of-this.md"
+    },
+    {
+     "n": 68,
+     "title": "Prokrastination",
+     "artist": "Moop Mama",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 69,
+     "title": "Let Them Not Weep",
+     "artist": "Be Svendsen",
+     "status": "present",
+     "source": "be-svendsen-let-them-not-weep.md"
+    },
+    {
+     "n": 70,
+     "title": "Smalltown Boy 2018 - Space City Remix",
+     "artist": "Bronski Beat, Space City",
+     "status": "present",
+     "source": "bronski-beat-space-city-smalltown-boy-2018-space-city-remix.md"
+    },
+    {
+     "n": 71,
+     "title": "Reckoning Song",
+     "artist": "Asaf Avidan, The Mojos",
+     "status": "present",
+     "source": "asaf-avidan-the-mojos-reckoning-song-one-day.md"
+    },
+    {
+     "n": 72,
+     "title": "Don't Know What",
+     "artist": "Rachel K Collier",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 73,
+     "title": "Doo uap, doo uap, doo uap",
+     "artist": "Gabin",
+     "status": "present",
+     "source": "gabin-doo-uap-doo-uap-doo-uap.md"
+    },
+    {
+     "n": 74,
+     "title": "Shut up My Moms Calling (Sped up)",
+     "artist": "Hotel Ugly",
+     "status": "present",
+     "source": "hotel-ugly-shut-up-my-moms-calling-sped-up.md"
+    },
+    {
+     "n": 75,
+     "title": "Drop The Game",
+     "artist": "Flume, Chet Faker",
+     "status": "present",
+     "source": "flume-chet-faker-drop-the-game.md"
+    },
+    {
+     "n": 76,
+     "title": "Hey Hey (Radio Edit)",
+     "artist": "Dennis Ferrer",
+     "status": "present",
+     "source": "dennis-ferrer-hey-hey.md"
+    },
+    {
+     "n": 77,
+     "title": "Earthquake",
+     "artist": "Rachel K Collier",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 78,
+     "title": "Numb / Encore",
+     "artist": "JAŸ-Z, Linkin Park",
+     "status": "present",
+     "source": "jay-z-linkin-park-numb-encore.md"
+    },
+    {
+     "n": 79,
+     "title": "How We Do",
+     "artist": "Mount Sims",
+     "status": "present",
+     "source": "mount-sims-how-we-do.md"
+    },
+    {
+     "n": 80,
+     "title": "Ice Cream",
+     "artist": "New Young Pony Club",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 81,
+     "title": "Paralyzed",
+     "artist": "Klyne",
+     "status": "present",
+     "source": "klyne-paralyzed.md"
+    },
+    {
+     "n": 82,
+     "title": "Reflections Are Protection",
+     "artist": "La Roux",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 83,
+     "title": "In Berlin",
+     "artist": "Tubbe",
+     "status": "present",
+     "source": "tubbe-in-berlin.md"
+    },
+    {
+     "n": 84,
+     "title": "Darklands",
+     "artist": "Whilk & Misky",
+     "status": "present",
+     "source": "whilk-and-miskey-darklands.md"
+    },
+    {
+     "n": 85,
+     "title": "Only For You - Croquet Club Remix",
+     "artist": "Mat Zo, Rachel K Collier, Croquet Club",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 86,
+     "title": "Romano Hip Hop",
+     "artist": "Gipsy.cz",
+     "status": "present",
+     "source": "gipsy-cz-romano-hip-hop.md"
+    },
+    {
+     "n": 87,
+     "title": "Tum Rakak",
+     "artist": "Deluxe",
+     "status": "present",
+     "source": "tum-rakak-deluxe.md"
+    },
+    {
+     "n": 88,
+     "title": "You Bring Me Down",
+     "artist": "Digitaria, Funky Fat",
+     "status": "present",
+     "source": "funky-fat-and-digitaria-you-bring-me-down.md"
+    },
+    {
+     "n": 89,
+     "title": "I Wish You Well",
+     "artist": "Rachel K Collier",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 90,
+     "title": "Seven Nation Army",
+     "artist": "The White Stripes",
+     "status": "present",
+     "source": "the-white-stripes-seven-nation-army.md"
+    },
+    {
+     "n": 91,
+     "title": "Body Language - Interpretation",
+     "artist": "Booka Shade",
+     "status": "present",
+     "source": "booka-shade-body-language-interpretation.md"
+    },
+    {
+     "n": 92,
+     "title": "Love Tonight (David Guetta Remix Edit)",
+     "artist": "Shouse, David Guetta",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 93,
+     "title": "Microfreaking Out",
+     "artist": "Rachel K Collier",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 94,
+     "title": "Needle in the Hay",
+     "artist": "Melissa Laveaux",
+     "status": "present",
+     "source": "melissa-laveaux-needle-in-the-hay.md"
+    },
+    {
+     "n": 95,
+     "title": "Time Again - Jan Blomqvist Club Mix",
+     "artist": "Jan Blomqvist",
+     "status": "present",
+     "source": "jan-blomqvist-time-again.md"
+    },
+    {
+     "n": 96,
+     "title": "Perfect Fit",
+     "artist": "Niko Schwind, Heartbeat",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 97,
+     "title": "Squares Into Circles - Original Mix",
+     "artist": "Rachel K Collier",
+     "status": "missing",
+     "source": null
+    },
+    {
+     "n": 98,
+     "title": "Believer",
+     "artist": "Imagine Dragons",
+     "status": "present",
+     "source": "imagine-dragons-believer.md"
+    },
+    {
+     "n": 99,
+     "title": "Catch - 2021 Remaster",
+     "artist": "Kosheen",
+     "status": "present",
+     "source": "kosheen-catch.md"
+    },
+    {
+     "n": 100,
+     "title": "Reality",
+     "artist": "Oliver Koletzki",
+     "status": "missing",
+     "source": null
+    }
+   ]
+  },
   {
    "year": 2022,
    "name": "Your Top Songs 2022",
@@ -11297,14 +13742,19 @@
  "recurring": [
   "alif-tree_forgotten-places.md",
   "aloe-blacc-i-need-a-dollar.md",
+  "amanda-blank_dj.md",
   "aphex-twin-windowlicker.md",
+  "arctic-monkeys-r-u-mine.md",
   "asaf-avidan-the-mojos-reckoning-song-one-day.md",
+  "asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md",
   "azealia-banks-lazy-jay-212.md",
   "ben-khan-savage.md",
   "billie-eilish-bury-a-friend.md",
   "bjork-kata-rokkar.md",
   "blondie-call-me.md",
+  "bob-moses-tearing-me-up.md",
   "boney-m-sunny.md",
+  "booka-shade-body-language-interpretation.md",
   "brandt-brauer-frick-emika-pretend.md",
   "brodinski-louisahhh-let-the-beat-control-your-body.md",
   "bronski-beat-arnaud-rebotini-smalltown-boy-arnaud-rebotini-remix.md",
@@ -11312,7 +13762,9 @@
   "bronski-beat-why.md",
   "bronski-beat_small_town_boy.md",
   "busta-rhymes-jamal-put-your-hands-where-my-eyes-could-see-feat-jamal.md",
+  "caitlin-thomas-schumacher-elektrochemie-pleasure-seeker.md",
   "caribou-odessa.md",
+  "cassius-toop-toop.md",
   "chet-faker-gold.md",
   "christopher-schwarzwalder-iannis-ritter-high-original-mix.md",
   "claptone-clap-your-hands-say-yeah-ghost.md",
@@ -11320,14 +13772,19 @@
   "clea-vincent-all-that-she-wants.md",
   "curtis-harding-need-your-love.md",
   "daft-punk-giorgio-by-moroder.md",
+  "dapayk-padberg-caro-noze-island-noze-remix.md",
   "dead-kennedys-too-drunk-to-fuck.md",
+  "disclosure-when-a-fire-starts-to-burn.md",
   "dj-disse-will-buhrkall-break-on-through.md",
   "dj-marky-stamina-mc-xrs-stamina-mc-carol-carolina-bela-lk-original-mix.md",
+  "dj-patife-sambassim-dj-patife-remix.md",
   "dramas-bloodbath.md",
+  "electric-guest-this-head-i-hold.md",
   "estelle-kanye-west-american-boy-feat-kanye-west.md",
   "flume-chet-faker-drop-the-game.md",
   "foster-the-people-pumped-up-kicks.md",
   "frivolous-wasting-time.md",
+  "funky-fat-and-digitaria-you-bring-me-down.md",
   "gabriella-cilmi-cry-me-a-river-live-version.md",
   "gabriella-cilmi-left-with-someone-else.md",
   "gabriella-cilmi-sweet-about-me.md",
@@ -11342,25 +13799,40 @@
   "her-zefire-queens-live-at-gaite-lyrique-paris.md",
   "him-self-her-kieran-fowkes-gone-too-long-original-mix.md",
   "hindi-zahra_stand-up.md",
+  "indiana-solo-dancing.md",
   "jain-come.md",
   "jain-makeba.md",
   "james-newton-howard-jennifer-lawrence-the-hanging-tree.md",
   "jan-blomqvist-dark-noise.md",
+  "john-newman-gemini-love-me-again-gemini-remix.md",
+  "john-newman-kove-love-me-again-kove-remix.md",
+  "john-newman-love-me-again.md",
   "johnny-cash-hurt.md",
+  "k-flay-blood-in-the-cut.md",
+  "k-flay-high-enough.md",
   "kakkmaddafakka-your-girl.md",
   "kalabrese-sarah-palin-fresh-and-foolish-feat-sarah-palin.md",
   "kelis-stick-up.md",
   "klangkarusell-moments.md",
   "klangkuenstler-alice-phoebe-lou-man-on-the-moon.md",
+  "klyne-paralyzed.md",
+  "klyne-waiting.md",
+  "kollektiv-turmstrasse-grillen-im-garten-gerberei-version.md",
   "kollektiv-turmstrasse_on-the-streets-let-freedom.md",
   "kruder-dorfmeister-johnson.md",
+  "labyrinth-ear-navy-light.md",
   "laidback-beautiful-day.md",
+  "luca-malina-fckrz.md",
+  "lucky-luke-cooler-than-me.md",
   "marbert-rocel-hush-now.md",
+  "marbert-rocel-me-myself-and-i.md",
   "marek-hemmann-hooray.md",
   "melissa-laveaux-kouzen.md",
+  "melissa-laveaux-needle-in-the-hay.md",
   "michael-jackson-billie-jean.md",
   "michelle-gurevich-party-girl.md",
   "miike-snow-paddling-out.md",
+  "monterosso-huacachina.md",
   "mount-sims-ashes.md",
   "mount-sims-black-sunglasses.md",
   "mount-sims-good-service.md",
@@ -11370,29 +13842,38 @@
   "mount-sims-toby-dammit-what-s-the-big-deal.md",
   "muse-uprising.md",
   "nicolas-jaar-time-for-us.md",
+  "nightmares-on-wax-you-wish.md",
   "nina-simone-sinnerman.md",
   "noze-wareika-exodus.md",
   "nteibint-tella-the-owner.md",
   "nu-jo-ke-who-loves-the-sun.md",
+  "paloma-faith-upside-down.md",
   "parra-for-cuva-anna-naklab-fading-nights.md",
   "poni-hoax-olga-kouklaki-budapest.md",
+  "poni-hoax-the-wild.md",
+  "portugal-the-man-feel-it-still.md",
   "pupkulies-rebecca-fou-de-toi.md",
+  "qodes-poison.md",
   "queen-another-one-bites-the-dust-remastered-2011.md",
   "radio-citizen-bajka-summer-days.md",
   "richard-muller-banket-po-schodoch.md",
   "say-yes-dog-lies.md",
   "say-yes-dog_a-friend.md",
+  "scarlet-pleasure-deja-vu.md",
   "simion-roland-clark-lost-club-mix.md",
   "slove-sarah-rebecca-flash-radio-edit.md",
+  "son-of-dave-devil-take-my-soul.md",
   "the-colorist-orchestra-emiliana-torrini-jungle-drum.md",
   "the-crooked-spoke-be-svendsen-black-tower-hotel-be-svendsen-mix.md",
   "the-hacker-mount-sims-traces-oxia-remix.md",
+  "the-police-roxanne.md",
   "the-white-stripes-seven-nation-army.md",
   "theangelcy-my-baby-boy.md",
   "tinush-sandburg.md",
   "tones-and-i-dance-monkey.md",
   "tones-and-i-the-kids-are-coming.md",
   "tubbe-in-berlin.md",
+  "tum-rakak-deluxe.md",
   "wamdue-project-roy-malone-king-of-my-castle-roy-malone-s-king-mix.md",
   "whilk-and-miskey-darklands.md",
   "zwicker-dragon-fly-feat-billy-oden-album-version.md",
@@ -19360,7 +21841,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 89
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -21629,7 +24115,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 49
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -22403,7 +24894,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 42
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -22966,7 +25462,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 9
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -23410,7 +25911,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 21
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -23992,7 +26498,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 15
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -24761,7 +27272,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 99
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -25097,7 +27613,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 75
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -26998,7 +29519,12 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 27
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -27436,7 +29962,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 8
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -28760,7 +31291,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 25
+    },
+    {
+     "year": 2025,
+     "n": 77
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -28872,7 +31412,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 76
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -29667,7 +32212,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 38
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -30196,7 +32746,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 78
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -30521,7 +33076,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 98
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -30734,7 +33294,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 50
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -30938,7 +33503,12 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 72
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -31590,7 +34160,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 43
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -31920,7 +34495,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 74
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -32033,7 +34613,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 44
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -33361,7 +35946,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 66
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -33673,7 +36263,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 24
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -34103,7 +36698,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 34
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -34212,7 +36812,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 30
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -36665,7 +39270,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 86
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -38191,7 +40801,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 73
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -38523,7 +41138,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 17
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -41669,7 +44289,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 82
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -42745,7 +45370,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 67
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -43923,7 +46553,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 87
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -44135,7 +46770,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 85
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -44345,7 +46985,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 59
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -46719,7 +49364,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 97
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -46828,7 +49478,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 28
+    },
+    {
+     "year": 2024,
+     "n": 33
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -47249,7 +49908,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 44
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -47588,7 +50252,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 76
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -48141,7 +50810,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 93
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -48670,7 +51344,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 38
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -50324,7 +53003,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 67
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -53025,7 +55709,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 66
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -53127,7 +55816,12 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 48
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -53862,7 +56556,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 27
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -54296,7 +56995,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 73
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -54917,7 +57621,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 35
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -55018,7 +57727,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 20
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -55117,7 +57831,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 62
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -55333,7 +58052,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 82
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -55544,7 +58268,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 64
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -55656,7 +58385,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 2
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -56217,7 +58951,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 52
+    },
+    {
+     "year": 2024,
+     "n": 78
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -56547,7 +59290,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 70
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -56760,7 +59508,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 58
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -58260,7 +61013,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 26
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -61235,7 +63993,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 44
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -61348,7 +64111,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 31
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -62235,7 +65003,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 1
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -62913,7 +65686,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 6
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -63241,7 +66019,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 37
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -63345,7 +66128,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 10
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -63781,7 +66569,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 63
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -63893,7 +66686,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 58
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -64229,7 +67027,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 3
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -64772,7 +67575,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 64
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -65215,7 +68023,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 61
+    },
+    {
+     "year": 2024,
+     "n": 50
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -65435,7 +68252,20 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 39
+    },
+    {
+     "year": 2024,
+     "n": 20
+    },
+    {
+     "year": 2025,
+     "n": 22
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -67204,7 +70034,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 5
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -67321,7 +70156,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 98
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -67961,7 +70801,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 56
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -68632,7 +71477,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 60
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -69284,7 +72134,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 77
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -70366,7 +73221,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 69
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -70470,7 +73330,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 88
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -71235,7 +74100,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 97
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -71558,7 +74428,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 99
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -73692,7 +76567,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 95
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -73904,7 +76784,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 52
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -78727,6 +81612,10 @@
     {
      "year": 2019,
      "n": 2
+    },
+    {
+     "year": 2023,
+     "n": 20
     }
    ],
    "langs": [
@@ -80464,6 +83353,10 @@
     {
      "year": 2021,
      "n": 3
+    },
+    {
+     "year": 2023,
+     "n": 54
     }
    ],
    "langs": [
@@ -80928,6 +83821,10 @@
     {
      "year": 2020,
      "n": 82
+    },
+    {
+     "year": 2023,
+     "n": 42
     }
    ],
    "langs": [
@@ -81947,6 +84844,10 @@
     {
      "year": 2022,
      "n": 7
+    },
+    {
+     "year": 2024,
+     "n": 100
     }
    ],
    "langs": [
@@ -82513,6 +85414,14 @@
     {
      "year": 2021,
      "n": 18
+    },
+    {
+     "year": 2023,
+     "n": 40
+    },
+    {
+     "year": 2024,
+     "n": 16
     }
    ],
    "langs": [
@@ -83072,6 +85981,10 @@
     {
      "year": 2020,
      "n": 81
+    },
+    {
+     "year": 2023,
+     "n": 43
     }
    ],
    "langs": [
@@ -86260,6 +89173,10 @@
     {
      "year": 2021,
      "n": 83
+    },
+    {
+     "year": 2024,
+     "n": 28
     }
    ],
    "langs": [
@@ -89902,6 +92819,14 @@
     {
      "year": 2018,
      "n": 52
+    },
+    {
+     "year": 2023,
+     "n": 75
+    },
+    {
+     "year": 2024,
+     "n": 29
     }
    ],
    "langs": [
@@ -90465,6 +93390,10 @@
     {
      "year": 2018,
      "n": 77
+    },
+    {
+     "year": 2023,
+     "n": 45
     }
    ],
    "langs": [
@@ -92066,6 +94995,10 @@
     {
      "year": 2018,
      "n": 20
+    },
+    {
+     "year": 2024,
+     "n": 90
     }
    ],
    "langs": [
@@ -95266,6 +98199,14 @@
     {
      "year": 2016,
      "n": 15
+    },
+    {
+     "year": 2023,
+     "n": 50
+    },
+    {
+     "year": 2024,
+     "n": 91
     }
    ],
    "langs": [
@@ -96398,6 +99339,10 @@
     {
      "year": 2022,
      "n": 25
+    },
+    {
+     "year": 2024,
+     "n": 83
     }
    ],
    "langs": [
@@ -97086,6 +100031,14 @@
     {
      "year": 2022,
      "n": 87
+    },
+    {
+     "year": 2023,
+     "n": 90
+    },
+    {
+     "year": 2024,
+     "n": 49
     }
    ],
    "langs": [
@@ -98684,6 +101637,10 @@
     {
      "year": 2022,
      "n": 85
+    },
+    {
+     "year": 2024,
+     "n": 47
     }
    ],
    "langs": [
@@ -101410,6 +104367,10 @@
     {
      "year": 2022,
      "n": 43
+    },
+    {
+     "year": 2024,
+     "n": 23
     }
    ],
    "langs": [
@@ -103221,6 +106182,10 @@
     {
      "year": 2022,
      "n": 76
+    },
+    {
+     "year": 2024,
+     "n": 61
     }
    ],
    "langs": [
@@ -104586,6 +107551,10 @@
     {
      "year": 2021,
      "n": 95
+    },
+    {
+     "year": 2023,
+     "n": 48
     }
    ],
    "langs": [
@@ -111227,6 +114196,10 @@
     {
      "year": 2020,
      "n": 14
+    },
+    {
+     "year": 2023,
+     "n": 23
     }
    ],
    "langs": [
@@ -111353,6 +114326,10 @@
     {
      "year": 2022,
      "n": 99
+    },
+    {
+     "year": 2024,
+     "n": 93
     }
    ],
    "langs": [
@@ -113114,6 +116091,14 @@
     {
      "year": 2021,
      "n": 30
+    },
+    {
+     "year": 2023,
+     "n": 91
+    },
+    {
+     "year": 2024,
+     "n": 96
     }
    ],
    "langs": [
@@ -118511,6 +121496,10 @@
     {
      "year": 2017,
      "n": 9
+    },
+    {
+     "year": 2023,
+     "n": 59
     }
    ],
    "langs": [
@@ -121971,6 +124960,10 @@
     {
      "year": 2017,
      "n": 4
+    },
+    {
+     "year": 2024,
+     "n": 14
     }
    ],
    "langs": [
@@ -122433,6 +125426,10 @@
     {
      "year": 2016,
      "n": 11
+    },
+    {
+     "year": 2023,
+     "n": 18
     }
    ],
    "langs": [
@@ -122552,6 +125549,10 @@
     {
      "year": 2016,
      "n": 6
+    },
+    {
+     "year": 2023,
+     "n": 81
     }
    ],
    "langs": [
@@ -123862,6 +126863,14 @@
     {
      "year": 2017,
      "n": 96
+    },
+    {
+     "year": 2024,
+     "n": 56
+    },
+    {
+     "year": 2025,
+     "n": 69
     }
    ],
    "langs": [
@@ -124832,6 +127841,10 @@
     {
      "year": 2018,
      "n": 38
+    },
+    {
+     "year": 2024,
+     "n": 74
     }
    ],
    "langs": [
@@ -127310,6 +130323,10 @@
     {
      "year": 2021,
      "n": 63
+    },
+    {
+     "year": 2024,
+     "n": 68
     }
    ],
    "langs": [
@@ -127691,6 +130708,10 @@
     {
      "year": 2018,
      "n": 68
+    },
+    {
+     "year": 2024,
+     "n": 73
     }
    ],
    "langs": [
@@ -131139,6 +134160,10 @@
     {
      "year": 2016,
      "n": 36
+    },
+    {
+     "year": 2023,
+     "n": 63
     }
    ],
    "langs": [
@@ -131623,6 +134648,10 @@
     {
      "year": 2022,
      "n": 20
+    },
+    {
+     "year": 2024,
+     "n": 67
     }
    ],
    "langs": [
@@ -131984,6 +135013,10 @@
     {
      "year": 2018,
      "n": 14
+    },
+    {
+     "year": 2024,
+     "n": 65
     }
    ],
    "langs": [
@@ -132815,6 +135848,10 @@
     {
      "year": 2016,
      "n": 27
+    },
+    {
+     "year": 2023,
+     "n": 57
     }
    ],
    "langs": [
@@ -133882,6 +136919,10 @@
     {
      "year": 2022,
      "n": 52
+    },
+    {
+     "year": 2023,
+     "n": 71
     }
    ],
    "langs": [
@@ -134143,6 +137184,10 @@
     {
      "year": 2016,
      "n": 35
+    },
+    {
+     "year": 2024,
+     "n": 30
     }
    ],
    "langs": [
@@ -135234,7 +138279,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 4
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -135555,7 +138605,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 66
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -135667,7 +138722,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 92
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -135778,7 +138838,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 2
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -135887,7 +138952,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 80
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -135998,7 +139068,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 98
+    },
+    {
+     "year": 2025,
+     "n": 81
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -136111,7 +139190,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 79
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -136216,7 +139300,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 71
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -136328,7 +139417,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 78
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -136759,7 +139853,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 21
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -137191,7 +140290,12 @@
     "learning",
     "sources"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 95
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -137647,7 +140751,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 7
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -137759,7 +140868,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 64
+    },
+    {
+     "year": 2025,
+     "n": 88
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -137864,7 +140982,12 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 1
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -138273,7 +141396,12 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 2
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -138613,6 +141741,14 @@
     {
      "year": 2022,
      "n": 2
+    },
+    {
+     "year": 2023,
+     "n": 94
+    },
+    {
+     "year": 2024,
+     "n": 92
     }
    ],
    "langs": [
@@ -139301,7 +142437,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 14
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -139413,7 +142554,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 15
+    },
+    {
+     "year": 2024,
+     "n": 34
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -139524,6 +142674,14 @@
     {
      "year": 2022,
      "n": 1
+    },
+    {
+     "year": 2023,
+     "n": 25
+    },
+    {
+     "year": 2024,
+     "n": 81
     }
    ],
    "langs": [
@@ -140197,7 +143355,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 9
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -140640,6 +143803,14 @@
     {
      "year": 2022,
      "n": 47
+    },
+    {
+     "year": 2023,
+     "n": 88
+    },
+    {
+     "year": 2024,
+     "n": 9
     }
    ],
    "langs": [
@@ -140746,7 +143917,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 27
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -141280,7 +144456,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 15
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -141928,6 +145109,14 @@
     {
      "year": 2021,
      "n": 4
+    },
+    {
+     "year": 2023,
+     "n": 41
+    },
+    {
+     "year": 2024,
+     "n": 18
     }
    ],
    "langs": [
@@ -142288,6 +145477,10 @@
     {
      "year": 2019,
      "n": 5
+    },
+    {
+     "year": 2024,
+     "n": 36
     }
    ],
    "langs": [
@@ -142511,7 +145704,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 40
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -142745,6 +145943,10 @@
     {
      "year": 2021,
      "n": 19
+    },
+    {
+     "year": 2023,
+     "n": 84
     }
    ],
    "langs": [
@@ -142977,6 +146179,10 @@
     {
      "year": 2022,
      "n": 94
+    },
+    {
+     "year": 2023,
+     "n": 83
     }
    ],
    "langs": [
@@ -143527,7 +146733,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 6
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -143877,6 +147088,10 @@
     {
      "year": 2022,
      "n": 39
+    },
+    {
+     "year": 2024,
+     "n": 57
     }
    ],
    "langs": [
@@ -144117,6 +147332,14 @@
     {
      "year": 2022,
      "n": 45
+    },
+    {
+     "year": 2023,
+     "n": 16
+    },
+    {
+     "year": 2025,
+     "n": 55
     }
    ],
    "langs": [
@@ -144227,7 +147450,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 17
+    },
+    {
+     "year": 2024,
+     "n": 32
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -144337,7 +147569,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 29
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -144460,7 +147697,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 95
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -144717,6 +147959,10 @@
     {
      "year": 2021,
      "n": 61
+    },
+    {
+     "year": 2024,
+     "n": 84
     }
    ],
    "langs": [
@@ -145093,6 +148339,14 @@
     {
      "year": 2022,
      "n": 5
+    },
+    {
+     "year": 2023,
+     "n": 87
+    },
+    {
+     "year": 2024,
+     "n": 41
     }
    ],
    "langs": [
@@ -145688,6 +148942,10 @@
     {
      "year": 2020,
      "n": 51
+    },
+    {
+     "year": 2024,
+     "n": 38
     }
    ],
    "langs": [
@@ -145822,6 +149080,18 @@
     {
      "year": 2022,
      "n": 13
+    },
+    {
+     "year": 2023,
+     "n": 26
+    },
+    {
+     "year": 2024,
+     "n": 13
+    },
+    {
+     "year": 2025,
+     "n": 17
     }
    ],
    "langs": [
@@ -145939,7 +149209,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 4
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -146046,7 +149321,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2025,
+     "n": 6
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -146290,6 +149570,14 @@
     {
      "year": 2020,
      "n": 61
+    },
+    {
+     "year": 2023,
+     "n": 79
+    },
+    {
+     "year": 2024,
+     "n": 53
     }
    ],
    "langs": [
@@ -146814,7 +150102,12 @@
     "sources",
     "credits"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 39
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -147046,6 +150339,14 @@
     {
      "year": 2019,
      "n": 14
+    },
+    {
+     "year": 2023,
+     "n": 49
+    },
+    {
+     "year": 2024,
+     "n": 7
     }
    ],
    "langs": [
@@ -147140,7 +150441,12 @@
     "sources",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 60
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -147371,6 +150677,10 @@
     {
      "year": 2021,
      "n": 1
+    },
+    {
+     "year": 2023,
+     "n": 46
     }
    ],
    "langs": [
@@ -147477,7 +150787,16 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 3
+    },
+    {
+     "year": 2024,
+     "n": 11
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -147688,7 +151007,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2024,
+     "n": 4
+    }
+   ],
    "langs": [
     "en",
     "cs"
@@ -147912,7 +151236,12 @@
     "credits",
     "musicbrainz"
    ],
-   "yearbooks": [],
+   "yearbooks": [
+    {
+     "year": 2023,
+     "n": 12
+    }
+   ],
    "langs": [
     "en",
     "cs"

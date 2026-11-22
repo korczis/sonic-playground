@@ -9,11 +9,14 @@ spotify: {"track": "49ScA06qwVTl6RkhpsaZGU", "album": "2StXfEbFEigItrQO3JiSsA", 
 keys: {"fold": "mattlange|pureruin"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 51}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Pure Ruin · Matt Lange
 
 From the album *Pure Ruin*, 5:34.
 A liked song.
+Your Top Songs 2023: #51.
 No review yet.

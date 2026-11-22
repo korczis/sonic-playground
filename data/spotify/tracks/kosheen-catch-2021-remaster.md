@@ -10,11 +10,14 @@ keys: {"fold": "kosheen|catch", "isrc": "GBAZG2110407", "musicbrainz": "b3d12448
 review: "kosheen-catch.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 99}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Catch - 2021 Remaster · Kosheen
 
 From the album *Resist (2021 Remaster)*, 3:23.
 A liked song.
+Your Top Songs 2023: #99.
 Reviewed: content/kosheen-catch.md.

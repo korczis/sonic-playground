@@ -10,11 +10,14 @@ keys: {"fold": "hotelugly|shutupmymomscallingspedup", "musicbrainz": "47f3e1fb-1
 review: "hotel-ugly-shut-up-my-moms-calling-sped-up.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 74}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Shut up My Moms Calling (Sped up) · Hotel Ugly
 
 From the album *Shut up My Moms Calling (Sped up)*, 2:15.
 A liked song.
+Your Top Songs 2023: #74.
 Reviewed: content/hotel-ugly-shut-up-my-moms-calling-sped-up.md.

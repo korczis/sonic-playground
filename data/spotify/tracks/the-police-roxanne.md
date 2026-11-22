@@ -10,11 +10,16 @@ keys: {"fold": "thepolice|roxanne", "isrc": "GBAAM7800003", "musicbrainz": "68aa
 review: "the-police-roxanne.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 15}
+  - {"year": 2024, "n": 34}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Roxanne · The Police
 
 From the album *Outlandos D'Amour (Remastered 2003)*, 3:11.
 A liked song.
+Your Top Songs 2023: #15.
+Your Top Songs 2024: #34.
 Reviewed: content/the-police-roxanne.md.

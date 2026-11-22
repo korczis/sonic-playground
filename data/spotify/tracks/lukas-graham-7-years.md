@@ -10,11 +10,14 @@ keys: {"fold": "lukasgraham|7years", "isrc": "USWB11506516", "musicbrainz": "87e
 review: "lukas-graham-7-years.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 15}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # 7 Years · Lukas Graham
 
 From the album *Lukas Graham*, 3:57.
 A liked song.
+Your Top Songs 2025: #15.
 Reviewed: content/lukas-graham-7-years.md.

@@ -9,11 +9,14 @@ spotify: {"track": "5wS0LGxzuldBZtD00OTYq4", "album": "0NVBfls5UT4szh3l7TaADi", 
 keys: {"fold": "oliverkoletzki|reality"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 100}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Reality · Oliver Koletzki
 
 From the album *I am OK*, 5:09.
 A liked song.
+Your Top Songs 2023: #100.
 No review yet.

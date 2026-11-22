@@ -10,14 +10,17 @@ keys: {"fold": "anthonyrother|brainshaker", "musicbrainz": "6eb33cf8-b27c-48da-8
 review: "anthony-rother-brainshaker.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2024, "n": 2}
 playlists:
   - {"playlist": "angry-ego", "n": 2}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Brainshaker · Anthony Rother
 
 From the album *Super Space Model*, 3:53.
 A liked song.
+Your Top Songs 2024: #2.
 In Angry Ego (#2).
 Reviewed: content/anthony-rother-brainshaker.md.

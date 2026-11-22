@@ -12,7 +12,8 @@ status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 99}
-sources: ["web-player:2026-11-14"]
+  - {"year": 2024, "n": 93}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Odessa · Caribou
@@ -20,4 +21,5 @@ sources: ["web-player:2026-11-14"]
 From the album *Swim*, 5:15.
 Not among the liked songs.
 Your Top Songs 2022: #99.
+Your Top Songs 2024: #93.
 Reviewed: content/caribou-odessa.md.

@@ -284,6 +284,12 @@ def classify(p: dict, self_name: str | None) -> str:
     sub = (p.get("library_subtitle") or "").lower()
     if spotify.year_of(p.get("name", "")) and ("made for" in sub or "spotify" in sub):
         return "yearbook"
+    # A "Your Top Songs <year>" Spotify generated (its id carries Spotify's 37i9dQZ prefix) that the
+    # library never held: read by name, with no library subtitle to say "Made for" (2023-2025,
+    # crawled with SonicCrawl.playlists() on 2026-11-22).
+    pid = (p.get("uri") or "").rsplit(":", 1)[-1]
+    if spotify.year_of(p.get("name", "")) and pid.startswith("37i9dQZ") and re.match(r"your top songs \d{4}$", p.get("name", "").strip().lower()):
+        return "yearbook"
     if "made for" in sub:
         return "made-for-you"
     owner = (p.get("owner") or {}).get("name") or sub.split("•")[-1].strip()
@@ -462,6 +468,7 @@ def resolve_reviews(m: dict) -> None:
         r = cat.resolve_item({"title": s["title"], "artists": s["artists"], **(forced or {})}, index)
         s["review"] = r["source"] if r["status"] == "present" else None
         s["status"] = r["status"]
+        s["decision"] = forced or None
         x = extra.get(s["review"] or "", {})
         mb = x.get("musicbrainz") or {}
         s["review_keys"] = {k: v for k, v in (("isrc", x.get("isrc")),
@@ -741,6 +748,9 @@ def yearbook_items(pl: dict, m: dict) -> list[dict]:
         for key, value in (("album", s["album"]), ("duration", s["duration"]), ("spotify", s["track_id"])):
             if value:
                 it[key] = value
+        # The owner's identity decision on the same recording (data/backlog/decisions.toml) carries
+        # into the yearbook, so its page resolves the item the way the record does.
+        it.update(s.get("decision") or {})
         items.append(it)
     return items
 

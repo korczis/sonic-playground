@@ -14,9 +14,10 @@ yearbooks:
   - {"year": 2019, "n": 47}
   - {"year": 2020, "n": 23}
   - {"year": 2021, "n": 61}
+  - {"year": 2024, "n": 84}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 323}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Five Minutes · Her
@@ -26,5 +27,6 @@ A liked song.
 Your Top Songs 2019: #47.
 Your Top Songs 2020: #23.
 Your Top Songs 2021: #61.
+Your Top Songs 2024: #84.
 In My Top Songs of All the Time (#323).
 Reviewed: content/her-five-minutes.md.

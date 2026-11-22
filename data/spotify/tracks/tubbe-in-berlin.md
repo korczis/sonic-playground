@@ -12,9 +12,10 @@ status: "present"
 liked: false
 yearbooks:
   - {"year": 2022, "n": 94}
+  - {"year": 2023, "n": 83}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 593}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # In Berlin · Tubbe
@@ -22,5 +23,6 @@ sources: ["web-player:2026-11-14"]
 From the album *Keine Arbeit lieber Tanzen*, 3:31.
 Not among the liked songs.
 Your Top Songs 2022: #94.
+Your Top Songs 2023: #83.
 In My Top Songs of All the Time (#593).
 Reviewed: content/tubbe-in-berlin.md.
