@@ -97580,6 +97580,115 @@
     }
    ]
   },
+  "miike-snow-genghis-khan.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miike-snow-genghis-khan/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Miike Snow",
+      "sameAs": "https://musicbrainz.org/artist/753a1564-aaef-4d39-bc68-4a8d5e328cf7"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electro-pop",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "iii"
+     },
+     "isrcCode": "USAT21503728",
+     "name": "Genghis Khan",
+     "sameAs": [
+      "https://musicbrainz.org/recording/19bf0a27-d3ee-41da-8758-e0020a35c078",
+      "https://www.youtube.com/watch?v=P_SlAzsXa7E"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/miike-snow-genghis-khan/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/miike-snow-genghis-khan/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Genghis Khan (Miike Snow song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Genghis_Khan_(Miike_Snow_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "iii (Miike Snow album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Iii_(Miike_Snow_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Miike Snow",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Miike_Snow"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Genghis Khan (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/19bf0a27-d3ee-41da-8758-e0020a35c078"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Miike Snow - Genghis Khan (Official Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=P_SlAzsXa7E"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Singl kapely Miike Snow z roku 2015 mění přiznání k iracionální žárlivosti ve falzetový electropop se skandovaným hookem, klavírem a arabským riffem; ve videoklipu, jehož režisérem je Ninian Doff, se padouch z bondovek zamiluje do zajatého špiona.",
+     "educationalLevel": "introductory",
+     "headline": "Miike Snow - Genghis Khan",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/falsetto/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/miike-snow-genghis-khan/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/miike-snow-genghis-khan/",
+     "wordCount": 509
+    }
+   ]
+  },
   "miike-snow-paddling-out.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -101610,6 +101719,123 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/nils-penner-the-thing/",
      "wordCount": 469
+    }
+   ]
+  },
+  "nina-simone-feeling-good.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nina-simone-feeling-good/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Nina Simone",
+      "sameAs": "https://musicbrainz.org/artist/2944824d-4c26-476f-a981-be849081942f"
+     },
+     "datePublished": "1965",
+     "genre": [
+      "jazz",
+      "blues",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "I Put A Spell On You"
+     },
+     "isrcCode": "USPR36500001",
+     "name": "Feeling Good",
+     "sameAs": [
+      "https://musicbrainz.org/recording/96b8213c-48ab-435a-bd70-7f9d491fd107",
+      "https://www.youtube.com/watch?v=oHRNrgDIJfo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/nina-simone-feeling-good/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/nina-simone-feeling-good/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Feeling Good",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Feeling_Good"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "I Put a Spell on You (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/I_Put_a_Spell_on_You_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Feeling Good': Nina Simone's Joyous Emancipation Anthem",
+       "publisher": "uDiscover Music",
+       "url": "https://www.udiscovermusic.com/stories/nina-simone-feeling-good-song-feature"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Hear the stunning isolated vocals for Nina Simone song 'Feeling Good'",
+       "publisher": "Far Out Magazine",
+       "url": "https://faroutmagazine.co.uk/isolated-vocals-nina-simone-song-feeling-good/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Feeling Good (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/96b8213c-48ab-435a-bd70-7f9d491fd107"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Nina Simone - Feeling Good (Official Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=oHRNrgDIJfo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Nahrávka Niny Simone z roku 1965 písně z muzikálu The Roar of the Greasepaint: téměř holý hlas v úvodu, žestě big bandu, které do něj vtrhnou, a píseň o osvobození, z níž se její podpisová skladba stala až díky reklamě v roce 1994.",
+     "educationalLevel": "introductory",
+     "headline": "Nina Simone - Feeling Good",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "improvisation",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/improvisation/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/nina-simone-feeling-good/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/nina-simone-feeling-good/",
+     "wordCount": 508
     }
    ]
   },
@@ -113264,6 +113490,131 @@
     }
    ]
   },
+  "scissor-sisters-comfortably-numb.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-comfortably-numb/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Scissor Sisters",
+      "sameAs": "https://musicbrainz.org/artist/4236d929-9a81-4c8e-97c3-8d3306780f50"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "cover",
+      "nu-disco",
+      "hi-nrg",
+      "disco"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Scissor Sisters"
+     },
+     "isrcCode": "GBAKW0300927",
+     "name": "Comfortably Numb",
+     "sameAs": [
+      "https://musicbrainz.org/recording/51afcd87-491b-42b5-a0e1-9869c4a08e20",
+      "https://www.youtube.com/watch?v=ZhYx0rTBqrM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/scissor-sisters-comfortably-numb/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-comfortably-numb/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Comfortably Numb",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Comfortably_Numb"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Scissor Sisters (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Scissor_Sisters_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Scissor Sisters",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Scissor_Sisters"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Scissor Sisters: Scissor Sisters",
+       "publisher": "RTÉ",
+       "url": "https://www.rte.ie/entertainment/music-reviews/2004/0301/449042-scissorsisters"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Scissor Sisters - Comfortably Numb",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-single-review-scissor-sisters-comfortably-numb-8776/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Making the Cut",
+       "publisher": "Gay City News",
+       "url": "https://gaycitynews.com/making-the-cut/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Comfortably Numb (Topic upload credits)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=ZhYx0rTBqrM"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Radikálně přearanžovaná disco verze písně Comfortably Numb od Pink Floyd v podání Scissor Sisters, zpívaná Jakem Shearsem vysokým falzetem: singl z jejich eponymního debutu, který se v roce 2004 dostal do britské první desítky a začínal jako B-strana.",
+     "educationalLevel": "introductory",
+     "headline": "Scissor Sisters - Comfortably Numb",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/falsetto/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/b-side/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-comfortably-numb/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/scissor-sisters-comfortably-numb/",
+     "wordCount": 503
+    }
+   ]
+  },
   "scratch-bandits-crew-goodbye.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -118695,6 +119046,146 @@
     }
    ]
   },
+  "the-chemical-brothers-q-tip-go.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-q-tip-go/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Chemical Brothers, Q-Tip",
+      "sameAs": "https://musicbrainz.org/artist/1946a82a-f927-40c2-8235-38d64f50d043"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Born In The Echoes"
+     },
+     "isrcCode": "GBUM71502365",
+     "name": "Go",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c4d27e06-b397-4664-a74a-b732e5121ed0",
+      "https://www.youtube.com/watch?v=LO2RPDZkY88"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-chemical-brothers-q-tip-go/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-q-tip-go/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Go (The Chemical Brothers song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Go_(The_Chemical_Brothers_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Born in the Echoes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Born_in_the_Echoes"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Triple J Pick Of The Week: The Chemical Brothers",
+       "publisher": "The Music Network",
+       "url": "https://themusicnetwork.com/news/triple-j-pick-of-the-week-the-chemical-brothers"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers ft. Q-Tip – Go",
+       "publisher": "The Singles Jukebox",
+       "url": "https://thesinglesjukebox.com/the-chemical-brothers-ft-q-tip-go/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers: Born in the Echoes",
+       "publisher": "Treble",
+       "url": "https://www.treblezine.com/24215-chemical-brothers-born-in-the-echoes-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers' 'Go' with Q-Tip",
+       "publisher": "Mixmag",
+       "url": "https://mixmag.net/read/the-chemical-brothers-go-with-q-tip-collaboration-news"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers release Michel Gondry-directed video for Go",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/news/latest-news/the-chemical-brothers-release-michel-gondry-directed-video-for-go"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Go (Provided to YouTube by Universal Music Group)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=AKZ1oa-LbjQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers - Go (Official Music Video) ft. Q-Tip",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=LO2RPDZkY88"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Znovushledání The Chemical Brothers s Q-Tipem z roku 2015, deset let po Galvanize: hnací beat a mohutná basová linka pod jeho neklidnými slokami, videoklip Michela Gondryho s tanečnicemi s tyčemi a druhý život v podobě britského hitu v první pětce v roce 2026.",
+     "educationalLevel": "introductory",
+     "headline": "The Chemical Brothers, Q-Tip - Go",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-q-tip-go/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-chemical-brothers-q-tip-go/",
+     "wordCount": 559
+    }
+   ]
+  },
   "the-colorist-orchestra-emiliana-torrini-jungle-drum.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -118933,6 +119424,115 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/the-crooked-spoke-be-svendsen-black-tower-hotel-be-svendsen-mix/",
      "wordCount": 472
+    }
+   ]
+  },
+  "the-game-50-cent-hate-it-or-love-it.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-game-50-cent-hate-it-or-love-it/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Game, 50 Cent",
+      "sameAs": "https://musicbrainz.org/artist/07cc14fb-4784-4a25-804b-2686ed5ef52c"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "hip-hop",
+      "r&b"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Documentary"
+     },
+     "isrcCode": "USIR10401121",
+     "name": "Hate It Or Love It",
+     "sameAs": [
+      "https://musicbrainz.org/recording/e608c965-ee42-47c0-b17c-7e36c0799fac",
+      "https://www.youtube.com/watch?v=BuMBmK5uksg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-game-50-cent-hate-it-or-love-it/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-game-50-cent-hate-it-or-love-it/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Hate It or Love It",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hate_It_or_Love_It"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Behind the Beat: Cool & Dre on How \"Hate It Or Love It\" was the Beginning & End for The Game & 50 Cent",
+       "publisher": "Okayplayer",
+       "url": "https://www.okayplayer.com/originals/the-game-50-cent-hate-it-or-love-it-making-cool-and-dre.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hate It Or Love It by The Game",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/game/hate-it-or-love-it"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hate It or Love It (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/e608c965-ee42-47c0-b17c-7e36c0799fac"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Game, 50 Cent - Hate It Or Love It (Official Music Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=BuMBmK5uksg"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Duet The Game a 50 Centa z roku 2005 o ulicích, ze kterých vzešli, zarapovaný přes hřejivě nasekaný sampl písně Rubber Band od The Trammps z dílny Cool & Dre: druhé místo v žebříčku, dvě nominace na Grammy a poslední chvíle před jejich rozchodem.",
+     "educationalLevel": "introductory",
+     "headline": "The Game, 50 Cent - Hate It Or Love It",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-game-50-cent-hate-it-or-love-it/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-game-50-cent-hate-it-or-love-it/",
+     "wordCount": 552
     }
    ]
   },
@@ -119221,6 +119821,115 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/the-horroris-one-night-in-nyc/",
      "wordCount": 593
+    }
+   ]
+  },
+  "the-killers-somebody-told-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-killers-somebody-told-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Killers",
+      "sameAs": "https://musicbrainz.org/artist/95e1ead9-4d31-4808-a7ac-32c3614c116b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "alternative rock",
+      "new wave",
+      "indie dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hot Fuss"
+     },
+     "isrcCode": "GBFFP0300054",
+     "name": "Somebody Told Me",
+     "sameAs": [
+      "https://musicbrainz.org/recording/45024040-a343-4141-9bc9-27ef0cc9163d",
+      "https://www.youtube.com/watch?v=Y5fBdpreJiU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-killers-somebody-told-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-killers-somebody-told-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Somebody Told Me",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Somebody_Told_Me"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hot Fuss",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hot_Fuss"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Somebody Told Me (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/45024040-a343-4141-9bc9-27ef0cc9163d"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Killers - Somebody Told Me (Official Music Video)",
+       "publisher": "TheKillersVEVO",
+       "url": "https://www.youtube.com/watch?v=Y5fBdpreJiU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "První britský hit The Killers z alba Hot Fuss (2004): klubový příběh nad syntezátory a kytarami v b moll, s pointou, kterou Blender označil za nejlepší hlášku roku, a s videoklipem, který se odvolává na New Order.",
+     "educationalLevel": "introductory",
+     "headline": "The Killers - Somebody Told Me",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "chord progression",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/chord-progression/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "verse-chorus form",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/verse-chorus-form/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "delay",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/delay/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-killers-somebody-told-me/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-killers-somebody-told-me/",
+     "wordCount": 452
     }
    ]
   },
@@ -119811,6 +120520,149 @@
     }
    ]
   },
+  "the-prodigy-beyond-the-deathray.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-beyond-the-deathray/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400358",
+     "name": "Beyond the Deathray",
+     "sameAs": [
+      "https://musicbrainz.org/recording/1f6ac723-fe9e-40ca-993c-b68fe4dbeb33",
+      "https://www.youtube.com/watch?v=xc0vUJ6-BNg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-beyond-the-deathray/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-beyond-the-deathray/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Prodigy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy – The Day Is My Enemy",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2015/03/album-review-the-prodigy-the-day-is-my-enemy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Beyond the Deathray (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/1f6ac723-fe9e-40ca-993c-b68fe4dbeb33"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - Beyond the Deathray",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=xc0vUJ6-BNg"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Instrumentální skladba v samém středu alba The Day Is My Enemy (2015) od The Prodigy: tři minuty stoupajícího sci-fi napětí, které kritici vyzdvihli jako nejkrásnější okamžik desky, o níž její tvůrce opakovaně mluvil jako o násilné.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Beyond the Deathray",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "interlude",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/interlude/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-beyond-the-deathray/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-beyond-the-deathray/",
+     "wordCount": 479
+    }
+   ]
+  },
   "the-puppini-sisters-could-it-be-magic.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -120273,6 +121125,131 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/the-retrosettes-sister-band-you-got-the-love/",
      "wordCount": 467
+    }
+   ]
+  },
+  "the-roots-erykah-badu-you-got-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-roots-erykah-badu-you-got-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Roots, Erykah Badu",
+      "sameAs": "https://musicbrainz.org/artist/80b3cf5e-18fe-4c59-98c7-e5bb87210710"
+     },
+     "datePublished": "1999",
+     "genre": [
+      "hip-hop",
+      "soul",
+      "r&b"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Things Fall Apart"
+     },
+     "isrcCode": "USMC19858697",
+     "name": "You Got Me",
+     "sameAs": [
+      "https://musicbrainz.org/recording/cefcb6a8-4770-44b1-a1d2-5cb536b051cf",
+      "https://www.youtube.com/watch?v=MJCHeEQV454"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-roots-erykah-badu-you-got-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-roots-erykah-badu-you-got-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "You Got Me (The Roots song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/You_Got_Me_(The_Roots_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Things Fall Apart (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Things_Fall_Apart_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "How Questlove Became the Defining Drummer of His Generation",
+       "publisher": "Philadelphia",
+       "url": "https://www.phillymag.com/?p=4145379"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Ahmir 'Questlove' Thompson: Quest's Best",
+       "publisher": "Modern Drummer",
+       "url": "https://moderndrummer.com/?p=1881"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "The Story of The Roots' 'You Got Me': Why Jill Scott's Version Reigns Supreme",
+       "publisher": "Okayplayer",
+       "url": "https://www.okayplayer.com/the-story-of-the-roots-you-got-me-why-jill-scotts-version-reigns-supreme/485529"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "You Got Me (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/cefcb6a8-4770-44b1-a1d2-5cb536b051cf"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Roots - You Got Me ft. Erykah Badu",
+       "publisher": "TheRootsVEVO",
+       "url": "https://www.youtube.com/watch?v=MJCHeEQV454"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Singl The Roots z alba Things Fall Apart (1999) oceněný cenou Grammy: vláčné ujištění pro milovanou osobu, která se bojí, že bude svedena z cesty, s Erykah Badu, jež zpívá hook, na kterém se autorsky podílela Jill Scott, s první nahranou slokou Eve a s drum and bassovou poctou od Questlova na konci.",
+     "educationalLevel": "intermediate",
+     "headline": "The Roots, Erykah Badu - You Got Me",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-roots-erykah-badu-you-got-me/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-roots-erykah-badu-you-got-me/",
+     "wordCount": 509
     }
    ]
   },
@@ -123253,6 +124230,142 @@
     }
    ]
   },
+  "toploader-dancing-in-the-moonlight.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/toploader-dancing-in-the-moonlight/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Toploader",
+      "sameAs": "https://musicbrainz.org/artist/3bdf9667-3205-4c5b-865b-ca3bb33fc5ac"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "cover",
+      "pop rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Dancing In The Moonlight: The Best Of Toploader"
+     },
+     "isrcCode": "GBBBL9902165",
+     "name": "Dancing in the Moonlight",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6ef6666f-6d48-4101-b15c-2abf3c8f9556",
+      "https://www.youtube.com/watch?v=j_5jDqX5cWk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/toploader-dancing-in-the-moonlight/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/toploader-dancing-in-the-moonlight/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Dancing in the Moonlight",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dancing_in_the_Moonlight"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Onka's Big Moka",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Onka%27s_Big_Moka"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Toploader",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Toploader"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "King Harvest",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/King_Harvest"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "The Story of... 'Dancing in the Moonlight' by Toploader",
+       "publisher": "Smooth Radio",
+       "url": "https://www.smoothradio.com/features/the-story-of/dancing-in-the-moonlight-toploader-jubel-lyrics-meaning-video/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Toploader, Dancing in the Moonlight | COVERS",
+       "publisher": "The Musical Hype",
+       "url": "https://themusicalhype.com/toploader-dancing-in-the-moonlight-covers"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Toploader's 'Dancing in the Moonlight' Saved My Life, Sort Of",
+       "publisher": "Vice",
+       "url": "https://www.vice.com/en/article/toploaders-dancing-in-the-moonlight-saved-my-life-sort-of"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dancing in the Moonlight – The Best of Toploader",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/a1bf27eb-21eb-4371-84e1-475c4a344a64"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Toploader - Dancing in the Moonlight (Official Visualiser)",
+       "publisher": "ToploaderVEVO",
+       "url": "https://www.youtube.com/watch?v=j_5jDqX5cWk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Coververze písně Dancing in the Moonlight od Shermana Kellyho, hitu King Harvest z roku 1973, kterou Toploader vydali v roce 2000: hřejivá píseň ke zpívání s klávesami a varhanami, která se při druhém vydání dostala do britské první desítky a od té doby žije v reklamách a soundtracích.",
+     "educationalLevel": "introductory",
+     "headline": "Toploader - Dancing in the Moonlight",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/toploader-dancing-in-the-moonlight/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/toploader-dancing-in-the-moonlight/",
+     "wordCount": 494
+    }
+   ]
+  },
   "totally-enormous-extinct-dinosaurs-garden.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -124808,6 +125921,124 @@
     }
    ]
   },
+  "vance-joy-riptide.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/vance-joy-riptide/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Vance Joy",
+      "sameAs": "https://musicbrainz.org/artist/df36f6db-5987-46ed-9d02-0cf36ed4e060"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "indie folk",
+      "indie pop",
+      "folk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "God Loves You When You're Dancing"
+     },
+     "isrcCode": "AULI01385760",
+     "name": "Riptide",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8c3f4879-5477-47f1-92f3-fe0a54b22786",
+      "https://www.youtube.com/watch?v=uJ_1HMAGb4k"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/vance-joy-riptide/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/vance-joy-riptide/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Riptide (Vance Joy song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Riptide_(Vance_Joy_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "God Loves You When You're Dancing",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/God_Loves_You_When_You%27re_Dancing"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Vance Joy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Vance_Joy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Behind the Song: Vance Joy, Riptide",
+       "publisher": "American Songwriter",
+       "url": "https://americansongwriter.com/riptide-vance-joy-james-keogh-behind-the-song/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Vance Joy is taking his time",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/features/interviews/vance-joy-is-taking-his-time"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Vance Joy - 'Riptide' Official Video",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=uJ_1HMAGb4k"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Průlomová skladba Vance Joye z roku 2013 z EP God Loves You When You're Dancing: milostná píseň o dospívání, vedená ukulele a plná volně se valících obrazů, která vyhrála Hottest 100 stanice Triple J a stala se nejdéle bodující písní v historii žebříčku ARIA.",
+     "educationalLevel": "introductory",
+     "headline": "Vance Joy - Riptide",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "bridge",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bridge/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "demo",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/demo/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/vance-joy-riptide/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/vance-joy-riptide/",
+     "wordCount": 519
+    }
+   ]
+  },
   "vitalic-cocaine.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -124901,6 +126132,122 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/vitalic-cocaine/",
      "wordCount": 559
+    }
+   ]
+  },
+  "vitalic-my-friend-dario.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/vitalic-my-friend-dario/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Vitalic",
+      "sameAs": "https://musicbrainz.org/artist/1f064e2d-aa55-4631-8f62-e2c14bbe1f4e"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "electroclash",
+      "electro-house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "OK Cowboy"
+     },
+     "name": "My Friend Dario",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bfa26860-5d13-4ce3-8f88-48633dcdd5ff",
+      "https://www.youtube.com/watch?v=F8V8_sIFL9s"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/vitalic-my-friend-dario/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/vitalic-my-friend-dario/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "My Friend Dario",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/My_Friend_Dario"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "OK Cowboy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/OK_Cowboy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Vitalic",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Vitalic"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Vitalic: OK Cowboy",
+       "publisher": "Treble",
+       "url": "https://www.treblezine.com/reviews/vitalic-ok-cowboy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Vitalic – OK Cowboy",
+       "publisher": "mxdwn",
+       "url": "https://music.mxdwn.com/2006/06/29/reviews/vitalic-ok-cowboy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Vitalic - My Friend Dario (official)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=F8V8_sIFL9s"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "První singl z Vitalicova debutového alba OK Cowboy z roku 2005: burácivá electroclashová píseň, která zní jako kytary, zpívaná programem pro syntézu hlasu Brigitte, o bezohledném řidiči jménem Dario, který jízdu nepřežije.",
+     "educationalLevel": "introductory",
+     "headline": "Vitalic - My Friend Dario",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/electroclash/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/vitalic-my-friend-dario/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/vitalic-my-friend-dario/",
+     "wordCount": 509
     }
    ]
   },
@@ -126550,6 +127897,115 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/whilk-misky-i-want-your-lovin-edit/",
      "wordCount": 546
+    }
+   ]
+  },
+  "white-town-your-woman.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/white-town-your-woman/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "White Town",
+      "sameAs": "https://musicbrainz.org/artist/b9068fde-91c8-48bf-8655-8d74c24ef4c5"
+     },
+     "datePublished": "1997",
+     "genre": [
+      "indie pop",
+      "synth-pop",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Women in Technology"
+     },
+     "isrcCode": "GBAYE9600116",
+     "name": "Your Woman",
+     "sameAs": [
+      "https://musicbrainz.org/recording/633526aa-b80c-4ab2-b3da-ddf9e13902a8",
+      "https://www.youtube.com/watch?v=lVL-zZnD3VU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/white-town-your-woman/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/white-town-your-woman/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Your Woman",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Your_Woman"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "White Town",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/White_Town"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Women in Technology (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Women_in_Technology_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Your Woman (Topic upload credits)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=3NoIusrv9OA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "White Town - Your Woman (Official HD Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=lVL-zZnD3VU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Britská jednička Jyotiho Mishry jako White Town z roku 1997: doma vyrobená popová píseň postavená na samplu tlumené trubky z roku 1932, zpívaná mužským hlasem z perspektivy, kterou běžný posluchač nečeká.",
+     "educationalLevel": "introductory",
+     "headline": "White Town - Your Woman",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "lo-fi",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/lo-fi/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/white-town-your-woman/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/white-town-your-woman/",
+     "wordCount": 532
     }
    ]
   },
@@ -222259,6 +223715,112 @@
     }
    ]
   },
+  "miike-snow-genghis-khan.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miike-snow-genghis-khan/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Miike Snow",
+      "sameAs": "https://musicbrainz.org/artist/753a1564-aaef-4d39-bc68-4a8d5e328cf7"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electro-pop",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "iii"
+     },
+     "isrcCode": "USAT21503728",
+     "name": "Genghis Khan",
+     "sameAs": [
+      "https://musicbrainz.org/recording/19bf0a27-d3ee-41da-8758-e0020a35c078",
+      "https://www.youtube.com/watch?v=P_SlAzsXa7E"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miike-snow-genghis-khan/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/miike-snow-genghis-khan/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Genghis Khan (Miike Snow song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Genghis_Khan_(Miike_Snow_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "iii (Miike Snow album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Iii_(Miike_Snow_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Miike Snow",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Miike_Snow"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Genghis Khan (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/19bf0a27-d3ee-41da-8758-e0020a35c078"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Miike Snow - Genghis Khan (Official Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=P_SlAzsXa7E"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Miike Snow's 2015 single turns an admission of irrational jealousy into falsetto electropop, with a chanted hook, piano and an Arabian riff, and a Ninian Doff video in which a Bond villain falls for his captive spy.",
+     "educationalLevel": "introductory",
+     "headline": "Miike Snow - Genghis Khan",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/concept/falsetto/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/miike-snow-genghis-khan/",
+     "wordCount": 549
+    }
+   ]
+  },
   "miike-snow-paddling-out.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -226175,6 +227737,120 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/nils-penner-the-thing/",
      "wordCount": 534
+    }
+   ]
+  },
+  "nina-simone-feeling-good.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nina-simone-feeling-good/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Nina Simone",
+      "sameAs": "https://musicbrainz.org/artist/2944824d-4c26-476f-a981-be849081942f"
+     },
+     "datePublished": "1965",
+     "genre": [
+      "jazz",
+      "blues",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "I Put A Spell On You"
+     },
+     "isrcCode": "USPR36500001",
+     "name": "Feeling Good",
+     "sameAs": [
+      "https://musicbrainz.org/recording/96b8213c-48ab-435a-bd70-7f9d491fd107",
+      "https://www.youtube.com/watch?v=oHRNrgDIJfo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nina-simone-feeling-good/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/nina-simone-feeling-good/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Feeling Good",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Feeling_Good"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "I Put a Spell on You (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/I_Put_a_Spell_on_You_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Feeling Good': Nina Simone's Joyous Emancipation Anthem",
+       "publisher": "uDiscover Music",
+       "url": "https://www.udiscovermusic.com/stories/nina-simone-feeling-good-song-feature"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Hear the stunning isolated vocals for Nina Simone song 'Feeling Good'",
+       "publisher": "Far Out Magazine",
+       "url": "https://faroutmagazine.co.uk/isolated-vocals-nina-simone-song-feeling-good/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Feeling Good (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/96b8213c-48ab-435a-bd70-7f9d491fd107"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Nina Simone - Feeling Good (Official Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=oHRNrgDIJfo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Nina Simone's 1965 recording of a show tune from The Roar of the Greasepaint: a nearly bare vocal opening, a big band's brass breaking in, and a song of emancipation that became her signature only after a 1994 advert.",
+     "educationalLevel": "introductory",
+     "headline": "Nina Simone - Feeling Good",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "improvisation",
+       "url": "https://korczis.github.io/sonic-playground/concept/improvisation/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/nina-simone-feeling-good/",
+     "wordCount": 537
     }
    ]
   },
@@ -237520,6 +239196,128 @@
     }
    ]
   },
+  "scissor-sisters-comfortably-numb.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-comfortably-numb/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Scissor Sisters",
+      "sameAs": "https://musicbrainz.org/artist/4236d929-9a81-4c8e-97c3-8d3306780f50"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "cover",
+      "nu-disco",
+      "hi-nrg",
+      "disco"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Scissor Sisters"
+     },
+     "isrcCode": "GBAKW0300927",
+     "name": "Comfortably Numb",
+     "sameAs": [
+      "https://musicbrainz.org/recording/51afcd87-491b-42b5-a0e1-9869c4a08e20",
+      "https://www.youtube.com/watch?v=ZhYx0rTBqrM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-comfortably-numb/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-comfortably-numb/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Comfortably Numb",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Comfortably_Numb"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Scissor Sisters (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Scissor_Sisters_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Scissor Sisters",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Scissor_Sisters"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Scissor Sisters: Scissor Sisters",
+       "publisher": "RTÉ",
+       "url": "https://www.rte.ie/entertainment/music-reviews/2004/0301/449042-scissorsisters"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Scissor Sisters - Comfortably Numb",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-single-review-scissor-sisters-comfortably-numb-8776/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Making the Cut",
+       "publisher": "Gay City News",
+       "url": "https://gaycitynews.com/making-the-cut/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Comfortably Numb (Topic upload credits)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=ZhYx0rTBqrM"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Scissor Sisters' radically re-arranged disco version of Pink Floyd's Comfortably Numb, sung by Jake Shears in a high falsetto: a 2004 UK top-ten single from their self-titled debut that started life as a B-side.",
+     "educationalLevel": "introductory",
+     "headline": "Scissor Sisters - Comfortably Numb",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/concept/falsetto/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/concept/b-side/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/scissor-sisters-comfortably-numb/",
+     "wordCount": 547
+    }
+   ]
+  },
   "scratch-bandits-crew-goodbye.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -242813,6 +244611,143 @@
     }
    ]
   },
+  "the-chemical-brothers-q-tip-go.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-q-tip-go/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Chemical Brothers, Q-Tip",
+      "sameAs": "https://musicbrainz.org/artist/1946a82a-f927-40c2-8235-38d64f50d043"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Born In The Echoes"
+     },
+     "isrcCode": "GBUM71502365",
+     "name": "Go",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c4d27e06-b397-4664-a74a-b732e5121ed0",
+      "https://www.youtube.com/watch?v=LO2RPDZkY88"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-q-tip-go/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-q-tip-go/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Go (The Chemical Brothers song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Go_(The_Chemical_Brothers_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Born in the Echoes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Born_in_the_Echoes"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Triple J Pick Of The Week: The Chemical Brothers",
+       "publisher": "The Music Network",
+       "url": "https://themusicnetwork.com/news/triple-j-pick-of-the-week-the-chemical-brothers"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers ft. Q-Tip – Go",
+       "publisher": "The Singles Jukebox",
+       "url": "https://thesinglesjukebox.com/the-chemical-brothers-ft-q-tip-go/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers: Born in the Echoes",
+       "publisher": "Treble",
+       "url": "https://www.treblezine.com/24215-chemical-brothers-born-in-the-echoes-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers' 'Go' with Q-Tip",
+       "publisher": "Mixmag",
+       "url": "https://mixmag.net/read/the-chemical-brothers-go-with-q-tip-collaboration-news"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers release Michel Gondry-directed video for Go",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/news/latest-news/the-chemical-brothers-release-michel-gondry-directed-video-for-go"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Go (Provided to YouTube by Universal Music Group)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=AKZ1oa-LbjQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Chemical Brothers - Go (Official Music Video) ft. Q-Tip",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=LO2RPDZkY88"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The Chemical Brothers' 2015 reunion with Q-Tip, ten years after Galvanize: a driving beat and a heavy bassline under his twitchy verses, a Michel Gondry video of pole-wielding dancers, and a second life as a UK top-five hit in 2026.",
+     "educationalLevel": "introductory",
+     "headline": "The Chemical Brothers, Q-Tip - Go",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-chemical-brothers-q-tip-go/",
+     "wordCount": 516
+    }
+   ]
+  },
   "the-colorist-orchestra-emiliana-torrini-jungle-drum.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -243044,6 +244979,112 @@
       }
      ],
      "url": "https://korczis.github.io/sonic-playground/the-crooked-spoke-be-svendsen-black-tower-hotel-be-svendsen-mix/",
+     "wordCount": 547
+    }
+   ]
+  },
+  "the-game-50-cent-hate-it-or-love-it.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-game-50-cent-hate-it-or-love-it/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Game, 50 Cent",
+      "sameAs": "https://musicbrainz.org/artist/07cc14fb-4784-4a25-804b-2686ed5ef52c"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "hip-hop",
+      "r&b"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Documentary"
+     },
+     "isrcCode": "USIR10401121",
+     "name": "Hate It Or Love It",
+     "sameAs": [
+      "https://musicbrainz.org/recording/e608c965-ee42-47c0-b17c-7e36c0799fac",
+      "https://www.youtube.com/watch?v=BuMBmK5uksg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-game-50-cent-hate-it-or-love-it/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-game-50-cent-hate-it-or-love-it/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Hate It or Love It",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hate_It_or_Love_It"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Behind the Beat: Cool & Dre on How \"Hate It Or Love It\" was the Beginning & End for The Game & 50 Cent",
+       "publisher": "Okayplayer",
+       "url": "https://www.okayplayer.com/originals/the-game-50-cent-hate-it-or-love-it-making-cool-and-dre.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hate It Or Love It by The Game",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/game/hate-it-or-love-it"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hate It or Love It (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/e608c965-ee42-47c0-b17c-7e36c0799fac"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Game, 50 Cent - Hate It Or Love It (Official Music Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=BuMBmK5uksg"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The Game and 50 Cent's 2005 duet about the streets they came up from, rapped over Cool & Dre's warm chop of the Trammps' Rubber Band: a number two hit, two Grammy nominations, and the last moment before their split.",
+     "educationalLevel": "introductory",
+     "headline": "The Game, 50 Cent - Hate It Or Love It",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-game-50-cent-hate-it-or-love-it/",
      "wordCount": 547
     }
    ]
@@ -243324,6 +245365,112 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/the-horroris-one-night-in-nyc/",
      "wordCount": 658
+    }
+   ]
+  },
+  "the-killers-somebody-told-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-killers-somebody-told-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Killers",
+      "sameAs": "https://musicbrainz.org/artist/95e1ead9-4d31-4808-a7ac-32c3614c116b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "alternative rock",
+      "new wave",
+      "indie dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hot Fuss"
+     },
+     "isrcCode": "GBFFP0300054",
+     "name": "Somebody Told Me",
+     "sameAs": [
+      "https://musicbrainz.org/recording/45024040-a343-4141-9bc9-27ef0cc9163d",
+      "https://www.youtube.com/watch?v=Y5fBdpreJiU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-killers-somebody-told-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-killers-somebody-told-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Somebody Told Me",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Somebody_Told_Me"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hot Fuss",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hot_Fuss"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Somebody Told Me (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/45024040-a343-4141-9bc9-27ef0cc9163d"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Killers - Somebody Told Me (Official Music Video)",
+       "publisher": "TheKillersVEVO",
+       "url": "https://www.youtube.com/watch?v=Y5fBdpreJiU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The Killers' first UK hit, from Hot Fuss (2004): a club story told over synthesizers and guitars in B-flat minor, with a punchline Blender called the year's best one-liner and a video that nods to New Order.",
+     "educationalLevel": "introductory",
+     "headline": "The Killers - Somebody Told Me",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "chord progression",
+       "url": "https://korczis.github.io/sonic-playground/concept/chord-progression/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "verse-chorus form",
+       "url": "https://korczis.github.io/sonic-playground/concept/verse-chorus-form/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "delay",
+       "url": "https://korczis.github.io/sonic-playground/concept/delay/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-killers-somebody-told-me/",
+     "wordCount": 507
     }
    ]
   },
@@ -243899,6 +246046,146 @@
     }
    ]
   },
+  "the-prodigy-beyond-the-deathray.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-beyond-the-deathray/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400358",
+     "name": "Beyond the Deathray",
+     "sameAs": [
+      "https://musicbrainz.org/recording/1f6ac723-fe9e-40ca-993c-b68fe4dbeb33",
+      "https://www.youtube.com/watch?v=xc0vUJ6-BNg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-beyond-the-deathray/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-beyond-the-deathray/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Prodigy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy – The Day Is My Enemy",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2015/03/album-review-the-prodigy-the-day-is-my-enemy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Beyond the Deathray (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/1f6ac723-fe9e-40ca-993c-b68fe4dbeb33"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - Beyond the Deathray",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=xc0vUJ6-BNg"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The instrumental at the centre of The Prodigy's The Day Is My Enemy (2015): three minutes of mounting, sci-fi tension that critics singled out as the most beautiful moment of an album its maker kept calling violent.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Beyond the Deathray",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "interlude",
+       "url": "https://korczis.github.io/sonic-playground/concept/interlude/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-beyond-the-deathray/",
+     "wordCount": 516
+    }
+   ]
+  },
   "the-puppini-sisters-could-it-be-magic.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -244349,6 +246636,128 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/the-retrosettes-sister-band-you-got-the-love/",
      "wordCount": 508
+    }
+   ]
+  },
+  "the-roots-erykah-badu-you-got-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-roots-erykah-badu-you-got-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Roots, Erykah Badu",
+      "sameAs": "https://musicbrainz.org/artist/80b3cf5e-18fe-4c59-98c7-e5bb87210710"
+     },
+     "datePublished": "1999",
+     "genre": [
+      "hip-hop",
+      "soul",
+      "r&b"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Things Fall Apart"
+     },
+     "isrcCode": "USMC19858697",
+     "name": "You Got Me",
+     "sameAs": [
+      "https://musicbrainz.org/recording/cefcb6a8-4770-44b1-a1d2-5cb536b051cf",
+      "https://www.youtube.com/watch?v=MJCHeEQV454"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-roots-erykah-badu-you-got-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-roots-erykah-badu-you-got-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "You Got Me (The Roots song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/You_Got_Me_(The_Roots_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Things Fall Apart (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Things_Fall_Apart_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "How Questlove Became the Defining Drummer of His Generation",
+       "publisher": "Philadelphia",
+       "url": "https://www.phillymag.com/?p=4145379"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Ahmir 'Questlove' Thompson: Quest's Best",
+       "publisher": "Modern Drummer",
+       "url": "https://moderndrummer.com/?p=1881"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "The Story of The Roots' 'You Got Me': Why Jill Scott's Version Reigns Supreme",
+       "publisher": "Okayplayer",
+       "url": "https://www.okayplayer.com/the-story-of-the-roots-you-got-me-why-jill-scotts-version-reigns-supreme/485529"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "You Got Me (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/cefcb6a8-4770-44b1-a1d2-5cb536b051cf"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Roots - You Got Me ft. Erykah Badu",
+       "publisher": "TheRootsVEVO",
+       "url": "https://www.youtube.com/watch?v=MJCHeEQV454"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The Roots' Grammy-winning single from Things Fall Apart (1999): a slinky reassurance to a lover afraid of being led astray, with Erykah Badu singing the hook Jill Scott co-wrote, Eve's first verse on record and a drum and bass homage from Questlove at the end.",
+     "educationalLevel": "intermediate",
+     "headline": "The Roots, Erykah Badu - You Got Me",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-roots-erykah-badu-you-got-me/",
+     "wordCount": 534
     }
    ]
   },
@@ -247248,6 +249657,139 @@
     }
    ]
   },
+  "toploader-dancing-in-the-moonlight.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/toploader-dancing-in-the-moonlight/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Toploader",
+      "sameAs": "https://musicbrainz.org/artist/3bdf9667-3205-4c5b-865b-ca3bb33fc5ac"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "cover",
+      "pop rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Dancing In The Moonlight: The Best Of Toploader"
+     },
+     "isrcCode": "GBBBL9902165",
+     "name": "Dancing in the Moonlight",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6ef6666f-6d48-4101-b15c-2abf3c8f9556",
+      "https://www.youtube.com/watch?v=j_5jDqX5cWk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/toploader-dancing-in-the-moonlight/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/toploader-dancing-in-the-moonlight/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Dancing in the Moonlight",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dancing_in_the_Moonlight"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Onka's Big Moka",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Onka%27s_Big_Moka"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Toploader",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Toploader"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "King Harvest",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/King_Harvest"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "The Story of... 'Dancing in the Moonlight' by Toploader",
+       "publisher": "Smooth Radio",
+       "url": "https://www.smoothradio.com/features/the-story-of/dancing-in-the-moonlight-toploader-jubel-lyrics-meaning-video/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Toploader, Dancing in the Moonlight | COVERS",
+       "publisher": "The Musical Hype",
+       "url": "https://themusicalhype.com/toploader-dancing-in-the-moonlight-covers"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Toploader's 'Dancing in the Moonlight' Saved My Life, Sort Of",
+       "publisher": "Vice",
+       "url": "https://www.vice.com/en/article/toploaders-dancing-in-the-moonlight-saved-my-life-sort-of"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dancing in the Moonlight – The Best of Toploader",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/a1bf27eb-21eb-4371-84e1-475c4a344a64"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Toploader - Dancing in the Moonlight (Official Visualiser)",
+       "publisher": "ToploaderVEVO",
+       "url": "https://www.youtube.com/watch?v=j_5jDqX5cWk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Toploader's 2000 cover of Sherman Kelly's Dancing in the Moonlight, the King Harvest hit of 1973: a warm keyboard-and-organ singalong that reached the UK top ten on its second release and has lived in adverts and soundtracks ever since.",
+     "educationalLevel": "introductory",
+     "headline": "Toploader - Dancing in the Moonlight",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/toploader-dancing-in-the-moonlight/",
+     "wordCount": 499
+    }
+   ]
+  },
   "totally-enormous-extinct-dinosaurs-garden.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -248761,6 +251303,121 @@
     }
    ]
   },
+  "vance-joy-riptide.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/vance-joy-riptide/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Vance Joy",
+      "sameAs": "https://musicbrainz.org/artist/df36f6db-5987-46ed-9d02-0cf36ed4e060"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "indie folk",
+      "indie pop",
+      "folk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "God Loves You When You're Dancing"
+     },
+     "isrcCode": "AULI01385760",
+     "name": "Riptide",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8c3f4879-5477-47f1-92f3-fe0a54b22786",
+      "https://www.youtube.com/watch?v=uJ_1HMAGb4k"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/vance-joy-riptide/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/vance-joy-riptide/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Riptide (Vance Joy song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Riptide_(Vance_Joy_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "God Loves You When You're Dancing",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/God_Loves_You_When_You%27re_Dancing"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Vance Joy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Vance_Joy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Behind the Song: Vance Joy, Riptide",
+       "publisher": "American Songwriter",
+       "url": "https://americansongwriter.com/riptide-vance-joy-james-keogh-behind-the-song/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Vance Joy is taking his time",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/features/interviews/vance-joy-is-taking-his-time"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Vance Joy - 'Riptide' Official Video",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=uJ_1HMAGb4k"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Vance Joy's 2013 breakthrough from the EP God Loves You When You're Dancing: a ukulele-led coming-of-age love song of loose, tumbling images that topped Triple J's Hottest 100 and became the longest-charting song in ARIA history.",
+     "educationalLevel": "introductory",
+     "headline": "Vance Joy - Riptide",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "bridge",
+       "url": "https://korczis.github.io/sonic-playground/concept/bridge/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "demo",
+       "url": "https://korczis.github.io/sonic-playground/concept/demo/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/vance-joy-riptide/",
+     "wordCount": 547
+    }
+   ]
+  },
   "vitalic-cocaine.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -248851,6 +251508,119 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/vitalic-cocaine/",
      "wordCount": 603
+    }
+   ]
+  },
+  "vitalic-my-friend-dario.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/vitalic-my-friend-dario/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Vitalic",
+      "sameAs": "https://musicbrainz.org/artist/1f064e2d-aa55-4631-8f62-e2c14bbe1f4e"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "electroclash",
+      "electro-house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "OK Cowboy"
+     },
+     "name": "My Friend Dario",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bfa26860-5d13-4ce3-8f88-48633dcdd5ff",
+      "https://www.youtube.com/watch?v=F8V8_sIFL9s"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/vitalic-my-friend-dario/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/vitalic-my-friend-dario/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "My Friend Dario",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/My_Friend_Dario"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "OK Cowboy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/OK_Cowboy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Vitalic",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Vitalic"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Vitalic: OK Cowboy",
+       "publisher": "Treble",
+       "url": "https://www.treblezine.com/reviews/vitalic-ok-cowboy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Vitalic – OK Cowboy",
+       "publisher": "mxdwn",
+       "url": "https://music.mxdwn.com/2006/06/29/reviews/vitalic-ok-cowboy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Vitalic - My Friend Dario (official)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=F8V8_sIFL9s"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The first single from Vitalic's 2005 debut album OK Cowboy: a revving, guitar-like electroclash song sung through the voice-synthesis program Brigitte, about a reckless driver called Dario who does not survive the ride.",
+     "educationalLevel": "introductory",
+     "headline": "Vitalic - My Friend Dario",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/concept/electroclash/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/vitalic-my-friend-dario/",
+     "wordCount": 545
     }
    ]
   },
@@ -250455,6 +253225,112 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/whilk-misky-i-want-your-lovin-edit/",
      "wordCount": 610
+    }
+   ]
+  },
+  "white-town-your-woman.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/white-town-your-woman/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "White Town",
+      "sameAs": "https://musicbrainz.org/artist/b9068fde-91c8-48bf-8655-8d74c24ef4c5"
+     },
+     "datePublished": "1997",
+     "genre": [
+      "indie pop",
+      "synth-pop",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Women in Technology"
+     },
+     "isrcCode": "GBAYE9600116",
+     "name": "Your Woman",
+     "sameAs": [
+      "https://musicbrainz.org/recording/633526aa-b80c-4ab2-b3da-ddf9e13902a8",
+      "https://www.youtube.com/watch?v=lVL-zZnD3VU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/white-town-your-woman/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/white-town-your-woman/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Your Woman",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Your_Woman"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "White Town",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/White_Town"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Women in Technology (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Women_in_Technology_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Your Woman (Topic upload credits)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=3NoIusrv9OA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "White Town - Your Woman (Official HD Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=lVL-zZnD3VU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Jyoti Mishra's 1997 UK number one as White Town: a home-made pop song built on a muted 1932 trumpet sample, sung by a male voice from a perspective a casual listener does not expect.",
+     "educationalLevel": "introductory",
+     "headline": "White Town - Your Woman",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "lo-fi",
+       "url": "https://korczis.github.io/sonic-playground/concept/lo-fi/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/white-town-your-woman/",
+     "wordCount": 545
     }
    ]
   },

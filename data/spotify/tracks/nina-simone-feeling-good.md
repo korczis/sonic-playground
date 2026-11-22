@@ -6,8 +6,9 @@ artists: ["Nina Simone"]
 album: "I Put A Spell On You"
 duration: "2:54"
 spotify: {"track": "61S0mEfdRtJ62Fc7fPqx0U", "album": "3ofZeSWPHZOE5WC2tNZDez", "artists": ["7G1GBhoKtEPnP86X2PvEYO"]}
-keys: {"fold": "ninasimone|feelinggood"}
-status: "missing"
+keys: {"fold": "ninasimone|feelinggood", "isrc": "USPR36500001", "musicbrainz": "96b8213c-48ab-435a-bd70-7f9d491fd107"}
+review: "nina-simone-feeling-good.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *I Put A Spell On You*, 2:54.
 A liked song.
-No review yet.
+Reviewed: content/nina-simone-feeling-good.md.

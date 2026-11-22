@@ -22,7 +22,7 @@ connections = [
 ]
 
 [extra.credits]
-writers = ["Jyoti Mishra", "Lew Stone"]
+writers = ["Jyoti Mishra", "Bing Crosby", "Irving Wallman", "Max Wartell"]
 vocals = ["GYM"]
 
 [extra.learning]
