@@ -115430,6 +115430,156 @@
     }
    ]
   },
+  "plan-b-she-said.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/plan-b-she-said/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Plan B",
+      "sameAs": "https://musicbrainz.org/artist/daf84e36-f78e-4c94-a032-6aed138c0d34"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "soul",
+      "hip-hop",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Defamation of Strickland Banks"
+     },
+     "isrcCode": "GBFFS1000013",
+     "name": "She Said",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8f7d5cc0-f964-4104-bdce-63ce192c60ac",
+      "https://www.wikidata.org/wiki/Q3959292",
+      "https://www.youtube.com/watch?v=rQjh9H-ymK4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/plan-b-she-said/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/plan-b-she-said/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "She Said (Plan B song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/She_Said_(Plan_B_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Defamation of Strickland Banks",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Defamation_of_Strickland_Banks"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plan B (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plan_B_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "She Said by Plan B",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/plan-b/she-said"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Plan B – She Said",
+       "publisher": "The Singles Jukebox",
+       "url": "https://thesinglesjukebox.com/?p=1315"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Plan B's She Said by Daniel Wolfe",
+       "publisher": "Promonews",
+       "url": "https://www.promonews.tv/videos/2010/02/19/plan-b%E2%80%99s-she-said-daniel-wolfe/4426"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Ivor Novello Awards 2011: Winners List",
+       "publisher": "Gigwise",
+       "url": "https://www.gigwise.com/news/63253/ivor-novello-awards-2011-winners-list"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Plan-B 'She Said' music video",
+       "publisher": "IMVDb",
+       "url": "https://imvdb.com/video/plan-b/she-said"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "The Defamation of Strickland Banks (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/7a547e7f-c3c5-34c2-8b24-9c8a644db12d"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plan B - She Said",
+       "publisher": "YouTube (planbuk)",
+       "url": "https://www.youtube.com/watch?v=rQjh9H-ymK4"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Průlomový soulpopový singl Bena Drewa: retrosoulový refrén s luskáním prstů a smyčci, obtočený kolem rapové vložky. Je to kapitola jeho koncepčního alba The Defamation of Strickland Banks, v níž je hrdina obviněn a postaven před soud.",
+     "educationalLevel": "intermediate",
+     "headline": "Plan B - She Said",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "concept album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/concept-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "stage persona",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/stage-persona/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/falsetto/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/rapping/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/plan-b-she-said/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/plan-b-she-said/",
+     "wordCount": 1243
+    }
+   ]
+  },
   "platinum-doug-move-on-original-club-mix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -254357,6 +254507,153 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/pitto-woodie-s-shadows/",
      "wordCount": 476
+    }
+   ]
+  },
+  "plan-b-she-said.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/plan-b-she-said/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Plan B",
+      "sameAs": "https://musicbrainz.org/artist/daf84e36-f78e-4c94-a032-6aed138c0d34"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "soul",
+      "hip-hop",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Defamation of Strickland Banks"
+     },
+     "isrcCode": "GBFFS1000013",
+     "name": "She Said",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8f7d5cc0-f964-4104-bdce-63ce192c60ac",
+      "https://www.wikidata.org/wiki/Q3959292",
+      "https://www.youtube.com/watch?v=rQjh9H-ymK4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/plan-b-she-said/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/plan-b-she-said/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "She Said (Plan B song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/She_Said_(Plan_B_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Defamation of Strickland Banks",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Defamation_of_Strickland_Banks"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plan B (musician)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plan_B_(musician)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "She Said by Plan B",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/plan-b/she-said"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Plan B – She Said",
+       "publisher": "The Singles Jukebox",
+       "url": "https://thesinglesjukebox.com/?p=1315"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Plan B's She Said by Daniel Wolfe",
+       "publisher": "Promonews",
+       "url": "https://www.promonews.tv/videos/2010/02/19/plan-b%E2%80%99s-she-said-daniel-wolfe/4426"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Ivor Novello Awards 2011: Winners List",
+       "publisher": "Gigwise",
+       "url": "https://www.gigwise.com/news/63253/ivor-novello-awards-2011-winners-list"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Plan-B 'She Said' music video",
+       "publisher": "IMVDb",
+       "url": "https://imvdb.com/video/plan-b/she-said"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "The Defamation of Strickland Banks (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/7a547e7f-c3c5-34c2-8b24-9c8a644db12d"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plan B - She Said",
+       "publisher": "YouTube (planbuk)",
+       "url": "https://www.youtube.com/watch?v=rQjh9H-ymK4"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Ben Drew's breakthrough soul-pop single: a finger-snapping, string-lit retro-soul chorus wrapped around a rapped interlude, the chapter of his concept album The Defamation of Strickland Banks in which its hero is accused and taken to court.",
+     "educationalLevel": "intermediate",
+     "headline": "Plan B - She Said",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "concept album",
+       "url": "https://korczis.github.io/sonic-playground/concept/concept-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "stage persona",
+       "url": "https://korczis.github.io/sonic-playground/concept/stage-persona/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/concept/falsetto/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/concept/rapping/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/plan-b-she-said/",
+     "wordCount": 1381
     }
    ]
   },
