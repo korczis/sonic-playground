@@ -38,6 +38,12 @@
         {%- endfor %}
       </dl>
     </div>
+    {%- if b.families | length > 0 %}
+    <div class="{{ card }} p-4 sm:p-6">
+      <h2 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="tax.families_nav" l={l} /> }}</h2>
+      <ul class="space-y-1.5 text-sm">{% for f in b.families %}<li class="flex justify-between gap-3"><a class="text-primary-700 hover:underline dark:text-primary-400" href="{{ get_url(path=lp ~ 'genre', trailing_slash=true) }}#family-{{ f.id }}" data-i18n="genre.family.{{ f.id }}">{{ l["genre.family." ~ f.id] }}</a><span class="text-gray-500 dark:text-gray-400">{{ f.count }}</span></li>{% endfor %}</ul>
+    </div>
+    {%- endif %}
     {%- if b.genres | length > 0 %}
     <div class="{{ card }} p-4 sm:p-6">
       <h2 class="mb-3 text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.genres" l={l} /> }}</h2>

@@ -3,7 +3,7 @@
 // archive, a track). Each chart has a table view (the <details> under it), a tooltip on hover,
 // light and dark palettes validated with the dataviz validator, and re-renders on theme change.
 //
-//   <div data-chart="months|genre|sentiment|heatmap|graph" data-limit="15" data-focus="<source>">
+//   <div data-chart="months|family|genre|sentiment|heatmap|graph" data-limit="15" data-focus="<source>">
 // A page module (static/js/core.js): mounts where a [data-chart] exists, loads the vendored
 // ECharts and the catalogue only when a chart comes within NEAR of the viewport (a track page's
 // graph sits below the review: a reader who never reaches it never pays ~380 kB gzip for it),
@@ -201,6 +201,38 @@ window.Sonic.module('charts', function mount() {
         onClick: function (e) { if (e.dataType === 'node' && e.data.path) go(base + '/' + e.data.path); },
       };
     },
+  };
+  // The genre families (data/genres.toml through the catalogue): tracks per family, every family
+  // shown, umbrella families last; the tooltip and the table name each family's terms, and a bar
+  // opens the family on the genre index.
+  FORMS.family = function (c, p) {
+    var fams = (c.genre_families || []).slice().reverse();
+    // A derived key (scripts/i18n.py writes one per family of data/genres.toml), not a written one.
+    var FAMILY = 'genre.family.';
+    function name(f) { return t(FAMILY + f.id); }
+    function terms(f) {
+      return f.terms.slice(0, 6).map(function (x) { return label('genre', x.term) + ' ' + x.count; }).join(', ');
+    }
+    return {
+      rows: [[t('chart.col.family'), t('chart.tracks'), t('chart.col.genres')]].concat(fams.slice().reverse().map(function (f) {
+        return [name(f), f.count, terms(f)];
+      })),
+      option: {
+        grid: { left: 8, right: 24, top: 8, bottom: 24, containLabel: true },
+        tooltip: Object.assign(tooltip(p), { trigger: 'axis', axisPointer: { type: 'shadow' }, formatter: function (e) {
+          var f = fams[e[0].dataIndex];
+          return '<b>' + name(f) + '</b><br>' + t('chart.track_count', { n: f.count }) + '<br>' + terms(f);
+        } }),
+        xAxis: Object.assign({ type: 'value', minInterval: 1 }, axisStyle(p)),
+        yAxis: Object.assign({ type: 'category', data: fams.map(name) }, axisStyle(p), { splitLine: { show: false } }),
+        series: [{ type: 'bar', name: t('chart.tracks'), data: fams.map(function (f) {
+          return { value: f.count, itemStyle: { color: f.umbrella ? p.other : p.single } };
+        }), barMaxWidth: 18, itemStyle: { borderRadius: [0, 4, 4, 0] } }],
+      },
+      onClick: function (e) {
+        go(base + '/' + window.Sonic.localPath('genre/') + '#family-' + fams[e.dataIndex].id);
+      },
+    };
   };
   FORMS.genre = FORMS.facet('genre');
   FORMS.sentiment = FORMS.facet('sentiment');

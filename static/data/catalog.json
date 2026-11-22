@@ -16,6 +16,7 @@
   "mood_terms": 2,
   "concept_terms": 115,
   "instrument_terms": 81,
+  "genre_families": 16,
   "yearbooks": 7,
   "recurring": 102,
   "translations": {
@@ -5459,6 +5460,1148 @@
   "genre-history",
   "culture"
  ],
+ "genre_families": [
+  {
+   "id": "house",
+   "count": 314,
+   "umbrella": false,
+   "names": [
+    "house",
+    "deep house",
+    "tech house",
+    "electro-house",
+    "french house",
+    "big room",
+    "tropical house",
+    "progressive house",
+    "melodic house",
+    "balearic",
+    "future house",
+    "acid house",
+    "hip house",
+    "slap house"
+   ],
+   "terms": [
+    {
+     "term": "house",
+     "slug": "house",
+     "count": 192
+    },
+    {
+     "term": "deep house",
+     "slug": "deep-house",
+     "count": 139
+    },
+    {
+     "term": "tech house",
+     "slug": "tech-house",
+     "count": 45
+    },
+    {
+     "term": "electro-house",
+     "slug": "electro-house",
+     "count": 22
+    },
+    {
+     "term": "french house",
+     "slug": "french-house",
+     "count": 7
+    },
+    {
+     "term": "big room",
+     "slug": "big-room",
+     "count": 6
+    },
+    {
+     "term": "tropical house",
+     "slug": "tropical-house",
+     "count": 5
+    },
+    {
+     "term": "progressive house",
+     "slug": "progressive-house",
+     "count": 4
+    },
+    {
+     "term": "melodic house",
+     "slug": "melodic-house",
+     "count": 3
+    },
+    {
+     "term": "balearic",
+     "slug": "balearic",
+     "count": 2
+    },
+    {
+     "term": "future house",
+     "slug": "future-house",
+     "count": 2
+    },
+    {
+     "term": "acid house",
+     "slug": "acid-house",
+     "count": 1
+    },
+    {
+     "term": "hip house",
+     "slug": "hip-house",
+     "count": 1
+    },
+    {
+     "term": "slap house",
+     "slug": "slap-house",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "electro",
+   "count": 239,
+   "umbrella": false,
+   "names": [
+    "electro-pop",
+    "synth-pop",
+    "electro",
+    "electroclash",
+    "indie electronic",
+    "experimental",
+    "new wave",
+    "hi-nrg",
+    "darkwave",
+    "80s",
+    "electropop",
+    "italo dance",
+    "synthwave"
+   ],
+   "terms": [
+    {
+     "term": "electro-pop",
+     "slug": "electro-pop",
+     "count": 95
+    },
+    {
+     "term": "synth-pop",
+     "slug": "synth-pop",
+     "count": 82
+    },
+    {
+     "term": "electro",
+     "slug": "electro",
+     "count": 50
+    },
+    {
+     "term": "electroclash",
+     "slug": "electroclash",
+     "count": 36
+    },
+    {
+     "term": "indie electronic",
+     "slug": "indie-electronic",
+     "count": 15
+    },
+    {
+     "term": "experimental",
+     "slug": "experimental",
+     "count": 13
+    },
+    {
+     "term": "new wave",
+     "slug": "new-wave",
+     "count": 12
+    },
+    {
+     "term": "hi-nrg",
+     "slug": "hi-nrg",
+     "count": 10
+    },
+    {
+     "term": "darkwave",
+     "slug": "darkwave",
+     "count": 9
+    },
+    {
+     "term": "80s",
+     "slug": "80s",
+     "count": 8
+    },
+    {
+     "term": "electropop",
+     "slug": "electropop",
+     "count": 1
+    },
+    {
+     "term": "italo dance",
+     "slug": "italo-dance",
+     "count": 1
+    },
+    {
+     "term": "synthwave",
+     "slug": "synthwave",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "soul",
+   "count": 236,
+   "umbrella": false,
+   "names": [
+    "soul",
+    "r&b",
+    "funk",
+    "disco",
+    "nu-disco",
+    "deep soul",
+    "gospel",
+    "soulful"
+   ],
+   "terms": [
+    {
+     "term": "soul",
+     "slug": "soul",
+     "count": 123
+    },
+    {
+     "term": "r&b",
+     "slug": "r-b",
+     "count": 64
+    },
+    {
+     "term": "funk",
+     "slug": "funk",
+     "count": 62
+    },
+    {
+     "term": "disco",
+     "slug": "disco",
+     "count": 52
+    },
+    {
+     "term": "nu-disco",
+     "slug": "nu-disco",
+     "count": 7
+    },
+    {
+     "term": "deep soul",
+     "slug": "deep-soul",
+     "count": 1
+    },
+    {
+     "term": "gospel",
+     "slug": "gospel",
+     "count": 1
+    },
+    {
+     "term": "soulful",
+     "slug": "soulful",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "pop",
+   "count": 200,
+   "umbrella": false,
+   "names": [
+    "pop",
+    "indie pop",
+    "ballad",
+    "art pop",
+    "dream pop",
+    "dark pop",
+    "latin pop",
+    "bedroom pop",
+    "experimental pop"
+   ],
+   "terms": [
+    {
+     "term": "pop",
+     "slug": "pop",
+     "count": 118
+    },
+    {
+     "term": "indie pop",
+     "slug": "indie-pop",
+     "count": 56
+    },
+    {
+     "term": "ballad",
+     "slug": "ballad",
+     "count": 19
+    },
+    {
+     "term": "art pop",
+     "slug": "art-pop",
+     "count": 11
+    },
+    {
+     "term": "dream pop",
+     "slug": "dream-pop",
+     "count": 6
+    },
+    {
+     "term": "dark pop",
+     "slug": "dark-pop",
+     "count": 4
+    },
+    {
+     "term": "latin pop",
+     "slug": "latin-pop",
+     "count": 2
+    },
+    {
+     "term": "bedroom pop",
+     "slug": "bedroom-pop",
+     "count": 1
+    },
+    {
+     "term": "experimental pop",
+     "slug": "experimental-pop",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "rock",
+   "count": 177,
+   "umbrella": false,
+   "names": [
+    "alternative",
+    "rock",
+    "alternative rock",
+    "indie",
+    "indie rock",
+    "post-punk",
+    "symphonic metal",
+    "psychedelic",
+    "punk",
+    "pop rock",
+    "art rock",
+    "glam rock",
+    "garage rock",
+    "britpop",
+    "dance-punk",
+    "folk rock",
+    "hard rock",
+    "rockabilly",
+    "shoegaze",
+    "arena rock",
+    "classic rock",
+    "hardcore punk",
+    "krautrock",
+    "noise rock",
+    "nu metal",
+    "power pop",
+    "progressive rock",
+    "punk rock",
+    "surf rock"
+   ],
+   "terms": [
+    {
+     "term": "alternative",
+     "slug": "alternative",
+     "count": 53
+    },
+    {
+     "term": "rock",
+     "slug": "rock",
+     "count": 37
+    },
+    {
+     "term": "alternative rock",
+     "slug": "alternative-rock",
+     "count": 33
+    },
+    {
+     "term": "indie",
+     "slug": "indie",
+     "count": 20
+    },
+    {
+     "term": "indie rock",
+     "slug": "indie-rock",
+     "count": 20
+    },
+    {
+     "term": "post-punk",
+     "slug": "post-punk",
+     "count": 15
+    },
+    {
+     "term": "symphonic metal",
+     "slug": "symphonic-metal",
+     "count": 10
+    },
+    {
+     "term": "psychedelic",
+     "slug": "psychedelic",
+     "count": 9
+    },
+    {
+     "term": "punk",
+     "slug": "punk",
+     "count": 6
+    },
+    {
+     "term": "pop rock",
+     "slug": "pop-rock",
+     "count": 5
+    },
+    {
+     "term": "art rock",
+     "slug": "art-rock",
+     "count": 4
+    },
+    {
+     "term": "glam rock",
+     "slug": "glam-rock",
+     "count": 4
+    },
+    {
+     "term": "garage rock",
+     "slug": "garage-rock",
+     "count": 3
+    },
+    {
+     "term": "britpop",
+     "slug": "britpop",
+     "count": 2
+    },
+    {
+     "term": "dance-punk",
+     "slug": "dance-punk",
+     "count": 2
+    },
+    {
+     "term": "folk rock",
+     "slug": "folk-rock",
+     "count": 2
+    },
+    {
+     "term": "hard rock",
+     "slug": "hard-rock",
+     "count": 2
+    },
+    {
+     "term": "rockabilly",
+     "slug": "rockabilly",
+     "count": 2
+    },
+    {
+     "term": "shoegaze",
+     "slug": "shoegaze",
+     "count": 2
+    },
+    {
+     "term": "arena rock",
+     "slug": "arena-rock",
+     "count": 1
+    },
+    {
+     "term": "classic rock",
+     "slug": "classic-rock",
+     "count": 1
+    },
+    {
+     "term": "hardcore punk",
+     "slug": "hardcore-punk",
+     "count": 1
+    },
+    {
+     "term": "krautrock",
+     "slug": "krautrock",
+     "count": 1
+    },
+    {
+     "term": "noise rock",
+     "slug": "noise-rock",
+     "count": 1
+    },
+    {
+     "term": "nu metal",
+     "slug": "nu-metal",
+     "count": 1
+    },
+    {
+     "term": "power pop",
+     "slug": "power-pop",
+     "count": 1
+    },
+    {
+     "term": "progressive rock",
+     "slug": "progressive-rock",
+     "count": 1
+    },
+    {
+     "term": "punk rock",
+     "slug": "punk-rock",
+     "count": 1
+    },
+    {
+     "term": "surf rock",
+     "slug": "surf-rock",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "downtempo",
+   "count": 105,
+   "umbrella": false,
+   "names": [
+    "downtempo",
+    "trip-hop",
+    "ambient",
+    "chillout",
+    "lounge",
+    "atmospheric",
+    "chill",
+    "chillwave",
+    "folktronica"
+   ],
+   "terms": [
+    {
+     "term": "downtempo",
+     "slug": "downtempo",
+     "count": 59
+    },
+    {
+     "term": "trip-hop",
+     "slug": "trip-hop",
+     "count": 41
+    },
+    {
+     "term": "ambient",
+     "slug": "ambient",
+     "count": 9
+    },
+    {
+     "term": "chillout",
+     "slug": "chillout",
+     "count": 9
+    },
+    {
+     "term": "lounge",
+     "slug": "lounge",
+     "count": 8
+    },
+    {
+     "term": "atmospheric",
+     "slug": "atmospheric",
+     "count": 1
+    },
+    {
+     "term": "chill",
+     "slug": "chill",
+     "count": 1
+    },
+    {
+     "term": "chillwave",
+     "slug": "chillwave",
+     "count": 1
+    },
+    {
+     "term": "folktronica",
+     "slug": "folktronica",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "jazz",
+   "count": 101,
+   "umbrella": false,
+   "names": [
+    "jazz",
+    "blues",
+    "nu-jazz",
+    "electro-swing",
+    "acid jazz",
+    "big band",
+    "easy listening",
+    "gypsy jazz",
+    "vocal jazz",
+    "hard bop"
+   ],
+   "terms": [
+    {
+     "term": "jazz",
+     "slug": "jazz",
+     "count": 47
+    },
+    {
+     "term": "blues",
+     "slug": "blues",
+     "count": 32
+    },
+    {
+     "term": "nu-jazz",
+     "slug": "nu-jazz",
+     "count": 18
+    },
+    {
+     "term": "electro-swing",
+     "slug": "electro-swing",
+     "count": 17
+    },
+    {
+     "term": "acid jazz",
+     "slug": "acid-jazz",
+     "count": 2
+    },
+    {
+     "term": "big band",
+     "slug": "big-band",
+     "count": 2
+    },
+    {
+     "term": "easy listening",
+     "slug": "easy-listening",
+     "count": 2
+    },
+    {
+     "term": "gypsy jazz",
+     "slug": "gypsy-jazz",
+     "count": 2
+    },
+    {
+     "term": "vocal jazz",
+     "slug": "vocal-jazz",
+     "count": 2
+    },
+    {
+     "term": "hard bop",
+     "slug": "hard-bop",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "world",
+   "count": 98,
+   "umbrella": false,
+   "names": [
+    "folk",
+    "world",
+    "acoustic",
+    "singer-songwriter",
+    "brazilian",
+    "bossa nova",
+    "samba rock",
+    "samba",
+    "indie folk",
+    "chanson",
+    "country",
+    "tango",
+    "afrobeat",
+    "bolero",
+    "cumbia",
+    "hawaiian",
+    "reggaeton",
+    "worldbeat"
+   ],
+   "terms": [
+    {
+     "term": "folk",
+     "slug": "folk",
+     "count": 37
+    },
+    {
+     "term": "world",
+     "slug": "world",
+     "count": 30
+    },
+    {
+     "term": "acoustic",
+     "slug": "acoustic",
+     "count": 19
+    },
+    {
+     "term": "singer-songwriter",
+     "slug": "singer-songwriter",
+     "count": 18
+    },
+    {
+     "term": "brazilian",
+     "slug": "brazilian",
+     "count": 13
+    },
+    {
+     "term": "bossa nova",
+     "slug": "bossa-nova",
+     "count": 9
+    },
+    {
+     "term": "samba rock",
+     "slug": "samba-rock",
+     "count": 7
+    },
+    {
+     "term": "samba",
+     "slug": "samba",
+     "count": 5
+    },
+    {
+     "term": "indie folk",
+     "slug": "indie-folk",
+     "count": 4
+    },
+    {
+     "term": "chanson",
+     "slug": "chanson",
+     "count": 3
+    },
+    {
+     "term": "country",
+     "slug": "country",
+     "count": 3
+    },
+    {
+     "term": "tango",
+     "slug": "tango",
+     "count": 2
+    },
+    {
+     "term": "afrobeat",
+     "slug": "afrobeat",
+     "count": 1
+    },
+    {
+     "term": "bolero",
+     "slug": "bolero",
+     "count": 1
+    },
+    {
+     "term": "cumbia",
+     "slug": "cumbia",
+     "count": 1
+    },
+    {
+     "term": "hawaiian",
+     "slug": "hawaiian",
+     "count": 1
+    },
+    {
+     "term": "reggaeton",
+     "slug": "reggaeton",
+     "count": 1
+    },
+    {
+     "term": "worldbeat",
+     "slug": "worldbeat",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "hiphop",
+   "count": 93,
+   "umbrella": false,
+   "names": [
+    "hip-hop",
+    "rap",
+    "g-funk",
+    "electro-rap",
+    "rap metal",
+    "rap rock",
+    "trap",
+    "crunk"
+   ],
+   "terms": [
+    {
+     "term": "hip-hop",
+     "slug": "hip-hop",
+     "count": 84
+    },
+    {
+     "term": "rap",
+     "slug": "rap",
+     "count": 41
+    },
+    {
+     "term": "g-funk",
+     "slug": "g-funk",
+     "count": 8
+    },
+    {
+     "term": "electro-rap",
+     "slug": "electro-rap",
+     "count": 2
+    },
+    {
+     "term": "rap metal",
+     "slug": "rap-metal",
+     "count": 2
+    },
+    {
+     "term": "rap rock",
+     "slug": "rap-rock",
+     "count": 2
+    },
+    {
+     "term": "trap",
+     "slug": "trap",
+     "count": 2
+    },
+    {
+     "term": "crunk",
+     "slug": "crunk",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "techno",
+   "count": 69,
+   "umbrella": false,
+   "names": [
+    "minimal",
+    "techno",
+    "industrial",
+    "melodic techno",
+    "detroit techno",
+    "dark electronic",
+    "dark techno",
+    "minimal techno"
+   ],
+   "terms": [
+    {
+     "term": "minimal",
+     "slug": "minimal",
+     "count": 37
+    },
+    {
+     "term": "techno",
+     "slug": "techno",
+     "count": 36
+    },
+    {
+     "term": "industrial",
+     "slug": "industrial",
+     "count": 8
+    },
+    {
+     "term": "melodic techno",
+     "slug": "melodic-techno",
+     "count": 7
+    },
+    {
+     "term": "detroit techno",
+     "slug": "detroit-techno",
+     "count": 3
+    },
+    {
+     "term": "dark electronic",
+     "slug": "dark-electronic",
+     "count": 2
+    },
+    {
+     "term": "dark techno",
+     "slug": "dark-techno",
+     "count": 1
+    },
+    {
+     "term": "minimal techno",
+     "slug": "minimal-techno",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "bass",
+   "count": 67,
+   "umbrella": false,
+   "names": [
+    "drum and bass",
+    "breakbeat",
+    "jungle",
+    "uk garage",
+    "big beat",
+    "future bass",
+    "dubstep",
+    "bassline",
+    "brazilian bass",
+    "broken beat",
+    "grime",
+    "liquid funk",
+    "neurofunk",
+    "uk funky"
+   ],
+   "terms": [
+    {
+     "term": "drum and bass",
+     "slug": "drum-and-bass",
+     "count": 27
+    },
+    {
+     "term": "breakbeat",
+     "slug": "breakbeat",
+     "count": 22
+    },
+    {
+     "term": "jungle",
+     "slug": "jungle",
+     "count": 6
+    },
+    {
+     "term": "uk garage",
+     "slug": "uk-garage",
+     "count": 6
+    },
+    {
+     "term": "big beat",
+     "slug": "big-beat",
+     "count": 5
+    },
+    {
+     "term": "future bass",
+     "slug": "future-bass",
+     "count": 4
+    },
+    {
+     "term": "dubstep",
+     "slug": "dubstep",
+     "count": 2
+    },
+    {
+     "term": "bassline",
+     "slug": "bassline",
+     "count": 1
+    },
+    {
+     "term": "brazilian bass",
+     "slug": "brazilian-bass",
+     "count": 1
+    },
+    {
+     "term": "broken beat",
+     "slug": "broken-beat",
+     "count": 1
+    },
+    {
+     "term": "grime",
+     "slug": "grime",
+     "count": 1
+    },
+    {
+     "term": "liquid funk",
+     "slug": "liquid-funk",
+     "count": 1
+    },
+    {
+     "term": "neurofunk",
+     "slug": "neurofunk",
+     "count": 1
+    },
+    {
+     "term": "uk funky",
+     "slug": "uk-funky",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "dub",
+   "count": 41,
+   "umbrella": false,
+   "names": [
+    "dub",
+    "reggae",
+    "dancehall"
+   ],
+   "terms": [
+    {
+     "term": "dub",
+     "slug": "dub",
+     "count": 29
+    },
+    {
+     "term": "reggae",
+     "slug": "reggae",
+     "count": 19
+    },
+    {
+     "term": "dancehall",
+     "slug": "dancehall",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "classical",
+   "count": 30,
+   "umbrella": false,
+   "names": [
+    "neoclassical",
+    "soundtrack",
+    "orchestral",
+    "classical crossover"
+   ],
+   "terms": [
+    {
+     "term": "neoclassical",
+     "slug": "neoclassical",
+     "count": 13
+    },
+    {
+     "term": "soundtrack",
+     "slug": "soundtrack",
+     "count": 12
+    },
+    {
+     "term": "orchestral",
+     "slug": "orchestral",
+     "count": 5
+    },
+    {
+     "term": "classical crossover",
+     "slug": "classical-crossover",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "trance",
+   "count": 5,
+   "umbrella": false,
+   "names": [
+    "trance",
+    "psytrance",
+    "progressive"
+   ],
+   "terms": [
+    {
+     "term": "trance",
+     "slug": "trance",
+     "count": 3
+    },
+    {
+     "term": "psytrance",
+     "slug": "psytrance",
+     "count": 2
+    },
+    {
+     "term": "progressive",
+     "slug": "progressive",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "electronic",
+   "count": 559,
+   "umbrella": true,
+   "names": [
+    "electronic",
+    "dance",
+    "indie dance",
+    "club",
+    "underground"
+   ],
+   "terms": [
+    {
+     "term": "electronic",
+     "slug": "electronic",
+     "count": 497
+    },
+    {
+     "term": "dance",
+     "slug": "dance",
+     "count": 114
+    },
+    {
+     "term": "indie dance",
+     "slug": "indie-dance",
+     "count": 14
+    },
+    {
+     "term": "club",
+     "slug": "club",
+     "count": 3
+    },
+    {
+     "term": "underground",
+     "slug": "underground",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "other",
+   "count": 161,
+   "umbrella": true,
+   "names": [
+    "cover",
+    "remix",
+    "spoken word",
+    "comedy",
+    "contemporary",
+    "introspective",
+    "novelty",
+    "party",
+    "playful",
+    "seductive",
+    "urban"
+   ],
+   "terms": [
+    {
+     "term": "cover",
+     "slug": "cover",
+     "count": 80
+    },
+    {
+     "term": "remix",
+     "slug": "remix",
+     "count": 69
+    },
+    {
+     "term": "spoken word",
+     "slug": "spoken-word",
+     "count": 5
+    },
+    {
+     "term": "comedy",
+     "slug": "comedy",
+     "count": 2
+    },
+    {
+     "term": "contemporary",
+     "slug": "contemporary",
+     "count": 1
+    },
+    {
+     "term": "introspective",
+     "slug": "introspective",
+     "count": 1
+    },
+    {
+     "term": "novelty",
+     "slug": "novelty",
+     "count": 1
+    },
+    {
+     "term": "party",
+     "slug": "party",
+     "count": 1
+    },
+    {
+     "term": "playful",
+     "slug": "playful",
+     "count": 1
+    },
+    {
+     "term": "seductive",
+     "slug": "seductive",
+     "count": 1
+    },
+    {
+     "term": "urban",
+     "slug": "urban",
+     "count": 1
+    }
+   ]
+  }
+ ],
  "yearbooks": [
   {
    "year": 2022,
@@ -5570,6 +6713,72 @@
     {
      "term": "disco",
      "count": 6
+    }
+   ],
+   "families": [
+    {
+     "id": "house",
+     "count": 35
+    },
+    {
+     "id": "pop",
+     "count": 22
+    },
+    {
+     "id": "electro",
+     "count": 20
+    },
+    {
+     "id": "soul",
+     "count": 18
+    },
+    {
+     "id": "downtempo",
+     "count": 12
+    },
+    {
+     "id": "rock",
+     "count": 11
+    },
+    {
+     "id": "jazz",
+     "count": 10
+    },
+    {
+     "id": "world",
+     "count": 7
+    },
+    {
+     "id": "dub",
+     "count": 6
+    },
+    {
+     "id": "techno",
+     "count": 4
+    },
+    {
+     "id": "bass",
+     "count": 3
+    },
+    {
+     "id": "hiphop",
+     "count": 3
+    },
+    {
+     "id": "classical",
+     "count": 1
+    },
+    {
+     "id": "trance",
+     "count": 1
+    },
+    {
+     "id": "electronic",
+     "count": 57
+    },
+    {
+     "id": "other",
+     "count": 13
     }
    ],
    "tracks": [
@@ -6378,6 +7587,68 @@
     {
      "term": "indie pop",
      "count": 7
+    }
+   ],
+   "families": [
+    {
+     "id": "electro",
+     "count": 23
+    },
+    {
+     "id": "soul",
+     "count": 23
+    },
+    {
+     "id": "pop",
+     "count": 18
+    },
+    {
+     "id": "house",
+     "count": 17
+    },
+    {
+     "id": "rock",
+     "count": 16
+    },
+    {
+     "id": "world",
+     "count": 15
+    },
+    {
+     "id": "jazz",
+     "count": 13
+    },
+    {
+     "id": "hiphop",
+     "count": 10
+    },
+    {
+     "id": "downtempo",
+     "count": 9
+    },
+    {
+     "id": "techno",
+     "count": 6
+    },
+    {
+     "id": "bass",
+     "count": 3
+    },
+    {
+     "id": "classical",
+     "count": 3
+    },
+    {
+     "id": "dub",
+     "count": 2
+    },
+    {
+     "id": "electronic",
+     "count": 32
+    },
+    {
+     "id": "other",
+     "count": 20
     }
    ],
    "tracks": [
@@ -7195,6 +8466,72 @@
      "count": 7
     }
    ],
+   "families": [
+    {
+     "id": "electro",
+     "count": 39
+    },
+    {
+     "id": "soul",
+     "count": 33
+    },
+    {
+     "id": "pop",
+     "count": 22
+    },
+    {
+     "id": "house",
+     "count": 20
+    },
+    {
+     "id": "jazz",
+     "count": 13
+    },
+    {
+     "id": "rock",
+     "count": 11
+    },
+    {
+     "id": "downtempo",
+     "count": 10
+    },
+    {
+     "id": "hiphop",
+     "count": 9
+    },
+    {
+     "id": "techno",
+     "count": 5
+    },
+    {
+     "id": "world",
+     "count": 3
+    },
+    {
+     "id": "bass",
+     "count": 2
+    },
+    {
+     "id": "classical",
+     "count": 1
+    },
+    {
+     "id": "dub",
+     "count": 1
+    },
+    {
+     "id": "trance",
+     "count": 1
+    },
+    {
+     "id": "electronic",
+     "count": 35
+    },
+    {
+     "id": "other",
+     "count": 9
+    }
+   ],
    "tracks": [
     {
      "n": 1,
@@ -8007,6 +9344,64 @@
     },
     {
      "term": "hip-hop",
+     "count": 6
+    }
+   ],
+   "families": [
+    {
+     "id": "electro",
+     "count": 32
+    },
+    {
+     "id": "house",
+     "count": 32
+    },
+    {
+     "id": "soul",
+     "count": 22
+    },
+    {
+     "id": "pop",
+     "count": 19
+    },
+    {
+     "id": "jazz",
+     "count": 18
+    },
+    {
+     "id": "downtempo",
+     "count": 15
+    },
+    {
+     "id": "rock",
+     "count": 8
+    },
+    {
+     "id": "world",
+     "count": 8
+    },
+    {
+     "id": "techno",
+     "count": 7
+    },
+    {
+     "id": "hiphop",
+     "count": 6
+    },
+    {
+     "id": "classical",
+     "count": 2
+    },
+    {
+     "id": "dub",
+     "count": 2
+    },
+    {
+     "id": "electronic",
+     "count": 62
+    },
+    {
+     "id": "other",
      "count": 6
     }
    ],
@@ -8825,6 +10220,64 @@
      "count": 4
     }
    ],
+   "families": [
+    {
+     "id": "house",
+     "count": 57
+    },
+    {
+     "id": "soul",
+     "count": 19
+    },
+    {
+     "id": "pop",
+     "count": 17
+    },
+    {
+     "id": "electro",
+     "count": 16
+    },
+    {
+     "id": "downtempo",
+     "count": 14
+    },
+    {
+     "id": "world",
+     "count": 11
+    },
+    {
+     "id": "jazz",
+     "count": 10
+    },
+    {
+     "id": "techno",
+     "count": 9
+    },
+    {
+     "id": "rock",
+     "count": 8
+    },
+    {
+     "id": "hiphop",
+     "count": 2
+    },
+    {
+     "id": "bass",
+     "count": 1
+    },
+    {
+     "id": "classical",
+     "count": 1
+    },
+    {
+     "id": "electronic",
+     "count": 64
+    },
+    {
+     "id": "other",
+     "count": 13
+    }
+   ],
    "tracks": [
     {
      "n": 1,
@@ -9640,6 +11093,68 @@
      "count": 6
     }
    ],
+   "families": [
+    {
+     "id": "house",
+     "count": 32
+    },
+    {
+     "id": "soul",
+     "count": 31
+    },
+    {
+     "id": "pop",
+     "count": 25
+    },
+    {
+     "id": "world",
+     "count": 22
+    },
+    {
+     "id": "electro",
+     "count": 17
+    },
+    {
+     "id": "rock",
+     "count": 12
+    },
+    {
+     "id": "jazz",
+     "count": 11
+    },
+    {
+     "id": "downtempo",
+     "count": 8
+    },
+    {
+     "id": "techno",
+     "count": 7
+    },
+    {
+     "id": "classical",
+     "count": 3
+    },
+    {
+     "id": "dub",
+     "count": 3
+    },
+    {
+     "id": "bass",
+     "count": 2
+    },
+    {
+     "id": "hiphop",
+     "count": 2
+    },
+    {
+     "id": "electronic",
+     "count": 49
+    },
+    {
+     "id": "other",
+     "count": 12
+    }
+   ],
    "tracks": [
     {
      "n": 1,
@@ -10453,6 +11968,64 @@
     {
      "term": "synth-pop",
      "count": 8
+    }
+   ],
+   "families": [
+    {
+     "id": "soul",
+     "count": 32
+    },
+    {
+     "id": "electro",
+     "count": 25
+    },
+    {
+     "id": "house",
+     "count": 23
+    },
+    {
+     "id": "rock",
+     "count": 23
+    },
+    {
+     "id": "pop",
+     "count": 22
+    },
+    {
+     "id": "world",
+     "count": 11
+    },
+    {
+     "id": "downtempo",
+     "count": 7
+    },
+    {
+     "id": "techno",
+     "count": 7
+    },
+    {
+     "id": "jazz",
+     "count": 6
+    },
+    {
+     "id": "hiphop",
+     "count": 5
+    },
+    {
+     "id": "bass",
+     "count": 3
+    },
+    {
+     "id": "dub",
+     "count": 2
+    },
+    {
+     "id": "electronic",
+     "count": 63
+    },
+    {
+     "id": "other",
+     "count": 9
     }
    ],
    "tracks": [

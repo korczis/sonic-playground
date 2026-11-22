@@ -168,6 +168,8 @@
 
 "chart.months.title" = "Recenze podle měsíců"
 "chart.months.caption" = "Kdy recenze vyšly. Sloupec otevře daný měsíc v archivu."
+"chart.families.title" = "Rodiny žánrů"
+"chart.families.caption" = "Skladby podle rodin žánrů; skladba se v rodině počítá jednou. Sloupec otevře rodinu s jejími žánry."
 "chart.genres.title" = "Nejčastější žánry"
 "chart.genres.caption" = "Skladby podle žánru. Sloupec otevře žánr."
 "chart.feelings.title" = "Nejčastější pocity"
@@ -176,8 +178,8 @@
 "chart.heatmap.caption" = "Jak často se žánr a pocit sejdou u jedné skladby (10 nejčastějších z obou). Buňka otevře průzkumník s oběma filtry."
 "chart.graph.title" = "Mapa hřiště"
 "chart.graph.caption" = "Každá skladba propojená se skladbami, kterým je nejpodobnější (společné žánry, pocity a nálady), obarvená podle prvního žánru. Táhněte, přibližte, najeďte; tečka otevře skladbu."
-"chart.browse_genres.title" = "Procházet podle žánru"
-"chart.browse_genres.caption" = "Sloupec filtruje skladby níže."
+"chart.browse_families.title" = "Procházet podle rodiny žánrů"
+"chart.browse_families.caption" = "Skladby podle rodin žánrů, zastřešující pojmy šedě. Sloupec otevře rodinu."
 "chart.browse_feelings.title" = "Procházet podle pocitu"
 "chart.browse_feelings.caption" = "Sloupec filtruje skladby níže."
 "chart.table" = "Zobrazit jako tabulku"
@@ -189,6 +191,7 @@
 "chart.col.term" = "Pojem"
 "chart.col.track" = "Skladba"
 "chart.col.genres" = "Žánry"
+"chart.col.family" = "Rodina"
 "chart.col.related" = "Zobrazené podobné skladby"
 "chart.col.cross" = "Žánr \\ pocit"
 
@@ -203,6 +206,8 @@
 "tax.one.sentiment" = "Pocit"
 "tax.one.mood" = "Nálada"
 "tax.list_lead" = { one = "{n} pojem.", few = "{n} pojmy, nejčastější první.", other = "{n} pojmů, nejčastější první." }
+"tax.families_lead" = { one = "{n} žánr v {f} rodinách, podle rodiny.", few = "{n} žánry v {f} rodinách, největší první.", other = "{n} žánrů v {f} rodinách, největší první." }
+"tax.families_nav" = "Rodiny žánrů"
 "tax.combine" = "Kombinovat v průzkumníku"
 "tax.feed" = "Feed"
 "tax.play" = "Přehrát {term}"

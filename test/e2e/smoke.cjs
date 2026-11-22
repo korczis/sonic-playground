@@ -1725,6 +1725,63 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // Genre families (data/genres.toml through catalog.genre_families): every scene is reachable
+  // from the sidebar, the home page, the explorer and the family chart, never hidden behind the
+  // umbrella terms that outnumber it (techno, jungle and dub were on no page but their own,
+  // 2026-11-22). The home page shows every yearbook, not the first four.
+  if (catalog.genre_families && catalog.genre_families.length) {
+    const fams = catalog.genre_families;
+    const { context, page, errors } = await open(browser, at(''), desktop);
+    check((await page.locator('section:has(#home-yearbooks) [data-yearbook]').count()) === (catalog.yearbooks || []).length,
+      `home: every yearbook is shown (${(catalog.yearbooks || []).length})`);
+    const side = await page.locator('#sidebar a[href*="/genre/#family-"]').evaluateAll((as) => as.map((a) => a.hash.slice(8)));
+    check(side.join() === fams.map((f) => f.id).join(), `sidebar: every genre family, umbrella last (${side.join(', ')})`);
+    const groups = await page.locator('#explorer-genre optgroup').evaluateAll((gs) => gs.map((g) => g.querySelectorAll('option').length));
+    check(groups.join() === fams.map((f) => f.terms.length).join(), `explorer: the genre options are grouped by family (${groups.length} groups)`);
+    const scene = fams.find((f) => !f.umbrella && f.terms.length > 1) || fams[0];
+    const term = scene.terms[scene.terms.length - 1].term;
+    await page.selectOption('#explorer-genre', term);
+    await page.waitForFunction((t) => new URL(location.href).searchParams.get('genre') === t, term, { timeout: 10000 })
+      .then(() => check(true, `explorer: a grouped option filters (${term})`), () => check(false, `explorer: a grouped option filters (${term})`));
+    await page.selectOption('#explorer-genre', '');
+    // The family chart: a click on a bar opens that family on the genre index, through the router.
+    // The chart lists the families bottom-up, so its top bar (the highest index) is the first family.
+    await page.locator('#home-genres').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => window.echarts && window.echarts.getInstanceByDom(document.getElementById('home-genres')), null, { timeout: 20000 });
+    const bar = await page.evaluate((n) => {
+      const el = document.getElementById('home-genres');
+      const [x, y] = window.echarts.getInstanceByDom(el).convertToPixel({ seriesIndex: 0 }, [1, n]);
+      const r = el.getBoundingClientRect();
+      return { x: r.left + x, y: r.top + y };
+    }, fams.length - 1);
+    await page.mouse.click(bar.x, bar.y);
+    await page.waitForFunction(() => location.pathname.endsWith('/genre/'), null, { timeout: 15000 }).catch(() => {});
+    const opened = await page.evaluate(() => location.pathname + location.hash);
+    check(opened.endsWith(`/genre/#family-${fams[0].id}`), `family chart: a bar opens the family on the genre index (${opened})`);
+    // The genre index: one section per family, each holding exactly the family's terms.
+    const sections = await page.locator('section[id^="family-"]').evaluateAll((ss) => ss.map((s) => [s.id.slice(7), s.querySelectorAll('a[href*="/genre/"]').length]));
+    check(sections.map((s) => s[0]).join() === fams.map((f) => f.id).join()
+      && sections.every(([id, n]) => n === fams.find((f) => f.id === id).terms.length),
+      `genre index: ${fams.length} family sections, each with its terms`);
+    check(await page.isVisible(`#family-${fams[0].id} a[href$="/genre/${fams[0].terms[0].slug}/"]`), 'genre index: a family links its terms');
+    // A term's page names its family and links every sibling.
+    await page.goto(at(`genre/${scene.terms[0].slug}/`), { waitUntil: 'load' });
+    const nav = await page.evaluate(() => {
+      const a = document.getElementById('family-nav');
+      return a ? { hash: a.hash, siblings: a.parentElement.querySelectorAll('a[href*="/genre/"]:not(#family-nav)').length } : null;
+    });
+    check(nav && nav.hash === `#family-${scene.id}` && nav.siblings === scene.terms.length,
+      `genre term: ${scene.terms[0].term} names its family and links its ${scene.terms.length} genres`);
+    if (catalog.yearbooks && catalog.yearbooks.length) {
+      const b = catalog.yearbooks[0];
+      await page.goto(at(`yearbook/${b.year}/`), { waitUntil: 'load' });
+      const yf = await page.locator('aside a[href*="/genre/#family-"]').count();
+      check(yf === b.families.length, `yearbook ${b.year}: its ${b.families.length} genre families, each linking the genre index`);
+    }
+    check(errors.length === 0, `genre families: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+
   await wcag(browser, desktop, new Set(catalog.tracks.map((t) => t.path)));
   if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);
   return done(browser);

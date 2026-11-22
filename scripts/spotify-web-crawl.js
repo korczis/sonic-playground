@@ -232,6 +232,26 @@
         short: short.map((p) => `${p.name} ${p.items.filter((x) => !x.unavailable).length}/${p.expected}`),
         top: t ? { tracks: t.tracks.length, artists: t.artists.length } : null };
     },
+    /**
+     * Named playlists only, by id: one the library does not hold, such as a "Your Top Songs"
+     * playlist Spotify made but the owner never saved (2023-2025, found on 2026-11-22). A partial
+     * snapshot (empty library): scripts/spotify_history.py merges every snapshot, a playlist's
+     * latest reading winning, so it adds these playlists and changes nothing else.
+     * @param {string[]} ids
+     */
+    async playlists(ids) {
+      const playlists = [];
+      for (const [k, id] of ids.entries()) {
+        crawl.progress = `${k + 1}/${ids.length} ${id}`;
+        playlists.push(await playlist({ uri: 'spotify:playlist:' + id, name: '', path: '/playlist/' + id }));
+      }
+      const snap = { schema: 'spotify-web-snapshot/v1', captured: new Date().toISOString().slice(0, 10),
+        source: "open.spotify.com, the owner's logged-in web player, named playlists read off the rendered page (scripts/spotify-web-crawl.js playlists())",
+        library: [], playlists };
+      localStorage.setItem(STORE, JSON.stringify(snap));
+      crawl.progress = 'done';
+      return playlists.map((p) => `${p.name} ${p.items.filter((x) => !x.unavailable).length}/${p.expected}`);
+    },
     /** Save the stored snapshot as one download (in a fresh tab), then clear it. */
     download() {
       const s = localStorage.getItem(STORE);

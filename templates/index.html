@@ -59,7 +59,7 @@
       <h2 id="home-yearbooks" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.title" l={l} /> }}</h2>
       <a href="{{ get_url(path='@/yearbook/_index.md', lang=lang) }}" class="text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="home.all_yearbooks" l={l} vars={ {"n": catalog.yearbooks | length} } /> }}</a>
     </div>
-    <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">{% for b in catalog.yearbooks[:4] %}{{ <yearbook_card b={b} catalog={catalog} l={l} /> }}{% endfor %}</div>
+    <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">{% for b in catalog.yearbooks %}{{ <yearbook_card b={b} catalog={catalog} l={l} /> }}{% endfor %}</div>
   </section>
   {%- endif %}
   {%- if catalog.recurring | length > 0 %}
@@ -106,15 +106,24 @@
           <h3 class="text-sm font-medium text-gray-900 dark:text-white" data-i18n="explorer.facet.{{ kind }}">{{ l["explorer.facet." ~ kind] }}</h3>
           <a href="{{ get_url(path=lp ~ kind, trailing_slash=true) }}" class="text-xs font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="home.sound_all" l={l} vars={ {"n": catalog.facets[kind] | length} } /> }}</a>
         </div>
+        {%- if kind == "genre" and catalog.genre_families | length > 0 %}
+        {#- Genres by family: each family with its most used terms, so a scene shows at once. -#}
+        <ul class="space-y-2">
+          {%- for f in catalog.genre_families %}{% if not f.umbrella %}
+          <li class="flex flex-wrap items-center gap-2"><a href="{{ get_url(path=lp ~ kind, trailing_slash=true) }}#family-{{ f.id }}" class="text-sm font-medium text-primary-700 hover:underline dark:text-primary-400" data-i18n="genre.family.{{ f.id }}">{{ l["genre.family." ~ f.id] }}</a>{{ <facet_badges terms={[]} kind={kind} l={l} limit={4} ranked={f.terms} /> }}</li>
+          {%- endif %}{% endfor %}
+        </ul>
+        {%- else %}
         <div class="flex flex-wrap gap-2">{{ <facet_badges terms={[]} kind={kind} l={l} limit={10} ranked={catalog.facets[kind]} /> }}</div>
+        {%- endif %}
       </div>
       {%- endif %}{% endfor %}
     </div>
   </section>
 
   <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
-    {{ <chart_card id="home-genres" chart="genre" ckey="chart.browse_genres" l={l} height="h-72" limit={10} target="explorer" /> }}
-    {{ <chart_card id="home-feelings" chart="sentiment" ckey="chart.browse_feelings" l={l} height="h-72" limit={10} target="explorer" /> }}
+    {{ <chart_card id="home-genres" chart="family" ckey="chart.browse_families" l={l} height="h-[28rem]" /> }}
+    {{ <chart_card id="home-feelings" chart="sentiment" ckey="chart.browse_feelings" l={l} height="h-[28rem]" limit={16} target="explorer" /> }}
   </div>
 
   {%- set field = "block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500" %}
@@ -141,9 +150,15 @@
         <label for="explorer-{{ kind }}" class="{{ lbl }}" data-i18n="explorer.facet.{{ kind }}">{{ l["explorer.facet." ~ kind] }}</label>
         <select id="explorer-{{ kind }}" name="{{ kind }}" data-facet="{{ kind }}" class="{{ field }}">
           <option value="" data-i18n="explorer.any.{{ kind }}">{{ l["explorer.any." ~ kind] }}</option>
-          {%- for f in catalog.facets[kind] %}
+          {#- Genres in their families (one <optgroup> each); every other facet is one plain group. -#}
+          {%- if kind == "genre" and catalog.genre_families | length > 0 %}{% set groups = catalog.genre_families %}{% else %}{% set groups = [{"id": "", "terms": catalog.facets[kind]}] %}{% endif %}
+          {%- for g in groups %}
+          {%- if g.id %}<optgroup label="{{ l["genre.family." ~ g.id] }}" data-i18n-label="genre.family.{{ g.id }}">{% endif %}
+          {%- for f in g.terms %}
           {%- set k = "term." ~ kind ~ "." ~ f.term %}{% if k in l %}{% set lab = l[k] %}{% else %}{% set lab = f.term %}{% endif %}
           <option value="{{ f.term }}" data-count="{{ f.count }}" data-label="{{ lab }}">{{ lab }} ({{ f.count }})</option>
+          {%- endfor %}
+          {%- if g.id %}</optgroup>{% endif %}
           {%- endfor %}
         </select>
       </div>

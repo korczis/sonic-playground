@@ -43,9 +43,17 @@
         {%- for kind in ["genre", "sentiment"] %}
         <p class="{{ heading }}" data-i18n="side.{{ kind }}">{{ l["side." ~ kind] }}</p>
         <ul class="space-y-0.5">
+          {%- if kind == "genre" and catalog.genre_families | length > 0 %}
+          {#- Genres browse by family (data/genres.toml): every scene is one click away, never
+              hidden behind the umbrella terms that outnumber it. -#}
+          {%- for f in catalog.genre_families %}
+          <li><a href="{{ get_url(path=lp ~ kind, trailing_slash=true) }}#family-{{ f.id }}" class="{{ sub }}"><span class="min-w-0 flex-1 truncate" data-i18n="genre.family.{{ f.id }}">{{ l["genre.family." ~ f.id] }}</span><span class="{{ badge }}">{{ f.count }}</span></a></li>
+          {%- endfor %}
+          {%- else %}
           {%- for f in catalog.facets[kind][:8] %}
           <li><a href="{% if l.lang in catalog.lang_terms and f.term not in catalog.lang_terms[l.lang][kind] %}{{ get_taxonomy_url(kind=kind, term=f.term, lang=catalog.languages | first) }}{% else %}{{ get_taxonomy_url(kind=kind, term=f.term, lang=l.lang) }}{% endif %}" class="{{ sub }}">{% set k = "term." ~ kind ~ "." ~ f.term %}<span class="min-w-0 flex-1 truncate">{% if k in l %}{{ l[k] }}{% else %}{{ f.term }}{% endif %}</span><span class="{{ badge }}">{{ f.count }}</span></a></li>
           {%- endfor %}
+          {%- endif %}
           <li><a href="{{ get_url(path=lp ~ kind, trailing_slash=true) }}" class="{{ sub }} font-medium text-primary-700 dark:text-primary-400">{{ <tx key={"side.all." ~ kind} l={l} vars={ {"n": catalog.facets[kind] | length} } /> }}</a></li>
         </ul>
         {%- endfor %}

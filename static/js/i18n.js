@@ -10,7 +10,7 @@
 //     as it is; a remembered choice always wins.
 //
 //   <span data-i18n="key" data-i18n-vars='{"n": 3}'>…</span>      text
-//   data-i18n-placeholder / -aria-label / -title / -alt="key"        attributes
+//   data-i18n-placeholder / -aria-label / -title / -alt / -label="key" attributes
 //   Sonic.t('key', {n: 3})                                            browser code
 //   Sonic.on('sonic:locale', fn)                                      re-render when the language changes
 (function () {
@@ -18,7 +18,7 @@
   var Sonic = window.Sonic;
   if (!Sonic) return;
   var KEY = 'sonic-locale';
-  var ATTRS = ['placeholder', 'aria-label', 'title', 'alt'];
+  var ATTRS = ['placeholder', 'aria-label', 'title', 'alt', 'label'];
   var bundle = null;
   var locale = document.documentElement.lang;
 

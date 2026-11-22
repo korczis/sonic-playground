@@ -15,7 +15,9 @@ from it, and the templates and the browser read only this file (static/data/cata
     explain each link;
   - the review outline: the sections most articles share, in their usual order, which
     scripts/track.py writes into a new article;
-  - facet counts, genre x sentiment co-occurrence, tracks per month, artists.
+  - facet counts, genre x sentiment co-occurrence, tracks per month, artists;
+  - the genre families (data/genres.toml): each family's terms and tracks, a term no family
+    lists placed by inference and reported, so browsing never hides a scene behind an umbrella.
 
     python3 scripts/catalog.py           write static/data/catalog.json
     python3 scripts/catalog.py --check   exit 1 on a contract violation or a stale catalogue
@@ -68,6 +70,7 @@ SCHEMA = "sonic-catalog/v1"
 TRACK_SCHEMA = json.loads(CONTRACT.read_text(encoding="utf-8"))
 CONCEPT_SCHEMA = json.loads((ROOT / "data" / "concept.schema.json").read_text(encoding="utf-8"))
 CONCEPTS_DIR = ROOT / TRACK_SCHEMA["x-sonic"]["concepts_dir"]
+GENRES = ROOT / "data" / "genres.toml"
 LOCALES = sorted(p.stem for p in (ROOT / "data" / "i18n").glob("*.toml"))
 # What of [extra] the browser's catalogue carries: what cards, the explorer and charts show. The
 # educational fields (ADR 0004) stay in the article: its page reads them from page.extra, and
@@ -117,6 +120,7 @@ WORDS_MIN = tomllib.loads((ROOT / "data" / "review.toml").read_text(encoding="ut
 MAIN_ARTIST = re.compile(r"\s*(?:,|&| x | and |\bfeat\.?|\bft\.|\bfeaturing\b|\bvs\.?)\s*", re.I)
 OUTLINE_THRESHOLD = RULES["outline_threshold"]
 TOP_PAIRS = 24
+NOTES: list[str] = []  # findings that are reported but violate no contract (an inferred family)
 YOUTUBE_ID = re.compile(r"/embed/([A-Za-z0-9_-]{11})$")
 # A single letter other than "a"/"I" at the end of a line, the word going on on the next line:
 # Markdown renders it "T he". Found 33 times in the restored reviews (2026-11-12).
@@ -377,9 +381,13 @@ def load_playlists(errors: list[str]) -> list[dict]:
     return out
 
 
-def yearbooks(tracks: list[Track], errors: list[str]) -> tuple[list[dict], dict[str, list[dict]]]:
+def yearbooks(tracks: list[Track], errors: list[str],
+              families: list[dict] | None = None) -> tuple[list[dict], dict[str, list[dict]]]:
     """The owner's annual Top Songs as derived collections: every item resolved to its review,
-    in playlist order, with counts, artists and genres; and per review the years it is in."""
+    in playlist order, with counts, artists, genres and genre families (a song counts once in a
+    family); and per review the years it is in."""
+    family_of = {x["term"]: f["id"] for f in families or [] for x in f["terms"]}
+    umbrella = {f["id"] for f in families or [] if f["umbrella"]}
     index = identity_index(tracks)
     by_source = {t.source: t for t in tracks}
     books, member_of = [], defaultdict(list)
@@ -400,6 +408,8 @@ def yearbooks(tracks: list[Track], errors: list[str]) -> tuple[list[dict], dict[
         present = [by_source[i["source"]] for i in items if i["source"]]
         artists = Counter(t.artist for t in present)
         genres = Counter(g for t in present for g in t.facets["genre"])
+        fams = Counter(fid for t in {t.source: t for t in present}.values()
+                       for fid in {family_of[g] for g in t.facets["genre"] if g in family_of})
         books.append({
             "year": p["year"], "name": p.get("name", ""), "file": p["file"],
             "expected": p.get("expected"), "items": len(items),
@@ -408,9 +418,74 @@ def yearbooks(tracks: list[Track], errors: list[str]) -> tuple[list[dict], dict[
                for s in ("present", "missing", "ambiguous", "skipped", "uncertain")},
             "artists": [{"term": k, "count": v} for k, v in sorted(artists.items(), key=lambda kv: (-kv[1], kv[0]))[:12]],
             "genres": [{"term": k, "count": v} for k, v in sorted(genres.items(), key=lambda kv: (-kv[1], kv[0]))[:12]],
+            "families": [{"id": k, "count": v} for k, v in sorted(
+                fams.items(), key=lambda kv: (kv[0] in umbrella, -kv[1], kv[0]))],
             "tracks": items,
         })
     return books, {k: sorted(v, key=lambda m: m["year"]) for k, v in member_of.items()}
+
+
+# --- Genre families (data/genres.toml). -------------------------------------------------------
+
+def load_genre_families(errors: list[str]) -> list[dict]:
+    """data/genres.toml: the families, each with an id, a name in every language and its terms.
+    A term in two families, or a family without a name, is a contract violation."""
+    if not GENRES.exists():
+        return []
+    families = tomllib.loads(GENRES.read_text(encoding="utf-8")).get("family", [])
+    owner: dict[str, str] = {}
+    ids: set[str] = set()
+    for f in families:
+        fid = f.get("id", "")
+        if not re.fullmatch(r"[a-z][a-z0-9-]*", fid) or fid in ids:
+            errors.append(f"data/genres.toml: family id '{fid}' is missing, malformed or repeated")
+        ids.add(fid)
+        for lang in [DEFAULT_LANG] + LANGUAGES:
+            if not str(f.get(lang, "")).strip():
+                errors.append(f"data/genres.toml: family '{fid}' has no {lang} name")
+        for term in f.get("terms", []):
+            if term in owner:
+                errors.append(f"data/genres.toml: '{term}' is in '{owner[term]}' and '{fid}'")
+            owner[term] = fid
+    return families
+
+
+def genre_families(tracks: list[Track], families: list[dict], notes: list[str]) -> list[dict]:
+    """Each family with the terms in use, their counts and the family's tracks (a track counts
+    once however many of its terms the family holds), largest first. A term no family lists goes
+    to the family of the listed term it shares the most reviews with; it is marked `inferred`
+    and named in `notes`, and a term that shares none goes to the last family. An `umbrella`
+    family (terms that name no scene) comes after every other."""
+    if not families:
+        return []
+    by_term: dict[str, set[str]] = defaultdict(set)
+    for t in tracks:
+        for g in t.facets["genre"]:
+            by_term[g].add(t.source)
+    written = {term: f["id"] for f in families for term in f.get("terms", [])}
+    placed = {term: fid for term, fid in written.items() if term in by_term}
+    inferred = set()
+    for term in sorted(set(by_term) - set(written)):
+        shared = Counter()
+        for other, fid in placed.items():
+            if other not in inferred:
+                shared[fid] += len(by_term[term] & by_term[other])
+        fid = shared.most_common(1)[0][0] if shared and shared.most_common(1)[0][1] else families[-1]["id"]
+        placed[term] = fid
+        inferred.add(term)
+        notes.append(f"genre '{term}' is in no family of data/genres.toml; placed in '{fid}' by inference")
+    out = []
+    for f in families:
+        terms = sorted((term for term, fid in placed.items() if fid == f["id"]),
+                       key=lambda term: (-len(by_term[term]), term))
+        if not terms:
+            continue
+        members = set().union(*(by_term[term] for term in terms))
+        out.append({"id": f["id"], "count": len(members), "umbrella": bool(f.get("umbrella")),
+                    "names": terms,
+                    "terms": [{"term": term, "slug": slugify(term), "count": len(by_term[term]),
+                               **({"inferred": True} if term in inferred else {})} for term in terms]})
+    return sorted(out, key=lambda f: (f["umbrella"], -f["count"], f["id"]))
 
 
 # --- Concepts (the glossary the articles teach from). ----------------------------------------
@@ -853,10 +928,11 @@ def build(errors: list[str]) -> dict:
 
     tracks.sort(key=lambda t: (t.date, t.title), reverse=True)
     errors += uniqueness(tracks)
+    families = genre_families(tracks, load_genre_families(errors), NOTES)
     translated = load_translations(tracks, errors)
     pages_translated = page_translations(errors)
     rel = related(tracks)
-    books, member_of = yearbooks(tracks, errors)
+    books, member_of = yearbooks(tracks, errors, families)
     # One artist, one home country: the reviews of an artist must agree (Mount Sims was DE in some
     # and US in others on 2026-11-12).
     countries: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
@@ -897,6 +973,7 @@ def build(errors: list[str]) -> dict:
             "first": min((t.date for t in tracks), default=""),
             "last": max((t.date for t in tracks), default=""),
             **{f"{f}_terms": len(facet_counts[f]) for f in FACETS},
+            "genre_families": len(families),
             "yearbooks": len(books),
             "recurring": sum(1 for m in member_of.values() if len(m) > 1),
             "translations": {lang: {"reviews": len(translated[lang]), "pages": len(pages_translated[lang])}
@@ -911,6 +988,7 @@ def build(errors: list[str]) -> dict:
         "facet_names": list(FACETS),
         "concepts": concept_index(tracks),
         "concept_categories": CONCEPT_SCHEMA["properties"]["category"]["enum"],
+        "genre_families": families,
         "yearbooks": books,
         "recurring": sorted(s for s, m in member_of.items() if len(m) > 1),
         "education": education(tracks),
@@ -1126,6 +1204,8 @@ def main() -> int:
     count = catalog["stats"]["tracks"]
     for e in errors:
         print(f"catalog: {e}", file=sys.stderr)
+    for n in NOTES:
+        print(f"catalog: note: {n}", file=sys.stderr)
     if errors:
         print(f"catalog: {len(errors)} contract violation(s)", file=sys.stderr)
         return 1
