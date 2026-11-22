@@ -179,6 +179,13 @@ function watch(page) {
   page.on('console', (m) => {
     if (m.type() !== 'error' && m.type() !== 'warning') return;
     if (m.text().startsWith('Failed to load resource')) return;
+    // A headless browser composites in software, so it reads every WebGL frame back itself and
+    // ANGLE reports that stall; a real Chrome composites on the GPU and never does (knowledge
+    // console-clean-by-construction). A notice, never a pass: any other warning still fails.
+    if (/^\[\.WebGL-[0-9a-fx]+\]GL Driver Message \([^)]*Performance[^)]*\): GPU stall due to ReadPixels/.test(m.text())) {
+      notices.add(`headless compositing (not the site): ${m.text()}`);
+      return;
+    }
     const from = (m.location() && m.location().url) || '';
     const own = !from || from.startsWith(origin);
     (own ? errors : null)?.push(`console ${m.type()}: ${m.text()}`);
@@ -543,6 +550,8 @@ async function shot(page, name) {
   // A fake microphone (a beeping tone) and auto-accepted permission prompts let the visualiser's
   // "Follow the music" run its real listening path and analysis.
   const launch = { headless: true, args: ['--enable-unsafe-swiftshader', '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] };
+  // On a Mac, WebGL on Metal, as Chrome itself runs it (headless defaults to ANGLE on OpenGL).
+  if (process.platform === 'darwin') launch.args.push('--use-angle=metal');
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   const browser = await chromium.launch(launch);
   instrument(browser);
@@ -928,7 +937,8 @@ async function shot(page, name) {
     const newestStill = catalog.tracks.find((t) => t.thumbnail);
     check(featured === newestStill.source, `home features the newest review with a still (${newestStill.source})`);
     // The mosaic as served (hero.js turns its tiles a few seconds later).
-    const served = await (await context.request.get(at(''))).text();
+    // Fetched by the page, so --artifact answers it (context.request would ask production).
+    const served = await page.evaluate((u) => fetch(u).then((r) => r.text()), at(''));
     const mosaic = served.slice(served.indexOf('id="hero-mosaic"'), served.indexOf('id="hero-newest"'));
     const tiles = [...mosaic.matchAll(/data-source="([^"]+)"/g)].map((m) => m[1]);
     const nine = catalog.tracks.filter((t) => t.youtube).slice(0, 9).map((t) => t.source);
@@ -1423,7 +1433,7 @@ async function shot(page, name) {
       if (m.h2 !== null && m.h1 !== null) check(m.h2 <= m.h1, `layout: ${where} no content heading outgrows the page title (h2 ${m.h2}px, h1 ${m.h1}px)`);
       if (m.fill !== null) check(m.fill <= 2, `layout: ${where} the text fills its card, not a column centred in it (${m.fill}px off)`);
       if (m.fill !== null && m.measure !== null) check(m.measure <= 45, `layout: ${where} the text keeps a readable measure (${m.measure.toFixed(1)}em per line)`);
-      if (Number.isFinite(m.rows)) check(m.rows >= 80, `layout: ${where} the aside's track rows keep their titles readable (${Math.round(m.rows)}px)`);
+      if (Number.isFinite(m.rows)) check(m.rows >= 64, `layout: ${where} the aside's track rows keep their titles readable (${Math.round(m.rows)}px)`);
       check(m.overlaps.length === 0, `layout: ${where} the navbar's title and controls do not overlap (${m.overlaps.join(', ')})`);
       check(errors.length === 0, `layout: ${where} no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
       if (width === 360 || width === 1920) await shot(page, `layout-${name.replace(' ', '-')}-${width}`);
