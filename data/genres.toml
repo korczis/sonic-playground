@@ -76,7 +76,7 @@ terms = ["soul", "deep soul", "soulful", "funk", "disco", "nu-disco", "r&b", "go
 id = "hiphop"
 en = "Hip-hop & rap"
 cs = "Hip-hop a rap"
-terms = ["hip-hop", "rap", "g-funk", "crunk", "trap", "electro-rap", "rap rock", "rap metal"]
+terms = ["hip-hop", "rap", "g-funk", "crunk", "trap", "electro-rap", "rap rock", "rap metal", "boom bap"]
 
 [[family]]
 id = "pop"

@@ -6,8 +6,9 @@ artists: ["Yeah Yeah Yeahs", "A-Trak"]
 album: "Good Morning Music: Wake Up Workout"
 duration: "3:23"
 spotify: {"track": "5qGIfWDRdyO67LCTqA2sEn", "album": "3MWSY8N1zWSNBcnMTIeiTz", "artists": ["3TNt4aUIxgfy9aoaft5Jj2", "3TaUSUXn41GixL7zbvrIDt"]}
-keys: {"fold": "yeahyeahyeahs|headswillrollatrakremixradioedit"}
-status: "missing"
+keys: {"fold": "yeahyeahyeahs|headswillrollatrakremixradioedit", "isrc": "USUM70906805", "musicbrainz": "2f7a1aeb-7687-4474-b49d-32352b4efd7b"}
+review: "yeah-yeah-yeahs-a-trak-heads-will-roll-a-trak-remix-radio-edit.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2025, "n": 58}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Good Morning Music: Wake Up Workout*, 3:23.
 A liked song.
 Your Top Songs 2025: #58.
-No review yet.
+Reviewed: content/yeah-yeah-yeahs-a-trak-heads-will-roll-a-trak-remix-radio-edit.md.

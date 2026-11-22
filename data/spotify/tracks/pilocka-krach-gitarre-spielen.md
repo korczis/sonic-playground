@@ -7,7 +7,8 @@ album: "Best Of"
 duration: "4:48"
 spotify: {"track": "67Rd9vIsF2cTh62Q3lg1St", "album": "48HBoA39mKzK8AsMyZ9dv9", "artists": ["72gQuI1GHmsUXIfe863TC7"]}
 keys: {"fold": "pilockakrach|gitarrespielen"}
-status: "missing"
+review: "pilocka-krach-gitarre-spielen.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2025, "n": 68}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Best Of*, 4:48.
 A liked song.
 Your Top Songs 2025: #68.
-No review yet.
+Reviewed: content/pilocka-krach-gitarre-spielen.md.

@@ -7,8 +7,9 @@ album: "Showgirl, the play (Original Soundtrack Recording)"
 duration: "4:16"
 explicit: true
 spotify: {"track": "6DChzhMnqG5vHUjSV2twU3", "album": "28AIuvdspM732uRnCM2cmM", "artists": ["0VPogECnuuH2xbYP3Rmpd4", "67ntscRUyeb8cbYpqTrz6U"]}
-keys: {"fold": "rebekawarrior|lavalise"}
-status: "missing"
+keys: {"fold": "rebekawarrior|lavalise", "isrc": "FRDRJ2100500", "musicbrainz": "b6dc318c-8a0b-4ade-99ab-4c0fdf797516"}
+review: "rebeka-warrior-marlene-saldana-la-valise.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2025, "n": 56}
@@ -20,4 +21,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Showgirl, the play (Original Soundtrack Recording)*, 4:16.
 A liked song.
 Your Top Songs 2025: #56.
-No review yet.
+Reviewed: content/rebeka-warrior-marlene-saldana-la-valise.md.

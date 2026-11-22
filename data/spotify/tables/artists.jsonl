@@ -20,7 +20,7 @@
 {"followed": false, "id": "a-deeper-sense", "liked": 0, "name": "A Deeper Sense", "reviewed": 0, "spotify_artist": "34C1icJqIMVraGaiyybDSW", "tracks": 1}
 {"followed": false, "id": "a-studio", "liked": 0, "name": "A'Studio", "reviewed": 0, "spotify_artist": "58gyHFyLoEM1rVTrPTa4vE", "tracks": 1}
 {"followed": false, "id": "a-ha", "liked": 0, "name": "a-ha", "reviewed": 0, "spotify_artist": "2jzc5TC5TVFLXQlBNiIUzE", "tracks": 1}
-{"followed": false, "id": "a-trak", "liked": 1, "name": "A-Trak", "reviewed": 0, "spotify_artist": "3TaUSUXn41GixL7zbvrIDt", "tracks": 2}
+{"followed": false, "id": "a-trak", "liked": 1, "name": "A-Trak", "reviewed": 1, "spotify_artist": "3TaUSUXn41GixL7zbvrIDt", "tracks": 2}
 {"followed": false, "id": "a-trick", "liked": 0, "name": "A-Trick", "reviewed": 0, "spotify_artist": "4IR7Q0Fqnx1jC3oiHz4TBW", "tracks": 1}
 {"followed": false, "id": "a-b-c", "liked": 0, "name": "A.B.C.", "reviewed": 0, "spotify_artist": "4uqq5ILbNFCt9Q8AdaIVlN", "tracks": 1}
 {"followed": false, "id": "a-o", "liked": 0, "name": "A.O.", "reviewed": 0, "spotify_artist": "2jfEozrJPe4aHfA86ClOAI", "tracks": 1}
@@ -44,7 +44,7 @@
 {"followed": false, "id": "ac-dc", "liked": 0, "name": "AC/DC", "reviewed": 0, "spotify_artist": "711MCceyCBcFnzjGY4Q7Un", "tracks": 1}
 {"followed": false, "id": "ace-of-base", "liked": 0, "name": "Ace of Base", "reviewed": 0, "spotify_artist": "5ksRONqssB7BR161NTtJAm", "tracks": 1}
 {"followed": false, "id": "acid-mondays", "liked": 1, "name": "ACID MONDAYS", "reviewed": 0, "spotify_artist": "2WDeKY1V6t4APg95ywXJjS", "tracks": 1}
-{"followed": false, "id": "acid-pauli", "liked": 3, "name": "Acid Pauli", "reviewed": 3, "spotify_artist": "3LHqODf1hGAgZ5LTw1Gf4C", "tracks": 4}
+{"followed": false, "id": "acid-pauli", "liked": 3, "name": "Acid Pauli", "reviewed": 4, "spotify_artist": "3LHqODf1hGAgZ5LTw1Gf4C", "tracks": 4}
 {"followed": false, "id": "acraze", "liked": 1, "name": "ACRAZE", "reviewed": 2, "spotify_artist": "4pnp4w9g30yLfVIAFnZMRd", "tracks": 2}
 {"followed": false, "id": "ada-pasternak", "liked": 0, "name": "Ada Pasternak", "reviewed": 0, "spotify_artist": "0zWAnfwWutUR6oTPQPg4nx", "tracks": 3}
 {"followed": false, "id": "adair-vernell", "liked": 0, "name": "Adair Vernell", "reviewed": 0, "spotify_artist": "6LeQ6TwIJsMGQoWHs5DT4A", "tracks": 1}
@@ -54,7 +54,7 @@
 {"followed": false, "id": "adana-twins", "liked": 0, "name": "Adana Twins", "reviewed": 0, "spotify_artist": "2JnkjHtuUjz83gkEx8QMS4", "tracks": 3}
 {"followed": false, "id": "adaolisa", "liked": 1, "name": "adaolisa", "reviewed": 1, "spotify_artist": "2WlLxOuhMiMtXh8KIL7T5k", "tracks": 1}
 {"followed": false, "id": "adi-oasis", "liked": 0, "name": "Adi Oasis", "reviewed": 0, "spotify_artist": "5RRfTrwXUGYiBB0DMV4hyh", "tracks": 2}
-{"followed": false, "id": "adi-scotheque", "liked": 1, "name": "Adi Scotheque", "reviewed": 0, "spotify_artist": "1CLTiwj3yiNG3HwufYt5md", "tracks": 1}
+{"followed": false, "id": "adi-scotheque", "liked": 1, "name": "Adi Scotheque", "reviewed": 1, "spotify_artist": "1CLTiwj3yiNG3HwufYt5md", "tracks": 1}
 {"followed": false, "id": "adrian-lux", "liked": 0, "name": "Adrian Lux", "reviewed": 0, "spotify_artist": "5kp9Qhzri9LrDkzrtjt5Sh", "tracks": 1}
 {"followed": false, "id": "adriatique", "liked": 0, "name": "Adriatique", "reviewed": 0, "spotify_artist": "02DWGcShQivFepRvGJ7xhB", "tracks": 3}
 {"followed": false, "id": "adela", "liked": 0, "name": "ADÉLA", "reviewed": 0, "spotify_artist": "2qanRMyA5bNuTvz1dK45OP", "tracks": 2}
@@ -408,7 +408,7 @@
 {"followed": false, "id": "bby", "liked": 0, "name": "bby", "reviewed": 0, "spotify_artist": "04PoYcw0Zcevr7MQC0kzUM", "tracks": 3}
 {"followed": false, "id": "bccf", "liked": 0, "name": "BCCF", "reviewed": 0, "spotify_artist": "3nom2q4wk6XDl2RN6xTs5f", "tracks": 1}
 {"followed": false, "id": "bdrmm", "liked": 0, "name": "bdrmm", "reviewed": 0, "spotify_artist": "4Cx5LnF4WNJIn9SSqyeq9C", "tracks": 1}
-{"followed": false, "id": "be-svendsen", "liked": 6, "name": "Be Svendsen", "reviewed": 5, "spotify_artist": "4BaLB5aiExO29BEGVUisru", "tracks": 6}
+{"followed": false, "id": "be-svendsen", "liked": 6, "name": "Be Svendsen", "reviewed": 6, "spotify_artist": "4BaLB5aiExO29BEGVUisru", "tracks": 6}
 {"followed": false, "id": "bea", "liked": 0, "name": "Bea", "reviewed": 0, "spotify_artist": "6Jl6Xw5FnzQqmKNodwbKym", "tracks": 1}
 {"followed": false, "id": "beach-house", "liked": 0, "name": "Beach House", "reviewed": 0, "spotify_artist": "56ZTgzPBDge0OvCGgMO3OY", "tracks": 2}
 {"followed": false, "id": "bearcubs", "liked": 1, "name": "Bearcubs", "reviewed": 0, "spotify_artist": "5iPtkyoEOCILhwFgl2a2d3", "tracks": 1}
@@ -688,7 +688,7 @@
 {"followed": false, "id": "carl-cox", "liked": 1, "name": "Carl Cox", "reviewed": 1, "spotify_artist": "19SmlbABtI4bXz864MLqOS", "tracks": 3}
 {"followed": false, "id": "carl-winther", "liked": 0, "name": "Carl Winther", "reviewed": 0, "spotify_artist": "6sGRzzszXhAo63o0iHBs7R", "tracks": 2}
 {"followed": false, "id": "carla-monroe", "liked": 0, "name": "Carla Monroe", "reviewed": 0, "spotify_artist": "4S9LNSZusH3XflT3g32bqB", "tracks": 1}
-{"followed": false, "id": "carla-pallone", "liked": 3, "name": "Carla Pallone", "reviewed": 1, "spotify_artist": "4WzuMp3YGOM5rOu07EH0Bm", "tracks": 3}
+{"followed": false, "id": "carla-pallone", "liked": 3, "name": "Carla Pallone", "reviewed": 3, "spotify_artist": "4WzuMp3YGOM5rOu07EH0Bm", "tracks": 3}
 {"followed": false, "id": "carlita", "liked": 0, "name": "Carlita", "reviewed": 0, "spotify_artist": "1GVbOnrND8b3eh2JZ4opw8", "tracks": 2}
 {"followed": false, "id": "carly-rae-jepsen", "liked": 0, "name": "Carly Rae Jepsen", "reviewed": 0, "spotify_artist": "6sFIWsNpZYqfjUpaCgueju", "tracks": 1}
 {"followed": false, "id": "carmen-castaldi", "liked": 0, "name": "Carmen Castaldi", "reviewed": 0, "spotify_artist": "1OvdpFrwnLCTKW5U9rOTiO", "tracks": 1}
@@ -2440,7 +2440,7 @@
 {"followed": false, "id": "lamomali", "liked": 0, "name": "Lamomali", "reviewed": 1, "spotify_artist": "7DxGG5hXfOSgepxXa7UqRF", "tracks": 1}
 {"followed": false, "id": "lampe", "liked": 0, "name": "Lampé", "reviewed": 0, "spotify_artist": "0Fj1rrCxxmlLoKKb7Vcvfc", "tracks": 1}
 {"followed": false, "id": "lana-del-rey", "liked": 2, "name": "Lana Del Rey", "reviewed": 3, "spotify_artist": "00FQb4jTyendYWaN8pK0wa", "tracks": 4}
-{"followed": false, "id": "landhouse", "liked": 1, "name": "Landhouse", "reviewed": 0, "spotify_artist": "0b05DhI4gD2fNDlqbFBOyt", "tracks": 1}
+{"followed": false, "id": "landhouse", "liked": 1, "name": "Landhouse", "reviewed": 1, "spotify_artist": "0b05DhI4gD2fNDlqbFBOyt", "tracks": 1}
 {"followed": false, "id": "landon-ryle", "liked": 0, "name": "Landon Ryle", "reviewed": 0, "spotify_artist": "1ZuahBYwNDFPAo6QAsnxTf", "tracks": 1}
 {"followed": false, "id": "lane-8", "liked": 0, "name": "Lane 8", "reviewed": 0, "spotify_artist": "27gtK7m9vYwCyJ04zz0kIb", "tracks": 5}
 {"followed": false, "id": "langoth", "liked": 1, "name": "Langoth", "reviewed": 1, "spotify_artist": "795XLsnDRo8Q2Tyth8S7N6", "tracks": 1}
@@ -2739,7 +2739,7 @@
 {"followed": false, "id": "mangabey", "liked": 0, "name": "Mangabey", "reviewed": 0, "spotify_artist": "0IySrk0S2gbAoxaYyPHEZD", "tracks": 1}
 {"followed": false, "id": "mani-hoffman", "liked": 1, "name": "Mani Hoffman", "reviewed": 0, "spotify_artist": "4h5uH2PyDzfpfZresu96cw", "tracks": 2}
 {"followed": false, "id": "mani-obeya", "liked": 1, "name": "Mani Obeya", "reviewed": 2, "spotify_artist": "3Ex5qqvWXjVZkWuTkYkKc6", "tracks": 2}
-{"followed": false, "id": "mansfield-tya", "liked": 3, "name": "Mansfield.TYA", "reviewed": 1, "spotify_artist": "4Rnbihd9aa3KWygk38BAZL", "tracks": 3}
+{"followed": false, "id": "mansfield-tya", "liked": 3, "name": "Mansfield.TYA", "reviewed": 3, "spotify_artist": "4Rnbihd9aa3KWygk38BAZL", "tracks": 3}
 {"followed": false, "id": "manu-katche", "liked": 0, "name": "Manu Katché", "reviewed": 0, "spotify_artist": "4HVFb71ZSXO6nRMk2pdPsy", "tracks": 2}
 {"followed": false, "id": "manuel-carrasco", "liked": 0, "name": "Manuel Carrasco", "reviewed": 0, "spotify_artist": "7qAoXV4U0qDxQAUqhszjAA", "tracks": 1}
 {"followed": false, "id": "manuel-tur", "liked": 0, "name": "Manuel Tur", "reviewed": 0, "spotify_artist": "7b1UQij21HldbE3W7njHEQ", "tracks": 1}
@@ -2793,7 +2793,7 @@
 {"followed": false, "id": "marlena-shaw", "liked": 0, "name": "Marlena Shaw", "reviewed": 0, "spotify_artist": "0hirZ8kPPdM9pzXpoagB4w", "tracks": 1}
 {"followed": false, "id": "marlo-rex", "liked": 0, "name": "Marlo Rex", "reviewed": 0, "spotify_artist": "3honvvPh3jtS2fTJEYKexS", "tracks": 2}
 {"followed": false, "id": "marlon-hoffstadt", "liked": 0, "name": "Marlon Hoffstadt", "reviewed": 0, "spotify_artist": "0HHa7ZJZxUQlg5l2mB0N0f", "tracks": 1}
-{"followed": false, "id": "marlene-saldana", "liked": 1, "name": "Marlène Saldana", "reviewed": 0, "spotify_artist": "67ntscRUyeb8cbYpqTrz6U", "tracks": 1}
+{"followed": false, "id": "marlene-saldana", "liked": 1, "name": "Marlène Saldana", "reviewed": 1, "spotify_artist": "67ntscRUyeb8cbYpqTrz6U", "tracks": 1}
 {"followed": false, "id": "marmy", "liked": 0, "name": "Marmy", "reviewed": 0, "spotify_artist": "7GDzOgd5Z7GSqIyfDcVguz", "tracks": 1}
 {"followed": false, "id": "marnik", "liked": 0, "name": "Marnik", "reviewed": 0, "spotify_artist": "6S3KljEiIOWoLMUyZrkQUc", "tracks": 1}
 {"followed": false, "id": "maroon-5", "liked": 2, "name": "Maroon 5", "reviewed": 2, "spotify_artist": "04gDigrS5kc9YWfZHwBETP", "tracks": 4}
@@ -2823,7 +2823,7 @@
 {"followed": false, "id": "mary-lou-williams", "liked": 0, "name": "Mary Lou Williams", "reviewed": 0, "spotify_artist": "6hrEc1XqVcGLK0Di6zVADR", "tracks": 1}
 {"followed": false, "id": "mashii", "liked": 0, "name": "mashii", "reviewed": 0, "spotify_artist": "346rTg4n7TEFJbcKda8gRZ", "tracks": 5}
 {"followed": false, "id": "mashiii", "liked": 0, "name": "mashiii", "reviewed": 0, "spotify_artist": "20ddrEXJPsqiWfg6bFGwZp", "tracks": 17}
-{"followed": false, "id": "masomenos", "liked": 1, "name": "Masomenos", "reviewed": 0, "spotify_artist": "720Je3zIeXsRIWUcWRO8uX", "tracks": 1}
+{"followed": false, "id": "masomenos", "liked": 1, "name": "Masomenos", "reviewed": 1, "spotify_artist": "720Je3zIeXsRIWUcWRO8uX", "tracks": 1}
 {"followed": false, "id": "massane", "liked": 0, "name": "Massane", "reviewed": 0, "spotify_artist": "0cjvrTtv350Ls87eGY80iz", "tracks": 2}
 {"followed": false, "id": "massano", "liked": 0, "name": "Massano", "reviewed": 0, "spotify_artist": "6htWLP8aiuf19FYMA4VQAZ", "tracks": 2}
 {"followed": false, "id": "massimo-farao", "liked": 0, "name": "Massimo Faraò", "reviewed": 0, "spotify_artist": "04qLma4TvriHyGJ0YlK6XI", "tracks": 1}
@@ -2967,7 +2967,7 @@
 {"followed": false, "id": "michelle-drew", "liked": 1, "name": "Michelle Drew", "reviewed": 0, "spotify_artist": "2j9zm5qYUbYTFAbcro3wSR", "tracks": 1}
 {"followed": false, "id": "michelle-gurevich", "liked": 2, "name": "Michelle Gurevich", "reviewed": 4, "spotify_artist": "2lP3Fx1aGCbQvH1F6i5Qeg", "tracks": 4}
 {"followed": false, "id": "mick-jones", "liked": 1, "name": "Mick Jones", "reviewed": 0, "spotify_artist": "7zQmORVNaWz1cW1KJB2cTX", "tracks": 1}
-{"followed": false, "id": "mickey-avalon", "liked": 1, "name": "Mickey Avalon", "reviewed": 0, "spotify_artist": "546WiMGysEqWZTzP8hJvB2", "tracks": 1}
+{"followed": false, "id": "mickey-avalon", "liked": 1, "name": "Mickey Avalon", "reviewed": 1, "spotify_artist": "546WiMGysEqWZTzP8hJvB2", "tracks": 1}
 {"followed": false, "id": "midnight-oil", "liked": 0, "name": "Midnight Oil", "reviewed": 0, "spotify_artist": "72KyoXzp0NOQij6OcmZUxk", "tracks": 2}
 {"followed": false, "id": "midnight-purple", "liked": 0, "name": "Midnight Purple", "reviewed": 0, "spotify_artist": "7LUt2H293nnM0f66ULFgUA", "tracks": 10}
 {"followed": false, "id": "miel-de-montagne", "liked": 0, "name": "Miel De Montagne", "reviewed": 0, "spotify_artist": "2iGwIqfIXRskkGakunO9sf", "tracks": 2}
@@ -3303,7 +3303,7 @@
 {"followed": false, "id": "nu", "liked": 5, "name": "Nu", "reviewed": 4, "spotify_artist": "5tY2sa8I11tpMuhU9onQ6e", "tracks": 7}
 {"followed": false, "id": "nu-aspect", "liked": 0, "name": "Nu Aspect", "reviewed": 0, "spotify_artist": "4NhRml5ZOfNaYJAHUE0XwT", "tracks": 7}
 {"followed": false, "id": "nuage", "liked": 0, "name": "Nuage", "reviewed": 0, "spotify_artist": "40aC0ICH8LjuNvZrh30WtD", "tracks": 3}
-{"followed": false, "id": "nuclear-cowboy", "liked": 1, "name": "Nuclear Cowboy", "reviewed": 0, "spotify_artist": "1hKcLAi8QwNtEIyvpUFDkC", "tracks": 1}
+{"followed": false, "id": "nuclear-cowboy", "liked": 1, "name": "Nuclear Cowboy", "reviewed": 1, "spotify_artist": "1hKcLAi8QwNtEIyvpUFDkC", "tracks": 1}
 {"followed": false, "id": "nujabes", "liked": 0, "name": "Nujabes", "reviewed": 0, "spotify_artist": "3Rq3YOF9YG9YfCWD4D56RZ", "tracks": 1}
 {"followed": false, "id": "nujakasha", "liked": 0, "name": "Nujakasha", "reviewed": 0, "spotify_artist": "6cyDwv8RqKLeSjs5IKPJnI", "tracks": 1}
 {"followed": false, "id": "noze", "liked": 4, "name": "Nôze", "reviewed": 6, "spotify_artist": "6rbW4PmepEAeeow5x9eW3u", "tracks": 6}
@@ -3376,7 +3376,7 @@
 {"followed": false, "id": "opto", "liked": 0, "name": "Opto", "reviewed": 0, "spotify_artist": "0mdVUK3zymRXiPGQPWw8KX", "tracks": 1}
 {"followed": false, "id": "orancha", "liked": 0, "name": "ORANCHA", "reviewed": 0, "spotify_artist": "2qF0nxmV3bJDUBGwnJ0xSp", "tracks": 1}
 {"followed": false, "id": "orange", "liked": 1, "name": "ORANGE", "reviewed": 0, "spotify_artist": "3GCL5c4VCnoSojNcRQHXF8", "tracks": 1}
-{"followed": false, "id": "orange-blossom", "liked": 1, "name": "Orange Blossom", "reviewed": 0, "spotify_artist": "0vAw8AfCObQgZlXRSRILOq", "tracks": 1}
+{"followed": false, "id": "orange-blossom", "liked": 1, "name": "Orange Blossom", "reviewed": 1, "spotify_artist": "0vAw8AfCObQgZlXRSRILOq", "tracks": 1}
 {"followed": false, "id": "orchestral-manoeuvres-in-the-dark", "liked": 0, "name": "Orchestral Manoeuvres In The Dark", "reviewed": 0, "spotify_artist": "7wJ9NwdRWtN92NunmXuwBk", "tracks": 1}
 {"followed": false, "id": "ordea", "liked": 0, "name": "ordea", "reviewed": 0, "spotify_artist": "60opm6hqASxAdE1Zdutxoa", "tracks": 5}
 {"followed": false, "id": "orem", "liked": 0, "name": "Orem", "reviewed": 0, "spotify_artist": "1HjQ6IQwNatqgTtFnklIoL", "tracks": 1}
@@ -3400,7 +3400,7 @@
 {"followed": false, "id": "otis-redding", "liked": 0, "name": "Otis Redding", "reviewed": 0, "spotify_artist": "60df5JBRRPcnSpsIMxxwQm", "tracks": 2}
 {"followed": false, "id": "otoji-ray", "liked": 0, "name": "Otoji + Ray", "reviewed": 0, "spotify_artist": "0b90iQpNWuYUH8vr0NyhOA", "tracks": 1}
 {"followed": false, "id": "otto-knows", "liked": 0, "name": "Otto Knows", "reviewed": 0, "spotify_artist": "5fahUm8t5c0GIdeTq0ZaG8", "tracks": 2}
-{"followed": false, "id": "oum-shatt", "liked": 1, "name": "Oum Shatt", "reviewed": 0, "spotify_artist": "3lQXHxiyVJnxHfRznEpgAT", "tracks": 1}
+{"followed": false, "id": "oum-shatt", "liked": 1, "name": "Oum Shatt", "reviewed": 1, "spotify_artist": "3lQXHxiyVJnxHfRznEpgAT", "tracks": 1}
 {"followed": false, "id": "outdoor-field-recorders", "liked": 0, "name": "Outdoor Field Recorders", "reviewed": 0, "spotify_artist": "71ep4LtjRagWcfM1rZ6lUr", "tracks": 1}
 {"followed": false, "id": "outkast", "liked": 0, "name": "Outkast", "reviewed": 0, "spotify_artist": "1G9G7WwrXka3Z1r7aIDjI7", "tracks": 2}
 {"followed": false, "id": "ovall", "liked": 0, "name": "Ovall", "reviewed": 0, "spotify_artist": "5fajxqVLxJxAzMvZn0AGIv", "tracks": 1}
@@ -3520,7 +3520,7 @@
 {"followed": false, "id": "pig-dan", "liked": 0, "name": "Pig&Dan", "reviewed": 0, "spotify_artist": "04jj7dljPI0ixtNsz2pXWK", "tracks": 1}
 {"followed": false, "id": "pigbaby", "liked": 0, "name": "pigbaby", "reviewed": 0, "spotify_artist": "6bY6N1PHP9mSt8fZ1V2hHd", "tracks": 1}
 {"followed": false, "id": "pigeon-john", "liked": 2, "name": "Pigeon John", "reviewed": 2, "spotify_artist": "3RfeWhoxAqlNRNcywG7RJj", "tracks": 2}
-{"followed": false, "id": "pilocka-krach", "liked": 28, "name": "Pilocka Krach", "reviewed": 17, "spotify_artist": "72gQuI1GHmsUXIfe863TC7", "top_month": 8, "tracks": 33}
+{"followed": false, "id": "pilocka-krach", "liked": 28, "name": "Pilocka Krach", "reviewed": 28, "spotify_artist": "72gQuI1GHmsUXIfe863TC7", "top_month": 8, "tracks": 33}
 {"followed": false, "id": "pink-floyd", "liked": 0, "name": "Pink Floyd", "reviewed": 1, "spotify_artist": "0k17h0D3J5VfsdmQ1iZtE9", "tracks": 1}
 {"followed": false, "id": "pinkpantheress", "liked": 0, "name": "PinkPantheress", "reviewed": 0, "spotify_artist": "78rUTD7y6Cy67W1RVzYs7t", "tracks": 1}
 {"followed": false, "id": "pischinger-dermota", "liked": 1, "name": "Pischinger & Dermota", "reviewed": 1, "spotify_artist": "4Xq5vYRTOLSKUMsPCZiebO", "tracks": 1}
@@ -3613,7 +3613,7 @@
 {"followed": false, "id": "rac", "liked": 2, "name": "RAC", "reviewed": 2, "spotify_artist": "4AGwPDdh1y8hochNzHy5HC", "tracks": 3}
 {"followed": false, "id": "rachel-chinouriri", "liked": 1, "name": "Rachel Chinouriri", "reviewed": 1, "spotify_artist": "4wrzxtBZw20ufDstKyTnnP", "tracks": 1}
 {"followed": false, "id": "rachel-k-collier", "liked": 4, "name": "Rachel K Collier", "reviewed": 12, "spotify_artist": "0hWL8sffP07PbVm5ilnf1o", "tracks": 12}
-{"followed": false, "id": "raddantze", "liked": 1, "name": "Raddantze", "reviewed": 0, "spotify_artist": "1GHfdjpfUhB42zcMKm2EOL", "tracks": 1}
+{"followed": false, "id": "raddantze", "liked": 1, "name": "Raddantze", "reviewed": 1, "spotify_artist": "1GHfdjpfUhB42zcMKm2EOL", "tracks": 1}
 {"followed": false, "id": "radio-citizen", "liked": 1, "name": "Radio Citizen", "reviewed": 1, "spotify_artist": "2tPR0lWEWNyDUHPeVEhewu", "tracks": 1}
 {"followed": false, "id": "radio-diffusion", "liked": 1, "name": "Radio Diffusion", "reviewed": 0, "spotify_artist": "4HsyzV3FBsr7AkXr2KU1HW", "tracks": 1}
 {"followed": false, "id": "radio-futura", "liked": 0, "name": "Radio Futura", "reviewed": 0, "spotify_artist": "4qKJA8Cf8R44cMThP6q8KM", "tracks": 1}
@@ -3655,13 +3655,13 @@
 {"followed": false, "id": "rayvon-owen", "liked": 0, "name": "Rayvon Owen", "reviewed": 0, "spotify_artist": "4S9n5NXLHzuAam5jmAyQP9", "tracks": 3}
 {"followed": false, "id": "reba-mcentire", "liked": 0, "name": "Reba McEntire", "reviewed": 0, "spotify_artist": "02rd0anEWfMtF7iMku9uor", "tracks": 2}
 {"followed": false, "id": "rebecca-sugar", "liked": 0, "name": "Rebecca Sugar", "reviewed": 0, "spotify_artist": "6Pd7FRVtwNxFsQIkDMpLGz", "tracks": 1}
-{"followed": false, "id": "rebeka-warrior", "liked": 4, "name": "Rebeka Warrior", "reviewed": 1, "spotify_artist": "0VPogECnuuH2xbYP3Rmpd4", "tracks": 4}
+{"followed": false, "id": "rebeka-warrior", "liked": 4, "name": "Rebeka Warrior", "reviewed": 4, "spotify_artist": "0VPogECnuuH2xbYP3Rmpd4", "tracks": 4}
 {"followed": false, "id": "reboot", "liked": 1, "name": "Reboot", "reviewed": 0, "spotify_artist": "3MUGWsOTNoR1OmZjgdQS3H", "tracks": 1}
 {"followed": false, "id": "rebuke", "liked": 0, "name": "Rebūke", "reviewed": 0, "spotify_artist": "113reBz1jA6rVxbXl55mlj", "tracks": 3}
 {"followed": false, "id": "recable", "liked": 1, "name": "Recable", "reviewed": 1, "spotify_artist": "2PCNtGdqoWQnJKgH3YtrRB", "tracks": 1}
 {"followed": false, "id": "recens", "liked": 0, "name": "Recens", "reviewed": 0, "spotify_artist": "4xV2bSEFsZbpyp49kOQMKg", "tracks": 2}
 {"followed": false, "id": "recondite", "liked": 0, "name": "Recondite", "reviewed": 0, "spotify_artist": "1doQgXssRfKnLx70adszbK", "tracks": 1}
-{"followed": false, "id": "red-axes", "liked": 3, "name": "Red Axes", "reviewed": 1, "spotify_artist": "5Owm9QgL9BSCRQKTX6T08G", "tracks": 3}
+{"followed": false, "id": "red-axes", "liked": 3, "name": "Red Axes", "reviewed": 2, "spotify_artist": "5Owm9QgL9BSCRQKTX6T08G", "tracks": 3}
 {"followed": false, "id": "red-garland", "liked": 1, "name": "Red Garland", "reviewed": 0, "spotify_artist": "35iymrFS4VnsKn35ebHKX9", "tracks": 3}
 {"followed": false, "id": "red-hot-chili-peppers", "liked": 0, "name": "Red Hot Chili Peppers", "reviewed": 1, "spotify_artist": "0L8ExT028jH3ddEcZwqJJ5", "tracks": 2}
 {"followed": false, "id": "red-ripples", "liked": 0, "name": "Red Ripples", "reviewed": 0, "spotify_artist": "0j3jW3YwTwnn46zLTuWNhq", "tracks": 1}
@@ -3710,7 +3710,7 @@
 {"followed": false, "id": "rising-star", "liked": 0, "name": "Rising Star", "reviewed": 0, "spotify_artist": "3HYUBCT2pYtoo0JHztEsRJ", "tracks": 1}
 {"followed": false, "id": "rita-ora", "liked": 0, "name": "Rita Ora", "reviewed": 0, "spotify_artist": "5CCwRZC6euC8Odo6y9X8jr", "tracks": 2}
 {"followed": false, "id": "riton", "liked": 0, "name": "Riton", "reviewed": 0, "spotify_artist": "7i9j813KFoSBMldGqlh2Z1", "tracks": 2}
-{"followed": false, "id": "rituals-of-mine", "liked": 1, "name": "Rituals of Mine", "reviewed": 0, "spotify_artist": "2diXk6bGS18SxXeoINo8MQ", "tracks": 1}
+{"followed": false, "id": "rituals-of-mine", "liked": 1, "name": "Rituals of Mine", "reviewed": 1, "spotify_artist": "2diXk6bGS18SxXeoINo8MQ", "tracks": 1}
 {"followed": false, "id": "rival-consoles", "liked": 0, "name": "Rival Consoles", "reviewed": 0, "spotify_artist": "05lIUgmmsmTX2N9dCKc8rC", "tracks": 5}
 {"followed": false, "id": "rivo", "liked": 0, "name": "Rivo", "reviewed": 0, "spotify_artist": "2NrprO4CludRmaWtpqud10", "tracks": 2}
 {"followed": false, "id": "rob-luft", "liked": 0, "name": "Rob Luft", "reviewed": 0, "spotify_artist": "4LgaDOxBtDK4KvEarwuiQL", "tracks": 1}
@@ -3735,7 +3735,7 @@
 {"followed": false, "id": "rocket-fx", "liked": 0, "name": "Rocket FX", "reviewed": 0, "spotify_artist": "3dFUAutVe4CdBO7DMDtIN5", "tracks": 1}
 {"followed": false, "id": "rocket-mike", "liked": 2, "name": "Rocket Mike", "reviewed": 1, "spotify_artist": "18ssEKS9fXX1nbMg7mAzaU", "tracks": 2}
 {"followed": false, "id": "rocky", "liked": 0, "name": "Rocky", "reviewed": 0, "spotify_artist": "542yUd4rGzUEOLd1diV94f", "tracks": 1}
-{"followed": false, "id": "roderic", "liked": 3, "name": "Roderic", "reviewed": 2, "spotify_artist": "7wSzFq5CoNoCpzazDphDJs", "tracks": 4}
+{"followed": false, "id": "roderic", "liked": 3, "name": "Roderic", "reviewed": 4, "spotify_artist": "7wSzFq5CoNoCpzazDphDJs", "tracks": 4}
 {"followed": false, "id": "rodriguez-jr", "liked": 0, "name": "Rodriguez Jr.", "reviewed": 0, "spotify_artist": "6Th7POyVfZgiHJQ64ddV5Y", "tracks": 1}
 {"followed": false, "id": "rodriguez", "liked": 1, "name": "Rodríguez", "reviewed": 1, "spotify_artist": "5PrHzxc3kFm4hIrGNmelpX", "tracks": 1}
 {"followed": false, "id": "roe-deers", "liked": 1, "name": "Roe Deers", "reviewed": 1, "spotify_artist": "1dgDxUpQTq1goeeck85apa", "tracks": 1}
@@ -3749,7 +3749,7 @@
 {"followed": false, "id": "role-models", "liked": 0, "name": "Role-Models", "reviewed": 0, "spotify_artist": "7w33UaLOaSd5WNwiogGIlt", "tracks": 1}
 {"followed": false, "id": "rom-com", "liked": 0, "name": "ROM COM", "reviewed": 0, "spotify_artist": "2MrqzR7wCXVQ0r6PPDIQTg", "tracks": 1}
 {"followed": false, "id": "roman-flugel", "liked": 1, "name": "Roman Flügel", "reviewed": 0, "spotify_artist": "2GvwZbDjH1DbQpodGKENDw", "tracks": 1}
-{"followed": false, "id": "romare", "liked": 1, "name": "Romare", "reviewed": 0, "spotify_artist": "6d1HqiWNEKV9zFqQM9WeYo", "tracks": 2}
+{"followed": false, "id": "romare", "liked": 1, "name": "Romare", "reviewed": 1, "spotify_artist": "6d1HqiWNEKV9zFqQM9WeYo", "tracks": 2}
 {"followed": false, "id": "romeo-elvis", "liked": 1, "name": "Roméo Elvis", "reviewed": 1, "spotify_artist": "2pHk4wAmL7ofTAuvCIUWtv", "tracks": 1}
 {"followed": false, "id": "ron-basejam", "liked": 1, "name": "Ron Basejam", "reviewed": 1, "spotify_artist": "3LijUg92GG1XomQ1OkuvfD", "tracks": 1}
 {"followed": false, "id": "ron-flatter", "liked": 1, "name": "Ron Flatter", "reviewed": 1, "spotify_artist": "0HZ3FXXgXyKoMHKwKSZOpq", "tracks": 9}
@@ -4107,7 +4107,7 @@
 {"followed": false, "id": "soulchef", "liked": 0, "name": "SoulChef", "reviewed": 0, "spotify_artist": "7rdiGVXL2fFyONexHzfKFS", "tracks": 1}
 {"followed": false, "id": "souleance", "liked": 0, "name": "Souleance", "reviewed": 0, "spotify_artist": "0HGVduSq54fO1fazKRZnaD", "tracks": 1}
 {"followed": false, "id": "soulflow", "liked": 0, "name": "Soulflow", "reviewed": 0, "spotify_artist": "6YaiytTo7ird6rLHP2BxYL", "tracks": 3}
-{"followed": false, "id": "soulwax", "liked": 5, "name": "Soulwax", "reviewed": 1, "spotify_artist": "43mWhBXSflupNLuNjM5vff", "tracks": 5}
+{"followed": false, "id": "soulwax", "liked": 5, "name": "Soulwax", "reviewed": 2, "spotify_artist": "43mWhBXSflupNLuNjM5vff", "tracks": 5}
 {"followed": false, "id": "sound-carrie", "liked": 0, "name": "Sound Carrie", "reviewed": 0, "spotify_artist": "6VSLsTLt5SnJSaiKVwHSKn", "tracks": 1}
 {"followed": false, "id": "sound-fx-of-nature", "liked": 0, "name": "Sound FX of Nature", "reviewed": 0, "spotify_artist": "27nw1ldFoK3yTpcm3BGKcs", "tracks": 1}
 {"followed": false, "id": "sounds-caused-by-lightning", "liked": 0, "name": "Sounds Caused By Lightning", "reviewed": 0, "spotify_artist": "5VGzMbTA9KIcP8GcG0KTaY", "tracks": 1}
@@ -4189,7 +4189,7 @@
 {"followed": false, "id": "still-phase", "liked": 0, "name": "Still Phase", "reviewed": 0, "spotify_artist": "0sqqa2e7ZaOilFJq4MEmbL", "tracks": 1}
 {"followed": false, "id": "still-woozy", "liked": 0, "name": "Still Woozy", "reviewed": 0, "spotify_artist": "4iMO20EPodreIaEl8qW66y", "tracks": 1}
 {"followed": false, "id": "stillgarden", "liked": 0, "name": "Stillgarden", "reviewed": 0, "spotify_artist": "6NKUqC8TcyhtHenPgTRTvt", "tracks": 1}
-{"followed": false, "id": "stimming", "liked": 2, "name": "Stimming", "reviewed": 3, "spotify_artist": "2yPveJtn9DpeN0CgNJHvAQ", "tracks": 4}
+{"followed": false, "id": "stimming", "liked": 2, "name": "Stimming", "reviewed": 4, "spotify_artist": "2yPveJtn9DpeN0CgNJHvAQ", "tracks": 4}
 {"followed": false, "id": "stine-vea-moracchioli", "liked": 0, "name": "Stine Vea Moracchioli", "reviewed": 0, "spotify_artist": "32RhZ6KVYJAfiXKJxGpuUz", "tracks": 1}
 {"followed": false, "id": "sto-cultr", "liked": 0, "name": "STO CULTR", "reviewed": 0, "spotify_artist": "3rxaya7knZ0iL2myO6CX6G", "tracks": 1}
 {"followed": false, "id": "sto-zvirat", "liked": 1, "name": "Sto zvířat", "reviewed": 0, "spotify_artist": "4fLCFZWbgAALL8veJBj8lX", "tracks": 1}
@@ -4277,7 +4277,7 @@
 {"followed": false, "id": "temper-city", "liked": 0, "name": "Temper City", "reviewed": 0, "spotify_artist": "5mHUmlJWkcoOk1NbjfrXWz", "tracks": 1}
 {"followed": false, "id": "tems", "liked": 0, "name": "Tems", "reviewed": 0, "spotify_artist": "687cZJR45JO7jhk1LHIbgq", "tracks": 1}
 {"followed": false, "id": "ten-walls", "liked": 0, "name": "Ten Walls", "reviewed": 0, "spotify_artist": "4veIvBHKoUacjuoMOm3vsg", "tracks": 1}
-{"followed": false, "id": "terra-lopez", "liked": 1, "name": "Terra Lopez", "reviewed": 0, "spotify_artist": "2k3Y5xAgSi7OZRV4kcpqWC", "tracks": 1}
+{"followed": false, "id": "terra-lopez", "liked": 1, "name": "Terra Lopez", "reviewed": 1, "spotify_artist": "2k3Y5xAgSi7OZRV4kcpqWC", "tracks": 1}
 {"followed": false, "id": "terranova", "liked": 1, "name": "Terranova", "reviewed": 1, "spotify_artist": "5ZrGK55yglfGEOvnB2japP", "tracks": 1}
 {"followed": false, "id": "terrar", "liked": 1, "name": "Terrar", "reviewed": 2, "spotify_artist": "0HQWgrzmyxoSYMVWQ70EJW", "tracks": 2}
 {"followed": false, "id": "terry-mclove", "liked": 0, "name": "Terry McLove", "reviewed": 0, "spotify_artist": "3FFEbEOgS5QZo0bZ0LnPD9", "tracks": 1}
@@ -4340,11 +4340,11 @@
 {"followed": false, "id": "the-judds", "liked": 0, "name": "The Judds", "reviewed": 0, "spotify_artist": "7MSTO40bsb3DOJQT6xLsIc", "tracks": 1}
 {"followed": false, "id": "the-killers", "liked": 1, "name": "The Killers", "reviewed": 1, "spotify_artist": "0C0XlULifJtAgn6ZNCW2eu", "tracks": 2}
 {"followed": false, "id": "the-knack", "liked": 0, "name": "The Knack", "reviewed": 0, "spotify_artist": "0Nn9YwJzcaeuU1jJL06e3r", "tracks": 1}
-{"followed": false, "id": "the-knife", "liked": 1, "name": "The Knife", "reviewed": 0, "spotify_artist": "7eQZTqEMozBcuSubfu52i4", "tracks": 1}
+{"followed": false, "id": "the-knife", "liked": 1, "name": "The Knife", "reviewed": 1, "spotify_artist": "7eQZTqEMozBcuSubfu52i4", "tracks": 1}
 {"followed": false, "id": "the-knocks", "liked": 1, "name": "The Knocks", "reviewed": 0, "spotify_artist": "2x7EATekOPhFGRx3syMGEC", "tracks": 2}
 {"followed": false, "id": "the-lady-tigra", "liked": 1, "name": "The Lady Tigra", "reviewed": 1, "spotify_artist": "1M446UaTgZCCietKB3RWM8", "tracks": 1}
 {"followed": false, "id": "the-latin-chartbreakers", "liked": 0, "name": "The Latin Chartbreakers", "reviewed": 0, "spotify_artist": "0E45kkDHueK1tgEa3XRvDT", "tracks": 1}
-{"followed": false, "id": "the-lawyer", "liked": 1, "name": "The Lawyer", "reviewed": 0, "spotify_artist": "1o3xEAqXYTqPZEHTJCtZw5", "tracks": 1}
+{"followed": false, "id": "the-lawyer", "liked": 1, "name": "The Lawyer", "reviewed": 1, "spotify_artist": "1o3xEAqXYTqPZEHTJCtZw5", "tracks": 1}
 {"followed": false, "id": "the-lay-backs", "liked": 0, "name": "The Lay-Backs", "reviewed": 0, "spotify_artist": "3hcHU2Pwf2YPgQXqdEi83C", "tracks": 1}
 {"followed": false, "id": "the-limp-twins", "liked": 1, "name": "The Limp Twins", "reviewed": 2, "spotify_artist": "1obN0tdFHKgmB2QyiM9Gqa", "tracks": 2}
 {"followed": false, "id": "the-lost-amigos", "liked": 3, "name": "The Lost Amigos", "reviewed": 4, "spotify_artist": "4IS89PCga3j0go9bYo5GyA", "tracks": 4}
@@ -4520,7 +4520,7 @@
 {"followed": false, "id": "tord-gustavsen-trio", "liked": 0, "name": "Tord Gustavsen Trio", "reviewed": 0, "spotify_artist": "3aTJxwDLCqCNvjrG7USP1a", "tracks": 2}
 {"followed": false, "id": "tore-brunborg", "liked": 0, "name": "Tore Brunborg", "reviewed": 0, "spotify_artist": "5TqxBHPsl5JnkRqPiZALxh", "tracks": 1}
 {"followed": true, "id": "tori-amos", "liked": 0, "name": "Tori Amos", "reviewed": 0, "spotify_artist": "1KsASRNugxU85T0u6zSg32", "tracks": 0}
-{"followed": false, "id": "torii-wolf", "liked": 1, "name": "Torii Wolf", "reviewed": 0, "spotify_artist": "3UQokJfoLRXZaSF111Vpyz", "tracks": 1}
+{"followed": false, "id": "torii-wolf", "liked": 1, "name": "Torii Wolf", "reviewed": 1, "spotify_artist": "3UQokJfoLRXZaSF111Vpyz", "tracks": 1}
 {"followed": false, "id": "tornadoez", "liked": 0, "name": "Tornadoez", "reviewed": 0, "spotify_artist": "1LHgM6GHbIR1kw5P52J2GM", "tracks": 1}
 {"followed": false, "id": "torren-foot", "liked": 0, "name": "Torren Foot", "reviewed": 0, "spotify_artist": "7lQOxDl96wmNoqGoW4kgv4", "tracks": 1}
 {"followed": false, "id": "torun-lysander", "liked": 0, "name": "Torun Lysander", "reviewed": 0, "spotify_artist": "7K4vsqFxtZxM5PavUCjQja", "tracks": 1}
@@ -4547,7 +4547,7 @@
 {"followed": false, "id": "trentemoller", "liked": 2, "name": "trentemøller", "reviewed": 1, "spotify_artist": "4O71i7ke5iIBX6RNSFoZbS", "tracks": 2}
 {"followed": false, "id": "tri-xon", "liked": 0, "name": "Tri/xon", "reviewed": 0, "spotify_artist": "7oFpeew5rSVQEUDcJ9y4F5", "tracks": 1}
 {"followed": false, "id": "triangular-prism-iii", "liked": 0, "name": "Triangular Prism III", "reviewed": 0, "spotify_artist": "0SxMFbx9jy8q9pGSJoopmf", "tracks": 2}
-{"followed": false, "id": "tricky", "liked": 3, "name": "Tricky", "reviewed": 2, "spotify_artist": "6hhA8TKRNryM8FNzqCqdDO", "tracks": 4}
+{"followed": false, "id": "tricky", "liked": 3, "name": "Tricky", "reviewed": 3, "spotify_artist": "6hhA8TKRNryM8FNzqCqdDO", "tracks": 4}
 {"followed": false, "id": "trikk", "liked": 0, "name": "Trikk", "reviewed": 0, "spotify_artist": "4wPR8PhvdOB0vksHMUWDZY", "tracks": 1}
 {"followed": false, "id": "trinidad-senolia", "liked": 0, "name": "Trinidad Senolia", "reviewed": 1, "spotify_artist": "5taPdyhSRG7c2KUJQwg553", "tracks": 1}
 {"followed": false, "id": "trinix", "liked": 3, "name": "Trinix", "reviewed": 1, "spotify_artist": "3HqP3nd8WI0VfHRhApPlan", "tracks": 3}
@@ -4679,7 +4679,7 @@
 {"followed": false, "id": "wankelmut", "liked": 1, "name": "Wankelmut", "reviewed": 3, "spotify_artist": "01e2lCvLZ4fLUIRy68nptH", "tracks": 4}
 {"followed": false, "id": "wanz", "liked": 1, "name": "Wanz", "reviewed": 1, "spotify_artist": "56xTxG4nQMAs1GW9kvn0uA", "tracks": 1}
 {"followed": false, "id": "wareika", "liked": 2, "name": "Wareika", "reviewed": 2, "spotify_artist": "5QVs44HFX0u3AXqN1EoePc", "tracks": 2}
-{"followed": false, "id": "warmduscher", "liked": 1, "name": "Warmduscher", "reviewed": 0, "spotify_artist": "1CWwXncu9sk7EIdbvqcquR", "tracks": 1}
+{"followed": false, "id": "warmduscher", "liked": 1, "name": "Warmduscher", "reviewed": 1, "spotify_artist": "1CWwXncu9sk7EIdbvqcquR", "tracks": 1}
 {"followed": false, "id": "warpaint", "liked": 1, "name": "Warpaint", "reviewed": 1, "spotify_artist": "3AmgGrYHXqgbmZ2yKoIVzO", "tracks": 1}
 {"followed": false, "id": "washed-out", "liked": 0, "name": "Washed Out", "reviewed": 0, "spotify_artist": "5juOkIIy18sFw9L30syt1Z", "tracks": 1}
 {"followed": false, "id": "wassermann", "liked": 1, "name": "Wassermann", "reviewed": 0, "spotify_artist": "0i2Q9WRxWu788ndngfKT26", "tracks": 1}
@@ -4783,7 +4783,7 @@
 {"followed": false, "id": "yasha", "liked": 1, "name": "Yasha", "reviewed": 0, "spotify_artist": "4gyXXo8iUEVExAbsgfeair", "tracks": 1}
 {"followed": false, "id": "yasmin", "liked": 1, "name": "Yasmin", "reviewed": 0, "spotify_artist": "5KEjVMaEdZ1tHgaAIkZCVp", "tracks": 1}
 {"followed": false, "id": "yazoo", "liked": 0, "name": "Yazoo", "reviewed": 0, "spotify_artist": "1G1mX30GpUJqOr1QU2eBSs", "tracks": 1}
-{"followed": false, "id": "yeah-yeah-yeahs", "liked": 2, "name": "Yeah Yeah Yeahs", "reviewed": 0, "spotify_artist": "3TNt4aUIxgfy9aoaft5Jj2", "tracks": 2}
+{"followed": false, "id": "yeah-yeah-yeahs", "liked": 2, "name": "Yeah Yeah Yeahs", "reviewed": 1, "spotify_artist": "3TNt4aUIxgfy9aoaft5Jj2", "tracks": 2}
 {"followed": false, "id": "yebba", "liked": 0, "name": "Yebba", "reviewed": 0, "spotify_artist": "1ooV8YZC1KbpEcrmI8WH0F", "tracks": 1}
 {"followed": false, "id": "yelle", "liked": 1, "name": "Yelle", "reviewed": 0, "spotify_artist": "0WbqAlM1WvfUD6dF7omThd", "tracks": 1}
 {"followed": false, "id": "yellow-claw", "liked": 0, "name": "Yellow Claw", "reviewed": 0, "spotify_artist": "47z7ZrgFoBvVpCnElCE3Zh", "tracks": 3}
@@ -4796,7 +4796,7 @@
 {"followed": false, "id": "yomoti", "liked": 0, "name": "Yomoti", "reviewed": 0, "spotify_artist": "1QybrBtERg1gUpJxwRelUC", "tracks": 1}
 {"followed": false, "id": "yonathan-avishai", "liked": 0, "name": "Yonathan Avishai", "reviewed": 0, "spotify_artist": "71Ek3rVXvYuvaRamNMs5k7", "tracks": 1}
 {"followed": false, "id": "you", "liked": 0, "name": "YOU", "reviewed": 0, "spotify_artist": "266PvBAoJzPdxt3dgkEsBW", "tracks": 1}
-{"followed": false, "id": "you-man", "liked": 2, "name": "You Man", "reviewed": 1, "spotify_artist": "7J7wDWLxbvVQdozTVeNWdp", "tracks": 3}
+{"followed": false, "id": "you-man", "liked": 2, "name": "You Man", "reviewed": 2, "spotify_artist": "7J7wDWLxbvVQdozTVeNWdp", "tracks": 3}
 {"followed": false, "id": "young-fathers", "liked": 0, "name": "Young Fathers", "reviewed": 0, "spotify_artist": "5mZC7ndY6oGMxJentRwsuV", "tracks": 1}
 {"followed": false, "id": "young-thug", "liked": 0, "name": "Young Thug", "reviewed": 0, "spotify_artist": "50co4Is1HCEo8bhOyUWKpn", "tracks": 1}
 {"followed": false, "id": "young-zee", "liked": 1, "name": "Young Zee", "reviewed": 0, "spotify_artist": "4OqgHlGnIFHukth5CY1Ejj", "tracks": 1}

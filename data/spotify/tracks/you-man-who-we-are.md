@@ -6,8 +6,9 @@ artists: ["You Man"]
 album: "Spectrum of Love"
 duration: "2:55"
 spotify: {"track": "56cqmGid7J5wMyfXJzOEOd", "album": "50rgN4NAnnRqFzl7TTtnQv", "artists": ["7J7wDWLxbvVQdozTVeNWdp"]}
-keys: {"fold": "youman|whoweare"}
-status: "missing"
+keys: {"fold": "youman|whoweare", "musicbrainz": "551e1ca4-d0c6-4757-8851-42af932b4a14"}
+review: "you-man-who-we-are.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2025, "n": 90}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Spectrum of Love*, 2:55.
 A liked song.
 Your Top Songs 2025: #90.
-No review yet.
+Reviewed: content/you-man-who-we-are.md.

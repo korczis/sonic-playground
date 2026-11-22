@@ -6,8 +6,9 @@ artists: ["Pilocka Krach", "Acid Pauli"]
 album: "Discolight"
 duration: "5:16"
 spotify: {"track": "7vCpLO2okAdGrOFZkT3Oyd", "album": "5VJEWnyyrZCwsr9pfpBWfp", "artists": ["72gQuI1GHmsUXIfe863TC7", "3LHqODf1hGAgZ5LTw1Gf4C"]}
-keys: {"fold": "pilockakrach|discolightacidpauliremix"}
-status: "missing"
+keys: {"fold": "pilockakrach|discolightacidpauliremix", "musicbrainz": "5ef81189-6f3c-450d-8d6f-a71976b6357d"}
+review: "pilocka-krach-acid-pauli-discolight-acid-pauli-remix.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2025, "n": 48}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-22"]
 From the album *Discolight*, 5:16.
 Not among the liked songs.
 Your Top Songs 2025: #48.
-No review yet.
+Reviewed: content/pilocka-krach-acid-pauli-discolight-acid-pauli-remix.md.
