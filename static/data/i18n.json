@@ -113,6 +113,7 @@
 "explorer.sort.artist": "Interpret A–Z",
 "explorer.sort.new": "Nejnovější",
 "explorer.sort.old": "Nejstarší",
+"explorer.sort.relevance": "Nejlepší shoda",
 "explorer.sort.title": "Skladba A–Z",
 "explorer.status_all": {
 "few": "{n} skladby",
@@ -1175,6 +1176,7 @@
 "explorer.sort.artist": "Artist A–Z",
 "explorer.sort.new": "Newest first",
 "explorer.sort.old": "Oldest first",
+"explorer.sort.relevance": "Best match",
 "explorer.sort.title": "Track A–Z",
 "explorer.status_all": {
 "one": "{n} track",

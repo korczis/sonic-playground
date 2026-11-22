@@ -1,7 +1,8 @@
 // The explorer on the home page: faceted filtering, text search and sorting over the cards the
 // build rendered (their data-* attributes mirror static/data/catalog.json). State lives in the
 // URL (?q=&genre=&sentiment=&mood=&sort=), so every view is a link; without this script the
-// form still submits and the page shows every track.
+// form still submits and the page shows every track. A query ranks the matches by relevance
+// unless the reader chose another order (the URL keeps only a sort that is not the default).
 // A page module (static/js/core.js): mounts on every page that has the explorer, and unmounts
 // the listeners it put outside #main-content when the router leaves the page.
 window.Sonic.module('explorer', function mount() {
@@ -25,6 +26,49 @@ window.Sonic.module('explorer', function mount() {
   var PAGE = Number(grid.getAttribute('data-page') || 24);
   var limit = PAGE;
   var more = /** @type {HTMLElement | null} */ (document.querySelector('[data-explorer-more]'));
+  // The order the reader chose ('' until then): with it unset, a query sorts by relevance and
+  // no query sorts newest first.
+  var chosen = '';
+
+  // How a word is read (catalog.json `search`, derived by scripts/catalog.py from its fold
+  // table and data/i18n/forms/<lang>.toml): the review index was cut with the same rules, so a
+  // query word and a review word meet in one form ("synthesizers" is "synthesizer").
+  var rules = /** @type {SonicSearchRules} */ (
+    JSON.parse(form.getAttribute('data-search-rules') || '{}'));
+  var FOLD = rules.fold || {};
+  var SUFFIXES = (rules.forms && rules.forms.suffixes) || [];
+  var MIN_STEM = (rules.forms && rules.forms.min_stem) || 0;
+
+  // A word in its form: the first suffix that ends it decides, a stem shorter than MIN_STEM
+  // leaves it as it is (scripts/catalog.py word_form).
+  function wordForm(word) {
+    for (var i = 0; i < SUFFIXES.length; i += 1) {
+      var suffix = SUFFIXES[i][0];
+      if (word.slice(-suffix.length) === suffix) {
+        var stem = word.slice(0, word.length - suffix.length);
+        return stem.length >= MIN_STEM ? stem + SUFFIXES[i][1] : word;
+      }
+    }
+    return word;
+  }
+
+  // The tokens of a text exactly as scripts/catalog.py search_tokens cuts a review: lowercase,
+  // the fold table's letters, no diacritics, split at everything but a-z and 0-9 (so
+  // "four-on-the-floor" and "TB-303" are runs of tokens), every token kept, each in its form.
+  // A possessive is its word ("punk's" is "punk", "dj's" "dj"), a decade its plural ("80's" is
+  // "80s"), never a token "s" (scripts/catalog.py search_tokens).
+  function rawTokens(text) {
+    return text.toLowerCase().replace(/([0-9])['\u2019]s(?![a-z0-9])/g, '$1s')
+      .replace(/(\S)['\u2019]s(?![a-z0-9])/g, '$1')
+      .replace(/[\u0080-\uffff]/g, function (c) { return FOLD[c] || c; })
+      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+      .split(/[^a-z0-9]+/).filter(Boolean);
+  }
+  function tokens(text) { return rawTokens(text).map(wordForm); }
+
+  // A text as the matcher reads it: its tokens between spaces, so ' w ' is the whole word w and
+  // ' w' a word that starts with w.
+  function field(text) { return ' ' + tokens(text).join(' ') + ' '; }
 
   // Cards come in the catalogue's order (newest first, scripts/catalog.py publication_order):
   // `rank` keeps that order between reviews of the same day.
@@ -36,8 +80,11 @@ window.Sonic.module('explorer', function mount() {
     });
     return {
       el: el, source: d.source || '', title: d.title || '', artist: d.artist || '',
-      date: d.date || '', rank: rank, text: (d.text || '').normalize('NFKD').replace(/[̀-ͯ]/g, ''),
-      review: '', terms: terms,
+      date: d.date || '', rank: rank, terms: terms, hit: true, score: 0,
+      words: {
+        title: field(d.title || ''), artist: field(d.artist || ''), text: field(d.text || ''),
+        review: '',
+      },
     };
   });
 
@@ -52,45 +99,119 @@ window.Sonic.module('explorer', function mount() {
     fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (data) {
       if (!alive) return; // the explorer was left: its late answer must not touch the next page
       if (!data || !data.tracks) { reviewIndex = 'failed'; return; }
-      items.forEach(function (it) { it.review = data.tracks[it.source] || ''; });
+      items.forEach(function (it) {
+        it.words.review = ' ' + (data.tracks[it.source] || '') + ' ';
+      });
+      known = {};
       reviewIndex = 'ready';
       document.documentElement.dataset.reviewsState = 'ready';
       render(false);
     }).catch(function () { reviewIndex = 'failed'; });
   }
 
-  function fold(s) {
-    return s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').trim();
-  }
+  function byDefault(q) { return q ? 'relevance' : 'new'; }
 
   function state() {
-    var s = { q: fold(query.value), sort: sort.value || 'new' };
+    var q = query.value.trim();
+    var s = { q: q, sort: chosen || byDefault(q), units: parse(q) };
     facets.forEach(function (sel) { s[sel.name] = sel.value; });
     return s;
   }
 
-  // A track matches when every word of the query is in its text and it carries every chosen
-  // facet term; `skip` leaves one facet out, to count what choosing another term would give.
+  // The query as units that must all match, each a run of tokens side by side: a quoted
+  // phrase ("basová linka", „…“ too), a word punctuation cuts into several tokens (tb-303),
+  // or a plain word. The last of several unquoted words is the one being typed: it is open.
+  function parse(q) {
+    var units = [];
+    q.replace(/["“”„]([^"“”„]*)["“”„]?|[^\s"“”„]+/g, function (m, phrase) {
+      var raw = rawTokens(phrase === undefined ? m : phrase);
+      if (raw.length) units.push({ tokens: raw.map(wordForm), raw: raw, quoted: phrase !== undefined, open: false });
+      return m;
+    });
+    var last = units[units.length - 1];
+    if (units.length > 1 && !last.quoted) last.open = true;
+    return units;
+  }
+
+  // What each unit looks for: its whole words in a track's card text (artist, title,
+  // description, terms) or review, so "art" is not "start" nor "artist". An open unit ("say yes
+  // do"), or one no track has as whole words ("synthesiz"), is read as unfinished: its last
+  // token matches the start of a word.
+  // Each unit is a list of alternatives, any of which matches. Whether some track has a unit
+  // as whole words is asked once per query text (the index does not change under it).
+  var known = {};
+  function somewhere(whole) {
+    if (!(whole in known)) {
+      known[whole] = items.some(function (it) {
+        return it.words.text.indexOf(whole) >= 0 || it.words.review.indexOf(whole) >= 0;
+      });
+    }
+    return known[whole];
+  }
+  function patterns(units) {
+    return units.map(function (u) {
+      var whole = ' ' + u.tokens.join(' ') + ' ';
+      if (!u.open && somewhere(whole)) return [whole];
+      // An unfinished word also as typed: its form can be a word no word starts with ("psy" is
+      // "psie" by the -y rule, and "psychedelic" does not start with that).
+      var alts = [whole.slice(0, -1)];
+      var typed = ' ' + u.tokens.slice(0, -1).concat(u.raw[u.raw.length - 1]).join(' ');
+      if (typed !== alts[0]) alts.push(typed);
+      return alts;
+    });
+  }
+
+  function count(hay, p) {
+    var n = 0;
+    for (var i = hay.indexOf(p); i >= 0 && n < 4; i = hay.indexOf(p, i + 1)) n += 1;
+    return n;
+  }
+
+  // Whether a field is the whole query: equal to it, or, when its last word is unfinished,
+  // equal but for the rest of that word ("say yes do" is the artist "Say Yes Dog").
+  function isAll(f, all) {
+    return f === all || (all.slice(-1) !== ' ' && f.indexOf(all) === 0
+      && f.indexOf(' ', all.length) === f.length - 1);
+  }
+
+  // Relevance: the whole query as the title or the artist first, then side by side in either,
+  // then side by side in the card's text or the review; then each unit by where it stands: the
+  // title or the artist, the card's text, the review (how often).
+  function score(it, units) {
+    var w = it.words;
+    // Of each unit's alternatives, the one this track holds.
+    var pats = units.map(function (alts) {
+      for (var i = 0; i < alts.length; i += 1) {
+        var p = alts[i];
+        if (w.title.indexOf(p) >= 0 || w.artist.indexOf(p) >= 0 || w.text.indexOf(p) >= 0
+          || w.review.indexOf(p) >= 0) return p;
+      }
+      return alts[0];
+    });
+    var all = pats.join('').replace(/ {2}/g, ' ');
+    var s = (isAll(w.title, all) || isAll(w.artist, all) ? 64 : 0)
+      + (w.title.indexOf(all) >= 0 || w.artist.indexOf(all) >= 0 ? 16 : 0)
+      + (w.text.indexOf(all) >= 0 || w.review.indexOf(all) >= 0 ? 12 : 0);
+    pats.forEach(function (p) {
+      s += (w.title.indexOf(p) >= 0 || w.artist.indexOf(p) >= 0 ? 8 : 0)
+        + (w.text.indexOf(p) >= 0 ? 2 : 0) + count(w.review, p);
+    });
+    return s;
+  }
+
+  // A track matches when every unit of the query is in its text (it.hit, set by render) and it
+  // carries every chosen facet term; `skip` leaves one facet out, to count what choosing
+  // another term would give.
   function matches(it, s, skip) {
     for (var i = 0; i < facets.length; i += 1) {
       var name = facets[i].name;
       if (name !== skip && s[name] && it.terms[name].indexOf(s[name]) < 0) return false;
     }
-    if (!s.q) return true;
-    // The query is tokenised exactly as scripts/catalog.py tokenises the reviews (letters and
-    // digits; punctuation splits), so "four-on-the-floor" finds a review that says it. The
-    // review index keeps words of 3+ letters; shorter tokens match the card text only.
-    var words = s.q.split(/[^a-z0-9]+/).filter(Boolean);
-    for (var w = 0; w < words.length; w += 1) {
-      var word = words[w];
-      var inCard = it.text.indexOf(word) >= 0;
-      var inReview = word.length > 2 && it.review.indexOf(word) >= 0;
-      if (!inCard && !inReview) return false;
-    }
-    return true;
+    return it.hit;
   }
 
   var ORDER = {
+    relevance: function (a, b) { return b.score - a.score || ORDER.new(a, b); },
     new: function (a, b) { return b.date.localeCompare(a.date) || a.rank - b.rank; },
     old: function (a, b) { return a.date.localeCompare(b.date) || b.rank - a.rank; },
     artist: function (a, b) { return a.artist.localeCompare(b.artist) || a.title.localeCompare(b.title); },
@@ -100,6 +221,15 @@ window.Sonic.module('explorer', function mount() {
   function render(push) {
     var s = state();
     if (s.q) loadReviews();
+    sort.value = s.sort;
+    var pats = patterns(s.units);
+    items.forEach(function (it) {
+      var w = it.words;
+      it.hit = pats.every(function (alts) {
+        return alts.some(function (p) { return w.text.indexOf(p) >= 0 || w.review.indexOf(p) >= 0; });
+      });
+      it.score = it.hit && pats.length ? score(it, pats) : 0;
+    });
     var shown = 0;
     var sorted = items.slice().sort(ORDER[s.sort] || ORDER.new);
     var frag = document.createDocumentFragment();
@@ -145,8 +275,11 @@ window.Sonic.module('explorer', function mount() {
     var params = new URLSearchParams(window.location.search);
     KEYS.forEach(function (k) { params.delete(k); });
     KEYS.forEach(function (k) {
-      var v = k === 'q' ? query.value.trim() : /** @type {HTMLSelectElement} */ (form.elements.namedItem(k)).value;
-      if (v && !(k === 'sort' && v === 'new')) params.set(k, v);
+      // A sort the reader chose stays in the URL even where it is the default, so a reload
+      // or Back keeps it for the next query.
+      var v = k === 'q' ? s.q : k === 'sort' ? (s.sort === byDefault(s.q) && !chosen ? '' : s.sort)
+        : /** @type {HTMLSelectElement} */ (form.elements.namedItem(k)).value;
+      if (v) params.set(k, v);
     });
     var url = window.location.pathname + (params.toString() ? '?' + params : '');
     if (url !== window.location.pathname + window.location.search) {
@@ -161,8 +294,9 @@ window.Sonic.module('explorer', function mount() {
     limit = (history.state && history.state.explorerLimit) || PAGE;
     var params = new URLSearchParams(window.location.search);
     query.value = params.get('q') || '';
-    sort.value = params.get('sort') || 'new';
-    if (!sort.value) sort.value = 'new';
+    // A sort the select does not offer leaves its value empty: the default for the query.
+    sort.value = params.get('sort') || '';
+    chosen = sort.value;
     facets.forEach(function (sel) {
       var v = params.get(sel.name) || '';
       sel.value = Array.prototype.some.call(sel.options, function (o) { return o.value === v; })
@@ -176,6 +310,8 @@ window.Sonic.module('explorer', function mount() {
     clearTimeout(timer);
     timer = setTimeout(function () { limit = PAGE; render(false); }, 120);
   });
+  // The sort's own listener runs first: the reader's choice, kept until a reset.
+  sort.addEventListener('change', function () { chosen = sort.value; });
   form.addEventListener('change', function () { limit = PAGE; render(true); });
   form.addEventListener('submit', function (event) { event.preventDefault(); limit = PAGE; render(true); });
   if (more) {
@@ -190,7 +326,7 @@ window.Sonic.module('explorer', function mount() {
     reset.addEventListener('click', function (event) {
       event.preventDefault();
       form.reset();
-      sort.value = 'new';
+      chosen = '';
       limit = PAGE;
       render(true);
       query.focus();

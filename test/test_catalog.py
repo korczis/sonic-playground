@@ -3,6 +3,7 @@
     python3 -m unittest discover -s test -p 'test_*.py'
 """
 import importlib.util
+import json
 import sys
 import tempfile
 import unittest
@@ -439,6 +440,51 @@ class PublicationOrder(unittest.TestCase):
             finally:
                 catalog.PUBLISHED, sys.argv = saved, argv
         self.assertIn(f"{gone} has no time in data/published.json", err.getvalue())
+
+
+class Search(unittest.TestCase):
+    """The search index's tokens (sonic-search/v2), which static/js/explorer.js cuts alike."""
+
+    def test_every_token_in_order(self):
+        self.assertEqual(catalog.search_tokens("The TB-303, four-on-the-floor: a DJ's 1990s."),
+                         ["the", "tb", "303", "four", "on", "the", "floor", "a", "dj", "1990"])
+        self.assertEqual(catalog.search_tokens("Daft Punk’s 80's"), catalog.search_tokens("daft punk 80s"))
+
+    def test_folding(self):
+        self.assertEqual(catalog.search_tokens("Tomas Høffding, Crécy, Straße"),
+                         ["toma", "hoffding", "crecie", "strasse"])
+        lower = {k: v for k, v in catalog.TRANSLIT_MAP.items() if k == k.lower()}
+        self.assertEqual(catalog.SEARCH_FOLD, lower)
+
+    def test_english_forms(self):
+        same = [("synthesizers", "synthesizer"), ("melodies", "melody"), ("basses", "bass"),
+                ("switches", "switch"), ("boxes", "box"), ("crashes", "crash"), ("plays", "play"),
+                ("drums", "drum"), ("movies", "movie"), ("djs", "dj")]
+        for a, b in same:
+            self.assertEqual(catalog.search_tokens(a), catalog.search_tokens(b), (a, b))
+        for kept in ("bass", "chorus", "analysis", "as", "key", "boy"):
+            self.assertEqual(catalog.search_tokens(kept), [kept])
+
+    def test_czech_forms(self):
+        def forms(*ws):
+            return {" ".join(catalog.search_tokens(w, "cs")) for w in ws}
+        self.assertEqual(forms("syntezátory", "syntezátor", "syntezátorem", "syntezátorům",
+                               "syntezátorech", "syntezátorami"), {"syntezator"})
+        self.assertEqual(forms("basová linka", "basovou linkou", "basové linky",
+                               "basových linkách"), {"basov link"})
+        # stems too short to cut, and a language without rules
+        self.assertEqual(catalog.search_tokens("ten jsou", "cs"), ["ten", "jsou"])
+        self.assertEqual(catalog.word_form("syntezator", {}), "syntezator")
+
+    def test_review_text(self):
+        body = 'A {{ figure(src="x.png") }} <b>bass</b> [line](https://example.com/lines) **303s**'
+        self.assertEqual(catalog.search_text(body), "a bass line 303")
+
+    def test_index_file(self):
+        cat = {"_search": {"a.md": "bass line"}, "_search_i18n": {"cs": {"a.md": "basov link"}}}
+        for lang, words in (("", "bass line"), ("cs", "basov link")):
+            data = json.loads(catalog.render_search(cat, lang))
+            self.assertEqual((data["schema"], data["tracks"]), ("sonic-search/v2", {"a.md": words}))
 
 
 class Repository(unittest.TestCase):

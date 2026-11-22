@@ -13,6 +13,8 @@
 //   - every page class renders with no console error and no failed same-origin request;
 //   - the home explorer: one card per catalogue track, faceted filter + text search + sort,
 //     URL state, the empty state, reset;
+//   - its full-text search: relevance first, whole words, short tokens, word forms, phrases,
+//     English and Czech, each checked against the index as served;
 //   - a track page: the video still turns into a youtube-nocookie player, related tracks exist;
 //   - the theme toggle flips and persists the Pro `color-theme` key;
 //   - phone width (390 px): no horizontal overflow, the sidebar drawer opens;
@@ -1449,21 +1451,143 @@ async function shot(page, name) {
     await context.close();
   }
 
-  // Full-text search over the reviews uses the same tokens as the index (review round 2).
+  // Full-text search (static/js/explorer.js over static/data/search*.json, sonic-search/v2):
+  // relevance first, whole words, every token, word forms, phrases, the URL. Every expectation is
+  // derived from the catalogue and the index as served, never typed: a review matches when its
+  // index (its tokens in order) holds the words, a card when its text says them.
   {
-    const term = 'four-on-the-floor';
-    const expected = Object.entries(JSON.parse(root
-      ? fs.readFileSync(path.join(root, 'data/search.json'), 'utf8')
-      : await (await get(at('data/search.json'))).text()).tracks)
-      .filter(([, words]) => ['four', 'floor'].every((w) => words.split(' ').includes(w))).length;
-    const { context, page } = await open(browser, at(''), desktop);
+    const readJson = async (rel) => JSON.parse(root ? fs.readFileSync(path.join(root, rel), 'utf8')
+      : await (await get(at(rel))).text());
+    const reviewsOf = async (rel) => {
+      const data = await readJson(rel);
+      check(data.schema === 'sonic-search/v2', `${rel}: schema sonic-search/v2 (${data.schema})`);
+      return Object.fromEntries(Object.entries(data.tracks).map(([s, w]) => [s, ` ${w} `]));
+    };
+    const plain = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '');
+    const searchIn = (page) => async (q) => {
+      await page.fill('#explorer-q', q);
+      await page.waitForFunction((want) => new URLSearchParams(location.search).get('q') === want
+        && document.documentElement.dataset.reviewsState === 'ready', q, { timeout: 15000 });
+      return page.locator('#explorer-grid [data-track]:not([hidden])').evaluateAll((els) =>
+        els.map((e) => ({ source: e.dataset.source, text: e.dataset.text })));
+    };
+    const sources = (cards) => cards.map((c) => c.source);
+    const same = (a, b) => sources(a).sort().join() === sources(b).sort().join();
+    // Every review whose index holds `words` is shown, and every card shown has them in its
+    // index or (`re`) in its own text: the matches are exactly the tracks that say it.
+    const exact = (index, cards, words, re) => {
+      const say = Object.keys(index).filter((s) => index[s].includes(words));
+      const shown = sources(cards);
+      return say.length > 0 && say.every((s) => shown.includes(s))
+        && cards.every((c) => index[c.source].includes(words) || re.test(plain(c.text)));
+    };
+    const total = catalog.tracks.length;
+    const noErrors = (what, errs) => check(errs.length === 0,
+      `${what}: no console errors${errs.length ? ' — ' + errs.join(' | ') : ''}`);
+
+    const en = await reviewsOf('data/search.json');
+    const { context, page, errors } = await open(browser, at('?probe=kept'), desktop);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
-    await page.fill('#explorer-q', term);
-    await page.waitForFunction(() => document.documentElement.dataset.reviewsState === 'ready');
-    await page.waitForTimeout(300);
-    const shown = await page.locator('#explorer-grid [data-track]:not([hidden])').count();
-    check(expected > 0 && shown >= expected, `search "${term}" finds the reviews that say it (${shown} ≥ ${expected})`);
+    const search = searchIn(page);
+    const url = () => new URL(page.url()).searchParams;
+
+    // Relevance: the artist with most tracks (catalog.artists) finds their own tracks first,
+    // and so does the same name with its last word unfinished, as it is while being typed.
+    const top = catalog.artists[0].term;
+    const own = catalog.tracks.filter((t) => t.artist.toLowerCase() === top.toLowerCase())
+      .map((t) => t.source);
+    for (const q of [top, top.slice(0, -1)]) {
+      const shown = await search(q);
+      check(own.length > 0 && shown.slice(0, own.length).every((c) => own.includes(c.source)),
+        `search "${q}": the artist's own ${own.length} tracks come first (of ${shown.length})`);
+    }
+    check(await page.inputValue('#explorer-sort') === 'relevance' && !url().has('sort')
+      && url().get('probe') === 'kept',
+      'a query sorts by relevance by default; the URL holds no sort and keeps the other keys');
+    // A title ranks its own track first: three catalogue titles of several words, each unique.
+    const key = (s) => plain(s).replace(/[^a-z0-9]+/g, ' ').trim();
+    const titles = catalog.tracks.filter((t) => /^[\x20-\x7e]+$/.test(t.track)
+      && key(t.track).includes(' ')
+      && catalog.tracks.filter((u) => key(u.track) === key(t.track)).length === 1).slice(0, 3);
+    for (const t of titles) {
+      const shown = await search(t.track);
+      const first = shown.length ? shown[0].source : 'nothing';
+      check(first === t.source,
+        `search "${t.track}": its track first (${first}, of ${shown.length})`);
+    }
+
+    // Whole words: "art" is neither "start" nor "artist".
+    const art = await search('art');
+    check(art.length < total / 4 && exact(en, art, ' art ', /(^|[^a-z0-9])arts?([^a-z0-9]|$)/),
+      `search "art": the word only (${art.length} of ${total})`);
+    // Short tokens and digits are searched: "tb-303" is the run "tb 303".
+    const tb = await search('tb-303');
+    check(exact(en, tb, ' tb 303 ', /tb[^a-z0-9]+303/),
+      `search "tb-303": exactly the tracks that name the TB-303 (${tb.length})`);
+    // Word forms: a plural finds what its singular finds.
+    const many = await search('synthesizers');
+    const one = await search('synthesizer');
+    check(same(many, one) && exact(en, one, ' synthesizer ', /synthesizer/),
+      `search "synthesizers" finds what "synthesizer" finds (${many.length} = ${one.length})`);
+    // A quoted phrase: its words side by side, fewer tracks than the same words anywhere.
+    const loose = await search('bass line');
+    const phrase = await search('"bass line"');
+    check(phrase.length < loose.length && exact(en, phrase, ' bass line ', /bass[^a-z0-9]+line/),
+      `search '"bass line"': the words side by side only (${phrase.length}, `
+      + `unquoted ${loose.length})`);
+
+    // A word being typed matches as typed too: a form rule must not turn it into a stem no word
+    // starts with ("psy" is "psie" by the -y rule; every review saying a word in psy... shows).
+    const half = 'psy';
+    const sayHalf = Object.keys(en).filter((s) => en[s].includes(` ${half}`));
+    const halfShown = sources(await search(half));
+    check(sayHalf.length > 0 && sayHalf.every((s) => halfShown.includes(s)),
+      `search "${half}": every review with a word that starts so (${sayHalf.length} of ${halfShown.length})`);
+    // A possessive is its word: "daft punk's" finds what "daft punk" finds.
+    const possessive = await search("daft punk's");
+    const bare = await search('daft punk');
+    check(bare.length > 0 && same(possessive, bare),
+      `search "daft punk's" finds what "daft punk" finds (${possessive.length} = ${bare.length})`);
+
+    // A sort the reader chooses wins over relevance and is in the URL; reset forgets it.
+    await page.selectOption('#explorer-sort', 'new');
+    const order = await page.locator('#explorer-grid [data-track]:not([hidden])')
+      .evaluateAll((els) => els.map((e) => e.dataset.source));
+    const byDate = catalog.tracks.map((t) => t.source).filter((s) => order.includes(s));
+    check(url().get('sort') === 'new' && url().get('probe') === 'kept'
+      && order.join() === byDate.join(),
+      'search: a chosen sort (newest first) wins over relevance, in the URL beside the other keys');
+    await page.fill('#explorer-q', '');
+    await page.waitForFunction(() => !new URLSearchParams(location.search).has('q'));
+    check(url().get('sort') === 'new',
+      'search: a chosen sort stays in the URL when the query is cleared, so a reload keeps it');
+    await page.click('[data-explorer-reset]');
+    await search('art');
+    check(await page.inputValue('#explorer-sort') === 'relevance' && !url().has('sort'),
+      'search: reset forgets the chosen sort; the next query is by relevance again');
+    noErrors('search', errors);
     await context.close();
+
+    // The Czech index on /cs/: Czech word forms, and one phrase in two cases.
+    const cs = await reviewsOf('data/search.cs.json');
+    const czech = await open(browser, at('cs/'), desktop);
+    await czech.page.waitForFunction(() =>
+      document.documentElement.dataset.explorerState === 'ready');
+    const hledej = searchIn(czech.page);
+    const forms = [];
+    for (const q of ['syntezátory', 'syntezátor', 'syntezátorem']) forms.push(await hledej(q));
+    check(same(forms[0], forms[1]) && same(forms[1], forms[2])
+      && exact(cs, forms[0], ' syntezator ', /syntezator/),
+      `cs: "syntezátory", "syntezátor", "syntezátorem" find the same ${forms[0].length} tracks`);
+    const nominative = await hledej('"basová linka"');
+    const instrumental = await hledej('"basovou linkou"');
+    const czLoose = await hledej('basová linka');
+    check(same(nominative, instrumental) && nominative.length < czLoose.length
+      && exact(cs, nominative, ' basov link ', /basov[a-z]*[^a-z0-9]+link/),
+      `cs: '"basová linka"' is '"basovou linkou"', words side by side (${nominative.length}, `
+      + `unquoted ${czLoose.length})`);
+    noErrors('cs search', czech.errors);
+    await czech.context.close();
   }
 
   // A video YouTube removed (data/videos.json) shows a note, and its still is never requested.
