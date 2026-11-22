@@ -95,7 +95,15 @@ transcribed) that have no review: a song, not a recording (version suffixes and 
 artists folded, remixes kept), each once. `--source spotify` lists the songs of the owner's
 Spotify history (ADR 0007) the owner chose (current top tracks, liked songs, own playlists),
 strongest choice first, without interludes and continuous mixes; `--limit N` takes the head of
-the list for one wave. `--batches N` splits it; each batch goes to one
+the list for one wave. Before batching a wave, screen it: `python3 scripts/backlog.py --source
+spotify --screen --limit N [--json]` (`scripts/screen.py`, no model, MusicBrainz at one request a
+second, Wikidata and Wikipedia, cached under `~/.cache/sonic-playground`) orders the songs by how
+much independent material exists and gives each its tier, score, reason codes and evidence URLs:
+`writable` (a song or release article, or two independent substantive sources) is commissioned
+first, `ambiguous` (artist-level coverage only, one source, or the identity unclear) next, and
+`thin` (catalogue rows only) last. The tier is an order, never a verdict: a thin song is still
+written, as a full page that says what no source describes. Hand each writer its row's evidence
+as the starting point of step 3. `--batches N` splits it; each batch goes to one
 `song-writer` agent (`.claude/agents/song-writer.md`) running this procedure in one shared
 worktree, creating only its own files. The integrator then runs `npm run derive` and the gate
 once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 agents):

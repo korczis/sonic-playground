@@ -468,10 +468,19 @@ MB_AGENT = "sonic-playground/1.0 (+https://github.com/korczis/sonic-playground)"
 MB_CACHE = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache")) / "sonic-playground" / "musicbrainz.json"
 
 
+_mb_memo: dict = {"stamp": None, "data": {}}
+
+
 def mb_cache() -> dict:
-    """The MusicBrainz cache; a missing or unreadable file is an empty cache, never an error."""
+    """The MusicBrainz cache; a missing or unreadable file is an empty cache, never an error.
+    The parsed file is kept while its size and mtime stand (it is tens of megabytes), and read
+    again when a writer beside this one replaced it."""
     try:
-        return json.loads(MB_CACHE.read_text(encoding="utf-8"))
+        st = MB_CACHE.stat()
+        stamp = (st.st_mtime_ns, st.st_size)
+        if _mb_memo["stamp"] != stamp:
+            _mb_memo["data"], _mb_memo["stamp"] = json.loads(MB_CACHE.read_text(encoding="utf-8")), stamp
+        return _mb_memo["data"]
     except (OSError, ValueError):
         return {}
 
@@ -497,6 +506,9 @@ def mb_get(url: str, args) -> dict:
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
                 data = json.loads(response.read().decode("utf-8"))
+            if "error" in data and attempt < 3:  # "the web server is currently busy"
+                time.sleep(2 ** attempt * 2)
+                continue
             break
         except urllib.error.HTTPError as exc:
             if exc.code in (429, 503) and attempt < 3:
@@ -507,11 +519,15 @@ def mb_get(url: str, args) -> dict:
                 break
             raise
     _mb_last[0] = time.monotonic()
+    if "error" in data:  # never cached: the next run asks again
+        raise urllib.error.URLError(f"musicbrainz: {data['error']}")
     MB_CACHE.parent.mkdir(parents=True, exist_ok=True)
     cache = {**mb_cache(), url: data}  # what writers running beside this one saved meanwhile
     tmp = MB_CACHE.with_name(f"{MB_CACHE.name}.{os.getpid()}.tmp")
     tmp.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
     os.replace(tmp, MB_CACHE)  # atomic: a reader never sees half a file
+    st = MB_CACHE.stat()
+    _mb_memo["data"], _mb_memo["stamp"] = cache, (st.st_mtime_ns, st.st_size)
     return data
 
 

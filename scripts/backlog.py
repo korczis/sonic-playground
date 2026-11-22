@@ -22,6 +22,9 @@ records, and a skipped item then leaves the list (--all keeps it).
     python3 scripts/backlog.py --check             exit 1 when a backlog file is malformed
     python3 scripts/backlog.py --source spotify --limit 40 --batches 8
                                                    the owner's 40 strongest picks, in 8 batches
+    python3 scripts/backlog.py --source spotify --screen --limit 60 [--json]
+                                                   the same songs ordered by how much is written
+                                                   about them (scripts/screen.py), with evidence
 """
 from __future__ import annotations
 
@@ -29,6 +32,7 @@ import argparse
 import json
 import re
 import sys
+import time
 import tomllib
 from pathlib import Path
 
@@ -167,6 +171,8 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=0, help="only the first N pending songs")
     parser.add_argument("--all", action="store_true",
                         help="spotify: also songs only in followed or made-for-you playlists")
+    parser.add_argument("--screen", action="store_true",
+                        help="rank the pending songs by their sources (scripts/screen.py; network)")
     args = parser.parse_args()
     rows = spotify_rows(everything=args.all) if args.source == "spotify" else load()
     problems = check(rows)
@@ -179,6 +185,15 @@ def main() -> int:
     total = len(todo)
     if args.limit:
         todo = todo[:args.limit]
+    if args.screen:
+        import screen
+        started = time.monotonic()
+        ranked = screen.screen(todo, progress=sys.stderr)
+        if args.json:
+            print(json.dumps(ranked, ensure_ascii=False, indent=1))
+        else:
+            screen.print_table(ranked, time.monotonic() - started)
+        return 0
     if args.batches:
         batches = [todo[i::args.batches] for i in range(args.batches)]
         print(json.dumps(batches, ensure_ascii=False, indent=1))
