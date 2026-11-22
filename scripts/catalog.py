@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 import tomllib
 import unicodedata
@@ -525,6 +526,37 @@ def review_files() -> list[Path]:
     return sorted(p for p in CONTENT.glob("*.md") if p.name != "_index.md" and not tr.translation_name(p.name))
 
 
+def first_added(log: str) -> dict[str, int]:
+    """When each review entered the repository, from `git log --diff-filter=A --no-renames
+    --format=%x00%at --name-only -- content`: file name -> the author time of its oldest add."""
+    added: dict[str, int] = {}
+    when = 0
+    for line in log.splitlines():
+        if line.startswith("\x00"):
+            when = int(line[1:])
+        elif line.startswith("content/") and line.count("/") == 1:
+            added[line.removeprefix("content/")] = when  # the log runs newest first
+    return added
+
+
+def publication_order(tracks: list[Track], added: dict[str, int]) -> None:
+    """Newest first: by date, then within a day by the time the review entered the repository
+    (one not yet committed is the newest), then by title."""
+    newest = max(added.values(), default=0) + 1
+    tracks.sort(key=lambda t: (t.date, added.get(t.source, newest), t.title), reverse=True)
+
+
+def git_added() -> dict[str, int]:
+    """first_added() of this checkout's history; empty outside a git work tree."""
+    try:
+        log = subprocess.run(
+            ["git", "log", "--diff-filter=A", "--no-renames", "--format=%x00%at", "--name-only",
+             "--", "content"], cwd=ROOT, capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    return first_added(log)
+
+
 def load_translations(tracks: list[Track], errors: list[str]) -> dict[str, dict[str, dict]]:
     """Per language, per review: what its translation says (title, description, path, words,
     index), each checked against its English page (scripts/translation.py). A missing one is an
@@ -926,7 +958,7 @@ def build(errors: list[str]) -> dict:
             errors.append(f"{t.source}: URL /{t.path} collides with {seen[t.path]}")
         seen[t.path] = t.source
 
-    tracks.sort(key=lambda t: (t.date, t.title), reverse=True)
+    publication_order(tracks, git_added())
     errors += uniqueness(tracks)
     families = genre_families(tracks, load_genre_families(errors), NOTES)
     translated = load_translations(tracks, errors)

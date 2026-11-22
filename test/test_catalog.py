@@ -366,6 +366,26 @@ class GenreFamilies(unittest.TestCase):
         self.assertEqual({f["id"] for f in data["genre_families"]} - {f["id"] for f in families}, set())
 
 
+class PublicationOrder(unittest.TestCase):
+    LOG = "\x00300\n\ncontent/b.md\ncontent/b.cs.md\n\x00200\n\ncontent/a.md\ncontent/sub/x.md\n" \
+          "\x00100\n\ncontent/a.md\nstatic/y.md\n"
+
+    def test_first_added_keeps_the_oldest_add_of_a_review(self):
+        self.assertEqual(catalog.first_added(self.LOG), {"b.md": 300, "b.cs.md": 300, "a.md": 100})
+
+    def test_same_day_reviews_order_by_when_they_were_added_uncommitted_first(self):
+        def track(source, title, day="2026-11-22"):
+            return type("T", (), {"source": source, "title": title, "date": day})()
+        tracks = [track("a.md", "Zed"), track("b.md", "Abba"), track("new.md", "Mid"),
+                  track("old.md", "Zz", "2026-11-21")]
+        catalog.publication_order(tracks, {"a.md": 100, "b.md": 300, "old.md": 50})
+        self.assertEqual([t.source for t in tracks], ["new.md", "b.md", "a.md", "old.md"])
+
+    def test_git_added_reads_this_checkout(self):
+        added = catalog.git_added()
+        self.assertIn("amy-winehouse-rehab.md", added)
+
+
 class Repository(unittest.TestCase):
     def test_catalogue_is_current(self):
         errors = []

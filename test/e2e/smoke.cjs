@@ -921,6 +921,14 @@ async function shot(page, name) {
     const featured = await page.locator('#featured').getAttribute('data-featured');
     const expected = catalog.tracks.map((t) => t.source).filter((s) => s !== featured).slice(0, 4);
     check(recent.join() === expected.join(), 'home lists the four newest reviews after the featured one');
+    const newestStill = catalog.tracks.find((t) => t.thumbnail);
+    check(featured === newestStill.source, `home features the newest review with a still (${newestStill.source})`);
+    // The mosaic as served (hero.js turns its tiles a few seconds later).
+    const served = await (await context.request.get(at(''))).text();
+    const mosaic = served.slice(served.indexOf('id="hero-mosaic"'), served.indexOf('id="hero-newest"'));
+    const tiles = [...mosaic.matchAll(/data-source="([^"]+)"/g)].map((m) => m[1]);
+    const nine = catalog.tracks.filter((t) => t.youtube).slice(0, 9).map((t) => t.source);
+    check(tiles.join() === nine.join(), 'the hero mosaic shows the nine newest reviews with a video, newest first');
     const kinds = catalog.facet_names.filter((k) => catalog.facets[k].length > 2);
     const sound = await page.locator('section[aria-labelledby="home-sound"] a[href]').count();
     check(sound >= kinds.length * 2, `home explores by sound over ${kinds.join(', ')}`);
@@ -944,7 +952,11 @@ async function shot(page, name) {
     check(before === Math.min(24, catalog.tracks.length), `explorer shows the first page (${before} cards)`);
     await page.click('[data-explorer-more]');
     check((await unfolded()) === Math.min(48, catalog.tracks.length), 'Show more unfolds the next page');
+    const order = () => page.locator('#explorer-grid [data-track]').evaluateAll((els) => els.map((e) => e.dataset.source));
+    const newest = catalog.tracks.map((t) => t.source);
+    check((await order()).join() === newest.join(), 'sort newest first keeps the catalogue order, same-day reviews included');
     await page.selectOption('#explorer-sort', 'old');
+    check((await order()).join() === newest.slice().reverse().join(), 'sort oldest first is the catalogue order reversed');
     const first = await page.locator('#explorer-grid [data-track]:not([hidden])').first().getAttribute('data-date');
     check(first === catalog.stats.first, `sort oldest first starts at ${catalog.stats.first}`);
     const deep = await open(browser, at(`?genre=${encodeURIComponent(genre.term)}&sort=artist`), desktop);

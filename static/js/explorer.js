@@ -26,7 +26,9 @@ window.Sonic.module('explorer', function mount() {
   var limit = PAGE;
   var more = /** @type {HTMLElement | null} */ (document.querySelector('[data-explorer-more]'));
 
-  var items = cards.map(function (el) {
+  // Cards come in the catalogue's order (newest first, scripts/catalog.py publication_order):
+  // `rank` keeps that order between reviews of the same day.
+  var items = cards.map(function (el, rank) {
     var d = el.dataset;
     var terms = {};
     facets.forEach(function (s) {
@@ -34,7 +36,7 @@ window.Sonic.module('explorer', function mount() {
     });
     return {
       el: el, source: d.source || '', title: d.title || '', artist: d.artist || '',
-      date: d.date || '', text: (d.text || '').normalize('NFKD').replace(/[̀-ͯ]/g, ''),
+      date: d.date || '', rank: rank, text: (d.text || '').normalize('NFKD').replace(/[̀-ͯ]/g, ''),
       review: '', terms: terms,
     };
   });
@@ -89,8 +91,8 @@ window.Sonic.module('explorer', function mount() {
   }
 
   var ORDER = {
-    new: function (a, b) { return b.date.localeCompare(a.date) || a.title.localeCompare(b.title); },
-    old: function (a, b) { return a.date.localeCompare(b.date) || a.title.localeCompare(b.title); },
+    new: function (a, b) { return b.date.localeCompare(a.date) || a.rank - b.rank; },
+    old: function (a, b) { return a.date.localeCompare(b.date) || b.rank - a.rank; },
     artist: function (a, b) { return a.artist.localeCompare(b.artist) || a.title.localeCompare(b.title); },
     title: function (a, b) { return a.title.localeCompare(b.title) || a.artist.localeCompare(b.artist); },
   };
