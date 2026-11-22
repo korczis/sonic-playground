@@ -6,8 +6,9 @@ artists: ["Oum Shatt"]
 album: "Oum Shatt"
 duration: "3:09"
 spotify: {"track": "6RLaMJszaIAYBq6nqHJJSK", "album": "1VfR5mdkzj3mqKR7PY4Zuo", "artists": ["3lQXHxiyVJnxHfRznEpgAT"]}
-keys: {"fold": "oumshatt|powertothewomenofthemorningshift"}
-status: "missing"
+keys: {"fold": "oumshatt|powertothewomenofthemorningshift", "isrc": "DEPC51600414", "musicbrainz": "147be656-6c57-45be-b4e9-de2af84cd9ce"}
+review: "oum-shatt-power-to-the-women-of-the-morning-shift.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2025, "n": 60}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Oum Shatt*, 3:09.
 A liked song.
 Your Top Songs 2025: #60.
-No review yet.
+Reviewed: content/oum-shatt-power-to-the-women-of-the-morning-shift.md.

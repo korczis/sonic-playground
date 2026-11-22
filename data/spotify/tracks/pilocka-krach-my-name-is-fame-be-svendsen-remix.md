@@ -7,7 +7,8 @@ album: "Fame"
 duration: "3:53"
 spotify: {"track": "1lRxFP7c6oFZZmduUto796", "album": "1fz44Um6FX68ZoNCx4GcMF", "artists": ["72gQuI1GHmsUXIfe863TC7", "4BaLB5aiExO29BEGVUisru"]}
 keys: {"fold": "pilockakrach|mynameisfamebesvendsenremix"}
-status: "missing"
+review: "pilocka-krach-be-svendsen-my-name-is-fame-be-svendsen-remix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2025, "n": 84}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Fame*, 3:53.
 A liked song.
 Your Top Songs 2025: #84.
-No review yet.
+Reviewed: content/pilocka-krach-be-svendsen-my-name-is-fame-be-svendsen-remix.md.
