@@ -203,9 +203,10 @@ def validate(value, schema: dict, where: str = "", root: dict | None = None) -> 
 
 # Letters NFKD does not decompose into a base letter; Zola (deunicode) transliterates them, so must
 # this ("Tomas Høffding" is "hoffding", not "hffding": a defect found on 2026-11-12).
-TRANSLIT = str.maketrans({"ø": "o", "Ø": "O", "æ": "ae", "Æ": "AE", "œ": "oe", "Œ": "OE", "ß": "ss",
+TRANSLIT_MAP = {"ø": "o", "Ø": "O", "æ": "ae", "Æ": "AE", "œ": "oe", "Œ": "OE", "ß": "ss",
                           "ł": "l", "Ł": "L", "đ": "d", "Đ": "D", "ð": "d", "Ð": "D", "þ": "th",
-                          "Þ": "TH", "ı": "i", "ħ": "h", "Ħ": "H"})
+                          "Þ": "TH", "ı": "i", "ħ": "h", "Ħ": "H"}
+TRANSLIT = str.maketrans(TRANSLIT_MAP)
 
 
 def slugify(text: str) -> str:
@@ -217,6 +218,42 @@ def slugify(text: str) -> str:
 
 def words(text: str) -> list[str]:
     return [w for w in slugify(text).split("-") if w]
+
+
+# The explorer's search (static/js/explorer.js) and its index (static/data/search.json) read
+# words alike: the same folding, the same cuts, the same word forms. The browser takes both
+# tables from catalog.json `search`, so they are written once, here and in data/i18n/forms/.
+SEARCH_FOLD = {k: v for k, v in TRANSLIT_MAP.items() if k == k.lower()}
+SEARCH_FORMS = {p.stem: tomllib.loads(p.read_text(encoding="utf-8"))
+                for p in sorted((ROOT / "data" / "i18n" / "forms").glob("*.toml"))}
+SEARCH_FOLD_TABLE = str.maketrans(SEARCH_FOLD)
+MARKS = re.compile(r"[\u0300-\u036f]")
+
+
+def word_form(word: str, forms: dict) -> str:
+    """A word in its search form (data/i18n/forms/<lang>.toml): the first suffix that ends it
+    decides; a stem shorter than min_stem leaves the word as it is."""
+    for suffix, to in forms.get("suffixes", []):
+        if word.endswith(suffix):
+            stem = word[:len(word) - len(suffix)]
+            return stem + to if len(stem) >= forms["min_stem"] else word
+    return word
+
+
+def search_tokens(text: str, lang: str = DEFAULT_LANG) -> list[str]:
+    """The explorer's tokens of a text, as static/js/explorer.js `tokens` cuts a query: lowercase,
+    the letters of SEARCH_FOLD, NFKD without its combining marks, split at every character that
+    is not a-z or 0-9, each token in its word form. Every token is kept, in order, short ones and
+    digits included: "TB-303" is "tb 303", and a phrase is tokens side by side."""
+    folded = MARKS.sub("", unicodedata.normalize("NFKD", text.lower().translate(SEARCH_FOLD_TABLE)))
+    forms = SEARCH_FORMS.get(lang, {})
+    return [word_form(w, forms) for w in re.split(r"[^a-z0-9]+", folded) if w]
+
+
+def search_text(body: str, lang: str = DEFAULT_LANG) -> str:
+    """A review's entry in the search index (sonic-search/v2): its prose as search tokens in
+    order, without shortcodes, HTML and link targets."""
+    return " ".join(search_tokens(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body), lang))
 
 
 def split_front_matter(text: str, name: str) -> tuple[str, str]:
@@ -588,8 +625,7 @@ def load_translations(tracks: list[Track], errors: list[str]) -> dict[str, dict[
         out[lang][english] = {
             "title": str(meta.get("title", "")).strip(), "description": str(meta.get("description", "")).strip(),
             "path": f"{lang}/{t.path}", "words": len(re.findall(r"\w+", body)),
-            "index": " ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
-                                      if len(w) > 2})),
+            "index": search_text(body, lang),
         }
     for lang in LANGUAGES:
         missing = [t.source for t in tracks if t.source not in out[lang]]
@@ -846,8 +882,7 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
         words=body_words, extra=kept_extra, outline=headings(body),
         video_gone=video_gone, full_extra=extra, paragraphs=paragraphs,
         fingerprint=tr.fingerprint(meta, body),
-        index=" ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
-                               if len(w) > 2})),
+        index=search_text(body),
     )
 
 
@@ -1031,6 +1066,7 @@ def build(errors: list[str]) -> dict:
         "months": [{"month": m, "count": months[m]} for m in sorted(months)],
         "artists": ranked(artists),
         "lookup": {t.source: i for i, t in enumerate(tracks)},
+        "search": {"fold": SEARCH_FOLD, "forms": SEARCH_FORMS},
         "_search": {t.source: t.index for t in tracks},
         "_search_i18n": {lang: {s: x["index"] for s, x in translated[lang].items()} for lang in LANGUAGES},
         "_jsonld": jsonld(tracks, translated),
@@ -1198,10 +1234,11 @@ def render(catalog: dict) -> str:
 
 
 def render_search(catalog: dict, lang: str = "") -> str:
-    """The review text index the explorer loads on the first query: per track, the distinct
-    folded words of its review (static/data/search.json, sonic-search/v1)."""
+    """The review text index the explorer loads on the first query: per track, the tokens of its
+    review in order (search_text; static/data/search.json, sonic-search/v2). In order, not a set
+    of distinct words, so that a quoted phrase finds only words side by side."""
     index = catalog["_search_i18n"][lang] if lang else catalog["_search"]
-    return json.dumps({"schema": "sonic-search/v1", "generated_by": "scripts/catalog.py",
+    return json.dumps({"schema": "sonic-search/v2", "generated_by": "scripts/catalog.py",
                        "tracks": index}, ensure_ascii=False, indent=0) + "\n"
 
 

@@ -1,6 +1,6 @@
 // Types of the site's browser code (static/js/*.js), checked by `npm run typecheck`
 // (tsc --checkJs, tsconfig.json). The data shapes mirror what scripts/catalog.py and
-// scripts/i18n.py derive (sonic-catalog/v1, sonic-search/v1, sonic-i18n/v1).
+// scripts/i18n.py derive (sonic-catalog/v1, sonic-search/v2, sonic-i18n/v1).
 
 interface SonicTrack {
   source: string;
@@ -25,10 +25,20 @@ interface SonicTrack {
   i18n: Record<string, { title: string; description: string; path: string }>;
 }
 
+/** How the explorer reads a word: catalog.json `search` for one language (scripts/catalog.py). */
+interface SonicSearchRules {
+  /** Letters NFKD does not decompose, to what they fold. */
+  fold: Record<string, string>;
+  /** The language's word forms (data/i18n/forms/<lang>.toml). */
+  forms: { min_stem: number; suffixes: [string, string][] };
+}
+
 interface SonicTerm { term: string; slug: string; count: number }
 
 interface SonicCatalog {
   schema: 'sonic-catalog/v1';
+  /** The explorer's word reading: the fold table and every language's word forms. */
+  search: { fold: Record<string, string>; forms: Record<string, SonicSearchRules['forms']> };
   stats: Record<string, number | string>;
   outline: { name: string; share: number; position: number; subsections: string[] }[];
   facets: { genre: SonicTerm[]; sentiment: SonicTerm[]; mood: SonicTerm[] };

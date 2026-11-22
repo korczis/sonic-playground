@@ -1,0 +1,25 @@
+# English word forms for the explorer's search. scripts/catalog.py builds the review index
+# (static/data/search.json) with these rules and static/js/explorer.js applies the same ones to
+# the query (catalog.json `search`), so a review and a query bring a word to one form:
+# "synthesizers" finds what "synthesizer" finds.
+#
+# A word ending in a suffix below becomes its stem plus the replacement. The first suffix that
+# ends the word decides (a suffix replaced by itself protects the word); a stem shorter than
+# min_stem leaves the word as it is. Every word passes once; no rule applies twice.
+min_stem = 2
+suffixes = [
+  ["ies", "ie"],   # melodies, movies: melodie, movie
+  ["sses", "ss"],  # basses: bass
+  ["shes", "sh"],  # crashes: crash
+  ["ches", "ch"],  # switches: switch
+  ["xes", "x"],    # boxes: box
+  ["ss", "ss"],    # bass, glass: kept
+  ["us", "us"],    # chorus: kept
+  ["is", "is"],    # analysis, this: kept
+  ["s", ""],       # synthesizers, drums, 1990s, djs: synthesizer, drum, 1990, dj
+  ["ay", "ay"],    # play: kept (plays is play above)
+  ["ey", "ey"],    # key: kept
+  ["oy", "oy"],    # boy: kept
+  ["uy", "uy"],    # guy: kept
+  ["y", "ie"],     # melody: melodie, the form of melodies
+]

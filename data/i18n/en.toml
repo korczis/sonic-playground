@@ -94,6 +94,7 @@
 "explorer.any.sentiment" = "Any feeling"
 "explorer.any.mood" = "Any mood"
 "explorer.sort" = "Sort"
+"explorer.sort.relevance" = "Best match"
 "explorer.sort.new" = "Newest first"
 "explorer.sort.old" = "Oldest first"
 "explorer.sort.artist" = "Artist A–Z"

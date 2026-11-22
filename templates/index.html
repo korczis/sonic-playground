@@ -103,7 +103,10 @@
         {{ <play_all target="explorer-grid" l={l} lkey="explorer.play" /> }}
       </div>
     </div>
-    <form data-explorer class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6" action="{{ get_url(path='@/_index.md', lang=lang) }}" method="get">
+    {#- How the explorer reads a word (catalog.json `search`, scripts/catalog.py): the fold table
+        and this language's word forms, the rules the review index was cut with. -#}
+    {%- if lang in catalog.search.forms %}{% set forms = catalog.search.forms[lang] %}{% else %}{% set forms = {} %}{% endif %}
+    <form data-explorer data-search-rules="{{ {"fold": catalog.search.fold, "forms": forms} | json_encode }}" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6" action="{{ get_url(path='@/_index.md', lang=lang) }}" method="get">
       <div class="sm:col-span-2 lg:col-span-3 2xl:col-span-2">
         <label for="explorer-q" class="{{ lbl }}" data-i18n="explorer.search">{{ l["explorer.search"] }}</label>
         <div class="relative">
@@ -134,8 +137,8 @@
       <div>
         <label for="explorer-sort" class="{{ lbl }}" data-i18n="explorer.sort">{{ l["explorer.sort"] }}</label>
         <select id="explorer-sort" name="sort" class="{{ field }}">
-          {%- for order in ["new", "old", "artist", "title"] %}
-          <option value="{{ order }}" data-i18n="explorer.sort.{{ order }}">{{ l["explorer.sort." ~ order] }}</option>
+          {%- for order in ["relevance", "new", "old", "artist", "title"] %}
+          <option value="{{ order }}"{% if order == "new" %} selected{% endif %} data-i18n="explorer.sort.{{ order }}">{{ l["explorer.sort." ~ order] }}</option>
           {%- endfor %}
         </select>
       </div>
