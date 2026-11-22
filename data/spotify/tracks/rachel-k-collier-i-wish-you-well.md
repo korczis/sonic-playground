@@ -7,7 +7,8 @@ album: "Songs In The Key Of Internet"
 duration: "4:12"
 spotify: {"track": "1exuw4eDWzIGOUF1OrtvrU", "album": "5xHwBoACmq0b17EhEFHCeU", "artists": ["0hWL8sffP07PbVm5ilnf1o"]}
 keys: {"fold": "rachelkcollier|iwishyouwell"}
-status: "missing"
+review: "rachel-k-collier-i-wish-you-well.md"
+status: "present"
 liked: false
 yearbooks:
   - {"year": 2023, "n": 89}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-22"]
 From the album *Songs In The Key Of Internet*, 4:12.
 Not among the liked songs.
 Your Top Songs 2023: #89.
-No review yet.
+Reviewed: content/rachel-k-collier-i-wish-you-well.md.
