@@ -7,7 +7,7 @@ album: "Turntable Soul Music"
 duration: "2:39"
 spotify: {"track": "0JixViE0rKLJ2IWRkFrU6d", "album": "7p7dnesGXLsARWflYGw5ZT", "artists": ["4N9nNkpjGuBlGWnYubQI8t"]}
 keys: {"fold": "belleruche|boughtandsold"}
-status: "skipped"
+status: "missing"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
