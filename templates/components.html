@@ -116,7 +116,7 @@
 {% endcomponent track_card %}
 
 {#- Compact track row (Pro list group item) for archives and lists: play, still, track, artist. -#}
-{% component track_row(t, l, note="", anchor="") %}
+{% component track_row(t, l, note="", anchor="", compact=false) %}
 {%- if l.lang in t.langs %}{% set href = get_url(path="@/" ~ t.source, lang=l.lang) %}{% else %}{% set href = get_url(path="@/" ~ t.source, lang=t.langs | first) %}{% endif -%}
 {%- if l.lang in t.i18n %}{% set desc = t.i18n[l.lang].description %}{% else %}{% set desc = t.description %}{% endif -%}
 {%- set label = t.artist ~ " – " ~ t.track -%}
@@ -135,7 +135,9 @@
       <span class="block truncate text-sm text-gray-500 dark:text-gray-400">{{ t.artist }}</span>
       {%- if note %}<span class="mt-0.5 block truncate text-xs text-gray-500 dark:text-gray-400">{{ note }}</span>{% endif %}
     </span>
+    {%- if not compact %}
     <time datetime="{{ t.date }}" class="hidden shrink-0 text-xs text-gray-500 sm:block dark:text-gray-400">{{ t.date }}</time>
+    {%- endif %}
   </a>
   {%- if t.youtube %}{{ <track_actions source={t.source} label={label} l={l} variant="row" /> }}{% endif %}
 </li>
@@ -269,14 +271,15 @@ src="{{ get_url(path=t.thumbnail) }}"
 {#- The page grid's one gutter (16 px; 32 px from xl, where the sidebar is beside it), so the
     header, the breadcrumb and every card share one left edge. `part`: "gutter" (the sides only,
     for a body that sets its own top) or "body" (the sides and the space under the page header).
-    Templates take these classes only from here (rule project.page-layout,
+    Templates take these classes only from here (rule project.ui-components,
     scripts/check-components.py). -#}
 {% component layout(part) %}{% if part == "gutter" %}px-4 xl:px-8{% else %}px-4 pt-6 xl:px-8{% endif %}{% endcomponent layout %}
 
 {#- Long text (a review, a plain page) on the Flowbite typography scale, mobile first: small type
-    on a phone, base from sm, large from lg, so a content heading never outgrows the page title.
-    The one text box of the site (rule project.page-layout). -#}
-{% component prose(html) %}<div data-prose class="format format-sm max-w-none sm:format-base lg:format-lg dark:format-invert format-a:text-primary-700 format-headings:tracking-tight dark:format-a:text-primary-400 format-img:rounded-lg">{{ html | safe }}</div>{% endcomponent prose %}
+    on a phone, base from sm (format-lg's h2 is 36 px, above the page title's 30 px, so it is not
+    used), so a content heading never outgrows the page title.
+    The one text box of the site (rule project.ui-components). -#}
+{% component prose(html) %}<div data-prose class="format format-sm max-w-none sm:format-base dark:format-invert format-a:text-primary-700 format-headings:tracking-tight dark:format-a:text-primary-400 format-img:rounded-lg">{{ html | safe }}</div>{% endcomponent prose %}
 
 {% component page_header(title, crumbs=[], kicker="", lead="", lead_key="", lead_vars={}, l={}) %}
 <div class="{{ <layout part="gutter" /> }} border-b border-gray-200 bg-white py-5 dark:border-gray-700 dark:bg-gray-800">

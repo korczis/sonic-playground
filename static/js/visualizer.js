@@ -694,6 +694,13 @@
     glowAt = now;
     var c = full.canvas();
     if (!c || !c.width) return;
+    if (window.SonicVisualizer.engine() === 'gl') {
+      // Reading a WebGL frame back stalls the GPU, and Chrome says so in the console: a three.js
+      // picture's glow follows its hue control (its palettes rotate by it) instead of its pixels.
+      var hue = Math.round((280 + (full.params().hue || 0)) % 360);
+      target.style.setProperty('--viz-glow', 'hsl(' + hue + ' 85% 62% / 0.55)');
+      return;
+    }
     if (!glowCanvas) { glowCanvas = document.createElement('canvas'); glowCanvas.width = 4; glowCanvas.height = 4; }
     var g = glowCanvas.getContext('2d', { willReadFrequently: true });
     try {

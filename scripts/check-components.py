@@ -15,7 +15,7 @@
     aria-description of a template is empty or comes from a string (tr, l[...]), never typed in
     one language (Czech pages announced "Breadcrumb", "Main", "Site").
 
-  - one page layout (rule project.page-layout): every page template opens its body with the
+  - one page layout (rule project.ui-components): every page template opens its body with the
     `layout` component, no template types the gutter classes (px-4 with xl:px-8) itself, and long
     text renders only through `prose` (no template sets the bare `format` class).
 

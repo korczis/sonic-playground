@@ -617,6 +617,10 @@ async function shot(page, name) {
       `shared link: the song is cued at its time (${now.source} at ${st.s.time})`);
     check(st.calls === 0 && !st.api && st.toast.length > 0, 'shared link: paused, the YouTube API not even loaded, and the toast says so');
     check(st.mode === 'prism' && st.params && st.params.warp === 1.5 && st.cinema === true, 'shared link: the picture, its live control and cinema');
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => window.SonicVisualizer.engine() !== 'gl'
+      || /^hsl\(\d+ 85% 62% \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
+    'shared link: a WebGL picture glows in its hue, no frame read back from the GPU');
     check(new URL(page.url()).searchParams.get('play') === key && new URL(page.url()).searchParams.get('t') === '42',
       'shared link: the URL keeps naming the song and its time');
     await page.click('#player [data-player-toggle]');
@@ -1362,12 +1366,12 @@ async function shot(page, name) {
     await context.close();
   }
 
-  // One page layout (rule project.page-layout), phone to wide desktop: nothing overflows the page
+  // One page layout (rule project.ui-components), phone to wide desktop: nothing overflows the page
   // or its content area, the page header and the first card share the gutter's left edge, long
   // text is mobile first (16 px or less on a phone, no content heading above the page title), a
   // plain page's text fills its card at a readable measure, and the navbar's title and controls
   // never overlap.
-  for (const width of [360, 768, 1440, 1920]) {
+  for (const width of [360, 768, 1280, 1440, 1920]) {
     const gutter = width >= 1280 ? 32 : 16;
     for (const [name, rel] of [['welcome', 'welcome/'], ['author', 'author/'], ['cs welcome', 'cs/welcome/'], ['track', sample.path],
       ['archive', 'archive/'], ['insights', 'insights/'], ['concepts', 'concept/'], ['yearbooks', 'yearbook/']]) {
@@ -1388,7 +1392,8 @@ async function shot(page, name) {
         const boxes = nav ? [...nav.querySelectorAll('a[href] span, button, a[href]:not(:has(span))')].filter(shown)
           .filter((el) => !el.closest('.sr-only') && !el.classList.contains('sr-only')).map((el) => {
             const range = document.createRange(); range.selectNodeContents(el);
-            const r = el.tagName === 'SPAN' ? range.getBoundingClientRect() : el.getBoundingClientRect();
+            // A span's text, unless it is cut off (truncate): then its own box is what shows.
+            const r = el.tagName === 'SPAN' && el.scrollWidth <= el.clientWidth ? range.getBoundingClientRect() : el.getBoundingClientRect();
             return { what: (el.textContent || el.getAttribute('aria-label') || el.tagName).trim().slice(0, 20), l: r.left, r: r.right, t: r.top, b: r.bottom };
           }) : [];
         const overlaps = [];
@@ -1406,6 +1411,8 @@ async function shot(page, name) {
           measure: p ? p.getBoundingClientRect().width / parseFloat(getComputedStyle(p).fontSize) : null,
           fill: card && prose ? Math.abs((left(prose) - left(card)) - pad(card)) + Math.abs(card.getBoundingClientRect().right - pad(card) - prose.getBoundingClientRect().right) : null,
           overlaps,
+          // The narrowest title column of an aside's track rows (welcome, author).
+          rows: Math.min(...[...document.querySelectorAll('aside [data-track] a > span.min-w-0')].map((el) => el.getBoundingClientRect().width)),
         };
       });
       const where = `${name} @${width}px`;
@@ -1416,6 +1423,7 @@ async function shot(page, name) {
       if (m.h2 !== null && m.h1 !== null) check(m.h2 <= m.h1, `layout: ${where} no content heading outgrows the page title (h2 ${m.h2}px, h1 ${m.h1}px)`);
       if (m.fill !== null) check(m.fill <= 2, `layout: ${where} the text fills its card, not a column centred in it (${m.fill}px off)`);
       if (m.fill !== null && m.measure !== null) check(m.measure <= 45, `layout: ${where} the text keeps a readable measure (${m.measure.toFixed(1)}em per line)`);
+      if (Number.isFinite(m.rows)) check(m.rows >= 80, `layout: ${where} the aside's track rows keep their titles readable (${Math.round(m.rows)}px)`);
       check(m.overlaps.length === 0, `layout: ${where} the navbar's title and controls do not overlap (${m.overlaps.join(', ')})`);
       check(errors.length === 0, `layout: ${where} no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
       if (width === 360 || width === 1920) await shot(page, `layout-${name.replace(' ', '-')}-${width}`);

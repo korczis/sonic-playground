@@ -1,6 +1,6 @@
 {#- A plain page (welcome, author): the Pro page header, the text in one card at reading width
     beside a derived aside (the newest reviews and the way into the explorer), one column on a
-    phone (rule project.page-layout). -#}
+    phone (rule project.ui-components). -#}
 {% extends "base.html" %}
 {%- block content %}
 {%- if page.description %}{% set lead = page.description %}{% else %}{% set lead = "" %}{% endif %}
@@ -16,7 +16,7 @@
     </div>
     <ul id="page-recent-list" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">
       {%- for t in catalog.tracks %}{% if loop.index > 5 %}{% break %}{% endif %}
-      {{ <track_row t={t} l={l} /> }}
+      {{ <track_row t={t} l={l} compact=true /> }}
       {%- endfor %}
     </ul>
     <div class="mt-4 flex flex-wrap gap-3 border-t border-gray-200 pt-4 dark:border-gray-700">

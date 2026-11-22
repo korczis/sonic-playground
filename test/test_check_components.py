@@ -1,4 +1,4 @@
-"""Unit tests of scripts/check-components.py's page-layout check (rule project.page-layout).
+"""Unit tests of scripts/check-components.py's page-layout check (rule project.ui-components).
 
     python3 -m unittest discover -s test -p 'test_check_components.py'
 """
