@@ -1,0 +1,11 @@
+term = "ballad"
+category = "form"
+wikipedia = "https://en.wikipedia.org/wiki/Ballad"
+see_also = ["verse-chorus form", "arrangement"]
+
+[en]
+definition = "In popular music, a slow song, usually about love or loss, that puts the melody and the singer's voice in front and keeps the accompaniment spare, often piano, acoustic guitar or strings. The word once meant a narrative folk song told in verses; the pop ballad keeps its intimacy rather than its story."
+
+[cs]
+term = "balada"
+definition = "V populární hudbě pomalá píseň, obvykle o lásce nebo ztrátě, která staví do popředí melodii a hlas zpěváka a doprovod drží střídmý, často klavír, akustickou kytaru nebo smyčce. Slovo kdysi označovalo vyprávěcí lidovou píseň o mnoha slokách; popová balada si z ní ponechala intimitu, ne příběh."

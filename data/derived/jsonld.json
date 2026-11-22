@@ -32625,6 +32625,116 @@
     }
    ]
   },
+  "d12-girls.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-girls/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Devils Night"
+     },
+     "isrcCode": "USIR10110472",
+     "name": "Girls",
+     "sameAs": [
+      "https://musicbrainz.org/recording/85c8eb3b-8d21-4af7-b3e5-7bb381199e39",
+      "https://www.youtube.com/watch?v=Pn4_ld8VW4Y"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/d12-girls/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-girls/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Devil's Night (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Devil%27s_Night_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Eminem on writing a diss track about Limp Bizkit",
+       "publisher": "Louder",
+       "url": "https://www.loudersound.com/features/eminem-on-writing-a-diss-track-about-limp-bizkit"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Eminem Name Drops Limp Bizkit + MGK in 'Guilty Conscience 2'",
+       "publisher": "Loudwire",
+       "url": "https://loudwire.com/eminem-limp-bizkit-mgk-guilty-conscience-2-lyrics/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Girls (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/85c8eb3b-8d21-4af7-b3e5-7bb381199e39"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Girls (Provided to YouTube by Universal Music Group)",
+       "publisher": "D12 - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=Pn4_ld8VW4Y"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Eminemův diss track proti Limp Bizkit z roku 2001, skrytý na konci debutového alba D12 Devil's Night: sólový výkon v Eminemově produkci, který si ze skupiny utahuje samplem jejího vlastního hitu Rollin'.",
+     "educationalLevel": "intermediate",
+     "headline": "D12 - Girls",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "diss track",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/diss-track/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hidden track",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hidden-track/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-girls/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/d12-girls/",
+     "wordCount": 540
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -33976,6 +34086,137 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/dada-life-so-young-so-high/",
      "wordCount": 498
+    }
+   ]
+  },
+  "dada-life-you-will-do-what-we-will-do.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dada-life-you-will-do-what-we-will-do/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dada Life",
+      "sameAs": "https://musicbrainz.org/artist/5b3cc848-942f-4363-8e89-b63a13c3fd0e"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "electro-house",
+      "big room",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Rules Of Dada"
+     },
+     "isrcCode": "SE22J1200120",
+     "name": "You Will Do What We Will Do",
+     "sameAs": [
+      "https://musicbrainz.org/recording/85130a77-63e1-4e15-beaa-c9f05df4851c",
+      "https://www.youtube.com/watch?v=krM2mH4fSVY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/dada-life-you-will-do-what-we-will-do/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dada-life-you-will-do-what-we-will-do/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Rules of Dada",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Rules_of_Dada"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dada Life",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dada_Life"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life - The Rules of Dada (Album Review) [So Much Dada]",
+       "publisher": "Your EDM",
+       "url": "https://newstaging.youredm.com/?p=4043"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Music Review: Dada Life 'The Rules Of Dada' via So Much Dada",
+       "publisher": "Magnetic Magazine",
+       "url": "https://magneticmag.com/2012/10/music-review-dada-life-the-rules-of-dada-via-so-much-dada/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "\"The Rules of Dada,\" Reviewed: Bubbling Over With Bangers",
+       "publisher": "Elektro Daily",
+       "url": "https://elektrodaily.com/the-rules-of-dada-reviewed-bubbling-over-with-bangers/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life: The Rules of Dada (album review)",
+       "publisher": "Dancing Astronaut",
+       "url": "https://dancingastronaut.com/2012/10/dada-life-the-rules-of-dada-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "You Will Do What We Will Do (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/85130a77-63e1-4e15-beaa-c9f05df4851c"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dada Life - You Will Do What We Will Do",
+       "publisher": "Dada Life (YouTube)",
+       "url": "https://www.youtube.com/watch?v=krM2mH4fSVY"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Pátá skladba alba The Rules of Dada švédského dua Dada Life z roku 2012: big room electro house s rozladěným riserem, dropem pilovité basy a vokodérovým hookem, který dva recenzenti přirovnali k Daft Punk.",
+     "educationalLevel": "introductory",
+     "headline": "Dada Life - You Will Do What We Will Do",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "drop",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/drop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocoder",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vocoder/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/dada-life-you-will-do-what-we-will-do/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/dada-life-you-will-do-what-we-will-do/",
+     "wordCount": 507
     }
    ]
   },
@@ -42591,6 +42832,131 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/dr-dre-let-s-get-high/",
      "wordCount": 510
+    }
+   ]
+  },
+  "dr-dre-light-speed.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dr-dre-light-speed/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dr. Dre",
+      "sameAs": "https://musicbrainz.org/artist/5f6ab597-f57a-40da-be9e-adad48708203"
+     },
+     "datePublished": "1999",
+     "genre": [
+      "hip-hop",
+      "rap",
+      "g-funk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "2001"
+     },
+     "isrcCode": "USIR19915076",
+     "name": "Light Speed",
+     "sameAs": [
+      "https://musicbrainz.org/recording/72d8aac7-f472-453a-90dc-57e619c7aef7",
+      "https://www.youtube.com/watch?v=Ct32AqbvS_Y"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/dr-dre-light-speed/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dr-dre-light-speed/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "2001 (Dr. Dre album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/2001_(Dr._Dre_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Ranking Every Song on Dr. Dre's '2001' Album",
+       "publisher": "Okayplayer",
+       "url": "https://www.okayplayer.com/dr-dre-2001-anniversary"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "1999 Rewind: Remembering Dr. Dre's 2001",
+       "publisher": "Soul In Stereo",
+       "url": "https://soulinstereo.com/2024/11/1999-rewind-remembering-dr-dres-2001.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Album Review: 2001 (Dr. Dre)",
+       "publisher": "Edge Induced Cohesion",
+       "url": "https://edgeinducedcohesion.blog/2022/02/24/album-review-2001-dr-dre"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "By All Means Necessary",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/By_All_Means_Necessary"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Light Speed (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/72d8aac7-f472-453a-90dc-57e619c7aef7"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Light Speed (Provided to YouTube by Universal Music Group)",
+       "publisher": "Dr. Dre - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=Ct32AqbvS_Y"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Devátá skladba alba 2001 od Dr. Dreho z roku 1999, kterou sdílí s Hittmanem: krátký opar nočního západopobřežního funku postavený na samplu Boogie Down Productions, který kritici řadí kamkoli od vrcholu alba až na poslední místo.",
+     "educationalLevel": "introductory",
+     "headline": "Dr. Dre - Light Speed",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/dr-dre-light-speed/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/dr-dre-light-speed/",
+     "wordCount": 528
     }
    ]
   },
@@ -52731,6 +53097,125 @@
     }
    ]
   },
+  "fischerspooner-happy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-happy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Fischerspooner",
+      "sameAs": "https://musicbrainz.org/artist/a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "electro-pop",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Odyssey"
+     },
+     "isrcCode": "USFS20400009",
+     "name": "Happy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/361788d5-b1be-451b-939b-c9a0741ef026",
+      "https://www.youtube.com/watch?v=9ZaBAyKTrtU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/fischerspooner-happy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-happy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's Odyssey Out Now",
+       "publisher": "Jackson Free Press",
+       "url": "https://www.mississippifreepress.org/fischerspooners-odyssey-out-now/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Odyssey (Fischerspooner album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Odyssey_(Fischerspooner_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/fischerspooner-odyssey-2495905588.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Album Review: Fischerspooner - Odyssey",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-fischerspooner-odyssey-11641/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's Odyssey",
+       "publisher": "Honolulu Star-Bulletin",
+       "url": "https://archives.starbulletin.com/2005/04/19/features/story2.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fischerspooner",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fischerspooner"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Happy (Provided to YouTube by Edsel)",
+       "publisher": "Fischerspooner - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=9ZaBAyKTrtU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Píseň o New Yorku z druhého alba Fischerspooner Odyssey (2005), dokončená s pomocí Lindy Perry, která v ní také krátce zpívá: synth-pop s bušící perkusí, později slyšitelný ve filmu Grandma's Boy.",
+     "educationalLevel": "introductory",
+     "headline": "Fischerspooner - Happy",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/soundtrack/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-happy/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/fischerspooner-happy/",
+     "wordCount": 440
+    }
+   ]
+  },
   "fischerspooner-natural-disaster.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -54003,6 +54488,130 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/florence-the-machine-mother/",
      "wordCount": 508
+    }
+   ]
+  },
+  "florence-the-machine-ship-to-wreck.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-ship-to-wreck/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Florence + The Machine",
+      "sameAs": "https://musicbrainz.org/artist/5fee3020-513b-48c2-b1f7-4681b01db0c6"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "folk",
+      "indie pop",
+      "alternative"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "How Big, How Blue, How Beautiful (Deluxe)"
+     },
+     "isrcCode": "GBUM71500288",
+     "name": "Ship To Wreck",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6f860ade-ef7d-4281-9803-cdb54a8812cb",
+      "https://www.youtube.com/watch?v=uiSNrq8lap4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/florence-the-machine-ship-to-wreck/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-ship-to-wreck/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Ship to Wreck",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ship_to_Wreck"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Florence + The Machine's \"Ship To Wreck\" Is A Big, Catchy Song About Being Self-Destructive",
+       "publisher": "The Fader",
+       "url": "https://thefader.com/2015/04/10/florence-the-machines-ship-to-wreck-is-a-catchy-song-about-being-self-destructive"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Watch Florence and the Machine's new video for latest single Ship To Wreck",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/news/latest-news/watch-florence-and-the-machines-new-video-for-latest-single-ship-to-wreck"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "The best Florence + The Machine songs ranked",
+       "publisher": "Ticketmaster",
+       "url": "https://discover.ticketmaster.co.uk/music/the-best-florence-the-machine-songs-ranked-56232/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ship to Wreck (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/6f860ade-ef7d-4281-9803-cdb54a8812cb"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Florence + The Machine - Ship To Wreck (Official Audio)",
+       "publisher": "FlorenceMachineVEVO",
+       "url": "https://www.youtube.com/watch?v=uiSNrq8lap4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Florence + The Machine - Ship To Wreck (The Odyssey - Chapter 4)",
+       "publisher": "FlorenceMachineVEVO",
+       "url": "https://www.youtube.com/watch?v=B9v8jLBrvug"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Úvodní skladba a druhý singl alba How Big, How Blue, How Beautiful (2015): cválající folk-popová píseň o sebedestrukci, jejíž jasné kytary, varhany a zvonkohra stojí proti textu o bezesném zmatku a lodi postavené jen proto, aby ztroskotala.",
+     "educationalLevel": "introductory",
+     "headline": "Florence + The Machine - Ship To Wreck",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-ship-to-wreck/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/florence-the-machine-ship-to-wreck/",
+     "wordCount": 488
     }
    ]
   },
@@ -60907,6 +61516,119 @@
     }
    ]
   },
+  "gin-wigmore-saturday-smile.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-saturday-smile/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gin Wigmore",
+      "sameAs": "https://musicbrainz.org/artist/cb0b7933-a5bc-48dc-a36b-00315d12ca8c"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "ballad",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gravel & Wine"
+     },
+     "isrcCode": "AUUM71101244",
+     "name": "Saturday Smile",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c963ee4f-a44e-405e-ac14-322dbe40bba0",
+      "https://www.youtube.com/watch?v=VbRZrgms8zo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gin-wigmore-saturday-smile/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-saturday-smile/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Gravel & Wine",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gravel_%26_Wine"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album review: Gin Wigmore - Gravel & Wine",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-gin-wigmore-gravel-wine/6IG2ILABL2BHEZ5EMZMNB7KPXQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Gin on the Rocks",
+       "publisher": "That Music Magazine",
+       "url": "https://thatmusicmag.com/gin-on-the-rocks/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Gin Wigmore: Gravel And Wine",
+       "publisher": "Beat",
+       "url": "https://beat.com.au/gin-wigmore-gravel-and-wine"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Saturday Smile (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/c963ee4f-a44e-405e-ac14-322dbe40bba0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Saturday Smile (Provided to YouTube by Universal Music Group)",
+       "publisher": "Gin Wigmore - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=VbRZrgms8zo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Jedna ze dvou balad, které novozélandský kritik vyzdvihl na albu Gin Wigmore Gravel & Wine z roku 2011, napsaná s Ericem Rossem, jenž v ní hraje na klavír: milostná píseň o tom, jak si být jistá člověkem a nejistá svým citem.",
+     "educationalLevel": "introductory",
+     "headline": "Gin Wigmore - Saturday Smile",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "ballad",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/ballad/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-saturday-smile/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gin-wigmore-saturday-smile/",
+     "wordCount": 510
+    }
+   ]
+  },
   "gin-wigmore-suffa-logic-willing-to-die.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -64616,6 +65338,136 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-hot-chip-kids-with-guns-hot-chip-remix/",
      "wordCount": 481
+    }
+   ]
+  },
+  "gorillaz-martina-topley-bird-roots-manuva-all-alone.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-martina-topley-bird-roots-manuva-all-alone/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz, Martina Topley-Bird, Roots Manuva",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "hip-hop",
+      "alternative",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Demon Days"
+     },
+     "isrcCode": "GBAYE0500176",
+     "name": "All Alone",
+     "sameAs": [
+      "https://musicbrainz.org/recording/92da1f05-0d96-441b-8e63-661a31779ff7",
+      "https://www.youtube.com/watch?v=VHhND-BkWdk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-martina-topley-bird-roots-manuva-all-alone/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-martina-topley-bird-roots-manuva-all-alone/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Demon Days",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Demon_Days"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Gorillaz: Demon Days",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/gorillaz-demon-2495924650.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Gorillaz: Demon Days",
+       "publisher": "NZ Herald",
+       "url": "https://nzherald.co.nz/lifestyle/emgorillazem-demon-days/SC577ZPRDA5A2BLR6L66CHQYNY"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "The Lasting Impact Of Gorillaz's 'Demon Days': From Making GRAMMYs History To Political Foreshadowing",
+       "publisher": "Grammy.com",
+       "url": "https://grammy.com/news/lasting-impact-of-gorillaz-demon-days-grammys"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Roots Manuva",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Roots_Manuva"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Martina Topley-Bird",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Martina_Topley-Bird"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "All Alone (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/92da1f05-0d96-441b-8e63-661a31779ff7"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - All Alone - Demon Days",
+       "publisher": "Gorillaz (YouTube)",
+       "url": "https://www.youtube.com/watch?v=VHhND-BkWdk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Desátá skladba alba Demon Days od Gorillaz (2005): Roots Manuva rapuje nad podkladem nahraným zčásti v Africe a Martina Topley-Bird promění závěr v to, co PopMatters nazval éterickým oblakem krásy.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz, Martina Topley-Bird, Roots Manuva - All Alone",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "coda",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/coda/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-martina-topley-bird-roots-manuva-all-alone/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-martina-topley-bird-roots-manuva-all-alone/",
+     "wordCount": 491
     }
    ]
   },
@@ -70528,6 +71380,127 @@
     }
    ]
   },
+  "hindi-zahra-fascination-remastered-version.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/hindi-zahra-fascination-remastered-version/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Hindi Zahra",
+      "sameAs": "https://musicbrainz.org/artist/34964ede-3103-4023-93c8-ee514abdcb3b"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "acoustic",
+      "folk",
+      "world"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Handmade"
+     },
+     "isrcCode": "FR9W10905088",
+     "name": "Fascination (Remastered Version)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9e2d4181-d981-48bc-8c7c-61b1b74eef69",
+      "https://www.youtube.com/watch?v=Iid4NdqqQA0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/hindi-zahra-fascination-remastered-version/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/hindi-zahra-fascination-remastered-version/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Download: Hindi Zahra, 'Fascination'",
+       "publisher": "Buzzbands.LA",
+       "url": "https://buzzbands.la/?p=31162"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hindi Zahra",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hindi_Zahra"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Handmade (Hindi Zahra album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Handmade_(Hindi_Zahra_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Fascination (Radio Edit)",
+       "publisher": "Qobuz",
+       "url": "https://www.qobuz.com/ie-en/album/fascination-hindi-zahra-/j9ndu8jlwpb8a"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Handmade",
+       "publisher": "Songlines",
+       "url": "https://www.songlines.co.uk/review/handmade"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Fascination (Radio Edit) (Provided to YouTube by Symphonic Distribution)",
+       "publisher": "Hindi Zahra - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=GLAnxngEiUs"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Fascination (Remastered Version) (Provided to YouTube by iMusician Digital AG)",
+       "publisher": "Hindi Zahra - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=Iid4NdqqQA0"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Něžná akustická píseň z debutového alba Hindi Zahry Handmade z roku 2010, vydaná v roce 2011 jako singl v rádiové verzi a zde v remasterované podobě alba: výkladní skříň hlasu, který jeden losangeleský hudební blog označil za konejšivý, a přitom plný textury.",
+     "educationalLevel": "introductory",
+     "headline": "Hindi Zahra - Fascination (Remastered Version)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remastering",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remastering/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/hindi-zahra-fascination-remastered-version/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/hindi-zahra-fascination-remastered-version/",
+     "wordCount": 465
+    }
+   ]
+  },
   "hindi-zahra-imik-si-mik-remastered-version.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -72880,6 +73853,157 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/ian-brown-the-world-is-yours/",
      "wordCount": 464
+    }
+   ]
+  },
+  "ian-brown-time-is-my-everything.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ian-brown-time-is-my-everything/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ian Brown",
+      "sameAs": "https://musicbrainz.org/artist/182d5d8a-94c7-4ef4-8222-a1838353a37b"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "alternative rock",
+      "indie"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Greatest"
+     },
+     "name": "Time Is My Everything",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4d111e32-d763-47ff-ab2b-8b856eec62ae",
+      "https://www.youtube.com/watch?v=qoDp1nG20Ik"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/ian-brown-time-is-my-everything/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ian-brown-time-is-my-everything/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Solarized (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Solarized_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Greatest (Ian Brown album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Greatest_(Ian_Brown_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Time Is My Everything",
+       "publisher": "Official Charts Company",
+       "url": "https://www.officialcharts.com/songs/ian-brown-time-is-my-everything/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "This Is My Everything",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/this-is-my-everything-2776912"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Solarized",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/solarized-2759465"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Ian Brown: Solarized",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/brownian-solarized-2495850658.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Ian Brown : Solarized",
+       "publisher": "Treble",
+       "url": "https://www.treblezine.com/ian-brown-solarized/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Ian Brown - Solarized",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/ian_brown-solarized"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Ian Brown: Solarized",
+       "publisher": "The Providence Phoenix",
+       "url": "https://providencephoenix.com/music/otr/documents/04491311.asp"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ian Brown",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ian_Brown"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Time Is My Everything (Provided to YouTube by Universal Music Group)",
+       "publisher": "Ian Brown - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=qoDp1nG20Ik"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Ian Brown - Time Is My Everything (music video)",
+       "publisher": "IanBrownVEVO (YouTube)",
+       "url": "https://www.youtube.com/watch?v=jW6cLKlKOek"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Singl Iana Browna z ledna 2005 z alba Solarized, napsaný s Timem Huttonem a vedený žesti v mariachi stylu, které kritici přirovnávali k soundtrackům spaghetti westernů a k albu Forever Changes skupiny Love; v Británii vystoupal na 15. místo a dostal se na výběr The Greatest.",
+     "educationalLevel": "introductory",
+     "headline": "Ian Brown - Time Is My Everything",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/ian-brown-time-is-my-everything/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/ian-brown-time-is-my-everything/",
+     "wordCount": 419
     }
    ]
   },
@@ -78511,6 +79635,117 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/john-newman-love-me-again/",
      "wordCount": 510
+    }
+   ]
+  },
+  "john-newman-love-thy-brother-love-me-again-love-thy-brother-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "John Newman, Love Thy Brother",
+      "sameAs": "https://musicbrainz.org/artist/589ef702-7f3a-4a1c-8f2c-4727005cfc0e"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "indie dance",
+      "remix",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Love Me Again"
+     },
+     "isrcCode": "GBUM71302818",
+     "name": "Love Me Again (Love Thy Brother Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/41eacb9d-f738-49d3-a1b8-d6a0e85cb3a5",
+      "https://www.youtube.com/watch?v=usrBkVegrEo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Love Me Again (John Newman song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Love_Me_Again_(John_Newman_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "John Newman - Love Me Again (Love Thy Brother Remix)",
+       "publisher": "My Music Is Better Than Yours",
+       "url": "https://mymusicisbetterthanyours.com/2013/06/john-newman-love-me-again-love-thy-brother-remix/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Blood Runs Thicker Than Water with Love Thy Brother",
+       "publisher": "Vice (Noisey)",
+       "url": "https://www.vice.com/en/article/blood-runs-thicker-than-water-with-love-thy-brother/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Love Me Again (Love Thy Brother remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/41eacb9d-f738-49d3-a1b8-d6a0e85cb3a5"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Love Me Again (Love Thy Brother Remix)",
+       "publisher": "YouTube (John Newman - Topic)",
+       "url": "https://www.youtube.com/watch?v=usrBkVegrEo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Remix debutového singlu Johna Newmana od montrealských bratrů Love Thy Brother z roku 2013, poslední ze čtyř v jeho digitálním balíčku: Newmanův hřejivý hlas proti funkové elektrické kytaře a big room klavíru.",
+     "educationalLevel": "introductory",
+     "headline": "John Newman, Love Thy Brother - Love Me Again (Love Thy Brother Remix)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/groove/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/",
+     "wordCount": 451
     }
    ]
   },
@@ -154912,6 +156147,113 @@
     }
    ]
   },
+  "d12-girls.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-girls/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Devils Night"
+     },
+     "isrcCode": "USIR10110472",
+     "name": "Girls",
+     "sameAs": [
+      "https://musicbrainz.org/recording/85c8eb3b-8d21-4af7-b3e5-7bb381199e39",
+      "https://www.youtube.com/watch?v=Pn4_ld8VW4Y"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-girls/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-girls/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Devil's Night (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Devil%27s_Night_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Eminem on writing a diss track about Limp Bizkit",
+       "publisher": "Louder",
+       "url": "https://www.loudersound.com/features/eminem-on-writing-a-diss-track-about-limp-bizkit"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Eminem Name Drops Limp Bizkit + MGK in 'Guilty Conscience 2'",
+       "publisher": "Loudwire",
+       "url": "https://loudwire.com/eminem-limp-bizkit-mgk-guilty-conscience-2-lyrics/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Girls (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/85c8eb3b-8d21-4af7-b3e5-7bb381199e39"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Girls (Provided to YouTube by Universal Music Group)",
+       "publisher": "D12 - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=Pn4_ld8VW4Y"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Eminem's 2001 diss track against Limp Bizkit, hidden at the end of D12's debut album Devil's Night: a solo performance, produced by Eminem, that mocks the band with a sample of their own hit Rollin'.",
+     "educationalLevel": "intermediate",
+     "headline": "D12 - Girls",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "diss track",
+       "url": "https://korczis.github.io/sonic-playground/concept/diss-track/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hidden track",
+       "url": "https://korczis.github.io/sonic-playground/concept/hidden-track/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/d12-girls/",
+     "wordCount": 553
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -156233,6 +157575,134 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/dada-life-so-young-so-high/",
      "wordCount": 546
+    }
+   ]
+  },
+  "dada-life-you-will-do-what-we-will-do.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dada-life-you-will-do-what-we-will-do/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dada Life",
+      "sameAs": "https://musicbrainz.org/artist/5b3cc848-942f-4363-8e89-b63a13c3fd0e"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "electro-house",
+      "big room",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Rules Of Dada"
+     },
+     "isrcCode": "SE22J1200120",
+     "name": "You Will Do What We Will Do",
+     "sameAs": [
+      "https://musicbrainz.org/recording/85130a77-63e1-4e15-beaa-c9f05df4851c",
+      "https://www.youtube.com/watch?v=krM2mH4fSVY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dada-life-you-will-do-what-we-will-do/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dada-life-you-will-do-what-we-will-do/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Rules of Dada",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Rules_of_Dada"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dada Life",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dada_Life"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life - The Rules of Dada (Album Review) [So Much Dada]",
+       "publisher": "Your EDM",
+       "url": "https://newstaging.youredm.com/?p=4043"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Music Review: Dada Life 'The Rules Of Dada' via So Much Dada",
+       "publisher": "Magnetic Magazine",
+       "url": "https://magneticmag.com/2012/10/music-review-dada-life-the-rules-of-dada-via-so-much-dada/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "\"The Rules of Dada,\" Reviewed: Bubbling Over With Bangers",
+       "publisher": "Elektro Daily",
+       "url": "https://elektrodaily.com/the-rules-of-dada-reviewed-bubbling-over-with-bangers/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Dada Life: The Rules of Dada (album review)",
+       "publisher": "Dancing Astronaut",
+       "url": "https://dancingastronaut.com/2012/10/dada-life-the-rules-of-dada-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "You Will Do What We Will Do (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/85130a77-63e1-4e15-beaa-c9f05df4851c"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dada Life - You Will Do What We Will Do",
+       "publisher": "Dada Life (YouTube)",
+       "url": "https://www.youtube.com/watch?v=krM2mH4fSVY"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Track five of Dada Life's 2012 album The Rules of Dada: big-room electro house with a detuned riser, a sawtooth bass drop and a vocoded hook that two reviewers compared to Daft Punk.",
+     "educationalLevel": "introductory",
+     "headline": "Dada Life - You Will Do What We Will Do",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "drop",
+       "url": "https://korczis.github.io/sonic-playground/concept/drop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocoder",
+       "url": "https://korczis.github.io/sonic-playground/concept/vocoder/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/dada-life-you-will-do-what-we-will-do/",
+     "wordCount": 561
     }
    ]
   },
@@ -164623,6 +166093,128 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/dr-dre-let-s-get-high/",
      "wordCount": 543
+    }
+   ]
+  },
+  "dr-dre-light-speed.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dr-dre-light-speed/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Dr. Dre",
+      "sameAs": "https://musicbrainz.org/artist/5f6ab597-f57a-40da-be9e-adad48708203"
+     },
+     "datePublished": "1999",
+     "genre": [
+      "hip-hop",
+      "rap",
+      "g-funk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "2001"
+     },
+     "isrcCode": "USIR19915076",
+     "name": "Light Speed",
+     "sameAs": [
+      "https://musicbrainz.org/recording/72d8aac7-f472-453a-90dc-57e619c7aef7",
+      "https://www.youtube.com/watch?v=Ct32AqbvS_Y"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/dr-dre-light-speed/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/dr-dre-light-speed/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "2001 (Dr. Dre album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/2001_(Dr._Dre_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Ranking Every Song on Dr. Dre's '2001' Album",
+       "publisher": "Okayplayer",
+       "url": "https://www.okayplayer.com/dr-dre-2001-anniversary"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "1999 Rewind: Remembering Dr. Dre's 2001",
+       "publisher": "Soul In Stereo",
+       "url": "https://soulinstereo.com/2024/11/1999-rewind-remembering-dr-dres-2001.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Album Review: 2001 (Dr. Dre)",
+       "publisher": "Edge Induced Cohesion",
+       "url": "https://edgeinducedcohesion.blog/2022/02/24/album-review-2001-dr-dre"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "By All Means Necessary",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/By_All_Means_Necessary"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Light Speed (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/72d8aac7-f472-453a-90dc-57e619c7aef7"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Light Speed (Provided to YouTube by Universal Music Group)",
+       "publisher": "Dr. Dre - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=Ct32AqbvS_Y"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The ninth track of Dr. Dre's 1999 album 2001, shared with Hittman: a short fog of nocturnal West Coast funk built on a Boogie Down Productions sample, which critics have ranked anywhere from a highlight to last place.",
+     "educationalLevel": "introductory",
+     "headline": "Dr. Dre - Light Speed",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/dr-dre-light-speed/",
+     "wordCount": 540
     }
    ]
   },
@@ -174505,6 +176097,122 @@
     }
    ]
   },
+  "fischerspooner-happy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-happy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Fischerspooner",
+      "sameAs": "https://musicbrainz.org/artist/a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "electro-pop",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Odyssey"
+     },
+     "isrcCode": "USFS20400009",
+     "name": "Happy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/361788d5-b1be-451b-939b-c9a0741ef026",
+      "https://www.youtube.com/watch?v=9ZaBAyKTrtU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-happy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-happy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's Odyssey Out Now",
+       "publisher": "Jackson Free Press",
+       "url": "https://www.mississippifreepress.org/fischerspooners-odyssey-out-now/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Odyssey (Fischerspooner album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Odyssey_(Fischerspooner_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/fischerspooner-odyssey-2495905588.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Album Review: Fischerspooner - Odyssey",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-fischerspooner-odyssey-11641/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's Odyssey",
+       "publisher": "Honolulu Star-Bulletin",
+       "url": "https://archives.starbulletin.com/2005/04/19/features/story2.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fischerspooner",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fischerspooner"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Happy (Provided to YouTube by Edsel)",
+       "publisher": "Fischerspooner - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=9ZaBAyKTrtU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "A song about New York City from Fischerspooner's second album Odyssey (2005), finished with help from Linda Perry, who also sings a cameo: synth-pop with battering percussion, later heard in the film Grandma's Boy.",
+     "educationalLevel": "introductory",
+     "headline": "Fischerspooner - Happy",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/concept/soundtrack/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/fischerspooner-happy/",
+     "wordCount": 487
+    }
+   ]
+  },
   "fischerspooner-natural-disaster.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -175744,6 +177452,127 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/florence-the-machine-mother/",
      "wordCount": 546
+    }
+   ]
+  },
+  "florence-the-machine-ship-to-wreck.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-ship-to-wreck/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Florence + The Machine",
+      "sameAs": "https://musicbrainz.org/artist/5fee3020-513b-48c2-b1f7-4681b01db0c6"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "folk",
+      "indie pop",
+      "alternative"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "How Big, How Blue, How Beautiful (Deluxe)"
+     },
+     "isrcCode": "GBUM71500288",
+     "name": "Ship To Wreck",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6f860ade-ef7d-4281-9803-cdb54a8812cb",
+      "https://www.youtube.com/watch?v=uiSNrq8lap4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-ship-to-wreck/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/florence-the-machine-ship-to-wreck/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Ship to Wreck",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ship_to_Wreck"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Florence + The Machine's \"Ship To Wreck\" Is A Big, Catchy Song About Being Self-Destructive",
+       "publisher": "The Fader",
+       "url": "https://thefader.com/2015/04/10/florence-the-machines-ship-to-wreck-is-a-catchy-song-about-being-self-destructive"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Watch Florence and the Machine's new video for latest single Ship To Wreck",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/news/latest-news/watch-florence-and-the-machines-new-video-for-latest-single-ship-to-wreck"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "The best Florence + The Machine songs ranked",
+       "publisher": "Ticketmaster",
+       "url": "https://discover.ticketmaster.co.uk/music/the-best-florence-the-machine-songs-ranked-56232/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ship to Wreck (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/6f860ade-ef7d-4281-9803-cdb54a8812cb"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Florence + The Machine - Ship To Wreck (Official Audio)",
+       "publisher": "FlorenceMachineVEVO",
+       "url": "https://www.youtube.com/watch?v=uiSNrq8lap4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Florence + The Machine - Ship To Wreck (The Odyssey - Chapter 4)",
+       "publisher": "FlorenceMachineVEVO",
+       "url": "https://www.youtube.com/watch?v=B9v8jLBrvug"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The opening track and second single of How Big, How Blue, How Beautiful (2015): a galloping folk-pop song about self-destruction, its bright guitars, organ and glockenspiel set against a lyric of sleepless confusion and a ship built only to be wrecked.",
+     "educationalLevel": "introductory",
+     "headline": "Florence + The Machine - Ship To Wreck",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/florence-the-machine-ship-to-wreck/",
+     "wordCount": 535
     }
    ]
   },
@@ -182468,6 +184297,116 @@
     }
    ]
   },
+  "gin-wigmore-saturday-smile.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-saturday-smile/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gin Wigmore",
+      "sameAs": "https://musicbrainz.org/artist/cb0b7933-a5bc-48dc-a36b-00315d12ca8c"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "ballad",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gravel & Wine"
+     },
+     "isrcCode": "AUUM71101244",
+     "name": "Saturday Smile",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c963ee4f-a44e-405e-ac14-322dbe40bba0",
+      "https://www.youtube.com/watch?v=VbRZrgms8zo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-saturday-smile/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gin-wigmore-saturday-smile/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Gravel & Wine",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Gravel_%26_Wine"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album review: Gin Wigmore - Gravel & Wine",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-gin-wigmore-gravel-wine/6IG2ILABL2BHEZ5EMZMNB7KPXQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Gin on the Rocks",
+       "publisher": "That Music Magazine",
+       "url": "https://thatmusicmag.com/gin-on-the-rocks/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Gin Wigmore: Gravel And Wine",
+       "publisher": "Beat",
+       "url": "https://beat.com.au/gin-wigmore-gravel-and-wine"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Saturday Smile (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/c963ee4f-a44e-405e-ac14-322dbe40bba0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Saturday Smile (Provided to YouTube by Universal Music Group)",
+       "publisher": "Gin Wigmore - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=VbRZrgms8zo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "One of the two ballads a New Zealand critic singled out on Gin Wigmore's 2011 album Gravel & Wine, written with Eric Rosse, who plays piano on it: a love song about being sure of a person and unsure of the feeling.",
+     "educationalLevel": "introductory",
+     "headline": "Gin Wigmore - Saturday Smile",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "ballad",
+       "url": "https://korczis.github.io/sonic-playground/concept/ballad/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gin-wigmore-saturday-smile/",
+     "wordCount": 536
+    }
+   ]
+  },
   "gin-wigmore-suffa-logic-willing-to-die.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -186081,6 +188020,133 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/gorillaz-hot-chip-kids-with-guns-hot-chip-remix/",
      "wordCount": 514
+    }
+   ]
+  },
+  "gorillaz-martina-topley-bird-roots-manuva-all-alone.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-martina-topley-bird-roots-manuva-all-alone/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz, Martina Topley-Bird, Roots Manuva",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "hip-hop",
+      "alternative",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Demon Days"
+     },
+     "isrcCode": "GBAYE0500176",
+     "name": "All Alone",
+     "sameAs": [
+      "https://musicbrainz.org/recording/92da1f05-0d96-441b-8e63-661a31779ff7",
+      "https://www.youtube.com/watch?v=VHhND-BkWdk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-martina-topley-bird-roots-manuva-all-alone/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-martina-topley-bird-roots-manuva-all-alone/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Demon Days",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Demon_Days"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Gorillaz: Demon Days",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/gorillaz-demon-2495924650.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Gorillaz: Demon Days",
+       "publisher": "NZ Herald",
+       "url": "https://nzherald.co.nz/lifestyle/emgorillazem-demon-days/SC577ZPRDA5A2BLR6L66CHQYNY"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "The Lasting Impact Of Gorillaz's 'Demon Days': From Making GRAMMYs History To Political Foreshadowing",
+       "publisher": "Grammy.com",
+       "url": "https://grammy.com/news/lasting-impact-of-gorillaz-demon-days-grammys"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Roots Manuva",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Roots_Manuva"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Martina Topley-Bird",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Martina_Topley-Bird"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "All Alone (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/92da1f05-0d96-441b-8e63-661a31779ff7"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - All Alone - Demon Days",
+       "publisher": "Gorillaz (YouTube)",
+       "url": "https://www.youtube.com/watch?v=VHhND-BkWdk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Track ten of Gorillaz's Demon Days (2005): Roots Manuva raps over a backing track partly recorded in Africa, and Martina Topley-Bird turns the end into what PopMatters called an ethereal cloud of lovely.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz, Martina Topley-Bird, Roots Manuva - All Alone",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "coda",
+       "url": "https://korczis.github.io/sonic-playground/concept/coda/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-martina-topley-bird-roots-manuva-all-alone/",
+     "wordCount": 524
     }
    ]
   },
@@ -191843,6 +193909,124 @@
     }
    ]
   },
+  "hindi-zahra-fascination-remastered-version.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/hindi-zahra-fascination-remastered-version/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Hindi Zahra",
+      "sameAs": "https://musicbrainz.org/artist/34964ede-3103-4023-93c8-ee514abdcb3b"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "acoustic",
+      "folk",
+      "world"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Handmade"
+     },
+     "isrcCode": "FR9W10905088",
+     "name": "Fascination (Remastered Version)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9e2d4181-d981-48bc-8c7c-61b1b74eef69",
+      "https://www.youtube.com/watch?v=Iid4NdqqQA0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/hindi-zahra-fascination-remastered-version/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/hindi-zahra-fascination-remastered-version/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Download: Hindi Zahra, 'Fascination'",
+       "publisher": "Buzzbands.LA",
+       "url": "https://buzzbands.la/?p=31162"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hindi Zahra",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hindi_Zahra"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Handmade (Hindi Zahra album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Handmade_(Hindi_Zahra_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Fascination (Radio Edit)",
+       "publisher": "Qobuz",
+       "url": "https://www.qobuz.com/ie-en/album/fascination-hindi-zahra-/j9ndu8jlwpb8a"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Handmade",
+       "publisher": "Songlines",
+       "url": "https://www.songlines.co.uk/review/handmade"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Fascination (Radio Edit) (Provided to YouTube by Symphonic Distribution)",
+       "publisher": "Hindi Zahra - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=GLAnxngEiUs"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Fascination (Remastered Version) (Provided to YouTube by iMusician Digital AG)",
+       "publisher": "Hindi Zahra - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=Iid4NdqqQA0"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "A sweet acoustic song from Hindi Zahra's 2010 debut Handmade, issued as a radio-edit single in 2011 and heard here in the album's remastered version, a showcase for what one Los Angeles music blog called her soothing yet textured voice.",
+     "educationalLevel": "introductory",
+     "headline": "Hindi Zahra - Fascination (Remastered Version)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remastering",
+       "url": "https://korczis.github.io/sonic-playground/concept/remastering/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/hindi-zahra-fascination-remastered-version/",
+     "wordCount": 489
+    }
+   ]
+  },
   "hindi-zahra-imik-si-mik-remastered-version.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -194138,6 +196322,154 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/ian-brown-the-world-is-yours/",
      "wordCount": 508
+    }
+   ]
+  },
+  "ian-brown-time-is-my-everything.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ian-brown-time-is-my-everything/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ian Brown",
+      "sameAs": "https://musicbrainz.org/artist/182d5d8a-94c7-4ef4-8222-a1838353a37b"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "alternative rock",
+      "indie"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Greatest"
+     },
+     "name": "Time Is My Everything",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4d111e32-d763-47ff-ab2b-8b856eec62ae",
+      "https://www.youtube.com/watch?v=qoDp1nG20Ik"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ian-brown-time-is-my-everything/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ian-brown-time-is-my-everything/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Solarized (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Solarized_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Greatest (Ian Brown album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Greatest_(Ian_Brown_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Time Is My Everything",
+       "publisher": "Official Charts Company",
+       "url": "https://www.officialcharts.com/songs/ian-brown-time-is-my-everything/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "This Is My Everything",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/this-is-my-everything-2776912"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Solarized",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/solarized-2759465"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Ian Brown: Solarized",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/brownian-solarized-2495850658.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Ian Brown : Solarized",
+       "publisher": "Treble",
+       "url": "https://www.treblezine.com/ian-brown-solarized/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Ian Brown - Solarized",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/ian_brown-solarized"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Ian Brown: Solarized",
+       "publisher": "The Providence Phoenix",
+       "url": "https://providencephoenix.com/music/otr/documents/04491311.asp"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ian Brown",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ian_Brown"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Time Is My Everything (Provided to YouTube by Universal Music Group)",
+       "publisher": "Ian Brown - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=qoDp1nG20Ik"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Ian Brown - Time Is My Everything (music video)",
+       "publisher": "IanBrownVEVO (YouTube)",
+       "url": "https://www.youtube.com/watch?v=jW6cLKlKOek"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Ian Brown's January 2005 single from Solarized, written with Tim Hutton and led by mariachi-style brass that critics compared to spaghetti-western soundtracks and Love's Forever Changes; it reached number 15 in the UK and was collected on The Greatest.",
+     "educationalLevel": "introductory",
+     "headline": "Ian Brown - Time Is My Everything",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/ian-brown-time-is-my-everything/",
+     "wordCount": 452
     }
    ]
   },
@@ -199619,6 +201951,114 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/john-newman-love-me-again/",
      "wordCount": 543
+    }
+   ]
+  },
+  "john-newman-love-thy-brother-love-me-again-love-thy-brother-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "John Newman, Love Thy Brother",
+      "sameAs": "https://musicbrainz.org/artist/589ef702-7f3a-4a1c-8f2c-4727005cfc0e"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "indie dance",
+      "remix",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Love Me Again"
+     },
+     "isrcCode": "GBUM71302818",
+     "name": "Love Me Again (Love Thy Brother Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/41eacb9d-f738-49d3-a1b8-d6a0e85cb3a5",
+      "https://www.youtube.com/watch?v=usrBkVegrEo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Love Me Again (John Newman song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Love_Me_Again_(John_Newman_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "John Newman - Love Me Again (Love Thy Brother Remix)",
+       "publisher": "My Music Is Better Than Yours",
+       "url": "https://mymusicisbetterthanyours.com/2013/06/john-newman-love-me-again-love-thy-brother-remix/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Blood Runs Thicker Than Water with Love Thy Brother",
+       "publisher": "Vice (Noisey)",
+       "url": "https://www.vice.com/en/article/blood-runs-thicker-than-water-with-love-thy-brother/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Love Me Again (Love Thy Brother remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/41eacb9d-f738-49d3-a1b8-d6a0e85cb3a5"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Love Me Again (Love Thy Brother Remix)",
+       "publisher": "YouTube (John Newman - Topic)",
+       "url": "https://www.youtube.com/watch?v=usrBkVegrEo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The Montreal brothers Love Thy Brother's 2013 remix of John Newman's debut single, the last of four in its digital bundle: Newman's warm voice set against funky electric guitar and big-room piano.",
+     "educationalLevel": "introductory",
+     "headline": "John Newman, Love Thy Brother - Love Me Again (Love Thy Brother Remix)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/concept/groove/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/john-newman-love-thy-brother-love-me-again-love-thy-brother-remix/",
+     "wordCount": 481
     }
    ]
   },

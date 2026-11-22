@@ -1,0 +1,11 @@
+term = "diss track"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Diss_track"
+see_also = ["rapping", "sampling"]
+
+[en]
+definition = "A song written to attack a named rival, usually another artist. Diss tracks grew out of hip-hop's battle tradition, where verbal skill decides who wins; they often quote or parody the target's own music, and a reply track can turn one song into a public feud."
+
+[cs]
+term = "diss track"
+definition = "Píseň napsaná jako útok na jmenovaného soka, obvykle jiného umělce. Diss tracky vyrostly z hip-hopové tradice battlů, v nichž o vítězi rozhoduje slovní obratnost; často citují nebo parodují hudbu samotného terče a odpověď na ně může z jediné písně udělat veřejný spor."

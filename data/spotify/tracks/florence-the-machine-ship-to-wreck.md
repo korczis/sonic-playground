@@ -6,8 +6,9 @@ artists: ["Florence + The Machine"]
 album: "How Big, How Blue, How Beautiful (Deluxe)"
 duration: "3:54"
 spotify: {"track": "3dEFa9KjOLEZl980ctEEv1", "album": "2jn2n5OkuHliOLKCqHnjXV", "artists": ["1moxjboGR7GNWYIMWsRjgG"]}
-keys: {"fold": "florencethemachine|shiptowreck"}
-status: "missing"
+keys: {"fold": "florencethemachine|shiptowreck", "isrc": "GBUM71500288", "musicbrainz": "6f860ade-ef7d-4281-9803-cdb54a8812cb"}
+review: "florence-the-machine-ship-to-wreck.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *How Big, How Blue, How Beautiful (Deluxe)*, 3:54.
 A liked song.
-No review yet.
+Reviewed: content/florence-the-machine-ship-to-wreck.md.
