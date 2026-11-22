@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONF = json.loads((ROOT / "data/visualizer.json").read_text(encoding="utf-8"))
 JS = (ROOT / "static/js/visualizer.js").read_text(encoding="utf-8")
+AUDIO = (ROOT / "static/js/viz-audio.js").read_text(encoding="utf-8")
 JS_2D = (ROOT / "static/js/viz-2d.js").read_text(encoding="utf-8")
 JS_GL = (ROOT / "static/js/viz-gl.js").read_text(encoding="utf-8")
 PLAYER = (ROOT / "static/js/player.js").read_text(encoding="utf-8")
@@ -139,13 +140,18 @@ class Visualizer(unittest.TestCase):
                             "nothing blends or fades the video itself (YouTube's terms)")
 
     def test_no_source_listens_by_itself(self):
-        # getDisplayMedia / getUserMedia run only in listen(), and listen() is called only from
-        # the toolbar's click handler (or by a caller of the public API): nothing asks on load.
+        # getDisplayMedia / getUserMedia run only in SonicAudio's listen() (static/js/viz-audio.js),
+        # which nothing in it calls; the visualiser calls it only from the toolbar's click handler
+        # (or a caller of the public API): nothing asks on load.
         handler = JS.index("s.addEventListener('click'")
         handler_end = JS.index("s.addEventListener('input'")
-        self.assertEqual(JS.count("getDisplayMedia("), 1)
-        self.assertEqual(JS.count("getUserMedia("), 1)
-        calls = [m.start() for m in re.finditer(r"(?<![\w.])(?<!function )listen\(", JS)]
+        for src in (JS, PLAYER):
+            self.assertNotIn("getDisplayMedia(", src)
+            self.assertNotIn("getUserMedia(", src)
+        self.assertEqual(AUDIO.count("getDisplayMedia("), 1)
+        self.assertEqual(AUDIO.count("getUserMedia("), 1)
+        self.assertEqual([m.start() for m in re.finditer(r"(?<![\w.])(?<!function )listen\(", AUDIO)], [])
+        calls = [m.start() for m in re.finditer(r"SA\.listen\(", JS)]
         self.assertTrue(calls)
         for at in calls:
             self.assertTrue(handler < at < handler_end, JS[at - 80:at + 20])

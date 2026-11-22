@@ -130,6 +130,18 @@ interface Window {
     link?(): string;
     state(): { queue: SonicQueueItem[]; index: number; time: number; repeat: string; view: string; video: string; autoplay: boolean };
   };
+  /** The sound the visualiser follows (static/js/viz-audio.js). */
+  SonicAudio: {
+    analyse(): SonicVizAnalysis;
+    features: SonicVizAnalysis;
+    source(): 'tab' | 'mic' | 'clock';
+    listening(): boolean;
+    listen(kind: 'tab' | 'mic'): Promise<void>;
+    stop(): void;
+    bestSource(): 'tab' | 'mic';
+    onChange(fn: () => void): void;
+    snapshot(): ReturnType<Window['SonicVisualizer']['analysis']>;
+  };
   SonicVisualizer: {
     modes(): string[];
     open(mode?: string): void;
