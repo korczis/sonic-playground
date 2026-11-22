@@ -113,4 +113,4 @@ tracks:
 
 # Your Top Songs 2024
 
-The annual Top Songs: 100 of 100 items read on 2026-11-22, 85 of them reviewed on the site.
+The annual Top Songs: 100 of 100 items read on 2026-11-22, 100 of them reviewed on the site.

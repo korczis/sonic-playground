@@ -6,8 +6,9 @@ artists: ["The Whip", "Crookers"]
 album: "Remix Marks Destination"
 duration: "6:04"
 spotify: {"track": "1CwD6XZdhcqMUQtmpcu1KO", "album": "1QQunRSa3REJaTlAI5jgOn", "artists": ["4M2H1fDQR5ygAi7MMOVxAA", "3o1cwVQfiDWafhYA02k13C"]}
-keys: {"fold": "thewhip|trashcrookersremix"}
-status: "missing"
+keys: {"fold": "thewhip|trashcrookersremix", "isrc": "GBEFR0801293", "musicbrainz": "34332035-09b9-4d44-8041-69d84018f1b0"}
+review: "the-whip-crookers-trash-crookers-remix.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2024, "n": 70}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Remix Marks Destination*, 6:04.
 A liked song.
 Your Top Songs 2024: #70.
-No review yet.
+Reviewed: content/the-whip-crookers-trash-crookers-remix.md.

@@ -6,8 +6,9 @@ artists: ["Melissa Laveaux"]
 album: "Camphor & Copper (Bonus Track Version)"
 duration: "4:19"
 spotify: {"track": "4sxhLTavzTcKPJkJqARXMU", "album": "1o9vBWliUrFc1CVWeh1jej", "artists": ["5Vby8ALwGN41v2nXpu2TSO"]}
-keys: {"fold": "melissalaveaux|myboat"}
-status: "missing"
+keys: {"fold": "melissalaveaux|myboat", "isrc": "FR2W60800012", "musicbrainz": "08d58988-9c1e-4783-82b0-325b224a8a59"}
+review: "melissa-laveaux-my-boat.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2025, "n": 12}
@@ -19,4 +20,4 @@ sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 From the album *Camphor & Copper (Bonus Track Version)*, 4:19.
 A liked song.
 Your Top Songs 2025: #12.
-No review yet.
+Reviewed: content/melissa-laveaux-my-boat.md.

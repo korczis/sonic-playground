@@ -7,7 +7,8 @@ album: "Sugar Cane"
 duration: "4:31"
 spotify: {"track": "3lShtQ5EAkd25oIQDR3Xyz", "album": "3y7NzqeZXXVfCLhaaW5fOo", "artists": ["72gQuI1GHmsUXIfe863TC7"]}
 keys: {"fold": "pilockakrach|ifthisworld"}
-status: "missing"
+review: "pilocka-krach-if-this-world.md"
+status: "present"
 liked: true
 yearbooks:
   - {"year": 2024, "n": 75}
@@ -21,4 +22,4 @@ From the album *Sugar Cane*, 4:31.
 A liked song.
 Your Top Songs 2024: #75.
 Your Top Songs 2025: #32.
-No review yet.
+Reviewed: content/pilocka-krach-if-this-world.md.

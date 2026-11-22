@@ -15,7 +15,7 @@ id = "techno"
 en = "Techno & minimal"
 cs = "Techno a minimal"
 terms = ["techno", "minimal", "minimal techno", "melodic techno", "detroit techno", "dark techno",
-         "industrial", "dark electronic"]
+         "industrial", "dark electronic", "ebm"]
 
 [[family]]
 id = "house"
