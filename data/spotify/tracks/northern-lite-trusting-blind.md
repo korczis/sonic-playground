@@ -12,12 +12,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "angry-ego", "n": 1}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 1}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Trusting Blind · Northern Lite
 
 From the album *23 (Best of Northern Lite)*, 4:50.
 A liked song.
-In Angry Ego (#1).
+In Angry Ego (#1); Your Top Songs 2024 (#1).
 Reviewed: content/northern-lite-trusting-blind.md.

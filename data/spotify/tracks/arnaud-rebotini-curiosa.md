@@ -10,11 +10,14 @@ keys: {"fold": "arnaudrebotini|curiosa", "musicbrainz": "a4e43ec3-25b6-4e60-bb42
 review: "arnaud-rebotini-curiosa.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 99}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Curiosa · Arnaud Rebotini
 
 From the album *Curiosa (Bande originale du film)*, 4:11.
 A liked song.
+In Your Top Songs 2024 (#99).
 Reviewed: content/arnaud-rebotini-curiosa.md.

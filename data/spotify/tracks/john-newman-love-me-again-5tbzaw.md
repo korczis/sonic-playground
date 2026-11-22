@@ -10,11 +10,16 @@ keys: {"fold": "johnnewman|lovemeagain", "isrc": "GBUM71301538", "musicbrainz": 
 review: "john-newman-love-me-again.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 39}
+  - {"playlist": "your-top-songs-2024", "n": 20}
+  - {"playlist": "your-top-songs-2025", "n": 22}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Love Me Again · John Newman
 
 From the album *Tribute*, 3:59.
 A liked song.
+In Your Top Songs 2023 (#39); Your Top Songs 2024 (#20); Your Top Songs 2025 (#22).
 Reviewed: content/john-newman-love-me-again.md.

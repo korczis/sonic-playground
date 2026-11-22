@@ -12,12 +12,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "sonic-playground", "n": 20}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 27}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Walking On the Moon · Roseaux, Aloe Blacc
 
 From the album *Roseaux*, 5:26.
 A liked song.
-In Sonic Playground (#20).
+In Sonic Playground (#20); Your Top Songs 2024 (#27).
 Reviewed: content/roseaux-walking-on-the-moon.md.

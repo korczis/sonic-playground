@@ -10,11 +10,14 @@ keys: {"fold": "swornvirgins|burningoffmyclothes"}
 review: "sworn-virgins-burning-off-my-clothes.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 95}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Burning Off My Clothes · Sworn Virgins
 
 From the album *Fifty Dollar Bills*, 6:49.
 A liked song.
+In Your Top Songs 2025 (#95).
 Reviewed: content/sworn-virgins-burning-off-my-clothes.md.

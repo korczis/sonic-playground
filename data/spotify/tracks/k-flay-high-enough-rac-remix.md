@@ -9,11 +9,14 @@ spotify: {"track": "1cxttvflVlYD4QA34tR5Yj", "album": "3GkyRKyYzpB4v0fjFBkUdr", 
 keys: {"fold": "kflay|highenoughracremix"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 76}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # High Enough - RAC Remix · K.Flay, RAC
 
 From the album *High Enough (RAC Remix)*, 3:28.
 A liked song.
+In Your Top Songs 2024 (#76).
 No review yet.

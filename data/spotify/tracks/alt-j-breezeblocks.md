@@ -12,12 +12,13 @@ status: "present"
 liked: false
 playlists:
   - {"playlist": "sonic-playground", "n": 7}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 40}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Breezeblocks · alt-J
 
 From the album *An Awesome Wave*, 3:47.
 Not among the liked songs.
-In Sonic Playground (#7).
+In Sonic Playground (#7); Your Top Songs 2024 (#40).
 Reviewed: content/alt-j-breezeblocks.md.

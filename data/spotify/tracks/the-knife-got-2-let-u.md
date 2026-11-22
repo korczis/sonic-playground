@@ -9,11 +9,14 @@ spotify: {"track": "07NHCiFDHwqcNtOaD64jkP", "album": "58VeC1LO2OjyHXsjtI306m", 
 keys: {"fold": "theknife|got2letu"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 46}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Got 2 Let U · The Knife
 
 From the album *Deep Cuts*, 3:59.
 A liked song.
+In Your Top Songs 2025 (#46).
 No review yet.

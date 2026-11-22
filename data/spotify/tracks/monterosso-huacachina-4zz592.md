@@ -12,7 +12,9 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 76}
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 61}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Huacachina · MonteRosso
@@ -20,4 +22,5 @@ sources: ["web-player:2026-11-14"]
 From the album *Kitsuné Parisien 4*, 3:33.
 A liked song.
 Your Top Songs 2022: #76.
+In Your Top Songs 2024 (#61).
 Reviewed: content/monterosso-huacachina.md.

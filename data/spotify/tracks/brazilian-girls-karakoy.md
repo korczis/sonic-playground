@@ -10,11 +10,14 @@ keys: {"fold": "braziliangirls|karakoy", "isrc": "US6DR1702518", "musicbrainz": 
 review: "brazilian-girls-karakoy.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 2}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Karaköy · Brazilian Girls
 
 From the album *Let's Make Love*, 3:44.
 A liked song.
+In Your Top Songs 2025 (#2).
 Reviewed: content/brazilian-girls-karakoy.md.

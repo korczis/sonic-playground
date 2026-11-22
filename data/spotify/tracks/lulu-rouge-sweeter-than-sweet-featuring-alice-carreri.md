@@ -10,11 +10,14 @@ keys: {"fold": "lulurouge|sweeterthansweet", "isrc": "DKAZ70842107", "musicbrain
 review: "lulu-rouge-sweeter-than-sweet.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 78}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Sweeter Than Sweet (featuring Alice Carreri) · Lulu Rouge
 
 From the album *Bless you*, 4:30.
 A liked song.
+In Your Top Songs 2025 (#78).
 Reviewed: content/lulu-rouge-sweeter-than-sweet.md.

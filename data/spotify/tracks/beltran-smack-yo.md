@@ -11,11 +11,14 @@ keys: {"fold": "beltran|smackyo", "isrc": "GBKQU2286551", "musicbrainz": "c2874e
 review: "beltran-smack-yo.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 26}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Smack Yo' · Beltran
 
 From the album *Smack Yo'*, 4:05.
 A liked song.
+In Your Top Songs 2025 (#26).
 Reviewed: content/beltran-smack-yo.md.

@@ -6,8 +6,9 @@ artists: ["Gorillaz"]
 album: "El Mañana / Kids with Guns"
 duration: "3:55"
 spotify: {"track": "0sCqJewXPLDD1lAB7SmWGl", "album": "49445aulSsQdUfDaTJaX8G", "artists": ["3AA28KZvwAUcZuOKwyblJQ"]}
-keys: {"fold": "gorillaz|elmanana"}
-status: "missing"
+keys: {"fold": "gorillaz|elmanana", "isrc": "GBAYE0500173", "musicbrainz": "d0769eb3-ca35-4aab-aa45-ecedee55250b"}
+review: "gorillaz-el-manana.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *El Mañana / Kids with Guns*, 3:55.
 A liked song.
-No review yet.
+Reviewed: content/gorillaz-el-manana.md.

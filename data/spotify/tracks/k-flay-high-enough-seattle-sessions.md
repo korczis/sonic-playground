@@ -9,11 +9,14 @@ spotify: {"track": "7DypEWDiM0cQEdAgIedHm1", "album": "1VL0K2cUyM7TR9jM0rfdvI", 
 keys: {"fold": "kflay|highenoughseattlesessions"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 19}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # High Enough - Seattle Sessions · K.Flay
 
 From the album *Every Where Is Some Where (Deluxe Version)*, 3:34.
 A liked song.
+In Your Top Songs 2024 (#19).
 No review yet.

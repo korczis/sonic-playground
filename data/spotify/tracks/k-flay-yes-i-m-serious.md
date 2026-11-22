@@ -10,11 +10,14 @@ spotify: {"track": "3QtCqTRl4NkUAAkk7TfBBe", "album": "3Dr5WJtXajX3SNsXwzsWhb", 
 keys: {"fold": "kflay|yesimserious"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 85}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Yes I'm Serious · K.Flay
 
 From the album *MONO*, 4:56.
 A liked song.
+In Your Top Songs 2024 (#85).
 No review yet.

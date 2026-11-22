@@ -10,11 +10,14 @@ keys: {"fold": "catastrophe|smalltownboynovaversion"}
 review: "catastrophe-smalltown-boy-nova-version.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 20}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Smalltown Boy - Nova Version · Catastrophe
 
 From the album *Fizzy*, 3:47.
 A liked song.
+In Your Top Songs 2025 (#20).
 Reviewed: content/catastrophe-smalltown-boy-nova-version.md.

@@ -9,11 +9,15 @@ spotify: {"track": "02ISLTUYF5GUjKrL7zvRb9", "album": "1v1Yp8sNjnCqx5YRf8ZaJA", 
 keys: {"fold": "newyoungponyclub|icecream"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 80}
+  - {"playlist": "your-top-songs-2024", "n": 62}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Ice Cream · New Young Pony Club
 
 From the album *Fantastic Playroom*, 3:08.
 A liked song.
+In Your Top Songs 2023 (#80); Your Top Songs 2024 (#62).
 No review yet.

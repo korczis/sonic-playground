@@ -13,12 +13,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "sonic-playground", "n": 1}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 3}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Pussy · Nick Monaco, David Marston
 
 From the album *Pussy*, 5:30.
 A liked song.
-In Sonic Playground (#1).
+In Sonic Playground (#1); Your Top Songs 2024 (#3).
 Reviewed: content/nick-monaco-david-marston-pussy.md.

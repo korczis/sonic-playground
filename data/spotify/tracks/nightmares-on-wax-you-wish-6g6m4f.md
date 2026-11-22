@@ -10,11 +10,14 @@ keys: {"fold": "nightmaresonwax|youwish", "isrc": "GBBPW0500164", "musicbrainz":
 review: "nightmares-on-wax-you-wish.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 43}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # You Wish · Nightmares On Wax
 
 From the album *In A Space Outta Sound*, 3:30.
 A liked song.
+In Your Top Songs 2023 (#43).
 Reviewed: content/nightmares-on-wax-you-wish.md.

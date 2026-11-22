@@ -16,7 +16,9 @@ yearbooks:
 playlists:
   - {"playlist": "best-of-the-best", "n": 91}
   - {"playlist": "my-top-songs-of-all-the-time", "n": 519}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 25}
+  - {"playlist": "your-top-songs-2024", "n": 81}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Cooler Than Me · Lucky Luke
@@ -24,5 +26,5 @@ sources: ["web-player:2026-11-14"]
 From the album *Cooler Than Me*, 2:59.
 A liked song.
 Your Top Songs 2022: #1.
-In Best of the Best (#91); My Top Songs of All the Time (#519).
+In Best of the Best (#91); My Top Songs of All the Time (#519); Your Top Songs 2023 (#25); Your Top Songs 2024 (#81).
 Reviewed: content/lucky-luke-cooler-than-me.md.

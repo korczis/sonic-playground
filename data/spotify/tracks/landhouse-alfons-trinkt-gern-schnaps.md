@@ -9,11 +9,14 @@ spotify: {"track": "1RICfPXP8phyK2m398zabi", "album": "4oAO2rngLiTApf2hRRrLCk", 
 keys: {"fold": "landhouse|alfonstrinktgernschnaps"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 89}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Alfons Trinkt Gern Schnaps · Landhouse, Raddantze
 
 From the album *Alfons Trinkt Gern Schnaps*, 5:48.
 A liked song.
+In Your Top Songs 2025 (#89).
 No review yet.

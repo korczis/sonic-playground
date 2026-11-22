@@ -9,11 +9,14 @@ spotify: {"track": "5Pz7Di1sVBjmF1BybAcF6L", "album": "48HBoA39mKzK8AsMyZ9dv9", 
 keys: {"fold": "pilockakrach|topsecretkeeper"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 99}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Top Secret Keeper · Pilocka Krach
 
 From the album *Best Of*, 4:56.
 A liked song.
+In Your Top Songs 2025 (#99).
 No review yet.

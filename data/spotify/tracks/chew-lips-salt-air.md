@@ -10,11 +10,14 @@ keys: {"fold": "chewlips|saltair", "musicbrainz": "99e77413-b945-4b8f-9fcb-1abe1
 review: "chew-lips-salt-air.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 73}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Salt Air · Chew Lips
 
 From the album *Kitsuné: Salt Air (Bonus Track Version)*, 2:54.
 A liked song.
+In Your Top Songs 2025 (#73).
 Reviewed: content/chew-lips-salt-air.md.

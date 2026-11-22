@@ -53,3 +53,6 @@
 {"available": 100, "id": "your-top-songs-2020", "items": 100, "kind": "yearbook", "name": "Your Top Songs 2020", "read": "2026-11-14", "record": "data/spotify/playlists/your-top-songs-2020.md", "year": 2020}
 {"available": 100, "id": "your-top-songs-2021", "items": 100, "kind": "yearbook", "name": "Your Top Songs 2021", "read": "2026-11-14", "record": "data/spotify/playlists/your-top-songs-2021.md", "year": 2021}
 {"available": 99, "id": "your-top-songs-2022", "items": 99, "kind": "yearbook", "name": "Your Top Songs 2022", "read": "2026-11-14", "record": "data/spotify/playlists/your-top-songs-2022.md", "year": 2022}
+{"available": 100, "id": "your-top-songs-2023", "items": 100, "kind": "own", "name": "Your Top Songs 2023", "read": "2026-11-22", "record": "data/spotify/playlists/your-top-songs-2023.md", "year": null}
+{"available": 100, "id": "your-top-songs-2024", "items": 100, "kind": "own", "name": "Your Top Songs 2024", "read": "2026-11-22", "record": "data/spotify/playlists/your-top-songs-2024.md", "year": null}
+{"available": 100, "id": "your-top-songs-2025", "items": 100, "kind": "own", "name": "Your Top Songs 2025", "read": "2026-11-22", "record": "data/spotify/playlists/your-top-songs-2025.md", "year": null}

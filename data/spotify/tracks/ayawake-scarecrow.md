@@ -10,11 +10,14 @@ keys: {"fold": "ayawake|scarecrow", "isrc": "GB7NR1743404", "musicbrainz": "30e3
 review: "ayawake-be-svendsen-scarecrow.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 52}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Scarecrow · AYAWAKE, Be Svendsen
 
 From the album *Scarecrow*, 3:26.
 A liked song.
+In Your Top Songs 2024 (#52).
 Reviewed: content/ayawake-be-svendsen-scarecrow.md.

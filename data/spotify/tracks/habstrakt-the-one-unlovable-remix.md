@@ -10,11 +10,14 @@ keys: {"fold": "habstrakt|theoneunlovableremix", "isrc": "CA6D21900237", "musicb
 review: "habstrakt-unlovable-the-one-unlovable-remix.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 24}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # The One - Unlovable Remix · Habstrakt, Unlovable
 
 From the album *The One*, 3:20.
 A liked song.
+In Your Top Songs 2023 (#24).
 Reviewed: content/habstrakt-unlovable-the-one-unlovable-remix.md.

@@ -10,11 +10,14 @@ keys: {"fold": "whitetown|yourwoman", "isrc": "GBAYE9600116", "musicbrainz": "63
 review: "white-town-your-woman.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 89}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Your Woman · White Town
 
 From the album *Women in Technology*, 4:19.
 A liked song.
+In Your Top Songs 2024 (#89).
 Reviewed: content/white-town-your-woman.md.

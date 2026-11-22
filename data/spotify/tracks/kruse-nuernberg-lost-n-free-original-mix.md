@@ -9,11 +9,14 @@ spotify: {"track": "4YlnbH4WRdobbhhlFOf2Qi", "album": "0GV5t51GsmfJvLaiakY8on", 
 keys: {"fold": "krusenuernberg|lostnfree"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 71}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Lost N Free - Original Mix · Kruse & Nuernberg, Brolin
 
 From the album *Lost N Free*, 6:16.
 A liked song.
+In Your Top Songs 2024 (#71).
 No review yet.

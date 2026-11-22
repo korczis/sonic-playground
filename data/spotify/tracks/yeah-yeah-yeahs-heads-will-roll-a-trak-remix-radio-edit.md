@@ -9,11 +9,14 @@ spotify: {"track": "5qGIfWDRdyO67LCTqA2sEn", "album": "3MWSY8N1zWSNBcnMTIeiTz", 
 keys: {"fold": "yeahyeahyeahs|headswillrollatrakremixradioedit"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 58}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Heads Will Roll - A-Trak Remix Radio Edit · Yeah Yeah Yeahs, A-Trak
 
 From the album *Good Morning Music: Wake Up Workout*, 3:23.
 A liked song.
+In Your Top Songs 2025 (#58).
 No review yet.

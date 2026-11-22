@@ -17,7 +17,7 @@ tracks:
   - {"n": 6, "track": "kav-verhouzer-get-what-you-came-for"}
   - {"n": 7, "track": "gin-wigmore-black-sheep"}
   - {"n": 8, "track": "imany-don-t-be-so-shy-filatov-karas-remix"}
-  - {"n": 9, "track": "paloma-faith-upside-down"}
+  - {"n": 9, "track": "paloma-faith-upside-down-7wtmno"}
   - {"n": 10, "track": "marek-hemmann-gemini"}
   - {"n": 11, "track": "jain-hope"}
   - {"n": 12, "track": "gabriella-cilmi-sweet-about-me"}
@@ -104,7 +104,7 @@ tracks:
   - {"n": 93, "track": "chet-faker-talk-is-cheap"}
   - {"n": 94, "track": "l-e-j-hanging-tree"}
   - {"n": 95, "track": "gorgon-city-ready-for-your-love-close-remix"}
-  - {"n": 96, "track": "john-newman-love-me-again-kove-remix"}
+  - {"n": 96, "track": "john-newman-love-me-again-kove-remix-7oiie4"}
   - {"n": 97, "track": "jain-come-extended-version"}
   - {"n": 98, "track": "marcus-marr-the-trouble-with-us"}
   - {"n": 99, "track": "lamomali-l-ame-au-mali"}

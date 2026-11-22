@@ -114,7 +114,7 @@ tracks:
   - {"n": 105, "track": "kav-verhouzer-get-what-you-came-for"}
   - {"n": 106, "track": "gin-wigmore-black-sheep"}
   - {"n": 107, "track": "imany-don-t-be-so-shy-filatov-karas-remix"}
-  - {"n": 108, "track": "paloma-faith-upside-down"}
+  - {"n": 108, "track": "paloma-faith-upside-down-7wtmno"}
   - {"n": 109, "track": "marek-hemmann-gemini"}
   - {"n": 110, "track": "jain-hope"}
   - {"n": 111, "track": "whtkd-say-to-me"}
@@ -193,7 +193,7 @@ tracks:
   - {"n": 184, "track": "chet-faker-talk-is-cheap"}
   - {"n": 185, "track": "l-e-j-hanging-tree"}
   - {"n": 186, "track": "gorgon-city-ready-for-your-love-close-remix"}
-  - {"n": 187, "track": "john-newman-love-me-again-kove-remix"}
+  - {"n": 187, "track": "john-newman-love-me-again-kove-remix-7oiie4"}
   - {"n": 188, "track": "jain-come-extended-version"}
   - {"n": 189, "track": "marcus-marr-the-trouble-with-us"}
   - {"n": 190, "track": "lamomali-l-ame-au-mali"}
@@ -289,7 +289,7 @@ tracks:
   - {"n": 280, "track": "dirty-doering-casino-aquatique"}
   - {"n": 281, "track": "terranova-prayer-feat-nicolette-krebitz-udo-kier-gui-boratto-mix"}
   - {"n": 282, "track": "noze-exodus"}
-  - {"n": 283, "track": "scarlet-pleasure-deja-vu"}
+  - {"n": 283, "track": "scarlet-pleasure-deja-vu-4a5x60"}
   - {"n": 284, "track": "kalabrese-fresh-and-foolish-feat-sarah-palin"}
   - {"n": 285, "track": "maruv-drunk-groove"}
   - {"n": 286, "track": "portugal-the-man-feel-it-still"}
@@ -383,7 +383,7 @@ tracks:
   - {"n": 374, "track": "bronski-beat-smalltown-boy"}
   - {"n": 375, "track": "bronski-beat-smalltown-boy-arnaud-rebotini-remix"}
   - {"n": 376, "track": "billie-eilish-bury-a-friend"}
-  - {"n": 377, "track": "tones-and-i-dance-monkey"}
+  - {"n": 377, "track": "tones-and-i-dance-monkey-2xu0ox"}
   - {"n": 378, "track": "stee-downes-asunder"}
   - {"n": 379, "track": "her-jeanie-j"}
   - {"n": 380, "track": "brandt-brauer-frick-pretend"}

@@ -10,11 +10,14 @@ keys: {"fold": "campclaude|trap", "musicbrainz": "00bfaed6-91a9-472e-aaf3-73717e
 review: "camp-claude-trap.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 2}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Trap · Camp Claude
 
 From the album *Swimming Lessons*, 2:30.
 A liked song.
+In Your Top Songs 2023 (#2).
 Reviewed: content/camp-claude-trap.md.

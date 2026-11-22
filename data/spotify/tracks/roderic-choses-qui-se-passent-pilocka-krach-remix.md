@@ -9,11 +9,14 @@ spotify: {"track": "5rEb89pZtSptunvto701Xq", "album": "0UtJ5bMB2opOQOb0UFuU01", 
 keys: {"fold": "roderic|chosesquisepassentpilockakrachremix"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 16}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Choses qui se passent - Pilocka Krach Remix · Roderic, Pilocka Krach, matt.i
 
 From the album *Choses qui se passent (Pilocka Krach Remix)*, 6:00.
 A liked song.
+In Your Top Songs 2025 (#16).
 No review yet.

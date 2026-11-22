@@ -10,11 +10,15 @@ keys: {"fold": "bookashade|bodylanguageinterpretation", "isrc": "DEBE70500175", 
 review: "booka-shade-body-language-interpretation.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 91}
+  - {"playlist": "your-top-songs-2024", "n": 96}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Body Language - Interpretation · Booka Shade
 
 From the album *Movements*, 5:00.
 A liked song.
+In Your Top Songs 2023 (#91); Your Top Songs 2024 (#96).
 Reviewed: content/booka-shade-body-language-interpretation.md.

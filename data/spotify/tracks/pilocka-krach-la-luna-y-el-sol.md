@@ -10,11 +10,14 @@ keys: {"fold": "pilockakrach|lalunayelsol"}
 review: "pilocka-krach_la_luna-y-el-sol.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 6}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # La Luna Y El Sol · Pilocka Krach
 
 From the album *Sugar Cane*, 4:41.
 A liked song.
+In Your Top Songs 2025 (#6).
 Reviewed: content/pilocka-krach_la_luna-y-el-sol.md.

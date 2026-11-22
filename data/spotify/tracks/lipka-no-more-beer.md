@@ -12,12 +12,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "sonic-playground", "n": 2}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 4}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # No More Beer · Lipka
 
 From the album *Lipka*, 3:38.
 A liked song.
-In Sonic Playground (#2).
+In Sonic Playground (#2); Your Top Songs 2024 (#4).
 Reviewed: content/lipka_no-more-beer.md.

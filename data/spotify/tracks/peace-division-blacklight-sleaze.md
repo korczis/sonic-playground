@@ -9,11 +9,14 @@ spotify: {"track": "736VLVib8Mj9TURmsktYjX", "album": "1HyrpnJDZrCcVtIiCWykgh", 
 keys: {"fold": "peacedivision|blacklightsleaze"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 24}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Blacklight Sleaze · Peace Division, Pleasant Gehman
 
 From the album *Blacklight Sleaze*, 6:19.
 A liked song.
+In Your Top Songs 2025 (#24).
 No review yet.

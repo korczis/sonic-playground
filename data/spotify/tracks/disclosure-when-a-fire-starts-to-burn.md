@@ -10,11 +10,14 @@ keys: {"fold": "disclosure|whenafirestartstoburn", "musicbrainz": "f103a196-c211
 review: "disclosure-when-a-fire-starts-to-burn.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 33}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # When A Fire Starts To Burn · Disclosure
 
 From the album *Settle (Special Edition)*, 4:43.
 A liked song.
+In Your Top Songs 2024 (#33).
 Reviewed: content/disclosure-when-a-fire-starts-to-burn.md.

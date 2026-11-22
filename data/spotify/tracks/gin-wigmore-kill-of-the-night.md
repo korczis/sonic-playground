@@ -14,7 +14,8 @@ yearbooks:
   - {"year": 2018, "n": 68}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 252}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 73}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Kill Of The Night · Gin Wigmore
@@ -22,5 +23,5 @@ sources: ["web-player:2026-11-14"]
 From the album *Gravel & Wine*, 3:25.
 A liked song.
 Your Top Songs 2018: #68.
-In My Top Songs of All the Time (#252).
+In My Top Songs of All the Time (#252); Your Top Songs 2024 (#73).
 Reviewed: content/gin-wigmore-kill-of-the-night.md.

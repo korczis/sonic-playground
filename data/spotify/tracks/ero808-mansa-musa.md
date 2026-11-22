@@ -11,11 +11,14 @@ keys: {"fold": "ero808|mansamusa", "isrc": "QM24S2403401", "musicbrainz": "32267
 review: "ero808-mansa-musa.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 27}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # MANSA MUSA · ero808
 
 From the album *MANSA MUSA*, 3:24.
 A liked song.
+In Your Top Songs 2025 (#27).
 Reviewed: content/ero808-mansa-musa.md.

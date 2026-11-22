@@ -9,11 +9,14 @@ spotify: {"track": "46TBpWBda8EDFpjCoM6wlF", "album": "4lmUyIgW4drysa7Lz2JF6q", 
 keys: {"fold": "rose|craving"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 34}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Craving · Røse, Rachel K Collier
 
 From the album *Craving*, 3:25.
 A liked song.
+In Your Top Songs 2023 (#34).
 No review yet.

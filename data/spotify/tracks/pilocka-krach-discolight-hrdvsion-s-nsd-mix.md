@@ -12,12 +12,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "sonic-playground", "n": 6}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 15}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Discolight - Hrdvsion's NSD Mix · Pilocka Krach, Hrdvsion
 
 From the album *Discolight*, 5:39.
 A liked song.
-In Sonic Playground (#6).
+In Sonic Playground (#6); Your Top Songs 2024 (#15).
 Reviewed: content/hrdvision-nsd-discolight.md.

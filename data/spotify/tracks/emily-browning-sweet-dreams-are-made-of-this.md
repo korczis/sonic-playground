@@ -10,11 +10,14 @@ keys: {"fold": "emilybrowning|sweetdreamsaremadeofthis", "isrc": "USNLR1100001",
 review: "emily-browning-sweet-dreams-are-made-of-this.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 67}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Sweet Dreams (Are Made Of This) · Emily Browning
 
 From the album *Sucker Punch (Original Motion Picture Soundtrack)*, 5:18.
 A liked song.
+In Your Top Songs 2023 (#67).
 Reviewed: content/emily-browning-sweet-dreams-are-made-of-this.md.

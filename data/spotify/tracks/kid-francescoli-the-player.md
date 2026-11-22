@@ -9,11 +9,14 @@ spotify: {"track": "1CMYaclBw1oZTwivt0Z8Si", "album": "54vSb9255iZKykjuytWbZh", 
 keys: {"fold": "kidfrancescoli|theplayer"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 55}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # The Player · Kid Francescoli, Julia Minkin
 
 From the album *Play Me Again*, 4:04.
 A liked song.
+In Your Top Songs 2023 (#55).
 No review yet.

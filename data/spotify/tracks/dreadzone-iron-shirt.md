@@ -12,12 +12,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "liked-from-radio", "n": 20}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2025", "n": 98}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Iron Shirt · Dreadzone
 
 From the album *Once Upon A Time*, 6:02.
 A liked song.
-In Liked from Radio (#20).
+In Liked from Radio (#20); Your Top Songs 2025 (#98).
 Reviewed: content/dreadzone-iron-shirt.md.

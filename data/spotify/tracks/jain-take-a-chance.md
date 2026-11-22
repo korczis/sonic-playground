@@ -10,11 +10,14 @@ keys: {"fold": "jain|takeachance", "isrc": "FR9W12219428", "musicbrainz": "8503c
 review: "jain-take-a-chance.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 38}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Take a Chance · Jain
 
 From the album *The Fool*, 3:24.
 A liked song.
+In Your Top Songs 2025 (#38).
 Reviewed: content/jain-take-a-chance.md.

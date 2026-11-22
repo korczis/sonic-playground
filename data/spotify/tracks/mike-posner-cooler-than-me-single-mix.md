@@ -10,11 +10,14 @@ keys: {"fold": "mikeposner|coolerthanmesinglemix", "musicbrainz": "0fec3b54-d6ae
 review: "mike-posner-gigamesh-cooler-than-me-single-mix.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 9}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Cooler Than Me - Single Mix · Mike Posner, Gigamesh
 
 From the album *31 Minutes to Takeoff*, 3:33.
 A liked song.
+In Your Top Songs 2025 (#9).
 Reviewed: content/mike-posner-gigamesh-cooler-than-me-single-mix.md.

@@ -13,12 +13,14 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "written-by-jt-daly", "n": 3}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 61}
+  - {"playlist": "your-top-songs-2024", "n": 50}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Blood In The Cut · K.Flay
 
 From the album *Every Where Is Some Where*, 3:08.
 A liked song.
-In Written By JT Daly (#3).
+In Written By JT Daly (#3); Your Top Songs 2023 (#61); Your Top Songs 2024 (#50).
 Reviewed: content/k-flay-blood-in-the-cut.md.

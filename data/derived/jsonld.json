@@ -66091,6 +66091,137 @@
     }
    ]
   },
+  "gorillaz-el-manana.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-el-manana/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "trip-hop",
+      "dub",
+      "alternative"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Demon Days"
+     },
+     "isrcCode": "GBAYE0500173",
+     "name": "El Mañana",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d0769eb3-ca35-4aab-aa45-ecedee55250b",
+      "https://www.youtube.com/watch?v=hji4gBuOvIQ"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-el-manana/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-el-manana/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "El Mañana (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/El_Ma%C3%B1ana_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Demon Days",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Demon_Days"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Demon Days, Gorillaz",
+       "publisher": "Audio Snobbery",
+       "url": "https://audiosnobbery.com/2019/05/18/demon-days-gorillaz/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "El Mañana",
+       "publisher": "Gorillaz Song by Song",
+       "url": "https://gorillazsongbysong.blogspot.com/2017/07/el-manana.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Reflections on 'Demon Days': How Gorillaz Turned Global Turmoil into a British Pop Masterpiece",
+       "publisher": "Vice",
+       "url": "https://www.vice.com/en/article/gorillaz-demon-days-retrospective/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Demon Days turns 20",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2307166/gorillaz-demon-days-turns-20/reviews/the-anniversary"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "El Mañana (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/d0769eb3-ca35-4aab-aa45-ecedee55250b"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - El Mañana (Official Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=hji4gBuOvIQ"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "El Mañana, tichý střed alba Demon Days od Gorillaz a jeho poslední singl: píseň Damona Albarna pro smyčce, akustickou kytaru a programované bicí, jejíž animovaný videoklip sestřelil létající ostrov z Feel Good Inc.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - El Mañana",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "stage persona",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/stage-persona/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-el-manana/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-el-manana/",
+     "wordCount": 519
+    }
+   ]
+  },
   "gorillaz-hot-chip-kids-with-guns-hot-chip-remix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -66211,6 +66342,295 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-hot-chip-kids-with-guns-hot-chip-remix/",
      "wordCount": 481
+    }
+   ]
+  },
+  "gorillaz-little-dragon-empire-ants.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-little-dragon-empire-ants/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz, Little Dragon",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "synth-pop",
+      "electronic",
+      "alternative"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000007",
+     "name": "Empire Ants",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a0481faf-70de-41de-95d6-315735ef8aea",
+      "https://www.youtube.com/watch?v=GNth4yhlffU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-little-dragon-empire-ants/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-little-dragon-empire-ants/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Empire Ants",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Empire_Ants"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz: Plastic Beach",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gorillaz-plastic-beach-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz - Plastic Beach",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-gorillaz-plastic-beach-4139231/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Empire Ants (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a0481faf-70de-41de-95d6-315735ef8aea"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Empire Ants - Plastic Beach",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=GNth4yhlffU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Sedmá skladba alba Plastic Beach (2010) od Gorillaz, s Yukimi Nagano ze skupiny Little Dragon: Damon Albarn zpívá pomalý, truchlivý nářek, dokud se nezvednou syntezátory a píseň se nepromění v to, co recenzenti slyšeli jako baleárskou taneční skladbu.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz, Little Dragon - Empire Ants",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-little-dragon-empire-ants/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-little-dragon-empire-ants/",
+     "wordCount": 520
+    }
+   ]
+  },
+  "gorillaz-lou-reed-some-kind-of-nature.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-lou-reed-some-kind-of-nature/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz, Lou Reed",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "alternative",
+      "electronic",
+      "funk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000009",
+     "name": "Some Kind of Nature",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4c1116a5-c81c-4355-8b9c-97e90b9af25f",
+      "https://www.youtube.com/watch?v=1KC2-EZ1ee0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-lou-reed-some-kind-of-nature/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-lou-reed-some-kind-of-nature/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lou Reed",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lou_Reed"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Some Kind Of Nature by Gorillaz",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/gorillaz/some-kind-of-nature"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz: Plastic Beach",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gorillaz-plastic-beach-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz - Plastic Beach",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-gorillaz-plastic-beach-4139231/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz – Plastic Beach",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-plastic-beach/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz",
+       "publisher": "The Harvard Crimson",
+       "url": "https://thecrimson.com/article/2010/3/9/gorillaz-plastic-beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Consumer Guide, May 2010",
+       "publisher": "Robert Christgau",
+       "url": "https://www.robertchristgau.com/xg/cg/cg2010-05.php"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Some Kind of Nature (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4c1116a5-c81c-4355-8b9c-97e90b9af25f"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Some Kind of Nature - Plastic Beach",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=1KC2-EZ1ee0"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Vstup Lou Reeda na albu Plastic Beach (2010) od Gorillaz: krátká, rozverná skladba, v níž napůl mluví text o plastu, který podle Damona Albarna napsal v newyorském taxíku.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz, Lou Reed - Some Kind of Nature",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "spoken word",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/spoken-word/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "verse-chorus form",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/verse-chorus-form/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-lou-reed-some-kind-of-nature/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-lou-reed-some-kind-of-nature/",
+     "wordCount": 500
     }
    ]
   },
@@ -66580,6 +67000,420 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-neneh-cherry-kids-with-guns/",
      "wordCount": 583
+    }
+   ]
+  },
+  "gorillaz-on-melancholy-hill.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-on-melancholy-hill/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "synth-pop",
+      "new wave",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000010",
+     "name": "On Melancholy Hill",
+     "sameAs": [
+      "https://musicbrainz.org/recording/842fbdae-8839-46e6-8a02-7f500a2b6597",
+      "https://www.youtube.com/watch?v=04mfKJWDSzI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-on-melancholy-hill/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-on-melancholy-hill/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "On Melancholy Hill",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/On_Melancholy_Hill"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz: Plastic Beach",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gorillaz-plastic-beach-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz",
+       "publisher": "The Harvard Crimson",
+       "url": "https://thecrimson.com/article/2010/3/9/gorillaz-plastic-beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz – Plastic Beach",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-plastic-beach/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "On Melancholy Hill (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/842fbdae-8839-46e6-8a02-7f500a2b6597"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - On Melancholy Hill (Official Video)",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=04mfKJWDSzI"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Třetí singl z alba Plastic Beach (2010) od Gorillaz, synthpopová píseň, kterou Damon Albarn původně napsal pro The Good, the Bad & the Queen a o níž recenzenti psali jako o jedné z nejsladších melodií, jaké kdy složil.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - On Melancholy Hill",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-on-melancholy-hill/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-on-melancholy-hill/",
+     "wordCount": 517
+    }
+   ]
+  },
+  "gorillaz-phoner-to-arizona.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-phoner-to-arizona/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "techno",
+      "electronic",
+      "experimental"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Fall"
+     },
+     "isrcCode": "GBAYE1001530",
+     "name": "Phoner to Arizona",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4d88ec25-a3a0-47c5-93e5-8824092ae834",
+      "https://www.youtube.com/watch?v=SAeUwuUGSaM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-phoner-to-arizona/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-phoner-to-arizona/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Phoner to Arizona",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Phoner_to_Arizona"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Fall (Gorillaz album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Fall_(Gorillaz_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "The New Gorillaz Single Doesn't Necessarily Not Sound Like Something Damon Albarn Made on His iPad While on Tour",
+       "publisher": "Vulture",
+       "url": "https://nymag.com/daily/entertainment/2010/12/the_new_gorillaz_single_doesnt.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gorillaz - The Fall",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/articles/05517-gorillaz-the-fall-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz: The Fall",
+       "publisher": "PopMatters",
+       "url": "https://web.archive.org/web/20160201074029/http://www.popmatters.com/review/140157-gorillaz-the-fall/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Sample 18 seconds of Gorillaz's free iPad album, The Fall",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2010/12/sample-18-seconds-of-gorillazs-free-ipad-album-the-fall/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Phoner To Arizona (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4d88ec25-a3a0-47c5-93e5-8824092ae834"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz - Phoner To Arizona",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=SAeUwuUGSaM"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Úvodní skladba alba The Fall, které Damon Albarn natočil na iPadu během turné: převážně instrumentální kus nahraný v Montrealu 3. října 2010, se zkreslenými vokály, hutnými beaty a syntezátorovým bubláním.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - Phoner to Arizona",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "lo-fi",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/lo-fi/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "distortion",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/distortion/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-phoner-to-arizona/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-phoner-to-arizona/",
+     "wordCount": 479
+    }
+   ]
+  },
+  "gorillaz-rhinestone-eyes.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-rhinestone-eyes/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "electro-funk",
+      "synth-pop",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000017",
+     "name": "Rhinestone Eyes",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a44db450-2b09-4eca-936f-a939ad56ae16",
+      "https://www.youtube.com/watch?v=7GdsftXc0yU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-rhinestone-eyes/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-rhinestone-eyes/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Rhinestone Eyes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Rhinestone_Eyes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Gorillaz tracks debuted by Damon",
+       "publisher": "BBC Newsbeat",
+       "url": "https://web.archive.org/web/20090118234954/http://news.bbc.co.uk/newsbeat/hi/music/newsid_7829000/7829878.stm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz: Plastic Beach",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gorillaz-plastic-beach-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz - Plastic Beach",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-gorillaz-plastic-beach-4139231/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz – Plastic Beach",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-plastic-beach/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Rhinestone Eyes (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a44db450-2b09-4eca-936f-a939ad56ae16"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Rhinestone Eyes (Official Audio)",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=7GdsftXc0yU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Skladba z alba Plastic Beach (2010) od Gorillaz, postavená zčásti z nevydaného dema, plánovaná jako singl a pak odložená, později oceněná platinou v Kanadě a na Novém Zélandu, s videoklipem v podobě storyboardového filmu.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - Rhinestone Eyes",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "demo",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/demo/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-rhinestone-eyes/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-rhinestone-eyes/",
+     "wordCount": 514
     }
    ]
   },
@@ -99689,6 +100523,253 @@
     }
    ]
   },
+  "moloko-familiar-feeling.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-familiar-feeling/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moloko",
+      "sameAs": "https://musicbrainz.org/artist/2f94016a-3880-4d8c-9af9-0e197ee77189"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "electronic",
+      "dance",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Statues"
+     },
+     "isrcCode": "GBBND0200958",
+     "name": "Familiar Feeling",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bafdfa98-2b8a-47b5-b3fa-33b6f3183872",
+      "https://www.youtube.com/watch?v=ABHgpUAv1mk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/moloko-familiar-feeling/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-familiar-feeling/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Familiar Feeling",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Familiar_Feeling"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Statues (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Statues_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Moloko"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Review of Moloko - Statues",
+       "publisher": "BBC Music",
+       "url": "https://www.bbc.co.uk/music/reviews/6mvr"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Moloko: Statues",
+       "publisher": "The Guardian",
+       "url": "https://www.theguardian.com/music/2003/feb/28/popandrock.artsfeatures1"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Familiar Feeling (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/bafdfa98-2b8a-47b5-b3fa-33b6f3183872"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko - Familiar Feeling (Official HD Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=ABHgpUAv1mk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Úvodní skladba a první singl posledního alba Moloko, Statues: píseň z roku 2003, kterou napsali Róisín Murphy a Mark Brydon a jejíž albová verze se celé minuty rozbíhá na varhanách, latinskoamerické kytaře a houslích, než přijde refrén.",
+     "educationalLevel": "introductory",
+     "headline": "Moloko - Familiar Feeling",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-familiar-feeling/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/moloko-familiar-feeling/",
+     "wordCount": 540
+    }
+   ]
+  },
+  "moloko-forever-more.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-forever-more/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moloko",
+      "sameAs": "https://musicbrainz.org/artist/2f94016a-3880-4d8c-9af9-0e197ee77189"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "house",
+      "dance",
+      "disco"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Statues"
+     },
+     "isrcCode": "GBBND0200972",
+     "name": "Forever More",
+     "sameAs": [
+      "https://musicbrainz.org/recording/0785d91a-bdca-461f-8461-7be99337d628",
+      "https://www.youtube.com/watch?v=X9j_IreT5yI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/moloko-forever-more/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-forever-more/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Forever More (Moloko song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Forever_More_(Moloko_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Statues (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Statues_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Forever More - watch the video",
+       "publisher": "Contact Music",
+       "url": "https://web.archive.org/web/20110606114143/http://www.contactmusic.com/new/home.nsf/webpages/molokox16x06x03"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Moloko: Statues",
+       "publisher": "The Guardian",
+       "url": "https://www.theguardian.com/music/2003/feb/28/popandrock.artsfeatures1"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Moloko - Statues",
+       "publisher": "RTÉ",
+       "url": "https://www.rte.ie/ten/2003/0408/moloko.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Forever More (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/0785d91a-bdca-461f-8461-7be99337d628"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko - Forever More (Official HD Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=X9j_IreT5yI"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Druhý singl Moloko z alba Statues, house z roku 2003, který napsali Mark Brydon a Róisín Murphy, postavený na basovém bubnu a žestích, jehož sedmiminutová albová verze je téměř dvakrát delší než singlová.",
+     "educationalLevel": "introductory",
+     "headline": "Moloko - Forever More",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-forever-more/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/moloko-forever-more/",
+     "wordCount": 463
+    }
+   ]
+  },
   "monkey-safari-new-day.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -122663,6 +123744,322 @@
     }
    ]
   },
+  "the-prodigy-destroy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-destroy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "techno",
+      "breakbeat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400359",
+     "name": "Destroy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/496e9f74-a57b-44c7-8728-fa69dca2b7f8",
+      "https://www.youtube.com/watch?v=dxNcC5w2edg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-destroy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-destroy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy – The Day Is My Enemy",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2015/03/album-review-the-prodigy-the-day-is-my-enemy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – The Day is My Enemy",
+       "publisher": "NME",
+       "url": "https://www.nme.com/reviews/the-prodigy/15990"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/the-prodigy-the-day-is-my-enemy-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Classic Rock",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy-1"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "The 31 best The Prodigy tracks ranked",
+       "publisher": "Mixmag",
+       "url": "https://mixmag.net/feature/best-the-prodigy-tracks-ranked"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Destroy (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/496e9f74-a57b-44c7-8728-fa69dca2b7f8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Destroy",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=dxNcC5w2edg"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Pátá skladba alba The Prodigy The Day Is My Enemy (2015), spolunapsaná a spoluprodukovaná se Zakem H Laycockem: kritici v ní slyšeli techno, retro hardcore i psycho-rave a podle jednoho z nich začíná bizarní osmibitovou melodií.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Destroy",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "distortion",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/distortion/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-destroy/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-destroy/",
+     "wordCount": 522
+    }
+   ]
+  },
+  "the-prodigy-get-your-fight-on.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-get-your-fight-on/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400361",
+     "name": "Get Your Fight On",
+     "sameAs": [
+      "https://musicbrainz.org/recording/fda74ae8-e33d-44c3-bd5b-57459246aa42",
+      "https://www.youtube.com/watch?v=21mrE6bI46Q"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-get-your-fight-on/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-get-your-fight-on/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/the-prodigy-the-day-is-my-enemy-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – The Day is My Enemy",
+       "publisher": "NME",
+       "url": "https://www.nme.com/reviews/the-prodigy/15990"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy \"Get Your Fight On\" (video)",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/prodigy-get_your_fight_on_video"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy release video for new single 'Get Your Fight On' - watch it now",
+       "publisher": "Entertainment.ie",
+       "url": "https://entertainment.ie/music/the-prodigy-release-video-for-new-single-get-your-fight-on-watch-it-now-262374"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Get Your Fight On (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/fda74ae8-e33d-44c3-bd5b-57459246aa42"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Salami Fever (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/cf7b4314-aa78-433d-a157-6bed12656d85"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Get Your Fight On",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=21mrE6bI46Q"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - Get Your Fight On (Official Video)",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=_3R_Gc0ClfQ"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Propagační singl z alba The Prodigy The Day Is My Enemy (2015), který vykřikují Keith Flint a Maxim, vznikl s KillSonik a se samplem skladby Salami Fever od Pepe Deluxé a později dostal videoklip sestříhaný z koncertní show kapely.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Get Your Fight On",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "live recording",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/live-recording/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-get-your-fight-on/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-get-your-fight-on/",
+     "wordCount": 522
+    }
+   ]
+  },
   "the-prodigy-ibiza.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -122818,6 +124215,280 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-ibiza/",
      "wordCount": 465
+    }
+   ]
+  },
+  "the-prodigy-invisible-sun.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-invisible-sun/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "trip-hop",
+      "dubstep"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400363",
+     "name": "Invisible Sun",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7df5476b-0e03-44b7-bb27-79dd3c5f0cd7",
+      "https://www.youtube.com/watch?v=LduJBDg4wGM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-invisible-sun/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-invisible-sun/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy are on autopilot",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/the-prodigy-are-on-autopilot"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – The Day is My Enemy",
+       "publisher": "NME",
+       "url": "https://www.nme.com/reviews/the-prodigy/15990"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Invisible Sun (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7df5476b-0e03-44b7-bb27-79dd3c5f0cd7"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Invisible Sun",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=LduJBDg4wGM"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Předposlední skladba alba The Prodigy The Day Is My Enemy (2015), kterou napsal sám Liam Howlett: pomalá, zadumaná výjimka alba, kterou kritici srovnávali s albem Mezzanine od Massive Attack i s Timbalandem.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Invisible Sun",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "distortion",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/distortion/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/deep-cut/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-invisible-sun/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-invisible-sun/",
+     "wordCount": 508
+    }
+   ]
+  },
+  "the-prodigy-medicine.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-medicine/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "breakbeat",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400360",
+     "name": "Medicine",
+     "sameAs": [
+      "https://musicbrainz.org/recording/61f739e7-8c6f-428c-b608-bb2eb5fb0f0e",
+      "https://www.youtube.com/watch?v=z5u-dyM--KE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-medicine/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-medicine/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album review: The Prodigy - The Day Is My Enemy",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-the-prodigy-the-day-is-my-enemy/MSI3RNWCRVB32OW5QCUKNHDYLU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – The Day is My Enemy",
+       "publisher": "NME",
+       "url": "https://www.nme.com/reviews/the-prodigy/15990"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Interview: YT",
+       "publisher": "United Reggae",
+       "url": "https://unitedreggae.com/articles/n1160/112512/interview-yt"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Medicine (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/61f739e7-8c6f-428c-b608-bb2eb5fb0f0e"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Medicine",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=z5u-dyM--KE"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Maxim a reggae MC YT z Ipswiche nad uvedeným samplem balkánského souboru na albu The Prodigy The Day Is My Enemy (2015): skladba, v níž kritici slyšeli východní hrozbu, ragga groove dopadající jako rána a pokřik, který chce být politický.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Medicine",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/deep-cut/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-medicine/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-medicine/",
+     "wordCount": 532
     }
    ]
   },
@@ -196196,6 +197867,134 @@
     }
    ]
   },
+  "gorillaz-el-manana.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-el-manana/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "trip-hop",
+      "dub",
+      "alternative"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Demon Days"
+     },
+     "isrcCode": "GBAYE0500173",
+     "name": "El Mañana",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d0769eb3-ca35-4aab-aa45-ecedee55250b",
+      "https://www.youtube.com/watch?v=hji4gBuOvIQ"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-el-manana/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-el-manana/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "El Mañana (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/El_Ma%C3%B1ana_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Demon Days",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Demon_Days"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Demon Days, Gorillaz",
+       "publisher": "Audio Snobbery",
+       "url": "https://audiosnobbery.com/2019/05/18/demon-days-gorillaz/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "El Mañana",
+       "publisher": "Gorillaz Song by Song",
+       "url": "https://gorillazsongbysong.blogspot.com/2017/07/el-manana.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Reflections on 'Demon Days': How Gorillaz Turned Global Turmoil into a British Pop Masterpiece",
+       "publisher": "Vice",
+       "url": "https://www.vice.com/en/article/gorillaz-demon-days-retrospective/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Demon Days turns 20",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2307166/gorillaz-demon-days-turns-20/reviews/the-anniversary"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "El Mañana (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/d0769eb3-ca35-4aab-aa45-ecedee55250b"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - El Mañana (Official Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=hji4gBuOvIQ"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "El Mañana, the quiet centre of Gorillaz' Demon Days and its last single: Damon Albarn's song of strings, acoustic guitar and programmed drums, whose animated video shot down the floating island of Feel Good Inc.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - El Mañana",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "stage persona",
+       "url": "https://korczis.github.io/sonic-playground/concept/stage-persona/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-el-manana/",
+     "wordCount": 546
+    }
+   ]
+  },
   "gorillaz-hot-chip-kids-with-guns-hot-chip-remix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -196313,6 +198112,289 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/gorillaz-hot-chip-kids-with-guns-hot-chip-remix/",
      "wordCount": 514
+    }
+   ]
+  },
+  "gorillaz-little-dragon-empire-ants.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-little-dragon-empire-ants/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz, Little Dragon",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "synth-pop",
+      "electronic",
+      "alternative"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000007",
+     "name": "Empire Ants",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a0481faf-70de-41de-95d6-315735ef8aea",
+      "https://www.youtube.com/watch?v=GNth4yhlffU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-little-dragon-empire-ants/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-little-dragon-empire-ants/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Empire Ants",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Empire_Ants"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz: Plastic Beach",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gorillaz-plastic-beach-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz - Plastic Beach",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-gorillaz-plastic-beach-4139231/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Empire Ants (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a0481faf-70de-41de-95d6-315735ef8aea"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Empire Ants - Plastic Beach",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=GNth4yhlffU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Track seven of Gorillaz's Plastic Beach (2010), with Yukimi Nagano of Little Dragon: Damon Albarn sings a slow, mournful lament until the synths swell and the song turns into what reviewers heard as a Balearic dance track.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz, Little Dragon - Empire Ants",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-little-dragon-empire-ants/",
+     "wordCount": 548
+    }
+   ]
+  },
+  "gorillaz-lou-reed-some-kind-of-nature.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-lou-reed-some-kind-of-nature/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz, Lou Reed",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "alternative",
+      "electronic",
+      "funk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000009",
+     "name": "Some Kind of Nature",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4c1116a5-c81c-4355-8b9c-97e90b9af25f",
+      "https://www.youtube.com/watch?v=1KC2-EZ1ee0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-lou-reed-some-kind-of-nature/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-lou-reed-some-kind-of-nature/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lou Reed",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lou_Reed"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Some Kind Of Nature by Gorillaz",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/gorillaz/some-kind-of-nature"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz: Plastic Beach",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gorillaz-plastic-beach-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz - Plastic Beach",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-gorillaz-plastic-beach-4139231/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz – Plastic Beach",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-plastic-beach/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz",
+       "publisher": "The Harvard Crimson",
+       "url": "https://thecrimson.com/article/2010/3/9/gorillaz-plastic-beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Consumer Guide, May 2010",
+       "publisher": "Robert Christgau",
+       "url": "https://www.robertchristgau.com/xg/cg/cg2010-05.php"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Some Kind of Nature (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4c1116a5-c81c-4355-8b9c-97e90b9af25f"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Some Kind of Nature - Plastic Beach",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=1KC2-EZ1ee0"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Lou Reed's turn on Gorillaz's Plastic Beach (2010): a short, jaunty track on which he half-speaks lyrics about plastic that, by Damon Albarn's account, he wrote in a New York taxi.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz, Lou Reed - Some Kind of Nature",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "spoken word",
+       "url": "https://korczis.github.io/sonic-playground/concept/spoken-word/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "verse-chorus form",
+       "url": "https://korczis.github.io/sonic-playground/concept/verse-chorus-form/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-lou-reed-some-kind-of-nature/",
+     "wordCount": 529
     }
    ]
   },
@@ -196673,6 +198755,411 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/gorillaz-neneh-cherry-kids-with-guns/",
      "wordCount": 652
+    }
+   ]
+  },
+  "gorillaz-on-melancholy-hill.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-on-melancholy-hill/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "synth-pop",
+      "new wave",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000010",
+     "name": "On Melancholy Hill",
+     "sameAs": [
+      "https://musicbrainz.org/recording/842fbdae-8839-46e6-8a02-7f500a2b6597",
+      "https://www.youtube.com/watch?v=04mfKJWDSzI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-on-melancholy-hill/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-on-melancholy-hill/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "On Melancholy Hill",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/On_Melancholy_Hill"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz: Plastic Beach",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gorillaz-plastic-beach-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz",
+       "publisher": "The Harvard Crimson",
+       "url": "https://thecrimson.com/article/2010/3/9/gorillaz-plastic-beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz – Plastic Beach",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-plastic-beach/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "On Melancholy Hill (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/842fbdae-8839-46e6-8a02-7f500a2b6597"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - On Melancholy Hill (Official Video)",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=04mfKJWDSzI"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The third single from Gorillaz's Plastic Beach (2010), a synth-pop song Damon Albarn first wrote for The Good, the Bad & the Queen, which reviewers called one of the sweetest melodies he has written.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - On Melancholy Hill",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-on-melancholy-hill/",
+     "wordCount": 545
+    }
+   ]
+  },
+  "gorillaz-phoner-to-arizona.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-phoner-to-arizona/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "techno",
+      "electronic",
+      "experimental"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Fall"
+     },
+     "isrcCode": "GBAYE1001530",
+     "name": "Phoner to Arizona",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4d88ec25-a3a0-47c5-93e5-8824092ae834",
+      "https://www.youtube.com/watch?v=SAeUwuUGSaM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-phoner-to-arizona/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-phoner-to-arizona/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Phoner to Arizona",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Phoner_to_Arizona"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Fall (Gorillaz album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Fall_(Gorillaz_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "The New Gorillaz Single Doesn't Necessarily Not Sound Like Something Damon Albarn Made on His iPad While on Tour",
+       "publisher": "Vulture",
+       "url": "https://nymag.com/daily/entertainment/2010/12/the_new_gorillaz_single_doesnt.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gorillaz - The Fall",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/articles/05517-gorillaz-the-fall-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz: The Fall",
+       "publisher": "PopMatters",
+       "url": "https://web.archive.org/web/20160201074029/http://www.popmatters.com/review/140157-gorillaz-the-fall/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Sample 18 seconds of Gorillaz's free iPad album, The Fall",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2010/12/sample-18-seconds-of-gorillazs-free-ipad-album-the-fall/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Phoner To Arizona (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4d88ec25-a3a0-47c5-93e5-8824092ae834"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz - Phoner To Arizona",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=SAeUwuUGSaM"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The opening track of The Fall, the album Damon Albarn made on an iPad on tour: a mostly instrumental piece recorded in Montreal on 3 October 2010, with distorted vocals, thick beats and synth burbles.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - Phoner to Arizona",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "lo-fi",
+       "url": "https://korczis.github.io/sonic-playground/concept/lo-fi/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "distortion",
+       "url": "https://korczis.github.io/sonic-playground/concept/distortion/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-phoner-to-arizona/",
+     "wordCount": 503
+    }
+   ]
+  },
+  "gorillaz-rhinestone-eyes.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-rhinestone-eyes/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "electro-funk",
+      "synth-pop",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000017",
+     "name": "Rhinestone Eyes",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a44db450-2b09-4eca-936f-a939ad56ae16",
+      "https://www.youtube.com/watch?v=7GdsftXc0yU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-rhinestone-eyes/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-rhinestone-eyes/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Rhinestone Eyes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Rhinestone_Eyes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Gorillaz tracks debuted by Damon",
+       "publisher": "BBC Newsbeat",
+       "url": "https://web.archive.org/web/20090118234954/http://news.bbc.co.uk/newsbeat/hi/music/newsid_7829000/7829878.stm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz: Plastic Beach",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/gorillaz-plastic-beach-album-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz - Plastic Beach",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-gorillaz-plastic-beach-4139231/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz – Plastic Beach",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-plastic-beach/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Rhinestone Eyes (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a44db450-2b09-4eca-936f-a939ad56ae16"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Rhinestone Eyes (Official Audio)",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=7GdsftXc0yU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "A Plastic Beach (2010) track by Gorillaz, built partly from an unreleased demo, planned as a single and then dropped, later certified platinum in Canada and New Zealand, with a storyboard film for its video.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - Rhinestone Eyes",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "demo",
+       "url": "https://korczis.github.io/sonic-playground/concept/demo/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-rhinestone-eyes/",
+     "wordCount": 531
     }
    ]
   },
@@ -228909,6 +231396,247 @@
     }
    ]
   },
+  "moloko-familiar-feeling.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-familiar-feeling/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moloko",
+      "sameAs": "https://musicbrainz.org/artist/2f94016a-3880-4d8c-9af9-0e197ee77189"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "electronic",
+      "dance",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Statues"
+     },
+     "isrcCode": "GBBND0200958",
+     "name": "Familiar Feeling",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bafdfa98-2b8a-47b5-b3fa-33b6f3183872",
+      "https://www.youtube.com/watch?v=ABHgpUAv1mk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-familiar-feeling/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-familiar-feeling/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Familiar Feeling",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Familiar_Feeling"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Statues (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Statues_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Moloko"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Review of Moloko - Statues",
+       "publisher": "BBC Music",
+       "url": "https://www.bbc.co.uk/music/reviews/6mvr"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Moloko: Statues",
+       "publisher": "The Guardian",
+       "url": "https://www.theguardian.com/music/2003/feb/28/popandrock.artsfeatures1"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Familiar Feeling (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/bafdfa98-2b8a-47b5-b3fa-33b6f3183872"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko - Familiar Feeling (Official HD Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=ABHgpUAv1mk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The opener and lead single of Moloko's last album, Statues: a 2003 song by Róisín Murphy and Mark Brydon whose album version builds for minutes on organ, Latin guitar and fiddles before its chorus arrives.",
+     "educationalLevel": "introductory",
+     "headline": "Moloko - Familiar Feeling",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/moloko-familiar-feeling/",
+     "wordCount": 557
+    }
+   ]
+  },
+  "moloko-forever-more.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-forever-more/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moloko",
+      "sameAs": "https://musicbrainz.org/artist/2f94016a-3880-4d8c-9af9-0e197ee77189"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "house",
+      "dance",
+      "disco"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Statues"
+     },
+     "isrcCode": "GBBND0200972",
+     "name": "Forever More",
+     "sameAs": [
+      "https://musicbrainz.org/recording/0785d91a-bdca-461f-8461-7be99337d628",
+      "https://www.youtube.com/watch?v=X9j_IreT5yI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-forever-more/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-forever-more/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Forever More (Moloko song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Forever_More_(Moloko_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Statues (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Statues_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Forever More - watch the video",
+       "publisher": "Contact Music",
+       "url": "https://web.archive.org/web/20110606114143/http://www.contactmusic.com/new/home.nsf/webpages/molokox16x06x03"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Moloko: Statues",
+       "publisher": "The Guardian",
+       "url": "https://www.theguardian.com/music/2003/feb/28/popandrock.artsfeatures1"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Moloko - Statues",
+       "publisher": "RTÉ",
+       "url": "https://www.rte.ie/ten/2003/0408/moloko.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Forever More (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/0785d91a-bdca-461f-8461-7be99337d628"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko - Forever More (Official HD Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=X9j_IreT5yI"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Moloko's second single from Statues, a 2003 house track by Mark Brydon and Róisín Murphy built on bass drum and brass, whose seven-minute album version runs almost twice as long as the single edit.",
+     "educationalLevel": "introductory",
+     "headline": "Moloko - Forever More",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/moloko-forever-more/",
+     "wordCount": 513
+    }
+   ]
+  },
   "monkey-safari-new-day.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -251277,6 +254005,316 @@
     }
    ]
   },
+  "the-prodigy-destroy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-destroy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "techno",
+      "breakbeat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400359",
+     "name": "Destroy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/496e9f74-a57b-44c7-8728-fa69dca2b7f8",
+      "https://www.youtube.com/watch?v=dxNcC5w2edg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-destroy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-destroy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy – The Day Is My Enemy",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2015/03/album-review-the-prodigy-the-day-is-my-enemy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – The Day is My Enemy",
+       "publisher": "NME",
+       "url": "https://www.nme.com/reviews/the-prodigy/15990"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/the-prodigy-the-day-is-my-enemy-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Classic Rock",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy-1"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "The 31 best The Prodigy tracks ranked",
+       "publisher": "Mixmag",
+       "url": "https://mixmag.net/feature/best-the-prodigy-tracks-ranked"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Destroy (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/496e9f74-a57b-44c7-8728-fa69dca2b7f8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Destroy",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=dxNcC5w2edg"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The fifth track of The Prodigy's The Day Is My Enemy (2015), co-written and co-produced with Zak H Laycock: a track critics heard as techno, retro hardcore and psycho-rave, opening, one wrote, on a bizarre eight-bit melody.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Destroy",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "distortion",
+       "url": "https://korczis.github.io/sonic-playground/concept/distortion/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-destroy/",
+     "wordCount": 547
+    }
+   ]
+  },
+  "the-prodigy-get-your-fight-on.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-get-your-fight-on/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400361",
+     "name": "Get Your Fight On",
+     "sameAs": [
+      "https://musicbrainz.org/recording/fda74ae8-e33d-44c3-bd5b-57459246aa42",
+      "https://www.youtube.com/watch?v=21mrE6bI46Q"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-get-your-fight-on/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-get-your-fight-on/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/the-prodigy-the-day-is-my-enemy-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – The Day is My Enemy",
+       "publisher": "NME",
+       "url": "https://www.nme.com/reviews/the-prodigy/15990"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy \"Get Your Fight On\" (video)",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/prodigy-get_your_fight_on_video"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy release video for new single 'Get Your Fight On' - watch it now",
+       "publisher": "Entertainment.ie",
+       "url": "https://entertainment.ie/music/the-prodigy-release-video-for-new-single-get-your-fight-on-watch-it-now-262374"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Get Your Fight On (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/fda74ae8-e33d-44c3-bd5b-57459246aa42"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Salami Fever (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/cf7b4314-aa78-433d-a157-6bed12656d85"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Get Your Fight On",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=21mrE6bI46Q"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - Get Your Fight On (Official Video)",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=_3R_Gc0ClfQ"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "A promotional single from The Prodigy's The Day Is My Enemy (2015), shouted by Keith Flint and Maxim, built with KillSonik and a sample of Pepe Deluxé's Salami Fever, and later given a video cut from the band's live show.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Get Your Fight On",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "live recording",
+       "url": "https://korczis.github.io/sonic-playground/concept/live-recording/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-get-your-fight-on/",
+     "wordCount": 548
+    }
+   ]
+  },
   "the-prodigy-ibiza.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -251429,6 +254467,274 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/the-prodigy-ibiza/",
      "wordCount": 530
+    }
+   ]
+  },
+  "the-prodigy-invisible-sun.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-invisible-sun/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "trip-hop",
+      "dubstep"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400363",
+     "name": "Invisible Sun",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7df5476b-0e03-44b7-bb27-79dd3c5f0cd7",
+      "https://www.youtube.com/watch?v=LduJBDg4wGM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-invisible-sun/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-invisible-sun/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy are on autopilot",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/the-prodigy-are-on-autopilot"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – The Day is My Enemy",
+       "publisher": "NME",
+       "url": "https://www.nme.com/reviews/the-prodigy/15990"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Invisible Sun (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7df5476b-0e03-44b7-bb27-79dd3c5f0cd7"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Invisible Sun",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=LduJBDg4wGM"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The penultimate track of The Prodigy's The Day Is My Enemy (2015), written by Liam Howlett alone: the album's slow, brooding exception, which critics compared to Massive Attack's Mezzanine and to Timbaland.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Invisible Sun",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "distortion",
+       "url": "https://korczis.github.io/sonic-playground/concept/distortion/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/concept/deep-cut/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-invisible-sun/",
+     "wordCount": 548
+    }
+   ]
+  },
+  "the-prodigy-medicine.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-medicine/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "breakbeat",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400360",
+     "name": "Medicine",
+     "sameAs": [
+      "https://musicbrainz.org/recording/61f739e7-8c6f-428c-b608-bb2eb5fb0f0e",
+      "https://www.youtube.com/watch?v=z5u-dyM--KE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-medicine/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-medicine/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album review: The Prodigy - The Day Is My Enemy",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-the-prodigy-the-day-is-my-enemy/MSI3RNWCRVB32OW5QCUKNHDYLU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – The Day is My Enemy",
+       "publisher": "NME",
+       "url": "https://www.nme.com/reviews/the-prodigy/15990"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Interview: YT",
+       "publisher": "United Reggae",
+       "url": "https://unitedreggae.com/articles/n1160/112512/interview-yt"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Medicine (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/61f739e7-8c6f-428c-b608-bb2eb5fb0f0e"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Medicine",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=z5u-dyM--KE"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Maxim and the Ipswich reggae MC YT over a credited sample of a Balkan ensemble on The Prodigy's The Day Is My Enemy (2015): a track critics heard as eastern menace, a ragga-slam groove and a chant that wants to be political.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Medicine",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/concept/groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/concept/deep-cut/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-medicine/",
+     "wordCount": 548
     }
    ]
   },

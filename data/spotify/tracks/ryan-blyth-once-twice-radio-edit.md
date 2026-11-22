@@ -10,11 +10,14 @@ keys: {"fold": "ryanblyth|oncetwice"}
 review: "ryan-blyth_once-twice-feat-rachel-k-collier.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 4}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Once Twice - Radio Edit · Ryan Blyth, Rachel K Collier
 
 From the album *Once Twice*, 2:50.
 A liked song.
+In Your Top Songs 2023 (#4).
 Reviewed: content/ryan-blyth_once-twice-feat-rachel-k-collier.md.

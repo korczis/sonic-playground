@@ -10,11 +10,14 @@ keys: {"fold": "crookers|royalt", "musicbrainz": "7c566203-ccbe-4765-8e17-51f0ed
 review: "crookers-roisin-murphy-royal-t.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 66}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Royal T · Crookers, Róisín Murphy
 
 From the album *From Then Until Now*, 5:18.
 A liked song.
+In Your Top Songs 2024 (#66).
 Reviewed: content/crookers-roisin-murphy-royal-t.md.

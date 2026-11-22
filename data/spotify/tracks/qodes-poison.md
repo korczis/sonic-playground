@@ -14,7 +14,8 @@ yearbooks:
   - {"year": 2021, "n": 3}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 456}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 54}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Poison · Qodës
@@ -22,5 +23,5 @@ sources: ["web-player:2026-11-14"]
 From the album *Poison*, 3:30.
 A liked song.
 Your Top Songs 2021: #3.
-In My Top Songs of All the Time (#456).
+In My Top Songs of All the Time (#456); Your Top Songs 2023 (#54).
 Reviewed: content/qodes-poison.md.
