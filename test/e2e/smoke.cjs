@@ -618,7 +618,7 @@ async function shot(page, name) {
     check(st.calls === 0 && !st.api && st.toast.length > 0, 'shared link: paused, the YouTube API not even loaded, and the toast says so');
     check(st.mode === 'prism' && st.params && st.params.warp === 1.5 && st.cinema === true, 'shared link: the picture, its live control and cinema');
     await page.waitForTimeout(300);
-    check(await page.evaluate(() => window.SonicVisualizer.engine() !== 'gl'
+    check(await page.evaluate(() => document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine') !== 'gl'
       || /^hsl\(\d+ 85% 62% \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
     'shared link: a WebGL picture glows in its hue, no frame read back from the GPU');
     check(new URL(page.url()).searchParams.get('play') === key && new URL(page.url()).searchParams.get('t') === '42',

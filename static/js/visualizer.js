@@ -694,7 +694,8 @@
     glowAt = now;
     var c = full.canvas();
     if (!c || !c.width) return;
-    if (window.SonicVisualizer.engine() === 'gl') {
+    var stage = c.closest('[data-visualizer-engine]');
+    if (stage && stage.getAttribute('data-visualizer-engine') === 'gl') {
       // Reading a WebGL frame back stalls the GPU, and Chrome says so in the console: a three.js
       // picture's glow follows its hue control (its palettes rotate by it) instead of its pixels.
       var hue = Math.round((280 + (full.params().hue || 0)) % 360);

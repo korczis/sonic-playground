@@ -16,7 +16,7 @@
     </div>
     <ul id="page-recent-list" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">
       {%- for t in catalog.tracks %}{% if loop.index > 5 %}{% break %}{% endif %}
-      {{ <track_row t={t} l={l} compact=true /> }}
+      {{ <track_row t={t} l={l} compact={true} /> }}
       {%- endfor %}
     </ul>
     <div class="mt-4 flex flex-wrap gap-3 border-t border-gray-200 pt-4 dark:border-gray-700">
