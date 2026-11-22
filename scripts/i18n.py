@@ -52,6 +52,7 @@ FACET_NAMES = list(CONTRACT["properties"]["taxonomies"]["properties"])
 EXTRA = CONTRACT["properties"]["extra"]["properties"]
 CONCEPT_CATEGORIES = json.loads((ROOT / "data" / "concept.schema.json").read_text(encoding="utf-8"))[
     "properties"]["category"]["enum"]
+VIZ = json.loads((ROOT / "data" / "visualizer.json").read_text(encoding="utf-8"))
 DYNAMIC = {
     "side.all.": ["genre", "sentiment"], "side.": ["genre", "sentiment"],
     "explorer.facet.": FACET_NAMES, "explorer.any.": FACET_NAMES,
@@ -68,6 +69,11 @@ DYNAMIC = {
     "menu.": [m["key"].split(".", 1)[1] for m in tomllib.loads(
         (ROOT / "config.toml").read_text(encoding="utf-8"))["extra"]["menu"]],
     "player.": ["play", "pause"],
+    # The visualiser's modes and live controls, one list (data/visualizer.json): names and hints
+    # in the settings, the parameters' labels beside their sliders.
+    "viz.mode.": [m["id"] for m in VIZ["modes"]], "viz.hint.": [m["id"] for m in VIZ["modes"]],
+    "viz.param.": list(VIZ["params"]),
+    "viz.group.": sorted({m["group"] for m in VIZ["modes"]}),
     "yearbook.page_": ["title", "description"],  # scripts/catalog.py, the derived yearbook pages
 }
 

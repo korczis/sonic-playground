@@ -7,7 +7,7 @@ title: "The bottom-bar player keeps playing across pages; a locked phone stops a
 description: "When changing the player, the router, playlists or anything about playback on phones."
 status: verified
 epistemics: observed
-date: 2026-11-12
+date: 2026-11-22
 tags:
   - player
   - youtube
@@ -56,6 +56,30 @@ provenance:
   time survive a reload (localStorage; nothing third-party loads until play is pressed again);
   lock-screen and hardware media keys work through the Media Session API while the page is
   active; the video stays visible while it plays (YouTube's API terms require a visible player).
+
+## The URL is the state (2026-11-22)
+
+- The player writes `?play=<track>&t=<seconds>` (a catalogue track by its file name without
+  `.md`, a loose video as `yt:<id>`): on every track change, every five seconds while it plays
+  and at once after a seek. The visualiser adds `viz=<mode>`, `viz.<control>=<value>` for each
+  live control away from its default and `viz.video=cinema`. Every component deletes only its
+  own keys and keeps the others' (the explorer once kept only `viz`); the router pushes the
+  link's own URL and the player writes its keys back after `sonic:navigated`.
+- Only `replaceState`: a song change is not a history entry, so Back keeps meaning the previous
+  page (a pushState per song would step through songs while the router ignores a same-path
+  popstate).
+- A shared link cues its track at its time, paused, ahead of the reader's own queue, with a
+  toast; nothing is asked of YouTube until play is pressed. An unknown track leaves the URL.
+
+## Cinema, and why the video is never blended with the picture
+
+Cinema (the visualiser's C key or button) moves the video panel to fill the screen above the
+bar and draws the picture around it; the video's edge glows in the picture's colour and pulses
+on the kick. The owner asked (2026-11-22) to blend the video into the visualisation through
+alpha. That would lay a picture over the player, which YouTube's API terms forbid and the rule
+above ("the video stays visible") refuses, and the page cannot read a cross-origin frame's
+pixels, so the picture could not follow the image anyway. Cinema shipped; an overlay waits for
+the owner's explicit decision against the terms.
 
 ## What a browser cannot do, and the legitimate answer
 

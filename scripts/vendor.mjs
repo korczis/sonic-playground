@@ -8,6 +8,10 @@
 // and compares the bytes, and refuses a series type, option or renderer static/js/charts.js uses
 // whose module is not declared, and a declared module charts.js does not use.
 //
+// three.js is built the same way from exactly the names static/js/viz-gl.js uses: every
+// `THREE.<Name>` in its code (comments excluded) is imported from 'three' and nothing else, so the
+// bundle follows the code and a name the code drops leaves the bundle with it.
+//
 //   node scripts/vendor.mjs          copy bundles, licences and write static/data/vendor.json
 //   node scripts/vendor.mjs --check  exit 1 when a vendored file differs from node_modules
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync }
@@ -21,8 +25,9 @@ const TARGET = join(ROOT, 'static/vendor');
 const MANIFEST = join(ROOT, 'static/data/vendor.json');
 const LIBS = {
   flowbite: { bundle: 'dist/flowbite.min.js', licence: 'LICENSE.md', ext: 'min.js' },
-  echarts: { build: true, licence: 'LICENSE', ext: 'custom.min.js' },
+  echarts: { build: 'echarts', licence: 'LICENSE', ext: 'custom.min.js' },
   p5: { bundle: 'lib/p5.min.js', licence: 'license.txt', ext: 'min.js' },
+  three: { build: 'three', licence: 'LICENSE', ext: 'custom.min.js' },
 };
 
 // What charts.js would show for each ECharts module: a series type, an option key, a renderer.
@@ -75,6 +80,33 @@ async function buildEcharts(decl) {
   });
   return Buffer.from(out.outputFiles[0].contents);
 }
+/** The three.js names static/js/viz-gl.js uses, read from its code (comments excluded). */
+export function threeNames(code) {
+  const text = code.split('\n').filter((line) => !line.trim().startsWith('//')).join('\n');
+  return [...new Set([...text.matchAll(/\bTHREE\.([A-Za-z_][A-Za-z0-9_]*)/g)].map((m) => m[1]))].sort();
+}
+
+/** three.js with exactly those names, as window.THREE (bytes, deterministic for one esbuild). */
+async function buildThree() {
+  const names = threeNames(readFileSync(join(ROOT, 'static/js/viz-gl.js'), 'utf8'));
+  if (!names.length) throw new Error('vendor: static/js/viz-gl.js uses no THREE.<name>');
+  const entry = [
+    `import { ${names.join(', ')} } from 'three';`,
+    `window.THREE = { ${names.join(', ')} };`,
+  ].join('\n');
+  const out = await build({
+    stdin: { contents: entry, resolveDir: ROOT, loader: 'js' }, bundle: true, minify: true,
+    format: 'iife', target: 'es2020', legalComments: 'none', write: false, logLevel: 'error',
+  });
+  // three keeps its GLSL in multi-line template literals, whose trailing spaces and space-before-
+  // tab indents the commit's whitespace check refuses. Whitespace at a line's end or before a tab
+  // means nothing to GLSL, and no other JS line can end in a space that matters, so the bundle
+  // drops it: the check stays whole for every file, the vendored one included.
+  const text = Buffer.from(out.outputFiles[0].contents).toString('utf8')
+    .replace(/[ \t]+$/gm, '').replace(/^ +(?=\t)/gm, '');
+  return Buffer.from(text, 'utf8');
+}
+
 const DECL = JSON.parse(readFileSync(join(ROOT, 'data/echarts.json'), 'utf8'));
 
 const pkg = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
@@ -96,14 +128,16 @@ for (const [name, lib] of Object.entries(LIBS)) {
     process.exit(1);
   }
   const file = `${name}-${pinned}.${lib.ext}`;
-  plan.push([lib.build ? await buildEcharts(DECL) : join('node_modules', name, lib.bundle), file]);
+  const built = lib.build === 'echarts' ? await buildEcharts(DECL)
+    : lib.build === 'three' ? await buildThree() : null;
+  plan.push([built || join('node_modules', name, lib.bundle), file]);
   plan.push([join('node_modules', name, lib.licence), `${name}-${pinned}.LICENSE.txt`]);
   manifest.libs[name] = { version: pinned, js: `vendor/${file}` };
 }
 const manifestText = JSON.stringify(manifest, null, 2) + '\n';
 
 const bytes = (source) => (Buffer.isBuffer(source) ? source : readFileSync(join(ROOT, source)));
-const label = (source) => (Buffer.isBuffer(source) ? 'its build from data/echarts.json' : source);
+const label = (source) => (Buffer.isBuffer(source) ? 'its declared build' : source);
 
 if (check) {
   let bad = 0;

@@ -29,7 +29,8 @@ English at the root and in Czech under `/cs/`; the language switch opens a page'
 | `content/<name>.cs.md` (the Czech translation beside each page) | `scripts/catalog.py` through `scripts/translation.py` | each review's `langs` and Czech `i18n` layer in the catalogue, `search.cs.json`, Czech JSON-LD; a translation stale, structurally different or not Czech is refused |
 | every local image the content shows (`figure`, `extra.cover_image`) and `data/media.toml` | `scripts/images.py` | `static/images/derived/` AVIF and WebP at each width, `static/data/images.json`; figures render a sized `<picture>`, cards the smallest variant; YouTube stills are one `srcset` of `[youtube] stills` through the `still` component (rule `project.media-budget`) |
 | every built page | `scripts/og.cjs` (Playwright) | `og/<slug>.png`, the 1200x630 card its Open Graph / X tags name |
-| `package.json` pins, `data/echarts.json` | `scripts/vendor.mjs`, `npm run css` | self-hosted Flowbite JS; ECharts built (esbuild) from only the declared chart types, components and renderer, checked against what `static/js/charts.js` uses; `static/css/app.css` |
+| `package.json` pins, `data/echarts.json` | `scripts/vendor.mjs`, `npm run css` | self-hosted Flowbite JS and p5; ECharts built (esbuild) from only the declared chart types, components and renderer, checked against what `static/js/charts.js` uses; three.js built from exactly the `THREE.<Name>`s `static/js/viz-gl.js` uses; `static/css/app.css` |
+| `data/visualizer.json` | `templates/partials/visualizer.html`, `static/js/visualizer.js`, `scripts/i18n.py` | the visualiser's modes (engine, fallback, live controls), the settings' mode cards and sliders, the interface keys each one needs |
 | `templates/components.html` | Zola 0.23 (Tera 2) | every page: explorer, track, archive, insights, taxonomies, 404 |
 
 ## Add a song
@@ -137,9 +138,27 @@ takes it out again, **Radio** and **Play all** replace the queue and say so; the
 every card lists them all, labelled. When the queue runs out, autoplay (on by default) plays a
 random track. The bar: previous,
 play/pause, next, repeat, the queue (reorder, remove, shuffle, clear), a small or large video,
-minimise, close. The queue survives navigation and reloads. A locked phone stops any embedded
+minimise, close. The queue survives navigation and reloads. The address bar always names what is
+playing (`?play=<track>&t=<seconds>`), so any page's URL is a link to this song at this moment; a
+shared link cues it at that time, paused, ahead of the reader's own queue. A locked phone stops any embedded
 video; "Open in the YouTube app" hands the queue to an app that keeps playing. Details:
 knowledge `player-and-background-playback`.
+
+## The visualiser
+
+Twenty-five pictures of the music, each an original homage to one Winamp-era visualisation
+(MilkDrop, AVS, Geiss, G-Force, WhiteCap and the preset authors of their scenes), listed once in
+`data/visualizer.json`: ten 2D modes on p5 (`static/js/viz-2d.js`) and fifteen GPU modes on
+three.js (`static/js/viz-gl.js`: MilkDrop-style feedback, fragment shaders, a reaction-diffusion,
+3D scenes), each GPU mode with a p5 fallback. Both libraries load only when a mode of theirs is
+shown, and the render scale adapts so phones keep their frame rate. Every mode reads one analysis
+of the sound per frame (bands with automatic gain, waveform, kick/snare/hat onsets, flux,
+centroid, tempo) from the shared tab or the microphone ("Follow the music"); without either it
+follows the player's clock and says so, since a YouTube frame's audio cannot be read. Each mode
+has live controls (speed, reaction, colour, trails, symmetry, ...); cinema puts the video across
+the screen with the picture around it, never over it. Everything is in the URL: `viz=<mode>`,
+`viz.<control>=<value>`, `viz.video=cinema` beside the player's `play` and `t`. Keys: arrows
+(mode), C (cinema), F (full screen), Esc.
 
 ## Develop
 
@@ -165,7 +184,11 @@ unit tests, the skill cases (`test/cases/`), type checks, vendored assets and CS
 every page has complete social tags, every page is linked from another, is its own canonical and is named back by its counterparts), and the browser smoke test (every page class, the
 explorer, the player on desktop and phone, the router, the locales, axe-core's WCAG 2.2 A and AA
 rules on one page of every kind in light and dark, and a sweep of every sitemap page for console
-errors, warnings and failed requests). Locally the sweep visits only the pages the change since
+errors, warnings and failed requests). Last, new code is tested (rule `project.new-code-tested`):
+`scripts/coverage.mjs` refuses any line the change adds to `static/js`, `scripts/*.mjs|cjs` or
+`scripts/*.py` that no test ran, by file and line, judged against the browser's coverage of the
+smoke test's feature checks, Node's own coverage and the unit suite's (`test/pycov.py`); a line
+that cannot run under the tests carries `// untested: <reason>`, listed in every run. Locally the sweep visits only the pages the change since
 `origin/main` can affect (changed reviews in both languages, their term pages, the home pages),
 six browser pages at a time, and every page when a template, style, script, config or interface
 string changed or with `VERIFY_FULL=1`; `scripts/verify.sh --sweep-plan <built site>` prints that

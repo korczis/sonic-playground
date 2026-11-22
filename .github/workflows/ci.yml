@@ -81,8 +81,13 @@ jobs:
     timeout-minutes: 40
     env:
       SMOKE_SHARD: 1/4
+      # New code is tested (scripts/coverage.mjs): the change is judged from the pull request's
+      # base, or from the commit before the push; the history must be there to diff against.
+      COVERAGE_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: ./.github/actions/setup
       - name: Browser for the smoke test (Playwright's chromium, no system packages)
         run: npx playwright-core install chromium

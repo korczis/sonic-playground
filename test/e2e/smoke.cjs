@@ -24,6 +24,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { retryAfter, HOST_PAUSES_MS } = require('./retry.cjs');
+const v8lines = require('./v8lines.cjs');
 
 let chromium;
 try {
@@ -327,7 +328,84 @@ async function wcag(browser, viewport, reviews) {
     (found.length ? `\n     ${found.slice(0, 12).join('\n     ')}` : ''));
 }
 
+// Coverage of the site's own scripts (rule project.new-code-tested): with SMOKE_COVERAGE=<file>
+// every page the feature checks open records V8's block coverage from its first byte (the page is
+// instrumented before it navigates), each page's painting is merged per script when its context
+// closes, and the lines that ran and never ran are written for scripts/coverage.mjs. The sitemap
+// sweep is not recorded: it repeats the same code on every page and only costs time.
+const COVERAGE = process.env.SMOKE_COVERAGE || '';
+let recording = !!COVERAGE;
+const painted = new Map(); // static/js/<name>.js -> { source, state }
+const instrumented = new Set();
+async function collect(page) {
+  if (!instrumented.has(page)) return;
+  instrumented.delete(page);
+  let entries = [];
+  try { entries = await page.coverage.stopJSCoverage(); } catch (e) { return; } // a page already gone
+  absorb(entries);
+}
+// Chrome drops a document's script coverage when the page loads another document, so the
+// coverage is taken before every navigation the test asks for, and recording starts again.
+async function snapshot(page) {
+  if (!instrumented.has(page)) return;
+  try {
+    absorb(await page.coverage.stopJSCoverage());
+    await page.coverage.startJSCoverage({ resetOnNavigation: false });
+  } catch (e) { instrumented.delete(page); }
+}
+function absorb(entries) {
+  for (const entry of entries) {
+    // Only the site's own scripts, served under its base: a /js/<name>.js of any other origin
+    // would be counted as the site's (a review, 2026-11-22).
+    const url = entry.url || '';
+    const m = /^js\/([a-z0-9-]+\.js)(?:\?|$)/.exec(url.startsWith(at('')) ? url.slice(at('').length) : '');
+    if (!m || !entry.source) continue;
+    const file = `static/js/${m[1]}`;
+    const state = v8lines.paint(entry.source, entry.functions);
+    const was = painted.get(file);
+    if (!was) painted.set(file, { source: entry.source, state });
+    else if (was.source === entry.source) v8lines.merge(was.state, state);
+    else check(false, `coverage: ${file} was served with two different sources; the reading would be wrong`);
+  }
+}
+function instrument(browser) {
+  if (!COVERAGE) return;
+  const newContext = browser.newContext.bind(browser);
+  browser.newContext = async (...args) => {
+    const context = await newContext(...args);
+    const newPage = context.newPage.bind(context);
+    context.newPage = async () => {
+      const page = await newPage();
+      // A context with JavaScript off (the no-JS checks) has nothing to record.
+      if (recording && args[0] && args[0].javaScriptEnabled !== false) {
+        await page.coverage.startJSCoverage({ resetOnNavigation: false });
+        instrumented.add(page);
+        for (const name of ['goto', 'reload', 'goBack', 'goForward']) {
+          const go = page[name].bind(page);
+          page[name] = async (...a) => { await snapshot(page); return go(...a); };
+        }
+      }
+      return page;
+    };
+    const close = context.close.bind(context);
+    context.close = async (...a) => {
+      for (const page of context.pages()) await collect(page);
+      return close(...a);
+    };
+    return context;
+  };
+}
+async function writeCoverage() {
+  if (!COVERAGE) return;
+  for (const page of [...instrumented]) await collect(page);
+  const out = {};
+  for (const [file, { source, state }] of painted) out[file] = v8lines.lines(source, state);
+  fs.writeFileSync(COVERAGE, JSON.stringify(out));
+  console.log(`coverage: ${painted.size} script(s) recorded -> ${COVERAGE}`);
+}
+
 async function done(browser) {
+  await writeCoverage();
   await browser.close();
   for (const n of notices) console.log(`note ${n}`);
   console.log(failures.length ? `smoke: ${failures.length} failure(s)` : 'smoke: all checks passed');
@@ -335,6 +413,7 @@ async function done(browser) {
 }
 
 async function sweep(browser) {
+  recording = false;
   let all = await sitemap();
   if (PATHS) {
     const rels = new Set(all.map((loc) => (loc.startsWith(base) ? loc.slice(base.length) : loc)));
@@ -398,6 +477,14 @@ function litShare(selector) {
 
 // The visualiser's cluster (settings, full screen, close) is on top of everything at its own
 // centre; the open queue used to lie over Close on phones and at 1280x720 (a review, 2026-11-15).
+// The visualiser's controls fade while the pointer rests and let clicks through; a pointer move
+// shows them, as it does for a reader, before a test clicks one.
+async function showViz(page) {
+  await page.mouse.move(31, 31);
+  await page.mouse.move(40, 40);
+  await page.waitForFunction(() => document.getElementById('visualizer-full').getAttribute('data-controls') === 'shown', null, { timeout: 3000 }).catch(() => {});
+}
+
 async function vizControlsOnTop(page, what) {
   // The cluster shows on a pointer move (it fades, and lets clicks through, while the pointer rests).
   await page.mouse.move(40, 40);
@@ -416,8 +503,9 @@ async function vizControlsOnTop(page, what) {
 // default small video on every desktop; then a review found a 3 % strip the corners missed).
 async function videoSeen(page, what) {
   const hits = await page.evaluate(() => {
+    // The video's own box: in cinema the panel fills the screen and only its child is the video.
     const panel = document.getElementById('player-panel');
-    const r = panel.getBoundingClientRect();
+    const r = (panel.firstElementChild || panel).getBoundingClientRect();
     if (r.width < 100 || r.left < 0 || r.top < 0 || r.right > innerWidth || r.bottom > innerHeight) {
       return [`off screen (${Math.round(r.left)},${Math.round(r.top)} ${Math.round(r.width)}x${Math.round(r.height)})`];
     }
@@ -449,9 +537,15 @@ async function shot(page, name) {
     check(missing.length === 0, `every catalogue path is a built page${missing.length ? ': ' + missing.map((t) => t.path).join(', ') : ''}`);
   }
 
-  const launch = { headless: true };
+  // SwiftShader stands in for a GPU where there is none (CI), so the visualiser's WebGL modes
+  // are tested on their own engine rather than on their p5 fallbacks; Chrome asks for this flag
+  // since it stopped falling back to SwiftShader by itself.
+  // A fake microphone (a beeping tone) and auto-accepted permission prompts let the visualiser's
+  // "Follow the music" run its real listening path and analysis.
+  const launch = { headless: true, args: ['--enable-unsafe-swiftshader', '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] };
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   const browser = await chromium.launch(launch);
+  instrument(browser);
   const desktop = { width: 1440, height: 900 };
   const phone = { width: 390, height: 844 };
   if (SWEEP_ONLY) {
@@ -503,8 +597,308 @@ async function shot(page, name) {
     await page.waitForTimeout(2000);
     check(await page.evaluate(() => !document.querySelector('#main [data-visualizer] canvas')), 'visualiser (reduced motion): the hero draws nothing');
     await page.evaluate(() => window.SonicVisualizer.open());
-    check(await page.evaluate(() => window.SonicVisualizer.mode() === 'aurora' && !document.querySelector('#visualizer-full [data-viz-cycle]').checked),
+    check(await page.evaluate(() => window.SonicVisualizer.mode() === 'veil' && !document.querySelector('#visualizer-full [data-viz-cycle]').checked),
       'visualiser (reduced motion): a calm mode that does not change by itself');
+    await context.close();
+  }
+  // A shared link (everything in the URL): the song cued at its time, paused, with no request to
+  // YouTube until play is pressed; the picture, its live control and cinema as the sender had
+  // them; the old mode names still open their successors.
+  {
+    const t = catalog.tracks.find((x) => x.youtube && !x.video_gone);
+    const key = t.source.replace(/\.md$/, '');
+    const { context, page, errors } = await open(browser, at(`?play=${key}&t=42&viz=prism&viz.warp=1.5&viz.video=cinema`), phone, 'light', {}, true);
+    await page.waitForFunction(() => window.SonicPlayer && window.SonicPlayer.state().index >= 0, null, { timeout: 10000 }).catch(() => {});
+    const st = await page.evaluate(() => ({ s: window.SonicPlayer.state(), mode: window.SonicVisualizer.mode(),
+      params: window.SonicVisualizer.params(), cinema: window.SonicVisualizer.cinema(), calls: window.__yt ? window.__yt.calls.length : 0, api: !!window.YT,
+      toast: document.querySelector('[data-player-toast-text]').textContent }));
+    const now = st.s.queue[st.s.index] || {};
+    check(now.source === t.source && Math.round(st.s.time) === 42 && !(await page.isHidden('#player')),
+      `shared link: the song is cued at its time (${now.source} at ${st.s.time})`);
+    check(st.calls === 0 && !st.api && st.toast.length > 0, 'shared link: paused, the YouTube API not even loaded, and the toast says so');
+    check(st.mode === 'prism' && st.params && st.params.warp === 1.5 && st.cinema === true, 'shared link: the picture, its live control and cinema');
+    check(new URL(page.url()).searchParams.get('play') === key && new URL(page.url()).searchParams.get('t') === '42',
+      'shared link: the URL keeps naming the song and its time');
+    await page.click('#player [data-player-toggle]');
+    await page.waitForFunction(() => !!document.querySelector('iframe#player-video'), null, { timeout: 10000 }).catch(() => {});
+    check(await page.evaluate(() => /[?&]start=42\b/.test((document.querySelector('iframe#player-video') || {}).src || '')),
+      'shared link: play starts the song at the shared time');
+    await page.waitForTimeout(400);
+    await videoSeen(page, 'visualiser (cinema, phone, shared link)');
+    await page.evaluate(() => window.SonicVisualizer.set('tunnel'));
+    check(await page.evaluate(() => window.SonicVisualizer.mode() === 'liquid'), 'visualiser: an old mode name (?viz=tunnel) opens its successor');
+    check(errors.length === 0, `shared link: no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // The rest of an independent review's findings (2026-11-22), each checked end to end on a phone.
+  {
+    const t = catalog.tracks.find((x) => x.youtube && !x.video_gone);
+    const key = t.source.replace(/\.md$/, '');
+    const { context, page, errors } = await open(browser, at(''), phone, 'light', {}, true);
+    // A shared link shows the sender's picture: the mode's defaults and the link's controls, not
+    // the reader's saved values or the reader's cinema; and h:m:s times are understood.
+    await page.evaluate(() => localStorage.setItem('sonic.visualizer', JSON.stringify({ cinema: true, params: { prism: { warp: 1.9, hue: 200 } } })));
+    await page.goto(at(`?play=${key}&t=1:02:03&viz=prism&viz.hue=40`), { waitUntil: 'load' });
+    await page.waitForFunction(() => window.SonicVisualizer && window.SonicVisualizer.mode() === 'prism' && window.SonicPlayer.state().index >= 0, null, { timeout: 10000 }).catch(() => {});
+    const st = await page.evaluate(() => ({ p: window.SonicVisualizer.params(), cinema: window.SonicVisualizer.cinema(), time: window.SonicPlayer.state().time }));
+    check(st.p && st.p.hue === 40 && st.p.warp === 1 && st.cinema === false, `shared link: the sender's picture, not the reader's saved one (${JSON.stringify(st)})`);
+    check(Math.round(st.time) === 3723, `shared link: t=1:02:03 is 3723 s (${st.time})`);
+    check(!new URL(page.url()).searchParams.has('viz.warp') && !new URL(page.url()).searchParams.has('viz.video'),
+      'shared link: the URL keeps exactly the sender\'s controls');
+    // The toast keeps below the visualiser's controls on a phone.
+    await page.evaluate(() => window.SonicPlayer.notify('A toast over the picture'));
+    await page.waitForTimeout(100);
+    check(await page.evaluate(() => {
+      const toast = document.getElementById('player-toast').getBoundingClientRect();
+      const rows = [...document.querySelectorAll('[data-viz-cluster] > :not(#visualizer-settings)')].map((r) => r.getBoundingClientRect().bottom);
+      return toast.top >= Math.max(...rows);
+    }), 'visualiser (phone): the toast keeps below the visualiser\'s controls');
+    // Cinema with the settings open on a phone: the video returns to its corner and the sheet
+    // ends above it. Play first, so there is a video to measure.
+    await page.click('#player [data-player-toggle]');
+    await page.waitForFunction(() => !!document.querySelector('iframe#player-video') && !document.getElementById('player-panel').hidden, null, { timeout: 10000 }).catch(() => {});
+    await page.evaluate(() => window.SonicVisualizer.cinema(true));
+    await page.mouse.move(30, 30);
+    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => {
+      const v = document.querySelector('#player-panel > div').getBoundingClientRect();
+      const s = document.getElementById('visualizer-settings').getBoundingClientRect();
+      return v.width > 0 && (s.right <= v.left || s.left >= v.right || s.bottom <= v.top || s.top >= v.bottom);
+    }), 'visualiser (cinema, phone, settings open): the sheet and the video do not overlap');
+    await page.keyboard.press('Escape');
+    await page.keyboard.press('Escape');
+    // A loose video in Czech: the toast and the bar are in Czech, never a key, and no key is
+    // saved; 1m5s is 65 s.
+    await page.goto(at(`cs/?play=yt:${t.youtube}&t=1m5s`), { waitUntil: 'load' });
+    await page.waitForFunction(() => window.SonicPlayer.state().index >= 0 && document.querySelector('[data-player-toast-text]').textContent, null, { timeout: 10000 }).catch(() => {});
+    const yt = await page.evaluate(() => ({ toast: document.querySelector('[data-player-toast-text]').textContent,
+      title: document.querySelector('[data-player-title]').textContent, s: window.SonicPlayer.state(),
+      saved: JSON.parse(localStorage.getItem('sonic-player') || '{}') }));
+    const loose = yt.s.queue[yt.s.index] || {};
+    check(yt.toast && !/^player\./.test(yt.toast) && yt.title && !/^player\./.test(yt.title),
+      `shared link (cs, loose video): the toast and the bar are words, not keys ("${yt.toast}", "${yt.title}")`);
+    check(loose.youtube === t.youtube && Math.round(yt.s.time) === 65 && (yt.saved.queue || []).every((q) => !/^player\./.test(q.track || '')),
+      'shared link (cs, loose video): cued at 1m5s, and no interface key is saved');
+    check(errors.length === 0, `review findings (phone): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // The interface strings fail to load: a shared link is still cued (quietly, no raw key in a
+  // toast), and the URL follows the next song instead of freezing on the shared one.
+  {
+    const S0 = catalog.tracks.find((x) => x.youtube && !x.video_gone);
+    const S1 = catalog.tracks.find((x) => x.youtube && !x.video_gone && x.source !== S0.source);
+    const { context, page } = await open(browser, at('404.html'), desktop, 'light', {}, true);
+    await context.route('**/data/i18n.json*', (route) => route.fulfill({ status: 503, body: 'down' }));
+    await page.goto(at(`?play=${S0.source.replace(/\.md$/, '')}&t=30`), { waitUntil: 'load' });
+    await page.waitForFunction(() => window.SonicPlayer.state().index >= 0, null, { timeout: 10000 }).catch(() => {});
+    const cued = await page.evaluate(() => ({ s: window.SonicPlayer.state(), toast: document.querySelector('[data-player-toast-text]').textContent }));
+    check((cued.s.queue[cued.s.index] || {}).source === S0.source && !/^player\./.test(cued.toast),
+      'shared link (strings failed): the song is cued, and no key is shown');
+    await page.evaluate((src) => Sonic.playIndex().then((c) => window.SonicPlayer.playNow(c.tracks.find((t) => t.source === src))), S1.source);
+    await page.waitForFunction((k) => new URL(location.href).searchParams.get('play') === k, S1.source.replace(/\.md$/, ''), { timeout: 10000 }).catch(() => {});
+    check(new URL(page.url()).searchParams.get('play') === S1.source.replace(/\.md$/, ''), 'shared link (strings failed): the URL follows the next song');
+    await context.close();
+  }
+  // An anchor on the page on screen that is already in the URL scrolls to its target again, as
+  // the browser does (the skip link used twice), and the player's keys stay in the URL.
+  {
+    const { context, page } = await open(browser, at(''), desktop);
+    await page.evaluate(() => {
+      const main = document.getElementById('main-content');
+      const target = document.createElement('div');
+      target.id = 'anchor-probe-target';
+      target.style.marginTop = '4000px';
+      target.textContent = 'target';
+      main.append(target);
+      const a = document.createElement('a');
+      a.href = '#anchor-probe-target';
+      a.id = 'anchor-probe';
+      a.textContent = 'to the target';
+      main.prepend(a);
+      history.replaceState(history.state, '', location.pathname + '?play=probe-song');
+    });
+    const near = () => page.evaluate(() => { const r = document.getElementById('anchor-probe-target').getBoundingClientRect(); return r.top >= -2 && r.top < innerHeight; });
+    await page.click('#anchor-probe');
+    await page.waitForTimeout(300);
+    check(await near() && new URL(page.url()).hash === '#anchor-probe-target' && new URL(page.url()).searchParams.get('play') === 'probe-song',
+      'router: an anchor on the page scrolls there and keeps the player\'s keys');
+    await page.evaluate(() => { window.scrollTo(0, 0); const m = document.getElementById('main-content'); if (m) m.scrollTop = 0; });
+    await page.evaluate(() => document.getElementById('anchor-probe').click());
+    await page.waitForTimeout(300);
+    check(await near() && await page.evaluate(() => document.activeElement && document.activeElement.id === 'anchor-probe-target'),
+      'router: the same anchor again scrolls there again and moves focus');
+    await context.close();
+  }
+  // The 40 s change, on Playwright's clock rather than a 40 s wait: the picture moves on to the
+  // next mode by itself, and the URL follows.
+  {
+    const { context, page } = await open(browser, at('404.html'), desktop);
+    await page.clock.install();
+    await page.goto(at('?viz=veil'), { waitUntil: 'load' });
+    await page.waitForFunction(() => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0) > 3, null, { timeout: 15000 }).catch(() => {});
+    const before = await page.evaluate(() => window.SonicVisualizer.mode());
+    await page.clock.fastForward(41000);
+    await page.waitForFunction((m) => window.SonicVisualizer.mode() !== m, before, { timeout: 15000 }).catch(() => {});
+    const after = await page.evaluate(() => ({ mode: window.SonicVisualizer.mode(), modes: window.SonicVisualizer.modes() }));
+    check(before === 'veil' && after.mode === after.modes[(after.modes.indexOf('veil') + 1) % after.modes.length]
+      && new URL(page.url()).searchParams.get('viz') === after.mode,
+      `visualiser: after 40 s the picture moves on to the next mode by itself (${before} -> ${after.mode})`);
+    await context.close();
+  }
+  // A shared link that resolves after play was pressed queues its song next and never swaps it
+  // under the playing video.
+  {
+    const S0 = catalog.tracks.find((x) => x.youtube && !x.video_gone);
+    const S1 = catalog.tracks.find((x) => x.youtube && !x.video_gone && x.source !== S0.source);
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'light', {}, true);
+    await page.evaluate((q) => localStorage.setItem('sonic-player', JSON.stringify({ queue: [q], index: 0, time: 0 })),
+      { source: S0.source, path: S0.path, i18n: {}, artist: S0.artist, track: S0.track, youtube: S0.youtube, thumbnail: '' });
+    await context.route('**/data/play.json*', async (route) => { await new Promise((r) => setTimeout(r, 2500)); await route.continue(); });
+    await page.goto(at(`?play=${S1.source.replace(/\.md$/, '')}&t=30`), { waitUntil: 'load' });
+    await page.click('#player [data-player-toggle]');
+    await page.waitForFunction(() => window.SonicPlayer.state().queue.length === 2, null, { timeout: 15000 }).catch(() => {});
+    const r = await page.evaluate(() => window.SonicPlayer.state());
+    check(r.index === 0 && r.queue[0].source === S0.source && r.queue[1] && r.queue[1].source === S1.source,
+      `shared link after play: the shared song is queued next, the playing one stays (${r.queue.map((q) => q.source).join(', ')} at ${r.index})`);
+    check(errors.length === 0, `shared link after play: no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // "Follow the music" listens for real (Chrome's fake microphone, a beeping tone). The tab is
+  // asked first on a Chromium computer; a shared tab without its audio (here a video-only stream,
+  // deterministic where headless Chrome would otherwise pick a source itself) falls back to the
+  // microphone. The analysis follows the sound, the button steps aside, "Don't listen" returns to
+  // the clock. A refused microphone is said beside the buttons.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), phone, 'dark');
+    await context.grantPermissions(['microphone', 'camera']);
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (md) md.getDisplayMedia = () => md.getUserMedia({ video: true });
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await page.mouse.move(30, 30);
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    // Two devices start in turn (the fake camera behind the silent tab, then the microphone):
+    // on a loaded machine that took over 10 s, so the wait is long and bounded.
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 30000 }).catch(() => {});
+    await page.waitForFunction(() => window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 10000 }).catch(() => {});
+    const a = await page.evaluate(() => window.SonicVisualizer.analysis());
+    check(a.source === 'mic' && a.level > 0.01, `visualiser: "Follow the music" falls back from a silent tab to the microphone and follows it (${JSON.stringify(a)})`);
+    check(await page.isHidden('#visualizer-full [data-viz-source="connect"]'), 'visualiser: listening, "Follow the music" steps aside');
+    await page.waitForTimeout(1500);
+    // The controls fade while the pointer rests; a move shows them, as it does for a reader.
+    await page.mouse.move(31, 31);
+    await page.mouse.move(40, 40);
+    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await page.click('#visualizer-full [data-viz-source="clock"]');
+    check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser: "Don\'t listen" returns to the clock');
+    check(errors.length === 0, `visualiser (microphone): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  {
+    const { context, page } = await open(browser, at('404.html'), phone);
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getUserMedia = () => Promise.reject(new DOMException('denied', 'NotAllowedError'));
+      md.getDisplayMedia = undefined; // a browser that cannot share a tab: the microphone is asked
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await page.mouse.move(30, 30);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied', null, { timeout: 5000 }).catch(() => {});
+    check(await page.evaluate(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied'
+      && window.SonicVisualizer.source() === 'clock'), 'visualiser: a refused microphone is said, and the picture stays on the clock');
+    await context.close();
+  }
+  // A GPU mode whose code cannot be loaded (offline, blocked) is drawn by its p5 fallback; when
+  // the p5 code cannot be loaded either, the stage says so instead of drawing nothing silently.
+  {
+    const { context, page } = await open(browser, at('404.html'), desktop);
+    await context.route('**/js/viz-gl.js*', (route) => route.abort());
+    await page.goto(at('?viz=liquid'), { waitUntil: 'load' });
+    await page.waitForFunction(() => window.SonicVisualizer.shown() === 'flux', null, { timeout: 15000 }).catch(() => {});
+    check(await page.evaluate(() => window.SonicVisualizer.shown()) === 'flux', 'visualiser: a GPU mode whose code cannot load is drawn by its fallback');
+    await context.close();
+  }
+  {
+    // A fresh context, so nothing of the p5 code is in any cache.
+    const { context, page } = await open(browser, at('404.html'), desktop);
+    await context.route('**/js/viz-2d.js*', (route) => route.abort());
+    await page.goto(at('?viz=kaleido'), { waitUntil: 'load' });
+    await page.waitForFunction(() => document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-error') === 'p5', null, { timeout: 15000 }).catch(() => {});
+    check(await page.evaluate(() => document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-error')) === 'p5',
+      'visualiser: when no picture code can load, the stage is marked, never silently blank');
+    await context.close();
+  }
+  // The analysis follows the music, not a clock: a 55 Hz pulse every 0.5 s (120 bpm), made with
+  // WebAudio and handed over as the microphone, gives kick onsets and a tempo of about 120.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), phone, 'dark');
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getDisplayMedia = undefined;
+      md.getUserMedia = async () => {
+        const ac = new AudioContext();
+        await ac.resume();
+        const osc = ac.createOscillator();
+        osc.frequency.value = 55;
+        const gain = ac.createGain();
+        gain.gain.value = 0;
+        const out = ac.createMediaStreamDestination();
+        osc.connect(gain).connect(out);
+        osc.start();
+        const t0 = ac.currentTime + 0.1;
+        for (let i = 0; i < 60; i++) {
+          const t = t0 + i * 0.5;
+          gain.gain.setValueAtTime(1, t);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + 0.16);
+          gain.gain.setValueAtTime(0, t + 0.18);
+        }
+        return out.stream;
+      };
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('ripple'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.analysis().bpm > 0, null, { timeout: 15000 }).catch(() => {});
+    // The label beside the mode's name refreshes once a second.
+    await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-tempo]').textContent.length > 0, null, { timeout: 5000 }).catch(() => {});
+    const tempo = await page.evaluate(() => ({ a: window.SonicVisualizer.analysis(), label: document.querySelector('#visualizer-full [data-viz-tempo]').textContent }));
+    check(tempo.a.source === 'mic' && tempo.a.bpm >= 110 && tempo.a.bpm <= 130 && /1[12]\d/.test(tempo.label),
+      `visualiser: the analysis finds the tempo of the music (120 bpm pulse -> ${tempo.a.bpm} bpm, "${tempo.label}")`);
+    check(errors.length === 0, `visualiser (tempo): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // Without WebGL 2 a GPU mode is drawn by its p5 fallback, and the settings say so; three.js is
+  // never downloaded for nothing.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop);
+    await page.addInitScript(() => {
+      const get = HTMLCanvasElement.prototype.getContext;
+      HTMLCanvasElement.prototype.getContext = function (kind, ...rest) { return kind === 'webgl2' ? null : get.call(this, kind, ...rest); };
+    });
+    let three = 0;
+    page.on('request', (r) => { if (/vendor\/three-/.test(r.url())) three += 1; });
+    await page.goto(at('?viz=liquid'), { waitUntil: 'load' });
+    await page.waitForFunction(() => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0) > 10, null, { timeout: 15000 }).catch(() => {});
+    const fb = await page.evaluate(() => ({ mode: window.SonicVisualizer.mode(), shown: window.SonicVisualizer.shown(), engine: window.SonicVisualizer.engine() }));
+    check(fb.mode === 'liquid' && fb.shown === 'flux' && fb.engine === 'p5' && await page.evaluate(litShare, '[data-visualizer-stage] canvas') > 0,
+      `visualiser (no WebGL 2): liquid is drawn by its fallback (${JSON.stringify(fb)})`);
+    // Flux morphs through five shapes, a new one every 7 s: it runs past the last of them.
+    await page.waitForTimeout(22500);
+    check(await page.evaluate(litShare, '[data-visualizer-stage] canvas') > 0, 'visualiser: flux still draws after morphing through every shape');
+    await page.mouse.move(30, 30);
+    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    check(await page.isVisible('#visualizer-full [data-viz-fallback]'), 'visualiser (no WebGL 2): the settings say a lighter picture stands in');
+    check(three === 0, `visualiser (no WebGL 2): three.js is never requested (${three})`);
+    check(errors.length === 0, `visualiser (no WebGL 2): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
   // A negative control for litShare: a blank canvas is not a picture.
@@ -1047,6 +1441,10 @@ async function shot(page, name) {
     const video = () => page.evaluate(() => window.__yt.player && window.__yt.player._video);
     const sample3 = catalog.tracks.find((t) => t.source === S[3]);
     check(await video() === sample3.youtube, 'player: the frame plays the current track\'s video');
+    // The listening guide on the track that plays seeks it in place (no reload of the frame).
+    await page.evaluate((src) => Sonic.playIndex().then((c) => window.SonicPlayer.seek(c.tracks.find((t) => t.source === src), '0:42')), S[3]);
+    check(await page.evaluate(() => window.__yt.calls.some((c) => c[0] === 'seek' && c[1] === 42)),
+      'player: the listening guide seeks the playing track in place');
 
     await page.click('[data-player-queue]');
     check(await page.isVisible('#player-queue'), 'player: the queue panel opens');
@@ -1064,13 +1462,141 @@ async function shot(page, name) {
     await page.click('#player-queue [data-visualizer-open]');
     await page.waitForFunction(() => document.documentElement.getAttribute('data-visualizer') === 'open');
     check(new URL(page.url()).searchParams.has('viz'), 'visualiser: opening it puts ?viz in the URL');
+    check(new URL(page.url()).searchParams.get('play') === S[3].replace(/\.md$/, ''), 'player: the URL names the playing song (?play)');
+    const webgl = await page.evaluate(() => !!document.createElement('canvas').getContext('webgl2'));
     for (const mode of await page.evaluate(() => window.SonicVisualizer.modes())) {
       await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
       const from = Number(await page.getAttribute('[data-visualizer-stage]', 'data-visualizer-frame') || 0);
-      await page.waitForFunction((f) => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0) > f + 40, from, { timeout: 15000 }).catch(() => {});
-      check(await page.evaluate(litShare, '[data-visualizer-stage] canvas') > 0, `visualiser: ${mode} draws`);
+      await page.waitForFunction((f) => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0) > f + 20, from, { timeout: 10000 }).catch(() => {});
+      const shown = await page.evaluate(() => ({ shown: window.SonicVisualizer.shown(), canvases: document.querySelectorAll('[data-visualizer-stage] canvas').length }));
+      check(await page.evaluate(litShare, '[data-visualizer-stage] canvas') > 0 && shown.canvases === 1,
+        `visualiser: ${mode} draws${shown.shown !== mode ? ' (as ' + shown.shown + ')' : ''}`);
+      if (webgl) check(shown.shown === mode, `visualiser: ${mode} draws on its own engine where WebGL 2 exists`);
       await videoSeen(page, `visualiser (${mode}, desktop, queue open)`);
     }
+    // Live controls and cinema: a slider writes its value into the URL; cinema fills the screen
+    // with the video, the picture around it, and the settings sheet never lies over it.
+    await page.evaluate(() => { window.SonicVisualizer.set('prism'); window.SonicVisualizer.param('warp', 1.5); });
+    check(new URL(page.url()).searchParams.get('viz.warp') === '1.5', 'visualiser: a live control is in the URL (viz.warp)');
+    await page.evaluate(() => window.SonicVisualizer.cinema(true));
+    await page.waitForTimeout(300);
+    check(new URL(page.url()).searchParams.get('viz.video') === 'cinema'
+      && await page.evaluate(() => document.querySelector('#player-panel > div').getBoundingClientRect().width > innerWidth * 0.5),
+      'visualiser: cinema fills the screen with the video and says so in the URL');
+    await videoSeen(page, 'visualiser (cinema, desktop)');
+    // A toast over cinema never lands on the video: desktop and landscape (a review, 2026-11-22).
+    await page.evaluate(() => window.SonicPlayer.notify('A toast over cinema'));
+    await page.waitForTimeout(120);
+    await videoSeen(page, 'visualiser (cinema, desktop, toast shown)');
+    const wide = page.viewportSize();
+    await page.setViewportSize({ width: 844, height: 390 });
+    await page.waitForTimeout(300);
+    await page.evaluate(() => window.SonicPlayer.notify('A toast over cinema in landscape'));
+    await page.waitForTimeout(120);
+    await videoSeen(page, 'visualiser (cinema, landscape 844x390, toast shown)');
+    await page.setViewportSize(wide);
+    await page.waitForTimeout(300);
+    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => {
+      const v = document.querySelector('#player-panel > div').getBoundingClientRect();
+      const s = document.getElementById('visualizer-settings').getBoundingClientRect();
+      return s.right <= v.left || s.left >= v.right || s.bottom <= v.top || s.top >= v.bottom;
+    }), 'visualiser (cinema, desktop): the settings and the video do not overlap');
+    await videoSeen(page, 'visualiser (cinema, desktop, settings open)');
+    // An independent review (2026-11-22) found each of these; each check fails on that build.
+    // The live controls are named by their own labels (an <output> inside the label took it).
+    check(await page.evaluate(() => [...document.querySelectorAll('#visualizer-settings [data-viz-param]')].filter((i) => i.offsetParent)
+      .every((i) => i.labels.length === 1 && i.labels[0].tagName === 'LABEL' && i.labels[0].textContent.trim().length > 0)),
+    'visualiser: every live control is named by its own label');
+    const warpName = await page.evaluate(() => document.querySelector('label[for="viz-param-warp"]').textContent.trim());
+    check(await page.getByRole('slider', { name: warpName, exact: true }).count() === 1, 'visualiser: a live control has its accessible name (role slider)');
+    // Every control of the sheet is at least 40 px tall (the chips, the toggles, the sliders).
+    const tiny = await page.evaluate(() => [...document.querySelectorAll('#visualizer-settings button, #visualizer-settings input[type=range], #visualizer-settings label:not([for])')]
+      .filter((e) => e.offsetParent).filter((e) => e.getBoundingClientRect().height < 39.5).map((e) => e.outerHTML.slice(0, 60)));
+    check(tiny.length === 0, `visualiser: every control of the settings is at least 40 px tall${tiny.length ? ': ' + tiny.join(' | ') : ''}`);
+    // The radio pattern: one tab stop per group; the arrows move within a group and check what they
+    // reach, and never change the picture from the Sound group.
+    check(await page.evaluate(() => [...document.querySelectorAll('#visualizer-settings [role=radiogroup]')]
+      .every((g) => g.querySelectorAll('[role=radio][tabindex="0"]').length === 1 && g.querySelector('[role=radio][tabindex="0"]').getAttribute('aria-checked') !== 'false')
+      || [...document.querySelectorAll('#visualizer-settings [role=radiogroup]')].every((g) => g.querySelectorAll('[role=radio][tabindex="0"]').length === 1)),
+    'visualiser: one tab stop per radio group');
+    await page.focus('#visualizer-settings [data-viz-mode][aria-checked="true"]');
+    const fromMode = await page.evaluate(() => window.SonicVisualizer.mode());
+    await page.keyboard.press('ArrowRight');
+    check(await page.evaluate((m) => window.SonicVisualizer.mode() !== m
+      && document.activeElement.getAttribute('data-viz-mode') === window.SonicVisualizer.mode()
+      && document.activeElement.getAttribute('aria-checked') === 'true', fromMode),
+    'visualiser: ArrowRight on a mode checks the next mode and keeps focus on it');
+    const keptMode = await page.evaluate(() => window.SonicVisualizer.mode());
+    await page.focus('#visualizer-settings [data-viz-source="mic"]');
+    await page.keyboard.press('ArrowRight');
+    check(await page.evaluate((m) => window.SonicVisualizer.mode() === m && document.activeElement.getAttribute('data-viz-source') === 'clock'
+      && window.SonicVisualizer.source() === 'clock', keptMode),
+    'visualiser: the arrows in the Sound group move within it and leave the picture alone');
+    // The glow's variables are set on the video panel, not on <html> (a whole-page restyle per frame).
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => document.documentElement.style.getPropertyValue('--viz-kick') === ''
+      && document.getElementById('player-panel').style.getPropertyValue('--viz-kick') !== ''),
+    'visualiser (cinema): the glow lives on the video panel, not on the root');
+    // The 40 s change switch is remembered both ways.
+    await page.click('#visualizer-full label:has([data-viz-cycle])');
+    check(await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer') || '{}').cycle === false), 'visualiser: the change switch turns the 40 s change off');
+    await page.click('#visualizer-full label:has([data-viz-cycle])');
+    check(await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer') || '{}').cycle === true), 'visualiser: and on again');
+    // Reset returns the live controls to the mode's defaults and takes them out of the URL.
+    await page.evaluate(() => window.SonicVisualizer.set('prism'));
+    await page.evaluate(() => window.SonicVisualizer.param('hue', 120));
+    check(new URL(page.url()).searchParams.get('viz.hue') === '120', 'visualiser: a moved control is in the URL');
+    await page.click('#visualizer-full [data-viz-reset]');
+    check(!new URL(page.url()).searchParams.has('viz.hue') && (await page.evaluate(() => window.SonicVisualizer.params().hue)) === 0,
+      'visualiser: Reset returns the controls to the mode\'s defaults');
+    // A slider moved by the keyboard writes its value, live, and the URL follows.
+    await page.focus('#viz-param-warp');
+    await page.keyboard.press('ArrowRight');
+    await page.waitForTimeout(400);
+    check(new URL(page.url()).searchParams.has('viz.warp') && Number(new URL(page.url()).searchParams.get('viz.warp')) === (await page.evaluate(() => window.SonicVisualizer.params().warp)),
+      'visualiser: a slider moved by the keyboard sets the control and the URL');
+    // The cinema switch in the sheet and the cinema button agree.
+    await page.click('#visualizer-full label:has([data-viz-cinema-switch])');
+    check(!(await page.evaluate(() => window.SonicVisualizer.cinema())) && !new URL(page.url()).searchParams.has('viz.video'),
+      'visualiser: the cinema switch turns cinema off');
+    await page.click('#visualizer-full label:has([data-viz-cinema-switch])');
+    check(await page.evaluate(() => window.SonicVisualizer.cinema()), 'visualiser: the cinema switch turns it on again');
+    await page.keyboard.press('Escape');
+    // C toggles cinema from the keyboard; F asks for real fullscreen.
+    await page.focus('#visualizer-full');
+    await page.keyboard.press('c');
+    check(!(await page.evaluate(() => window.SonicVisualizer.cinema())), 'visualiser: C turns cinema off');
+    await page.keyboard.press('c');
+    check(await page.evaluate(() => window.SonicVisualizer.cinema()), 'visualiser: C turns cinema on');
+    await page.keyboard.press('f');
+    await page.waitForTimeout(300);
+    if (await page.evaluate(() => !!document.fullscreenElement)) await page.keyboard.press('f');
+    check(await page.evaluate(() => document.documentElement.getAttribute('data-visualizer') === 'open'), 'visualiser: F leaves the picture open');
+    // "Copy a link" copies the URL of this picture and this song, and says so.
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-share]');
+    await page.waitForTimeout(300);
+    const copied = await page.evaluate(() => navigator.clipboard.readText());
+    check(new URL(copied).searchParams.get('viz') && new URL(copied).searchParams.get('play') && new URL(copied).searchParams.get('viz.video') === 'cinema',
+      `visualiser: "Copy a link" copies the picture and the song (${copied.replace(/^https?:\/\/[^/]+/, '')})`);
+    check(await page.evaluate(() => document.querySelector('[data-player-toast-text]').textContent.length > 0), 'visualiser: the copy is confirmed in the toast');
+    // A resized window redraws the picture at its new size.
+    const was = page.viewportSize();
+    await page.setViewportSize({ width: 900, height: 700 });
+    await page.waitForTimeout(500);
+    check(await page.evaluate(() => { const c = document.querySelector('[data-visualizer-stage] canvas'); return c && c.getBoundingClientRect().width === 900; }),
+      'visualiser: a resized window redraws the picture at its new size');
+    await page.setViewportSize(was);
+    // Cinema yields to the open queue: the queue's own rules place the video beside it.
+    await page.click('[data-player-queue]');
+    await page.waitForTimeout(200);
+    check(await page.isVisible('#player-queue'), 'visualiser (cinema): the queue opens over the picture');
+    await videoSeen(page, 'visualiser (cinema, desktop, queue open)');
+    await page.keyboard.press('Escape');
+    await page.evaluate(() => window.SonicVisualizer.cinema(false));
     check(!(await page.isVisible('#player-queue')), 'visualiser: opening it closes the queue');
     await vizControlsOnTop(page, 'visualiser (desktop)');
     check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser: nothing listens until the reader asks');
@@ -1083,12 +1609,56 @@ async function shot(page, name) {
       'visualiser: closing it returns focus to the queue button it was opened from');
     // Escape closes the topmost layer only: the queue reopened over it first, then the picture.
     await page.evaluate(() => window.SonicVisualizer.open('bars'));
+    check(await page.evaluate(() => window.SonicVisualizer.mode() === 'tower'), 'visualiser: the old name bars opens its successor');
     await page.click('[data-player-queue]');
     await page.keyboard.press('Escape');
     check(await page.evaluate(() => document.getElementById('player-queue').hidden && document.documentElement.getAttribute('data-visualizer') === 'open'),
       'visualiser: Escape with the queue open closes the queue and keeps the picture');
     await page.keyboard.press('Escape');
     check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer')), 'visualiser: the next Escape closes the picture');
+    // Leaving a mode before its first frame (reef builds its grid on the first frame): the next
+    // mode takes over, and a close right after it still closes, leaving no page inert.
+    await page.evaluate(() => window.SonicVisualizer.open('prism'));
+    await page.waitForFunction(() => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0) > 5, null, { timeout: 10000 }).catch(() => {});
+    await page.evaluate(() => { window.SonicVisualizer.set('reef'); window.SonicVisualizer.set('fold'); });
+    await page.waitForTimeout(400);
+    check(await page.evaluate(() => window.SonicVisualizer.mode() === 'fold' && document.querySelectorAll('[data-visualizer-stage] canvas').length === 1),
+      'visualiser: a mode left before its first frame hands over cleanly');
+    await page.evaluate(() => { window.SonicVisualizer.set('reef'); window.SonicVisualizer.close(); });
+    check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer') && document.getElementById('visualizer-full').hidden
+      && !document.getElementById('main-content').hasAttribute('inert')),
+    'visualiser: a close right after a mode change closes, and the page is usable');
+    // A link to the page on screen fetches nothing, whatever the player keeps in the URL.
+    let refetched = 0;
+    const onRequest = (r) => { if (r.resourceType() === 'fetch' && new URL(r.url()).pathname === new URL(page.url()).pathname) refetched += 1; };
+    page.on('request', onRequest);
+    await page.evaluate(() => {
+      const a = document.createElement('a');
+      a.href = location.pathname;
+      a.id = 'same-page-probe';
+      a.textContent = 'here';
+      document.getElementById('main-content').prepend(a);
+    });
+    check(new URL(page.url()).searchParams.has('play'), 'player: the URL names the song before the same-page link');
+    await page.click('#same-page-probe');
+    await page.waitForTimeout(600);
+    page.off('request', onRequest);
+    check(refetched === 0, `router: a link to the page on screen fetches nothing although ?play is in the URL (${refetched})`);
+    await page.evaluate(() => document.getElementById('same-page-probe').remove());
+    // Leaving a page with the picture open closes it before the next entry is pushed, so Back
+    // never returns to an entry that reopens it.
+    await page.evaluate(() => window.SonicVisualizer.open('veil'));
+    check(new URL(page.url()).searchParams.get('viz') === 'veil', 'visualiser: open, the URL names it');
+    const away = catalog.tracks.find((t) => t.youtube && !t.video_gone && t.source !== S[0]);
+    await page.evaluate((href) => window.SonicRouter.go(href), at(away.path));
+    await page.waitForFunction((p) => location.pathname.endsWith(p), away.path, { timeout: 15000 }).catch(() => {});
+    check(!new URL(page.url()).searchParams.has('viz') && new URL(page.url()).searchParams.has('play'),
+      'router: the next page keeps the song and not the closed picture');
+    await page.goBack();
+    await page.waitForTimeout(800);
+    check(!new URL(page.url()).searchParams.has('viz') && !(await page.evaluate(() => document.documentElement.hasAttribute('data-visualizer'))),
+      'router: Back returns to the page without reopening the picture');
+    await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready', null, { timeout: 15000 }).catch(() => {});
     // Behind every page while the player plays (the owner, 2026-11-16): the layer draws while
     // playing, never covers the video, rests while paused and obeys the settings' switch.
     await page.evaluate(() => window.__yt.fire(1));
@@ -1336,9 +1906,16 @@ async function shot(page, name) {
     await page.mouse.move(20, 20);
     await vizControlsOnTop(page, 'visualiser (phone, opened from the queue)');
     await videoSeen(page, 'visualiser (phone, opened from the queue)');
-    await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
     check(await page.isVisible('#visualizer-settings') && await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
       'visualiser (phone): the settings open within the screen');
+    await page.waitForTimeout(100);
+    check(await page.evaluate(() => {
+      const v = document.querySelector('#player-panel > div').getBoundingClientRect();
+      const s = document.getElementById('visualizer-settings').getBoundingClientRect();
+      return s.right <= v.left || s.left >= v.right || s.bottom <= v.top || s.top >= v.bottom;
+    }), 'visualiser (phone): the settings sheet ends above the video');
+    await videoSeen(page, 'visualiser (phone, settings open)');
     await page.keyboard.press('Escape');
     check(await page.evaluate(() => document.getElementById('visualizer-settings').hidden && document.documentElement.getAttribute('data-visualizer') === 'open'),
       'visualiser (phone): Escape closes the settings first');
