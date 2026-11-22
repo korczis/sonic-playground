@@ -1642,7 +1642,7 @@
 {"followed": false, "id": "goom-gum", "liked": 0, "name": "Goom Gum", "reviewed": 0, "spotify_artist": "6D36JCiONtO40ykvT5RBec", "tracks": 1}
 {"followed": false, "id": "goonrock", "liked": 0, "name": "GoonRock", "reviewed": 1, "spotify_artist": "53sIBaVjXQhfH89Vu6nEGh", "tracks": 1}
 {"followed": true, "id": "gorgon-city", "liked": 25, "name": "Gorgon City", "reviewed": 12, "spotify_artist": "4VNQWV2y1E97Eqo2D5UTjx", "top_month": 14, "tracks": 29}
-{"followed": true, "id": "gorillaz", "liked": 213, "name": "Gorillaz", "reviewed": 37, "spotify_artist": "3AA28KZvwAUcZuOKwyblJQ", "top_month": 1, "tracks": 214}
+{"followed": true, "id": "gorillaz", "liked": 213, "name": "Gorillaz", "reviewed": 46, "spotify_artist": "3AA28KZvwAUcZuOKwyblJQ", "top_month": 1, "tracks": 214}
 {"followed": false, "id": "gotan-project", "liked": 2, "name": "Gotan Project", "reviewed": 2, "spotify_artist": "44ejFPE33H5aOInxNV2BFP", "tracks": 2}
 {"followed": false, "id": "gottlieb-scheppert", "liked": 0, "name": "Gottlieb Scheppert", "reviewed": 0, "spotify_artist": "7gsbhHwWrgawymTkQVXlC4", "tracks": 1}
 {"followed": false, "id": "gotts-street-park", "liked": 0, "name": "Gotts Street Park", "reviewed": 0, "spotify_artist": "2hwy5DELim1AxB1sHPqn4y", "tracks": 1}
@@ -2559,7 +2559,7 @@
 {"followed": false, "id": "listenbee", "liked": 0, "name": "LISTENBEE", "reviewed": 0, "spotify_artist": "6YvP6AXefuZ3bROoEVjCiY", "tracks": 1}
 {"followed": false, "id": "little-big-town", "liked": 0, "name": "Little Big Town", "reviewed": 0, "spotify_artist": "3CygdxquGHurS7f9LjNLkv", "tracks": 1}
 {"followed": false, "id": "little-boots", "liked": 1, "name": "Little Boots", "reviewed": 0, "spotify_artist": "0MoXIHcFwhIWnFgBfdvQ30", "tracks": 1}
-{"followed": false, "id": "little-dragon", "liked": 3, "name": "Little Dragon", "reviewed": 1, "spotify_artist": "6Tyzp9KzpiZ04DABQoedps", "tracks": 4}
+{"followed": false, "id": "little-dragon", "liked": 3, "name": "Little Dragon", "reviewed": 2, "spotify_artist": "6Tyzp9KzpiZ04DABQoedps", "tracks": 4}
 {"followed": false, "id": "little-sis-nora", "liked": 1, "name": "Little Sis Nora", "reviewed": 1, "spotify_artist": "1KYt3TMGpa1LtVi0m2A0F9", "tracks": 1}
 {"followed": false, "id": "liv-campbell", "liked": 0, "name": "Liv Campbell", "reviewed": 0, "spotify_artist": "0tnzJk2sh7IKujnXHz2oKV", "tracks": 1}
 {"followed": false, "id": "living-room", "liked": 0, "name": "Living Room", "reviewed": 0, "spotify_artist": "0sLb0ouettR8lDLnEgCSVK", "tracks": 1}
@@ -2593,7 +2593,7 @@
 {"followed": false, "id": "los-sobriles", "liked": 0, "name": "Los Sobriles", "reviewed": 0, "spotify_artist": "3JST5hIfjYPRqhKMJXqku2", "tracks": 2}
 {"followed": false, "id": "lost-frequencies", "liked": 0, "name": "Lost Frequencies", "reviewed": 0, "spotify_artist": "7f5Zgnp2spUuuzKplmRkt7", "tracks": 6}
 {"followed": false, "id": "lothief", "liked": 0, "name": "LOthief", "reviewed": 0, "spotify_artist": "3thMwq9J3a0UeLnPGhA4Qn", "tracks": 1}
-{"followed": false, "id": "lou-reed", "liked": 1, "name": "Lou Reed", "reviewed": 0, "spotify_artist": "42TFhl7WlMRXiNqzSrnzPL", "tracks": 1}
+{"followed": false, "id": "lou-reed", "liked": 1, "name": "Lou Reed", "reviewed": 1, "spotify_artist": "42TFhl7WlMRXiNqzSrnzPL", "tracks": 1}
 {"followed": false, "id": "louie-austen", "liked": 1, "name": "Louie Austen", "reviewed": 1, "spotify_artist": "41ITYFOUrXrzWhudmBYC0X", "tracks": 2}
 {"followed": false, "id": "louie-zong", "liked": 0, "name": "Louie Zong", "reviewed": 0, "spotify_artist": "7jOY91ZU7kn86slH3fBbaD", "tracks": 1}
 {"followed": false, "id": "louis-armstrong", "liked": 0, "name": "Louis Armstrong", "reviewed": 0, "spotify_artist": "19eLuQmk9aCobbVDHc6eek", "tracks": 1}
@@ -3041,7 +3041,7 @@
 {"followed": false, "id": "moksi", "liked": 0, "name": "Moksi", "reviewed": 0, "spotify_artist": "5jm3x1qIibWdKSEMw2G011", "tracks": 1}
 {"followed": false, "id": "molchat-doma", "liked": 0, "name": "Molchat Doma", "reviewed": 0, "spotify_artist": "1nVq0hKIVReeaiB3xJgKf0", "tracks": 1}
 {"followed": false, "id": "molella", "liked": 0, "name": "Molella", "reviewed": 0, "spotify_artist": "6PozOimyS8a9OxMddMSBCf", "tracks": 1}
-{"followed": true, "id": "moloko", "liked": 94, "name": "Moloko", "reviewed": 5, "spotify_artist": "4aaBjq7VqqQvpSF69GglvO", "top_month": 3, "tracks": 98}
+{"followed": true, "id": "moloko", "liked": 94, "name": "Moloko", "reviewed": 9, "spotify_artist": "4aaBjq7VqqQvpSF69GglvO", "top_month": 3, "tracks": 98}
 {"followed": false, "id": "moloko", "liked": 1, "name": "Moloko +", "reviewed": 1, "spotify_artist": "1h8THrZxJlzedZBcLHSCq2", "top_month": 3, "tracks": 1}
 {"followed": false, "id": "moments-of-divinity", "liked": 0, "name": "Moments Of Divinity", "reviewed": 0, "spotify_artist": "0Srt4bBej7bpUZRcgHNl3V", "tracks": 2}
 {"followed": false, "id": "mommo-g", "liked": 1, "name": "Mommo G", "reviewed": 1, "spotify_artist": "3YXwz66R6WNSraTxjpGC0K", "tracks": 1}
@@ -4377,7 +4377,7 @@
 {"followed": false, "id": "the-pogues", "liked": 0, "name": "The Pogues", "reviewed": 0, "spotify_artist": "2wzMOQwNT6ZvVB4amvhFAH", "tracks": 2}
 {"followed": false, "id": "the-police", "liked": 1, "name": "The Police", "reviewed": 1, "spotify_artist": "5NGO30tJxFlKixkPSgXcFE", "tracks": 1}
 {"followed": false, "id": "the-polish-ambassador", "liked": 1, "name": "The Polish Ambassador", "reviewed": 1, "spotify_artist": "2dI9IuajQnLR5dLxHjTTqU", "tracks": 1}
-{"followed": false, "id": "the-prodigy", "liked": 14, "name": "The Prodigy", "reviewed": 6, "spotify_artist": "4k1ELeJKT1ISyDv8JivPpB", "top_month": 22, "tracks": 14}
+{"followed": false, "id": "the-prodigy", "liked": 14, "name": "The Prodigy", "reviewed": 10, "spotify_artist": "4k1ELeJKT1ISyDv8JivPpB", "top_month": 22, "tracks": 14}
 {"followed": false, "id": "the-product-g-b", "liked": 0, "name": "The Product G&B", "reviewed": 0, "spotify_artist": "782IpIScTpnDhYb9hyxOu1", "tracks": 1}
 {"followed": false, "id": "the-project", "liked": 1, "name": "The Project", "reviewed": 1, "spotify_artist": "5Oduhm4YxSZ9vHGOKXNs4C", "tracks": 1}
 {"followed": true, "id": "the-puppini-sisters", "liked": 64, "name": "The Puppini Sisters", "reviewed": 8, "spotify_artist": "1svaANJTE5KrG16fTGDqOs", "top_month": 4, "tracks": 64}

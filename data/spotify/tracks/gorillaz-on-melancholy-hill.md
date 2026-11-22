@@ -6,8 +6,9 @@ artists: ["Gorillaz"]
 album: "Plastic Beach"
 duration: "3:53"
 spotify: {"track": "0q6LuUqGLUiCPP1cbdwFs3", "album": "2dIGnmEIy1WZIcZCFSj6i8", "artists": ["3AA28KZvwAUcZuOKwyblJQ"]}
-keys: {"fold": "gorillaz|onmelancholyhill"}
-status: "missing"
+keys: {"fold": "gorillaz|onmelancholyhill", "isrc": "GBAYE1000010", "musicbrainz": "842fbdae-8839-46e6-8a02-7f500a2b6597"}
+review: "gorillaz-on-melancholy-hill.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Plastic Beach*, 3:53.
 A liked song.
-No review yet.
+Reviewed: content/gorillaz-on-melancholy-hill.md.
