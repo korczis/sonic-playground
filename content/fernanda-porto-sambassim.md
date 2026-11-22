@@ -14,8 +14,8 @@ release_year = "2002"
 album = "Fernanda Porto"
 publisher = "Trama"
 country = "BR"
-isrc = "BRWMB0200783"
-musicbrainz = { recording = "bd9671bd-b531-4bd5-afb8-162dd83ec62e", artist = "1d5ff878-e2c6-493a-a7e4-51ee9f0663de", release = "98623dbe-ca97-400e-81c1-4c8a46a53f98" }
+isrc = "BRTPA0200182"
+musicbrainz = { recording = "93678096-886b-4d9a-936c-5f28f6593090", artist = "1d5ff878-e2c6-493a-a7e4-51ee9f0663de", release = "db04be23-8d3c-4e37-981c-81f4ab87d2f4" }
 youtube = "https://www.youtube.com/embed/hlVJ7cBAqRQ"
 connections = [
   { source = "dj-patife-sambassim-dj-patife-remix.md", why = "DJ Patife's drum and bass remix of this song, the version that made it a club hit before Porto's own album appeared." },

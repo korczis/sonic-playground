@@ -10,11 +10,14 @@ keys: {"fold": "arcticmonkeys|rumine", "isrc": "GBCEL1200081", "musicbrainz": "6
 review: "arctic-monkeys-r-u-mine.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 30}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # R U Mine? · Arctic Monkeys
 
 From the album *AM*, 3:21.
 A liked song.
+In Your Top Songs 2024 (#30).
 Reviewed: content/arctic-monkeys-r-u-mine.md.

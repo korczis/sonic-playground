@@ -13,12 +13,13 @@ liked: true
 playlists:
   - {"playlist": "back-to-life-back-to-reality", "n": 11}
   - {"playlist": "kitchen-swagger", "n": 53}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 37}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Back To Life · Soul II Soul, Caron Wheeler
 
 From the album *Keep On Movin'*, 3:48.
 A liked song.
-In Back to life, Back to reality (#11); Kitchen Swagger (#53).
+In Back to life, Back to reality (#11); Kitchen Swagger (#53); Your Top Songs 2023 (#37).
 Reviewed: content/soul-ii-soul-caron-wheeler-back-to-life.md.

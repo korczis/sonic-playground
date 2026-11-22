@@ -10,11 +10,14 @@ keys: {"fold": "franzferdinand|takemeout", "musicbrainz": "a1818245-54db-4881-86
 review: "franz-ferdinand-take-me-out.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 17}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Take Me Out · Franz Ferdinand
 
 From the album *Franz Ferdinand*, 3:57.
 A liked song.
+In Your Top Songs 2024 (#17).
 Reviewed: content/franz-ferdinand-take-me-out.md.

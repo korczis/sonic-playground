@@ -10,11 +10,14 @@ keys: {"fold": "crookers|madkidz", "musicbrainz": "22f4d2cb-91f9-4179-800f-81920
 review: "crookers-mad-kidz.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 48}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Mad Kidz · Crookers
 
 From the album *Mad Kidz EP*, 4:59.
 A liked song.
+In Your Top Songs 2024 (#48).
 Reviewed: content/crookers-mad-kidz.md.

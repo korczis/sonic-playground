@@ -15,7 +15,7 @@ album = "dont smile at me"
 release_year = "2017"
 country = "US"
 isrc = "USUM71707478"
-musicbrainz = { recording = "ed3a357a-cd5c-4489-aeb3-25cc87bac005", artist = "f4abc0b5-3f7a-4eff-8f78-ac078dbce533", release = "6f920f97-4702-4ee1-9e52-d0f9401adbd9" }
+musicbrainz = { recording = "ed3a357a-cd5c-4489-aeb3-25cc87bac005", artist = "f4abc0b5-3f7a-4eff-8f78-ac078dbce533", release = "abc2be17-afc6-48e2-8a56-976093287c4f" }
 youtube = "https://www.youtube.com/embed/ebb5AinKxWI"
 connections = [
   { source = "billie-eilish-bury-a-friend.md", why = "Two years later, the same sibling team: Billie Eilish writing with Finneas, who produced it, and the same dark, minimal pop pushed further toward the horror film." },

@@ -12,12 +12,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "best-of-the-best", "n": 103}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 64}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Bulletproof · La Roux
 
 From the album *La Roux*, 3:25.
 A liked song.
-In Best of the Best (#103).
+In Best of the Best (#103); Your Top Songs 2023 (#64).
 Reviewed: content/la-roux-bulletproof.md.

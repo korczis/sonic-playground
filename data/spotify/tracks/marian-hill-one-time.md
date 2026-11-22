@@ -9,11 +9,14 @@ spotify: {"track": "1Z4UKak2eNteHFZkwiYPNz", "album": "4GgwHp794AzZkv2hh8geZu", 
 keys: {"fold": "marianhill|onetime"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 37}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # One Time · Marian Hill
 
 From the album *Sway*, 3:37.
 A liked song.
+In Your Top Songs 2025 (#37).
 No review yet.

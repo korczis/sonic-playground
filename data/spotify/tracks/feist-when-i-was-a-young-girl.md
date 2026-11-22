@@ -10,11 +10,14 @@ keys: {"fold": "feist|wheniwasayounggirl", "isrc": "FRZ020301620", "musicbrainz"
 review: "feist-when-i-was-a-young-girl.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 82}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # When I Was A Young Girl · Feist
 
 From the album *Let It Die*, 3:08.
 A liked song.
+In Your Top Songs 2024 (#82).
 Reviewed: content/feist-when-i-was-a-young-girl.md.

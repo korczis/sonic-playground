@@ -11,11 +11,14 @@ keys: {"fold": "bassastralxigo|pussycockgod", "musicbrainz": "b7dfa2df-7081-4b73
 review: "bass-astral-x-igo-pussy-cock-god.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 88}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Pussy Cock & God · Bass Astral x Igo
 
 From the album *Discobolus*, 4:41.
 A liked song.
+In Your Top Songs 2024 (#88).
 Reviewed: content/bass-astral-x-igo-pussy-cock-god.md.

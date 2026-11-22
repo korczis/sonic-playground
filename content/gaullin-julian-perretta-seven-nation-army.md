@@ -16,7 +16,7 @@ publisher = "Columbia/B1 Recordings"
 release_year = "2021"
 country = "LT"
 isrc = "DEE862100599"
-musicbrainz = { recording = "17126981-2bc3-47cd-be22-b9139704b3ee", artist = "5d235edc-97b2-466d-980b-e5efbfb45bb9", release = "57fd1779-ac87-42ce-b4ca-ef12f99b8515" }
+musicbrainz = { recording = "17126981-2bc3-47cd-be22-b9139704b3ee", artist = "5d235edc-97b2-466d-980b-e5efbfb45bb9", release = "a9ab7c06-2e36-4eda-84d3-cb097fd09016" }
 connections = [
   { source = "lucky-luke-cooler-than-me.md", why = "Another Lithuanian producer's dance cover of an English-language hit, released through the same Columbia/B1 Recordings channel." },
   { source = "timmy-trumpet-gabry-ponte-mad-world.md", why = "A dance remake of a famous older song from the same pandemic-era years, with the original's best-known part kept at its centre." },

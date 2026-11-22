@@ -11,7 +11,7 @@ instrument = ["vocals", "synthesizer", "keyboard", "drum machine"]
 
 [extra]
 country = "US"
-musicbrainz = { recording = "735c521d-397b-4162-bd97-586ddf2ec1e3", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "839cb588-924d-4d91-bf4a-dafb9100f213" }
+musicbrainz = { recording = "735c521d-397b-4162-bd97-586ddf2ec1e3", artist = "09fd9dc8-9426-41be-84b0-c0319ea5e11e", release = "6c1de2fb-d9d3-4e0e-aea0-8a7d51a666d3" }
 publisher = "International DeeJay Gigolo Records"
 release_year = "2004"
 album = "Wild Light"

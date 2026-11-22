@@ -16,7 +16,7 @@ album = "Masochist EP"
 publisher = "Hot Creations"
 release_year = "2012"
 country = "BR"
-musicbrainz = { recording = "606cf38e-9863-4b05-8dba-6b2d24f701ef", artist = "3a2a2270-b793-4689-b0b4-2f9455881cbb", release = "60f84962-e96f-4314-8986-25a66ac1835d" }
+musicbrainz = { recording = "3e24c189-7a8a-4ed7-a51c-185c6f427b2d", artist = "3a2a2270-b793-4689-b0b4-2f9455881cbb", release = "bb552411-c7df-41ef-a06f-ad03380bd90b" }
 youtube = "https://www.youtube.com/embed/mxAc6fLKf-Y"
 connections = [
   { source = "infinity-ink-infinity.md", why = "Another deep house act of the same 2012 moment whose early releases came out on Hot Creations." },

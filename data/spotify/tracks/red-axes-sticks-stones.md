@@ -9,11 +9,14 @@ spotify: {"track": "3SEbtUizfVgPdYnHct8TK5", "album": "2XWxTnbxhF3BrU3YtfSgzo", 
 keys: {"fold": "redaxes|sticksstones"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 86}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Sticks & Stones · Red Axes, Adi Scotheque
 
 From the album *Red Axes*, 3:46.
 A liked song.
+In Your Top Songs 2025 (#86).
 No review yet.

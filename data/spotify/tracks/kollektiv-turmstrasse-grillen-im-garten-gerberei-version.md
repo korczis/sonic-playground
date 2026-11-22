@@ -14,7 +14,8 @@ yearbooks:
   - {"year": 2021, "n": 83}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 508}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 28}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Grillen im Garten - Gerberei Version · Kollektiv Turmstrasse
@@ -22,5 +23,5 @@ sources: ["web-player:2026-11-14"]
 From the album *Musik Gewinnt Freunde Collection*, 7:02.
 A liked song.
 Your Top Songs 2021: #83.
-In My Top Songs of All the Time (#508).
+In My Top Songs of All the Time (#508); Your Top Songs 2024 (#28).
 Reviewed: content/kollektiv-turmstrasse-grillen-im-garten-gerberei-version.md.

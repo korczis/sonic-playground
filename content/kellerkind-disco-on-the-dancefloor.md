@@ -10,7 +10,7 @@ concept = ["music video", "remix", "alternate version"]
 
 [extra]
 country = "CH"
-musicbrainz = { recording = "28a20955-bd6d-49d2-8600-5b8386f55812", artist = "aa3af441-d77c-4f56-8a57-0508ba8c4124", release = "140a6df0-3d28-465e-8209-4d09994b99ac" }
+musicbrainz = { recording = "9add0ecf-89f1-4fb1-906e-4823c4094cb2", artist = "aa3af441-d77c-4f56-8a57-0508ba8c4124", release = "a24bc9ad-28bf-4509-9cff-af08ce0829fc" }
 publisher = "Sirion Records"
 release_year = "2012"
 album = "Basement Story"

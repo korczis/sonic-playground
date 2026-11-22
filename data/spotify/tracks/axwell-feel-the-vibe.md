@@ -6,7 +6,7 @@ artists: ["Axwell"]
 album: "Feel The Vibe"
 duration: "7:06"
 spotify: {"track": "5b7FkNOZEjRj6OkzKpWyee", "album": "4tO3SzjOQc90Maxjv72pPf", "artists": ["1xNmvlEiICkRlRGqlNFZ43"]}
-keys: {"fold": "axwell|feelthevibe", "musicbrainz": "6683552b-32df-4ea8-b0f3-09ce79e38129"}
+keys: {"fold": "axwell|feelthevibe", "musicbrainz": "207ddf87-1b10-4f3d-ade5-dda3061ed932"}
 review: "axwell-feel-the-vibe.md"
 status: "present"
 liked: true

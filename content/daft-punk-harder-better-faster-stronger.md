@@ -11,7 +11,7 @@ instrument = ["vocoder", "sampler", "keyboard"]
 
 [extra]
 country = "FR"
-musicbrainz = { recording = "0b064e82-a1cf-4821-b7d9-7313ae89d63c", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "4cc688c7-4080-4924-b138-45bd9cf223ac" }
+musicbrainz = { recording = "f1a6a40f-78f5-4918-968d-f64363bae94c", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "d073287b-d1bd-4f11-a933-a4386f8cf701" }
 release_year = "2001"
 album = "Discovery"
 publisher = "Virgin"

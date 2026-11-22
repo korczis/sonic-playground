@@ -16,7 +16,7 @@ release_year = "2013"
 country = "DE"
 bpm = 121
 key = "F major"
-musicbrainz = { recording = "3df464c0-be7e-4f2a-9e0a-81e56002b39f", artist = "ae7bc80c-548a-43a5-8e30-162b2330ee29", release = "04110363-c146-4aec-928a-793819d3669b" }
+musicbrainz = { recording = "3df464c0-be7e-4f2a-9e0a-81e56002b39f", artist = "ae7bc80c-548a-43a5-8e30-162b2330ee29", release = "147c779a-fd33-42cb-9457-a9502e9a9d32" }
 youtube = "https://www.youtube.com/embed/a9FC80QdVVI"
 connections = [
   { source = "sante-richard-judge-awake.md", why = "Another German house record of the same years that found its way into Dixon's sets." },

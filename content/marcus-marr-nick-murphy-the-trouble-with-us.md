@@ -12,7 +12,7 @@ instrument = ["vocals", "guitar", "bass", "synthesizer", "keyboard", "drums"]
 [extra]
 country = "GB"
 isrc = "USCJ71501360"
-musicbrainz = { recording = "7e69a75c-00c4-4c49-97a6-b14d55cd3eac", artist = "a2b18c06-8160-436c-a9bc-c9317574999e", release = "9baa3f5d-ac19-4820-845c-121aa17bcd88" }
+musicbrainz = { recording = "7e69a75c-00c4-4c49-97a6-b14d55cd3eac", artist = "a2b18c06-8160-436c-a9bc-c9317574999e", release = "352ef931-31ec-4603-8c5d-627c45fa9fef" }
 release_year = "2015"
 album = "The Trouble With Us"
 publisher = "Detail Records / Downtown Records"

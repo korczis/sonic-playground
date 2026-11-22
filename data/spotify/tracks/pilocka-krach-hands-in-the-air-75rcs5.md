@@ -9,11 +9,14 @@ spotify: {"track": "75RcS5gcYaTtcvLKDLpw3c", "album": "3eR21rjHunlbi77uTBV8q8", 
 keys: {"fold": "pilockakrach|handsintheair"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 11}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Hands in the Air · Pilocka Krach, One Fine Day Kids
 
 From the album *One Fine Day presents Pilocka Krach & Dear Reader feat. One Fine Day Kids*, 4:54.
 A liked song.
+In Your Top Songs 2025 (#11).
 No review yet.

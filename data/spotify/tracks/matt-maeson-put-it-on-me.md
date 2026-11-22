@@ -9,11 +9,14 @@ spotify: {"track": "7tySfDFfBiCjraLdoy6In5", "album": "0CibAyYN112OULmO1Rhpsv", 
 keys: {"fold": "mattmaeson|putitonme"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 5}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Put It on Me · Matt Maeson
 
 From the album *The Hearse*, 3:22.
 A liked song.
+In Your Top Songs 2024 (#5).
 No review yet.

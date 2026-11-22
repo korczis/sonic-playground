@@ -9,11 +9,14 @@ spotify: {"track": "7f0OpNd7yIQ4XaUEGJKlF3", "album": "73CQFC33BSD84XPTuQQi8i", 
 keys: {"fold": "nikoschwind|perfectfit"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 96}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Perfect Fit · Niko Schwind, Heartbeat
 
 From the album *Grippin' World*, 6:30.
 A liked song.
+In Your Top Songs 2023 (#96).
 No review yet.

@@ -12,7 +12,7 @@ instrument = ["vocals", "bass", "drums", "whistling"]
 [extra]
 country = "US"
 isrc = "USSM11002931"
-musicbrainz = { recording = "55cfb83f-adc1-4730-a71b-90b369fd3f84", artist = "e0e1a584-dd0a-4bd1-88d1-c4c62895039d", release = "44212a17-10d2-4f7b-b6cb-76cfeff6853b" }
+musicbrainz = { recording = "55cfb83f-adc1-4730-a71b-90b369fd3f84", artist = "e0e1a584-dd0a-4bd1-88d1-c4c62895039d", release = "d9ffa89f-98d4-45dc-81f1-61a1518fd692" }
 release_year = "2010"
 album = "Torches"
 publisher = "Startime International / Columbia"

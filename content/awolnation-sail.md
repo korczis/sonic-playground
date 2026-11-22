@@ -12,7 +12,7 @@ instrument = ["synthesizer", "vocals", "piano"]
 [extra]
 country = "US"
 isrc = "USP6L1000053"
-musicbrainz = { recording = "ce0009a9-7c7b-4e2f-9ed0-5533d434e75c", artist = "77b29df2-056e-409e-a1b2-5e2bbfe421c4", release = "d1e72cb3-5d35-4048-95e7-e2bd9160f4e1" }
+musicbrainz = { recording = "ce0009a9-7c7b-4e2f-9ed0-5533d434e75c", artist = "77b29df2-056e-409e-a1b2-5e2bbfe421c4", release = "005a30f8-13e9-4d90-a48f-2a6647fcdb0c" }
 release_year = "2010"
 album = "Megalithic Symphony"
 publisher = "Red Bull Records"

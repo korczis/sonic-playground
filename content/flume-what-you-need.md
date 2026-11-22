@@ -11,7 +11,7 @@ concept = ["soundtrack", "record producer"]
 [extra]
 country = "AU"
 isrc = "AUFF00500391"
-musicbrainz = { recording = "420146b5-9e8e-4c6e-969d-1fd90ec27e94", artist = "35fd8d42-b4a6-4414-9827-8766bd0daa3c", release = "e97a2d4d-bce7-4684-a5e3-78d45c850d85" }
+musicbrainz = { recording = "420146b5-9e8e-4c6e-969d-1fd90ec27e94", artist = "35fd8d42-b4a6-4414-9827-8766bd0daa3c", release = "18acbfcd-b07d-4bec-a11c-1a4b3c41a0ae" }
 publisher = "Future Classic"
 release_year = "2012"
 album = "Flume"

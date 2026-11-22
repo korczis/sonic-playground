@@ -13,7 +13,7 @@ instrument = ["vocals", "guitar", "keyboard", "bass", "finger snaps"]
 release_year = "2015"
 country = "FR"
 isrc = "FR9W11505356"
-musicbrainz = { recording = "4ed01be7-3eba-4d44-878e-8aa356b433b5", artist = "85002755-85e7-484e-a831-dc47c27af2b3", release = "12a7d932-4961-4030-bb45-e9daa6dc5ba3" }
+musicbrainz = { recording = "4ed01be7-3eba-4d44-878e-8aa356b433b5", artist = "85002755-85e7-484e-a831-dc47c27af2b3", release = "55a04d1a-2aec-473d-b247-3a95e8eafe5a" }
 youtube = "https://www.youtube.com/embed/sqM3APrfijU"
 artist = "Her"
 track = "Five Minutes"

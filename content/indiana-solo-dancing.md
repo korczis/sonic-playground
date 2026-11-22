@@ -15,7 +15,7 @@ album = "No Romeo"
 publisher = "Sony Music"
 country = "GB"
 isrc = "GBARL1400145"
-musicbrainz = { recording = "4a5196fa-f4a6-4cb3-b4ec-fe9e3324e328", artist = "5be8db78-fb0c-4427-9e25-547b64da79f9", release = "477e0806-c203-413d-86f3-2dd002ad7a61" }
+musicbrainz = { recording = "4a5196fa-f4a6-4cb3-b4ec-fe9e3324e328", artist = "5be8db78-fb0c-4427-9e25-547b64da79f9", release = "2ae0c135-35e2-4c26-9f9c-7e0e8620a373" }
 cover_image = "/images/thumbnails/indiana-solo-dancing.jpeg"
 youtube = "https://www.youtube.com/embed/WSrktmE963I"
 connections = [

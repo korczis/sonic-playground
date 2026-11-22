@@ -11,7 +11,7 @@ instrument = ["vocals", "synthesizer", "bass"]
 
 [extra]
 country = "DE"
-musicbrainz = { recording = "82154a6e-eebc-4025-aef2-3c28f610e931", artist = "163218c2-9e0f-4d2d-aecb-ebbdef6aab70", release = "5bebca15-c8bc-43e1-91e7-1a6219ea54c9" }
+musicbrainz = { recording = "f7d5b8ba-f031-40c9-bf8a-42476976cf97", artist = "163218c2-9e0f-4d2d-aecb-ebbdef6aab70", release = "57143238-a308-4097-a52f-1ada8c05bdbd" }
 release_year = "2015"
 album = "Sugar"
 publisher = "Tonspiel / Warner Music"

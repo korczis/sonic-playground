@@ -9,11 +9,14 @@ spotify: {"track": "0an9zVn661Xhu94USWLmIj", "album": "3E7tB63oCaFKzaxJSlrLD2", 
 keys: {"fold": "meute|verden"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 22}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Verden · MEUTE, pølaroit
 
 From the album *Verden*, 5:44.
 A liked song.
+In Your Top Songs 2024 (#22).
 No review yet.

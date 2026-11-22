@@ -9,11 +9,14 @@ spotify: {"track": "3Ziiby0NCf14WBDSlf4YNT", "album": "4loBDXkwGnokEXosoC6lLp", 
 keys: {"fold": "roseaux|claraodalua"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 43}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Clarao Da Lua · Roseaux, Aloe Blacc
 
 From the album *Roseaux*, 3:13.
 A liked song.
+In Your Top Songs 2024 (#43).
 No review yet.

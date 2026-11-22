@@ -6,7 +6,7 @@ artists: ["Elizeth Cardoso"]
 album: "Disco De Ouro"
 duration: "3:43"
 spotify: {"track": "4X2v1zob0sZ7HtY2TyWiuf", "album": "0szKyWd8zRFN2jtqWnaUmW", "artists": ["5w4qi7KMTWcV7sgXgVoPwW"]}
-keys: {"fold": "elizethcardoso|eubebosim"}
+keys: {"fold": "elizethcardoso|eubebosim", "musicbrainz": "2c5b5be7-9635-4b86-9f33-860224f13afa"}
 review: "elizeth-cardoso-eu-bebo-sim.md"
 status: "present"
 liked: true

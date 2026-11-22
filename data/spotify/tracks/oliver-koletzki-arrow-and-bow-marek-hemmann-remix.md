@@ -9,11 +9,14 @@ spotify: {"track": "3c0HGyyrk0RGwhJHtXePHA", "album": "5Zxq42w9sMYHcJz5gvPdm6", 
 keys: {"fold": "oliverkoletzki|arrowandbowmarekhemmannremix"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 37}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Arrow and Bow - Marek Hemmann Remix · Oliver Koletzki, Fran
 
 From the album *Arrow And Bow*, 7:11.
 A liked song.
+In Your Top Songs 2024 (#37).
 No review yet.

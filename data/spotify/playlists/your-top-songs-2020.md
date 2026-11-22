@@ -15,7 +15,7 @@ tracks:
   - {"n": 4, "track": "say-yes-dog-a-friend-3xhbig"}
   - {"n": 5, "track": "bronski-beat-smalltown-boy-arnaud-rebotini-remix"}
   - {"n": 6, "track": "billie-eilish-bury-a-friend"}
-  - {"n": 7, "track": "tones-and-i-dance-monkey"}
+  - {"n": 7, "track": "tones-and-i-dance-monkey-2xu0ox"}
   - {"n": 8, "track": "stee-downes-asunder"}
   - {"n": 9, "track": "her-jeanie-j"}
   - {"n": 10, "track": "brandt-brauer-frick-pretend"}

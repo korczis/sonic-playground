@@ -11,7 +11,7 @@ instrument = ["vocals", "synthesizer", "keyboard", "drum machine"]
 
 [extra]
 country = "CA"
-musicbrainz = { recording = "d014fb94-f975-470f-8bdf-82f099ae4358", artist = "7413ccd4-a9e9-4965-8506-49e580dda6d5", release = "fdda8212-c3cd-445d-9c05-21cebb30b962" }
+musicbrainz = { recording = "d014fb94-f975-470f-8bdf-82f099ae4358", artist = "7413ccd4-a9e9-4965-8506-49e580dda6d5", release = "0dab4d8f-b37d-401a-b488-e597ef14cf98" }
 release_year = "2016"
 album = "New Decadence"
 youtube = "https://www.youtube.com/embed/NqGQIO2m3YQ"

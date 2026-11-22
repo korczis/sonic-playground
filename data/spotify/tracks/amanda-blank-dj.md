@@ -12,12 +12,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "sonic-playground", "n": 4}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 11}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # DJ · Amanda Blank
 
 From the album *I Love You*, 2:53.
 A liked song.
-In Sonic Playground (#4).
+In Sonic Playground (#4); Your Top Songs 2024 (#11).
 Reviewed: content/amanda-blank_dj.md.

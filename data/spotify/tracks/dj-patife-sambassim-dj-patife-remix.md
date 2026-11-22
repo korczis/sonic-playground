@@ -12,12 +12,13 @@ status: "present"
 liked: false
 playlists:
   - {"playlist": "chill", "n": 262}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 63}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Sambassim - DJ Patife Remix · DJ Patife
 
 From the album *Cool Steps Drum 'n' Bass Grooves*, 3:36.
 Not among the liked songs.
-In Chill (#262).
+In Chill (#262); Your Top Songs 2023 (#63).
 Reviewed: content/dj-patife-sambassim-dj-patife-remix.md.

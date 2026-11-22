@@ -11316,12 +11316,12 @@
    "musicbrainz"
   ],
   "exempt": 24,
-  "complete": 982,
+  "complete": 983,
   "concept": 1113,
   "learning": 1092,
   "sources": 1113,
   "credits": 1063,
-  "musicbrainz": 1042
+  "musicbrainz": 1044
  },
  "facets": {
   "genre": [
@@ -66801,7 +66801,8 @@
     "concept",
     "learning",
     "sources",
-    "credits"
+    "credits",
+    "musicbrainz"
    ],
    "yearbooks": [],
    "langs": [
@@ -134248,7 +134249,8 @@
    "edu": [
     "concept",
     "learning",
-    "sources"
+    "sources",
+    "musicbrainz"
    ],
    "yearbooks": [],
    "langs": [

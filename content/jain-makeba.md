@@ -13,7 +13,7 @@ instrument = ["vocals", "keyboard", "drum machine", "guitar", "bass guitar", "tr
 release_year = "2015"
 country = "FR"
 isrc = "FR9W11504985"
-musicbrainz = { recording = "94ab444d-24a3-451a-883c-98a2c8e56964", artist = "0e6dffeb-bda0-4eb1-9567-2ac9306a516d", release = "c024904f-b176-42df-8522-62b561e5c3a4" }
+musicbrainz = { recording = "94ab444d-24a3-451a-883c-98a2c8e56964", artist = "0e6dffeb-bda0-4eb1-9567-2ac9306a516d", release = "b878e72b-3278-460c-91cf-cd77c85c862a" }
 album = "Zanaka"
 youtube = "https://www.youtube.com/embed/59Q_lhgGANc"
 connections = [

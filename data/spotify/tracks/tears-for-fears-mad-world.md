@@ -12,12 +12,13 @@ status: "present"
 liked: true
 playlists:
   - {"playlist": "best-of-the-best", "n": 2}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 6}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Mad World · Tears For Fears
 
 From the album *The Hurting*, 3:35.
 A liked song.
-In Best of the Best (#2).
+In Best of the Best (#2); Your Top Songs 2023 (#6).
 Reviewed: content/tears-for-fears-mad-world.md.

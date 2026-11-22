@@ -11,7 +11,7 @@ instrument = ["vocal samples"]
 
 [extra]
 country = "IT"
-musicbrainz = { recording = "0e484abd-8bad-4aff-bbbe-a555c3d40aef", artist = "f3fdca54-02ff-42c5-898a-468453d29d43", release = "c1e89ab4-e4a5-4999-b92c-b89f7bae4aa7" }
+musicbrainz = { recording = "0e484abd-8bad-4aff-bbbe-a555c3d40aef", artist = "2f94016a-3880-4d8c-9af9-0e197ee77189", release = "c1e89ab4-e4a5-4999-b92c-b89f7bae4aa7" }
 publisher = "24 Records"
 release_year = "2005"
 album = "A Style Suite"

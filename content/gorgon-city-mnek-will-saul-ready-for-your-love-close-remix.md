@@ -12,7 +12,7 @@ instrument = ["vocals", "synthesizer"]
 [extra]
 country = "GB"
 isrc = "GBUM71308462"
-musicbrainz = { recording = "ee626c79-8b22-4dd3-b06c-99aa4f7263c0", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "36f0a84f-e962-404c-9117-4d4d5b41a2e9" }
+musicbrainz = { recording = "ee626c79-8b22-4dd3-b06c-99aa4f7263c0", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "a612b8ad-eebf-4a2e-b602-85a0be81d9e7" }
 release_year = "2014"
 album = "Sirens (Remixes)"
 publisher = "Virgin EMI"

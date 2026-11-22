@@ -9,11 +9,14 @@ spotify: {"track": "6Lmx1AyfNlmOVCW2Sxisnk", "album": "4cJpfipD6q3smdPwp8COoO", 
 keys: {"fold": "willk|sunisdark"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 33}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Sun Is Dark · WILL K
 
 From the album *Sun Is Dark*, 2:38.
 A liked song.
+In Your Top Songs 2025 (#33).
 No review yet.

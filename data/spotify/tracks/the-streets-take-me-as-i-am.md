@@ -10,11 +10,14 @@ spotify: {"track": "5UjccMIJkNhont0TGSU0iD", "album": "4hEKRyUeVXejefnsvKYERB", 
 keys: {"fold": "thestreets|takemeasiam"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 12}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Take Me As I Am · The Streets, Chris Lorenzo
 
 From the album *None Of Us Are Getting Out Of This Life Alive*, 3:06.
 A liked song.
+In Your Top Songs 2023 (#12).
 No review yet.

@@ -10,11 +10,14 @@ keys: {"fold": "gabin|doouapdoouapdoouap", "isrc": "IT0570200103", "musicbrainz"
 review: "gabin-doo-uap-doo-uap-doo-uap.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 73}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Doo uap, doo uap, doo uap · Gabin
 
 From the album *Gabin*, 7:21.
 A liked song.
+In Your Top Songs 2023 (#73).
 Reviewed: content/gabin-doo-uap-doo-uap-doo-uap.md.

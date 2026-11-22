@@ -9,11 +9,14 @@ spotify: {"track": "3KQ70WhB1RX6VLnezrxBar", "album": "5UziuqqEUcDqjWSlaD5GsX", 
 keys: {"fold": "rachelkcollier|ships"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 1}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Ships · Rachel K Collier
 
 From the album *Ships*, 3:52.
 A liked song.
+In Your Top Songs 2023 (#1).
 No review yet.

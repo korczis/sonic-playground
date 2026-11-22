@@ -10,11 +10,14 @@ keys: {"fold": "bronskibeat|starspeopletheatresmilkyway", "isrc": "GBBLY1800026"
 review: "bronski-beat-people-theatre-stars-people-theatre-s-milky-way-mix.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 58}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Stars - People Theatre's Milky Way · Bronski Beat, People Theatre
 
 From the album *The Age of Remix*, 6:52.
 A liked song.
+In Your Top Songs 2023 (#58).
 Reviewed: content/bronski-beat-people-theatre-stars-people-theatre-s-milky-way-mix.md.

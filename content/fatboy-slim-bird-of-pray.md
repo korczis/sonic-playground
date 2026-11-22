@@ -15,8 +15,8 @@ album = "Halfway Between the Gutter and the Stars"
 publisher = "Skint Records"
 release_year = "2000"
 country = "GB"
-isrc = "GBBMQ0000090"
-musicbrainz = { recording = "2f4416e3-b0cd-4577-a1cf-a717fc200877", artist = "34c63966-445c-4613-afe1-4f0e1e53ae9a", release = "8d443597-3eff-424a-a021-9f9e446670b6" }
+isrc = "GBBMQ0000114"
+musicbrainz = { recording = "31a0eae0-8af8-4512-9f0f-4d1bf35f2c14", artist = "34c63966-445c-4613-afe1-4f0e1e53ae9a", release = "77fc888e-043f-490d-beb8-b3b3f1a2b1eb" }
 youtube = "https://www.youtube.com/embed/zKEWdRPRf3I"
 samples = [
   { artist = "The Doors", track = "Bird of Prey" },

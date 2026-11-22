@@ -11,11 +11,14 @@ keys: {"fold": "paparoach|lastresort", "isrc": "USDW10021712", "musicbrainz": "6
 review: "papa-roach-last-resort.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 42}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Last Resort · Papa Roach
 
 From the album *Infest*, 3:19.
 A liked song.
+In Your Top Songs 2025 (#42).
 Reviewed: content/papa-roach-last-resort.md.

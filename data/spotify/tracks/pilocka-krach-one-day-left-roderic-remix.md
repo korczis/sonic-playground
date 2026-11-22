@@ -9,11 +9,14 @@ spotify: {"track": "5asSSalSm1dIvFndcy0l0k", "album": "0pRHN9U3ddUmCcQBQFFHSa", 
 keys: {"fold": "pilockakrach|onedayleftrodericremix"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 28}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # One Day Left - Roderic Remix · Pilocka Krach, The Lost Amigos, Sunru, Nereo II, Roderic
 
 From the album *One Day Left*, 6:15.
 A liked song.
+In Your Top Songs 2025 (#28).
 No review yet.

@@ -15,7 +15,7 @@ album = "D-Sides"
 release_year = "2006"
 country = "GB"
 isrc = "GBAYE0502307"
-musicbrainz = { recording = "5aaf4ead-cbd4-4ae1-b659-c332be1d81ac", artist = "e21857d5-3256-4547-afb3-4b6ded592596", release = "d42cf16d-f439-4a5b-ae1b-6ba2f77ab32f" }
+musicbrainz = { recording = "5aaf4ead-cbd4-4ae1-b659-c332be1d81ac", artist = "e21857d5-3256-4547-afb3-4b6ded592596", release = "519084b6-b720-4f35-9ed7-00bf198c4035" }
 youtube = "https://www.youtube.com/embed/CLPyFnmRDTE"
 connections = [
   { source = "gorillaz-neneh-cherry-kids-with-guns.md", why = "The other half of the 2006 double A-side single that El Mañana was released on." },

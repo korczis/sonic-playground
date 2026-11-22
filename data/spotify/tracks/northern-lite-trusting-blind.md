@@ -6,18 +6,19 @@ artists: ["Northern Lite"]
 album: "23 (Best of Northern Lite)"
 duration: "4:50"
 spotify: {"track": "0y2helBP4ZZfT4tEgUJv5P", "album": "0ftDGYbwnQLDtjivFeuCIH", "artists": ["243v6y74lia0v8jy6FH5iF"]}
-keys: {"fold": "northernlite|trustingblind", "musicbrainz": "957629f2-7d7b-4828-9b8e-c6f9fdc1f5d7"}
+keys: {"fold": "northernlite|trustingblind", "musicbrainz": "6f2a425c-83bd-493f-889d-fa2555a4906c"}
 review: "northern-lite-trusting-blind.md"
 status: "present"
 liked: true
 playlists:
   - {"playlist": "angry-ego", "n": 1}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2024", "n": 1}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Trusting Blind · Northern Lite
 
 From the album *23 (Best of Northern Lite)*, 4:50.
 A liked song.
-In Angry Ego (#1).
+In Angry Ego (#1); Your Top Songs 2024 (#1).
 Reviewed: content/northern-lite-trusting-blind.md.

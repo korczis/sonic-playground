@@ -11,11 +11,14 @@ keys: {"fold": "guccimane|wakeupinthesky", "isrc": "USAT21811087", "musicbrainz"
 review: "gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 30}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Wake Up in the Sky · Gucci Mane, Bruno Mars, Kodak Black
 
 From the album *Evil Genius*, 3:23.
 A liked song.
+In Your Top Songs 2023 (#30).
 Reviewed: content/gucci-mane-bruno-mars-kodak-black-wake-up-in-the-sky.md.

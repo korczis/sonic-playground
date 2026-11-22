@@ -11,8 +11,8 @@ instrument = ["vocals", "bass guitar", "guitar", "drums", "percussion", "keyboar
 
 [extra]
 country = "GB"
-isrc = "USEVS0400013"
-musicbrainz = { recording = "0797a933-5b1c-49f9-9e6c-f935b7a070c8", artist = "dbbc47a5-1338-4830-9298-a8d0b11c0a46", release = "b4753c63-b304-471b-a363-0ce7372a06ad" }
+isrc = "USESC0400009"
+musicbrainz = { recording = "b5bcd836-1d7d-493c-98df-0223b3e29715", artist = "dbbc47a5-1338-4830-9298-a8d0b11c0a46", release = "47bd9330-eb9c-4638-ac41-b6870c2624db" }
 release_year = "2004"
 album = "Mind Body & Soul (Special Edition)"
 youtube = "https://www.youtube.com/embed/npM_zvBNTGo"

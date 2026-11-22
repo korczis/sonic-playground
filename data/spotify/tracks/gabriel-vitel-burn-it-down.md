@@ -10,11 +10,14 @@ keys: {"fold": "gabrielvitel|burnitdown", "musicbrainz": "7f14ece6-6b1b-401e-ab4
 review: "gabriel-vitel_burn-it-down.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 60}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Burn It Down · GABRIEL VITEL
 
 From the album *Ipoly Mate 001*, 6:32.
 A liked song.
+In Your Top Songs 2024 (#60).
 Reviewed: content/gabriel-vitel_burn-it-down.md.

@@ -15,7 +15,7 @@ album = "Riot on an Empty Street"
 release_year = "2004"
 country = "NO"
 isrc = "GBDCG0400006"
-musicbrainz = { recording = "a508c2ed-66c4-433e-97ff-8b3d97b2f124", artist = "cf0f4547-ffbd-4011-98ad-0bec9ba022db", release = "2fcf9777-52a8-4990-a23f-395313b5590a" }
+musicbrainz = { recording = "a508c2ed-66c4-433e-97ff-8b3d97b2f124", artist = "cf0f4547-ffbd-4011-98ad-0bec9ba022db", release = "d8b0cc3b-e47b-45db-b189-9ca6787e78d0" }
 youtube = "https://www.youtube.com/embed/Nl_OEhdTUzQ"
 connections = [
   { source = "kakkmaddafakka-your-girl.md", why = "Another Bergen record with Erlend Øye's hand on it: he produced Kakkmaddafakka's Hest and released it on his own label." },

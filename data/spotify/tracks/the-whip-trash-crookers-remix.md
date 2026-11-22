@@ -9,11 +9,14 @@ spotify: {"track": "1CwD6XZdhcqMUQtmpcu1KO", "album": "1QQunRSa3REJaTlAI5jgOn", 
 keys: {"fold": "thewhip|trashcrookersremix"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 70}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Trash - Crookers Remix · The Whip, Crookers
 
 From the album *Remix Marks Destination*, 6:04.
 A liked song.
+In Your Top Songs 2024 (#70).
 No review yet.

@@ -12,7 +12,7 @@ instrument = ["vocals"]
 [extra]
 country = "GB"
 isrc = "GBAKW0201117"
-musicbrainz = { recording = "0baa7ad3-1ed8-4538-941d-bb9d3e484411", artist = "c0c5e158-d61d-4043-a0eb-dc6cc1e0a539", release = "907ec3b7-ba1e-49e3-b16e-2ca72523e807" }
+musicbrainz = { recording = "0baa7ad3-1ed8-4538-941d-bb9d3e484411", artist = "c0c5e158-d61d-4043-a0eb-dc6cc1e0a539", release = "e1fd7ba8-86f2-45db-a6da-6cfb64c716d7" }
 publisher = "Polydor"
 release_year = "2002"
 album = "A Little Deeper"

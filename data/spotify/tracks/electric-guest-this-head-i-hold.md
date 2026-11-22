@@ -10,11 +10,15 @@ keys: {"fold": "electricguest|thisheadihold", "isrc": "USCJ81100776", "musicbrai
 review: "electric-guest-this-head-i-hold.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 98}
+  - {"playlist": "your-top-songs-2025", "n": 81}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # This Head I Hold · Electric Guest
 
 From the album *Mondo*, 2:55.
 A liked song.
+In Your Top Songs 2024 (#98); Your Top Songs 2025 (#81).
 Reviewed: content/electric-guest-this-head-i-hold.md.

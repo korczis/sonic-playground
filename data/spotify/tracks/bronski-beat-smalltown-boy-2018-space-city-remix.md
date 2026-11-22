@@ -10,11 +10,14 @@ keys: {"fold": "bronskibeat|smalltownboy2018spacecityremix", "musicbrainz": "9da
 review: "bronski-beat-space-city-smalltown-boy-2018-space-city-remix.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 70}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Smalltown Boy 2018 - Space City Remix · Bronski Beat, Space City
 
 From the album *Smalltown Boy 2k18, Pt. 2 (Remixes)*, 7:59.
 A liked song.
+In Your Top Songs 2023 (#70).
 Reviewed: content/bronski-beat-space-city-smalltown-boy-2018-space-city-remix.md.

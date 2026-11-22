@@ -15,7 +15,7 @@ album = "Every Where Is Some Where"
 release_year = "2016"
 country = "US"
 isrc = "USUM71607030"
-musicbrainz = { recording = "70f0fb6e-e3c8-4788-a1e7-65d49ad36a1e", artist = "d1fc999f-6184-41a6-bcb1-7c59bf74a6e1", release = "6627aa9c-c06f-4a6c-9077-45ffa8caf987" }
+musicbrainz = { recording = "70f0fb6e-e3c8-4788-a1e7-65d49ad36a1e", artist = "d1fc999f-6184-41a6-bcb1-7c59bf74a6e1", release = "6e33faa0-5963-4f36-9742-a863eab1506c" }
 youtube = "https://www.youtube.com/embed/DMA4vDwP7n4"
 connections = [
   { source = "k-flay-aire-atlantica-blood-in-the-cut-aire-atlantica-remix.md", why = "The same song remixed by Aire Atlantica into electronic dance-pop: hear what a remixer keeps of this vocal and what he replaces." },

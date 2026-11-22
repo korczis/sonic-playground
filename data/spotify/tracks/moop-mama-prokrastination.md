@@ -9,11 +9,14 @@ spotify: {"track": "7l0DPehrQ3M9DOgzy7dRGH", "album": "75YUJv9SB4MEqYqFsHjI9o", 
 keys: {"fold": "moopmama|prokrastination"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 68}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Prokrastination · Moop Mama
 
 From the album *M.O.O.P.Topia*, 5:21.
 A liked song.
+In Your Top Songs 2023 (#68).
 No review yet.

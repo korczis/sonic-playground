@@ -10,11 +10,14 @@ keys: {"fold": "shitrobot|losingmypatience", "isrc": "US4GE1000034", "musicbrain
 review: "shit-robot-alexis-taylor-losing-my-patience.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 49}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Losing My Patience · Shit Robot, Alexis Taylor
 
 From the album *From the Cradle to the Rave*, 4:18.
 A liked song.
+In Your Top Songs 2025 (#49).
 Reviewed: content/shit-robot-alexis-taylor-losing-my-patience.md.

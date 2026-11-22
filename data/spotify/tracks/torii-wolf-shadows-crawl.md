@@ -9,11 +9,14 @@ spotify: {"track": "5pmFlCsvTj4bN3zmwSTWCM", "album": "3Id3KLd5bbJXoS467MFybJ", 
 keys: {"fold": "toriiwolf|shadowscrawl"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 57}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Shadows Crawl · Torii Wolf
 
 From the album *Flow Riiot*, 2:37.
 A liked song.
+In Your Top Songs 2025 (#57).
 No review yet.

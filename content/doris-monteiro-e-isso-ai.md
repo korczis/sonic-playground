@@ -11,7 +11,7 @@ instrument = ["vocals"]
 
 [extra]
 country = "BR"
-musicbrainz = { artist = "229938bc-027c-48c3-b00f-8f66567c1e3b" }
+musicbrainz = { recording = "27019458-9cce-44e0-ada3-de6f363c4ed7", artist = "229938bc-027c-48c3-b00f-8f66567c1e3b" }
 publisher = "Odeon"
 release_year = "1971"
 album = "Doris - 1971"

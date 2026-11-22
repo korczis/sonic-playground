@@ -15,7 +15,8 @@ yearbooks:
   - {"year": 2021, "n": 1}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 374}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 46}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Smalltown Boy · Bronski Beat
@@ -24,5 +25,5 @@ From the album *The Age of Consent*, 5:02.
 Not among the liked songs.
 Your Top Songs 2020: #3.
 Your Top Songs 2021: #1.
-In My Top Songs of All the Time (#374).
+In My Top Songs of All the Time (#374); Your Top Songs 2023 (#46).
 Reviewed: content/bronski-beat_small_town_boy.md.

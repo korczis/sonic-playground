@@ -11,7 +11,7 @@ instrument = ["sampler"]
 
 [extra]
 country = "DK"
-musicbrainz = { recording = "0f1d4313-6854-43e8-8dbb-44ab23cfef7c", artist = "4c48d14b-edef-4f25-b645-c138f24fae47", release = "130e1e02-2cc7-4f33-b2b9-9636f638cf2e" }
+musicbrainz = { recording = "0f1d4313-6854-43e8-8dbb-44ab23cfef7c", artist = "4c48d14b-edef-4f25-b645-c138f24fae47", release = "534e6737-5f4a-4fd6-ba35-6dc1a3a9610b" }
 publisher = "Music for Dreams"
 release_year = "2007"
 album = "When I'm Bored I Change Colour (Deluxe)"

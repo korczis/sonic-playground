@@ -10,11 +10,14 @@ keys: {"fold": "besvendsen|letthemnotweep", "musicbrainz": "3091e45e-15c3-46e8-a
 review: "be-svendsen-let-them-not-weep.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2023", "n": 69}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Let Them Not Weep · Be Svendsen
 
 From the album *Masquerade*, 6:35.
 A liked song.
+In Your Top Songs 2023 (#69).
 Reviewed: content/be-svendsen-let-them-not-weep.md.

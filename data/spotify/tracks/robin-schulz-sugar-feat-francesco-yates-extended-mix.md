@@ -6,7 +6,7 @@ artists: ["Robin Schulz", "Francesco Yates"]
 album: "Sugar (feat. Francesco Yates) [The Remixes]"
 duration: "5:01"
 spotify: {"track": "5xXrjMWN9liuZBV1pXRyLT", "album": "4N6BmXSKDxz3Bqne1s9ZQE", "artists": ["3t5xRXzsuZmMDkQzgOX35S", "5X1JzPIIonP3u9lA580pPT"]}
-keys: {"fold": "robinschulz|sugar", "musicbrainz": "82154a6e-eebc-4025-aef2-3c28f610e931"}
+keys: {"fold": "robinschulz|sugar", "musicbrainz": "f7d5b8ba-f031-40c9-bf8a-42476976cf97"}
 review: "robin-schulz-francesco-yates-sugar.md"
 status: "present"
 liked: false

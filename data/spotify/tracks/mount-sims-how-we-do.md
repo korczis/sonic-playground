@@ -17,7 +17,9 @@ yearbooks:
   - {"year": 2020, "n": 61}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 5}
-sources: ["web-player:2026-11-14"]
+  - {"playlist": "your-top-songs-2023", "n": 79}
+  - {"playlist": "your-top-songs-2024", "n": 53}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # How We Do · Mount Sims
@@ -28,5 +30,5 @@ Your Top Songs 2016: #4.
 Your Top Songs 2017: #1.
 Your Top Songs 2018: #7.
 Your Top Songs 2020: #61.
-In My Top Songs of All the Time (#5).
+In My Top Songs of All the Time (#5); Your Top Songs 2023 (#79); Your Top Songs 2024 (#53).
 Reviewed: content/mount-sims-how-we-do.md.

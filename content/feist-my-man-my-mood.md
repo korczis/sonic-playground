@@ -14,7 +14,7 @@ release_year = "2007"
 country = "CA"
 album = "The Reminder"
 publisher = "Arts & Crafts"
-musicbrainz = { recording = "10dec8b6-1af0-47b0-8c90-296b85d2e1b9", artist = "a670e05a-cea8-4b37-bce9-d82daf1a0fa4", release = "99e7ae1c-ab4b-4f78-8a72-983d1f24be0a" }
+musicbrainz = { recording = "4cd1c84e-0b4f-4e44-8f57-df0a7aa938a2", artist = "a670e05a-cea8-4b37-bce9-d82daf1a0fa4", release = "31b978d2-96ec-4693-8efe-20785d020768" }
 youtube = "https://www.youtube.com/embed/ltYq-jalYm0"
 connections = [
   { source = "daft-punk-give-life-back-to-music.md", why = "Chilly Gonzales, Feist's co-writer and pianist here, plays keyboards on the opening track of Random Access Memories." },

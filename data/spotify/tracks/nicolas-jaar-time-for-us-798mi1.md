@@ -6,7 +6,7 @@ artists: ["Nicolas Jaar"]
 album: "Time For Us"
 duration: "7:40"
 spotify: {"track": "798mI116dJdZ12n9CkdflI", "album": "42rcUTT9KiIZZusdoW0wXI", "artists": ["5a0etAzO5V26gvlbmHzT9W"]}
-keys: {"fold": "nicolasjaar|timeforus", "musicbrainz": "4d8568c2-5603-4a22-be7d-42ea9db3e3dc"}
+keys: {"fold": "nicolasjaar|timeforus", "musicbrainz": "26e0736f-c09c-48d7-849c-8ffcd13c4879"}
 review: "nicolas-jaar-time-for-us.md"
 status: "present"
 liked: true

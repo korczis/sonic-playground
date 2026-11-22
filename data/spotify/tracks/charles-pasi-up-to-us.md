@@ -10,11 +10,14 @@ keys: {"fold": "charlespasi|uptous", "musicbrainz": "5f18f9d6-54cb-48b8-ad88-c92
 review: "charles-pasi-up-to-us.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2024", "n": 35}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Up to Us · Charles Pasi
 
 From the album *Uncaged*, 3:50.
 A liked song.
+In Your Top Songs 2024 (#35).
 Reviewed: content/charles-pasi-up-to-us.md.

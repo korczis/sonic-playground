@@ -10,11 +10,14 @@ keys: {"fold": "ilestvilaine|crisentheme", "musicbrainz": "7aa018ff-3ee9-4d85-9c
 review: "il-est-vilaine-cris-en-theme.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+playlists:
+  - {"playlist": "your-top-songs-2025", "n": 50}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Cris en theme · Il Est Vilaine
 
 From the album *Les Mystères de Lorient*, 2:27.
 A liked song.
+In Your Top Songs 2025 (#50).
 Reviewed: content/il-est-vilaine-cris-en-theme.md.

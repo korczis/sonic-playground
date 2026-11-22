@@ -15,7 +15,7 @@ album = "La Roux"
 release_year = "2009"
 country = "GB"
 isrc = "GBUM70903779"
-musicbrainz = { recording = "bf3e215f-40b3-495c-b782-42bf65e5e254", artist = "88d1360a-bc2d-47df-90d1-d2de285560aa", release = "6a29e4ed-75ac-4a6b-99ec-c7525d8a9461" }
+musicbrainz = { recording = "bf3e215f-40b3-495c-b782-42bf65e5e254", artist = "88d1360a-bc2d-47df-90d1-d2de285560aa", release = "5b4535a1-c786-41c6-b977-f157c67f5513" }
 youtube = "https://www.youtube.com/embed/Kk8eJh4i8Lo"
 connections = [
   { source = "eurythmics-annie-lennox-dave-stewart-sweet-dreams-are-made-of-this-2005-remaster.md", why = "One of the 1980s acts Plugged In heard Bulletproof nodding to: another British synth-pop duo of a singer and a producer-musician." },
