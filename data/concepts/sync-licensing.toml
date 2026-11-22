@@ -1,0 +1,11 @@
+term = "sync licensing"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Synchronization_rights"
+see_also = ["soundtrack", "music video"]
+
+[en]
+definition = "Licensing a recording to be played in time with pictures, most visibly in advertising. An advertisement can carry a song to listeners who would never have found it, sometimes years after its release."
+
+[cs]
+term = "synchronizační licence"
+definition = "Licence k použití nahrávky souběžně s obrazem, nejviditelněji v reklamě. Reklama může píseň donést k posluchačům, kteří by ji jinak nikdy neobjevili, někdy i roky po jejím vydání."
