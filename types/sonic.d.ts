@@ -80,8 +80,14 @@ interface SonicVizAnalysis {
   energy: number;
   /** Seconds since the page started; the frame's length in seconds (at most 0.1). */
   t: number; dt: number;
-  source: 'tab' | 'mic' | 'clock';
+  source: SonicAudioSource;
 }
+
+/** Where the visualiser's sound comes from (static/js/viz-audio.js). */
+type SonicAudioSource = 'tab' | 'system' | 'device' | 'mic' | 'clock';
+
+/** An audio input; a loopback device carries what the computer plays. */
+interface SonicAudioDevice { id: string; label: string; loopback: boolean }
 
 /** A mode's own state, fresh at every mode change and resize. */
 interface SonicVizScratch {
@@ -134,9 +140,17 @@ interface Window {
   SonicAudio: {
     analyse(): SonicVizAnalysis;
     features: SonicVizAnalysis;
-    source(): 'tab' | 'mic' | 'clock';
+    source(): SonicAudioSource;
+    /** The input heard (a device or the microphone), or null. */
+    device(): { id: string; label: string } | null;
+    /** Every audio input, loopback devices first (empty until the reader has allowed one). */
+    devices(): Promise<SonicAudioDevice[]>;
+    isLoopback(label: string): boolean;
+    /** Start a remembered loopback device again where the browser already allows it. */
+    resume(id: string): Promise<boolean>;
+    canShare(): boolean;
     listening(): boolean;
-    listen(kind: 'tab' | 'mic'): Promise<void>;
+    listen(kind: 'tab' | 'system' | 'device' | 'mic', id?: string): Promise<void>;
     stop(): void;
     bestSource(): 'tab' | 'mic';
     onChange(fn: () => void): void;
@@ -162,7 +176,9 @@ interface Window {
       onsets: { name: string; t: number }[];
     };
     source(): string;
-    listen(kind: 'tab' | 'mic'): Promise<void>;
+    listen(kind: 'tab' | 'system' | 'device' | 'mic', id?: string): Promise<void>;
+    /** The audio inputs the settings list, loopback devices first. */
+    devices(): SonicAudioDevice[];
     stop(): void;
     background(): boolean;
   };

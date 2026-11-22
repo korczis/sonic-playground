@@ -3,11 +3,18 @@
 //
 // Where the sound comes from. The player is a YouTube iframe on another origin, so the page
 // cannot read its audio; the browser hands it over only when the reader agrees:
-//   tab   the reader shares this tab with its audio (getDisplayMedia); the picture follows the
-//         music exactly. Chrome and Edge on a computer.
-//   mic   the microphone (getUserMedia); the picture follows the sound in the room. Phones too.
-//   clock no audio: the picture follows the player's state and time only (moving at 120 bpm
-//         while it plays, resting while it is paused), and says so.
+//   tab    the reader shares this tab with its audio (getDisplayMedia); the picture follows the
+//          music exactly. Chrome and Edge on a computer.
+//   system the reader shares the whole screen with the computer's sound (getDisplayMedia with
+//          systemAudio), where the browser offers it (Chromium on Windows and ChromeOS, on macOS
+//          from 14.2): the picture follows everything the computer plays.
+//   device an audio input the reader picks (getUserMedia with its exact deviceId): a loopback
+//          device such as BlackHole carries what the computer plays, with no tab to share and no
+//          microphone on. A loopback chosen once starts again by itself on a later visit while the
+//          browser already allows it (resume); nothing else ever starts without a click.
+//   mic    the microphone (getUserMedia); the picture follows the sound in the room. Phones too.
+//   clock  no audio: the picture follows the player's state and time only (moving at 120 bpm
+//          while it plays, resting while it is paused), and says so.
 //
 // What is heard: 48 log-spaced bands in dB with automatic gain, the waveform, the level and three
 // ranges, onsets of the kick, snare and hi-hat ranges (the rise of each range's level over an
@@ -33,7 +40,8 @@
   var audio = {
     ctx: /** @type {AudioContext | null} */ (null), analyser: /** @type {AnalyserNode | null} */ (null),
     stream: /** @type {MediaStream | null} */ (null), freq: new Float32Array(0), time: new Float32Array(0),
-    kind: /** @type {'tab' | 'mic' | 'clock'} */ ('clock'), edges: /** @type {number[]} */ ([]),
+    kind: /** @type {SonicAudioSource} */ ('clock'), edges: /** @type {number[]} */ ([]),
+    device: /** @type {{id: string, label: string} | null} */ (null),
   };
   // Band i spans 40 * 400^(i/48) to 40 * 400^((i+1)/48) Hz: log-spaced from 40 Hz to 16 kHz.
   function bandOf(hz) { return Math.round(Math.log(hz / 40) / Math.log(400) * BANDS); }
@@ -102,6 +110,7 @@
     audio.stream = null;
     audio.analyser = null;
     audio.kind = 'clock';
+    audio.device = null;
     dsp.kicks = [];
     dsp.primed = false;
     A.bpm = 0;
@@ -119,18 +128,25 @@
     return out;
   }
 
-  /** @param {'tab' | 'mic'} kind */
-  function listen(kind) {
+  /**
+   * Listen to a source; a 'device' names its input. Every source is the sound as it is: no echo
+   * cancellation, noise suppression or automatic gain, which would flatten the very dynamics the
+   * picture follows.
+   * @param {'tab' | 'system' | 'device' | 'mic'} kind @param {string} [id] the input of 'device'
+   */
+  function listen(kind, id) {
     var md = navigator.mediaDevices;
     if (!md) return Promise.reject(new Error('unsupported'));
-    // The sound as it is: no echo cancellation, noise suppression or automatic gain, which would
-    // flatten the very dynamics the picture follows.
+    if (kind === 'device' && !id) return Promise.reject(new Error('no-device'));
     var raw = { echoCancellation: false, noiseSuppression: false, autoGainControl: false };
-    var ask = kind === 'tab'
-      ? (md.getDisplayMedia ? md.getDisplayMedia(/** @type {any} */ ({ video: true, audio: raw,
-        preferCurrentTab: true, selfBrowserSurface: 'include' }))
+    // This tab, offered first; or the whole screen, offered first, with the computer's sound.
+    var screen = kind === 'tab'
+      ? { video: true, audio: raw, preferCurrentTab: true, selfBrowserSurface: 'include' }
+      : { video: { displaySurface: 'monitor' }, audio: raw, systemAudio: 'include', selfBrowserSurface: 'exclude' };
+    var ask = kind === 'tab' || kind === 'system'
+      ? (md.getDisplayMedia ? md.getDisplayMedia(/** @type {any} */ (screen))
         : Promise.reject(new Error('unsupported')))
-      : md.getUserMedia({ audio: raw });
+      : md.getUserMedia({ audio: kind === 'device' ? Object.assign({ deviceId: { exact: id } }, raw) : raw });
     return ask.then(function (stream) {
       if (!stream.getAudioTracks().length) {
         stream.getTracks().forEach(function (tr) { tr.stop(); });
@@ -160,20 +176,84 @@
       });
       audio.stream = stream;
       audio.kind = kind;
+      // The input heard, named for the status: the track's own label (the device's, where the
+      // browser gives one); a shared screen's track is named by the browser, not by a device.
+      var track = stream.getAudioTracks()[0];
+      audio.device = kind === 'device' || kind === 'mic' ? { id: id || '', label: track.label || '' } : null;
       dsp.primed = false;
       dsp.ceil = -30;
       stream.getAudioTracks()[0].addEventListener('ended', stopAudio);
       changed();
     });
   }
-  /** The source "Follow the music" asks for: the tab where a computer can share one, else the mic. */
-  function bestSource() {
+  /** True where a screen's or a tab's audio can be shared: Chromium on a computer. */
+  function canShare() {
     var md = navigator.mediaDevices;
     var phone = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
     // Only Chromium shares a tab's audio; Firefox and Safari would ask for a silent screen.
     var brands = /** @type {any} */ (navigator).userAgentData ? /** @type {any} */ (navigator).userAgentData.brands || [] : [];
     var chromium = brands.some(function (b) { return /Chromium/.test(b.brand); });
-    return md && md.getDisplayMedia && !phone && chromium ? 'tab' : 'mic';
+    return !!(md && md.getDisplayMedia && !phone && chromium);
+  }
+  /** The source "Follow the music" asks for: the tab where a computer can share one, else the mic. */
+  function bestSource() { return canShare() ? 'tab' : 'mic'; }
+
+  // A loopback device is a virtual input that carries what the computer plays: BlackHole,
+  // Loopback and Soundflower on a Mac, VB-Cable ("CABLE Output") and Stereo Mix on Windows, the
+  // PulseAudio and PipeWire monitors on Linux ("Monitor of ...", "....monitor").
+  var LOOPBACK = /blackhole|loopback|soundflower|vb-?cable|cable output|stereo mix|monitor of|\.monitor\b|pipewire|pulse(audio)?.*monitor/i;
+  /** @param {string} label */
+  function isLoopback(label) { return LOOPBACK.test(label || ''); }
+  /**
+   * Every audio input, loopback devices first. Reading the list never asks: until the reader has
+   * allowed an input the browser hides its ids and labels, and the list is empty. The aliases
+   * 'default' and 'communications' are left out: they name another entry, and may change.
+   * @returns {Promise<{id: string, label: string, loopback: boolean}[]>}
+   */
+  function devices() {
+    var md = navigator.mediaDevices;
+    if (!md || !md.enumerateDevices) return Promise.resolve([]);
+    return md.enumerateDevices().then(function (list) {
+      var out = list.filter(function (d) {
+        return d.kind === 'audioinput' && d.deviceId && d.label && d.deviceId !== 'default' && d.deviceId !== 'communications';
+      }).map(function (d) { return { id: d.deviceId, label: d.label, loopback: isLoopback(d.label) }; });
+      return out.filter(function (d) { return d.loopback; }).concat(out.filter(function (d) { return !d.loopback; }));
+    }, function () { return []; });
+  }
+  /** Resolves once the page may start sound: at once after the reader's first click or key. */
+  function activated() {
+    var ua = /** @type {any} */ (navigator).userActivation;
+    if (!ua || ua.hasBeenActive) return Promise.resolve();
+    return new Promise(function (done) {
+      function go() {
+        document.removeEventListener('pointerdown', go, true);
+        document.removeEventListener('keydown', go, true);
+        done(undefined);
+      }
+      document.addEventListener('pointerdown', go, true);
+      document.addEventListener('keydown', go, true);
+    });
+  }
+  /**
+   * Start a remembered loopback device again without asking: only while the browser already
+   * allows the inputs (so no prompt can appear), the device is still there and still a loopback,
+   * and nothing else is heard; the sound starts with the reader's first click or key on the page
+   * (a browser starts audio only then). A plain microphone never starts by itself.
+   * @param {string} id @returns {Promise<boolean>} true when it listens
+   */
+  function resume(id) {
+    var perms = navigator.permissions;
+    if (!id || !navigator.mediaDevices || !perms || !perms.query) return Promise.resolve(false);
+    return perms.query(/** @type {any} */ ({ name: 'microphone' })).then(function (st) {
+      if (st.state !== 'granted') return false;
+      return devices().then(function (list) {
+        if (!list.some(function (d) { return d.id === id && d.loopback; })) return false;
+        return activated().then(function () {
+          if (audio.analyser) return false;
+          return listen('device', id).then(function () { return true; });
+        });
+      });
+    }).catch(function () { return false; });
   }
 
   var analysedAt = -1;
@@ -192,7 +272,7 @@
     var t = now / 1000;
     A.t = t;
     A.dt = dt;
-    A.source = audio.analyser ? /** @type {'tab' | 'mic'} */ (audio.kind) : 'clock';
+    A.source = audio.analyser ? audio.kind : 'clock';
     A.beat = false;
     if (audio.analyser) fromAudio(dt, t); else fromClock();
     features(dt, t, !audio.analyser);
@@ -392,8 +472,14 @@
     analyse: analyse,
     /** The live features, as last analysed (the same object analyse() returns). */
     features: A,
-    /** 'tab', 'mic' or 'clock'. */
+    /** 'tab', 'system', 'device', 'mic' or 'clock'. */
     source: function () { return audio.kind; },
+    /** The input heard (a device or the microphone): its id and label; null otherwise. */
+    device: function () { return audio.device ? { id: audio.device.id, label: audio.device.label } : null; },
+    devices: devices,
+    isLoopback: isLoopback,
+    resume: resume,
+    canShare: canShare,
     /** True while a stream is analysed. */
     listening: function () { return !!audio.analyser; },
     listen: listen,

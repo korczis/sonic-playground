@@ -57,14 +57,17 @@
     return BY[m] ? m : null;
   }
 
-  /** @returns {{mode: string, cycle: boolean, bg: boolean, cinema: boolean, params: Record<string, Record<string, number>>}} */
+  // `device` is the audio input the reader chose last (SonicAudio's 'device'), '' for none: a
+  // loopback device among them starts again by itself on a later visit (SonicAudio.resume).
+  /** @returns {{mode: string, cycle: boolean, bg: boolean, cinema: boolean, device: string, params: Record<string, Record<string, number>>}} */
   function prefs() {
     try {
       var p = JSON.parse(localStorage.getItem(STORE) || '{}');
       return { mode: resolve(p.mode) || MODES[0], cycle: p.cycle !== false, bg: p.bg !== false,
-        cinema: p.cinema === true, params: p.params && typeof p.params === 'object' ? p.params : {} };
+        cinema: p.cinema === true, device: typeof p.device === 'string' ? p.device : '',
+        params: p.params && typeof p.params === 'object' ? p.params : {} };
     } catch (e) {
-      return { mode: MODES[0], cycle: true, bg: true, cinema: false, params: {} };
+      return { mode: MODES[0], cycle: true, bg: true, cinema: false, device: '', params: {} };
     }
   }
   function savePrefs(p) {
@@ -565,6 +568,7 @@
     var btn = s.querySelector('[data-viz-settings]');
     if (btn) btn.setAttribute('aria-expanded', String(on));
     if (on) {
+      refreshDevices();
       // Cinema makes room for the sheet beside the video on a wide screen (styles/app.css).
       layoutSettings();
       requestAnimationFrame(function () { requestAnimationFrame(layoutSettings); });
@@ -598,6 +602,11 @@
       var kind = b.getAttribute('data-viz-source');
       if (kind === 'connect') /** @type {HTMLElement} */ (b).hidden = SA.source() !== 'clock';
       else b.setAttribute('aria-checked', String(kind === SA.source()));
+      if (kind === 'system') /** @type {HTMLElement} */ (b).hidden = !SA.canShare();
+    });
+    var heard = SA.device();
+    s.querySelectorAll('[data-viz-device]').forEach(function (b) {
+      b.setAttribute('aria-checked', String(SA.source() === 'device' && !!heard && b.getAttribute('data-viz-device') === heard.id));
     });
     // The live controls of this mode, in its order; the others wait hidden.
     var box = s.querySelector('[data-viz-params]');
@@ -624,15 +633,60 @@
     if (bgSwitch) { bgSwitch.checked = prefs().bg && !reduced; bgSwitch.disabled = reduced; }
     var status = s.querySelector('[data-viz-status]');
     if (status) {
-      // data-i18n lets i18n.js translate it again when the bundle arrives or the language changes.
-      var key = SA.source() === 'tab' ? 'viz.status_tab'
-        : SA.source() === 'mic' ? 'viz.status_mic' : 'viz.status_clock';
-      var said = SA.source() === 'tab' ? Sonic.t('viz.status_tab')
-        : SA.source() === 'mic' ? Sonic.t('viz.status_mic') : Sonic.t('viz.status_clock');
+      // The status names the source and the input heard. data-i18n (with data-i18n-vars) lets
+      // i18n.js translate it again when the bundle arrives or the language changes.
+      var src = SA.source();
+      var called = heard ? heard.label || deviceLabel(heard.id) : '';
+      var vars = { device: called };
+      var pick = src === 'tab' ? ['viz.status_tab', Sonic.t('viz.status_tab')]
+        : src === 'system' ? ['viz.status_system', Sonic.t('viz.status_system')]
+          : src === 'device' ? ['viz.status_device', Sonic.t('viz.status_device', vars)]
+            : src === 'mic' && called ? ['viz.status_mic_named', Sonic.t('viz.status_mic_named', vars)]
+              : src === 'mic' ? ['viz.status_mic', Sonic.t('viz.status_mic')] : ['viz.status_clock', Sonic.t('viz.status_clock')];
+      var key = pick[0];
+      var said = pick[1];
       status.setAttribute('data-i18n', key);
+      status.setAttribute('data-i18n-vars', JSON.stringify(vars));
       if (said !== key) status.textContent = said;
     }
     syncTempo();
+  }
+  // The audio inputs, as the browser last listed them (SonicAudio.devices: empty until the reader
+  // has allowed one), rendered as chips; refreshed when the sheet opens, the source changes or a
+  // device comes or goes. Reading the list never asks for anything.
+  /** @type {SonicAudioDevice[]} */
+  var inputs = [];
+  function deviceLabel(id) {
+    var d = inputs.filter(function (x) { return x.id === id; })[0];
+    return d ? d.label : '';
+  }
+  function refreshDevices() {
+    return SA.devices().then(function (list) {
+      inputs = list;
+      renderDevices();
+      syncControls();
+    });
+  }
+  function renderDevices() {
+    var s = shell();
+    var box = /** @type {HTMLElement | null} */ (s && s.querySelector('[data-viz-devices-box]'));
+    var group = s && s.querySelector('[data-viz-devices]');
+    var chip = /** @type {HTMLTemplateElement | null} */ (s && s.querySelector('template[data-viz-device-chip]'));
+    var hint = /** @type {HTMLElement | null} */ (s && s.querySelector('[data-viz-loopback-hint]'));
+    if (!box || !group || !chip || !hint) return;
+    box.hidden = !inputs.length;
+    hint.hidden = inputs.some(function (d) { return d.loopback; });
+    var focused = document.activeElement && group.contains(document.activeElement)
+      ? document.activeElement.getAttribute('data-viz-device') : null;
+    group.textContent = '';
+    inputs.forEach(function (d) {
+      var b = /** @type {HTMLElement} */ (/** @type {DocumentFragment} */ (chip.content.cloneNode(true)).firstElementChild);
+      b.setAttribute('data-viz-device', d.id);
+      /** @type {HTMLElement} */ (b.querySelector('[data-viz-device-label]')).textContent = d.label;
+      /** @type {HTMLElement} */ (b.querySelector('[data-viz-device-badge]')).hidden = !d.loopback;
+      group.appendChild(b);
+      if (d.id === focused) b.focus();
+    });
   }
   function syncTempo() {
     var s = shell();
@@ -690,6 +744,25 @@
     setUrl();
   }
 
+  /** @param {string} id the device to remember, '' for none */
+  function rememberDevice(id) {
+    var p = prefs();
+    if (p.device === id) return;
+    p.device = id;
+    savePrefs(p);
+  }
+  /** A source that could not start is said beside the buttons that asked. @param {boolean} toast */
+  function refused(toast) {
+    var s = shell();
+    var status = s && s.querySelector('[data-viz-status]');
+    if (status) {
+      status.setAttribute('data-i18n', 'viz.denied');
+      status.removeAttribute('data-i18n-vars');
+      status.textContent = Sonic.t('viz.denied');
+    }
+    say(Sonic.t('viz.denied'), toast);
+  }
+
   function wire() {
     var s = shell();
     if (!s || s.getAttribute('data-wired')) return;
@@ -702,20 +775,22 @@
       if (!btn) { showControls(); return; }
       var mode = btn.getAttribute('data-viz-mode');
       var source = btn.getAttribute('data-viz-source');
+      var device = btn.getAttribute('data-viz-device');
+      // A source the reader picks replaces the remembered device: only a device chosen again is
+      // remembered (and, a loopback, started again on a later visit).
+      if (source) rememberDevice('');
       if (mode) choose(mode);
       else if (source === 'clock') SA.stop();
-      else if (source === 'tab' || source === 'mic' || source === 'connect') {
+      else if (device) {
+        SA.listen('device', device).then(function () { rememberDevice(device); }, function () { refused(false); });
+      } else if (source === 'tab' || source === 'system' || source === 'mic' || source === 'connect') {
         var kind = source === 'connect' ? SA.bestSource() : source;
         // A refusal is said beside the buttons that asked, not in a toast over them.
-        SA.listen(/** @type {'tab' | 'mic'} */ (kind)).catch(function (err) {
+        SA.listen(/** @type {'tab' | 'system' | 'mic'} */ (kind)).catch(function (err) {
           // A shared tab without its audio is not a refusal: follow the room instead.
           if (source === 'connect' && kind === 'tab' && err && err.message === 'no-audio') return SA.listen('mic');
           throw err;
-        }).catch(function () {
-          var status = s.querySelector('[data-viz-status]');
-          if (status) { status.setAttribute('data-i18n', 'viz.denied'); status.textContent = Sonic.t('viz.denied'); }
-          say(Sonic.t('viz.denied'), source === 'connect');
-        });
+        }).catch(function () { refused(source === 'connect'); });
       } else if (btn.hasAttribute('data-viz-settings')) { toggleSettings(); return; }
       else if (btn.hasAttribute('data-viz-cinema')) setCinema(!cinema, false);
       else if (btn.hasAttribute('data-viz-share')) share();
@@ -774,7 +849,9 @@
       var by = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1;
       var next = /** @type {HTMLElement} */ (radios[(radios.indexOf(radio) + by + radios.length) % radios.length]);
       next.focus();
-      if (!next.hasAttribute('data-viz-source') || next.getAttribute('data-viz-source') === 'clock') next.click();
+      // A source or a device starts only on a click: the arrows move to it, no further.
+      var listens = next.hasAttribute('data-viz-device') || (next.hasAttribute('data-viz-source') && next.getAttribute('data-viz-source') !== 'clock');
+      if (!listens) next.click();
       showControls();
       return;
     }
@@ -871,6 +948,11 @@
   });
 
   SA.onChange(announce);
+  // A newly allowed input names every device: the list follows the source and the hardware.
+  SA.onChange(refreshDevices);
+  if (navigator.mediaDevices && navigator.mediaDevices.addEventListener) navigator.mediaDevices.addEventListener('devicechange', refreshDevices);
+  // A loopback device chosen on an earlier visit starts again, without asking (SonicAudio.resume).
+  SA.resume(prefs().device);
   wire();
   syncBackground();
   // A shared link: ?viz=<mode>, its live controls and cinema.
@@ -910,6 +992,7 @@
     analysis: SA.snapshot,
     source: SA.source,
     listen: SA.listen,
+    devices: function () { return inputs.slice(); },
     stop: SA.stop,
     background: function () { return !!bgHandle && html.hasAttribute('data-visualizer-bg'); },
   };
