@@ -3,7 +3,8 @@
  "description": "The owner's Spotify history: public identity and relationships (ADR 0007). Derived by scripts/spotify_history.py build --write; never edited by hand.",
  "sources": [
   "web-player:2026-11-14",
-  "web-player:2026-11-14"
+  "web-player:2026-11-14",
+  "web-player:2026-11-22"
  ],
  "records": {
   "track": {
@@ -26,7 +27,7 @@
  "tables": {
   "tracks": {
    "path": "data/spotify/tables/tracks.jsonl",
-   "rows": 6558,
+   "rows": 6598,
    "key": "id",
    "join": {
     "spotify_track": "Spotify track id",
@@ -39,12 +40,12 @@
   },
   "playlists": {
    "path": "data/spotify/tables/playlists.jsonl",
-   "rows": 55,
+   "rows": 58,
    "key": "id"
   },
   "memberships": {
    "path": "data/spotify/tables/memberships.jsonl",
-   "rows": 7973,
+   "rows": 8273,
    "key": [
     "playlist",
     "n"
@@ -56,7 +57,7 @@
   },
   "artists": {
    "path": "data/spotify/tables/artists.jsonl",
-   "rows": 4849,
+   "rows": 4852,
    "key": "spotify_artist",
    "join": {
     "name": "tracks.artists[]"
@@ -64,7 +65,7 @@
   },
   "albums": {
    "path": "data/spotify/tables/albums.jsonl",
-   "rows": 4746,
+   "rows": 4752,
    "key": "spotify_album",
    "join": {
     "name": "tracks.album"
@@ -77,17 +78,17 @@
   "use": "templates/page.html"
  },
  "counts": {
-  "tracks": 6558,
+  "tracks": 6598,
   "liked": 2029,
-  "reviewed": 1299,
-  "playlists": 55,
-  "memberships": 7973,
-  "artists": 4849,
-  "albums": 4746,
+  "reviewed": 1323,
+  "playlists": 58,
+  "memberships": 8273,
+  "artists": 4852,
+  "albums": 4752,
   "playlists_by_kind": {
    "liked": 1,
    "own": 11,
-   "yearbook": 7,
+   "yearbook": 10,
    "made-for-you": 9,
    "followed": 27
   }

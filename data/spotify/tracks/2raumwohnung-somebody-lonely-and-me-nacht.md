@@ -10,11 +10,14 @@ keys: {"fold": "2raumwohnung|somebodylonelyandmenacht", "isrc": "DEKG91500107", 
 review: "2raumwohnung-somebody-lonely-and-me-nacht.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 7}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Somebody lonely and me - Nacht · 2raumwohnung
 
 From the album *Nacht und Tag*, 3:19.
 A liked song.
+Your Top Songs 2025: #7.
 Reviewed: content/2raumwohnung-somebody-lonely-and-me-nacht.md.

@@ -9,11 +9,14 @@ spotify: {"track": "6XgyVJPRAFCPPop0kTh0gt", "album": "0pRHN9U3ddUmCcQBQFFHSa", 
 keys: {"fold": "pilockakrach|onedayleft"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 25}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # One Day Left - Original · Pilocka Krach, The Lost Amigos, Sunru, Nereo II
 
 From the album *One Day Left*, 7:00.
 A liked song.
+Your Top Songs 2025: #25.
 No review yet.

@@ -9,11 +9,14 @@ spotify: {"track": "7podKCePfIMQRDDxK71PWC", "album": "5iQxynqu3B2KR3XsrU0HrK", 
 keys: {"fold": "mansfieldtya|tempete"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 51}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Tempête · Mansfield.TYA, Rebeka Warrior, Carla Pallone
 
 From the album *Monument ordinaire*, 3:00.
 A liked song.
+Your Top Songs 2025: #51.
 No review yet.

@@ -10,14 +10,17 @@ keys: {"fold": "phantogram|blackoutdaysfutureislandsremix"}
 review: "phantogram-future-islands-black-out-days-future-islands-remix.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2024, "n": 58}
 playlists:
   - {"playlist": "chill", "n": 245}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Black Out Days - Future Islands Remix · Phantogram, Future Islands
 
 From the album *Black Out Days (Future Islands Remix)*, 4:08.
 A liked song.
+Your Top Songs 2024: #58.
 In Chill (#245).
 Reviewed: content/phantogram-future-islands-black-out-days-future-islands-remix.md.

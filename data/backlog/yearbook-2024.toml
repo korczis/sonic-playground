@@ -1,0 +1,810 @@
+# The owner's Spotify yearbook 2024 ("Your Top Songs 2024"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2024
+name = "Your Top Songs 2024"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2024\", read off the rendered page on 2026-11-22 (scripts/spotify_history.py)"
+retrieved = "2026-11-22"
+expected = 100
+
+[[track]]
+n = 1
+title = "Trusting Blind"
+artists = ["Northern Lite"]
+album = "23 (Best of Northern Lite)"
+duration = "4:50"
+spotify = "0y2helBP4ZZfT4tEgUJv5P"
+
+[[track]]
+n = 2
+title = "Brainshaker"
+artists = ["Anthony Rother"]
+album = "Super Space Model"
+duration = "3:53"
+spotify = "2jTkp5akY8h9WrDBu9JSDl"
+
+[[track]]
+n = 3
+title = "Pussy"
+artists = ["Nick Monaco", "David Marston"]
+album = "Pussy"
+duration = "5:30"
+spotify = "5Z3KP0QDKsUwgskRrd09oq"
+
+[[track]]
+n = 4
+title = "No More Beer"
+artists = ["Lipka"]
+album = "Lipka"
+duration = "3:38"
+spotify = "0d1sJw4mhznh9XOEyKx1Jt"
+
+[[track]]
+n = 5
+title = "Put It on Me"
+artists = ["Matt Maeson"]
+album = "The Hearse"
+duration = "3:22"
+spotify = "7tySfDFfBiCjraLdoy6In5"
+
+[[track]]
+n = 6
+title = "Tweet Tweet Tweet - Remastered"
+artists = ["Sleaford Mods"]
+album = "All That Glue"
+duration = "3:03"
+spotify = "65Fjyp55nKjx6GTpl2zYE6"
+
+[[track]]
+n = 7
+title = "Stand Up - Remastered Version"
+artists = ["Hindi Zahra"]
+album = "Handmade"
+duration = "4:39"
+spotify = "0tIaxfo2PQU0TRAEUhBRWi"
+
+[[track]]
+n = 8
+title = "This Baby Don’t Cry"
+artists = ["K.Flay"]
+album = "Solutions"
+duration = "3:04"
+spotify = "5fNoxNQ6Lc8Ke2MhxGsxDE"
+
+[[track]]
+n = 9
+title = "You Bring Me Down"
+artists = ["Digitaria", "Funky Fat"]
+album = "Mascochist"
+duration = "5:36"
+spotify = "1IsfJhAPIA6kitJQQDCDyq"
+review = "funky-fat-and-digitaria-you-bring-me-down.md"
+
+[[track]]
+n = 10
+title = "Speeddance"
+artists = ["Reptile Youth"]
+album = "Reptile Youth"
+duration = "2:57"
+spotify = "1gdO3q99cYhaFg3WaP27JQ"
+
+[[track]]
+n = 11
+title = "DJ"
+artists = ["Amanda Blank"]
+album = "I Love You"
+duration = "2:53"
+spotify = "6630jJm4hZc35rtcj8SxIc"
+
+[[track]]
+n = 12
+title = "Can’t Sleep"
+artists = ["K.Flay"]
+album = "Life as a Dog (Deluxe Version)"
+duration = "4:11"
+spotify = "56lwHTCikHS3QwVGtfSelJ"
+
+[[track]]
+n = 13
+title = "A Friend"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "4:20"
+spotify = "0NHa9oZtgHjATqVobmGeNp"
+
+[[track]]
+n = 14
+title = "Navy Light"
+artists = ["Labyrinth Ear"]
+album = "Oak"
+duration = "3:07"
+spotify = "6o43Gi1cX7Nyi6koSkwIBc"
+
+[[track]]
+n = 15
+title = "Discolight - Hrdvsion's NSD Mix"
+artists = ["Pilocka Krach", "Hrdvsion"]
+album = "Discolight"
+duration = "5:39"
+spotify = "0b299r91H8yGH44abvKHBe"
+
+[[track]]
+n = 16
+title = "Exodus"
+artists = ["Nôze", "Wareika"]
+album = "Dring"
+duration = "4:04"
+spotify = "3058eH0LR8vfku76qexgK5"
+
+[[track]]
+n = 17
+title = "Take Me Out"
+artists = ["Franz Ferdinand"]
+album = "Franz Ferdinand"
+duration = "3:57"
+spotify = "20I8RduZC2PWMWTDCZuuAN"
+
+[[track]]
+n = 18
+title = "Fckrz"
+artists = ["Luca Malina"]
+album = "Fckrz"
+duration = "3:10"
+spotify = "4gdOGETp6oy2xi1A8UFrgb"
+
+[[track]]
+n = 19
+title = "High Enough - Seattle Sessions"
+artists = ["K.Flay"]
+album = "Every Where Is Some Where (Deluxe Version)"
+duration = "3:34"
+spotify = "7DypEWDiM0cQEdAgIedHm1"
+
+[[track]]
+n = 20
+title = "Love Me Again"
+artists = ["John Newman"]
+album = "Tribute"
+duration = "3:59"
+spotify = "5TbzAWWc5eJaANpA9kfGCd"
+
+[[track]]
+n = 21
+title = "Faster You Fall"
+artists = ["Eli"]
+album = "One Popular Guy"
+duration = "3:22"
+spotify = "0scFkQkZhWVCImZ3FiWM9q"
+
+[[track]]
+n = 22
+title = "Verden"
+artists = ["MEUTE", "pølaroit"]
+album = "Verden"
+duration = "5:44"
+spotify = "0an9zVn661Xhu94USWLmIj"
+
+[[track]]
+n = 23
+title = "The Wild"
+artists = ["Poni Hoax"]
+album = "Tropical Suite"
+duration = "4:16"
+spotify = "4gURwGc6oLBW4NqLDHCAnr"
+
+[[track]]
+n = 24
+title = "Hands in the Air"
+artists = ["Pilocka Krach", "One Fine Day Kids"]
+album = "One Fine Day presents Pilocka Krach & Dear Reader feat. One Fine Day Kids"
+duration = "4:54"
+spotify = "0HIVoXPrMZQMTkfbHgY16z"
+
+[[track]]
+n = 25
+title = "Love Me Again - Gemini Remix"
+artists = ["John Newman", "Gemini"]
+album = "Love Me Again"
+duration = "4:02"
+spotify = "23BNcdu0SFDckVpOBFxvpQ"
+
+[[track]]
+n = 26
+title = "So What"
+artists = ["K.Flay"]
+album = "What If It Is"
+duration = "3:32"
+spotify = "2dY0v4JUaQI7yUuIETxmGZ"
+
+[[track]]
+n = 27
+title = "Walking On the Moon"
+artists = ["Roseaux", "Aloe Blacc"]
+album = "Roseaux"
+duration = "5:26"
+spotify = "2uSQGq0WuAVhAJk3xoMJJu"
+
+[[track]]
+n = 28
+title = "Grillen im Garten - Gerberei Version"
+artists = ["Kollektiv Turmstrasse"]
+album = "Musik Gewinnt Freunde Collection"
+duration = "7:02"
+spotify = "3WTSVuJewaXTakNZlSiIMx"
+
+[[track]]
+n = 29
+title = "Drop The Game"
+artists = ["Flume", "Chet Faker"]
+album = "Lockjaw"
+duration = "3:41"
+spotify = "3wFFW1B6WAmAFGOwdEOOZR"
+
+[[track]]
+n = 30
+title = "R U Mine?"
+artists = ["Arctic Monkeys"]
+album = "AM"
+duration = "3:21"
+spotify = "2AT8iROs4FQueDv2c8q2KE"
+
+[[track]]
+n = 31
+title = "Oh Yeah Voll Krass - feat. Lian Ferdinand"
+artists = ["Pilocka Krach", "Lian Ferdinand"]
+album = "Oh Yeah Voll Krass / Discolight"
+duration = "3:08"
+spotify = "4zGGLcHbkSxKJ8RZbHarjM"
+
+[[track]]
+n = 32
+title = "High Enough"
+artists = ["K.Flay"]
+album = "Every Where Is Some Where"
+duration = "3:51"
+spotify = "1qwno7xb5mJe71xtMS6jl2"
+
+[[track]]
+n = 33
+title = "When A Fire Starts To Burn"
+artists = ["Disclosure"]
+album = "Settle (Special Edition)"
+duration = "4:43"
+spotify = "47EMbBZPg4OBe6m1fijQzj"
+
+[[track]]
+n = 34
+title = "Roxanne"
+artists = ["The Police"]
+album = "Outlandos D'Amour (Remastered 2003)"
+duration = "3:11"
+spotify = "3EYOJ48Et32uATr9ZmLnAo"
+
+[[track]]
+n = 35
+title = "Up to Us"
+artists = ["Charles Pasi"]
+album = "Uncaged"
+duration = "3:50"
+spotify = "4U16nu86W5RTw9bxgi0s7J"
+
+[[track]]
+n = 36
+title = "Feel It Still"
+artists = ["Portugal. The Man"]
+album = "Woodstock"
+duration = "2:43"
+spotify = "6QgjcU0zLnzq5OrUoSZ3OK"
+
+[[track]]
+n = 37
+title = "Arrow and Bow - Marek Hemmann Remix"
+artists = ["Oliver Koletzki", "Fran"]
+album = "Arrow And Bow"
+duration = "7:11"
+spotify = "3c0HGyyrk0RGwhJHtXePHA"
+
+[[track]]
+n = 38
+title = "Oddity"
+artists = ["Zwicker", "Olivera Stanimirov"]
+album = "Songs of Lucid Dreamers"
+duration = "4:21"
+spotify = "5SQNCXpg0MC1vzhYBHfAf6"
+
+[[track]]
+n = 39
+title = "We Are Your Friends - Justice Vs Simian"
+artists = ["Justice", "Simian"]
+album = "We Are Your Friends"
+duration = "4:22"
+spotify = "5f5RzlEgheGXEsYAvmYil8"
+review = "justice-vs-simian_we-are-your-friends.md"
+
+[[track]]
+n = 40
+title = "Breezeblocks"
+artists = ["alt-J"]
+album = "An Awesome Wave"
+duration = "3:47"
+spotify = "1ZLroqJA8qoS5QEeCo0fA7"
+
+[[track]]
+n = 41
+title = "Tum Rakak"
+artists = ["Deluxe"]
+album = "Stachelight"
+duration = "4:36"
+spotify = "2C2SY9l26IT3guKqQoMMSr"
+
+[[track]]
+n = 42
+title = "The Muck"
+artists = ["K.Flay"]
+album = "Inside Voices / Outside Voices"
+duration = "3:24"
+spotify = "2mTi5x0gW64QWPg2weiifi"
+
+[[track]]
+n = 43
+title = "Clarao Da Lua"
+artists = ["Roseaux", "Aloe Blacc"]
+album = "Roseaux"
+duration = "3:13"
+spotify = "3Ziiby0NCf14WBDSlf4YNT"
+
+[[track]]
+n = 44
+title = "Maybe, I"
+artists = ["Des Rocs"]
+album = "Let the Vultures In"
+duration = "3:06"
+spotify = "6lJyWYl1tSXqFn2FH16xvG"
+
+[[track]]
+n = 45
+title = "Wildfire"
+artists = ["SBTRKT", "Little Dragon"]
+album = "SBTRKT (Deluxe Version)"
+duration = "3:21"
+spotify = "0fiTN2N5HEIefAHtm00vYG"
+
+[[track]]
+n = 46
+title = "Somebody's Watching Me"
+artists = ["MC Lars", "K.Flay"]
+album = "Single and Famous"
+duration = "3:24"
+spotify = "6vpq0BGzf7SgjCFJ7ebJ0X"
+
+[[track]]
+n = 47
+title = "Devil Take My Soul"
+artists = ["Son Of Dave"]
+album = "O2"
+duration = "4:16"
+spotify = "4F2r5tc0M3WgqsnU4oDsZd"
+
+[[track]]
+n = 48
+title = "Mad Kidz"
+artists = ["Crookers"]
+album = "Mad Kidz EP"
+duration = "4:59"
+spotify = "5BidkT1AnyfWyBRqjlTuZN"
+
+[[track]]
+n = 49
+title = "Seven Nation Army"
+artists = ["The White Stripes"]
+album = "Elephant"
+duration = "3:52"
+spotify = "3dPQuX8Gs42Y7b454ybpMR"
+
+[[track]]
+n = 50
+title = "Blood In The Cut"
+artists = ["K.Flay"]
+album = "Every Where Is Some Where"
+duration = "3:08"
+spotify = "4q604hQba5940BbOoaenmz"
+
+[[track]]
+n = 51
+title = "After All"
+artists = ["Oliver Koletzki", "Nörd"]
+album = "I am OK"
+duration = "4:18"
+spotify = "4LGau9TyMOdnh2PezDRhd7"
+
+[[track]]
+n = 52
+title = "Scarecrow"
+artists = ["AYAWAKE", "Be Svendsen"]
+album = "Scarecrow"
+duration = "3:26"
+spotify = "6ZMvunZhqQbcZTUxrHU9GU"
+
+[[track]]
+n = 53
+title = "How We Do"
+artists = ["Mount Sims"]
+album = "UltraSex"
+duration = "3:54"
+spotify = "4flxgPC0426CEeSrzQIic0"
+
+[[track]]
+n = 54
+title = "&Run - K.Flay Remix"
+artists = ["Sir Sly", "K.Flay"]
+album = "&Run (K.Flay Remix)"
+duration = "3:36"
+spotify = "3TrZ2uMYbbeaTH8iBc4dUf"
+
+[[track]]
+n = 55
+title = "Trust Me When I Lie"
+artists = ["Luca Malina"]
+album = "Trust Me When I Lie"
+duration = "3:11"
+spotify = "669pBel16P5pZJxM20T7OA"
+
+[[track]]
+n = 56
+title = "Love Me Again - Kove Remix"
+artists = ["John Newman", "Kove"]
+album = "Love Me Again"
+duration = "4:20"
+spotify = "40IxKRgFSE2CO4RTlmB5vD"
+
+[[track]]
+n = 57
+title = "Paddling Out"
+artists = ["Miike Snow"]
+album = "Happy To You (Deluxe Edition)"
+duration = "3:43"
+spotify = "0rfXn2iUwqQXzNvJgmcG6p"
+
+[[track]]
+n = 58
+title = "Black Out Days - Future Islands Remix"
+artists = ["Phantogram", "Future Islands"]
+album = "Black Out Days (Future Islands Remix)"
+duration = "4:08"
+spotify = "3kxkjirben9RVm9NqYa6rm"
+
+[[track]]
+n = 59
+title = "Heartbreak Summer"
+artists = ["RAC", "K.Flay"]
+album = "EGO"
+duration = "3:52"
+spotify = "1XUWDkiiipRz5ORL7mPFw2"
+
+[[track]]
+n = 60
+title = "Burn It Down"
+artists = ["GABRIEL VITEL"]
+album = "Ipoly Mate 001"
+duration = "6:32"
+spotify = "3JnbdWWcv4p6YkLQ2gmTwi"
+
+[[track]]
+n = 61
+title = "Huacachina"
+artists = ["MonteRosso"]
+album = "Kitsuné Parisien 4"
+duration = "3:33"
+spotify = "4ZZ592cEhEAwwcqlix5fQO"
+
+[[track]]
+n = 62
+title = "Ice Cream"
+artists = ["New Young Pony Club"]
+album = "Fantastic Playroom"
+duration = "3:08"
+spotify = "02ISLTUYF5GUjKrL7zvRb9"
+
+[[track]]
+n = 63
+title = "Single and Famous"
+artists = ["MC Lars", "K.Flay"]
+album = "Single and Famous"
+duration = "3:50"
+spotify = "18uTrmsjHkhV41nQK3Q416"
+
+[[track]]
+n = 64
+title = "Solo Dancing"
+artists = ["Indiana"]
+album = "No Romeo (Deluxe)"
+duration = "4:14"
+spotify = "3PS7vZHBOB3rT70CUYHagZ"
+
+[[track]]
+n = 65
+title = "Gold"
+artists = ["Chet Faker"]
+album = "Built on Glass"
+duration = "4:45"
+spotify = "1Ll09EiN5ffeFl1xNZB2Uk"
+
+[[track]]
+n = 66
+title = "Royal T"
+artists = ["Crookers", "Róisín Murphy"]
+album = "From Then Until Now"
+duration = "5:18"
+spotify = "26ftlGM3oc4hSJcnQu98Y0"
+
+[[track]]
+n = 67
+title = "All that she wants"
+artists = ["Clea Vincent"]
+album = "Non mais oui"
+duration = "4:17"
+spotify = "1t2DuK4AAnNbaiQl7QKFKA"
+
+[[track]]
+n = 68
+title = "Written In The Water"
+artists = ["Gin Wigmore"]
+album = "Blood To Bone"
+duration = "2:46"
+spotify = "4VBOT2FRGcu5bjerUG9wMR"
+
+[[track]]
+n = 69
+title = "Mother - Parov Stelars Cry and Dance Remix"
+artists = ["Lilja Bloom", "Parov Stelar"]
+album = "Mother"
+duration = "4:47"
+spotify = "1oDFpECgktjKZOx4es9mpS"
+
+[[track]]
+n = 70
+title = "Trash - Crookers Remix"
+artists = ["The Whip", "Crookers"]
+album = "Remix Marks Destination"
+duration = "6:04"
+spotify = "1CwD6XZdhcqMUQtmpcu1KO"
+
+[[track]]
+n = 71
+title = "Lost N Free - Original Mix"
+artists = ["Kruse & Nuernberg", "Brolin"]
+album = "Lost N Free"
+duration = "6:16"
+spotify = "4YlnbH4WRdobbhhlFOf2Qi"
+
+[[track]]
+n = 72
+title = "Riders On The Storm"
+artists = ["Sie", "Courtney Gray"]
+album = "Riders On The Storm"
+duration = "5:57"
+spotify = "27hilkexz7KhcPWesUuWXx"
+
+[[track]]
+n = 73
+title = "Kill Of The Night"
+artists = ["Gin Wigmore"]
+album = "Gravel & Wine"
+duration = "3:25"
+spotify = "2m17BTWlZq0wtS9cpJsCfM"
+
+[[track]]
+n = 74
+title = "Come"
+artists = ["Jain"]
+album = "Zanaka"
+duration = "2:42"
+spotify = "1YrC8s6yZWw23QxW6rfM9f"
+
+[[track]]
+n = 75
+title = "If This World"
+artists = ["Pilocka Krach"]
+album = "Sugar Cane"
+duration = "4:31"
+spotify = "3lShtQ5EAkd25oIQDR3Xyz"
+
+[[track]]
+n = 76
+title = "High Enough - RAC Remix"
+artists = ["K.Flay", "RAC"]
+album = "High Enough (RAC Remix)"
+duration = "3:28"
+spotify = "1cxttvflVlYD4QA34tR5Yj"
+
+[[track]]
+n = 77
+title = "COPYCAT"
+artists = ["Billie Eilish"]
+album = "dont smile at me"
+duration = "3:14"
+spotify = "5w7wuzMzsDer96KqxafeRK"
+
+[[track]]
+n = 78
+title = "Pleasure Seeker"
+artists = ["CAITLIN", "Thomas Schumacher", "Elektrochemie"]
+album = "Road Less Traveled"
+duration = "7:16"
+spotify = "0CYtYG2DFM6GTMhMZI6OzU"
+
+[[track]]
+n = 79
+title = "Express (Pilocka Krach's Night Train Express Remix)"
+artists = ["PRADA MEINHOFF", "Pilocka Krach"]
+album = "Express (Pilocka Krach's Night Train Express Remix)"
+duration = "6:25"
+spotify = "2qmKPLZNs9sNc1qGaw6fYb"
+
+[[track]]
+n = 80
+title = "Zen (with K.Flay & grandson)"
+artists = ["X Ambassadors", "K.Flay", "grandson"]
+album = "Zen (with K.Flay & grandson)"
+duration = "3:35"
+spotify = "2loEXJRB5ExGcUHYX365R5"
+
+[[track]]
+n = 81
+title = "Cooler Than Me"
+artists = ["Lucky Luke"]
+album = "Cooler Than Me"
+duration = "2:59"
+spotify = "525GY0mXYnxajolwgS8Eaz"
+
+[[track]]
+n = 82
+title = "When I Was A Young Girl"
+artists = ["Feist"]
+album = "Let It Die"
+duration = "3:08"
+spotify = "0h2g4pfDUQiieJtFIQ2hLy"
+
+[[track]]
+n = 83
+title = "Dance Monkey"
+artists = ["Tones And I"]
+album = "Welcome To The Madhouse (Deluxe)"
+duration = "3:29"
+spotify = "2N8m6CYs74qQO4mjVcXO30"
+
+[[track]]
+n = 84
+title = "Five Minutes"
+artists = ["Her"]
+album = "Her"
+duration = "3:48"
+spotify = "7LqT7LqKsCh6epYR9UdAlP"
+
+[[track]]
+n = 85
+title = "Yes I'm Serious"
+artists = ["K.Flay"]
+album = "MONO"
+duration = "4:56"
+spotify = "3QtCqTRl4NkUAAkk7TfBBe"
+
+[[track]]
+n = 86
+title = "Paris 1985"
+artists = ["Lecomte De Brégeot", "Elle Valenci"]
+album = "Paris 1985"
+duration = "4:56"
+spotify = "71QaSt8styoSuQhCIkKNzW"
+
+[[track]]
+n = 87
+title = "Ay Caramba"
+artists = ["Pilocka Krach", "The Lost Amigos"]
+album = "Ay Caramba"
+duration = "4:15"
+spotify = "2lMDSF6Rg002zj1WQXvCeX"
+
+[[track]]
+n = 88
+title = "Pussy Cock & God"
+artists = ["Bass Astral x Igo"]
+album = "Discobolus"
+duration = "4:41"
+spotify = "5SmPIkENC3tSQ87JI5DOU7"
+
+[[track]]
+n = 89
+title = "Your Woman"
+artists = ["White Town"]
+album = "Women in Technology"
+duration = "4:19"
+spotify = "3UBItNVbFQiVC5hBQlBvnr"
+
+[[track]]
+n = 90
+title = "Island - Nôze Remix"
+artists = ["Dapayk & Padberg", "Caro", "Nôze"]
+album = "Black Beauty Remixes, Pt. 2"
+duration = "6:21"
+spotify = "4ak7LywJZLn9PVKcfosgJb"
+
+[[track]]
+n = 91
+title = "One Day / Reckoning Song (Wankelmut Remix) - Radio Edit"
+artists = ["Asaf Avidan", "The Mojos", "Wankelmut"]
+album = "One Day / Reckoning Song (Wankelmut Remix)"
+duration = "3:35"
+spotify = "68rcszAg5pbVaXVvR7LFNh"
+
+[[track]]
+n = 92
+title = "Needle in the Hay"
+artists = ["Melissa Laveaux"]
+album = "Camphor & Copper (Bonus Track Version)"
+duration = "3:24"
+spotify = "4TCcDD97LU6rBUnYhjGmR8"
+
+[[track]]
+n = 93
+title = "Odessa"
+artists = ["Caribou"]
+album = "Swim"
+duration = "5:15"
+spotify = "3iwH1DfB0Yq2uKhCv7SMxp"
+
+[[track]]
+n = 94
+title = "Hoag"
+artists = ["Luke Garcia", "Th3 Oth3r"]
+album = "Dantze, Baby II"
+duration = "7:04"
+spotify = "49wPUQ4U5nZ80lr6iQSBLN"
+
+[[track]]
+n = 95
+title = "My Click"
+artists = ["Aaron Ahrends"]
+album = "My Click EP"
+duration = "6:57"
+spotify = "5rY3X0tZUwUzL3pr3UbG3i"
+
+[[track]]
+n = 96
+title = "Body Language - Interpretation"
+artists = ["Booka Shade"]
+album = "Movements"
+duration = "5:00"
+spotify = "1ABwlOhYanbuafWx1yvx0T"
+
+[[track]]
+n = 97
+title = "2d2f"
+artists = ["Avenue D"]
+album = "Bootleg"
+duration = "2:57"
+spotify = "3FH2ETmx4PHyBbtZRYWjC8"
+
+[[track]]
+n = 98
+title = "This Head I Hold"
+artists = ["Electric Guest"]
+album = "Mondo"
+duration = "2:55"
+spotify = "0LVaveDmmoMEKhBGhVhfoI"
+
+[[track]]
+n = 99
+title = "Curiosa"
+artists = ["Arnaud Rebotini"]
+album = "Curiosa (Bande originale du film)"
+duration = "4:11"
+spotify = "08sABdyACgEjOIAJg5aqCw"
+
+[[track]]
+n = 100
+title = "Fading Nights"
+artists = ["Parra for Cuva", "Anna Naklab"]
+album = "Fading Nights"
+duration = "7:05"
+spotify = "6RqNzlRmo0PnQNKm8ub69O"

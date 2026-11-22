@@ -12,11 +12,12 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 19}
+  - {"year": 2023, "n": 84}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 465}
 top:
   - {"range": "month", "rank": 47, "read": "2026-11-14"}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Darklands · Whilk & Misky
@@ -25,5 +26,6 @@ From the album *Darklands*, 7:16.
 A liked song.
 Top tracks of the month (read 2026-11-14): #47.
 Your Top Songs 2021: #19.
+Your Top Songs 2023: #84.
 In My Top Songs of All the Time (#465).
 Reviewed: content/whilk-and-miskey-darklands.md.

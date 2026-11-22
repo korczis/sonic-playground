@@ -10,11 +10,14 @@ keys: {"fold": "essel|lennon", "isrc": "GBJAJ2300006", "musicbrainz": "6c10dd3d-
 review: "essel-lennon.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 59}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Lennon · ESSEL
 
 From the album *Lennon*, 3:25.
 A liked song.
+Your Top Songs 2025: #59.
 Reviewed: content/essel-lennon.md.

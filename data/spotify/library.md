@@ -1,14 +1,14 @@
 ---
 schema: "spotify-library/v1"
 id: "library"
-songs: 6558
+songs: 6598
 liked: 2029
-reviewed: 1299
-sources: ["web-player:2026-11-14", "web-player:2026-11-14"]
+reviewed: 1323
+sources: ["web-player:2026-11-14", "web-player:2026-11-14", "web-player:2026-11-22"]
 playlists:
   - {"kind": "liked", "ids": ["liked-songs"]}
   - {"kind": "own", "ids": ["angry-ego", "best-of-the-best", "discover-weekly", "liked-from-radio", "my-playlist-10", "my-playlist-11", "my-playlist-5", "my-playlist-9", "my-shazam-tracks", "my-top-songs-of-all-the-time", "sonic-playground"]}
-  - {"kind": "yearbook", "ids": ["your-top-songs-2016", "your-top-songs-2017", "your-top-songs-2018", "your-top-songs-2019", "your-top-songs-2020", "your-top-songs-2021", "your-top-songs-2022"]}
+  - {"kind": "yearbook", "ids": ["your-top-songs-2016", "your-top-songs-2017", "your-top-songs-2018", "your-top-songs-2019", "your-top-songs-2020", "your-top-songs-2021", "your-top-songs-2022", "your-top-songs-2023", "your-top-songs-2024", "your-top-songs-2025"]}
   - {"kind": "made-for-you", "ids": ["brain-food", "discover-weekly-2", "funk-soul-classics", "jamiroquai-radio", "late-night-jazz", "mellow-beats", "night-rain", "rachel-k-collier-mix", "the-wind-down"]}
   - {"kind": "followed", "ids": ["back-to-life-back-to-reality", "beautiful-songs-1960", "berlin-electronic-underground", "best-of-post-modern-jukebox", "bjork-gling-glo", "chill", "chill-house-2026", "coding-music", "country-classics-top-country-songs-of-all-time", "deep-sleep", "devadesatky", "elise-russell-s-christmas", "eurythmics-sweet-dreams-ibiza-deep-summer-remix-2015", "evening-commute", "full-bk", "gold-school", "housewerk", "kitchen-swagger", "leapfrogstudio", "love-me-love-me-say-that-you-love-me", "midnight-music-deep-house-chill-vocal-house", "mint", "playlist-zami-lee", "sensation", "slam-40-updated-weekly", "slam-fm-top-40-updated-weekly-may-7th", "written-by-jt-daly"]}
 albums:
@@ -273,4 +273,4 @@ top_artists:
 
 # The owner's Spotify library
 
-6558 songs (2029 liked, 1299 reviewed on the site), 55 playlists, 115 saved albums and 90 followed artists. Derived by scripts/spotify_history.py; never edit by hand.
+6598 songs (2029 liked, 1323 reviewed on the site), 58 playlists, 115 saved albums and 90 followed artists. Derived by scripts/spotify_history.py; never edit by hand.

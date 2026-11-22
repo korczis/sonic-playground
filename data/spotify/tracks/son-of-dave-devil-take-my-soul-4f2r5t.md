@@ -12,7 +12,8 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 85}
-sources: ["web-player:2026-11-14"]
+  - {"year": 2024, "n": 47}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Devil Take My Soul · Son Of Dave
@@ -20,4 +21,5 @@ sources: ["web-player:2026-11-14"]
 From the album *O2*, 4:16.
 A liked song.
 Your Top Songs 2022: #85.
+Your Top Songs 2024: #47.
 Reviewed: content/son-of-dave-devil-take-my-soul.md.

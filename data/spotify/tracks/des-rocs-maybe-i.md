@@ -10,11 +10,14 @@ keys: {"fold": "desrocs|maybei", "isrc": "GBKPL1819627", "musicbrainz": "786bbd9
 review: "des-rocs-maybe-i.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 44}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Maybe, I · Des Rocs
 
 From the album *Let the Vultures In*, 3:06.
 A liked song.
+Your Top Songs 2024: #44.
 Reviewed: content/des-rocs-maybe-i.md.

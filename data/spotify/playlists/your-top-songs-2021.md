@@ -18,7 +18,7 @@ tracks:
   - {"n": 7, "track": "the-weeknd-blinding-lights"}
   - {"n": 8, "track": "billie-eilish-bury-a-friend"}
   - {"n": 9, "track": "bronski-beat-it-ain-t-necessarily-so"}
-  - {"n": 10, "track": "tones-and-i-dance-monkey"}
+  - {"n": 10, "track": "tones-and-i-dance-monkey-2xu0ox"}
   - {"n": 11, "track": "kruder-dorfmeister-johnson"}
   - {"n": 12, "track": "tubbe-in-berlin-5amzdl"}
   - {"n": 13, "track": "say-yes-dog-a-friend-3xhbig"}

@@ -10,11 +10,14 @@ keys: {"fold": "zwicker|oddity", "musicbrainz": "fab1aaf1-0adf-4f60-9dcc-f90c437
 review: "zwicker_oddity.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 38}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Oddity · Zwicker, Olivera Stanimirov
 
 From the album *Songs of Lucid Dreamers*, 4:21.
 A liked song.
+Your Top Songs 2024: #38.
 Reviewed: content/zwicker_oddity.md.

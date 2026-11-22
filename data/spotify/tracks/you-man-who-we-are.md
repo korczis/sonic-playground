@@ -9,11 +9,14 @@ spotify: {"track": "56cqmGid7J5wMyfXJzOEOd", "album": "50rgN4NAnnRqFzl7TTtnQv", 
 keys: {"fold": "youman|whoweare"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 90}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Who We Are · You Man
 
 From the album *Spectrum of Love*, 2:55.
 A liked song.
+Your Top Songs 2025: #90.
 No review yet.

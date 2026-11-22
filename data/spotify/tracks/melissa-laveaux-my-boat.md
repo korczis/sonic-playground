@@ -9,11 +9,14 @@ spotify: {"track": "4sxhLTavzTcKPJkJqARXMU", "album": "1o9vBWliUrFc1CVWeh1jej", 
 keys: {"fold": "melissalaveaux|myboat"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 12}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # My Boat · Melissa Laveaux
 
 From the album *Camphor & Copper (Bonus Track Version)*, 4:19.
 A liked song.
+Your Top Songs 2025: #12.
 No review yet.

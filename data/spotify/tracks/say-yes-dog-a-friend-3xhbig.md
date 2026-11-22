@@ -14,9 +14,10 @@ yearbooks:
   - {"year": 2019, "n": 8}
   - {"year": 2020, "n": 4}
   - {"year": 2021, "n": 13}
+  - {"year": 2023, "n": 26}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 289}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # A Friend · Say Yes Dog
@@ -26,5 +27,6 @@ A liked song.
 Your Top Songs 2019: #8.
 Your Top Songs 2020: #4.
 Your Top Songs 2021: #13.
+Your Top Songs 2023: #26.
 In My Top Songs of All the Time (#289).
 Reviewed: content/say-yes-dog_a-friend.md.

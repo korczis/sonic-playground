@@ -1,0 +1,809 @@
+# The owner's Spotify yearbook 2025 ("Your Top Songs 2025"), written by scripts/spotify.py.
+# Items are recordings in playlist order; scripts/catalog.py resolves each to one review.
+kind = "yearbook"
+year = 2025
+name = "Your Top Songs 2025"
+source = "Spotify web player, the owner's playlist \"Your Top Songs 2025\", read off the rendered page on 2026-11-22 (scripts/spotify_history.py)"
+retrieved = "2026-11-22"
+expected = 100
+
+[[track]]
+n = 1
+title = "Lungo Mare"
+artists = ["Time To Sleep"]
+album = "Lungo Mare"
+duration = "4:08"
+spotify = "6xyYawB1MHnhqW15YomUY6"
+
+[[track]]
+n = 2
+title = "Karaköy"
+artists = ["Brazilian Girls"]
+album = "Let's Make Love"
+duration = "3:44"
+spotify = "1JXRCUZPk98Jh1WnZRK0w9"
+
+[[track]]
+n = 3
+title = "Prayer In C"
+artists = ["NOVEMBER KID"]
+album = "Prayer In C"
+duration = "2:02"
+spotify = "2dTzxQ0GUuLc8bKzRRWAGg"
+
+[[track]]
+n = 4
+title = "Time Has Changed - Northern Lite Remix"
+artists = ["Codec", "Flexor", "Northern Lite"]
+album = "Time Has Changed Remixes"
+duration = "5:59"
+spotify = "197YeuGdOM8YpjjLGMpzPg"
+review = "codec-n-flexor-time-has-changed-northern-lite-remix.md"
+
+[[track]]
+n = 5
+title = "Dummy – Chris Lake Remix"
+artists = ["Portugal. The Man", "Chris Lake"]
+album = "Dummy – Chris Lake Remix"
+duration = "2:53"
+spotify = "0SmyaVrzL7j3R9k3pkJgUh"
+
+[[track]]
+n = 6
+title = "La Luna Y El Sol"
+artists = ["Pilocka Krach"]
+album = "Sugar Cane"
+duration = "4:41"
+spotify = "38gOYe7vQj3O8bit0CFVla"
+
+[[track]]
+n = 7
+title = "Somebody lonely and me - Nacht"
+artists = ["2raumwohnung"]
+album = "Nacht und Tag"
+duration = "3:19"
+spotify = "4QRMAnVfVFaUvl3Hbrq7XO"
+
+[[track]]
+n = 8
+title = "Come Online"
+artists = ["Kid Francescoli", "Julia Minkin"]
+album = "Play Me Again"
+duration = "2:38"
+spotify = "1n4Ooi4zsQOfXFed4tMxME"
+
+[[track]]
+n = 9
+title = "Cooler Than Me - Single Mix"
+artists = ["Mike Posner", "Gigamesh"]
+album = "31 Minutes to Takeoff"
+duration = "3:33"
+spotify = "2V4bv1fNWfTcyRJKmej6Sj"
+
+[[track]]
+n = 10
+title = "Goodbye"
+artists = ["Scratch Bandits Crew"]
+album = "Stereo 7"
+duration = "4:11"
+spotify = "2G6dtpFgHX75Ei0ros3opC"
+
+[[track]]
+n = 11
+title = "Hands in the Air"
+artists = ["Pilocka Krach", "One Fine Day Kids"]
+album = "One Fine Day presents Pilocka Krach & Dear Reader feat. One Fine Day Kids"
+duration = "4:54"
+spotify = "75RcS5gcYaTtcvLKDLpw3c"
+
+[[track]]
+n = 12
+title = "My Boat"
+artists = ["Melissa Laveaux"]
+album = "Camphor & Copper (Bonus Track Version)"
+duration = "4:19"
+spotify = "4sxhLTavzTcKPJkJqARXMU"
+
+[[track]]
+n = 13
+title = "Pump Up The Jam - NightFunk Remix"
+artists = ["Technotronic", "NightFunk"]
+album = "Pump Up The Jam (NightFunk Remix)"
+duration = "6:04"
+spotify = "6b5gaDGd1zlJtCM873Q23D"
+
+[[track]]
+n = 14
+title = "Ay Caramba"
+artists = ["Pilocka Krach", "The Lost Amigos"]
+album = "Ay Caramba"
+duration = "4:15"
+spotify = "2lMDSF6Rg002zj1WQXvCeX"
+
+[[track]]
+n = 15
+title = "7 Years"
+artists = ["Lukas Graham"]
+album = "Lukas Graham"
+duration = "3:57"
+spotify = "5kqIPrATaCc2LqxVWzQGbk"
+
+[[track]]
+n = 16
+title = "Choses qui se passent - Pilocka Krach Remix"
+artists = ["Roderic", "Pilocka Krach", "matt.i"]
+album = "Choses qui se passent (Pilocka Krach Remix)"
+duration = "6:00"
+spotify = "5rEb89pZtSptunvto701Xq"
+
+[[track]]
+n = 17
+title = "A Friend"
+artists = ["Say Yes Dog"]
+album = "Plastic Love"
+duration = "4:20"
+spotify = "0NHa9oZtgHjATqVobmGeNp"
+
+[[track]]
+n = 18
+title = "Clarita's Song - feat. The Lost Amigos"
+artists = ["Pilocka Krach", "The Lost Amigos"]
+album = "The Lost Amigos"
+duration = "3:26"
+spotify = "06YAhym5Btgx8bUqCQ4EoW"
+
+[[track]]
+n = 19
+title = "Oh Yeah Voll Krass - feat. Lian Ferdinand"
+artists = ["Pilocka Krach", "Lian Ferdinand"]
+album = "Oh Yeah Voll Krass / Discolight"
+duration = "3:08"
+spotify = "4zGGLcHbkSxKJ8RZbHarjM"
+
+[[track]]
+n = 20
+title = "Smalltown Boy - Nova Version"
+artists = ["Catastrophe"]
+album = "Fizzy"
+duration = "3:47"
+spotify = "3xCcqxfHLRnX6RONKrdNZY"
+
+[[track]]
+n = 21
+title = "Trippy"
+artists = ["Mindchatter"]
+album = "Trippy"
+duration = "2:52"
+spotify = "1HBChKTUXlkfVEvFXTnv5P"
+
+[[track]]
+n = 22
+title = "Love Me Again"
+artists = ["John Newman"]
+album = "Tribute"
+duration = "3:59"
+spotify = "5TbzAWWc5eJaANpA9kfGCd"
+
+[[track]]
+n = 23
+title = "Amusement Park"
+artists = ["Nicolas Michaux"]
+album = "Les Chutes"
+duration = "3:33"
+spotify = "6Iw6EcVVKZD7oLpY97t1vd"
+
+[[track]]
+n = 24
+title = "Blacklight Sleaze"
+artists = ["Peace Division", "Pleasant Gehman"]
+album = "Blacklight Sleaze"
+duration = "6:19"
+spotify = "736VLVib8Mj9TURmsktYjX"
+
+[[track]]
+n = 25
+title = "One Day Left - Original"
+artists = ["Pilocka Krach", "The Lost Amigos", "Sunru", "Nereo II"]
+album = "One Day Left"
+duration = "7:00"
+spotify = "6XgyVJPRAFCPPop0kTh0gt"
+
+[[track]]
+n = 26
+title = "Smack Yo'"
+artists = ["Beltran"]
+album = "Smack Yo'"
+duration = "4:05"
+spotify = "2UdCQIDwFvGhslUYZH5tRR"
+
+[[track]]
+n = 27
+title = "MANSA MUSA"
+artists = ["ero808"]
+album = "MANSA MUSA"
+duration = "3:24"
+spotify = "7M2brbK9zVw52HpmxqjHck"
+
+[[track]]
+n = 28
+title = "One Day Left - Roderic Remix"
+artists = ["Pilocka Krach", "The Lost Amigos", "Sunru", "Nereo II", "Roderic"]
+album = "One Day Left"
+duration = "6:15"
+spotify = "5asSSalSm1dIvFndcy0l0k"
+
+[[track]]
+n = 29
+title = "Dans Ta Face"
+artists = ["Potochkine"]
+album = "Potochkine"
+duration = "3:55"
+spotify = "1vh41Mkc7f881mCt8kNvaK"
+
+[[track]]
+n = 30
+title = "Fresh"
+artists = ["Pilocka Krach"]
+album = "The Lost Amigos"
+duration = "3:53"
+spotify = "2Fs586Bgdw3LL6QppsfhGG"
+
+[[track]]
+n = 31
+title = "DRENCH"
+artists = ["AYYBO", "Preme"]
+album = "DRENCH"
+duration = "3:17"
+spotify = "3E0Fcls8R8nWjxqwtgJq8j"
+
+[[track]]
+n = 32
+title = "If This World"
+artists = ["Pilocka Krach"]
+album = "Sugar Cane"
+duration = "4:31"
+spotify = "3lShtQ5EAkd25oIQDR3Xyz"
+
+[[track]]
+n = 33
+title = "Sun Is Dark"
+artists = ["WILL K"]
+album = "Sun Is Dark"
+duration = "2:38"
+spotify = "6Lmx1AyfNlmOVCW2Sxisnk"
+
+[[track]]
+n = 34
+title = "Magnified Love"
+artists = ["GusGus"]
+album = "Arabian Horse"
+duration = "4:53"
+spotify = "0TVm3OWSvd7fD7lJjIXYq6"
+
+[[track]]
+n = 35
+title = "Auf Wiedersehen"
+artists = ["Mansfield.TYA", "Rebeka Warrior", "Carla Pallone"]
+album = "Monument ordinaire"
+duration = "3:03"
+spotify = "3KayrZjvmCLhjv6IeONEWZ"
+
+[[track]]
+n = 36
+title = "When We Fall"
+artists = ["You Man", "Jérôme Voisin"]
+album = "Spectrum of Love"
+duration = "4:22"
+spotify = "1FLcx0TakO65t4S89j6qBj"
+
+[[track]]
+n = 37
+title = "One Time"
+artists = ["Marian Hill"]
+album = "Sway"
+duration = "3:37"
+spotify = "1Z4UKak2eNteHFZkwiYPNz"
+
+[[track]]
+n = 38
+title = "Take a Chance"
+artists = ["Jain"]
+album = "The Fool"
+duration = "3:24"
+spotify = "7DYmK7Yvs6aZyJ2jiit9nB"
+
+[[track]]
+n = 39
+title = "I Wanna MMM... - Successful Radio Version"
+artists = ["The Lawyer"]
+album = "I Wanna MMM..."
+duration = "3:35"
+spotify = "4veHeaa5OFBgKy5h7DwFDi"
+
+[[track]]
+n = 40
+title = "Down the Line - It Takes a Number"
+artists = ["Romare"]
+album = "Meditations on Afrocentrism"
+duration = "4:14"
+spotify = "4CjEkkRMMKY2ROy21bFNrc"
+
+[[track]]
+n = 41
+title = "Midnight Dipper - Soulwax Remix"
+artists = ["Warmduscher", "Soulwax"]
+album = "Midnight Dipper (Soulwax Remix)"
+duration = "6:09"
+spotify = "5XQZUuA1mTyiq3V6VYMCki"
+
+[[track]]
+n = 42
+title = "Last Resort"
+artists = ["Papa Roach"]
+album = "Infest"
+duration = "3:19"
+spotify = "5W8YXBz9MTIDyrpYaCg2Ky"
+
+[[track]]
+n = 43
+title = "Sure the Sun Will Rise"
+artists = ["Hugo Kant"]
+album = "Far from Home"
+duration = "4:55"
+spotify = "5LNaTQI9U9Ethx7umN9KC7"
+
+[[track]]
+n = 44
+title = "HYPNOSIS"
+artists = ["AYYBO", "ero808"]
+album = "HYPNOSIS"
+duration = "2:38"
+spotify = "5KFasflYKU9VnMTthjNXNv"
+
+[[track]]
+n = 45
+title = "Cavaliers"
+artists = ["Mansfield.TYA", "Rebeka Warrior", "Carla Pallone"]
+album = "NYX"
+duration = "2:33"
+spotify = "07F8ojojIcr19BWqHJFLyo"
+
+[[track]]
+n = 46
+title = "Got 2 Let U"
+artists = ["The Knife"]
+album = "Deep Cuts"
+duration = "3:59"
+spotify = "07NHCiFDHwqcNtOaD64jkP"
+
+[[track]]
+n = 47
+title = "Express (Pilocka Krach's Night Train Express Remix)"
+artists = ["PRADA MEINHOFF", "Pilocka Krach"]
+album = "Express (Pilocka Krach's Night Train Express Remix)"
+duration = "6:25"
+spotify = "2qmKPLZNs9sNc1qGaw6fYb"
+
+[[track]]
+n = 48
+title = "Discolight - Acid Pauli Remix"
+artists = ["Pilocka Krach", "Acid Pauli"]
+album = "Discolight"
+duration = "5:16"
+spotify = "7vCpLO2okAdGrOFZkT3Oyd"
+
+[[track]]
+n = 49
+title = "Losing My Patience"
+artists = ["Shit Robot", "Alexis Taylor"]
+album = "From the Cradle to the Rave"
+duration = "4:18"
+spotify = "3JDztstrvaA8D2Wy35491v"
+
+[[track]]
+n = 50
+title = "Cris en theme"
+artists = ["Il Est Vilaine"]
+album = "Les Mystères de Lorient"
+duration = "2:27"
+spotify = "4F21MTBGfVjx0GJOJjCwyg"
+
+[[track]]
+n = 51
+title = "Tempête"
+artists = ["Mansfield.TYA", "Rebeka Warrior", "Carla Pallone"]
+album = "Monument ordinaire"
+duration = "3:00"
+spotify = "7podKCePfIMQRDDxK71PWC"
+
+[[track]]
+n = 52
+title = "Baddest Muthafucka"
+artists = ["Mickey Avalon"]
+album = "Teardrops on My Tombstone"
+duration = "2:55"
+spotify = "0MyCVL6PTojOykQ4sXKqc8"
+
+[[track]]
+n = 53
+title = "Rain in the Desert"
+artists = ["Pilocka Krach", "Roderic"]
+album = "Joy"
+duration = "5:03"
+spotify = "7bHACyLbMxP6orV3ZIW1fM"
+
+[[track]]
+n = 54
+title = "Painting Town"
+artists = ["Nuclear Cowboy"]
+album = "where has our time gone?"
+duration = "3:39"
+spotify = "7krYIJj0yQWrlLOLyhu1aK"
+
+[[track]]
+n = 55
+title = "Moments"
+artists = ["Klangkarussell", "Will Heard"]
+album = "Netzwerk"
+duration = "5:01"
+spotify = "3fx25M65m6ATiKnEIDS3HK"
+
+[[track]]
+n = 56
+title = "La valise"
+artists = ["Rebeka Warrior", "Marlène Saldana"]
+album = "Showgirl, the play (Original Soundtrack Recording)"
+duration = "4:16"
+spotify = "6DChzhMnqG5vHUjSV2twU3"
+
+[[track]]
+n = 57
+title = "Shadows Crawl"
+artists = ["Torii Wolf"]
+album = "Flow Riiot"
+duration = "2:37"
+spotify = "5pmFlCsvTj4bN3zmwSTWCM"
+
+[[track]]
+n = 58
+title = "Heads Will Roll - A-Trak Remix Radio Edit"
+artists = ["Yeah Yeah Yeahs", "A-Trak"]
+album = "Good Morning Music: Wake Up Workout"
+duration = "3:23"
+spotify = "5qGIfWDRdyO67LCTqA2sEn"
+
+[[track]]
+n = 59
+title = "Lennon"
+artists = ["ESSEL"]
+album = "Lennon"
+duration = "3:25"
+spotify = "6KCmJ8VI6VYNRNubSqi0Ck"
+
+[[track]]
+n = 60
+title = "Power to the Women of the Morning Shift"
+artists = ["Oum Shatt"]
+album = "Oum Shatt"
+duration = "3:09"
+spotify = "6RLaMJszaIAYBq6nqHJJSK"
+
+[[track]]
+n = 61
+title = "Palmenhaus"
+artists = ["Roderic", "Pilocka Krach"]
+album = "Kater Blau Konsortium pres. „Give ‚em a future“"
+duration = "5:48"
+spotify = "6Tj2ENnL8ARQ1dJoAS0rzt"
+
+[[track]]
+n = 62
+title = "Like a Dog"
+artists = ["Carte Contact"]
+album = "Jeune femme (Original Motion Picture Soundtrack)"
+duration = "3:38"
+spotify = "6TYxc0MjbB5PjaZLw3QXrV"
+
+[[track]]
+n = 63
+title = "My Name Is Fame"
+artists = ["Pilocka Krach"]
+album = "Fame"
+duration = "3:30"
+spotify = "5qnsUIlVizeOkG87tompze"
+
+[[track]]
+n = 64
+title = "Would You (go to bed with me?)"
+artists = ["Campbell", "Alcemist"]
+album = "Would You (go to bed with me?)"
+duration = "2:00"
+spotify = "2N8gR2yftrHbZR53U5kYnX"
+
+[[track]]
+n = 65
+title = "G - 3rd eye"
+artists = ["Masomenos"]
+album = "The third eye"
+duration = "5:13"
+spotify = "34tqAqCh5IRGEmrZmsEmcU"
+
+[[track]]
+n = 66
+title = "Euro Trash Girl"
+artists = ["Chicks On Speed"]
+album = "Will Save Us All"
+duration = "4:02"
+spotify = "0mnwvGqEDNrY1cLAfyK4Ob"
+
+[[track]]
+n = 67
+title = "Undercover Dreamer"
+artists = ["DRAMAS"]
+album = "Dramas"
+duration = "3:35"
+spotify = "66YSdUHo59xfr0YBtjGmz2"
+
+[[track]]
+n = 68
+title = "Gitarre Spielen"
+artists = ["Pilocka Krach"]
+album = "Best Of"
+duration = "4:48"
+spotify = "67Rd9vIsF2cTh62Q3lg1St"
+
+[[track]]
+n = 69
+title = "Love Me Again - Kove Remix"
+artists = ["John Newman", "Kove"]
+album = "Love Me Again"
+duration = "4:20"
+spotify = "40IxKRgFSE2CO4RTlmB5vD"
+
+[[track]]
+n = 70
+title = "Cheft El Khof"
+artists = ["Orange Blossom"]
+album = "Everything Must Change"
+duration = "6:52"
+spotify = "5XyO0Fr068soEkVfyuqINg"
+
+[[track]]
+n = 71
+title = "The River"
+artists = ["Bakermat"]
+album = "The Spirit (Track By Track)"
+duration = "2:24"
+spotify = "2fr38idkJUOF1LNk1P8D2y"
+
+[[track]]
+n = 72
+title = "Chaos"
+artists = ["Icare Sandilas"]
+album = "Chaos"
+duration = "3:21"
+spotify = "3nqkWMcVZ0aR7J3GdnvORL"
+
+[[track]]
+n = 73
+title = "Salt Air"
+artists = ["Chew Lips"]
+album = "Kitsuné: Salt Air (Bonus Track Version)"
+duration = "2:54"
+spotify = "5EYWXZOHlb9sPplvP4d7L6"
+
+[[track]]
+n = 74
+title = "Armor"
+artists = ["Tricky", "Terra Lopez", "Rituals of Mine"]
+album = "ununiform"
+duration = "2:25"
+spotify = "0E7f3hTSKkPt8gJgCdHeWG"
+
+[[track]]
+n = 75
+title = "Love Me Again - Love Thy Brother Remix"
+artists = ["John Newman", "Love Thy Brother"]
+album = "Love Me Again"
+duration = "4:26"
+spotify = "5gCtfWY9TrEBO1xa5S2gbL"
+
+[[track]]
+n = 76
+title = "Love Me Again - Ejeca Remix"
+artists = ["John Newman", "Ejeca"]
+album = "Love Me Again"
+duration = "6:52"
+spotify = "206fCw7hyJnFXRhKmz6Zdr"
+
+[[track]]
+n = 77
+title = "Love Me Again - Gemini Remix"
+artists = ["John Newman", "Gemini"]
+album = "Love Me Again"
+duration = "4:02"
+spotify = "23BNcdu0SFDckVpOBFxvpQ"
+
+[[track]]
+n = 78
+title = "Sweeter Than Sweet (featuring Alice Carreri)"
+artists = ["Lulu Rouge"]
+album = "Bless you"
+duration = "4:30"
+spotify = "59cgEoNbNjGpa6xBBwkhF2"
+
+[[track]]
+n = 79
+title = "Because Of You"
+artists = ["C2C", "Pigeon John"]
+album = "Tetra"
+duration = "3:42"
+spotify = "3XOEuZcwfW4l7fttcB7zB6"
+
+[[track]]
+n = 80
+title = "The Bomb - Single version"
+artists = ["Pigeon John"]
+album = "Dragon Slayer"
+duration = "3:23"
+spotify = "2JUoEXXQxjjBfISZxycyFt"
+
+[[track]]
+n = 81
+title = "This Head I Hold"
+artists = ["Electric Guest"]
+album = "Mondo"
+duration = "2:55"
+spotify = "0LVaveDmmoMEKhBGhVhfoI"
+
+[[track]]
+n = 82
+title = "Miracle"
+artists = ["Caravan Palace"]
+album = "Chronologic"
+duration = "3:36"
+spotify = "5uKKPK1HAdPL3y4CEQDL7q"
+
+[[track]]
+n = 83
+title = "Dogs Are In This House"
+artists = ["Pilocka Krach"]
+album = "The Lost Amigos"
+duration = "5:06"
+spotify = "4XxfujTvxXYDFKHnhuYcaT"
+
+[[track]]
+n = 84
+title = "My Name Is Fame - Be Svendsen Remix"
+artists = ["Pilocka Krach", "Be Svendsen"]
+album = "Fame"
+duration = "3:53"
+spotify = "1lRxFP7c6oFZZmduUto796"
+
+[[track]]
+n = 85
+title = "Alien Babies"
+artists = ["Easter"]
+album = "The Softest Hard"
+duration = "4:28"
+spotify = "3r4MKrJbHNlI4nBnrgXt4h"
+
+[[track]]
+n = 86
+title = "Sticks & Stones"
+artists = ["Red Axes", "Adi Scotheque"]
+album = "Red Axes"
+duration = "3:46"
+spotify = "3SEbtUizfVgPdYnHct8TK5"
+
+[[track]]
+n = 87
+title = "megapunk"
+artists = ["Ela Minus"]
+album = "acts of rebellion"
+duration = "3:12"
+spotify = "2EUZKvwewWl3FVxLcmkMl9"
+
+[[track]]
+n = 88
+title = "Solo Dancing"
+artists = ["Indiana"]
+album = "No Romeo (Deluxe)"
+duration = "4:14"
+spotify = "3PS7vZHBOB3rT70CUYHagZ"
+
+[[track]]
+n = 89
+title = "Alfons Trinkt Gern Schnaps"
+artists = ["Landhouse", "Raddantze"]
+album = "Alfons Trinkt Gern Schnaps"
+duration = "5:48"
+spotify = "1RICfPXP8phyK2m398zabi"
+
+[[track]]
+n = 90
+title = "Who We Are"
+artists = ["You Man"]
+album = "Spectrum of Love"
+duration = "2:55"
+spotify = "56cqmGid7J5wMyfXJzOEOd"
+
+[[track]]
+n = 91
+title = "Laughter In Cairo"
+artists = ["Pilocka Krach"]
+album = "Sugar Cane"
+duration = "6:21"
+spotify = "3zZG2Q9FC0yCbYHdvqoo39"
+
+[[track]]
+n = 92
+title = "Like a Vice"
+artists = ["Louisahhh"]
+album = "A Trap I've Built"
+duration = "5:52"
+spotify = "3QlGz2Dar5QHNAy2ERkfCD"
+
+[[track]]
+n = 93
+title = "Modus"
+artists = ["De la Suda"]
+album = "Modus"
+duration = "3:32"
+spotify = "2tVimIvA2lVMJ7pzoA8c8Y"
+
+[[track]]
+n = 94
+title = "The Song"
+artists = ["Stimming"]
+album = "Window Shopping EP"
+duration = "8:37"
+spotify = "4e7XWsTooToOKpNdT0AKLc"
+
+[[track]]
+n = 95
+title = "Burning Off My Clothes"
+artists = ["Sworn Virgins"]
+album = "Fifty Dollar Bills"
+duration = "6:49"
+spotify = "0FKSWFLNmW5ikQGkaJPZya"
+
+[[track]]
+n = 96
+title = "Bird In A Cage"
+artists = ["Pilocka Krach"]
+album = "Sugar Cane"
+duration = "3:37"
+spotify = "0KEeXvdLVwB8IxcgWGuPyv"
+
+[[track]]
+n = 97
+title = "Anxiety"
+artists = ["Doechii"]
+album = "Anxiety"
+duration = "4:09"
+spotify = "1musbempyJAw5gfSKZHXP9"
+
+[[track]]
+n = 98
+title = "Iron Shirt"
+artists = ["Dreadzone"]
+album = "Once Upon A Time"
+duration = "6:02"
+spotify = "3LHlJJaYA1jJZrQQdHIh4P"
+
+[[track]]
+n = 99
+title = "Top Secret Keeper"
+artists = ["Pilocka Krach"]
+album = "Best Of"
+duration = "4:56"
+spotify = "5Pz7Di1sVBjmF1BybAcF6L"
+
+[[track]]
+n = 100
+title = "Joy"
+artists = ["Pilocka Krach"]
+album = "Joy"
+duration = "6:06"
+spotify = "3UGAUcPgDvkoaw0EuHgYRo"

@@ -10,11 +10,14 @@ keys: {"fold": "hottoddy|ineedlove", "musicbrainz": "3103d5a7-3314-446f-920a-ff5
 review: "hot-toddy-ron-basejam-i-need-love.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 44}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # I Need Love · Hot Toddy, Ron Basejam
 
 From the album *I Need Love*, 5:31.
 A liked song.
+Your Top Songs 2023: #44.
 Reviewed: content/hot-toddy-ron-basejam-i-need-love.md.

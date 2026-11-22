@@ -11,11 +11,14 @@ keys: {"fold": "ayybo|drench", "isrc": "SGB502384462", "musicbrainz": "8a95eaf6-
 review: "ayybo-preme-drench.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 31}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # DRENCH · AYYBO, Preme
 
 From the album *DRENCH*, 3:17.
 A liked song.
+Your Top Songs 2025: #31.
 Reviewed: content/ayybo-preme-drench.md.

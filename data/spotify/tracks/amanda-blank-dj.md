@@ -10,14 +10,17 @@ keys: {"fold": "amandablank|dj", "isrc": "USCJ80900349", "musicbrainz": "16c2033
 review: "amanda-blank_dj.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2024, "n": 11}
 playlists:
   - {"playlist": "sonic-playground", "n": 4}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # DJ · Amanda Blank
 
 From the album *I Love You*, 2:53.
 A liked song.
+Your Top Songs 2024: #11.
 In Sonic Playground (#4).
 Reviewed: content/amanda-blank_dj.md.
