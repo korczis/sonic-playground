@@ -10,7 +10,7 @@ concept = ["groove", "mixing"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "68f8561d5449"
+of = "bf8474db60ee"
 
 [extra]
 connections = [
@@ -58,4 +58,4 @@ Trinidad-Senolia je DJská a producentská dvojice: Garth Trinidad, jehož hlas 
 
 ## Ohlas a dopad
 
-Vydavatelství představilo EP jako začátek epické odyseje dua; žádnou recenzi této skladby se nepodařilo najít. Je tady proto, že patřila k nejposlouchanějším skladbám majitele v roce 2021, a protože popová píseň ze 60. let si stále nachází nové domovy: De La Soul samplovali nahrávku Turtles v roce 1989, dávno předtím, než hostovali ve skladbě {{ <track_link source="gorillaz-de-la-soul-feel-good-inc.md" lang="cs" /> }}. Pusťte si ji pozdě večer a sledujte ten rozhovor.
+Vydavatelství představilo EP jako začátek epické odyseje dua; žádnou recenzi této skladby se nepodařilo najít. Popová píseň ze 60. let si stále nachází nové domovy: De La Soul samplovali nahrávku Turtles v roce 1989, dávno předtím, než hostovali ve skladbě {{ <track_link source="gorillaz-de-la-soul-feel-good-inc.md" lang="cs" /> }}. Pusťte si ji pozdě večer a sledujte ten rozhovor.

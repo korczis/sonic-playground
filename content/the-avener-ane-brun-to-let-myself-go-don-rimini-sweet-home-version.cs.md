@@ -10,7 +10,7 @@ concept = ["remix", "dj mix"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "0b3f8f658ab7"
+of = "2ae3ca90bd95"
 
 [extra]
 connections = [
@@ -56,4 +56,4 @@ Don Rimini je pseudonym francouzského producenta Xaviera Gassemanna, aktivního
 
 ## Ohlas a dopad
 
-Nenašli jsme pro tuto verzi žádné umístění v žebříčcích ani recenzi. Je tady, protože patřila k nejposlouchanějším písním majitele v jednom roce na Spotify, což ukazuje, že i remix schovaný na konci mixové kompilace si může najít svého posluchače. Pusťte si ji po verzi The Avenera a poslouchejte rozdíl.
+Nenašli jsme pro tuto verzi žádné umístění v žebříčcích ani recenzi. Pusťte si ji po verzi The Avenera a poslouchejte rozdíl.

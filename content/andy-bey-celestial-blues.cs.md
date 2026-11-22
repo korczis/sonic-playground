@@ -10,7 +10,7 @@ concept = ["blues", "alternate version", "remix"]
 instrument = ["vocals", "electric piano", "organ", "harpsichord", "synthesizer", "bass guitar", "guitar", "drums", "violin", "viola", "percussion"]
 
 [extra.translation]
-of = "8d1a52c6c811"
+of = "1ce48898b317"
 
 [extra]
 connections = [
@@ -60,4 +60,4 @@ Andy Bey, narozený v Newarku v roce 1939, zpíval od svých sedmnácti let se s
 
 ## Ohlas a dopad
 
-AllMusic dal albu čtyři hvězdičky z pěti a reedice u Be With Records v roce 2016 a později u Speakers Corner ho vrátily do obchodů. V roce 2015 dostal Beyův hlas díky přepracování od The Avener na francouzské elektronické album. Je tu proto, že patřila k písním, které majitel v roce 2022 poslouchal nejčastěji. Začněte tímto originálem a poslechněte si, odkud všechno vzešlo.
+AllMusic dal albu čtyři hvězdičky z pěti a reedice u Be With Records v roce 2016 a později u Speakers Corner ho vrátily do obchodů. V roce 2015 dostal Beyův hlas díky přepracování od The Avener na francouzské elektronické album. Začněte tímto originálem a poslechněte si, odkud všechno vzešlo.

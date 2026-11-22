@@ -108,4 +108,4 @@ Hijacked formed in 2012, and their Bandcamp page carries OGGIT, a five-track rel
 
 ## Impact and Reception
 
-Rising Path was a small, self-made release, and Seewhat is on this playground as one of the owner's songs of 2018, the side of Clément Bazin that works with a singer and a songwriter. Listen to it next to his solo tracks and hear what a voice changes.
+Rising Path was a small, self-made release, and Seewhat is the side of Clément Bazin that works with a singer and a songwriter. Listen to it next to his solo tracks and hear what a voice changes.

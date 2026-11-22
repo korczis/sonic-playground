@@ -118,4 +118,4 @@ Massive Attack, from Bristol, recorded Heligoland between 2005 and 2009, with Ne
 
 ## Impact and Reception
 
-Songfacts reports that the Lincoln advert was the first time Massive Attack let a car commercial use their music, and that all income from it went to Save Our Gulf, an initiative of the Waterkeeper Alliance, after the 2010 BP oil spill. The remix is here as one of the owner's songs of 2018. Play it late, and let Sandoval's voice take its time.
+Songfacts reports that the Lincoln advert was the first time Massive Attack let a car commercial use their music, and that all income from it went to Save Our Gulf, an initiative of the Waterkeeper Alliance, after the 2010 BP oil spill. Play it late, and let Sandoval's voice take its time.

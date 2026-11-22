@@ -99,4 +99,4 @@ There is no artist to describe. Under the name The Hanging Tree, Spotify lists t
 
 ## Impact and Reception
 
-No source reviews this single. It is on this playground because it is among the owner's top songs of 2017, the same list that holds the film recording itself. Compare it with the credited covers by {{ <track_link source="l-e-j-hanging-tree.md" /> }} and {{ <track_link source="blankets-the-hanging-tree.md" /> }}, and listen for the difference between imitating a song and interpreting it.
+No source reviews this single. Compare it with the credited covers by {{ <track_link source="l-e-j-hanging-tree.md" /> }} and {{ <track_link source="blankets-the-hanging-tree.md" /> }}, and listen for the difference between imitating a song and interpreting it.

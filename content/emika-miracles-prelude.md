@@ -141,4 +141,4 @@ Emika is Ema Jolly, the Berlin-based producer and singer born in Milton Keynes. 
 
 ## Impact and Reception
 
-A prelude is rarely reviewed on its own, and only Spectrum Culture gave this one a sentence. It is here because the owner played it often enough for it to make a yearbook. Listen to it with the lights low, and let it run straight into Miracles.
+A prelude is rarely reviewed on its own, and only Spectrum Culture gave this one a sentence. Listen to it with the lights low, and let it run straight into Miracles.

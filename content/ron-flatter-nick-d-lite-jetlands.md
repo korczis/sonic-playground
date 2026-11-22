@@ -107,4 +107,4 @@ Ron Flatter holds a residency in his hometown of Halle (Saale); his biography co
 
 ## Impact and Reception
 
-Jetlands travelled through compilations: MusicBrainz lists it on Schneeweiß II, #afterhour, Volume 2 and About: Berlin, Vol. 6, all within a few months. It is here as a track that reached the owner's yearbook years later with almost no critical paper trail. Give it its full length, and decide for yourself where the sunshine is.
+Jetlands travelled through compilations: MusicBrainz lists it on Schneeweiß II, #afterhour, Volume 2 and About: Berlin, Vol. 6, all within a few months. It did so with almost no critical paper trail. Give it its full length, and decide for yourself where the sunshine is.

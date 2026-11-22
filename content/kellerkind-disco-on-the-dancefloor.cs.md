@@ -9,7 +9,7 @@ sentiment = ["groovy", "celebratory"]
 concept = ["music video", "remix", "alternate version"]
 
 [extra.translation]
-of = "b4cebe0b9802"
+of = "91a9c0588d19"
 
 [extra]
 connections = [
@@ -52,4 +52,4 @@ Kellerkind, německy dítě ze sklepa, je Švýcar a jeho stránka na Bandcampu 
 
 ## Ohlas a dopad
 
-Skladba se po deseti letech vrátila do katalogu Sirion se třemi novými verzemi, což ukazuje, jak dlouho v příběhu labelu vydržela. Na tomto hřišti je jako jedna z písní majitele z roku 2018. Pusťte si ji na večírku a sledujte, kdo začne tančit první.
+Skladba se po deseti letech vrátila do katalogu Sirion se třemi novými verzemi, což ukazuje, jak dlouho v příběhu labelu vydržela. Pusťte si ji na večírku a sledujte, kdo začne tančit první.

@@ -118,4 +118,4 @@ Discogs describes Paji as a German musician and producer from Aachen living in B
 
 ## Impact and Reception
 
-We found no review and no chart entry for Six o'clock. Its reach shows in its afterlife, in a mixed deep house compilation within months and on Buddha-Bar three years later. It is here because it stayed in the owner's yearbook. Give it its full six minutes and listen for where the techno and the deep house meet.
+We found no review and no chart entry for Six o'clock. Its reach shows in its afterlife, in a mixed deep house compilation within months and on Buddha-Bar three years later. Give it its full six minutes and listen for where the techno and the deep house meet.

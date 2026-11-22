@@ -10,7 +10,7 @@ concept = ["stage persona", "music video", "alternate version"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "2a15eeb7caec"
+of = "7d0d69957498"
 
 [extra]
 connections = [
@@ -56,4 +56,4 @@ Jako Sliimy sdílela Sahraoui koncem prvního desetiletí 21. století písně n
 
 ## Ohlas a dopad
 
-Hypnotized byl spíš novým začátkem než hitem: NOWNESS, kanál krátkých filmů, uvedl jeho videoklip v premiéře a singl otevřel cestu k L'Heure Bleue. Je tu jako jedna z písní majitele z roku 2018. Pusťte si ho dvakrát, jednou bez obrazu.
+Hypnotized byl spíš novým začátkem než hitem: NOWNESS, kanál krátkých filmů, uvedl jeho videoklip v premiéře a singl otevřel cestu k L'Heure Bleue. Pusťte si ho dvakrát, jednou bez obrazu.

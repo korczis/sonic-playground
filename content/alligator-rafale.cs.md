@@ -10,7 +10,7 @@ concept = ["drum machine", "lo-fi", "synthesizer"]
 instrument = ["vocals", "keyboard", "drum machine"]
 
 [extra.translation]
-of = "d370b7b2689e"
+of = "9ec23e11f72c"
 
 [extra]
 connections = [
@@ -59,4 +59,4 @@ Alligator vzniklo jako duo v roce 2017 kolem alba Octets a La Souterraine, kter�
 
 ## Ohlas a dopad
 
-Soundcharts vyzdvihuje Rafale jako skladbu, která vyčnívala a hodně se hrála; je to nejposlouchanější píseň dua. Je tu proto, že patřila k písním, které majitel v roce 2022 poslouchal nejčastěji. Pusťte si ji pozdě večer a nechte se tím poryvem unést.
+Soundcharts vyzdvihuje Rafale jako skladbu, která vyčnívala a hodně se hrála; je to nejposlouchanější píseň dua. Pusťte si ji pozdě večer a nechte se tím poryvem unést.

@@ -10,7 +10,7 @@ concept = ["featured artist", "hook", "dub"]
 instrument = ["vocals", "keyboard"]
 
 [extra.translation]
-of = "f86038a2040d"
+of = "dc49707cc27b"
 
 [extra]
 connections = [
@@ -60,4 +60,4 @@ Tom Fire je jméno, pod kterým francouzský producent Camille Ballon vydává v
 
 ## Ohlas a dopad
 
-Culture Dub ohodnotil Low Fidelity jako album velké hudební kvality. No Food je tu proto, že patřila k písním, které majitel v roce 2022 poslouchal nejčastěji. Pusťte si ji a uvidíte, jestli vás refrén pustí.
+Culture Dub ohodnotil Low Fidelity jako album velké hudební kvality. Pusťte si ji a uvidíte, jestli vás refrén pustí.

@@ -112,4 +112,4 @@ Marbert Rocel formed in 2002 as a trio of Robert Krause (Panthera), Antje Seifar
 
 ## Impact and Reception
 
-Resident Advisor announced Small Hours in 2012; no review we found singled out Song For You. It is here as one of the owner's songs of 2018. Put it on in the small hours, the time the album is named for.
+Resident Advisor announced Small Hours in 2012; no review we found singled out Song For You. Put it on in the small hours, the time the album is named for.

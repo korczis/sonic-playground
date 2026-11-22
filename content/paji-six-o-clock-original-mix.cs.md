@@ -9,7 +9,7 @@ sentiment = ["relaxed", "hypnotic"]
 concept = ["remix", "dj mix"]
 
 [extra.translation]
-of = "b044423a91b9"
+of = "9df9421b679a"
 
 [extra]
 connections = [
@@ -56,4 +56,4 @@ Discogs popisuje Pajiho jako německého hudebníka a producenta z Cách, který
 
 ## Ohlas a dopad
 
-Pro Six o'clock jsme nenašli žádnou recenzi ani umístění v hitparádě. Jeho dosah ukazuje druhý život, v mixované deephousové kompilaci během několika měsíců a na Buddha-Baru o tři roky později. Je tu proto, že zůstal v ročence majitele. Dopřejte mu celých šest minut a poslouchejte, kde se techno a deep house potkávají.
+Pro Six o'clock jsme nenašli žádnou recenzi ani umístění v hitparádě. Jeho dosah ukazuje druhý život, v mixované deephousové kompilaci během několika měsíců a na Buddha-Baru o tři roky později. Dopřejte mu celých šest minut a poslouchejte, kde se techno a deep house potkávají.

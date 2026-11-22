@@ -10,7 +10,7 @@ concept = ["featured artist", "alternate version", "remix"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "7267d7716ac1"
+of = "05b8dc4dcd80"
 
 [extra]
 connections = [
@@ -64,4 +64,4 @@ Agoria je Sébastien Devaud, francouzský producent a DJ narozený v roce 1976, 
 
 ## Ohlas a dopad
 
-Blog Five Minutes uvedl, že Tsugi zvolil Drift albem měsíce za květen 2019, a Remedy pak prožila druhý život na kompilacích. Je tu jako jedna z majitelových písní roku 2019. Pusťte si ji nejdřív jako krátkou píseň a pak ji nechte jedním z dlouhých remixů odnést na taneční parket.
+Blog Five Minutes uvedl, že Tsugi zvolil Drift albem měsíce za květen 2019, a Remedy pak prožila druhý život na kompilacích. Pusťte si ji nejdřív jako krátkou píseň a pak ji nechte jedním z dlouhých remixů odnést na taneční parket.

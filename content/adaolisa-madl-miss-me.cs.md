@@ -10,7 +10,7 @@ concept = ["record producer", "hook"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "4509184157fb"
+of = "222aafb406d1"
 
 [extra]
 connections = [
@@ -58,4 +58,4 @@ adaolisa je dcerou rakouského a nigerijského rodiče. Vyrůstala v Johannesbur
 
 ## Ohlas a dopad
 
-FM4 si Miss Me v listopadu 2019 všimlo dvakrát. O dva roky později se její singl Fineboy dostal na 1. místo hitparády FM4 a ona se stala Soundpark Act of the Month stanice, zpěvačkou, která podle FM4 rozhodně odmítá hrát před publikem. Je tady proto, že patřila k nejposlouchanějším skladbám majitele v roce 2021. Najděte si ji pod jejím jménem a poslouchejte hlas v popředí.
+FM4 si Miss Me v listopadu 2019 všimlo dvakrát. O dva roky později se její singl Fineboy dostal na 1. místo hitparády FM4 a ona se stala Soundpark Act of the Month stanice, zpěvačkou, která podle FM4 rozhodně odmítá hrát před publikem. Najděte si ji pod jejím jménem a poslouchejte hlas v popředí.

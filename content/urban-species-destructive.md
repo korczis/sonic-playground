@@ -118,4 +118,4 @@ Urban Species came from Tottenham in North London. Mintos and DJ Renegade starte
 
 ## Impact and Reception
 
-The 2009 review gave Blanket 2.5 out of 5 and found its vocals at times drab, yet called Destructive "amazing" and said it "works really well all the way through". No other review of the song was found. It is here because it was among the owner's most played songs of 2020. Put it on loud and wait for the chorus.
+The 2009 review gave Blanket 2.5 out of 5 and found its vocals at times drab, yet called Destructive "amazing" and said it "works really well all the way through". No other review of the song was found. Put it on loud and wait for the chorus.

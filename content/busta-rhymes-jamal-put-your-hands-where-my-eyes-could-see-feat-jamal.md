@@ -112,7 +112,7 @@ At three minutes and fourteen seconds, the album track is short. Listen for how 
 
 The {{ <concept_link name="music video" /> }} began by accident. While the track was being mixed, Coming to America was playing silently on the studio television, and Busta called Hype Williams to say, "I want to do Coming to America all over." Designed by Ron Norsworthy and shot in Lower Manhattan, including the lobby of the Surrogate's Courthouse, it cost, Busta recalled, "$800,000, maybe $900,000"; MTV ranked it 20th of its 100 greatest music videos in 1999.
 
-A {{ <concept_link name="featured artist" /> }} credit names a guest on another artist's track. This page keeps the credit as the owner's Spotify yearbook gives it, and records that the label's own credits for this recording, like the album's track list, do not include him.
+A {{ <concept_link name="featured artist" /> }} credit names a guest on another artist's track. This page keeps the credit as Spotify gives it, and records that the label's own credits for this recording, like the album's track list, do not include him.
 
 ## Artistic Context
 

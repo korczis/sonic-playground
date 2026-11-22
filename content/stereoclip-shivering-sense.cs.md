@@ -10,7 +10,7 @@ concept = ["alternate version", "music video"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "2d3d6b6d4da3"
+of = "6637fa097123"
 
 [extra]
 connections = [
@@ -64,4 +64,4 @@ Stereoclip je bruselský producent Maxime (Max) Merkpoel. Začínal instrumentá
 
 ## Ohlas a dopad
 
-Shivering Sense nikdy nebyl hit a žádnou recenzi se o něm nepodařilo najít. Je tu proto, že patří k majitelovým písním, a proto, že ukazuje, kde producent začíná. Pusťte si nejdřív albovou verzi, potom video.
+Shivering Sense nikdy nebyl hit a žádnou recenzi se o něm nepodařilo najít. Ukazuje, kde producent začíná. Pusťte si nejdřív albovou verzi, potom video.

@@ -10,7 +10,7 @@ concept = ["club culture", "featured artist"]
 instrument = ["vocal samples", "horns", "harmonica"]
 
 [extra.translation]
-of = "94b67be76205"
+of = "ad2f9b2e85cd"
 
 [extra]
 connections = [
@@ -57,4 +57,4 @@ UBWG popisuje Nua jako živý projekt, který prošel deep housem, hip hopem, tr
 
 ## Ohlas a dopad
 
-Její ohlas je tišší než u titulní skladby: tip jednoho magazínu, nové vinylové vydání o sedm let později a místo v ročence majitele. Je tu jako B-strana, která je celá pohybem. Pusťte si ji po Who Loves the Sun a poslechněte si, jak se totéž EP obrací od písně k tanci.
+Její ohlas je tišší než u titulní skladby: tip jednoho magazínu a nové vinylové vydání o sedm let později. Je tu jako B-strana, která je celá pohybem. Pusťte si ji po Who Loves the Sun a poslechněte si, jak se totéž EP obrací od písně k tanci.

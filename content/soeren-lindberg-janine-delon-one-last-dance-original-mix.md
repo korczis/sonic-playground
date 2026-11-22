@@ -91,4 +91,4 @@ Fadersport is a record label based in Hamburg, whose catalogue on Discogs runs f
 
 ## Impact and Reception
 
-No review or chart entry mentions One Last Dance. Its reach shows in the compilations instead, a track that kept being chosen for collections of deep house and summer dance music for three years after its release. It is on this playground because it is in the owner's listening. Press play and hear what kept the compilers coming back.
+No review or chart entry mentions One Last Dance. Its reach shows in the compilations instead, a track that kept being chosen for collections of deep house and summer dance music for three years after its release. Press play and hear what kept the compilers coming back.

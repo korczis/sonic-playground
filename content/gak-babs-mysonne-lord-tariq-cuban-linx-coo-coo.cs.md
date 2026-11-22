@@ -10,7 +10,7 @@ concept = ["featured artist"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "11b9c2553e25"
+of = "94ea91e8029b"
 +++
 
 ## Žánr a nálada
@@ -35,4 +35,4 @@ Gak se narodil v roce 1977 v Nice, má beninské kořeny a vyrůstal ve čtvrti 
 
 ## Ohlas a dopad
 
-Žádnou recenzi Coo Coo ani umístění v žebříčku jsme nenašli. Gak se na spojení s Whoo Kidem dívá zpětně jako na zdroj jisté pozornosti tisku a viditelnosti, ne jako na zkratku: v roce 2011 následovalo Pow Europe 1.5 a pak patnáct let ticha, než se v roce 2025 vrátil s albem Touche Noire. Coo Coo je na tomto webu proto, že patří k tomu, co majitel poslouchá, jako doklad výpravy rappera z Nice do amerického hip-hopu. Najděte si ji na albu a poslouchejte, jak zní jejích pět uvedených interpretů.
+Žádnou recenzi Coo Coo ani umístění v žebříčku jsme nenašli. Gak se na spojení s Whoo Kidem dívá zpětně jako na zdroj jisté pozornosti tisku a viditelnosti, ne jako na zkratku: v roce 2011 následovalo Pow Europe 1.5 a pak patnáct let ticha, než se v roce 2025 vrátil s albem Touche Noire. Coo Coo je dokladem výpravy rappera z Nice do amerického hip-hopu. Najděte si ji na albu a poslouchejte, jak zní jejích pět uvedených interpretů.

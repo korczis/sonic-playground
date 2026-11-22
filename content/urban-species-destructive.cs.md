@@ -10,7 +10,7 @@ concept = ["featured artist", "build-up"]
 instrument = ["vocals", "backing vocals", "guitar", "piano", "strings"]
 
 [extra.translation]
-of = "532ef65a212b"
+of = "a603586a51b1"
 
 [extra]
 connections = [
@@ -63,4 +63,4 @@ Urban Species pocházeli z Tottenhamu v severním Londýně. Mintos a DJ Renegad
 
 ## Ohlas a dopad
 
-Recenze z roku 2009 dala albu Blanket 2,5 bodu z 5 a jeho vokály místy považovala za fádní, Destructive přesto označila za „úžasnou“ a napsala, že „funguje opravdu dobře od začátku do konce“. Jinou recenzi písně se nepodařilo najít. Je tady proto, že patřila k nejposlouchanějším skladbám majitele v roce 2020. Pusťte si ji nahlas a počkejte na refrén.
+Recenze z roku 2009 dala albu Blanket 2,5 bodu z 5 a jeho vokály místy považovala za fádní, Destructive přesto označila za „úžasnou“ a napsala, že „funguje opravdu dobře od začátku do konce“. Jinou recenzi písně se nepodařilo najít. Pusťte si ji nahlas a počkejte na refrén.

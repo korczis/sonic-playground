@@ -10,7 +10,7 @@ concept = ["featured artist", "alternate version", "music video"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "170ffa172630"
+of = "af48ddd7b666"
 
 [extra]
 connections = [
@@ -56,4 +56,4 @@ Data Transmission označil Phonique za jednoho z nejneúnavnějších umělců o
 
 ## Ohlas a dopad
 
-Grass Is Greener uvedl album do světa a žil dál v remixech, na Green Supreme Remixed ve čtyřech verzích. Je tu jako jedna z písní majitele z roku 2018. Dopřejte mu celých sedm a půl minuty.
+Grass Is Greener uvedl album do světa a žil dál v remixech, na Green Supreme Remixed ve čtyřech verzích. Dopřejte mu celých sedm a půl minuty.

@@ -117,4 +117,4 @@ Tom Fire is the name under which the French producer Camille Ballon releases his
 
 ## Impact and Reception
 
-Culture Dub judged Low Fidelity an album of great musical quality. No Food is here because it was among the owner's most played songs of 2022. Play it and see whether the refrain lets you go.
+Culture Dub judged Low Fidelity an album of great musical quality. Play it and see whether the refrain lets you go.

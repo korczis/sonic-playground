@@ -97,4 +97,4 @@ Trinidad-Senolia is a DJ and production team: Garth Trinidad, whose voice narrat
 
 ## Impact and Reception
 
-The label introduced the EP as the start of the duo's epic odyssey; no review of this track has been found. It is here because it was among the owner's most played songs of 2021, and because a 1960s pop song keeps finding new homes: De La Soul sampled the Turtles' recording in 1989, long before they guested on {{ <track_link source="gorillaz-de-la-soul-feel-good-inc.md" /> }}. Put it on late and follow the conversation.
+The label introduced the EP as the start of the duo's epic odyssey; no review of this track has been found. A 1960s pop song keeps finding new homes: De La Soul sampled the Turtles' recording in 1989, long before they guested on {{ <track_link source="gorillaz-de-la-soul-feel-good-inc.md" /> }}. Put it on late and follow the conversation.

@@ -117,4 +117,4 @@ Kitsuné is a Paris label, and Parisien is the name of its series of compilation
 
 ## Impact and Reception
 
-Huacachina has no press of its own; opening a Kitsuné compilation was its way into the world, and it led the duo back to the same series. It is here because it was among the owner's most played songs of 2022. Put it on, follow the bass, and see whether you float.
+Huacachina has no press of its own; opening a Kitsuné compilation was its way into the world, and it led the duo back to the same series. Put it on, follow the bass, and see whether you float.
