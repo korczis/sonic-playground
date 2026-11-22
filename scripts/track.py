@@ -504,6 +504,9 @@ def mb_get(url: str, args) -> dict:
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
                 data = json.loads(response.read().decode("utf-8"))
+            if "error" in data and attempt < 5:  # "the web server is currently busy": retry, never cache
+                time.sleep(2 ** attempt * 2)
+                continue
             break
         except urllib.error.HTTPError as exc:
             if exc.code in (429, 503) and attempt < 5:
@@ -516,6 +519,8 @@ def mb_get(url: str, args) -> dict:
                 break
             raise
     _mb_last[0] = time.monotonic()
+    if "error" in data:  # still busy after every retry: an answer about the service, not the query
+        raise RuntimeError(f"MusicBrainz is busy, not cached: {url}")
     MB_CACHE.parent.mkdir(parents=True, exist_ok=True)
     cache = {**mb_cache(), url: data}  # what writers running beside this one saved meanwhile
     tmp = MB_CACHE.with_name(f"{MB_CACHE.name}.{os.getpid()}.tmp")

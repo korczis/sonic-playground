@@ -49,7 +49,9 @@ npm run derive && bash scripts/verify.sh
 Many songs at once: `python3 scripts/backlog.py` lists what the owner's playlists hold and the
 journal does not; `--source spotify` ranks the owner's Spotify picks without a review (top
 tracks, liked songs, own playlists); `--limit N` takes one wave and `--batches N` splits it for N
-`song-writer` agents (`.claude/agents/`), each running the same skill.
+`song-writer` agents (`.claude/agents/`), each running the same skill. `--screen` (`scripts/screen.py`)
+orders a wave by how much MusicBrainz, Wikidata and Wikipedia know about each song (`writable`,
+`ambiguous`, `thin`, with the evidence URLs for the writer); it orders, it never skips a song.
 
 ## Every review teaches
 

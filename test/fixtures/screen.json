@@ -1,0 +1,397 @@
+{
+ "_about": "API answers for test/test_screen.py, trimmed to the fields scripts/screen.py reads. A key is '<URL builder of screen.py>|<argument>|...'; a URL not listed answers {} (nothing found).",
+ "mb_search_url|Milkshake|Kelis": {
+  "recordings": [
+   {
+    "id": "rec-milkshake",
+    "score": 100,
+    "title": "Milkshake",
+    "length": 182400,
+    "artist-credit": [
+     {
+      "name": "Kelis",
+      "artist": {
+       "id": "art-kelis",
+       "name": "Kelis"
+      }
+     }
+    ],
+    "releases": [
+     {
+      "id": "rel-single",
+      "date": "2003-11-24",
+      "release-group": {
+       "id": "rg-single",
+       "title": "Milkshake",
+       "primary-type": "Single"
+      }
+     },
+     {
+      "id": "rel-tasty",
+      "date": "2003-12-09",
+      "release-group": {
+       "id": "rg-tasty",
+       "title": "Tasty",
+       "primary-type": "Album"
+      }
+     },
+     {
+      "id": "rel-hits",
+      "date": "2005-01-01",
+      "release-group": {
+       "id": "rg-hits",
+       "title": "Hits of 2004",
+       "primary-type": "Album",
+       "secondary-types": [
+        "Compilation"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "id": "rec-milkshake-remix",
+    "score": 98,
+    "title": "Milkshake (Dirty Vegas remix)",
+    "length": 401000,
+    "artist-credit": [
+     {
+      "name": "Kelis",
+      "artist": {
+       "id": "art-kelis",
+       "name": "Kelis"
+      }
+     }
+    ],
+    "releases": [
+     {
+      "id": "rel-remix",
+      "release-group": {
+       "id": "rg-remix",
+       "title": "Milkshake",
+       "primary-type": "Single"
+      }
+     }
+    ]
+   },
+   {
+    "id": "rec-other",
+    "score": 90,
+    "title": "Milkshake",
+    "length": 182000,
+    "artist-credit": [
+     {
+      "name": "Somebody Else",
+      "artist": {
+       "id": "art-else",
+       "name": "Somebody Else"
+      }
+     }
+    ],
+    "releases": []
+   }
+  ]
+ },
+ "mb_entity_url|artist|art-kelis": {
+  "country": "US",
+  "relations": [
+   {
+    "type": "wikidata",
+    "url": {
+     "resource": "https://www.wikidata.org/wiki/Q1"
+    }
+   },
+   {
+    "type": "discogs",
+    "url": {
+     "resource": "https://www.discogs.com/artist/8285"
+    }
+   },
+   {
+    "type": "free streaming",
+    "url": {
+     "resource": "https://open.spotify.com/artist/x"
+    }
+   }
+  ]
+ },
+ "mb_entity_url|release-group|rg-single": {
+  "relations": [
+   {
+    "type": "wikidata",
+    "url": {
+     "resource": "https://www.wikidata.org/wiki/Q2"
+    }
+   }
+  ]
+ },
+ "mb_entity_url|release-group|rg-tasty": {
+  "relations": [
+   {
+    "type": "allmusic",
+    "url": {
+     "resource": "https://www.allmusic.com/album/mw0000"
+    }
+   },
+   {
+    "type": "review",
+    "url": {
+     "resource": "https://www.bbc.co.uk/music/reviews/tasty"
+    }
+   }
+  ]
+ },
+ "wd_sitelinks_url|Q1,Q2": {
+  "entities": {
+   "Q1": {
+    "sitelinks": {
+     "enwiki": {
+      "title": "Kelis"
+     },
+     "dewiki": {
+      "title": "Kelis"
+     },
+     "frwiki": {
+      "title": "Kelis"
+     },
+     "eswiki": {
+      "title": "Kelis"
+     },
+     "itwiki": {
+      "title": "Kelis"
+     },
+     "plwiki": {
+      "title": "Kelis"
+     },
+     "ptwiki": {
+      "title": "Kelis"
+     },
+     "svwiki": {
+      "title": "Kelis"
+     },
+     "nlwiki": {
+      "title": "Kelis"
+     },
+     "fiwiki": {
+      "title": "Kelis"
+     },
+     "commonswiki": {
+      "title": "Category:Kelis"
+     },
+     "enwikiquote": {
+      "title": "Kelis"
+     }
+    }
+   },
+   "Q2": {
+    "sitelinks": {
+     "enwiki": {
+      "title": "Milkshake (song)"
+     },
+     "dewiki": {
+      "title": "Milkshake (Lied)"
+     }
+    }
+   }
+  }
+ },
+ "mb_search_url|Hideaway|Kiesza": {
+  "recordings": [
+   {
+    "id": "rec-hideaway",
+    "score": 100,
+    "title": "Hideaway",
+    "length": 251000,
+    "artist-credit": [
+     {
+      "name": "Kiesza",
+      "artist": {
+       "id": "art-kiesza",
+       "name": "Kiesza"
+      }
+     }
+    ],
+    "releases": [
+     {
+      "id": "rel-h",
+      "release-group": {
+       "id": "rg-h",
+       "title": "Hideaway",
+       "primary-type": "Single"
+      }
+     }
+    ]
+   },
+   {
+    "id": "rec-hideaway-gc",
+    "score": 100,
+    "title": "Hideaway (Gorgon City remix)",
+    "length": 311000,
+    "artist-credit": [
+     {
+      "name": "Kiesza",
+      "artist": {
+       "id": "art-kiesza",
+       "name": "Kiesza"
+      }
+     }
+    ],
+    "releases": [
+     {
+      "id": "rel-sirens",
+      "release-group": {
+       "id": "rg-sirens",
+       "title": "Sirens (Remixes)",
+       "primary-type": "Album",
+       "secondary-types": [
+        "Compilation",
+        "Remix"
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "wp_search_url|en|Hideaway|Kiesza": {
+  "query": {
+   "search": [
+    {
+     "title": "Hideaway (Kiesza song)",
+     "snippet": "a song by Canadian singer <span>Kiesza</span>"
+    }
+   ]
+  }
+ },
+ "mb_search_url|Hoag|Luke Garcia": {
+  "recordings": [
+   {
+    "id": "rec-hoag",
+    "score": 100,
+    "title": "Hoag",
+    "length": 424500,
+    "artist-credit": [
+     {
+      "name": "Luke Garcia",
+      "artist": {
+       "id": "art-luke",
+       "name": "Luke Garcia"
+      }
+     },
+     {
+      "name": "Th3 Oth3r",
+      "artist": {
+       "id": "art-other",
+       "name": "Th3 Oth3r"
+      }
+     }
+    ],
+    "releases": [
+     {
+      "id": "rel-dantze",
+      "release-group": {
+       "id": "rg-dantze",
+       "title": "Dantze, Baby II",
+       "primary-type": "EP"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "mb_entity_url|artist|art-luke": {
+  "relations": [
+   {
+    "type": "discogs",
+    "url": {
+     "resource": "https://www.discogs.com/artist/1"
+    }
+   }
+  ]
+ },
+ "mb_entity_url|release-group|rg-dantze": {
+  "relations": [
+   {
+    "type": "discogs",
+    "url": {
+     "resource": "https://www.discogs.com/master/2"
+    }
+   }
+  ]
+ },
+ "mb_search_url|F.E.E.L.|Lucky Luke": {
+  "recordings": [
+   {
+    "id": "rec-feel",
+    "score": 100,
+    "title": "F.E.E.L.",
+    "length": 300000,
+    "artist-credit": [
+     {
+      "name": "Lucky Luke",
+      "artist": {
+       "id": "art-lucky",
+       "name": "Lucky Luke"
+      }
+     }
+    ],
+    "releases": []
+   }
+  ]
+ },
+ "mb_artist_search_url|Kovacs": {
+  "artists": [
+   {
+    "id": "art-kovacs-1",
+    "score": 100,
+    "name": "Kovacs"
+   },
+   {
+    "id": "art-kovacs-2",
+    "score": 100,
+    "name": "Kovács"
+   }
+  ]
+ },
+ "wp_search_url|en|My Love|Kovacs": {
+  "query": {
+   "search": [
+    {
+     "title": "My Love",
+     "snippet": "My Love may refer to ... a 2015 song by <span>Kovacs</span>"
+    }
+   ]
+  }
+ },
+ "wp_page_url|en|My Love": {
+  "query": {
+   "pages": {
+    "1": {
+     "title": "My Love",
+     "pageprops": {
+      "disambiguation": ""
+     }
+    }
+   }
+  }
+ },
+ "wp_search_url|en|Bird Mess|Belleruche": {
+  "query": {
+   "search": [
+    {
+     "title": "Bird Mess",
+     "snippet": "a 2007 song by <span>Belleruche</span>"
+    }
+   ]
+  }
+ },
+ "wp_page_url|en|Bird Mess": {
+  "query": {
+   "pages": {
+    "2": {
+     "title": "Bird Mess"
+    }
+   }
+  }
+ }
+}
