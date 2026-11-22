@@ -106,3 +106,15 @@ n = 17
 title = "We Are Your Friends - Justice Vs Simian"
 artists = ["Justice", "Simian"]
 review = "justice-vs-simian_we-are-your-friends.md"
+
+[[track]]
+n = 18
+title = "Go All Night - Drew Hill Remix"
+artists = ["Gorgon City", "Jennifer Hudson", "Michelle Drew", "Philip Hill"]
+skip = "deferred: thin sources, no source describes the remix (wave 26 screening)"
+
+[[track]]
+n = 19
+title = "Bought and Sold"
+artists = ["Belleruche"]
+skip = "deferred: thin sources, only track listings name it (wave 26 screening)"
