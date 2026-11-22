@@ -18,7 +18,7 @@
     <ol id="yearbook-list" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">
       {%- for i in b.tracks %}
       {%- if i.source and i.source in catalog.lookup %}
-      {{ <track_row t={catalog.tracks[catalog.lookup[i.source]]} l={l} note={"#" ~ i.n} /> }}
+      {{ <track_row t={catalog.tracks[catalog.lookup[i.source]]} l={l} note={"#" ~ i.n} anchor={"n-" ~ i.n} /> }}
       {%- else %}
       <li class="flex items-center gap-3 py-3 text-sm text-gray-500 dark:text-gray-400" id="n-{{ i.n }}" data-yearbook-item="{{ i.status }}">
         <span class="w-10 shrink-0 text-center font-mono text-xs">#{{ i.n }}</span>

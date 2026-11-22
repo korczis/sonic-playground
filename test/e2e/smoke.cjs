@@ -1778,7 +1778,59 @@ async function shot(page, name) {
       const yf = await page.locator('aside a[href*="/genre/#family-"]').count();
       check(yf === b.families.length, `yearbook ${b.year}: its ${b.families.length} genre families, each linking the genre index`);
     }
+    if (catalog.yearbooks && catalog.yearbooks.length > 1) {
+      // The taste chart: a year x family heatmap of the yearbooks; a cell opens that year.
+      await page.goto(at('yearbook/'), { waitUntil: 'load' });
+      await page.locator('#chart-taste').scrollIntoViewIfNeeded();
+      await page.waitForFunction(() => window.echarts && window.echarts.getInstanceByDom(document.getElementById('chart-taste')), null, { timeout: 20000 });
+      const built = await page.evaluate(seriesBuilt);
+      check(built.some((c) => c.id === 'chart-taste' && c.built > 0), 'yearbooks: the taste chart is built by the shipped ECharts');
+      const oldest = Math.min(...catalog.yearbooks.map((b) => b.year));
+      const cell = await page.evaluate(() => {
+        const el = document.getElementById('chart-taste');
+        const [x, y] = window.echarts.getInstanceByDom(el).convertToPixel({ seriesIndex: 0 }, [0, 0]);
+        const r = el.getBoundingClientRect();
+        return { x: r.left + x, y: r.top + y };
+      });
+      await page.mouse.click(cell.x, cell.y);
+      await page.waitForFunction((y) => location.pathname.endsWith(`/yearbook/${y}/`), oldest, { timeout: 15000 }).catch(() => {});
+      check(new URL(page.url()).pathname.endsWith(`/yearbook/${oldest}/`), `taste chart: a cell opens its yearbook (${new URL(page.url()).pathname})`);
+    }
     check(errors.length === 0, `genre families: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+
+  // A review's contents (page.toc and the educational parts it has): every chip leads to a part
+  // of this page; a yearbook position on a review leads to that row of the yearbook (only
+  // unresolved rows had the anchor, 2026-11-22); the Czech home page links stay in Czech.
+  {
+    const t = catalog.tracks.find((x) => x.yearbooks && x.yearbooks.length && x.related && x.related.length) || catalog.tracks[0];
+    const { context, page, errors } = await open(browser, at(t.path), desktop);
+    const chips = await page.locator('[data-contents] a').evaluateAll((as) => as.map((a) => {
+      const id = decodeURIComponent(a.hash.slice(1));
+      return { id, ok: a.pathname === location.pathname && !!document.getElementById(id) };
+    }));
+    check(chips.length > 2 && chips.every((c) => c.ok),
+      `track contents: ${chips.length} chips, each a part of this page${chips.some((c) => !c.ok) ? ' — ' + chips.filter((c) => !c.ok).map((c) => c.id).join(', ') : ''}`);
+    const lastChip = chips[chips.length - 1];
+    await page.locator('[data-contents] a').last().click();
+    await page.waitForFunction((id) => location.hash === '#' + id, lastChip.id, { timeout: 5000 }).catch(() => {});
+    const seen = await page.evaluate((id) => {
+      const r = document.getElementById(id).getBoundingClientRect();
+      return r.top >= 0 && r.top < window.innerHeight;
+    }, lastChip.id);
+    check(seen, `track contents: a chip scrolls its part into view (#${lastChip.id})`);
+    if (t.yearbooks && t.yearbooks.length) {
+      const y = t.yearbooks[0];
+      await page.goto(at(`yearbook/${y.year}/#n-${y.n}`), { waitUntil: 'load' });
+      check(await page.evaluate((s) => { const li = document.getElementById(location.hash.slice(1)); return !!li && li.dataset.source === s; }, t.source),
+        `yearbook ${y.year}: #n-${y.n} is the row of ${t.source}`);
+    }
+    await page.goto(at('cs/'), { waitUntil: 'load' });
+    const english = await page.locator('main a[href]').evaluateAll((as, site) => as.map((a) => a.href)
+      .filter((h) => h.startsWith(site) && /\/(genre|sentiment|concept)\/$/.test(h) && !h.startsWith(site + 'cs/')), base);
+    check(english.length === 0, `cs home: facet and glossary links stay in Czech${english.length ? ' — ' + english.join(', ') : ''}`);
+    check(errors.length === 0, `contents and anchors: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
 

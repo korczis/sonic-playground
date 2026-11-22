@@ -59,6 +59,8 @@
 "chart.months.title": "Recenze podle měsíců",
 "chart.other": "ostatní žánry",
 "chart.table": "Zobrazit jako tabulku",
+"chart.taste.caption": "Kolik písní každé ročenky patří do které rodiny žánrů. Buňka otevře ročenku daného roku.",
+"chart.taste.title": "Rodiny žánrů rok po roku",
 "chart.track_count": {
 "few": "{n} skladby",
 "one": "{n} skladba",
@@ -871,6 +873,7 @@
 "track.artist": "Interpret",
 "track.bpm": "Tempo (BPM)",
 "track.by": "Autor",
+"track.contents": "Na této stránce",
 "track.country": "Země",
 "track.credits.featuring": "Hostující",
 "track.credits.producers": "Produkce",
@@ -1042,6 +1045,8 @@
 "chart.months.title": "Reviews per month",
 "chart.other": "other genres",
 "chart.table": "Show as table",
+"chart.taste.caption": "How many songs of each yearbook belong to each family of genres. A cell opens that year's yearbook.",
+"chart.taste.title": "Genre families, year by year",
 "chart.track_count": {
 "one": "{n} track",
 "other": "{n} tracks"
@@ -1827,6 +1832,7 @@
 "track.artist": "Artist",
 "track.bpm": "Tempo (BPM)",
 "track.by": "By",
+"track.contents": "On this page",
 "track.country": "Country",
 "track.credits.featuring": "Featuring",
 "track.credits.producers": "Produced by",
