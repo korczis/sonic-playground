@@ -6,8 +6,9 @@ artists: ["Moby", "Cold Specks"]
 album: "Innocents"
 duration: "6:05"
 spotify: {"track": "2lM6YVumylO9nBA3e98WFR", "album": "42nWWdyergWptZNYUKmxEn", "artists": ["3OsRAKCvk37zwYcnzRf5XF", "2DMHBCdboDAYJWzt2lDSP5"]}
-keys: {"fold": "moby|acaseforshame"}
-status: "missing"
+keys: {"fold": "moby|acaseforshame", "isrc": "GB3AD1300009", "musicbrainz": "bd39b73d-d2ec-459c-8b84-af64169f1720"}
+review: "moby-cold-specks-a-case-for-shame.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Innocents*, 6:05.
 A liked song.
-No review yet.
+Reviewed: content/moby-cold-specks-a-case-for-shame.md.

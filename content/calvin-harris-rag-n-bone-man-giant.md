@@ -15,7 +15,7 @@ album = "Giant (with Rag'n'Bone Man)"
 release_year = "2019"
 country = "GB"
 isrc = "GBARL1801703"
-musicbrainz = { recording = "8bd6e418-47bc-4f7b-85c6-b9c9a713208f", artist = "8dd98bdc-80ec-4e93-8509-2f46bafc09a7", release = "b4efac3b-e81d-445a-beb5-effde8e1fdb4" }
+musicbrainz = { recording = "8bd6e418-47bc-4f7b-85c6-b9c9a713208f", artist = "8dd98bdc-80ec-4e93-8509-2f46bafc09a7", release = "48ab9d22-acc7-42a8-ba54-b1b49f76b75d" }
 youtube = "https://www.youtube.com/embed/ir6nk2zrMG0"
 connections = [
   { source = "axwell-max-c-i-found-u-radio-edit.md", why = "An earlier house single with piano and a gospel-tinged lead vocal, the same pairing Giant is built on." },

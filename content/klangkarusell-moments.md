@@ -14,7 +14,7 @@ release_year = "2014"
 country = "AT"
 album = "Netzwerk"
 publisher = "Vertigo Records"
-musicbrainz = { recording = "a55601a6-54bf-4c35-8bf5-95d21b8b11ac", artist = "dbbd3f1f-1c25-4dd6-b6d0-5a1bc7a3acc1", release = "3d88f104-5e80-441b-9670-8f683f9af225" }
+musicbrainz = { recording = "5a10f362-c021-43ef-b2e7-3e44669314ad", artist = "dbbd3f1f-1c25-4dd6-b6d0-5a1bc7a3acc1", release = "4cbf8d38-80b2-4081-b7f9-43327df497a5" }
 youtube = "https://www.youtube.com/embed/ZbDQ8SVqHZw"
 connections = [
   { source = "klangkarussell-we-want-your-soul.md", why = "Another song from the same album, Netzwerk, where the duo bring in a guest, Adam Freeland, instead of singing themselves." },

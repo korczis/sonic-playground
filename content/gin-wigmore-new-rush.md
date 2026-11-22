@@ -12,7 +12,7 @@ instrument = ["vocals", "drums", "bass", "electric guitar", "synthesizer", "perc
 [extra]
 country = "NZ"
 isrc = "AUUM71500267"
-musicbrainz = { recording = "d53334f0-afa4-47b7-ad01-fbda188fd673", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "3c60a0c8-c07b-463d-8c72-93908a0e80e3" }
+musicbrainz = { recording = "d53334f0-afa4-47b7-ad01-fbda188fd673", artist = "cb0b7933-a5bc-48dc-a36b-00315d12ca8c", release = "379eb676-e750-4c99-9f50-00348fb0a239" }
 release_year = "2015"
 album = "Blood to Bone"
 publisher = "Island"

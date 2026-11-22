@@ -7,7 +7,7 @@ album: "Cooler Than Me"
 duration: "2:59"
 explicit: true
 spotify: {"track": "525GY0mXYnxajolwgS8Eaz", "album": "5BmY6ZPLmhyIm9bRdN4mWP", "artists": ["5ee4yhrWOxaxvL77BoVpVR"]}
-keys: {"fold": "luckyluke|coolerthanme", "musicbrainz": "3efcecdb-ae4f-40bb-9013-8a49144ac54d"}
+keys: {"fold": "luckyluke|coolerthanme", "musicbrainz": "5d635aca-05f0-4aff-b4cf-81f21cfc4894"}
 review: "lucky-luke-cooler-than-me.md"
 status: "present"
 liked: true

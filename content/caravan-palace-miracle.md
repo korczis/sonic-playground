@@ -12,7 +12,7 @@ instrument = ["vocals", "synth bass", "electronic beats", "sampler", "piano", "s
 [extra]
 country = "FR"
 isrc = "FR9W11827929"
-musicbrainz = { recording = "eac9d182-674c-4612-9996-16c5e108b4b2", artist = "72eabb1a-4d2c-4de6-90f2-671b2cada42b", release = "706495c0-a5f2-4c82-a054-315f06a91bb1" }
+musicbrainz = { recording = "eac9d182-674c-4612-9996-16c5e108b4b2", artist = "72eabb1a-4d2c-4de6-90f2-671b2cada42b", release = "2a16b4b5-4cde-4126-90fc-2763308198ee" }
 publisher = "Lone Diggers"
 release_year = "2019"
 album = "Chronologic"

@@ -16,10 +16,6 @@ trap 'rm -rf "$work"' EXIT
 git -C "$root" archive HEAD | tar -x -C "$work"
 cp "$root/.githooks/pre-commit" "$work/.githooks/pre-commit"
 cd "$work"
-# The scratch history adds every review in one commit, so same-day reviews order by title
-# (scripts/catalog.py publication_order), not as this repository's history orders them: derive
-# the fixture's catalogue for its own history, or the sound tree reads as stale.
-python3 scripts/catalog.py >/dev/null
 git init -q
 git add -A
 git -c core.hooksPath=/dev/null -c user.name=case -c user.email=case@example.invalid \

@@ -11,7 +11,7 @@ instrument = ["vocals", "sampler"]
 
 [extra]
 country = "FR"
-musicbrainz = { recording = "6e0bb16c-dd2d-4dec-803f-4afb5b8788c1", artist = "6f3d4a7b-45b2-4c08-9306-8d271e92cb4f", release = "3ff44574-9d73-416b-b6d8-32f30b645d12" }
+musicbrainz = { recording = "428ee932-5ed7-4951-8ce1-94a05254b39c", artist = "6f3d4a7b-45b2-4c08-9306-8d271e92cb4f", release = "78fc0451-98c4-4708-a0de-e9bdff492488" }
 release_year = "2006"
 album = "French Cuisine"
 publisher = "Compost Records"

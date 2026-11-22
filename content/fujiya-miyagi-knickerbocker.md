@@ -15,7 +15,7 @@ album = "Lightbulbs"
 release_year = "2008"
 country = "GB"
 isrc = "GBRSN0700017"
-musicbrainz = { recording = "e7e90f59-1a5d-48c2-9757-788bf12b86b9", artist = "41a94033-8b12-4c60-a22c-38c78801e363", release = "8ba70811-4869-4838-929c-5a56b7355906" }
+musicbrainz = { recording = "e7e90f59-1a5d-48c2-9757-788bf12b86b9", artist = "41a94033-8b12-4c60-a22c-38c78801e363", release = "6fdec5a6-998f-430f-a88b-d5f0cf423b67" }
 youtube = "https://www.youtube.com/embed/9AIa4bgw0uI"
 connections = [
   { source = "easter-alien-babies.md", why = "Another lyric that works through a strange list of things, delivered in a half-spoken monotone over electronic beats." },

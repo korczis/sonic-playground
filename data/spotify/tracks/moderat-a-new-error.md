@@ -6,7 +6,7 @@ artists: ["Moderat"]
 album: "Moderat"
 duration: "6:07"
 spotify: {"track": "1fmoCZ6mtMiqA5GHWPcZz9", "album": "2HEh23ogCT3wiYfag2iMxD", "artists": ["2exkZbmNqMKnT8LRWuxWgy"]}
-keys: {"fold": "moderat|anewerror", "musicbrainz": "2efbe7f4-3402-4a06-b2c4-bc6eaccad049"}
+keys: {"fold": "moderat|anewerror", "musicbrainz": "ee46b53d-9664-4d94-9896-d61476ee4e31"}
 review: "moderat-a-new-error.md"
 status: "present"
 liked: true

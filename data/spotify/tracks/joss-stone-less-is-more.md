@@ -6,7 +6,7 @@ artists: ["Joss Stone"]
 album: "Mind Body & Soul (Special Edition)"
 duration: "4:17"
 spotify: {"track": "0ozKDRPig9rKkBhJA6NxDI", "album": "6rEYIfMefUM2leNQNoBdu2", "artists": ["7bvcQXJHkFiN1ppIN3q4fi"]}
-keys: {"fold": "jossstone|lessismore", "isrc": "USEVS0400013", "musicbrainz": "0797a933-5b1c-49f9-9e6c-f935b7a070c8"}
+keys: {"fold": "jossstone|lessismore", "isrc": "USESC0400009", "musicbrainz": "b5bcd836-1d7d-493c-98df-0223b3e29715"}
 review: "joss-stone-less-is-more.md"
 status: "present"
 liked: true

@@ -6,7 +6,7 @@ artists: ["Corinne Bailey Rae"]
 album: "Put Your Records On"
 duration: "3:35"
 spotify: {"track": "2nGFzvICaeEWjIrBrL2RAx", "album": "3GfLFBVOXEUHqxAAKcBOtu", "artists": ["29WzbAQtDnBJF09es0uddn"]}
-keys: {"fold": "corinnebaileyrae|putyourrecordson", "musicbrainz": "601e5cb7-c9f0-4227-b72a-f0a5abad1cd4"}
+keys: {"fold": "corinnebaileyrae|putyourrecordson", "musicbrainz": "a2ca096d-b51b-4bd5-bda0-a0875c5f9657"}
 review: "corinne-bailey-rae-put-your-records-on.md"
 status: "present"
 liked: true

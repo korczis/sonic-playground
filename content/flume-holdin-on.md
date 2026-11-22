@@ -12,7 +12,7 @@ instrument = ["synthesizer", "sampler", "drum machine", "keyboard"]
 [extra]
 country = "AU"
 isrc = "AUFF00500393"
-musicbrainz = { recording = "0ea3cecb-f796-4d95-b389-5e24e3edfc6a", artist = "35fd8d42-b4a6-4414-9827-8766bd0daa3c", release = "650e867a-9e9a-4f7e-8537-6a301d02f09d" }
+musicbrainz = { recording = "0ea3cecb-f796-4d95-b389-5e24e3edfc6a", artist = "35fd8d42-b4a6-4414-9827-8766bd0daa3c", release = "18acbfcd-b07d-4bec-a11c-1a4b3c41a0ae" }
 release_year = "2012"
 album = "Flume"
 publisher = "Future Classic"

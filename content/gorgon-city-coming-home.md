@@ -12,7 +12,7 @@ instrument = ["vocals", "backing vocals", "piano", "keyboards", "bass", "drum pr
 [extra]
 country = "GB"
 isrc = "GBUM71403997"
-musicbrainz = { recording = "d69c533d-f7f7-4994-9831-b8ec78f80160", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "b6317202-fb3b-4ebe-991a-22475d3e1fc9" }
+musicbrainz = { recording = "d69c533d-f7f7-4994-9831-b8ec78f80160", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "5bc7c28a-f0a2-491c-a386-f63c2c1092d3" }
 publisher = "Virgin EMI/Black Butter"
 release_year = "2014"
 album = "Sirens"

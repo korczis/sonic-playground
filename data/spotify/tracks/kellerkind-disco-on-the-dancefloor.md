@@ -6,7 +6,7 @@ artists: ["Kellerkind"]
 album: "Basement Story"
 duration: "5:55"
 spotify: {"track": "5tr87YpnHiJaGKFD56cjQN", "album": "0T6fLwZGtEqELfF3ubKgbu", "artists": ["4GYQytEFxnzqH96O6QywsA"]}
-keys: {"fold": "kellerkind|discoonthedancefloor", "musicbrainz": "28a20955-bd6d-49d2-8600-5b8386f55812"}
+keys: {"fold": "kellerkind|discoonthedancefloor", "musicbrainz": "9add0ecf-89f1-4fb1-906e-4823c4094cb2"}
 review: "kellerkind-disco-on-the-dancefloor.md"
 status: "present"
 liked: true

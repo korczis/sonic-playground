@@ -17,7 +17,7 @@ publisher = "Cherry Red Records"
 release_year = "1981"
 country = "US"
 isrc = "GBBLY8100008"
-musicbrainz = { recording = "ab9cc46f-edec-4a3f-91c7-c3b2921e563d", artist = "37c78aeb-d196-42b5-b991-6afb4fc9bc2e", release = "33745f60-fd66-479d-84d5-6694c5295d59" }
+musicbrainz = { recording = "ab9cc46f-edec-4a3f-91c7-c3b2921e563d", artist = "37c78aeb-d196-42b5-b991-6afb4fc9bc2e", release = "e86e10c8-56d3-4409-971d-84d7b411f125" }
 youtube = "https://www.youtube.com/embed/0LDsBVBEdpk"
 connections = [
   { source = "nouvelle-vague-too-drunk-to-fuck.md", why = "The same song recast as soft bossa nova in 2004, a cover that makes the satire sharper by removing the noise." },

@@ -15,7 +15,7 @@ album = "Old Friend"
 release_year = "2018"
 country = "GB"
 isrc = "GBAYE1801203"
-musicbrainz = { recording = "59ad7ea9-bcc6-4e02-a5e5-112d80b8ce02", artist = "25835693-a126-478a-944e-1303ae7a2551", release = "b4d0e241-5bec-45ad-ba35-c1df22df43cc" }
+musicbrainz = { recording = "59ad7ea9-bcc6-4e02-a5e5-112d80b8ce02", artist = "25835693-a126-478a-944e-1303ae7a2551", release = "91474759-b6b6-47f1-af3c-50c964bcf0b6" }
 youtube = "https://www.youtube.com/embed/ugS6OiwQ3WU"
 connections = [
   { source = "camelphat-elderbrook-cola-club-mix.md", why = "Elderbrook's breakthrough a year earlier, whose tone one critic heard carried over into Old Friend." },

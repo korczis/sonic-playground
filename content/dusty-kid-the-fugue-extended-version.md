@@ -11,7 +11,7 @@ instrument = ["synthesizer"]
 
 [extra]
 country = "IT"
-musicbrainz = { recording = "766c582f-d570-4081-9ee1-99c8b15c9bf7", artist = "ca89a1e5-8e3e-4de4-a946-0331dcbac12a", release = "c1e8658e-d772-4dfd-bebe-221c38c88d08" }
+musicbrainz = { recording = "766c582f-d570-4081-9ee1-99c8b15c9bf7", artist = "ca89a1e5-8e3e-4de4-a946-0331dcbac12a", release = "4cd4b457-3107-4acf-a6bc-4467eb8c63c6" }
 publisher = "Isolade"
 release_year = "2009"
 album = "A Raver's Diary - Singles & B-Sides"

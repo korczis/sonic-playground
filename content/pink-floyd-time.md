@@ -11,8 +11,8 @@ instrument = ["vocals", "backing vocals", "electric guitar", "bass guitar", "dru
 
 [extra]
 country = "GB"
-isrc = "GBAYE7300322"
-musicbrainz = { recording = "0e11c0fd-a1da-4b88-a438-7ef55c5809ec", artist = "83d91898-7763-47d7-b03b-b92132375c47", release = "65d67b87-f13a-4f1f-9efa-6d80975921a6" }
+isrc = "GBAYE0300337"
+musicbrainz = { recording = "41959321-f2bb-4580-aa19-16248fe665d3", artist = "83d91898-7763-47d7-b03b-b92132375c47", release = "b84ee12a-09ef-421b-82de-0441a926375b" }
 publisher = "Harvest"
 release_year = "1973"
 album = "The Dark Side of the Moon"

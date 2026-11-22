@@ -12,7 +12,7 @@ instrument = ["vocals", "guitar", "synthesizer", "sampler"]
 [extra]
 country = "GB"
 isrc = "GBAJH0602195"
-musicbrainz = { recording = "72cbbcdd-4b3a-41b8-92d6-0fa13888f00d", artist = "8538e728-ca0b-4321-b7e5-cff6565dd4c0", release = "e7e11875-e581-43e0-ba38-c7f90812683b" }
+musicbrainz = { recording = "72cbbcdd-4b3a-41b8-92d6-0fa13888f00d", artist = "8538e728-ca0b-4321-b7e5-cff6565dd4c0", release = "690cab8e-a283-4107-ad99-bcc33380cf95" }
 publisher = "Mute Records"
 release_year = "1989"
 album = "The Best of Depeche Mode, Vol. 1"

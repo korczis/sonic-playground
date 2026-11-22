@@ -6,7 +6,7 @@ artists: ["Polo & Pan"]
 album: "Caravelle"
 duration: "4:36"
 spotify: {"track": "2XOXx2U5IIoBRPlmGgDqj8", "album": "0SuFqlCe5i30Fr75ZlPQVT", "artists": ["45yEuthJ9yq1rNXAOpBnqM"]}
-keys: {"fold": "polopan|canopee", "isrc": "FRPDG1600020", "musicbrainz": "26d01b2d-33cd-437b-a2c3-762c47408d74"}
+keys: {"fold": "polopan|canopee", "isrc": "FRPDG1600010", "musicbrainz": "41fb4424-4b4b-48fb-9073-4a0f6b329998"}
 review: "polo-pan-canopee.md"
 status: "present"
 liked: false

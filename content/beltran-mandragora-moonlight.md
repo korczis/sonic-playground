@@ -10,6 +10,7 @@ concept = ["kick drum", "bassline", "hook"]
 instrument = ["vocals", "synthesizer", "bass"]
 
 [extra]
+musicbrainz = { recording = "57265656-03af-47a8-bc1e-7e2227f2c6d9", artist = "355be781-1147-41d9-8ac7-5690ea1578c3", release = "8240a4aa-5d29-454f-b784-52abe6d6b89d" }
 publisher = "Revival New York"
 release_year = "2023"
 album = "Moonlight"

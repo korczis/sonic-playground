@@ -18,9 +18,6 @@ if [ "${1:-}" != "--judge-index" ]; then
   MAJORDOMUS_DOCTOR_CONTEXT=commit majordomus doctor || exit $?
 fi
 root=$(git rev-parse --show-toplevel)
-# The catalogue orders same-day reviews by when they entered the history (scripts/catalog.py
-# publication_order): the export has no .git, so its check reads this repository's.
-git_dir=$(git rev-parse --absolute-git-dir)
 tree=$(git write-tree)
 export_dir=$(mktemp -d "${TMPDIR:-/tmp}/sonic-index.XXXXXX")
 trap 'rm -rf "$export_dir"' EXIT
@@ -30,7 +27,7 @@ if [ -e "$root/data/spotify/private" ]; then
   ln -s "$(cd "$root/data/spotify/private" && pwd -P)" "$export_dir/data/spotify/private"
 fi
 cd "$export_dir"
-GIT_DIR="$git_dir" python3 scripts/catalog.py --check || exit $?
+python3 scripts/catalog.py --check || exit $?
 python3 scripts/spotify_history.py --check || exit $?
 python3 scripts/i18n.py --check || exit $?
 python3 scripts/images.py --check || exit $?

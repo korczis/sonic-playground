@@ -11,7 +11,7 @@ instrument = ["kick drum", "bass", "synthesizer"]
 
 [extra]
 country = "SE"
-musicbrainz = { recording = "6683552b-32df-4ea8-b0f3-09ce79e38129", artist = "4539050e-e355-4c39-bdfa-e74cb67ce365", release = "333dc9a9-81cb-441e-bfc6-bdb229f1b947" }
+musicbrainz = { recording = "207ddf87-1b10-4f3d-ade5-dda3061ed932", artist = "4539050e-e355-4c39-bdfa-e74cb67ce365", release = "24702f7d-604b-41fa-ad10-206c1a9918ea" }
 release_year = "2004"
 album = "Feel The Vibe"
 youtube = "https://www.youtube.com/embed/889H0Am7vFo"

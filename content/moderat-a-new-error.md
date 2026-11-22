@@ -11,7 +11,7 @@ instrument = ["synthesizer", "synth bass", "drum machine"]
 
 [extra]
 country = "DE"
-musicbrainz = { recording = "2efbe7f4-3402-4a06-b2c4-bc6eaccad049", artist = "7754905b-8bf7-48e2-935a-03d566fec464", release = "e5b92757-4fc3-4992-b822-6d6a3e0ab040" }
+musicbrainz = { recording = "ee46b53d-9664-4d94-9896-d61476ee4e31", artist = "7754905b-8bf7-48e2-935a-03d566fec464", release = "bdf5c392-c58a-428d-92df-7653c69b68fa" }
 publisher = "BPitch Control"
 release_year = "2009"
 album = "Moderat"

@@ -6,7 +6,7 @@ artists: ["Beltran", "Mandragora"]
 album: "Moonlight"
 duration: "5:37"
 spotify: {"track": "39JDdezxhax7XyjkRpM6Ds", "album": "5IQW0dQVimAiqZopb4JBng", "artists": ["1jgSqmZTBltb5O2L7ErmEP", "2AasvmwafZPTgQANaoLoQY"]}
-keys: {"fold": "beltran|moonlight"}
+keys: {"fold": "beltran|moonlight", "musicbrainz": "57265656-03af-47a8-bc1e-7e2227f2c6d9"}
 review: "beltran-mandragora-moonlight.md"
 status: "present"
 liked: true

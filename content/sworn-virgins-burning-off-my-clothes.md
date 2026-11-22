@@ -10,6 +10,8 @@ concept = ["groove", "bassline", "club culture"]
 instrument = ["vocals", "bass"]
 
 [extra]
+isrc = "GBKPL1812707"
+musicbrainz = { recording = "29bcecd4-1425-4e22-bca8-10f9c8cdebbd", artist = "c95c1c94-7924-442c-a34b-b58d5ba97070", release = "37d4a4b3-2b81-4a10-ae13-a308bef1bb84" }
 artist = "Sworn Virgins"
 track = "Burning Off My Clothes"
 album = "Fifty Dollar Bills"

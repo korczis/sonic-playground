@@ -14,7 +14,7 @@ release_year = "2001"
 country = "US"
 album = "#1"
 publisher = "International DeeJay Gigolo Records"
-musicbrainz = { recording = "f95bb37b-1f7f-4cc7-a140-5d0f2ce8493a", artist = "a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0", release = "1e9492ef-f406-4343-914a-8189ba5bdbd6" }
+musicbrainz = { recording = "4b34fd71-e6b7-4ef0-a14e-16449f6f630a", artist = "a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0", release = "ad4d4142-8590-45fd-a504-e4a2e00a94ee" }
 youtube = "https://www.youtube.com/embed/HHbAtxSTXo0"
 connections = [
   { source = "miss-kittin-frank-sinatra.md", why = "Another electroclash anthem first released on DJ Hell's International DeeJay Gigolo label." },

@@ -15,7 +15,7 @@ album = "D-Sides"
 release_year = "2005"
 country = "GB"
 isrc = "GBAYE0501589"
-musicbrainz = { recording = "ddd640db-1660-4d40-a033-b0af9f192b08", artist = "e21857d5-3256-4547-afb3-4b6ded592596", release = "a7f1fe0f-ab3b-4f8b-851d-77ec26070816" }
+musicbrainz = { recording = "ddd640db-1660-4d40-a033-b0af9f192b08", artist = "e21857d5-3256-4547-afb3-4b6ded592596", release = "519084b6-b720-4f35-9ed7-00bf198c4035" }
 youtube = "https://www.youtube.com/embed/QH4cYyTv434"
 connections = [
   { source = "gorillaz-de-la-soul-feel-good-inc.md", why = "The single whose Japanese CD EP first carried Murdoc Is God in 2005, the bright, funny face of the same Demon Days era." },

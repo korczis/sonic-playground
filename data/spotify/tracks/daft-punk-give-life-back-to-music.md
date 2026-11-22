@@ -6,7 +6,7 @@ artists: ["Daft Punk"]
 album: "Random Access Memories"
 duration: "4:35"
 spotify: {"track": "0dEIca2nhcxDUV8C5QkPYb", "album": "4m2880jivSbbyEGAKfITCa", "artists": ["4tZwfgrHOc3mvqYlEYSvVi"]}
-keys: {"fold": "daftpunk|givelifebacktomusic", "musicbrainz": "4383e23d-59a3-4631-8727-0b3248061cf9"}
+keys: {"fold": "daftpunk|givelifebacktomusic", "musicbrainz": "0c871a4a-efdf-47f8-98c2-cc277f806d2f"}
 review: "daft-punk-give-life-back-to-music.md"
 status: "present"
 liked: true

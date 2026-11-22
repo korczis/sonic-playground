@@ -7,6 +7,7 @@ import json
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from typing import Any
 from pathlib import Path
 
@@ -375,8 +376,8 @@ class PublicationOrder(unittest.TestCase):
         self.assertEqual(catalog.first_added(self.LOG), {"b.md": 300, "b.cs.md": 300, "a.md": 100})
 
     def test_same_day_reviews_order_by_when_they_were_added_uncommitted_first(self):
-        def track(source, title, day="2026-11-22") -> Any:
-            return type("T", (), {"source": source, "title": title, "date": day})()
+        def track(source, title, day="2026-11-22"):
+            return SimpleNamespace(source=source, title=title, date=day)
         tracks = [track("a.md", "Zed"), track("b.md", "Abba"), track("new.md", "Mid"),
                   track("old.md", "Zz", "2026-11-21")]
         catalog.publication_order(tracks, {"a.md": 100, "b.md": 300, "old.md": 50})
@@ -385,6 +386,48 @@ class PublicationOrder(unittest.TestCase):
     def test_git_added_reads_this_checkout(self):
         added = catalog.git_added()
         self.assertIn("amy-winehouse-rehab.md", added)
+
+    def test_published_times_take_the_record_then_git_then_now(self):
+        times, missing = catalog.published_times(["c.md", "a.md", "b.md"], {"a.md": 10},
+                                                 {"a.md": 1, "b.md": 20}, 99)
+        self.assertEqual(times, {"a.md": 10, "b.md": 20, "c.md": 99})
+        self.assertEqual(missing, ["b.md", "c.md"])
+
+    def test_the_record_round_trips_one_review_per_line(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "published.json"
+            text = catalog.render_published({"b.md": 2, "a.md": 1})
+            self.assertEqual([ln.strip() for ln in text.splitlines() if ln.strip().startswith('"')
+                              and ln.strip()[1:2] in "ab" and ".md" in ln], ['"a.md": 1,', '"b.md": 2'])
+            path.write_text(text, encoding="utf-8")
+            saved = catalog.PUBLISHED
+            try:
+                catalog.PUBLISHED = path
+                self.assertEqual(catalog.load_published(), {"a.md": 1, "b.md": 2})
+                catalog.PUBLISHED = Path(d) / "absent.json"
+                self.assertEqual(catalog.load_published(), {})
+            finally:
+                catalog.PUBLISHED = saved
+
+    def test_check_refuses_a_review_the_record_lacks(self):
+        import contextlib
+        import io
+        import json
+        record = json.loads(catalog.PUBLISHED.read_text(encoding="utf-8"))
+        gone = sorted(record["reviews"])[0]
+        del record["reviews"][gone]
+        with tempfile.TemporaryDirectory(dir=catalog.ROOT) as d:  # main names it relative to ROOT
+            path = Path(d) / "published.json"
+            path.write_text(json.dumps(record), encoding="utf-8")
+            saved, argv = catalog.PUBLISHED, sys.argv
+            err = io.StringIO()
+            try:
+                catalog.PUBLISHED, sys.argv = path, ["catalog.py", "--check"]
+                with contextlib.redirect_stderr(err):
+                    self.assertEqual(catalog.main(), 1)
+            finally:
+                catalog.PUBLISHED, sys.argv = saved, argv
+        self.assertIn(f"{gone} has no time in data/published.json", err.getvalue())
 
 
 class Search(unittest.TestCase):

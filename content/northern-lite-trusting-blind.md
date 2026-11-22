@@ -13,7 +13,7 @@ instrument = ["synthesizer", "bass"]
 release_year = "2001"
 publisher = "1st Decade Records"
 country = "DE"
-musicbrainz = { recording = "957629f2-7d7b-4828-9b8e-c6f9fdc1f5d7", artist = "a7d361b5-ff0b-48ab-b3e5-9d70bdd5d251", release = "5953228b-b1e0-4a17-b525-1acf85f3fbaf" }
+musicbrainz = { recording = "6f2a425c-83bd-493f-889d-fa2555a4906c", artist = "a7d361b5-ff0b-48ab-b3e5-9d70bdd5d251", release = "b303e371-9224-49de-bf59-f769a409ef64" }
 cover_image = "/images/thumbnails/northern-lite-trusting-blind.jpg"
 youtube = "https://www.youtube.com/embed/2dmRpoG2hao"
 connections = [

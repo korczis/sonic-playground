@@ -12,7 +12,7 @@ instrument = ["vocals"]
 [extra]
 country = "GB"
 isrc = "GBUM71302817"
-musicbrainz = { recording = "1cf8f733-ac67-4d23-bfdb-4bd52292cd0b", artist = "589ef702-7f3a-4a1c-8f2c-4727005cfc0e", release = "46b35976-879f-499d-9b12-64bc86be41d7" }
+musicbrainz = { recording = "1cf8f733-ac67-4d23-bfdb-4bd52292cd0b", artist = "589ef702-7f3a-4a1c-8f2c-4727005cfc0e", release = "19a16966-1ee7-4233-a47c-2df310d9df27" }
 release_year = "2013"
 album = "Love Me Again"
 publisher = "Universal Island Records"

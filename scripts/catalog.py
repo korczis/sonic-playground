@@ -29,6 +29,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 import tomllib
 import unicodedata
 from collections import Counter, defaultdict
@@ -78,6 +79,9 @@ LOCALES = sorted(p.stem for p in (ROOT / "data" / "i18n").glob("*.toml"))
 # the structured data is derived into data/derived/jsonld.json, used by the build only.
 CATALOG_EXTRA = ("album", "publisher", "release_year", "video_duration", "country")
 JSONLD = ROOT / "data" / "derived" / "jsonld.json"
+# When each review entered the repository (sonic-published/v1): a tracked record, so the
+# catalogue's order derives from the tree alone, never from a history a copy may not carry.
+PUBLISHED = ROOT / "data" / "published.json"
 CONFIG = tomllib.loads((ROOT / "config.toml").read_text(encoding="utf-8"))
 DEFAULT_LANG = CONFIG["default_language"]
 LANGUAGES = sorted(CONFIG.get("languages", {}))  # the languages besides the default (ADR 0006)
@@ -583,6 +587,34 @@ def publication_order(tracks: list[Track], added: dict[str, int]) -> None:
     tracks.sort(key=lambda t: (t.date, added.get(t.source, newest), t.title), reverse=True)
 
 
+def load_published() -> dict[str, int]:
+    """data/published.json: review file -> when it entered the repository (Unix seconds)."""
+    if not PUBLISHED.exists():
+        return {}
+    return {k: int(v) for k, v in json.loads(PUBLISHED.read_text(encoding="utf-8"))["reviews"].items()}
+
+
+def published_times(sources: list[str], recorded: dict[str, int], added: dict[str, int],
+                    now: int) -> tuple[dict[str, int], list[str]]:
+    """Every review's time, the recorded one first, else when git first added it, else now; and
+    the reviews that had no record (`npm run derive` writes them, `--check` refuses them)."""
+    times: dict[str, int] = {}
+    missing: list[str] = []
+    for s in sorted(sources):
+        if s in recorded:
+            times[s] = recorded[s]
+        else:
+            missing.append(s)
+            times[s] = added.get(s, now)
+    return times, missing
+
+
+def render_published(times: dict[str, int]) -> str:
+    """One review per line, sorted, so two branches that add reviews merge line by line."""
+    return json.dumps({"schema": "sonic-published/v1", "generated_by": "scripts/catalog.py",
+                       "reviews": times}, indent=1, sort_keys=True) + "\n"
+
+
 def git_added() -> dict[str, int]:
     """first_added() of this checkout's history; empty outside a git work tree."""
     try:
@@ -993,7 +1025,12 @@ def build(errors: list[str]) -> dict:
             errors.append(f"{t.source}: URL /{t.path} collides with {seen[t.path]}")
         seen[t.path] = t.source
 
-    publication_order(tracks, git_added())
+    recorded = load_published()
+    sources = [t.source for t in tracks]
+    # History is read only for a review the record lacks (a new one, or a record merged away).
+    added = git_added() if any(s not in recorded for s in sources) else {}
+    published, unrecorded = published_times(sources, recorded, added, int(time.time()))
+    publication_order(tracks, published)
     errors += uniqueness(tracks)
     families = genre_families(tracks, load_genre_families(errors), NOTES)
     translated = load_translations(tracks, errors)
@@ -1027,6 +1064,7 @@ def build(errors: list[str]) -> dict:
                 for k, v in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))]
 
     return {
+        "_published": published, "_unrecorded": unrecorded,
         "schema": SCHEMA,
         "generated_by": "scripts/catalog.py",
         "contract": "data/track.schema.json",
@@ -1269,7 +1307,8 @@ def main() -> int:
     leftovers = [p for p in YEARBOOK_PAGES.glob("*.md") if p not in pages] if YEARBOOK_PAGES.exists() else []
     outputs = {**pages, OUTPUT: render(catalog), PLAY: render_play(catalog), SEARCH: render_search(catalog),
                **{SEARCH.with_name(f"search.{lang}.json"): render_search(catalog, lang) for lang in LANGUAGES},
-               JSONLD: json.dumps(catalog["_jsonld"], ensure_ascii=False, indent=1, sort_keys=True) + "\n"}
+               JSONLD: json.dumps(catalog["_jsonld"], ensure_ascii=False, indent=1, sort_keys=True) + "\n",
+               PUBLISHED: render_published(catalog["_published"])}
     count = catalog["stats"]["tracks"]
     for e in errors:
         print(f"catalog: {e}", file=sys.stderr)
@@ -1279,13 +1318,15 @@ def main() -> int:
         print(f"catalog: {len(errors)} contract violation(s)", file=sys.stderr)
         return 1
     if args.check:
+        for s in catalog["_unrecorded"]:
+            print(f"catalog: {s} has no time in data/published.json; run npm run derive", file=sys.stderr)
         stale = [p for p, text in outputs.items()
                  if not p.exists() or p.read_text(encoding="utf-8") != text]
         for p in stale:
             print(f"catalog: {p.relative_to(ROOT)} is stale; run npm run derive", file=sys.stderr)
         for p in leftovers:
             print(f"catalog: {p.relative_to(ROOT)} belongs to no yearbook; run npm run derive", file=sys.stderr)
-        if stale or leftovers:
+        if stale or leftovers or catalog["_unrecorded"]:
             return 1
         print(f"catalog: {count} tracks, contract and catalogue current")
         return 0

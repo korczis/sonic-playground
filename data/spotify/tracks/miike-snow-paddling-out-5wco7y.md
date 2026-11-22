@@ -6,7 +6,7 @@ artists: ["Miike Snow"]
 album: "Happy To You (Deluxe Edition)"
 duration: "3:43"
 spotify: {"track": "5WCO7yEZrl8Qi1MSpTLBkP", "album": "3MTR7tpvPt5Pt8xUv0npiQ", "artists": ["4l1cKWYW591xnwEGxpUg3J"]}
-keys: {"fold": "miikesnow|paddlingout", "musicbrainz": "acef882f-b5ab-4511-b787-a87641bec14c"}
+keys: {"fold": "miikesnow|paddlingout", "musicbrainz": "bb0201ea-acc3-4f6d-be59-390c64dea954"}
 review: "miike-snow-paddling-out.md"
 status: "present"
 liked: false

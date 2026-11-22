@@ -12,7 +12,7 @@ instrument = ["vocals", "saxophone", "violin", "keyboards", "drums", "bass"]
 [extra]
 country = "GB"
 isrc = "GBBLK9900236"
-musicbrainz = { recording = "3461d894-5cf3-469d-a937-8d6131a1a54e", artist = "83a554c5-4fd3-4ec8-9dd5-15989850ea17", release = "f5f6ea41-bce9-40e3-aee9-3f078bd19db0" }
+musicbrainz = { recording = "3461d894-5cf3-469d-a937-8d6131a1a54e", artist = "83a554c5-4fd3-4ec8-9dd5-15989850ea17", release = "36b188cc-9b9e-4d64-bd0f-d8f2caf64de8" }
 publisher = "V2"
 release_year = "1999"
 album = "I Find You Very Attractive"

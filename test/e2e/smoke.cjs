@@ -181,6 +181,13 @@ function watch(page) {
   page.on('console', (m) => {
     if (m.type() !== 'error' && m.type() !== 'warning') return;
     if (m.text().startsWith('Failed to load resource')) return;
+    // A headless browser composites in software, so it reads every WebGL frame back itself and
+    // ANGLE reports that stall; a real Chrome composites on the GPU and never does (knowledge
+    // console-clean-by-construction). A notice, never a pass: any other warning still fails.
+    if (/^\[\.WebGL-[0-9a-fx]+\]GL Driver Message \([^)]*Performance[^)]*\): GPU stall due to ReadPixels/.test(m.text())) {
+      notices.add(`headless compositing (not the site): ${m.text()}`);
+      return;
+    }
     const from = (m.location() && m.location().url) || '';
     const own = !from || from.startsWith(origin);
     (own ? errors : null)?.push(`console ${m.type()}: ${m.text()}`);
@@ -545,6 +552,8 @@ async function shot(page, name) {
   // A fake microphone (a beeping tone) and auto-accepted permission prompts let the visualiser's
   // "Follow the music" run its real listening path and analysis.
   const launch = { headless: true, args: ['--enable-unsafe-swiftshader', '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] };
+  // On a Mac, WebGL on Metal, as Chrome itself runs it (headless defaults to ANGLE on OpenGL).
+  if (process.platform === 'darwin') launch.args.push('--use-angle=metal');
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   const browser = await chromium.launch(launch);
   instrument(browser);
@@ -619,6 +628,10 @@ async function shot(page, name) {
       `shared link: the song is cued at its time (${now.source} at ${st.s.time})`);
     check(st.calls === 0 && !st.api && st.toast.length > 0, 'shared link: paused, the YouTube API not even loaded, and the toast says so');
     check(st.mode === 'prism' && st.params && st.params.warp === 1.5 && st.cinema === true, 'shared link: the picture, its live control and cinema');
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine') !== 'gl'
+      || /^hsl\(\d+ 85% 62% \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
+    'shared link: a WebGL picture glows in its hue, no frame read back from the GPU');
     check(new URL(page.url()).searchParams.get('play') === key && new URL(page.url()).searchParams.get('t') === '42',
       'shared link: the URL keeps naming the song and its time');
     await page.click('#player [data-player-toggle]');
@@ -926,7 +939,8 @@ async function shot(page, name) {
     const newestStill = catalog.tracks.find((t) => t.thumbnail);
     check(featured === newestStill.source, `home features the newest review with a still (${newestStill.source})`);
     // The mosaic as served (hero.js turns its tiles a few seconds later).
-    const served = await (await context.request.get(at(''))).text();
+    // Fetched by the page, so --artifact answers it (context.request would ask production).
+    const served = await page.evaluate((u) => fetch(u).then((r) => r.text()), at(''));
     const mosaic = served.slice(served.indexOf('id="hero-mosaic"'), served.indexOf('id="hero-newest"'));
     const tiles = [...mosaic.matchAll(/data-source="([^"]+)"/g)].map((m) => m[1]);
     const nine = catalog.tracks.filter((t) => t.youtube).slice(0, 9).map((t) => t.source);
@@ -1329,7 +1343,11 @@ async function shot(page, name) {
     await page.waitForFunction(() => !document.querySelector('[data-chart]') || Number(document.documentElement.dataset.chartsState) > 0,
       null, { timeout: 5000 }).catch(() => {});
     await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))));
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    // The shell clips the document (#shell overflow-hidden), so the content area is measured too.
+    const overflow = await page.evaluate(() => {
+      const main = document.getElementById('main-content');
+      return Math.max(document.documentElement.scrollWidth - window.innerWidth, main ? main.scrollWidth - main.clientWidth : 0);
+    });
     check(overflow <= 0, `${name} @390px: no horizontal overflow (${overflow}px)`);
     const small = await page.evaluate((min) => [...document.querySelectorAll('button, a[href], [role=button], select, input')]
       .filter((el) => {
@@ -1358,6 +1376,71 @@ async function shot(page, name) {
       await shot(page, `${name}-phone`);
     }
     await context.close();
+  }
+
+  // One page layout (rule project.ui-components), phone to wide desktop: nothing overflows the page
+  // or its content area, the page header and the first card share the gutter's left edge, long
+  // text is mobile first (16 px or less on a phone, no content heading above the page title), a
+  // plain page's text fills its card at a readable measure, and the navbar's title and controls
+  // never overlap.
+  for (const width of [360, 768, 1280, 1440, 1920]) {
+    const gutter = width >= 1280 ? 32 : 16;
+    for (const [name, rel] of [['welcome', 'welcome/'], ['author', 'author/'], ['cs welcome', 'cs/welcome/'], ['track', sample.path],
+      ['archive', 'archive/'], ['insights', 'insights/'], ['concepts', 'concept/'], ['yearbooks', 'yearbook/']]) {
+      const { context, page, errors } = await open(browser, at(rel), { width, height: 900 }, width === 768 ? 'dark' : 'light');
+      await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))));
+      const m = await page.evaluate(() => {
+        const main = document.getElementById('main-content');
+        const left = (el) => (el ? el.getBoundingClientRect().left : null);
+        const pad = (el) => parseFloat(getComputedStyle(el).paddingLeft);
+        const header = document.querySelector('#main-content h1');
+        const crumb = document.querySelector('#main-content nav[aria-label] ol, #main-content nav ol');
+        const prose = document.querySelector('[data-prose]');
+        const card = document.querySelector('[data-page-card]');
+        const p = prose && prose.querySelector('p');
+        const h2 = prose && prose.querySelector('h2');
+        const shown = (el) => el.offsetParent && el.getBoundingClientRect().width > 1;
+        const nav = document.querySelector('nav.fixed');
+        const boxes = nav ? [...nav.querySelectorAll('a[href] span, button, a[href]:not(:has(span))')].filter(shown)
+          .filter((el) => !el.closest('.sr-only') && !el.classList.contains('sr-only')).map((el) => {
+            const range = document.createRange(); range.selectNodeContents(el);
+            // A span's text, unless it is cut off (truncate): then its own box is what shows.
+            const r = el.tagName === 'SPAN' && el.scrollWidth <= el.clientWidth ? range.getBoundingClientRect() : el.getBoundingClientRect();
+            return { what: (el.textContent || el.getAttribute('aria-label') || el.tagName).trim().slice(0, 20), l: r.left, r: r.right, t: r.top, b: r.bottom };
+          }) : [];
+        const overlaps = [];
+        for (let i = 0; i < boxes.length; i += 1) for (let j = i + 1; j < boxes.length; j += 1) {
+          const a = boxes[i]; const c = boxes[j];
+          if (a.l < c.r - 1 && c.l < a.r - 1 && a.t < c.b - 1 && c.t < a.b - 1) overlaps.push(`${a.what} / ${c.what}`);
+        }
+        const firstCard = main && [...main.querySelectorAll('section, article, aside')].find((el) => el.getBoundingClientRect().width > 100 && !el.closest('header'));
+        return {
+          overflow: Math.max(document.documentElement.scrollWidth - innerWidth, main ? main.scrollWidth - main.clientWidth : 0),
+          header: left(header), crumb: left(crumb), card: left(firstCard), main: main ? left(main) : 0,
+          text: p ? parseFloat(getComputedStyle(p).fontSize) : null,
+          h1: header ? parseFloat(getComputedStyle(header).fontSize) : null,
+          h2: h2 ? parseFloat(getComputedStyle(h2).fontSize) : null,
+          measure: p ? p.getBoundingClientRect().width / parseFloat(getComputedStyle(p).fontSize) : null,
+          fill: card && prose ? Math.abs((left(prose) - left(card)) - pad(card)) + Math.abs(card.getBoundingClientRect().right - pad(card) - prose.getBoundingClientRect().right) : null,
+          overlaps,
+          // The narrowest title column of an aside's track rows (welcome, author).
+          rows: Math.min(...[...document.querySelectorAll('aside [data-track] a > span.min-w-0')].map((el) => el.getBoundingClientRect().width)),
+        };
+      });
+      const where = `${name} @${width}px`;
+      check(m.overflow <= 0, `layout: ${where} nothing overflows the page or its content area (${m.overflow}px)`);
+      if (m.header !== null) check(Math.abs(m.header - m.main - gutter) <= 1, `layout: ${where} the page title sits on the ${gutter}px gutter (${Math.round(m.header - m.main)}px)`);
+      if (m.header !== null && m.card !== null) check(Math.abs(m.card - m.header) <= 1, `layout: ${where} the first card shares the title's left edge (${Math.round(m.card)} vs ${Math.round(m.header)})`);
+      if (m.text !== null && width < 640) check(m.text <= 16, `layout: ${where} body text is mobile first (${m.text}px)`);
+      if (m.h2 !== null && m.h1 !== null) check(m.h2 <= m.h1, `layout: ${where} no content heading outgrows the page title (h2 ${m.h2}px, h1 ${m.h1}px)`);
+      if (m.fill !== null) check(m.fill <= 2, `layout: ${where} the text fills its card, not a column centred in it (${m.fill}px off)`);
+      if (m.fill !== null && m.measure !== null) check(m.measure <= 45, `layout: ${where} the text keeps a readable measure (${m.measure.toFixed(1)}em per line)`);
+      if (Number.isFinite(m.rows)) check(m.rows >= 64, `layout: ${where} the aside's track rows keep their titles readable (${Math.round(m.rows)}px)`);
+      check(m.overlaps.length === 0, `layout: ${where} the navbar's title and controls do not overlap (${m.overlaps.join(', ')})`);
+      check(errors.length === 0, `layout: ${where} no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+      if (width === 360 || width === 1920) await shot(page, `layout-${name.replace(' ', '-')}-${width}`);
+      await context.close();
+    }
   }
 
   // Without JavaScript the phone still reaches the navigation (review round 2).

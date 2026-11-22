@@ -12,7 +12,7 @@ instrument = ["vocals", "piano", "percussion"]
 [extra]
 country = "NO"
 isrc = "SEBGA1400887"
-musicbrainz = { recording = "28f490b4-1415-4c39-8106-c9c4084cde82", artist = "ba0e7638-0cd6-4ff4-8987-c3e224d22c23", release = "5cd08d5c-222f-48c8-a9f8-7bbbe042fee3" }
+musicbrainz = { recording = "28f490b4-1415-4c39-8106-c9c4084cde82", artist = "ba0e7638-0cd6-4ff4-8987-c3e224d22c23", release = "02d8d9b7-b5d0-4672-b698-d3b6a2de2a83" }
 youtube = "https://www.youtube.com/embed/f8kJa6JYK9Q"
 album = "Cloud Nine"
 publisher = "Ultra Music"
