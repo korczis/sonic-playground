@@ -632,6 +632,12 @@ async function shot(page, name) {
     check(await page.evaluate(() => document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine') !== 'gl'
       || /^hsl\(\d+ 85% 62% \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
     'shared link: a WebGL picture glows in its hue, no frame read back from the GPU');
+    // A p5 picture draws in 2D: its glow is the colour of its own pixels.
+    await page.evaluate(() => window.SonicVisualizer.set('kaleido'));
+    await page.waitForFunction(() => document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine') === 'p5'
+      && /^rgb\(\d+ \d+ \d+ \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow')), null, { timeout: 10000 }).catch(() => {});
+    check(await page.evaluate(() => /^rgb\(\d+ \d+ \d+ \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
+      'shared link: a 2D (p5) picture glows in the colour of its own pixels');
     check(new URL(page.url()).searchParams.get('play') === key && new URL(page.url()).searchParams.get('t') === '42',
       'shared link: the URL keeps naming the song and its time');
     await page.click('#player [data-player-toggle]');

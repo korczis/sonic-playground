@@ -179,14 +179,15 @@ window.Sonic.module('explorer', function mount() {
   // title or the artist, the card's text, the review (how often).
   function score(it, units) {
     var w = it.words;
-    // Of each unit's alternatives, the one this track holds.
+    // Of each unit's alternatives, the one this track holds (score runs only for a hit, so
+    // when none before it does, the last one is it).
     var pats = units.map(function (alts) {
-      for (var i = 0; i < alts.length; i += 1) {
+      for (var i = 0; i < alts.length - 1; i += 1) {
         var p = alts[i];
         if (w.title.indexOf(p) >= 0 || w.artist.indexOf(p) >= 0 || w.text.indexOf(p) >= 0
           || w.review.indexOf(p) >= 0) return p;
       }
-      return alts[0];
+      return alts[alts.length - 1];
     });
     var all = pats.join('').replace(/ {2}/g, ' ');
     var s = (isAll(w.title, all) || isAll(w.artist, all) ? 64 : 0)

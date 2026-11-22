@@ -24,6 +24,10 @@ def executable(path: Path) -> list[int]:
     lines: set[int] = set()
 
     def walk(code: types.CodeType) -> None:
+        # Python 3.14 compiles annotations into a lazy __annotate__ (PEP 649) that only runs when
+        # someone reads them: a signature's continuation line lives there and never "runs".
+        if code.co_name == "__annotate__":
+            return
         for _, _, line in code.co_lines():
             if line is not None:
                 lines.add(line)
