@@ -12,7 +12,7 @@ instrument = ["vocals", "synthesizer"]
 [extra]
 release_year = "2000"
 country = "US"
-musicbrainz = { recording = "4a47f6a3-d1a2-46dd-a8b5-b8b8f4c48bb2", artist = "b004d3c7-5402-4034-be67-13eeccc7b1af", release = "ad6aa380-097d-4f61-b459-b90473f90820" }
+musicbrainz = { recording = "1839813d-361e-471e-8bc1-9f3f1bdc219e", artist = "b004d3c7-5402-4034-be67-13eeccc7b1af", release = "6cdb5ee5-b5c6-4cd4-abed-cac6bfd131a8" }
 album = "Kittenz and Thee Glitz"
 publisher = "City Rockers"
 youtube = "https://www.youtube.com/embed/tYjKDEnYTyI"

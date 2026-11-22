@@ -11,7 +11,7 @@ instrument = ["vocals"]
 
 [extra]
 country = "FR"
-musicbrainz = { recording = "0af00b49-6131-4edc-9e5d-8f155dbee3a6", artist = "bc7ec666-4700-4f48-a797-5c607f84a890", release = "f16e54a4-b5dd-4d02-b8d3-d59751cef284" }
+musicbrainz = { recording = "6f0c8ed5-89fa-4ac5-89f1-7e8d8f0434e3", artist = "bc7ec666-4700-4f48-a797-5c607f84a890", release = "8cc0ee1e-6ecc-4827-b6d1-357e100572cb" }
 release_year = "1998"
 album = "First Album"
 publisher = "International DeeJay Gigolo Records"

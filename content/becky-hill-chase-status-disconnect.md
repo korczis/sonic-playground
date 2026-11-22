@@ -15,7 +15,7 @@ album = "Believe Me Now?"
 release_year = "2023"
 country = "GB"
 isrc = "GBUM72306155"
-musicbrainz = { recording = "fd6cde2d-b5df-4a2c-83e0-36be3900245e", artist = "27bc6f5b-4585-49ab-8d7d-c62b59f5f010", release = "a654ac59-dfcb-47e8-9cc5-ea111dc9a9a6" }
+musicbrainz = { recording = "fd6cde2d-b5df-4a2c-83e0-36be3900245e", artist = "27bc6f5b-4585-49ab-8d7d-c62b59f5f010", release = "1996f7bc-ea68-4051-a489-fb631a23cf51" }
 youtube = "https://www.youtube.com/embed/7va_uL1ZnTg"
 connections = [
   { source = "john-newman-kove-love-me-again-kove-remix.md", why = "Another big British pop voice carried into drum and bass, here by a remixer rather than by the song's own producers." },

@@ -12,7 +12,7 @@ instrument = ["vocals", "guitar", "synthesizer"]
 [extra]
 country = "CA"
 isrc = "GBCEL1500297"
-musicbrainz = { recording = "73fc86c5-716f-43dc-8be9-2951c84e2fa2", artist = "7ce3d484-d681-437c-8d33-913261d0ad51", release = "e91f4bf8-c4ed-4477-8b8d-03babe421583" }
+musicbrainz = { recording = "73fc86c5-716f-43dc-8be9-2951c84e2fa2", artist = "7ce3d484-d681-437c-8d33-913261d0ad51", release = "9b1a2070-7f55-4d00-bd9d-9298a2f5e739" }
 release_year = "2015"
 album = "Days Gone By"
 publisher = "Domino"

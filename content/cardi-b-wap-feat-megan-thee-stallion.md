@@ -13,7 +13,7 @@ instrument = ["vocals", "drum machine", "bass", "sampler"]
 release_year = "2020"
 country = "US"
 isrc = "USAT22005111"
-musicbrainz = { recording = "3af602f0-e273-4d66-83c2-8d55243cc56b", artist = "2f3c4d70-0462-40da-bba3-0aec5772c556", release = "8bb5807f-d41a-4484-a8bb-024b8fdc9c6e" }
+musicbrainz = { recording = "3af602f0-e273-4d66-83c2-8d55243cc56b", artist = "2f3c4d70-0462-40da-bba3-0aec5772c556", release = "0c22d54d-7a8c-4ec5-baaa-4dd3f3b7ad1f" }
 album = "Am I the Drama?"
 publisher = "Atlantic Records"
 youtube = "https://www.youtube.com/embed/hsm4poTWjMs"

@@ -12,7 +12,7 @@ instrument = ["vocals", "vocoder", "guitar", "bass guitar", "drums", "percussion
 [extra]
 country = "FR"
 isrc = "USQX91300105"
-musicbrainz = { recording = "dbc0da50-4bc6-4230-9e7b-136b5dc2b31a", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "d2db9a03-5f0a-4532-952f-571fe588f509" }
+musicbrainz = { recording = "dbc0da50-4bc6-4230-9e7b-136b5dc2b31a", artist = "056e4f3e-d505-4dad-8ec1-d04f521cbb56", release = "36e2aede-346d-4931-8565-78d810d167c7" }
 publisher = "Columbia"
 release_year = "2013"
 album = "Random Access Memories"

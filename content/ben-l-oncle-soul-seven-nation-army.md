@@ -12,7 +12,7 @@ instrument = ["vocals"]
 [extra]
 country = "FR"
 isrc = "FRUM70901063"
-musicbrainz = { recording = "47d17e6e-4a32-48c3-a4e0-4603a5d41a9b", artist = "2dbdbbad-9427-4360-b6c7-13a2f7214627", release = "c8330233-0b2f-47a7-8ad8-df98f49dc752" }
+musicbrainz = { recording = "47d17e6e-4a32-48c3-a4e0-4603a5d41a9b", artist = "2dbdbbad-9427-4360-b6c7-13a2f7214627", release = "13f96ef1-6784-4ba0-85da-7f945c81493f" }
 publisher = "Motown"
 release_year = "2010"
 album = "Ben L'Oncle Soul"

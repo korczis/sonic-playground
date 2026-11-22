@@ -11,7 +11,7 @@ instrument = ["alphorn", "keyboards", "sampler"]
 
 [extra]
 country = "CH"
-musicbrainz = { recording = "9a256e7d-3faf-4b83-97d4-420b8827bf47", artist = "1756db99-9747-44db-a6f2-3037aa37ef8d", release = "139e7fae-8bec-4cc7-8246-bd45bc5db589" }
+musicbrainz = { recording = "9a256e7d-3faf-4b83-97d4-420b8827bf47", artist = "a3081657-68e6-4e6e-9553-d2ec21118f1f", release = "139e7fae-8bec-4cc7-8246-bd45bc5db589" }
 publisher = "Straight Ahead"
 release_year = "2001"
 album = "Hybrid Organics (Expanded)"

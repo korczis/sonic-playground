@@ -12,7 +12,7 @@ instrument = ["vocals", "synthesizer"]
 [extra]
 country = "CO"
 isrc = "GBCEL1900764"
-musicbrainz = { recording = "fdfc2715-4c4b-4fbe-950e-551130dce894", artist = "a5e221c1-da44-4ebb-a2ea-1a704782413c", release = "ff3eacc5-ca17-44a5-afa7-fa7e7056d7fa" }
+musicbrainz = { recording = "fdfc2715-4c4b-4fbe-950e-551130dce894", artist = "a5e221c1-da44-4ebb-a2ea-1a704782413c", release = "240f4588-031f-4d78-b693-d401b33487b0" }
 publisher = "Domino"
 release_year = "2020"
 album = "acts of rebellion"

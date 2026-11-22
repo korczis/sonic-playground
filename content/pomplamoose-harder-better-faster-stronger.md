@@ -15,7 +15,7 @@ track = "Harder, Better, Faster, Stronger"
 release_year = "2019"
 country = "US"
 isrc = "QZGWW1980916"
-musicbrainz = { recording = "dbb5b9c8-2463-4ef0-92a8-36acec52d030", artist = "63d61461-ecfe-4057-896b-3ba3ff3111eb", release = "aa3cacad-2c88-43a0-86c6-31347a2c3658" }
+musicbrainz = { recording = "dbb5b9c8-2463-4ef0-92a8-36acec52d030", artist = "63d61461-ecfe-4057-896b-3ba3ff3111eb", release = "4288b126-bf78-424c-b54a-9ef487ac8e11" }
 album = "Daft Pomp"
 video_duration = "4:21"
 youtube = "https://www.youtube.com/embed/fUpdfpOPf4Y"

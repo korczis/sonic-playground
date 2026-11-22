@@ -14,7 +14,7 @@ publisher = "PMR Records"
 album = "Settle (Special Edition)"
 release_year = "2013"
 country = "GB"
-musicbrainz = { recording = "f103a196-c211-479e-86fb-4d45f3b5f75c", artist = "ae65c507-d9a0-4d42-9a6c-2b1f82158b9f", release = "30470346-55d6-4965-962c-8c1c63255500" }
+musicbrainz = { recording = "0339c26e-5ad8-4f37-94a1-86460b160570", artist = "ae65c507-d9a0-4d42-9a6c-2b1f82158b9f", release = "8117004b-e3b9-4203-882c-45b9db809f3a" }
 youtube = "https://www.youtube.com/embed/WLxyfzoPxyQ"
 connections = [
   { source = "chuck-roberts-in-the-beginning.md", why = "The voice of the 1987 My House sermon, the most sampled speech in house music: the tradition of preaching over a house beat that Disclosure drew on." },

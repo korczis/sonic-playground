@@ -13,7 +13,7 @@ instrument = ["synthesizer", "saxophone", "drum machine"]
 release_year = "2009"
 country = "DE"
 isrc = "DEDU60900008"
-musicbrainz = { recording = "e76beeda-bdab-49d9-b0aa-11b82ce956aa", artist = "a8704ddb-1ffe-4049-ae53-2d91fec2c143", release = "3745b087-ad32-456a-baa6-159834be72a4" }
+musicbrainz = { recording = "e76beeda-bdab-49d9-b0aa-11b82ce956aa", artist = "a8704ddb-1ffe-4049-ae53-2d91fec2c143", release = "7d7a572f-8f02-4b85-ae23-157b80699e6a" }
 publisher = "Freude am Tanzen"
 album = "In Between"
 youtube = "https://www.youtube.com/embed/5syX_6jrvJ0"

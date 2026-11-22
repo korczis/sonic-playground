@@ -15,7 +15,7 @@ album = "Voyager"
 release_year = "2016"
 country = "FR"
 isrc = "FRU661610102"
-musicbrainz = { recording = "2c453b71-acbf-491d-97fd-d2c7482f152c", artist = "1f064e2d-aa55-4631-8f62-e2c14bbe1f4e", release = "353b0c8c-8973-4fb2-a1dc-92ce12f115a5" }
+musicbrainz = { recording = "2c453b71-acbf-491d-97fd-d2c7482f152c", artist = "1f064e2d-aa55-4631-8f62-e2c14bbe1f4e", release = "97264b7f-7f03-49d6-8387-41919848de44" }
 youtube = "https://www.youtube.com/embed/SVIfhjrZT00"
 connections = [
   { source = "daft-punk-giorgio-by-moroder.md", why = "Another French electronic act's homage to Giorgio Moroder, whose disco beat critics heard driving Waiting for the Stars." },

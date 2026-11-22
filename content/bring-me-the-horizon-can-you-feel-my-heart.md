@@ -12,7 +12,7 @@ instrument = ["vocals", "guitar", "bass guitar", "drums", "synthesizer"]
 [extra]
 country = "GB"
 isrc = "GBARL1202415"
-musicbrainz = { recording = "863dd3b3-c525-427c-a0fb-faa75b1dde37", artist = "074e3847-f67f-49f9-81f1-8c8cea147e8e", release = "0026b5c3-2261-43cc-ad7a-bef48b21df06" }
+musicbrainz = { recording = "863dd3b3-c525-427c-a0fb-faa75b1dde37", artist = "074e3847-f67f-49f9-81f1-8c8cea147e8e", release = "4a39c597-6901-4c44-8a93-92d2f65ce2d8" }
 publisher = "RCA Records"
 release_year = "2013"
 album = "Sempiternal"

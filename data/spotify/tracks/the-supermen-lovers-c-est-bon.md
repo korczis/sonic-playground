@@ -6,7 +6,7 @@ artists: ["The Supermen Lovers", "Herr Styler", "Cristine"]
 album: "Between The Ages"
 duration: "3:19"
 spotify: {"track": "5ALcK9iZxr3iMOXQTPH52r", "album": "2WNbAMUEf7ijmefa6uBTK3", "artists": ["08dJ0NJ9jMf8qdLmdhQ2yA", "3lzemEsH825kWB2wQfL4Je", "7uApw5Pmo2aehTnBYeaJ0n"]}
-keys: {"fold": "thesupermenlovers|cestbon", "musicbrainz": "97653d73-944a-4792-8656-23e3eb4a9520"}
+keys: {"fold": "thesupermenlovers|cestbon", "musicbrainz": "a2ee27d0-f2e5-4de4-a3b7-78f19cd5079e"}
 review: "the-supermen-lovers-herr-styler-cristine-c-est-bon.md"
 status: "present"
 liked: true

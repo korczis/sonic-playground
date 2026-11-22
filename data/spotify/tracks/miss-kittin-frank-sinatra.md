@@ -6,7 +6,7 @@ artists: ["Miss Kittin", "The Hacker"]
 album: "First Album (2009 Reissue)"
 duration: "3:56"
 spotify: {"track": "1hTBci21ebFOUBjPHoJ4Zz", "album": "4YSmNOiY47nx2VodZ8N1I8", "artists": ["3QhNv79NoIvarU6N57GBzL", "763V8ZisRsw5kCoquzKTUp"]}
-keys: {"fold": "misskittin|franksinatra", "musicbrainz": "0af00b49-6131-4edc-9e5d-8f155dbee3a6"}
+keys: {"fold": "misskittin|franksinatra", "musicbrainz": "6f0c8ed5-89fa-4ac5-89f1-7e8d8f0434e3"}
 review: "miss-kittin-frank-sinatra.md"
 status: "present"
 liked: false

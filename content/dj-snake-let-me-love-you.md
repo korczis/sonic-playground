@@ -14,7 +14,7 @@ publisher = "Interscope Records"
 album = "Encore"
 release_year = "2016"
 country = "FR"
-musicbrainz = { recording = "324cf63f-6cd4-483c-a81b-5e7fadeef7db", artist = "31445b1e-96f3-4c7f-84ec-dd02e647e690", release = "beb1b925-684e-4e4f-b15a-9460513e4709" }
+musicbrainz = { recording = "8c162756-e8ae-4dd9-945b-23193a81d745", artist = "31445b1e-96f3-4c7f-84ec-dd02e647e690", release = "a21aec3a-b579-4020-8f5a-aebfd092d0a3" }
 youtube = "https://www.youtube.com/embed/euCqAq6BRa4"
 connections = [
   { source = "kygo-maty-noyes-stay.md", why = "Tropical house of the same years in which a producer frames a pleading vocal asking someone to stay." },

@@ -12,7 +12,7 @@ instrument = ["vocals", "drum machine", "bass", "keyboard", "handclaps"]
 [extra]
 country = "US"
 isrc = "USQ4E1300686"
-musicbrainz = { recording = "f367ad6e-efd5-4496-aba5-21a4edcd82c6", artist = "149f91ef-1287-46da-9a8e-87fee02f1471", release = "bf45bdf7-f9b0-48fb-ab22-93a5ccfe963f" }
+musicbrainz = { recording = "f367ad6e-efd5-4496-aba5-21a4edcd82c6", artist = "149f91ef-1287-46da-9a8e-87fee02f1471", release = "0ed8c55b-1c54-475e-8dba-4311b5e87a97" }
 release_year = "2013"
 album = "G I R L"
 publisher = "Back Lot Music / Columbia"

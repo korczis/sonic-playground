@@ -44,6 +44,7 @@ Every command prints JSON. Exit codes: 0 ok, 1 contract violation or unfinished 
 from __future__ import annotations
 
 import argparse
+import atexit
 import difflib
 import json
 import os
@@ -521,13 +522,36 @@ def mb_get(url: str, args) -> dict:
     _mb_last[0] = time.monotonic()
     if "error" in data:  # still busy after every retry: an answer about the service, not the query
         raise RuntimeError(f"MusicBrainz is busy, not cached: {url}")
-    MB_CACHE.parent.mkdir(parents=True, exist_ok=True)
-    cache = {**mb_cache(), url: data}  # what writers running beside this one saved meanwhile
-    tmp = MB_CACHE.with_name(f"{MB_CACHE.name}.{os.getpid()}.tmp")
-    tmp.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
-    os.replace(tmp, MB_CACHE)  # atomic: a reader never sees half a file
     seen[url] = data
+    _mb_pending[url] = data
+    if len(_mb_pending) >= MB_FLUSH_EVERY:
+        mb_flush()
     return data
+
+
+MB_FLUSH_EVERY = 25  # answers held before the cache file (tens of MB) is rewritten
+_mb_pending: dict[str, dict] = {}
+
+
+def mb_flush() -> None:
+    """Merge this process's new answers into the cache file. The read, merge and replace run
+    under an exclusive lock, so two writers running side by side never drop each other's
+    answers; the replace is atomic, so a reader never sees half a file."""
+    if not _mb_pending:
+        return
+    import fcntl
+
+    MB_CACHE.parent.mkdir(parents=True, exist_ok=True)
+    with open(MB_CACHE.with_name(f"{MB_CACHE.name}.lock"), "w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        cache = {**mb_cache(), **_mb_pending}
+        tmp = MB_CACHE.with_name(f"{MB_CACHE.name}.{os.getpid()}.tmp")
+        tmp.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
+        os.replace(tmp, MB_CACHE)
+    _mb_pending.clear()
+
+
+atexit.register(mb_flush)
 
 
 def mb_quote(text: str) -> str:

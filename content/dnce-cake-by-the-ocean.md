@@ -15,7 +15,7 @@ album = "Swaay"
 release_year = "2015"
 country = "US"
 isrc = "USUM71514637"
-musicbrainz = { recording = "495a17fb-3fbb-4847-a601-b9445ee5277c", artist = "b02dc689-7859-461d-b70e-9fe1f64fddce", release = "51a6b70a-5c5d-44c2-9f2c-42b0a6771b81" }
+musicbrainz = { recording = "495a17fb-3fbb-4847-a601-b9445ee5277c", artist = "b02dc689-7859-461d-b70e-9fe1f64fddce", release = "f81cb5c9-de16-4f11-aab5-d4c0b52f95ff" }
 youtube = "https://www.youtube.com/embed/vWaRiD5ym74"
 connections = [
   { source = "daft-punk-pharrell-williams-nile-rodgers-get-lucky-radio-edit.md", why = "The disco revival of 2013 that opened radio to the 1970s-inspired dance-pop Cake By The Ocean brought back two years later." },

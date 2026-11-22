@@ -2126,7 +2126,7 @@
      },
      "name": "Forgotten Places",
      "sameAs": [
-      "https://musicbrainz.org/recording/6e0bb16c-dd2d-4dec-803f-4afb5b8788c1",
+      "https://musicbrainz.org/recording/428ee932-5ed7-4951-8ce1-94a05254b39c",
       "https://www.youtube.com/watch?v=Hs86ddB4sYA"
      ]
     },
@@ -9345,7 +9345,7 @@
      },
      "name": "Feel The Vibe",
      "sameAs": [
-      "https://musicbrainz.org/recording/6683552b-32df-4ea8-b0f3-09ce79e38129",
+      "https://musicbrainz.org/recording/207ddf87-1b10-4f3d-ade5-dda3061ed932",
       "https://www.youtube.com/watch?v=889H0Am7vFo"
      ]
     },
@@ -14667,7 +14667,8 @@
      "@type": "MusicRecording",
      "byArtist": {
       "@type": "MusicGroup",
-      "name": "Beltran & Mandragora"
+      "name": "Beltran & Mandragora",
+      "sameAs": "https://musicbrainz.org/artist/355be781-1147-41d9-8ac7-5690ea1578c3"
      },
      "datePublished": "2023",
      "genre": [
@@ -14679,7 +14680,10 @@
       "@type": "MusicAlbum",
       "name": "Moonlight"
      },
-     "name": "Moonlight"
+     "name": "Moonlight",
+     "sameAs": [
+      "https://musicbrainz.org/recording/57265656-03af-47a8-bc1e-7e2227f2c6d9"
+     ]
     },
     {
      "@id": "https://korczis.github.io/sonic-playground/cs/beltran-mandragora-moonlight/#review",
@@ -30667,7 +30671,7 @@
      },
      "name": "Put Your Records On",
      "sameAs": [
-      "https://musicbrainz.org/recording/601e5cb7-c9f0-4227-b72a-f0a5abad1cd4",
+      "https://musicbrainz.org/recording/a2ca096d-b51b-4bd5-bda0-a0875c5f9657",
       "https://www.youtube.com/watch?v=rjOhZZyn30k"
      ]
     },
@@ -35584,7 +35588,7 @@
      },
      "name": "Give Life Back to Music",
      "sameAs": [
-      "https://musicbrainz.org/recording/4383e23d-59a3-4631-8727-0b3248061cf9",
+      "https://musicbrainz.org/recording/0c871a4a-efdf-47f8-98c2-cc277f806d2f",
       "https://www.youtube.com/watch?v=IluRBvnYMoY"
      ]
     },
@@ -35810,7 +35814,7 @@
      },
      "name": "Harder, Better, Faster, Stronger",
      "sameAs": [
-      "https://musicbrainz.org/recording/0b064e82-a1cf-4821-b7d9-7313ae89d63c",
+      "https://musicbrainz.org/recording/f1a6a40f-78f5-4918-968d-f64363bae94c",
       "https://www.youtube.com/watch?v=gAjR4_CbPpQ"
      ]
     },
@@ -38527,6 +38531,7 @@
      },
      "name": "Hey Hey",
      "sameAs": [
+      "https://musicbrainz.org/recording/1cec6359-8303-424f-9f31-6edbdd5c6736",
       "https://www.youtube.com/watch?v=5dgimjMhAIk"
      ]
     },
@@ -39589,7 +39594,7 @@
      },
      "name": "When A Fire Starts To Burn",
      "sameAs": [
-      "https://musicbrainz.org/recording/f103a196-c211-479e-86fb-4d45f3b5f75c",
+      "https://musicbrainz.org/recording/0339c26e-5ad8-4f37-94a1-86460b160570",
       "https://www.youtube.com/watch?v=WLxyfzoPxyQ"
      ]
     },
@@ -41408,7 +41413,7 @@
      },
      "name": "Let Me Love You",
      "sameAs": [
-      "https://musicbrainz.org/recording/324cf63f-6cd4-483c-a81b-5e7fadeef7db",
+      "https://musicbrainz.org/recording/8c162756-e8ae-4dd9-945b-23193a81d745",
       "https://www.youtube.com/watch?v=euCqAq6BRa4"
      ]
     },
@@ -42337,6 +42342,7 @@
      },
      "name": "É Isso Ai",
      "sameAs": [
+      "https://musicbrainz.org/recording/27019458-9cce-44e0-ada3-de6f363c4ed7",
       "https://www.youtube.com/watch?v=YAGOae7884E"
      ]
     },
@@ -47418,6 +47424,7 @@
      },
      "name": "Eu Bebo Sim",
      "sameAs": [
+      "https://musicbrainz.org/recording/2c5b5be7-9635-4b86-9f33-860224f13afa",
       "https://www.youtube.com/watch?v=7ndSPGXr3Ic"
      ]
     },
@@ -50611,7 +50618,7 @@
      "byArtist": {
       "@type": "MusicGroup",
       "name": "Farolfi & Gambafreaks vs Moloko",
-      "sameAs": "https://musicbrainz.org/artist/f3fdca54-02ff-42c5-898a-468453d29d43"
+      "sameAs": "https://musicbrainz.org/artist/2f94016a-3880-4d8c-9af9-0e197ee77189"
      },
      "datePublished": "2005",
      "genre": [
@@ -50731,10 +50738,10 @@
       "@type": "MusicAlbum",
       "name": "Halfway Between the Gutter and the Stars"
      },
-     "isrcCode": "GBBMQ0000090",
+     "isrcCode": "GBBMQ0000114",
      "name": "Sunset (Bird of Prey)",
      "sameAs": [
-      "https://musicbrainz.org/recording/2f4416e3-b0cd-4577-a1cf-a717fc200877",
+      "https://musicbrainz.org/recording/31a0eae0-8af8-4512-9f0f-4d1bf35f2c14",
       "https://www.youtube.com/watch?v=zKEWdRPRf3I"
      ]
     },
@@ -51272,7 +51279,7 @@
      },
      "name": "My Moon My Man",
      "sameAs": [
-      "https://musicbrainz.org/recording/10dec8b6-1af0-47b0-8c90-296b85d2e1b9",
+      "https://musicbrainz.org/recording/4cd1c84e-0b4f-4e44-8f57-df0a7aa938a2",
       "https://www.youtube.com/watch?v=ltYq-jalYm0"
      ]
     },
@@ -51643,7 +51650,7 @@
      },
      "name": "Madame Hollywood (feat. Miss Kittin)",
      "sameAs": [
-      "https://musicbrainz.org/recording/4a47f6a3-d1a2-46dd-a8b5-b8b8f4c48bb2",
+      "https://musicbrainz.org/recording/1839813d-361e-471e-8bc1-9f3f1bdc219e",
       "https://www.youtube.com/watch?v=tYjKDEnYTyI"
      ]
     },
@@ -52216,10 +52223,10 @@
       "@type": "MusicAlbum",
       "name": "Fernanda Porto"
      },
-     "isrcCode": "BRWMB0200783",
+     "isrcCode": "BRTPA0200182",
      "name": "Sambassim",
      "sameAs": [
-      "https://musicbrainz.org/recording/bd9671bd-b531-4bd5-afb8-162dd83ec62e",
+      "https://musicbrainz.org/recording/93678096-886b-4d9a-936c-5f28f6593090",
       "https://www.youtube.com/watch?v=hlVJ7cBAqRQ"
      ]
     },
@@ -53129,7 +53136,7 @@
      },
      "name": "Emerge",
      "sameAs": [
-      "https://musicbrainz.org/recording/f95bb37b-1f7f-4cc7-a140-5d0f2ce8493a",
+      "https://musicbrainz.org/recording/4b34fd71-e6b7-4ef0-a14e-16449f6f630a",
       "https://www.youtube.com/watch?v=HHbAtxSTXo0"
      ]
     },
@@ -56919,10 +56926,10 @@
       "@type": "MusicAlbum",
       "name": "The Rising Tied"
      },
-     "isrcCode": "USWB10603333",
+     "isrcCode": "USWB10502457",
      "name": "Remember The Name",
      "sameAs": [
-      "https://musicbrainz.org/recording/a57dd705-898c-4aa4-a7ea-d35637b1884b",
+      "https://musicbrainz.org/recording/58efc946-0e19-4131-bc8d-c4d4bb7c2834",
       "https://www.youtube.com/watch?v=VDvr08sCPOc"
      ]
     },
@@ -58231,7 +58238,7 @@
      },
      "name": "You Bring Me Down",
      "sameAs": [
-      "https://musicbrainz.org/recording/606cf38e-9863-4b05-8dba-6b2d24f701ef",
+      "https://musicbrainz.org/recording/3e24c189-7a8a-4ed7-a51c-185c6f427b2d",
       "https://www.youtube.com/watch?v=mxAc6fLKf-Y"
      ]
     },
@@ -64362,7 +64369,7 @@
      },
      "name": "Imagination (Weiss Remix)",
      "sameAs": [
-      "https://musicbrainz.org/recording/e1a0894d-2aec-4b2d-b765-3339c73c6048",
+      "https://musicbrainz.org/recording/027d6281-9595-4c01-8e1b-86489b26c9b6",
       "https://www.youtube.com/watch?v=ZrzoiTXFn3w"
      ]
     },
@@ -82826,10 +82833,10 @@
       "@type": "MusicAlbum",
       "name": "Mind Body & Soul (Special Edition)"
      },
-     "isrcCode": "USEVS0400013",
+     "isrcCode": "USESC0400009",
      "name": "Less Is More",
      "sameAs": [
-      "https://musicbrainz.org/recording/0797a933-5b1c-49f9-9e6c-f935b7a070c8",
+      "https://musicbrainz.org/recording/b5bcd836-1d7d-493c-98df-0223b3e29715",
       "https://www.youtube.com/watch?v=npM_zvBNTGo"
      ]
     },
@@ -87480,7 +87487,7 @@
      },
      "name": "Disco On the Dancefloor",
      "sameAs": [
-      "https://musicbrainz.org/recording/28a20955-bd6d-49d2-8600-5b8386f55812",
+      "https://musicbrainz.org/recording/9add0ecf-89f1-4fb1-906e-4823c4094cb2",
       "https://www.youtube.com/watch?v=B0xxvTucw7w"
      ]
     },
@@ -88622,7 +88629,7 @@
      },
      "name": "Moments",
      "sameAs": [
-      "https://musicbrainz.org/recording/a55601a6-54bf-4c35-8bf5-95d21b8b11ac",
+      "https://musicbrainz.org/recording/5a10f362-c021-43ef-b2e7-3e44669314ad",
       "https://www.youtube.com/watch?v=ZbDQ8SVqHZw"
      ]
     },
@@ -95651,7 +95658,7 @@
      "byArtist": {
       "@type": "MusicGroup",
       "name": "Lucky Luke",
-      "sameAs": "https://musicbrainz.org/artist/ac3b8052-6dc1-448e-a678-a20bc9975e90"
+      "sameAs": "https://musicbrainz.org/artist/b00f7edd-cc9a-4539-a641-ad0ddc6acf20"
      },
      "datePublished": "2019",
      "genre": [
@@ -95661,7 +95668,7 @@
      ],
      "name": "Cooler Than Me",
      "sameAs": [
-      "https://musicbrainz.org/recording/3efcecdb-ae4f-40bb-9013-8a49144ac54d",
+      "https://musicbrainz.org/recording/5d635aca-05f0-4aff-b4cf-81f21cfc4894",
       "https://www.youtube.com/watch?v=A3pJB4m713M"
      ]
     },
@@ -104091,7 +104098,7 @@
      },
      "name": "Paddling Out",
      "sameAs": [
-      "https://musicbrainz.org/recording/acef882f-b5ab-4511-b787-a87641bec14c",
+      "https://musicbrainz.org/recording/bb0201ea-acc3-4f6d-be59-390c64dea954",
       "https://www.youtube.com/watch?v=WCNQ2mc_Zzc"
      ]
     },
@@ -104534,7 +104541,7 @@
      },
      "name": "Frank Sinatra",
      "sameAs": [
-      "https://musicbrainz.org/recording/0af00b49-6131-4edc-9e5d-8f155dbee3a6",
+      "https://musicbrainz.org/recording/6f0c8ed5-89fa-4ac5-89f1-7e8d8f0434e3",
       "https://www.youtube.com/watch?v=ouWAymYiUn8"
      ]
     },
@@ -104750,7 +104757,7 @@
      },
      "name": "A New Error",
      "sameAs": [
-      "https://musicbrainz.org/recording/2efbe7f4-3402-4a06-b2c4-bc6eaccad049",
+      "https://musicbrainz.org/recording/ee46b53d-9664-4d94-9896-d61476ee4e31",
       "https://www.youtube.com/watch?v=QpxFcMYRV08"
      ]
     },
@@ -106462,7 +106469,7 @@
      },
      "name": "No Yellow Lines",
      "sameAs": [
-      "https://musicbrainz.org/recording/df8f2c4d-3657-4632-a615-c42ed79241de",
+      "https://musicbrainz.org/recording/352a3e4c-0a85-4e1f-a98a-f8614e17ce64",
       "https://www.youtube.com/watch?v=ApH1k54daoI"
      ]
     },
@@ -107946,7 +107953,7 @@
      },
      "name": "Time For Us",
      "sameAs": [
-      "https://musicbrainz.org/recording/4d8568c2-5603-4a22-be7d-42ea9db3e3dc",
+      "https://musicbrainz.org/recording/26e0736f-c09c-48d7-849c-8ffcd13c4879",
       "https://www.youtube.com/watch?v=fyVYRrYiVSc"
      ]
     },
@@ -109917,7 +109924,7 @@
      ],
      "name": "Trusting Blind",
      "sameAs": [
-      "https://musicbrainz.org/recording/957629f2-7d7b-4828-9b8e-c6f9fdc1f5d7",
+      "https://musicbrainz.org/recording/6f2a425c-83bd-493f-889d-fa2555a4906c",
       "https://www.youtube.com/watch?v=2dmRpoG2hao"
      ]
     },
@@ -117557,10 +117564,10 @@
       "@type": "MusicAlbum",
       "name": "The Dark Side of the Moon"
      },
-     "isrcCode": "GBAYE7300322",
+     "isrcCode": "GBAYE0300337",
      "name": "Time",
      "sameAs": [
-      "https://musicbrainz.org/recording/0e11c0fd-a1da-4b88-a438-7ef55c5809ec",
+      "https://musicbrainz.org/recording/41959321-f2bb-4580-aa19-16248fe665d3",
       "https://www.youtube.com/watch?v=Qr0-7Ds79zo"
      ]
     },
@@ -118269,10 +118276,10 @@
       "@type": "MusicAlbum",
       "name": "Caravelle"
      },
-     "isrcCode": "FRPDG1600020",
+     "isrcCode": "FRPDG1600010",
      "name": "Canopée",
      "sameAs": [
-      "https://musicbrainz.org/recording/26d01b2d-33cd-437b-a2c3-762c47408d74",
+      "https://musicbrainz.org/recording/41fb4424-4b4b-48fb-9073-4a0f6b329998",
       "https://www.youtube.com/watch?v=f5IruTV-LGQ"
      ]
     },
@@ -122861,7 +122868,7 @@
      },
      "name": "Sugar",
      "sameAs": [
-      "https://musicbrainz.org/recording/82154a6e-eebc-4025-aef2-3c28f610e931",
+      "https://musicbrainz.org/recording/f7d5b8ba-f031-40c9-bf8a-42476976cf97",
       "https://www.youtube.com/watch?v=bvC_0foemLY"
      ]
     },
@@ -131788,7 +131795,8 @@
      "@type": "MusicRecording",
      "byArtist": {
       "@type": "MusicGroup",
-      "name": "Sworn Virgins"
+      "name": "Sworn Virgins",
+      "sameAs": "https://musicbrainz.org/artist/c95c1c94-7924-442c-a34b-b58d5ba97070"
      },
      "datePublished": "2018",
      "genre": [
@@ -131800,8 +131808,10 @@
       "@type": "MusicAlbum",
       "name": "Fifty Dollar Bills"
      },
+     "isrcCode": "GBKPL1812707",
      "name": "Burning Off My Clothes",
      "sameAs": [
+      "https://musicbrainz.org/recording/29bcecd4-1425-4e22-bca8-10f9c8cdebbd",
       "https://www.youtube.com/watch?v=oAkNT7b2nGs"
      ]
     },
@@ -138081,7 +138091,7 @@
      },
      "name": "C'est bon",
      "sameAs": [
-      "https://musicbrainz.org/recording/97653d73-944a-4792-8656-23e3eb4a9520",
+      "https://musicbrainz.org/recording/a2ee27d0-f2e5-4de4-a3b7-78f19cd5079e",
       "https://www.youtube.com/watch?v=78Yoaqu-JqM"
      ]
     },
@@ -140319,7 +140329,7 @@
      },
      "name": "Shifter",
      "sameAs": [
-      "https://musicbrainz.org/recording/f9014ca1-9132-4d46-9eab-c216d77e58c7"
+      "https://musicbrainz.org/recording/90bfaf4c-3310-45fa-bfd1-33d0286118a2"
      ]
     },
     {
@@ -142544,7 +142554,7 @@
      "byArtist": {
       "@type": "MusicGroup",
       "name": "Tweak",
-      "sameAs": "https://musicbrainz.org/artist/1756db99-9747-44db-a6f2-3037aa37ef8d"
+      "sameAs": "https://musicbrainz.org/artist/a3081657-68e6-4e6e-9553-d2ec21118f1f"
      },
      "datePublished": "2001",
      "genre": [
@@ -143472,7 +143482,7 @@
      },
      "name": "Memories",
      "sameAs": [
-      "https://musicbrainz.org/recording/e6a83985-a884-49b1-94dc-0eacdaf145b6",
+      "https://musicbrainz.org/recording/c3be4f09-f2af-442a-91b4-e50c67b3db52",
       "https://www.youtube.com/watch?v=sQ0jwAeqU5k"
      ]
     },
@@ -148944,7 +148954,7 @@
      },
      "name": "Forgotten Places",
      "sameAs": [
-      "https://musicbrainz.org/recording/6e0bb16c-dd2d-4dec-803f-4afb5b8788c1",
+      "https://musicbrainz.org/recording/428ee932-5ed7-4951-8ce1-94a05254b39c",
       "https://www.youtube.com/watch?v=Hs86ddB4sYA"
      ]
     },
@@ -155977,7 +155987,7 @@
      },
      "name": "Feel The Vibe",
      "sameAs": [
-      "https://musicbrainz.org/recording/6683552b-32df-4ea8-b0f3-09ce79e38129",
+      "https://musicbrainz.org/recording/207ddf87-1b10-4f3d-ade5-dda3061ed932",
       "https://www.youtube.com/watch?v=889H0Am7vFo"
      ]
     },
@@ -161167,7 +161177,8 @@
      "@type": "MusicRecording",
      "byArtist": {
       "@type": "MusicGroup",
-      "name": "Beltran & Mandragora"
+      "name": "Beltran & Mandragora",
+      "sameAs": "https://musicbrainz.org/artist/355be781-1147-41d9-8ac7-5690ea1578c3"
      },
      "datePublished": "2023",
      "genre": [
@@ -161179,7 +161190,10 @@
       "@type": "MusicAlbum",
       "name": "Moonlight"
      },
-     "name": "Moonlight"
+     "name": "Moonlight",
+     "sameAs": [
+      "https://musicbrainz.org/recording/57265656-03af-47a8-bc1e-7e2227f2c6d9"
+     ]
     },
     {
      "@id": "https://korczis.github.io/sonic-playground/beltran-mandragora-moonlight/#review",
@@ -176756,7 +176770,7 @@
      },
      "name": "Put Your Records On",
      "sameAs": [
-      "https://musicbrainz.org/recording/601e5cb7-c9f0-4227-b72a-f0a5abad1cd4",
+      "https://musicbrainz.org/recording/a2ca096d-b51b-4bd5-bda0-a0875c5f9657",
       "https://www.youtube.com/watch?v=rjOhZZyn30k"
      ]
     },
@@ -181553,7 +181567,7 @@
      },
      "name": "Give Life Back to Music",
      "sameAs": [
-      "https://musicbrainz.org/recording/4383e23d-59a3-4631-8727-0b3248061cf9",
+      "https://musicbrainz.org/recording/0c871a4a-efdf-47f8-98c2-cc277f806d2f",
       "https://www.youtube.com/watch?v=IluRBvnYMoY"
      ]
     },
@@ -181773,7 +181787,7 @@
      },
      "name": "Harder, Better, Faster, Stronger",
      "sameAs": [
-      "https://musicbrainz.org/recording/0b064e82-a1cf-4821-b7d9-7313ae89d63c",
+      "https://musicbrainz.org/recording/f1a6a40f-78f5-4918-968d-f64363bae94c",
       "https://www.youtube.com/watch?v=gAjR4_CbPpQ"
      ]
     },
@@ -184418,6 +184432,7 @@
      },
      "name": "Hey Hey",
      "sameAs": [
+      "https://musicbrainz.org/recording/1cec6359-8303-424f-9f31-6edbdd5c6736",
       "https://www.youtube.com/watch?v=5dgimjMhAIk"
      ]
     },
@@ -185453,7 +185468,7 @@
      },
      "name": "When A Fire Starts To Burn",
      "sameAs": [
-      "https://musicbrainz.org/recording/f103a196-c211-479e-86fb-4d45f3b5f75c",
+      "https://musicbrainz.org/recording/0339c26e-5ad8-4f37-94a1-86460b160570",
       "https://www.youtube.com/watch?v=WLxyfzoPxyQ"
      ]
     },
@@ -187224,7 +187239,7 @@
      },
      "name": "Let Me Love You",
      "sameAs": [
-      "https://musicbrainz.org/recording/324cf63f-6cd4-483c-a81b-5e7fadeef7db",
+      "https://musicbrainz.org/recording/8c162756-e8ae-4dd9-945b-23193a81d745",
       "https://www.youtube.com/watch?v=euCqAq6BRa4"
      ]
     },
@@ -188129,6 +188144,7 @@
      },
      "name": "É Isso Ai",
      "sameAs": [
+      "https://musicbrainz.org/recording/27019458-9cce-44e0-ada3-de6f363c4ed7",
       "https://www.youtube.com/watch?v=YAGOae7884E"
      ]
     },
@@ -193081,6 +193097,7 @@
      },
      "name": "Eu Bebo Sim",
      "sameAs": [
+      "https://musicbrainz.org/recording/2c5b5be7-9635-4b86-9f33-860224f13afa",
       "https://www.youtube.com/watch?v=7ndSPGXr3Ic"
      ]
     },
@@ -196196,7 +196213,7 @@
      "byArtist": {
       "@type": "MusicGroup",
       "name": "Farolfi & Gambafreaks vs Moloko",
-      "sameAs": "https://musicbrainz.org/artist/f3fdca54-02ff-42c5-898a-468453d29d43"
+      "sameAs": "https://musicbrainz.org/artist/2f94016a-3880-4d8c-9af9-0e197ee77189"
      },
      "datePublished": "2005",
      "genre": [
@@ -196313,10 +196330,10 @@
       "@type": "MusicAlbum",
       "name": "Halfway Between the Gutter and the Stars"
      },
-     "isrcCode": "GBBMQ0000090",
+     "isrcCode": "GBBMQ0000114",
      "name": "Sunset (Bird of Prey)",
      "sameAs": [
-      "https://musicbrainz.org/recording/2f4416e3-b0cd-4577-a1cf-a717fc200877",
+      "https://musicbrainz.org/recording/31a0eae0-8af8-4512-9f0f-4d1bf35f2c14",
       "https://www.youtube.com/watch?v=zKEWdRPRf3I"
      ]
     },
@@ -196839,7 +196856,7 @@
      },
      "name": "My Moon My Man",
      "sameAs": [
-      "https://musicbrainz.org/recording/10dec8b6-1af0-47b0-8c90-296b85d2e1b9",
+      "https://musicbrainz.org/recording/4cd1c84e-0b4f-4e44-8f57-df0a7aa938a2",
       "https://www.youtube.com/watch?v=ltYq-jalYm0"
      ]
     },
@@ -197201,7 +197218,7 @@
      },
      "name": "Madame Hollywood (feat. Miss Kittin)",
      "sameAs": [
-      "https://musicbrainz.org/recording/4a47f6a3-d1a2-46dd-a8b5-b8b8f4c48bb2",
+      "https://musicbrainz.org/recording/1839813d-361e-471e-8bc1-9f3f1bdc219e",
       "https://www.youtube.com/watch?v=tYjKDEnYTyI"
      ]
     },
@@ -197759,10 +197776,10 @@
       "@type": "MusicAlbum",
       "name": "Fernanda Porto"
      },
-     "isrcCode": "BRWMB0200783",
+     "isrcCode": "BRTPA0200182",
      "name": "Sambassim",
      "sameAs": [
-      "https://musicbrainz.org/recording/bd9671bd-b531-4bd5-afb8-162dd83ec62e",
+      "https://musicbrainz.org/recording/93678096-886b-4d9a-936c-5f28f6593090",
       "https://www.youtube.com/watch?v=hlVJ7cBAqRQ"
      ]
     },
@@ -198648,7 +198665,7 @@
      },
      "name": "Emerge",
      "sameAs": [
-      "https://musicbrainz.org/recording/f95bb37b-1f7f-4cc7-a140-5d0f2ce8493a",
+      "https://musicbrainz.org/recording/4b34fd71-e6b7-4ef0-a14e-16449f6f630a",
       "https://www.youtube.com/watch?v=HHbAtxSTXo0"
      ]
     },
@@ -202342,10 +202359,10 @@
       "@type": "MusicAlbum",
       "name": "The Rising Tied"
      },
-     "isrcCode": "USWB10603333",
+     "isrcCode": "USWB10502457",
      "name": "Remember The Name",
      "sameAs": [
-      "https://musicbrainz.org/recording/a57dd705-898c-4aa4-a7ea-d35637b1884b",
+      "https://musicbrainz.org/recording/58efc946-0e19-4131-bc8d-c4d4bb7c2834",
       "https://www.youtube.com/watch?v=VDvr08sCPOc"
      ]
     },
@@ -203621,7 +203638,7 @@
      },
      "name": "You Bring Me Down",
      "sameAs": [
-      "https://musicbrainz.org/recording/606cf38e-9863-4b05-8dba-6b2d24f701ef",
+      "https://musicbrainz.org/recording/3e24c189-7a8a-4ed7-a51c-185c6f427b2d",
       "https://www.youtube.com/watch?v=mxAc6fLKf-Y"
      ]
     },
@@ -209590,7 +209607,7 @@
      },
      "name": "Imagination (Weiss Remix)",
      "sameAs": [
-      "https://musicbrainz.org/recording/e1a0894d-2aec-4b2d-b765-3339c73c6048",
+      "https://musicbrainz.org/recording/027d6281-9595-4c01-8e1b-86489b26c9b6",
       "https://www.youtube.com/watch?v=ZrzoiTXFn3w"
      ]
     },
@@ -227583,10 +227600,10 @@
       "@type": "MusicAlbum",
       "name": "Mind Body & Soul (Special Edition)"
      },
-     "isrcCode": "USEVS0400013",
+     "isrcCode": "USESC0400009",
      "name": "Less Is More",
      "sameAs": [
-      "https://musicbrainz.org/recording/0797a933-5b1c-49f9-9e6c-f935b7a070c8",
+      "https://musicbrainz.org/recording/b5bcd836-1d7d-493c-98df-0223b3e29715",
       "https://www.youtube.com/watch?v=npM_zvBNTGo"
      ]
     },
@@ -232117,7 +232134,7 @@
      },
      "name": "Disco On the Dancefloor",
      "sameAs": [
-      "https://musicbrainz.org/recording/28a20955-bd6d-49d2-8600-5b8386f55812",
+      "https://musicbrainz.org/recording/9add0ecf-89f1-4fb1-906e-4823c4094cb2",
       "https://www.youtube.com/watch?v=B0xxvTucw7w"
      ]
     },
@@ -233232,7 +233249,7 @@
      },
      "name": "Moments",
      "sameAs": [
-      "https://musicbrainz.org/recording/a55601a6-54bf-4c35-8bf5-95d21b8b11ac",
+      "https://musicbrainz.org/recording/5a10f362-c021-43ef-b2e7-3e44669314ad",
       "https://www.youtube.com/watch?v=ZbDQ8SVqHZw"
      ]
     },
@@ -240069,7 +240086,7 @@
      "byArtist": {
       "@type": "MusicGroup",
       "name": "Lucky Luke",
-      "sameAs": "https://musicbrainz.org/artist/ac3b8052-6dc1-448e-a678-a20bc9975e90"
+      "sameAs": "https://musicbrainz.org/artist/b00f7edd-cc9a-4539-a641-ad0ddc6acf20"
      },
      "datePublished": "2019",
      "genre": [
@@ -240079,7 +240096,7 @@
      ],
      "name": "Cooler Than Me",
      "sameAs": [
-      "https://musicbrainz.org/recording/3efcecdb-ae4f-40bb-9013-8a49144ac54d",
+      "https://musicbrainz.org/recording/5d635aca-05f0-4aff-b4cf-81f21cfc4894",
       "https://www.youtube.com/watch?v=A3pJB4m713M"
      ]
     },
@@ -248287,7 +248304,7 @@
      },
      "name": "Paddling Out",
      "sameAs": [
-      "https://musicbrainz.org/recording/acef882f-b5ab-4511-b787-a87641bec14c",
+      "https://musicbrainz.org/recording/bb0201ea-acc3-4f6d-be59-390c64dea954",
       "https://www.youtube.com/watch?v=WCNQ2mc_Zzc"
      ]
     },
@@ -248718,7 +248735,7 @@
      },
      "name": "Frank Sinatra",
      "sameAs": [
-      "https://musicbrainz.org/recording/0af00b49-6131-4edc-9e5d-8f155dbee3a6",
+      "https://musicbrainz.org/recording/6f0c8ed5-89fa-4ac5-89f1-7e8d8f0434e3",
       "https://www.youtube.com/watch?v=ouWAymYiUn8"
      ]
     },
@@ -248928,7 +248945,7 @@
      },
      "name": "A New Error",
      "sameAs": [
-      "https://musicbrainz.org/recording/2efbe7f4-3402-4a06-b2c4-bc6eaccad049",
+      "https://musicbrainz.org/recording/ee46b53d-9664-4d94-9896-d61476ee4e31",
       "https://www.youtube.com/watch?v=QpxFcMYRV08"
      ]
     },
@@ -250592,7 +250609,7 @@
      },
      "name": "No Yellow Lines",
      "sameAs": [
-      "https://musicbrainz.org/recording/df8f2c4d-3657-4632-a615-c42ed79241de",
+      "https://musicbrainz.org/recording/352a3e4c-0a85-4e1f-a98a-f8614e17ce64",
       "https://www.youtube.com/watch?v=ApH1k54daoI"
      ]
     },
@@ -252034,7 +252051,7 @@
      },
      "name": "Time For Us",
      "sameAs": [
-      "https://musicbrainz.org/recording/4d8568c2-5603-4a22-be7d-42ea9db3e3dc",
+      "https://musicbrainz.org/recording/26e0736f-c09c-48d7-849c-8ffcd13c4879",
       "https://www.youtube.com/watch?v=fyVYRrYiVSc"
      ]
     },
@@ -253954,7 +253971,7 @@
      ],
      "name": "Trusting Blind",
      "sameAs": [
-      "https://musicbrainz.org/recording/957629f2-7d7b-4828-9b8e-c6f9fdc1f5d7",
+      "https://musicbrainz.org/recording/6f2a425c-83bd-493f-889d-fa2555a4906c",
       "https://www.youtube.com/watch?v=2dmRpoG2hao"
      ]
     },
@@ -261399,10 +261416,10 @@
       "@type": "MusicAlbum",
       "name": "The Dark Side of the Moon"
      },
-     "isrcCode": "GBAYE7300322",
+     "isrcCode": "GBAYE0300337",
      "name": "Time",
      "sameAs": [
-      "https://musicbrainz.org/recording/0e11c0fd-a1da-4b88-a438-7ef55c5809ec",
+      "https://musicbrainz.org/recording/41959321-f2bb-4580-aa19-16248fe665d3",
       "https://www.youtube.com/watch?v=Qr0-7Ds79zo"
      ]
     },
@@ -262093,10 +262110,10 @@
       "@type": "MusicAlbum",
       "name": "Caravelle"
      },
-     "isrcCode": "FRPDG1600020",
+     "isrcCode": "FRPDG1600010",
      "name": "Canopée",
      "sameAs": [
-      "https://musicbrainz.org/recording/26d01b2d-33cd-437b-a2c3-762c47408d74",
+      "https://musicbrainz.org/recording/41fb4424-4b4b-48fb-9073-4a0f6b329998",
       "https://www.youtube.com/watch?v=f5IruTV-LGQ"
      ]
     },
@@ -266571,7 +266588,7 @@
      },
      "name": "Sugar",
      "sameAs": [
-      "https://musicbrainz.org/recording/82154a6e-eebc-4025-aef2-3c28f610e931",
+      "https://musicbrainz.org/recording/f7d5b8ba-f031-40c9-bf8a-42476976cf97",
       "https://www.youtube.com/watch?v=bvC_0foemLY"
      ]
     },
@@ -275270,7 +275287,8 @@
      "@type": "MusicRecording",
      "byArtist": {
       "@type": "MusicGroup",
-      "name": "Sworn Virgins"
+      "name": "Sworn Virgins",
+      "sameAs": "https://musicbrainz.org/artist/c95c1c94-7924-442c-a34b-b58d5ba97070"
      },
      "datePublished": "2018",
      "genre": [
@@ -275282,8 +275300,10 @@
       "@type": "MusicAlbum",
       "name": "Fifty Dollar Bills"
      },
+     "isrcCode": "GBKPL1812707",
      "name": "Burning Off My Clothes",
      "sameAs": [
+      "https://musicbrainz.org/recording/29bcecd4-1425-4e22-bca8-10f9c8cdebbd",
       "https://www.youtube.com/watch?v=oAkNT7b2nGs"
      ]
     },
@@ -281410,7 +281430,7 @@
      },
      "name": "C'est bon",
      "sameAs": [
-      "https://musicbrainz.org/recording/97653d73-944a-4792-8656-23e3eb4a9520",
+      "https://musicbrainz.org/recording/a2ee27d0-f2e5-4de4-a3b7-78f19cd5079e",
       "https://www.youtube.com/watch?v=78Yoaqu-JqM"
      ]
     },
@@ -283588,7 +283608,7 @@
      },
      "name": "Shifter",
      "sameAs": [
-      "https://musicbrainz.org/recording/f9014ca1-9132-4d46-9eab-c216d77e58c7"
+      "https://musicbrainz.org/recording/90bfaf4c-3310-45fa-bfd1-33d0286118a2"
      ]
     },
     {
@@ -285753,7 +285773,7 @@
      "byArtist": {
       "@type": "MusicGroup",
       "name": "Tweak",
-      "sameAs": "https://musicbrainz.org/artist/1756db99-9747-44db-a6f2-3037aa37ef8d"
+      "sameAs": "https://musicbrainz.org/artist/a3081657-68e6-4e6e-9553-d2ec21118f1f"
      },
      "datePublished": "2001",
      "genre": [
@@ -286657,7 +286677,7 @@
      },
      "name": "Memories",
      "sameAs": [
-      "https://musicbrainz.org/recording/e6a83985-a884-49b1-94dc-0eacdaf145b6",
+      "https://musicbrainz.org/recording/c3be4f09-f2af-442a-91b4-e50c67b3db52",
       "https://www.youtube.com/watch?v=sQ0jwAeqU5k"
      ]
     },

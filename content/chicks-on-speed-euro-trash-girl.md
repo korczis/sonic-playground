@@ -13,7 +13,7 @@ instrument = ["vocals", "synthesizer", "drum machine"]
 release_year = "1998"
 country = "DE"
 isrc = "DEK590060113"
-musicbrainz = { recording = "b2c884f2-daf0-4899-bd61-cd4f4897e943", artist = "4da58f86-c7fb-4837-9ef5-423f122d2d15", release = "171937d4-708a-4c56-bca0-2fa456e56602" }
+musicbrainz = { recording = "b2c884f2-daf0-4899-bd61-cd4f4897e943", artist = "4da58f86-c7fb-4837-9ef5-423f122d2d15", release = "c6bfcddd-9e6f-4967-a2da-42cd374dd352" }
 youtube = "https://www.youtube.com/embed/JBXoZQmZoQw"
 artist = "Chicks On Speed"
 track = "Euro Trash Girl"

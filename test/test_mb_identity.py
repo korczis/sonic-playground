@@ -377,5 +377,24 @@ class AuditCommand(unittest.TestCase):
         self.assertEqual(json.loads(out.getvalue())["counts"]["unreachable"], 1)
 
 
+    def test_cache_flush_merges_with_a_concurrent_writer(self):
+        """Two processes filling the cache side by side keep both sets of answers."""
+        old, pending = track.MB_CACHE, dict(track._mb_pending)
+        track.MB_CACHE = Path(self.tmp.name) / "shared-cache.json"
+        try:
+            track.MB_CACHE.write_text(json.dumps({"https://mb/other": {"by": "the other"}}))
+            track._mb_pending.clear()
+            track._mb_pending["https://mb/mine"] = {"by": "this one"}
+            track.mb_flush()
+            cache = json.loads(track.MB_CACHE.read_text())
+            self.assertEqual(cache, {"https://mb/other": {"by": "the other"},
+                                     "https://mb/mine": {"by": "this one"}})
+            self.assertEqual(track._mb_pending, {})
+        finally:
+            track.MB_CACHE = old
+            track._mb_pending.clear()
+            track._mb_pending.update(pending)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -6,7 +6,7 @@ artists: ["DJ Snake", "Justin Bieber"]
 album: "Encore"
 duration: "3:25"
 spotify: {"track": "0lYBSQXN6rCTvUZvg9S0lU", "album": "02sEJTj1sye1JaqxqpcSCp", "artists": ["540vIaP2JwjQb9dm3aArA4", "1uNFoZAHBGtllmzznpCI3s"]}
-keys: {"fold": "djsnake|letmeloveyou", "musicbrainz": "324cf63f-6cd4-483c-a81b-5e7fadeef7db"}
+keys: {"fold": "djsnake|letmeloveyou", "musicbrainz": "8c162756-e8ae-4dd9-945b-23193a81d745"}
 review: "dj-snake-let-me-love-you.md"
 status: "present"
 liked: true

@@ -12,7 +12,7 @@ instrument = ["vocals", "synthesizer", "drum programming"]
 [extra]
 country = "US"
 isrc = "TCAAS1002680"
-musicbrainz = { recording = "d7da696d-c202-4e8c-9660-13de1b1dbda8", artist = "d1fc999f-6184-41a6-bcb1-7c59bf74a6e1", release = "e57aaabd-4510-4a2a-97fa-71d086302751" }
+musicbrainz = { recording = "d7da696d-c202-4e8c-9660-13de1b1dbda8", artist = "d1fc999f-6184-41a6-bcb1-7c59bf74a6e1", release = "465b01de-f677-4c7d-816c-2c48aa3286eb" }
 release_year = "2010"
 album = "K.Flay"
 youtube = "https://www.youtube.com/embed/7q_w_vIKoag"

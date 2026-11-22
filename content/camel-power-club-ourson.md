@@ -11,7 +11,7 @@ instrument = ["vocals", "guitar", "sampler"]
 
 [extra]
 country = "FR"
-musicbrainz = { recording = "29f1f0cc-9162-4e78-9b9c-8e79c4886589", artist = "50ff982e-6da3-4116-b648-166a87c302bd", release = "9d307a6d-5970-4dc1-85cf-5e074bfaad9e" }
+musicbrainz = { recording = "29f1f0cc-9162-4e78-9b9c-8e79c4886589", artist = "50ff982e-6da3-4116-b648-166a87c302bd", release = "71565de5-8dbf-447e-b859-9abeacc692c5" }
 release_year = "2019"
 album = "Sputnik II"
 publisher = "Bramar Records"

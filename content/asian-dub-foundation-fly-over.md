@@ -15,7 +15,7 @@ album = "Tank"
 publisher = "EMI"
 country = "GB"
 isrc = "GBFEB0700016"
-musicbrainz = { recording = "b5cf39cc-272e-4515-aa40-380fca41a1f4", artist = "db612997-f11e-424d-8b41-cf410a433656", release = "8b51274d-c1ca-42b8-a815-d4a527f91689" }
+musicbrainz = { recording = "b5cf39cc-272e-4515-aa40-380fca41a1f4", artist = "db612997-f11e-424d-8b41-cf410a433656", release = "ae223869-dc15-4c72-8964-3eb68ef64d8a" }
 youtube = "https://www.youtube.com/embed/6m3z3IAtlzk"
 connections = [
   { source = "dj-patife-sambassim-dj-patife-remix.md", why = "Another track built on the churning breakbeats of drum and bass, from the Brazilian side of the same mid-2000s scene." },

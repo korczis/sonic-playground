@@ -12,7 +12,7 @@ instrument = ["vocals"]
 [extra]
 country = "UA"
 isrc = "RUA591701134"
-musicbrainz = { recording = "d91e0de1-1f4f-4fa6-b22b-5c6966490ce2", artist = "23d0ffbe-f372-443e-81b2-28048bdea37f", release = "20f7027f-a3ad-4ed1-8aa2-28b7f2c12236" }
+musicbrainz = { recording = "d91e0de1-1f4f-4fa6-b22b-5c6966490ce2", artist = "23d0ffbe-f372-443e-81b2-28048bdea37f", release = "7ba29ad1-9c1a-4771-9d6f-8ab7c150ea5e" }
 publisher = "Warner Music Russia"
 release_year = "2017"
 album = "Black Water"

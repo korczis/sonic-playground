@@ -6,7 +6,7 @@ artists: ["Klangkarussell", "Will Heard"]
 album: "Netzwerk"
 duration: "5:01"
 spotify: {"track": "3fx25M65m6ATiKnEIDS3HK", "album": "0CoiuzFtZVRk9imDnfate2", "artists": ["041iTeoMIwXMlShuQPIVKo", "39AZSw4A8hCFWunEg2k89Z"]}
-keys: {"fold": "klangkarussell|moments", "musicbrainz": "a55601a6-54bf-4c35-8bf5-95d21b8b11ac"}
+keys: {"fold": "klangkarussell|moments", "musicbrainz": "5a10f362-c021-43ef-b2e7-3e44669314ad"}
 review: "klangkarusell-moments.md"
 status: "present"
 liked: true

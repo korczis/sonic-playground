@@ -15,7 +15,7 @@ album = "Clawfinger"
 publisher = "WEA / MVG"
 country = "SE"
 isrc = "SELBD9707030"
-musicbrainz = { recording = "0cd87b4d-a115-4e29-a020-815a8ee25ead", artist = "f16d25c6-556f-42f9-b648-5f48a8f96ec2", release = "b99714a7-49e6-4ab5-bed7-250cadc3f6ed" }
+musicbrainz = { recording = "0cd87b4d-a115-4e29-a020-815a8ee25ead", artist = "f16d25c6-556f-42f9-b648-5f48a8f96ec2", release = "035b3a84-e6b7-3eb0-91a9-539e726ee9eb" }
 youtube = "https://www.youtube.com/embed/4yG0QE9ce3U"
 connections = [
   { source = "fort-minor-remember-the-name.md", why = "Rap verses over hard, rock-weighted production: the rap-rock crossover that Clawfinger helped open in Europe in the 1990s." },

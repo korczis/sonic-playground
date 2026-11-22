@@ -14,7 +14,7 @@ album = "Collision Course"
 release_year = "2004"
 country = "US"
 isrc = "USWB10403681"
-musicbrainz = { recording = "daccb724-8023-432a-854c-e0accb6c8678", artist = "f82bcf78-5b69-4622-a5ef-73800768d9ac", release = "f51598f5-4ef9-4b8a-865d-06a077bf78cf" }
+musicbrainz = { recording = "daccb724-8023-432a-854c-e0accb6c8678", artist = "f82bcf78-5b69-4622-a5ef-73800768d9ac", release = "31d3ab1e-49dc-434b-bf0b-b43dc0f1d626" }
 youtube = "https://www.youtube.com/embed/_1oO4wzPCmE"
 connections = [
   { source = "fort-minor-remember-the-name.md", why = "Mike Shinoda's own rap project a year later, where the producer of this mash-up steps forward as the MC." },

@@ -11,7 +11,7 @@ instrument = ["vocals", "bass", "drums", "synthesizer"]
 
 [extra]
 country = "FR"
-musicbrainz = { recording = "97653d73-944a-4792-8656-23e3eb4a9520", artist = "0df6d50f-7e43-4c6a-8220-61932b67c9c5", release = "f37932d9-f76d-4046-a675-0cfef8f3c3ca" }
+musicbrainz = { recording = "a2ee27d0-f2e5-4de4-a3b7-78f19cd5079e", artist = "0df6d50f-7e43-4c6a-8220-61932b67c9c5", release = "550c75a0-87bf-444a-ac18-45491a64bffa" }
 release_year = "2011"
 album = "Between The Ages"
 publisher = "Lafessé Records"
