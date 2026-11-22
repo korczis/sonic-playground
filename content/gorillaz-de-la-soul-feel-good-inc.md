@@ -37,7 +37,7 @@ objectives = [
   "Read a music video as commentary, here a cartoon about intellectual freedom and the media.",
 ]
 listen_for = [
-  { part = "the intro", what = "A sample of A Fistful of Peanuts, Spacemonkeyz' dub version of the earlier Gorillaz single Clint Eastwood, before the song itself begins." },
+  { part = "the video's opening", what = "In the music video, not the song, a sample of A Fistful of Peanuts, Spacemonkeyz' dub version of the earlier Gorillaz single Clint Eastwood, plays as the camera rises up the tower." },
   { part = "the bass line", what = "What Sean McCarthy called a killer bass line, the riff the song starts on." },
   { part = "the chorus", what = "The windmill chorus, which the same reviewer thought could be a sixties protest anthem, carried by what Drowned in Sound called Simon Tong's Balearic house guitar." },
   { part = "the rap", what = "Trugoy's verse, written the night after he first heard the instrumental, and Maseo's laugh, which according to Albarn was him laughing at the music being made that day." },
@@ -100,7 +100,7 @@ Damon Albarn wrote the song in 2003 on the way to the Coachella festival, after 
 
 ### Intro
 
-The track opens on a sample of A Fistful of Peanuts, the Spacemonkeyz dub of the earlier Gorillaz single Clint Eastwood.
+The music video, not the song, opens on a sample of A Fistful of Peanuts, the Spacemonkeyz dub of the earlier Gorillaz single Clint Eastwood.
 
 ### Bass Line
 

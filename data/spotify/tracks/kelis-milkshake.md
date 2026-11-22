@@ -6,8 +6,9 @@ artists: ["Kelis"]
 album: "Tasty"
 duration: "3:02"
 spotify: {"track": "2cMTIlktg3M9mXYqCPqw1J", "album": "61PSy6UJB26jzBvnLOgLzI", "artists": ["0IF46mUS8NXjgHabxk2MCM"]}
-keys: {"fold": "kelis|milkshake"}
-status: "missing"
+keys: {"fold": "kelis|milkshake", "isrc": "USAR10300450", "musicbrainz": "d30afdee-6014-480f-884c-8ff8259cb27c"}
+review: "kelis-milkshake.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Tasty*, 3:02.
 A liked song.
-No review yet.
+Reviewed: content/kelis-milkshake.md.
