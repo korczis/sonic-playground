@@ -44,5 +44,6 @@ blocking.
 ## How to apply
 
 Reproduce with `CHROME_PATH=<chrome> bash scripts/verify.sh` (or `SMOKE_SWEEP=0` for the fast
-pass while iterating). A new finding gets a row here: symptom, root cause, the gate that now
+pass while iterating). Off CI that sweeps only the pages the change can affect; a finding on a
+page outside them needs `VERIFY_FULL=1` (or `SMOKE_PATHS_FILE` listing it). A new finding gets a row here: symptom, root cause, the gate that now
 refuses it.

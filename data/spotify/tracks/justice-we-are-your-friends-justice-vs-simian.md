@@ -7,7 +7,8 @@ album: "We Are Your Friends"
 duration: "4:22"
 spotify: {"track": "5f5RzlEgheGXEsYAvmYil8", "album": "6ZvHsKjcXTEF3YcY2VejIk", "artists": ["1gR0gsQYfi6joyO1dlp76N", "19rgRqYVP3LJf9tGmMWLjP"]}
 keys: {"fold": "justice|weareyourfriendsjusticevssimian"}
-status: "missing"
+review: "justice-vs-simian_we-are-your-friends.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *We Are Your Friends*, 4:22.
 A liked song.
-No review yet.
+Reviewed: content/justice-vs-simian_we-are-your-friends.md.
