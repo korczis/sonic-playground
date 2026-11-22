@@ -3,14 +3,14 @@ schema: adr/v1
 id: adr-0007
 kind: adr
 title: The owner's Spotify history is one record per song, public identity and relationships, private time
-status: proposed
+status: accepted
 date: 2026-11-14
 tags:
   - spotify
   - privacy
   - data
 provenance:
-  origin: extracted
+  origin: authored
   derived_from:
     - session:e290e809-a468-45bf-91be-e27d9cc26bab
     - file:scripts/spotify_history.py

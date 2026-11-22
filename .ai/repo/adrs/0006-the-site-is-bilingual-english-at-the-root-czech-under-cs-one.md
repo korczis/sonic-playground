@@ -3,13 +3,13 @@ schema: adr/v1
 id: adr-0006
 kind: adr
 title: The site is bilingual: English at the root, Czech under /cs/, one source of facts
-status: proposed
+status: accepted
 date: 2026-11-12
 tags:
   - i18n
   - content
 provenance:
-  origin: extracted
+  origin: authored
   derived_from:
     - file:config.toml
     - file:data/i18n
