@@ -6,14 +6,18 @@ artists: ["Røse", "Rachel K Collier"]
 album: "Craving"
 duration: "3:25"
 spotify: {"track": "46TBpWBda8EDFpjCoM6wlF", "album": "4lmUyIgW4drysa7Lz2JF6q", "artists": ["5huqNQIKJ3EOW8G2lbjiyr", "0hWL8sffP07PbVm5ilnf1o"]}
-keys: {"fold": "rose|craving"}
-status: "missing"
+keys: {"fold": "rose|craving", "isrc": "GBENL1601714"}
+review: "rose-rachel-k-collier-craving.md"
+status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 34}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Craving · Røse, Rachel K Collier
 
 From the album *Craving*, 3:25.
 A liked song.
-No review yet.
+Your Top Songs 2023: #34.
+Reviewed: content/rose-rachel-k-collier-craving.md.

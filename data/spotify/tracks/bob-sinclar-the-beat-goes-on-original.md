@@ -10,11 +10,14 @@ keys: {"fold": "bobsinclar|thebeatgoeson", "isrc": "FRQ679800202", "musicbrainz"
 review: "bob-sinclar-the-beat-goes-on.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 60}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # The beat goes on - Original · Bob Sinclar
 
 From the album *III*, 2:59.
 A liked song.
+Your Top Songs 2023: #60.
 Reviewed: content/bob-sinclar-the-beat-goes-on.md.

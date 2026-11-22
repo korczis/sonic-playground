@@ -16,6 +16,15 @@
     <a href="{{ get_url(path='@/_index.md', lang=lang) }}?{{ taxonomy.name }}={{ term.name | urlencode }}" class="{{ btn }}">{{ <icon name="search" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.combine" l={l} /> }}</a>
     <a href="{{ term.permalink }}atom.xml" class="{{ btn }}">{{ <icon name="rss" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.feed" l={l} /> }}</a>
   </div>
+  {%- if taxonomy.name == "genre" %}
+  {#- The term's genre family (data/genres.toml): its siblings, one click away. -#}
+  {%- for f in catalog.genre_families %}{% if term.name in f.names and f.terms | length > 1 %}
+  <nav aria-labelledby="family-nav" class="flex flex-wrap items-center gap-2 rounded-lg border border-gray-200 bg-white p-3 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    <a id="family-nav" href="{{ get_url(path=lp ~ 'genre', trailing_slash=true) }}#family-{{ f.id }}" class="mr-1 text-sm font-semibold text-primary-700 hover:underline dark:text-primary-400" data-i18n="genre.family.{{ f.id }}">{{ l["genre.family." ~ f.id] }}</a>
+    {{ <facet_badges terms={[]} kind="genre" l={l} limit={24} ranked={f.terms} /> }}
+  </nav>
+  {%- endif %}{% endfor %}
+  {%- endif %}
   {{ <term_grid pages={pages} catalog={catalog} l={l} heading="h2" /> }}
   {{ <pager paginator={paginator} l={l} /> }}
 </div>

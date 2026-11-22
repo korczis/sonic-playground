@@ -22,6 +22,7 @@
   </section>
   {%- endif %}
   {{ <chart_card id="chart-months" chart="months" ckey="chart.months" l={l} height="h-64" /> }}
+  {{ <chart_card id="chart-families" chart="family" ckey="chart.families" l={l} height="h-[28rem]" /> }}
   <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
     {{ <chart_card id="chart-genres" chart="genre" ckey="chart.genres" l={l} height="h-[28rem]" limit={15} /> }}
     {{ <chart_card id="chart-feelings" chart="sentiment" ckey="chart.feelings" l={l} height="h-[28rem]" limit={15} /> }}

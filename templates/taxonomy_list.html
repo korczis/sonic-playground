@@ -1,15 +1,49 @@
-{#- All terms of one facet, most used first, with their counts. Strings: data/i18n/. -#}
+{#- All terms of one facet, most used first, with their counts. Genres are grouped by family
+    (data/genres.toml through catalog.genre_families), each family a section with its anchor
+    (#family-<id>) that the sidebar, the home page and the charts link to. Strings: data/i18n/. -#}
 {% extends "base.html" %}
 {%- block content %}
 {%- set name_key = "tax.name." ~ taxonomy.name %}
+{%- if taxonomy.name == "genre" %}{% set families = catalog.genre_families %}{% else %}{% set families = [] %}{% endif %}
+{%- set ranked = terms | sort(attribute="page_count") | reverse %}
+{%- set tile = "flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700" %}
+{%- set count_badge = "ml-3 shrink-0 rounded-full bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300" %}
+{%- if families | length > 0 %}
+{{ <page_header title={l[name_key]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], "", name_key]]} lead_key="tax.families_lead" lead_vars={ {"n": terms | length, "f": families | length} } l={l} /> }}
+{%- else %}
 {{ <page_header title={l[name_key]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], "", name_key]]} lead_key="tax.list_lead" lead_vars={ {"n": terms | length} } l={l} /> }}
+{%- endif %}
 <div class="px-4 pt-6 xl:px-8">
-  {%- if terms | length > 0 %}
+  {%- if terms | length > 0 and families | length > 0 %}
+  <nav aria-label="{{ l["tax.families_nav"] }}" data-i18n-aria-label="tax.families_nav" class="mb-6 flex flex-wrap gap-2">
+    {%- for f in families %}
+    <a href="#family-{{ f.id }}" class="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-sm font-medium {% if f.umbrella %}bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600{% else %}bg-primary-100 text-primary-800 hover:bg-primary-200 dark:bg-primary-900 dark:text-primary-300 dark:hover:bg-primary-800{% endif %}"><span data-i18n="genre.family.{{ f.id }}">{{ l["genre.family." ~ f.id] }}</span><span class="font-normal tabular-nums">{{ f.count }}</span></a>
+    {%- endfor %}
+  </nav>
+  <div class="space-y-8">
+    {%- for f in families %}
+    <section id="family-{{ f.id }}" aria-labelledby="family-{{ f.id }}-title" class="scroll-mt-20">
+      <div class="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+        <h2 id="family-{{ f.id }}-title" class="text-lg font-semibold text-gray-900 dark:text-white" data-i18n="genre.family.{{ f.id }}">{{ l["genre.family." ~ f.id] }}</h2>
+        <span class="text-sm text-gray-500 dark:text-gray-400">{{ <tx key="chart.track_count" l={l} vars={ {"n": f.count} } /> }}</span>
+      </div>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        {%- for t in ranked %}{% if t.name in f.names %}
+        <a href="{{ t.permalink }}" class="{{ tile }}">
+          {% set k = "term." ~ taxonomy.name ~ "." ~ t.name %}<span class="truncate text-sm font-medium text-gray-900 dark:text-white">{% if k in l %}{{ l[k] }}{% else %}{{ t.name }}{% endif %}</span>
+          <span class="{{ count_badge }}">{{ t.page_count }}</span>
+        </a>
+        {%- endif %}{% endfor %}
+      </div>
+    </section>
+    {%- endfor %}
+  </div>
+  {%- elif terms | length > 0 %}
   <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-    {%- for t in terms | sort(attribute="page_count") | reverse %}
-    <a href="{{ t.permalink }}" class="flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    {%- for t in ranked %}
+    <a href="{{ t.permalink }}" class="{{ tile }}">
       {% set k = "term." ~ taxonomy.name ~ "." ~ t.name %}<span class="truncate text-sm font-medium text-gray-900 dark:text-white">{% if k in l %}{{ l[k] }}{% else %}{{ t.name }}{% endif %}</span>
-      <span class="ml-3 shrink-0 rounded-full bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-300">{{ t.page_count }}</span>
+      <span class="{{ count_badge }}">{{ t.page_count }}</span>
     </a>
     {%- endfor %}
   </div>

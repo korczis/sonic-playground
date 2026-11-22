@@ -134,6 +134,7 @@
 "track.more_like_caption" = "Weighted overlap of genres, feelings and moods."
 "track.newer" = "Newer"
 "track.older" = "Older"
+"track.contents" = "On this page"
 "track.facets" = "Facets"
 "track.explore_more" = "Explore more {genre}"
 "track.listen" = "Listen"
@@ -172,6 +173,10 @@
 
 "chart.months.title" = "Reviews per month"
 "chart.months.caption" = "When the reviews were published. A bar opens that month in the archive."
+"chart.families.title" = "Genre families"
+"chart.families.caption" = "Tracks per family of genres; a track counts once in a family. A bar opens the family with its genres."
+"chart.taste.title" = "Genre families, year by year"
+"chart.taste.caption" = "How many songs of each yearbook belong to each family of genres. A cell opens that year's yearbook."
 "chart.genres.title" = "Top genres"
 "chart.genres.caption" = "Tracks per genre. A bar opens the genre."
 "chart.feelings.title" = "Top feelings"
@@ -180,8 +185,8 @@
 "chart.heatmap.caption" = "How often a genre and a feeling meet on the same track (top 10 of each). A cell opens the explorer with both filters."
 "chart.graph.title" = "The map of the playground"
 "chart.graph.caption" = "Every track, linked to the tracks it is most alike (shared genres, feelings and moods), coloured by its first genre. Drag, zoom, hover; a dot opens the track."
-"chart.browse_genres.title" = "Browse by genre"
-"chart.browse_genres.caption" = "A bar filters the tracks below."
+"chart.browse_families.title" = "Browse by genre family"
+"chart.browse_families.caption" = "Tracks per family of genres, umbrella terms in grey. A bar opens the family."
 "chart.browse_feelings.title" = "Browse by feeling"
 "chart.browse_feelings.caption" = "A bar filters the tracks below."
 "chart.table" = "Show as table"
@@ -193,6 +198,7 @@
 "chart.col.term" = "Term"
 "chart.col.track" = "Track"
 "chart.col.genres" = "Genres"
+"chart.col.family" = "Family"
 "chart.col.related" = "Related tracks shown"
 "chart.col.cross" = "Genre \\ feeling"
 
@@ -207,6 +213,8 @@
 "tax.one.sentiment" = "Feeling"
 "tax.one.mood" = "Mood"
 "tax.list_lead" = { one = "{n} term.", other = "{n} terms, most used first." }
+"tax.families_lead" = { one = "{n} genre in {f} families, by family.", other = "{n} genres in {f} families, the largest first." }
+"tax.families_nav" = "Genre families"
 "tax.combine" = "Combine in the explorer"
 "tax.feed" = "Feed"
 "tax.play" = "Play {term}"

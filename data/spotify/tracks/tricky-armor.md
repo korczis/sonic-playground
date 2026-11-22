@@ -9,11 +9,14 @@ spotify: {"track": "0E7f3hTSKkPt8gJgCdHeWG", "album": "4sGtQEOp2d7K0RbAdMT75c", 
 keys: {"fold": "tricky|armor"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 74}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Armor · Tricky, Terra Lopez, Rituals of Mine
 
 From the album *ununiform*, 2:25.
 A liked song.
+Your Top Songs 2025: #74.
 No review yet.

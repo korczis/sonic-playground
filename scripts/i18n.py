@@ -17,7 +17,8 @@
     adds what is derived, never written: "lang" (the locale's code) and a label for every taxonomy
     term in use, "term.<facet>.<term>": the term itself in the default locale, its label from
     data/i18n/terms/<locale>.toml (a concept's from data/concepts/<slug>.toml) in every other;
-    a term in use without a label is an error.
+    a term in use without a label is an error; and "genre.family.<id>", the name of every genre
+    family in that locale, from data/genres.toml (a family without one is an error).
 
     python3 scripts/i18n.py           write static/data/i18n.json
     python3 scripts/i18n.py --check   exit 1 on any finding or a stale bundle
@@ -35,6 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 LOCALES = ROOT / "data" / "i18n"
 TERMS = LOCALES / "terms"
 CONCEPTS = ROOT / "data" / "concepts"
+GENRES = ROOT / "data" / "genres.toml"
 CATALOG = ROOT / "static" / "data" / "catalog.json"
 BUNDLE = ROOT / "static" / "data" / "i18n.json"
 PLACEHOLDER = re.compile(r"\{([a-z_]+)\}")
@@ -108,6 +110,11 @@ def derived(code: str, default: str, errors: list[str]) -> dict[str, str]:
                 if not label:
                     errors.append(f"{code}: {kind} '{term}' has no label in data/i18n/terms/{code}.toml")
             out[f"term.{kind}.{term}"] = label or term
+    families = tomllib.loads(GENRES.read_text(encoding="utf-8")).get("family", []) if GENRES.exists() else []
+    for f in families:
+        if not str(f.get(code, "")).strip():
+            errors.append(f"{code}: genre family '{f.get('id')}' has no {code} name in data/genres.toml")
+        out[f"genre.family.{f.get('id')}"] = f.get(code) or f.get(default) or f.get("id", "")
     if code != default:
         for kind, table in labels.items():
             for term in sorted(set(table) - set(terms_in_use().get(kind, []))):

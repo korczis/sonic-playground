@@ -6,14 +6,18 @@ artists: ["Rachel Chinouriri", "Joe Goddard"]
 album: "Four° In Winter (Deluxe)"
 duration: "2:48"
 spotify: {"track": "55KvkgRT9fqmQxqqPuaRJX", "album": "3G1jxG3M4rwWm3CZG4S1Wq", "artists": ["4wrzxtBZw20ufDstKyTnnP", "380fnmlGnkyueBMqGWx2k5"]}
-keys: {"fold": "rachelchinouriri|darkerplacejoegoddardremixradioedit"}
-status: "missing"
+keys: {"fold": "rachelchinouriri|darkerplacejoegoddardremixradioedit", "isrc": "GBAYE2100060", "musicbrainz": "180789de-0e44-4e72-8f6d-3cc241fbce71"}
+review: "rachel-chinouriri-joe-goddard-darker-place-joe-goddard-remix-radio-edit.md"
+status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 53}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Darker Place - Joe Goddard Remix, Radio Edit · Rachel Chinouriri, Joe Goddard
 
 From the album *Four° In Winter (Deluxe)*, 2:48.
 A liked song.
-No review yet.
+Your Top Songs 2023: #53.
+Reviewed: content/rachel-chinouriri-joe-goddard-darker-place-joe-goddard-remix-radio-edit.md.

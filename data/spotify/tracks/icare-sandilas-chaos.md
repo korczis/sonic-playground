@@ -10,11 +10,14 @@ keys: {"fold": "icaresandilas|chaos", "musicbrainz": "6df5e68d-12ea-4ac7-9e26-76
 review: "icare-sandilas-chaos.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 72}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Chaos · Icare Sandilas
 
 From the album *Chaos*, 3:21.
 A liked song.
+Your Top Songs 2025: #72.
 Reviewed: content/icare-sandilas-chaos.md.

@@ -12,10 +12,11 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 7}
+  - {"year": 2024, "n": 100}
 playlists:
   - {"playlist": "best-of-the-best", "n": 77}
   - {"playlist": "my-top-songs-of-all-the-time", "n": 525}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Fading Nights · Parra for Cuva, Anna Naklab
@@ -23,5 +24,6 @@ sources: ["web-player:2026-11-14"]
 From the album *Fading Nights*, 7:05.
 A liked song.
 Your Top Songs 2022: #7.
+Your Top Songs 2024: #100.
 In Best of the Best (#77); My Top Songs of All the Time (#525).
 Reviewed: content/parra-for-cuva-anna-naklab-fading-nights.md.

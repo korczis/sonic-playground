@@ -7,7 +7,8 @@ album: "Best Of"
 duration: "3:11"
 spotify: {"track": "7xpm1dfAzU3DUHGsJcZVxR", "album": "48HBoA39mKzK8AsMyZ9dv9", "artists": ["72gQuI1GHmsUXIfe863TC7"]}
 keys: {"fold": "pilockakrach|ohyeahvollkrass"}
-status: "missing"
+review: "pilocka-krach-lian-ferdinand-oh-yeah-voll-krass-feat-lian-ferdinand.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Best Of*, 3:11.
 A liked song.
-No review yet.
+Reviewed: content/pilocka-krach-lian-ferdinand-oh-yeah-voll-krass-feat-lian-ferdinand.md.

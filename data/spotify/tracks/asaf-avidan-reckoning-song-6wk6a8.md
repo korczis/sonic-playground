@@ -10,14 +10,17 @@ keys: {"fold": "asafavidan|reckoningsong", "musicbrainz": "04bc55b8-1934-4600-95
 review: "asaf-avidan-the-mojos-reckoning-song-one-day.md"
 status: "present"
 liked: false
+yearbooks:
+  - {"year": 2023, "n": 71}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 562}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Reckoning Song · Asaf Avidan, The Mojos
 
 From the album *The Reckoning*, 2:46.
 Not among the liked songs.
+Your Top Songs 2023: #71.
 In My Top Songs of All the Time (#562).
 Reviewed: content/asaf-avidan-the-mojos-reckoning-song-one-day.md.

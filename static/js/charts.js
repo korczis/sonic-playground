@@ -3,7 +3,7 @@
 // archive, a track). Each chart has a table view (the <details> under it), a tooltip on hover,
 // light and dark palettes validated with the dataviz validator, and re-renders on theme change.
 //
-//   <div data-chart="months|genre|sentiment|heatmap|graph" data-limit="15" data-focus="<source>">
+//   <div data-chart="months|family|taste|genre|sentiment|heatmap|graph" data-limit="15" data-focus="<source>">
 // A page module (static/js/core.js): mounts where a [data-chart] exists, loads the vendored
 // ECharts and the catalogue only when a chart comes within NEAR of the viewport (a track page's
 // graph sits below the review: a reader who never reaches it never pays ~380 kB gzip for it),
@@ -201,6 +201,81 @@ window.Sonic.module('charts', function mount() {
         onClick: function (e) { if (e.dataType === 'node' && e.data.path) go(base + '/' + e.data.path); },
       };
     },
+  };
+  // The genre families (data/genres.toml through the catalogue): tracks per family, every family
+  // shown, umbrella families last; the tooltip and the table name each family's terms, and a bar
+  // opens the family on the genre index.
+  FORMS.family = function (c, p) {
+    var fams = (c.genre_families || []).slice().reverse();
+    // A derived key (scripts/i18n.py writes one per family of data/genres.toml), not a written one.
+    var FAMILY = 'genre.family.';
+    function name(f) { return t(FAMILY + f.id); }
+    function terms(f) {
+      return f.terms.slice(0, 6).map(function (x) { return label('genre', x.term) + ' ' + x.count; }).join(', ');
+    }
+    return {
+      rows: [[t('chart.col.family'), t('chart.tracks'), t('chart.col.genres')]].concat(fams.slice().reverse().map(function (f) {
+        return [name(f), f.count, terms(f)];
+      })),
+      option: {
+        grid: { left: 8, right: 24, top: 8, bottom: 24, containLabel: true },
+        tooltip: Object.assign(tooltip(p), { trigger: 'axis', axisPointer: { type: 'shadow' }, formatter: function (e) {
+          var f = fams[e[0].dataIndex];
+          return '<b>' + name(f) + '</b><br>' + t('chart.track_count', { n: f.count }) + '<br>' + terms(f);
+        } }),
+        xAxis: Object.assign({ type: 'value', minInterval: 1 }, axisStyle(p)),
+        yAxis: Object.assign({ type: 'category', data: fams.map(name) }, axisStyle(p), { splitLine: { show: false } }),
+        series: [{ type: 'bar', name: t('chart.tracks'), data: fams.map(function (f) {
+          return { value: f.count, itemStyle: { color: f.umbrella ? p.other : p.single } };
+        }), barMaxWidth: 18, itemStyle: { borderRadius: [0, 4, 4, 0] } }],
+      },
+      onClick: function (e) {
+        go(base + '/' + window.Sonic.localPath('genre/') + '#family-' + fams[e.dataIndex].id);
+      },
+    };
+  };
+  // The owner's taste over the years: each yearbook's songs per genre family (catalog.yearbooks
+  // [].families), a row per scene family (umbrella families left out), a column per year; a cell
+  // opens that year's yearbook.
+  FORMS.taste = function (c, p) {
+    var FAMILY = 'genre.family.';
+    var books = (c.yearbooks || []).slice().sort(function (a, b) { return a.year - b.year; });
+    var fams = (c.genre_families || []).filter(function (f) { return !f.umbrella; });
+    var years = books.map(function (b) { return String(b.year); });
+    var names = fams.map(function (f) { return t(FAMILY + f.id); });
+    var data = [];
+    var max = 1;
+    fams.forEach(function (f, fi) {
+      books.forEach(function (b, bi) {
+        var hit = (b.families || []).filter(function (x) { return x.id === f.id; })[0];
+        var n = hit ? hit.count : 0;
+        max = Math.max(max, n);
+        data.push([bi, fi, n]);
+      });
+    });
+    return {
+      rows: [[t('chart.col.family')].concat(years)].concat(fams.map(function (f, fi) {
+        return [names[fi]].concat(books.map(function (b, bi) { return data[fi * books.length + bi][2]; }));
+      })),
+      option: {
+        grid: { left: 8, right: 8, top: 8, bottom: 56, containLabel: true },
+        tooltip: Object.assign(tooltip(p), { formatter: function (e) {
+          var b = books[e.value[0]];
+          return '<b>' + names[e.value[1]] + '</b> · ' + b.year + '<br>' + t('chart.track_count', { n: e.value[2] }) + ' / ' + b.present;
+        } }),
+        xAxis: Object.assign({ type: 'category', data: years }, axisStyle(p), { splitLine: { show: false } }),
+        yAxis: Object.assign({ type: 'category', data: names, inverse: true }, axisStyle(p), { splitLine: { show: false } }),
+        visualMap: { min: 0, max: max, calculable: false, orient: 'horizontal', left: 'center', bottom: 0,
+          itemWidth: 12, itemHeight: 120, textStyle: { color: p.muted }, inRange: { color: p.ramp } },
+        series: [{ type: 'heatmap', data: data, label: { show: true, color: p.ink, fontSize: 11, textBorderColor: p.surface, textBorderWidth: 2,
+          formatter: function (e) { return e.value[2] || ''; } },
+          itemStyle: { borderColor: p.surface, borderWidth: 2, borderRadius: 4 },
+          emphasis: { itemStyle: { borderColor: p.ink, borderWidth: 2 } } }],
+      },
+      onClick: function (e) {
+        go(base + '/' + window.Sonic.localPath('yearbook/' + books[e.value[0]].year + '/'));
+      },
+    };
   };
   FORMS.genre = FORMS.facet('genre');
   FORMS.sentiment = FORMS.facet('sentiment');

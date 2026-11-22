@@ -10,11 +10,14 @@ keys: {"fold": "janblomqvist|timeagainjanblomqvistclubmix", "musicbrainz": "dd86
 review: "jan-blomqvist-time-again.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 95}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Time Again - Jan Blomqvist Club Mix · Jan Blomqvist
 
 From the album *Time Again*, 7:08.
 A liked song.
+Your Top Songs 2023: #95.
 Reviewed: content/jan-blomqvist-time-again.md.

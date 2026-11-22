@@ -10,11 +10,14 @@ keys: {"fold": "jorisdelacroix|epoque", "musicbrainz": "ab645b5d-08ce-4f7d-b807-
 review: "joris-delacroix-epoque.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 29}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Epoque · Joris Delacroix
 
 From the album *Night Visions*, 6:59.
 A liked song.
+Your Top Songs 2023: #29.
 Reviewed: content/joris-delacroix-epoque.md.

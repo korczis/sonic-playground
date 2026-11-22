@@ -10,11 +10,14 @@ keys: {"fold": "codec|timehaschangednorthernliteremix", "musicbrainz": "aed48dc0
 review: "codec-n-flexor-time-has-changed-northern-lite-remix.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 4}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Time Has Changed - Northern Lite Remix · Codec, Flexor, Northern Lite
 
 From the album *Time Has Changed Remixes*, 5:59.
 A liked song.
+Your Top Songs 2025: #4.
 Reviewed: content/codec-n-flexor-time-has-changed-northern-lite-remix.md.

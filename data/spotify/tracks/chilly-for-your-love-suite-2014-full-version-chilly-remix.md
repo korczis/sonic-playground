@@ -10,11 +10,14 @@ keys: {"fold": "chilly|foryourlovesuite2014fullversionchillyremix", "musicbrainz
 review: "chilly-for-your-love-suite-2014-full-version-chilly-remix.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 27}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # For Your Love Suite 2014 full version - Chilly Remix · Chilly
 
 From the album *For Your Love new mix 2014*, 9:30.
 A liked song.
+Your Top Songs 2023: #27.
 Reviewed: content/chilly-for-your-love-suite-2014-full-version-chilly-remix.md.

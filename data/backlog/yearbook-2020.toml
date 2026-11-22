@@ -4,7 +4,7 @@ kind = "yearbook"
 year = 2020
 name = "Your Top Songs 2020"
 source = "Spotify web player, the owner's playlist \"Your Top Songs 2020\", read off the rendered page on 2026-11-14 (scripts/spotify_history.py)"
-retrieved = "2026-11-14"
+retrieved = "2026-11-22"
 expected = 100
 
 [[track]]
@@ -318,6 +318,7 @@ artists = ["Kalabrese", "Sarah Palin"]
 album = "Independent Dancer"
 duration = "4:57"
 spotify = "43335d4chxjzyIpiq4RXCu"
+review = "kalabrese-sarah-palin-fresh-and-foolish-feat-sarah-palin.md"
 
 [[track]]
 n = 40

@@ -13,11 +13,13 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2021, "n": 4}
+  - {"year": 2023, "n": 41}
+  - {"year": 2024, "n": 18}
 playlists:
   - {"playlist": "best-of-the-best", "n": 72}
   - {"playlist": "my-top-songs-of-all-the-time", "n": 457}
   - {"playlist": "sonic-playground", "n": 13}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Fckrz · Luca Malina
@@ -25,5 +27,7 @@ sources: ["web-player:2026-11-14"]
 From the album *Fckrz*, 3:10.
 A liked song.
 Your Top Songs 2021: #4.
+Your Top Songs 2023: #41.
+Your Top Songs 2024: #18.
 In Best of the Best (#72); My Top Songs of All the Time (#457); Sonic Playground (#13).
 Reviewed: content/luca-malina-fckrz.md.

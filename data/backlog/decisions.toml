@@ -304,3 +304,21 @@ n = 50
 title = "Lost for Words, Pt. 2"
 artists = ["Paul Morley"]
 skip = "part of a short story read by the writer that closes the Late Night Tales mix, not a song"
+
+[[track]]
+n = 51
+title = "Take Me As I Am"
+artists = ["The Streets", "Chris Lorenzo"]
+review = "chris-lorenzo-and-the-streets_take-me-as-i-am.md"
+
+[[track]]
+n = 52
+title = "You Bring Me Down"
+artists = ["Digitaria", "Funky Fat"]
+review = "funky-fat-and-digitaria-you-bring-me-down.md"
+
+[[track]]
+n = 53
+title = "We Are Your Friends - Justice Vs Simian"
+artists = ["Justice", "Simian"]
+review = "justice-vs-simian_we-are-your-friends.md"

@@ -1,0 +1,125 @@
+# The genre families: every genre term the reviews use (taxonomies.genre), grouped once into the
+# family a listener looks for first. scripts/catalog.py derives from it each family's tracks and
+# counts (catalog.genre_families), and scripts/i18n.py its label in every locale
+# ("genre.family.<id>"). The sidebar, the genre index, the home page, the explorer and the charts
+# browse by family, so a specific scene (techno, minimal, dub, drum and bass, jungle) is never
+# hidden behind the umbrella terms that outnumber it ("electronic", "house", "pop").
+#
+# A term is in exactly one family. A term no family lists yet is placed by inference (the family
+# of the listed term it shares the most reviews with) and reported by scripts/catalog.py; add it
+# here to make the placement written. Families are shown largest first, an `umbrella` family
+# (terms that name no scene) after every other; the order here is only the order of reading.
+
+[[family]]
+id = "techno"
+en = "Techno & minimal"
+cs = "Techno a minimal"
+terms = ["techno", "minimal", "minimal techno", "melodic techno", "detroit techno", "dark techno",
+         "industrial", "dark electronic", "ebm"]
+
+[[family]]
+id = "house"
+en = "House"
+cs = "House"
+terms = ["house", "deep house", "tech house", "electro-house", "french house", "progressive house",
+         "tropical house", "melodic house", "future house", "acid house", "hip house", "slap house",
+         "big room", "balearic"]
+
+[[family]]
+id = "bass"
+en = "Drum & bass, jungle & breaks"
+cs = "Drum and bass, jungle a breakbeat"
+terms = ["drum and bass", "jungle", "neurofunk", "liquid funk", "breakbeat", "big beat",
+         "broken beat", "uk garage", "bassline", "grime", "dubstep", "future bass", "uk funky",
+         "brazilian bass"]
+
+[[family]]
+id = "dub"
+en = "Dub & reggae"
+cs = "Dub a reggae"
+terms = ["dub", "reggae", "dancehall"]
+
+[[family]]
+id = "trance"
+en = "Trance"
+cs = "Trance"
+terms = ["trance", "psytrance", "progressive"]
+
+[[family]]
+id = "downtempo"
+en = "Downtempo, trip-hop & ambient"
+cs = "Downtempo, trip-hop a ambient"
+terms = ["downtempo", "trip-hop", "ambient", "chillout", "lounge", "chill", "chillwave",
+         "atmospheric", "folktronica"]
+
+[[family]]
+id = "electro"
+en = "Electro, synth & new wave"
+cs = "Electro, synth a new wave"
+terms = ["electro", "electroclash", "electro-pop", "electropop", "synth-pop", "synthwave",
+         "darkwave", "new wave", "hi-nrg", "italo dance", "indie electronic", "experimental", "80s"]
+
+[[family]]
+id = "electronic"
+en = "Electronic & dance (umbrella)"
+cs = "Elektronika a dance (zastřešující)"
+umbrella = true
+terms = ["electronic", "dance", "club", "underground", "indie dance"]
+
+[[family]]
+id = "soul"
+en = "Soul, funk & disco"
+cs = "Soul, funk a disco"
+terms = ["soul", "deep soul", "soulful", "funk", "disco", "nu-disco", "r&b", "gospel"]
+
+[[family]]
+id = "hiphop"
+en = "Hip-hop & rap"
+cs = "Hip-hop a rap"
+terms = ["hip-hop", "rap", "g-funk", "crunk", "trap", "electro-rap", "rap rock", "rap metal"]
+
+[[family]]
+id = "pop"
+en = "Pop"
+cs = "Pop"
+terms = ["pop", "indie pop", "art pop", "dark pop", "dream pop", "bedroom pop", "latin pop",
+         "ballad", "experimental pop"]
+
+[[family]]
+id = "rock"
+en = "Rock, punk & alternative"
+cs = "Rock, punk a alternativa"
+terms = ["rock", "alternative", "alternative rock", "indie", "indie rock", "post-punk", "punk",
+         "punk rock", "hardcore punk", "glam rock", "garage rock", "hard rock", "arena rock",
+         "classic rock", "progressive rock", "noise rock", "power pop", "britpop", "shoegaze",
+         "psychedelic", "krautrock", "art rock", "pop rock", "folk rock", "rockabilly", "surf rock",
+         "dance-punk", "nu metal", "symphonic metal"]
+
+[[family]]
+id = "jazz"
+en = "Jazz, swing & blues"
+cs = "Jazz, swing a blues"
+terms = ["jazz", "nu-jazz", "acid jazz", "vocal jazz", "big band", "gypsy jazz", "hard bop",
+         "easy listening", "electro-swing", "blues", "brass band"]
+
+[[family]]
+id = "world"
+en = "Folk & world"
+cs = "Folk a world music"
+terms = ["folk", "indie folk", "acoustic", "singer-songwriter", "chanson", "country", "world",
+         "brazilian", "samba", "samba rock", "bossa nova", "tango", "bolero", "cumbia", "afrobeat",
+         "hawaiian", "worldbeat", "reggaeton"]
+
+[[family]]
+id = "classical"
+en = "Classical, orchestral & soundtrack"
+cs = "Klasika, orchestr a filmová hudba"
+terms = ["neoclassical", "orchestral", "classical crossover", "soundtrack"]
+
+[[family]]
+id = "other"
+en = "Versions, spoken word & other"
+cs = "Verze, mluvené slovo a ostatní"
+umbrella = true
+terms = ["cover", "remix", "spoken word", "comedy", "novelty", "party", "playful", "seductive",
+         "introspective", "contemporary", "urban"]

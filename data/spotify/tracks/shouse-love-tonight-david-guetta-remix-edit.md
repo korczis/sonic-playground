@@ -6,14 +6,18 @@ artists: ["Shouse", "David Guetta"]
 album: "Love Tonight (David Guetta Remix)"
 duration: "2:38"
 spotify: {"track": "2prnn41CblB8B4yWACDljP", "album": "6LktjDEUeZj1E08vm45ROY", "artists": ["2TcGJdSOiOvITBzhvfX8XB", "1Cs0zKBU1kc0i8ypK3B9ai"]}
-keys: {"fold": "shouse|lovetonightdavidguettaremixedit"}
-status: "missing"
+keys: {"fold": "shouse|lovetonightdavidguettaremixedit", "isrc": "USA2P2120718", "musicbrainz": "d2784273-4bb8-4085-b866-98a464ab6640"}
+review: "shouse-david-guetta-love-tonight-david-guetta-remix-edit.md"
+status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 92}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Love Tonight (David Guetta Remix Edit) · Shouse, David Guetta
 
 From the album *Love Tonight (David Guetta Remix)*, 2:38.
 A liked song.
-No review yet.
+Your Top Songs 2023: #92.
+Reviewed: content/shouse-david-guetta-love-tonight-david-guetta-remix-edit.md.

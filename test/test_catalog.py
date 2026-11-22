@@ -320,6 +320,52 @@ class Related(unittest.TestCase):
         self.assertEqual(rel[0]["shared"], ["genre:industrial", "genre:techno"])
 
 
+class GenreFamilies(unittest.TestCase):
+    """data/genres.toml groups the genre terms; the catalogue derives each family's tracks."""
+
+    @staticmethod
+    def t(source, genre):
+        return catalog.Track(source=source, path=source, title=source, artist="a", track=source,
+                             inferred="", date="2024-10-01", description="", youtube_id=None,
+                             thumbnail="", thumbnail_local=False, words=1,
+                             facets={"genre": genre, "sentiment": [], "mood": [], "tags": []})
+
+    FAMILIES = [
+        {"id": "techno", "en": "Techno", "cs": "Techno", "terms": ["techno", "minimal"]},
+        {"id": "bass", "en": "Bass", "cs": "Bass", "terms": ["drum and bass", "jungle"]},
+        {"id": "electronic", "en": "Electronic", "cs": "Elektronika", "umbrella": True,
+         "terms": ["electronic"]},
+    ]
+
+    def test_a_track_counts_once_and_umbrella_families_come_last(self):
+        tracks = [self.t("a", ["electronic", "techno", "minimal"]), self.t("b", ["electronic", "jungle"]),
+                  self.t("c", ["electronic", "drum and bass", "jungle"]), self.t("d", ["electronic"])]
+        notes: list[str] = []
+        fams = catalog.genre_families(tracks, self.FAMILIES, notes)
+        self.assertEqual([(f["id"], f["count"]) for f in fams], [("bass", 2), ("techno", 1), ("electronic", 4)])
+        self.assertEqual([x["term"] for x in fams[0]["terms"]], ["jungle", "drum and bass"])
+        self.assertEqual(notes, [])
+
+    def test_an_unlisted_term_is_placed_by_inference_and_reported(self):
+        tracks = [self.t("a", ["jungle", "ragga jungle"]), self.t("b", ["techno"])]
+        notes: list[str] = []
+        fams = {f["id"]: f for f in catalog.genre_families(tracks, self.FAMILIES, notes)}
+        placed = {x["term"]: x for x in fams["bass"]["terms"]}
+        self.assertTrue(placed["ragga jungle"]["inferred"])
+        self.assertEqual(len(notes), 1)
+        self.assertIn("ragga jungle", notes[0])
+
+    def test_every_term_in_use_is_written_in_a_family(self):
+        # The repository's own corpus: no genre is left to inference (add it to data/genres.toml).
+        errors: list[str] = []
+        families = catalog.load_genre_families(errors)
+        self.assertEqual(errors, [])
+        data = catalog.build([])
+        inferred = [x["term"] for f in data["genre_families"] for x in f["terms"] if x.get("inferred")]
+        self.assertEqual(inferred, [], "add these genres to data/genres.toml")
+        self.assertEqual({f["id"] for f in data["genre_families"]} - {f["id"] for f in families}, set())
+
+
 class Repository(unittest.TestCase):
     def test_catalogue_is_current(self):
         errors = []

@@ -10,9 +10,12 @@ keys: {"fold": "noze|exodus", "musicbrainz": "cb5335f4-5d5d-4934-95be-aed3e32c5b
 review: "noze-wareika-exodus.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2023, "n": 40}
+  - {"year": 2024, "n": 16}
 top:
   - {"range": "month", "rank": 6, "read": "2026-11-14"}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Exodus · Nôze, Wareika
@@ -20,4 +23,6 @@ sources: ["web-player:2026-11-14"]
 From the album *Dring*, 4:04.
 A liked song.
 Top tracks of the month (read 2026-11-14): #6.
+Your Top Songs 2023: #40.
+Your Top Songs 2024: #16.
 Reviewed: content/noze-wareika-exodus.md.

@@ -10,9 +10,11 @@ keys: {"fold": "marbertrocel|memyselfandi", "musicbrainz": "6a1e56cd-81fe-4349-9
 review: "marbert-rocel-me-myself-and-i.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2023, "n": 48}
 top:
   - {"range": "month", "rank": 29, "read": "2026-11-14"}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Me, Myself and I · Marbert Rocel
@@ -20,4 +22,5 @@ sources: ["web-player:2026-11-14"]
 From the album *In the Beginning*, 4:25.
 A liked song.
 Top tracks of the month (read 2026-11-14): #29.
+Your Top Songs 2023: #48.
 Reviewed: content/marbert-rocel-me-myself-and-i.md.

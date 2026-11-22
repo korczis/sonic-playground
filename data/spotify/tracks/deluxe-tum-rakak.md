@@ -12,9 +12,11 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2022, "n": 5}
+  - {"year": 2023, "n": 87}
+  - {"year": 2024, "n": 41}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 523}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Tum Rakak · Deluxe
@@ -22,5 +24,7 @@ sources: ["web-player:2026-11-14"]
 From the album *Stachelight*, 4:36.
 A liked song.
 Your Top Songs 2022: #5.
+Your Top Songs 2023: #87.
+Your Top Songs 2024: #41.
 In My Top Songs of All the Time (#523).
 Reviewed: content/tum-rakak-deluxe.md.

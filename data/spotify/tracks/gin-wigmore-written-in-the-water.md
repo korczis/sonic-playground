@@ -14,9 +14,10 @@ yearbooks:
   - {"year": 2017, "n": 18}
   - {"year": 2020, "n": 57}
   - {"year": 2021, "n": 63}
+  - {"year": 2024, "n": 68}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 116}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Written In The Water · Gin Wigmore
@@ -26,5 +27,6 @@ A liked song.
 Your Top Songs 2017: #18.
 Your Top Songs 2020: #57.
 Your Top Songs 2021: #63.
+Your Top Songs 2024: #68.
 In My Top Songs of All the Time (#116).
 Reviewed: content/gin-wigmore-written-in-the-water.md.

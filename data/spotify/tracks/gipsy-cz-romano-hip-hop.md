@@ -10,11 +10,14 @@ keys: {"fold": "gipsycz|romanohiphop", "musicbrainz": "339e0962-0b77-4e0b-9868-9
 review: "gipsy-cz-romano-hip-hop.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 86}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Romano Hip Hop · Gipsy.cz
 
 From the album *Romano Hip Hop*, 2:37.
 A liked song.
+Your Top Songs 2023: #86.
 Reviewed: content/gipsy-cz-romano-hip-hop.md.

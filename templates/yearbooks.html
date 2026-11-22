@@ -4,6 +4,9 @@
 {% extends "base.html" %}
 {%- block content %}
 {{ <page_header title={l["yearbook.title"]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["yearbook.title"], "", "yearbook.title"]]} lead_key="yearbook.lead" lead_vars={ {"n": catalog.yearbooks | length, "r": catalog.stats.recurring} } l={l} /> }}
+{%- if catalog.genre_families | length > 0 and catalog.yearbooks | length > 1 %}
+<div class="px-4 pt-6 xl:px-8">{{ <chart_card id="chart-taste" chart="taste" ckey="chart.taste" l={l} height="h-[32rem]" /> }}</div>
+{%- endif %}
 <div class="grid grid-cols-1 gap-4 px-4 pt-6 sm:grid-cols-2 xl:grid-cols-3 xl:px-8">
   {%- for b in catalog.yearbooks %}
   {{ <yearbook_card b={b} catalog={catalog} l={l} /> }}

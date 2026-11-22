@@ -1,0 +1,11 @@
+term = "charity record"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Charity_record"
+see_also = ["protest song", "compilation album"]
+
+[en]
+definition = "A record made to raise money for a cause, with some or all of its earnings going to a charity rather than to the artists or the label. It can be a star-studded single, a compilation of donated tracks, or a small release by a community project, and the story of why it was made often travels with the music."
+
+[cs]
+term = "charitativní nahrávka"
+definition = "Nahrávka vydaná proto, aby získala peníze pro dobrou věc: část jejího výtěžku nebo celý výtěžek jde na dobročinnost, ne umělcům či vydavatelství. Může to být singl plný hvězd, kompilace darovaných skladeb i malé vydání komunitního projektu a příběh o tom, proč vznikla, se často šíří spolu s hudbou."

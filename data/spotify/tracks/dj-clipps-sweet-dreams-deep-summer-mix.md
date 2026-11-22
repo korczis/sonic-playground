@@ -10,14 +10,17 @@ keys: {"fold": "djclipps|sweetdreamsdeepsummermix"}
 review: "dj-clipps-sweet-dreams-deep-summer-mix.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2023, "n": 56}
 playlists:
   - {"playlist": "eurythmics-sweet-dreams-ibiza-deep-summer-remix-2015", "n": 113}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Sweet Dreams - Deep Summer Mix · DJ Clipps, Tasia, Bthelick, 9Ts
 
 From the album *Sweet Dreams (Deep Summer Mix)*, 5:33.
 A liked song.
+Your Top Songs 2023: #56.
 In Eurythmics - Sweet Dreams (Ibiza Deep Summer Remix 2015) (#113).
 Reviewed: content/dj-clipps-sweet-dreams-deep-summer-mix.md.

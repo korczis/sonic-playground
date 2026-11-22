@@ -10,11 +10,14 @@ keys: {"fold": "bakermat|theriver", "isrc": "NLE802100254", "musicbrainz": "0156
 review: "bakermat-the-river.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 71}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # The River · Bakermat
 
 From the album *The Spirit (Track By Track)*, 2:24.
 A liked song.
+Your Top Songs 2025: #71.
 Reviewed: content/bakermat-the-river.md.

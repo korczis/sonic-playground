@@ -10,11 +10,16 @@ keys: {"fold": "kflay|highenough", "musicbrainz": "7561099f-b4ce-4fc9-b02c-a97b2
 review: "k-flay-high-enough.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 17}
+  - {"year": 2024, "n": 32}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # High Enough · K.Flay
 
 From the album *Every Where Is Some Where*, 3:51.
 A liked song.
+Your Top Songs 2023: #17.
+Your Top Songs 2024: #32.
 Reviewed: content/k-flay-high-enough.md.

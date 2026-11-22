@@ -48,7 +48,9 @@ link. Not for bulk imports (run the engine in a loop and review each article).
 4. **Facets.** `python3 scripts/track.py vocab --limit 40` shows the vocabulary. Pick 2-4
    genres and 2-4 feelings, preferring existing terms; `scripts/track.py suggest --genre ...
    --sentiment ...` names the nearest existing term for each new one and previews the related
-   tracks. A new term is fine when no existing one is true to the track.
+   tracks. A new term is fine when no existing one is true to the track. A new genre also goes
+   into its family in `data/genres.toml` (the site browses genres by family; `npm run derive`
+   names a genre left to inference, and `test/test_catalog.py` refuses it).
 5. **Write the skeleton.** `python3 scripts/track.py new "<input>" --genre ... --sentiment ...
    [--mood ...] --description "<one or two sentences>"` writes the article from
    `archetypes/track.md`: front matter per `data/track.schema.json` and the outline the corpus

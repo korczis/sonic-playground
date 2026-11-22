@@ -109,6 +109,34 @@ class Model(unittest.TestCase):
         self.assertEqual(len(set(ids1)), 3)
 
 
+class Classify(unittest.TestCase):
+    def test_an_unsaved_top_songs_playlist_is_a_yearbook(self):
+        # Read by id with SonicCrawl.playlists(): no library subtitle, the owner shown as "Made for".
+        p = {"uri": "spotify:playlist:37i9dQZF1Fa1IIVtEpGUcU", "name": "Your Top Songs 2023",
+             "library_subtitle": None, "owner": {"name": "Owner", "id": "owner"}}
+        self.assertEqual(sh.classify(p, "Owner"), "yearbook")
+
+    def test_an_own_playlist_named_like_a_year_stays_own(self):
+        p = {"uri": "spotify:playlist:5hTq0aBcDeFgHiJkLmNoPq", "name": "Your Top Songs 2023",
+             "library_subtitle": "Playlist • Owner", "owner": {"name": "Owner", "id": "owner"}}
+        self.assertEqual(sh.classify(p, "Owner"), "own")
+        p = {"uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M", "name": "Today's Top Hits 2023",
+             "library_subtitle": None, "owner": {"name": "Spotify", "id": "spotify"}}
+        self.assertNotEqual(sh.classify(p, "Owner"), "yearbook")
+
+
+class YearbookDecisions(unittest.TestCase):
+    def test_an_identity_decision_carries_into_the_yearbook_item(self):
+        song = {"title": "Take Me As I Am", "artists": ["The Streets", "Chris Lorenzo"], "album": None,
+                "duration": "3:06", "track_id": "5UjccMIJkNhont0TGSU0iD",
+                "decision": {"review": "chris-lorenzo-and-the-streets_take-me-as-i-am.md"}}
+        m = {"songs": {"s": song, "t": {**song, "track_id": None, "decision": None}}}
+        items = sh.yearbook_items({"rows": [{"n": 1, "song": "s"}, {"n": 2, "song": "t"}, {"n": 3, "song": None}]}, m)
+        self.assertEqual(items[0]["review"], "chris-lorenzo-and-the-streets_take-me-as-i-am.md")
+        self.assertNotIn("review", items[1])
+        self.assertTrue(items[2]["uncertain"])
+
+
 class Records(unittest.TestCase):
     def setUp(self):
         self.m = built()
