@@ -6,8 +6,9 @@ artists: ["John Newman", "Gemini"]
 album: "Love Me Again"
 duration: "4:02"
 spotify: {"track": "1D00XtwJIPy2k4Lj6Mfraj", "album": "1pk2xlllveW9EPfv0XTXrK", "artists": ["34v5MVKeQnIo0CWYMbbrPf", "3QqJ1L8cWsPFZ1YDPpUmvG"]}
-keys: {"fold": "johnnewman|lovemeagaingeminiremix"}
-status: "missing"
+keys: {"fold": "johnnewman|lovemeagaingeminiremix", "isrc": "GBUM71302815", "musicbrainz": "c5fdabaf-2049-458c-a685-8a86292b84f8"}
+review: "john-newman-gemini-love-me-again-gemini-remix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Love Me Again*, 4:02.
 A liked song.
-No review yet.
+Reviewed: content/john-newman-gemini-love-me-again-gemini-remix.md.

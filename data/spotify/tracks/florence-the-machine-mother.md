@@ -6,8 +6,9 @@ artists: ["Florence + The Machine"]
 album: "How Big, How Blue, How Beautiful (Deluxe)"
 duration: "5:49"
 spotify: {"track": "0lnYrMmUtjJSEwVKj8PxUS", "album": "2jn2n5OkuHliOLKCqHnjXV", "artists": ["1moxjboGR7GNWYIMWsRjgG"]}
-keys: {"fold": "florencethemachine|mother"}
-status: "missing"
+keys: {"fold": "florencethemachine|mother", "isrc": "GBUM71500291", "musicbrainz": "71faae77-de36-462f-9234-582a13f3f404"}
+review: "florence-the-machine-mother.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *How Big, How Blue, How Beautiful (Deluxe)*, 5:49.
 A liked song.
-No review yet.
+Reviewed: content/florence-the-machine-mother.md.
