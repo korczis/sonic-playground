@@ -32980,6 +32980,148 @@
     }
    ]
   },
+  "d12-my-band.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-my-band/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "D12 World"
+     },
+     "isrcCode": "USIR10400103",
+     "name": "My Band",
+     "sameAs": [
+      "https://musicbrainz.org/recording/895c8c9c-9bb3-47bf-9244-39c9c93e2be3",
+      "https://www.youtube.com/watch?v=FMVujE_A_OM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/d12-my-band/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-my-band/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "My Band",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/My_Band"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "D12 – D12 World",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/d12-d12_world"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World (review excerpts from AllMusic and The Guardian)",
+       "publisher": "Music Critic",
+       "url": "https://musiccritic.com/d12/d12-world"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Immaturity makes this World go round",
+       "publisher": "Indiana Daily Student",
+       "url": "https://www.idsnews.com/article/2004/05/immaturity-makes-this-world-go-round"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World (review)",
+       "publisher": "Cleveland Scene",
+       "url": "https://www.clevescene.com/?p=224845"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Review: D12, 'D12 World' (reposted from The Detroit News)",
+       "publisher": "RyanMcBain.com",
+       "url": "https://ryanmcbain.com/real/forum/the-cantina/hip-hopalyptic/reviews/1676-review-d12-d12-world"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "My Band (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/895c8c9c-9bb3-47bf-9244-39c9c93e2be3"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "My Band (Provided to YouTube by Universal Music Group)",
+       "publisher": "D12 - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=FMVujE_A_OM"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 - My Band ft. Cameo (Official Music Video)",
+       "publisher": "D12VEVO",
+       "url": "https://www.youtube.com/watch?v=ttWQK5VXskA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "První singl z alba D12 World (2004), v němž si D12 dělají legraci z představy, že Eminem je jejich frontman; v Austrálii, na Novém Zélandu a v Norsku se dostal na 1. místo, ve Velké Británii na 2. místo.",
+     "educationalLevel": "introductory",
+     "headline": "D12 - My Band",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "posse cut",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/posse-cut/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "parody",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/parody/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-my-band/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/d12-my-band/",
+     "wordCount": 531
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -53461,6 +53603,131 @@
     }
    ]
   },
+  "fischerspooner-just-let-go.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-just-let-go/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Fischerspooner",
+      "sameAs": "https://musicbrainz.org/artist/a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "electro-pop",
+      "synth-pop",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Odyssey"
+     },
+     "isrcCode": "USFS20400002",
+     "name": "Just Let Go",
+     "sameAs": [
+      "https://musicbrainz.org/recording/262bcf79-51bb-4f8b-bd5d-faefb4751b60",
+      "https://www.youtube.com/watch?v=e5Qw2y2DUxo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/fischerspooner-just-let-go/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-just-let-go/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Fischerspooner",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fischerspooner"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Odyssey (Fischerspooner album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Odyssey_(Fischerspooner_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/fischerspooner-odyssey-2495905588.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/fischerspooner-odyssey"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "Scene Point Blank",
+       "url": "https://www.scenepointblank.com/reviews/fischerspooner/odyssey"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's 'Odyssey' Out Now",
+       "publisher": "Jackson Free Press (Mississippi Free Press archive)",
+       "url": "https://www.mississippifreepress.org/fischerspooners-odyssey-out-now/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Just Let Go",
+       "publisher": "YouTube (Fischerspooner - Topic)",
+       "url": "https://www.youtube.com/watch?v=e5Qw2y2DUxo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Just Let Go otevírá album Fischerspooner Odyssey z roku 2005 a byla jeho prvním singlem: electroclashový puls se tu potkává s živými bicími a bojovnými elektrickými kytarami v písni, o níž Casey Spooner řekl, že je o bitvách mezi duševním a tělesným.",
+     "educationalLevel": "introductory",
+     "headline": "Fischerspooner - Just Let Go",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/electroclash/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-just-let-go/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/fischerspooner-just-let-go/",
+     "wordCount": 511
+    }
+   ]
+  },
   "fischerspooner-natural-disaster.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -65110,6 +65377,131 @@
     }
    ]
   },
+  "gorillaz-broken.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-broken/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "synth-pop",
+      "electronic",
+      "alternative"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000011",
+     "name": "Broken",
+     "sameAs": [
+      "https://musicbrainz.org/recording/de2151e6-8cae-4561-8eb0-6bb933adeebd",
+      "https://www.youtube.com/watch?v=crC4DKiKPYY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-broken/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-broken/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Gorillaz tracks debuted by Damon",
+       "publisher": "BBC Newsbeat",
+       "url": "https://web.archive.org/web/20090118234954/http://news.bbc.co.uk/newsbeat/hi/music/newsid_7829000/7829878.stm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz – Plastic Beach",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-plastic-beach/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Broken (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/de2151e6-8cae-4561-8eb0-6bb933adeebd"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Broken - Plastic Beach",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=crC4DKiKPYY"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Albová skladba z desky Plastic Beach (2010) od Gorillaz, v níž vpředu stojí sám Damon Albarn; poprvé zazněla jako demo na BBC Radio 1 o rok dříve a zůstala z velké části taková, jaká byla.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - Broken",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "demo",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/demo/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "concept album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/concept-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/deep-cut/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-broken/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-broken/",
+     "wordCount": 490
+    }
+   ]
+  },
   "gorillaz-d12-911-live-in-nyc.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -65345,6 +65737,130 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-de-la-soul-feel-good-inc/",
      "wordCount": 526
+    }
+   ]
+  },
+  "gorillaz-del-the-funky-homosapien-clint-eastwood.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-del-the-funky-homosapien-clint-eastwood/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz, Del The Funky Homosapien",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "hip-hop",
+      "dub",
+      "electronic",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gorillaz"
+     },
+     "isrcCode": "GBAYE0001408",
+     "name": "Clint Eastwood",
+     "sameAs": [
+      "https://musicbrainz.org/recording/318a1c51-5910-4823-bda1-09ea6d84648a",
+      "https://www.youtube.com/watch?v=4L3Yg8uNeFc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-del-the-funky-homosapien-clint-eastwood/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-del-the-funky-homosapien-clint-eastwood/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Clint Eastwood (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Clint_Eastwood_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Singles Collection 2001–2011",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Singles_Collection_2001%E2%80%932011"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Damon Albarn reveals that the beat from one of Gorillaz' best-loved songs was an Omnichord loop preset",
+       "publisher": "MusicRadar",
+       "url": "https://www.musicradar.com/news/damon-albarn-gorillaz-clint-eastwood-omnichord-preset"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Del the Funky Homosapien on Gorillaz's \"Clint Eastwood\"",
+       "publisher": "SPIN",
+       "url": "https://www.spinmagazine.com/2023/07/del-the-funky-homosapien-on-gorillazs-clint-eastwood-if-they-a-cartoon-band-why-you-motherfuckers-doing-this-shit/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Clint Eastwood (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/318a1c51-5910-4823-bda1-09ea6d84648a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Clint Eastwood (Provided to YouTube by WM Italy)",
+       "publisher": "Gorillaz - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=4L3Yg8uNeFc"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Clint Eastwood (Official Video)",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=1V_xRb0x9aw"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Debutový singl virtuální kapely Damona Albarna a Jamieho Hewletta (2001): přednastavený rytmus z Omnichordu, melodika vypůjčená z výkřiku ze spaghetti westernu a sloky, které Del the Funky Homosapien napsal za půl hodiny.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz, Del The Funky Homosapien - Clint Eastwood",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "drum machine",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/drum-machine/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "stage persona",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/stage-persona/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-del-the-funky-homosapien-clint-eastwood/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-del-the-funky-homosapien-clint-eastwood/",
+     "wordCount": 500
     }
    ]
   },
@@ -98821,6 +99337,131 @@
     }
    ]
   },
+  "moby-cold-specks-a-case-for-shame.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moby-cold-specks-a-case-for-shame/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moby, Cold Specks",
+      "sameAs": "https://musicbrainz.org/artist/8970d868-0723-483b-a75b-51088913d3d4"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "downtempo",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Innocents"
+     },
+     "isrcCode": "GB3AD1300009",
+     "name": "A Case for Shame",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bd39b73d-d2ec-459c-8b84-af64169f1720",
+      "https://www.youtube.com/watch?v=Y0MTRqpHK9w"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/moby-cold-specks-a-case-for-shame/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moby-cold-specks-a-case-for-shame/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "A Case for Shame",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/A_Case_for_Shame"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Innocents (Moby album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Innocents_(Moby_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Cold Specks",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Cold_Specks"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Moby — Innocents",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/moby-the-innocents-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "First Listen: Moby, 'Innocents'",
+       "publisher": "NPR",
+       "url": "https://www.npr.org/2013/09/23/224250790/first-listen-moby-innocents"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Moby: Innocents",
+       "publisher": "Hot Press",
+       "url": "https://hotpress.com/music/moby-innocents-10288815"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "A Case for Shame",
+       "publisher": "YouTube (Moby - Topic)",
+       "url": "https://www.youtube.com/watch?v=Y0MTRqpHK9w"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "A Case for Shame, první singl z Mobyho alba Innocents z roku 2013, spojuje jeho pomalou, elegickou elektroniku s hlasem Cold Specks: sametový groove ambientních kláves a zářivých harmonií kolem jejího bluesově protahovaného zpěvu.",
+     "educationalLevel": "introductory",
+     "headline": "Moby, Cold Specks - A Case for Shame",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "ambient texture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/ambient-texture/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/moby-cold-specks-a-case-for-shame/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/moby-cold-specks-a-case-for-shame/",
+     "wordCount": 488
+    }
+   ]
+  },
   "moderat-a-new-error.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -104472,6 +105113,131 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/oliver-koletzki-through-the-darkness/",
      "wordCount": 434
+    }
+   ]
+  },
+  "olivia-dean-so-easy-to-fall-in-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/olivia-dean-so-easy-to-fall-in-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Olivia Dean",
+      "sameAs": "https://musicbrainz.org/artist/15e0d608-0869-429b-898d-3d8db3ecedd5"
+     },
+     "datePublished": "2025",
+     "genre": [
+      "bossa nova",
+      "jazz",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Art of Loving"
+     },
+     "isrcCode": "GBUM72503087",
+     "name": "So Easy (To Fall In Love)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/58320a3a-43f3-4188-826a-a762ca7f04f1",
+      "https://www.youtube.com/watch?v=FX1_FXlKxXY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/olivia-dean-so-easy-to-fall-in-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/olivia-dean-so-easy-to-fall-in-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "So Easy (To Fall in Love)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/So_Easy_(To_Fall_in_Love)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Art of Loving (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Art_of_Loving_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Olivia Dean",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Olivia_Dean"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "It's So Easy to Fall in Love With Olivia Dean",
+       "publisher": "Elle",
+       "url": "https://www.elle.com/culture/music/a68068522/olivia-dean-interview/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Olivia Dean review, The Art of Loving: De-complicating and de-escalating romance with playful generosity",
+       "publisher": "The Independent",
+       "url": "https://www.the-independent.com/arts-entertainment/music/reviews/olivia-dean-review-the-art-of-loving-b2832958.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Olivia Dean - The Art of Loving",
+       "publisher": "The Skinny",
+       "url": "https://www.theskinny.co.uk/music/reviews/albums/olivia-dean-the-art-of-loving"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Olivia Dean - So Easy (To Fall In Love) (Lyric Video)",
+       "publisher": "YouTube (Olivia Dean)",
+       "url": "https://www.youtube.com/watch?v=FX1_FXlKxXY"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "So Easy (To Fall in Love) je povzbuzení ve stylu bossa novy z alba The Art of Loving (2025) Olivie Dean: bicí, barový klavír a trubka à la Bacharach za zpěvačkou, která flirtuje, přesvědčuje a nazývá se dokonalou směsí sobotní noci a zbytku vašeho života.",
+     "educationalLevel": "introductory",
+     "headline": "Olivia Dean - So Easy (To Fall In Love)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "phrasing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/phrasing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/olivia-dean-so-easy-to-fall-in-love/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/olivia-dean-so-easy-to-fall-in-love/",
+     "wordCount": 492
     }
    ]
   },
@@ -119884,6 +120650,136 @@
     }
    ]
   },
+  "the-cat-empire-sly.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-sly/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Cat Empire",
+      "sameAs": "https://musicbrainz.org/artist/a530492f-8806-4bd7-9c14-80c237eb92fe"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "rock",
+      "reggae",
+      "ska"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Two Shoes"
+     },
+     "isrcCode": "AUTW00500001",
+     "name": "Sly",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ed6f6a97-1e48-48e7-837f-255a2dd2ac9a",
+      "https://www.youtube.com/watch?v=-qWCXhxa_bc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-cat-empire-sly/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-sly/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Sly (The Cat Empire song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sly_(The_Cat_Empire_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Two Shoes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Two_Shoes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Cat Empire",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Cat_Empire"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "The Cat Empire: Two Shoes",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/the-cat-empire-two-shoes-2495797515.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Cat Empire – Two Shoes / So Many Nights",
+       "publisher": "mxdwn",
+       "url": "https://music.mxdwn.com/2009/08/09/reviews/the-cat-empire-two-shoes-so-many-nights/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Cat Empire – Two Shoes (user review)",
+       "publisher": "Sputnikmusic",
+       "url": "https://www.sputnikmusic.com/album/8800/The-Cat-Empire-Two-Shoes/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sly (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/ed6f6a97-1e48-48e7-837f-255a2dd2ac9a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Cat Empire - Sly (Official Audio)",
+       "publisher": "The Cat Empire",
+       "url": "https://www.youtube.com/watch?v=-qWCXhxa_bc"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Píseň Felixe Riebla, která otevírá album Two Shoes, nahrané The Cat Empire v Havaně, a byla jeho prvním singlem (2005); kritici v ní slyšeli cokoli od přímočaré rockovky po rychlé reggae.",
+     "educationalLevel": "introductory",
+     "headline": "The Cat Empire - Sly",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/b-side/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-sly/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-cat-empire-sly/",
+     "wordCount": 477
+    }
+   ]
+  },
   "the-cat-empire-the-car-song.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -121925,6 +122821,624 @@
     }
    ]
   },
+  "the-prodigy-nasty.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-nasty/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "breakbeat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400352",
+     "name": "Nasty",
+     "sameAs": [
+      "https://musicbrainz.org/recording/76b4d6ca-cde1-4642-bf77-3161295b6cc5",
+      "https://www.youtube.com/watch?v=uR9g_x8WI5A"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-nasty/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-nasty/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Nasty (The Prodigy song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Nasty_(The_Prodigy_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nasty by The Prodigy",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/the-prodigy/nasty"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy \"Nasty\" (video)",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/prodigy-nasty_video"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy 'Nasty' by Oliver Jones",
+       "publisher": "Promonews",
+       "url": "https://www.promonews.tv/videos/2015/01/16/prodigy-nasty-oliver-jones/31191"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy: Nasty",
+       "publisher": "Shots",
+       "url": "https://shots.net/news/view/86041-the-prodigy-nasty"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy – The Day Is My Enemy",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2015/03/album-review-the-prodigy-the-day-is-my-enemy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/the-prodigy-the-day-is-my-enemy-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy are on autopilot",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/the-prodigy-are-on-autopilot"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nasty (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/76b4d6ca-cde1-4642-bf77-3161295b6cc5"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nasty (The Prodigy - Topic)",
+       "publisher": "The Prodigy - Topic",
+       "url": "https://www.youtube.com/watch?v=uR9g_x8WI5A"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - Nasty",
+       "publisher": "TheProdigyVEVO",
+       "url": "https://www.youtube.com/watch?v=xB_nKpEkILs"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Hlavní singl alba The Prodigy The Day Is My Enemy (2015) s Keithem Flintem a Maximem u mikrofonu: skladba, v níž jeden kritik slyšel návrat k punkem nasáklým devadesátým letům a jiný práci bez zápalu, a videoklip, v němž městská liška obrátí role se svými lovci.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Nasty",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-nasty/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-nasty/",
+     "wordCount": 494
+    }
+   ]
+  },
+  "the-prodigy-rok-weiler.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-rok-weiler/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400362",
+     "name": "Rok-Weiler",
+     "sameAs": [
+      "https://musicbrainz.org/recording/762e9aba-ee99-482c-be28-b5397a8868bb",
+      "https://www.youtube.com/watch?v=nYYj15htuKI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-rok-weiler/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-rok-weiler/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/the-prodigy-the-day-is-my-enemy-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album review: The Prodigy - The Day Is My Enemy",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-the-prodigy-the-day-is-my-enemy/MSI3RNWCRVB32OW5QCUKNHDYLU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Rok-Weiler (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/762e9aba-ee99-482c-be28-b5397a8868bb"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Rok-Weiler",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=nYYj15htuKI"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Skladba Keitha Flinta z alba The Prodigy The Day Is My Enemy (2015), napsaná a spoluprodukovaná s Black Futures, na kytaru hraje Rob Holliday: beaty, které jeden kritik slyšel jako vytesané z betonu, mazlavé filtrované syntezátory a skladba, která rozdělila recenzenty na nadšené a nepřesvědčené.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Rok-Weiler",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "filter sweep",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/filter-sweep/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-rok-weiler/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-rok-weiler/",
+     "wordCount": 461
+    }
+   ]
+  },
+  "the-prodigy-the-day-is-my-enemy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-the-day-is-my-enemy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "industrial"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400351",
+     "name": "The Day Is My Enemy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/87125a97-75cc-4e32-9c59-f38290db5757",
+      "https://www.youtube.com/watch?v=9-LD3a28ePE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-the-day-is-my-enemy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-the-day-is-my-enemy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy \"The Day Is My Enemy\"",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/prodigy-day_is_my_enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day is My Enemy by The Prodigy",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/the-prodigy/the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy",
+       "publisher": "Mixdown",
+       "url": "https://mixdownmag.com.au/features/interviews/the-prodigy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy are on autopilot",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/the-prodigy-are-on-autopilot"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/87125a97-75cc-4e32-9c59-f38290db5757"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=9-LD3a28ePE"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Titulní skladba, která otevírá album The Prodigy z roku 2015: kytarový riff od Ollyho Burdena, živé bicí v podání Top Secret Drum Corps a Martina Topley-Bird zpívající slova vypůjčená z písně All Through the Night (Cole Porter), v níž kritici slyšeli temnotu, zadumanost a hrozbu.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - The Day Is My Enemy",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "interpolation",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/interpolation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "riff",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/riff/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-the-day-is-my-enemy/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-the-day-is-my-enemy/",
+     "wordCount": 495
+    }
+   ]
+  },
+  "the-prodigy-wild-frontier.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-wild-frontier/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "breakbeat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400355",
+     "name": "Wild Frontier",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ae905620-5c8a-4969-b054-9d896fedfdd6",
+      "https://www.youtube.com/watch?v=AnMsK_PJYA4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-wild-frontier/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-wild-frontier/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy are on autopilot",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/the-prodigy-are-on-autopilot"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album review: The Prodigy - The Day Is My Enemy",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-the-prodigy-the-day-is-my-enemy/MSI3RNWCRVB32OW5QCUKNHDYLU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy: Wild Frontier",
+       "publisher": "Shots",
+       "url": "https://shots.net/news/view/86476-the-prodigy-wild-frontier"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy 'Wild Frontier' Music Video",
+       "publisher": "The Music Times",
+       "url": "https://www.musictimes.com/articles/29543/20150223/the-prodigy-wild-frontier-music-video-the-day-is-my-enemy.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - Wild Frontier",
+       "publisher": "Nederlands Film Festival",
+       "url": "https://www.filmfestival.nl/en/archive/the-prodigy-wild-frontier"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy Reveal Wild Frontier Video",
+       "publisher": "Noise11",
+       "url": "https://www.noise11.com/news/the-prodigy-reveal-wild-frontier-video-20150224"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Wild Frontier (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/ae905620-5c8a-4969-b054-9d896fedfdd6"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Wild Frontier",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=AnMsK_PJYA4"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Druhý singl z alba The Prodigy The Day Is My Enemy (2015), který vznikl ve spolupráci s KillSonik jako spoluautory a spoluproducenty a zpívá ho Maxim: melodie, v níž jeden kritik slyšel osmibitovou počítačovou hudbu, a animovaný videoklip (režie Mascha Halberstad).",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Wild Frontier",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "chiptune",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/chiptune/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-wild-frontier/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-wild-frontier/",
+     "wordCount": 506
+    }
+   ]
+  },
   "the-puppini-sisters-could-it-be-magic.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -122035,6 +123549,123 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/the-puppini-sisters-could-it-be-magic/",
      "wordCount": 487
+    }
+   ]
+  },
+  "the-puppini-sisters-crazy-in-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-puppini-sisters-crazy-in-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Puppini Sisters",
+      "sameAs": "https://musicbrainz.org/artist/c17d3b64-57f1-4e28-8a85-2c02bfc0bc05"
+     },
+     "datePublished": "2007",
+     "genre": [
+      "cover",
+      "jazz",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Rise and Fall of Ruby Woo"
+     },
+     "isrcCode": "GBUM70705982",
+     "name": "Crazy In Love",
+     "sameAs": [
+      "https://musicbrainz.org/recording/71cf6294-d34f-48be-930a-20510479dad2",
+      "https://www.youtube.com/watch?v=yOD7bx8Y6As"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-puppini-sisters-crazy-in-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-puppini-sisters-crazy-in-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Rise and Fall of Ruby Woo",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Rise_and_Fall_of_Ruby_Woo"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Puppini Sisters",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Puppini_Sisters"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Crazy in Love",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Crazy_in_Love"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "The Puppini Sisters: The Rise and Fall of Ruby Woo (The Graham Weekly Album Review)",
+       "publisher": "George Graham",
+       "url": "https://www.georgegraham.com/reviews/puppini.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Album Review: The Rise and Fall of Ruby Woo - The Puppini Sisters",
+       "publisher": "The Von Pip Musical Express",
+       "url": "https://www.thevpme.com/reviews/album-review-the-rise-and-fall-of-ruby-woo-the-puppini-sisters"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Crazy In Love (Album Version)",
+       "publisher": "YouTube (The Puppini Sisters - Topic)",
+       "url": "https://www.youtube.com/watch?v=yOD7bx8Y6As"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The Puppini Sisters proměňují hit Beyoncé Crazy in Love z roku 2003 v číslo pro těsnou vokální harmonii na svém albu The Rise and Fall of Ruby Woo z roku 2007, nesené stojací basou a houslemi a houpající se od hot jazzu ke kabaretu.",
+     "educationalLevel": "introductory",
+     "headline": "The Puppini Sisters - Crazy In Love",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-puppini-sisters-crazy-in-love/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-puppini-sisters-crazy-in-love/",
+     "wordCount": 535
     }
    ]
   },
@@ -162303,6 +163934,145 @@
     }
    ]
   },
+  "d12-my-band.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-my-band/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "D12 World"
+     },
+     "isrcCode": "USIR10400103",
+     "name": "My Band",
+     "sameAs": [
+      "https://musicbrainz.org/recording/895c8c9c-9bb3-47bf-9244-39c9c93e2be3",
+      "https://www.youtube.com/watch?v=FMVujE_A_OM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-my-band/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-my-band/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "My Band",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/My_Band"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "D12 – D12 World",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/d12-d12_world"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World (review excerpts from AllMusic and The Guardian)",
+       "publisher": "Music Critic",
+       "url": "https://musiccritic.com/d12/d12-world"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Immaturity makes this World go round",
+       "publisher": "Indiana Daily Student",
+       "url": "https://www.idsnews.com/article/2004/05/immaturity-makes-this-world-go-round"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World (review)",
+       "publisher": "Cleveland Scene",
+       "url": "https://www.clevescene.com/?p=224845"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Review: D12, 'D12 World' (reposted from The Detroit News)",
+       "publisher": "RyanMcBain.com",
+       "url": "https://ryanmcbain.com/real/forum/the-cantina/hip-hopalyptic/reviews/1676-review-d12-d12-world"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "My Band (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/895c8c9c-9bb3-47bf-9244-39c9c93e2be3"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "My Band (Provided to YouTube by Universal Music Group)",
+       "publisher": "D12 - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=FMVujE_A_OM"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 - My Band ft. Cameo (Official Music Video)",
+       "publisher": "D12VEVO",
+       "url": "https://www.youtube.com/watch?v=ttWQK5VXskA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The first single from D12 World (2004), in which D12 mock the idea that Eminem is their lead singer; it reached number one in Australia, New Zealand and Norway and number two in the UK.",
+     "educationalLevel": "introductory",
+     "headline": "D12 - My Band",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "posse cut",
+       "url": "https://korczis.github.io/sonic-playground/concept/posse-cut/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "parody",
+       "url": "https://korczis.github.io/sonic-playground/concept/parody/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/d12-my-band/",
+     "wordCount": 555
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -182262,6 +184032,128 @@
     }
    ]
   },
+  "fischerspooner-just-let-go.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-just-let-go/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Fischerspooner",
+      "sameAs": "https://musicbrainz.org/artist/a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "electro-pop",
+      "synth-pop",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Odyssey"
+     },
+     "isrcCode": "USFS20400002",
+     "name": "Just Let Go",
+     "sameAs": [
+      "https://musicbrainz.org/recording/262bcf79-51bb-4f8b-bd5d-faefb4751b60",
+      "https://www.youtube.com/watch?v=e5Qw2y2DUxo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/fischerspooner-just-let-go/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/fischerspooner-just-let-go/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Fischerspooner",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fischerspooner"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Odyssey (Fischerspooner album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Odyssey_(Fischerspooner_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/fischerspooner-odyssey-2495905588.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/fischerspooner-odyssey"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner: Odyssey",
+       "publisher": "Scene Point Blank",
+       "url": "https://www.scenepointblank.com/reviews/fischerspooner/odyssey"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Fischerspooner's 'Odyssey' Out Now",
+       "publisher": "Jackson Free Press (Mississippi Free Press archive)",
+       "url": "https://www.mississippifreepress.org/fischerspooners-odyssey-out-now/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Just Let Go",
+       "publisher": "YouTube (Fischerspooner - Topic)",
+       "url": "https://www.youtube.com/watch?v=e5Qw2y2DUxo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Just Let Go opens Fischerspooner's 2005 album Odyssey and was its lead single: electroclash pulse meets live drums and combative electric guitars, a song Casey Spooner described as being about battles between the mental and the physical.",
+     "educationalLevel": "introductory",
+     "headline": "Fischerspooner - Just Let Go",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/concept/electroclash/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/fischerspooner-just-let-go/",
+     "wordCount": 548
+    }
+   ]
+  },
   "fischerspooner-natural-disaster.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -193608,6 +195500,128 @@
     }
    ]
   },
+  "gorillaz-broken.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-broken/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "synth-pop",
+      "electronic",
+      "alternative"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Plastic Beach"
+     },
+     "isrcCode": "GBAYE1000011",
+     "name": "Broken",
+     "sameAs": [
+      "https://musicbrainz.org/recording/de2151e6-8cae-4561-8eb0-6bb933adeebd",
+      "https://www.youtube.com/watch?v=crC4DKiKPYY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-broken/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-broken/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Plastic Beach",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Plastic_Beach"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Gorillaz tracks debuted by Damon",
+       "publisher": "BBC Newsbeat",
+       "url": "https://web.archive.org/web/20090118234954/http://news.bbc.co.uk/newsbeat/hi/music/newsid_7829000/7829878.stm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Plastic Beach Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2075213/gorillaz-plastic-beach-review/franchises/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Gorillaz – Plastic Beach",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/gorillaz-plastic-beach-26370"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Album Review: Gorillaz – Plastic Beach",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-plastic-beach/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Broken (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/de2151e6-8cae-4561-8eb0-6bb933adeebd"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Broken - Plastic Beach",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=crC4DKiKPYY"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "An album track from Gorillaz's Plastic Beach (2010) with Damon Albarn alone at the front, first heard as a demo on BBC Radio 1 a year earlier and kept mostly as it was.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - Broken",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "demo",
+       "url": "https://korczis.github.io/sonic-playground/concept/demo/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "concept album",
+       "url": "https://korczis.github.io/sonic-playground/concept/concept-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/concept/deep-cut/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-broken/",
+     "wordCount": 517
+    }
+   ]
+  },
   "gorillaz-d12-911-live-in-nyc.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -193837,6 +195851,127 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/gorillaz-de-la-soul-feel-good-inc/",
      "wordCount": 544
+    }
+   ]
+  },
+  "gorillaz-del-the-funky-homosapien-clint-eastwood.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-del-the-funky-homosapien-clint-eastwood/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz, Del The Funky Homosapien",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "hip-hop",
+      "dub",
+      "electronic",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gorillaz"
+     },
+     "isrcCode": "GBAYE0001408",
+     "name": "Clint Eastwood",
+     "sameAs": [
+      "https://musicbrainz.org/recording/318a1c51-5910-4823-bda1-09ea6d84648a",
+      "https://www.youtube.com/watch?v=4L3Yg8uNeFc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-del-the-funky-homosapien-clint-eastwood/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-del-the-funky-homosapien-clint-eastwood/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Clint Eastwood (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Clint_Eastwood_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Singles Collection 2001–2011",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Singles_Collection_2001%E2%80%932011"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Damon Albarn reveals that the beat from one of Gorillaz' best-loved songs was an Omnichord loop preset",
+       "publisher": "MusicRadar",
+       "url": "https://www.musicradar.com/news/damon-albarn-gorillaz-clint-eastwood-omnichord-preset"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Del the Funky Homosapien on Gorillaz's \"Clint Eastwood\"",
+       "publisher": "SPIN",
+       "url": "https://www.spinmagazine.com/2023/07/del-the-funky-homosapien-on-gorillazs-clint-eastwood-if-they-a-cartoon-band-why-you-motherfuckers-doing-this-shit/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Clint Eastwood (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/318a1c51-5910-4823-bda1-09ea6d84648a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Clint Eastwood (Provided to YouTube by WM Italy)",
+       "publisher": "Gorillaz - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=4L3Yg8uNeFc"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Clint Eastwood (Official Video)",
+       "publisher": "Gorillaz",
+       "url": "https://www.youtube.com/watch?v=1V_xRb0x9aw"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The debut single of Damon Albarn and Jamie Hewlett's virtual band (2001): an Omnichord preset, a melodica line borrowed from a spaghetti-western yell, and verses Del the Funky Homosapien wrote in half an hour.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz, Del The Funky Homosapien - Clint Eastwood",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "drum machine",
+       "url": "https://korczis.github.io/sonic-playground/concept/drum-machine/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "stage persona",
+       "url": "https://korczis.github.io/sonic-playground/concept/stage-persona/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-del-the-funky-homosapien-clint-eastwood/",
+     "wordCount": 542
     }
    ]
   },
@@ -226431,6 +228566,128 @@
     }
    ]
   },
+  "moby-cold-specks-a-case-for-shame.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moby-cold-specks-a-case-for-shame/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moby, Cold Specks",
+      "sameAs": "https://musicbrainz.org/artist/8970d868-0723-483b-a75b-51088913d3d4"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "downtempo",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Innocents"
+     },
+     "isrcCode": "GB3AD1300009",
+     "name": "A Case for Shame",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bd39b73d-d2ec-459c-8b84-af64169f1720",
+      "https://www.youtube.com/watch?v=Y0MTRqpHK9w"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moby-cold-specks-a-case-for-shame/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moby-cold-specks-a-case-for-shame/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "A Case for Shame",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/A_Case_for_Shame"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Innocents (Moby album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Innocents_(Moby_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Cold Specks",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Cold_Specks"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Moby — Innocents",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/quietus-reviews/moby-the-innocents-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "First Listen: Moby, 'Innocents'",
+       "publisher": "NPR",
+       "url": "https://www.npr.org/2013/09/23/224250790/first-listen-moby-innocents"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Moby: Innocents",
+       "publisher": "Hot Press",
+       "url": "https://hotpress.com/music/moby-innocents-10288815"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "A Case for Shame",
+       "publisher": "YouTube (Moby - Topic)",
+       "url": "https://www.youtube.com/watch?v=Y0MTRqpHK9w"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "A Case for Shame, the first single from Moby's 2013 album Innocents, pairs his slow, elegiac electronics with the voice of Cold Specks: a velvety groove of ambient keys and luminous harmonies around her bluesy drawl.",
+     "educationalLevel": "introductory",
+     "headline": "Moby, Cold Specks - A Case for Shame",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "ambient texture",
+       "url": "https://korczis.github.io/sonic-playground/concept/ambient-texture/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/moby-cold-specks-a-case-for-shame/",
+     "wordCount": 527
+    }
+   ]
+  },
   "moderat-a-new-error.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -231926,6 +234183,128 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/oliver-koletzki-through-the-darkness/",
      "wordCount": 490
+    }
+   ]
+  },
+  "olivia-dean-so-easy-to-fall-in-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/olivia-dean-so-easy-to-fall-in-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Olivia Dean",
+      "sameAs": "https://musicbrainz.org/artist/15e0d608-0869-429b-898d-3d8db3ecedd5"
+     },
+     "datePublished": "2025",
+     "genre": [
+      "bossa nova",
+      "jazz",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Art of Loving"
+     },
+     "isrcCode": "GBUM72503087",
+     "name": "So Easy (To Fall In Love)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/58320a3a-43f3-4188-826a-a762ca7f04f1",
+      "https://www.youtube.com/watch?v=FX1_FXlKxXY"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/olivia-dean-so-easy-to-fall-in-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/olivia-dean-so-easy-to-fall-in-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "So Easy (To Fall in Love)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/So_Easy_(To_Fall_in_Love)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Art of Loving (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Art_of_Loving_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Olivia Dean",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Olivia_Dean"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "It's So Easy to Fall in Love With Olivia Dean",
+       "publisher": "Elle",
+       "url": "https://www.elle.com/culture/music/a68068522/olivia-dean-interview/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Olivia Dean review, The Art of Loving: De-complicating and de-escalating romance with playful generosity",
+       "publisher": "The Independent",
+       "url": "https://www.the-independent.com/arts-entertainment/music/reviews/olivia-dean-review-the-art-of-loving-b2832958.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Olivia Dean - The Art of Loving",
+       "publisher": "The Skinny",
+       "url": "https://www.theskinny.co.uk/music/reviews/albums/olivia-dean-the-art-of-loving"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Olivia Dean - So Easy (To Fall In Love) (Lyric Video)",
+       "publisher": "YouTube (Olivia Dean)",
+       "url": "https://www.youtube.com/watch?v=FX1_FXlKxXY"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "So Easy (To Fall in Love) is Olivia Dean's bossa nova pep talk from The Art of Loving (2025): drums, cocktail piano and a Bacharach-style trumpet behind a singer who flirts, persuades and calls herself the perfect mix of Saturday night and the rest of your life.",
+     "educationalLevel": "introductory",
+     "headline": "Olivia Dean - So Easy (To Fall In Love)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "phrasing",
+       "url": "https://korczis.github.io/sonic-playground/concept/phrasing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/olivia-dean-so-easy-to-fall-in-love/",
+     "wordCount": 530
     }
    ]
   },
@@ -246936,6 +249315,133 @@
     }
    ]
   },
+  "the-cat-empire-sly.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-sly/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Cat Empire",
+      "sameAs": "https://musicbrainz.org/artist/a530492f-8806-4bd7-9c14-80c237eb92fe"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "rock",
+      "reggae",
+      "ska"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Two Shoes"
+     },
+     "isrcCode": "AUTW00500001",
+     "name": "Sly",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ed6f6a97-1e48-48e7-837f-255a2dd2ac9a",
+      "https://www.youtube.com/watch?v=-qWCXhxa_bc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-sly/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-sly/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Sly (The Cat Empire song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Sly_(The_Cat_Empire_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Two Shoes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Two_Shoes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Cat Empire",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Cat_Empire"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "The Cat Empire: Two Shoes",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/the-cat-empire-two-shoes-2495797515.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Cat Empire – Two Shoes / So Many Nights",
+       "publisher": "mxdwn",
+       "url": "https://music.mxdwn.com/2009/08/09/reviews/the-cat-empire-two-shoes-so-many-nights/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Cat Empire – Two Shoes (user review)",
+       "publisher": "Sputnikmusic",
+       "url": "https://www.sputnikmusic.com/album/8800/The-Cat-Empire-Two-Shoes/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sly (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/ed6f6a97-1e48-48e7-837f-255a2dd2ac9a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Cat Empire - Sly (Official Audio)",
+       "publisher": "The Cat Empire",
+       "url": "https://www.youtube.com/watch?v=-qWCXhxa_bc"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Felix Riebl's song that opens The Cat Empire's Havana-recorded Two Shoes and was its first single (2005), heard by critics as anything from a straight-ahead rocker to a fast reggae tune.",
+     "educationalLevel": "introductory",
+     "headline": "The Cat Empire - Sly",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/concept/b-side/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-cat-empire-sly/",
+     "wordCount": 493
+    }
+   ]
+  },
   "the-cat-empire-the-car-song.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -248926,6 +251432,612 @@
     }
    ]
   },
+  "the-prodigy-nasty.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-nasty/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "breakbeat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400352",
+     "name": "Nasty",
+     "sameAs": [
+      "https://musicbrainz.org/recording/76b4d6ca-cde1-4642-bf77-3161295b6cc5",
+      "https://www.youtube.com/watch?v=uR9g_x8WI5A"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-nasty/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-nasty/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Nasty (The Prodigy song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Nasty_(The_Prodigy_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nasty by The Prodigy",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/the-prodigy/nasty"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy \"Nasty\" (video)",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/prodigy-nasty_video"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy 'Nasty' by Oliver Jones",
+       "publisher": "Promonews",
+       "url": "https://www.promonews.tv/videos/2015/01/16/prodigy-nasty-oliver-jones/31191"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy: Nasty",
+       "publisher": "Shots",
+       "url": "https://shots.net/news/view/86041-the-prodigy-nasty"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy – The Day Is My Enemy",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2015/03/album-review-the-prodigy-the-day-is-my-enemy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/the-prodigy-the-day-is-my-enemy-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy are on autopilot",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/the-prodigy-are-on-autopilot"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nasty (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/76b4d6ca-cde1-4642-bf77-3161295b6cc5"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Nasty (The Prodigy - Topic)",
+       "publisher": "The Prodigy - Topic",
+       "url": "https://www.youtube.com/watch?v=uR9g_x8WI5A"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - Nasty",
+       "publisher": "TheProdigyVEVO",
+       "url": "https://www.youtube.com/watch?v=xB_nKpEkILs"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The lead single of The Prodigy's The Day Is My Enemy (2015), with Keith Flint and Maxim on vocals: a track one critic heard harking back to the punk-infused 1990s, another as phoned-in, and a video in which an urban fox turns the tables on its hunters.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Nasty",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-nasty/",
+     "wordCount": 519
+    }
+   ]
+  },
+  "the-prodigy-rok-weiler.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-rok-weiler/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400362",
+     "name": "Rok-Weiler",
+     "sameAs": [
+      "https://musicbrainz.org/recording/762e9aba-ee99-482c-be28-b5397a8868bb",
+      "https://www.youtube.com/watch?v=nYYj15htuKI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-rok-weiler/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-rok-weiler/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/the-prodigy-the-day-is-my-enemy-album-review"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album review: The Prodigy - The Day Is My Enemy",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-the-prodigy-the-day-is-my-enemy/MSI3RNWCRVB32OW5QCUKNHDYLU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Rok-Weiler (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/762e9aba-ee99-482c-be28-b5397a8868bb"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Rok-Weiler",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=nYYj15htuKI"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "A Keith Flint track from The Prodigy's The Day Is My Enemy (2015), co-written and co-produced with Black Futures, with Rob Holliday on guitar: beats one critic heard as hewn from concrete and gooey filtered synths, a track that split reviewers between thrilled and unimpressed.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Rok-Weiler",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "filter sweep",
+       "url": "https://korczis.github.io/sonic-playground/concept/filter-sweep/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-rok-weiler/",
+     "wordCount": 492
+    }
+   ]
+  },
+  "the-prodigy-the-day-is-my-enemy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-the-day-is-my-enemy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "industrial"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400351",
+     "name": "The Day Is My Enemy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/87125a97-75cc-4e32-9c59-f38290db5757",
+      "https://www.youtube.com/watch?v=9-LD3a28ePE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-the-day-is-my-enemy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-the-day-is-my-enemy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy \"The Day Is My Enemy\"",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/prodigy-day_is_my_enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day is My Enemy by The Prodigy",
+       "publisher": "Songfacts",
+       "url": "https://www.songfacts.com/facts/the-prodigy/the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy",
+       "publisher": "Mixdown",
+       "url": "https://mixdownmag.com.au/features/interviews/the-prodigy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy are on autopilot",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/the-prodigy-are-on-autopilot"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/87125a97-75cc-4e32-9c59-f38290db5757"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - The Day Is My Enemy",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=9-LD3a28ePE"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The title track that opens The Prodigy's 2015 album: a guitar riff by Olly Burden, live drums by Top Secret Drum Corps and Martina Topley-Bird singing words borrowed from Cole Porter's All Through the Night, which critics heard as dark, brooding and menacing.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - The Day Is My Enemy",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "interpolation",
+       "url": "https://korczis.github.io/sonic-playground/concept/interpolation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "riff",
+       "url": "https://korczis.github.io/sonic-playground/concept/riff/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-the-day-is-my-enemy/",
+     "wordCount": 536
+    }
+   ]
+  },
+  "the-prodigy-wild-frontier.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-wild-frontier/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "breakbeat"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400355",
+     "name": "Wild Frontier",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ae905620-5c8a-4969-b054-9d896fedfdd6",
+      "https://www.youtube.com/watch?v=AnMsK_PJYA4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-wild-frontier/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-wild-frontier/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy – The Day Is My Enemy",
+       "publisher": "The List",
+       "url": "https://list.co.uk/news/the-prodigy-the-day-is-my-enemy-12862"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy are on autopilot",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/the-prodigy-are-on-autopilot"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album review: The Prodigy - The Day Is My Enemy",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-the-prodigy-the-day-is-my-enemy/MSI3RNWCRVB32OW5QCUKNHDYLU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy: Wild Frontier",
+       "publisher": "Shots",
+       "url": "https://shots.net/news/view/86476-the-prodigy-wild-frontier"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy 'Wild Frontier' Music Video",
+       "publisher": "The Music Times",
+       "url": "https://www.musictimes.com/articles/29543/20150223/the-prodigy-wild-frontier-music-video-the-day-is-my-enemy.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy - Wild Frontier",
+       "publisher": "Nederlands Film Festival",
+       "url": "https://www.filmfestival.nl/en/archive/the-prodigy-wild-frontier"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy Reveal Wild Frontier Video",
+       "publisher": "Noise11",
+       "url": "https://www.noise11.com/news/the-prodigy-reveal-wild-frontier-video-20150224"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Wild Frontier (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/ae905620-5c8a-4969-b054-9d896fedfdd6"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Wild Frontier",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=AnMsK_PJYA4"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The second single from The Prodigy's The Day Is My Enemy (2015), co-written and co-produced with KillSonik and voiced by Maxim: a melody one critic heard as eight-bit computer music, and a stop-motion video by Mascha Halberstad.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Wild Frontier",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "chiptune",
+       "url": "https://korczis.github.io/sonic-playground/concept/chiptune/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-wild-frontier/",
+     "wordCount": 531
+    }
+   ]
+  },
   "the-puppini-sisters-could-it-be-magic.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -249033,6 +252145,120 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/the-puppini-sisters-could-it-be-magic/",
      "wordCount": 506
+    }
+   ]
+  },
+  "the-puppini-sisters-crazy-in-love.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-puppini-sisters-crazy-in-love/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Puppini Sisters",
+      "sameAs": "https://musicbrainz.org/artist/c17d3b64-57f1-4e28-8a85-2c02bfc0bc05"
+     },
+     "datePublished": "2007",
+     "genre": [
+      "cover",
+      "jazz",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Rise and Fall of Ruby Woo"
+     },
+     "isrcCode": "GBUM70705982",
+     "name": "Crazy In Love",
+     "sameAs": [
+      "https://musicbrainz.org/recording/71cf6294-d34f-48be-930a-20510479dad2",
+      "https://www.youtube.com/watch?v=yOD7bx8Y6As"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-puppini-sisters-crazy-in-love/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-puppini-sisters-crazy-in-love/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Rise and Fall of Ruby Woo",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Rise_and_Fall_of_Ruby_Woo"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Puppini Sisters",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Puppini_Sisters"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Crazy in Love",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Crazy_in_Love"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "The Puppini Sisters: The Rise and Fall of Ruby Woo (The Graham Weekly Album Review)",
+       "publisher": "George Graham",
+       "url": "https://www.georgegraham.com/reviews/puppini.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Album Review: The Rise and Fall of Ruby Woo - The Puppini Sisters",
+       "publisher": "The Von Pip Musical Express",
+       "url": "https://www.thevpme.com/reviews/album-review-the-rise-and-fall-of-ruby-woo-the-puppini-sisters"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Crazy In Love (Album Version)",
+       "publisher": "YouTube (The Puppini Sisters - Topic)",
+       "url": "https://www.youtube.com/watch?v=yOD7bx8Y6As"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The Puppini Sisters turn Beyoncé's 2003 hit Crazy in Love into a close-harmony number on their 2007 album The Rise and Fall of Ruby Woo, carried by upright bass and violin and swinging from hot jazz towards cabaret.",
+     "educationalLevel": "introductory",
+     "headline": "The Puppini Sisters - Crazy In Love",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-puppini-sisters-crazy-in-love/",
+     "wordCount": 565
     }
    ]
   },

@@ -854,7 +854,7 @@
 {"followed": false, "id": "cody-chesnutt", "liked": 0, "name": "Cody Chesnutt", "reviewed": 0, "spotify_artist": "3sO8muEXafy2NGwUZByrTr", "tracks": 1}
 {"followed": false, "id": "cody-fry", "liked": 0, "name": "Cody Fry", "reviewed": 0, "spotify_artist": "7dOCnyDR2oEa1hQlvTXvdT", "tracks": 1}
 {"followed": false, "id": "coileainn", "liked": 0, "name": "Coileáinn", "reviewed": 0, "spotify_artist": "5flYFtyT8qgB5GdW7SQsic", "tracks": 1}
-{"followed": false, "id": "cold-specks", "liked": 1, "name": "Cold Specks", "reviewed": 0, "spotify_artist": "2DMHBCdboDAYJWzt2lDSP5", "tracks": 1}
+{"followed": false, "id": "cold-specks", "liked": 1, "name": "Cold Specks", "reviewed": 1, "spotify_artist": "2DMHBCdboDAYJWzt2lDSP5", "tracks": 1}
 {"followed": false, "id": "coldabank", "liked": 1, "name": "Coldabank", "reviewed": 1, "spotify_artist": "3JOvRLynmP4mA6dvlWARoA", "tracks": 3}
 {"followed": false, "id": "coldare", "liked": 0, "name": "Coldare", "reviewed": 0, "spotify_artist": "2FHefNucZqH8nNdKcJX7tM", "tracks": 1}
 {"followed": false, "id": "coldplay", "liked": 0, "name": "Coldplay", "reviewed": 0, "spotify_artist": "4gzpq5DPGxSnKTe4SA8HAU", "tracks": 4}
@@ -932,7 +932,7 @@
 {"followed": false, "id": "d-stone", "liked": 0, "name": "D Stone", "reviewed": 0, "spotify_artist": "54G5Bq4yKz8mwGYFsffne9", "tracks": 1}
 {"followed": false, "id": "d-nox", "liked": 0, "name": "D-Nox", "reviewed": 0, "spotify_artist": "1TqcQwnBqloJrKkGs4l4LT", "tracks": 1}
 {"followed": false, "id": "d-o-d", "liked": 0, "name": "D.O.D", "reviewed": 0, "spotify_artist": "0Cs47vvRsPgEfliBU9KDiB", "tracks": 1}
-{"followed": true, "id": "d12", "liked": 41, "name": "D12", "reviewed": 14, "spotify_artist": "5Qi4Bb7a8C0a00NZcA77L0", "top_month": 6, "tracks": 41}
+{"followed": true, "id": "d12", "liked": 41, "name": "D12", "reviewed": 15, "spotify_artist": "5Qi4Bb7a8C0a00NZcA77L0", "top_month": 6, "tracks": 41}
 {"followed": false, "id": "da-fonz", "liked": 1, "name": "Da Fonz", "reviewed": 1, "spotify_artist": "0leB3oHU2aoETTsyr4WCfb", "tracks": 1}
 {"followed": false, "id": "dabeull", "liked": 0, "name": "Dabeull", "reviewed": 0, "spotify_artist": "7sw3xJMTpdcpfssx17hfrb", "tracks": 1}
 {"followed": false, "id": "dada-life", "liked": 11, "name": "Dada Life", "reviewed": 11, "spotify_artist": "00sAT5YX8W3xNd1EuqyHw9", "top_month": 25, "tracks": 13}
@@ -1048,7 +1048,7 @@
 {"followed": false, "id": "definition", "liked": 0, "name": "Definition", "reviewed": 0, "spotify_artist": "7KT19dObRj1T5OgnyQFm4C", "tracks": 1}
 {"followed": true, "id": "defuckto", "liked": 1, "name": "DeFuckTo", "reviewed": 1, "spotify_artist": "5ePLZV8qgXvEewuJCWkwTU", "tracks": 1}
 {"followed": false, "id": "degravitated", "liked": 0, "name": "Degravitated", "reviewed": 0, "spotify_artist": "5X78BhxOkF4gr6Q0WD1CoY", "tracks": 1}
-{"followed": false, "id": "del-the-funky-homosapien", "liked": 5, "name": "Del The Funky Homosapien", "reviewed": 0, "spotify_artist": "0YsLR3SQd5QTXAhGIGX7cl", "tracks": 5}
+{"followed": false, "id": "del-the-funky-homosapien", "liked": 5, "name": "Del The Funky Homosapien", "reviewed": 3, "spotify_artist": "0YsLR3SQd5QTXAhGIGX7cl", "tracks": 5}
 {"followed": false, "id": "delac", "liked": 0, "name": "Delac", "reviewed": 0, "spotify_artist": "2MkVSepMMfJrKDOivPEmKM", "tracks": 1}
 {"followed": false, "id": "delacey", "liked": 0, "name": "Delacey", "reviewed": 0, "spotify_artist": "1thbOfXak53dM1Xabq3pmb", "tracks": 10}
 {"followed": false, "id": "delayed-dreams", "liked": 0, "name": "Delayed Dreams", "reviewed": 0, "spotify_artist": "67psE9BkYf2rCpo8zZHQmZ", "tracks": 1}
@@ -1451,7 +1451,7 @@
 {"followed": false, "id": "fiona-daniel", "liked": 1, "name": "Fiona Daniel", "reviewed": 1, "spotify_artist": "2BCDV8oxSjy9uXFxcFprgn", "tracks": 1}
 {"followed": false, "id": "fionnlagh", "liked": 0, "name": "Fionnlagh", "reviewed": 0, "spotify_artist": "5EG6Uwsagvsrl6ukTGuqeh", "tracks": 1}
 {"followed": false, "id": "firstwave", "liked": 0, "name": "Firstwave", "reviewed": 0, "spotify_artist": "391rJg2YdneMI1zyy1o44E", "tracks": 1}
-{"followed": true, "id": "fischerspooner", "liked": 31, "name": "Fischerspooner", "reviewed": 11, "spotify_artist": "5R7K1GezC0jy24v1R2n4x3", "top_month": 7, "tracks": 31}
+{"followed": true, "id": "fischerspooner", "liked": 31, "name": "Fischerspooner", "reviewed": 12, "spotify_artist": "5R7K1GezC0jy24v1R2n4x3", "top_month": 7, "tracks": 31}
 {"followed": false, "id": "fisher", "liked": 0, "name": "FISHER", "reviewed": 0, "spotify_artist": "1VJ0briNOlXRtJUAzoUJdt", "tracks": 2}
 {"followed": false, "id": "fiuk", "liked": 0, "name": "Fiuk", "reviewed": 0, "spotify_artist": "0SVSq6V4n9dDVeIZifohqN", "tracks": 1}
 {"followed": false, "id": "five", "liked": 0, "name": "Five", "reviewed": 0, "spotify_artist": "6rEzedK7cKWjeQWdAYvWVG", "tracks": 1}
@@ -1641,7 +1641,7 @@
 {"followed": false, "id": "goom-gum", "liked": 0, "name": "Goom Gum", "reviewed": 0, "spotify_artist": "6D36JCiONtO40ykvT5RBec", "tracks": 1}
 {"followed": false, "id": "goonrock", "liked": 0, "name": "GoonRock", "reviewed": 1, "spotify_artist": "53sIBaVjXQhfH89Vu6nEGh", "tracks": 1}
 {"followed": true, "id": "gorgon-city", "liked": 25, "name": "Gorgon City", "reviewed": 12, "spotify_artist": "4VNQWV2y1E97Eqo2D5UTjx", "top_month": 14, "tracks": 29}
-{"followed": true, "id": "gorillaz", "liked": 213, "name": "Gorillaz", "reviewed": 33, "spotify_artist": "3AA28KZvwAUcZuOKwyblJQ", "top_month": 1, "tracks": 214}
+{"followed": true, "id": "gorillaz", "liked": 213, "name": "Gorillaz", "reviewed": 37, "spotify_artist": "3AA28KZvwAUcZuOKwyblJQ", "top_month": 1, "tracks": 214}
 {"followed": false, "id": "gotan-project", "liked": 2, "name": "Gotan Project", "reviewed": 2, "spotify_artist": "44ejFPE33H5aOInxNV2BFP", "tracks": 2}
 {"followed": false, "id": "gottlieb-scheppert", "liked": 0, "name": "Gottlieb Scheppert", "reviewed": 0, "spotify_artist": "7gsbhHwWrgawymTkQVXlC4", "tracks": 1}
 {"followed": false, "id": "gotts-street-park", "liked": 0, "name": "Gotts Street Park", "reviewed": 0, "spotify_artist": "2hwy5DELim1AxB1sHPqn4y", "tracks": 1}
@@ -3025,7 +3025,7 @@
 {"followed": false, "id": "mo-falk", "liked": 0, "name": "Mo Falk", "reviewed": 0, "spotify_artist": "40U5WCKQ9YGndn2bqa5vEZ", "tracks": 1}
 {"followed": false, "id": "mo-do", "liked": 0, "name": "Mo-Do", "reviewed": 0, "spotify_artist": "3Y42QTbwNJeqEVmrMknG0f", "tracks": 2}
 {"followed": false, "id": "mobb-deep", "liked": 0, "name": "Mobb Deep", "reviewed": 0, "spotify_artist": "6O2zJ0tId7g07yzHtX0yap", "tracks": 1}
-{"followed": false, "id": "moby", "liked": 1, "name": "Moby", "reviewed": 0, "spotify_artist": "3OsRAKCvk37zwYcnzRf5XF", "tracks": 5}
+{"followed": false, "id": "moby", "liked": 1, "name": "Moby", "reviewed": 1, "spotify_artist": "3OsRAKCvk37zwYcnzRf5XF", "tracks": 5}
 {"followed": false, "id": "mochakk", "liked": 0, "name": "Mochakk", "reviewed": 0, "spotify_artist": "0rTh1tAdrEbdKZBTiiAQSo", "tracks": 1}
 {"followed": false, "id": "modapit", "liked": 0, "name": "Modapit", "reviewed": 0, "spotify_artist": "6KodO7gtDTYK7uhiu1z1Zb", "tracks": 1}
 {"followed": false, "id": "moderat", "liked": 2, "name": "Moderat", "reviewed": 1, "spotify_artist": "2exkZbmNqMKnT8LRWuxWgy", "tracks": 3}
@@ -3347,7 +3347,7 @@
 {"followed": false, "id": "oliver-torr", "liked": 0, "name": "Oliver Torr", "reviewed": 0, "spotify_artist": "2A4cJbWj5ukS0nj06L84E8", "tracks": 2}
 {"followed": false, "id": "oliver-olafsson", "liked": 0, "name": "Oliver Ólafsson", "reviewed": 0, "spotify_artist": "0xgumNwunVskpeLSl8FyjU", "tracks": 1}
 {"followed": false, "id": "olivera-stanimirov", "liked": 1, "name": "Olivera Stanimirov", "reviewed": 1, "spotify_artist": "03266j9VvwOi5WIvRznEcX", "tracks": 1}
-{"followed": false, "id": "olivia-dean", "liked": 1, "name": "Olivia Dean", "reviewed": 0, "spotify_artist": "00x1fYSGhdqScXBRpSj3DW", "tracks": 1}
+{"followed": false, "id": "olivia-dean", "liked": 1, "name": "Olivia Dean", "reviewed": 1, "spotify_artist": "00x1fYSGhdqScXBRpSj3DW", "tracks": 1}
 {"followed": false, "id": "olivia-holt", "liked": 0, "name": "Olivia Holt", "reviewed": 0, "spotify_artist": "188VINPQh5dyNfLUkevKqf", "tracks": 1}
 {"followed": false, "id": "olivia-kuper-harris", "liked": 0, "name": "Olivia Kuper Harris", "reviewed": 0, "spotify_artist": "3qiw3l9oPTSbZU7wrh2mmo", "tracks": 1}
 {"followed": false, "id": "olivia-nelson", "liked": 0, "name": "Olivia Nelson", "reviewed": 0, "spotify_artist": "4QJrAwNc5j17E5N2PxpqGj", "tracks": 1}
@@ -4298,7 +4298,7 @@
 {"followed": false, "id": "the-brothers-johnson", "liked": 0, "name": "The Brothers Johnson", "reviewed": 0, "spotify_artist": "6h3rSZ8VLK7a5vXjEmhfuD", "tracks": 1}
 {"followed": false, "id": "the-bucketheads", "liked": 0, "name": "The Bucketheads", "reviewed": 0, "spotify_artist": "1yjuFciXmV3NaPCzwwHclC", "tracks": 1}
 {"followed": false, "id": "the-cardigans", "liked": 0, "name": "The Cardigans", "reviewed": 0, "spotify_artist": "1tqZaCwM57UFKjWoYwMLrw", "tracks": 3}
-{"followed": false, "id": "the-cat-empire", "liked": 4, "name": "The Cat Empire", "reviewed": 1, "spotify_artist": "023YMawCG3OvACmRjWxLWC", "top_month": 45, "tracks": 4}
+{"followed": false, "id": "the-cat-empire", "liked": 4, "name": "The Cat Empire", "reviewed": 2, "spotify_artist": "023YMawCG3OvACmRjWxLWC", "top_month": 45, "tracks": 4}
 {"followed": false, "id": "the-chainsmokers", "liked": 0, "name": "The Chainsmokers", "reviewed": 1, "spotify_artist": "69GGBxA162lTqCwzJG5jLp", "tracks": 5}
 {"followed": false, "id": "the-charlie-daniels-band", "liked": 0, "name": "The Charlie Daniels Band", "reviewed": 0, "spotify_artist": "12d4iIvTOk7JkI6ecvc3ca", "tracks": 2}
 {"followed": false, "id": "the-chemical-brothers", "liked": 2, "name": "The Chemical Brothers", "reviewed": 3, "spotify_artist": "1GhPHrq36VKCY3ucVaZCfo", "tracks": 3}
@@ -4374,10 +4374,10 @@
 {"followed": false, "id": "the-pogues", "liked": 0, "name": "The Pogues", "reviewed": 0, "spotify_artist": "2wzMOQwNT6ZvVB4amvhFAH", "tracks": 2}
 {"followed": false, "id": "the-police", "liked": 1, "name": "The Police", "reviewed": 1, "spotify_artist": "5NGO30tJxFlKixkPSgXcFE", "tracks": 1}
 {"followed": false, "id": "the-polish-ambassador", "liked": 1, "name": "The Polish Ambassador", "reviewed": 1, "spotify_artist": "2dI9IuajQnLR5dLxHjTTqU", "tracks": 1}
-{"followed": false, "id": "the-prodigy", "liked": 14, "name": "The Prodigy", "reviewed": 2, "spotify_artist": "4k1ELeJKT1ISyDv8JivPpB", "top_month": 22, "tracks": 14}
+{"followed": false, "id": "the-prodigy", "liked": 14, "name": "The Prodigy", "reviewed": 6, "spotify_artist": "4k1ELeJKT1ISyDv8JivPpB", "top_month": 22, "tracks": 14}
 {"followed": false, "id": "the-product-g-b", "liked": 0, "name": "The Product G&B", "reviewed": 0, "spotify_artist": "782IpIScTpnDhYb9hyxOu1", "tracks": 1}
 {"followed": false, "id": "the-project", "liked": 1, "name": "The Project", "reviewed": 1, "spotify_artist": "5Oduhm4YxSZ9vHGOKXNs4C", "tracks": 1}
-{"followed": true, "id": "the-puppini-sisters", "liked": 64, "name": "The Puppini Sisters", "reviewed": 6, "spotify_artist": "1svaANJTE5KrG16fTGDqOs", "top_month": 4, "tracks": 64}
+{"followed": true, "id": "the-puppini-sisters", "liked": 64, "name": "The Puppini Sisters", "reviewed": 8, "spotify_artist": "1svaANJTE5KrG16fTGDqOs", "top_month": 4, "tracks": 64}
 {"followed": false, "id": "the-pussycat-dolls", "liked": 1, "name": "The Pussycat Dolls", "reviewed": 0, "spotify_artist": "6wPhSqRtPu1UhRCDX5yaDJ", "tracks": 1}
 {"followed": false, "id": "the-rain-seeker", "liked": 0, "name": "The Rain Seeker", "reviewed": 0, "spotify_artist": "3D9BR2Fa86NsSY5aISRoKT", "tracks": 1}
 {"followed": false, "id": "the-rapture", "liked": 1, "name": "The Rapture", "reviewed": 0, "spotify_artist": "166Dz1GX3xonSQ3Z6CQW26", "tracks": 1}
