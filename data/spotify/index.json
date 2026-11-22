@@ -1,7 +1,7 @@
 {
  "liked": 2029,
  "playlists": 58,
- "reviewed": 1444,
+ "reviewed": 1459,
  "reviews": {
   "2raumwohnung-somebody-lonely-and-me-nacht.md": {
    "liked": true,
@@ -2891,6 +2891,15 @@
    "track": "3V608tXKQzlFg59P1ddJ0x",
    "yearbooks": []
   },
+  "d12-my-band.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "d12-my-band"
+   ],
+   "track": "2wD3LhUzTSWBJjL52TFrc7",
+   "yearbooks": []
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "liked": true,
    "playlists": 0,
@@ -4622,6 +4631,15 @@
    "track": "69gdHhYx6gFGmllm5i0drX",
    "yearbooks": []
   },
+  "fischerspooner-just-let-go.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "fischerspooner-just-let-go"
+   ],
+   "track": "20rmCQ2pO3GZva9O61nDMu",
+   "yearbooks": []
+  },
   "fischerspooner-natural-disaster.md": {
    "liked": true,
    "playlists": 0,
@@ -5640,6 +5658,15 @@
    "track": "4YyDH4Omf3cusOZnHO9Jsd",
    "yearbooks": []
   },
+  "gorillaz-broken.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "gorillaz-broken"
+   ],
+   "track": "3THFKx88trZuOFlssVLJ5G",
+   "yearbooks": []
+  },
   "gorillaz-d12-911-live-in-nyc.md": {
    "liked": true,
    "playlists": 0,
@@ -5660,6 +5687,17 @@
    "yearbooks": [
     2021
    ]
+  },
+  "gorillaz-del-the-funky-homosapien-clint-eastwood.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "gorillaz-clint-eastwood",
+    "gorillaz-clint-eastwood-1mjqpd",
+    "gorillaz-clint-eastwood-1rkuog"
+   ],
+   "track": "0muV6QOTuXjPnqGxpZAQhb",
+   "yearbooks": []
   },
   "gorillaz-demon-days.md": {
    "liked": true,
@@ -9077,6 +9115,15 @@
     2016
    ]
   },
+  "moby-cold-specks-a-case-for-shame.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "moby-a-case-for-shame"
+   ],
+   "track": "2lM6YVumylO9nBA3e98WFR",
+   "yearbooks": []
+  },
   "moderat-a-new-error.md": {
    "liked": true,
    "playlists": 1,
@@ -9807,6 +9854,15 @@
    "yearbooks": [
     2021
    ]
+  },
+  "olivia-dean-so-easy-to-fall-in-love.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "olivia-dean-so-easy-to-fall-in-love"
+   ],
+   "track": "6sGIMrtIzQjdzNndVxe397",
+   "yearbooks": []
   },
   "one-direction-drag-me-down.md": {
    "liked": false,
@@ -11801,6 +11857,15 @@
     2017
    ]
   },
+  "the-cat-empire-sly.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-cat-empire-sly"
+   ],
+   "track": "4CgLsryBo7vNWSR1eozlHn",
+   "yearbooks": []
+  },
   "the-cat-empire-the-car-song.md": {
    "liked": true,
    "playlists": 0,
@@ -11996,6 +12061,42 @@
    "track": "3kiQr8eCenBE1YjibVgJtO",
    "yearbooks": []
   },
+  "the-prodigy-nasty.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-prodigy-nasty"
+   ],
+   "track": "2msRyvklnxEE2XeNhcRaEi",
+   "yearbooks": []
+  },
+  "the-prodigy-rok-weiler.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-prodigy-rok-weiler"
+   ],
+   "track": "5yM2YaiofWi0ekN5cWvg7X",
+   "yearbooks": []
+  },
+  "the-prodigy-the-day-is-my-enemy.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-prodigy-the-day-is-my-enemy"
+   ],
+   "track": "2742Nu3MnNqG7x29nEPRls",
+   "yearbooks": []
+  },
+  "the-prodigy-wild-frontier.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-prodigy-wild-frontier"
+   ],
+   "track": "19dC6Wyt4hygLKdu43Gc2c",
+   "yearbooks": []
+  },
   "the-puppini-sisters-could-it-be-magic.md": {
    "liked": true,
    "playlists": 0,
@@ -12004,6 +12105,16 @@
     "the-puppini-sisters-could-it-be-magic-2s4ait"
    ],
    "track": "2eyo7YlQZLxRQG76LbdtU9",
+   "yearbooks": []
+  },
+  "the-puppini-sisters-crazy-in-love.md": {
+   "liked": true,
+   "playlists": 0,
+   "records": [
+    "the-puppini-sisters-crazy-in-love",
+    "the-puppini-sisters-crazy-in-love-6vikjs"
+   ],
+   "track": "4WOtjGuSDOOkzaxspbXslI",
    "yearbooks": []
   },
   "the-puppini-sisters-spooky.md": {
