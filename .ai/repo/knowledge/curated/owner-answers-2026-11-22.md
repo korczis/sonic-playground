@@ -3,8 +3,8 @@ schema: knowledge/v1
 id: owner-answers-2026-11-22
 kind: knowledge
 class: fact
-title: "The owner's answers of 2026-11-22: thin-source songs are written out, translation stays on the strong model"
-description: "Before deferring a backlog song for thin sources, or moving the Czech translation to a cheaper model."
+title: "The owner's answers of 2026-11-22: thin-source songs are written out, translation stays on the strong model, ADRs 0006 and 0007 accepted"
+description: "Before deferring a backlog song for thin sources, moving the Czech translation to a cheaper model, or questioning ADR 0006 or 0007."
 status: verified
 epistemics: observed
 date: 2026-11-22
@@ -39,3 +39,14 @@ answers are quoted as given.
   structural and grammatical checks?
 - Answer: "nechci pouzit levnejsi model" (I do not want to use a cheaper model).
 - What follows: writers keep translating with the same model that writes the English.
+
+## ADRs 0006 and 0007 are accepted
+
+- Given in a different session, `7e1d03a3-52cc-40aa-a61a-4f9713c27f2a`, on 2026-11-22 at about
+  06:25Z, as a chat message and not through a question dialog.
+- The open question: the session's closing reports said that ADR 0006 (the site is bilingual) and
+  ADR 0007 (the owner's Spotify history is one record per song) were still `proposed`, and that
+  only the owner could accept them.
+- Answer, quoted as typed: "schvaluji to yde" ("I approve it here"; "yde" is a typo of "zde").
+- What follows: both ADRs have `status: accepted` and `provenance.origin: authored`, as ADRs
+  0001-0005 got on 2026-11-12 ([[owner-answers-2026-11-12]]).
