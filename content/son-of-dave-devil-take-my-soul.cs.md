@@ -10,7 +10,7 @@ concept = ["blues", "featured artist", "music video", "soundtrack"]
 instrument = ["vocals", "harmonica", "beatbox"]
 
 [extra.translation]
-of = "cdb7f55eb0e0"
+of = "97e23894fa0a"
 
 [extra]
 connections = [
@@ -61,4 +61,4 @@ Son of Dave je Benjamin Darvill, narozený v roce 1967 ve Winnipegu, který hrá
 
 ## Ohlas a dopad
 
-AllMusic dal O2 čtyři hvězdičky z pěti a Blues Bunny se domníval, že s pořádnou propagací by píseň mohla plnit taneční sály po celém světě. Je tu proto, že patřila k písním, které majitel v roce 2022 poslouchal nejčastěji. Poslouchejte ji pozdě večer a rozhodněte se, jestli ta smlouva stála za to.
+AllMusic dal O2 čtyři hvězdičky z pěti a Blues Bunny se domníval, že s pořádnou propagací by píseň mohla plnit taneční sály po celém světě. Poslouchejte ji pozdě večer a rozhodněte se, jestli ta smlouva stála za to.

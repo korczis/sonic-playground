@@ -112,4 +112,4 @@ KlangTherapeuten are Felix Adams and Philipp Weidenbach, former neighbours who f
 
 ## Impact and Reception
 
-We found no chart entry or review for this remix. It travelled through a DJ mix in its first year and is here because it stayed in the owner's yearbook. Give it the full seven and a half minutes.
+We found no chart entry or review for this remix. It travelled through a DJ mix in its first year. Give it the full seven and a half minutes.

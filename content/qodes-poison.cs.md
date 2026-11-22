@@ -9,7 +9,7 @@ sentiment = ["hypnotic", "groovy"]
 concept = ["featured artist", "radio edit", "extended mix"]
 
 [extra.translation]
-of = "d866760a5c16"
+of = "df1847916514"
 +++
 
 ## Žánr a nálada
@@ -34,4 +34,4 @@ Qodës je znám z vlastních kanálů, ne z tisku: profil na SoundCloudu bez ži
 
 ## Ohlas a dopad
 
-Žádná recenze ani žebříček Poison nezmiňují, její publikum se však dá změřit: nahrávka na SoundCloudu do listopadu 2026 překročila milion přehrání, což je na skladbu bez vydavatelství za zády velký dosah. Na tomto webu je proto, že patří k tomu, co majitel poslouchá. Pusťte si ji nahoře a posuďte sami, jaký jed to je.
+Žádná recenze ani žebříček Poison nezmiňují, její publikum se však dá změřit: nahrávka na SoundCloudu do listopadu 2026 překročila milion přehrání, což je na skladbu bez vydavatelství za zády velký dosah. Pusťte si ji nahoře a posuďte sami, jaký jed to je.

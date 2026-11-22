@@ -105,7 +105,7 @@ kind = "encyclopedia"
 
 ## Song Summary
 
-Fathorn runs 5:53 and is credited to Boehler as writer, with one guest: Robert Morgenthaler on alphorn. The album credits name Boehler as its producer, mixer and programmer and as the player of keyboards and sampler. Straight Ahead, a Zürich label, released Hybrid Organics on CD and LP in 2001. In December 2017 Boehler reissued it digitally as Hybrid Organics (Expanded), with remixes by Raw Deal, Sequel and Beanfield and bonus tracks; that is the edition the owner's yearbook names.
+Fathorn runs 5:53 and is credited to Boehler as writer, with one guest: Robert Morgenthaler on alphorn. The album credits name Boehler as its producer, mixer and programmer and as the player of keyboards and sampler. Straight Ahead, a Zürich label, released Hybrid Organics on CD and LP in 2001. In December 2017 Boehler reissued it digitally as Hybrid Organics (Expanded), with remixes by Raw Deal, Sequel and Beanfield and bonus tracks; that is the edition this page is about.
 
 ## Musical Breakdown
 

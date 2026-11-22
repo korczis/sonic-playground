@@ -10,7 +10,7 @@ concept = ["cover version", "sampling"]
 instrument = ["vocals", "synthesizer"]
 
 [extra.translation]
-of = "4392600dc7a6"
+of = "8370edf71d73"
 
 [extra]
 connections = [
@@ -55,4 +55,4 @@ GYM, na Bandcampu labelu uváděný jako G Y M, vydává u Play It Loudly, nezá
 
 ## Ohlas a dopad
 
-Originál White Town se ve Spojeném království dostal na první místo jako první píseň s obrácenou genderovou perspektivou, která tamní žebříček vyhrála, a v USA na 23. místo. Coververze GYM se v žebříčcích neobjevila a žádné recenze jsme nenašli; je tady, protože patřila k nejposlouchanějším písním majitele v jednom roce na Spotify. Pusťte si obě verze hned po sobě.
+Originál White Town se ve Spojeném království dostal na první místo jako první píseň s obrácenou genderovou perspektivou, která tamní žebříček vyhrála, a v USA na 23. místo. Coververze GYM se v žebříčcích neobjevila a žádné recenze jsme nenašli. Pusťte si obě verze hned po sobě.

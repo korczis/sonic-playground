@@ -10,7 +10,7 @@ concept = ["music video", "mixing"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "11078e2ad729"
+of = "0cb92302a75e"
 
 [extra]
 connections = [
@@ -53,4 +53,4 @@ Hijacked vznikli v roce 2012 a jejich stránka na Bandcampu nabízí OGGIT, pět
 
 ## Ohlas a dopad
 
-Rising Path bylo malé vydání vlastními silami a Seewhat je na tomto hřišti jako jedna z písní majitele z roku 2018, ta stránka Clémenta Bazina, která pracuje se zpěvačkou a textařkou. Poslechněte si ji vedle jeho sólových skladeb a uslyšíte, co hlas změní.
+Rising Path bylo malé vydání vlastními silami a Seewhat je ta stránka Clémenta Bazina, která pracuje se zpěvačkou a textařkou. Poslechněte si ji vedle jeho sólových skladeb a uslyšíte, co hlas změní.

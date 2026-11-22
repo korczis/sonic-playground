@@ -10,7 +10,7 @@ concept = ["sampling", "music video", "featured artist"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "7d8c7192cf28"
+of = "188c3a8d3837"
 
 [extra]
 connections = [
@@ -55,7 +55,7 @@ Se třemi minutami a čtrnácti vteřinami je albová verze krátká. Poslouchej
 
 {{ <concept_link name="music video" text="Videoklip" lang="cs" /> }} vznikl náhodou. Když se skladba mixovala, běžel ve studiové televizi bez zvuku film Princ Akim a Busta zavolal Hype Williamsovi se slovy: „I want to do Coming to America all over“ (chci natočit Prince Akima znovu). Výpravu navrhl Ron Norsworthy, natáčelo se na Dolním Manhattanu, mimo jiné ve vstupní hale budovy Surrogate's Courthouse, a klip podle Bustovy vzpomínky stál „$800,000, maybe $900,000“ (800 000, možná 900 000 dolarů); MTV ho v roce 1999 zařadila na 20. místo svých 100 nejlepších videoklipů.
 
-Kredit, kterým se uvádí {{ <concept_link name="featured artist" text="hostující umělec" lang="cs" /> }}, jmenuje hosta na skladbě jiného interpreta. Tato stránka kredit ponechává tak, jak ho uvádí majitelova ročenka ze Spotify, a zaznamenává, že vlastní kredity vydavatelství k této nahrávce ho stejně jako seznam skladeb alba neuvádějí.
+Kredit, kterým se uvádí {{ <concept_link name="featured artist" text="hostující umělec" lang="cs" /> }}, jmenuje hosta na skladbě jiného interpreta. Tato stránka kredit ponechává tak, jak ho uvádí Spotify, a zaznamenává, že vlastní kredity vydavatelství k této nahrávce ho stejně jako seznam skladeb alba neuvádějí.
 
 ## Umělecký kontext
 

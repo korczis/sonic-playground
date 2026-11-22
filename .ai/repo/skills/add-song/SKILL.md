@@ -108,7 +108,9 @@ once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 a
 - No official upload at all: create the page from the name; it shows the derived artwork.
 - A batch row's `why` (top rank, liked, playlists) orders the wave and never enters the prose:
   "here because it is among the owner's most played tracks this month" is stale within weeks
-  and says nothing about the music (wave 12, 2026-11-19: eleven pages had it removed).
+  and says nothing about the music (wave 12, 2026-11-19: eleven pages had it removed). Since
+  2026-11-22 the contract refuses any sentence about the owner's listening, in English and
+  Czech (rule `project.educational-article`); `track.py check` names it.
 - A backlog song that already has a page under another credit or title: the lead artist and
   song match it when only one page fits; a sourced other title ("One Night In NYC" for
   "One Night In New York City") goes in `extra.titles`, never a second page.

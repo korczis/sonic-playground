@@ -104,4 +104,4 @@ As Sliimy, Sahraoui shared songs on Myspace in the late 2000s, signed with Warne
 
 ## Impact and Reception
 
-Hypnotized was a fresh start more than a hit: NOWNESS, a channel for short films, gave its video a premiere, and the single opened the road to L'Heure Bleue. It is here as one of the owner's songs of 2018. Let it play twice, once without the pictures.
+Hypnotized was a fresh start more than a hit: NOWNESS, a channel for short films, gave its video a premiere, and the single opened the road to L'Heure Bleue. Let it play twice, once without the pictures.

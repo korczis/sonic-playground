@@ -110,4 +110,4 @@ Son of Dave is Benjamin Darvill, born in Winnipeg in 1967, who played harmonica,
 
 ## Impact and Reception
 
-AllMusic gave O2 four stars out of five, and Blues Bunny thought the song could be filling dance halls around the world with the right promotion. It is here because it was among the owner's most played songs of 2022. Listen late, and decide whether the bargain was worth it.
+AllMusic gave O2 four stars out of five, and Blues Bunny thought the song could be filling dance halls around the world with the right promotion. Listen late, and decide whether the bargain was worth it.

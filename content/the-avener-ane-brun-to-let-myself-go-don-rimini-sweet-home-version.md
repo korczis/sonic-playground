@@ -101,4 +101,4 @@ Don Rimini is the alias of the French producer Xavier Gassemann, active since 20
 
 ## Impact and Reception
 
-We found no chart entry or review for this version. It is here because it was among the owner's most played songs of a Spotify year, a sign that a remix tucked away at the end of a mix compilation can still find its listener. Play it after The Avener's version and listen for the difference.
+We found no chart entry or review for this version. Play it after The Avener's version and listen for the difference.

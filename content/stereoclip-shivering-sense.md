@@ -135,4 +135,4 @@ Stereoclip is the Brussels producer Maxime (Max) Merkpoel. He started out making
 
 ## Impact and Reception
 
-Shivering Sense was never a hit, and no review of it could be found. It is here because it is one of the owner's songs, and because it shows where a producer starts. Listen to the album version first, then the video.
+Shivering Sense was never a hit, and no review of it could be found. It shows where a producer starts. Listen to the album version first, then the video.

@@ -144,4 +144,4 @@ Agoria is Sébastien Devaud, a French producer and DJ born in 1976, a co-founder
 
 ## Impact and Reception
 
-The Five Minutes blog reported that Tsugi made Drift its album of the month for May 2019, and Remedy went on to a second life on compilations. It is here as one of the owner's songs of 2019. Play it as a short song first, then let one of the long remixes take it to the dance floor.
+The Five Minutes blog reported that Tsugi made Drift its album of the month for May 2019, and Remedy went on to a second life on compilations. Play it as a short song first, then let one of the long remixes take it to the dance floor.

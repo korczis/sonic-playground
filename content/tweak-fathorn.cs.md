@@ -10,7 +10,7 @@ concept = ["alternate version", "dj mix", "remix"]
 instrument = ["alphorn", "keyboards", "sampler"]
 
 [extra.translation]
-of = "8924935dbceb"
+of = "a1b25707e787"
 
 [extra]
 connections = [
@@ -35,7 +35,7 @@ questions = ["Co se stane s nástrojem spojeným s horami a lidovou hudbou, kdy�
 
 ## O skladbě
 
-Fathorn trvá 5:53 a jako autor je uveden Boehler, s jediným hostem: Robertem Morgenthalerem na alpský roh. Kredity alba uvádějí Boehlera jako producenta, autora mixu a programátora a jako hráče na klávesové nástroje a sampler. Curyšský label Straight Ahead vydal Hybrid Organics v roce 2001 na CD a LP. V prosinci 2017 album Boehler digitálně znovu vydal jako Hybrid Organics (Expanded), s remixy od Raw Deal, Sequel a Beanfield a s bonusovými skladbami; právě toto vydání uvádí majitelova ročenka.
+Fathorn trvá 5:53 a jako autor je uveden Boehler, s jediným hostem: Robertem Morgenthalerem na alpský roh. Kredity alba uvádějí Boehlera jako producenta, autora mixu a programátora a jako hráče na klávesové nástroje a sampler. Curyšský label Straight Ahead vydal Hybrid Organics v roce 2001 na CD a LP. V prosinci 2017 album Boehler digitálně znovu vydal jako Hybrid Organics (Expanded), s remixy od Raw Deal, Sequel a Beanfield a s bonusovými skladbami; právě o tomto vydání je tato stránka.
 
 ## Hudební rozbor
 

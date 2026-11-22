@@ -124,4 +124,4 @@ Andy Bey, born in Newark in 1939, sang from the age of 17 with his sisters Salom
 
 ## Impact and Reception
 
-AllMusic gave the album four stars out of five, and reissues by Be With Records in 2016 and Speakers Corner later brought it back to the shops. In 2015 The Avener's rework put Bey's voice on a French electronic album. It is here because it was among the owner's most played songs of 2022. Start with this original, and listen to where everything came from.
+AllMusic gave the album four stars out of five, and reissues by Be With Records in 2016 and Speakers Corner later brought it back to the shops. In 2015 The Avener's rework put Bey's voice on a French electronic album. Start with this original, and listen to where everything came from.

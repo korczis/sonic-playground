@@ -10,7 +10,7 @@ concept = ["interlude", "alternate version"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "ecca61685638"
+of = "24f7734393f8"
 
 [extra]
 connections = [
@@ -64,4 +64,4 @@ Emika je Ema Jolly, producentka a zpěvačka usazená v Berlíně, narozená v M
 
 ## Ohlas a dopad
 
-Předehry se samostatně recenzují zřídka a této věnoval větu jen Spectrum Culture. Je tu proto, že ji majitel pouštěl tak často, až se dostala do ročenky. Poslouchejte ji při ztlumeném světle a nechte ji plynule přejít do Miracles.
+Předehry se samostatně recenzují zřídka a této věnoval větu jen Spectrum Culture. Poslouchejte ji při ztlumeném světle a nechte ji plynule přejít do Miracles.

@@ -9,7 +9,7 @@ sentiment = ["hypnotic", "groovy"]
 concept = ["remix", "dj mix"]
 
 [extra.translation]
-of = "98bd3f4b5c35"
+of = "1703290f9fda"
 
 [extra]
 connections = [
@@ -55,4 +55,4 @@ KlangTherapeuten jsou Felix Adams a Philipp Weidenbach, bývalí sousedé, kteř
 
 ## Ohlas a dopad
 
-Pro tento remix jsme nenašli žádné umístění v hitparádě ani recenzi. Už v prvním roce putoval DJ mixem a je tu proto, že zůstal v ročence majitele. Dopřejte mu celých sedm a půl minuty.
+Pro tento remix jsme nenašli žádné umístění v hitparádě ani recenzi. Už v prvním roce putoval DJ mixem. Dopřejte mu celých sedm a půl minuty.

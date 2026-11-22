@@ -92,6 +92,26 @@ TRANSLATION = RULES["translation"]
 # Phrases that would fit any track say nothing about this one (rule educational-article).
 CLICHES = tuple(c.lower() for c in RULES["cliches"])
 SHARED_PARAGRAPH = RULES["shared_paragraph_chars"]
+# A review is about the song, never about the site owner's listening (rule educational-article):
+# "here because it was among the owner's most played songs of 2022" was written into 36 reviews
+# and their translations by 2026-11-22, and says nothing about the music. Narrow on purpose: the
+# owner named outright ("the owner", "majitel", "vlastník") next to a listening word. "The
+# duo's most played song", a station's playlist or "the label owner" are not refused.
+_EN_OWNER = r"\b[Tt]he\s+(?:site(?:'s|’s)?\s+)?owner"  # lower-case: the song "The Owner" is not
+_CS_LISTEN = (r"(?:poslouch|poslech|přehrá|pouště|streamov|ročen[kc]|playlist|nejposlouchanějš"
+              r"|nejpřehrávanějš|nejhranějš|oblíben)\w*")
+_CS_OWNER = r"\b(?:majitel|vlastník)\w*"
+OWNER_LISTENING = tuple(re.compile(p) for p in (
+    _EN_OWNER + r"(?:'s|’s)\s+(?:(?i:own|spotify|annual)\s+)?(?i:most[- ]played|most[- ]streamed"
+    r"|top|favou?rites?|listening|playlists?|yearbooks?|library|songs?|tracks?|picks?|rotation"
+    r"|liked|plays|streams|collection|history)\b",
+    _EN_OWNER + r"\s+(?:(?i:has|had|often|kept|keeps)\s+)?(?i:played|plays|listened|listens"
+    r"|streamed|streams|liked|likes|saved|replayed)\b",
+    r"(?i)" + _CS_OWNER + r"(?:\W+\w+){0,4}?\W+" + _CS_LISTEN,
+    r"(?i)" + _CS_LISTEN + r"(?:\W+\w+){0,4}?\W+" + _CS_OWNER,
+    r"(?i)\b(?:písn|píseň|skladb)\w*\s+" + _CS_OWNER,
+    r"(?i)\b(?:majitelov|vlastníkov)\w*\s+(?:písn|píseň|skladb|seznam|výběr)\w*",
+))
 WORDS_MIN = tomllib.loads((ROOT / "data" / "review.toml").read_text(encoding="utf-8"))["defaults"]["words_min"]
 # The credit's first name: "A & B", "A x B", "A, B", "A feat. B" all name A first.
 MAIN_ARTIST = re.compile(r"\s*(?:,|&| x | and |\bfeat\.?|\bft\.|\bfeaturing\b|\bvs\.?)\s*", re.I)
@@ -455,7 +475,8 @@ def load_translations(tracks: list[Track], errors: list[str]) -> dict[str, dict[
         except (ValueError, tomllib.TOMLDecodeError) as exc:
             errors.append(f"{rel}: {exc}")
             continue
-        problems = validate(meta, TRANSLATION_SCHEMA) + tr.check(rel, meta, body, t.fingerprint, TRANSLATION)
+        problems = (validate(meta, TRANSLATION_SCHEMA) + tr.check(rel, meta, body, t.fingerprint, TRANSLATION)
+                    + owner_listening_problems(meta, body))
         errors += [f"{rel}: {p}" for p in problems]
         out[lang][english] = {
             "title": str(meta.get("title", "")).strip(), "description": str(meta.get("description", "")).strip(),
@@ -546,6 +567,34 @@ class Track:
     video_gone: bool = False
     paragraphs: list = field(default_factory=list)  # the long ones, normalised: shared-text check
     fingerprint: dict = field(default_factory=dict)  # what a translation keeps (scripts/translation.py)
+
+
+def owner_listening(text: str) -> list[str]:
+    """The phrases of text that speak of the site owner's listening (OWNER_LISTENING)."""
+    found = (m.group(0) for p in OWNER_LISTENING for m in p.finditer(text))
+    return sorted({re.sub(r"\s+", " ", f) for f in found})
+
+
+def owner_listening_problems(meta: dict, body: str) -> list[str]:
+    """Every place of a review or a translation, front matter and prose, that speaks of the
+    owner's listening: a review is about the song (rule educational-article)."""
+    def strings(value, where: str):
+        if isinstance(value, str):
+            yield where, value
+        elif isinstance(value, dict):
+            for k, v in value.items():
+                yield from strings(v, f"{where}.{k}" if where else str(k))
+        elif isinstance(value, list):
+            for i, v in enumerate(value):
+                yield from strings(v, f"{where}[{i}]")
+
+    prose = "\n".join(line for line in body.splitlines() if not line.startswith("[//]: #"))
+    problems = []
+    for where, text in [*strings(meta, ""), ("the body", prose)]:
+        for phrase in owner_listening(text):
+            problems.append(f"{where} says '{phrase}': a review is about the song, never about the "
+                            "owner's listening; remove the sentence (rule educational-article)")
+    return problems
 
 
 def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> Track | None:
@@ -652,6 +701,8 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
         if phrase in prose:
             err(f"'{phrase}' would fit any track; say what this one does instead "
                 "(x-sonic.cliches in data/track.schema.json)")
+    for problem in owner_listening_problems(meta, body):
+        err(problem)
 
     for term in facets.get("concept", []):
         if slugify(term) not in KNOWN_CONCEPTS:

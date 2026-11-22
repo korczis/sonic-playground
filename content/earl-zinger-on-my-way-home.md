@@ -98,4 +98,4 @@ Earl Zinger is Rob Gallagher, the original vocalist of Galliano, the acid jazz g
 
 ## Impact and Reception
 
-Luna Kafé found the album humorous, colourful and partly quite a party, even if not all of it holds water. No other review of the song was found. It is here because it was among the owner's most played songs of 2021. Put it on for the last stretch home.
+Luna Kafé found the album humorous, colourful and partly quite a party, even if not all of it holds water. No other review of the song was found. Put it on for the last stretch home.

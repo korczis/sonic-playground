@@ -10,7 +10,7 @@ concept = ["stage persona", "interlude"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "eca1ed90c405"
+of = "472209ab2130"
 
 [extra]
 connections = [
@@ -58,4 +58,4 @@ Earl Zinger je Rob Gallagher, původní zpěvák skupiny Galliano, acidjazzové 
 
 ## Ohlas a dopad
 
-Luna Kafé považovalo album za vtipné, barvité a místy pořádný večírek, i když ne všechno na něm obstojí. Jinou recenzi písně se nepodařilo najít. Je tady proto, že patřila k nejposlouchanějším skladbám majitele v roce 2021. Pusťte si ji na poslední úsek cesty domů.
+Luna Kafé považovalo album za vtipné, barvité a místy pořádný večírek, i když ne všechno na něm obstojí. Jinou recenzi písně se nepodařilo najít. Pusťte si ji na poslední úsek cesty domů.

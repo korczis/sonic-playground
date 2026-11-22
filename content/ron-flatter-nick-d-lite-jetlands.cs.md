@@ -9,7 +9,7 @@ sentiment = ["melancholic", "bittersweet"]
 concept = ["remix", "featured artist", "club culture"]
 
 [extra.translation]
-of = "965fe21ea74f"
+of = "5e440dc42779"
 
 [extra]
 connections = [
@@ -54,4 +54,4 @@ Ron Flatter má rezidenci ve svém rodném Halle (Saale); jeho životopis počí
 
 ## Ohlas a dopad
 
-Jetlands putovala kompilacemi: MusicBrainz ji uvádí na Schneeweiß II, #afterhour, Volume 2 a About: Berlin, Vol. 6, všechny v rozmezí několika měsíců. Je tu jako skladba, která se do ročenky majitele dostala o roky později téměř bez stopy v kritice. Dopřejte jí celou délku a sami rozhodněte, kde je to slunce.
+Jetlands putovala kompilacemi: MusicBrainz ji uvádí na Schneeweiß II, #afterhour, Volume 2 a About: Berlin, Vol. 6, všechny v rozmezí několika měsíců. Stalo se tak téměř bez stopy v kritice. Dopřejte jí celou délku a sami rozhodněte, kde je to slunce.
