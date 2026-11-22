@@ -10,7 +10,7 @@ concept = ["remix", "alternate version", "soundtrack"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "1da7f9b2bd81"
+of = "5b6b06add813"
 
 [extra]
 connections = [
@@ -57,4 +57,4 @@ Massive Attack z Bristolu nahrávali Heligoland v letech 2005 až 2009 a hlavní
 
 ## Ohlas a dopad
 
-Songfacts uvádí, že reklama na Lincoln byla vůbec poprvé, kdy Massive Attack dovolili použít svou hudbu v reklamě na auto, a že veškerý příjem z ní šel po ropné havárii BP v roce 2010 iniciativě Save Our Gulf organizace Waterkeeper Alliance. Remix je tu jako jedna z písní majitele z roku 2018. Pusťte si ho pozdě v noci a nechte hlasu Sandoval čas.
+Songfacts uvádí, že reklama na Lincoln byla vůbec poprvé, kdy Massive Attack dovolili použít svou hudbu v reklamě na auto, a že veškerý příjem z ní šel po ropné havárii BP v roce 2010 iniciativě Save Our Gulf organizace Waterkeeper Alliance. Pusťte si ho pozdě v noci a nechte hlasu Sandoval čas.

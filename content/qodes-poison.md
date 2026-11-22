@@ -69,4 +69,4 @@ Qodës is known from the artist's own channels rather than from the press: a Sou
 
 ## Impact and Reception
 
-No review or chart entry mentions Poison, but its audience is measurable: the SoundCloud upload had passed a million plays by November 2026, a wide reach for a track with no label behind it. It is on this playground because it is in the owner's listening. Press play above and decide for yourself what kind of poison it is.
+No review or chart entry mentions Poison, but its audience is measurable: the SoundCloud upload had passed a million plays by November 2026, a wide reach for a track with no label behind it. Press play above and decide for yourself what kind of poison it is.

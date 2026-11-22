@@ -10,7 +10,7 @@ concept = ["featured artist", "alternate version"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "6f2f0e9368bc"
+of = "0f8fa0f3139d"
 
 [extra]
 connections = [
@@ -58,4 +58,4 @@ Chaim Avital je izraelský producent z Tel Avivu. Textura vypráví, jak k němu
 
 ## Ohlas a dopad
 
-V recenzi alba Alive slyšel Resident Advisor albovou verzi Love Rehab jako další chytrý obrat, zakouřenou skladbu ve středním tempu, která vás chytí slovy. Originál byl první a patří mezi nejposlouchanější písně majitele tohoto webu v roce 2019. Pusťte si ho a dopřejte mu celých sedm minut.
+V recenzi alba Alive slyšel Resident Advisor albovou verzi Love Rehab jako další chytrý obrat, zakouřenou skladbu ve středním tempu, která vás chytí slovy. Originál byl první. Pusťte si ho a dopřejte mu celých sedm minut.

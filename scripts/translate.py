@@ -152,7 +152,9 @@ def check_files(paths: list[Path]) -> list[str]:
         meta, body = read(src)
         ometa, obody = read(path)
         if is_review(src):
-            found = cat.validate(ometa, cat.TRANSLATION_SCHEMA) + tr.check(rel, ometa, obody, tr.fingerprint(meta, body), cat.TRANSLATION)
+            found = (cat.validate(ometa, cat.TRANSLATION_SCHEMA)
+                     + tr.check(rel, ometa, obody, tr.fingerprint(meta, body), cat.TRANSLATION)
+                     + cat.owner_listening_problems(ometa, obody))
         else:
             errors: list[str] = []
             cat.page_translations(errors)

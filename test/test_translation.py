@@ -174,6 +174,17 @@ class Tool(unittest.TestCase):
         meta, body = parts(EN)
         self.assertIn(f'of = "{tr.prose_hash(meta, body)}"', cs.read_text())
 
+    def test_the_owners_listening_is_refused_in_a_translation(self):
+        cs = self.tmp / "content" / "alt-j-breezeblocks.cs.md"
+        cs.write_text(cs.read_text() + "\nJe tu proto, že patřila k nejposlouchanějším skladbám majitele v roce 2014.\n")
+        out = self.run_tool("check", "content/alt-j-breezeblocks.cs.md")
+        self.assertNotEqual(out.returncode, 0)
+        self.assertIn("never about the owner's listening", out.stdout + out.stderr)
+        check = subprocess.run([sys.executable, str(self.tmp / "scripts" / "catalog.py"), "--check"],
+                               capture_output=True, text=True, cwd=self.tmp)
+        self.assertNotEqual(check.returncode, 0)
+        self.assertIn("alt-j-breezeblocks.cs.md: the body says", check.stderr)
+
     def test_status_counts_every_page(self):
         out = self.run_tool("status")
         self.assertRegex(out.stdout, r"translate: cs: \d+ current, \d+ stale, \d+ untranslated, \d+ missing of \d+")

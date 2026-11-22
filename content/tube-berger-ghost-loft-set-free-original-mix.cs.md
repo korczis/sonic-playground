@@ -10,7 +10,7 @@ concept = ["featured artist", "bassline", "dj mix"]
 instrument = ["vocals", "bass", "strings", "synthesizer"]
 
 [extra.translation]
-of = "97fb2e2002a4"
+of = "2b8e155900a0"
 
 [extra]
 connections = [
@@ -57,4 +57,4 @@ Tube & Berger jsou Arndt Rörig a Marko Vidovic, alias Lou Berger, ze Solingenu,
 
 ## Ohlas a dopad
 
-Ohlas Set Free se nezapsal do hitparád, ale do kompilací: během několika měsíců se objevil na ibizském mixu Ministry of Sound a i potom se dál vracel na deep house výběry. Je tu jako jedna z písní majitele z roku 2018. Pusťte si ho, když se večer setmí a zůstane teplý.
+Ohlas Set Free se nezapsal do hitparád, ale do kompilací: během několika měsíců se objevil na ibizském mixu Ministry of Sound a i potom se dál vracel na deep house výběry. Pusťte si ho, když se večer setmí a zůstane teplý.

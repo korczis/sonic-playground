@@ -10,7 +10,7 @@ concept = ["radio edit", "featured artist", "club culture"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "8eadd7a43a81"
+of = "4ab1109ee0b3"
 
 [extra]
 connections = [
@@ -33,7 +33,7 @@ questions = ["Freaky Trigger se ohradil proti použití dětského hlasu v tane�
 
 ## O skladbě
 
-Hlas patří Michaelu Smithovi, dvanáctiletému chlapci z kalifornského Comptonu, kterého Solèr potkal na ulici, když v Los Angeles natáčel album Out of the Woods. Nebyl školeným zpěvákem; Freaky Trigger jeho part nazval rapem. Manila byla prvním singlem alba a podle německé Wikipedie hitem přes noc. Tato verze, dlouhá tři minuty a šest sekund, pochází z vydání Manila (Mixes) od Klein Records z června 2003; Spotify ročenka majitele tohoto webu ji uvádí jako Seelenluft - Manila (Radio Edit), se jménem projektu zopakovaným v názvu.
+Hlas patří Michaelu Smithovi, dvanáctiletému chlapci z kalifornského Comptonu, kterého Solèr potkal na ulici, když v Los Angeles natáčel album Out of the Woods. Nebyl školeným zpěvákem; Freaky Trigger jeho part nazval rapem. Manila byla prvním singlem alba a podle německé Wikipedie hitem přes noc. Tato verze, dlouhá tři minuty a šest sekund, pochází z vydání Manila (Mixes) od Klein Records z června 2003; Spotify ji uvádí jako Seelenluft - Manila (Radio Edit), se jménem projektu zopakovaným v názvu.
 
 ## Hudební rozbor
 

@@ -9,7 +9,7 @@ sentiment = ["haunting", "dark"]
 concept = ["cover version", "sound-alike recording", "soundtrack"]
 
 [extra.translation]
-of = "dbc318deeff6"
+of = "e40d40452829"
 
 [extra]
 connections = [
@@ -60,4 +60,4 @@ Není tu žádný interpret, kterého by šlo popsat. Pod jménem The Hanging Tr
 
 ## Ohlas a dopad
 
-Žádný zdroj tento singl nerecenzuje. Na tomto hřišti je proto, že patří mezi nejposlouchanější písně majitele za rok 2017, na týž seznam, na kterém je i samotná filmová nahrávka. Porovnejte ho s podepsanými coververzemi od {{ <track_link source="l-e-j-hanging-tree.md" lang="cs" /> }} a {{ <track_link source="blankets-the-hanging-tree.md" lang="cs" /> }} a poslouchejte rozdíl mezi napodobením písně a jejím výkladem.
+Žádný zdroj tento singl nerecenzuje. Porovnejte ho s podepsanými coververzemi od {{ <track_link source="l-e-j-hanging-tree.md" lang="cs" /> }} a {{ <track_link source="blankets-the-hanging-tree.md" lang="cs" /> }} a poslouchejte rozdíl mezi napodobením písně a jejím výkladem.

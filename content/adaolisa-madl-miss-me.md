@@ -97,4 +97,4 @@ adaolisa is the daughter of an Austrian and a Nigerian. She grew up in Johannesb
 
 ## Impact and Reception
 
-FM4 picked up Miss Me twice in November 2019. Two years later her single Fineboy went to number 1 on the FM4 charts and she was the station's Soundpark Act of the Month, a singer who, FM4 noted, decidedly refuses to play in front of an audience. It is here because it was among the owner's most played songs of 2021. Find it under her name and listen for the voice up front.
+FM4 picked up Miss Me twice in November 2019. Two years later her single Fineboy went to number 1 on the FM4 charts and she was the station's Soundpark Act of the Month, a singer who, FM4 noted, decidedly refuses to play in front of an audience. Find it under her name and listen for the voice up front.

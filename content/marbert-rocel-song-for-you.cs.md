@@ -10,7 +10,7 @@ concept = ["club culture", "sampling"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "d5a1f47c8d08"
+of = "d33a01a8030c"
 
 [extra]
 connections = [
@@ -57,4 +57,4 @@ Marbert Rocel vznikli v roce 2002 jako trio Robert Krause (Panthera), Antje Seif
 
 ## Ohlas a dopad
 
-Resident Advisor ohlásil Small Hours v roce 2012; žádná recenze, kterou jsme našli, Song For You zvlášť nevyzdvihla. Je tu jako jedna z písní majitele z roku 2018. Pusťte si ji v časných ranních hodinách, v čase, po kterém se album jmenuje.
+Resident Advisor ohlásil Small Hours v roce 2012; žádná recenze, kterou jsme našli, Song For You zvlášť nevyzdvihla. Pusťte si ji v časných ranních hodinách, v čase, po kterém se album jmenuje.

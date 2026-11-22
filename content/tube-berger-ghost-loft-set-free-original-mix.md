@@ -106,4 +106,4 @@ Tube & Berger are Arndt Rörig and Marko Vidovic, alias Lou Berger, from Solinge
 
 ## Impact and Reception
 
-Set Free's reception is written in compilations rather than charts: within months it was on a Ministry of Sound Ibiza mix, and it kept appearing on deep house collections after that. It is here as one of the owner's songs of 2018. Play it when the evening turns dark and stays warm.
+Set Free's reception is written in compilations rather than charts: within months it was on a Ministry of Sound Ibiza mix, and it kept appearing on deep house collections after that. Play it when the evening turns dark and stays warm.

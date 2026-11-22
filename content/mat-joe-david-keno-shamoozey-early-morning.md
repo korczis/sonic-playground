@@ -137,4 +137,4 @@ Mat.Joe are Matze and Johannes, friends from Hannover who began as the hip-hop p
 
 ## Impact and Reception
 
-Music Is 4 Lovers put Early Morning at number ten in its July 2015 list of the month's best tracks. It is here because it was among the owner's most played songs of 2022. Play it in the early morning, and see whether it holds on to the night.
+Music Is 4 Lovers put Early Morning at number ten in its July 2015 list of the month's best tracks. Play it in the early morning, and see whether it holds on to the night.

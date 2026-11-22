@@ -112,4 +112,4 @@ Data Transmission called Phonique one of the industry's most tireless artists, w
 
 ## Impact and Reception
 
-Grass Is Greener led the album out and kept going as remixes, four versions of it on Green Supreme Remixed. It is here as one of the owner's songs of 2018. Give it the full seven and a half minutes.
+Grass Is Greener led the album out and kept going as remixes, four versions of it on Green Supreme Remixed. Give it the full seven and a half minutes.

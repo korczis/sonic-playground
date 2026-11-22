@@ -41,6 +41,17 @@ nothing.
   not, and uses none of the phrases in `x-sonic.cliches` of `data/track.schema.json` (wording
   that would fit any track). Negative cases: `test/test_catalog.py` (`test_a_cliche_is_refused`,
   `test_the_review_names_its_artist_and_track`, `test_a_short_review_is_refused_unless_exempt`).
+- A review is about the song, never about the site owner's listening (2026-11-22): no "it is
+  here because it was among the owner's most played songs of 2022", "a place in the owner's
+  yearbook", "majitel ji poslouchal" in the prose or any front-matter text of a review or its
+  translation. `OWNER_LISTENING` in `scripts/catalog.py` refuses the owner named outright
+  ("the owner", "majitel", "vlastník") next to a listening word (played, most played, songs,
+  playlist, yearbook; poslouchat, ročenka, písně); a sourced fact about the artist's catalogue
+  ("the duo's most played song") or a station's playlist stays. `catalog.py --check` (so the
+  pre-commit hook), `track.py check` and `translate.py check` run it; 36 reviews and their
+  translations carried such a sentence until then. Cases: `test/test_catalog.py`
+  (`OwnerListening`, `test_the_owners_listening_is_refused_in_prose_and_front_matter`),
+  `test/test_translation.py` (`test_the_owners_listening_is_refused_in_a_translation`).
 - `scripts/track.py new` writes the required section "Concepts in Focus" (data/review.toml);
   `scripts/track.py enrich` fills the identifiers MusicBrainz knows.
 - Structured data (`Article` + `LearningResource` + `MusicRecording`) is derived into

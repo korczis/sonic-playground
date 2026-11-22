@@ -94,4 +94,4 @@ Gak was born in Nice in 1977, of Beninese origin, and grew up in the Moulins dis
 
 ## Impact and Reception
 
-We found no review of Coo Coo and no chart entry. Gak looks back on the Whoo Kid connection as a source of some press and visibility, not a shortcut: Pow Europe 1.5 followed in 2011, then fifteen years of silence before his return with Touche Noire in 2025. Coo Coo is on this playground because it is in the owner's listening, a document of a Nice rapper's trip into American hip-hop. Find it on the album and listen for its five credited artists.
+We found no review of Coo Coo and no chart entry. Gak looks back on the Whoo Kid connection as a source of some press and visibility, not a shortcut: Pow Europe 1.5 followed in 2011, then fifteen years of silence before his return with Touche Noire in 2025. Coo Coo is a document of a Nice rapper's trip into American hip-hop. Find it on the album and listen for its five credited artists.

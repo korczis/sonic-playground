@@ -164,6 +164,15 @@ class Contract(unittest.TestCase):
     def test_a_cliche_is_refused(self):
         self.assertTrue(any("would fit any track" in e for e in self._append("\nA sonic journey.\n")))
 
+    def test_the_owners_listening_is_refused_in_prose_and_front_matter(self):
+        # 2026-11-22: 36 reviews and their translations said why the owner listened to them
+        said = "never about the owner's listening"
+        errors = self._append("\nIt is here because it was among the owner's most played songs of 2022.\n")
+        self.assertTrue(any(said in e and "the body" in e for e in errors), errors)
+        _, errors = self.load(extra='edu_exempt = "Nothing documents this remix beyond the owner\'s playlist."\n')
+        self.assertTrue(any(said in e and "extra.edu_exempt" in e for e in errors), errors)
+        self.assertFalse(any(said in e for e in self._append("\nIt is the duo's most played song.\n")))
+
     def test_the_review_names_its_artist_and_track(self):
         _, errors = self.load(title="Someone Else - Another Song", name="someone-else-another-song.md")
         self.assertTrue(any("never names its artist (Someone Else)" in e for e in errors))
@@ -243,6 +252,56 @@ class Contract(unittest.TestCase):
         track, errors = self.load(title="Lulu's Theme", extra='artist = "Lulu Rouge"\n', name="x.md")
         self.assertEqual(errors, [])
         self.assertEqual(track.artist, "Lulu Rouge")
+
+
+class OwnerListening(unittest.TestCase):
+    """catalog.owner_listening: the owner named outright next to a listening word, nothing else."""
+    REFUSED = [
+        "It is here because it was among the owner's most played songs of 2022.",
+        "It is here as one of the owner's songs of 2018.",
+        "a vinyl repress seven years later, and a place in the owner's yearbook.",
+        "It is here because it stayed in the owner's yearbook.",
+        "beyond the owner's playlist, so nothing about its sound could be sourced.",
+        "It is on this playground because it is among the owner's top songs of 2017.",
+        "It is on this playground because it is in the owner's listening.",
+        "It is here because the owner played it often enough for it to make a yearbook.",
+        "This page keeps the credit as the owner's Spotify yearbook gives it.",
+        "The site owner’s favourite track of the summer.",
+        "Je tady proto, že patřila k nejposlouchanějším skladbám majitele v roce 2021.",
+        "Je tu proto, že patřila k písním, které majitel v roce 2022 poslouchal nejčastěji.",
+        "Je tu jako jedna z majitelových písní roku 2019.",
+        "Je tu jako jedna z písní majitele z roku 2018.",
+        "Je tu proto, že zůstal v ročence majitele.",
+        "Na tomto webu je proto, že patří k tomu, co majitel poslouchá.",
+        "Je tu proto, že ji majitel pouštěl tak často, až se dostala do ročenky.",
+        "Spotify ročenka majitele tohoto webu ji uvádí jako Manila (Radio Edit).",
+        "Patří do playlistu vlastníka stránek.",
+    ]
+    ACCEPTED = [
+        "Soundcharts singles out Rafale as the track that stood out; it is the duo's most played song.",
+        "The hook is light enough for a summer playlist and moving enough to stick.",
+        "BBC Radio 1 put the single on its A-list playlist for six weeks.",
+        "Henneberg works in Berlin as a producer, label owner, mastering engineer and DJ.",
+        "Knight, the owner of her label Juana, recorded her debut album.",
+        "Robin Schulz shared his remix as a free download, which upset the song's copyright owner.",
+        "The Owner plays its hook twice; play The Owner and wait for the chorus.",
+        "Do You Like That Song? still named The Owner among the pair's excellent songs.",
+        "Soundcharts lists it among her top songs.",
+        "Je to nejposlouchanější píseň dua.",
+        "Hook je dost lehký pro letní playlist a dost dojemný, aby utkvěl.",
+        "Rádio ji zařadilo do svého playlistu na šest týdnů.",
+        "Henneberg tam působí jako producent, majitel labelu a DJ.",
+        "Coververze ukazuje, co přežije, když píseň změní majitele.",
+        "Paape je jedním z majitelů labelu Kompakt.",
+    ]
+
+    def test_the_owners_listening_is_found(self):
+        for text in self.REFUSED:
+            self.assertTrue(catalog.owner_listening(text), text)
+
+    def test_other_owners_and_other_playlists_are_not(self):
+        for text in self.ACCEPTED:
+            self.assertEqual(catalog.owner_listening(text), [], text)
 
 
 class Related(unittest.TestCase):

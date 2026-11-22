@@ -98,4 +98,4 @@ GYM, credited as G Y M on the label's Bandcamp, releases on Play It Loudly, an i
 
 ## Impact and Reception
 
-White Town's original reached number one in the UK, the first gender-reversal song to top the chart there, and number 23 in the US. GYM's cover had no chart life and no reviews that we could find; it is here because it was among the owner's most played songs of a Spotify year. Play the two versions back to back.
+White Town's original reached number one in the UK, the first gender-reversal song to top the chart there, and number 23 in the US. GYM's cover had no chart life and no reviews that we could find. Play the two versions back to back.

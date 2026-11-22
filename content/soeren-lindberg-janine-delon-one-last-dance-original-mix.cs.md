@@ -10,7 +10,7 @@ concept = ["featured artist", "radio edit"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "df0edfe94d5d"
+of = "c1b3cac8667e"
 +++
 
 ## Žánr a nálada
@@ -35,4 +35,4 @@ Fadersport je hamburské vydavatelství, jehož katalog na Discogs sahá od konc
 
 ## Ohlas a dopad
 
-Žádná recenze ani žebříček One Last Dance nezmiňují. Její dosah je vidět spíš na kompilacích: skladba, kterou sestavovatelé ještě tři roky po vydání vybírali do výběrů deep housu a letní taneční hudby. Na tomto webu je proto, že patří k tomu, co majitel poslouchá. Pusťte si ji a poslechněte si, proč se k ní sestavovatelé vraceli.
+Žádná recenze ani žebříček One Last Dance nezmiňují. Její dosah je vidět spíš na kompilacích: skladba, kterou sestavovatelé ještě tři roky po vydání vybírali do výběrů deep housu a letní taneční hudby. Pusťte si ji a poslechněte si, proč se k ní sestavovatelé vraceli.

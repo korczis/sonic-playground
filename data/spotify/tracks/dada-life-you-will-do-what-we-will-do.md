@@ -6,8 +6,9 @@ artists: ["Dada Life"]
 album: "The Rules Of Dada"
 duration: "4:00"
 spotify: {"track": "6bPZ9EETcA0K63Zj7OcSzw", "album": "1lqbyIuEs1vy1lfgdKvCu0", "artists": ["00sAT5YX8W3xNd1EuqyHw9"]}
-keys: {"fold": "dadalife|youwilldowhatwewilldo"}
-status: "missing"
+keys: {"fold": "dadalife|youwilldowhatwewilldo", "isrc": "SE22J1200120", "musicbrainz": "85130a77-63e1-4e15-beaa-c9f05df4851c"}
+review: "dada-life-you-will-do-what-we-will-do.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Rules Of Dada*, 4:00.
 A liked song.
-No review yet.
+Reviewed: content/dada-life-you-will-do-what-we-will-do.md.

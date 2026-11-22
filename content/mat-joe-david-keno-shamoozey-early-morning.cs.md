@@ -10,7 +10,7 @@ concept = ["hook", "club culture", "featured artist"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "eff797bd5990"
+of = "49a20b70b501"
 
 [extra]
 connections = [
@@ -61,4 +61,4 @@ Mat.Joe jsou Matze a Johannes, přátelé z Hannoveru, kteří začínali v roce
 
 ## Ohlas a dopad
 
-Music Is 4 Lovers zařadil Early Morning na desáté místo svého seznamu nejlepších skladeb července 2015. Je tu proto, že patřila k písním, které majitel v roce 2022 poslouchal nejčastěji. Pusťte si ji brzy ráno a uvidíte, jestli udrží noc.
+Music Is 4 Lovers zařadil Early Morning na desáté místo svého seznamu nejlepších skladeb července 2015. Pusťte si ji brzy ráno a uvidíte, jestli udrží noc.

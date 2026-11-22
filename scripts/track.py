@@ -31,6 +31,8 @@ the track and replaces every TODO(write); `check` then proves the article meets 
     python3 scripts/track.py refresh content/<file>.md [--youtube URL] [--album A]
                              [--release-year YYYY] [--publisher P]   (prose untouched)
     python3 scripts/track.py check content/<file>.md
+    python3 scripts/track.py enrich content/<file>.md [--write] [--force] [--offline]
+    python3 scripts/track.py audit-mb [content/<file>.md ...] [--fix] [--offline]
     python3 scripts/track.py vocab [--facet genre] [--limit N]
     python3 scripts/track.py suggest --genre g ... --sentiment s ...
     python3 scripts/track.py outline
@@ -468,24 +470,16 @@ MB_AGENT = "sonic-playground/1.0 (+https://github.com/korczis/sonic-playground)"
 MB_CACHE = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache")) / "sonic-playground" / "musicbrainz.json"
 
 
-_mb_memo: dict = {"stamp": None, "data": {}}
-
-
 def mb_cache() -> dict:
-    """The MusicBrainz cache; a missing or unreadable file is an empty cache, never an error.
-    The parsed file is kept while its size and mtime stand (it is tens of megabytes), and read
-    again when a writer beside this one replaced it."""
+    """The MusicBrainz cache; a missing or unreadable file is an empty cache, never an error."""
     try:
-        st = MB_CACHE.stat()
-        stamp = (st.st_mtime_ns, st.st_size)
-        if _mb_memo["stamp"] != stamp:
-            _mb_memo["data"], _mb_memo["stamp"] = json.loads(MB_CACHE.read_text(encoding="utf-8")), stamp
-        return _mb_memo["data"]
+        return json.loads(MB_CACHE.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return {}
 
 
 _mb_last = [0.0]
+_mb_seen: dict[str, dict] = {}  # per cache file: what this process has read or fetched
 
 
 def mb_get(url: str, args) -> dict:
@@ -494,40 +488,45 @@ def mb_get(url: str, args) -> dict:
     if getattr(args, "mb_fixture", None):
         data = json.loads(Path(args.mb_fixture).read_text(encoding="utf-8"))
         return data.get(url, {})
-    cache = mb_cache()
-    if url in cache:
-        return cache[url]
+    seen = _mb_seen.get(str(MB_CACHE))
+    if seen is None:  # the cache is parsed once per process, not once per answer
+        seen = _mb_seen[str(MB_CACHE)] = mb_cache()
+    if url in seen:
+        return seen[url]
+    if getattr(args, "offline", False):
+        raise MBOffline(f"not in the MusicBrainz cache: {url}")
     wait = 1.1 - (time.monotonic() - _mb_last[0])
     if wait > 0:
         time.sleep(wait)
     request = urllib.request.Request(url, headers={"User-Agent": MB_AGENT, "Accept": "application/json"})
     data: dict = {}
-    for attempt in range(4):
+    for attempt in range(6):
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
                 data = json.loads(response.read().decode("utf-8"))
-            if "error" in data and attempt < 3:  # "the web server is currently busy"
+            if "error" in data and attempt < 5:  # "the web server is currently busy": retry, never cache
                 time.sleep(2 ** attempt * 2)
                 continue
             break
         except urllib.error.HTTPError as exc:
-            if exc.code in (429, 503) and attempt < 3:
-                time.sleep(2 ** attempt * 2)
+            if exc.code in (429, 503) and attempt < 5:
+                # The service's rate limit: wait as long as it asks (else back off), then retry.
+                after = exc.headers.get("Retry-After", "") if exc.headers else ""
+                time.sleep(min(int(after) if after.isdigit() else 2 ** attempt * 2, 30))
                 continue
             if exc.code == 404:
                 data = {}
                 break
             raise
     _mb_last[0] = time.monotonic()
-    if "error" in data:  # never cached: the next run asks again
-        raise urllib.error.URLError(f"musicbrainz: {data['error']}")
+    if "error" in data:  # still busy after every retry: an answer about the service, not the query
+        raise RuntimeError(f"MusicBrainz is busy, not cached: {url}")
     MB_CACHE.parent.mkdir(parents=True, exist_ok=True)
     cache = {**mb_cache(), url: data}  # what writers running beside this one saved meanwhile
     tmp = MB_CACHE.with_name(f"{MB_CACHE.name}.{os.getpid()}.tmp")
     tmp.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
     os.replace(tmp, MB_CACHE)  # atomic: a reader never sees half a file
-    st = MB_CACHE.stat()
-    _mb_memo["data"], _mb_memo["stamp"] = cache, (st.st_mtime_ns, st.st_size)
+    seen[url] = data
     return data
 
 
@@ -535,94 +534,627 @@ def mb_quote(text: str) -> str:
     return '"' + re.sub(r'([+\-&|!(){}\[\]^"~*?:\\/])', r"\\\1", text) + '"'
 
 
-def seconds(mmss: str | None) -> int | None:
-    if not mmss or not re.fullmatch(r"\d{1,2}:\d{2}", mmss):
+def seconds(text: str | None) -> int | None:
+    """'m:ss' or 'h:mm:ss' in seconds; anything else is unknown."""
+    if not text or not re.fullmatch(r"(\d{1,2}:)?\d{1,2}:\d{2}", text):
         return None
-    m, s_ = mmss.split(":")
-    return int(m) * 60 + int(s_)
+    total = 0
+    for part in text.split(":"):
+        total = total * 60 + int(part)
+    return total
 
 
-def mb_match(artist: str, track: str, duration: int | None, args) -> dict:
-    """The MusicBrainz recording of artist - track: a search scored by MusicBrainz, then kept
-    only when the title and the main artist agree (folded), the closest length when the video's
-    is known, else the earliest release. Ambiguity is reported, never guessed."""
-    main = re.split(r",| feat\.? | & | x ", artist, maxsplit=1)[0].strip()
-    title = re.sub(r"\s*\((feat\.|ft\.)[^)]*\)", "", track).strip()
-    q = f"recording:{mb_quote(title)} AND artist:{mb_quote(main)}"
-    found = mb_get(MB + "recording?" + urllib.parse.urlencode({"query": q, "fmt": "json", "limit": 15}), args)
-    want_title, want_artist = fold(title), fold(main)
-    candidates = []
-    for r in found.get("recordings", []):
-        credits = " ".join(c.get("name", "") + " " + (c.get("artist", {}).get("name", ""))
-                           for c in r.get("artist-credit", []))
-        if int(r.get("score", 0)) < 85 or fold(r.get("title", "")) != want_title:
+def mmss(value: int | None) -> str:
+    return "?" if value is None else f"{value // 60}:{value % 60:02d}"
+
+
+# --- Which recording and release a review is about. ------------------------------------------
+#
+# A search finds many recordings of one song: the album track, DJ-mix and live copies, music
+# videos, instrumentals, excerpts. The review is about the one its own facts name: the length of
+# its Spotify recording (data/spotify, ADR 0007), the album it names, and failing those the
+# earliest Official release. Whatever those facts cannot tell apart is left out, never guessed.
+
+WINDOW = 3  # seconds a recording's length may differ from the review's known duration
+VIDEO_WINDOW = 30  # a video's length is only a hint: intros and outros make it longer
+SPOTIFY = ROOT / "data" / "spotify"
+VARIOUS = "89ad4ac3-39f7-470e-963a-56509c546377"  # MusicBrainz's "Various Artists"
+# Versions a review is not about unless its own track title or album says so.
+MARKERS = {
+    "live": re.compile(r"\b(live|unplugged|in concert)\b"),
+    "dj-mix": re.compile(r"\b(dj-?mix(ed)?|mixed by|continuous mix|mix ?cut)\b"),
+    "instrumental": re.compile(r"\binstrumentals?\b"),
+    "excerpt": re.compile(r"\b(excerpt|snippet)\b"),
+    "karaoke": re.compile(r"\bkaraoke\b"),
+    "a cappella": re.compile(r"\b(a ?cappella|acapella)\b"),
+}
+# Release-group secondary types that are a version of their own, and the marker each means.
+MARKED_TYPES = {"Live": "live", "DJ-mix": "dj-mix", "Mixtape/Street": "dj-mix"}
+DASHES = re.compile(r"[‐-―−]")
+EDITION = re.compile(r"\s*[\(\[][^)\]]*[\)\]]|\s+-\s+.*$")
+PRIMARY = {"Album": 0, "EP": 1, "Single": 2}
+RECORDING_FLAGS = ("missing", "length", "version", "video", "only-on")
+
+
+class MBOffline(LookupError):
+    """--offline and the answer is not in the cache."""
+
+
+def markers(text: str) -> set[str]:
+    text = DASHES.sub("-", text.lower())
+    return {name for name, rx in MARKERS.items() if rx.search(text)}
+
+
+def marks(text: str, allowed: str = "") -> set[str]:
+    """The version markers of text (live, DJ-mix, instrumental, excerpt, karaoke, a cappella)
+    that allowed (the review's own title or album) does not carry itself."""
+    return markers(text) - markers(allowed)
+
+
+_spotify: dict[str, dict[str, list[dict]]] = {}
+
+
+def spotify_rows(name: str) -> list[dict]:
+    """The rows of the owner's Spotify history (data/spotify/tables/tracks.jsonl) whose review
+    is this page; a missing or unreadable table is no rows."""
+    key = str(SPOTIFY)
+    if key not in _spotify:
+        by_review: dict[str, list[dict]] = {}
+        try:
+            lines = (SPOTIFY / "tables" / "tracks.jsonl").read_text(encoding="utf-8").splitlines()
+            for line in lines:
+                row = json.loads(line) if line.strip() else {}
+                if row.get("review"):
+                    by_review.setdefault(row["review"], []).append(row)
+        except (OSError, ValueError):
+            by_review = {}
+        _spotify[key] = by_review
+    return _spotify[key].get(name, [])
+
+
+def spotify_facts(name: str, track: str) -> dict:
+    """The duration and album(s) the owner's Spotify history gives a review, from its rows that
+    are the song itself (an instrumental or live row its title does not name is left out).
+    Durations that disagree by more than WINDOW give none."""
+    rows = [r for r in spotify_rows(name)
+            if not marks(f"{r.get('title', '')} {r.get('album', '')}", track)]
+    found = sorted({d for d in (seconds(r.get("duration")) for r in rows) if d})
+    albums = sorted({r["album"] for r in rows if r.get("album")})
+    if not found:
+        return {"albums": albums}
+    if found[-1] - found[0] > WINDOW:
+        return {"albums": albums,
+                "note": "Spotify durations disagree: " + ", ".join(mmss(d) for d in found)}
+    return {"albums": albums, "duration": found[0]}
+
+
+def page_facts(t) -> dict:
+    """What a review says about its recording: artist, track, album (else Spotify's), the
+    artist's country, and the known duration with its source (Spotify; else the video's, which
+    is only a hint)."""
+    extra = t.full_extra
+    album = extra.get("album") if isinstance(extra.get("album"), str) else ""
+    spotify = spotify_facts(Path(t.source).name, t.track)
+    video = seconds(extra.get("video_duration")) if isinstance(extra.get("video_duration"),
+                                                              str) else None
+    duration, source = (spotify["duration"], "spotify") if spotify.get("duration") else (
+        (video, "video") if video else (None, ""))
+    return {"artist": t.artist, "track": t.track,
+            "albums": [album] if album else spotify.get("albums", []),
+            "album_source": "page" if album else ("spotify" if spotify.get("albums") else ""),
+            "duration": duration, "duration_source": source,
+            "country": extra.get("country") if isinstance(extra.get("country"), str) else "",
+            "notes": [spotify["note"]] if spotify.get("note") else []}
+
+
+def album_tier(title: str, albums: list[str]) -> int:
+    """0 the release is titled as the album (folded), 1 the same once edition qualifiers such
+    as "(Deluxe Edition)" or " - Remastered" are dropped, 2 another title or no album known."""
+    if any(fold(a) and fold(title) == fold(a) for a in albums):
+        return 0
+    bare = fold(EDITION.sub("", title))
+    return 1 if bare and any(bare == fold(EDITION.sub("", a)) for a in albums) else 2
+
+
+def release_flags(rel: dict, albums: list[str], track: str = "") -> list[str]:
+    """Why a release is not one a review would name: a status other than Official (bootleg,
+    promotion, none), or a live, DJ-mix, instrumental, excerpt, karaoke or a cappella edition
+    (by its release group, title or disambiguation) that neither the review's album nor its
+    track title names (a review of a live or instrumental version keeps such releases)."""
+    status = rel.get("status")
+    flags = [] if status == "Official" else [(status or "no status").lower()]
+    group = rel.get("release-group") or {}
+    kinds = {MARKED_TYPES[t] for t in group.get("secondary-types") or [] if t in MARKED_TYPES}
+    kinds |= markers(f"{rel.get('title', '')} {rel.get('disambiguation') or ''}")
+    return flags + sorted(kinds - markers(" ".join([*albums, track])))
+
+
+def is_compilation(rel: dict) -> bool:
+    group = rel.get("release-group") or {}
+    return ("Compilation" in (group.get("secondary-types") or [])
+            or any((c.get("artist") or {}).get("id") == VARIOUS
+                   for c in rel.get("artist-credit") or [] if isinstance(c, dict)))
+
+
+def date_key(value: str | None) -> str:
+    """A release date for sorting: a year or month alone sorts after every full date in it."""
+    if not value or not re.fullmatch(r"\d{4}(-\d{2}){0,2}", value):
+        return "9999-99-99"
+    return (value + "-99-99")[:10]
+
+
+def first_year(releases: list[dict], albums: list[str], track: str = "") -> str:
+    first = min((date_key(r.get("date")) for r in releases
+                 if not release_flags(r, albums, track)),
+                default="9999")
+    return "" if first.startswith("9999") else first[:4]
+
+
+def pick_release(releases: list[dict], albums: list[str], country: str = "",
+                 track: str = "") -> dict:
+    """The release a review names among its recording's: Official and not another version,
+    titled as the review's album (folded), not a compilation, earliest; then the artist's
+    country, then worldwide, an album before an EP or single. Pressings that still tie are one
+    release (the lowest id wins); different titles that still tie, an album no release is
+    titled as, or only compilations without an album are ambiguous: no release, and why."""
+    usable = [r for r in releases if not release_flags(r, albums, track)]
+    if not usable:
+        return {"release": "", "why": "no Official release of the recording that is not live, "
+                "a DJ-mix, an instrumental or an excerpt"}
+    if albums:
+        usable = [r for r in usable if album_tier(r.get("title", ""), albums) < 2]
+        if not usable:
+            return {"release": "", "why": "no Official release of the recording is titled "
+                    + " or ".join(repr(a) for a in albums)}
+
+    def key(r: dict) -> tuple:
+        group = r.get("release-group") or {}
+        place = 0 if country and r.get("country") == country else (
+            1 if r.get("country") == "XW" else 2)
+        return (album_tier(r.get("title", ""), albums), is_compilation(r),
+                date_key(r.get("date")), place, PRIMARY.get(group.get("primary-type") or "", 3),
+                r.get("id", ""))
+
+    usable.sort(key=key)
+    best = usable[0]
+    tied = {r.get("title", "") for r in usable if key(r)[:-1] == key(best)[:-1]}
+    if len({fold(t) for t in tied}) > 1:
+        return {"release": "", "why": "releases tie: " + ", ".join(sorted(tied))}
+    if not albums and is_compilation(best):
+        return {"release": "", "why": "only compilations carry the recording and the review "
+                "names no album"}
+    return {"release": best["id"], "title": best.get("title", ""), "date": best.get("date", ""),
+            "why": ""}
+
+
+def main_artist(artist: str) -> str:
+    return re.split(r",| feat\.? | & | x ", artist, maxsplit=1)[0].strip()
+
+
+def song_title(track: str) -> str:
+    return re.sub(r"\s*\((feat\.|ft\.)[^)]*\)", "", track).strip()
+
+
+def credits_of(r: dict) -> list[dict]:
+    return [c for c in r.get("artist-credit") or [] if isinstance(c, dict) and c.get("artist")]
+
+
+def credit_id(r: dict, artist: str) -> str:
+    """The id of the review's main artist among a recording's credits (else the first)."""
+    want = fold(main_artist(artist))
+    credits = credits_of(r)
+    exact = [c["artist"]["id"] for c in credits
+             if want in (fold(c.get("name", "")), fold(c["artist"].get("name", "")))]
+    return exact[0] if exact else (credits[0]["artist"]["id"] if credits else "")
+
+
+def length_of(r: dict) -> int | None:
+    return round(r["length"] / 1000) if r.get("length") else None
+
+
+def within(length: int | None, facts: dict) -> bool | None:
+    """Whether a recording's length agrees with the review's duration; None when either is
+    unknown. A video's duration allows VIDEO_WINDOW, Spotify's WINDOW."""
+    duration = facts.get("duration")
+    if not length or not duration:
+        return None
+    window = WINDOW if facts.get("duration_source") == "spotify" else VIDEO_WINDOW
+    return abs(length - duration) <= window
+
+
+def credit_agrees(r: dict, artist: str) -> bool:
+    """Whether a recording credits the review's artist by name: one credit is the main artist
+    or the whole artist (folded), or the credits joined are the whole artist ("Simon &
+    Garfunkel" as one credit, "Dr. Dre feat. Eminem" as two). "Fixture Artistry" is not
+    "Fixture Artist": a looser credit is only a candidate, never proved by a length."""
+    whole, main = fold(artist), fold(main_artist(artist))
+    names = {fold(n) for c in credits_of(r)
+             for n in (c.get("name", ""), c["artist"].get("name", ""))}
+    joined = fold("".join(c.get("name", "") + (c.get("joinphrase") or "") for c in credits_of(r)))
+    return bool({whole, main} & names) or (bool(whole) and joined == whole)
+
+
+def mb_candidates(found: list[dict], facts: dict) -> tuple[list[dict], dict[str, int]]:
+    """The recordings of a search that are the review's song by its artist and could be the
+    one it is about, best first, and how many others were rejected for which reason.
+
+    Not candidates: another title (folded, featured artists dropped), or no credit naming the
+    artist at all. Rejected: a music video; a recording whose title or disambiguation marks a
+    version the review's own title does not (live, DJ-mix, instrumental, excerpt, karaoke, a
+    cappella: a review of the live version keeps live recordings); one only on such releases or
+    bootlegs; one whose length is off the Spotify duration by more than WINDOW. Ranked: the
+    artist credited by name before a looser credit, on a release titled as the review's album,
+    length within the window, on an artist release before compilations only, earliest usable
+    release, id. A compilation only ranks: one recording spans many releases."""
+    track = facts["track"]
+    want_title, want_artist = fold(song_title(track)), fold(main_artist(facts["artist"]))
+    albums = facts["albums"]
+    strict = facts.get("duration_source") == "spotify"
+    kept: list[dict] = []
+    rejected: dict[str, int] = {}
+    for r in found:
+        credits = " ".join(c.get("name", "") + " " + c["artist"].get("name", "")
+                           for c in credits_of(r))
+        if fold(r.get("title", "")) != want_title or want_artist not in fold(credits):
+            continue  # another song or another artist: not a candidate at all
+        releases = r.get("releases") or []
+        clean = [x for x in releases
+                 if not set(release_flags(x, albums, track)) & (set(MARKERS) | {"bootleg"})]
+        usable = [x for x in releases if not release_flags(x, albums, track)]
+        version = marks(f"{r.get('title', '')} {r.get('disambiguation') or ''}", track)
+        length = length_of(r)
+        fits = within(length, facts)
+        reason = ("video" if r.get("video") else ", ".join(sorted(version)) if version
+                  else "no release" if not releases
+                  else "only on live, DJ-mix, instrumental or bootleg releases" if not clean
+                  else f"length off {mmss(facts['duration'])}" if strict and fits is False
+                  else "")
+        if reason:
+            rejected[reason] = rejected.get(reason, 0) + 1
             continue
-        if want_artist not in fold(credits):
-            continue
-        dates = sorted(x.get("date", "") for x in r.get("releases", []) if x.get("date"))
-        length = (r.get("length") or 0) // 1000 or None
-        candidates.append({"r": r, "first": dates[0] if dates else "9999", "length": length})
-    if not candidates:
-        return {"status": "no-match", "query": q}
-    if duration:
-        candidates.sort(key=lambda c: (abs((c["length"] or 10**6) - duration), c["first"]))
-    else:
-        candidates.sort(key=lambda c: c["first"])
-    best = candidates[0]["r"]
-    first = candidates[0]["first"]
-    artist_id = next((c["artist"]["id"] for c in best.get("artist-credit", []) if "artist" in c), "")
-    releases = sorted((x for x in best.get("releases", []) if x.get("date")), key=lambda x: x["date"])
+        kept.append({
+            "r": r, "id": r["id"], "length": length, "fits": fits,
+            "credited": credit_agrees(r, facts["artist"]),
+            "album": min((album_tier(x.get("title", ""), albums) for x in usable), default=2),
+            "compilation": all(is_compilation(x) for x in usable) if usable else True,
+            "first": min((date_key(x.get("date")) for x in usable), default="9999-99-99")})
+    kept.sort(key=lambda c: (not c["credited"], c["album"], 0 if c["fits"] else 1,
+                             c["compilation"], c["first"], c["id"]))
+    return kept, rejected
+
+
+def evidence_of(c: dict) -> str:
+    """What singles a candidate out: the album it is on, else its length. A length alone
+    supports a recording that credits the artist by name; it never proves a looser one."""
+    if c["album"] < 2:
+        return "album"
+    return "duration" if c["fits"] and c["credited"] else ""
+
+
+def mb_search_url(query: str, limit: int) -> str:
+    return MB + "recording?" + urllib.parse.urlencode({"query": query, "fmt": "json",
+                                                       "limit": limit})
+
+
+def mb_releases_url(recording: str) -> str:
+    return MB + "release?" + urllib.parse.urlencode(
+        {"recording": recording, "inc": "artist-credits release-groups", "limit": 100,
+         "fmt": "json"})
+
+
+def mb_recording_url(recording: str) -> str:
+    return MB + f"recording/{recording}?" + urllib.parse.urlencode(
+        {"inc": "isrcs artist-credits", "fmt": "json"})
+
+
+def mb_release_url(release: str) -> str:
+    return MB + f"release/{release}?" + urllib.parse.urlencode(
+        {"inc": "recordings release-groups artist-credits", "fmt": "json"})
+
+
+def mb_search(facts: dict, args) -> tuple[list[dict], str]:
+    """The recordings MusicBrainz finds for the song: on a release titled as each album the
+    review names, then without the album; one recording's releases from both are merged."""
+    q = (f"recording:{mb_quote(song_title(facts['track']))} "
+         f"AND artist:{mb_quote(main_artist(facts['artist']))}")
+    urls = [mb_search_url(f"{q} AND release:{mb_quote(a)}", 25) for a in facts["albums"][:2]]
+    merged: dict[str, dict] = {}
+    for url in urls + [mb_search_url(q, 50)]:
+        for r in mb_get(url, args).get("recordings") or []:
+            known = merged.setdefault(r["id"], {**r, "releases": []})
+            ids = {x.get("id") for x in known["releases"]}
+            known["releases"] += [x for x in r.get("releases") or [] if x.get("id") not in ids]
+    return list(merged.values()), q
+
+
+def mb_match(facts: dict, args) -> dict:
+    """The MusicBrainz recording and release a review is about (mb_candidates, pick_release).
+    Several candidates that neither the album nor a known duration tells apart are ambiguous;
+    a release the facts cannot single out is left empty with the reason in notes."""
+    found, query = mb_search(facts, args)
+    kept, rejected = mb_candidates(found, facts)
+    base = {"query": query, "rejected": rejected, "candidates": len(kept)}
+    if not kept:
+        return {**base, "status": "no-match",
+                "why": "no recording of the song by the artist" + (
+                    " that is not " + ", ".join(sorted(rejected)) if rejected else "")}
+    best = kept[0]
+    evidence = evidence_of(best)
+    if not best["credited"] and not evidence:
+        return {**base, "status": "ambiguous",
+                "why": "no recording credits " + repr(facts["artist"]) + " by name, and no "
+                       "album confirms a looser credit"}
+    if len(kept) > 1 and not evidence:
+        return {**base, "status": "ambiguous",
+                "why": f"{len(kept)} recordings remain and neither an album nor a known duration "
+                       "tells them apart (set extra.album, or fill ids by hand)"}
+    r = best["r"]
+    artist_id = credit_id(r, facts["artist"])
     found_artist = mb_get(MB + f"artist/{artist_id}?fmt=json", args) if artist_id else {}
-    return {"status": "matched", "recording": best["id"], "artist": artist_id,
-            "release": releases[0]["id"] if releases else "",
-            "isrc": sorted(best.get("isrcs", []))[:1],
-            "year": first[:4] if first != "9999" else "",
-            "country": found_artist.get("country") or "",
-            "candidates": len(candidates)}
+    country = found_artist.get("country") or ""
+    releases = mb_get(mb_releases_url(r["id"]), args).get("releases") or r.get("releases") or []
+    rel = pick_release(releases, facts["albums"], facts.get("country") or country,
+                       facts["track"])
+    notes = list(facts.get("notes", []))
+    if rel["why"]:
+        notes.append("release left out: " + rel["why"])
+    if not evidence:
+        notes.append("the only candidate; neither an album nor a known duration confirms it")
+    return {**base, "status": "matched", "recording": r["id"], "artist": artist_id,
+            "release": rel["release"], "release_title": rel.get("title", ""),
+            "isrc": sorted(r.get("isrcs") or [])[:1],
+            "year": first_year(releases, facts["albums"], facts["track"]),
+            "country": country, "length": best["length"], "evidence": evidence,
+            "notes": notes}
+
+
+def say(command: str, rel: str, message: str) -> None:
+    print(f"{command}: {rel}: {message}", file=sys.stderr)
 
 
 def enrich(paths: list[str], args) -> int:
-    """Fill what MusicBrainz knows into [extra]: the recording, artist and first release ids,
-    the ISRC, the artist's country, and the release year when the review has none. A value the
-    review already has is kept; without --write this only reports."""
+    """Fill what MusicBrainz knows into [extra]: the recording, artist and release ids, the
+    ISRC, the artist's country, and the release year when the review has none. A value the
+    review already has is kept; without --write this only reports. What the review's facts
+    cannot single out is written as nothing, and the report says why."""
     files = cat.review_files() if args.all else [content_path(p) for p in paths]
-    report = {"matched": [], "unchanged": [], "no-match": [], "failed": []}
+    report: dict[str, list] = {"matched": [], "unchanged": [], "ambiguous": [], "no-match": [],
+                               "failed": []}
     for file in files:
-        if file.name == "_index.md":
+        if file.name == "_index.md" or cat.tr.translation_name(file.name):
             continue
         errors: list[str] = []
         t = cat.load_track(file, errors)
         if not t:
             continue
         rel = f"content/{file.name}"
-        if t.full_extra.get("musicbrainz") and not args.force:
+        old = t.full_extra.get("musicbrainz")
+        old = old if isinstance(old, dict) else {}
+        if old.get("recording") and not args.force:
             report["unchanged"].append(rel)
             continue
+        facts = page_facts(t)
         try:
-            m = mb_match(t.artist, t.track, seconds(t.full_extra.get("video_duration")), args)
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
-            report["failed"].append({"file": rel, "error": str(exc)})
+            m = mb_match(facts, args)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, MBOffline) as exc:
+            report["failed"].append({"file": rel, "error": str(exc) or type(exc).__name__})
             continue
         if m["status"] != "matched":
-            report["no-match"].append({"file": rel, "query": m.get("query")})
+            report[m["status"]].append({"file": rel, "why": m["why"], "query": m["query"],
+                                        "rejected": m["rejected"]})
+            say("enrich", rel, f"nothing written: {m['why']}")
             continue
-        updates = {"musicbrainz": {k: m[k] for k in ("recording", "artist", "release") if m[k]}}
+        ids = {k: m[k] for k in ("recording", "artist", "release") if m[k]}
+        if not ids.get("release") and old.get("release") and old.get("recording") == m["recording"]:
+            ids["release"] = old["release"]  # --force keeps a release the match cannot replace
+        updates: dict = {"musicbrainz": ids}
         if m["isrc"] and not t.full_extra.get("isrc"):
             updates["isrc"] = m["isrc"][0]
         # MusicBrainz uses XW (worldwide), XE (Europe) and XU (unknown) for areas, not countries.
-        if (m["country"] and re.fullmatch(r"[A-Z]{2}", m["country"]) and m["country"] not in ("XW", "XE", "XU")
-                and not t.full_extra.get("country")):
+        if (m["country"] and re.fullmatch(r"[A-Z]{2}", m["country"])
+                and m["country"] not in ("XW", "XE", "XU") and not t.full_extra.get("country")):
             updates["country"] = m["country"]
         if m["year"] and not t.full_extra.get("release_year"):
             updates["release_year"] = m["year"]
-        entry = {"file": rel, "updates": updates, "candidates": m["candidates"]}
+        entry = {"file": rel, "updates": updates, "candidates": m["candidates"],
+                 "rejected": m["rejected"], "length": mmss(m["length"]),
+                 "duration": f"{mmss(facts['duration'])} ({facts['duration_source'] or 'none'})",
+                 "release_title": m["release_title"], "notes": m["notes"]}
+        for note in m["notes"]:
+            say("enrich", rel, note)
         if args.write and write_extra(file, rel, updates, quiet=True) != 0:
-            report["failed"].append({"file": rel, "error": "the rewritten article fails the contract"})
+            report["failed"].append({"file": rel,
+                                     "error": "the rewritten article fails the contract"})
             continue
         report["matched"].append(entry)
-    out({"written": bool(args.write), **{k: v for k, v in report.items()},
+    out({"written": bool(args.write), **report,
          "counts": {k: len(v) for k, v in report.items()}})
     return 1 if report["failed"] else 0
+
+
+# --- Audit: ids already written that look wrong. ---------------------------------------------
+
+def mb_flags(facts: dict, ids: dict, recording: dict, releases: list[dict],
+             release: dict | None, member: bool | None) -> list[dict]:
+    """What looks wrong with a review's MusicBrainz ids, each {field, kind, detail}: the
+    recording (missing, its length against the review's duration, a version marker, a video,
+    only on live/DJ-mix/bootleg releases), its artist, the ISRC not on the recording, the
+    release (missing, not carrying the recording, not Official or another version, not the
+    review's album, a compilation when the artist's own release exists)."""
+    flags: list[dict] = []
+
+    def flag(field: str, kind: str, detail: str) -> None:
+        flags.append({"field": field, "kind": kind, "detail": detail})
+
+    albums, track = facts["albums"], facts["track"]
+    if not recording:
+        flag("recording", "missing", f"recording {ids.get('recording')} is not in MusicBrainz")
+    else:
+        length = length_of(recording)
+        if within(length, facts) is False:
+            flag("recording", "length", f"recording is {mmss(length)}, the review's duration "
+                 f"{mmss(facts['duration'])} ({facts['duration_source']})")
+        version = marks(f"{recording.get('title', '')} {recording.get('disambiguation') or ''}",
+                        facts["track"])
+        if version:
+            flag("recording", "version", f"recording {recording.get('title', '')!r} "
+                 f"({recording.get('disambiguation') or 'no disambiguation'}) is "
+                 + ", ".join(sorted(version)))
+        if recording.get("video"):
+            flag("recording", "video", "the recording is a music video")
+        clean = [x for x in releases
+                 if not set(release_flags(x, albums, track)) & (set(MARKERS) | {"bootleg"})]
+        if releases and not clean:
+            flag("recording", "only-on", "every release of the recording is live, a DJ-mix, an "
+                 "instrumental or a bootleg")
+        credit_ids = {c["artist"]["id"] for c in credits_of(recording)}
+        if ids.get("artist") and ids["artist"] not in credit_ids:
+            flag("artist", "artist", f"artist {ids['artist']} is not credited on the recording")
+        if ids.get("isrc") and ids["isrc"] not in (recording.get("isrcs") or []):
+            flag("isrc", "isrc", f"ISRC {ids['isrc']} is not on the recording (it has "
+                 + (", ".join(recording.get("isrcs") or []) or "none") + ")")
+    if ids.get("release"):
+        if release is None:
+            pass  # not looked up
+        elif not release:
+            flag("release", "missing", f"release {ids['release']} is not in MusicBrainz")
+        else:
+            title = release.get("title", "")
+            if member is False:
+                flag("release", "not-of-recording", f"release {title!r} does not carry the "
+                     "recording")
+            bad = release_flags(release, albums, track)
+            if bad:
+                flag("release", "release-version", f"release {title!r} is " + ", ".join(bad))
+            if albums and album_tier(title, albums) == 2:
+                flag("release", "album", f"release {title!r} is not the album "
+                     + " or ".join(repr(a) for a in albums) + f" ({facts['album_source']})")
+            elif not albums and is_compilation(release) and any(
+                    not is_compilation(x) and not release_flags(x, albums, track)
+                    for x in releases):
+                flag("release", "compilation", f"release {title!r} is a compilation and the "
+                     "recording has an artist release")
+    return flags
+
+
+def release_carries(release: dict, recording: str) -> bool:
+    return any((tr.get("recording") or {}).get("id") == recording
+               for medium in release.get("media") or [] for tr in medium.get("tracks") or [])
+
+
+def mb_propose(facts: dict, ids: dict, flags: list[dict], recording: dict,
+               releases: list[dict], args) -> tuple[dict, str]:
+    """The correction for flagged ids, only when it is unambiguous: a new recording (and its
+    release) when the recording is flagged, else a release among the recording's, the credited
+    artist, the recording's ISRC. Returns (updates of [extra], why nothing when empty)."""
+    fields = {f["field"] for f in flags}
+    mb = {k: ids[k] for k in ("recording", "artist", "release") if ids.get(k)}
+    rec = recording
+    if "recording" in fields:
+        m = mb_match(facts, args)
+        if m["status"] != "matched":
+            return {}, m["why"]
+        if m["recording"] == ids.get("recording"):
+            return {}, "the match is the same recording"
+        rec = mb_get(mb_recording_url(m["recording"]), args)
+        mb = {k: m[k] for k in ("recording", "artist", "release") if m[k]}
+        if not m["release"]:
+            return {}, "a new recording without a release: " + "; ".join(m["notes"])
+    else:
+        if "release" in fields:
+            rel = pick_release(releases, facts["albums"], facts.get("country") or "",
+                               facts["track"])
+            if not rel["release"]:
+                return {}, rel["why"]
+            mb["release"] = rel["release"]
+        if "artist" in fields:
+            artist = credit_id(recording, facts["artist"])
+            if not artist:
+                return {}, "the recording credits no artist"
+            mb["artist"] = artist
+    updates: dict = {}
+    if mb != {k: ids[k] for k in ("recording", "artist", "release") if ids.get(k)}:
+        updates["musicbrainz"] = mb
+    isrcs = sorted(rec.get("isrcs") or [])
+    if ids.get("isrc") and ids["isrc"] not in isrcs:
+        if not isrcs:
+            return updates, ("" if updates
+                             else "the recording has no ISRC; remove extra.isrc by hand")
+        updates["isrc"] = isrcs[0]
+    return updates, "" if updates else "nothing to change"
+
+
+def audit_mb(paths: list[str], args) -> int:
+    """Report the reviews whose MusicBrainz ids look wrong (mb_flags), with the unambiguous
+    correction where there is one; --fix writes those corrections and nothing else. A report,
+    not a gate: exit 0."""
+    files = ([content_path(p) for p in paths] if paths else cat.review_files())
+    report: dict[str, list] = {"flagged": [], "ok": [], "unenriched": [], "unreachable": []}
+    for file in files:
+        if file.name == "_index.md" or cat.tr.translation_name(file.name):
+            continue
+        errors: list[str] = []
+        t = cat.load_track(file, errors, include_drafts=True)
+        if not t:
+            continue
+        rel = f"content/{file.name}"
+        mb = t.full_extra.get("musicbrainz")
+        mb = mb if isinstance(mb, dict) else {}
+        if not mb.get("recording"):
+            report["unenriched"].append(rel)
+            continue
+        ids = {**{k: mb.get(k, "") for k in ("recording", "artist", "release")},
+               "isrc": t.full_extra.get("isrc") or ""}
+        facts = page_facts(t)
+        try:
+            recording = mb_get(mb_recording_url(ids["recording"]), args)
+            releases = (mb_get(mb_releases_url(ids["recording"]), args).get("releases") or []
+                        if recording else [])
+            release, member = None, None
+            if ids["release"]:
+                release = next((r for r in releases if r.get("id") == ids["release"]), None)
+                member = True if release else None
+                if release is None:
+                    release = mb_get(mb_release_url(ids["release"]), args)
+                    member = release_carries(release, ids["recording"]) if release else None
+            flags = mb_flags(facts, ids, recording, releases, release, member)
+            proposed, why_not = (mb_propose(facts, ids, flags, recording, releases, args)
+                                 if flags else ({}, ""))
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, MBOffline) as exc:
+            report["unreachable"].append({"file": rel, "error": str(exc) or type(exc).__name__})
+            continue
+        if not flags:
+            report["ok"].append(rel)
+            continue
+        entry = {"file": rel, "ids": ids, "album": facts["albums"],
+                 "duration": f"{mmss(facts['duration'])} ({facts['duration_source'] or 'none'})",
+                 "length": mmss(length_of(recording)) if recording else "?",
+                 "release_title": (release or {}).get("title", ""),
+                 "flags": flags, "proposed": proposed, "fixed": False}
+        if why_not:
+            entry["why_not"] = why_not
+        if args.fix and proposed:
+            entry["fixed"] = write_extra(file, rel, proposed, quiet=True) == 0
+        report["flagged"].append(entry)
+    kinds: dict[str, int] = {}
+    for entry in report["flagged"]:
+        for f in entry["flags"]:
+            kinds[f["kind"]] = kinds.get(f["kind"], 0) + 1
+    counts = {k: len(v) for k, v in report.items()}
+    proposals = sum(1 for e in report["flagged"] if e["proposed"])
+    fixed = sum(1 for e in report["flagged"] if e["fixed"])
+    summary = (f"{sum(counts.values())} reviews: {counts['ok']} ok, {counts['flagged']} flagged"
+               + (" (" + ", ".join(f"{k} {n}" for k, n in sorted(kinds.items())) + ")"
+                  if kinds else "")
+               + f", {counts['unenriched']} without ids, {counts['unreachable']} unreachable; "
+               + f"{proposals} unambiguous corrections"
+               + (f", {fixed} written" if args.fix else " (--fix writes them)"))
+    out({"fixed": bool(args.fix), **report, "counts": counts, "flags": kinds,
+         "summary": summary})
+    for entry in report["flagged"]:
+        say("audit-mb", entry["file"], "; ".join(f["detail"] for f in entry["flags"]))
+    print(f"audit-mb: {summary}", file=sys.stderr)
+    return 0
 
 
 def check(path: str) -> int:
@@ -681,6 +1213,12 @@ def main() -> int:
     p_en.add_argument("--write", action="store_true", help="write (default: report only)")
     p_en.add_argument("--force", action="store_true", help="also reviews that have identifiers")
     p_en.add_argument("--mb-fixture", help="MusicBrainz answers from a JSON file (tests)")
+    p_en.add_argument("--offline", action="store_true", help="the MusicBrainz cache only")
+    p_au = sub.add_parser("audit-mb", help="report reviews whose MusicBrainz ids look wrong")
+    p_au.add_argument("files", nargs="*", help="reviews (default: every review)")
+    p_au.add_argument("--fix", action="store_true", help="write the unambiguous corrections")
+    p_au.add_argument("--mb-fixture", help="MusicBrainz answers from a JSON file (tests)")
+    p_au.add_argument("--offline", action="store_true", help="the MusicBrainz cache only")
     p_vocab = sub.add_parser("vocab", help="the facet vocabulary, most used first")
     p_vocab.add_argument("--facet", choices=cat.FACETS)
     p_vocab.add_argument("--limit", type=int, default=0)
@@ -700,6 +1238,8 @@ def main() -> int:
         return refresh(args.file, args)
     if args.command == "enrich":
         return enrich(args.files, args)
+    if args.command == "audit-mb":
+        return audit_mb(args.files, args)
     if args.command == "check":
         return check(args.file)
     if args.command == "vocab":

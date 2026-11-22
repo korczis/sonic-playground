@@ -108,4 +108,4 @@ Kellerkind, German for a child of the cellar, is Swiss, and his Bandcamp page gi
 
 ## Impact and Reception
 
-The track returned to Sirion's catalogue ten years on, with three remakes, a sign of how long it lasted in the label's story. It is on this playground as one of the owner's songs of 2018. Put it on at a party and see who dances first.
+The track returned to Sirion's catalogue ten years on, with three remakes, a sign of how long it lasted in the label's story. Put it on at a party and see who dances first.

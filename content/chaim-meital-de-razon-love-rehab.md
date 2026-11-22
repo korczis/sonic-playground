@@ -126,4 +126,4 @@ Chaim Avital is an Israeli producer from Tel Aviv. Textura tells how electronic 
 
 ## Impact and Reception
 
-Reviewing Alive, Resident Advisor heard the album version of Love Rehab as another canny turn, a smoky mid-tempo rubdown that hooks you with the words. The original came first, and it is among the owner's most played songs of 2019. Play it, and give it the full seven minutes.
+Reviewing Alive, Resident Advisor heard the album version of Love Rehab as another canny turn, a smoky mid-tempo rubdown that hooks you with the words. The original came first. Play it, and give it the full seven minutes.

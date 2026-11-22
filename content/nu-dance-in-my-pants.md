@@ -107,4 +107,4 @@ UBWG describes Nu as a live act who had worked across deep house, hip hop, trip 
 
 ## Impact and Reception
 
-Its reception is quieter than its title track's: one magazine's tip, a vinyl repress seven years later, and a place in the owner's yearbook. It is here as the B-side that is all movement. Play it after Who Loves the Sun and hear the same EP turn from song to dance.
+Its reception is quieter than its title track's: one magazine's tip and a vinyl repress seven years later. It is here as the B-side that is all movement. Play it after Who Loves the Sun and hear the same EP turn from song to dance.

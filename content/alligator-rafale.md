@@ -110,4 +110,4 @@ Alligator formed as a duo in 2017 around Octets, and La Souterraine, which relea
 
 ## Impact and Reception
 
-Soundcharts singles out Rafale as the track that stood out and was widely broadcast; it is the duo's most played song. It is here because it was among the owner's most played songs of 2022. Put it on late, and let the gust carry you.
+Soundcharts singles out Rafale as the track that stood out and was widely broadcast; it is the duo's most played song. Put it on late, and let the gust carry you.

@@ -10,7 +10,7 @@ concept = ["remix", "alternate version", "music video"]
 instrument = ["vocals"]
 
 [extra.translation]
-of = "8cce07a03850"
+of = "e6a0b3def2ed"
 
 [extra]
 connections = [
@@ -55,4 +55,4 @@ Chris Brann se narodil v Atlantě a je nejznámější jako Wamdue Project a Ana
 
 ## Ohlas a dopad
 
-King Mix udělal z King of My Castle taneční standard: verze z roku 2009 s novými mixy se vrátila do nizozemské Top 40 a hook žije dál v pozdějších house nahrávkách, jako je {{ <track_link source="dj-s-k-t-must-be-a-reason-radio-edit.md" lang="cs" /> }}. Patří mezi písně majitele z roku 2018 i 2019. Zesilte ji a zeptejte se, kdo vládne vašemu hradu.
+King Mix udělal z King of My Castle taneční standard: verze z roku 2009 s novými mixy se vrátila do nizozemské Top 40 a hook žije dál v pozdějších house nahrávkách, jako je {{ <track_link source="dj-s-k-t-must-be-a-reason-radio-edit.md" lang="cs" /> }}. Zesilte ji a zeptejte se, kdo vládne vašemu hradu.

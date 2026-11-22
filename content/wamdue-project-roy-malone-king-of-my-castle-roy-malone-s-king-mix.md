@@ -104,4 +104,4 @@ Chris Brann was born in Atlanta and is best known as Wamdue Project and Ananda P
 
 ## Impact and Reception
 
-The King Mix made King of My Castle a dance standard: a 2009 version with new mixes returned to the Dutch Top 40, and the hook lives on in later house records such as {{ <track_link source="dj-s-k-t-must-be-a-reason-radio-edit.md" /> }}. It is one of the owner's songs of both 2018 and 2019. Turn it up and ask who rules your castle.
+The King Mix made King of My Castle a dance standard: a 2009 version with new mixes returned to the Dutch Top 40, and the hook lives on in later house records such as {{ <track_link source="dj-s-k-t-must-be-a-reason-radio-edit.md" /> }}. Turn it up and ask who rules your castle.

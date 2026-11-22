@@ -106,7 +106,7 @@ year = "2020"
 
 ## Song Summary
 
-The voice belongs to Michael Smith, a twelve-year-old from Compton, California, whom Solèr met in the street while making the album Out of the Woods in Los Angeles. He was not a trained singer; Freaky Trigger called his part a rap. Manila was the album's first single and, as German Wikipedia puts it, an overnight hit. This edit, three minutes six long, comes from Klein Records' release Manila (Mixes), dated June 2003; the owner's Spotify yearbook lists it as Seelenluft - Manila (Radio Edit), the project's name repeated in the title.
+The voice belongs to Michael Smith, a twelve-year-old from Compton, California, whom Solèr met in the street while making the album Out of the Woods in Los Angeles. He was not a trained singer; Freaky Trigger called his part a rap. Manila was the album's first single and, as German Wikipedia puts it, an overnight hit. This edit, three minutes six long, comes from Klein Records' release Manila (Mixes), dated June 2003; Spotify lists it as Seelenluft - Manila (Radio Edit), the project's name repeated in the title.
 
 ## Musical Breakdown
 

@@ -10,7 +10,7 @@ concept = ["bassline", "ambient texture"]
 instrument = ["vocals", "bass"]
 
 [extra.translation]
-of = "b15b916e6648"
+of = "3e7c99caeef8"
 
 [extra]
 connections = [
@@ -58,4 +58,4 @@ Kitsuné je pařížské vydavatelství a Parisien je název jeho řady kompilac
 
 ## Ohlas a dopad
 
-Huacachina nemá vlastní ohlas v tisku; jejím vstupem do světa bylo otevření kompilace Kitsuné a duo ji přivedla zpět do téže řady. Je tu proto, že patřila k písním, které majitel v roce 2022 poslouchal nejčastěji. Pusťte si ji, sledujte basu a uvidíte, jestli se budete vznášet.
+Huacachina nemá vlastní ohlas v tisku; jejím vstupem do světa bylo otevření kompilace Kitsuné a duo ji přivedla zpět do téže řady. Pusťte si ji, sledujte basu a uvidíte, jestli se budete vznášet.
