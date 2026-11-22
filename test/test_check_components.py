@@ -54,5 +54,15 @@ class PageLayout(unittest.TestCase):
         self.assertEqual(check.layout_problems(), [])
 
 
+class Repository(unittest.TestCase):
+    def test_the_templates_pass_every_check(self):
+        import contextlib
+        import io
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(check.main(), 0)
+        self.assertIn("0 problem(s)", out.getvalue())
+
+
 if __name__ == "__main__":
     unittest.main()

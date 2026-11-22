@@ -386,6 +386,18 @@ class PublicationOrder(unittest.TestCase):
         added = catalog.git_added()
         self.assertIn("amy-winehouse-rehab.md", added)
 
+    def test_git_added_outside_a_work_tree_is_empty(self):
+        import os
+        from unittest import mock
+        clean = {k: v for k, v in os.environ.items() if not k.startswith("GIT_")}
+        with tempfile.TemporaryDirectory() as d, mock.patch.dict(os.environ, clean, clear=True):
+            saved = catalog.ROOT
+            try:
+                catalog.ROOT = Path(d)  # a directory git knows nothing of
+                self.assertEqual(catalog.git_added(), {})
+            finally:
+                catalog.ROOT = saved
+
     def test_published_times_take_the_record_then_git_then_now(self):
         times, missing = catalog.published_times(["c.md", "a.md", "b.md"], {"a.md": 10},
                                                  {"a.md": 1, "b.md": 20}, 99)
