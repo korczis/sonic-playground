@@ -226,11 +226,12 @@ async function visit(context, rel) {
   return { errors, stalled };
 }
 
-// The sweep's parallel pages: SMOKE_WORKERS, else the machine's cores less two, never fewer than the
-// six the CI runner always had and never more than sixteen (each is a browser context). Every page
-// is still visited, scrolled and waited for; only more of them at once.
+// The sweep's parallel pages: SMOKE_WORKERS, else on CI the machine's cores less two, never fewer
+// than the six the CI runner always had and never more than sixteen (each is a browser context).
+// Off CI the default is six: sixteen contexts beside a desktop ran a workstation out of memory.
+// Every page is still visited, scrolled and waited for; only more of them at once.
 const SWEEP_WORKERS = Number(process.env.SMOKE_WORKERS)
-  || Math.min(16, Math.max(6, require('node:os').cpus().length - 2));
+  || (process.env.CI ? Math.min(16, Math.max(6, require('node:os').cpus().length - 2)) : 6);
 
 // SMOKE_SHARD=k/n: the sweep visits only every n-th sitemap page from the k-th, so n jobs share
 // it (CI: .github/workflows/ci.yml and pages.yml). SMOKE_SWEEP=only skips the feature checks: a
@@ -245,6 +246,14 @@ const SHARD = (() => {
   return { k, n };
 })();
 const SWEEP_ONLY = process.env.SMOKE_SWEEP === 'only';
+
+// SMOKE_PATHS_FILE=<file>: the sweep visits only these site paths (one per line, relative to the
+// base URL, '/' the home page; scripts/verify.sh writes the pages a local change can affect). A
+// listed path the sitemap lacks fails. The feature checks, one page of each kind, are unchanged.
+const PATHS = process.env.SMOKE_PATHS_FILE
+  ? new Set(fs.readFileSync(process.env.SMOKE_PATHS_FILE, 'utf8').split('\n')
+    .map((l) => l.trim()).filter(Boolean).map((l) => l.replace(/^\//, '')))
+  : null;
 
 // Every page of the site (its sitemap), as absolute URLs.
 async function sitemap() {
@@ -326,7 +335,16 @@ async function done(browser) {
 }
 
 async function sweep(browser) {
-  const all = await sitemap();
+  let all = await sitemap();
+  if (PATHS) {
+    const rels = new Set(all.map((loc) => (loc.startsWith(base) ? loc.slice(base.length) : loc)));
+    const unknown = [...PATHS].filter((rel) => !rels.has(rel));
+    check(unknown.length === 0, `sweep: every path of SMOKE_PATHS_FILE is a sitemap page` +
+      (unknown.length ? ` (not: /${unknown.slice(0, 10).join(', /')})` : ''));
+    const total = all.length;
+    all = all.filter((loc) => PATHS.has(loc.startsWith(base) ? loc.slice(base.length) : loc));
+    console.log(`sweep: ${all.length} of ${total} sitemap pages, those listed in SMOKE_PATHS_FILE`);
+  }
   const urls = all.filter((_, i) => i % SHARD.n === SHARD.k - 1);
   const part = SHARD.n > 1 ? `shard ${SHARD.k}/${SHARD.n}: ${urls.length} of ${all.length}` : `${urls.length}`;
   const failed = [];
@@ -897,6 +915,12 @@ async function shot(page, name) {
     ['genres', 'genre/'], ['archive', 'archive/'], ['concepts', 'concept/'], ['concept', `concept/${(catalog.concepts.find((c) => (c.tracks || []).length) || {}).slug}/`],
     ['author', 'author/'], ['welcome', 'welcome/'], ['cs track', (sample.i18n && sample.i18n.cs && sample.i18n.cs.path) || 'cs/']]) {
     const { context, page } = await open(browser, at(rel), phone, name === 'track' ? 'dark' : 'light');
+    // Measured once the page's charts have drawn (or 5 s passed) and fonts are in: on production the
+    // genres index once measured 210 px of overflow mid-render and none a minute later (run
+    // 44753754937); the check is about the settled layout, not a frame during it.
+    await page.waitForFunction(() => !document.querySelector('[data-chart]') || Number(document.documentElement.dataset.chartsState) > 0,
+      null, { timeout: 5000 }).catch(() => {});
+    await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))));
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     check(overflow <= 0, `${name} @390px: no horizontal overflow (${overflow}px)`);
     const small = await page.evaluate((min) => [...document.querySelectorAll('button, a[href], [role=button], select, input')]

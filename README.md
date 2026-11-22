@@ -163,7 +163,11 @@ unit tests, the skill cases (`test/cases/`), type checks, vendored assets and CS
 every page has complete social tags, every page is linked from another, is its own canonical and is named back by its counterparts), and the browser smoke test (every page class, the
 explorer, the player on desktop and phone, the router, the locales, axe-core's WCAG 2.2 A and AA
 rules on one page of every kind in light and dark, and a sweep of every sitemap page for console
-errors, warnings and failed requests).
+errors, warnings and failed requests). Locally the sweep visits only the pages the change since
+`origin/main` can affect (changed reviews in both languages, their term pages, the home pages),
+six browser pages at a time, and every page when a template, style, script, config or interface
+string changed or with `VERIFY_FULL=1`; `scripts/verify.sh --sweep-plan <built site>` prints that
+plan without running anything. CI always sweeps every page.
 
 ## Deploy
 
@@ -172,7 +176,7 @@ commits, `majordomus doctor`, the gate above), deploys exactly the tested artefa
 Pages, waits until production serves the commit (`revision.txt`) and runs the smoke test against
 production. The sitemap sweep, the longest part, runs in four parallel jobs in both places
 (`SMOKE_SHARD=k/4`; `SMOKE_SWEEP=only` skips the feature checks in shards 2-4); locally one run
-checks everything. Every job has a deadline (`test/cases/40_workflow_deadlines.sh`). There is no other
+checks every feature and sweeps what the change can affect (`VERIFY_FULL=1`: every page). Every job has a deadline (`test/cases/40_workflow_deadlines.sh`). There is no other
 deploy target (rule `project.deploy-gate`). `content-health.yml` probes videos and external links
 weekly.
 
