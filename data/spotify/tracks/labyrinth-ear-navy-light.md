@@ -12,9 +12,10 @@ status: "present"
 liked: true
 yearbooks:
   - {"year": 2017, "n": 4}
+  - {"year": 2024, "n": 14}
 playlists:
   - {"playlist": "my-top-songs-of-all-the-time", "n": 104}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Navy Light · Labyrinth Ear
@@ -22,5 +23,6 @@ sources: ["web-player:2026-11-14"]
 From the album *Oak*, 3:07.
 A liked song.
 Your Top Songs 2017: #4.
+Your Top Songs 2024: #14.
 In My Top Songs of All the Time (#104).
 Reviewed: content/labyrinth-ear-navy-light.md.

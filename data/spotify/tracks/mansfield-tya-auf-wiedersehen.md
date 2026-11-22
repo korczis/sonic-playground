@@ -9,11 +9,14 @@ spotify: {"track": "3KayrZjvmCLhjv6IeONEWZ", "album": "5iQxynqu3B2KR3XsrU0HrK", 
 keys: {"fold": "mansfieldtya|aufwiedersehen"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 35}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Auf Wiedersehen · Mansfield.TYA, Rebeka Warrior, Carla Pallone
 
 From the album *Monument ordinaire*, 3:03.
 A liked song.
+Your Top Songs 2025: #35.
 No review yet.

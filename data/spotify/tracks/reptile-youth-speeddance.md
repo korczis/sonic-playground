@@ -9,11 +9,14 @@ spotify: {"track": "1gdO3q99cYhaFg3WaP27JQ", "album": "70diW1bHdn1h7FUvjz7W2o", 
 keys: {"fold": "reptileyouth|speeddance"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 10}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Speeddance · Reptile Youth
 
 From the album *Reptile Youth*, 2:57.
 A liked song.
+Your Top Songs 2024: #10.
 No review yet.

@@ -9,11 +9,14 @@ spotify: {"track": "7krYIJj0yQWrlLOLyhu1aK", "album": "2JQJwbqnVVCdggsGM01qMj", 
 keys: {"fold": "nuclearcowboy|paintingtown"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 54}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Painting Town · Nuclear Cowboy
 
 From the album *where has our time gone?*, 3:39.
 A liked song.
+Your Top Songs 2025: #54.
 No review yet.

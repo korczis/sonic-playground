@@ -9,11 +9,14 @@ spotify: {"track": "71QaSt8styoSuQhCIkKNzW", "album": "7CLyC0yjoI3Zyaubzpk8Wv", 
 keys: {"fold": "lecomtedebregeot|paris1985"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 86}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Paris 1985 · Lecomte De Brégeot, Elle Valenci
 
 From the album *Paris 1985*, 4:56.
 A liked song.
+Your Top Songs 2024: #86.
 No review yet.

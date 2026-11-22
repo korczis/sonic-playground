@@ -10,11 +10,14 @@ keys: {"fold": "pilockakrach|mynameisfame"}
 review: "pilocka-krach-my-name-is-fame.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 63}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # My Name Is Fame · Pilocka Krach
 
 From the album *Fame*, 3:30.
 A liked song.
+Your Top Songs 2025: #63.
 Reviewed: content/pilocka-krach-my-name-is-fame.md.

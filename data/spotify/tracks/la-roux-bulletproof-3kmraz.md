@@ -10,14 +10,17 @@ keys: {"fold": "laroux|bulletproof", "isrc": "GBUM70903779", "musicbrainz": "bf3
 review: "la-roux-bulletproof.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2023, "n": 64}
 playlists:
   - {"playlist": "best-of-the-best", "n": 103}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Bulletproof · La Roux
 
 From the album *La Roux*, 3:25.
 A liked song.
+Your Top Songs 2023: #64.
 In Best of the Best (#103).
 Reviewed: content/la-roux-bulletproof.md.

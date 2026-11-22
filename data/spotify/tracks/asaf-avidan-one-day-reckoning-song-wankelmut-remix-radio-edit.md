@@ -10,11 +10,14 @@ keys: {"fold": "asafavidan|onedayreckoningsongwankelmutremix", "isrc": "DEQ32120
 review: "asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 50}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # One Day / Reckoning Song (Wankelmut Remix) [Radio Edit] · Asaf Avidan, The Mojos, Wankelmut
 
 From the album *One Day / Reckoning Song (Wankelmut Remix)*, 3:35.
 A liked song.
+Your Top Songs 2023: #50.
 Reviewed: content/asaf-avidan-the-mojos-wankelmut-one-day-reckoning-song-wankelmut-remix-radio-edit.md.

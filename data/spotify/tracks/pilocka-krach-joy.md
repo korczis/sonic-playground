@@ -9,11 +9,14 @@ spotify: {"track": "3UGAUcPgDvkoaw0EuHgYRo", "album": "4b5LIhaYjxi4s98JJpjhpy", 
 keys: {"fold": "pilockakrach|joy"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 100}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Joy · Pilocka Krach
 
 From the album *Joy*, 6:06.
 A liked song.
+Your Top Songs 2025: #100.
 No review yet.

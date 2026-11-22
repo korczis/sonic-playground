@@ -13,11 +13,13 @@ liked: true
 yearbooks:
   - {"year": 2019, "n": 9}
   - {"year": 2022, "n": 45}
+  - {"year": 2023, "n": 16}
+  - {"year": 2025, "n": 55}
 playlists:
   - {"playlist": "best-of-the-best", "n": 1}
   - {"playlist": "liked-from-radio", "n": 6}
   - {"playlist": "my-top-songs-of-all-the-time", "n": 290}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Moments · Klangkarussell, Will Heard
@@ -26,5 +28,7 @@ From the album *Netzwerk*, 5:01.
 A liked song.
 Your Top Songs 2019: #9.
 Your Top Songs 2022: #45.
+Your Top Songs 2023: #16.
+Your Top Songs 2025: #55.
 In Best of the Best (#1); Liked from Radio (#6); My Top Songs of All the Time (#290).
 Reviewed: content/klangkarusell-moments.md.

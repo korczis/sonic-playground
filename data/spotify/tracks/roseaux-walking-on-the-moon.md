@@ -10,14 +10,17 @@ keys: {"fold": "roseaux|walkingonthemoon", "musicbrainz": "45bf5897-c919-4f0f-96
 review: "roseaux-walking-on-the-moon.md"
 status: "present"
 liked: true
+yearbooks:
+  - {"year": 2024, "n": 27}
 playlists:
   - {"playlist": "sonic-playground", "n": 20}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Walking On the Moon · Roseaux, Aloe Blacc
 
 From the album *Roseaux*, 5:26.
 A liked song.
+Your Top Songs 2024: #27.
 In Sonic Playground (#20).
 Reviewed: content/roseaux-walking-on-the-moon.md.

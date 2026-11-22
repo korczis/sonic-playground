@@ -10,11 +10,14 @@ keys: {"fold": "hugokant|surethesunwillrise", "musicbrainz": "b2ddc8e8-3faa-4ace
 review: "hugo-kant-sure-the-sun-will-rise.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 43}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Sure the Sun Will Rise · Hugo Kant
 
 From the album *Far from Home*, 4:55.
 A liked song.
+Your Top Songs 2025: #43.
 Reviewed: content/hugo-kant-sure-the-sun-will-rise.md.

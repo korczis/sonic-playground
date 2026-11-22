@@ -9,11 +9,14 @@ spotify: {"track": "1FLcx0TakO65t4S89j6qBj", "album": "50rgN4NAnnRqFzl7TTtnQv", 
 keys: {"fold": "youman|whenwefall"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 36}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # When We Fall · You Man, Jérôme Voisin
 
 From the album *Spectrum of Love*, 4:22.
 A liked song.
+Your Top Songs 2025: #36.
 No review yet.

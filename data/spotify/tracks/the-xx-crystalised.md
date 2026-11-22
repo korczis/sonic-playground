@@ -10,11 +10,14 @@ keys: {"fold": "thexx|crystalised", "isrc": "GBBKS0900025", "musicbrainz": "2856
 review: "the-xx-crystalised.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 14}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Crystalised · The xx
 
 From the album *xx*, 3:21.
 A liked song.
+Your Top Songs 2023: #14.
 Reviewed: content/the-xx-crystalised.md.

@@ -9,11 +9,14 @@ spotify: {"track": "4CjEkkRMMKY2ROy21bFNrc", "album": "6JgRuGcjvkFmbqHlcuD6wv", 
 keys: {"fold": "romare|downthelineittakesanumber"}
 status: "missing"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2025, "n": 40}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Down the Line - It Takes a Number · Romare
 
 From the album *Meditations on Afrocentrism*, 4:14.
 A liked song.
+Your Top Songs 2025: #40.
 No review yet.

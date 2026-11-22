@@ -12,10 +12,11 @@ status: "present"
 liked: false
 yearbooks:
   - {"year": 2020, "n": 14}
+  - {"year": 2023, "n": 23}
 playlists:
   - {"playlist": "best-of-the-best", "n": 23}
   - {"playlist": "my-top-songs-of-all-the-time", "n": 384}
-sources: ["web-player:2026-11-14"]
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Toop Toop · Cassius
@@ -23,5 +24,6 @@ sources: ["web-player:2026-11-14"]
 From the album *15 Again (Deluxe Edition)*, 2:47.
 Not among the liked songs.
 Your Top Songs 2020: #14.
+Your Top Songs 2023: #23.
 In Best of the Best (#23); My Top Songs of All the Time (#384).
 Reviewed: content/cassius-toop-toop.md.

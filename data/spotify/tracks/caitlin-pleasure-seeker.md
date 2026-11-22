@@ -10,11 +10,16 @@ keys: {"fold": "caitlin|pleasureseeker", "isrc": "DEBE70500156", "musicbrainz": 
 review: "caitlin-thomas-schumacher-elektrochemie-pleasure-seeker.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 52}
+  - {"year": 2024, "n": 78}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Pleasure Seeker · CAITLIN, Thomas Schumacher, Elektrochemie
 
 From the album *Road Less Traveled*, 7:16.
 A liked song.
+Your Top Songs 2023: #52.
+Your Top Songs 2024: #78.
 Reviewed: content/caitlin-thomas-schumacher-elektrochemie-pleasure-seeker.md.

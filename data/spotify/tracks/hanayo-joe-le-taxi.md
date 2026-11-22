@@ -10,11 +10,14 @@ keys: {"fold": "hanayo|joeletaxi"}
 review: "hanayo-joe-le-taxi.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2023, "n": 66}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # Joe Le Taxi · Hanayo
 
 From the album *Gift*, 5:10.
 A liked song.
+Your Top Songs 2023: #66.
 Reviewed: content/hanayo-joe-le-taxi.md.

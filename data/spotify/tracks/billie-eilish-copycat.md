@@ -10,11 +10,14 @@ keys: {"fold": "billieeilish|copycat", "isrc": "USUM71707478", "musicbrainz": "e
 review: "billie-eilish-copycat.md"
 status: "present"
 liked: true
-sources: ["web-player:2026-11-14"]
+yearbooks:
+  - {"year": 2024, "n": 77}
+sources: ["web-player:2026-11-14", "web-player:2026-11-22"]
 ---
 
 # COPYCAT · Billie Eilish
 
 From the album *dont smile at me*, 3:14.
 A liked song.
+Your Top Songs 2024: #77.
 Reviewed: content/billie-eilish-copycat.md.
