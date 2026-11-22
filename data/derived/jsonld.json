@@ -33076,6 +33076,128 @@
     }
    ]
   },
+  "d12-how-come.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-how-come/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "D12 World"
+     },
+     "isrcCode": "USIR10400124",
+     "name": "How Come",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d4d359aa-bbf3-48a4-a64d-74112fd303d7",
+      "https://www.youtube.com/watch?v=Vxt3cIMqDQk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/d12-how-come/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-how-come/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "How Come (D12 song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/How_Come_(D12_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "D12 World",
+       "publisher": "The Chicago Maroon",
+       "url": "https://chicagomaroon.com/?p=11912"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "D12 World",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/d12-world-2727981"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 - How Come (Explicit)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=Vxt3cIMqDQk"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 - How Come/Git Up",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=h4eTUrunPXU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Druhý singl z alba D12 World (2004), produkce Witt & Pep: Eminem, Kon Artis a Proof se střídají ve slokách o napětí uvnitř skupiny, pod refrénem, který jeden kritik nazval chytlavým a druhý neodbytnou melodií.",
+     "educationalLevel": "introductory",
+     "headline": "D12 - How Come",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-how-come/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/d12-how-come/",
+     "wordCount": 558
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -64972,6 +65094,118 @@
     }
    ]
   },
+  "gorillaz-amarillo.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-amarillo/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "trip-hop",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Fall"
+     },
+     "isrcCode": "GBAYE1001540",
+     "name": "Amarillo",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c7566f71-ef85-44c0-8783-d3b8bb0f1d8a",
+      "https://www.youtube.com/watch?v=TdwJ0lUtN8M"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/gorillaz-amarillo/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-amarillo/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Amarillo (Gorillaz song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Amarillo_(Gorillaz_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Fall (Gorillaz album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Fall_(Gorillaz_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album review: Gorillaz - The Fall",
+       "publisher": "NZ Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-gorillaz-ithe-falli/AGAMSNNCVC44NOLVKLPCEYZRIA"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gorillaz - The Fall",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-gorillaz-the-fall-4142473/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album Review: Gorillaz - The Fall",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-the-fall/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Amarillo - The Fall",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=TdwJ0lUtN8M"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Amarillo, nahraná za jediný den v texaském Amarillu pro album The Fall, které Gorillaz natočili na iPadu: pomalá píseň Damona Albarna plná dozvuku, s Mickem Jonesem z The Clash na kytaru.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - Amarillo",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "vocoder",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vocoder/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "reverb",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/reverb/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-amarillo/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/gorillaz-amarillo/",
+     "wordCount": 490
+    }
+   ]
+  },
   "gorillaz-bootie-brown-dirty-harry.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -85762,6 +85996,117 @@
     }
    ]
   },
+  "kelis-trick-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kelis-trick-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kelis",
+      "sameAs": "https://musicbrainz.org/artist/1239d1bc-cc09-43e0-bcd0-374f60346138"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "r&b",
+      "reggae",
+      "funk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Tasty"
+     },
+     "isrcCode": "USAR10301288",
+     "name": "Trick Me",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b9cecd74-d256-4499-be54-71f0006a2505",
+      "https://www.youtube.com/watch?v=zI339U6GS9s"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/kelis-trick-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kelis-trick-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Trick Me",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Trick_Me"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Kelis: Tasty",
+       "publisher": "Pitchfork",
+       "url": "https://pitchfork.com/reviews/albums/4566-tasty/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Kelis : Tasty",
+       "publisher": "NME",
+       "url": "https://web.archive.org/web/20120214222249/http://www.nme.com/reviews/kelis/7287"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Tasty (Kelis album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Tasty_(Kelis_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kelis - Trick Me",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=zI339U6GS9s"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Trick Me, kterou napsal a produkoval Dallas Austin, následovala po Milkshake jako druhý singl z alba Tasty (2003): poskakující kytara s ozvěnou pod varováním před šílenou ženou ve městě a ve velké části Evropy větší hit než Milkshake.",
+     "educationalLevel": "introductory",
+     "headline": "Kelis - Trick Me",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "off-beat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/off-beat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "delay",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/delay/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/kelis-trick-me/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/kelis-trick-me/",
+     "wordCount": 515
+    }
+   ]
+  },
   "kellerkind-disco-on-the-dancefloor.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -90070,6 +90415,117 @@
     }
    ]
   },
+  "kylie-minogue-come-into-my-world-fischerspooner-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kylie-minogue-come-into-my-world-fischerspooner-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kylie Minogue",
+      "sameAs": "https://musicbrainz.org/artist/2fddb92d-24b2-46a5-bf28-3aed46f4684c"
+     },
+     "datePublished": "2002",
+     "genre": [
+      "remix",
+      "electroclash",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Fever"
+     },
+     "isrcCode": "GBAYE0201421",
+     "name": "Come into My World (Fischerspooner Mix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/0a3d6f5e-bff6-4ed9-b72c-3f5419c4b5c0",
+      "https://www.youtube.com/watch?v=Ee8RzKjzEHo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/kylie-minogue-come-into-my-world-fischerspooner-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kylie-minogue-come-into-my-world-fischerspooner-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Come into My World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Come_into_My_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Boombox (Kylie Minogue album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Boombox_(Kylie_Minogue_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fever (Kylie Minogue album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fever_(Kylie_Minogue_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fischerspooner",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fischerspooner"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Review: Boombox - Kylie Minogue",
+       "publisher": "Talk About Pop Music",
+       "url": "https://talkaboutpopmusic.com/2018/10/20/review-boombox-kylie-minogue"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Come into My World (Fischerspooner Mix) (Topic upload credits)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=Ee8RzKjzEHo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Mix písně Come into My World od newyorského electroclashového dua Fischerspooner; původní píseň je posledním singlem z alba Fever od Kylie Minogue a získala cenu Grammy. Mix vyšel na singlech písně v roce 2002 a později se dostal na remixové album Boombox.",
+     "educationalLevel": "introductory",
+     "headline": "Kylie Minogue - Come into My World (Fischerspooner Mix)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/electroclash/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/kylie-minogue-come-into-my-world-fischerspooner-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/kylie-minogue-come-into-my-world-fischerspooner-mix/",
+     "wordCount": 513
+    }
+   ]
+  },
   "kylie-minogue-padam-padam.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -91904,6 +92360,138 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/lcd-soundsystem-dance-yrself-clean/",
      "wordCount": 561
+    }
+   ]
+  },
+  "lcd-soundsystem-tribulations.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-tribulations/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "LCD Soundsystem",
+      "sameAs": "https://musicbrainz.org/artist/2aaf7396-6ab8-40f3-9776-a41c42c8e26b"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "electro-pop",
+      "dance-punk",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "LCD Soundsystem"
+     },
+     "isrcCode": "US4GE0400027",
+     "name": "Tribulations",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6d59e291-a005-46f2-8ded-2e4f6b02b360",
+      "https://www.youtube.com/watch?v=1e51W--w2Fk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lcd-soundsystem-tribulations/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-tribulations/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Tribulations (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Tribulations_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "LCD Soundsystem (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/LCD_Soundsystem_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "LCD Soundsystem: LCD Soundsystem",
+       "publisher": "RTÉ",
+       "url": "https://www.rte.ie/entertainment/music-reviews/2005/0224/449235-lcdsoundsystem/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "LCD Soundsystem: self-titled",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/lcdsoundsystem-st2005-2495979164.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "LCD Soundsystem Turns 20",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2293969/lcd-soundsystem-turns-20/reviews/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "LCD Soundsystem Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/1731188/lcd-soundsystem-turns-10/reviews/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The 99 Greatest Dance Albums of All Time",
+       "publisher": "Vice",
+       "url": "https://www.vice.com/en/article/the-99-greatest-dance-albums-of-all-time/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "LCD Soundsystem - Tribulations (official video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=1e51W--w2Fk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Tribulations z debutu LCD Soundsystem z roku 2005 je nemilosrdně dupající syntezátorová skladba, v níž jeden kritik slyšel ducha synth-popu 80. let a jiný zlomené srdce pod lesklým diskovým beatem.",
+     "educationalLevel": "introductory",
+     "headline": "LCD Soundsystem - Tribulations",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-tribulations/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lcd-soundsystem-tribulations/",
+     "wordCount": 493
     }
    ]
   },
@@ -94464,6 +95052,143 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/lykke-li-breaking-it-up/",
      "wordCount": 520
+    }
+   ]
+  },
+  "lykke-li-get-some.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lykke-li-get-some/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lykke Li",
+      "sameAs": "https://musicbrainz.org/artist/cc7d4686-ea02-45fd-956e-94c1a322558c"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "indie pop",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Wounded Rhymes"
+     },
+     "isrcCode": "SEVUM1000401",
+     "name": "Get Some",
+     "sameAs": [
+      "https://musicbrainz.org/recording/89aa23ad-94bf-4c6a-9fb3-5e9f4d001df9",
+      "https://www.youtube.com/watch?v=azloSL5j95Q"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lykke-li-get-some/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lykke-li-get-some/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Get Some (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Get_Some_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Wounded Rhymes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Wounded_Rhymes"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Lykke Li – Wounded Rhymes",
+       "publisher": "Spin",
+       "url": "https://www.spinmagazine.com/2011/03/lykke-li-wounded-rhymes-llatlantic/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "SOTD 157: Lykke Li – Get Some",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/new-music/song-of-the-day/sotd-157-lykke-li-get-some-38951"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Sweden Strikes Back",
+       "publisher": "The Village Voice",
+       "url": "https://www.villagevoice.com/sweden-strikes-back/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Lykke Li – “Get Some” & “Paris Blue”",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/554102/lykke-li-get-some-paris-blue/music/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Lykke Li – “Get Some” Video",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/575282/lykke-li-get-some-video/video/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Get Some (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/89aa23ad-94bf-4c6a-9fb3-5e9f4d001df9"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lykke Li - Get Some",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=azloSL5j95Q"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Úvodní singl druhého alba Lykke Li Wounded Rhymes (2010), napsaný a produkovaný s Björnem Yttlingem: mohutné kmenové bicí, hlas na lovu a píseň, která je podle své zpěvačky o moci, ne o sexu.",
+     "educationalLevel": "introductory",
+     "headline": "Lykke Li - Get Some",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lykke-li-get-some/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lykke-li-get-some/",
+     "wordCount": 516
     }
    ]
   },
@@ -124631,6 +125356,119 @@
     }
    ]
   },
+  "scissor-sisters-filthy-gorgeous.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-filthy-gorgeous/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Scissor Sisters",
+      "sameAs": "https://musicbrainz.org/artist/4236d929-9a81-4c8e-97c3-8d3306780f50"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hi-nrg",
+      "disco",
+      "pop rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Scissor Sisters"
+     },
+     "isrcCode": "GBAKW0300864",
+     "name": "Filthy/Gorgeous",
+     "sameAs": [
+      "https://musicbrainz.org/recording/1c82165b-1bef-4916-94d9-84ef4eb2bef9",
+      "https://www.youtube.com/watch?v=OXWGQnAKZss"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/scissor-sisters-filthy-gorgeous/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-filthy-gorgeous/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Filthy/Gorgeous",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Filthy/Gorgeous"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Scissor Sisters (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Scissor_Sisters_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Cutting Edge",
+       "publisher": "Metro Weekly",
+       "url": "https://www.metroweekly.com/2004/07/cutting-edge/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Scissor Sisters: Scissor Sisters",
+       "publisher": "The A.V. Club",
+       "url": "https://www.avclub.com/scissor-sisters-scissor-sisters-1798199793"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "'A post-millennial queer pop bible': Scissor Sisters' debut album re-reviewed",
+       "publisher": "Attitude",
+       "url": "https://attitude.co.uk/culture/scissor-sisters-debut-album-retrospectively-re-475732"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Filthy / Gorgeous (Topic upload credits)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=OXWGQnAKZss"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Filthy/Gorgeous, rockově tvrdý hi-NRG kus z eponymního debutu Scissor Sisters, se v roce 2005 stal prvním singlem kapely v britské první pětce a dostal videoklip Johna Camerona Mitchella ve dvou verzích.",
+     "educationalLevel": "introductory",
+     "headline": "Scissor Sisters - Filthy/Gorgeous",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-filthy-gorgeous/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/scissor-sisters-filthy-gorgeous/",
+     "wordCount": 482
+    }
+   ]
+  },
   "scratch-bandits-crew-goodbye.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -130786,6 +131624,272 @@
     }
    ]
   },
+  "the-cat-empire-the-car-song.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-the-car-song/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Cat Empire",
+      "sameAs": "https://musicbrainz.org/artist/a530492f-8806-4bd7-9c14-80c237eb92fe"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "jazz",
+      "ska",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Two Shoes"
+     },
+     "isrcCode": "AUTW00500005",
+     "name": "The Car Song",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c5c3dcad-2cde-4cdb-8b4a-9322f1ad6b4a",
+      "https://www.youtube.com/watch?v=p39pC2-zFJU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-cat-empire-the-car-song/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-the-car-song/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Car Song",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Car_Song"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Two Shoes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Two_Shoes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Cat Empire",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Cat_Empire"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "The Cat Empire: Two Shoes",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/the-cat-empire-two-shoes-2495797515.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "The Cat Empire: The Cat Empire EP",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/the-cat-empire-the-cat-empire-ep-2495722612.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Cat Empire – Two Shoes / So Many Nights",
+       "publisher": "mxdwn",
+       "url": "https://music.mxdwn.com/2009/08/09/reviews/the-cat-empire-two-shoes-so-many-nights/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Car Song (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/c5c3dcad-2cde-4cdb-8b4a-9322f1ad6b4a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Cat Empire - The Car Song (Official Audio)",
+       "publisher": "The Cat Empire",
+       "url": "https://www.youtube.com/watch?v=p39pC2-zFJU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Komický příběh Harryho Jamese Anguse o školákovi, od něhož všichni čekali, že bude právníkem, druhý singl z alba Two Shoes (2005), které The Cat Empire nahráli v Havaně: klávesy a trubka pohánějí rock and roll s latinskoamerickým nádechem.",
+     "educationalLevel": "introductory",
+     "headline": "The Cat Empire - The Car Song",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/b-side/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-the-car-song/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-cat-empire-the-car-song/",
+     "wordCount": 480
+    }
+   ]
+  },
+  "the-chemical-brothers-hey-boy-hey-girl.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-hey-boy-hey-girl/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Chemical Brothers",
+      "sameAs": "https://musicbrainz.org/artist/1946a82a-f927-40c2-8235-38d64f50d043"
+     },
+     "datePublished": "1999",
+     "genre": [
+      "electronic",
+      "big beat",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Surrender"
+     },
+     "isrcCode": "GBAAA0300529",
+     "name": "Hey Boy Hey Girl",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bf7845cc-eac3-48a3-8b06-543b4b7ba117",
+      "https://www.youtube.com/watch?v=lKVTVdK7SZA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-chemical-brothers-hey-boy-hey-girl/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-hey-boy-hey-girl/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Hey Boy Hey Girl",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hey_Boy_Hey_Girl"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Surrender (The Chemical Brothers album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Surrender_(The_Chemical_Brothers_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1999",
+       "name": "Surrender",
+       "publisher": "NME",
+       "url": "https://web.archive.org/web/2010/http://www.nme.com/reviews/the-chemical-brothers/1112"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "150 Best Tracks of the Past 15 Years",
+       "publisher": "NME",
+       "url": "https://web.archive.org/web/2012/https://www.nme.com/list/150-best-tracks-of-the-past-15-years/248648/page/11"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "The Chemical Brothers release two new remixes of '90s classic Hey Boy Hey Girl",
+       "publisher": "Dancing Astronaut",
+       "url": "https://dancingastronaut.com/2019/10/the-chemical-brothers-release-2-new-remixes-of-90s-classic-hey-boy-hey-girl/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "The Chemical Brothers - Hey Boy Hey Girl (KiNK Remix)",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/24269"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hey Boy Hey Girl (Provided to YouTube by Universal Music Group)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=lKVTVdK7SZA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Chemical Brothers - Hey Boy Hey Girl (Official Music Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=tpKCqp9CALQ"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Pilotní singl The Chemical Brothers z alba Surrender (1999): sampl z The Roof Is on Fire, „hey boy“ prohnané vokodérem a groove, který podle NME graduje od hrozivého trance až po absolutní taneční pecku; 3. místo v Británii a videoklip s tančícími kostlivci.",
+     "educationalLevel": "introductory",
+     "headline": "The Chemical Brothers - Hey Boy Hey Girl",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocoder",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vocoder/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-hey-boy-hey-girl/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-chemical-brothers-hey-boy-hey-girl/",
+     "wordCount": 561
+    }
+   ]
+  },
   "the-chemical-brothers-q-tip-go.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -132661,6 +133765,164 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-beyond-the-deathray/",
      "wordCount": 479
+    }
+   ]
+  },
+  "the-prodigy-ibiza.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-ibiza/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "punk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400354",
+     "name": "Ibiza",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7eadf74f-0530-4268-99e9-2e1f4e0115e8",
+      "https://www.youtube.com/watch?v=guUHZnbWoyo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/the-prodigy-ibiza/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-ibiza/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Ibiza (The Prodigy song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ibiza_(The_Prodigy_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Prodigy Announces Sleaford Mods Collaboration 'Ibiza'",
+       "publisher": "The Music Times",
+       "url": "https://www.musictimes.com/articles/12253/20141013/prodigy-announces-sleaford-mods-collaboration-ibiza-single-sure-please-britains.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy – The Day Is My Enemy",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2015/03/album-review-the-prodigy-the-day-is-my-enemy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy and Sleaford Mods get rowdy for 'Ibiza' video",
+       "publisher": "DIY",
+       "url": "https://diymag.com/news/the-prodigy-and-sleaford-mods-get-rowdy-for-ibiza-video"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ibiza (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7eadf74f-0530-4268-99e9-2e1f4e0115e8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Ibiza ft. Sleaford Mods",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=guUHZnbWoyo"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy ‘Ibiza’ feat. Sleaford Mods (Official Video)",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=Zhg2IvPDZL8"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Hostování Sleaford Mods na albu The Prodigy The Day Is My Enemy (2015): mluvená tiráda Jasona Williamsona nad slizkou elektropunkovou skladbou, kterou Liam Howlett nenamířil proti ostrovu, ale proti superstar DJům, kteří přiletí s USB flashkou.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Ibiza",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "spoken word",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/spoken-word/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-ibiza/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/the-prodigy-ibiza/",
+     "wordCount": 465
     }
    ]
   },
@@ -141229,6 +142491,129 @@
     }
    ]
   },
+  "yael-naim-new-soul.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/yael-naim-new-soul/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Yael Naim",
+      "sameAs": "https://musicbrainz.org/artist/def226b0-7990-4b38-ab1a-7740461844dc"
+     },
+     "datePublished": "2007",
+     "genre": [
+      "indie folk",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Yael Naim"
+     },
+     "isrcCode": "FR79W0700370",
+     "name": "New Soul",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8d8363b5-b5ef-4435-9a40-ee0b5415d914",
+      "https://www.youtube.com/watch?v=hhE7QMXRE1g"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/yael-naim-new-soul/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/yael-naim-new-soul/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "New Soul",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/New_Soul"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Yael Naim",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Yael_Naim"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Yael Naim (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Yael_Naim_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Mac Ad Raises Yael Naim's Profile",
+       "publisher": "NPR",
+       "url": "https://www.npr.org/transcripts/88415853"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Yael Naim & David Donatien: Yael Naim & David Donatien",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/yael-naim-david-donatien-yael-naim-david-donatien-2496163674.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "For just a moment, Yael Naim gave Apple's technology soul",
+       "publisher": "The A.V. Club",
+       "url": "https://www.avclub.com/for-just-a-moment-yael-naim-gave-apple-s-technology-so-1798278662"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Yael Naim - New Soul (Official Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=hhE7QMXRE1g"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "New Soul od Yael Naim, nahraná s Davidem Donatienem ve studiu v jejím pařížském bytě, je lehká píseň o začínání života nanovo, s hookem „la la la“ a žertovným trombonem; reklama Applu na MacBook Air ji v roce 2008 dostala do americké první desítky.",
+     "educationalLevel": "introductory",
+     "headline": "Yael Naim - New Soul",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/yael-naim-new-soul/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/yael-naim-new-soul/",
+     "wordCount": 495
+    }
+   ]
+  },
   "yeah-yeah-yeahs-a-trak-heads-will-roll-a-trak-remix-radio-edit.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -141365,6 +142750,129 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/yeah-yeah-yeahs-a-trak-heads-will-roll-a-trak-remix-radio-edit/",
      "wordCount": 515
+    }
+   ]
+  },
+  "yeah-yeah-yeahs-heads-will-roll.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/yeah-yeah-yeahs-heads-will-roll/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Yeah Yeah Yeahs",
+      "sameAs": "https://musicbrainz.org/artist/584c04d2-4acc-491b-8a0a-e63133f4bfc4"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "dance-punk",
+      "alternative rock",
+      "indie rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "It's Blitz!"
+     },
+     "isrcCode": "GBUM70900924",
+     "name": "Heads Will Roll",
+     "sameAs": [
+      "https://musicbrainz.org/recording/493b4b13-f3a3-4ba6-8ae1-7667035dcc16",
+      "https://www.youtube.com/watch?v=auzfTPp4moA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/yeah-yeah-yeahs-heads-will-roll/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/yeah-yeah-yeahs-heads-will-roll/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Heads Will Roll (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Heads_Will_Roll_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "It's Blitz!",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/It%27s_Blitz!"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "'It's Blitz!' At 10: How The Dancefloor Classic Marked A New Era For The Yeah Yeah Yeahs",
+       "publisher": "Recording Academy",
+       "url": "https://www.grammy.com/news/its-blitz-10-how-dancefloor-classic-marked-new-era-yeah-yeah-yeahs/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Yeah Yeah Yeahs: It's Blitz!",
+       "publisher": "The Austin Chronicle",
+       "url": "https://austinchronicle.com/music/2009-04-03/762438"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Heads Will Roll (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/493b4b13-f3a3-4ba6-8ae1-7667035dcc16"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Yeah Yeah Yeahs - Heads Will Roll (Official Music Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=auzfTPp4moA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Singl z roku 2009, který Yeah Yeah Yeahs přivedl od garage rocku na taneční parket: hororový příběh o nešťastné noci venku, postavený z předem nahraných samplů bicích, syntezátoru ARP a smyčcového riffu ze samplu mellotronu, který později ještě dál ponesl remix od A-Traka.",
+     "educationalLevel": "introductory",
+     "headline": "Yeah Yeah Yeahs - Heads Will Roll",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/loop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "analog synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/analog-synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/yeah-yeah-yeahs-heads-will-roll/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/yeah-yeah-yeahs-heads-will-roll/",
+     "wordCount": 504
     }
    ]
   },
@@ -174295,6 +175803,125 @@
     }
    ]
   },
+  "d12-how-come.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-how-come/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "D12 World"
+     },
+     "isrcCode": "USIR10400124",
+     "name": "How Come",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d4d359aa-bbf3-48a4-a64d-74112fd303d7",
+      "https://www.youtube.com/watch?v=Vxt3cIMqDQk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-how-come/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-how-come/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "How Come (D12 song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/How_Come_(D12_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "D12 World",
+       "publisher": "The Chicago Maroon",
+       "url": "https://chicagomaroon.com/?p=11912"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "D12 World",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/d12-world-2727981"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 - How Come (Explicit)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=Vxt3cIMqDQk"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12 - How Come/Git Up",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=h4eTUrunPXU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The second single from D12's 2004 album D12 World, produced by Witt & Pep: Eminem, Kon Artis and Proof take turns on the strain inside the group, under a chorus one critic called catchy and another a nagging melody.",
+     "educationalLevel": "introductory",
+     "headline": "D12 - How Come",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/d12-how-come/",
+     "wordCount": 548
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -205372,6 +206999,115 @@
     }
    ]
   },
+  "gorillaz-amarillo.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-amarillo/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Gorillaz",
+      "sameAs": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "trip-hop",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Fall"
+     },
+     "isrcCode": "GBAYE1001540",
+     "name": "Amarillo",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c7566f71-ef85-44c0-8783-d3b8bb0f1d8a",
+      "https://www.youtube.com/watch?v=TdwJ0lUtN8M"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/gorillaz-amarillo/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/gorillaz-amarillo/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Amarillo (Gorillaz song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Amarillo_(Gorillaz_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Fall (Gorillaz album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Fall_(Gorillaz_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album review: Gorillaz - The Fall",
+       "publisher": "NZ Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-gorillaz-ithe-falli/AGAMSNNCVC44NOLVKLPCEYZRIA"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gorillaz - The Fall",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-gorillaz-the-fall-4142473/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album Review: Gorillaz - The Fall",
+       "publisher": "Beats Per Minute",
+       "url": "https://beatsperminute.com/album-review-gorillaz-the-fall/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Gorillaz - Amarillo - The Fall",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=TdwJ0lUtN8M"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Amarillo, recorded in a single day in Amarillo, Texas, for Gorillaz' iPad-made album The Fall: a slow, reverb-laden song by Damon Albarn with Mick Jones of The Clash on guitar.",
+     "educationalLevel": "introductory",
+     "headline": "Gorillaz - Amarillo",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "vocoder",
+       "url": "https://korczis.github.io/sonic-playground/concept/vocoder/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "reverb",
+       "url": "https://korczis.github.io/sonic-playground/concept/reverb/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/gorillaz-amarillo/",
+     "wordCount": 544
+    }
+   ]
+  },
   "gorillaz-bootie-brown-dirty-harry.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -225628,6 +227364,114 @@
     }
    ]
   },
+  "kelis-trick-me.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kelis-trick-me/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kelis",
+      "sameAs": "https://musicbrainz.org/artist/1239d1bc-cc09-43e0-bcd0-374f60346138"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "r&b",
+      "reggae",
+      "funk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Tasty"
+     },
+     "isrcCode": "USAR10301288",
+     "name": "Trick Me",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b9cecd74-d256-4499-be54-71f0006a2505",
+      "https://www.youtube.com/watch?v=zI339U6GS9s"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kelis-trick-me/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kelis-trick-me/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Trick Me",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Trick_Me"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Kelis: Tasty",
+       "publisher": "Pitchfork",
+       "url": "https://pitchfork.com/reviews/albums/4566-tasty/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Kelis : Tasty",
+       "publisher": "NME",
+       "url": "https://web.archive.org/web/20120214222249/http://www.nme.com/reviews/kelis/7287"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Tasty (Kelis album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Tasty_(Kelis_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kelis - Trick Me",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=zI339U6GS9s"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Trick Me, written and produced by Dallas Austin, followed Milkshake as the second single from Kelis's Tasty (2003): a skanking, echoed guitar under a warning about a madwoman in town, and a bigger hit than Milkshake across much of Europe.",
+     "educationalLevel": "introductory",
+     "headline": "Kelis - Trick Me",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "off-beat",
+       "url": "https://korczis.github.io/sonic-playground/concept/off-beat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "delay",
+       "url": "https://korczis.github.io/sonic-playground/concept/delay/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/kelis-trick-me/",
+     "wordCount": 511
+    }
+   ]
+  },
   "kellerkind-disco-on-the-dancefloor.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -229822,6 +231666,114 @@
     }
    ]
   },
+  "kylie-minogue-come-into-my-world-fischerspooner-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kylie-minogue-come-into-my-world-fischerspooner-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kylie Minogue",
+      "sameAs": "https://musicbrainz.org/artist/2fddb92d-24b2-46a5-bf28-3aed46f4684c"
+     },
+     "datePublished": "2002",
+     "genre": [
+      "remix",
+      "electroclash",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Fever"
+     },
+     "isrcCode": "GBAYE0201421",
+     "name": "Come into My World (Fischerspooner Mix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/0a3d6f5e-bff6-4ed9-b72c-3f5419c4b5c0",
+      "https://www.youtube.com/watch?v=Ee8RzKjzEHo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kylie-minogue-come-into-my-world-fischerspooner-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kylie-minogue-come-into-my-world-fischerspooner-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Come into My World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Come_into_My_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Boombox (Kylie Minogue album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Boombox_(Kylie_Minogue_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fever (Kylie Minogue album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fever_(Kylie_Minogue_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Fischerspooner",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Fischerspooner"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Review: Boombox - Kylie Minogue",
+       "publisher": "Talk About Pop Music",
+       "url": "https://talkaboutpopmusic.com/2018/10/20/review-boombox-kylie-minogue"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Come into My World (Fischerspooner Mix) (Topic upload credits)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=Ee8RzKjzEHo"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The New York electroclash duo Fischerspooner's mix of Come into My World, the Grammy-winning last single from Kylie Minogue's Fever: released on the song's 2002 singles and later collected on the remix album Boombox.",
+     "educationalLevel": "introductory",
+     "headline": "Kylie Minogue - Come into My World (Fischerspooner Mix)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/concept/electroclash/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/kylie-minogue-come-into-my-world-fischerspooner-mix/",
+     "wordCount": 549
+    }
+   ]
+  },
   "kylie-minogue-padam-padam.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -231608,6 +233560,135 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/lcd-soundsystem-dance-yrself-clean/",
      "wordCount": 555
+    }
+   ]
+  },
+  "lcd-soundsystem-tribulations.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-tribulations/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "LCD Soundsystem",
+      "sameAs": "https://musicbrainz.org/artist/2aaf7396-6ab8-40f3-9776-a41c42c8e26b"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "electro-pop",
+      "dance-punk",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "LCD Soundsystem"
+     },
+     "isrcCode": "US4GE0400027",
+     "name": "Tribulations",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6d59e291-a005-46f2-8ded-2e4f6b02b360",
+      "https://www.youtube.com/watch?v=1e51W--w2Fk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-tribulations/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-tribulations/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Tribulations (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Tribulations_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "LCD Soundsystem (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/LCD_Soundsystem_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "LCD Soundsystem: LCD Soundsystem",
+       "publisher": "RTÉ",
+       "url": "https://www.rte.ie/entertainment/music-reviews/2005/0224/449235-lcdsoundsystem/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "LCD Soundsystem: self-titled",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/lcdsoundsystem-st2005-2495979164.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "LCD Soundsystem Turns 20",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/2293969/lcd-soundsystem-turns-20/reviews/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "LCD Soundsystem Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/1731188/lcd-soundsystem-turns-10/reviews/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The 99 Greatest Dance Albums of All Time",
+       "publisher": "Vice",
+       "url": "https://www.vice.com/en/article/the-99-greatest-dance-albums-of-all-time/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "LCD Soundsystem - Tribulations (official video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=1e51W--w2Fk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Tribulations, from LCD Soundsystem's 2005 debut, is a merciless synth stomp that a critic heard as the ghost of 1980s synth pop and another heard as heartbreak under a shiny disco thump.",
+     "educationalLevel": "introductory",
+     "headline": "LCD Soundsystem - Tribulations",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lcd-soundsystem-tribulations/",
+     "wordCount": 533
     }
    ]
   },
@@ -234096,6 +236177,140 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/lykke-li-breaking-it-up/",
      "wordCount": 483
+    }
+   ]
+  },
+  "lykke-li-get-some.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lykke-li-get-some/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lykke Li",
+      "sameAs": "https://musicbrainz.org/artist/cc7d4686-ea02-45fd-956e-94c1a322558c"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "indie pop",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Wounded Rhymes"
+     },
+     "isrcCode": "SEVUM1000401",
+     "name": "Get Some",
+     "sameAs": [
+      "https://musicbrainz.org/recording/89aa23ad-94bf-4c6a-9fb3-5e9f4d001df9",
+      "https://www.youtube.com/watch?v=azloSL5j95Q"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lykke-li-get-some/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lykke-li-get-some/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Get Some (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Get_Some_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Wounded Rhymes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Wounded_Rhymes"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Lykke Li – Wounded Rhymes",
+       "publisher": "Spin",
+       "url": "https://www.spinmagazine.com/2011/03/lykke-li-wounded-rhymes-llatlantic/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "SOTD 157: Lykke Li – Get Some",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/new-music/song-of-the-day/sotd-157-lykke-li-get-some-38951"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Sweden Strikes Back",
+       "publisher": "The Village Voice",
+       "url": "https://www.villagevoice.com/sweden-strikes-back/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Lykke Li – “Get Some” & “Paris Blue”",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/554102/lykke-li-get-some-paris-blue/music/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Lykke Li – “Get Some” Video",
+       "publisher": "Stereogum",
+       "url": "https://www.stereogum.com/575282/lykke-li-get-some-video/video/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Get Some (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/89aa23ad-94bf-4c6a-9fb3-5e9f4d001df9"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lykke Li - Get Some",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=azloSL5j95Q"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The lead single of Lykke Li's second album Wounded Rhymes (2010), written and produced with Björn Yttling: heaving tribal drums, a voice on the prowl and a song its singer says is about power, not sex.",
+     "educationalLevel": "introductory",
+     "headline": "Lykke Li - Get Some",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lykke-li-get-some/",
+     "wordCount": 542
     }
    ]
   },
@@ -263477,6 +265692,116 @@
     }
    ]
   },
+  "scissor-sisters-filthy-gorgeous.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-filthy-gorgeous/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Scissor Sisters",
+      "sameAs": "https://musicbrainz.org/artist/4236d929-9a81-4c8e-97c3-8d3306780f50"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hi-nrg",
+      "disco",
+      "pop rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Scissor Sisters"
+     },
+     "isrcCode": "GBAKW0300864",
+     "name": "Filthy/Gorgeous",
+     "sameAs": [
+      "https://musicbrainz.org/recording/1c82165b-1bef-4916-94d9-84ef4eb2bef9",
+      "https://www.youtube.com/watch?v=OXWGQnAKZss"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-filthy-gorgeous/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/scissor-sisters-filthy-gorgeous/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Filthy/Gorgeous",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Filthy/Gorgeous"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Scissor Sisters (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Scissor_Sisters_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Cutting Edge",
+       "publisher": "Metro Weekly",
+       "url": "https://www.metroweekly.com/2004/07/cutting-edge/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Scissor Sisters: Scissor Sisters",
+       "publisher": "The A.V. Club",
+       "url": "https://www.avclub.com/scissor-sisters-scissor-sisters-1798199793"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "'A post-millennial queer pop bible': Scissor Sisters' debut album re-reviewed",
+       "publisher": "Attitude",
+       "url": "https://attitude.co.uk/culture/scissor-sisters-debut-album-retrospectively-re-475732"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Filthy / Gorgeous (Topic upload credits)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=OXWGQnAKZss"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Scissor Sisters' Filthy/Gorgeous, the hard-rocking hi-NRG stomper from their self-titled debut, became the band's first UK top-five single in 2005 and came with a John Cameron Mitchell video in two versions.",
+     "educationalLevel": "introductory",
+     "headline": "Scissor Sisters - Filthy/Gorgeous",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/scissor-sisters-filthy-gorgeous/",
+     "wordCount": 543
+    }
+   ]
+  },
   "scratch-bandits-crew-goodbye.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -269476,6 +271801,266 @@
     }
    ]
   },
+  "the-cat-empire-the-car-song.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-the-car-song/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Cat Empire",
+      "sameAs": "https://musicbrainz.org/artist/a530492f-8806-4bd7-9c14-80c237eb92fe"
+     },
+     "datePublished": "2005",
+     "genre": [
+      "jazz",
+      "ska",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Two Shoes"
+     },
+     "isrcCode": "AUTW00500005",
+     "name": "The Car Song",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c5c3dcad-2cde-4cdb-8b4a-9322f1ad6b4a",
+      "https://www.youtube.com/watch?v=p39pC2-zFJU"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-the-car-song/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-cat-empire-the-car-song/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Car Song",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Car_Song"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Two Shoes",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Two_Shoes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Cat Empire",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Cat_Empire"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "The Cat Empire: Two Shoes",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/the-cat-empire-two-shoes-2495797515.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "The Cat Empire: The Cat Empire EP",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/the-cat-empire-the-cat-empire-ep-2495722612.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "The Cat Empire – Two Shoes / So Many Nights",
+       "publisher": "mxdwn",
+       "url": "https://music.mxdwn.com/2009/08/09/reviews/the-cat-empire-two-shoes-so-many-nights/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Car Song (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/c5c3dcad-2cde-4cdb-8b4a-9322f1ad6b4a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Cat Empire - The Car Song (Official Audio)",
+       "publisher": "The Cat Empire",
+       "url": "https://www.youtube.com/watch?v=p39pC2-zFJU"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Harry James Angus's comic tale of a schoolkid everyone expected to become a lawyer, the second single from The Cat Empire's Havana-recorded Two Shoes (2005): keys and trumpet driving a Latin-tinged rock and roll.",
+     "educationalLevel": "introductory",
+     "headline": "The Cat Empire - The Car Song",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/concept/b-side/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-cat-empire-the-car-song/",
+     "wordCount": 507
+    }
+   ]
+  },
+  "the-chemical-brothers-hey-boy-hey-girl.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-hey-boy-hey-girl/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Chemical Brothers",
+      "sameAs": "https://musicbrainz.org/artist/1946a82a-f927-40c2-8235-38d64f50d043"
+     },
+     "datePublished": "1999",
+     "genre": [
+      "electronic",
+      "big beat",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Surrender"
+     },
+     "isrcCode": "GBAAA0300529",
+     "name": "Hey Boy Hey Girl",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bf7845cc-eac3-48a3-8b06-543b4b7ba117",
+      "https://www.youtube.com/watch?v=lKVTVdK7SZA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-hey-boy-hey-girl/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-chemical-brothers-hey-boy-hey-girl/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Hey Boy Hey Girl",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hey_Boy_Hey_Girl"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Surrender (The Chemical Brothers album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Surrender_(The_Chemical_Brothers_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1999",
+       "name": "Surrender",
+       "publisher": "NME",
+       "url": "https://web.archive.org/web/2010/http://www.nme.com/reviews/the-chemical-brothers/1112"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "150 Best Tracks of the Past 15 Years",
+       "publisher": "NME",
+       "url": "https://web.archive.org/web/2012/https://www.nme.com/list/150-best-tracks-of-the-past-15-years/248648/page/11"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "The Chemical Brothers release two new remixes of '90s classic Hey Boy Hey Girl",
+       "publisher": "Dancing Astronaut",
+       "url": "https://dancingastronaut.com/2019/10/the-chemical-brothers-release-2-new-remixes-of-90s-classic-hey-boy-hey-girl/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "The Chemical Brothers - Hey Boy Hey Girl (KiNK Remix)",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/24269"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hey Boy Hey Girl (Provided to YouTube by Universal Music Group)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=lKVTVdK7SZA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Chemical Brothers - Hey Boy Hey Girl (Official Music Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=tpKCqp9CALQ"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The Chemical Brothers' 1999 lead single from Surrender: a sample of The Roof Is on Fire, a vocoded hey boy and a groove that NME heard build from menacing trance to an absolute dance stomper; a UK number three with a video of dancing skeletons.",
+     "educationalLevel": "introductory",
+     "headline": "The Chemical Brothers - Hey Boy Hey Girl",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "vocoder",
+       "url": "https://korczis.github.io/sonic-playground/concept/vocoder/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-chemical-brothers-hey-boy-hey-girl/",
+     "wordCount": 543
+    }
+   ]
+  },
   "the-chemical-brothers-q-tip-go.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -271303,6 +273888,161 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/the-prodigy-beyond-the-deathray/",
      "wordCount": 516
+    }
+   ]
+  },
+  "the-prodigy-ibiza.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-ibiza/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "The Prodigy",
+      "sameAs": "https://musicbrainz.org/artist/4a4ee089-93b1-4470-af9a-6ff575d32704"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electronic",
+      "big beat",
+      "punk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Day Is My Enemy"
+     },
+     "isrcCode": "GBCEJ1400354",
+     "name": "Ibiza",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7eadf74f-0530-4268-99e9-2e1f4e0115e8",
+      "https://www.youtube.com/watch?v=guUHZnbWoyo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/the-prodigy-ibiza/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/the-prodigy-ibiza/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Ibiza (The Prodigy song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ibiza_(The_Prodigy_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Day Is My Enemy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Day_Is_My_Enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Prodigy Announces Sleaford Mods Collaboration 'Ibiza'",
+       "publisher": "The Music Times",
+       "url": "https://www.musictimes.com/articles/12253/20141013/prodigy-announces-sleaford-mods-collaboration-ibiza-single-sure-please-britains.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy – 'The Day Is My Enemy' Vinyl Review",
+       "publisher": "Sonicabuse",
+       "url": "https://sonicabuse.com/the-prodigy-the-day-is-my-enemy-vinyl-review/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy – The Day Is My Enemy",
+       "publisher": "Consequence of Sound",
+       "url": "https://consequence.net/2015/03/album-review-the-prodigy-the-day-is-my-enemy/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Album Review: The Prodigy - The Day Is My Enemy",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-the-prodigy-the-day-is-my-enemy-4148829/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Rjyan Kidwell (Cex) Talks the Prodigy's The Day Is My Enemy",
+       "publisher": "Talkhouse",
+       "url": "https://talkhouse.com/rjyan-kidwell-cex-talks-the-prodigys-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy: The Day Is My Enemy",
+       "publisher": "Metal Hammer",
+       "url": "https://www.loudersound.com/reviews/the-prodigy-the-day-is-my-enemy"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy and Sleaford Mods get rowdy for 'Ibiza' video",
+       "publisher": "DIY",
+       "url": "https://diymag.com/news/the-prodigy-and-sleaford-mods-get-rowdy-for-ibiza-video"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ibiza (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7eadf74f-0530-4268-99e9-2e1f4e0115e8"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Prodigy - Ibiza ft. Sleaford Mods",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=guUHZnbWoyo"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Prodigy ‘Ibiza’ feat. Sleaford Mods (Official Video)",
+       "publisher": "The Prodigy",
+       "url": "https://www.youtube.com/watch?v=Zhg2IvPDZL8"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Sleaford Mods' guest turn on The Prodigy's The Day Is My Enemy (2015): Jason Williamson's spoken rant over a sleazy electro-punk track that Liam Howlett aimed not at the island but at the superstar DJs who fly in with a USB stick.",
+     "educationalLevel": "introductory",
+     "headline": "The Prodigy - Ibiza",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "spoken word",
+       "url": "https://korczis.github.io/sonic-playground/concept/spoken-word/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/the-prodigy-ibiza/",
+     "wordCount": 530
     }
    ]
   },
@@ -279643,6 +282383,126 @@
     }
    ]
   },
+  "yael-naim-new-soul.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/yael-naim-new-soul/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Yael Naim",
+      "sameAs": "https://musicbrainz.org/artist/def226b0-7990-4b38-ab1a-7740461844dc"
+     },
+     "datePublished": "2007",
+     "genre": [
+      "indie folk",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Yael Naim"
+     },
+     "isrcCode": "FR79W0700370",
+     "name": "New Soul",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8d8363b5-b5ef-4435-9a40-ee0b5415d914",
+      "https://www.youtube.com/watch?v=hhE7QMXRE1g"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/yael-naim-new-soul/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/yael-naim-new-soul/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "New Soul",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/New_Soul"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Yael Naim",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Yael_Naim"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Yael Naim (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Yael_Naim_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Mac Ad Raises Yael Naim's Profile",
+       "publisher": "NPR",
+       "url": "https://www.npr.org/transcripts/88415853"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Yael Naim & David Donatien: Yael Naim & David Donatien",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/yael-naim-david-donatien-yael-naim-david-donatien-2496163674.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "For just a moment, Yael Naim gave Apple's technology soul",
+       "publisher": "The A.V. Club",
+       "url": "https://www.avclub.com/for-just-a-moment-yael-naim-gave-apple-s-technology-so-1798278662"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Yael Naim - New Soul (Official Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=hhE7QMXRE1g"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Yael Naim's New Soul, recorded with David Donatien in a studio in her Paris apartment, is a light song about starting life over, with a la-la-la hook and droll trombone; Apple's MacBook Air advert took it into the US top ten in 2008.",
+     "educationalLevel": "introductory",
+     "headline": "Yael Naim - New Soul",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/yael-naim-new-soul/",
+     "wordCount": 508
+    }
+   ]
+  },
   "yeah-yeah-yeahs-a-trak-heads-will-roll-a-trak-remix-radio-edit.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -279776,6 +282636,126 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/yeah-yeah-yeahs-a-trak-heads-will-roll-a-trak-remix-radio-edit/",
      "wordCount": 569
+    }
+   ]
+  },
+  "yeah-yeah-yeahs-heads-will-roll.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/yeah-yeah-yeahs-heads-will-roll/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Yeah Yeah Yeahs",
+      "sameAs": "https://musicbrainz.org/artist/584c04d2-4acc-491b-8a0a-e63133f4bfc4"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "dance-punk",
+      "alternative rock",
+      "indie rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "It's Blitz!"
+     },
+     "isrcCode": "GBUM70900924",
+     "name": "Heads Will Roll",
+     "sameAs": [
+      "https://musicbrainz.org/recording/493b4b13-f3a3-4ba6-8ae1-7667035dcc16",
+      "https://www.youtube.com/watch?v=auzfTPp4moA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/yeah-yeah-yeahs-heads-will-roll/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/yeah-yeah-yeahs-heads-will-roll/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Heads Will Roll (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Heads_Will_Roll_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "It's Blitz!",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/It%27s_Blitz!"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "'It's Blitz!' At 10: How The Dancefloor Classic Marked A New Era For The Yeah Yeah Yeahs",
+       "publisher": "Recording Academy",
+       "url": "https://www.grammy.com/news/its-blitz-10-how-dancefloor-classic-marked-new-era-yeah-yeah-yeahs/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Yeah Yeah Yeahs: It's Blitz!",
+       "publisher": "The Austin Chronicle",
+       "url": "https://austinchronicle.com/music/2009-04-03/762438"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Heads Will Roll (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/493b4b13-f3a3-4ba6-8ae1-7667035dcc16"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Yeah Yeah Yeahs - Heads Will Roll (Official Music Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=auzfTPp4moA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The 2009 single that took Yeah Yeah Yeahs from garage rock to the dancefloor: a horror story about an ill-fated night out, built from pre-recorded drum samples, an ARP synthesizer and a string riff from a Mellotron sample, and later carried further by A-Trak's remix.",
+     "educationalLevel": "introductory",
+     "headline": "Yeah Yeah Yeahs - Heads Will Roll",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/concept/loop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "analog synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/analog-synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/yeah-yeah-yeahs-heads-will-roll/",
+     "wordCount": 547
     }
    ]
   },
