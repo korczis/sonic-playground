@@ -14,7 +14,7 @@
 {%- set_global deep = false %}
 {%- for t in catalog.tracks %}{% if t.youtube and (not deep or t.words > deep.words) %}{% set_global deep = t %}{% endif %}{% endfor %}
 {{ <site_hero l={l} eyebrow_vars={eyebrow_vars} lead_vars={lead_vars} stats={hero_stats} primary_href="#explorer-title" secondary_href={get_url(path="@/pages/welcome.md", lang=lang)} tracks={catalog.tracks} deep={deep} /> }}
-<div class="relative z-10 -mt-16 space-y-4 px-4 xl:px-8">
+<div class="{{ <layout part="gutter" /> }} relative z-10 -mt-16 space-y-4">
   {#- The newest track with a picture leads; the catalogue is newest first. -#}
   {%- set_global featured = catalog.tracks | first %}
   {%- for t in catalog.tracks %}{% if t.thumbnail %}{% set_global featured = t %}{% break %}{% endif %}{% endfor %}

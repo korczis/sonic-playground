@@ -1,14 +1,28 @@
-{#- A plain page (welcome, author): the Pro page header and one typography card. -#}
+{#- A plain page (welcome, author): the Pro page header, the text in one card at reading width
+    beside a derived aside (the newest reviews and the way into the explorer), one column on a
+    phone (rule project.page-layout). -#}
 {% extends "base.html" %}
 {%- block content %}
 {%- if page.description %}{% set lead = page.description %}{% else %}{% set lead = "" %}{% endif %}
 {{ <page_header title={page.title} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [page.title, "", ""]]} lead={lead} l={l} /> }}
-{%- set body = page.content %}
-<div class="px-4 pt-6 xl:px-8">
-  <article class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:p-8 dark:border-gray-700 dark:bg-gray-800">
-    <div class="format format-lg mx-auto max-w-3xl dark:format-invert format-a:text-primary-700 dark:format-a:text-primary-400 format-img:rounded-lg">
-      {{ body | safe }}
-    </div>
+<div class="{{ <layout part="body" /> }} grid grid-cols-1 items-start gap-4 xl:grid-cols-[minmax(0,48rem)_minmax(0,22rem)]">
+  <article class="min-w-0 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:p-8 dark:border-gray-700 dark:bg-gray-800" data-page-card>
+    {{ <prose html={page.content} /> }}
   </article>
+  <aside aria-labelledby="page-recent" class="min-w-0 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:sticky xl:top-20 dark:border-gray-700 dark:bg-gray-800">
+    <div class="mb-2 flex items-center justify-between gap-3">
+      <h2 id="page-recent" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="home.recent" l={l} /> }}</h2>
+      {{ <play_all target="page-recent-list" l={l} lkey="home.recent_play" /> }}
+    </div>
+    <ul id="page-recent-list" data-playlist class="divide-y divide-gray-200 dark:divide-gray-700">
+      {%- for t in catalog.tracks %}{% if loop.index > 5 %}{% break %}{% endif %}
+      {{ <track_row t={t} l={l} /> }}
+      {%- endfor %}
+    </ul>
+    <div class="mt-4 flex flex-wrap gap-3 border-t border-gray-200 pt-4 dark:border-gray-700">
+      <a href="{{ get_url(path='@/_index.md', lang=lang) }}#explorer-title" class="inline-flex items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <tx key="home.cta_explore" l={l} /> }}{{ <icon name="arrow-right" cls="ml-2 h-4 w-4" /> }}</a>
+      <a href="{{ get_url(path='@/pages/archive.md', lang=lang) }}" class="inline-flex items-center py-2 text-sm font-medium text-primary-700 hover:underline dark:text-primary-400">{{ <tx key="home.recent_all" l={l} /> }}</a>
+    </div>
+  </aside>
 </div>
 {%- endblock content %}

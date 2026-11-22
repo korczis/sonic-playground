@@ -232,15 +232,15 @@ src="{{ get_url(path=t.thumbnail) }}"
 {% component figure(src, alt="", caption="") %}
 {%- set media = load_data(path="static/data/images.json") -%}
 {%- set m = media.images[src] -%}
-<figure class="not-format my-6">
+<figure class="not-format mx-auto my-6 max-w-md">
   {%- set last_fmt = media.formats | last -%}
   {%- set big = m.variants[last_fmt] | last -%}
   <a href="{{ get_url(path=big[2]) }}" class="block overflow-hidden rounded-lg focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
     <picture>
       {%- for fmt, rows in m.variants %}{% if fmt != last_fmt %}
-      <source type="image/{{ fmt }}" sizes="(min-width: 1024px) 720px, 100vw" srcset="{% for v in rows %}{{ get_url(path=v[2]) }} {{ v[0] }}w{% if not loop.last %}, {% endif %}{% endfor %}">
+      <source type="image/{{ fmt }}" sizes="(min-width: 480px) 448px, 100vw" srcset="{% for v in rows %}{{ get_url(path=v[2]) }} {{ v[0] }}w{% if not loop.last %}, {% endif %}{% endfor %}">
       {%- endif %}{% endfor %}
-      <img src="{{ get_url(path=big[2]) }}" sizes="(min-width: 1024px) 720px, 100vw" srcset="{% for v in m.variants[last_fmt] %}{{ get_url(path=v[2]) }} {{ v[0] }}w{% if not loop.last %}, {% endif %}{% endfor %}" width="{{ big[0] }}" height="{{ big[1] }}" alt="{{ alt }}" loading="lazy" decoding="async" class="h-auto w-full rounded-lg">
+      <img src="{{ get_url(path=big[2]) }}" sizes="(min-width: 480px) 448px, 100vw" srcset="{% for v in m.variants[last_fmt] %}{{ get_url(path=v[2]) }} {{ v[0] }}w{% if not loop.last %}, {% endif %}{% endfor %}" width="{{ big[0] }}" height="{{ big[1] }}" alt="{{ alt }}" loading="lazy" decoding="async" class="h-auto w-full rounded-lg">
     </picture>
   </a>
   {%- if caption %}<figcaption class="mt-2 text-center text-sm text-gray-500 dark:text-gray-400">{{ caption }}</figcaption>{% endif %}
@@ -266,8 +266,20 @@ src="{{ get_url(path=t.thumbnail) }}"
     its interface string or "" for content such as a term) and the title, kicker and lead. The
     lead is an interface string (lead_key with lead_vars and l, formatted by `tr`) or, for
     content, plain text (lead). -#}
+{#- The page grid's one gutter (16 px; 32 px from xl, where the sidebar is beside it), so the
+    header, the breadcrumb and every card share one left edge. `part`: "gutter" (the sides only,
+    for a body that sets its own top) or "body" (the sides and the space under the page header).
+    Templates take these classes only from here (rule project.page-layout,
+    scripts/check-components.py). -#}
+{% component layout(part) %}{% if part == "gutter" %}px-4 xl:px-8{% else %}px-4 pt-6 xl:px-8{% endif %}{% endcomponent layout %}
+
+{#- Long text (a review, a plain page) on the Flowbite typography scale, mobile first: small type
+    on a phone, base from sm, large from lg, so a content heading never outgrows the page title.
+    The one text box of the site (rule project.page-layout). -#}
+{% component prose(html) %}<div data-prose class="format format-sm max-w-none sm:format-base lg:format-lg dark:format-invert format-a:text-primary-700 format-headings:tracking-tight dark:format-a:text-primary-400 format-img:rounded-lg">{{ html | safe }}</div>{% endcomponent prose %}
+
 {% component page_header(title, crumbs=[], kicker="", lead="", lead_key="", lead_vars={}, l={}) %}
-<div class="border-b border-gray-200 bg-white px-4 py-5 xl:px-8 dark:border-gray-700 dark:bg-gray-800">
+<div class="{{ <layout part="gutter" /> }} border-b border-gray-200 bg-white py-5 dark:border-gray-700 dark:bg-gray-800">
   <nav class="mb-3 flex" aria-label="Breadcrumb" data-i18n-aria-label="landmark.breadcrumb">
     <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 md:space-x-2">
       {%- for c in crumbs %}
@@ -346,7 +358,7 @@ src="{{ get_url(path=t.thumbnail) }}"
   <img {{ <still t={t} sizes="160px" /> }} alt="" width="480" height="360" data-thumb class="absolute inset-0 -z-10 h-full w-full scale-110 object-cover opacity-60 blur-sm" fetchpriority="high">
   {%- endif %}
   <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/75 to-primary-900/40" aria-hidden="true"></div>
-  <div class="px-4 pb-32 pt-6 sm:pt-10 lg:pb-36 xl:px-8">
+  <div class="{{ <layout part="gutter" /> }} pb-32 pt-6 sm:pt-10 lg:pb-36">
     <nav class="mb-8 flex" aria-label="Breadcrumb" data-i18n-aria-label="landmark.breadcrumb">
       <ol class="inline-flex flex-wrap items-center gap-y-1 space-x-1 text-sm md:space-x-2">
         <li class="inline-flex items-center"><a href="{{ home }}" class="inline-flex items-center font-medium text-gray-300 hover:text-white">{{ <icon name="home" cls="mr-1.5 h-4 w-4" /> }}{{ <tx key="site.home" l={l} /> }}</a></li>
@@ -450,7 +462,7 @@ src="{{ get_url(path=t.thumbnail) }}"
   <div data-hero-backdrop class="absolute inset-0 -z-10 opacity-35 mix-blend-soft-light" aria-hidden="true"></div>
   {{ <visualizer mode="aurora" modes="aurora nebula plasma" media="(min-width: 1024px)" cycle={true} cls="absolute inset-0 -z-10 opacity-30 mix-blend-screen [mask-image:linear-gradient(to_right,transparent_0%,transparent_45%,black_75%)]" /> }}
   <button type="button" data-visualizer-open aria-haspopup="dialog" aria-controls="visualizer-full" class="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-inset ring-white/20 backdrop-blur hover:bg-white/20 focus:outline-none focus:ring-4 focus:ring-primary-500 sm:right-4 sm:top-4" aria-label="{{ <tr key="viz.open" l={l} /> }}" data-i18n-aria-label="viz.open" title="{{ <tr key="viz.open" l={l} /> }}" data-i18n-title="viz.open">{{ <icon name="waves" /> }}</button>
-  <div class="grid items-center gap-12 px-4 pb-32 pt-10 sm:pt-16 lg:min-h-[40rem] lg:grid-cols-12 lg:pb-36 xl:px-8">
+  <div class="{{ <layout part="gutter" /> }} grid items-center gap-12 pb-32 pt-10 sm:pt-16 lg:min-h-[40rem] lg:grid-cols-12 lg:pb-36">
     <div class="lg:col-span-7">
       <p class="mb-6 inline-flex flex-wrap items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-primary-100 ring-1 ring-inset ring-white/20 backdrop-blur"><span class="relative mr-2 flex h-2.5 w-2.5" aria-hidden="true"><span class="hero-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span><span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-pink-500"></span></span>{{ <tx key="home.eyebrow" l={l} vars={eyebrow_vars} /> }}</p>
       <h1 class="mb-6 text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl xl:text-7xl 2xl:text-8xl"><span class="block">{{ <tx key="home.headline" l={l} /> }}</span><span class="block bg-gradient-to-r from-primary-300 via-pink-300 to-amber-200 bg-clip-text pb-2 text-transparent">{{ <tx key="home.headline_accent" l={l} /> }}</span></h1>

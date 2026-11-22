@@ -10,7 +10,7 @@
 {%- if paginator %}{% set pages = paginator.pages %}{% else %}{% set pages = term.pages %}{% endif %}
 {%- set btn = "inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:focus:ring-gray-700" %}
 {{ <page_header title={tl} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], get_url(path=lp ~ taxonomy.name, trailing_slash=true), name_key], [tl, "", ""]]} kicker={l[one_key]} lead_key="tax.count" lead_vars={ {"n": term.page_count} } l={l} /> }}
-<div class="space-y-4 px-4 pt-6 xl:px-8">
+<div class="{{ <layout part="body" /> }} space-y-4">
   <div class="flex flex-wrap gap-2">
     {{ <play_all target="term-grid" l={l} lkey="tax.play" vars={ {"term": tl} } /> }}
     <a href="{{ get_url(path='@/_index.md', lang=lang) }}?{{ taxonomy.name }}={{ term.name | urlencode }}" class="{{ btn }}">{{ <icon name="search" cls="mr-2 h-4 w-4" /> }}{{ <tx key="tax.combine" l={l} /> }}</a>

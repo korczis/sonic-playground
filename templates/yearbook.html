@@ -9,7 +9,7 @@
 {%- set ytitle %}{{ <tr key="yearbook.one" l={l} vars={ {"year": year} } /> }}{% endset %}
 {%- set card = "rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800" %}
 {{ <page_header title={ytitle} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l["yearbook.title"], get_url(path="@/yearbook/_index.md", lang=lang), "yearbook.title"], [year ~ "", "", ""]]} kicker={b.name} lead_key="yearbook.count" lead_vars={ {"n": b.items, "s": b.songs} } l={l} /> }}
-<div class="grid grid-cols-1 gap-4 px-4 pt-6 xl:grid-cols-3 xl:px-8">
+<div class="{{ <layout part="body" /> }} grid grid-cols-1 gap-4 xl:grid-cols-3">
   <section class="{{ card }} p-4 sm:p-6 xl:col-span-2" aria-labelledby="yb-list">
     <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
       <h2 id="yb-list" class="text-lg font-semibold text-gray-900 dark:text-white">{{ <tx key="yearbook.list" l={l} /> }}</h2>
