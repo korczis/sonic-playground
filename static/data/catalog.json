@@ -6105,8 +6105,7 @@
     {
      "term": "electro-funk",
      "slug": "electro-funk",
-     "count": 1,
-     "inferred": true
+     "count": 1
     },
     {
      "term": "electropop",
@@ -6269,7 +6268,6 @@
     "hard rock",
     "rockabilly",
     "shoegaze",
-    "ska",
     "arena rock",
     "classic rock",
     "hardcore punk",
@@ -6376,12 +6374,6 @@
      "term": "shoegaze",
      "slug": "shoegaze",
      "count": 2
-    },
-    {
-     "term": "ska",
-     "slug": "ska",
-     "count": 2,
-     "inferred": true
     },
     {
      "term": "arena rock",
@@ -6911,12 +6903,13 @@
   },
   {
    "id": "dub",
-   "count": 45,
+   "count": 46,
    "umbrella": false,
    "names": [
     "dub",
     "reggae",
-    "dancehall"
+    "dancehall",
+    "ska"
    ],
    "terms": [
     {
@@ -6933,6 +6926,11 @@
      "term": "dancehall",
      "slug": "dancehall",
      "count": 3
+    },
+    {
+     "term": "ska",
+     "slug": "ska",
+     "count": 2
     }
    ]
   },

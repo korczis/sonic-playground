@@ -37,7 +37,7 @@ terms = ["drum and bass", "jungle", "neurofunk", "liquid funk", "breakbeat", "bi
 id = "dub"
 en = "Dub & reggae"
 cs = "Dub a reggae"
-terms = ["dub", "reggae", "dancehall"]
+terms = ["dub", "reggae", "dancehall", "ska"]
 
 [[family]]
 id = "trance"
@@ -57,7 +57,8 @@ id = "electro"
 en = "Electro, synth & new wave"
 cs = "Electro, synth a new wave"
 terms = ["electro", "electroclash", "electro-pop", "electropop", "synth-pop", "synthwave",
-         "darkwave", "new wave", "hi-nrg", "italo dance", "indie electronic", "experimental", "80s"]
+         "darkwave", "new wave", "hi-nrg", "italo dance", "indie electronic", "experimental", "80s",
+         "electro-funk"]
 
 [[family]]
 id = "electronic"
