@@ -13,7 +13,7 @@
 {%- else %}
 {{ <page_header title={l[name_key]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], "", name_key]]} lead_key="tax.list_lead" lead_vars={ {"n": terms | length} } l={l} /> }}
 {%- endif %}
-<div class="px-4 pt-6 xl:px-8">
+<div class="{{ <layout part="body" /> }}">
   {%- if terms | length > 0 and families | length > 0 %}
   <nav aria-label="{{ l["tax.families_nav"] }}" data-i18n-aria-label="tax.families_nav" class="mb-6 flex flex-wrap gap-2">
     {%- for f in families %}

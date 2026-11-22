@@ -18,7 +18,7 @@
 {%- else %}
 {{ <page_header title={page.title} crumbs={[[l["site.home"], home, "site.home"], [page.title, "", ""]]} lead={lead} l={l} /> }}
 {%- endif %}
-<div class="relative z-10 grid grid-cols-1 gap-4 px-4 xl:grid-cols-3 xl:px-8{% if track %} -mt-24{% else %} pt-6{% endif %}">
+<div class="{{ <layout part="gutter" /> }} relative z-10 grid grid-cols-1 gap-4 xl:grid-cols-3{% if track %} -mt-24{% else %} pt-6{% endif %}">
   <div class="min-w-0 space-y-4 xl:col-span-2">
     <article class="{{ card }} p-4 sm:p-6 xl:p-8" aria-labelledby="review-title">
       {%- if track %}
@@ -64,9 +64,7 @@
       {%- else %}
       <h2 id="review-title" class="sr-only">{{ page.title }}</h2>
       {%- endif %}
-      <div class="format format-sm max-w-none sm:format-base lg:format-lg dark:format-invert format-a:text-primary-700 format-headings:tracking-tight dark:format-a:text-primary-400">
-        {{ page.content | safe }}
-      </div>
+      {{ <prose html={page.content} /> }}
     </article>
 
     {#- The educational article (ADR 0004): everything below comes from the front matter; its words

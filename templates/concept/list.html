@@ -5,7 +5,7 @@
 {%- block content %}
 {%- set name_key = "tax.name.concept" %}
 {{ <page_header title={l[name_key]} crumbs={[[l["site.home"], get_url(path="@/_index.md", lang=lang), "site.home"], [l[name_key], "", name_key]]} lead_key="concept.list_lead" lead_vars={ {"n": catalog.concepts | length} } l={l} /> }}
-<div class="space-y-8 px-4 pt-6 xl:px-8">
+<div class="{{ <layout part="body" /> }} space-y-8">
   {%- set groups = catalog.concepts | group_by(attribute="category") %}
   {#- In the order data/concept.schema.json lists the categories. -#}
   {%- for cat in catalog.concept_categories %}{% if cat in groups %}{% set items = groups[cat] %}
