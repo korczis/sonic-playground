@@ -57,7 +57,8 @@ link. Not for bulk imports (run the engine in a loop and review each article).
 6. **Teach (ADR 0004, rule `project.educational-article`).** Every review is also an educational
    article, described in its front matter:
    - `python3 scripts/track.py enrich content/<file>.md --write` fills the MusicBrainz ids, ISRC,
-     the artist's country and a missing year (check the match is the right recording);
+     the artist's country and a missing year, then `python3 scripts/track.py audit-mb
+     content/<file>.md` checks them (see "Many songs");
    - `[taxonomies] concept = [...]` (2-4, from `data/concepts/`; a new concept is a new
      `data/concepts/<slug>.toml` with a definition in every locale) and `instrument = [...]`;
    - `[extra.credits]` (writers, producers, featuring, remixers, vocals) as credited;
@@ -112,6 +113,14 @@ once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 a
 - A backlog song that already has a page under another credit or title: the lead artist and
   song match it when only one page fits; a sourced other title ("One Night In NYC" for
   "One Night In New York City") goes in `extra.titles`, never a second page.
+- MusicBrainz ids: set `extra.album` (`track.py refresh --album`) before `enrich`; it picks the
+  recording within 3 s of the Spotify duration on the album's release and leaves out (and says
+  why) what it cannot single out. Then run `track.py audit-mb content/<file>.md`: it flags a
+  length off the duration, a live/DJ-mix/instrumental/excerpt copy, a release that is not the
+  album, an ISRC not on the recording. Fix every flag (`--fix` writes only unambiguous
+  corrections; the rest by hand from musicbrainz.org) before `check`. In recent waves 30-50% of
+  enriched pages had a compilation, DJ-mix, live or instrumental copy (Dr. Dre's "2001
+  Instrumental", a 64 s Jeff Mills mix excerpt).
 - A row that is not a song (an interview, a skit) or whose artist is unclear is skipped and
   reported for the owner, never guessed. Once the integrator confirms it is not a song, it gets a
   `skip = "<reason>"` row in `data/backlog/decisions.toml` (a song reviewed under another

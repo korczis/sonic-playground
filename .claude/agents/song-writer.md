@@ -31,9 +31,11 @@ its own quoted argument; `track.py new ... --date <today>`; `track.py refresh` w
 only when sourced, the year and label; replace every `TODO(write)` with 400-550 words in the
 existing reviews' voice, one line per paragraph, every heading kept in order; add the
 educational layer of the skill's step "Teach" (run `track.py enrich <file> --write` first: it is
-your own file; concepts from `data/concepts/`, creating `data/concepts/<slug>.toml` with en and cs
-definitions only for a concept none defines yet; the listening guide keyed by part, with a time
-only where a source gives one; at least two sources); finish with
+your own file; then `track.py audit-mb <file>` and fix every id it flags, with `--fix` where it
+proposes one, else by hand, or report it; concepts from `data/concepts/`, creating
+`data/concepts/<slug>.toml` with en and cs definitions only for a concept none defines yet; the
+listening guide keyed by part, with a time only where a source gives one; at least two sources);
+finish with
 `python3 scripts/track.py check content/<file>.md` at `"errors": []` and `"unfinished": 0`.
 Then `python3 scripts/translate.py scaffold content/<file>.md`, translate in place and finish
 with `python3 scripts/translate.py check content/<file>.cs.md` at 0 problems; after any later
