@@ -32735,6 +32735,129 @@
     }
    ]
   },
+  "d12-git-up.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-git-up/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "D12 World"
+     },
+     "isrcCode": "USIR10400122",
+     "name": "Git Up",
+     "sameAs": [
+      "https://musicbrainz.org/recording/108c61ea-c7e0-4990-86ef-725f7c4cc016",
+      "https://www.youtube.com/watch?v=lcIVw9g7klk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/d12-git-up/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-git-up/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Name Game",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Name_Game"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "D12 World",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/d12-world-2727981"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Eminem's band could use a little more Eminem, a little better math",
+       "publisher": "The Chicago Maroon",
+       "url": "https://chicagomaroon.com/?p=11912"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Git Up (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/108c61ea-c7e0-4990-86ef-725f7c4cc016"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Git Up (Provided to YouTube by Universal Music Group)",
+       "publisher": "D12 - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=lcIVw9g7klk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Úvodní skladba alba D12 World, které D12 vydali v roce 2004, v produkci Eminema s Luisem Restem a s uvedeným samplem z písně The Name Game Shirley Ellis; jeden kritik chválil Eminemův přednes, ne jeho slova.",
+     "educationalLevel": "introductory",
+     "headline": "D12 - Git Up",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/rapping/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-git-up/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/d12-git-up/",
+     "wordCount": 453
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -83596,6 +83719,129 @@
     }
    ]
   },
+  "kelis-andre-3000-millionaire.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kelis-andre-3000-millionaire/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kelis, André 3000",
+      "sameAs": "https://musicbrainz.org/artist/1239d1bc-cc09-43e0-bcd0-374f60346138"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "r&b",
+      "funk",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Tasty"
+     },
+     "isrcCode": "USAR10301293",
+     "name": "Millionaire",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6c354af0-6022-45f8-887d-cacba20f08bd",
+      "https://www.youtube.com/watch?v=4kceTvsdSlE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/kelis-andre-3000-millionaire/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kelis-andre-3000-millionaire/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Millionaire (Kelis song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Millionaire_(Kelis_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Tasty (Kelis album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Tasty_(Kelis_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Kelis: Tasty",
+       "publisher": "Houston Press",
+       "url": "https://www.houstonpress.com/music/kelis-6553012/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Kelis Tasty",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/kelis-tasty"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Classic Album Review: Kelis | Tasty",
+       "publisher": "Tinnitist",
+       "url": "https://tinnitist.com/2024/01/02/classic-album-review-kelis-tasty"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Millionaire",
+       "publisher": "YouTube (Kelis - Topic)",
+       "url": "https://www.youtube.com/watch?v=4kceTvsdSlE"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "André 3000 produkoval Millionaire a zpívá v něm s Kelis: rychlý, minimalistický synth-funkový duet z alba Tasty postavený na skladbě La Di Da Di od Doug E. Fresh a Slick Rick, který se v roce 2004 dostal ve Velké Británii na 3. místo.",
+     "educationalLevel": "introductory",
+     "headline": "Kelis, André 3000 - Millionaire",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/kelis-andre-3000-millionaire/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/kelis-andre-3000-millionaire/",
+     "wordCount": 495
+    }
+   ]
+  },
   "kelis-milkshake.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -87273,6 +87519,131 @@
     }
    ]
   },
+  "kosheen-catch.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kosheen-catch/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kosheen",
+      "sameAs": "https://musicbrainz.org/artist/4f4bda3c-d636-4135-b65a-6cc26bc75788"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "drum and bass",
+      "trip-hop",
+      "breakbeat",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Resist (2021 Remaster)"
+     },
+     "isrcCode": "GBAZG2110407",
+     "name": "Catch",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b3d12448-7c48-4757-86b6-0ec76e1af3f1",
+      "https://www.youtube.com/watch?v=DrbsasZUZf4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/kosheen-catch/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kosheen-catch/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Catch (Kosheen song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Catch_(Kosheen_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Resist (Kosheen album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Resist_(Kosheen_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kosheen",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kosheen"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "kosheen : resist (2021 remaster)",
+       "publisher": "Moksha Recordings",
+       "url": "https://www.moksha.co.uk/page/3"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Kosheen's Iconic 2000 Hit 'Catch' Celebrates 25th Anniversary with Explosive Reworks",
+       "publisher": "Armada Music",
+       "url": "https://www.armadamusic.com/news/kosheens-iconic-2000-hit-catch-celebrates-25th-anniversary-with-explosive-reworks-first-up-reinier-zonnevelds-bounce-mix"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Under the Kosheen",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/under-the-kosheen-1694376"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kosheen: Resist",
+       "publisher": "Laut.de",
+       "url": "https://www.laut.de/Kosheen/Alben/Resist-2186"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Bristolský singl Catch skupiny Kosheen, který při prvním vydání v roce 2000 uvízl na 86. místě a po návratu v roce 2001 dosáhl 15. místa v Británii, zde v remasteru debutového alba Resist z roku 2021.",
+     "educationalLevel": "introductory",
+     "headline": "Kosheen - Catch",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remastering",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remastering/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/breakbeat/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/kosheen-catch/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/kosheen-catch/",
+     "wordCount": 499
+    }
+   ]
+  },
   "koudlam-see-you-all.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -87541,6 +87912,135 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/kruder-dorfmeister-johnson/",
      "wordCount": 427
+    }
+   ]
+  },
+  "kungs-cookin-on-3-burners-this-girl.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kungs-cookin-on-3-burners-this-girl/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kungs, Cookin' on 3 Burners",
+      "sameAs": "https://musicbrainz.org/artist/a125cd83-a379-4935-a7ec-beaa778bad70"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "house",
+      "remix",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Layers"
+     },
+     "isrcCode": "FQI311601798",
+     "name": "This Girl",
+     "sameAs": [
+      "https://musicbrainz.org/recording/458ec4b7-529f-43b6-b3e7-439f32cd11eb",
+      "https://www.youtube.com/watch?v=2Y6Nne8RvaA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/kungs-cookin-on-3-burners-this-girl/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kungs-cookin-on-3-burners-this-girl/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "This Girl (Cookin' on 3 Burners song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/This_Girl_(Cookin%27_on_3_Burners_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "This Girl",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/This_Girl"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Layers (Kungs album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Layers_(Kungs_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kungs",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kungs"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Cookin' on 3 Burners",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Cookin%27_on_3_Burners"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Kungs On The Meaning & Making Of 'This Girl' | Behind The Song",
+       "publisher": "iHeartRadio",
+       "url": "https://www.iheart.com/content/2016-09-13-interview-kungs-talks-this-girl-meaning-behind-the-song"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "This Girl (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/458ec4b7-529f-43b6-b3e7-439f32cd11eb"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Kungs vs Cookin' on 3 Burners - This Girl",
+       "publisher": "KungsVEVO (YouTube)",
+       "url": "https://www.youtube.com/watch?v=2Y6Nne8RvaA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Housové přepracování soulového singlu melbournského tria Cookin' on 3 Burners z roku 2009, které nazpívala Kylie Auldist, od Kungse z roku 2016: verze o délce 3:15 z alba Layers, jednička ve Francii a Německu.",
+     "educationalLevel": "introductory",
+     "headline": "Kungs, Cookin' on 3 Burners - This Girl",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/kungs-cookin-on-3-burners-this-girl/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/kungs-cookin-on-3-burners-this-girl/",
+     "wordCount": 459
     }
    ]
   },
@@ -88844,6 +89344,121 @@
     }
    ]
   },
+  "lana-del-rey-ultraviolence.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lana-del-rey-ultraviolence/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lana Del Rey",
+      "sameAs": "https://musicbrainz.org/artist/b7539c32-53e7-4908-bda3-81449c367da6"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "rock",
+      "ballad"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Ultraviolence"
+     },
+     "isrcCode": "GBUM71402015",
+     "name": "Ultraviolence",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9f755d8a-5b38-434b-b372-2d8c688a4de9",
+      "https://www.youtube.com/watch?v=EJSk2RySqKg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lana-del-rey-ultraviolence/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lana-del-rey-ultraviolence/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Ultraviolence (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ultraviolence_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ultraviolence (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ultraviolence_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Album Review: Lana Del Rey - Ultraviolence",
+       "publisher": "KEXP",
+       "url": "https://kexp.org/read/2014/6/23/album-review-lana-del-rey-ultraviolence"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Lana Del Rey's Ultraviolence Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2261381/lana-del-rey-ultraviolence-turns-10/reviews/the-anniversary"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lana Del Rey - Ultraviolence (Audio)",
+       "publisher": "YouTube (LanaDelReyVEVO)",
+       "url": "https://www.youtube.com/watch?v=EJSk2RySqKg"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Titulní skladba alba Lany Del Rey z roku 2014: pomalá rocková balada se smyčci z produkce Dana Auerbacha, která interpoluje píseň He Hit Me od The Crystals a vedle chvály za svůj zvuk sklidila i kritiku za své téma.",
+     "educationalLevel": "intermediate",
+     "headline": "Lana Del Rey - Ultraviolence",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "interpolation",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/interpolation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "ballad",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/ballad/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lana-del-rey-ultraviolence/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lana-del-rey-ultraviolence/",
+     "wordCount": 517
+    }
+   ]
+  },
   "langoth-da-fonz-grounding.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -89080,6 +89695,138 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/las-aves-n-e-m/",
      "wordCount": 497
+    }
+   ]
+  },
+  "lcd-soundsystem-dance-yrself-clean.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-dance-yrself-clean/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "LCD Soundsystem",
+      "sameAs": "https://musicbrainz.org/artist/2aaf7396-6ab8-40f3-9776-a41c42c8e26b"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "dance-punk",
+      "indie dance",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "This Is Happening"
+     },
+     "isrcCode": "US4GE1000019",
+     "name": "Dance Yrself Clean",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2351cd90-50cc-4862-bba0-6fa8b807b4e3",
+      "https://www.youtube.com/watch?v=9ZNkPA_zUd4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lcd-soundsystem-dance-yrself-clean/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-dance-yrself-clean/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Dance Yrself Clean",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dance_Yrself_Clean"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "This Is Happening",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/This_Is_Happening"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "LCD Soundsystem",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/LCD_Soundsystem"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "LCD Soundsystem: This Is Happening",
+       "publisher": "NZ Herald",
+       "url": "https://nzherald.co.nz/entertainment/lcd-soundsystem-ithis-is-happeningi/EXK236LM6Z2X6GCNIAA4AYFDAA"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "LCD Soundsystem, 'This Is Happening' (DFA/Virgin)",
+       "publisher": "SPIN",
+       "url": "https://www.spinmagazine.com/2010/05/lcd-soundsystem-happening-dfavirgin/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "LCD Soundsystem This Is Happening track by track",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/?p=3969"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "This Is Happening Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2084259/lcd-soundsystem-this-is-happening-review/reviews/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "The 100 best songs of the 2010s",
+       "publisher": "Paste",
+       "url": "https://www.pastemagazine.com/article/best-songs-of-the-2010s-1"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Devítiminutová úvodní skladba alba This Is Happening od LCD Soundsystem začíná skoro šeptem nad drobnými syntezátorovými figurami a zhruba ve třetí minutě se rozlomí v uvolnění pro taneční parket, poháněné breakbeatem.",
+     "educationalLevel": "introductory",
+     "headline": "LCD Soundsystem - Dance Yrself Clean",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/falsetto/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-dance-yrself-clean/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lcd-soundsystem-dance-yrself-clean/",
+     "wordCount": 561
     }
    ]
   },
@@ -89357,6 +90104,128 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/lemaitre-jennie-a-closer/",
      "wordCount": 489
+    }
+   ]
+  },
+  "lenka-everything-at-once.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lenka-everything-at-once/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lenka",
+      "sameAs": "https://musicbrainz.org/artist/ae9ed5e2-4caf-4b3d-9cb3-2ad626b91714"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "pop",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Two (Expanded Edition)"
+     },
+     "isrcCode": "USSM11004327",
+     "name": "Everything at Once",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7c112ae8-f8dc-479c-b199-885ce3bc38d4",
+      "https://www.youtube.com/watch?v=eE9tV1WGTgE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lenka-everything-at-once/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lenka-everything-at-once/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Everything at Once",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Everything_at_Once"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Two (Lenka album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Two_(Lenka_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lenka",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lenka"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Lenka - Two",
+       "publisher": "Oklahoma Gazette",
+       "url": "https://www.okgazette.com/music/lenka-two-2948893/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Windows 8 U.K. 2012 Commercial - What's the Song?",
+       "publisher": "Diffuser",
+       "url": "https://diffuser.fm/windows-8-u-k-2012-commercial-whats-the-song/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Everything at Once (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7c112ae8-f8dc-479c-b199-885ce3bc38d4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lenka - Everything At Once (Official Video)",
+       "publisher": "LenkaVEVO (YouTube)",
+       "url": "https://www.youtube.com/watch?v=eE9tV1WGTgE"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Poskakující, střídmá písnička o dvou a půl minutách z alba Two, které Lenka vydala v roce 2011, v produkci Davida Kostena; reklama na Windows 8 z ní udělala její druhý nejúspěšnější singl.",
+     "educationalLevel": "introductory",
+     "headline": "Lenka - Everything at Once",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lenka-everything-at-once/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lenka-everything-at-once/",
+     "wordCount": 453
     }
    ]
   },
@@ -90616,6 +91485,124 @@
     }
    ]
   },
+  "lukas-graham-7-years.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lukas-graham-7-years/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lukas Graham",
+      "sameAs": "https://musicbrainz.org/artist/124cec07-44f1-4a99-9aaa-96a5bb9ec0bd"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "pop",
+      "soul",
+      "ballad"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lukas Graham"
+     },
+     "isrcCode": "USWB11506516",
+     "name": "7 Years",
+     "sameAs": [
+      "https://musicbrainz.org/recording/87e36ab4-6914-44ab-b740-7abb37678040",
+      "https://www.youtube.com/watch?v=LHCob76kigA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lukas-graham-7-years/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lukas-graham-7-years/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "7 Years (Lukas Graham song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/7_Years_(Lukas_Graham_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lukas Graham",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lukas_Graham"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Who are Lukas Graham? Here are 7 things about the band behind the smash hit 7 Years",
+       "publisher": "Official Charts Company",
+       "url": "https://officialcharts.com/chart-news/who-are-lukas-graham-here-are-7-things-about-the-band-behind-the-smash-hit-7-years__13799"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Behind The Song: Lukas Graham - \"7 Years\"",
+       "publisher": "CBS New York",
+       "url": "https://www.cbsnews.com/newyork/news/behind-the-song-lukas-graham-7-years/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "7 Years (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/87e36ab4-6914-44ab-b740-7abb37678040"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Lukas Graham - 7 Years [Official Music Video]",
+       "publisher": "Lukas Graham (YouTube)",
+       "url": "https://www.youtube.com/watch?v=LHCob76kigA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Singl z roku 2015, který dánskou kapelu Lukas Graham vynesl na první místo v Británii a Austrálii: soulpopová balada v g moll, v níž Lukas Forchhammer prochází svým životem od sedmi let po šedesát.",
+     "educationalLevel": "introductory",
+     "headline": "Lukas Graham - 7 Years",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "chord progression",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/chord-progression/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "minor key",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/minor-key/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lukas-graham-7-years/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lukas-graham-7-years/",
+     "wordCount": 480
+    }
+   ]
+  },
   "lulu-rouge-lulu-theme.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -90812,6 +91799,128 @@
     }
    ]
   },
+  "lykke-li-breaking-it-up.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lykke-li-breaking-it-up/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lykke Li",
+      "sameAs": "https://musicbrainz.org/artist/cc7d4686-ea02-45fd-956e-94c1a322558c"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "indie pop",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Youth Novels"
+     },
+     "isrcCode": "SEVUM0800110",
+     "name": "Breaking It Up",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8351afef-29d7-414c-9477-20f307be469f",
+      "https://www.youtube.com/watch?v=X7E2otC93IA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lykke-li-breaking-it-up/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lykke-li-breaking-it-up/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Youth Novels",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Youth_Novels"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lykke Li",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lykke_Li"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Lykke Li - Youth Novels",
+       "publisher": "The Skinny",
+       "url": "https://www.theskinny.co.uk/music/reviews/albums/lykke-li-youth-novels"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Lykke Li : Youth Novels",
+       "publisher": "Treble",
+       "url": "https://www.treblezine.com/reviews/lykke-li-youth-novels/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Lykke Li: Youth Novels",
+       "publisher": "Paste",
+       "url": "https://pastemagazine.com/music/lykke-li/lykke-li-youth-novels"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lykke Li - Breaking It Up",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=X7E2otC93IA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Třetí singl z debutu Youth Novels od Lykke Li, píseň o rozchodu poháněná tleskáním a sborem doprovodných hlasů, kterou Björn Yttling postavil z klavíru, syntezátoru, basy a smyčcového kvarteta.",
+     "educationalLevel": "introductory",
+     "headline": "Lykke Li - Breaking It Up",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lykke-li-breaking-it-up/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lykke-li-breaking-it-up/",
+     "wordCount": 520
+    }
+   ]
+  },
   "m-a-n-d-y-booka-shade-body-language-original-remaster.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -90930,6 +92039,130 @@
     }
    ]
   },
+  "macklemore-ryan-lewis-thrift-shop.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/macklemore-ryan-lewis-thrift-shop/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Macklemore & Ryan Lewis",
+      "sameAs": "https://musicbrainz.org/artist/97b226c8-7140-4da3-91ac-15e62e131a81"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "hip-hop",
+      "pop",
+      "comedy"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Heist"
+     },
+     "isrcCode": "GMM881200003",
+     "name": "Thrift Shop",
+     "sameAs": [
+      "https://musicbrainz.org/recording/42f0b591-cf89-4e45-aaca-7b97a2d1d98a",
+      "https://www.youtube.com/watch?v=QK8mJJJvaes"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/macklemore-ryan-lewis-thrift-shop/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/macklemore-ryan-lewis-thrift-shop/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Thrift Shop",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Thrift_Shop"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Heist (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Heist_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "The Number Ones: Macklemore & Ryan Lewis' \"Thrift Shop\" (Feat. Wanz)",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2251884/the-number-ones-macklemore-ryan-lewis-thrift-shop-feat-wanz/columns/the-number-ones"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Behind The Song: \"Thrift Shop,\" with Hook Singer Wanz",
+       "publisher": "American Songwriter",
+       "url": "https://americansongwriter.com/behind-the-song-thrift-shop-with-hook-singer-wanz/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Overplayed Song of the Week: Macklemore & Ryan Lewis ft. Wanz, 'Thrift Shop'",
+       "publisher": "Grantland",
+       "url": "https://grantland.com/hollywood-prospectus/overplayed-song-of-the-week-macklemore-ryan-lewis-ft-wanz-thrift-shop/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "MACKLEMORE & RYAN LEWIS - THRIFT SHOP FEAT. WANZ (OFFICIAL VIDEO)",
+       "publisher": "YouTube (Macklemore)",
+       "url": "https://www.youtube.com/watch?v=QK8mJJJvaes"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Óda dua Macklemore & Ryan Lewis z roku 2012 na oblečení z druhé ruky jede na rozsekané smyčce žesťů a dunivém hooku zpěváka Wanze a stala se první nezávisle vydanou jedničkou žebříčku Billboard Hot 100 od roku 1994.",
+     "educationalLevel": "introductory",
+     "headline": "Macklemore & Ryan Lewis - Thrift Shop",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "self-release",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/self-release/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/macklemore-ryan-lewis-thrift-shop/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/macklemore-ryan-lewis-thrift-shop/",
+     "wordCount": 544
+    }
+   ]
+  },
   "mafia-klvb-credit-card.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -91012,6 +92245,128 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/mafia-klvb-credit-card/",
      "wordCount": 455
+    }
+   ]
+  },
+  "magnetic-man-katy-b-perfect-stranger.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/magnetic-man-katy-b-perfect-stranger/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Magnetic Man, Katy B",
+      "sameAs": "https://musicbrainz.org/artist/200e86d3-707e-4e55-94bd-20b0301df327"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "drum and bass",
+      "electronic",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Magnetic Man"
+     },
+     "isrcCode": "GBARL1000727",
+     "name": "Perfect Stranger",
+     "sameAs": [
+      "https://musicbrainz.org/recording/5cf4730f-05c6-49f8-9024-ac9dc00085b2",
+      "https://www.youtube.com/watch?v=evhdBR3hpjo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/magnetic-man-katy-b-perfect-stranger/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/magnetic-man-katy-b-perfect-stranger/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Perfect Stranger (Magnetic Man song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Perfect_Stranger_(Magnetic_Man_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Magnetic Man (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Magnetic_Man_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Magnetic Man",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Magnetic_Man"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Katy B",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Katy_B"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Magnetic Man - Magnetic Man",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/8007"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Magnetic Man: Magnetic Man",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/140224-magnetic-man-magnetic-man-2496042394.html"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Druhý singl Magnetic Man staví text Katy B o lásce na první pohled nad valivý drum and bassový groove, jehož refrén podle Resident Advisor vystřelí do stratosféry na klamně jednoduché smyčce bicích.",
+     "educationalLevel": "introductory",
+     "headline": "Magnetic Man, Katy B - Perfect Stranger",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/loop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/magnetic-man-katy-b-perfect-stranger/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/magnetic-man-katy-b-perfect-stranger/",
+     "wordCount": 515
     }
    ]
   },
@@ -91225,6 +92580,117 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/mando-diao-dance-with-somebody-radio-version/",
      "wordCount": 559
+    }
+   ]
+  },
+  "maneskin-beggin.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maneskin-beggin/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Måneskin",
+      "sameAs": "https://musicbrainz.org/artist/3862342a-43c4-4cdb-8250-bfdbfb5e1419"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "rock",
+      "glam rock",
+      "funk",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Chosen"
+     },
+     "isrcCode": "ITB001700846",
+     "name": "Beggin'",
+     "sameAs": [
+      "https://musicbrainz.org/recording/e06b192f-88cd-407a-8efc-125efe3d6c9d",
+      "https://www.youtube.com/watch?v=D557gnClcwc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/maneskin-beggin/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/maneskin-beggin/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Beggin' (Måneskin recording)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Beggin%27_(M%C3%A5neskin_recording)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Beggin'",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Beggin%27"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Chosen (EP)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Chosen_(EP)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "How Italian Rockers Måneskin's Terrible Four Seasons Cover From 2017 Took Over Spotify",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2153444/maneskin-beggin-eurovision-tiktok-spotify/columns/the-week-in-pop"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Beggin'",
+       "publisher": "YouTube (Måneskin - Topic)",
+       "url": "https://www.youtube.com/watch?v=D557gnClcwc"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Coververze písně Beggin' od The Four Seasons, kterou Måneskin v roce 2017 nahráli téměř naživo pro své debutové EP Chosen, sleduje verzi skupiny Madcon až po rapovou sloku a o čtyři roky později, po vítězství kapely na Eurovizi, se stala celosvětovým hitem.",
+     "educationalLevel": "introductory",
+     "headline": "Måneskin - Beggin'",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/maneskin-beggin/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/maneskin-beggin/",
+     "wordCount": 503
     }
    ]
   },
@@ -156254,6 +157720,126 @@
     }
    ]
   },
+  "d12-git-up.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-git-up/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "D12",
+      "sameAs": "https://musicbrainz.org/artist/9ab19acf-06d9-4c92-bd5a-8c945488d45b"
+     },
+     "datePublished": "2004",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "D12 World"
+     },
+     "isrcCode": "USIR10400122",
+     "name": "Git Up",
+     "sameAs": [
+      "https://musicbrainz.org/recording/108c61ea-c7e0-4990-86ef-725f7c4cc016",
+      "https://www.youtube.com/watch?v=lcIVw9g7klk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/d12-git-up/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/d12-git-up/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "D12 World",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12_World"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "D12",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/D12"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Name Game",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Name_Game"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "D12 World",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/d12-world-2727981"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Eminem's band could use a little more Eminem, a little better math",
+       "publisher": "The Chicago Maroon",
+       "url": "https://chicagomaroon.com/?p=11912"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Git Up (recording credits)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/108c61ea-c7e0-4990-86ef-725f7c4cc016"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Git Up (Provided to YouTube by Universal Music Group)",
+       "publisher": "D12 - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=lcIVw9g7klk"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The opening track of D12's 2004 album D12 World, produced by Eminem with Luis Resto and credited with a sample of Shirley Ellis's The Name Game; one critic praised Eminem's delivery and not his words.",
+     "educationalLevel": "introductory",
+     "headline": "D12 - Git Up",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/concept/rapping/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/d12-git-up/",
+     "wordCount": 496
+    }
+   ]
+  },
   "dada-life-arrive-beautiful-leave-ugly.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -205807,6 +207393,126 @@
     }
    ]
   },
+  "kelis-andre-3000-millionaire.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kelis-andre-3000-millionaire/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kelis, André 3000",
+      "sameAs": "https://musicbrainz.org/artist/1239d1bc-cc09-43e0-bcd0-374f60346138"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "r&b",
+      "funk",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Tasty"
+     },
+     "isrcCode": "USAR10301293",
+     "name": "Millionaire",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6c354af0-6022-45f8-887d-cacba20f08bd",
+      "https://www.youtube.com/watch?v=4kceTvsdSlE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kelis-andre-3000-millionaire/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kelis-andre-3000-millionaire/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Millionaire (Kelis song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Millionaire_(Kelis_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Tasty (Kelis album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Tasty_(Kelis_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Kelis: Tasty",
+       "publisher": "Houston Press",
+       "url": "https://www.houstonpress.com/music/kelis-6553012/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2004",
+       "name": "Kelis Tasty",
+       "publisher": "Exclaim!",
+       "url": "https://exclaim.ca/music/article/kelis-tasty"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Classic Album Review: Kelis | Tasty",
+       "publisher": "Tinnitist",
+       "url": "https://tinnitist.com/2024/01/02/classic-album-review-kelis-tasty"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Millionaire",
+       "publisher": "YouTube (Kelis - Topic)",
+       "url": "https://www.youtube.com/watch?v=4kceTvsdSlE"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "André 3000 produced and joins Kelis on Millionaire, a quick, minimal synth-funk duet from Tasty built on Doug E. Fresh and Slick Rick's La Di Da Di, which reached number three in the UK in 2004.",
+     "educationalLevel": "introductory",
+     "headline": "Kelis, André 3000 - Millionaire",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/kelis-andre-3000-millionaire/",
+     "wordCount": 506
+    }
+   ]
+  },
   "kelis-milkshake.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -209385,6 +211091,128 @@
     }
    ]
   },
+  "kosheen-catch.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kosheen-catch/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kosheen",
+      "sameAs": "https://musicbrainz.org/artist/4f4bda3c-d636-4135-b65a-6cc26bc75788"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "drum and bass",
+      "trip-hop",
+      "breakbeat",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Resist (2021 Remaster)"
+     },
+     "isrcCode": "GBAZG2110407",
+     "name": "Catch",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b3d12448-7c48-4757-86b6-0ec76e1af3f1",
+      "https://www.youtube.com/watch?v=DrbsasZUZf4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kosheen-catch/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kosheen-catch/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Catch (Kosheen song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Catch_(Kosheen_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Resist (Kosheen album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Resist_(Kosheen_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kosheen",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kosheen"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "kosheen : resist (2021 remaster)",
+       "publisher": "Moksha Recordings",
+       "url": "https://www.moksha.co.uk/page/3"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Kosheen's Iconic 2000 Hit 'Catch' Celebrates 25th Anniversary with Explosive Reworks",
+       "publisher": "Armada Music",
+       "url": "https://www.armadamusic.com/news/kosheens-iconic-2000-hit-catch-celebrates-25th-anniversary-with-explosive-reworks-first-up-reinier-zonnevelds-bounce-mix"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Under the Kosheen",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/under-the-kosheen-1694376"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kosheen: Resist",
+       "publisher": "Laut.de",
+       "url": "https://www.laut.de/Kosheen/Alben/Resist-2186"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Kosheen's Bristol single Catch, stalled at 86 on its first release in 2000 and a UK number 15 on its return in 2001, heard here in the 2021 remaster of their debut album Resist.",
+     "educationalLevel": "introductory",
+     "headline": "Kosheen - Catch",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remastering",
+       "url": "https://korczis.github.io/sonic-playground/concept/remastering/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/concept/breakbeat/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/kosheen-catch/",
+     "wordCount": 542
+    }
+   ]
+  },
   "koudlam-see-you-all.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -209647,6 +211475,132 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/kruder-dorfmeister-johnson/",
      "wordCount": 473
+    }
+   ]
+  },
+  "kungs-cookin-on-3-burners-this-girl.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kungs-cookin-on-3-burners-this-girl/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Kungs, Cookin' on 3 Burners",
+      "sameAs": "https://musicbrainz.org/artist/a125cd83-a379-4935-a7ec-beaa778bad70"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "house",
+      "remix",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Layers"
+     },
+     "isrcCode": "FQI311601798",
+     "name": "This Girl",
+     "sameAs": [
+      "https://musicbrainz.org/recording/458ec4b7-529f-43b6-b3e7-439f32cd11eb",
+      "https://www.youtube.com/watch?v=2Y6Nne8RvaA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/kungs-cookin-on-3-burners-this-girl/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/kungs-cookin-on-3-burners-this-girl/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "This Girl (Cookin' on 3 Burners song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/This_Girl_(Cookin%27_on_3_Burners_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "This Girl",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/This_Girl"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Layers (Kungs album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Layers_(Kungs_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kungs",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kungs"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Cookin' on 3 Burners",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Cookin%27_on_3_Burners"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Kungs On The Meaning & Making Of 'This Girl' | Behind The Song",
+       "publisher": "iHeartRadio",
+       "url": "https://www.iheart.com/content/2016-09-13-interview-kungs-talks-this-girl-meaning-behind-the-song"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "This Girl (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/458ec4b7-529f-43b6-b3e7-439f32cd11eb"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Kungs vs Cookin' on 3 Burners - This Girl",
+       "publisher": "KungsVEVO (YouTube)",
+       "url": "https://www.youtube.com/watch?v=2Y6Nne8RvaA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Kungs' 2016 house rework of a 2009 soul single by the Melbourne trio Cookin' on 3 Burners, sung by Kylie Auldist: the 3:15 version on Layers, number one in France and Germany.",
+     "educationalLevel": "introductory",
+     "headline": "Kungs, Cookin' on 3 Burners - This Girl",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/kungs-cookin-on-3-burners-this-girl/",
+     "wordCount": 500
     }
    ]
   },
@@ -210914,6 +212868,118 @@
     }
    ]
   },
+  "lana-del-rey-ultraviolence.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lana-del-rey-ultraviolence/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lana Del Rey",
+      "sameAs": "https://musicbrainz.org/artist/b7539c32-53e7-4908-bda3-81449c367da6"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "rock",
+      "ballad"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Ultraviolence"
+     },
+     "isrcCode": "GBUM71402015",
+     "name": "Ultraviolence",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9f755d8a-5b38-434b-b372-2d8c688a4de9",
+      "https://www.youtube.com/watch?v=EJSk2RySqKg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lana-del-rey-ultraviolence/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lana-del-rey-ultraviolence/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Ultraviolence (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ultraviolence_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ultraviolence (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ultraviolence_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Album Review: Lana Del Rey - Ultraviolence",
+       "publisher": "KEXP",
+       "url": "https://kexp.org/read/2014/6/23/album-review-lana-del-rey-ultraviolence"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Lana Del Rey's Ultraviolence Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2261381/lana-del-rey-ultraviolence-turns-10/reviews/the-anniversary"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lana Del Rey - Ultraviolence (Audio)",
+       "publisher": "YouTube (LanaDelReyVEVO)",
+       "url": "https://www.youtube.com/watch?v=EJSk2RySqKg"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The title track of Lana Del Rey's 2014 album: a slow, string-laden rock ballad produced by Dan Auerbach that interpolates the Crystals' He Hit Me and drew criticism for its subject alongside praise for its sound.",
+     "educationalLevel": "intermediate",
+     "headline": "Lana Del Rey - Ultraviolence",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "interpolation",
+       "url": "https://korczis.github.io/sonic-playground/concept/interpolation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "ballad",
+       "url": "https://korczis.github.io/sonic-playground/concept/ballad/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lana-del-rey-ultraviolence/",
+     "wordCount": 551
+    }
+   ]
+  },
   "langoth-da-fonz-grounding.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -211144,6 +213210,135 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/las-aves-n-e-m/",
      "wordCount": 558
+    }
+   ]
+  },
+  "lcd-soundsystem-dance-yrself-clean.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-dance-yrself-clean/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "LCD Soundsystem",
+      "sameAs": "https://musicbrainz.org/artist/2aaf7396-6ab8-40f3-9776-a41c42c8e26b"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "dance-punk",
+      "indie dance",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "This Is Happening"
+     },
+     "isrcCode": "US4GE1000019",
+     "name": "Dance Yrself Clean",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2351cd90-50cc-4862-bba0-6fa8b807b4e3",
+      "https://www.youtube.com/watch?v=9ZNkPA_zUd4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-dance-yrself-clean/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lcd-soundsystem-dance-yrself-clean/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Dance Yrself Clean",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dance_Yrself_Clean"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "This Is Happening",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/This_Is_Happening"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "LCD Soundsystem",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/LCD_Soundsystem"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "LCD Soundsystem: This Is Happening",
+       "publisher": "NZ Herald",
+       "url": "https://nzherald.co.nz/entertainment/lcd-soundsystem-ithis-is-happeningi/EXK236LM6Z2X6GCNIAA4AYFDAA"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "LCD Soundsystem, 'This Is Happening' (DFA/Virgin)",
+       "publisher": "SPIN",
+       "url": "https://www.spinmagazine.com/2010/05/lcd-soundsystem-happening-dfavirgin/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "LCD Soundsystem This Is Happening track by track",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/?p=3969"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "This Is Happening Turns 10",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2084259/lcd-soundsystem-this-is-happening-review/reviews/the-anniversary/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "The 100 best songs of the 2010s",
+       "publisher": "Paste",
+       "url": "https://www.pastemagazine.com/article/best-songs-of-the-2010s-1"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The nine-minute opener of LCD Soundsystem's This Is Happening starts as a near-whisper over small synth figures, then bursts, about three minutes in, into a breakbeat-driven dance-floor release.",
+     "educationalLevel": "introductory",
+     "headline": "LCD Soundsystem - Dance Yrself Clean",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/concept/falsetto/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lcd-soundsystem-dance-yrself-clean/",
+     "wordCount": 555
     }
    ]
   },
@@ -211412,6 +213607,125 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/lemaitre-jennie-a-closer/",
      "wordCount": 534
+    }
+   ]
+  },
+  "lenka-everything-at-once.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lenka-everything-at-once/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lenka",
+      "sameAs": "https://musicbrainz.org/artist/ae9ed5e2-4caf-4b3d-9cb3-2ad626b91714"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "pop",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Two (Expanded Edition)"
+     },
+     "isrcCode": "USSM11004327",
+     "name": "Everything at Once",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7c112ae8-f8dc-479c-b199-885ce3bc38d4",
+      "https://www.youtube.com/watch?v=eE9tV1WGTgE"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lenka-everything-at-once/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lenka-everything-at-once/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Everything at Once",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Everything_at_Once"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Two (Lenka album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Two_(Lenka_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lenka",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lenka"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Lenka - Two",
+       "publisher": "Oklahoma Gazette",
+       "url": "https://www.okgazette.com/music/lenka-two-2948893/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Windows 8 U.K. 2012 Commercial - What's the Song?",
+       "publisher": "Diffuser",
+       "url": "https://diffuser.fm/windows-8-u-k-2012-commercial-whats-the-song/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Everything at Once (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7c112ae8-f8dc-479c-b199-885ce3bc38d4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lenka - Everything At Once (Official Video)",
+       "publisher": "LenkaVEVO (YouTube)",
+       "url": "https://www.youtube.com/watch?v=eE9tV1WGTgE"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "A bouncy, pared-down song of two and a half minutes from Lenka's 2011 album Two, produced by David Kosten, which a Windows 8 advertisement turned into her second most successful single.",
+     "educationalLevel": "introductory",
+     "headline": "Lenka - Everything at Once",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lenka-everything-at-once/",
+     "wordCount": 492
     }
    ]
   },
@@ -212635,6 +214949,121 @@
     }
    ]
   },
+  "lukas-graham-7-years.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lukas-graham-7-years/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lukas Graham",
+      "sameAs": "https://musicbrainz.org/artist/124cec07-44f1-4a99-9aaa-96a5bb9ec0bd"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "pop",
+      "soul",
+      "ballad"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lukas Graham"
+     },
+     "isrcCode": "USWB11506516",
+     "name": "7 Years",
+     "sameAs": [
+      "https://musicbrainz.org/recording/87e36ab4-6914-44ab-b740-7abb37678040",
+      "https://www.youtube.com/watch?v=LHCob76kigA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lukas-graham-7-years/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lukas-graham-7-years/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "7 Years (Lukas Graham song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/7_Years_(Lukas_Graham_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lukas Graham",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lukas_Graham"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Who are Lukas Graham? Here are 7 things about the band behind the smash hit 7 Years",
+       "publisher": "Official Charts Company",
+       "url": "https://officialcharts.com/chart-news/who-are-lukas-graham-here-are-7-things-about-the-band-behind-the-smash-hit-7-years__13799"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Behind The Song: Lukas Graham - \"7 Years\"",
+       "publisher": "CBS New York",
+       "url": "https://www.cbsnews.com/newyork/news/behind-the-song-lukas-graham-7-years/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "7 Years (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/87e36ab4-6914-44ab-b740-7abb37678040"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Lukas Graham - 7 Years [Official Music Video]",
+       "publisher": "Lukas Graham (YouTube)",
+       "url": "https://www.youtube.com/watch?v=LHCob76kigA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The 2015 single that took the Danish band Lukas Graham to number one in Britain and Australia: a G-minor soul-pop ballad in which Lukas Forchhammer walks through his life from seven to sixty.",
+     "educationalLevel": "introductory",
+     "headline": "Lukas Graham - 7 Years",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "chord progression",
+       "url": "https://korczis.github.io/sonic-playground/concept/chord-progression/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "minor key",
+       "url": "https://korczis.github.io/sonic-playground/concept/minor-key/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lukas-graham-7-years/",
+     "wordCount": 536
+    }
+   ]
+  },
   "lulu-rouge-lulu-theme.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -212825,6 +215254,125 @@
     }
    ]
   },
+  "lykke-li-breaking-it-up.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lykke-li-breaking-it-up/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lykke Li",
+      "sameAs": "https://musicbrainz.org/artist/cc7d4686-ea02-45fd-956e-94c1a322558c"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "indie pop",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Youth Novels"
+     },
+     "isrcCode": "SEVUM0800110",
+     "name": "Breaking It Up",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8351afef-29d7-414c-9477-20f307be469f",
+      "https://www.youtube.com/watch?v=X7E2otC93IA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lykke-li-breaking-it-up/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lykke-li-breaking-it-up/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Youth Novels",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Youth_Novels"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lykke Li",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lykke_Li"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Lykke Li - Youth Novels",
+       "publisher": "The Skinny",
+       "url": "https://www.theskinny.co.uk/music/reviews/albums/lykke-li-youth-novels"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Lykke Li : Youth Novels",
+       "publisher": "Treble",
+       "url": "https://www.treblezine.com/reviews/lykke-li-youth-novels/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Lykke Li: Youth Novels",
+       "publisher": "Paste",
+       "url": "https://pastemagazine.com/music/lykke-li/lykke-li-youth-novels"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lykke Li - Breaking It Up",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=X7E2otC93IA"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "The third single from Lykke Li's debut Youth Novels, a break-up song driven by handclaps and a chorus of backing voices, built by Björn Yttling from piano, synth, bass and a string quartet.",
+     "educationalLevel": "introductory",
+     "headline": "Lykke Li - Breaking It Up",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "vocal harmony",
+       "url": "https://korczis.github.io/sonic-playground/concept/vocal-harmony/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lykke-li-breaking-it-up/",
+     "wordCount": 483
+    }
+   ]
+  },
   "m-a-n-d-y-booka-shade-body-language-original-remaster.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -212940,6 +215488,127 @@
     }
    ]
   },
+  "macklemore-ryan-lewis-thrift-shop.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/macklemore-ryan-lewis-thrift-shop/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Macklemore & Ryan Lewis",
+      "sameAs": "https://musicbrainz.org/artist/97b226c8-7140-4da3-91ac-15e62e131a81"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "hip-hop",
+      "pop",
+      "comedy"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Heist"
+     },
+     "isrcCode": "GMM881200003",
+     "name": "Thrift Shop",
+     "sameAs": [
+      "https://musicbrainz.org/recording/42f0b591-cf89-4e45-aaca-7b97a2d1d98a",
+      "https://www.youtube.com/watch?v=QK8mJJJvaes"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/macklemore-ryan-lewis-thrift-shop/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/macklemore-ryan-lewis-thrift-shop/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Thrift Shop",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Thrift_Shop"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Heist (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Heist_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "The Number Ones: Macklemore & Ryan Lewis' \"Thrift Shop\" (Feat. Wanz)",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2251884/the-number-ones-macklemore-ryan-lewis-thrift-shop-feat-wanz/columns/the-number-ones"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Behind The Song: \"Thrift Shop,\" with Hook Singer Wanz",
+       "publisher": "American Songwriter",
+       "url": "https://americansongwriter.com/behind-the-song-thrift-shop-with-hook-singer-wanz/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Overplayed Song of the Week: Macklemore & Ryan Lewis ft. Wanz, 'Thrift Shop'",
+       "publisher": "Grantland",
+       "url": "https://grantland.com/hollywood-prospectus/overplayed-song-of-the-week-macklemore-ryan-lewis-ft-wanz-thrift-shop/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "MACKLEMORE & RYAN LEWIS - THRIFT SHOP FEAT. WANZ (OFFICIAL VIDEO)",
+       "publisher": "YouTube (Macklemore)",
+       "url": "https://www.youtube.com/watch?v=QK8mJJJvaes"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Macklemore & Ryan Lewis's 2012 ode to second-hand clothes rides a chopped-up horn loop and Wanz's rumbling hook, and became the first independently released number one on the Billboard Hot 100 since 1994.",
+     "educationalLevel": "introductory",
+     "headline": "Macklemore & Ryan Lewis - Thrift Shop",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "self-release",
+       "url": "https://korczis.github.io/sonic-playground/concept/self-release/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/macklemore-ryan-lewis-thrift-shop/",
+     "wordCount": 545
+    }
+   ]
+  },
   "mafia-klvb-credit-card.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -213019,6 +215688,125 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/mafia-klvb-credit-card/",
      "wordCount": 543
+    }
+   ]
+  },
+  "magnetic-man-katy-b-perfect-stranger.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/magnetic-man-katy-b-perfect-stranger/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Magnetic Man, Katy B",
+      "sameAs": "https://musicbrainz.org/artist/200e86d3-707e-4e55-94bd-20b0301df327"
+     },
+     "datePublished": "2010",
+     "genre": [
+      "drum and bass",
+      "electronic",
+      "pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Magnetic Man"
+     },
+     "isrcCode": "GBARL1000727",
+     "name": "Perfect Stranger",
+     "sameAs": [
+      "https://musicbrainz.org/recording/5cf4730f-05c6-49f8-9024-ac9dc00085b2",
+      "https://www.youtube.com/watch?v=evhdBR3hpjo"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/magnetic-man-katy-b-perfect-stranger/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/magnetic-man-katy-b-perfect-stranger/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Perfect Stranger (Magnetic Man song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Perfect_Stranger_(Magnetic_Man_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Magnetic Man (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Magnetic_Man_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Magnetic Man",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Magnetic_Man"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Katy B",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Katy_B"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Magnetic Man - Magnetic Man",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/8007"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Magnetic Man: Magnetic Man",
+       "publisher": "PopMatters",
+       "url": "https://www.popmatters.com/140224-magnetic-man-magnetic-man-2496042394.html"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Magnetic Man's second single sets Katy B's love-at-first-sight lyric over a rolling drum and bass groove whose chorus, as Resident Advisor heard it, launches into the stratosphere on a deceptively simple drum loop.",
+     "educationalLevel": "introductory",
+     "headline": "Magnetic Man, Katy B - Perfect Stranger",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/concept/loop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/magnetic-man-katy-b-perfect-stranger/",
+     "wordCount": 546
     }
    ]
   },
@@ -213226,6 +216014,114 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-radio-version/",
      "wordCount": 622
+    }
+   ]
+  },
+  "maneskin-beggin.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maneskin-beggin/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Måneskin",
+      "sameAs": "https://musicbrainz.org/artist/3862342a-43c4-4cdb-8250-bfdbfb5e1419"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "rock",
+      "glam rock",
+      "funk",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Chosen"
+     },
+     "isrcCode": "ITB001700846",
+     "name": "Beggin'",
+     "sameAs": [
+      "https://musicbrainz.org/recording/e06b192f-88cd-407a-8efc-125efe3d6c9d",
+      "https://www.youtube.com/watch?v=D557gnClcwc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maneskin-beggin/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/maneskin-beggin/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Beggin' (Måneskin recording)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Beggin%27_(M%C3%A5neskin_recording)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Beggin'",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Beggin%27"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Chosen (EP)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Chosen_(EP)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "How Italian Rockers Måneskin's Terrible Four Seasons Cover From 2017 Took Over Spotify",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/2153444/maneskin-beggin-eurovision-tiktok-spotify/columns/the-week-in-pop"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Beggin'",
+       "publisher": "YouTube (Måneskin - Topic)",
+       "url": "https://www.youtube.com/watch?v=D557gnClcwc"
+      }
+     ],
+     "datePublished": "2026-11-22",
+     "description": "Måneskin's 2017 cover of the Four Seasons' Beggin', recorded almost live for their debut EP Chosen, followed Madcon's version down to the rap verse and became a worldwide hit four years later, after the band won Eurovision.",
+     "educationalLevel": "introductory",
+     "headline": "Måneskin - Beggin'",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/maneskin-beggin/",
+     "wordCount": 548
     }
    ]
   },
