@@ -1073,6 +1073,318 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (${label} room): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // The analysis hears where the sound stands and what it is made of: a 440 Hz tone panned hard
+  // left (balance -1, width 0.5: one side only, a tone's flatness), then white noise in the
+  // centre, quiet, then 24 dB louder (balance 0, width 0, as flat and bright as noise, the
+  // loudness 24 dB up), then a second, mono stream with the tone (0 and 0: a mono microphone is
+  // centred, not hard left). Before it, the clock (the player playing, no sound) has no pitch and
+  // no stereo, and its bar runs over four beats with the downbeat on the first.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getDisplayMedia = undefined;
+      let calls = 0;
+      md.getUserMedia = async () => {
+        const ac = new AudioContext();
+        await ac.resume();
+        const out = ac.createMediaStreamDestination();
+        const tone = ac.createOscillator();
+        tone.frequency.value = 440;
+        const tg = ac.createGain();
+        tg.gain.value = 0.2;
+        if (calls++) {
+          out.channelCount = 1;
+          tone.connect(tg).connect(out);
+          tone.start();
+          return out.stream;
+        }
+        const offset = performance.now() / 1000 - ac.currentTime;
+        const t0 = ac.currentTime + 0.2;
+        const pan = ac.createStereoPanner();
+        pan.pan.value = -1;
+        tone.connect(tg).connect(pan).connect(out);
+        tone.start(t0);
+        tone.stop(t0 + 3);
+        const buf = ac.createBuffer(1, ac.sampleRate * 7, ac.sampleRate);
+        const d = buf.getChannelData(0);
+        let seed = 3;
+        for (let i = 0; i < d.length; i++) { seed = (seed * 16807) % 2147483647; d[i] = seed / 1073741823.5 - 1; }
+        const noise = ac.createBufferSource();
+        noise.buffer = buf;
+        const ng = ac.createGain();
+        ng.gain.setValueAtTime(0.2 / 16, 0);
+        ng.gain.setValueAtTime(0.2, t0 + 6);
+        noise.connect(ng).connect(out);
+        noise.start(t0 + 3);
+        window.__ends = [t0 + 3, t0 + 6, t0 + 9].map((t) => t + offset);
+        return out.stream;
+      };
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    // Every frame's features, in the page's clock.
+    await page.evaluate(() => {
+      const w = /** @type {any} */ (window);
+      w.__frames = [];
+      const tick = () => {
+        const a = w.SonicVisualizer.analysis();
+        w.__frames.push(Object.assign({ t: performance.now() / 1000 }, a, { bands: null, onsets: null }));
+        if (w.__frames.length < 3000) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      w.__state = document.documentElement.getAttribute('data-player-state');
+      document.documentElement.setAttribute('data-player-state', 'playing');
+    });
+    await page.waitForTimeout(2600);
+    const clock = await page.evaluate(() => {
+      const w = /** @type {any} */ (window);
+      if (w.__state) document.documentElement.setAttribute('data-player-state', w.__state);
+      else document.documentElement.removeAttribute('data-player-state');
+      return w.__frames.splice(0);
+    });
+    const bars = clock.map((f) => f.bar);
+    const downs = clock.filter((f) => f.downbeat > 0.9).map((f) => f.bar);
+    check(clock.length > 20 && clock.every((f) => f.source === 'clock' && f.chroma.every((c) => c === 0) && f.balance === 0
+      && f.width === 0 && f.keyStrength === 0 && f.brightness >= 0 && f.brightness <= 1 && f.rolloff >= 0 && f.rolloff <= 1
+      && f.loudness === f.level) && Math.min(...bars) < 0.1 && Math.max(...bars) > 0.9 && downs.length > 0 && downs.every((b) => b < 0.05),
+    `visualiser: the clock has no pitch and no stereo, its bar runs over four beats from the downbeat (${clock.length} frames, bar ${Math.min(...bars).toFixed(2)}-${Math.max(...bars).toFixed(2)}, downbeats at ${downs.map((b) => b.toFixed(2)).join(' ')})`);
+    // The controls faded while the pointer rested; a move shows them.
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
+    await page.waitForFunction(() => window.__ends && performance.now() / 1000 > window.__ends[2] + 0.2, null, { timeout: 30000 }).catch(() => {});
+    const run = await page.evaluate(() => ({ frames: window.__frames, ends: window.__ends }));
+    if (!run.ends) {
+      check(false, 'visualiser: stereo, timbre and loudness: the signal never started');
+    } else {
+      // Each phase's last 0.7 s (its first moments let the smoothing settle).
+      const phase = (end) => {
+        const fs = run.frames.filter((f) => f.t > end - 0.8 && f.t < end - 0.1);
+        const mean = (k) => fs.reduce((s, f) => s + f[k], 0) / Math.max(1, fs.length);
+        return { n: fs.length, balance: mean('balance'), width: mean('width'), flatness: mean('flatness'), rolloff: mean('rolloff'),
+          brightness: mean('brightness'), loudness: mean('loudness'), lufs: mean('lufs'), dyn: mean('dynamicsDb') };
+      };
+      const [left, quiet, loud] = run.ends.map(phase);
+      const say = (x) => JSON.stringify(Object.fromEntries(Object.entries(x).map(([k, v]) => [k, Math.round(v * 100) / 100])));
+      check(left.n > 5 && left.balance < -0.9 && left.width > 0.4 && left.width < 0.6,
+        `visualiser: a tone panned hard left reads balance -1, width 0.5 (${say(left)})`);
+      check(quiet.n > 5 && Math.abs(quiet.balance) < 0.1 && quiet.width < 0.1,
+        `visualiser: noise in the centre reads balance 0, width 0 (${say(quiet)})`);
+      check(left.flatness < 0.1 && quiet.flatness > 0.8 && loud.flatness > 0.8,
+        `visualiser: a tone is tonal, white noise flat (flatness ${left.flatness.toFixed(2)} vs ${quiet.flatness.toFixed(2)})`);
+      check(left.brightness < 0.05 && quiet.brightness > 0.6 && left.rolloff > 0.35 && left.rolloff < 0.45 && quiet.rolloff > 0.9,
+        `visualiser: a 440 Hz tone is dark, its rolloff at 440 Hz; white noise bright, its rolloff near the top (brightness ${left.brightness.toFixed(2)} vs ${quiet.brightness.toFixed(2)}, rolloff ${left.rolloff.toFixed(2)} vs ${quiet.rolloff.toFixed(2)})`);
+      check(Math.abs(loud.lufs - quiet.lufs - 24) < 3 && Math.abs(loud.loudness - quiet.loudness - 0.5) < 0.08 && loud.loudness < 1,
+        `visualiser: a passage 24 dB louder reads 24 dB louder (${quiet.lufs.toFixed(1)} -> ${loud.lufs.toFixed(1)} LUFS, loudness ${quiet.loudness.toFixed(2)} -> ${loud.loudness.toFixed(2)})`);
+      // The dynamics read 3 s: at the end of the loud passage nearly all of them are its noise.
+      const steady = run.frames.filter((f) => f.t > run.ends[2] - 0.3 && f.t < run.ends[2] - 0.1).map((f) => f.dynamicsDb);
+      check(steady.length > 0 && Math.max(...steady) < 3, `visualiser: a steady noise has next to no dynamics (${steady.map((x) => x.toFixed(1)).join(' ')} dB)`);
+      // A second stream, mono: the analysis starts again from it.
+      await page.evaluate(() => window.SonicVisualizer.stop());
+      await page.evaluate(() => window.SonicVisualizer.listen('mic'));
+      await page.waitForTimeout(1500);
+      const mono = await page.evaluate(() => window.SonicVisualizer.analysis());
+      check(mono.source === 'mic' && Math.abs(mono.balance) < 0.05 && mono.width < 0.05 && mono.loudness > 0.5,
+        `visualiser: a mono source reads balance 0, width 0 (${mono.balance.toFixed(2)}, ${mono.width.toFixed(2)})`);
+    }
+    check(errors.length === 0, `visualiser (stereo, timbre, loudness): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // The analysis hears the harmony: a C major chord (C4, E4, G4, each with five harmonics) for
+  // 5 s, then an A minor chord (A3, C4, E4). The chroma peaks at C, E and G, then at A, C and E;
+  // the key reads C major, then A minor, and changes once, within 3 s, not from frame to frame.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getDisplayMedia = undefined;
+      md.getUserMedia = async () => {
+        const ac = new AudioContext();
+        await ac.resume();
+        const out = ac.createMediaStreamDestination();
+        const offset = performance.now() / 1000 - ac.currentTime;
+        const t0 = ac.currentTime + 0.2;
+        const wave = ac.createPeriodicWave(new Float32Array([0, 1, 0.5, 0.33, 0.25, 0.2]), new Float32Array(6));
+        const note = (hz, from, to) => {
+          const o = ac.createOscillator();
+          o.setPeriodicWave(wave);
+          o.frequency.value = hz;
+          const g = ac.createGain();
+          g.gain.value = 0.15;
+          o.connect(g).connect(out);
+          o.start(from);
+          o.stop(to);
+        };
+        [261.63, 329.63, 392].forEach((hz) => note(hz, t0, t0 + 5));
+        [220, 261.63, 329.63].forEach((hz) => note(hz, t0 + 5, t0 + 10));
+        window.__ends = [t0 + 5, t0 + 10].map((t) => t + offset);
+        return out.stream;
+      };
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
+    await page.evaluate(() => {
+      const w = /** @type {any} */ (window);
+      w.__frames = [];
+      const tick = () => {
+        const a = w.SonicVisualizer.analysis();
+        w.__frames.push({ t: performance.now() / 1000, chroma: a.chroma, pitch: a.pitch, key: a.key, minor: a.minor, strength: a.keyStrength });
+        if (w.__frames.length < 3000) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    await page.waitForFunction(() => window.__ends && performance.now() / 1000 > window.__ends[1] - 0.05, null, { timeout: 30000 }).catch(() => {});
+    const run = await page.evaluate(() => ({ frames: window.__frames, ends: window.__ends }));
+    if (!run.ends) {
+      check(false, 'visualiser: the harmony: the chords never played');
+    } else {
+      const names = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+      const chord = (end) => {
+        const fs = run.frames.filter((f) => f.t > end - 0.8 && f.t < end - 0.1);
+        const mean = names.map((_, i) => fs.reduce((s, f) => s + f.chroma[i], 0) / Math.max(1, fs.length));
+        const top = mean.map((v, i) => [v, i]).sort((x, y) => y[0] - x[0]).slice(0, 3).map(([, i]) => i).sort((x, y) => x - y);
+        const last = fs[fs.length - 1] || { key: -1, minor: -1, pitch: -1, strength: 0 };
+        return { top, third: mean.slice().sort((x, y) => y - x)[3], key: last.key, minor: last.minor, pitch: last.pitch, strength: last.strength };
+      };
+      const [cmaj, amin] = run.ends.map(chord);
+      const said = (c) => `${c.top.map((i) => names[i]).join(' ')}, key ${names[c.key] || '?'}${c.minor ? 'm' : ''} (${c.strength.toFixed(2)}), the next class ${c.third.toFixed(2)}`;
+      check(cmaj.top.join() === '0,4,7' && cmaj.third < 0.5 && [0, 4, 7].includes(cmaj.pitch),
+        `visualiser: a C major chord's chroma peaks at C, E and G (${said(cmaj)})`);
+      check(amin.top.join() === '0,4,9' && amin.third < 0.5 && [0, 4, 9].includes(amin.pitch),
+        `visualiser: an A minor chord's chroma peaks at A, C and E, distinct from C major (${said(amin)})`);
+      check(cmaj.key === 0 && cmaj.minor === 0 && amin.key === 9 && amin.minor === 1 && cmaj.strength > 0.8 && amin.strength > 0.8,
+        `visualiser: the key reads C major, then A minor (${said(cmaj)}; ${said(amin)})`);
+      const keyed = run.frames.filter((f) => f.t > run.ends[0] - 4 && f.t < run.ends[1]);
+      const changes = keyed.slice(1).filter((f, i) => f.key * 2 + f.minor !== keyed[i].key * 2 + keyed[i].minor).map((f) => f.t - run.ends[0]);
+      check(changes.length === 1 && changes[0] > 0.3 && changes[0] < 3,
+        `visualiser: the key changes once with the chord, never flickering (${changes.map((d) => d.toFixed(2) + ' s after the chord').join(', ') || 'never'})`);
+    }
+    check(errors.length === 0, `visualiser (harmony): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // The analysis hears the bar and the song's parts: a groove at 120 bpm whose first beat of each
+  // bar is played 6 dB louder, under a pad and hats, for 12 s (it starts on the bar's last beat,
+  // so the downbeat is learnt from the accents, not taken from the first kick heard); then the same beat under a new
+  // texture (bright chords and a wash of noise) for 8 s. On the accented kick the bar reads 0, on
+  // the others a quarter, a half, three quarters; one new section is counted, 0.2-4 s after the
+  // switch, not one on every beat; a beat's dynamics stand far above a steady noise's; and a
+  // frame's analysis costs little.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getDisplayMedia = undefined;
+      md.getUserMedia = async () => {
+        const ac = new AudioContext();
+        await ac.resume();
+        const out = ac.createMediaStreamDestination();
+        const bus = ac.createGain();
+        bus.gain.value = 0.5;
+        bus.connect(out);
+        const offset = performance.now() / 1000 - ac.currentTime;
+        const t0 = ac.currentTime + 0.3;
+        const sw = t0 + 12;
+        const pad = (type, hz, cut, level, from, to) => {
+          const o = ac.createOscillator(); o.type = type; o.frequency.value = hz;
+          const f = ac.createBiquadFilter(); f.frequency.value = cut;
+          const g = ac.createGain(); g.gain.value = level;
+          o.connect(f).connect(g).connect(bus); o.start(from); o.stop(to);
+        };
+        [220, 261.6, 329.6].forEach((hz) => pad('triangle', hz, 1200, 0.06, t0, sw));
+        [440, 554.4, 659.3, 880].forEach((hz) => pad('sawtooth', hz, 6000, 0.08, sw, sw + 9));
+        const noise = ac.createBuffer(1, ac.sampleRate * 2, ac.sampleRate);
+        const d = noise.getChannelData(0);
+        let seed = 5;
+        for (let i = 0; i < d.length; i++) { seed = (seed * 16807) % 2147483647; d[i] = seed / 1073741823.5 - 1; }
+        const hiss = (cut, level, at, len) => {
+          const s = ac.createBufferSource(); s.buffer = noise; s.loop = len < 0;
+          const f = ac.createBiquadFilter(); f.type = 'highpass'; f.frequency.value = cut;
+          const g = ac.createGain();
+          g.gain.setValueAtTime(level, at);
+          if (len > 0) g.gain.exponentialRampToValueAtTime(0.001, at + len);
+          s.connect(f).connect(g).connect(bus); s.start(at);
+        };
+        hiss(3000, 0.15, sw, -1);
+        const truth = { down: [], beat: [], sw: sw + offset };
+        for (let i = 0; i * 0.5 < 20.5; i++) {
+          const t = t0 + i * 0.5;
+          const k = ac.createOscillator();
+          k.frequency.setValueAtTime(150, t); k.frequency.exponentialRampToValueAtTime(45, t + 0.12);
+          const kg = ac.createGain();
+          kg.gain.setValueAtTime(0, t); kg.gain.linearRampToValueAtTime(i % 4 === 1 ? 1 : 0.5, t + 0.003);
+          kg.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+          k.connect(kg).connect(bus); k.start(t); k.stop(t + 0.35);
+          hiss(8000, 0.3, t + 0.25, 0.05);
+          (i % 4 === 1 ? truth.down : truth.beat).push(t + offset);
+        }
+        window.__truth = truth;
+        return out.stream;
+      };
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
+    // Every frame, and the bar on the frame each kick was found.
+    await page.evaluate(() => {
+      const w = /** @type {any} */ (window);
+      w.__frames = [];
+      w.__kicks = new Map();
+      const tick = () => {
+        const a = w.SonicVisualizer.analysis();
+        w.__frames.push({ t: performance.now() / 1000, bar: a.bar, downbeat: a.downbeat, section: a.section, change: a.change,
+          novelty: a.novelty, dyn: a.dynamicsDb, dynamics: a.dynamics, bpm: a.bpm, cost: a.cost });
+        a.onsets.forEach((o) => { if (o.name === 'kick' && !w.__kicks.has(o.t)) w.__kicks.set(o.t, a.bar); });
+        if (w.__frames.length < 5000) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    await page.waitForFunction(() => window.__truth && performance.now() / 1000 > window.__truth.sw + 8, null, { timeout: 45000 }).catch(() => {});
+    const run = await page.evaluate(() => ({ frames: window.__frames, kicks: Array.from(window.__kicks.entries()), truth: window.__truth }));
+    if (!run.truth || run.frames.length < 60) {
+      check(false, `visualiser: the bar and the parts: the analysis ran (${run.frames.length} frames, ${run.truth ? 'the groove played' : 'the groove never started'})`);
+    } else {
+      const T = run.truth;
+      // Once the tempo is known (6 s in), each kick found is matched to the beat it was played on
+      // (the stream's latency is under 0.15 s) and the bar read where it was found.
+      const settled = T.down[0] + 6;
+      const on = (list, t) => list.some((x) => t - x > -0.02 && t - x < 0.15);
+      const found = run.kicks.filter(([t]) => t > settled);
+      const downs = found.filter(([t]) => on(T.down, t)).map(([, bar]) => bar);
+      const others = found.filter(([t]) => on(T.beat, t)).map(([, bar]) => bar);
+      const atZero = (b) => b < 0.06 || b > 0.96;
+      const quarter = (b) => Math.abs(b * 4 - Math.round(b * 4)) < 0.25 && Math.round(b * 4) % 4 !== 0;
+      check(downs.length >= 5 && downs.filter(atZero).length >= downs.length * 0.8 && others.length >= 12 && others.filter(quarter).length >= others.length * 0.8,
+        `visualiser: the bar reads 0 on the accented kick and a quarter, half, three quarters on the others (downbeats ${downs.map((b) => b.toFixed(2)).join(' ')}; others ${others.map((b) => b.toFixed(2)).join(' ')})`);
+      const db = run.frames.filter((f) => f.t > settled && f.downbeat > 0.9).map((f) => f.bar);
+      check(db.length >= 4 && db.every(atZero), `visualiser: the downbeat envelope rises on the bar's first beat (${db.map((b) => b.toFixed(2)).join(' ')})`);
+      // The sections: one, a moment after the switch; none from the beat before or after it.
+      const steps = run.frames.slice(1).filter((f, i) => f.section !== run.frames[i].section).map((f) => f.t - T.sw);
+      const before = Math.max(...run.frames.filter((f) => f.t > T.sw - 2.5 && f.t < T.sw).map((f) => f.novelty));
+      const after = Math.max(...run.frames.filter((f) => f.t > T.sw && f.t < T.sw + 4).map((f) => f.novelty));
+      const lifted = run.frames.find((f) => f.t > T.sw + (steps[0] || 0) && f.t < T.sw + (steps[0] || 0) + 0.1);
+      check(steps.length === 1 && steps[0] > 0.2 && steps[0] < 4 && after > before * 2 && lifted && lifted.change > 0.8,
+        `visualiser: a new texture counts one new section, not one on every beat (${steps.map((s) => s.toFixed(2) + ' s after the switch').join(', ') || 'none'}; novelty ${before.toFixed(2)} before, ${after.toFixed(2)} after)`);
+      const dyn = run.frames.filter((f) => f.t > settled && f.t < T.sw).map((f) => f.dyn);
+      const low = dyn.slice().sort((x, y) => x - y)[dyn.length >> 2];
+      check(low > 5 && run.frames.every((f) => f.dynamics >= 0 && f.dynamics <= 1),
+        `visualiser: a beat has dynamics (${low.toFixed(1)} dB peak over mean, a steady noise under 3)`);
+      const cost = run.frames.filter((f) => f.t > T.sw).map((f) => f.cost).sort((x, y) => x - y);
+      const median = cost[cost.length >> 1];
+      check(median < 2, `visualiser: a frame's analysis costs little (${median.toFixed(3)} ms a frame, median)`);
+    }
+    check(errors.length === 0, `visualiser (bar, sections): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // Without WebGL 2 a GPU mode is drawn by its p5 fallback, and the settings say so; three.js is
   // never downloaded for nothing.
   {
