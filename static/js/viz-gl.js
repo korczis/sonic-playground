@@ -554,12 +554,16 @@
       '  vec3 n = normalize(k.xyy * de(pos + k.xyy) + k.yyx * de(pos + k.yyx) + k.yxy * de(pos + k.yxy) + k.xxx * de(pos + k.xxx));',
       '  float ao = 1.0 - steps / float(maxSteps);',
       '  float dif = clamp(dot(n, normalize(vec3(0.3, 0.6, -0.7))), 0.0, 1.0);',
-      '  vec3 base = mix(vec3(0.55), tone(sin(pos.z * 0.35 + pos.x)), 0.75);',
-      '  vec3 col = base * (0.12 + dif * 0.9) * ao * ao;',
+      // Saturated panes on a dark ground, deep occlusion in the lattice's recesses and a rim of the
+      // accent where a pane turns away: it read pale, a grey wash (a browser review, 2026-11-23).
+      '  vec3 hue = tone(sin(pos.z * 0.35 + pos.x));',
+      '  vec3 base = clamp(mix(vec3(dot(hue, vec3(0.333))), hue, 1.6), 0.0, 1.0) * 0.8;',
+      '  float rim = pow(1.0 - clamp(dot(n, -rd), 0.0, 1.0), 3.0);',
+      '  vec3 col = base * (0.03 + pow(dif, 1.6) * 0.9) * ao * ao * ao + accentC() * rim * 0.35 * ao;',
       '  col += accentC() * (1.0 - ao) * 0.3 * (0.4 + 0.4 * max(uHigh, 0.0) * uFlash);',
-      '  col = mix(deep(0.02), col, exp(-t * 0.28));',
+      '  col = mix(deep(0.02), col, exp(-t * 0.38));',
       '  col += accentC() * exp(-abs(t - uShock * 4.0) * 2.5) * exp(-uShock * 1.5) * 0.35 * (0.4 + 0.6 * uFlash);',
-      '  gl_FragColor = vec4(finish(col * 0.8, vUv), 1.0);',
+      '  gl_FragColor = vec4(finish(col * 0.42, vUv), 1.0);',
       '}',
     ],
   };

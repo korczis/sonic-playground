@@ -1894,6 +1894,44 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (phone sources): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // The toast keeps off the open settings sheet as it keeps off the video (a browser review,
+  // 2026-11-23: on a phone it hid the cinema switch and the first device for its few seconds), at
+  // 390 and 320 px; and a shared link under reduced motion opens the calm mode, not its own.
+  for (const vp of [phone, { width: 320, height: 568 }]) {
+    const t = catalog.tracks.find((x) => x.youtube && !x.video_gone);
+    const key = t.source.replace(/\.md$/, '');
+    const { context, page, errors } = await open(browser, at(`?play=${key}&t=10`), vp, 'dark', {}, true);
+    await page.waitForFunction(() => window.SonicPlayer && window.SonicPlayer.state().index >= 0, null, { timeout: 10000 }).catch(() => {});
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-settings]');
+    await page.waitForTimeout(300);
+    await page.evaluate(() => window.SonicPlayer.notify('Playing now: a toast over the settings'));
+    await page.waitForTimeout(400);
+    const boxes = await page.evaluate(() => {
+      const r = (el) => { if (!el || el.hidden) return null; const b = el.getBoundingClientRect(); return b.height ? { top: b.top, bottom: b.bottom, left: b.left, right: b.right } : null; };
+      const toast = document.querySelector('[data-player-toast]') || document.getElementById('player-toast');
+      const panel = document.getElementById('player-panel');
+      return { toast: r(toast), sheet: r(document.getElementById('visualizer-settings')),
+        video: panel && !panel.hidden ? r(panel.firstElementChild || panel) : null, shown: toast ? toast.dataset.shown : null };
+    });
+    const cross = (a, b) => !!a && !!b && a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+    check(boxes.shown === 'true' && !!boxes.toast && !!boxes.sheet && !cross(boxes.toast, boxes.sheet) && !cross(boxes.toast, boxes.video),
+      `visualiser (${vp.width} px): the toast keeps off the open settings sheet and the video (${JSON.stringify({ toast: boxes.toast && [Math.round(boxes.toast.top), Math.round(boxes.toast.bottom)], sheet: boxes.sheet && [Math.round(boxes.sheet.top), Math.round(boxes.sheet.bottom)] })})`);
+    await page.click('#visualizer-full [data-viz-settings]');
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => !document.documentElement.hasAttribute('data-viz-settings')), `visualiser (${vp.width} px): the sheet closes again with the toast up`);
+    check(errors.length === 0, `visualiser (toast, ${vp.width} px): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  {
+    const { context, page, errors } = await open(browser, at('?viz=liquid'), desktop, 'dark', { reducedMotion: 'reduce' });
+    await page.waitForFunction(() => window.SonicVisualizer && window.SonicVisualizer.mode(), null, { timeout: 10000 }).catch(() => {});
+    const calm = await page.evaluate(() => ({ mode: window.SonicVisualizer.mode(), url: new URL(location.href).searchParams.get('viz') }));
+    check(calm.mode === 'veil' && calm.url === 'veil', `visualiser (reduced motion): a shared link opens the calm mode, not its own (${JSON.stringify(calm)})`);
+    check(errors.length === 0, `visualiser (reduced motion, shared link): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // Every WebGL mode follows the music (static/js/viz-gl.js through the grammar of
   // static/js/viz-map.js), on one page with music handed over as the microphone: the picture
   // moves clearly more with the music than in silence, and its colours turn with the harmony (C
