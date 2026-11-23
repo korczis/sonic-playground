@@ -132,7 +132,7 @@
     kick: Object.assign(detector(40, 150, 0.22, 0.16), { bins: true, k: 2.5, lift: 6 }),
     snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2 }),
     hat: detector(6500, 16000, 0.08, 0.06),
-    kicks: /** @type {number[]} */ ([]), period: 0.5, lastKick: -10,
+    kicks: /** @type {number[]} */ ([]), period: 0.5, lastKick: -10, steady: 0, median: 0,
     onsets: /** @type {{name: string, t: number}[]} */ ([]),
     clock: { playing: false, base: 0, at: 0, beat: -1, half: -1 },
     // The pitch: the raw chroma of this frame, its slow mean (about a second), the loudest peak of
@@ -183,6 +183,8 @@
     audio.kind = 'clock';
     audio.device = null;
     dsp.kicks = [];
+    dsp.steady = 0;
+    dsp.median = 0;
     dsp.primed = false;
     A.bpm = 0;
     changed();
@@ -777,9 +779,13 @@
     var median = iv[iv.length >> 1];
     var dev = iv.map(function (d) { return Math.abs(d - median); }).sort(function (a, b) { return a - b; });
     var filled = (ks.length - 1) / Math.max(1, (t - ks[0]) / median);
-    if (dev[dev.length >> 1] > median * 0.08 || filled < 0.45) { A.bpm = 0; return; }
+    if (dev[dev.length >> 1] > median * 0.08 || filled < 0.45) { A.bpm = 0; dsp.steady = 0; return; }
+    // Said only once three estimates in a row agree within 4%: kicks found at random in a loud
+    // room can line up once (110 bpm from a fan's noise, 2026-11-23), a played beat keeps agreeing.
+    dsp.steady = dsp.median && Math.abs(median - dsp.median) < dsp.median * 0.04 ? dsp.steady + 1 : 0;
+    dsp.median = median;
     dsp.period = dsp.period * 0.7 + median * 0.3;
-    A.bpm = Math.round(60 / dsp.period);
+    A.bpm = dsp.steady >= 2 ? Math.round(60 / dsp.period) : 0;
   }
 
   /** @param {number} dt @param {number} t @param {boolean} clock */
