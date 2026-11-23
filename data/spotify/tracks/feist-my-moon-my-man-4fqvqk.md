@@ -6,7 +6,7 @@ artists: ["Feist"]
 album: "The Reminder"
 duration: "3:48"
 spotify: {"track": "4fQVQKIiidREPI0MhFEuDn", "album": "27Y2wm3WcFThQocgjLI5wF", "artists": ["6CWTBjOJK75cTE8Xv8u1kj"]}
-keys: {"fold": "feist|mymoonmyman", "musicbrainz": "10dec8b6-1af0-47b0-8c90-296b85d2e1b9"}
+keys: {"fold": "feist|mymoonmyman", "musicbrainz": "4cd1c84e-0b4f-4e44-8f57-df0a7aa938a2"}
 review: "feist-my-man-my-mood.md"
 status: "present"
 liked: false

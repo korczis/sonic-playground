@@ -12,7 +12,7 @@ instrument = ["vocals", "piano", "double bass", "drums", "clarinet"]
 [extra]
 release_year = "2005"
 country = "AT"
-musicbrainz = { recording = "e6a83985-a884-49b1-94dc-0eacdaf145b6", artist = "8f389bf5-a950-4a2f-a962-daf08151ee33", release = "c3141dba-cacb-49ab-a76a-95f9fef05790" }
+musicbrainz = { recording = "c3be4f09-f2af-442a-91b4-e50c67b3db52", artist = "8f389bf5-a950-4a2f-a962-daf08151ee33", release = "3456b3f4-c003-46de-b192-792cef357d77" }
 album = "Ballroom Stories"
 youtube = "https://www.youtube.com/embed/sQ0jwAeqU5k"
 publisher = "Dope Noir"

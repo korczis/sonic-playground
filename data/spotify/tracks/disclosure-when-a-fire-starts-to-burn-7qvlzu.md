@@ -6,7 +6,7 @@ artists: ["Disclosure"]
 album: "Settle (Special Edition)"
 duration: "4:44"
 spotify: {"track": "7qVLZuvzNjyiy3TVtEBwBE", "album": "7bdjtx1RTkWoSoOaIl7a8E", "artists": ["6nS5roXSAGhTGr34W6n7Et"]}
-keys: {"fold": "disclosure|whenafirestartstoburn", "musicbrainz": "f103a196-c211-479e-86fb-4d45f3b5f75c"}
+keys: {"fold": "disclosure|whenafirestartstoburn", "musicbrainz": "0339c26e-5ad8-4f37-94a1-86460b160570"}
 review: "disclosure-when-a-fire-starts-to-burn.md"
 status: "present"
 liked: true

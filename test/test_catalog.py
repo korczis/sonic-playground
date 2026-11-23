@@ -3,9 +3,11 @@
     python3 -m unittest discover -s test -p 'test_*.py'
 """
 import importlib.util
+import json
 import sys
 import tempfile
 import unittest
+from types import SimpleNamespace
 from typing import Any
 from pathlib import Path
 
@@ -364,6 +366,125 @@ class GenreFamilies(unittest.TestCase):
         inferred = [x["term"] for f in data["genre_families"] for x in f["terms"] if x.get("inferred")]
         self.assertEqual(inferred, [], "add these genres to data/genres.toml")
         self.assertEqual({f["id"] for f in data["genre_families"]} - {f["id"] for f in families}, set())
+
+
+class PublicationOrder(unittest.TestCase):
+    LOG = "\x00300\n\ncontent/b.md\ncontent/b.cs.md\n\x00200\n\ncontent/a.md\ncontent/sub/x.md\n" \
+          "\x00100\n\ncontent/a.md\nstatic/y.md\n"
+
+    def test_first_added_keeps_the_oldest_add_of_a_review(self):
+        self.assertEqual(catalog.first_added(self.LOG), {"b.md": 300, "b.cs.md": 300, "a.md": 100})
+
+    def test_same_day_reviews_order_by_when_they_were_added_uncommitted_first(self):
+        def track(source, title, day="2026-11-22"):
+            return SimpleNamespace(source=source, title=title, date=day)
+        tracks = [track("a.md", "Zed"), track("b.md", "Abba"), track("new.md", "Mid"),
+                  track("old.md", "Zz", "2026-11-21")]
+        catalog.publication_order(tracks, {"a.md": 100, "b.md": 300, "old.md": 50})
+        self.assertEqual([t.source for t in tracks], ["new.md", "b.md", "a.md", "old.md"])
+
+    def test_git_added_reads_this_checkout(self):
+        added = catalog.git_added()
+        self.assertIn("amy-winehouse-rehab.md", added)
+
+    def test_git_added_outside_a_work_tree_is_empty(self):
+        import os
+        from unittest import mock
+        clean = {k: v for k, v in os.environ.items() if not k.startswith("GIT_")}
+        with tempfile.TemporaryDirectory() as d, mock.patch.dict(os.environ, clean, clear=True):
+            saved = catalog.ROOT
+            try:
+                catalog.ROOT = Path(d)  # a directory git knows nothing of
+                self.assertEqual(catalog.git_added(), {})
+            finally:
+                catalog.ROOT = saved
+
+    def test_published_times_take_the_record_then_git_then_now(self):
+        times, missing = catalog.published_times(["c.md", "a.md", "b.md"], {"a.md": 10},
+                                                 {"a.md": 1, "b.md": 20}, 99)
+        self.assertEqual(times, {"a.md": 10, "b.md": 20, "c.md": 99})
+        self.assertEqual(missing, ["b.md", "c.md"])
+
+    def test_the_record_round_trips_one_review_per_line(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "published.json"
+            text = catalog.render_published({"b.md": 2, "a.md": 1})
+            self.assertEqual([ln.strip() for ln in text.splitlines() if ln.strip().startswith('"')
+                              and ln.strip()[1:2] in "ab" and ".md" in ln], ['"a.md": 1,', '"b.md": 2'])
+            path.write_text(text, encoding="utf-8")
+            saved = catalog.PUBLISHED
+            try:
+                catalog.PUBLISHED = path
+                self.assertEqual(catalog.load_published(), {"a.md": 1, "b.md": 2})
+                catalog.PUBLISHED = Path(d) / "absent.json"
+                self.assertEqual(catalog.load_published(), {})
+            finally:
+                catalog.PUBLISHED = saved
+
+    def test_check_refuses_a_review_the_record_lacks(self):
+        import contextlib
+        import io
+        import json
+        record = json.loads(catalog.PUBLISHED.read_text(encoding="utf-8"))
+        gone = sorted(record["reviews"])[0]
+        del record["reviews"][gone]
+        with tempfile.TemporaryDirectory(dir=catalog.ROOT) as d:  # main names it relative to ROOT
+            path = Path(d) / "published.json"
+            path.write_text(json.dumps(record), encoding="utf-8")
+            saved, argv = catalog.PUBLISHED, sys.argv
+            err = io.StringIO()
+            try:
+                catalog.PUBLISHED, sys.argv = path, ["catalog.py", "--check"]
+                with contextlib.redirect_stderr(err):
+                    self.assertEqual(catalog.main(), 1)
+            finally:
+                catalog.PUBLISHED, sys.argv = saved, argv
+        self.assertIn(f"{gone} has no time in data/published.json", err.getvalue())
+
+
+class Search(unittest.TestCase):
+    """The search index's tokens (sonic-search/v2), which static/js/explorer.js cuts alike."""
+
+    def test_every_token_in_order(self):
+        self.assertEqual(catalog.search_tokens("The TB-303, four-on-the-floor: a DJ's 1990s."),
+                         ["the", "tb", "303", "four", "on", "the", "floor", "a", "dj", "1990"])
+        self.assertEqual(catalog.search_tokens("Daft Punk’s 80's"), catalog.search_tokens("daft punk 80s"))
+
+    def test_folding(self):
+        self.assertEqual(catalog.search_tokens("Tomas Høffding, Crécy, Straße"),
+                         ["toma", "hoffding", "crecie", "strasse"])
+        lower = {k: v for k, v in catalog.TRANSLIT_MAP.items() if k == k.lower()}
+        self.assertEqual(catalog.SEARCH_FOLD, lower)
+
+    def test_english_forms(self):
+        same = [("synthesizers", "synthesizer"), ("melodies", "melody"), ("basses", "bass"),
+                ("switches", "switch"), ("boxes", "box"), ("crashes", "crash"), ("plays", "play"),
+                ("drums", "drum"), ("movies", "movie"), ("djs", "dj")]
+        for a, b in same:
+            self.assertEqual(catalog.search_tokens(a), catalog.search_tokens(b), (a, b))
+        for kept in ("bass", "chorus", "analysis", "as", "key", "boy"):
+            self.assertEqual(catalog.search_tokens(kept), [kept])
+
+    def test_czech_forms(self):
+        def forms(*ws):
+            return {" ".join(catalog.search_tokens(w, "cs")) for w in ws}
+        self.assertEqual(forms("syntezátory", "syntezátor", "syntezátorem", "syntezátorům",
+                               "syntezátorech", "syntezátorami"), {"syntezator"})
+        self.assertEqual(forms("basová linka", "basovou linkou", "basové linky",
+                               "basových linkách"), {"basov link"})
+        # stems too short to cut, and a language without rules
+        self.assertEqual(catalog.search_tokens("ten jsou", "cs"), ["ten", "jsou"])
+        self.assertEqual(catalog.word_form("syntezator", {}), "syntezator")
+
+    def test_review_text(self):
+        body = 'A {{ figure(src="x.png") }} <b>bass</b> [line](https://example.com/lines) **303s**'
+        self.assertEqual(catalog.search_text(body), "a bass line 303")
+
+    def test_index_file(self):
+        cat = {"_search": {"a.md": "bass line"}, "_search_i18n": {"cs": {"a.md": "basov link"}}}
+        for lang, words in (("", "bass line"), ("cs", "basov link")):
+            data = json.loads(catalog.render_search(cat, lang))
+            self.assertEqual((data["schema"], data["tracks"]), ("sonic-search/v2", {"a.md": words}))
 
 
 class Repository(unittest.TestCase):

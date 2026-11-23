@@ -56,7 +56,7 @@ VIZ = json.loads((ROOT / "data" / "visualizer.json").read_text(encoding="utf-8")
 DYNAMIC = {
     "side.all.": ["genre", "sentiment"], "side.": ["genre", "sentiment"],
     "explorer.facet.": FACET_NAMES, "explorer.any.": FACET_NAMES,
-    "explorer.sort.": ["new", "old", "artist", "title"],
+    "explorer.sort.": ["relevance", "new", "old", "artist", "title"],
     "tax.name.": FACET_NAMES, "tax.one.": FACET_NAMES,
     "concept.category.": CONCEPT_CATEGORIES,
     "yearbook.status.": ["present", "missing", "ambiguous", "skipped", "uncertain"],

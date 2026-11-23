@@ -11,7 +11,7 @@ instrument = ["vocals"]
 
 [extra]
 country = "GB"
-musicbrainz = { recording = "d726602e-ae59-441d-b3c1-fa11aaaee742", artist = "c530bbe8-132c-4a45-94eb-89e4347bc521", release = "c66a3c71-e48c-4a7b-9c5d-c0c3d5b7f753" }
+musicbrainz = { recording = "d726602e-ae59-441d-b3c1-fa11aaaee742", artist = "c530bbe8-132c-4a45-94eb-89e4347bc521", release = "cf26a72c-20b5-4e4d-8fc7-31fba56be0e4" }
 publisher = "Milan Records"
 release_year = "2015"
 album = "Youth (Original Soundtrack Album)"

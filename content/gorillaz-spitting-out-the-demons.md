@@ -12,7 +12,7 @@ instrument = ["vocals"]
 [extra]
 country = "GB"
 isrc = "GBAYE0500621"
-musicbrainz = { recording = "647587af-c293-4d0e-a0af-3244688231e7", artist = "e21857d5-3256-4547-afb3-4b6ded592596", release = "a7f1fe0f-ab3b-4f8b-851d-77ec26070816" }
+musicbrainz = { recording = "647587af-c293-4d0e-a0af-3244688231e7", artist = "e21857d5-3256-4547-afb3-4b6ded592596", release = "519084b6-b720-4f35-9ed7-00bf198c4035" }
 publisher = "Parlophone"
 release_year = "2005"
 album = "D-Sides"

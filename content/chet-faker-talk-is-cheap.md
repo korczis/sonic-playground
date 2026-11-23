@@ -12,7 +12,7 @@ instrument = ["vocals", "saxophone"]
 [extra]
 country = "AU"
 isrc = "AUFF81300504"
-musicbrainz = { recording = "0294a9af-5d56-4288-9e89-63daab260c67", artist = "a21b2652-62ed-4767-a3d2-0aa802abf080", release = "0481beb3-0a12-4d35-9663-909e5eb7691b" }
+musicbrainz = { recording = "0294a9af-5d56-4288-9e89-63daab260c67", artist = "a21b2652-62ed-4767-a3d2-0aa802abf080", release = "717dd194-1abf-4ac0-85b9-be8c844cf4d8" }
 release_year = "2014"
 album = "Built on Glass"
 publisher = "Future Classic"

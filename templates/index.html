@@ -14,7 +14,7 @@
 {%- set_global deep = false %}
 {%- for t in catalog.tracks %}{% if t.youtube and (not deep or t.words > deep.words) %}{% set_global deep = t %}{% endif %}{% endfor %}
 {{ <site_hero l={l} eyebrow_vars={eyebrow_vars} lead_vars={lead_vars} stats={hero_stats} primary_href="#explorer-title" secondary_href={get_url(path="@/pages/welcome.md", lang=lang)} tracks={catalog.tracks} deep={deep} /> }}
-<div class="relative z-10 -mt-16 space-y-4 px-4 xl:px-8">
+<div class="{{ <layout part="gutter" /> }} relative z-10 -mt-16 space-y-4">
   {#- The newest track with a picture leads; the catalogue is newest first. -#}
   {%- set_global featured = catalog.tracks | first %}
   {%- for t in catalog.tracks %}{% if t.thumbnail %}{% set_global featured = t %}{% break %}{% endif %}{% endfor %}
@@ -103,7 +103,10 @@
         {{ <play_all target="explorer-grid" l={l} lkey="explorer.play" /> }}
       </div>
     </div>
-    <form data-explorer class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6" action="{{ get_url(path='@/_index.md', lang=lang) }}" method="get">
+    {#- How the explorer reads a word (catalog.json `search`, scripts/catalog.py): the fold table
+        and this language's word forms, the rules the review index was cut with. -#}
+    {%- if lang in catalog.search.forms %}{% set forms = catalog.search.forms[lang] %}{% else %}{% set forms = {} %}{% endif %}
+    <form data-explorer data-search-rules="{{ {"fold": catalog.search.fold, "forms": forms} | json_encode }}" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6" action="{{ get_url(path='@/_index.md', lang=lang) }}" method="get">
       <div class="sm:col-span-2 lg:col-span-3 2xl:col-span-2">
         <label for="explorer-q" class="{{ lbl }}" data-i18n="explorer.search">{{ l["explorer.search"] }}</label>
         <div class="relative">
@@ -134,8 +137,8 @@
       <div>
         <label for="explorer-sort" class="{{ lbl }}" data-i18n="explorer.sort">{{ l["explorer.sort"] }}</label>
         <select id="explorer-sort" name="sort" class="{{ field }}">
-          {%- for order in ["new", "old", "artist", "title"] %}
-          <option value="{{ order }}" data-i18n="explorer.sort.{{ order }}">{{ l["explorer.sort." ~ order] }}</option>
+          {%- for order in ["relevance", "new", "old", "artist", "title"] %}
+          <option value="{{ order }}"{% if order == "new" %} selected{% endif %} data-i18n="explorer.sort.{{ order }}">{{ l["explorer.sort." ~ order] }}</option>
           {%- endfor %}
         </select>
       </div>

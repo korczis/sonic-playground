@@ -12,7 +12,7 @@ instrument = ["vocals"]
 [extra]
 country = "NO"
 isrc = "SEVVQ0800301"
-musicbrainz = { recording = "b101e0d7-db2b-488e-869f-c10f6793bc2c", artist = "d735497b-25f9-4503-8fb5-f50150730c18", release = "76ba5670-5b9f-4b11-8eda-f482e039cf72" }
+musicbrainz = { recording = "b101e0d7-db2b-488e-869f-c10f6793bc2c", artist = "d735497b-25f9-4503-8fb5-f50150730c18", release = "4b61970e-9a3f-4b39-8989-9be8b8b05654" }
 publisher = "DetErMine Records"
 release_year = "2008"
 album = "Changing of the Seasons"

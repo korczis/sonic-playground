@@ -12,7 +12,7 @@ instrument = ["vocals", "piano", "percussion"]
 [extra]
 country = "CA"
 isrc = "USCM51600028"
-musicbrainz = { recording = "be9e4a6b-3f56-468a-aa61-b1bcb6fc277f", artist = "9fff2f8a-21e6-47de-a2b8-7f449929d43f", release = "e2f55bbb-a03a-4f83-8122-a536406a1e69" }
+musicbrainz = { recording = "be9e4a6b-3f56-468a-aa61-b1bcb6fc277f", artist = "9fff2f8a-21e6-47de-a2b8-7f449929d43f", release = "935c51e8-a026-4be9-8cdf-fa3299eb3fce" }
 publisher = "Young Money"
 release_year = "2016"
 album = "Views"

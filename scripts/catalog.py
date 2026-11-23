@@ -27,7 +27,9 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
+import time
 import tomllib
 import unicodedata
 from collections import Counter, defaultdict
@@ -77,6 +79,9 @@ LOCALES = sorted(p.stem for p in (ROOT / "data" / "i18n").glob("*.toml"))
 # the structured data is derived into data/derived/jsonld.json, used by the build only.
 CATALOG_EXTRA = ("album", "publisher", "release_year", "video_duration", "country")
 JSONLD = ROOT / "data" / "derived" / "jsonld.json"
+# When each review entered the repository (sonic-published/v1): a tracked record, so the
+# catalogue's order derives from the tree alone, never from a history a copy may not carry.
+PUBLISHED = ROOT / "data" / "published.json"
 CONFIG = tomllib.loads((ROOT / "config.toml").read_text(encoding="utf-8"))
 DEFAULT_LANG = CONFIG["default_language"]
 LANGUAGES = sorted(CONFIG.get("languages", {}))  # the languages besides the default (ADR 0006)
@@ -202,9 +207,10 @@ def validate(value, schema: dict, where: str = "", root: dict | None = None) -> 
 
 # Letters NFKD does not decompose into a base letter; Zola (deunicode) transliterates them, so must
 # this ("Tomas Høffding" is "hoffding", not "hffding": a defect found on 2026-11-12).
-TRANSLIT = str.maketrans({"ø": "o", "Ø": "O", "æ": "ae", "Æ": "AE", "œ": "oe", "Œ": "OE", "ß": "ss",
+TRANSLIT_MAP = {"ø": "o", "Ø": "O", "æ": "ae", "Æ": "AE", "œ": "oe", "Œ": "OE", "ß": "ss",
                           "ł": "l", "Ł": "L", "đ": "d", "Đ": "D", "ð": "d", "Ð": "D", "þ": "th",
-                          "Þ": "TH", "ı": "i", "ħ": "h", "Ħ": "H"})
+                          "Þ": "TH", "ı": "i", "ħ": "h", "Ħ": "H"}
+TRANSLIT = str.maketrans(TRANSLIT_MAP)
 
 
 def slugify(text: str) -> str:
@@ -216,6 +222,46 @@ def slugify(text: str) -> str:
 
 def words(text: str) -> list[str]:
     return [w for w in slugify(text).split("-") if w]
+
+
+# The explorer's search (static/js/explorer.js) and its index (static/data/search.json) read
+# words alike: the same folding, the same cuts, the same word forms. The browser takes both
+# tables from catalog.json `search`, so they are written once, here and in data/i18n/forms/.
+SEARCH_FOLD = {k: v for k, v in TRANSLIT_MAP.items() if k == k.lower()}
+SEARCH_FORMS = {p.stem: tomllib.loads(p.read_text(encoding="utf-8"))
+                for p in sorted((ROOT / "data" / "i18n" / "forms").glob("*.toml"))}
+SEARCH_FOLD_TABLE = str.maketrans(SEARCH_FOLD)
+MARKS = re.compile(r"[\u0300-\u036f]")
+
+
+def word_form(word: str, forms: dict) -> str:
+    """A word in its search form (data/i18n/forms/<lang>.toml): the first suffix that ends it
+    decides; a stem shorter than min_stem leaves the word as it is."""
+    for suffix, to in forms.get("suffixes", []):
+        if word.endswith(suffix):
+            stem = word[:len(word) - len(suffix)]
+            return stem + to if len(stem) >= forms["min_stem"] else word
+    return word
+
+
+def search_tokens(text: str, lang: str = DEFAULT_LANG) -> list[str]:
+    """The explorer's tokens of a text, as static/js/explorer.js `tokens` cuts a query: lowercase,
+    the letters of SEARCH_FOLD, NFKD without its combining marks, split at every character that
+    is not a-z or 0-9, each token in its word form; a possessive is its word. Every token is kept, in order, short ones and
+    digits included: "TB-303" is "tb 303", and a phrase is tokens side by side."""
+    # A possessive is its word ("punk's" is "punk", "dj's" "dj"), a decade its plural ("80's"
+    # is "80s"), never a token "s".
+    lower = re.sub(r"([0-9])['\u2019]s(?![a-z0-9])", r"\1s", text.lower())
+    lower = re.sub(r"(\S)['\u2019]s(?![a-z0-9])", r"\1", lower)
+    folded = MARKS.sub("", unicodedata.normalize("NFKD", lower.translate(SEARCH_FOLD_TABLE)))
+    forms = SEARCH_FORMS.get(lang, {})
+    return [word_form(w, forms) for w in re.split(r"[^a-z0-9]+", folded) if w]
+
+
+def search_text(body: str, lang: str = DEFAULT_LANG) -> str:
+    """A review's entry in the search index (sonic-search/v2): its prose as search tokens in
+    order, without shortcodes, HTML and link targets."""
+    return " ".join(search_tokens(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body), lang))
 
 
 def split_front_matter(text: str, name: str) -> tuple[str, str]:
@@ -525,6 +571,65 @@ def review_files() -> list[Path]:
     return sorted(p for p in CONTENT.glob("*.md") if p.name != "_index.md" and not tr.translation_name(p.name))
 
 
+def first_added(log: str) -> dict[str, int]:
+    """When each review entered the repository, from `git log --diff-filter=A --no-renames
+    --format=%x00%at --name-only -- content`: file name -> the author time of its oldest add."""
+    added: dict[str, int] = {}
+    when = 0
+    for line in log.splitlines():
+        if line.startswith("\x00"):
+            when = int(line[1:])
+        elif line.startswith("content/") and line.count("/") == 1:
+            added[line.removeprefix("content/")] = when  # the log runs newest first
+    return added
+
+
+def publication_order(tracks: list[Track], added: dict[str, int]) -> None:
+    """Newest first: by date, then within a day by the time the review entered the repository
+    (one not yet committed is the newest), then by title."""
+    newest = max(added.values(), default=0) + 1
+    tracks.sort(key=lambda t: (t.date, added.get(t.source, newest), t.title), reverse=True)
+
+
+def load_published() -> dict[str, int]:
+    """data/published.json: review file -> when it entered the repository (Unix seconds)."""
+    if not PUBLISHED.exists():
+        return {}
+    return {k: int(v) for k, v in json.loads(PUBLISHED.read_text(encoding="utf-8"))["reviews"].items()}
+
+
+def published_times(sources: list[str], recorded: dict[str, int], added: dict[str, int],
+                    now: int) -> tuple[dict[str, int], list[str]]:
+    """Every review's time, the recorded one first, else when git first added it, else now; and
+    the reviews that had no record (`npm run derive` writes them, `--check` refuses them)."""
+    times: dict[str, int] = {}
+    missing: list[str] = []
+    for s in sorted(sources):
+        if s in recorded:
+            times[s] = recorded[s]
+        else:
+            missing.append(s)
+            times[s] = added.get(s, now)
+    return times, missing
+
+
+def render_published(times: dict[str, int]) -> str:
+    """One review per line, sorted, so two branches that add reviews merge line by line."""
+    return json.dumps({"schema": "sonic-published/v1", "generated_by": "scripts/catalog.py",
+                       "reviews": times}, indent=1, sort_keys=True) + "\n"
+
+
+def git_added() -> dict[str, int]:
+    """first_added() of this checkout's history; empty outside a git work tree."""
+    try:
+        log = subprocess.run(
+            ["git", "log", "--diff-filter=A", "--no-renames", "--format=%x00%at", "--name-only",
+             "--", "content"], cwd=ROOT, capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    return first_added(log)
+
+
 def load_translations(tracks: list[Track], errors: list[str]) -> dict[str, dict[str, dict]]:
     """Per language, per review: what its translation says (title, description, path, words,
     index), each checked against its English page (scripts/translation.py). A missing one is an
@@ -556,8 +661,7 @@ def load_translations(tracks: list[Track], errors: list[str]) -> dict[str, dict[
         out[lang][english] = {
             "title": str(meta.get("title", "")).strip(), "description": str(meta.get("description", "")).strip(),
             "path": f"{lang}/{t.path}", "words": len(re.findall(r"\w+", body)),
-            "index": " ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
-                                      if len(w) > 2})),
+            "index": search_text(body, lang),
         }
     for lang in LANGUAGES:
         missing = [t.source for t in tracks if t.source not in out[lang]]
@@ -814,8 +918,7 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
         words=body_words, extra=kept_extra, outline=headings(body),
         video_gone=video_gone, full_extra=extra, paragraphs=paragraphs,
         fingerprint=tr.fingerprint(meta, body),
-        index=" ".join(sorted({w for w in words(re.sub(r"\{\{.*?\}\}|<[^>]+>|\]\([^)]*\)", " ", body))
-                               if len(w) > 2})),
+        index=search_text(body),
     )
 
 
@@ -926,7 +1029,12 @@ def build(errors: list[str]) -> dict:
             errors.append(f"{t.source}: URL /{t.path} collides with {seen[t.path]}")
         seen[t.path] = t.source
 
-    tracks.sort(key=lambda t: (t.date, t.title), reverse=True)
+    recorded = load_published()
+    sources = [t.source for t in tracks]
+    # History is read only for a review the record lacks (a new one, or a record merged away).
+    added = git_added() if any(s not in recorded for s in sources) else {}
+    published, unrecorded = published_times(sources, recorded, added, int(time.time()))
+    publication_order(tracks, published)
     errors += uniqueness(tracks)
     families = genre_families(tracks, load_genre_families(errors), NOTES)
     translated = load_translations(tracks, errors)
@@ -960,6 +1068,7 @@ def build(errors: list[str]) -> dict:
                 for k, v in sorted(counter.items(), key=lambda kv: (-kv[1], kv[0]))]
 
     return {
+        "_published": published, "_unrecorded": unrecorded,
         "schema": SCHEMA,
         "generated_by": "scripts/catalog.py",
         "contract": "data/track.schema.json",
@@ -999,6 +1108,7 @@ def build(errors: list[str]) -> dict:
         "months": [{"month": m, "count": months[m]} for m in sorted(months)],
         "artists": ranked(artists),
         "lookup": {t.source: i for i, t in enumerate(tracks)},
+        "search": {"fold": SEARCH_FOLD, "forms": SEARCH_FORMS},
         "_search": {t.source: t.index for t in tracks},
         "_search_i18n": {lang: {s: x["index"] for s, x in translated[lang].items()} for lang in LANGUAGES},
         "_jsonld": jsonld(tracks, translated),
@@ -1166,10 +1276,11 @@ def render(catalog: dict) -> str:
 
 
 def render_search(catalog: dict, lang: str = "") -> str:
-    """The review text index the explorer loads on the first query: per track, the distinct
-    folded words of its review (static/data/search.json, sonic-search/v1)."""
+    """The review text index the explorer loads on the first query: per track, the tokens of its
+    review in order (search_text; static/data/search.json, sonic-search/v2). In order, not a set
+    of distinct words, so that a quoted phrase finds only words side by side."""
     index = catalog["_search_i18n"][lang] if lang else catalog["_search"]
-    return json.dumps({"schema": "sonic-search/v1", "generated_by": "scripts/catalog.py",
+    return json.dumps({"schema": "sonic-search/v2", "generated_by": "scripts/catalog.py",
                        "tracks": index}, ensure_ascii=False, indent=0) + "\n"
 
 
@@ -1200,7 +1311,8 @@ def main() -> int:
     leftovers = [p for p in YEARBOOK_PAGES.glob("*.md") if p not in pages] if YEARBOOK_PAGES.exists() else []
     outputs = {**pages, OUTPUT: render(catalog), PLAY: render_play(catalog), SEARCH: render_search(catalog),
                **{SEARCH.with_name(f"search.{lang}.json"): render_search(catalog, lang) for lang in LANGUAGES},
-               JSONLD: json.dumps(catalog["_jsonld"], ensure_ascii=False, indent=1, sort_keys=True) + "\n"}
+               JSONLD: json.dumps(catalog["_jsonld"], ensure_ascii=False, indent=1, sort_keys=True) + "\n",
+               PUBLISHED: render_published(catalog["_published"])}
     count = catalog["stats"]["tracks"]
     for e in errors:
         print(f"catalog: {e}", file=sys.stderr)
@@ -1210,13 +1322,15 @@ def main() -> int:
         print(f"catalog: {len(errors)} contract violation(s)", file=sys.stderr)
         return 1
     if args.check:
+        for s in catalog["_unrecorded"]:
+            print(f"catalog: {s} has no time in data/published.json; run npm run derive", file=sys.stderr)
         stale = [p for p, text in outputs.items()
                  if not p.exists() or p.read_text(encoding="utf-8") != text]
         for p in stale:
             print(f"catalog: {p.relative_to(ROOT)} is stale; run npm run derive", file=sys.stderr)
         for p in leftovers:
             print(f"catalog: {p.relative_to(ROOT)} belongs to no yearbook; run npm run derive", file=sys.stderr)
-        if stale or leftovers:
+        if stale or leftovers or catalog["_unrecorded"]:
             return 1
         print(f"catalog: {count} tracks, contract and catalogue current")
         return 0

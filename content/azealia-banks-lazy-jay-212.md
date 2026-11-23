@@ -13,7 +13,7 @@ instrument = ["vocals", "synthesizer"]
 release_year = "2011"
 album = "1991"
 country = "US"
-musicbrainz = { recording = "0b855586-49fd-45ac-bb7a-ec7aad0e712d", artist = "0c3505e7-d884-43cf-9028-d318607190a4", release = "f530084c-5960-4ff5-96af-8e401264be8c" }
+musicbrainz = { recording = "0b855586-49fd-45ac-bb7a-ec7aad0e712d", artist = "0c3505e7-d884-43cf-9028-d318607190a4", release = "78714ed3-d060-4b1d-a01b-f69ac531cad8" }
 youtube = "https://www.youtube.com/embed/i3Jv9fNPjgk"
 connections = [
   { source = "cardi-b-wap-feat-megan-thee-stallion.md", why = "A later hit in which women rappers make explicit desire the subject and the joke, as 212 did nine years earlier." },

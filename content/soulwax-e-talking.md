@@ -15,7 +15,7 @@ album = "Nite Versions"
 release_year = "2005"
 country = "BE"
 isrc = "BEP010400146"
-musicbrainz = { recording = "23905410-ea04-4e5c-b30b-526db93567b6", artist = "68ec1b08-3c2e-40b3-b0af-8f323743fdff", release = "ba9ef813-ca5e-4efc-9c7b-155954f3cbe3" }
+musicbrainz = { recording = "23905410-ea04-4e5c-b30b-526db93567b6", artist = "68ec1b08-3c2e-40b3-b0af-8f323743fdff", release = "89638e85-4a52-43dc-9d13-76327b26605e" }
 youtube = "https://www.youtube.com/embed/oDzZGBHUlZ4"
 connections = [
   { source = "metronomy-love-letters-soulwax-remix.md", why = "Soulwax remixing another band, years later, with the same habit of rebuilding a pop song around its bassline." },

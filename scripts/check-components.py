@@ -15,6 +15,10 @@
     aria-description of a template is empty or comes from a string (tr, l[...]), never typed in
     one language (Czech pages announced "Breadcrumb", "Main", "Site").
 
+  - one page layout (rule project.ui-components): every page template opens its body with the
+    `layout` component, no template types the gutter classes (px-4 with xl:px-8) itself, and long
+    text renders only through `prose` (no template sets the bare `format` class).
+
     python3 scripts/check-components.py     exit 1 on any finding
 """
 from __future__ import annotations
@@ -43,6 +47,11 @@ SPOKEN = re.compile(r'\s(aria-label|aria-description|title|alt|placeholder)="([^
 # owner's. Once both accept a localised name, this set and its exemption go.
 PRO_ANCHORS = {"Sidebar", "Breadcrumb"}
 COMMENT = re.compile(r"\{#.*?#\}", re.S)
+CLASS = re.compile(r'class="([^"]*)"')
+GUTTER = (re.compile(r"(?:^|\s)px-4(?:\s|$)"), re.compile(r"(?:^|\s)xl:px-8(?:\s|$)"))
+BARE_FORMAT = re.compile(r"(?:^|\s)format(?:\s|$)")
+LAYOUT_DEFINITION = re.compile(r"\{%\s*component\s+(layout|prose)\((.*?)\{%\s*endcomponent\s+\1\s*%\}", re.S)
+LAYOUT_CALL = re.compile(r'\{\{\s*<layout\s+part="(gutter|body)"')
 STILL_DEFINITION = re.compile(r"\{%\s*component\s+still\((.*?)\{%\s*endcomponent\s+still\s*%\}", re.S)
 
 
@@ -105,11 +114,35 @@ def main() -> int:
                     problems.append(f"{path.relative_to(ROOT).as_posix()}:{number} {attr}=\"{value}\" is typed in one "
                                     f"language; use {attr}=\"{{{{ <tr key=… l={{l}} /> }}}}\" data-i18n-{attr}=\"…\"")
 
+    problems += layout_problems()
+
     for p in problems:
         print(f"check-components: {p}", file=sys.stderr)
     print(f"check-components: {len(set(defined))} components, {sum(len(v) for v in calls.values())} calls, "
           f"{len(problems)} problem(s)")
     return 1 if problems else 0
+
+
+def layout_problems(templates: Path = TEMPLATES) -> list[str]:
+    """One page layout: the gutter and the text box come only from `layout` and `prose`, and every
+    page template (one that extends base.html) opens its body with `layout`."""
+    problems: list[str] = []
+    for path in sorted(templates.rglob("*.html")):
+        text = COMMENT.sub(lambda m: "\n" * m.group(0).count("\n"), path.read_text(encoding="utf-8"))
+        if path.name == "components.html":
+            text = LAYOUT_DEFINITION.sub(lambda m: "\n" * m.group(0).count("\n"), text)
+        name = path.relative_to(templates.parent).as_posix()
+        if '{% extends "base.html" %}' in text and not LAYOUT_CALL.search(text):
+            problems.append(f"{name} does not open its body with {{{{ <layout part=\"body\" /> }}}}")
+        for number, line in enumerate(text.splitlines(), 1):
+            for classes in CLASS.findall(line):
+                if all(g.search(classes) for g in GUTTER):
+                    problems.append(f"{name}:{number} types the page gutter (px-4 … xl:px-8); use "
+                                    f"class=\"{{{{ <layout part=\"gutter\" /> }}}} …\"")
+                if BARE_FORMAT.search(classes):
+                    problems.append(f"{name}:{number} sets the typography box itself; use "
+                                    f"{{{{ <prose html={{…}} /> }}}}")
+    return problems
 
 
 if __name__ == "__main__":

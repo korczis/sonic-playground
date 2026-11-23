@@ -13,6 +13,8 @@
 //   - every page class renders with no console error and no failed same-origin request;
 //   - the home explorer: one card per catalogue track, faceted filter + text search + sort,
 //     URL state, the empty state, reset;
+//   - its full-text search: relevance first, whole words, short tokens, word forms, phrases,
+//     English and Czech, each checked against the index as served;
 //   - a track page: the video still turns into a youtube-nocookie player, related tracks exist;
 //   - the theme toggle flips and persists the Pro `color-theme` key;
 //   - phone width (390 px): no horizontal overflow, the sidebar drawer opens;
@@ -179,6 +181,13 @@ function watch(page) {
   page.on('console', (m) => {
     if (m.type() !== 'error' && m.type() !== 'warning') return;
     if (m.text().startsWith('Failed to load resource')) return;
+    // A headless browser composites in software, so it reads every WebGL frame back itself and
+    // ANGLE reports that stall; a real Chrome composites on the GPU and never does (knowledge
+    // console-clean-by-construction). A notice, never a pass: any other warning still fails.
+    if (/^\[\.WebGL-[0-9a-fx]+\]GL Driver Message \([^)]*Performance[^)]*\): GPU stall due to ReadPixels/.test(m.text())) {
+      notices.add(`headless compositing (not the site): ${m.text()}`);
+      return;
+    }
     const from = (m.location() && m.location().url) || '';
     const own = !from || from.startsWith(origin);
     (own ? errors : null)?.push(`console ${m.type()}: ${m.text()}`);
@@ -543,6 +552,8 @@ async function shot(page, name) {
   // A fake microphone (a beeping tone) and auto-accepted permission prompts let the visualiser's
   // "Follow the music" run its real listening path and analysis.
   const launch = { headless: true, args: ['--enable-unsafe-swiftshader', '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] };
+  // On a Mac, WebGL on Metal, as Chrome itself runs it (headless defaults to ANGLE on OpenGL).
+  if (process.platform === 'darwin') launch.args.push('--use-angle=metal');
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   const browser = await chromium.launch(launch);
   instrument(browser);
@@ -617,6 +628,16 @@ async function shot(page, name) {
       `shared link: the song is cued at its time (${now.source} at ${st.s.time})`);
     check(st.calls === 0 && !st.api && st.toast.length > 0, 'shared link: paused, the YouTube API not even loaded, and the toast says so');
     check(st.mode === 'prism' && st.params && st.params.warp === 1.5 && st.cinema === true, 'shared link: the picture, its live control and cinema');
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine') !== 'gl'
+      || /^hsl\(\d+ 85% 62% \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
+    'shared link: a WebGL picture glows in its hue, no frame read back from the GPU');
+    // A p5 picture draws in 2D: its glow is the colour of its own pixels.
+    await page.evaluate(() => window.SonicVisualizer.set('kaleido'));
+    await page.waitForFunction(() => document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine') === 'p5'
+      && /^rgb\(\d+ \d+ \d+ \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow')), null, { timeout: 10000 }).catch(() => {});
+    check(await page.evaluate(() => /^rgb\(\d+ \d+ \d+ \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
+      'shared link: a 2D (p5) picture glows in the colour of its own pixels');
     check(new URL(page.url()).searchParams.get('play') === key && new URL(page.url()).searchParams.get('t') === '42',
       'shared link: the URL keeps naming the song and its time');
     await page.click('#player [data-player-toggle]');
@@ -1290,6 +1311,15 @@ async function shot(page, name) {
     const featured = await page.locator('#featured').getAttribute('data-featured');
     const expected = catalog.tracks.map((t) => t.source).filter((s) => s !== featured).slice(0, 4);
     check(recent.join() === expected.join(), 'home lists the four newest reviews after the featured one');
+    const newestStill = catalog.tracks.find((t) => t.thumbnail);
+    check(featured === newestStill.source, `home features the newest review with a still (${newestStill.source})`);
+    // The mosaic as served (hero.js turns its tiles a few seconds later).
+    // Fetched by the page, so --artifact answers it (context.request would ask production).
+    const served = await page.evaluate((u) => fetch(u).then((r) => r.text()), at(''));
+    const mosaic = served.slice(served.indexOf('id="hero-mosaic"'), served.indexOf('id="hero-newest"'));
+    const tiles = [...mosaic.matchAll(/data-source="([^"]+)"/g)].map((m) => m[1]);
+    const nine = catalog.tracks.filter((t) => t.youtube).slice(0, 9).map((t) => t.source);
+    check(tiles.join() === nine.join(), 'the hero mosaic shows the nine newest reviews with a video, newest first');
     const kinds = catalog.facet_names.filter((k) => catalog.facets[k].length > 2);
     const sound = await page.locator('section[aria-labelledby="home-sound"] a[href]').count();
     check(sound >= kinds.length * 2, `home explores by sound over ${kinds.join(', ')}`);
@@ -1313,7 +1343,11 @@ async function shot(page, name) {
     check(before === Math.min(24, catalog.tracks.length), `explorer shows the first page (${before} cards)`);
     await page.click('[data-explorer-more]');
     check((await unfolded()) === Math.min(48, catalog.tracks.length), 'Show more unfolds the next page');
+    const order = () => page.locator('#explorer-grid [data-track]').evaluateAll((els) => els.map((e) => e.dataset.source));
+    const newest = catalog.tracks.map((t) => t.source);
+    check((await order()).join() === newest.join(), 'sort newest first keeps the catalogue order, same-day reviews included');
     await page.selectOption('#explorer-sort', 'old');
+    check((await order()).join() === newest.slice().reverse().join(), 'sort oldest first is the catalogue order reversed');
     const first = await page.locator('#explorer-grid [data-track]:not([hidden])').first().getAttribute('data-date');
     check(first === catalog.stats.first, `sort oldest first starts at ${catalog.stats.first}`);
     const deep = await open(browser, at(`?genre=${encodeURIComponent(genre.term)}&sort=artist`), desktop);
@@ -1684,7 +1718,11 @@ async function shot(page, name) {
     await page.waitForFunction(() => !document.querySelector('[data-chart]') || Number(document.documentElement.dataset.chartsState) > 0,
       null, { timeout: 5000 }).catch(() => {});
     await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))));
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    // The shell clips the document (#shell overflow-hidden), so the content area is measured too.
+    const overflow = await page.evaluate(() => {
+      const main = document.getElementById('main-content');
+      return Math.max(document.documentElement.scrollWidth - window.innerWidth, main ? main.scrollWidth - main.clientWidth : 0);
+    });
     check(overflow <= 0, `${name} @390px: no horizontal overflow (${overflow}px)`);
     const small = await page.evaluate((min) => [...document.querySelectorAll('button, a[href], [role=button], select, input')]
       .filter((el) => {
@@ -1715,6 +1753,71 @@ async function shot(page, name) {
     await context.close();
   }
 
+  // One page layout (rule project.ui-components), phone to wide desktop: nothing overflows the page
+  // or its content area, the page header and the first card share the gutter's left edge, long
+  // text is mobile first (16 px or less on a phone, no content heading above the page title), a
+  // plain page's text fills its card at a readable measure, and the navbar's title and controls
+  // never overlap.
+  for (const width of [360, 768, 1280, 1440, 1920]) {
+    const gutter = width >= 1280 ? 32 : 16;
+    for (const [name, rel] of [['welcome', 'welcome/'], ['author', 'author/'], ['cs welcome', 'cs/welcome/'], ['track', sample.path],
+      ['archive', 'archive/'], ['insights', 'insights/'], ['concepts', 'concept/'], ['yearbooks', 'yearbook/']]) {
+      const { context, page, errors } = await open(browser, at(rel), { width, height: 900 }, width === 768 ? 'dark' : 'light');
+      await page.evaluate(() => document.fonts.ready.then(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))));
+      const m = await page.evaluate(() => {
+        const main = document.getElementById('main-content');
+        const left = (el) => (el ? el.getBoundingClientRect().left : null);
+        const pad = (el) => parseFloat(getComputedStyle(el).paddingLeft);
+        const header = document.querySelector('#main-content h1');
+        const crumb = document.querySelector('#main-content nav[aria-label] ol, #main-content nav ol');
+        const prose = document.querySelector('[data-prose]');
+        const card = document.querySelector('[data-page-card]');
+        const p = prose && prose.querySelector('p');
+        const h2 = prose && prose.querySelector('h2');
+        const shown = (el) => el.offsetParent && el.getBoundingClientRect().width > 1;
+        const nav = document.querySelector('nav.fixed');
+        const boxes = nav ? [...nav.querySelectorAll('a[href] span, button, a[href]:not(:has(span))')].filter(shown)
+          .filter((el) => !el.closest('.sr-only') && !el.classList.contains('sr-only')).map((el) => {
+            const range = document.createRange(); range.selectNodeContents(el);
+            // A span's text, unless it is cut off (truncate): then its own box is what shows.
+            const r = el.tagName === 'SPAN' && el.scrollWidth <= el.clientWidth ? range.getBoundingClientRect() : el.getBoundingClientRect();
+            return { what: (el.textContent || el.getAttribute('aria-label') || el.tagName).trim().slice(0, 20), l: r.left, r: r.right, t: r.top, b: r.bottom };
+          }) : [];
+        const overlaps = [];
+        for (let i = 0; i < boxes.length; i += 1) for (let j = i + 1; j < boxes.length; j += 1) {
+          const a = boxes[i]; const c = boxes[j];
+          if (a.l < c.r - 1 && c.l < a.r - 1 && a.t < c.b - 1 && c.t < a.b - 1) overlaps.push(`${a.what} / ${c.what}`);
+        }
+        const firstCard = main && [...main.querySelectorAll('section, article, aside')].find((el) => el.getBoundingClientRect().width > 100 && !el.closest('header'));
+        return {
+          overflow: Math.max(document.documentElement.scrollWidth - innerWidth, main ? main.scrollWidth - main.clientWidth : 0),
+          header: left(header), crumb: left(crumb), card: left(firstCard), main: main ? left(main) : 0,
+          text: p ? parseFloat(getComputedStyle(p).fontSize) : null,
+          h1: header ? parseFloat(getComputedStyle(header).fontSize) : null,
+          h2: h2 ? parseFloat(getComputedStyle(h2).fontSize) : null,
+          measure: p ? p.getBoundingClientRect().width / parseFloat(getComputedStyle(p).fontSize) : null,
+          fill: card && prose ? Math.abs((left(prose) - left(card)) - pad(card)) + Math.abs(card.getBoundingClientRect().right - pad(card) - prose.getBoundingClientRect().right) : null,
+          overlaps,
+          // The narrowest title column of an aside's track rows (welcome, author).
+          rows: Math.min(...[...document.querySelectorAll('aside [data-track] a > span.min-w-0')].map((el) => el.getBoundingClientRect().width)),
+        };
+      });
+      const where = `${name} @${width}px`;
+      check(m.overflow <= 0, `layout: ${where} nothing overflows the page or its content area (${m.overflow}px)`);
+      if (m.header !== null) check(Math.abs(m.header - m.main - gutter) <= 1, `layout: ${where} the page title sits on the ${gutter}px gutter (${Math.round(m.header - m.main)}px)`);
+      if (m.header !== null && m.card !== null) check(Math.abs(m.card - m.header) <= 1, `layout: ${where} the first card shares the title's left edge (${Math.round(m.card)} vs ${Math.round(m.header)})`);
+      if (m.text !== null && width < 640) check(m.text <= 16, `layout: ${where} body text is mobile first (${m.text}px)`);
+      if (m.h2 !== null && m.h1 !== null) check(m.h2 <= m.h1, `layout: ${where} no content heading outgrows the page title (h2 ${m.h2}px, h1 ${m.h1}px)`);
+      if (m.fill !== null) check(m.fill <= 2, `layout: ${where} the text fills its card, not a column centred in it (${m.fill}px off)`);
+      if (m.fill !== null && m.measure !== null) check(m.measure <= 45, `layout: ${where} the text keeps a readable measure (${m.measure.toFixed(1)}em per line)`);
+      if (Number.isFinite(m.rows)) check(m.rows >= 64, `layout: ${where} the aside's track rows keep their titles readable (${Math.round(m.rows)}px)`);
+      check(m.overlaps.length === 0, `layout: ${where} the navbar's title and controls do not overlap (${m.overlaps.join(', ')})`);
+      check(errors.length === 0, `layout: ${where} no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+      if (width === 360 || width === 1920) await shot(page, `layout-${name.replace(' ', '-')}-${width}`);
+      await context.close();
+    }
+  }
+
   // Without JavaScript the phone still reaches the navigation (review round 2).
   {
     const { context, page } = await open(browser, at(''), phone, 'light', { javaScriptEnabled: false });
@@ -1723,21 +1826,143 @@ async function shot(page, name) {
     await context.close();
   }
 
-  // Full-text search over the reviews uses the same tokens as the index (review round 2).
+  // Full-text search (static/js/explorer.js over static/data/search*.json, sonic-search/v2):
+  // relevance first, whole words, every token, word forms, phrases, the URL. Every expectation is
+  // derived from the catalogue and the index as served, never typed: a review matches when its
+  // index (its tokens in order) holds the words, a card when its text says them.
   {
-    const term = 'four-on-the-floor';
-    const expected = Object.entries(JSON.parse(root
-      ? fs.readFileSync(path.join(root, 'data/search.json'), 'utf8')
-      : await (await get(at('data/search.json'))).text()).tracks)
-      .filter(([, words]) => ['four', 'floor'].every((w) => words.split(' ').includes(w))).length;
-    const { context, page } = await open(browser, at(''), desktop);
+    const readJson = async (rel) => JSON.parse(root ? fs.readFileSync(path.join(root, rel), 'utf8')
+      : await (await get(at(rel))).text());
+    const reviewsOf = async (rel) => {
+      const data = await readJson(rel);
+      check(data.schema === 'sonic-search/v2', `${rel}: schema sonic-search/v2 (${data.schema})`);
+      return Object.fromEntries(Object.entries(data.tracks).map(([s, w]) => [s, ` ${w} `]));
+    };
+    const plain = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '');
+    const searchIn = (page) => async (q) => {
+      await page.fill('#explorer-q', q);
+      await page.waitForFunction((want) => new URLSearchParams(location.search).get('q') === want
+        && document.documentElement.dataset.reviewsState === 'ready', q, { timeout: 15000 });
+      return page.locator('#explorer-grid [data-track]:not([hidden])').evaluateAll((els) =>
+        els.map((e) => ({ source: e.dataset.source, text: e.dataset.text })));
+    };
+    const sources = (cards) => cards.map((c) => c.source);
+    const same = (a, b) => sources(a).sort().join() === sources(b).sort().join();
+    // Every review whose index holds `words` is shown, and every card shown has them in its
+    // index or (`re`) in its own text: the matches are exactly the tracks that say it.
+    const exact = (index, cards, words, re) => {
+      const say = Object.keys(index).filter((s) => index[s].includes(words));
+      const shown = sources(cards);
+      return say.length > 0 && say.every((s) => shown.includes(s))
+        && cards.every((c) => index[c.source].includes(words) || re.test(plain(c.text)));
+    };
+    const total = catalog.tracks.length;
+    const noErrors = (what, errs) => check(errs.length === 0,
+      `${what}: no console errors${errs.length ? ' — ' + errs.join(' | ') : ''}`);
+
+    const en = await reviewsOf('data/search.json');
+    const { context, page, errors } = await open(browser, at('?probe=kept'), desktop);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
-    await page.fill('#explorer-q', term);
-    await page.waitForFunction(() => document.documentElement.dataset.reviewsState === 'ready');
-    await page.waitForTimeout(300);
-    const shown = await page.locator('#explorer-grid [data-track]:not([hidden])').count();
-    check(expected > 0 && shown >= expected, `search "${term}" finds the reviews that say it (${shown} ≥ ${expected})`);
+    const search = searchIn(page);
+    const url = () => new URL(page.url()).searchParams;
+
+    // Relevance: the artist with most tracks (catalog.artists) finds their own tracks first,
+    // and so does the same name with its last word unfinished, as it is while being typed.
+    const top = catalog.artists[0].term;
+    const own = catalog.tracks.filter((t) => t.artist.toLowerCase() === top.toLowerCase())
+      .map((t) => t.source);
+    for (const q of [top, top.slice(0, -1)]) {
+      const shown = await search(q);
+      check(own.length > 0 && shown.slice(0, own.length).every((c) => own.includes(c.source)),
+        `search "${q}": the artist's own ${own.length} tracks come first (of ${shown.length})`);
+    }
+    check(await page.inputValue('#explorer-sort') === 'relevance' && !url().has('sort')
+      && url().get('probe') === 'kept',
+      'a query sorts by relevance by default; the URL holds no sort and keeps the other keys');
+    // A title ranks its own track first: three catalogue titles of several words, each unique.
+    const key = (s) => plain(s).replace(/[^a-z0-9]+/g, ' ').trim();
+    const titles = catalog.tracks.filter((t) => /^[\x20-\x7e]+$/.test(t.track)
+      && key(t.track).includes(' ')
+      && catalog.tracks.filter((u) => key(u.track) === key(t.track)).length === 1).slice(0, 3);
+    for (const t of titles) {
+      const shown = await search(t.track);
+      const first = shown.length ? shown[0].source : 'nothing';
+      check(first === t.source,
+        `search "${t.track}": its track first (${first}, of ${shown.length})`);
+    }
+
+    // Whole words: "art" is neither "start" nor "artist".
+    const art = await search('art');
+    check(art.length < total / 4 && exact(en, art, ' art ', /(^|[^a-z0-9])arts?([^a-z0-9]|$)/),
+      `search "art": the word only (${art.length} of ${total})`);
+    // Short tokens and digits are searched: "tb-303" is the run "tb 303".
+    const tb = await search('tb-303');
+    check(exact(en, tb, ' tb 303 ', /tb[^a-z0-9]+303/),
+      `search "tb-303": exactly the tracks that name the TB-303 (${tb.length})`);
+    // Word forms: a plural finds what its singular finds.
+    const many = await search('synthesizers');
+    const one = await search('synthesizer');
+    check(same(many, one) && exact(en, one, ' synthesizer ', /synthesizer/),
+      `search "synthesizers" finds what "synthesizer" finds (${many.length} = ${one.length})`);
+    // A quoted phrase: its words side by side, fewer tracks than the same words anywhere.
+    const loose = await search('bass line');
+    const phrase = await search('"bass line"');
+    check(phrase.length < loose.length && exact(en, phrase, ' bass line ', /bass[^a-z0-9]+line/),
+      `search '"bass line"': the words side by side only (${phrase.length}, `
+      + `unquoted ${loose.length})`);
+
+    // A word being typed matches as typed too: a form rule must not turn it into a stem no word
+    // starts with ("psy" is "psie" by the -y rule; every review saying a word in psy... shows).
+    const half = 'psy';
+    const sayHalf = Object.keys(en).filter((s) => en[s].includes(` ${half}`));
+    const halfShown = sources(await search(half));
+    check(sayHalf.length > 0 && sayHalf.every((s) => halfShown.includes(s)),
+      `search "${half}": every review with a word that starts so (${sayHalf.length} of ${halfShown.length})`);
+    // A possessive is its word: "daft punk's" finds what "daft punk" finds.
+    const possessive = await search("daft punk's");
+    const bare = await search('daft punk');
+    check(bare.length > 0 && same(possessive, bare),
+      `search "daft punk's" finds what "daft punk" finds (${possessive.length} = ${bare.length})`);
+
+    // A sort the reader chooses wins over relevance and is in the URL; reset forgets it.
+    await page.selectOption('#explorer-sort', 'new');
+    const order = await page.locator('#explorer-grid [data-track]:not([hidden])')
+      .evaluateAll((els) => els.map((e) => e.dataset.source));
+    const byDate = catalog.tracks.map((t) => t.source).filter((s) => order.includes(s));
+    check(url().get('sort') === 'new' && url().get('probe') === 'kept'
+      && order.join() === byDate.join(),
+      'search: a chosen sort (newest first) wins over relevance, in the URL beside the other keys');
+    await page.fill('#explorer-q', '');
+    await page.waitForFunction(() => !new URLSearchParams(location.search).has('q'));
+    check(url().get('sort') === 'new',
+      'search: a chosen sort stays in the URL when the query is cleared, so a reload keeps it');
+    await page.click('[data-explorer-reset]');
+    await search('art');
+    check(await page.inputValue('#explorer-sort') === 'relevance' && !url().has('sort'),
+      'search: reset forgets the chosen sort; the next query is by relevance again');
+    noErrors('search', errors);
     await context.close();
+
+    // The Czech index on /cs/: Czech word forms, and one phrase in two cases.
+    const cs = await reviewsOf('data/search.cs.json');
+    const czech = await open(browser, at('cs/'), desktop);
+    await czech.page.waitForFunction(() =>
+      document.documentElement.dataset.explorerState === 'ready');
+    const hledej = searchIn(czech.page);
+    const forms = [];
+    for (const q of ['syntezátory', 'syntezátor', 'syntezátorem']) forms.push(await hledej(q));
+    check(same(forms[0], forms[1]) && same(forms[1], forms[2])
+      && exact(cs, forms[0], ' syntezator ', /syntezator/),
+      `cs: "syntezátory", "syntezátor", "syntezátorem" find the same ${forms[0].length} tracks`);
+    const nominative = await hledej('"basová linka"');
+    const instrumental = await hledej('"basovou linkou"');
+    const czLoose = await hledej('basová linka');
+    check(same(nominative, instrumental) && nominative.length < czLoose.length
+      && exact(cs, nominative, ' basov link ', /basov[a-z]*[^a-z0-9]+link/),
+      `cs: '"basová linka"' is '"basovou linkou"', words side by side (${nominative.length}, `
+      + `unquoted ${czLoose.length})`);
+    noErrors('cs search', czech.errors);
+    await czech.context.close();
   }
 
   // A video YouTube removed (data/videos.json) shows a note, and its still is never requested.

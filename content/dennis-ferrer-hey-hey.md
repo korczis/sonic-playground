@@ -14,7 +14,7 @@ publisher = "Defected"
 album = "Hey Hey"
 release_year = "2010"
 country = "US"
-musicbrainz = { artist = "a163dbd2-4ec1-416b-af45-64f9ce31351f" }
+musicbrainz = { recording = "1cec6359-8303-424f-9f31-6edbdd5c6736", artist = "a163dbd2-4ec1-416b-af45-64f9ce31351f" }
 youtube = "https://www.youtube.com/embed/5dgimjMhAIk"
 connections = [
   { source = "crookers-mad-kidz.md", why = "Crookers, the Milan duo who remixed Hey Hey for its 2010 remix EP, on their own breakthrough." },

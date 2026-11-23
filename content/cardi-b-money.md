@@ -12,7 +12,7 @@ instrument = ["vocals", "piano", "programmed beats"]
 [extra]
 country = "US"
 isrc = "USAT21811495"
-musicbrainz = { recording = "554be879-81c1-4202-9c45-286af561182f", artist = "2f3c4d70-0462-40da-bba3-0aec5772c556", release = "9a1ba945-c3f2-401c-ae0b-5a59a8976950" }
+musicbrainz = { recording = "554be879-81c1-4202-9c45-286af561182f", artist = "2f3c4d70-0462-40da-bba3-0aec5772c556", release = "1873d1c7-4bdd-4f7b-ba51-0b039ffb03c8" }
 publisher = "Atlantic Records"
 release_year = "2018"
 youtube = "https://www.youtube.com/embed/Zj2cK8wymIA"

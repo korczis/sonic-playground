@@ -12,7 +12,7 @@ instrument = ["vocals"]
 [extra]
 country = "FR"
 isrc = "FR9W11003435"
-musicbrainz = { recording = "eac3466c-c653-4698-954f-79764f001d93", artist = "c5028308-353d-49c1-b8a5-dd623c09abbd", release = "d733a615-528f-4d65-bbdd-660b60a5a760" }
+musicbrainz = { recording = "eac3466c-c653-4698-954f-79764f001d93", artist = "c5028308-353d-49c1-b8a5-dd623c09abbd", release = "3708134c-81bc-446c-92e7-7eb28076b19c" }
 edu_exempt = "No review, interview or lyrics page describes Coo Coo itself and no official upload of it exists, so no listening guide or learning objectives could be grounded; the page rests on the release facts (MusicBrainz) and on franceinfo's and Abcdr du Son's accounts of the album."
 publisher = "Zintertainment"
 release_year = "2010"

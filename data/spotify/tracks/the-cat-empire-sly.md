@@ -6,8 +6,9 @@ artists: ["The Cat Empire"]
 album: "Two Shoes"
 duration: "3:47"
 spotify: {"track": "4CgLsryBo7vNWSR1eozlHn", "album": "3wzXwICSZrUJd5D8gmdDnh", "artists": ["023YMawCG3OvACmRjWxLWC"]}
-keys: {"fold": "thecatempire|sly"}
-status: "missing"
+keys: {"fold": "thecatempire|sly", "isrc": "AUTW00500001", "musicbrainz": "ed6f6a97-1e48-48e7-837f-255a2dd2ac9a"}
+review: "the-cat-empire-sly.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Two Shoes*, 3:47.
 A liked song.
-No review yet.
+Reviewed: content/the-cat-empire-sly.md.

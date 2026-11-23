@@ -12,7 +12,7 @@ instrument = ["vocals", "strings", "electric guitar"]
 [extra]
 country = "AU"
 isrc = "USNLR1100001"
-musicbrainz = { recording = "7ad3c4e1-6423-4e22-ad1a-f3579e70dcf5", artist = "5358b552-626e-49ee-bc91-0def4ed1178b", release = "e6a39f71-35fc-42c3-9036-d6fcfa3abff8" }
+musicbrainz = { recording = "7ad3c4e1-6423-4e22-ad1a-f3579e70dcf5", artist = "5358b552-626e-49ee-bc91-0def4ed1178b", release = "7bbd655e-943e-47c0-a27a-323e0e98f589" }
 publisher = "WaterTower Music"
 release_year = "2011"
 album = "Sucker Punch (Original Motion Picture Soundtrack)"

@@ -377,5 +377,47 @@ class AuditCommand(unittest.TestCase):
         self.assertEqual(json.loads(out.getvalue())["counts"]["unreachable"], 1)
 
 
+    def test_cache_flush_merges_with_a_concurrent_writer(self):
+        """Two processes filling the cache side by side keep both sets of answers."""
+        old, pending = track.MB_CACHE, dict(track._mb_pending)
+        track.MB_CACHE = Path(self.tmp.name) / "shared-cache.json"
+        try:
+            track.MB_CACHE.write_text(json.dumps({"https://mb/other": {"by": "the other"}}))
+            track._mb_pending.clear()
+            track._mb_pending["https://mb/mine"] = {"by": "this one"}
+            track.mb_flush()
+            cache = json.loads(track.MB_CACHE.read_text())
+            self.assertEqual(cache, {"https://mb/other": {"by": "the other"},
+                                     "https://mb/mine": {"by": "this one"}})
+            self.assertEqual(track._mb_pending, {})
+        finally:
+            track.MB_CACHE = old
+            track._mb_pending.clear()
+            track._mb_pending.update(pending)
+
+    def test_an_answer_from_the_service_is_cached_and_flushed_every_few(self):
+        """mb_get keeps a fetched answer and writes the cache once MB_FLUSH_EVERY are held; a
+        flush with nothing held leaves the file alone."""
+        from unittest import mock
+        old, pending, every = track.MB_CACHE, dict(track._mb_pending), track.MB_FLUSH_EVERY
+        track.MB_CACHE = Path(self.tmp.name) / "fetch-cache.json"
+        body = io.BytesIO(json.dumps({"id": "fetched"}).encode("utf-8"))
+        try:
+            track._mb_pending.clear()
+            track.mb_flush()
+            self.assertFalse(track.MB_CACHE.exists())
+            track.MB_FLUSH_EVERY = 1
+            with mock.patch.object(track.urllib.request, "urlopen", return_value=contextlib.nullcontext(body)), \
+                    mock.patch.object(track.time, "sleep"):
+                data = track.mb_get("https://mb/fetched", argparse.Namespace(offline=False))
+            self.assertEqual(data, {"id": "fetched"})
+            self.assertEqual(json.loads(track.MB_CACHE.read_text())["https://mb/fetched"], {"id": "fetched"})
+            self.assertEqual(track._mb_pending, {})
+        finally:
+            track.MB_CACHE, track.MB_FLUSH_EVERY = old, every
+            track._mb_pending.clear()
+            track._mb_pending.update(pending)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -11,7 +11,7 @@ instrument = ["vocals"]
 
 [extra]
 country = "BR"
-musicbrainz = { artist = "41deaf18-1aec-46fb-baad-4b0381c3160f" }
+musicbrainz = { recording = "2c5b5be7-9635-4b86-9f33-860224f13afa", artist = "41deaf18-1aec-46fb-baad-4b0381c3160f" }
 publisher = "Copacabana"
 release_year = "1973"
 album = "Disco De Ouro"

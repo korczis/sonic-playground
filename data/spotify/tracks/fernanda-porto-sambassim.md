@@ -6,7 +6,7 @@ artists: ["Fernanda Porto"]
 album: "Best Of Fernanda Porto"
 duration: "4:14"
 spotify: {"track": "6JZPhnCTpCj884X0d9DX7O", "album": "2qGoLROkdo6CF3N9Zo45Gz", "artists": ["01GliotOQOW6gTjIIUEhNR"]}
-keys: {"fold": "fernandaporto|sambassim", "isrc": "BRWMB0200783", "musicbrainz": "bd9671bd-b531-4bd5-afb8-162dd83ec62e"}
+keys: {"fold": "fernandaporto|sambassim", "isrc": "BRTPA0200182", "musicbrainz": "93678096-886b-4d9a-936c-5f28f6593090"}
 review: "fernanda-porto-sambassim.md"
 status: "present"
 liked: false

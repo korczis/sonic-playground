@@ -15,7 +15,7 @@ album = "Time's Running In"
 release_year = "2020"
 country = "US"
 isrc = "QZC5T2000072"
-musicbrainz = { recording = "846572bc-36b5-459b-bc6b-40efd93762fd", artist = "e9787dd2-5857-4b51-8e59-a190a54820fc", release = "9ff8839c-0b14-4a33-b3cd-c306a6c694de" }
+musicbrainz = { recording = "846572bc-36b5-459b-bc6b-40efd93762fd", artist = "e9787dd2-5857-4b51-8e59-a190a54820fc", release = "d1d88d4c-f197-41b0-9ba5-a71d968e7e37" }
 youtube = "https://www.youtube.com/embed/8Ua3YgwOJ8c"
 connections = [
   { source = "nu-jo-ke-acid-pauli-who-loves-the-sun-acid-pauli-s-let-it-be-naked-remix.md", why = "Acid Pauli, who remixed Lost Kingdom, the track that follows Bebe on Time's Running In, for the album's 2021 remix collection." },

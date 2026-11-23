@@ -12,7 +12,7 @@ instrument = ["vocals", "guitar", "keyboards", "bass", "finger snaps"]
 [extra]
 country = "GB"
 isrc = "GBUM71400655"
-musicbrainz = { recording = "52032938-7ee1-4375-9a6b-c349f0a6c1af", artist = "20395131-fbde-43ce-b141-b700cfdae99c", release = "75a5284d-9e9c-4522-8020-527218c2ec33" }
+musicbrainz = { recording = "52032938-7ee1-4375-9a6b-c349f0a6c1af", artist = "20395131-fbde-43ce-b141-b700cfdae99c", release = "3634a177-ed3b-48b9-abb3-e1d3ef0179d8" }
 release_year = "2014"
 album = "ZABA"
 publisher = "Wolf Tone"

@@ -12,7 +12,7 @@ instrument = ["vocals", "bass", "strings"]
 [extra]
 country = "BE"
 isrc = "BEB471500095"
-musicbrainz = { recording = "bc532d54-6aa3-49bc-9fdf-9b9620d1b8ab", artist = "62dc94cc-f611-4345-87cb-b914796a4a45", release = "71ccebd5-64e1-47d1-b9b0-70b84efa308d" }
+musicbrainz = { recording = "bc532d54-6aa3-49bc-9fdf-9b9620d1b8ab", artist = "62dc94cc-f611-4345-87cb-b914796a4a45", release = "42c1c539-da57-46b1-a97b-d4179efbc3af" }
 publisher = "Columbia"
 release_year = "2015"
 album = "In Wonderland"

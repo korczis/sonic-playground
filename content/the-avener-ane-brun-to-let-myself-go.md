@@ -12,7 +12,7 @@ instrument = ["vocals", "synthesizer", "drum machine", "guitar"]
 [extra]
 country = "FR"
 isrc = "FRV601400160"
-musicbrainz = { recording = "da80cda6-9385-4645-b495-9321673c3ee0", artist = "529c40b4-c57f-49e2-ad5a-201eb2fb4a5b", release = "8c475aa5-a62b-473d-b00a-2bba080c170b" }
+musicbrainz = { recording = "da80cda6-9385-4645-b495-9321673c3ee0", artist = "529c40b4-c57f-49e2-ad5a-201eb2fb4a5b", release = "51f3f496-01b9-46f6-a3a3-54da87db0b71" }
 release_year = "2015"
 album = "The Wanderings Of The Avener"
 youtube = "https://www.youtube.com/embed/a0GLPMq8k5o"

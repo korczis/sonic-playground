@@ -12,7 +12,7 @@ instrument = ["piano", "vocals", "drum machine"]
 [extra]
 country = "US"
 isrc = "USJAY0100057"
-musicbrainz = { recording = "7276155b-a01b-42a9-9d31-eb0c317d07b8", artist = "8ef1df30-ae4f-4dbd-9351-1a32b208a01e", release = "72214fcf-9cf3-4875-9923-13aa400ea8d3" }
+musicbrainz = { recording = "7276155b-a01b-42a9-9d31-eb0c317d07b8", artist = "8ef1df30-ae4f-4dbd-9351-1a32b208a01e", release = "715bf993-29dc-4f0b-b1cc-f6278df972c5" }
 release_year = "2001"
 album = "Songs in A Minor"
 publisher = "J Records"

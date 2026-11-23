@@ -1,0 +1,37 @@
+# Czech word forms for the explorer's search, the rules of data/i18n/forms/en.toml applied to
+# the folded words (no diacritics): scripts/catalog.py builds static/data/search.cs.json with
+# them and static/js/explorer.js applies them to a query on /cs/, so "syntezátory",
+# "syntezátorem" and "syntezátor" are one word, and "basovou linkou" is "basová linka".
+#
+# The endings of the common cases of nouns and adjectives, longest first. The first that ends
+# the word decides; a stem shorter than min_stem leaves the word as it is. Light on purpose:
+# an ending that also ends many stems (-ova, -ho, -mu) is left out, and consonant alternations
+# (linka, lince) are not followed.
+min_stem = 3
+suffixes = [
+  ["ami", ""],  # syntezátorami, linkami
+  ["emi", ""],  # písněmi
+  ["ech", ""],  # syntezátorech
+  ["ich", ""],  # jarních
+  ["ach", ""],  # linkách
+  ["ych", ""],  # basových
+  ["ymi", ""],  # basovými
+  ["imi", ""],  # jarními
+  ["eho", ""],  # basového
+  ["emu", ""],  # basovému
+  ["iho", ""],  # jarního
+  ["imu", ""],  # jarnímu
+  ["ovi", ""],  # interpretovi
+  ["em", ""],   # syntezátorem
+  ["om", ""],   # (colloquial) syntezátorom
+  ["um", ""],   # syntezátorům
+  ["ou", ""],   # linkou, basovou
+  ["ym", ""],   # basovým
+  ["im", ""],   # jarním
+  ["a", ""],    # linka, basová
+  ["e", ""],    # basové, skladbě
+  ["i", ""],    # písni
+  ["o", ""],    # město
+  ["u", ""],    # linku, syntezátoru
+  ["y", ""],    # syntezátory, linky
+]

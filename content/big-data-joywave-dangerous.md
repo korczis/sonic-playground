@@ -12,7 +12,7 @@ instrument = ["vocals", "guitar", "bass", "handclaps"]
 [extra]
 country = "US"
 isrc = "TCABQ1375535"
-musicbrainz = { recording = "72d81724-84ef-44e2-a228-b124916eda30", artist = "f3ae28b3-4d08-4b99-bd25-71d600a13916", release = "a24006f7-7859-4fab-9fa5-5d87e41a611e" }
+musicbrainz = { recording = "72d81724-84ef-44e2-a228-b124916eda30", artist = "f3ae28b3-4d08-4b99-bd25-71d600a13916", release = "cbb7607e-5280-48c0-8b30-cd4b322e5f86" }
 release_year = "2013"
 album = "2.0"
 publisher = "Wilcassettes"

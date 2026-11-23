@@ -12,7 +12,7 @@ instrument = ["cello"]
 [extra]
 country = "FI"
 isrc = "DERK41600023"
-musicbrainz = { recording = "5ce9a15d-0159-45e2-8247-241895203b02", artist = "788ad31c-bf0c-4a31-83f8-b8b130d79c76", release = "acec9629-ffa4-457f-9d39-34dac2e48230" }
+musicbrainz = { recording = "5ce9a15d-0159-45e2-8247-241895203b02", artist = "788ad31c-bf0c-4a31-83f8-b8b130d79c76", release = "e14a61c4-d29f-4826-8d9b-8ca90b663bc0" }
 publisher = "Odyssey Music Network"
 release_year = "2016"
 album = "Plays Metallica by Four Cellos (2016 Remastered Version)"

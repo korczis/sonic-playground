@@ -6,7 +6,7 @@ artists: ["Waldeck"]
 album: "Ballroom Stories"
 duration: "3:53"
 spotify: {"track": "03IroQVyJPkCNntdcRZlpi", "album": "69y7lUVJJeP9ikl3j0CsP6", "artists": ["6596yDTd94cIC3dlBptxDH"]}
-keys: {"fold": "waldeck|memories", "musicbrainz": "e6a83985-a884-49b1-94dc-0eacdaf145b6"}
+keys: {"fold": "waldeck|memories", "musicbrainz": "c3be4f09-f2af-442a-91b4-e50c67b3db52"}
 review: "waldeck-memories.md"
 status: "present"
 liked: true

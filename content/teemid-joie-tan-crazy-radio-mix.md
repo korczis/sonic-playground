@@ -11,7 +11,7 @@ instrument = ["vocals"]
 
 [extra]
 isrc = "DEA621400409"
-musicbrainz = { recording = "64934b22-18fa-44c4-a6e4-431efcfc070b", artist = "c8fe96ee-2195-4b27-adb0-525843822b6d", release = "13eaa3d9-239a-42cf-a2fa-8b461a817346" }
+musicbrainz = { recording = "64934b22-18fa-44c4-a6e4-431efcfc070b", artist = "c8fe96ee-2195-4b27-adb0-525843822b6d", release = "95fa7920-ac2b-4fe0-a13c-70e4c74faa22" }
 release_year = "2014"
 album = "Crazy"
 publisher = "Warner Music Germany"

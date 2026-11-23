@@ -7,7 +7,7 @@ album: "The Rising Tied"
 duration: "3:50"
 explicit: true
 spotify: {"track": "6ljbkNIzfmFrGyYUTUAleN", "album": "1YIAli70SqLNnmSJZjlVpr", "artists": ["7dWYWUbO68rXJOcyA7SpJk", "5bf6yYgHODBW5EreBZshpX"]}
-keys: {"fold": "fortminor|rememberthename", "isrc": "USWB10603333", "musicbrainz": "a57dd705-898c-4aa4-a7ea-d35637b1884b"}
+keys: {"fold": "fortminor|rememberthename", "isrc": "USWB10502457", "musicbrainz": "58efc946-0e19-4131-bc8d-c4d4bb7c2834"}
 review: "fort-minor-remember-the-name.md"
 status: "present"
 liked: false

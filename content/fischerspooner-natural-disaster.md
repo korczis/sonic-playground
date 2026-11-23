@@ -12,7 +12,7 @@ instrument = ["synthesizer", "vocals"]
 [extra]
 country = "US"
 isrc = "USFS20200017"
-musicbrainz = { recording = "8bf185e8-ef38-40c8-9901-c11d3a47e8ce", artist = "a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0", release = "ccf14271-f4f1-4f2f-9e0b-d84f5f24085d" }
+musicbrainz = { recording = "8bf185e8-ef38-40c8-9901-c11d3a47e8ce", artist = "a4f54716-24d9-4c6b-8ba7-1d7e7a5173d0", release = "ad4d4142-8590-45fd-a504-e4a2e00a94ee" }
 publisher = "International DeeJay Gigolo Records"
 release_year = "2001"
 album = "#1"

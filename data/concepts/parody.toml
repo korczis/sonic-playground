@@ -1,0 +1,11 @@
+term = "parody"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Parody_music"
+see_also = ["music video", "stage persona"]
+
+[en]
+definition = "Music that imitates a recognisable song, style or artist closely enough to be identified, in order to mock or comment on it. A parody works only if the listener knows the original, so it says as much about what was famous at the time as about its target."
+
+[cs]
+term = "parodie"
+definition = "Hudba, která napodobuje známou píseň, styl nebo interpreta tak věrně, že je lze poznat, aby se jim vysmála nebo je okomentovala. Parodie funguje jen tehdy, když posluchač zná originál, a proto vypovídá o tom, co bylo v dané době slavné, stejně jako o svém terči."

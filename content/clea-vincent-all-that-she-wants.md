@@ -12,7 +12,7 @@ instrument = ["vocals", "keyboard", "synthesizer", "drum machine"]
 [extra]
 country = "FR"
 isrc = "FR6V82187692"
-musicbrainz = { recording = "ef9243a8-1667-4cf5-b5bf-2a81789aced7", artist = "90024c0b-daa5-485c-818c-c600522ce1b8", release = "240fa98d-ed20-4c4e-88e8-5f4ea9ec8f12" }
+musicbrainz = { recording = "ef9243a8-1667-4cf5-b5bf-2a81789aced7", artist = "90024c0b-daa5-485c-818c-c600522ce1b8", release = "fe38bf80-3646-46cd-8958-a5745a70dafd" }
 publisher = "Midnight Special Records"
 release_year = "2014"
 album = "Non mais oui"

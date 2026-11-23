@@ -12,7 +12,7 @@ instrument = ["vocals", "drum machine", "synthesizer"]
 [extra]
 release_year = "2015"
 country = "GB"
-musicbrainz = { recording = "e1a0894d-2aec-4b2d-b765-3339c73c6048", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "a1091df5-6350-4c7e-a24e-a0722eb9cd63" }
+musicbrainz = { recording = "027d6281-9595-4c01-8e1b-86489b26c9b6", artist = "ba8aaa28-2de4-4d5c-824e-1e9d49235c55", release = "a612b8ad-eebf-4a2e-b602-85a0be81d9e7" }
 album = "Sirens (Remixes)"
 publisher = "Virgin EMI / Black Butter"
 youtube = "https://www.youtube.com/embed/ZrzoiTXFn3w"

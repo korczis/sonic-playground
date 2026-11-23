@@ -11,8 +11,8 @@ instrument = ["vocals"]
 
 [extra]
 country = "FR"
-isrc = "FRPDG1600020"
-musicbrainz = { recording = "26d01b2d-33cd-437b-a2c3-762c47408d74", artist = "1d9ec7ea-0fa4-41d9-917b-723c735ebbfe", release = "8e02dc1a-7b01-422f-b316-33633a2bcf21" }
+isrc = "FRPDG1600010"
+musicbrainz = { recording = "41fb4424-4b4b-48fb-9073-4a0f6b329998", artist = "1d9ec7ea-0fa4-41d9-917b-723c735ebbfe", release = "b7316c9c-d9ed-49f2-aef3-b19167652ec1" }
 release_year = "2016"
 album = "Caravelle"
 publisher = "Hamburger Records / Ekler'O'Shock"

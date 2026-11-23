@@ -90,6 +90,7 @@
 "explorer.any.sentiment" = "Jakýkoli pocit"
 "explorer.any.mood" = "Jakákoli nálada"
 "explorer.sort" = "Řazení"
+"explorer.sort.relevance" = "Nejlepší shoda"
 "explorer.sort.new" = "Nejnovější"
 "explorer.sort.old" = "Nejstarší"
 "explorer.sort.artist" = "Interpret A–Z"

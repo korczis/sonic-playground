@@ -11,7 +11,7 @@ instrument = ["vocals", "acoustic guitar", "electric guitar", "bass", "keyboard"
 
 [extra]
 country = "GB"
-musicbrainz = { recording = "601e5cb7-c9f0-4227-b72a-f0a5abad1cd4", artist = "bc85c6f6-6b06-44c1-8754-ef32c1e6b824", release = "32eabea9-e851-4dca-941e-b1712457822e" }
+musicbrainz = { recording = "a2ca096d-b51b-4bd5-bda0-a0875c5f9657", artist = "bc85c6f6-6b06-44c1-8754-ef32c1e6b824", release = "fa9b38c0-54d9-4c35-b7aa-7608e633a8d2" }
 release_year = "2006"
 album = "Corinne Bailey Rae"
 publisher = "EMI"

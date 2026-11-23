@@ -12,7 +12,7 @@ instrument = ["vocals", "guitar"]
 [extra]
 country = "SE"
 isrc = "CH3131340085"
-musicbrainz = { recording = "9340d549-2621-45f9-9bb2-351429a91f2d", artist = "c85cfd6b-b1e9-4a50-bd55-eb725f04f7d5", release = "6f5ff18b-3895-46ef-8cf0-ba7209e31413" }
+musicbrainz = { recording = "9340d549-2621-45f9-9bb2-351429a91f2d", artist = "c85cfd6b-b1e9-4a50-bd55-eb725f04f7d5", release = "26d64e29-553f-47b2-9cf5-4f8163485d5e" }
 publisher = "PRMD Music"
 release_year = "2013"
 album = "True"
