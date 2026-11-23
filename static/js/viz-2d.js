@@ -663,7 +663,7 @@
       var P = 48, dt = G.dt;
       if (!s.r) {
         s.r = new Float32Array(P); s.al = new Float32Array(P); s.hu = new Float32Array(P);
-        s.wd = new Float32Array(P); s.ox = new Float32Array(P); s.slot = 0; s.quiet = 0; s.side = 1;
+        s.wd = new Float32Array(P); s.ox = new Float32Array(P); s.slot = 0; s.quiet = 1e9; s.side = 1;
       }
       function emit(width, alpha, hue, ox) {
         var i = s.slot = (s.slot + 1) % P;
@@ -673,7 +673,7 @@
       if (k > 0 && a.beat) emit(2.6 + 2 * G.punch, 0.9, 0, 0);
       if (k > 0 && onset(s, 'sn', a.snare, 0.85, a)) emit(1.2, 0.75, 1, (s.side = -s.side) * G.spread * M * 0.35);
       s.quiet += dt;
-      if (s.quiet > 1 / q.speed) emit(2.2, 0.6, 2, 0);
+      if (s.quiet > 1 / q.speed) emit(2.8, 0.8, 2, 0);
       fade(g, w, h, 0.22);
       g.translate(w / 2 + G.pan * w, h / 2);
       g.globalCompositeOperation = 'lighter';
@@ -705,14 +705,24 @@
         }
         g.closePath();
         var hue = s.hu[i] === 0 ? G.H : s.hu[i] === 1 ? G.A : G.H + 30;
-        g.strokeStyle = hsla(hue, G.S, G.L + 6, s.al[i] * G.ex);
+        // A soft halo as wide as the treble reaches, then the ring itself.
+        g.strokeStyle = hsla(hue, G.S, G.L, 0.14 * s.al[i] * G.ex);
+        g.lineWidth = s.wd[i] * unit * (3 + 4 * m.halo);
+        g.stroke();
+        g.strokeStyle = hsla(hue, G.S, G.L + 14, s.al[i] * G.ex);
         g.lineWidth = s.wd[i] * unit;
         g.stroke();
       }
       var core = M * (0.015 + (0.03 * G.pulse + 0.012 * Math.max(0, m.drive.bass)) * G.mo);
+      // The pool of light the rings rise from (added each frame over trails, so a small share).
+      var pool = g.createRadialGradient(0, 0, 0, 0, 0, M * 0.16);
+      pool.addColorStop(0, hsla(G.H, G.S, G.L, (0.1 + 0.05 * G.punch * G.flash) * G.ex));
+      pool.addColorStop(1, 'rgba(0,0,0,0)');
+      g.fillStyle = pool;
+      g.fillRect(-M * 0.16, -M * 0.16, M * 0.32, M * 0.32);
       g.beginPath();
       g.arc(0, 0, core, 0, TAU);
-      g.fillStyle = hsla(G.H + 15, G.S, G.L + 14, (0.45 + 0.3 * G.punch * G.flash) * G.ex);
+      g.fillStyle = hsla(G.H + 15, G.S, G.L + 6, (0.4 + 0.3 * G.punch * G.flash) * G.ex);
       g.fill();
     }),
 
