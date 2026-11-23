@@ -1794,6 +1794,70 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (no WebGL 2): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // Every p5 mode follows the music through the shared grammar (static/js/viz-2d.js reads
+  // static/js/viz-map.js): with music each picture moves clearly more than in silence, a new key
+  // turns its colour (C major, then F# major, the far side of the circle of fifths), and nothing
+  // logs an error. One page, the microphone stays connected; modes and chords change in place.
+  // The background layer behind the pages then still draws its calm modes, at 30 frames a second.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await context.grantPermissions(['microphone']);
+    await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
+    check(await page.evaluate(() => window.SonicVisualizer.source()) === 'mic', 'visualiser (p5 modes): the music is heard through the microphone');
+    const stage = '[data-visualizer-stage] canvas';
+    // The picture over ~1.5 s: the mean absolute change of its cells between samples, its hue.
+    const watchPicture = async () => {
+      let prev = null, moved = 0, n = 0, hx = 0, hy = 0;
+      for (let k = 0; k < 7; k++) {
+        const s = await page.evaluate(pictureStats, stage);
+        if (prev) { moved += s.cells.reduce((acc, y, c) => acc + Math.abs(y - prev.cells[c]), 0) / s.cells.length; n++; }
+        if (s.hue >= 0) { hx += s.chroma * Math.cos(s.hue * Math.PI * 2); hy += s.chroma * Math.sin(s.hue * Math.PI * 2); }
+        prev = s;
+        await page.waitForTimeout(220);
+      }
+      return { moved: moved / n, hue: (Math.atan2(hy, hx) / (Math.PI * 2) + 1) % 1, luma: prev.luma };
+    };
+    const arc = (h0, h1) => { const d = Math.abs(h1 - h0) % 1; return Math.min(d, 1 - d); };
+    const p5modes = await page.evaluate(() => JSON.parse(document.getElementById('viz-conf').textContent).modes.filter((m) => m.engine === 'p5').map((m) => m.id));
+    let chord = 0;
+    const chords = [[0, 4, 7], [6, 10, 1]];
+    for (const mode of p5modes) {
+      await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
+      await page.waitForTimeout(900);
+      const music = await watchPicture();
+      await page.evaluate(() => window.__music.gain(0));
+      await page.waitForTimeout(1000);
+      const quiet = await watchPicture();
+      await page.evaluate(() => window.__music.gain(1));
+      chord = 1 - chord;
+      await page.evaluate((c) => window.__music.chord(c), chords[chord]);
+      await page.waitForTimeout(3300);
+      const turned = await watchPicture();
+      check(music.moved > quiet.moved * 1.6 && music.moved > 0.004,
+        `visualiser (${mode}): the picture moves with the music (cell change ${music.moved.toFixed(4)} with music, ${quiet.moved.toFixed(4)} in silence)`);
+      check(arc(music.hue, turned.hue) > 0.05,
+        `visualiser (${mode}): the harmony colours it (mean hue ${music.hue.toFixed(3)} in ${chord ? 'C' : 'F#'}, ${turned.hue.toFixed(3)} in ${chord ? 'F#' : 'C'}, ${arc(music.hue, turned.hue).toFixed(3)} apart)`);
+    }
+    check(errors.length === 0, `visualiser (p5 modes with music): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    // Behind the page: the full screen closed and the player playing, the calm modes draw, gently.
+    await page.evaluate(() => { window.SonicVisualizer.close(); document.documentElement.setAttribute('data-player-state', 'playing'); });
+    await page.waitForFunction(() => Number(document.getElementById('visualizer-bg').getAttribute('data-visualizer-frame') || 0) > 20, null, { timeout: 15000 }).catch(() => {});
+    const f0 = Number(await page.getAttribute('#visualizer-bg', 'data-visualizer-frame'));
+    const bgStats = [];
+    for (let k = 0; k < 5; k++) { bgStats.push(await page.evaluate(pictureStats, '#visualizer-bg canvas')); await page.waitForTimeout(400); }
+    const fps = (Number(await page.getAttribute('#visualizer-bg', 'data-visualizer-frame')) - f0) / 2;
+    const bgMoved = bgStats.slice(1).reduce((acc, s, k) => acc + s.cells.reduce((a2, y, c) => a2 + Math.abs(y - bgStats[k].cells[c]), 0) / s.cells.length, 0) / 4;
+    const bgLuma = bgStats.reduce((acc, s) => acc + s.luma, 0) / bgStats.length;
+    check(bgStats[4].lit > 0 && bgLuma < 0.3 && bgMoved < 0.06 && fps < 36,
+      `visualiser: the background draws calmly (${await page.getAttribute('#visualizer-bg', 'data-visualizer-mode')}: lit ${bgStats[4].lit.toFixed(2)}, luma ${bgLuma.toFixed(3)}, cell change ${bgMoved.toFixed(4)}, ${fps.toFixed(0)} fps)`);
+    check(errors.length === 0, `visualiser (background with music): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // A negative control for litShare: a blank canvas is not a picture.
   {
     const { context, page } = await open(browser, at(''), desktop);
