@@ -22,6 +22,23 @@
 // tempo from the kicks' intervals with the position in the beat, and the loudness of the last
 // seconds (SonicVizAnalysis in types/sonic.d.ts). Every mode is a function of these features and
 // of its parameters.
+//
+// Beyond the bands and the onsets, the musical dimensions a picture can follow, each clamped to
+// a documented range (types/sonic.d.ts) and smoothed so it does not flicker:
+//   stereo     balance and width from the two channels (a mono source reads as 0 and 0);
+//   pitch      a 12-class chroma from a longer window, its dominant class, and the triad (key or
+//              chord colour) the last second matches, which changes only after holding 0.8 s;
+//   timbre     spectral flatness, the 85% rolloff and the brightness (the share above 1.5 kHz);
+//   loudness   an approximate K-weighted loudness (ITU BS.1770 filters, EBU's 0.4 s window) and
+//              the dynamics, the loudest moment of the last 3 s over its mean;
+//   rhythm     the position in a 4/4 bar (3/4 is not told apart) whose first beat is the beat the
+//              kicks accent most, and an envelope on that downbeat;
+//   structure  the contrast of the last 3 s with the 6 s before them, which counts a new section
+//              and raises a decaying `change` when the music moves on, at most every 6 s.
+// The clock hears no sound: it has no pitch (the chroma stays flat at 0), no stereo, flatness,
+// dynamics or novelty; its loudness and timbre are read from its own bands and its bar runs at
+// 120 bpm with the downbeat on every fourth beat.
+// The snapshot's `cost` is the mean milliseconds a frame's analysis takes (the e2e test reads it).
 (function () {
   'use strict';
   var html = document.documentElement;
@@ -36,18 +53,32 @@
     bands: new Float32Array(BANDS), wave: new Float32Array(256),
     level: 0, bass: 0, mid: 0, high: 0, kick: 0, snare: 0, hat: 0, beat: false,
     flux: 0, centroid: 0, bpm: 0, phase: 0, energy: 0, t: 0, dt: 1 / 60, source: 'clock',
+    balance: 0, width: 0, chroma: new Float32Array(12), pitch: 0, key: 0, minor: 0, keyStrength: 0,
+    flatness: 0, rolloff: 0, brightness: 0, loudness: 0, dynamics: 0, bar: 0, downbeat: 0,
+    novelty: 0, section: 0, change: 0,
   };
   var audio = {
     ctx: /** @type {AudioContext | null} */ (null), analyser: /** @type {AnalyserNode | null} */ (null),
     stream: /** @type {MediaStream | null} */ (null), freq: new Float32Array(0), time: new Float32Array(0),
     kind: /** @type {SonicAudioSource} */ ('clock'), edges: /** @type {number[]} */ ([]),
     device: /** @type {{id: string, label: string} | null} */ (null),
+    // Each bin's power (linear), read once a frame by the bands, the kick and the timbre.
+    power: new Float32Array(0),
+    // The pitch: a longer window, its bins from 80 Hz to 5 kHz (ca..cz) and their width in Hz.
+    pitch: /** @type {AnalyserNode | null} */ (null),
+    cfreq: new Float32Array(0), ca: 1, cz: 2, chz: 1,
+    // The two channels, K-weighted: balance, width and loudness.
+    left: /** @type {AnalyserNode | null} */ (null),
+    right: /** @type {AnalyserNode | null} */ (null),
+    l: new Float32Array(0), r: new Float32Array(0), bright: 1,
   };
   // Band i spans 40 * 400^(i/48) to 40 * 400^((i+1)/48) Hz: log-spaced from 40 Hz to 16 kHz.
   function bandOf(hz) { return Math.round(Math.log(hz / 40) / Math.log(400) * BANDS); }
   // The ranges every mode reads: the bass up to 180 Hz, the mids to 3.6 kHz, the highs above.
   var BASS_END = bandOf(180);
   var MID_END = bandOf(3600);
+  // The clock's brightness reads its bands above 1.5 kHz.
+  var BRIGHT = bandOf(1500);
   // The picture spans RANGE dB below the loudest band of the last seconds. TILT dB per octave
   // around 1 kHz evens out music's falling spectrum, as an analyser's slope does, so the treble
   // moves as visibly as the bass.
@@ -55,6 +86,25 @@
   var TILT = 3;
   var tilt = new Float32Array(BANDS);
   for (var ti = 0; ti < BANDS; ti++) tilt[ti] = TILT * Math.log2(40 * Math.pow(400, (ti + 0.5) / BANDS) / 1000);
+  // The loudness maps -54 to -6 LUFS (a quiet room to a loud master) onto 0..1.
+  var LOUD_FLOOR = -54;
+  var LOUD_TOP = -6;
+  // The triads the key reads: 12 major (root, major third, fifth), then 12 minor.
+  /** @type {number[][]} */
+  var TRIADS = [];
+  for (var tr = 0; tr < 24; tr++) {
+    var root = tr % 12;
+    TRIADS.push([root, (root + (tr < 12 ? 4 : 3)) % 12, (root + 7) % 12]);
+  }
+  // The structure: one feature row every 0.25 s (8 broad band groups, so a change of chord moves
+  // little; the loudness, the flatness, the brightness), 36 rows (9 s): the last 12 rows (3 s)
+  // against the 24 (6 s) before them.
+  var GROUPS = 8;
+  var ROW = GROUPS + 3;
+  var ROWS = 36;
+  var RECENT = 12;
+  /** @param {number} x */
+  function unit(x) { return Math.max(0, Math.min(1, x)); }
   // An onset detector per range. Its level is the mean power of every FFT bin in the range, in dB:
   // one figure over all the range's bins, so a quiet room's noise averages out where a narrow band
   // of one or two bins would jump by several dB from frame to frame. An onset is a rise of that
@@ -84,6 +134,20 @@
     kicks: /** @type {number[]} */ ([]), period: 0.5, lastKick: -10,
     onsets: /** @type {{name: string, t: number}[]} */ ([]),
     clock: { playing: false, base: 0, at: 0, beat: -1, half: -1 },
+    // The pitch: the raw chroma of this frame, its slow mean (about a second), the loudest peak of
+    // the last frame, the triad held (0-23) and the one that would replace it, held for how long.
+    raw: new Float32Array(12), slow: new Float32Array(12), ctop: -110, key: 0, cand: -1, candT: 0,
+    // The loudness: the mean square (EBU's 0.4 s), in LUFS, and each frame's for the dynamics.
+    ms: 1e-7, lufs: -70, dynDb: 0,
+    hist: { ms: new Float32Array(256), t: new Float32Array(256).fill(-100), i: 0 },
+    // The bar: the beat of the last kick on the grid (0-3), when it was, which beat is the
+    // downbeat, each beat's accent (dB above the kicks' mean) and the accent being measured.
+    beatN: 0, beatAt: -10, down: 0, acc: [0, 0, 0, 0], accMean: -200, downLast: -10,
+    accent: { slot: 0, peak: -200, until: 0 },
+    cost: 0,
+    // The structure: the rows, the row being summed, the novelty's usual level, the last section.
+    st: { ring: new Float32Array(ROW * ROWS), sum: new Float32Array(ROW), n: 0, at: -10, i: 0,
+      filled: 0, base: 0.02, armed: true, sectionAt: -10 },
   };
 
   function playing() { return html.getAttribute('data-player-state') === 'playing'; }
@@ -108,7 +172,7 @@
   function stopAudio() {
     if (audio.stream) audio.stream.getTracks().forEach(function (tr) { tr.stop(); });
     audio.stream = null;
-    audio.analyser = null;
+    audio.analyser = audio.pitch = audio.left = audio.right = null;
     audio.kind = 'clock';
     audio.device = null;
     dsp.kicks = [];
@@ -163,11 +227,46 @@
       // No smoothing in the analyser: the onsets read the raw spectrum; the picture smooths each
       // band itself, quickly up and slowly down (fromAudio).
       an.smoothingTimeConstant = 0;
-      ctx.createMediaStreamSource(stream).connect(an);
+      var src = ctx.createMediaStreamSource(stream);
+      src.connect(an);
       audio.analyser = an;
       audio.freq = new Float32Array(an.frequencyBinCount);
+      audio.power = new Float32Array(an.frequencyBinCount);
       audio.time = new Float32Array(an.fftSize);
       audio.edges = bandEdges(an.frequencyBinCount, ctx.sampleRate / 2);
+      audio.bright = Math.round(1500 / (ctx.sampleRate / an.fftSize));
+      // The pitch reads a window four times longer (170 ms at 48 kHz, 6 Hz a bin), so the
+      // semitones of the low notes are told apart; only its bins up to 5 kHz are copied.
+      var pa = ctx.createAnalyser();
+      pa.fftSize = 8192;
+      pa.smoothingTimeConstant = 0;
+      src.connect(pa);
+      audio.pitch = pa;
+      audio.chz = ctx.sampleRate / pa.fftSize;
+      audio.ca = Math.round(80 / audio.chz);
+      audio.cz = Math.round(5000 / audio.chz);
+      audio.cfreq = new Float32Array(audio.cz + 1);
+      // The two channels through the K-weighting of ITU BS.1770 (a high-pass at 38 Hz, a 4 dB
+      // shelf above 1.5 kHz), after an up-mix that puts a mono source on both, so a microphone
+      // reads as centred and narrow rather than hard left.
+      var up = ctx.createGain();
+      up.channelCount = 2;
+      up.channelCountMode = 'explicit';
+      up.channelInterpretation = 'speakers';
+      var hp = ctx.createBiquadFilter();
+      hp.type = 'highpass'; hp.frequency.value = 38; hp.Q.value = 0.5;
+      var shelf = ctx.createBiquadFilter();
+      shelf.type = 'highshelf'; shelf.frequency.value = 1500; shelf.gain.value = 4;
+      var split = ctx.createChannelSplitter(2);
+      src.connect(up).connect(hp).connect(shelf).connect(split);
+      audio.left = ctx.createAnalyser();
+      audio.right = ctx.createAnalyser();
+      split.connect(audio.left, 0);
+      split.connect(audio.right, 1);
+      audio.l = new Float32Array(audio.left.fftSize);
+      audio.r = new Float32Array(audio.right.fftSize);
+      dsp.st.filled = dsp.st.n = 0;
+      dsp.st.sum.fill(0);
       [dsp.kick, dsp.snare, dsp.hat].forEach(function (d) {
         var bins = an.frequencyBinCount;
         var hz = ctx.sampleRate / 2 / bins;
@@ -276,6 +375,8 @@
     A.beat = false;
     if (audio.analyser) fromAudio(dt, t); else fromClock();
     features(dt, t, !audio.analyser);
+    // What the analysis costs: the mean milliseconds of a frame's analysis, over about 20 frames.
+    dsp.cost += (performance.now() - now - dsp.cost) * 0.05;
     return A;
   }
 
@@ -286,13 +387,23 @@
     an.getFloatTimeDomainData(audio.time);
     var e = audio.edges;
     var top = -200;
-    // Each band's level is the mean power of its bins in dB (a silent bin is -Infinity), tilted.
+    var pw = audio.power;
+    // Each bin's power, once (a silent bin is -Infinity in dB, 0 here), with what the timbre reads:
+    // the total, the mean in dB (the geometric mean of the powers) and the share above 1.5 kHz.
+    var from = e[0], to = e[2 * BANDS - 1], sumP = 0, sumDb = 0, hiP = 0;
+    for (var q = from; q < to; q++) {
+      var qd = audio.freq[q];
+      var qp = qd > -200 ? Math.pow(10, qd / 10) : 0;
+      pw[q] = qp;
+      sumP += qp;
+      sumDb += Math.max(qd, -160);
+      if (q >= audio.bright) hiP += qp;
+    }
+    timbre(dt, from, to, sumP, sumDb, hiP);
+    // Each band's level is the mean power of its bins in dB, tilted.
     for (var i = 0; i < BANDS; i++) {
       var p = 0;
-      for (var k = e[2 * i]; k < e[2 * i + 1]; k++) {
-        var d = audio.freq[k];
-        if (d > -200) p += Math.pow(10, d / 10);
-      }
+      for (var k = e[2 * i]; k < e[2 * i + 1]; k++) p += pw[k];
       var db = 10 * Math.log10(p / (e[2 * i + 1] - e[2 * i]) + 1e-20) + tilt[i];
       dsp.db[i] = db;
       if (db > top) top = db;
@@ -318,9 +429,12 @@
     }
     dsp.prevDb.set(dsp.db);
     detect('kick', t, dt);
+    accent(t);
     detect('snare', t, dt);
     detect('hat', t, dt);
     dsp.primed = true;
+    chroma(dt);
+    stereo(dt, t);
     var step = audio.time.length / A.wave.length;
     var rms = 0;
     for (var w = 0; w < A.wave.length; w++) {
@@ -338,10 +452,7 @@
     var d = dsp[name];
     var level = 0, lvl = 0;
     if (d.bins) {
-      for (var k = d.a; k < d.z; k++) {
-        var v = audio.freq[k];
-        if (v > -200) level += Math.pow(10, v / 10);
-      }
+      for (var k = d.a; k < d.z; k++) level += audio.power[k];
       level = 10 * Math.log10(level / (d.z - d.a) + 1e-20);
     } else {
       for (var c = d.lo; c < d.hi; c++) level += Math.max(dsp.db[c], -160);
@@ -350,6 +461,7 @@
     for (var b = d.lo; b < d.hi; b++) lvl += A.bands[b];
     lvl /= d.hi - d.lo;
     if (!dsp.primed) { d.prev = d.lag = d.slow = level; }
+    d.level = level;
     var ref = dt >= 0.025 ? d.prev : d.lag;
     d.lag = d.prev;
     d.prev = level;
@@ -368,6 +480,203 @@
     d.vari = (1 - a) * (d.vari + a * diff * diff);
   }
 
+  // The timbre of this frame's bins from 40 Hz to 16 kHz: the flatness is their geometric mean
+  // over their arithmetic mean, over 0.56, the ratio a white noise's spectrum has (each bin of a
+  // noise scatters, so even white noise reads 0.56, not 1); the rolloff is the frequency below
+  // which 85% of the power lies, on the bands' log axis (0 at 40 Hz, 1 at 16 kHz); the
+  // brightness the share of the power above 1.5 kHz. Silence leaves them falling to 0.
+  /**
+   * @param {number} dt @param {number} from @param {number} to the bins read
+   * @param {number} sumP their power @param {number} sumDb their dB
+   * @param {number} hiP their power above 1.5 kHz
+   */
+  function timbre(dt, from, to, sumP, sumDb, hiP) {
+    var n = to - from;
+    var heard = sumP / n > 1e-12;
+    var flat = 0, roll = 0;
+    if (heard) {
+      flat = unit(Math.pow(10, (sumDb / n - 10 * Math.log10(sumP / n)) / 10) / 0.56);
+      var k = from, acc = 0;
+      while (k < to - 1 && acc + audio.power[k] < sumP * 0.85) acc += audio.power[k++];
+      roll = unit(Math.log(k * audio.ctx.sampleRate / 2 / audio.power.length / 40) / Math.log(400));
+    }
+    var g = 1 - Math.exp(-dt / 0.1);
+    A.flatness += (flat - A.flatness) * g;
+    A.rolloff += (roll - A.rolloff) * g;
+    A.brightness += ((heard ? hiP / sumP : 0) - A.brightness) * g;
+  }
+
+  // The chroma: every spectral peak from 80 Hz to 5 kHz within 50 dB of the loudest, at its
+  // interpolated frequency, adds its magnitude to its pitch class, weighted down the further it
+  // lies from the semitone (a quarter tone counts nothing). Normalised to its strongest class,
+  // smoothed over 0.15 s; its mean over about a second picks the triad.
+  /** @param {number} dt */
+  function chroma(dt) {
+    var f = audio.cfreq, raw = dsp.raw;
+    /** @type {AnalyserNode} */ (audio.pitch).getFloatFrequencyData(f);
+    raw.fill(0);
+    var floor = Math.max(dsp.ctop - 50, -120), top = -200, most = 0;
+    for (var k = audio.ca; k < audio.cz; k++) {
+      var b = f[k];
+      if (b > top) top = b;
+      if (b <= floor || b <= f[k - 1] || b < f[k + 1]) continue;
+      var off = 0.5 * (f[k - 1] - f[k + 1]) / (f[k - 1] - 2 * b + f[k + 1]);
+      if (!(Math.abs(off) < 1)) off = 0;
+      var midi = 12 * Math.log2((k + off) * audio.chz / 440) + 69;
+      var near = Math.round(midi);
+      var w = Math.cos(Math.PI * (midi - near));
+      raw[near % 12] += Math.pow(10, b / 20) * w * w;
+    }
+    dsp.ctop = top;
+    for (var c = 0; c < 12; c++) most = Math.max(most, raw[c]);
+    var g = 1 - Math.exp(-dt / 0.15), s = 1 - Math.exp(-dt / 1), lead = 0, norm = 0;
+    for (var i = 0; i < 12; i++) {
+      var v = most > 0 ? raw[i] / most : 0;
+      A.chroma[i] += (v - A.chroma[i]) * g;
+      dsp.slow[i] += (v - dsp.slow[i]) * s;
+      norm += dsp.slow[i] * dsp.slow[i];
+      if (A.chroma[i] > A.chroma[lead]) lead = i;
+    }
+    if (A.chroma[lead] > 0.2) A.pitch = lead;
+    key(dt, Math.sqrt(norm));
+  }
+
+  // The key (the chord colour of the last second): the triad whose pitch classes the slow chroma
+  // matches best (cosine, its root weighted 1.2 so a lone note names its own triad). Another
+  // triad replaces the held one only after winning for 0.8 s.
+  /** @param {number} dt @param {number} norm */
+  function key(dt, norm) {
+    var sl = dsp.slow;
+    /** @param {number} j */
+    var score = function (j) {
+      var t = TRIADS[j];
+      return (1.2 * sl[t[0]] + sl[t[1]] + sl[t[2]]) / (norm * Math.sqrt(3.44));
+    };
+    if (norm < 0.05) { A.keyStrength *= 1 - dt; return; }
+    var best = 0;
+    for (var j = 1; j < 24; j++) if (score(j) > score(best)) best = j;
+    if (best === dsp.key) dsp.cand = -1;
+    else if (best === dsp.cand) dsp.candT += dt;
+    else { dsp.cand = best; dsp.candT = 0; }
+    if (dsp.cand >= 0 && dsp.candT >= 0.8) { dsp.key = dsp.cand; dsp.cand = -1; }
+    A.key = dsp.key % 12;
+    A.minor = dsp.key >= 12 ? 1 : 0;
+    A.keyStrength = unit(score(dsp.key));
+  }
+
+  // The two K-weighted channels: the balance is the right's level against the left's (-1 hard
+  // left, 1 hard right), the width the share of the side (L - R) in the power (0 mono, 0.5 one
+  // side only or two unrelated channels, 1 out of phase), both over 0.2 s. The loudness is their
+  // summed mean square over 0.4 s in LUFS (BS.1770; a mono source counts on both speakers); the
+  // dynamics the loudest frame of the last 3 s over their mean, 20 dB being 1.
+  /** @param {number} dt @param {number} t */
+  function stereo(dt, t) {
+    var l = audio.l, r = audio.r;
+    /** @type {AnalyserNode} */ (audio.left).getFloatTimeDomainData(l);
+    /** @type {AnalyserNode} */ (audio.right).getFloatTimeDomainData(r);
+    var sl = 0, sr = 0, x = 0;
+    for (var i = 0; i < l.length; i++) { sl += l[i] * l[i]; sr += r[i] * r[i]; x += l[i] * r[i]; }
+    var both = sl + sr, ms = both / l.length, heard = ms > 1e-8;
+    var bal = heard ? (Math.sqrt(sr) - Math.sqrt(sl)) / (Math.sqrt(sr) + Math.sqrt(sl)) : 0;
+    var wid = heard ? unit((both - 2 * x) / (2 * both)) : 0;
+    var g = 1 - Math.exp(-dt / 0.2);
+    A.balance += (bal - A.balance) * g;
+    A.width += (wid - A.width) * g;
+    ms = Math.max(1e-7, ms);
+    dsp.ms += (ms - dsp.ms) * (1 - Math.exp(-dt / 0.4));
+    dsp.lufs = -0.691 + 10 * Math.log10(dsp.ms);
+    A.loudness = unit((dsp.lufs - LOUD_FLOOR) / (LOUD_TOP - LOUD_FLOOR));
+    var h = dsp.hist, peak = 0, sum = 0, n = 0;
+    h.ms[h.i] = ms;
+    h.t[h.i] = t;
+    h.i = (h.i + 1) % h.ms.length;
+    for (var j = 0; j < h.ms.length; j++) {
+      if (t - h.t[j] > 3) continue;
+      peak = Math.max(peak, h.ms[j]);
+      sum += h.ms[j];
+      n++;
+    }
+    dsp.dynDb = 10 * Math.log10(peak * n / sum);
+    A.dynamics = unit(dsp.dynDb / 20);
+  }
+
+  // The accent of a kick on the grid: its range's loudest level within 80 ms of the onset, in dB
+  // above the kicks' running mean, averaged per beat of the bar; the beat accented most is the
+  // downbeat, and another beat takes its place only when it is accented 1.5 dB more.
+  /** @param {number} t */
+  function accent(t) {
+    var ac = dsp.accent;
+    if (!ac.until) return;
+    ac.peak = Math.max(ac.peak, dsp.kick.level);
+    if (t < ac.until) return;
+    ac.until = 0;
+    if (dsp.accMean < -150) dsp.accMean = ac.peak;
+    var acc = dsp.acc;
+    acc[ac.slot] += (ac.peak - dsp.accMean - acc[ac.slot]) * 0.35;
+    dsp.accMean += (ac.peak - dsp.accMean) * 0.25;
+    var best = 0;
+    for (var s = 1; s < 4; s++) if (acc[s] > acc[best]) best = s;
+    if (acc[best] > acc[dsp.down] + 1.5) dsp.down = best;
+  }
+
+  // The kick's place in the bar: a kick within a quarter beat of the grid (whole beats after the
+  // last one on it) moves the count on; one off the grid is passed over; after 2 s without one
+  // the count starts again from this kick.
+  /** @param {number} t */
+  function count(t) {
+    var beats = (t - dsp.beatAt) / dsp.period;
+    var n = Math.round(beats);
+    if (t - dsp.beatAt > 2) { dsp.beatN = 0; dsp.acc = [0, 0, 0, 0]; dsp.down = 0; }
+    else if (n < 1 || Math.abs(beats - n) > 0.25) return;
+    else dsp.beatN = (dsp.beatN + n) % 4;
+    dsp.beatAt = t;
+    dsp.accent = { slot: dsp.beatN, peak: dsp.kick.level, until: t + 0.08 };
+    if (dsp.beatN === dsp.down && A.bpm) { A.downbeat = reduced ? 0.35 : 1; dsp.downLast = t; }
+  }
+
+  // The structure: a row of features every 0.25 s; once 9 s are heard, the novelty is the mean
+  // difference of the last 3 s from the 6 s before them (0.25 being 1). A section begins where
+  // it stands above both 0.06 and three times its usual level, at least 6 s after the last, and
+  // the next waits until it has fallen back below half of that.
+  /** @param {number} t */
+  function structure(t) {
+    var st = dsp.st, sum = st.sum;
+    var per = BANDS / GROUPS;
+    for (var b = 0; b < BANDS; b++) sum[Math.floor(b / per)] += A.bands[b] / per;
+    sum[GROUPS] += A.loudness;
+    sum[GROUPS + 1] += A.flatness;
+    sum[GROUPS + 2] += A.brightness;
+    st.n++;
+    if (t - st.at < 0.25) return;
+    st.at = t;
+    for (var d = 0; d < ROW; d++) { st.ring[st.i * ROW + d] = sum[d] / st.n; sum[d] = 0; }
+    st.n = 0;
+    st.i = (st.i + 1) % ROWS;
+    st.filled = Math.min(ROWS, st.filled + 1);
+    if (st.filled < ROWS) return;
+    var nov = 0;
+    for (var c = 0; c < ROW; c++) {
+      var recent = 0, past = 0;
+      for (var row = 0; row < ROWS; row++) {
+        var v = st.ring[((st.i - 1 - row + ROWS) % ROWS) * ROW + c];
+        if (row < RECENT) recent += v; else past += v;
+      }
+      nov += Math.abs(recent / RECENT - past / (ROWS - RECENT));
+    }
+    nov /= ROW;
+    A.novelty = unit(nov / 0.25);
+    var bar = Math.max(0.06, st.base * 3);
+    if (st.armed && nov > bar && t - st.sectionAt >= 6) {
+      A.section += 1;
+      A.change = reduced ? 0.35 : 1;
+      st.sectionAt = t;
+      st.armed = false;
+    } else if (nov < bar / 2) {
+      st.armed = true;
+      st.base += (Math.min(nov, 0.04) - st.base) * 0.02;
+    }
+  }
+
   // No sound to read: a calm, honest motion driven by the player's time at 120 bpm while it
   // plays (a kick on every beat, a snare on two and four, hats on the eighths), settling to a slow
   // drift when it is paused or stopped. The onsets are scheduled, not detected.
@@ -379,7 +688,12 @@
     var drift = performance.now() / 1000;
     var beat = Math.floor(t * 2);
     var half = Math.floor(t * 4);
-    if (on && beat !== c.beat) { c.beat = beat; onset('kick', A.t); if (beat % 2) onset('snare', A.t); }
+    if (on && beat !== c.beat) {
+      c.beat = beat;
+      onset('kick', A.t);
+      if (beat % 2) onset('snare', A.t);
+      if (beat % 4 === 0) { A.downbeat = reduced ? 0.35 : 1; dsp.downLast = A.t; }
+    }
     if (on && half !== c.half) { c.half = half; onset('hat', A.t); }
     var gain = on ? 0.6 : 0.3;
     for (var i = 0; i < BANDS; i++) {
@@ -397,6 +711,17 @@
         * (0.6 + A.kick * 0.8);
     }
     A.phase = on ? (t * 2) % 1 : 0;
+    A.bar = on ? (t * 2) % 4 / 4 : 0;
+    A.balance = A.width = A.flatness = A.dynamics = A.novelty = A.keyStrength = 0;
+    A.chroma.fill(0);
+    // The timbre and the loudness of the clock's own bands: the share above 1.5 kHz, the band
+    // below which 85% of their sum lies, their mean.
+    var sum = 0, hi = 0, acc = 0, roll = 0;
+    for (var b = 0; b < BANDS; b++) { sum += A.bands[b]; if (b >= BRIGHT) hi += A.bands[b]; }
+    while (roll < BANDS - 1 && acc + A.bands[roll] < sum * 0.85) acc += A.bands[roll++];
+    A.brightness = sum > 0 ? hi / sum : 0;
+    A.rolloff = roll / BANDS;
+    A.loudness = sum / BANDS;
   }
 
   /** @param {'kick' | 'snare' | 'hat'} name @param {number} t */
@@ -420,6 +745,7 @@
     var ks = dsp.kicks;
     ks.push(t);
     while (ks.length && t - ks[0] > 8) ks.shift();
+    count(t);
     dsp.lastKick = t;
     if (ks.length < 6) return;
     var iv = [];
@@ -460,10 +786,17 @@
     ['kick', 'snare', 'hat'].forEach(function (name) {
       if (dsp[name].last !== t) A[name] *= Math.exp(-dt / dsp[name].tau);
     });
+    if (dsp.downLast !== t) A.downbeat *= Math.exp(-dt / dsp.kick.tau);
+    A.change *= Math.exp(-dt / 1.5);
     dsp.prev.set(b);
     if (!clock) {
       if (t - dsp.lastKick > 8) A.bpm = 0;
       A.phase = A.bpm ? ((t - dsp.lastKick) / dsp.period) % 1 : (t * 2) % 1;
+      // The bar: the beats since the downbeat, counted from the last kick on the grid; without a
+      // tempo it runs at 120 bpm, as the beat does.
+      var beats = dsp.beatN - dsp.down + 4 + (t - dsp.beatAt) / dsp.period;
+      A.bar = A.bpm ? (beats % 4) / 4 : (t * 0.5) % 1;
+      structure(t);
     }
   }
 
@@ -491,7 +824,12 @@
     snapshot: function () {
       return { level: A.level, bass: A.bass, mid: A.mid, high: A.high, kick: A.kick, snare: A.snare,
         hat: A.hat, flux: A.flux, centroid: A.centroid, bpm: A.bpm, source: A.source,
-        bands: Array.from(A.bands), onsets: dsp.onsets.slice() };
+        bands: Array.from(A.bands), onsets: dsp.onsets.slice(),
+        balance: A.balance, width: A.width, chroma: Array.from(A.chroma), pitch: A.pitch,
+        key: A.key, minor: A.minor, keyStrength: A.keyStrength, flatness: A.flatness,
+        rolloff: A.rolloff, brightness: A.brightness, loudness: A.loudness, lufs: dsp.lufs, dynamics: A.dynamics,
+        dynamicsDb: dsp.dynDb, bar: A.bar, downbeat: A.downbeat, phase: A.phase, novelty: A.novelty,
+        section: A.section, change: A.change, cost: dsp.cost };
     },
   };
 })();

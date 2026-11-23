@@ -153,7 +153,9 @@ three.js (`static/js/viz-gl.js`: MilkDrop-style feedback, fragment shaders, a re
 3D scenes), each GPU mode with a p5 fallback. Both libraries load only when a mode of theirs is
 shown, and the render scale adapts so phones keep their frame rate. Every mode reads one analysis
 of the sound per frame (bands with automatic gain, waveform, kick/snare/hat onsets, flux,
-centroid, tempo) from the shared tab or the microphone ("Follow the music"); without either it
+centroid, tempo; stereo balance and width, chroma and key, flatness, rolloff, brightness,
+K-weighted loudness and dynamics, the bar and its downbeat, sections) from the shared tab or the
+microphone ("Follow the music"); without either it
 follows the player's clock and says so, since a YouTube frame's audio cannot be read. Each mode
 has live controls (speed, reaction, colour, trails, symmetry, ...); cinema puts the video across
 the screen with the picture around it, never over it. Everything is in the URL: `viz=<mode>`,

@@ -91,6 +91,33 @@ interface SonicVizAnalysis {
   /** Seconds since the page started; the frame's length in seconds (at most 0.1). */
   t: number; dt: number;
   source: SonicAudioSource;
+  /** Stereo, over 0.2 s: the balance, -1 (left) .. 1 (right); the width, 0 (mono) .. 1 (out of
+   *  phase), the side's share of the power (0.5: one side only, or two unrelated channels).
+   *  A mono source and the clock read 0 and 0. */
+  balance: number; width: number;
+  /** 12 pitch classes (C = 0 .. B = 11) from 80 Hz to 5 kHz, 0..1 with the strongest at 1, over
+   *  0.15 s; all 0 in silence and on the clock (it has no pitch). */
+  chroma: Float32Array;
+  /** The dominant pitch class, 0..11 (kept while nothing pitched is heard). */
+  pitch: number;
+  /** The key or chord colour of the last second: the best-matching triad's root (0..11), minor
+   *  (1) or major (0), and how well it matches, 0..1 (0 on the clock). Changes only after the
+   *  new triad has won for 0.8 s. */
+  key: number; minor: number; keyStrength: number;
+  /** Timbre, over 0.1 s: spectral flatness, 0 (a tone) .. 1 (white noise); the 85% rolloff on
+   *  the bands' log axis, 0 (40 Hz) .. 1 (16 kHz); brightness, the power's share above 1.5 kHz,
+   *  0..1. The clock reads its own bands (flatness 0). */
+  flatness: number; rolloff: number; brightness: number;
+  /** Approximate K-weighted loudness over 0.4 s, -54..-6 LUFS as 0..1 (no automatic gain); the
+   *  dynamics, the loudest frame of the last 3 s over their mean, 0..20 dB as 0..1. The clock's
+   *  loudness is its level, its dynamics 0. */
+  loudness: number; dynamics: number;
+  /** The position in a 4/4 bar, 0..1 (0 on the downbeat, the beat the kicks accent most); the
+   *  downbeat's envelope, 1 on a kick on it, decaying. 3/4 is not told apart. */
+  bar: number; downbeat: number;
+  /** Structure: the last 3 s against the 6 s before them, 0..1; the sections counted since the
+   *  page started (a new one at most every 6 s); 1 when one begins, decaying over 1.5 s. */
+  novelty: number; section: number; change: number;
 }
 
 /** Where the visualiser's sound comes from (static/js/viz-audio.js). */
@@ -184,6 +211,14 @@ interface Window {
       flux: number; centroid: number; bpm: number; source: string; bands: number[];
       /** The last 64 onsets, with the page time (seconds) they were found at. */
       onsets: { name: string; t: number }[];
+      balance: number; width: number; chroma: number[]; pitch: number; key: number; minor: number;
+      keyStrength: number; flatness: number; rolloff: number; brightness: number; loudness: number;
+      /** The loudness in LUFS and the dynamics in dB, unmapped. */
+      lufs: number; dynamicsDb: number;
+      dynamics: number; bar: number; downbeat: number; phase: number; novelty: number;
+      section: number; change: number;
+      /** The mean milliseconds a frame's analysis takes, over about 20 frames. */
+      cost: number;
     };
     source(): string;
     listen(kind: 'tab' | 'system' | 'device' | 'mic', id?: string): Promise<void>;
