@@ -1769,6 +1769,60 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (map): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // Every WebGL mode follows the music (static/js/viz-gl.js through the grammar of
+  // static/js/viz-map.js), on one page with music handed over as the microphone: the picture
+  // moves clearly more with the music than in silence, and its colours turn with the harmony (C
+  // major to F# major, opposite on the circle of fifths, or back; the key's hue takes seconds to
+  // follow); no console error. The mic stays connected while the modes and chords change in place.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    const sel = '[data-visualizer-stage] canvas';
+    await page.evaluate(() => window.SonicVisualizer.open('liquid'));
+    await page.waitForFunction(() => !!window.SonicVizGL, null, { timeout: 15000 }).catch(() => {});
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 5000 }).catch(() => {});
+    await page.waitForTimeout(2500);
+    const { modes, gl } = await page.evaluate(() => ({ modes: window.SonicVizGL.modes(), gl: window.SonicVizGL.supported() }));
+    check(modes.length === 15 && await page.evaluate(() => window.SonicVisualizer.source()) === 'mic',
+      `visualiser (gl, music): the music is heard from the microphone, ${modes.length} WebGL modes to follow it`);
+    // How much the picture moves: the mean change of a cell between samples a quarter second apart.
+    const moves = async () => {
+      let last = null, sum = 0;
+      for (let i = 0; i < 7; i++) {
+        const s = await page.evaluate(pictureStats, sel);
+        if (last) sum += s.cells.reduce((acc, y, k) => acc + Math.abs(y - last.cells[k]), 0) / s.cells.length;
+        last = s;
+        await page.waitForTimeout(250);
+      }
+      return sum / 6;
+    };
+    const arc = (x, y) => Math.min(Math.abs(x - y), 1 - Math.abs(x - y));
+    const C = [0, 4, 7], FIS = [6, 10, 1];
+    for (const [i, mode] of modes.entries()) {
+      const before = errors.length;
+      await page.evaluate((m) => { window.__music.gain(1); window.SonicVisualizer.set(m); }, mode);
+      await page.waitForTimeout(1000);
+      const shown = await page.evaluate(() => window.SonicVisualizer.shown());
+      const from = await page.evaluate(pictureStats, sel);
+      const loud = await moves();
+      await page.evaluate((c) => window.__music.chord(c), i % 2 ? C : FIS);
+      await page.waitForTimeout(3200);
+      const to = await page.evaluate(pictureStats, sel);
+      // The loudness falls over seconds, and with it the exposure: silence is judged once it settled.
+      await page.evaluate(() => window.__music.gain(0));
+      await page.waitForTimeout(3000);
+      const quiet = await moves();
+      check((!gl || shown === mode) && loud > quiet * 1.5 && loud > 0.012,
+        `visualiser (gl, music): ${mode} moves with the music (${loud.toFixed(4)} a cell with it, ${quiet.toFixed(4)} in silence${gl ? '' : ', drawn by ' + shown})`);
+      check(from.hue >= 0 && to.hue >= 0 && arc(from.hue, to.hue) > 0.1,
+        `visualiser (gl, music): ${mode} is coloured by the harmony (mean hue ${from.hue.toFixed(2)} -> ${to.hue.toFixed(2)}, ${arc(from.hue, to.hue).toFixed(2)} round the wheel, ${i % 2 ? 'F# to C' : 'C to F#'})`);
+      check(errors.length === before, `visualiser (gl, music): ${mode}: no console error${errors.length > before ? ': ' + errors.slice(before).join(' | ') : ''}`);
+    }
+    await context.close();
+  }
   // Without WebGL 2 a GPU mode is drawn by its p5 fallback, and the settings say so; three.js is
   // never downloaded for nothing.
   {
