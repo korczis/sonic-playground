@@ -153,7 +153,9 @@ three.js (`static/js/viz-gl.js`: MilkDrop-style feedback, fragment shaders, a re
 3D scenes), each GPU mode with a p5 fallback. Both libraries load only when a mode of theirs is
 shown, and the render scale adapts so phones keep their frame rate. Every mode reads one analysis
 of the sound per frame (bands with automatic gain, waveform, kick/snare/hat onsets, flux,
-centroid, tempo) from the shared tab or the microphone ("Follow the music"); without either it
+centroid, tempo; stereo balance and width, chroma and key, flatness, rolloff, brightness,
+K-weighted loudness and dynamics, the bar and its downbeat, sections) from the shared tab or the
+microphone ("Follow the music"); without either it
 follows the player's clock and says so, since a YouTube frame's audio cannot be read. Each mode
 has live controls (speed, reaction, colour, trails, symmetry, ...); cinema puts the video across
 the screen with the picture around it, never over it. Everything is in the URL: `viz=<mode>`,
@@ -167,7 +169,9 @@ Requirements: Zola (`.zola-version`), Node 22, Python 3.11+ (`.tool-versions`), 
 
 ```sh
 npm ci                     # also wires .githooks (core.hooksPath)
-npm run dev                # vendor + CSS + catalogue, then zola serve
+npm run dev                # vendor + CSS + catalogue, then zola serve (scripts/dev.mjs)
+npm run serve              # serve a built site (public/, or --dir <dir>) at http://127.0.0.1:1111/
+npm run preview            # build for the local server, then serve it under /sonic-playground/
 npm test                   # unit tests (catalogue, engine)
 npm run typecheck          # tsc --checkJs over static/js, pyright over scripts/ and test/
 bash scripts/verify.sh     # the whole gate CI runs, browser smoke test included
@@ -175,6 +179,27 @@ bash scripts/verify.sh     # the whole gate CI runs, browser smoke test included
 python3 scripts/probe-videos.py   # which videos disappeared from YouTube (network)
 python3 scripts/probe-links.py    # which external links stopped answering (network)
 ```
+
+### Ports
+
+`npm run dev`, `npm run serve` and `npm run preview` take their port and host from the first of:
+the flag (`--port <n>`, `--host <h>`), the environment (`SONIC_PORT`, `SONIC_HOST`),
+package.json's `"config": {"port": 1111, "host": "127.0.0.1"}`, the default (1111, 127.0.0.1);
+one module resolves them for both servers (`scripts/port.mjs`). `--port 0` takes a free port, and
+the URL actually served is always printed. A value that is no port (an integer 0-65535) exits 2;
+a port something already answers on exits 1 before anything starts, naming the port, what holds
+it (lsof, on macOS and Linux) and how to choose another.
+
+```sh
+npm run dev -- --port 4000 --drafts   # zola serve --port 4000 --interface 127.0.0.1 --drafts
+SONIC_PORT=0 npm run preview          # a free port
+npm run serve -- --dir /tmp/site --base   # a production build, under config.toml's base_url path
+npm pkg set config.port=4000          # a new default (edits package.json)
+```
+
+`scripts/serve.mjs` is a zero-dependency static server that answers as GitHub Pages does
+(directory index, slash redirect, 404 with `404.html`); it is for looking at a build here, and
+nothing deploys it.
 
 `scripts/verify.sh` runs, in order: the content contract (schema, references, one song one
 review, prose that names its recording, the minimum length, no stock phrases) and catalogue
@@ -214,7 +239,8 @@ archetypes/         track.md, the template of a new review
 templates/          components.html (UI components), partials/ (shell, player), page templates
 static/js/          core (modules), router, player, track-menu, explorer, charts, i18n, site (shell)
 static/data/        catalog.json, search.json, i18n.json (derived, committed), vendor.json
-scripts/            catalog, track, backlog, i18n, og, check-built, check-components, probes, verify
+scripts/            catalog, track, backlog, i18n, og, check-built, check-components, probes, verify,
+                    dev, serve and port (the local servers)
 test/               unit tests, cases/ (skill and policy cases), e2e/smoke.cjs (Playwright)
 types/              sonic.d.ts (the catalogue, i18n and module API, for tsc --checkJs)
 .ai/                Majordomus layer: policy, rules, skills, ADRs, knowledge, workflows

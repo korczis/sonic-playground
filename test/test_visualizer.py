@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONF = json.loads((ROOT / "data/visualizer.json").read_text(encoding="utf-8"))
 JS = (ROOT / "static/js/visualizer.js").read_text(encoding="utf-8")
+AUDIO = (ROOT / "static/js/viz-audio.js").read_text(encoding="utf-8")
 JS_2D = (ROOT / "static/js/viz-2d.js").read_text(encoding="utf-8")
 JS_GL = (ROOT / "static/js/viz-gl.js").read_text(encoding="utf-8")
 PLAYER = (ROOT / "static/js/player.js").read_text(encoding="utf-8")
@@ -139,16 +140,35 @@ class Visualizer(unittest.TestCase):
                             "nothing blends or fades the video itself (YouTube's terms)")
 
     def test_no_source_listens_by_itself(self):
-        # getDisplayMedia / getUserMedia run only in listen(), and listen() is called only from
-        # the toolbar's click handler (or by a caller of the public API): nothing asks on load.
+        # getDisplayMedia / getUserMedia run only in SonicAudio's listen() (static/js/viz-audio.js),
+        # which nothing in it calls; the visualiser calls it only from the toolbar's click handler
+        # (or a caller of the public API): nothing asks on load.
         handler = JS.index("s.addEventListener('click'")
         handler_end = JS.index("s.addEventListener('input'")
-        self.assertEqual(JS.count("getDisplayMedia("), 1)
-        self.assertEqual(JS.count("getUserMedia("), 1)
-        calls = [m.start() for m in re.finditer(r"(?<![\w.])(?<!function )listen\(", JS)]
+        for src in (JS, PLAYER):
+            self.assertNotIn("getDisplayMedia(", src)
+            self.assertNotIn("getUserMedia(", src)
+        self.assertEqual(AUDIO.count("getDisplayMedia("), 1)
+        self.assertEqual(AUDIO.count("getUserMedia("), 1)
+        # One call of listen() in the module itself: resume(), which starts a remembered device
+        # only after the browser reports the inputs already allowed ('granted', so no prompt can
+        # appear) and the device is a loopback; a plain microphone never starts by itself.
+        inner = [m.start() for m in re.finditer(r"(?<![\w.])(?<!function )listen\(", AUDIO)]
+        self.assertEqual(len(inner), 1)
+        resume = AUDIO.index("function resume(")
+        body = AUDIO[resume:inner[0]]
+        self.assertTrue(resume < inner[0] < AUDIO.index("\n  }\n", resume), "listen() is called only in resume()")
+        self.assertIn("name: 'microphone'", body)
+        self.assertIn("st.state !== 'granted') return false", body)
+        self.assertIn("d.loopback", body)
+        self.assertIn("listen('device', id)", AUDIO[inner[0]:inner[0] + 30])
+        calls = [m.start() for m in re.finditer(r"SA\.listen\(", JS)]
         self.assertTrue(calls)
         for at in calls:
             self.assertTrue(handler < at < handler_end, JS[at - 80:at + 20])
+        # The visualiser asks SonicAudio to resume once, on load, with the remembered device.
+        self.assertEqual(JS.count("SA.resume("), 1)
+        self.assertIn("SA.resume(prefs().device)", JS)
 
     def test_the_url_carries_the_song_and_the_picture(self):
         for key in ("'play'", "'t'"):

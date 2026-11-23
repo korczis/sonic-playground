@@ -170,7 +170,7 @@
     (core.js) must be present on any page the reader may navigate to. ECharts (1 MB), p5 (1 MB, the
     visualiser) and the YouTube API are loaded on demand only. -#}
 <script src="{{ get_url(path=vendor.libs.flowbite.js) }}" defer></script>
-{%- for script in ["core", "i18n", "site", "router", "player", "track-menu", "explorer", "charts", "visualizer", "hero"] %}
+{%- for script in ["core", "i18n", "site", "router", "player", "track-menu", "explorer", "charts", "viz-audio", "viz-map", "visualizer", "hero"] %}
 <script src="{{ get_url(path='js/' ~ script ~ '.js', cachebust=true) }}" defer></script>
 {%- endfor %}
 </body>

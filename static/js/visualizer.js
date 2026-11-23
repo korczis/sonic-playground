@@ -7,23 +7,10 @@
 // a p5 fallback for a browser without WebGL 2, and the live controls (parameters) it offers. Both
 // engines and their libraries load on demand, only when a mode of theirs is shown.
 //
-// Where the sound comes from. The player is a YouTube iframe on another origin, so the page
-// cannot read its audio. There are three sources, and the controls always say which one is
-// active:
-//   tab   the reader shares this tab with its audio (getDisplayMedia); the picture follows the
-//         music exactly. Chrome and Edge on a computer, and only after the reader agrees.
-//   mic   the microphone (getUserMedia); the picture follows the sound in the room. Phones too.
-//   clock no audio: the picture follows the player's state and time only (moving at 120 bpm
-//         while it plays, resting while it is paused), and says so.
-// Nothing asks for a permission by itself: the reader presses "Follow the music" (the tab on a
-// computer that can share one, the microphone elsewhere) or chooses a source in the settings.
-//
-// The sound is analysed once per frame into features every mode reads (SonicVizAnalysis in
-// types/sonic.d.ts): 48 log-spaced bands with automatic gain, the waveform, level and the three
-// ranges, onsets of the kick, snare and hi-hat ranges (spectral flux over an adaptive threshold)
-// as decaying envelopes, the overall flux and spectral centroid, a tempo from the kicks'
-// intervals with the position in the beat, and the loudness of the last seconds. That is the
-// "colour music": every mode is a function of these features and of its parameters.
+// The sound, where it comes from and what is heard in it, is static/js/viz-audio.js
+// (window.SonicAudio); the controls always say which source is active. Nothing asks for a
+// permission by itself: the reader presses "Follow the music" (the tab on a computer that can
+// share one, the microphone elsewhere) or chooses a source in the settings.
 //
 // Fullscreen: SonicVisualizer.open() lays the picture over the page below the player (z 35,
 // under the queue and panels at 40 and the bar at 50), with no chrome; it closes the queue and
@@ -52,7 +39,6 @@
   var PARAMS = CONF.params;
   var CALM = CONF.calm;
   var STORE = 'sonic.visualizer';
-  var BANDS = 48;
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!MODES.length) return;
 
@@ -71,14 +57,17 @@
     return BY[m] ? m : null;
   }
 
-  /** @returns {{mode: string, cycle: boolean, bg: boolean, cinema: boolean, params: Record<string, Record<string, number>>}} */
+  // `device` is the audio input the reader chose last (SonicAudio's 'device'), '' for none: a
+  // loopback device among them starts again by itself on a later visit (SonicAudio.resume).
+  /** @returns {{mode: string, cycle: boolean, bg: boolean, cinema: boolean, device: string, params: Record<string, Record<string, number>>}} */
   function prefs() {
     try {
       var p = JSON.parse(localStorage.getItem(STORE) || '{}');
       return { mode: resolve(p.mode) || MODES[0], cycle: p.cycle !== false, bg: p.bg !== false,
-        cinema: p.cinema === true, params: p.params && typeof p.params === 'object' ? p.params : {} };
+        cinema: p.cinema === true, device: typeof p.device === 'string' ? p.device : '',
+        params: p.params && typeof p.params === 'object' ? p.params : {} };
     } catch (e) {
-      return { mode: MODES[0], cycle: true, bg: true, cinema: false, params: {} };
+      return { mode: MODES[0], cycle: true, bg: true, cinema: false, device: '', params: {} };
     }
   }
   function savePrefs(p) {
@@ -115,257 +104,12 @@
     return out;
   }
 
-  // ---- The sound: one analysis per frame, shared by every sketch. -----------------------------
+  // ---- The sound (static/js/viz-audio.js). ------------------------------------------------------
 
-  /** @type {SonicVizAnalysis} */
-  var A = {
-    bands: new Float32Array(BANDS), wave: new Float32Array(256),
-    level: 0, bass: 0, mid: 0, high: 0, kick: 0, snare: 0, hat: 0, beat: false,
-    flux: 0, centroid: 0, bpm: 0, phase: 0, energy: 0, t: 0, dt: 1 / 60, source: 'clock',
-  };
-  var audio = { ctx: null, analyser: null, stream: null, freq: null, time: null, kind: 'clock' };
-  // An onset detector per range: the positive spectral flux of its bands over an adaptive
-  // threshold (running mean plus 1.5 standard deviations), at most one onset per `gap` seconds;
-  // its envelope decays with `tau`.
-  function detector(lo, hi, gap, tau) {
-    return { lo: lo, hi: hi, gap: gap, tau: tau, mean: 0, vari: 0.0004, last: -10 };
-  }
-  var dsp = {
-    raw: new Float32Array(BANDS), prev: new Float32Array(BANDS), peak: 0.25,
-    kick: detector(0, 6, 0.22, 0.16), snare: detector(8, 22, 0.14, 0.12),
-    hat: detector(28, 48, 0.08, 0.06),
-    kicks: /** @type {number[]} */ ([]), period: 0.5, lastKick: -10,
-    clock: { playing: false, base: 0, at: 0, beat: -1, half: -1 },
-  };
-
+  var SA = window.SonicAudio;
+  var A = SA.features;
+  var analyse = SA.analyse;
   function playing() { return html.getAttribute('data-player-state') === 'playing'; }
-
-  // The player saves its time every few seconds; between saves the clock runs on its own.
-  function syncClock() {
-    var now = performance.now() / 1000;
-    var on = playing();
-    var t = 0;
-    try { t = window.SonicPlayer ? window.SonicPlayer.state().time || 0 : 0; } catch (e) { t = 0; }
-    var c = dsp.clock;
-    if (on !== c.playing || Math.abs(t - clockTime()) > 6) {
-      dsp.clock = { playing: on, base: on ? t : clockTime(), at: now, beat: c.beat, half: c.half };
-    }
-  }
-  function clockTime() {
-    var c = dsp.clock;
-    return c.playing ? c.base + (performance.now() / 1000 - c.at) : c.base;
-  }
-
-  /** Stop listening and return to the clock. */
-  function stopAudio() {
-    if (audio.stream) audio.stream.getTracks().forEach(function (tr) { tr.stop(); });
-    audio.stream = null;
-    audio.analyser = null;
-    audio.kind = 'clock';
-    dsp.kicks = [];
-    A.bpm = 0;
-    announce();
-  }
-
-  /** @param {'tab' | 'mic'} kind */
-  function listen(kind) {
-    var md = navigator.mediaDevices;
-    if (!md) return Promise.reject(new Error('unsupported'));
-    var ask = kind === 'tab'
-      ? (md.getDisplayMedia ? md.getDisplayMedia(/** @type {any} */ ({ video: true, audio: true, preferCurrentTab: true }))
-        : Promise.reject(new Error('unsupported')))
-      : md.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
-    return ask.then(function (stream) {
-      if (!stream.getAudioTracks().length) {
-        stream.getTracks().forEach(function (tr) { tr.stop(); });
-        throw new Error('no-audio');
-      }
-      // Only the sound is wanted; the shared picture is dropped at once.
-      stream.getVideoTracks().forEach(function (tr) { tr.stop(); });
-      if (audio.stream) audio.stream.getTracks().forEach(function (tr) { tr.stop(); });
-      var AC = window.AudioContext || /** @type {any} */ (window).webkitAudioContext;
-      audio.ctx = audio.ctx || new AC();
-      if (audio.ctx.state === 'suspended') audio.ctx.resume();
-      var an = audio.ctx.createAnalyser();
-      an.fftSize = 2048;
-      an.smoothingTimeConstant = 0.6;
-      an.minDecibels = -90;
-      an.maxDecibels = -20;
-      audio.ctx.createMediaStreamSource(stream).connect(an);
-      audio.analyser = an;
-      audio.freq = new Uint8Array(an.frequencyBinCount);
-      audio.time = new Uint8Array(an.fftSize);
-      audio.stream = stream;
-      audio.kind = kind;
-      dsp.peak = 0.25;
-      stream.getAudioTracks()[0].addEventListener('ended', stopAudio);
-      announce();
-    });
-  }
-  /** The source "Follow the music" asks for: the tab where a computer can share one, else the mic. */
-  function bestSource() {
-    var md = navigator.mediaDevices;
-    var phone = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-    // Only Chromium shares a tab's audio; Firefox and Safari would ask for a silent screen.
-    var brands = /** @type {any} */ (navigator).userAgentData ? /** @type {any} */ (navigator).userAgentData.brands || [] : [];
-    var chromium = brands.some(function (b) { return /Chromium/.test(b.brand); });
-    return md && md.getDisplayMedia && !phone && chromium ? 'tab' : 'mic';
-  }
-
-  var analysedAt = -1;
-  /** @returns {SonicVizAnalysis} */
-  function analyse() {
-    var now = performance.now();
-    if (analysedAt >= 0 && now - analysedAt < 4) return A; // the sketches of one frame share it
-    var dt = analysedAt < 0 ? 1 / 60 : Math.min(0.1, (now - analysedAt) / 1000);
-    analysedAt = now;
-    A.t = now / 1000;
-    A.dt = dt;
-    A.source = audio.analyser ? /** @type {'tab' | 'mic'} */ (audio.kind) : 'clock';
-    A.beat = false;
-    if (audio.analyser) fromAudio(dt); else fromClock();
-    features(dt, now / 1000, !audio.analyser);
-    return A;
-  }
-
-  function fromAudio(dt) {
-    var an = audio.analyser;
-    an.getByteFrequencyData(audio.freq);
-    an.getByteTimeDomainData(audio.time);
-    var n = audio.freq.length;
-    var nyquist = audio.ctx.sampleRate / 2;
-    var top = 0;
-    // Log-spaced bands from 40 Hz to 16 kHz, so the bass is not one bar among a thousand.
-    for (var i = 0; i < BANDS; i++) {
-      var lo = 40 * Math.pow(400, i / BANDS);
-      var hi = 40 * Math.pow(400, (i + 1) / BANDS);
-      var a = Math.max(1, Math.floor(lo / nyquist * n));
-      var z = Math.max(a + 1, Math.ceil(hi / nyquist * n));
-      var peak = 0;
-      for (var k = a; k < z && k < n; k++) peak = Math.max(peak, audio.freq[k]);
-      var v = Math.pow(peak / 255, 1.6);
-      dsp.raw[i] = v;
-      if (v > top) top = v;
-    }
-    // Automatic gain: the loudest band of the last seconds reaches about 0.9, so a quiet room
-    // (the microphone) moves the picture as much as a loud tab. The peak falls with a 3 s half-life.
-    dsp.peak = Math.max(top, dsp.peak * Math.pow(0.5, dt / 3), 0.08);
-    var gain = 0.9 / dsp.peak;
-    for (var j = 0; j < BANDS; j++) {
-      var target = Math.min(1, dsp.raw[j] * gain);
-      var b = A.bands[j];
-      A.bands[j] = b + (target - b) * (target > b ? 0.65 : 0.22);
-    }
-    var step = audio.time.length / A.wave.length;
-    var rms = 0;
-    for (var w = 0; w < A.wave.length; w++) {
-      var s = (audio.time[Math.floor(w * step)] - 128) / 128;
-      A.wave[w] = s;
-      rms += s * s;
-    }
-    // The waveform is gained like the bands, so a quiet source still draws a shape.
-    var wg = Math.min(6, 0.5 / Math.max(0.02, Math.sqrt(rms / A.wave.length)));
-    for (var x = 0; x < A.wave.length; x++) A.wave[x] = Math.max(-1, Math.min(1, A.wave[x] * wg));
-  }
-
-  // No sound to read: a calm, honest motion driven by the player's time at 120 bpm while it
-  // plays (a kick on every beat, a snare on two and four, hats on the eighths), settling to a slow
-  // drift when it is paused or stopped. The onsets are scheduled, not detected.
-  function fromClock() {
-    syncClock();
-    var c = dsp.clock;
-    var on = c.playing;
-    var t = clockTime();
-    var drift = performance.now() / 1000;
-    var beat = Math.floor(t * 2);
-    var half = Math.floor(t * 4);
-    if (on && beat !== c.beat) { c.beat = beat; onset('kick', A.t); if (beat % 2) onset('snare', A.t); }
-    if (on && half !== c.half) { c.half = half; onset('hat', A.t); }
-    var gain = on ? 0.6 : 0.3;
-    for (var i = 0; i < BANDS; i++) {
-      var f = i / BANDS;
-      var shape = (1 - f) * 0.75 + 0.25;
-      var wobble = 0.5 + 0.5 * Math.sin(drift * (0.6 + f * 2.3) + i * 0.7)
-        * Math.cos(drift * 0.37 + i * 1.3);
-      var hit = i < 8 ? A.kick * 0.5 : i < 28 ? A.snare * 0.25 : A.hat * 0.3;
-      var v = gain * shape * (0.35 + 0.65 * wobble) + (on ? hit : 0);
-      A.bands[i] = A.bands[i] * 0.7 + Math.min(1, v) * 0.3;
-    }
-    for (var j = 0; j < A.wave.length; j++) {
-      var x = j / A.wave.length;
-      A.wave[j] = gain * (Math.sin(x * 12 + drift * 3) * 0.6 + Math.sin(x * 31 - drift * 5) * 0.25)
-        * (0.6 + A.kick * 0.8);
-    }
-    A.phase = on ? (t * 2) % 1 : 0;
-  }
-
-  /** @param {'kick' | 'snare' | 'hat'} name @param {number} t */
-  function onset(name, t) {
-    dsp[name].last = t;
-    A[name] = reduced ? 0.35 : 1;
-    if (name === 'kick') {
-      A.beat = !reduced;
-      if (audio.analyser) tempo(t);
-    }
-  }
-
-  // The tempo: the median interval between the last kicks, folded into 75-180 bpm.
-  function tempo(t) {
-    var ks = dsp.kicks;
-    ks.push(t);
-    while (ks.length && t - ks[0] > 8) ks.shift();
-    dsp.lastKick = t;
-    if (ks.length < 4) return;
-    var iv = [];
-    for (var i = 1; i < ks.length; i++) {
-      var d = ks[i] - ks[i - 1];
-      while (d < 0.333) d *= 2;
-      while (d > 0.8) d /= 2;
-      iv.push(d);
-    }
-    iv.sort(function (a, b) { return a - b; });
-    dsp.period = dsp.period * 0.7 + iv[iv.length >> 1] * 0.3;
-    A.bpm = Math.round(60 / dsp.period);
-  }
-
-  /** @param {number} dt @param {number} t @param {boolean} clock */
-  function features(dt, t, clock) {
-    var b = A.bands;
-    var sum = 0, bass = 0, mid = 0, high = 0, moment = 0, flux = 0;
-    for (var i = 0; i < BANDS; i++) {
-      var v = b[i];
-      sum += v;
-      moment += v * i;
-      flux += Math.max(0, v - dsp.prev[i]);
-      if (i < 8) bass += v; else if (i < 28) mid += v; else high += v;
-    }
-    A.level = sum / BANDS;
-    A.bass = bass / 8;
-    A.mid = mid / 20;
-    A.high = high / (BANDS - 28);
-    A.centroid = A.centroid * 0.8 + (sum > 0.01 ? moment / sum / (BANDS - 1) : 0) * 0.2;
-    A.flux = A.flux * 0.6 + Math.min(1, flux / (BANDS * 0.08)) * 0.4;
-    A.energy += (A.level - A.energy) * (1 - Math.exp(-dt / 4));
-    ['kick', 'snare', 'hat'].forEach(function (name) {
-      var d = dsp[name];
-      if (d.last !== t) A[name] *= Math.exp(-dt / d.tau);
-      if (clock) return;
-      var f = 0, lvl = 0;
-      for (var k = d.lo; k < d.hi; k++) { f += Math.max(0, b[k] - dsp.prev[k]); lvl += b[k]; }
-      f /= d.hi - d.lo;
-      lvl /= d.hi - d.lo;
-      var threshold = d.mean + 1.5 * Math.sqrt(d.vari) + 0.015;
-      if (f > threshold && lvl > 0.08 && t - d.last > d.gap) onset(/** @type {'kick'} */ (name), t);
-      var diff = f - d.mean;
-      d.mean += 0.05 * diff;
-      d.vari = 0.95 * (d.vari + 0.05 * diff * diff);
-    });
-    dsp.prev.set(b);
-    if (!clock) {
-      if (t - dsp.lastKick > 8) A.bpm = 0;
-      A.phase = A.bpm ? ((t - dsp.lastKick) / dsp.period) % 1 : (t * 2) % 1;
-    }
-  }
 
   // ---- Engines and sketches. ---------------------------------------------------------------------
 
@@ -417,9 +161,11 @@
     var ring = opt.modes && opt.modes.length ? opt.modes : MODES;
     var st = { mode: opt.mode, cycle: opt.cycle, started: performance.now(), visible: true, frames: 0,
       params: opt.params || paramsFor(opt.mode) };
+    // The grammar's signals for this picture, with its own envelopes (static/js/viz-map.js).
+    var mapper = window.SonicVizMap.create();
     /** @type {SonicVizScratch} */
-    var scratch = { t: 0, params: st.params };
-    /** @type {{engine: string, set: (id: string) => void, remove: () => void, resize: () => void} | null} */
+    var scratch = { t: 0, params: st.params, m: mapper.map };
+    /** @type {{engine: string, set: (id: string) => void, remove: () => void, resize: () => void, memory?: () => {textures: number, geometries: number}} | null} */
     var runner = null;
     var pending = /** @type {object | null} */ (null);
     var gone = false;
@@ -442,7 +188,7 @@
     }
     // A picture draws only while it is on screen.
     var seen = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
-      st.visible = entries[0].isIntersecting;
+      st.visible = entries[entries.length - 1].isIntersecting;
     }) : null;
     if (seen) seen.observe(el);
     var size = el.clientWidth + 'x' + el.clientHeight;
@@ -450,7 +196,7 @@
       var now = el.clientWidth + 'x' + el.clientHeight;
       if (now === size) return;
       size = now;
-      scratch = { t: scratch.t, params: st.params };
+      scratch = { t: scratch.t, params: st.params, m: mapper.map };
       if (runner) runner.resize();
     }) : null;
     if (sized) sized.observe(el);
@@ -473,6 +219,7 @@
       }
       scratch.t = age * (opt.slow || 1);
       scratch.params = st.params;
+      scratch.m = mapper.frame(a, st.params);
       st.frames += 1;
       el.setAttribute('data-visualizer-frame', String(st.frames));
       return a;
@@ -526,6 +273,7 @@
       raf = requestAnimationFrame(loop);
       return {
         engine: 'gl',
+        memory: function () { return h.memory(); },
         set: function (next) { h.set(next); },
         remove: function () { cancelAnimationFrame(raf); h.remove(); },
         resize: function () { h.resize(); },
@@ -564,7 +312,7 @@
         st.mode = id;
         st.started = performance.now();
         st.params = paramsFor(id);
-        scratch = { t: 0, params: st.params };
+        scratch = { t: 0, params: st.params, m: mapper.map };
         el.setAttribute('data-visualizer-mode', id);
         flash();
         mount();
@@ -573,6 +321,9 @@
       shown: function () { return effective(st.mode); },
       cycle: function (on) { st.cycle = on; st.started = performance.now(); },
       params: function () { return st.params; },
+      map: function () { return mapper.map; },
+      /** The WebGL renderer's GPU holdings, or null for a p5 picture. */
+      memory: function () { return runner && runner.memory ? runner.memory() : null; },
       /** @param {string} k @param {number} v */
       param: function (k, v) { var c = clampParam(k, v); if (c !== null) st.params[k] = c; },
       canvas: function () { return /** @type {HTMLCanvasElement | null} */ (el.querySelector('canvas')); },
@@ -666,7 +417,6 @@
   // Cinema: the video panel fills the screen above the bar (styles/app.css), the picture around
   // it, and the picture's colour glows at the video's edge, pulsing with the kick.
   var glowRaf = 0;
-  var glowCanvas = /** @type {HTMLCanvasElement | null} */ (null);
   var glowAt = 0;
   function applyCinema() {
     var on = isOpen() && cinema;
@@ -692,30 +442,13 @@
     target.style.setProperty('--viz-kick', A.kick.toFixed(2));
     if (now - glowAt < 125 || !full) return;
     glowAt = now;
-    var c = full.canvas();
-    if (!c || !c.width) return;
-    var stage = c.closest('[data-visualizer-engine]');
-    if (stage && stage.getAttribute('data-visualizer-engine') === 'gl') {
-      // Reading a WebGL frame back stalls the GPU, and Chrome says so in the console: a three.js
-      // picture's glow follows its hue control (its palettes rotate by it) instead of its pixels.
-      var hue = Math.round((280 + (full.params().hue || 0)) % 360);
-      target.style.setProperty('--viz-glow', 'hsl(' + hue + ' 85% 62% / 0.55)');
-      return;
-    }
-    if (!glowCanvas) { glowCanvas = document.createElement('canvas'); glowCanvas.width = 4; glowCanvas.height = 4; }
-    var g = glowCanvas.getContext('2d', { willReadFrequently: true });
-    try {
-      g.drawImage(c, 0, 0, 4, 4);
-      var d = g.getImageData(0, 0, 4, 4).data;
-      var r = 0, gr = 0, bl = 0;
-      for (var i = 0; i < d.length; i += 4) { r += d[i]; gr += d[i + 1]; bl += d[i + 2]; }
-      var n = d.length / 4;
-      // Lifted towards full brightness, so a dark frame still glows in its own hue.
-      var m = Math.max(r, gr, bl, 1) / n;
-      var k = Math.min(3, 200 / m);
-      target.style.setProperty('--viz-glow', 'rgb(' + Math.round(r / n * k) + ' ' + Math.round(gr / n * k) + ' '
-        + Math.round(bl / n * k) + ' / 0.55)');
-    } catch (e) { /* a canvas the browser will not read: no glow */ }
+    // The picture's palette, as every mode builds it (static/js/viz-map.js: the key's hue turned
+    // by the hue control, its saturation and lightness): nothing is read back from the picture,
+    // which for a WebGL frame stalls the GPU and for a 2D one copies the whole canvas back
+    // (a review, 2026-11-23).
+    var m = full.map();
+    target.style.setProperty('--viz-glow', 'hsl(' + Math.round(m.hue * 360) + ' ' + Math.round(45 + 45 * m.sat) + '% '
+      + Math.round(48 + 22 * m.light) + '% / 0.55)');
   }
   function setCinema(on, quiet) {
     cinema = on;
@@ -832,6 +565,7 @@
     var btn = s.querySelector('[data-viz-settings]');
     if (btn) btn.setAttribute('aria-expanded', String(on));
     if (on) {
+      refreshDevices();
       // Cinema makes room for the sheet beside the video on a wide screen (styles/app.css).
       layoutSettings();
       requestAnimationFrame(function () { requestAnimationFrame(layoutSettings); });
@@ -857,14 +591,19 @@
     });
     // The radio pattern: one tab stop per group, the checked radio (the first when none is).
     s.querySelectorAll('[role=radiogroup]').forEach(function (g) {
-      var radios = g.querySelectorAll('[role=radio]');
-      var on = g.querySelector('[role=radio][aria-checked="true"]') || radios[0];
+      var radios = shownRadios(g);
+      var on = radios.filter(function (r) { return r.getAttribute('aria-checked') === 'true'; })[0] || radios[0];
       radios.forEach(function (r) { r.setAttribute('tabindex', r === on ? '0' : '-1'); });
     });
     s.querySelectorAll('[data-viz-source]').forEach(function (b) {
       var kind = b.getAttribute('data-viz-source');
-      if (kind === 'connect') /** @type {HTMLElement} */ (b).hidden = audio.kind !== 'clock';
-      else b.setAttribute('aria-checked', String(kind === audio.kind));
+      if (kind === 'connect') /** @type {HTMLElement} */ (b).hidden = SA.source() !== 'clock';
+      else b.setAttribute('aria-checked', String(kind === SA.source()));
+      if (kind === 'system') /** @type {HTMLElement} */ (b).hidden = !SA.canShare();
+    });
+    var heard = SA.device();
+    s.querySelectorAll('[data-viz-device]').forEach(function (b) {
+      b.setAttribute('aria-checked', String(SA.source() === 'device' && !!heard && b.getAttribute('data-viz-device') === heard.id));
     });
     // The live controls of this mode, in its order; the others wait hidden.
     var box = s.querySelector('[data-viz-params]');
@@ -891,21 +630,76 @@
     if (bgSwitch) { bgSwitch.checked = prefs().bg && !reduced; bgSwitch.disabled = reduced; }
     var status = s.querySelector('[data-viz-status]');
     if (status) {
-      // data-i18n lets i18n.js translate it again when the bundle arrives or the language changes.
-      var key = audio.kind === 'tab' ? 'viz.status_tab'
-        : audio.kind === 'mic' ? 'viz.status_mic' : 'viz.status_clock';
-      var said = audio.kind === 'tab' ? Sonic.t('viz.status_tab')
-        : audio.kind === 'mic' ? Sonic.t('viz.status_mic') : Sonic.t('viz.status_clock');
+      // The status names the source and the input heard. data-i18n (with data-i18n-vars) lets
+      // i18n.js translate it again when the bundle arrives or the language changes.
+      var src = SA.source();
+      var called = heard ? deviceLabel(heard.id) || heard.label : '';
+      var vars = { device: called };
+      var pick = src === 'tab' ? ['viz.status_tab', Sonic.t('viz.status_tab')]
+        : src === 'system' ? ['viz.status_system', Sonic.t('viz.status_system')]
+          : src === 'device' ? ['viz.status_device', Sonic.t('viz.status_device', vars)]
+            : src === 'mic' && called ? ['viz.status_mic_named', Sonic.t('viz.status_mic_named', vars)]
+              : src === 'mic' ? ['viz.status_mic', Sonic.t('viz.status_mic')] : ['viz.status_clock', Sonic.t('viz.status_clock')];
+      var key = pick[0];
+      var said = pick[1];
       status.setAttribute('data-i18n', key);
+      status.setAttribute('data-i18n-vars', JSON.stringify(vars));
       if (said !== key) status.textContent = said;
     }
     syncTempo();
+  }
+  // The audio inputs, as the browser last listed them (SonicAudio.devices: empty until the reader
+  // has allowed one), rendered as chips; refreshed when the sheet opens, the source changes or a
+  // device comes or goes. Reading the list never asks for anything.
+  /** @type {SonicAudioDevice[]} */
+  var inputs = [];
+  var PHONE = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  /** A radio group's radios that are shown (a hidden one, such as "the whole computer" where it
+   *  cannot be shared, takes no stop and the arrows pass it). @param {Element} g */
+  function shownRadios(g) {
+    return Array.prototype.filter.call(g.querySelectorAll('[role=radio]'), function (r) { return !r.hidden; });
+  }
+  function deviceLabel(id) {
+    var d = inputs.filter(function (x) { return x.id === id; })[0];
+    return d ? d.label : '';
+  }
+  function refreshDevices() {
+    return SA.devices().then(function (list) {
+      inputs = list;
+      renderDevices();
+      syncControls();
+    });
+  }
+  function renderDevices() {
+    var s = shell();
+    var box = /** @type {HTMLElement | null} */ (s && s.querySelector('[data-viz-devices-box]'));
+    var group = s && s.querySelector('[data-viz-devices]');
+    var chip = /** @type {HTMLTemplateElement | null} */ (s && s.querySelector('template[data-viz-device-chip]'));
+    var hint = /** @type {HTMLElement | null} */ (s && s.querySelector('[data-viz-loopback-hint]'));
+    if (!box || !group || !chip || !hint) return;
+    var loopback = inputs.some(function (d) { return d.loopback; });
+    // A lone plain microphone is already "Listen with the microphone": the group shows when it
+    // offers more (a loopback, or a choice of inputs). A phone cannot install a loopback, so the
+    // hint to install one is for computers only.
+    box.hidden = !(loopback || inputs.length > 1);
+    hint.hidden = loopback || PHONE;
+    var focused = document.activeElement && group.contains(document.activeElement)
+      ? document.activeElement.getAttribute('data-viz-device') : null;
+    group.textContent = '';
+    inputs.forEach(function (d) {
+      var b = /** @type {HTMLElement} */ (/** @type {DocumentFragment} */ (chip.content.cloneNode(true)).firstElementChild);
+      b.setAttribute('data-viz-device', d.id);
+      /** @type {HTMLElement} */ (b.querySelector('[data-viz-device-label]')).textContent = d.label;
+      /** @type {HTMLElement} */ (b.querySelector('[data-viz-device-badge]')).hidden = !d.loopback;
+      group.appendChild(b);
+      if (d.id === focused) b.focus();
+    });
   }
   function syncTempo() {
     var s = shell();
     var el = /** @type {HTMLElement | null} */ (s && s.querySelector('[data-viz-tempo]'));
     if (!el) return;
-    el.hidden = !(audio.analyser && A.bpm);
+    el.hidden = !(SA.listening() && A.bpm);
     if (!el.hidden) el.textContent = Sonic.t('viz.tempo', { bpm: String(A.bpm) });
   }
   setInterval(function () { if (isOpen()) syncTempo(); }, 1000);
@@ -957,6 +751,25 @@
     setUrl();
   }
 
+  /** @param {string} id the device to remember, '' for none */
+  function rememberDevice(id) {
+    var p = prefs();
+    if (p.device === id) return;
+    p.device = id;
+    savePrefs(p);
+  }
+  /** A source that could not start is said beside the buttons that asked. @param {boolean} toast */
+  function refused(toast) {
+    var s = shell();
+    var status = s && s.querySelector('[data-viz-status]');
+    if (status) {
+      status.setAttribute('data-i18n', 'viz.denied');
+      status.removeAttribute('data-i18n-vars');
+      status.textContent = Sonic.t('viz.denied');
+    }
+    say(Sonic.t('viz.denied'), toast);
+  }
+
   function wire() {
     var s = shell();
     if (!s || s.getAttribute('data-wired')) return;
@@ -969,20 +782,22 @@
       if (!btn) { showControls(); return; }
       var mode = btn.getAttribute('data-viz-mode');
       var source = btn.getAttribute('data-viz-source');
+      var device = btn.getAttribute('data-viz-device');
+      // A source the reader picks replaces the remembered device: only a device chosen again is
+      // remembered (and, a loopback, started again on a later visit).
+      if (source) rememberDevice('');
       if (mode) choose(mode);
-      else if (source === 'clock') stopAudio();
-      else if (source === 'tab' || source === 'mic' || source === 'connect') {
-        var kind = source === 'connect' ? bestSource() : source;
+      else if (source === 'clock') SA.stop();
+      else if (device) {
+        SA.listen('device', device).then(function () { rememberDevice(device); }, function () { refused(false); });
+      } else if (source === 'tab' || source === 'system' || source === 'mic' || source === 'connect') {
+        var kind = source === 'connect' ? SA.bestSource() : source;
         // A refusal is said beside the buttons that asked, not in a toast over them.
-        listen(/** @type {'tab' | 'mic'} */ (kind)).catch(function (err) {
+        SA.listen(/** @type {'tab' | 'system' | 'mic'} */ (kind)).catch(function (err) {
           // A shared tab without its audio is not a refusal: follow the room instead.
-          if (source === 'connect' && kind === 'tab' && err && err.message === 'no-audio') return listen('mic');
+          if (source === 'connect' && kind === 'tab' && err && err.message === 'no-audio') return SA.listen('mic');
           throw err;
-        }).catch(function () {
-          var status = s.querySelector('[data-viz-status]');
-          if (status) { status.setAttribute('data-i18n', 'viz.denied'); status.textContent = Sonic.t('viz.denied'); }
-          say(Sonic.t('viz.denied'), source === 'connect');
-        });
+        }).catch(function () { refused(source === 'connect'); });
       } else if (btn.hasAttribute('data-viz-settings')) { toggleSettings(); return; }
       else if (btn.hasAttribute('data-viz-cinema')) setCinema(!cinema, false);
       else if (btn.hasAttribute('data-viz-share')) share();
@@ -1037,11 +852,14 @@
     if (radio && /^Arrow(Left|Right|Up|Down)$/.test(e.key)) {
       e.preventDefault();
       var group = /** @type {HTMLElement} */ (radio.closest('[role=radiogroup]'));
-      var radios = Array.prototype.slice.call(group.querySelectorAll('[role=radio]'));
+      var radios = shownRadios(group);
       var by = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1;
       var next = /** @type {HTMLElement} */ (radios[(radios.indexOf(radio) + by + radios.length) % radios.length]);
       next.focus();
-      if (!next.hasAttribute('data-viz-source') || next.getAttribute('data-viz-source') === 'clock') next.click();
+      // A source or a device (and "don't listen" too) changes only on a click, Space or Enter: the
+      // arrows move to it, no further, so passing over "don't listen" never stops the music.
+      var sound = next.hasAttribute('data-viz-device') || next.hasAttribute('data-viz-source');
+      if (!sound) next.click();
       showControls();
       return;
     }
@@ -1137,6 +955,12 @@
     };
   });
 
+  SA.onChange(announce);
+  // A newly allowed input names every device: the list follows the source and the hardware.
+  SA.onChange(refreshDevices);
+  if (navigator.mediaDevices && navigator.mediaDevices.addEventListener) navigator.mediaDevices.addEventListener('devicechange', refreshDevices);
+  // A loopback device chosen on an earlier visit starts again, without asking (SonicAudio.resume).
+  SA.resume(prefs().device);
   wire();
   syncBackground();
   // A shared link: ?viz=<mode>, its live controls and cinema.
@@ -1164,6 +988,8 @@
     },
     set: choose,
     params: function () { return full ? Object.assign({}, full.params()) : null; },
+    map: function () { return full ? JSON.parse(JSON.stringify(full.map())) : null; },
+    memory: function () { return full ? full.memory() : null; },
     param: function (k, v) {
       var s = shell();
       var input = /** @type {HTMLInputElement | null} */ (s && s.querySelector('[data-viz-param="' + k + '"]'));
@@ -1173,12 +999,11 @@
       setUrl();
     },
     cinema: function (on) { if (typeof on === 'boolean') setCinema(on, true); return cinema && isOpen(); },
-    analysis: function () {
-      return { level: A.level, kick: A.kick, flux: A.flux, centroid: A.centroid, bpm: A.bpm, source: A.source };
-    },
-    source: function () { return audio.kind; },
-    listen: listen,
-    stop: stopAudio,
+    analysis: SA.snapshot,
+    source: SA.source,
+    listen: SA.listen,
+    devices: function () { return inputs.slice(); },
+    stop: SA.stop,
     background: function () { return !!bgHandle && html.hasAttribute('data-visualizer-bg'); },
   };
 })();
