@@ -19,7 +19,7 @@
 //   node scripts/serve.mjs --build --port 0      built for a free port, then served (preview)
 //   SONIC_PORT=4000 npm run serve                the port from the environment
 import { execFileSync } from 'node:child_process';
-import { readFileSync, statSync } from 'node:fs';
+import { readFileSync, realpathSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -52,6 +52,23 @@ export function basePath(file = join(ROOT, 'config.toml')) {
  * @returns {import('node:http').RequestListener}
  */
 export function site(root, base) {
+  // A name the file system refuses (too long, not readable) is a file that is not there, never a
+  // crash of the server; a symbolic link is followed only while it stays under root (a review,
+  // 2026-11-23).
+  const look = (path) => {
+    try {
+      return statSync(path, { throwIfNoEntry: false });
+    } catch (e) {
+      return undefined;
+    }
+  };
+  const under = (path) => {
+    let real, top;
+    try {
+      real = realpathSync(path); top = realpathSync(root);
+    } catch (e) { return false; } // untested: the file was found a moment before; only a race with its removal lands here
+    return real === top || real.startsWith(top + sep);
+  };
   return (req, res) => {
     const send = (status, headers, body) => {
       res.writeHead(status, { 'Cache-Control': 'no-store', ...headers });
@@ -75,12 +92,12 @@ export function site(root, base) {
     const file = join(root, name.slice(base.length));
     const inside = file === root || file.startsWith(root + sep);
     if (!name.startsWith(base) || name.includes('\0') || !inside) return missing();
-    const stat = statSync(file, { throwIfNoEntry: false });
+    const stat = look(file);
     if (stat && stat.isDirectory() && !name.endsWith('/')) {
       return send(301, { Location: `${pathname}/${search}` }, '');
     }
     const target = stat && stat.isDirectory() ? join(file, 'index.html') : file;
-    if (!statSync(target, { throwIfNoEntry: false })?.isFile()) return missing();
+    if (!look(target)?.isFile() || !under(target)) return missing();
     const type = TYPES[extname(target).toLowerCase()] || 'application/octet-stream';
     return send(200, { 'Content-Type': type }, readFileSync(target));
   };

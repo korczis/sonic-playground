@@ -15,7 +15,7 @@
     corner on a phone, and it fades after a few seconds. The settings are a sheet whose height
     static/js/visualizer.js bounds by the video and the bar. Pro glass surfaces, the hero's style;
     every string is an interface key. -#}
-{%- set chip = "min-h-10 rounded-lg px-3 py-2 text-left text-gray-200 ring-1 ring-inset ring-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400 aria-checked:bg-white aria-checked:text-gray-900" %}
+{%- set chip = "min-h-10 rounded-lg px-3 py-2 text-left text-gray-200 ring-1 ring-inset ring-white/15 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400 aria-checked:bg-white aria-checked:text-gray-900 aria-checked:focus:ring-primary-700" %}
 {%- set round = "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-gray-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-400 aria-expanded:bg-white aria-expanded:text-gray-900 aria-pressed:bg-white aria-pressed:text-gray-900" %}
 {%- set toggle = "relative h-5 w-9 shrink-0 rounded-full bg-gray-600 after:absolute after:start-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:bg-white after:transition-all peer-checked:bg-primary-600 peer-checked:after:translate-x-full peer-focus:ring-2 peer-focus:ring-primary-400 peer-disabled:opacity-40" %}
 <div id="visualizer-full" hidden tabindex="-1" role="dialog" aria-modal="false" aria-label="{{ l["viz.region"] }}" data-i18n-aria-label="viz.region" data-controls="shown" class="group fixed inset-0 z-[35] bg-black outline-none data-[controls=hidden]:cursor-none">
@@ -113,7 +113,7 @@
           <p id="viz-devices-label" class="mb-1.5 text-[11px] font-medium uppercase tracking-wider text-gray-400" data-i18n="viz.devices">{{ l["viz.devices"] }}</p>
           <div data-viz-devices role="radiogroup" aria-labelledby="viz-sources-label viz-devices-label" class="flex flex-wrap gap-1.5"></div>
           <template data-viz-device-chip>
-            <button type="button" role="radio" aria-checked="false" class="{{ chip }} inline-flex items-center gap-2 text-sm font-medium"><span data-viz-device-label></span><span data-viz-device-badge hidden class="rounded bg-primary-900 px-2 py-0.5 text-[11px] font-medium text-primary-200" data-i18n="viz.loopback">{{ l["viz.loopback"] }}</span></button>
+            <button type="button" role="radio" aria-checked="false" class="{{ chip }} inline-flex items-center gap-2 text-sm font-medium"><span data-viz-device-label></span><span data-viz-device-badge hidden class="rounded-md bg-primary-900 px-2.5 py-0.5 text-xs font-medium text-primary-200" data-i18n="viz.loopback">{{ l["viz.loopback"] }}</span></button>
           </template>
         </div>
         <p data-viz-loopback-hint class="mt-2 text-xs text-gray-400" data-i18n="viz.loopback_hint">{{ l["viz.loopback_hint"] }}</p>

@@ -143,9 +143,13 @@
       }
       st.punch *= Math.exp(-dt / 0.15);
       M.punch = st.punch * (calm ? 0.35 : 1);
-      while (st.flashes.length && a.t - st.flashes[0] > 1) st.flashes.shift();
-      // At most three flashes a second: past two, an impulse's brightness share drops to 0.3.
-      st.flashGain = follow(st.flashGain, st.flashes.length > 2 ? 0.3 : 1, dt, 0.05, 0.6);
+      // The flashes of the last second, the window just under it: beats exactly half a second apart
+      // (two a second) put three onsets at 0, 0.5 and 1.0 s, which is not three within a second.
+      while (st.flashes.length && a.t - st.flashes[0] > 0.98) st.flashes.shift();
+      // At most three flashes a second: past two, an impulse's brightness share drops to 0.3 at
+      // once (50 ms) and comes back slowly (0.6 s). follow() takes the rise's time first: here
+      // that is the recovery.
+      st.flashGain = follow(st.flashGain, st.flashes.length > 2 ? 0.3 : 1, dt, 0.6, 0.05);
       M.flashGain = calm ? Math.min(0.2, st.flashGain) : st.flashGain;
 
       // Form: a new section draws a new variant, crossfaded by the change envelope.

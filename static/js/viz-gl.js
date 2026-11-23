@@ -401,8 +401,8 @@
       '  float segs = 8.0 + floor(vary(2.0) * 3.0) * 4.0;',
       '  float tw = a / TAU * segs + ringId * 0.5;',
       '  float seg = smoothstep(0.43, 0.5, abs(fract(tw) - 0.5));',
-      '  float lit = 0.25 + 1.4 * spec(fract(ringId * 0.137));',
-      '  vec3 col = tone(sin(ringId * 0.7)) * (edge * lit + seg * 0.3 * (0.4 + uHat));',
+      '  float lit = 0.25 + 0.5 * uExpo + 0.9 * spec(fract(ringId * 0.137)) * uFlash;',
+      '  vec3 col = tone(sin(ringId * 0.7)) * (edge * lit + seg * 0.3 * (0.45 + 0.15 * uHat * uFlash));',
       '  col += accentC() * exp(-abs(depth - 0.4 - uShock * 3.0) * 14.0) * exp(-uShock * 2.5) * (0.3 + 0.4 * uFlash);',
       '  col = mix(col, deep(0.025), 1.0 - exp(-depth * 0.16));',
       '  col += accentC() * exp(-r * r * 90.0) * (0.35 + 0.4 * max(uBass, 0.0));',
@@ -437,7 +437,7 @@
       '    vec3 ink = mix(tone(fi / 8.0 * 2.0 - 1.0), accentC(), 0.3 * smoothstep(5.0, 8.0, fi));',
       '    col += ink * (0.0016 + s * 0.003) / (abs(r - R) + 0.0035) * (0.45 + 0.3 * uPunch * uFlash);',
       '  }',
-      '  col += accentC() * 0.12 * exp(-r * r * 30.0) * (0.4 + max(uBass, 0.0));',
+      '  col += accentC() * 0.12 * exp(-r * r * 30.0) * (0.4 + 0.6 * uExpo + 0.3 * max(uBass, 0.0) * uFlash);',
       '  gl_FragColor = vec4(finish(col, vUv), 1.0);',
       '}',
     ],
@@ -470,7 +470,7 @@
       '  glass *= 0.35 + (0.6 + 0.6 * sin(ca * n * 2.0 + uTime * 0.3)) * exp(-length(cp) * 2.2);',
       '  float ld = 1.0 - smoothstep(0.0, 0.007, lead);',
       '  vec3 col = glass * (1.0 - ld * 0.9) + mix(vec3(1.0, 0.92, 0.75), accentC(), 0.4) * ld * (0.006 + (0.3 * uPunch + 0.1 * uPulse) * uFlash);',
-      '  col += accentC() * 0.14 * (0.3 + max(uBass, 0.0)) * exp(-dot(cp, cp) * 8.0);',
+      '  col += accentC() * 0.14 * (0.3 + 0.6 * uExpo + 0.3 * max(uBass, 0.0) * uFlash) * exp(-dot(cp, cp) * 8.0);',
       '  gl_FragColor = vec4(finish(col * 1.1, vUv), 1.0);',
       '}',
     ],
@@ -556,7 +556,7 @@
       '  float dif = clamp(dot(n, normalize(vec3(0.3, 0.6, -0.7))), 0.0, 1.0);',
       '  vec3 base = mix(vec3(0.55), tone(sin(pos.z * 0.35 + pos.x)), 0.75);',
       '  vec3 col = base * (0.12 + dif * 0.9) * ao * ao;',
-      '  col += accentC() * (1.0 - ao) * 0.3 * (0.4 + max(uHigh, 0.0));',
+      '  col += accentC() * (1.0 - ao) * 0.3 * (0.4 + 0.4 * max(uHigh, 0.0) * uFlash);',
       '  col = mix(deep(0.02), col, exp(-t * 0.28));',
       '  col += accentC() * exp(-abs(t - uShock * 4.0) * 2.5) * exp(-uShock * 1.5) * 0.35 * (0.4 + 0.6 * uFlash);',
       '  gl_FragColor = vec4(finish(col * 0.8, vUv), 1.0);',
@@ -707,7 +707,7 @@
   // band; the cloud breathes on the beat and spreads with the stereo.
   var CHOIR_VS = [
     'attribute vec2 seed;',
-    'uniform float uPixel, uCount, uBeats, uKick, uPulse, uPunch, uMotion, uVariant, uPrevVariant, uMorph, uReact, uSpread;',
+    'uniform float uPixel, uCount, uBeats, uKick, uPulse, uPunch, uMotion, uVariant, uPrevVariant, uMorph, uReact, uSpread, uFlash;',
     'uniform float uChroma[12];',
     'uniform sampler2D uSpec;',
     'varying float vU; varying float vS; varying float vK; varying float vPc; varying vec2 vUv;',
@@ -744,7 +744,7 @@
     '  pos *= 1.0 + sp * 0.25 + k * 0.06 + (0.1 * uPulse + 0.08 * uPunch) * uMotion;',
     '  pos.x *= 1.0 + 0.3 * uSpread;',
     '  vec4 mv = modelViewMatrix * vec4(pos, 1.0);',
-    '  gl_PointSize = (2.2 + sp * 5.0 + k * 3.0 + uKick * 2.0 * uMotion) * uPixel * (3.0 / -mv.z);',
+    '  gl_PointSize = (2.2 + sp * 5.0 + k * 3.0 + uKick * 2.0 * uMotion * uFlash) * uPixel * (3.0 / -mv.z);',
     '  vU = u; vS = sp; vK = k; vPc = float(pc); vUv = vec2(0.0);',
     '  gl_Position = projectionMatrix * mv;',
     '}',
@@ -1243,6 +1243,8 @@
 
     var handle = {
       canvas: canvas,
+      /** What the renderer holds on the GPU, for the check that a mode change frees its own. */
+      memory: function () { return { textures: renderer.info.memory.textures, geometries: renderer.info.memory.geometries }; },
       set: function (next) {
         if (next === id || !MODES[next]) return;
         if (mode) { try { mode.dispose(); } catch (e) { console.error('viz-gl: dispose ' + id, e); } }
@@ -1253,6 +1255,9 @@
         ctx.U.uHarmB.value = PALETTE[next][1][1];
         slow = 0;
         calmSince = performance.now();
+        // The disposed mode is forgotten before the resize: resizing it would allocate its render
+        // targets again inside a mode nothing will dispose (a review, 2026-11-23).
+        mode = null;
         size();
         // A mode that cannot be built draws nothing and says why, once, in the console.
         try { mode = MODES[next](ctx); } catch (e) { mode = null; console.error('viz-gl: ' + next, e); }

@@ -111,6 +111,7 @@ printf '{"a":1}\n' > "$site/assets/data.json"
 printf 'raw\n' > "$site/assets/blob.bin"
 printf '<p>missing page</p>\n' > "$site/404.html"
 printf 'secret\n' > "$work/outside.txt"
+ln -s "$work/outside.txt" "$site/leak.txt"
 
 # Starts serve.mjs in the background and waits for the URL it prints (into $url).
 start() { # <log> <args...>
@@ -170,9 +171,16 @@ get "${url}a%00b"
 [ "$status" = 404 ] || fail "a NUL in the path is 404: $status"
 get "${url}%E0%A4%A"
 [ "$status" = 400 ] || fail "a malformed escape is 400: $status"
+get "${url}leak.txt"
+[ "$status" = 404 ] && ! grep -q secret "$work/body" || fail "a symbolic link leading outside the directory is 404: $status"
+get "${url}$(printf 'x%.0s' $(seq 1 300)).html"
+[ "$status" = 404 ] || fail "a name the file system refuses (too long) is 404: $status"
+get "$url"
+[ "$status" = 200 ] || fail "the server still answers after a refused name: $status"
 stop
 echo "ok   serve-port: --port 0 serves on a free port it prints; files with their type under the base path"
-echo "ok   serve-port: directories and the bare path redirect, missing is 404, nothing outside is served"
+echo "ok   serve-port: directories and the bare path redirect, missing is 404, nothing outside is served, not even through a link"
+echo "ok   serve-port: a name the file system refuses is 404 and the server keeps serving"
 
 # Without --base, at /; without a 404.html, a plain 404. The port from SONIC_PORT, then the flag.
 rm "$site/404.html"

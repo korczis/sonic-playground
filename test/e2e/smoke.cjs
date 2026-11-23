@@ -743,16 +743,22 @@ async function shot(page, name) {
       `shared link: the song is cued at its time (${now.source} at ${st.s.time})`);
     check(st.calls === 0 && !st.api && st.toast.length > 0, 'shared link: paused, the YouTube API not even loaded, and the toast says so');
     check(st.mode === 'prism' && st.params && st.params.warp === 1.5 && st.cinema === true, 'shared link: the picture, its live control and cinema');
-    await page.waitForTimeout(300);
-    check(await page.evaluate(() => document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine') !== 'gl'
-      || /^hsl\(\d+ 85% 62% \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
-    'shared link: a WebGL picture glows in its hue, no frame read back from the GPU');
-    // A p5 picture draws in 2D: its glow is the colour of its own pixels.
+    // The glow at the video's edge is the picture's palette (the key's hue turned by the hue
+    // control), read from its map, never from its pixels, for a WebGL and a p5 picture alike.
+    const glowOf = () => page.evaluate(() => {
+      const m = /^hsl\((\d+) (\d+)% (\d+)% \/ 0\.55\)$/.exec(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'));
+      const map = window.SonicVisualizer.map();
+      const engine = document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine');
+      return { hue: m ? Number(m[1]) : -1, want: map ? Math.round(map.hue * 360) : -2, engine };
+    });
+    const near = (g) => g.hue >= 0 && Math.min(Math.abs(g.hue - g.want), 360 - Math.abs(g.hue - g.want)) <= 3;
+    await page.waitForTimeout(400);
+    const glowGl = await glowOf();
     await page.evaluate(() => window.SonicVisualizer.set('kaleido'));
-    await page.waitForFunction(() => document.querySelector('#visualizer-full [data-visualizer-engine]').getAttribute('data-visualizer-engine') === 'p5'
-      && /^rgb\(\d+ \d+ \d+ \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow')), null, { timeout: 10000 }).catch(() => {});
-    check(await page.evaluate(() => /^rgb\(\d+ \d+ \d+ \/ 0\.55\)$/.test(document.getElementById('player-panel').style.getPropertyValue('--viz-glow'))),
-      'shared link: a 2D (p5) picture glows in the colour of its own pixels');
+    await page.waitForTimeout(400);
+    const glow2d = await glowOf();
+    check(near(glowGl) && near(glow2d) && glow2d.engine === 'p5',
+      `shared link: the glow is the picture's palette from its map, WebGL and p5 alike (${glowGl.engine} ${glowGl.hue}/${glowGl.want}, ${glow2d.engine} ${glow2d.hue}/${glow2d.want})`);
     check(new URL(page.url()).searchParams.get('play') === key && new URL(page.url()).searchParams.get('t') === '42',
       'shared link: the URL keeps naming the song and its time');
     await page.click('#player [data-player-toggle]');
@@ -1767,6 +1773,125 @@ async function shot(page, name) {
     await page.evaluate(() => window.SonicVisualizer.close());
     check(await page.evaluate(() => window.SonicVisualizer.map()) === null, 'visualiser map: none while the full screen is closed');
     check(errors.length === 0, `visualiser (map): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // A review's findings, held: the flash limit cuts at once and recovers slowly; leaving a
+  // feedback mode for another WebGL mode frees its render targets (it used to allocate a new pair
+  // inside the mode it had just disposed); the last request for a source wins, not the last one
+  // granted, and "don't listen" cancels a request still on its way.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      const tone = () => {
+        const ac = new AudioContext();
+        const o = ac.createOscillator();
+        const out = ac.createMediaStreamDestination();
+        o.connect(out); o.start();
+        return out.stream;
+      };
+      window.__streams = [];
+      // The microphone answers late (a slow device), the tab at once.
+      md.getUserMedia = () => new Promise((ok) => setTimeout(() => { const s = tone(); window.__streams.push(['mic', s]); ok(s); }, 600));
+      md.getDisplayMedia = async () => { const s = tone(); window.__streams.push(['tab', s]); return s; };
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    const flash = await page.evaluate(() => {
+      const mapper = window.SonicVizMap.create();
+      const base = { bpm: 120, phase: 0, bar: 0, kick: 0, beat: false, section: 0, change: 0, chroma: new Float32Array(12) };
+      let t = 0, m = null;
+      const step = (patch) => { t += 1 / 60; m = mapper.frame(Object.assign({}, base, patch, { t, dt: 1 / 60 }), { react: 1, hue: 0 }); return m.flashGain; };
+      for (let i = 0; i < 60; i++) step({});
+      // Three beats 0.15 s apart: the third is the third flash within a second.
+      const at3 = [];
+      for (let i = 0; i < 30; i++) at3.push(step(i % 9 === 0 ? { beat: true, kick: 1 } : {}));
+      const cut = at3[18 + 6]; // 0.1 s after the third beat
+      for (let i = 0; i < 50; i++) step({}); // the window empties about 1 s after the first beat
+      const back = step({}); let later = back;
+      for (let i = 0; i < 12; i++) later = step({}); // 0.2 s on
+      return { cut, later };
+    });
+    check(flash.cut < 0.6 && flash.later < 0.9,
+      `visualiser map: past two flashes in a second the impulse share drops at once and comes back slowly (0.1 s after: ${flash.cut.toFixed(2)}; 0.2 s into the recovery: ${flash.later.toFixed(2)})`);
+    await page.evaluate(() => window.SonicVisualizer.open('liquid'));
+    const stage = '[data-visualizer-stage]';
+    const settle = async () => {
+      const from = Number(await page.getAttribute(stage, 'data-visualizer-frame') || 0);
+      await page.waitForFunction((f) => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0) > f + 5, from, { timeout: 10000 }).catch(() => {});
+    };
+    await settle();
+    const held = [];
+    for (let round = 0; round < 3; round++) {
+      for (const m of ['patchbay', 'prism', 'ember', 'liquid']) { await page.evaluate((x) => window.SonicVisualizer.set(x), m); await settle(); }
+      held.push(await page.evaluate(() => window.SonicVisualizer.memory()));
+    }
+    const webgl = held[0] !== null;
+    check(!webgl || (held[2].textures <= held[0].textures && held[1].textures <= held[0].textures),
+      `visualiser (WebGL): leaving a feedback mode frees its render targets (${webgl ? held.map((h) => h.textures).join(' -> ') + ' textures after each round' : 'no WebGL 2 here'})`);
+    // The microphone asked first answers after the tab asked second: the tab is heard, the late
+    // microphone's stream is stopped; then a request still waiting when "don't listen" comes is
+    // stopped when it arrives.
+    await page.evaluate(() => { window.SonicVisualizer.listen('mic').catch(() => {}); window.SonicVisualizer.listen('tab').catch(() => {}); });
+    await page.waitForTimeout(1000);
+    const race = await page.evaluate(() => ({ source: window.SonicVisualizer.source(),
+      mic: window.__streams.filter((x) => x[0] === 'mic').map((x) => x[1].getTracks().every((tr) => tr.readyState === 'ended')) }));
+    await page.evaluate(() => { window.SonicVisualizer.listen('mic').catch(() => {}); window.SonicVisualizer.stop(); });
+    await page.waitForTimeout(1000);
+    const cancel = await page.evaluate(() => ({ source: window.SonicVisualizer.source(),
+      mic: window.__streams.filter((x) => x[0] === 'mic').map((x) => x[1].getTracks().every((tr) => tr.readyState === 'ended')) }));
+    check(race.source === 'tab' && race.mic.length === 1 && race.mic[0],
+      `visualiser sources: the last request wins, the earlier one granted later is stopped (${JSON.stringify(race)})`);
+    check(cancel.source === 'clock' && cancel.mic.length === 2 && cancel.mic.every(Boolean),
+      `visualiser sources: "don't listen" cancels a request still on its way (${JSON.stringify(cancel)})`);
+    check(errors.length === 0, `visualiser (review findings): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // The Sound group on a phone (a browser review, 2026-11-23): "the whole computer" cannot be
+  // shared there and is hidden, so the arrows pass it instead of getting stuck on it; passing over
+  // "don't listen" never stops the music (only a click, Space or Enter does); a lone plain
+  // microphone is not offered twice; the hint to install a loopback device is for computers.
+  {
+    const iphone = { userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1', isMobile: true, hasTouch: true };
+    const { context, page, errors } = await open(browser, at('404.html'), phone, 'dark', iphone);
+    await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
+    await page.addInitScript(() => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.enumerateDevices = async () => [{ kind: 'audioinput', deviceId: 'phone-mic', groupId: 'g', label: 'iPhone Microphone', toJSON() { return this; } }];
+      const q = navigator.permissions && navigator.permissions.query.bind(navigator.permissions);
+      if (q) navigator.permissions.query = (d) => (d && d.name === 'microphone' ? Promise.resolve({ state: 'granted', onchange: null }) : q(d));
+    });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-settings]');
+    await page.waitForTimeout(400);
+    const shown = await page.evaluate(() => ({
+      system: document.querySelector('#visualizer-full [data-viz-source="system"]').hidden,
+      devices: document.querySelector('#visualizer-full [data-viz-devices-box]').hidden,
+      hint: document.querySelector('#visualizer-full [data-viz-loopback-hint]').hidden,
+      stops: [...document.querySelectorAll('#visualizer-full [data-viz-source]:not([data-viz-source="connect"])')].filter((b) => b.getAttribute('tabindex') === '0').map((b) => b.getAttribute('data-viz-source')),
+    }));
+    check(shown.system && shown.devices && shown.hint && shown.stops.length === 1 && shown.stops[0] !== 'system',
+      `visualiser (phone): no whole-computer share, a lone microphone not offered twice, no loopback hint, one tab stop on a shown radio (${JSON.stringify(shown)})`);
+    await page.focus('#visualizer-full [data-viz-source="tab"]');
+    await page.keyboard.press('ArrowRight');
+    const afterTab = await page.evaluate(() => document.activeElement.getAttribute('data-viz-source'));
+    await page.keyboard.press('ArrowRight');
+    const onClock = await page.evaluate(() => ({ at: document.activeElement.getAttribute('data-viz-source'), source: window.SonicVisualizer.source() }));
+    await page.keyboard.press('ArrowLeft');
+    const back = await page.evaluate(() => document.activeElement.getAttribute('data-viz-source'));
+    check(afterTab === 'mic' && back === 'mic', `visualiser (phone): the arrows pass the hidden whole-computer chip (tab -> ${afterTab}, back to ${back})`);
+    check(onClock.at === 'clock' && onClock.source === 'mic', `visualiser (phone): passing over "don't listen" keeps the music (${JSON.stringify(onClock)})`);
+    await page.focus('#visualizer-full [data-viz-source="clock"]');
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(300);
+    check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser (phone): Enter on "don\'t listen" stops listening');
+    check(errors.length === 0, `visualiser (phone sources): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
   // Every WebGL mode follows the music (static/js/viz-gl.js through the grammar of

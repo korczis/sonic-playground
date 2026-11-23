@@ -62,6 +62,7 @@
     stream: /** @type {MediaStream | null} */ (null), freq: new Float32Array(0), time: new Float32Array(0),
     kind: /** @type {SonicAudioSource} */ ('clock'), edges: /** @type {number[]} */ ([]),
     device: /** @type {{id: string, label: string} | null} */ (null),
+    src: /** @type {MediaStreamAudioSourceNode | null} */ (null), request: 0,
     // Each bin's power (linear), read once a frame by the bands, the kick and the timbre.
     power: new Float32Array(0),
     // The pitch: a longer window, its bins from 80 Hz to 5 kHz (ca..cz) and their width in Hz.
@@ -170,7 +171,13 @@
 
   /** Stop listening and return to the clock. */
   function stopAudio() {
+    // A request still on its way loses to this one (see the request token in listen).
+    audio.request += 1;
     if (audio.stream) audio.stream.getTracks().forEach(function (tr) { tr.stop(); });
+    // The graph is let go and the audio thread rests until the next source.
+    if (audio.src) audio.src.disconnect();
+    audio.src = null;
+    if (audio.ctx && audio.ctx.state === 'running') audio.ctx.suspend();
     audio.stream = null;
     audio.analyser = audio.pitch = audio.left = audio.right = null;
     audio.kind = 'clock';
@@ -211,7 +218,15 @@
       ? (md.getDisplayMedia ? md.getDisplayMedia(/** @type {any} */ (screen))
         : Promise.reject(new Error('unsupported')))
       : md.getUserMedia({ audio: kind === 'device' ? Object.assign({ deviceId: { exact: id } }, raw) : raw });
+    // The last request wins, not the last to be granted: a pick, a "don't listen" or a remembered
+    // device's start made while an earlier request waits (a picker open, a slow device) makes
+    // that earlier one stop its stream when it arrives (a review, 2026-11-23).
+    var mine = ++audio.request;
     return ask.then(function (stream) {
+      if (mine !== audio.request) {
+        stream.getTracks().forEach(function (tr) { tr.stop(); });
+        return;
+      }
       if (!stream.getAudioTracks().length) {
         stream.getTracks().forEach(function (tr) { tr.stop(); });
         throw new Error('no-audio');
@@ -227,7 +242,8 @@
       // No smoothing in the analyser: the onsets read the raw spectrum; the picture smooths each
       // band itself, quickly up and slowly down (fromAudio).
       an.smoothingTimeConstant = 0;
-      var src = ctx.createMediaStreamSource(stream);
+      if (audio.src) audio.src.disconnect();
+      var src = audio.src = ctx.createMediaStreamSource(stream);
       src.connect(an);
       audio.analyser = an;
       audio.freq = new Float32Array(an.frequencyBinCount);
@@ -343,12 +359,14 @@
   function resume(id) {
     var perms = navigator.permissions;
     if (!id || !navigator.mediaDevices || !perms || !perms.query) return Promise.resolve(false);
+    // Any request the reader makes meanwhile (a pick, "don't listen") wins over this one.
+    var at = audio.request;
     return perms.query(/** @type {any} */ ({ name: 'microphone' })).then(function (st) {
       if (st.state !== 'granted') return false;
       return devices().then(function (list) {
         if (!list.some(function (d) { return d.id === id && d.loopback; })) return false;
         return activated().then(function () {
-          if (audio.analyser) return false;
+          if (audio.analyser || audio.request !== at) return false;
           return listen('device', id).then(function () { return true; });
         });
       });

@@ -165,7 +165,7 @@
     var mapper = window.SonicVizMap.create();
     /** @type {SonicVizScratch} */
     var scratch = { t: 0, params: st.params, m: mapper.map };
-    /** @type {{engine: string, set: (id: string) => void, remove: () => void, resize: () => void} | null} */
+    /** @type {{engine: string, set: (id: string) => void, remove: () => void, resize: () => void, memory?: () => {textures: number, geometries: number}} | null} */
     var runner = null;
     var pending = /** @type {object | null} */ (null);
     var gone = false;
@@ -188,7 +188,7 @@
     }
     // A picture draws only while it is on screen.
     var seen = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
-      st.visible = entries[0].isIntersecting;
+      st.visible = entries[entries.length - 1].isIntersecting;
     }) : null;
     if (seen) seen.observe(el);
     var size = el.clientWidth + 'x' + el.clientHeight;
@@ -273,6 +273,7 @@
       raf = requestAnimationFrame(loop);
       return {
         engine: 'gl',
+        memory: function () { return h.memory(); },
         set: function (next) { h.set(next); },
         remove: function () { cancelAnimationFrame(raf); h.remove(); },
         resize: function () { h.resize(); },
@@ -321,6 +322,8 @@
       cycle: function (on) { st.cycle = on; st.started = performance.now(); },
       params: function () { return st.params; },
       map: function () { return mapper.map; },
+      /** The WebGL renderer's GPU holdings, or null for a p5 picture. */
+      memory: function () { return runner && runner.memory ? runner.memory() : null; },
       /** @param {string} k @param {number} v */
       param: function (k, v) { var c = clampParam(k, v); if (c !== null) st.params[k] = c; },
       canvas: function () { return /** @type {HTMLCanvasElement | null} */ (el.querySelector('canvas')); },
@@ -414,7 +417,6 @@
   // Cinema: the video panel fills the screen above the bar (styles/app.css), the picture around
   // it, and the picture's colour glows at the video's edge, pulsing with the kick.
   var glowRaf = 0;
-  var glowCanvas = /** @type {HTMLCanvasElement | null} */ (null);
   var glowAt = 0;
   function applyCinema() {
     var on = isOpen() && cinema;
@@ -440,30 +442,13 @@
     target.style.setProperty('--viz-kick', A.kick.toFixed(2));
     if (now - glowAt < 125 || !full) return;
     glowAt = now;
-    var c = full.canvas();
-    if (!c || !c.width) return;
-    var stage = c.closest('[data-visualizer-engine]');
-    if (stage && stage.getAttribute('data-visualizer-engine') === 'gl') {
-      // Reading a WebGL frame back stalls the GPU, and Chrome says so in the console: a three.js
-      // picture's glow follows its hue control (its palettes rotate by it) instead of its pixels.
-      var hue = Math.round((280 + (full.params().hue || 0)) % 360);
-      target.style.setProperty('--viz-glow', 'hsl(' + hue + ' 85% 62% / 0.55)');
-      return;
-    }
-    if (!glowCanvas) { glowCanvas = document.createElement('canvas'); glowCanvas.width = 4; glowCanvas.height = 4; }
-    var g = glowCanvas.getContext('2d', { willReadFrequently: true });
-    try {
-      g.drawImage(c, 0, 0, 4, 4);
-      var d = g.getImageData(0, 0, 4, 4).data;
-      var r = 0, gr = 0, bl = 0;
-      for (var i = 0; i < d.length; i += 4) { r += d[i]; gr += d[i + 1]; bl += d[i + 2]; }
-      var n = d.length / 4;
-      // Lifted towards full brightness, so a dark frame still glows in its own hue.
-      var m = Math.max(r, gr, bl, 1) / n;
-      var k = Math.min(3, 200 / m);
-      target.style.setProperty('--viz-glow', 'rgb(' + Math.round(r / n * k) + ' ' + Math.round(gr / n * k) + ' '
-        + Math.round(bl / n * k) + ' / 0.55)');
-    } catch (e) { /* a canvas the browser will not read: no glow */ }
+    // The picture's palette, as every mode builds it (static/js/viz-map.js: the key's hue turned
+    // by the hue control, its saturation and lightness): nothing is read back from the picture,
+    // which for a WebGL frame stalls the GPU and for a 2D one copies the whole canvas back
+    // (a review, 2026-11-23).
+    var m = full.map();
+    target.style.setProperty('--viz-glow', 'hsl(' + Math.round(m.hue * 360) + ' ' + Math.round(45 + 45 * m.sat) + '% '
+      + Math.round(48 + 22 * m.light) + '% / 0.55)');
   }
   function setCinema(on, quiet) {
     cinema = on;
@@ -606,8 +591,8 @@
     });
     // The radio pattern: one tab stop per group, the checked radio (the first when none is).
     s.querySelectorAll('[role=radiogroup]').forEach(function (g) {
-      var radios = g.querySelectorAll('[role=radio]');
-      var on = g.querySelector('[role=radio][aria-checked="true"]') || radios[0];
+      var radios = shownRadios(g);
+      var on = radios.filter(function (r) { return r.getAttribute('aria-checked') === 'true'; })[0] || radios[0];
       radios.forEach(function (r) { r.setAttribute('tabindex', r === on ? '0' : '-1'); });
     });
     s.querySelectorAll('[data-viz-source]').forEach(function (b) {
@@ -648,7 +633,7 @@
       // The status names the source and the input heard. data-i18n (with data-i18n-vars) lets
       // i18n.js translate it again when the bundle arrives or the language changes.
       var src = SA.source();
-      var called = heard ? heard.label || deviceLabel(heard.id) : '';
+      var called = heard ? deviceLabel(heard.id) || heard.label : '';
       var vars = { device: called };
       var pick = src === 'tab' ? ['viz.status_tab', Sonic.t('viz.status_tab')]
         : src === 'system' ? ['viz.status_system', Sonic.t('viz.status_system')]
@@ -668,6 +653,12 @@
   // device comes or goes. Reading the list never asks for anything.
   /** @type {SonicAudioDevice[]} */
   var inputs = [];
+  var PHONE = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  /** A radio group's radios that are shown (a hidden one, such as "the whole computer" where it
+   *  cannot be shared, takes no stop and the arrows pass it). @param {Element} g */
+  function shownRadios(g) {
+    return Array.prototype.filter.call(g.querySelectorAll('[role=radio]'), function (r) { return !r.hidden; });
+  }
   function deviceLabel(id) {
     var d = inputs.filter(function (x) { return x.id === id; })[0];
     return d ? d.label : '';
@@ -686,8 +677,12 @@
     var chip = /** @type {HTMLTemplateElement | null} */ (s && s.querySelector('template[data-viz-device-chip]'));
     var hint = /** @type {HTMLElement | null} */ (s && s.querySelector('[data-viz-loopback-hint]'));
     if (!box || !group || !chip || !hint) return;
-    box.hidden = !inputs.length;
-    hint.hidden = inputs.some(function (d) { return d.loopback; });
+    var loopback = inputs.some(function (d) { return d.loopback; });
+    // A lone plain microphone is already "Listen with the microphone": the group shows when it
+    // offers more (a loopback, or a choice of inputs). A phone cannot install a loopback, so the
+    // hint to install one is for computers only.
+    box.hidden = !(loopback || inputs.length > 1);
+    hint.hidden = loopback || PHONE;
     var focused = document.activeElement && group.contains(document.activeElement)
       ? document.activeElement.getAttribute('data-viz-device') : null;
     group.textContent = '';
@@ -857,13 +852,14 @@
     if (radio && /^Arrow(Left|Right|Up|Down)$/.test(e.key)) {
       e.preventDefault();
       var group = /** @type {HTMLElement} */ (radio.closest('[role=radiogroup]'));
-      var radios = Array.prototype.slice.call(group.querySelectorAll('[role=radio]'));
+      var radios = shownRadios(group);
       var by = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1;
       var next = /** @type {HTMLElement} */ (radios[(radios.indexOf(radio) + by + radios.length) % radios.length]);
       next.focus();
-      // A source or a device starts only on a click: the arrows move to it, no further.
-      var listens = next.hasAttribute('data-viz-device') || (next.hasAttribute('data-viz-source') && next.getAttribute('data-viz-source') !== 'clock');
-      if (!listens) next.click();
+      // A source or a device (and "don't listen" too) changes only on a click, Space or Enter: the
+      // arrows move to it, no further, so passing over "don't listen" never stops the music.
+      var sound = next.hasAttribute('data-viz-device') || next.hasAttribute('data-viz-source');
+      if (!sound) next.click();
       showControls();
       return;
     }
@@ -993,6 +989,7 @@
     set: choose,
     params: function () { return full ? Object.assign({}, full.params()) : null; },
     map: function () { return full ? JSON.parse(JSON.stringify(full.map())) : null; },
+    memory: function () { return full ? full.memory() : null; },
     param: function (k, v) {
       var s = shell();
       var input = /** @type {HTMLInputElement | null} */ (s && s.querySelector('[data-viz-param="' + k + '"]'));
