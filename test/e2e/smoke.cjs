@@ -1859,7 +1859,12 @@ async function shot(page, name) {
     page.on('request', onRequest);
     await page.evaluate(() => {
       const a = document.createElement('a');
-      a.href = location.pathname;
+      // The page's own query stays (against production that is the ?v= cache-buster); only
+      // what the player and the visualiser keep in the URL is left out, as a reader's link does.
+      const q = new URLSearchParams(location.search);
+      [...q.keys()].filter((k) => k === 'play' || k === 't' || k === 'viz' || k.startsWith('viz.'))
+        .forEach((k) => q.delete(k));
+      a.href = location.pathname + (q.toString() ? `?${q}` : '');
       a.id = 'same-page-probe';
       a.textContent = 'here';
       document.getElementById('main-content').prepend(a);
