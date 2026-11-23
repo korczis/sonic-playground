@@ -815,6 +815,178 @@ async function shot(page, name) {
       && window.SonicVisualizer.source() === 'clock'), 'visualiser: a refused microphone is said, and the picture stays on the clock');
     await context.close();
   }
+  // The sound straight from the computer, with no microphone on: a loopback device (here a fake
+  // "BlackHole 2ch" beside a fake microphone, both WebAudio streams; getUserMedia records what it
+  // is asked; a third is unplugged before it is chosen) is listed first with its badge, starts when it is chosen (its exact deviceId, every
+  // processing flag off), is remembered, and starts again after a reload with the reader's first
+  // click while the browser reports the microphone allowed. The whole computer (systemAudio), this
+  // tab and the microphone are asked as they should be, and each says what it hears. A plain
+  // microphone chosen as a device never starts by itself; with the permission not yet given
+  // nothing starts, the browser names no device, and the hint on a loopback device is shown.
+  // Nothing is ever asked on load.
+  {
+    const inputs = (context, perm, labels) => context.addInitScript(([perm, labels]) => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      const w = /** @type {any} */ (window);
+      w.__asked = [];
+      const list = [
+        { deviceId: 'default', kind: 'audioinput', label: 'Default - MacBook Pro Microphone', groupId: 'g1' },
+        { deviceId: 'mic-1', kind: 'audioinput', label: 'MacBook Pro Microphone', groupId: 'g1' },
+        { deviceId: 'bh-2ch', kind: 'audioinput', label: 'BlackHole 2ch', groupId: 'g2' },
+        { deviceId: 'usb-9', kind: 'audioinput', label: 'USB Audio CODEC', groupId: 'g3' },
+        { deviceId: 'spk-1', kind: 'audiooutput', label: 'MacBook Pro Speakers', groupId: 'g1' },
+      ];
+      // Without the permission the browser lists its inputs without ids or labels.
+      md.enumerateDevices = async () => list.map((d) => (labels ? { ...d } : { ...d, deviceId: '', label: '' }));
+      const query = navigator.permissions.query.bind(navigator.permissions);
+      navigator.permissions.query = (d) => (d && d.name === 'microphone' ? Promise.resolve(/** @type {any} */ ({ state: perm })) : query(d));
+      const sound = async (label) => {
+        const ac = new AudioContext();
+        await ac.resume();
+        const osc = ac.createOscillator();
+        osc.type = 'sawtooth';
+        osc.frequency.value = 110;
+        const out = ac.createMediaStreamDestination();
+        osc.connect(out);
+        osc.start();
+        Object.defineProperty(out.stream.getAudioTracks()[0], 'label', { value: label });
+        return out.stream;
+      };
+      md.getUserMedia = async (c) => {
+        w.__asked.push({ how: 'user', c: JSON.parse(JSON.stringify(c)) });
+        // Unplugged between the list and the click.
+        if (c.audio && c.audio.deviceId && c.audio.deviceId.exact === 'usb-9') throw new DOMException('gone', 'OverconstrainedError');
+        return sound(c.audio && c.audio.deviceId ? '' : 'MacBook Pro Microphone');
+      };
+      md.getDisplayMedia = async (c) => {
+        w.__asked.push({ how: 'display', c: JSON.parse(JSON.stringify(c)) });
+        return sound('');
+      };
+    }, [perm, labels]);
+    const asked = (page) => page.evaluate(() => /** @type {any} */ (window).__asked);
+    const raw = (a) => a.echoCancellation === false && a.noiseSuppression === false && a.autoGainControl === false;
+    const status = (page) => page.evaluate(() => {
+      const el = document.querySelector('#visualizer-full [data-viz-status]');
+      return { key: el.getAttribute('data-i18n'), text: el.textContent };
+    });
+    const sheet = async (page) => {
+      await showViz(page);
+      if (await page.isHidden('#visualizer-settings')) await page.click('#visualizer-full [data-viz-settings]');
+    };
+    const heard = (page, source) => page.waitForFunction((s) => window.SonicVisualizer.source() === s
+      && window.SonicVisualizer.analysis().level > 0, source, { timeout: 15000 }).catch(() => {});
+
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await inputs(context, 'granted', true);
+    await page.goto(at(''), { waitUntil: 'load' });
+    check((await asked(page)).length === 0, 'visualiser sources: nothing is asked on load');
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await sheet(page);
+    await page.waitForFunction(() => document.querySelectorAll('#visualizer-full [data-viz-device]').length === 3, null, { timeout: 5000 }).catch(() => {});
+    const listed = await page.evaluate(() => ({
+      chips: Array.from(document.querySelectorAll('#visualizer-full [data-viz-device]')).map((b) => ({
+        id: b.getAttribute('data-viz-device'), label: b.querySelector('[data-viz-device-label]').textContent,
+        badge: !b.querySelector('[data-viz-device-badge]').hidden })),
+      hint: document.querySelector('#visualizer-full [data-viz-loopback-hint]').hidden,
+      system: document.querySelector('#visualizer-full [data-viz-source="system"]').hidden,
+    }));
+    check(listed.chips.length === 3 && listed.chips[0].id === 'bh-2ch' && listed.chips[0].badge
+      && listed.chips[1].id === 'mic-1' && !listed.chips[1].badge && listed.chips[2].id === 'usb-9'
+      && listed.hint && !listed.system,
+      `visualiser sources: the inputs are listed, the loopback first with its badge, no alias; the whole computer is offered (${JSON.stringify(listed)})`);
+    await page.click('#visualizer-full [data-viz-device="bh-2ch"]');
+    await heard(page, 'device');
+    let ask = (await asked(page)).pop();
+    let said = await status(page);
+    check(ask && ask.how === 'user' && ask.c.audio.deviceId.exact === 'bh-2ch' && raw(ask.c.audio)
+      && await page.evaluate(() => window.SonicVisualizer.analysis().level > 0),
+      `visualiser sources: the chosen loopback device is asked by its exact id, every processing flag off, and heard (${JSON.stringify(ask)})`);
+    check(said.key === 'viz.status_device' && said.text.includes('BlackHole 2ch')
+      && await page.getAttribute('#visualizer-full [data-viz-device="bh-2ch"]', 'aria-checked') === 'true',
+      `visualiser sources: the status names the device heard ("${said.text}")`);
+    check(await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer')).device) === 'bh-2ch',
+      'visualiser sources: the chosen device is remembered');
+
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForTimeout(800);
+    check((await asked(page)).length === 0 && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock',
+      'visualiser sources: after a reload nothing is asked before the reader acts');
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await page.click('#visualizer-full [data-visualizer-stage]');
+    await heard(page, 'device');
+    ask = (await asked(page))[0];
+    check(ask && ask.c.audio.deviceId.exact === 'bh-2ch' && await page.evaluate(() => window.SonicVisualizer.source()) === 'device',
+      `visualiser sources: the remembered loopback starts again by itself, without a prompt (${JSON.stringify(ask)})`);
+
+    await sheet(page);
+    await page.click('#visualizer-full [data-viz-source="system"]');
+    await heard(page, 'system');
+    ask = (await asked(page)).pop();
+    said = await status(page);
+    check(ask && ask.how === 'display' && ask.c.systemAudio === 'include' && ask.c.video.displaySurface === 'monitor'
+      && raw(ask.c.audio) && said.key === 'viz.status_system'
+      && await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer')).device) === '',
+      `visualiser sources: the whole computer is asked with its sound, said, and replaces the remembered device (${JSON.stringify(ask)})`);
+    await sheet(page);
+    await page.click('#visualizer-full [data-viz-source="tab"]');
+    await heard(page, 'tab');
+    ask = (await asked(page)).pop();
+    check(ask && ask.how === 'display' && ask.c.preferCurrentTab === true && (await status(page)).key === 'viz.status_tab',
+      `visualiser sources: this tab is asked and said (${JSON.stringify(ask)})`);
+    await sheet(page);
+    await page.click('#visualizer-full [data-viz-source="mic"]');
+    await heard(page, 'mic');
+    ask = (await asked(page)).pop();
+    said = await status(page);
+    check(ask && ask.how === 'user' && !ask.c.audio.deviceId && raw(ask.c.audio)
+      && said.key === 'viz.status_mic_named' && said.text.includes('MacBook Pro Microphone'),
+      `visualiser sources: the microphone is asked only when picked, raw, and named ("${said.text}")`);
+    // A plain microphone chosen as a device is remembered but never starts by itself.
+    await sheet(page);
+    await page.click('#visualizer-full [data-viz-device="mic-1"]');
+    await page.waitForFunction(() => /** @type {any} */ (window).__asked.length === 5, null, { timeout: 5000 }).catch(() => {});
+    await page.reload({ waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await page.click('#visualizer-full [data-visualizer-stage]');
+    await sheet(page);
+    // The arrows move between the devices without starting one.
+    await page.waitForSelector('#visualizer-full [data-viz-device="bh-2ch"]', { timeout: 5000 }).catch(() => {});
+    await page.focus('#visualizer-full [data-viz-device="bh-2ch"]');
+    await page.keyboard.press('ArrowRight');
+    await page.waitForTimeout(1500);
+    check(await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer')).device) === 'mic-1'
+      && (await asked(page)).length === 0 && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock'
+      && await page.evaluate(() => document.activeElement.getAttribute('data-viz-device')) === 'mic-1',
+      'visualiser sources: a remembered plain microphone never starts by itself, nor does an arrow key');
+    await page.click('#visualizer-full [data-viz-device="usb-9"]');
+    await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied', null, { timeout: 5000 }).catch(() => {});
+    check((await status(page)).key === 'viz.denied' && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock'
+      && await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer')).device) === 'mic-1',
+      'visualiser sources: a device that cannot start is said beside the buttons, and not remembered');
+    check(errors.length === 0, `visualiser sources: no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+
+    // Not yet allowed: the browser names no device, nothing starts, the hint is shown.
+    const second = await open(browser, at('404.html'), desktop);
+    await inputs(second.context, 'prompt', false);
+    await second.page.goto(at(''), { waitUntil: 'load' });
+    await second.page.evaluate(() => localStorage.setItem('sonic.visualizer', JSON.stringify({ device: 'bh-2ch' })));
+    await second.page.reload({ waitUntil: 'load' });
+    await second.page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await second.page.click('#visualizer-full [data-visualizer-stage]');
+    await sheet(second.page);
+    await second.page.waitForTimeout(1500);
+    const before = await second.page.evaluate(() => ({
+      asked: /** @type {any} */ (window).__asked.length, source: window.SonicVisualizer.source(),
+      box: document.querySelector('#visualizer-full [data-viz-devices-box]').hidden,
+      hint: document.querySelector('#visualizer-full [data-viz-loopback-hint]').hidden,
+    }));
+    check(before.asked === 0 && before.source === 'clock' && before.box && !before.hint,
+      `visualiser sources: without the permission a remembered loopback waits, no device is listed, the hint is shown (${JSON.stringify(before)})`);
+    check(second.errors.length === 0, `visualiser sources (not allowed): no console error${second.errors.length ? ': ' + second.errors.join(' | ') : ''}`);
+    await second.context.close();
+  }
   // A GPU mode whose code cannot be loaded (offline, blocked) is drawn by its p5 fallback; when
   // the p5 code cannot be loaded either, the stage says so instead of drawing nothing silently.
   {

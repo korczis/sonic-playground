@@ -150,11 +150,25 @@ class Visualizer(unittest.TestCase):
             self.assertNotIn("getUserMedia(", src)
         self.assertEqual(AUDIO.count("getDisplayMedia("), 1)
         self.assertEqual(AUDIO.count("getUserMedia("), 1)
-        self.assertEqual([m.start() for m in re.finditer(r"(?<![\w.])(?<!function )listen\(", AUDIO)], [])
+        # One call of listen() in the module itself: resume(), which starts a remembered device
+        # only after the browser reports the inputs already allowed ('granted', so no prompt can
+        # appear) and the device is a loopback; a plain microphone never starts by itself.
+        inner = [m.start() for m in re.finditer(r"(?<![\w.])(?<!function )listen\(", AUDIO)]
+        self.assertEqual(len(inner), 1)
+        resume = AUDIO.index("function resume(")
+        body = AUDIO[resume:inner[0]]
+        self.assertTrue(resume < inner[0] < AUDIO.index("\n  }\n", resume), "listen() is called only in resume()")
+        self.assertIn("name: 'microphone'", body)
+        self.assertIn("st.state !== 'granted') return false", body)
+        self.assertIn("d.loopback", body)
+        self.assertIn("listen('device', id)", AUDIO[inner[0]:inner[0] + 30])
         calls = [m.start() for m in re.finditer(r"SA\.listen\(", JS)]
         self.assertTrue(calls)
         for at in calls:
             self.assertTrue(handler < at < handler_end, JS[at - 80:at + 20])
+        # The visualiser asks SonicAudio to resume once, on load, with the remembered device.
+        self.assertEqual(JS.count("SA.resume("), 1)
+        self.assertIn("SA.resume(prefs().device)", JS)
 
     def test_the_url_carries_the_song_and_the_picture(self):
         for key in ("'play'", "'t'"):
