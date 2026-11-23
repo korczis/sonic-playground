@@ -484,6 +484,121 @@ function litShare(selector) {
   return lit / (64 * 36);
 }
 
+// What a picture shows, for the checks that it follows the music: a 32x18 sample's mean
+// luminance, its lit share, its mean hue (a circular mean weighted by saturation, 0..1) with that
+// weight, and the luminance of every cell (two samples' cells differ as much as the picture moved).
+function pictureStats(selector) {
+  const c = document.querySelector(selector);
+  if (!c) return null;
+  const g = document.createElement('canvas');
+  g.width = 32;
+  g.height = 18;
+  const x = g.getContext('2d', { willReadFrequently: true });
+  x.drawImage(c, 0, 0, 32, 18);
+  const d = x.getImageData(0, 0, 32, 18).data;
+  const cells = [];
+  let luma = 0, lit = 0, hx = 0, hy = 0, wsum = 0;
+  for (let i = 0; i < d.length; i += 4) {
+    const r = d[i] / 255, gr = d[i + 1] / 255, b = d[i + 2] / 255;
+    const y = 0.2126 * r + 0.7152 * gr + 0.0722 * b;
+    cells.push(y);
+    luma += y;
+    if (y > 0.08) lit++;
+    const max = Math.max(r, gr, b), min = Math.min(r, gr, b);
+    const sat = max - min;
+    if (sat > 0.05) {
+      let h = max === r ? (gr - b) / sat : max === gr ? 2 + (b - r) / sat : 4 + (r - gr) / sat;
+      h = ((h / 6) % 1 + 1) % 1;
+      hx += sat * Math.cos(h * Math.PI * 2);
+      hy += sat * Math.sin(h * Math.PI * 2);
+      wsum += sat;
+    }
+  }
+  const n = d.length / 4;
+  return { luma: luma / n, lit: lit / n, hue: wsum ? (Math.atan2(hy, hx) / (Math.PI * 2) + 1) % 1 : -1,
+    chroma: wsum / n, cells };
+}
+
+// Music handed over as the microphone, for the checks that the pictures follow it: a kick on
+// every beat, a snare on two and four, hats on the off-beats, a bass on the chord's root and a pad
+// on the chord, through a compressor. page.addInitScript(musicMic, { bpm, chord }) installs it;
+// in the page, window.__music.chord([pitch classes]) changes the harmony and
+// window.__music.gain(g) the loudness (0: silence) while it plays; window.__music.kicks holds when
+// each kick was played (page time, seconds).
+function musicMic({ bpm = 124, chord = [0, 4, 7] } = {}) {
+  const md = navigator.mediaDevices;
+  if (!md) return;
+  md.getDisplayMedia = undefined;
+  md.getUserMedia = async () => {
+    const ac = new AudioContext();
+    await ac.resume();
+    const out = ac.createMediaStreamDestination();
+    const comp = ac.createDynamicsCompressor();
+    comp.threshold.value = -14; comp.ratio.value = 4; comp.knee.value = 10;
+    comp.attack.value = 0.008; comp.release.value = 0.15;
+    const master = ac.createGain();
+    master.gain.value = 2.2;
+    comp.connect(master).connect(out);
+    const bus = ac.createGain();
+    bus.gain.value = 0.4;
+    bus.connect(comp);
+    const hz = (pc, octave) => 440 * Math.pow(2, (pc - 9) / 12 + (octave - 4));
+    const voices = [0, 1, 2].map(() => {
+      const o = ac.createOscillator(); o.type = 'sawtooth';
+      const f = ac.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 2400;
+      const g = ac.createGain(); g.gain.value = 0.1;
+      o.connect(f).connect(g).connect(bus); o.start();
+      return o;
+    });
+    const bass = ac.createOscillator(); bass.type = 'sawtooth';
+    const bl = ac.createBiquadFilter(); bl.type = 'lowpass'; bl.frequency.value = 220;
+    const bg = ac.createGain(); bg.gain.value = 0.3;
+    bass.connect(bl).connect(bg).connect(bus); bass.start();
+    const setChord = (pcs) => {
+      pcs.slice(0, 3).forEach((pc, i) => voices[i].frequency.setValueAtTime(hz(pc, 4), ac.currentTime));
+      bass.frequency.setValueAtTime(hz(pcs[0], 2), ac.currentTime);
+    };
+    setChord(chord);
+    const noise = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+    const d = noise.getChannelData(0);
+    let seed = 3;
+    for (let i = 0; i < d.length; i++) { seed = (seed * 16807) % 2147483647; d[i] = seed / 1073741823.5 - 1; }
+    const hit = (filter, cut, at, peak, len) => {
+      const s = ac.createBufferSource(); s.buffer = noise;
+      const f = ac.createBiquadFilter(); f.type = filter; f.frequency.value = cut;
+      const g = ac.createGain();
+      g.gain.setValueAtTime(0, at); g.gain.linearRampToValueAtTime(peak, at + 0.002);
+      g.gain.exponentialRampToValueAtTime(0.001, at + len);
+      s.connect(f).connect(g).connect(bus); s.start(at, (at * 7.3) % 0.5, len + 0.02);
+    };
+    const period = 60 / bpm;
+    const offset = performance.now() / 1000 - ac.currentTime;
+    const kicks = [];
+    let next = ac.currentTime + 0.2, beat = 0;
+    // Scheduled a little ahead, for as long as the page lives.
+    const plan = () => {
+      while (next < ac.currentTime + 0.5) {
+        const k = ac.createOscillator();
+        k.frequency.setValueAtTime(150, next); k.frequency.exponentialRampToValueAtTime(45, next + 0.12);
+        const kg = ac.createGain();
+        kg.gain.setValueAtTime(0, next); kg.gain.linearRampToValueAtTime(1.2, next + 0.003);
+        kg.gain.exponentialRampToValueAtTime(0.001, next + 0.35);
+        k.connect(kg).connect(bus); k.start(next); k.stop(next + 0.4);
+        kicks.push(next + offset);
+        if (kicks.length > 200) kicks.shift();
+        if (beat % 2) hit('bandpass', 1800, next, 0.9, 0.18);
+        hit('highpass', 8000, next + period / 2, 0.6, 0.05);
+        next += period;
+        beat += 1;
+      }
+    };
+    plan();
+    setInterval(plan, 100);
+    window.__music = { kicks, chord: setChord, gain: (g) => master.gain.setTargetAtTime(2.2 * g, ac.currentTime, 0.02) };
+    return out.stream;
+  };
+}
+
 // The visualiser's cluster (settings, full screen, close) is on top of everything at its own
 // centre; the open queue used to lie over Close on phones and at 1280x720 (a review, 2026-11-15).
 // The visualiser's controls fade while the pointer rests and let clicks through; a pointer move
