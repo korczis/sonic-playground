@@ -5,6 +5,10 @@
   "description": "Sonic Playground: a hand-picked music journal. Static Zola site on GitHub Pages, Flowbite Pro UI, catalogue derived from front matter.",
   "license": "UNLICENSED",
   "author": "Tomas Korcak",
+  "config": {
+    "port": 1111,
+    "host": "127.0.0.1"
+  },
   "engines": {
     "node": ">=22"
   },
@@ -17,7 +21,9 @@
     "derive": "python3 scripts/spotify_history.py build --write --if-sources && python3 scripts/catalog.py",
     "check": "python3 scripts/catalog.py --check",
     "build": "npm run --silent assets && npm run --silent check && zola build",
-    "dev": "npm run --silent assets && npm run --silent derive && zola serve",
+    "dev": "npm run --silent assets && npm run --silent derive && node scripts/dev.mjs",
+    "serve": "node scripts/serve.mjs",
+    "preview": "npm run --silent assets && npm run --silent check && node scripts/serve.mjs --build",
     "test": "python3 -m unittest discover -s test -p 'test_*.py'",
     "test:e2e": "node test/e2e/smoke.cjs",
     "verify": "bash scripts/verify.sh",
