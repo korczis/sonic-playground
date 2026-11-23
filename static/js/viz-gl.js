@@ -40,6 +40,17 @@
   var IDS = ['liquid', 'patchbay', 'prism', 'ember', 'tidal', 'hyperloop', 'chrome', 'whirlpool',
     'choir', 'garden', 'silk', 'cathedral', 'reef', 'mercury', 'fold'];
   var HEAVY = { fold: 1, mercury: 1, cathedral: 1, garden: 1, hyperloop: 1 };
+  // Each mode's palette around the key's hue, in turns: its own offset, then its harmony's two
+  // hues (analogous +-1/12, complementary 1/2, split-complementary 5/12 and 7/12, triadic +-1/3).
+  // The offsets spread the modes round the wheel, so in one key no two look alike, and the whole
+  // palette still turns with the key and the hue control.
+  var ANALOG = [-1 / 12, 1 / 12], COMPL = [1 / 2, 1 / 24], SPLIT = [5 / 12, 7 / 12], TRIAD = [-1 / 3, 1 / 3];
+  var PALETTE = {
+    liquid: [0, TRIAD], patchbay: [0.7, ANALOG], prism: [0.5, COMPL], ember: [-0.04, ANALOG],
+    tidal: [0.58, SPLIT], hyperloop: [0.83, COMPL], chrome: [0.25, ANALOG], whirlpool: [0.67, TRIAD],
+    choir: [0.42, SPLIT], garden: [0.17, TRIAD], silk: [0.75, ANALOG], cathedral: [0.33, SPLIT],
+    reef: [0.45, ANALOG], mercury: [0.92, COMPL], fold: [0.12, SPLIT],
+  };
   var SCALES = [1, 0.85, 0.7, 0.58, 0.47, 0.38, 0.3, 0.25];
 
   // ---- GLSL. -------------------------------------------------------------------------------------
@@ -55,7 +66,7 @@
     'uBass', 'uMid', 'uHigh', 'uLevel', 'uFlux', 'uEnergy', 'uKick', 'uSnare', 'uHat',
     'uPulse', 'uPre', 'uBarPulse', 'uPunch', 'uFlash', 'uMotion', 'uDrift', 'uExpo', 'uReact',
     'uHueK', 'uAccent', 'uSat', 'uLight', 'uHueP', 'uRough', 'uHalo', 'uPan', 'uSpread', 'uContrast',
-    'uVariant', 'uPrevVariant', 'uMorph',
+    'uVariant', 'uPrevVariant', 'uMorph', 'uHueOff', 'uHarmA', 'uHarmB',
     'uWarp', 'uTrails', 'uGlow', 'uZoom', 'uSymmetry', 'uDetail', 'uDensity',
   ];
 
@@ -78,15 +89,32 @@
     '  vec3 k = clamp(abs(fract(h + vec3(0.0, 2.0 / 3.0, 1.0 / 3.0)) * 6.0 - 3.0) - 1.0, 0.0, 1.0);',
     '  return v * mix(vec3(1.0), k, s);',
     '}',
-    // The key's palette: t -1..1 spans the analogous hues around the key, the saturation is how
-    // clearly one key sounds, a brighter timbre is a lighter colour; the accent is the leading note.
+    // The mode's palette: its base is the key's hue turned by the mode's own offset (uHueOff), and
+    // its harmony (analogous, complementary, split or triadic) the two hues uHarmA and uHarmB away
+    // from it. t -1..1 runs from the first harmony hue through the base to the second; the base
+    // keeps the larger share. The saturation is how clearly one key sounds, a brighter timbre a
+    // lighter colour.
     'float satK() { return 0.42 + 0.58 * uSat; }',
-    'vec3 tone(float t) { return hsv(uHueK + 0.085 * t, satK() * (1.0 - 0.3 * uLight), 1.0); }',
-    'vec3 accentC() { return hsv(uAccent, satK(), 1.0); }',
-    'vec3 deep(float v) { return hsv(uHueK + 0.03, satK() * 0.95, v); }',
-    // A pitch class's own hue, its place on the circle of fifths turned by the hue control.
-    'float pcHue(int i) { return fract(float((i * 7) % 12) / 12.0 + uHueP); }',
-    'vec3 note(int i) { return hsv(pcHue(i), satK(), 1.0); }',
+    'float baseH() { return uHueK + uHueOff; }',
+    'vec3 tone(float t) {',
+    '  float s = satK() * (1.0 - 0.3 * uLight);',
+    '  vec3 c = hsv(baseH() + 0.04 * t, s, 1.0);',
+    '  c = mix(c, hsv(baseH() + uHarmA, s, 1.0), 0.8 * smoothstep(0.35, 1.0, -t));',
+    '  return mix(c, hsv(baseH() + uHarmB, s, 1.0), 0.8 * smoothstep(0.35, 1.0, t));',
+    '}',
+    // The events' colours stand out of the base wash: the leading note (accent), pushed at least
+    // a quarter turn from the base, and the notes, each lighter and brighter than the base.
+    'vec3 accentC() {',
+    '  float d = fract(uAccent - uHueK + 0.5) - 0.5;',
+    '  float h = baseH() + (abs(d) < 0.25 ? (d < 0.0 ? -0.25 : 0.25) : d);',
+    '  return hsv(h, satK() * 0.7, 1.0) * 1.35;',
+    '}',
+    // The ground: dark, in the base hue, a little more saturated than the light.
+    'vec3 deep(float v) { return hsv(baseH() + 0.02, min(1.0, satK() * 1.1), v); }',
+    // A pitch class's own hue, its place on the circle of fifths turned by the hue control and the
+    // mode's offset.
+    'float pcHue(int i) { return fract(float((i * 7) % 12) / 12.0 + uHueP + uHueOff); }',
+    'vec3 note(int i) { return hsv(pcHue(i), satK() * 0.8, 1.0) * 1.25; }',
     'float hash(vec2 p) { p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }',
     'float h1(float n) { return fract(sin(n * 127.1 + 311.7) * 43758.5453); }',
     // A section's own value k of its variant, crossfaded from the last section's.
@@ -263,7 +291,7 @@
     ember: [
       'vec3 fire(float x) {',
       '  x = clamp(x, 0.0, 1.5);',
-      '  return hsv(uHueK - 0.06 + 0.1 * x, satK() * (1.0 - 0.55 * smoothstep(0.6, 1.4, x)), 1.0) * (x * x * 1.6);',
+      '  return hsv(baseH() - 0.06 + 0.1 * x, satK() * (1.0 - 0.55 * smoothstep(0.6, 1.4, x)), 1.0) * (x * x * 1.6);',
       '}',
       'void main() {',
       '  vec2 p = centred(vUv);',
@@ -278,7 +306,7 @@
       '  col += fire(0.5 + 0.8 * b) * exp(-(p.y - bot) * (12.0 - 6.0 * b)) * smoothstep(0.42, 0.75, fbm(vec2(p.x * 7.0, p.y * 2.5 - uTime * 1.8)) + 0.25 * b) * 0.022 * uFr;',
       '  float h = hash(floor(vUv * uRes / 3.0) + floor(uTime * 40.0));',
       '  float rate = 0.0002 + (uKick * 0.004 + uHat * 0.0015) * (0.4 + b);',
-      '  col += fire(1.2) * step(1.0 - rate, h) * (1.0 - smoothstep(bot, bot + 0.3, p.y)) * 0.5 * uFr;',
+      '  col += mix(fire(1.2), accentC(), 0.6) * step(1.0 - rate, h) * (1.0 - smoothstep(bot, bot + 0.3, p.y)) * 0.5 * uFr;',
       '  float wv = bot + 0.18 + wave(vUv.x) * (0.04 + 0.05 * lvl());',
       '  col += fire(0.8 + 0.4 * uLight) * (line(p.y - wv, 0.003) + 0.25 * glowl(p.y - wv, 0.01)) * (0.05 + 0.1 * uPunch * uFlash) * uFr;',
       '  gl_FragColor = vec4(min(col, vec3(4.0)), 1.0);',
@@ -664,7 +692,7 @@
     '  float fres = pow(1.0 - max(dot(N, V), 0.0), 3.0);',
     '  vec3 env = mix(deep(0.06), tone(0.3) * 0.7, smoothstep(-0.4, 0.8, R.y));',
     '  env += tone(-0.9) * smoothstep(0.85, 0.98, dot(R, normalize(vec3(-0.8, 0.4, 0.4))));',
-    '  vec3 film = hsv(uHueK + 0.09 * cos(fres * 7.0 + vDisp * 9.0), satK(), 1.0);',
+    '  vec3 film = hsv(baseH() + 0.09 * cos(fres * 7.0 + vDisp * 9.0), satK(), 1.0);',
     '  float rough = 1.0 + 3.0 * uRough;',
     '  float sp = pow(max(dot(R, normalize(uLamp - vPos)), 0.0), 50.0 / rough);',
     '  float sp2 = pow(max(dot(R, normalize(uLamp2 - vPos)), 0.0), 30.0 / rough) * (0.3 + 0.7 * uSpread);',
@@ -1039,7 +1067,7 @@
 
   /** Adds a pitch class's colour, weighted, to out: its hue on the circle of fifths. */
   function noteRgb(pc, hueP, weight, out) {
-    var h = (((pc * 7) % 12) / 12 + hueP) % 1;
+    var h = ((((pc * 7) % 12) / 12 + hueP) % 1 + 1) % 1;
     [0, 2 / 3, 1 / 3].forEach(function (o, c) {
       out[c] += weight * Math.min(1, Math.max(0, Math.abs(((h + o) % 1) * 6 - 3) - 1));
     });
@@ -1208,7 +1236,7 @@
         var k = (ch[i] || 0) * (ch[i] || 0);
         U.uChroma.value[i] = k;
         total += k;
-        if (k > 0.05) noteRgb(i, U.uHueP.value, k, noteSum);
+        if (k > 0.05) noteRgb(i, U.uHueP.value + U.uHueOff.value, k, noteSum);
       }
       U.uNoteCol.value.set(noteSum[0], noteSum[1], noteSum[2]).multiplyScalar(1 / Math.max(1, total));
     }
@@ -1220,6 +1248,9 @@
         if (mode) { try { mode.dispose(); } catch (e) { console.error('viz-gl: dispose ' + id, e); } }
         id = next;
         level = HEAVY[next] ? 2 : 0;
+        ctx.U.uHueOff.value = PALETTE[next][0];
+        ctx.U.uHarmA.value = PALETTE[next][1][0];
+        ctx.U.uHarmB.value = PALETTE[next][1][1];
         slow = 0;
         calmSince = performance.now();
         size();
