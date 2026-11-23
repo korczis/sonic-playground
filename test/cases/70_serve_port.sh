@@ -132,7 +132,7 @@ stop() { kill -TERM "$pid"; local code=0; wait "$pid" || code=$?; [ "$code" -eq 
 get() { # <url>: sets $status, the headers in $work/head and the body in $work/body
   status=$(curl -s --noproxy '*' --path-as-is -o "$work/body" -D "$work/head" -w '%{http_code}' "$1")
 }
-header() { grep -i "^$1:" "$work/head" | head -1 | cut -d' ' -f2- | tr -d '\r'; }
+header() { grep -i -m1 "^$1:" "$work/head" | cut -d' ' -f2- | tr -d '\r'; }
 
 # Under config.toml's base path, on a free port (--port 0).
 base=$("$node" --input-type=module -e "import('$serve').then((m) => console.log(m.basePath()))")
