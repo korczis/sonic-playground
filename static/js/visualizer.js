@@ -161,8 +161,10 @@
     var ring = opt.modes && opt.modes.length ? opt.modes : MODES;
     var st = { mode: opt.mode, cycle: opt.cycle, started: performance.now(), visible: true, frames: 0,
       params: opt.params || paramsFor(opt.mode) };
+    // The grammar's signals for this picture, with its own envelopes (static/js/viz-map.js).
+    var mapper = window.SonicVizMap.create();
     /** @type {SonicVizScratch} */
-    var scratch = { t: 0, params: st.params };
+    var scratch = { t: 0, params: st.params, m: mapper.map };
     /** @type {{engine: string, set: (id: string) => void, remove: () => void, resize: () => void} | null} */
     var runner = null;
     var pending = /** @type {object | null} */ (null);
@@ -194,7 +196,7 @@
       var now = el.clientWidth + 'x' + el.clientHeight;
       if (now === size) return;
       size = now;
-      scratch = { t: scratch.t, params: st.params };
+      scratch = { t: scratch.t, params: st.params, m: mapper.map };
       if (runner) runner.resize();
     }) : null;
     if (sized) sized.observe(el);
@@ -217,6 +219,7 @@
       }
       scratch.t = age * (opt.slow || 1);
       scratch.params = st.params;
+      scratch.m = mapper.frame(a, st.params);
       st.frames += 1;
       el.setAttribute('data-visualizer-frame', String(st.frames));
       return a;
@@ -308,7 +311,7 @@
         st.mode = id;
         st.started = performance.now();
         st.params = paramsFor(id);
-        scratch = { t: 0, params: st.params };
+        scratch = { t: 0, params: st.params, m: mapper.map };
         el.setAttribute('data-visualizer-mode', id);
         flash();
         mount();
@@ -317,6 +320,7 @@
       shown: function () { return effective(st.mode); },
       cycle: function (on) { st.cycle = on; st.started = performance.now(); },
       params: function () { return st.params; },
+      map: function () { return mapper.map; },
       /** @param {string} k @param {number} v */
       param: function (k, v) { var c = clampParam(k, v); if (c !== null) st.params[k] = c; },
       canvas: function () { return /** @type {HTMLCanvasElement | null} */ (el.querySelector('canvas')); },
@@ -988,6 +992,7 @@
     },
     set: choose,
     params: function () { return full ? Object.assign({}, full.params()) : null; },
+    map: function () { return full ? JSON.parse(JSON.stringify(full.map())) : null; },
     param: function (k, v) {
       var s = shell();
       var input = /** @type {HTMLInputElement | null} */ (s && s.querySelector('[data-viz-param="' + k + '"]'));

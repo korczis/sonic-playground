@@ -126,8 +126,34 @@ type SonicAudioSource = 'tab' | 'system' | 'device' | 'mic' | 'clock';
 /** An audio input; a loopback device carries what the computer plays. */
 interface SonicAudioDevice { id: string; label: string; loopback: boolean }
 
+/** The signals a mode draws with (static/js/viz-map.js): the grammar shared by every mode. */
+interface SonicVizMap {
+  /** Each level against its own last 4 s: 1 normal, below 0.7 quiet, above 1.3 loud (0..3). */
+  bass: number; mid: number; high: number; level: number; flux: number; energy: number;
+  /** The same as deviations scaled by the react control, -1..2 (0 at rest). */
+  drive: { bass: number; mid: number; high: number; level: number; flux: number; energy: number };
+  /** The palette: base hue (the key on the circle of fifths plus the hue control), its
+   *  saturation, the lightness (the timbre's brightness) and the accent (the leading note), 0..1. */
+  hue: number; sat: number; light: number; accent: number;
+  /** The global brightness, the slow loudness, 0..1: the only thing that brightens the screen. */
+  exposure: number;
+  /** Texture roughness (noise), halo size (the treble's reach), pan (-0.25..0.25 of the width),
+   *  spread (stereo width) and contrast (punchy dynamics), 0..1. */
+  rough: number; halo: number; pan: number; spread: number; contrast: number;
+  /** Pace (tempo over 120 bpm, 0.6..1.6); after the beat, before it, after the downbeat (0..1);
+   *  the latched big event (0..1, decaying). */
+  rate: number; pulse: number; pre: number; barPulse: number; punch: number;
+  /** The scene variant of this section and the last (0..1), and the crossfade into it (0..1). */
+  variant: number; prevVariant: number; morph: number;
+  /** An impulse's share of brightness (0.3 after two flashes within a second), the motion cap,
+   *  and whether reduced motion is asked for. */
+  flashGain: number; motion: number; reduced: boolean;
+}
+
 /** A mode's own state, fresh at every mode change and resize. */
 interface SonicVizScratch {
+  /** The frame's shared signals (static/js/viz-map.js). */
+  m: SonicVizMap;
   /** Seconds since the mode started (slowed under reduced motion). */
   t: number;
   /** Every parameter of data/visualizer.json at its current value. */
@@ -173,6 +199,7 @@ interface Window {
     link?(): string;
     state(): { queue: SonicQueueItem[]; index: number; time: number; repeat: string; view: string; video: string; autoplay: boolean };
   };
+  SonicVizMap: { create(): { frame(a: SonicVizAnalysis, p: Record<string, number>): SonicVizMap; map: SonicVizMap }; fifths(pc: number): number };
   /** The sound the visualiser follows (static/js/viz-audio.js). */
   SonicAudio: {
     analyse(): SonicVizAnalysis;
@@ -194,6 +221,8 @@ interface Window {
     snapshot(): ReturnType<Window['SonicVisualizer']['analysis']>;
   };
   SonicVisualizer: {
+    /** A copy of the full screen's shared signals, or null while it is closed. */
+    map(): SonicVizMap | null;
     modes(): string[];
     open(mode?: string): void;
     close(): void;

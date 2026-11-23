@@ -1579,6 +1579,81 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (bar, sections): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // The grammar every mode shares (static/js/viz-map.js), driven frame by frame in the browser
+  // with made-up analyses: a level is read against its own last seconds and react scales only the
+  // swing; the palette's hue is the key on the circle of fifths (C and G neighbours, C and F#
+  // opposite), smoothed, and turned by the hue control; impulses are latched for a quarter beat,
+  // and past two flashes in a second their brightness share drops; a new section draws a new
+  // variant once; a source with no pitch keeps the hue; the full screen hands its map out.
+  {
+    const { context, page, errors } = await open(browser, at(''), desktop, 'dark');
+    const g = await page.evaluate(() => {
+      const chord = (notes) => { const c = new Float32Array(12); notes.forEach((n) => { c[n] = 1; }); return c; };
+      const base = { bass: 0.5, mid: 0.4, high: 0.3, level: 0.4, flux: 0.2, energy: 0.4, chroma: chord([0, 4, 7]),
+        pitch: 0, key: 0, minor: 0, keyStrength: 0.9, flatness: 0.05, centroid: 0.4, rolloff: 0.5, loudness: 0.5,
+        width: 0.2, balance: 0.4, dynamics: 0.5, bpm: 120, phase: 0, bar: 0, beat: false, kick: 0, section: 0, change: 0 };
+      const run = (mapper, seconds, patch, params, each) => {
+        let m = null;
+        for (let i = 0; i < seconds * 60; i++) {
+          const t = (run.t = (run.t || 0) + 1 / 60);
+          const a = Object.assign({}, base, typeof patch === 'function' ? patch(t, i) : patch, { t, dt: 1 / 60 });
+          m = mapper.frame(a, params);
+          if (each) each(m, t);
+        }
+        return JSON.parse(JSON.stringify(m));
+      };
+      const P = { react: 1, hue: 0 };
+      const levels = window.SonicVizMap.create();
+      const rest = run(levels, 6, {}, P);
+      const loud = run(levels, 0.3, { bass: 0.8 }, P);
+      const calm = run(window.SonicVizMap.create(), 6, {}, { react: 0, hue: 0 });
+      const calmLoud = run(window.SonicVizMap.create(), 0.3, { bass: 0.8 }, { react: 0, hue: 0 });
+      const colour = window.SonicVizMap.create();
+      const c = run(colour, 8, {}, P);
+      const soon = run(colour, 0.2, { chroma: chord([7, 11, 2]), pitch: 7, key: 7 }, P);
+      const gMaj = run(colour, 10, { chroma: chord([7, 11, 2]), pitch: 7, key: 7 }, P);
+      const fis = run(window.SonicVizMap.create(), 8, { chroma: chord([6, 10, 1]), pitch: 6, key: 6 }, P);
+      const turned = run(window.SonicVizMap.create(), 8, {}, { react: 1, hue: 180 });
+      const drums = run(colour, 3, { chroma: new Float32Array(12), keyStrength: 0 }, P);
+      const fast = window.SonicVizMap.create();
+      let punches = 0, prev = 0;
+      const flashy = run(fast, 2, (t, i) => ({ beat: i % 8 === 0, kick: i % 8 === 0 ? 1 : 0.2 }), P,
+        (m) => { if (m.punch > prev + 0.3) punches++; prev = m.punch; });
+      const slow = run(window.SonicVizMap.create(), 3, (t, i) => ({ beat: i % 30 === 0, kick: i % 30 === 0 ? 1 : 0 }), P);
+      const latch = window.SonicVizMap.create();
+      let fired = 0, last = 0;
+      run(latch, 1, (t, i) => ({ beat: i < 5, kick: i < 5 ? 1 : 0 }), P, (m) => { if (m.punch > last + 0.3) fired++; last = m.punch; });
+      const form = window.SonicVizMap.create();
+      const s0 = run(form, 1, {}, P);
+      const s1 = run(form, 0.1, { section: 1, change: 1 }, P);
+      const s1later = run(form, 3, { section: 1, change: 0 }, P);
+      return { rest, loud, calm, calmLoud, c, soon, gMaj, fis, turned, drums, flashy, slow, punches, fired, s0, s1, s1later };
+    });
+    const arc = (a, b) => Math.min(Math.abs(a - b), 1 - Math.abs(a - b));
+    check(Math.abs(g.rest.bass - 1) < 0.05 && g.loud.bass > 1.3 && g.loud.drive.bass > 0.3 && g.calm.drive.bass === 0 && g.calmLoud.drive.bass === 0,
+      `visualiser map: a level is read against its own last seconds; react scales only the swing (rest ${g.rest.bass.toFixed(2)}, louder ${g.loud.bass.toFixed(2)}, drive ${g.loud.drive.bass.toFixed(2)}, react 0: ${g.calmLoud.drive.bass})`);
+    check(arc(g.c.hue, g.gMaj.hue) < 0.13 && arc(g.c.hue, g.fis.hue) > 0.35 && arc(g.c.hue, g.soon.hue) < arc(g.c.hue, g.gMaj.hue) * 0.5,
+      `visualiser map: the hue is the key on the circle of fifths, C and G neighbours, C and F# apart, moving smoothly (C ${g.c.hue.toFixed(2)}, G ${g.gMaj.hue.toFixed(2)}, F# ${g.fis.hue.toFixed(2)}, 0.2 s after the change ${g.soon.hue.toFixed(2)})`);
+    check(arc(g.turned.hue, (g.c.hue + 0.5) % 1) < 0.02, `visualiser map: the hue control turns the palette (${g.c.hue.toFixed(2)} -> ${g.turned.hue.toFixed(2)})`);
+    check(Math.abs(g.drums.hue - g.gMaj.hue) < 0.01 && Object.values(g.drums).every((v) => typeof v !== 'number' || Number.isFinite(v)),
+      `visualiser map: without pitch the hue stays where it was, every signal finite (${g.drums.hue.toFixed(2)})`);
+    check(g.flashy.flashGain < 0.4 && g.slow.flashGain > 0.9 && g.punches >= 4,
+      `visualiser map: impulses at 7.5 a second still move (${g.punches} punches) but their brightness share drops (${g.flashy.flashGain.toFixed(2)}); two a second keep it (${g.slow.flashGain.toFixed(2)})`);
+    check(g.fired === 1, `visualiser map: a big event is latched for a quarter beat (${g.fired} fired from 5 frames of beat)`);
+    check(g.s0.variant !== g.s1.variant && g.s1.prevVariant === g.s0.variant && g.s1.morph < 0.05 && g.s1later.morph > 0.95 && g.s1later.variant === g.s1.variant,
+      `visualiser map: a new section draws a new variant once, crossfaded (${g.s0.variant.toFixed(2)} -> ${g.s1.variant.toFixed(2)}, morph ${g.s1.morph.toFixed(2)} -> ${g.s1later.morph.toFixed(2)})`);
+    check(Math.abs(g.c.pan - 0.1) < 0.01 && g.c.spread > 0.15 && g.c.sat > 0.6,
+      `visualiser map: stereo places and spreads, a clear major key is saturated (pan ${g.c.pan.toFixed(2)}, spread ${g.c.spread.toFixed(2)}, saturation ${g.c.sat.toFixed(2)})`);
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await page.waitForFunction(() => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0) > 10, null, { timeout: 10000 }).catch(() => {});
+    const live = await page.evaluate(() => window.SonicVisualizer.map());
+    check(!!live && Number.isFinite(live.hue) && Number.isFinite(live.exposure) && live.motion > 0,
+      `visualiser map: the full screen hands out its picture's signals (${live ? 'hue ' + live.hue.toFixed(2) + ', exposure ' + live.exposure.toFixed(2) : 'none'})`);
+    await page.evaluate(() => window.SonicVisualizer.close());
+    check(await page.evaluate(() => window.SonicVisualizer.map()) === null, 'visualiser map: none while the full screen is closed');
+    check(errors.length === 0, `visualiser (map): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // Without WebGL 2 a GPU mode is drawn by its p5 fallback, and the settings say so; three.js is
   // never downloaded for nothing.
   {
