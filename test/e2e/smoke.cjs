@@ -525,7 +525,7 @@ function pictureStats(selector) {
 // in the page, window.__music.chord([pitch classes]) changes the harmony and
 // window.__music.gain(g) the loudness (0: silence) while it plays; window.__music.kicks holds when
 // each kick was played (page time, seconds).
-function musicMic({ bpm = 124, chord = [0, 4, 7] } = {}) {
+function musicMic({ bpm = 124, chord = [0, 4, 7], kicks = [0, 1, 2, 3], snares = [1, 3] } = {}) {
   const md = navigator.mediaDevices;
   if (!md) return;
   md.getDisplayMedia = undefined;
@@ -573,28 +573,34 @@ function musicMic({ bpm = 124, chord = [0, 4, 7] } = {}) {
     };
     const period = 60 / bpm;
     const offset = performance.now() / 1000 - ac.currentTime;
-    const kicks = [];
+    const played = [];
     let next = ac.currentTime + 0.2, beat = 0;
-    // Scheduled a little ahead, for as long as the page lives.
+    const barAt = next;
+    // Scheduled a little ahead, bar by bar, for as long as the page lives: kicks and snares where
+    // the patterns put them (beats from the bar's start, 0-4), hats on every off-beat.
+    let bar = 0;
     const plan = () => {
-      while (next < ac.currentTime + 0.5) {
-        const k = ac.createOscillator();
-        k.frequency.setValueAtTime(150, next); k.frequency.exponentialRampToValueAtTime(45, next + 0.12);
-        const kg = ac.createGain();
-        kg.gain.setValueAtTime(0, next); kg.gain.linearRampToValueAtTime(1.2, next + 0.003);
-        kg.gain.exponentialRampToValueAtTime(0.001, next + 0.35);
-        k.connect(kg).connect(bus); k.start(next); k.stop(next + 0.4);
-        kicks.push(next + offset);
-        if (kicks.length > 200) kicks.shift();
-        if (beat % 2) hit('bandpass', 1800, next, 0.9, 0.18);
-        hit('highpass', 8000, next + period / 2, 0.6, 0.05);
-        next += period;
-        beat += 1;
+      while (barAt + bar * 4 * period < ac.currentTime + 0.5) {
+        const t0 = barAt + bar * 4 * period;
+        kicks.forEach((b) => {
+          const at = t0 + b * period;
+          const k = ac.createOscillator();
+          k.frequency.setValueAtTime(150, at); k.frequency.exponentialRampToValueAtTime(45, at + 0.12);
+          const kg = ac.createGain();
+          kg.gain.setValueAtTime(0, at); kg.gain.linearRampToValueAtTime(1.2, at + 0.003);
+          kg.gain.exponentialRampToValueAtTime(0.001, at + 0.35);
+          k.connect(kg).connect(bus); k.start(at); k.stop(at + 0.4);
+          played.push(at + offset);
+          if (played.length > 200) played.shift();
+        });
+        snares.forEach((b) => hit('bandpass', 1800, t0 + b * period, 0.9, 0.18));
+        for (let h = 0; h < 4; h++) hit('highpass', 8000, t0 + (h + 0.5) * period, 0.6, 0.05);
+        bar += 1;
       }
     };
     plan();
     setInterval(plan, 100);
-    window.__music = { kicks, chord: setChord, gain: (g) => master.gain.setTargetAtTime(2.2 * g, ac.currentTime, 0.02) };
+    window.__music = { kicks: played, chord: setChord, gain: (g) => master.gain.setTargetAtTime(2.2 * g, ac.currentTime, 0.02) };
     return out.stream;
   };
 }
@@ -1324,6 +1330,27 @@ async function shot(page, name) {
     check(after - before > 0.05, `visualiser: the bass bars jump on the kick (${before.toFixed(2)} -> ${after.toFixed(2)}; latency ${Math.round(lag * 1000)} ms)`);
     }
     check(errors.length === 0, `visualiser (mastered mix): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // A tempo is the beat's, not the kicks' intervals: a hip-hop groove at 86 bpm whose kicks are
+  // syncopated (on one, the and of two, three and a half; snares on two and four, hats on the
+  // off-beats) reads 86 (or its double). Read from the kicks' intervals, freely licensed hip-hop
+  // read 118 or nothing, rock and jazz locked a fifth of the time, and a piano read 110
+  // (2026-11-24); the tempo now comes from the novelty's autocorrelation.
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript(musicMic, { bpm: 86, chord: [9, 0, 4], kicks: [0, 1.5, 2.5], snares: [1, 3] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
+    await page.waitForTimeout(13000);
+    const seen = [];
+    for (let i = 0; i < 12; i++) { seen.push(await page.evaluate(() => window.SonicVisualizer.analysis().bpm)); await page.waitForTimeout(250); }
+    const right = seen.filter((b) => (b >= 83 && b <= 89) || (b >= 166 && b <= 178)).length;
+    check(right >= 9, `visualiser: a syncopated hip-hop groove at 86 bpm reads its tempo (${seen.join(' ')})`);
+    check(errors.length === 0, `visualiser (hip-hop tempo): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
   // A microphone in a room with no music: its noise (pink, as a room's is) is no beat. A quiet
