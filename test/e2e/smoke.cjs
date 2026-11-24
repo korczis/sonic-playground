@@ -2271,6 +2271,100 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (loud and sparse modes): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // The modes analysis pass 3 found wrong on real music. chrome's surface is smooth: its
+  // reflections were a mosaic of the triangles' own normals (the mean absolute Laplacian of the
+  // sphere's middle, in 2x2 blocks against its luminance, read 0.055-0.072 and reads 0.017-0.024
+  // with the surface's normals; below 0.035). With the music, flux, pocket, starlane, ripple and
+  // moire keep a median luminance above 0.14, 0.10, 0.09, 0.235 and 0.182 (they read 0.103,
+  // 0.084, 0.070-0.078, 0.170-0.199 and 0.164 before, and 0.19, 0.12, 0.10-0.15, 0.27-0.31 and
+  // 0.20 after; on real recordings they stayed near black); pocket's bars are shorter in a quiet
+  // passage (at gain 0.3 below 0.75 of its luminance at gain 1; it read 0.98, the auto-gained
+  // bars filled the matrix as much); and patchbay and silk draw more than one hue (the
+  // saturation-weighted resultant of the hues of their lit cells below 0.97: it read 0.98-0.99,
+  // one olive wash, and reads 0.92-0.94).
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await context.grantPermissions(['microphone']);
+    await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('chrome'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
+    const stage = '[data-visualizer-stage] canvas';
+    await page.waitForTimeout(2500);
+    const facets = [];
+    for (let k = 0; k < 6; k++) {
+      facets.push(await page.evaluate((sel) => {
+        const c = document.querySelector(sel);
+        const side = Math.round(Math.min(c.width, c.height) * 0.3), n = Math.floor(side / 2);
+        const g = document.createElement('canvas'); g.width = side; g.height = side;
+        const x = g.getContext('2d', { willReadFrequently: true });
+        x.drawImage(c, (c.width - side) / 2, (c.height - side) / 2, side, side, 0, 0, side, side);
+        const d = x.getImageData(0, 0, side, side).data, L = new Float32Array(n * n);
+        // 2x2 blocks average the grain away; facets show as steps between neighbouring blocks.
+        for (let i = 0; i < n * n; i++) {
+          const bx = (i % n) * 2, by = Math.floor(i / n) * 2;
+          for (const o of [0, 1, side, side + 1]) { const p = (by * side + bx + o) * 4; L[i] += (0.2126 * d[p] + 0.7152 * d[p + 1] + 0.0722 * d[p + 2]) / 1020; }
+        }
+        let lap = 0, sum = 0;
+        for (let yy = 1; yy < n - 1; yy++) for (let xx = 1; xx < n - 1; xx++) {
+          const i = yy * n + xx;
+          lap += Math.abs(4 * L[i] - L[i - 1] - L[i + 1] - L[i - n] - L[i + n]); sum += L[i];
+        }
+        return lap / Math.max(1e-6, sum);
+      }, stage));
+      await page.waitForTimeout(300);
+    }
+    const facet = facets.sort((p, q) => p - q)[3];
+    check(await page.evaluate(() => window.SonicVisualizer.shown()) === 'chrome' && facet < 0.035,
+      `visualiser (chrome): the surface is smooth, not a mosaic of facets (Laplacian against luminance ${facet.toFixed(3)}, below 0.035)`);
+    const lumaOf = async () => {
+      const l = [];
+      for (let k = 0; k < 9; k++) { l.push((await page.evaluate(pictureStats, stage)).luma); await page.waitForTimeout(150); }
+      return l.sort((p, q) => p - q)[4];
+    };
+    const lit = {};
+    for (const [mode, least] of [['flux', 0.14], ['pocket', 0.1], ['starlane', 0.09], ['ripple', 0.235], ['moire', 0.182]]) {
+      await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
+      await page.waitForTimeout(2000);
+      lit[mode] = await lumaOf();
+      check(lit[mode] > least, `visualiser (${mode}): with music it is lit (median luminance ${lit[mode].toFixed(3)}, above ${least})`);
+    }
+    await page.evaluate(() => { window.__music.gain(0.3); window.SonicVisualizer.set('pocket'); });
+    await page.waitForTimeout(3500);
+    const quietPocket = await lumaOf();
+    check(quietPocket < lit.pocket * 0.75,
+      `visualiser (pocket): a quiet passage lights fewer LEDs (median luminance ${quietPocket.toFixed(3)} at gain 0.3, ${lit.pocket.toFixed(3)} at gain 1)`);
+    await page.evaluate(() => window.__music.gain(1));
+    for (const mode of ['patchbay', 'silk']) {
+      await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
+      await page.waitForTimeout(3000);
+      const rs = [];
+      for (let k = 0; k < 5; k++) {
+        rs.push(await page.evaluate((sel) => {
+          const g = document.createElement('canvas'); g.width = 32; g.height = 18;
+          const x = g.getContext('2d'); x.drawImage(document.querySelector(sel), 0, 0, 32, 18);
+          const d = x.getImageData(0, 0, 32, 18).data;
+          let hx = 0, hy = 0, w = 0;
+          for (let i = 0; i < d.length; i += 4) {
+            const r = d[i] / 255, gr = d[i + 1] / 255, b = d[i + 2] / 255;
+            const mx = Math.max(r, gr, b), sat = mx - Math.min(r, gr, b);
+            if (sat <= 0.05 || mx < 0.3) continue;
+            let h = mx === r ? (gr - b) / sat : mx === gr ? 2 + (b - r) / sat : 4 + (r - gr) / sat;
+            h = ((h / 6) % 1 + 1) % 1;
+            hx += sat * Math.cos(h * Math.PI * 2); hy += sat * Math.sin(h * Math.PI * 2); w += sat;
+          }
+          return w ? Math.hypot(hx, hy) / w : 1;
+        }, stage));
+        await page.waitForTimeout(250);
+      }
+      const R = rs.sort((p, q) => p - q)[2];
+      check(R < 0.97, `visualiser (${mode}): more than one hue (the hues' resultant ${R.toFixed(2)}, below 0.97)`);
+    }
+    check(errors.length === 0, `visualiser (pass 3's modes): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // A negative control for litShare: a blank canvas is not a picture.
   {
     const { context, page } = await open(browser, at(''), desktop);

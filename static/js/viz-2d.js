@@ -34,6 +34,23 @@
     return 'hsla(' + ((h % 360 + 360) % 360).toFixed(1) + ',' + clamp(sat, 0, 100).toFixed(1) + '%,'
       + clamp(light, 0, 100).toFixed(1) + '%,' + clamp(alpha, 0, 1).toFixed(3) + ')';
   }
+  // The luminance of each hue at full saturation and half lightness (linear sRGB, one per degree):
+  // yellow is 0.93, blue 0.07. A palette that turns with the key went ten times darker as the key
+  // moved it from yellow to violet, whatever the music did (analysis pass 3: pocket fell from a
+  // luminance of 0.054 to 0.020 at a key change and stayed there through the loudest part).
+  var HUE_Y = new Float32Array(360);
+  for (var hd = 0; hd < 360; hd++) {
+    var lin3 = [0, 120, 240].map(function (o) {
+      var c = clamp(2 - Math.abs(((hd - o + 540) % 360) - 180) / 60, 0, 1);
+      return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    });
+    HUE_Y[hd] = 0.2126 * lin3[0] + 0.7152 * lin3[1] + 0.0722 * lin3[2];
+  }
+  /** hsla with the lightness a dark hue (blue, violet, red) needs to read as bright as the rest. */
+  function hsle(h, sat, light, alpha) {
+    var y = HUE_Y[((Math.round(h) % 360) + 360) % 360];
+    return hsla(h, sat, light + 16 * Math.max(0, 0.42 - y) / 0.42, alpha);
+  }
   /** The spectrum at a fraction f (0 bass .. 1 treble), interpolated between bands. */
   function bandAt(a, f) {
     var n = a.bands.length;
@@ -107,6 +124,9 @@
     // exposure itself (0..1), for the sparse modes that also widen their light with it.
     G.ek = k * m.exposure + (1 - k) * 0.55;
     G.ex = 0.62 + 0.38 * G.ek;
+    // How loud the passage is, for motion: 0 at half the song's peak exposure or below, 1 at the
+    // peak (the bands are auto-gained, so without it a quiet break moved as much as the drop).
+    G.lk = k * smooth(clamp((m.exposure - 0.5) / 0.5, 0, 1)) + (1 - k) * 0.5;
     G.punch = Math.min(1.5, m.punch * R);
     // The beat's shapes only while the beat moves (a paused clock holds its phase at 0) and
     // something is heard (the tempo's flywheel runs on through a silence).
@@ -269,11 +289,14 @@
           if (j === 0) g.moveTo(rx, ry); else g.lineTo(rx, ry);
         }
         var hue = r === 2 ? lerp(G.H + 30, G.A, 0.5) : G.H - 28 + r * 28;
-        var col = hsla(hue + G.punch * 18, G.S, G.L + 4, (0.5 + 0.12 * G.punch * G.flash) * G.ex);
+        // As wide, bright and haloed as the passage is exposed: thin ribbons on black were near
+        // black on techno (79 % of the frames, analysis pass 3), whose steady drop has no deviation
+        // of the level to widen them.
+        var col = hsle(hue + G.punch * 18, G.S, G.L + 4, (0.42 + 0.3 * G.ek + 0.12 * G.punch * G.flash) * G.ex);
         g.strokeStyle = col;
         g.shadowColor = col;
-        g.shadowBlur = (5 + 9 * m.halo) * unit;
-        g.lineWidth = (1.1 + 1.6 * Math.max(0, m.drive.level) + 1.4 * G.pulse) * unit;
+        g.shadowBlur = (5 + 9 * m.halo) * unit * (0.7 + 0.5 * G.ek);
+        g.lineWidth = (1.1 + 1.6 * Math.max(0, m.drive.level) + 1.4 * G.pulse) * unit * (0.8 + 0.8 * G.ek);
         g.stroke();
       }
     }),
@@ -405,7 +428,9 @@
       var drv = bandDrive(s, a, G.R, G.dt), B = a.bands.length;
       bg(g, w, h, hsla(G.H + 220, 40, 2, 1));
       var pitch = Math.min(w * 0.88 / cols, h * 0.5 / rows);
-      var r = pitch * 0.34;
+      // Unlit LEDs stay small; lit ones grow with the exposure (a mostly black ground: 73 % of
+      // the frames near black on techno, analysis pass 3).
+      var r = pitch * 0.3, rl = pitch * (0.3 + 0.15 * G.ek);
       var x0 = (w - pitch * (cols - 1)) / 2, y0 = (h + pitch * (rows - 1)) / 2 - h * 0.06;
       var calm = 1 - k, rel = Math.exp(-G.dt / 0.1);
       var lay = vary(m, 3), was = varied(m, 3);
@@ -416,7 +441,9 @@
         var raw = k * Math.pow(bandAt(a, fb), 1.1) * (1.05 + 0.5 * drv[Math.round(fb * (B - 1))])
           + calm * (0.2 + 0.12 * Math.sin(G.beats * 0.55 + c * 0.5));
         tall = Math.max(tall, raw);
-        var v = knee(raw / head * pump);
+        // As tall as the passage is loud: the auto-gained bands filled the matrix as much in a
+        // quiet break as in the drop, and the bars moved against the music (r -0.45 on techno).
+        var v = knee(raw / head * pump) * (calm + k * (0.45 + 0.55 * G.lk));
         s.vals[c] = v > s.vals[c] ? v : s.vals[c] * rel + v * (1 - rel);
         s.peaks[c] = Math.max(s.vals[c], s.peaks[c] - G.dt / 0.9);
       }
@@ -434,20 +461,20 @@
       g.fill();
       // Lit dots, one path per row (one colour each), climbing from the key's deep colour to
       // the leading note's; a big event lights them up by its (governed) share.
-      g.shadowBlur = pitch * (0.3 + 0.6 * m.halo);
+      g.shadowBlur = pitch * (0.3 + 0.6 * m.halo) * (0.6 + 0.8 * G.ek);
       for (var row = 0; row < rows; row++) {
         g.beginPath();
         var any = false;
         for (var c2 = 0; c2 < cols; c2++) {
           if (Math.round(s.vals[c2] * rows) <= row) continue;
           var lx = x0 + c2 * pitch, ly = y0 - row * pitch;
-          g.moveTo(lx + r, ly); g.arc(lx, ly, r, 0, TAU);
+          g.moveTo(lx + rl, ly); g.arc(lx, ly, rl, 0, TAU);
           any = true;
         }
         if (!any) continue;
         var f = row / (rows - 1);
         var hue = f > 0.8 ? lerp(G.H + 30, G.A, (f - 0.8) * 5) : G.H - 35 + f * 65;
-        var col = hsla(hue, G.S, G.L - 6 + f * 12 + 10 * G.punch * G.flash, G.ex);
+        var col = hsle(hue, G.S, G.L - 10 + f * 12 + 6 * G.ek + 10 * G.punch * G.flash, G.ex);
         g.fillStyle = col;
         g.shadowColor = col;
         g.fill();
@@ -503,14 +530,25 @@
       var B = a.bands.length;
       // The step is as large as the passage is loud (a full half sector at its usual level): a
       // snare in a quiet break turned it as far as one in the drop, so it moved against the music.
-      if (onset(s, 'sn', a.snare, 0.8, a)) s.stepTo = (s.stepTo || 0) + (m.reduced ? 0 : TAU / (2 * folds)) * Math.ceil(k) * Math.min(1, m.level);
+      // A snare roll (a build-up, where the kick drops out) fired a step on every quarter beat and
+      // span the flower fastest in the quietest part (r -0.33 on techno, analysis pass 3): the
+      // snares of the last beat share the step (s.rolls, decaying over a beat), and it is as large
+      // as the passage is loud.
+      s.rolls = (s.rolls || 0) * Math.exp(-G.dt * (a.bpm || 120) / 60);
+      if (onset(s, 'sn', a.snare, 0.8, a)) {
+        s.rolls += 1;
+        s.stepTo = (s.stepTo || 0) + (m.reduced ? 0 : TAU / (2 * folds)) * Math.ceil(k) * Math.min(1, m.level)
+          * (0.25 + 0.75 * G.lk) / (s.rolls * s.rolls);
+      }
       s.theta = lerp(s.stepTo || 0, s.theta || 0, Math.exp(-G.dt / 0.12));
       fade(g, w, h, 0.2 + 0.25 * G.cap * (1 - q.trails));
       g.translate(w / 2 + G.pan * w * 0.5, h / 2);
       g.rotate(s.theta + G.beats * 0.035 + 0.05 * Math.sin(((a.bar || 0) + G.bars) * TAU / 4) * k);
       g.globalCompositeOperation = 'lighter';
       var base = M * 0.07 * (1 + (0.4 * Math.max(0, m.drive.bass) * G.pulse + 0.2 * G.punch) * G.mo);
-      var reach = M * 0.42 * (1 + 0.15 * G.spread) * (0.85 + 0.15 * pumpOf(G, a));
+      // The flower opens as wide as the passage is loud (its auto-gained rays reached as far in a
+      // quiet break as in the drop).
+      var reach = M * 0.42 * (1 + 0.15 * G.spread) * (0.85 + 0.15 * pumpOf(G, a)) * (0.6 + 0.4 * G.lk);
       var sector = TAU / folds;
       var unit = Math.max(1, M / 600);
       var calm = 1 - k;
@@ -605,10 +643,11 @@
       var surge = 1 + (0.3 * Math.max(0, m.drive.energy) + 0.45 * Math.max(0, m.drive.level)
         + 0.9 * G.pulse - 0.25 * G.pre) * G.mo;
       var spd = (0.16 * q.speed * m.rate * surge + 1.1 * G.punch * G.mo) * dt * G.cap;
-      var streak = spd * (1.5 + 1.5 * G.ek + 5 * G.punch * G.mo);
-      // A glow at the vanishing point, the leading note's colour.
-      var glow = g.createRadialGradient(cx, cy, 0, cx, cy, f * 0.5);
-      glow.addColorStop(0, hsla(G.A, G.S, G.L, (0.1 + 0.2 * G.punch * G.flash) * G.ex));
+      var streak = spd * (1.5 + 3 * G.ek + 5 * G.punch * G.mo);
+      // A glow at the vanishing point, the leading note's colour, as wide and bright as the passage
+      // is exposed (the field stayed near black in 63-68 % of the frames, analysis pass 3).
+      var glow = g.createRadialGradient(cx, cy, 0, cx, cy, f * (0.4 + 0.35 * G.ek));
+      glow.addColorStop(0, hsle(G.A, G.S, G.L, (0.06 + 0.1 * G.ek + 0.2 * G.punch * G.flash) * G.ex));
       glow.addColorStop(1, 'rgba(0,0,0,0)');
       g.fillStyle = glow;
       g.fillRect(0, 0, w, h);
@@ -641,10 +680,10 @@
         var twinkle = tint === 3 ? 0.35 * a.hat * k : 0;
         // Thin strokes on black were nearly black (a median luminance of 0.003 on real music):
         // the stars widen and brighten with the exposure, the ground stays black.
-        g.strokeStyle = hsla(G.H - 25 + tint * 20, G.S * (1 - ff * 0.45), G.L + 8 + ff * 16,
+        g.strokeStyle = hsle(G.H - 25 + tint * 20, G.S * (1 - ff * 0.45), G.L + 8 + ff * 16,
           (0.55 + depth * 0.25 + twinkle) * G.ex);
         g.lineWidth = (0.7 + depth * 0.9) * (1.6 - ff * 0.8) * (1 + 1.2 * Math.pow(band, 1.5) * k)
-          * (1 + 1.4 * G.ek) * (1 + 0.5 * G.pulse * G.mo);
+          * (1 + 2 * G.ek) * (1 + 0.5 * G.pulse * G.mo);
         g.stroke();
       }
     }),
@@ -723,7 +762,7 @@
       var grow = M * (0.2 + 0.3 * Math.max(0, m.drive.level) - 0.1 * quiet * k) * q.speed * m.rate * dt * (G.cap < 1 ? 0.35 : 1)
         * (0.7 + (1.6 * G.pulse + 1.2 * a.kick * k + 0.6 * G.punch) * G.mo);
       // The rings are as wide as the passage is exposed; the beat thickens them.
-      var unit = Math.max(1, M / 600) * (0.8 + 0.9 * G.ek) * (1 + 0.6 * G.pulse * G.mo);
+      var unit = Math.max(1, M / 600) * (0.8 + 1.3 * G.ek) * (1 + 0.6 * G.pulse * G.mo);
       var SH = [0, 6, 5], amp0 = [0, 0.05, 0.1];
       var lobes = lerp(SH[varied(m, 3)], SH[vary(m, 3)], G.mix > 0.5 ? 1 : 0);
       var lobeAmp = lerp(amp0[varied(m, 3)], amp0[vary(m, 3)], G.mix);
@@ -747,21 +786,24 @@
         }
         g.closePath();
         var hue = s.hu[i] === 0 ? G.H : s.hu[i] === 1 ? G.A : G.H + 30;
-        // A soft halo as wide as the treble reaches, then the ring itself.
-        g.strokeStyle = hsla(hue, G.S, G.L, 0.14 * s.al[i] * G.ex);
+        // A soft halo as wide as the treble reaches and as bright as the passage is exposed (the
+        // rings on black were near black in 58 % of the frames on techno, analysis pass 3), then
+        // the ring itself.
+        g.strokeStyle = hsle(hue, G.S, G.L, (0.1 + 0.14 * G.ek) * s.al[i] * G.ex);
         g.lineWidth = s.wd[i] * unit * (3 + 4 * m.halo);
         g.stroke();
-        g.strokeStyle = hsla(hue, G.S, G.L + 14, s.al[i] * G.ex);
+        g.strokeStyle = hsle(hue, G.S, G.L + 14, s.al[i] * G.ex);
         g.lineWidth = s.wd[i] * unit;
         g.stroke();
       }
       var core = M * (0.015 + (0.05 * G.pulse + 0.012 * Math.max(0, m.drive.bass)) * G.mo);
       // The pool of light the rings rise from (added each frame over trails, so a small share).
-      var pool = g.createRadialGradient(0, 0, 0, 0, 0, M * 0.16);
-      pool.addColorStop(0, hsla(G.H, G.S, G.L, (0.1 + 0.05 * G.punch * G.flash) * G.ex));
+      var pr = M * (0.14 + 0.14 * G.ek);
+      var pool = g.createRadialGradient(0, 0, 0, 0, 0, pr);
+      pool.addColorStop(0, hsle(G.H, G.S, G.L, (0.07 + 0.07 * G.ek + 0.05 * G.punch * G.flash) * G.ex));
       pool.addColorStop(1, 'rgba(0,0,0,0)');
       g.fillStyle = pool;
-      g.fillRect(-M * 0.16, -M * 0.16, M * 0.32, M * 0.32);
+      g.fillRect(-pr, -pr, pr * 2, pr * 2);
       g.beginPath();
       g.arc(0, 0, core, 0, TAU);
       g.fillStyle = hsla(G.H + 15, G.S, G.L + 6, (0.4 + 0.3 * G.punch * G.flash) * G.ex);
@@ -908,9 +950,10 @@
       s.nudge = (s.nudge || 0) * Math.exp(-G.dt / 0.4) + G.punch * 0.02 * G.dt * 60 * G.mo;
       s.swing = (s.swing || 0) + G.dt * 0.25 * Math.max(0, m.drive.mid) * G.mo;
       // The grids turn as fast as the passage is loud, with a lurch on every beat: driven only by
-      // the deviations (zero in a steady drop), they moved less the louder the music got.
+      // the deviations (zero in a steady drop), they moved less the louder the music got. The
+      // level is against its last seconds, so the exposure (G.lk) slows them in a quiet passage.
       s.turn = (s.turn || 0) + G.dt * 2 * m.rate * (q.speed || 1) * G.mo
-        * (0.003 + 0.003 * (1 - k) + 0.006 * Math.min(1.5, m.level) * k + 0.03 * G.pulse);
+        * (0.003 + 0.003 * (1 - k) + (0.006 * Math.min(1.5, m.level) * k + 0.03 * G.pulse) * (0.3 + 0.7 * G.lk));
       var th = s.turn + s.swing * 0.3;
       var bar = 0.02 * Math.sin(((a.bar || 0) + G.bars) * TAU / 2) * k * G.mo;
       function lines(theta, spacing, css, width) {
@@ -925,10 +968,12 @@
         g.stroke();
       }
       // The lines as bold and bright as the passage is exposed (a loud drop sank into the dark).
-      var ink = (0.34 + 0.2 * G.ek) * G.ex, lw = sp * (0.14 + 0.12 * G.ek);
-      lines(th, sp, hsla(G.H - 25, G.S, G.L + 4, ink), lw);
+      // A quiet passage still draws them visibly (52 % of the frames near black on rock, analysis
+      // pass 3), and a dark hue (the violets) as bright as the rest.
+      var ink = (0.42 + 0.2 * G.ek) * G.ex, lw = sp * (0.16 + 0.12 * G.ek);
+      lines(th, sp, hsle(G.H - 25, G.S, G.L + 4, ink), lw);
       lines(th + 0.05 + bar + s.nudge, sp * (1 + 0.06 * Math.max(0, m.drive.bass) * G.mo),
-        hsla(G.H + 25, G.S, G.L + 4, ink), lw);
+        hsle(G.H + 25, G.S, G.L + 4, ink), lw);
       // The figure turning the other way, breathing with the mids.
       g.rotate(-th * 1.6 - s.nudge);
       var q2 = sp * (1.15 + 0.12 * Math.max(0, m.drive.mid) * G.mo);
@@ -952,7 +997,7 @@
         s.vig = g.createRadialGradient(cw / 2, ch / 2, Math.min(cw, ch) * 0.15,
           cw / 2, ch / 2, Math.hypot(cw, ch) * 0.55);
         s.vig.addColorStop(0, 'rgba(3,3,8,0)');
-        s.vig.addColorStop(1, 'rgba(3,3,8,0.92)');
+        s.vig.addColorStop(1, 'rgba(3,3,8,0.84)');
       }
       g.fillStyle = s.vig;
       g.fillRect(0, 0, cw, ch);
