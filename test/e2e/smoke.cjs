@@ -1364,8 +1364,9 @@ async function shot(page, name) {
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
     await page.click('#visualizer-full [data-viz-source="connect"]');
-    await page.waitForFunction(() => window.SonicVisualizer.analysis().bpm > 0, null, { timeout: 25000 }).catch(() => {});
-    await page.waitForTimeout(3000);
+    // Once the tempo has settled on the groove's own (an early estimate may land on a related one).
+    await page.waitForFunction((g) => { const b = window.SonicVisualizer.analysis().bpm; return Math.abs(b - g) <= 3 || Math.abs(b - 2 * g) <= 6; }, groove.bpm, { timeout: 30000 }).catch(() => {});
+    await page.waitForTimeout(2000);
     const run = await page.evaluate(() => new Promise((done) => {
       const rows = [];
       const t0 = performance.now();
@@ -1563,7 +1564,7 @@ async function shot(page, name) {
         `visualiser: a tone is tonal, white noise flat (flatness ${left.flatness.toFixed(2)} vs ${quiet.flatness.toFixed(2)})`);
       check(left.brightness < 0.05 && quiet.brightness > 0.6 && left.rolloff > 0.35 && left.rolloff < 0.45 && quiet.rolloff > 0.9,
         `visualiser: a 440 Hz tone is dark, its rolloff at 440 Hz; white noise bright, its rolloff near the top (brightness ${left.brightness.toFixed(2)} vs ${quiet.brightness.toFixed(2)}, rolloff ${left.rolloff.toFixed(2)} vs ${quiet.rolloff.toFixed(2)})`);
-      check(Math.abs(loud.lufs - quiet.lufs - 24) < 3 && Math.abs(loud.loudness - quiet.loudness - 0.5) < 0.08 && loud.loudness < 1,
+      check(Math.abs(loud.lufs - quiet.lufs - 24) < 3 && Math.abs(loud.loudness - quiet.loudness - 24 / 54) < 0.08 && loud.loudness < 1,
         `visualiser: a passage 24 dB louder reads 24 dB louder (${quiet.lufs.toFixed(1)} -> ${loud.lufs.toFixed(1)} LUFS, loudness ${quiet.loudness.toFixed(2)} -> ${loud.loudness.toFixed(2)})`);
       // The dynamics read 3 s: at the end of the loud passage nearly all of them are its noise.
       const steady = run.frames.filter((f) => f.t > run.ends[2] - 0.3 && f.t < run.ends[2] - 0.1).map((f) => f.dynamicsDb);
@@ -1580,8 +1581,11 @@ async function shot(page, name) {
     await context.close();
   }
   // The analysis hears the harmony: a C major chord (C4, E4, G4, each with five harmonics) for
-  // 5 s, then an A minor chord (A3, C4, E4). The chroma peaks at C, E and G, then at A, C and E;
-  // the key reads C major, then A minor, and changes once, within 3 s, not from frame to frame.
+  // 5 s, an A minor chord (A3, C4, E4) for 5 s, then a cadence in F# major, I-IV-V (F#, B, C#,
+  // 3 s each). The chroma peaks at C, E and G, then at A, C and E. The key (Krumhansl-Schmuckler
+  // profiles over about 8 s) reads C major, keeps to C major or its relative A minor through the
+  // A minor chord (the vi of C), and reads F# major at the end of the cadence, changing at most
+  // three times in all (a lone triad is ambiguous between keys; a cadence is not).
   {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(() => {
@@ -1607,7 +1611,10 @@ async function shot(page, name) {
         };
         [261.63, 329.63, 392].forEach((hz) => note(hz, t0, t0 + 5));
         [220, 261.63, 329.63].forEach((hz) => note(hz, t0 + 5, t0 + 10));
-        window.__ends = [t0 + 5, t0 + 10].map((t) => t + offset);
+        [369.99, 466.16, 554.37].forEach((hz) => note(hz, t0 + 10, t0 + 13));
+        [246.94, 311.13, 369.99].forEach((hz) => note(hz, t0 + 13, t0 + 16));
+        [277.18, 349.23, 415.3].forEach((hz) => note(hz, t0 + 16, t0 + 19));
+        window.__ends = [t0 + 5, t0 + 10, t0 + 19].map((t) => t + offset);
         return out.stream;
       };
     });
@@ -1622,11 +1629,11 @@ async function shot(page, name) {
       const tick = () => {
         const a = w.SonicVisualizer.analysis();
         w.__frames.push({ t: performance.now() / 1000, chroma: a.chroma, pitch: a.pitch, key: a.key, minor: a.minor, strength: a.keyStrength });
-        if (w.__frames.length < 3000) requestAnimationFrame(tick);
+        if (w.__frames.length < 4000) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);
     });
-    await page.waitForFunction(() => window.__ends && performance.now() / 1000 > window.__ends[1] - 0.05, null, { timeout: 30000 }).catch(() => {});
+    await page.waitForFunction(() => window.__ends && performance.now() / 1000 > window.__ends[2] - 0.05, null, { timeout: 40000 }).catch(() => {});
     const run = await page.evaluate(() => ({ frames: window.__frames, ends: window.__ends }));
     if (!run.ends) {
       check(false, 'visualiser: the harmony: the chords never played');
@@ -1639,18 +1646,20 @@ async function shot(page, name) {
         const last = fs[fs.length - 1] || { key: -1, minor: -1, pitch: -1, strength: 0 };
         return { top, third: mean.slice().sort((x, y) => y - x)[3], key: last.key, minor: last.minor, pitch: last.pitch, strength: last.strength };
       };
-      const [cmaj, amin] = run.ends.map(chord);
+      const [cmaj, amin, fis] = run.ends.map(chord);
       const said = (c) => `${c.top.map((i) => names[i]).join(' ')}, key ${names[c.key] || '?'}${c.minor ? 'm' : ''} (${c.strength.toFixed(2)}), the next class ${c.third.toFixed(2)}`;
       check(cmaj.top.join() === '0,4,7' && cmaj.third < 0.5 && [0, 4, 7].includes(cmaj.pitch),
         `visualiser: a C major chord's chroma peaks at C, E and G (${said(cmaj)})`);
       check(amin.top.join() === '0,4,9' && amin.third < 0.5 && [0, 4, 9].includes(amin.pitch),
         `visualiser: an A minor chord's chroma peaks at A, C and E, distinct from C major (${said(amin)})`);
-      check(cmaj.key === 0 && cmaj.minor === 0 && amin.key === 9 && amin.minor === 1 && cmaj.strength > 0.8 && amin.strength > 0.8,
-        `visualiser: the key reads C major, then A minor (${said(cmaj)}; ${said(amin)})`);
-      const keyed = run.frames.filter((f) => f.t > run.ends[0] - 4 && f.t < run.ends[1]);
-      const changes = keyed.slice(1).filter((f, i) => f.key * 2 + f.minor !== keyed[i].key * 2 + keyed[i].minor).map((f) => f.t - run.ends[0]);
-      check(changes.length === 1 && changes[0] > 0.3 && changes[0] < 3,
-        `visualiser: the key changes once with the chord, never flickering (${changes.map((d) => d.toFixed(2) + ' s after the chord').join(', ') || 'never'})`);
+      const cOrA = (c) => (c.key === 0 && c.minor === 0) || (c.key === 9 && c.minor === 1);
+      check(cmaj.key === 0 && cmaj.minor === 0 && cOrA(amin) && fis.key === 6 && fis.minor === 0 && cmaj.strength > 0.6 && fis.strength > 0.6,
+        `visualiser: the key reads C major, keeps to it (or A minor) through its vi, then F# major (${said(cmaj)}; ${said(amin)}; ${said(fis)})`);
+      const keyed = run.frames.filter((f) => f.t > run.ends[0] - 3 && f.t < run.ends[2]);
+      const changes = keyed.slice(1).filter((f, i) => f.key * 2 + f.minor !== keyed[i].key * 2 + keyed[i].minor).map((f) => ({ at: f.t, key: f.key, minor: f.minor }));
+      const toFis = changes.filter((c) => c.key === 6 && c.minor === 0).map((c) => c.at - run.ends[1]);
+      check(changes.length <= 3 && toFis.length >= 1 && toFis[0] > 1,
+        `visualiser: the key turns to F# major in the cadence, never flickering (${changes.length} change(s); F# ${toFis.map((d) => d.toFixed(1) + ' s into it').join(', ') || 'never'})`);
     }
     check(errors.length === 0, `visualiser (harmony): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
@@ -1844,6 +1853,32 @@ async function shot(page, name) {
     await page.evaluate(() => window.SonicVisualizer.close());
     check(await page.evaluate(() => window.SonicVisualizer.map()) === null, 'visualiser map: none while the full screen is closed');
     check(errors.length === 0, `visualiser (map): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // Two of the grammar's readings measured on recordings (pass 2, 2026-11-24): a quiet opening
+  // then the music read 2-3 times its normal for 10-20 s (the long averages were seeded from the
+  // first frame); and a loud master's 8 dB break moved the exposure from 1.00 to 0.90 only (it
+  // was absolute, saturating). Now the averages warm up with the sound, and the exposure reads the
+  // loudness against the song's own recent peak.
+  {
+    const { context, page, errors } = await open(browser, at(''), desktop, 'dark');
+    const r = await page.evaluate(() => {
+      const base = { bass: 0.4, mid: 0.4, high: 0.4, level: 0.4, flux: 0.2, chroma: new Float32Array(12), keyStrength: 0,
+        bpm: 0, phase: 0, bar: 0, beat: false, kick: 0, section: 0, change: 0, loudness: 0.8 };
+      const P = { react: 1, hue: 0 };
+      let t = 0;
+      const run = (mapper, seconds, patch) => { let m = null; for (let i = 0; i < seconds * 60; i++) { t += 1 / 60; m = mapper.frame(Object.assign({}, base, patch, { t, dt: 1 / 60 }), P); } return JSON.parse(JSON.stringify(m)); };
+      const opening = window.SonicVizMap.create();
+      run(opening, 0.3, { bass: 0.01, mid: 0.01, high: 0.01, level: 0.01, flux: 0.01, loudness: 0.05 });
+      const early = run(opening, 2, {});
+      const exposure = window.SonicVizMap.create();
+      const loud = run(exposure, 20, {});
+      const brk = run(exposure, 3, { loudness: 0.8 - 8 / 54 });
+      return { early: early.level, energy: early.energy, loud: loud.exposure, brk: brk.exposure };
+    });
+    check(r.early < 1.3 && r.energy < 1.3, `visualiser map: music after a quiet opening reads its normal, not 2-3 times it (level ${r.early.toFixed(2)}, energy ${r.energy.toFixed(2)} 2 s in)`);
+    check(r.loud > 0.95 && r.brk < 0.8, `visualiser map: an 8 dB break under the song's peak dims the exposure (${r.loud.toFixed(2)} -> ${r.brk.toFixed(2)})`);
+    check(errors.length === 0, `visualiser (map readings): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
   // A review's findings, held: the flash limit cuts at once and recovers slowly; leaving a

@@ -87,16 +87,11 @@
   var TILT = 3;
   var tilt = new Float32Array(BANDS);
   for (var ti = 0; ti < BANDS; ti++) tilt[ti] = TILT * Math.log2(40 * Math.pow(400, (ti + 0.5) / BANDS) / 1000);
-  // The loudness maps -54 to -6 LUFS (a quiet room to a loud master) onto 0..1.
+  // The loudness maps -54 to 0 LUFS onto 0..1: a quiet room to beyond the loudest master (a
+  // brickwalled track measured -3 LUFS here and saturated a top at -6, 2026-11-24). The picture's
+  // exposure reads it against the song's own recent peak (static/js/viz-map.js).
   var LOUD_FLOOR = -54;
-  var LOUD_TOP = -6;
-  // The triads the key reads: 12 major (root, major third, fifth), then 12 minor.
-  /** @type {number[][]} */
-  var TRIADS = [];
-  for (var tr = 0; tr < 24; tr++) {
-    var root = tr % 12;
-    TRIADS.push([root, (root + (tr < 12 ? 4 : 3)) % 12, (root + 7) % 12]);
-  }
+  var LOUD_TOP = 0;
   // The structure: one feature row every 0.25 s (8 broad band groups, so a change of chord moves
   // little; the loudness, the flatness, the brightness), 36 rows (9 s): the last 12 rows (3 s)
   // against the 24 (6 s) before them.
@@ -133,12 +128,14 @@
     snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2 }),
     hat: detector(6500, 16000, 0.08, 0.06),
     period: 0.5, lastKick: -10, lastAny: -10, beatPhase: 0, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
-    nov: new Float32Array(400), novX: new Float32Array(400), acf: new Float32Array(400), novBin: -1, novFill: 0, novLast: 0, novCount: 0, heardAt: -1,
+    nov: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novX: new Float32Array(400),
+    acf: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novBin: -1, novFill: 0,
+    novLast: [0, 0, 0], novCount: 0, heardAt: -1, rises: [0, 0, 0],
     onsets: /** @type {{name: string, t: number}[]} */ ([]),
     clock: { playing: false, base: 0, at: 0, beat: -1, half: -1 },
     // The pitch: the raw chroma of this frame, its slow mean (about a second), the loudest peak of
     // the last frame, the triad held (0-23) and the one that would replace it, held for how long.
-    raw: new Float32Array(12), slow: new Float32Array(12), ctop: -110, key: 0, cand: -1, candT: 0,
+    raw: new Float32Array(12), slow: new Float32Array(12), keyChroma: new Float32Array(12), ctop: -110, key: 0, cand: -1, candT: 0,
     // The loudness: the mean square (EBU's 0.4 s), in LUFS, and each frame's for the dynamics.
     ms: 1e-7, lufs: -70, dynDb: 0,
     hist: { ms: new Float32Array(256), t: new Float32Array(256).fill(-100), i: 0 },
@@ -455,11 +452,11 @@
       // Widmer 2013): a sustained bass line's partials, beating with each other, wobble a band by a
       // few dB from frame to frame and read as a pulse of their own; a played note rises over
       // its neighbours too.
-      var beatRise = 0;
+      var rises = dsp.rises;
+      rises[0] = rises[1] = rises[2] = 0;
       for (var y2 = 0; y2 < BANDS; y2++) {
         var before = Math.max(dsp.prevDb[y2], y2 > 0 ? dsp.prevDb[y2 - 1] : -200, y2 < BANDS - 1 ? dsp.prevDb[y2 + 1] : -200, floor);
-        var up = Math.max(0, Math.max(dsp.db[y2], floor) - before);
-        beatRise += up * (y2 < BASS_END ? 4 : y2 < MID_END ? 1 : 0.5);
+        rises[y2 < BASS_END ? 0 : y2 < MID_END ? 1 : 2] += Math.max(0, Math.max(dsp.db[y2], floor) - before);
       }
       // Only a frame that brought new sound counts, timed by the audio's own clock: the audio thread
       // delivers in blocks, so some frames see none, and their zero novelty fell into a rhythm with
@@ -468,7 +465,10 @@
       if (heardAt !== dsp.heardAt) {
         var span = dsp.heardAt > 0 ? Math.max(1 / 240, heardAt - dsp.heardAt) : dt;
         dsp.heardAt = heardAt;
-        novelty(heardAt, beatRise / BANDS / (span * 60));
+        rises[0] /= BASS_END * span * 60;
+        rises[1] /= (MID_END - BASS_END) * span * 60;
+        rises[2] /= (BANDS - MID_END) * span * 60;
+        novelty(heardAt, rises);
       }
     }
     dsp.prevDb.set(dsp.db);
@@ -585,28 +585,46 @@
     key(dt, Math.sqrt(norm));
   }
 
-  // The key (the chord colour of the last second): the triad whose pitch classes the slow chroma
-  // matches best (cosine, its root weighted 1.2 so a lone note names its own triad). Another
-  // triad replaces the held one only after winning for 0.8 s.
-  /** @param {number} dt @param {number} norm */
+  // The key: Krumhansl and Schmuckler's key profiles (the probe-tone ratings of each pitch class
+  // in a major and a minor key) correlated with the chroma averaged over about 8 s, the best of the
+  // 24 keys held until another beats it by 0.05 for 2 s. Measured on freely licensed recordings
+  // (2026-11-24), the best triad of the last second it replaces matched the key 0-45% of the time
+  // and changed 9-26 times a minute; these profiles, on the same chroma, named the key of 7 of 8
+  // excerpts, changing 1-6 times a minute.
+  var KS_MAJOR = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88];
+  var KS_MINOR = [6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17];
+  /** Pearson's r of the chroma with a profile rotated to a root. */
+  function keyFit(c, prof, root) {
+    var mc = 0, mp = 0, i;
+    for (i = 0; i < 12; i++) { mc += c[i]; mp += prof[i]; }
+    mc /= 12; mp /= 12;
+    var sxy = 0, sxx = 0, syy = 0;
+    for (i = 0; i < 12; i++) {
+      var x = c[(i + root) % 12] - mc, y = prof[i] - mp;
+      sxy += x * y; sxx += x * x; syy += y * y;
+    }
+    return sxx > 1e-9 ? sxy / Math.sqrt(sxx * syy) : 0;
+  }
+  /** @param {number} dt @param {number} norm the slow chroma's length (0 in silence) */
   function key(dt, norm) {
-    var sl = dsp.slow;
-    /** @param {number} j */
-    var score = function (j) {
-      var t = TRIADS[j];
-      return (1.2 * sl[t[0]] + sl[t[1]] + sl[t[2]]) / (norm * Math.sqrt(3.44));
-    };
+    var lc = dsp.keyChroma, a = 1 - Math.exp(-dt / 4);
     if (norm < 0.05) { A.keyStrength *= 1 - dt; return; }
-    var best = 0;
-    for (var j = 1; j < 24; j++) if (score(j) > score(best)) best = j;
-    if (best === dsp.key) dsp.cand = -1;
+    for (var i = 0; i < 12; i++) lc[i] += (dsp.slow[i] / norm - lc[i]) * a;
+    var best = 0, bestR = -2, held = 0;
+    for (var k = 0; k < 24; k++) {
+      var r = keyFit(lc, k < 12 ? KS_MAJOR : KS_MINOR, k % 12);
+      if (r > bestR) { bestR = r; best = k; }
+      if (k === dsp.key) held = r;
+    }
+    if (best === dsp.key || bestR < held + 0.05) { dsp.cand = -1; }
     else if (best === dsp.cand) dsp.candT += dt;
     else { dsp.cand = best; dsp.candT = 0; }
-    if (dsp.cand >= 0 && dsp.candT >= 0.8) { dsp.key = dsp.cand; dsp.cand = -1; }
+    if (dsp.cand >= 0 && dsp.candT >= 2) { dsp.key = dsp.cand; dsp.cand = -1; held = bestR; }
     A.key = dsp.key % 12;
     A.minor = dsp.key >= 12 ? 1 : 0;
-    A.keyStrength = unit(score(dsp.key));
+    A.keyStrength = unit(held);
   }
+
 
   // The two K-weighted channels: the balance is the right's level against the left's (-1 hard
   // left, 1 hard right), the width the share of the side (L - R) in the power (0 mono, 0.5 one
@@ -798,39 +816,51 @@
   // licensed recordings, 2026-11-24).
   var NOV_STEP = 0.02;
   var NOV_N = 400;
-  // Measured on freely licensed recordings (2026-11-24): a beat's clarity is 0.3-0.55 (techno,
-  // hip-hop, rock), 0.15-0.3 (swing jazz); music without one, 0.05-0.15, noise up to about 0.14.
-  var TEMPO_CONF = 0.21;
-  var TEMPO_KEEP = 0.15;
-  /** @param {number} t @param {number} v */
+  // Each range (bass, mids, highs) keeps its own novelty and autocorrelation; the best range's
+  // best lag is the tempo, said only where the ranges' mean hears it too. One bass-weighted
+  // novelty let a dotted-eighth bass line put techno at 2/3 of its tempo while the highs held the
+  // beat; the mean alone missed swing jazz; the best range alone found beats in Vivaldi (pass 2
+  // on recordings, 2026-11-24).
+  var TEMPO_CONF = 0.3;
+  var TEMPO_KEEP = 0.18;
+  var TEMPO_SHARED = 0.16;
+  var RANGES = 3;
+  /** @param {number} t @param {number[]} v each range's novelty */
   function novelty(t, v) {
-    var bin = Math.floor(t / NOV_STEP);
-    var ring = dsp.nov;
-    if (dsp.novBin < 0 || bin - dsp.novBin > NOV_N) { ring.fill(0); dsp.novBin = bin - 1; dsp.novLast = v; dsp.novCount = 0; }
+    var bin = Math.floor(t / NOV_STEP), q;
+    if (dsp.novBin < 0 || bin - dsp.novBin > NOV_N) {
+      for (q = 0; q < RANGES; q++) { dsp.nov[q].fill(0); dsp.novLast[q] = v[q]; }
+      dsp.novBin = bin - 1;
+      dsp.novCount = 0;
+    }
     // Frames sharing a step are averaged, never maximised: at 60 fps every fifth 20 ms step holds
     // two frames, and their maximum put a 100 ms rhythm into a room's noise (2026-11-24).
     if (bin === dsp.novBin) {
       dsp.novCount += 1;
-      ring[bin % NOV_N] += (v - ring[bin % NOV_N]) / dsp.novCount;
-      dsp.novLast = v;
+      for (q = 0; q < RANGES; q++) dsp.nov[q][bin % NOV_N] += (v[q] - dsp.nov[q][bin % NOV_N]) / dsp.novCount;
+      for (q = 0; q < RANGES; q++) dsp.novLast[q] = v[q];
       return;
     }
     // Steps a slow frame skipped are drawn between it and the last, so 30 fps reads like 60.
     var gap = bin - dsp.novBin;
-    for (var b = dsp.novBin + 1; b <= bin; b++) ring[b % NOV_N] = dsp.novLast + (v - dsp.novLast) * (b - dsp.novBin) / gap;
-    dsp.novLast = v;
+    for (q = 0; q < RANGES; q++) {
+      for (var b = dsp.novBin + 1; b <= bin; b++) {
+        dsp.nov[q][b % NOV_N] = dsp.novLast[q] + (v[q] - dsp.novLast[q]) * (b - dsp.novBin) / gap;
+      }
+      dsp.novLast[q] = v[q];
+    }
     dsp.novCount = 1;
-    dsp.novFill = Math.min(NOV_N, dsp.novFill + (bin - dsp.novBin));
+    dsp.novFill = Math.min(NOV_N, dsp.novFill + gap);
     dsp.novBin = bin;
-    if (t - dsp.tempoAt >= 0.5 && dsp.novFill >= NOV_N / 2) { dsp.tempoAt = t; estimate(); }
+    // From 2 s of history on, twice a second.
+    if (t - dsp.tempoAt >= 0.5 && dsp.novFill >= 100) { dsp.tempoAt = t; estimate(); }
   }
   // A beat repeats at every multiple of its period: a lag scores its correlations at one to four
-  // periods (a tempo 4/3 or 2/3 off the beat, which eighth notes or triplets favour, misses the
-  // multiples; so does a chance peak in noise), as their weighted mean.
+  // periods (a tempo 4/3 off the beat, which eighth notes favour, misses the multiples; so does a
+  // chance peak in noise), as their weighted mean.
   /** @param {Float32Array} r @param {number} L */
   function comb(r, L) {
-    // Half the period too: a beat's eighth notes fall there; a dotted-eighth riff's do not.
-    var h = L / 2, sum = 0.5 * (r[Math.floor(h)] + (r[Math.ceil(h)] - r[Math.floor(h)]) * (h - Math.floor(h))), w = 0.5;
+    var sum = 0, w = 0;
     for (var k = 1; k <= 4; k++) {
       if (k * L >= dsp.novFill) break;
       sum += r[k * L] / k;
@@ -838,8 +868,16 @@
     }
     return w ? sum / w : 0;
   }
-  function estimate() {
-    var x = dsp.novX, n = dsp.novFill, ring = dsp.nov, mean = 0, i;
+  /** The ranges' scores of a lag, averaged: a beat is shared by them, a riff in one range or a
+   *  chance periodicity is not. */
+  function combAll(L) {
+    var sum = 0;
+    for (var q = 0; q < RANGES; q++) sum += comb(dsp.acf[q], L);
+    return sum / RANGES;
+  }
+  /** One range's autocorrelation of its smoothed, centred novelty, into dsp.acf[q]. */
+  function correlate(q, lo, hi) {
+    var x = dsp.novX, n = dsp.novFill, ring = dsp.nov[q], mean = 0, i;
     // Smoothed over +-40 ms first: a beat's period is rarely a whole number of steps, and sharp
     // onsets would miss each other at its multiples (124 bpm read as 166, 2026-11-24).
     for (i = 0; i < n; i++) {
@@ -856,40 +894,58 @@
     mean /= n;
     var r0 = 0;
     for (i = 0; i < n; i++) { x[i] -= mean; r0 += x[i] * x[i]; }
-    var lo = Math.round(60 / 180 / NOV_STEP), hi = Math.round(60 / 75 / NOV_STEP);
-    var r = dsp.acf;
+    var r = dsp.acf[q];
     for (var L = Math.floor(lo / 2); L <= hi * 4 && L < n; L++) {
       var acc = 0;
       for (i = 0; i + L < n; i++) acc += x[i] * x[i + L];
       r[L] = r0 > 1e-9 ? acc / r0 * n / (n - L) : 0;
     }
-    var best = -1, bestScore = -Infinity;
-    for (L = lo; L <= hi; L++) {
-      var bpm = 60 / (L * NOV_STEP);
-      var prior = Math.exp(-0.5 * Math.pow(Math.log2(bpm / 120) / 0.9, 2));
-      var score = comb(r, L) * prior;
-      if (score > bestScore) { bestScore = score; best = L; }
+  }
+  function estimate() {
+    var lo = Math.round(60 / 180 / NOV_STEP), hi = Math.round(60 / 75 / NOV_STEP), q, L;
+    for (q = 0; q < RANGES; q++) correlate(q, lo, hi);
+    var best = -1, bestQ = 0, bestScore = -Infinity;
+    for (q = 0; q < RANGES; q++) {
+      for (L = lo; L <= hi; L++) {
+        var bpm = 60 / (L * NOV_STEP);
+        var prior = Math.exp(-0.5 * Math.pow(Math.log2(bpm / 120) / 0.9, 2));
+        var score = comb(dsp.acf[q], L) * prior;
+        if (score > bestScore) { bestScore = score; best = L; bestQ = q; }
+      }
     }
+    var r = dsp.acf[bestQ];
     // The peak between steps (a parabola through the best lag and its neighbours).
     var a = comb(r, best - 1), b0 = comb(r, best), c = comb(r, best + 1);
+    // ... and the ranges together must hear it too: music without a beat lets one range find a
+    // chance periodicity (Vivaldi read 86 bpm half the time), not all three.
+    var shared = combAll(best);
     var den = a - 2 * b0 + c;
     var lag = best + (den < 0 ? Math.max(-0.5, Math.min(0.5, 0.5 * (a - c) / den)) : 0);
     dsp.tempoConf = Math.max(0, b0);
-    // A clear beat is needed to start (TEMPO_CONF), less to keep one going through a break.
-    if (dsp.tempoConf < (A.bpm ? TEMPO_KEEP : TEMPO_CONF)) { A.bpm = 0; dsp.steady = 0; return; }
     var period = lag * NOV_STEP;
-    // A tempo needs something to hear: at least one onset for every two beats over the last
-    // seconds. A room's noise has a faint periodicity of its own (about 260 ms, from the audio
-    // path) but hardly an onset (0.3-0.5 a second against 1.2 needed at 140 bpm).
+    // A tempo held keeps going through a break or a fill while some range still finds it, at
+    // least 80% as clearly as the best lag now: a tempo held at a wrong multiple gives way.
+    if (A.bpm && Math.abs(period - dsp.period) > dsp.period * 0.04) {
+      var keep = combAll(Math.round(dsp.period / NOV_STEP));
+      if (keep >= TEMPO_KEEP && keep >= 0.8 * b0 && supported(dsp.period)) { dsp.tempoConf = keep; return; }
+    }
+    if (dsp.tempoConf < (A.bpm ? TEMPO_KEEP : TEMPO_CONF) || shared < TEMPO_SHARED || !supported(period)) { A.bpm = 0; dsp.steady = 0; return; }
+    // Two estimates in a row that agree within 4% say it.
+    dsp.steady = dsp.median && Math.abs(period - dsp.median) < dsp.median * 0.04 ? dsp.steady + 1 : 0;
+    dsp.median = period;
+    dsp.period = dsp.steady ? dsp.period * 0.7 + period * 0.3 : period;
+    A.bpm = dsp.steady >= 1 ? Math.round(60 / dsp.period) : 0;
+  }
+  // A tempo needs something to hear: at least one onset for every three beats over the last
+  // seconds. A room's noise has a faint periodicity of its own (about 260 ms, from the audio path)
+  // but hardly an onset (0.3-0.5 a second against 0.8 needed at 140 bpm).
+  /** @param {number} period */
+  function supported(period) {
     var ons = dsp.onsets, now = A.t, heard = 0;
     for (var o = ons.length - 1; o >= 0 && now - ons[o].t < 8; o--) heard++;
     // The list keeps the last 64: where it is full, the rate is over the time it spans.
     var spanS = heard >= ons.length && ons.length >= 64 ? Math.max(1, now - ons[0].t) : 8;
-    if (heard / spanS < 0.5 / period) { A.bpm = 0; dsp.steady = 0; return; }
-    dsp.steady = dsp.median && Math.abs(period - dsp.median) < dsp.median * 0.04 ? dsp.steady + 1 : 0;
-    dsp.median = period;
-    dsp.period = dsp.steady ? dsp.period * 0.7 + period * 0.3 : period;
-    A.bpm = dsp.steady >= 2 ? Math.round(60 / dsp.period) : 0;
+    return heard / spanS >= 0.35 / period;
   }
   // A kick anchors the beat's phase and the bar (count).
   function tempo(t) {
