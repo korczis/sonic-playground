@@ -466,8 +466,9 @@
     if (!s) return;
     var p = prefs();
     var explicit = resolve(mode || '');
-    // Reduced motion: a calm mode, slowed, that never changes by itself.
-    var m = explicit || (reduced ? CALM : p.mode);
+    // Reduced motion: a calm mode, slowed, that never changes by itself; a shared link's mode too
+    // gives way to it (the reader can still choose any mode in the settings).
+    var m = reduced && shared ? CALM : explicit || (reduced ? CALM : p.mode);
     if (!isOpen()) opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     // The queue would lie over the controls; the video panel stays where it is.
     if (window.SonicPlayer && window.SonicPlayer.queue) window.SonicPlayer.queue(false);
@@ -562,6 +563,8 @@
     var on = show === undefined ? panel.hidden : show;
     panel.hidden = !on;
     if (on) html.setAttribute('data-viz-settings', 'open'); else html.removeAttribute('data-viz-settings');
+    // A toast showing keeps off the sheet (static/js/player.js placeToast), and comes back when it closes.
+    if (window.SonicPlayer && window.SonicPlayer.placeToast) requestAnimationFrame(window.SonicPlayer.placeToast);
     var btn = s.querySelector('[data-viz-settings]');
     if (btn) btn.setAttribute('aria-expanded', String(on));
     if (on) {

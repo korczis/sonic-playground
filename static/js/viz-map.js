@@ -44,17 +44,18 @@
     return x - Math.floor(x);
   }
 
-  // The relative levels: [field, attack, release] of the fast follower; the long average forgets
-  // over 4 s.
-  var REL = [['bass', 0.02, 0.18], ['mid', 0.03, 0.25], ['high', 0.01, 0.12], ['level', 0.05, 0.4],
-    ['flux', 0.03, 0.25], ['energy', 1, 3]];
+  // The relative levels: [signal, attack, release, the analysis field it reads] of the fast
+  // follower; the long average forgets over 4 s. The energy is the level followed slowly (the
+  // analysis's own energy is already a slow average, and its average against itself read 1).
+  var REL = [['bass', 0.02, 0.18, 'bass'], ['mid', 0.03, 0.25, 'mid'], ['high', 0.01, 0.12, 'high'],
+    ['level', 0.05, 0.4, 'level'], ['flux', 0.03, 0.25, 'flux'], ['energy', 1, 3, 'level']];
 
   function create() {
     var st = {
       fast: /** @type {Record<string, number>} */ ({}), long: /** @type {Record<string, number>} */ ({}),
       hue: -1, accent: 0, sat: 0.5, light: 0.5, exposure: 0.4, flat: 0, roll: 0.5, width: 0, pan: 0,
       dyn: 0, punch: 0, latched: -10, section: -1, variant: 0, prevVariant: 0, flashes: /** @type {number[]} */ ([]),
-      flashGain: 1, lastPunch: 0,
+      flashGain: 1, lastPunch: 0, heard: 0, silent: 0, peak: 0,
     };
     REL.forEach(function (r) { st.fast[r[0]] = 0; st.long[r[0]] = 0; });
     /** @type {SonicVizMap} */
@@ -78,19 +79,27 @@
       var calm = !!(reduced && reduced.matches);
       if (calm) react = Math.min(react, 0.5);
       var longK = 1 - Math.exp(-dt / 4);
+      // The first 4 s of sound (again after 2 s of silence) warm the long averages up: they never
+      // sit below the fast ones there. Seeded from the first frame, a quiet opening read 2-3 times
+      // its normal for 10-20 s, so the picture drove hardest while the music was quietest
+      // (measured on recordings, 2026-11-24).
+      if ((a.level || 0) < 0.02) { st.silent += dt; if (st.silent > 2) st.heard = 0; }
+      else { st.silent = 0; st.heard += dt; }
+      var warm = st.heard < 4;
       REL.forEach(function (r) {
         var k = r[0];
-        var x = /** @type {number} */ (a[/** @type {'bass'} */ (k)]) || 0;
+        var x = /** @type {number} */ (a[/** @type {'bass'} */ (r[3])]) || 0;
         st.fast[k] = follow(st.fast[k], x, dt, r[1], r[2]);
-        // The long average starts at the first value heard, so the first seconds are not all loud.
         st.long[k] = st.long[k] > 0 ? st.long[k] + (x - st.long[k]) * longK : x;
+        if (warm) st.long[k] = Math.max(st.long[k], st.fast[k]);
         var rel = st.fast[k] / Math.max(0.02, st.long[k]);
         M[/** @type {'bass'} */ (k)] = clamp(rel, 0, 3);
         M.drive[/** @type {'bass'} */ (k)] = clamp((rel - 1) * react, -1, 2);
       });
 
-      // Colour: the chroma's vector on the circle of fifths gives the key's hue and how clearly
-      // one key sounds; without pitch (the clock, silence, drums) the hue rests where it was.
+      // Colour: the key's root on the circle of fifths gives the hue (the analysis holds a key for
+      // seconds; the chroma's own vector wandered 1-4 turns a minute), the chroma's vector how
+      // clearly one key sounds; without a key (the clock, silence, drums) the hue rests.
       var cx = 0, cy = 0, sum = 0;
       var chroma = a.chroma || [];
       for (var i = 0; i < chroma.length; i++) {
@@ -99,7 +108,7 @@
         cx += w * Math.cos(ang); cy += w * Math.sin(ang); sum += w;
       }
       var clarity = sum > 1e-3 ? Math.sqrt(cx * cx + cy * cy) / sum : 0;
-      var keyHue = clarity > 0.05 ? (Math.atan2(cy, cx) / (Math.PI * 2) + 1) % 1 : -1;
+      var keyHue = a.keyStrength > 0.3 ? fifths(a.key || 0) : -1;
       if (st.hue < 0) st.hue = keyHue >= 0 ? keyHue : 0;
       else if (keyHue >= 0) st.hue = towards(st.hue, keyHue, 1 - Math.exp(-dt / 3));
       if (chroma.length && a.keyStrength > 0.2) st.accent = towards(st.accent, fifths(a.pitch || 0), 1 - Math.exp(-dt / 0.6));
@@ -107,16 +116,26 @@
       var satTarget = clamp(0.45 + 0.55 * clarity - (a.minor ? 0.12 : 0) - 0.35 * Math.sqrt(a.flatness || 0), 0.15, 1);
       st.sat = follow(st.sat, satTarget, dt, 0.4, 1.2);
       st.light = follow(st.light, clamp(a.centroid || 0, 0, 1), dt, 0.1, 0.5);
-      // Brightness rides the slow loudness only (impulses never flash the whole screen).
-      var loud = a.loudness === undefined ? a.level : a.loudness;
-      st.exposure = follow(st.exposure, clamp(loud || 0, 0, 1), dt, 0.05, 0.4);
+      // Brightness rides the slow loudness only (impulses never flash the whole screen), read
+      // against the song's own recent peak: at the peak 1, 18 dB under it 0.4 (a brickwalled
+      // master's 8 dB break moved an absolute exposure from 1.00 to 0.90 only). The peak falls
+      // 0.4 dB a second, so a quieter song comes up to its own full light within a minute or so.
+      var loud = clamp((a.loudness === undefined ? a.level : a.loudness) || 0, 0, 1);
+      st.peak = Math.max(loud, st.peak - dt * 0.4 / 54);
+      // For its first 30 s a song is held against a loud master's level (-10 LUFS), not against its
+      // own first sound: seeded from it, a quiet intro read as its own peak and lit at 0.84.
+      if (st.heard < 30) st.peak = Math.max(st.peak, 44 / 54);
+      var expo = clamp(1 - (st.peak - loud) / (18 / 54), 0.4, 1) * clamp(loud / 0.08, 0, 1);
+      st.exposure = follow(st.exposure, expo, dt, 0.05, 0.4);
       st.flat = follow(st.flat, Math.sqrt(clamp(a.flatness || 0, 0, 1)), dt, 0.15, 0.6);
       st.roll = follow(st.roll, clamp(a.rolloff === undefined ? a.centroid : a.rolloff, 0, 1), dt, 0.1, 0.5);
       st.width = follow(st.width, clamp(a.width || 0, 0, 1), dt, 0.2, 0.8);
       st.pan = follow(st.pan, clamp(a.balance || 0, -1, 1) * 0.25, dt, 0.1, 0.4);
       st.dyn = follow(st.dyn, clamp(a.dynamics || 0, 0, 1), dt, 0.5, 2);
       var hueParam = (p.hue || 0) / 360;
-      M.hue = ((st.hue + hueParam) % 1 + 1) % 1;
+      // A new section turns the palette by up to 30 degrees, crossfaded with the scene.
+      var turn = ((st.prevVariant - 0.5) + (st.variant - st.prevVariant) * (1 - clamp(a.change || 0, 0, 1))) * 2 / 12;
+      M.hue = ((st.hue + hueParam + turn) % 1 + 1) % 1;
       M.accent = ((st.accent + hueParam) % 1 + 1) % 1;
       M.sat = st.sat;
       M.light = st.light;

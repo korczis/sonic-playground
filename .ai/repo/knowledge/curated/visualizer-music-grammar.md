@@ -67,3 +67,43 @@ SC 2.3.1; Spence (2011) and Evans & Treisman (2010) on cross-modal correspondenc
 al., Visualization of Harmony in Music with Colour; Itoh et al. (2017); EBU R 128 / Tech 3341;
 Richan & Rouat (2020) on timbre visualisation; Quilez, Domain Warping; Bridson et al. (2007),
 Curl-noise; MDN, prefers-reduced-motion.
+
+## Measured on real recordings (three analysis passes, 2026-11-24)
+
+Ordered by the owner as three analysis-and-reaction passes ([[owner-answers-2026-11-24]]). The
+material was eight freely licensed recordings from Wikimedia Commons (techno, hip-hop, rock,
+swing jazz, drum and bass, solo piano, Beethoven, Vivaldi), against librosa references.
+
+- **Tempo.**
+  - The kick intervals were replaced by per-range novelty autocorrelation (bass, mids, highs;
+    SuperFlux rises, smoothed, averaged per 20 ms step, fed only by frames with new sound on the
+    audio clock). Each lag is scored by a comb over 1-4 periods with a 120 bpm prior. The best
+    range's lag is weighed against its metrical relatives by the highs, and accepted only with the
+    ranges' shared support and an onset rate.
+  - Hip-hop went from 0% to 99% right and jazz from 27% to 55-65%. Beethoven and a room's noise
+    get none.
+  - Known limit: a techno track with a dotted-eighth riff wavers between related tempos (166, 125,
+    83).
+- **Beat phase.**
+  - It is an oscillator after algoglyph's Kuramoto plate (`kernels/signal/kuramoto.ts`), but
+    with proportional, near-beat-only pulls: the sine coupling held a techno track's phase on the
+    off-beat.
+  - It is anchored on the last kick at a lock and runs through dropouts.
+- **Key.** Krumhansl-Schmuckler profiles over about 8 s, with a 0.05 / 2 s hold: 1-9 changes a
+  minute instead of 9-26, and rock 85% right. A lone major triad is ambiguous between keys (F#
+  read A# minor); a cadence is not. The palette's hue follows the key's root.
+- **Sections.** A two-sided Page-Hinkley test, algoglyph's page-hinkley plate
+  (`kernels/stochastic/page-hinkley.ts`), on six z-scored features. Offline F1 0.49-0.53 against
+  0.34 for the old 3 s / 6 s contrast. Live, a spread floor of 0.03, lambda 10, 3 s to learn and
+  6 s between sections keep it at 1-4 a minute.
+- **Picture.**
+  - The relative levels warm up with the sound (a quiet opening read 2-3x its normal).
+  - The exposure reads loudness against the song's recent peak, held at -10 LUFS for the first
+    30 s.
+  - Sections turn the palette by up to 30 degrees.
+  - A 10-minute session showed no leak: heap 7.3-7.9 MB, GL textures constant, 60 fps.
+
+These lessons were offered back to algoglyph as its curated note
+`music-analysis-from-sonic-playground` (branch `chore/knowledge-music-analysis` in
+~/dev/algoglyph), with three plates they suggest: tempo-autocorrelation, key-profiles and
+superflux-onsets.

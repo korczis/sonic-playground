@@ -188,15 +188,28 @@
     }
     var top = Math.max(t.top, floor);
     var bar = el.bar.hidden ? window.innerHeight : el.bar.getBoundingClientRect().top;
+    /** @type {DOMRect | null} */
+    var v = null;
+    var onVideo = function (y) { return !!v && across(v) && y + h > v.top && y < v.bottom; };
     if (!el.panel.hidden) {
       // The video's own box (in cinema the panel fills the screen and only its child is the video).
-      var v = (el.panel.firstElementChild || el.panel).getBoundingClientRect();
-      var onVideo = function (y) { return across(v) && y + h > v.top && y < v.bottom; };
+      v = (el.panel.firstElementChild || el.panel).getBoundingClientRect();
       if (onVideo(top)) {
         if (v.bottom + 8 + h <= bar - 8) top = v.bottom + 8;          // below the video
         else if (v.top - 8 - h >= floor) top = v.top - 8 - h;          // above it
         else top = Math.max(floor, bar - h - 8 > v.bottom ? bar - h - 8 : bar + 4); // over the bar, never the video
       }
+    }
+    // The visualiser's open settings sheet is the reader's work, so the toast keeps off it too:
+    // below it or above it where it fits clear of the video, else over the bar (on phones the
+    // sheet fills the space above the bar; it used to hide the cinema switch and the first
+    // device for the toast's few seconds, a review, 2026-11-23).
+    var sheet = html.dataset.vizSettings === 'open' ? document.getElementById('visualizer-settings') : null;
+    var sb = sheet && !sheet.hidden ? sheet.getBoundingClientRect() : null;
+    var onSheet = function (y) { return !!sb && across(sb) && y + h > sb.top && y < sb.bottom; };
+    if (sb && onSheet(top)) {
+      var fits = function (y) { return y >= floor && y + h <= bar - 8 && !onVideo(y) && !onSheet(y); };
+      top = fits(sb.bottom + 8) ? sb.bottom + 8 : fits(sb.top - 8 - h) ? sb.top - 8 - h : bar + 4;
     }
     if (top !== t.top) box.style.top = top + 'px';
   }

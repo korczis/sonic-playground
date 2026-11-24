@@ -87,16 +87,11 @@
   var TILT = 3;
   var tilt = new Float32Array(BANDS);
   for (var ti = 0; ti < BANDS; ti++) tilt[ti] = TILT * Math.log2(40 * Math.pow(400, (ti + 0.5) / BANDS) / 1000);
-  // The loudness maps -54 to -6 LUFS (a quiet room to a loud master) onto 0..1.
+  // The loudness maps -54 to 0 LUFS onto 0..1: a quiet room to beyond the loudest master (a
+  // brickwalled track measured -3 LUFS here and saturated a top at -6, 2026-11-24). The picture's
+  // exposure reads it against the song's own recent peak (static/js/viz-map.js).
   var LOUD_FLOOR = -54;
-  var LOUD_TOP = -6;
-  // The triads the key reads: 12 major (root, major third, fifth), then 12 minor.
-  /** @type {number[][]} */
-  var TRIADS = [];
-  for (var tr = 0; tr < 24; tr++) {
-    var root = tr % 12;
-    TRIADS.push([root, (root + (tr < 12 ? 4 : 3)) % 12, (root + 7) % 12]);
-  }
+  var LOUD_TOP = 0;
   // The structure: one feature row every 0.25 s (8 broad band groups, so a change of chord moves
   // little; the loudness, the flatness, the brightness), 36 rows (9 s): the last 12 rows (3 s)
   // against the 24 (6 s) before them.
@@ -132,12 +127,15 @@
     kick: Object.assign(detector(40, 150, 0.22, 0.16), { bins: true, k: 2.5, lift: 6 }),
     snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2 }),
     hat: detector(6500, 16000, 0.08, 0.06),
-    kicks: /** @type {number[]} */ ([]), period: 0.5, lastKick: -10,
+    period: 0.5, lastKick: -10, lastAny: -10, beatPhase: 0, offKicks: 0, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
+    nov: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novX: new Float32Array(400),
+    acf: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novBin: -1, novFill: 0,
+    novLast: [0, 0, 0], novCount: 0, heardAt: -1, rises: [0, 0, 0],
     onsets: /** @type {{name: string, t: number}[]} */ ([]),
     clock: { playing: false, base: 0, at: 0, beat: -1, half: -1 },
     // The pitch: the raw chroma of this frame, its slow mean (about a second), the loudest peak of
     // the last frame, the triad held (0-23) and the one that would replace it, held for how long.
-    raw: new Float32Array(12), slow: new Float32Array(12), ctop: -110, key: 0, cand: -1, candT: 0,
+    raw: new Float32Array(12), slow: new Float32Array(12), keyChroma: new Float32Array(12), ctop: -110, key: 0, cand: -1, candT: 0,
     // The loudness: the mean square (EBU's 0.4 s), in LUFS, and each frame's for the dynamics.
     ms: 1e-7, lufs: -70, dynDb: 0,
     hist: { ms: new Float32Array(256), t: new Float32Array(256).fill(-100), i: 0 },
@@ -148,7 +146,10 @@
     cost: 0,
     // The structure: the rows, the row being summed, the novelty's usual level, the last section.
     st: { ring: new Float32Array(ROW * ROWS), sum: new Float32Array(ROW), n: 0, at: -10, i: 0,
-      filled: 0, base: 0.02, armed: true, sectionAt: -10 },
+      filled: 0, sectionAt: -10 },
+    phRow: new Float64Array(6),
+    ph: { n: 0, since: -10, mean: new Float64Array(6), m2: new Float64Array(6), up: new Float64Array(6),
+      upMin: new Float64Array(6), down: new Float64Array(6), downMax: new Float64Array(6) },
   };
 
   function playing() { return html.getAttribute('data-player-state') === 'playing'; }
@@ -182,7 +183,11 @@
     audio.analyser = audio.pitch = audio.left = audio.right = null;
     audio.kind = 'clock';
     audio.device = null;
-    dsp.kicks = [];
+    dsp.steady = 0;
+    dsp.median = 0;
+    dsp.novBin = -1;
+    dsp.novFill = 0;
+    dsp.heardAt = -1;
     dsp.primed = false;
     A.bpm = 0;
     changed();
@@ -282,6 +287,8 @@
       audio.l = new Float32Array(audio.left.fftSize);
       audio.r = new Float32Array(audio.right.fftSize);
       dsp.st.filled = dsp.st.n = 0;
+      dsp.ph.n = 0;
+      dsp.ph.since = performance.now() / 1000;
       dsp.st.sum.fill(0);
       [dsp.kick, dsp.snare, dsp.hat].forEach(function (d) {
         var bins = an.frequencyBinCount;
@@ -444,6 +451,30 @@
       var rise = 0;
       for (var x = 0; x < BANDS; x++) rise += Math.max(0, Math.max(dsp.db[x], floor) - Math.max(dsp.prevDb[x], floor));
       A.flux = A.flux * 0.6 + Math.min(1, rise / BANDS / 4 / (dt * 60)) * 0.4;
+      // The beat's novelty leans on the bass, where the kick carries it: a riff on dotted eighths
+      // in the mids made a 124 bpm techno track read as 166 (2026-11-24).
+      // Each band's rise is taken over the loudest of its neighbours a frame ago (SuperFlux, Böck and
+      // Widmer 2013): a sustained bass line's partials, beating with each other, wobble a band by a
+      // few dB from frame to frame and read as a pulse of their own; a played note rises over
+      // its neighbours too.
+      var rises = dsp.rises;
+      rises[0] = rises[1] = rises[2] = 0;
+      for (var y2 = 0; y2 < BANDS; y2++) {
+        var before = Math.max(dsp.prevDb[y2], y2 > 0 ? dsp.prevDb[y2 - 1] : -200, y2 < BANDS - 1 ? dsp.prevDb[y2 + 1] : -200, floor);
+        rises[y2 < BASS_END ? 0 : y2 < MID_END ? 1 : 2] += Math.max(0, Math.max(dsp.db[y2], floor) - before);
+      }
+      // Only a frame that brought new sound counts, timed by the audio's own clock: the audio thread
+      // delivers in blocks, so some frames see none, and their zero novelty fell into a rhythm with
+      // the frame rate (a room's noise read 140-160 bpm, 2026-11-24).
+      var heardAt = /** @type {AudioContext} */ (audio.ctx).currentTime;
+      if (heardAt !== dsp.heardAt) {
+        var span = dsp.heardAt > 0 ? Math.max(1 / 240, heardAt - dsp.heardAt) : dt;
+        dsp.heardAt = heardAt;
+        rises[0] /= BASS_END * span * 60;
+        rises[1] /= (MID_END - BASS_END) * span * 60;
+        rises[2] /= (BANDS - MID_END) * span * 60;
+        novelty(heardAt, rises);
+      }
     }
     dsp.prevDb.set(dsp.db);
     detect('kick', t, dt);
@@ -559,28 +590,46 @@
     key(dt, Math.sqrt(norm));
   }
 
-  // The key (the chord colour of the last second): the triad whose pitch classes the slow chroma
-  // matches best (cosine, its root weighted 1.2 so a lone note names its own triad). Another
-  // triad replaces the held one only after winning for 0.8 s.
-  /** @param {number} dt @param {number} norm */
+  // The key: Krumhansl and Schmuckler's key profiles (the probe-tone ratings of each pitch class
+  // in a major and a minor key) correlated with the chroma averaged over about 8 s, the best of the
+  // 24 keys held until another beats it by 0.05 for 2 s. Measured on freely licensed recordings
+  // (2026-11-24), the best triad of the last second it replaces matched the key 0-45% of the time
+  // and changed 9-26 times a minute; these profiles, on the same chroma, named the key of 7 of 8
+  // excerpts, changing 1-6 times a minute.
+  var KS_MAJOR = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88];
+  var KS_MINOR = [6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17];
+  /** Pearson's r of the chroma with a profile rotated to a root. */
+  function keyFit(c, prof, root) {
+    var mc = 0, mp = 0, i;
+    for (i = 0; i < 12; i++) { mc += c[i]; mp += prof[i]; }
+    mc /= 12; mp /= 12;
+    var sxy = 0, sxx = 0, syy = 0;
+    for (i = 0; i < 12; i++) {
+      var x = c[(i + root) % 12] - mc, y = prof[i] - mp;
+      sxy += x * y; sxx += x * x; syy += y * y;
+    }
+    return sxx > 1e-9 ? sxy / Math.sqrt(sxx * syy) : 0;
+  }
+  /** @param {number} dt @param {number} norm the slow chroma's length (0 in silence) */
   function key(dt, norm) {
-    var sl = dsp.slow;
-    /** @param {number} j */
-    var score = function (j) {
-      var t = TRIADS[j];
-      return (1.2 * sl[t[0]] + sl[t[1]] + sl[t[2]]) / (norm * Math.sqrt(3.44));
-    };
+    var lc = dsp.keyChroma, a = 1 - Math.exp(-dt / 4);
     if (norm < 0.05) { A.keyStrength *= 1 - dt; return; }
-    var best = 0;
-    for (var j = 1; j < 24; j++) if (score(j) > score(best)) best = j;
-    if (best === dsp.key) dsp.cand = -1;
+    for (var i = 0; i < 12; i++) lc[i] += (dsp.slow[i] / norm - lc[i]) * a;
+    var best = 0, bestR = -2, held = 0;
+    for (var k = 0; k < 24; k++) {
+      var r = keyFit(lc, k < 12 ? KS_MAJOR : KS_MINOR, k % 12);
+      if (r > bestR) { bestR = r; best = k; }
+      if (k === dsp.key) held = r;
+    }
+    if (best === dsp.key || bestR < held + 0.05) { dsp.cand = -1; }
     else if (best === dsp.cand) dsp.candT += dt;
     else { dsp.cand = best; dsp.candT = 0; }
-    if (dsp.cand >= 0 && dsp.candT >= 0.8) { dsp.key = dsp.cand; dsp.cand = -1; }
+    if (dsp.cand >= 0 && dsp.candT >= 2) { dsp.key = dsp.cand; dsp.cand = -1; held = bestR; }
     A.key = dsp.key % 12;
     A.minor = dsp.key >= 12 ? 1 : 0;
-    A.keyStrength = unit(score(dsp.key));
+    A.keyStrength = unit(held);
   }
+
 
   // The two K-weighted channels: the balance is the right's level against the left's (-1 hard
   // left, 1 hard right), the width the share of the side (L - R) in the power (0 mono, 0.5 one
@@ -652,10 +701,17 @@
     if (dsp.beatN === dsp.down && A.bpm) { A.downbeat = reduced ? 0.35 : 1; dsp.downLast = t; }
   }
 
-  // The structure: a row of features every 0.25 s; once 9 s are heard, the novelty is the mean
-  // difference of the last 3 s from the 6 s before them (0.25 being 1). A section begins where
-  // it stands above both 0.06 and three times its usual level, at least 6 s after the last, and
-  // the next waits until it has fallen back below half of that.
+  // The structure: a row of features every 0.25 s. The novelty (for the pictures) is the mean
+  // difference of the last 3 s from the 6 s before them, once 9 s are heard (0.25 being 1). A new
+  // section is a change of the music's level found by a two-sided Page-Hinkley test, the test of
+  // algoglyph's page-hinkley plate (kernels/stochastic/page-hinkley.ts,
+  // https://korczis.github.io/algoglyph/), on six features (the loudness, the brightness and the
+  // band groups in pairs), each as a z-score against its own mean and spread (at least 0.03)
+  // since the last section: up += z - 1, down += z + 1, a section where either has moved 10 from
+  // its extreme; then everything starts again, with 3 s to learn and at least 6 s between
+  // sections. Against librosa's boundaries on freely licensed recordings (pass 3, 2026-11-24)
+  // the test scored F1 0.49-0.53 offline where the 3 s / 6 s contrast scored 0.34; live, a
+  // tighter spread floor and threshold keep music without sections near two a minute.
   /** @param {number} t */
   function structure(t) {
     var st = dsp.st, sum = st.sum;
@@ -671,6 +727,11 @@
     st.n = 0;
     st.i = (st.i + 1) % ROWS;
     st.filled = Math.min(ROWS, st.filled + 1);
+    var row0 = ((st.i - 1 + ROWS) % ROWS) * ROW, f = dsp.phRow;
+    f[0] = st.ring[row0 + GROUPS];
+    f[1] = st.ring[row0 + GROUPS + 2];
+    for (var gp = 0; gp < 4; gp++) f[2 + gp] = (st.ring[row0 + gp * 2] + st.ring[row0 + gp * 2 + 1]) / 2;
+    pageHinkley(t, f);
     if (st.filled < ROWS) return;
     var nov = 0;
     for (var c = 0; c < ROW; c++) {
@@ -683,16 +744,37 @@
     }
     nov /= ROW;
     A.novelty = unit(nov / 0.25);
-    var bar = Math.max(0.06, st.base * 3);
-    if (st.armed && nov > bar && t - st.sectionAt >= 6) {
+  }
+  /** @param {number} t @param {Float64Array} f the row's six features */
+  function pageHinkley(t, f) {
+    var ph = dsp.ph, alarm = false, k;
+    var learning = t - ph.since < 3;
+    for (k = 0; k < 6; k++) {
+      if (!learning && ph.n > 1) {
+        var z = (f[k] - ph.mean[k]) / Math.max(0.03, Math.sqrt(ph.m2[k] / (ph.n - 1)));
+        ph.up[k] += z - 1;
+        ph.upMin[k] = Math.min(ph.upMin[k], ph.up[k]);
+        ph.down[k] += z + 1;
+        ph.downMax[k] = Math.max(ph.downMax[k], ph.down[k]);
+        if (ph.up[k] - ph.upMin[k] > 10 || ph.downMax[k] - ph.down[k] > 10) alarm = true;
+      }
+    }
+    // Welford's running mean and spread, each feature's own since the last section.
+    ph.n += 1;
+    for (k = 0; k < 6; k++) {
+      var d = f[k] - ph.mean[k];
+      ph.mean[k] += d / ph.n;
+      ph.m2[k] += d * (f[k] - ph.mean[k]);
+    }
+    if (!alarm) return;
+    if (t - dsp.st.sectionAt >= 6) {
       A.section += 1;
       A.change = reduced ? 0.35 : 1;
-      st.sectionAt = t;
-      st.armed = false;
-    } else if (nov < bar / 2) {
-      st.armed = true;
-      st.base += (Math.min(nov, 0.04) - st.base) * 0.02;
+      dsp.st.sectionAt = t;
     }
+    ph.n = 0;
+    ph.since = t;
+    for (k = 0; k < 6; k++) { ph.mean[k] = ph.m2[k] = ph.up[k] = ph.upMin[k] = ph.down[k] = ph.downMax[k] = 0; }
   }
 
   // No sound to read: a calm, honest motion driven by the player's time at 120 bpm while it
@@ -747,6 +829,24 @@
     dsp[name].last = t;
     A[name] = reduced ? 0.35 : 1;
     dsp.onsets.push({ name: name, t: t });
+    dsp.lastAny = t;
+    // A kick or a snare pulls the beat's phase towards a beat (phase 0) by a share of the error,
+    // a kick most; a hat not at all. The pull is proportional (a sawtooth), not the sine of the
+    // Kuramoto coupling: the sine does not pull at half a beat, so off-beat hats held the phase
+    // on the off-beat (pass 3: techno's phase sat 0.43 of a beat off, 2026-11-24).
+    // Only an onset near a beat pulls (a syncopated kick half a beat off is the groove, not an
+    // error); were the phase ever to sit half a beat off, four kicks in a row away from the beat
+    // set it back on the last of them.
+    if (A.bpm && audio.analyser && name !== 'hat') {
+      var err = dsp.beatPhase > 0.5 ? dsp.beatPhase - 1 : dsp.beatPhase;
+      if (Math.abs(err) < 0.3) {
+        dsp.beatPhase = ((dsp.beatPhase - (name === 'kick' ? 0.3 : 0.1) * err) % 1 + 1) % 1;
+        if (name === 'kick') dsp.offKicks = 0;
+      } else if (name === 'kick' && ++dsp.offKicks >= 4) {
+        dsp.beatPhase = 0;
+        dsp.offKicks = 0;
+      }
+    }
     if (dsp.onsets.length > 64) dsp.onsets.shift();
     if (name === 'kick') {
       A.beat = !reduced;
@@ -754,32 +854,165 @@
     }
   }
 
-  // The tempo: the median interval between the last kicks, folded into 75-180 bpm. It is said only
-  // from six kicks on, while the intervals agree (their median deviation within 8% of the median;
-  // a played beat's is about 2%) and while the kicks fill at least 45% of the beats they span (a
-  // kick on every beat fills all, on every other half): folding squeezes any interval into that
-  // range, and kicks found at random, in a noisy room, fill about a third.
+  // The tempo: the autocorrelation of the novelty (the bands' rise, frame by frame) over the last
+  // 8 s, at 20 ms a step, for 75-180 bpm. Each lag scores its own correlation and half its double's
+  // (a beat repeats at two beats), weighed by a log-normal preference around 120 bpm (a tempo and
+  // its double both correlate; the nearer one to 120 wins). It is said only while the correlation
+  // is clear (TEMPO_CONF) and once three estimates in a row, half a second apart, agree within 4%.
+  // The kicks alone found it on four-on-the-floor only: real hip-hop, rock and jazz have
+  // syncopated or missing kicks, and a piano without a beat read 110 bpm (measured on freely
+  // licensed recordings, 2026-11-24).
+  var NOV_STEP = 0.02;
+  var NOV_N = 400;
+  // Each range (bass, mids, highs) keeps its own novelty and autocorrelation; the best range's
+  // best lag is the tempo, said only where the ranges' mean hears it too. One bass-weighted
+  // novelty let a dotted-eighth bass line put techno at 2/3 of its tempo while the highs held the
+  // beat; the mean alone missed swing jazz; the best range alone found beats in Vivaldi (pass 2
+  // on recordings, 2026-11-24).
+  var TEMPO_CONF = 0.3;
+  var TEMPO_KEEP = 0.18;
+  var TEMPO_SHARED = 0.16;
+  var RANGES = 3;
+  /** @param {number} t @param {number[]} v each range's novelty */
+  function novelty(t, v) {
+    var bin = Math.floor(t / NOV_STEP), q;
+    if (dsp.novBin < 0 || bin - dsp.novBin > NOV_N) {
+      for (q = 0; q < RANGES; q++) { dsp.nov[q].fill(0); dsp.novLast[q] = v[q]; }
+      dsp.novBin = bin - 1;
+      dsp.novCount = 0;
+    }
+    // Frames sharing a step are averaged, never maximised: at 60 fps every fifth 20 ms step holds
+    // two frames, and their maximum put a 100 ms rhythm into a room's noise (2026-11-24).
+    if (bin === dsp.novBin) {
+      dsp.novCount += 1;
+      for (q = 0; q < RANGES; q++) dsp.nov[q][bin % NOV_N] += (v[q] - dsp.nov[q][bin % NOV_N]) / dsp.novCount;
+      for (q = 0; q < RANGES; q++) dsp.novLast[q] = v[q];
+      return;
+    }
+    // Steps a slow frame skipped are drawn between it and the last, so 30 fps reads like 60.
+    var gap = bin - dsp.novBin;
+    for (q = 0; q < RANGES; q++) {
+      for (var b = dsp.novBin + 1; b <= bin; b++) {
+        dsp.nov[q][b % NOV_N] = dsp.novLast[q] + (v[q] - dsp.novLast[q]) * (b - dsp.novBin) / gap;
+      }
+      dsp.novLast[q] = v[q];
+    }
+    dsp.novCount = 1;
+    dsp.novFill = Math.min(NOV_N, dsp.novFill + gap);
+    dsp.novBin = bin;
+    // From 2 s of history on, twice a second.
+    if (t - dsp.tempoAt >= 0.5 && dsp.novFill >= 100) { dsp.tempoAt = t; estimate(); }
+  }
+  // A beat repeats at every multiple of its period: a lag scores its correlations at one to four
+  // periods (a tempo 4/3 off the beat, which eighth notes favour, misses the multiples; so does a
+  // chance peak in noise), as their weighted mean.
+  /** @param {Float32Array} r @param {number} L */
+  function comb(r, L) {
+    var sum = 0, w = 0;
+    for (var k = 1; k <= 4; k++) {
+      if (k * L >= dsp.novFill) break;
+      sum += r[k * L] / k;
+      w += 1 / k;
+    }
+    return w ? sum / w : 0;
+  }
+  /** The ranges' scores of a lag, averaged: a beat is shared by them, a riff in one range or a
+   *  chance periodicity is not. */
+  function combAll(L) {
+    var sum = 0;
+    for (var q = 0; q < RANGES; q++) sum += comb(dsp.acf[q], L);
+    return sum / RANGES;
+  }
+  /** One range's autocorrelation of its smoothed, centred novelty, into dsp.acf[q]. */
+  function correlate(q, lo, hi) {
+    var x = dsp.novX, n = dsp.novFill, ring = dsp.nov[q], mean = 0, i;
+    // Smoothed over +-40 ms first: a beat's period is rarely a whole number of steps, and sharp
+    // onsets would miss each other at its multiples (124 bpm read as 166, 2026-11-24).
+    for (i = 0; i < n; i++) {
+      var acc0 = 0, w0 = 0;
+      for (var k = -2; k <= 2; k++) {
+        if (i + k < 0 || i + k >= n) continue;
+        var wk = 3 - Math.abs(k);
+        acc0 += ring[(dsp.novBin - n + 1 + i + k + NOV_N * 2) % NOV_N] * wk;
+        w0 += wk;
+      }
+      x[i] = acc0 / w0;
+      mean += x[i];
+    }
+    mean /= n;
+    var r0 = 0;
+    for (i = 0; i < n; i++) { x[i] -= mean; r0 += x[i] * x[i]; }
+    var r = dsp.acf[q];
+    for (var L = Math.floor(lo / 2); L <= hi * 4 && L < n; L++) {
+      var acc = 0;
+      for (i = 0; i + L < n; i++) acc += x[i] * x[i + L];
+      r[L] = r0 > 1e-9 ? acc / r0 * n / (n - L) : 0;
+    }
+  }
+  function estimate() {
+    var lo = Math.round(60 / 180 / NOV_STEP), hi = Math.round(60 / 75 / NOV_STEP), q, L;
+    for (q = 0; q < RANGES; q++) correlate(q, lo, hi);
+    var best = -1, bestQ = 0, bestScore = -Infinity;
+    for (q = 0; q < RANGES; q++) {
+      for (L = lo; L <= hi; L++) {
+        var bpm = 60 / (L * NOV_STEP);
+        var prior = Math.exp(-0.5 * Math.pow(Math.log2(bpm / 120) / 0.9, 2));
+        var score = comb(dsp.acf[q], L) * prior;
+        if (score > bestScore) { bestScore = score; best = L; bestQ = q; }
+      }
+    }
+    // The best range may hear a riff, not the beat: among its lag's metrical relatives (3/4, 4/3,
+    // 2/3, 3/2) the one the highs hear best wins, where hats and snares mark the beat's grid. A
+    // dotted-eighth bass riff held techno at 4/3 of its tempo (pass 3, 2026-11-24).
+    var pick = best, pickScore = -Infinity;
+    [1, 0.75, 4 / 3, 2 / 3, 1.5].forEach(function (f) {
+      var Lc = Math.round(best * f);
+      if (Lc < lo || Lc > hi) return;
+      var sc = comb(dsp.acf[2], Lc) * Math.exp(-0.5 * Math.pow(Math.log2(60 / (Lc * NOV_STEP) / 120) / 0.9, 2));
+      if (sc > pickScore) { pickScore = sc; pick = Lc; }
+    });
+    best = pick;
+    var r = dsp.acf[bestQ];
+    // The peak between steps (a parabola through the best lag and its neighbours).
+    var a = comb(r, best - 1), b0 = comb(r, best), c = comb(r, best + 1);
+    // ... and the ranges together must hear it too: music without a beat lets one range find a
+    // chance periodicity (Vivaldi read 86 bpm half the time), not all three.
+    var shared = combAll(best);
+    var den = a - 2 * b0 + c;
+    var lag = best + (den < 0 ? Math.max(-0.5, Math.min(0.5, 0.5 * (a - c) / den)) : 0);
+    dsp.tempoConf = Math.max(0, b0);
+    var period = lag * NOV_STEP;
+    // A tempo held keeps going through a break or a fill while some range still finds it, at
+    // least 80% as clearly as the best lag now: a tempo held at a wrong multiple gives way.
+    if (A.bpm && Math.abs(period - dsp.period) > dsp.period * 0.04) {
+      var keep = combAll(Math.round(dsp.period / NOV_STEP));
+      if (keep >= TEMPO_KEEP && keep >= 0.8 * b0 && supported(dsp.period)) { dsp.tempoConf = keep; return; }
+    }
+    if (dsp.tempoConf < (A.bpm ? TEMPO_KEEP : TEMPO_CONF) || shared < TEMPO_SHARED || !supported(period)) { A.bpm = 0; dsp.steady = 0; return; }
+    // Two estimates in a row that agree within 4% say it.
+    dsp.steady = dsp.median && Math.abs(period - dsp.median) < dsp.median * 0.04 ? dsp.steady + 1 : 0;
+    dsp.median = period;
+    dsp.period = dsp.steady ? dsp.period * 0.7 + period * 0.3 : period;
+    var was = A.bpm;
+    A.bpm = dsp.steady >= 1 ? Math.round(60 / dsp.period) : 0;
+    // A new lock starts its phase from the last kick (a beat), not from wherever it drifted.
+    if (!was && A.bpm && A.t - dsp.lastKick < dsp.period * 2) dsp.beatPhase = ((A.t - dsp.lastKick) / dsp.period) % 1;
+  }
+  // A tempo needs something to hear: at least one onset for every three beats over the last
+  // seconds. A room's noise has a faint periodicity of its own (about 260 ms, from the audio path)
+  // but hardly an onset (0.3-0.5 a second against 0.8 needed at 140 bpm).
+  /** @param {number} period */
+  function supported(period) {
+    var ons = dsp.onsets, now = A.t, heard = 0;
+    for (var o = ons.length - 1; o >= 0 && now - ons[o].t < 8; o--) heard++;
+    // The list keeps the last 64: where it is full, the rate is over the time it spans.
+    var spanS = heard >= ons.length && ons.length >= 64 ? Math.max(1, now - ons[0].t) : 8;
+    return heard / spanS >= 0.35 / period;
+  }
+  // A kick anchors the beat's phase and the bar (count).
   function tempo(t) {
-    var ks = dsp.kicks;
-    ks.push(t);
-    while (ks.length && t - ks[0] > 8) ks.shift();
     count(t);
     dsp.lastKick = t;
-    if (ks.length < 6) return;
-    var iv = [];
-    for (var i = 1; i < ks.length; i++) {
-      var d = ks[i] - ks[i - 1];
-      while (d < 0.333) d *= 2;
-      while (d > 0.8) d /= 2;
-      iv.push(d);
-    }
-    iv.sort(function (a, b) { return a - b; });
-    var median = iv[iv.length >> 1];
-    var dev = iv.map(function (d) { return Math.abs(d - median); }).sort(function (a, b) { return a - b; });
-    var filled = (ks.length - 1) / Math.max(1, (t - ks[0]) / median);
-    if (dev[dev.length >> 1] > median * 0.08 || filled < 0.45) { A.bpm = 0; return; }
-    dsp.period = dsp.period * 0.7 + median * 0.3;
-    A.bpm = Math.round(60 / dsp.period);
   }
 
   /** @param {number} dt @param {number} t @param {boolean} clock */
@@ -808,8 +1041,20 @@
     A.change *= Math.exp(-dt / 1.5);
     dsp.prev.set(b);
     if (!clock) {
-      if (t - dsp.lastKick > 8) A.bpm = 0;
-      A.phase = A.bpm ? ((t - dsp.lastKick) / dsp.period) % 1 : (t * 2) % 1;
+      // The phase is an oscillator running at the tempo that the onsets pull into step, after the
+      // phase locking of algoglyph's Kuramoto plate (dθ/dt = ω + K·sin(ψ − θ),
+      // https://korczis.github.io/algoglyph/ , kernels/signal/kuramoto.ts): it never jumps, so a
+      // syncopated kick (a hip-hop kick on the and of two) nudges it instead of restarting the
+      // beat half-way, as resetting it on every kick did.
+      // It keeps running through a short dropout of the tempo (a break, a fill) rather than
+      // restarting, which threw the beat to a random phase 4-7 times a song.
+      if (A.bpm || (dsp.period > 0 && t - dsp.lastAny < 4)) {
+        dsp.beatPhase = (dsp.beatPhase + dt / dsp.period) % 1;
+        A.phase = dsp.beatPhase;
+      } else {
+        dsp.beatPhase = (t * 2) % 1;
+        A.phase = dsp.beatPhase;
+      }
       // The bar: the beats since the downbeat, counted from the last kick on the grid; without a
       // tempo it runs at 120 bpm, as the beat does.
       var beats = dsp.beatN - dsp.down + 4 + (t - dsp.beatAt) / dsp.period;
@@ -842,7 +1087,7 @@
     snapshot: function () {
       return { level: A.level, bass: A.bass, mid: A.mid, high: A.high, kick: A.kick, snare: A.snare,
         hat: A.hat, flux: A.flux, centroid: A.centroid, bpm: A.bpm, source: A.source,
-        bands: Array.from(A.bands), onsets: dsp.onsets.slice(),
+        bands: Array.from(A.bands), onsets: dsp.onsets.slice(), tempoConf: dsp.tempoConf,
         balance: A.balance, width: A.width, chroma: Array.from(A.chroma), pitch: A.pitch,
         key: A.key, minor: A.minor, keyStrength: A.keyStrength, flatness: A.flatness,
         rolloff: A.rolloff, brightness: A.brightness, loudness: A.loudness, lufs: dsp.lufs, dynamics: A.dynamics,
