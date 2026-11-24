@@ -1762,12 +1762,14 @@ async function shot(page, name) {
         `visualiser: the bar reads 0 on the accented kick and a quarter, half, three quarters on the others (downbeats ${downs.map((b) => b.toFixed(2)).join(' ')}; others ${others.map((b) => b.toFixed(2)).join(' ')})`);
       const db = run.frames.filter((f) => f.t > settled && f.downbeat > 0.9).map((f) => f.bar);
       check(db.length >= 4 && db.every(atZero), `visualiser: the downbeat envelope rises on the bar's first beat (${db.map((b) => b.toFixed(2)).join(' ')})`);
-      // The sections: one, a moment after the switch; none from the beat before or after it.
+      // The sections: one, a moment after the switch (from the first quarter second of the new
+      // texture the analysis hears, its sound arriving some 70 ms after the switch); none from the
+      // beat before or after it.
       const steps = run.frames.slice(1).filter((f, i) => f.section !== run.frames[i].section).map((f) => f.t - T.sw);
       const before = Math.max(...run.frames.filter((f) => f.t > T.sw - 2.5 && f.t < T.sw).map((f) => f.novelty));
       const after = Math.max(...run.frames.filter((f) => f.t > T.sw && f.t < T.sw + 4).map((f) => f.novelty));
       const lifted = run.frames.find((f) => f.t > T.sw + (steps[0] || 0) && f.t < T.sw + (steps[0] || 0) + 0.1);
-      check(steps.length === 1 && steps[0] > 0.2 && steps[0] < 4 && after > before * 2 && lifted && lifted.change > 0.8,
+      check(steps.length === 1 && steps[0] > 0.05 && steps[0] < 4 && after > before * 2 && lifted && lifted.change > 0.8,
         `visualiser: a new texture counts one new section, not one on every beat (${steps.map((s) => s.toFixed(2) + ' s after the switch').join(', ') || 'none'}; novelty ${before.toFixed(2)} before, ${after.toFixed(2)} after)`);
       const dyn = run.frames.filter((f) => f.t > settled && f.t < T.sw).map((f) => f.dyn);
       const low = dyn.slice().sort((x, y) => x - y)[dyn.length >> 2];
@@ -1864,7 +1866,7 @@ async function shot(page, name) {
     const { context, page, errors } = await open(browser, at(''), desktop, 'dark');
     const r = await page.evaluate(() => {
       const base = { bass: 0.4, mid: 0.4, high: 0.4, level: 0.4, flux: 0.2, chroma: new Float32Array(12), keyStrength: 0,
-        bpm: 0, phase: 0, bar: 0, beat: false, kick: 0, section: 0, change: 0, loudness: 0.8 };
+        bpm: 0, phase: 0, bar: 0, beat: false, kick: 0, section: 0, change: 0, loudness: 0.85 };
       const P = { react: 1, hue: 0 };
       let t = 0;
       const run = (mapper, seconds, patch) => { let m = null; for (let i = 0; i < seconds * 60; i++) { t += 1 / 60; m = mapper.frame(Object.assign({}, base, patch, { t, dt: 1 / 60 }), P); } return JSON.parse(JSON.stringify(m)); };
@@ -1873,11 +1875,14 @@ async function shot(page, name) {
       const early = run(opening, 2, {});
       const exposure = window.SonicVizMap.create();
       const loud = run(exposure, 20, {});
-      const brk = run(exposure, 3, { loudness: 0.8 - 8 / 54 });
-      return { early: early.level, energy: early.energy, loud: loud.exposure, brk: brk.exposure };
+      const brk = run(exposure, 3, { loudness: 0.85 - 8 / 54 });
+      const intro = window.SonicVizMap.create();
+      const quietIntro = run(intro, 6, { loudness: 36 / 54 });
+      return { early: early.level, energy: early.energy, loud: loud.exposure, brk: brk.exposure, intro: quietIntro.exposure };
     });
     check(r.early < 1.3 && r.energy < 1.3, `visualiser map: music after a quiet opening reads its normal, not 2-3 times it (level ${r.early.toFixed(2)}, energy ${r.energy.toFixed(2)} 2 s in)`);
     check(r.loud > 0.95 && r.brk < 0.8, `visualiser map: an 8 dB break under the song's peak dims the exposure (${r.loud.toFixed(2)} -> ${r.brk.toFixed(2)})`);
+    check(r.intro < 0.7, `visualiser map: a quiet intro (-18 LUFS) is not lit as its own peak (${r.intro.toFixed(2)})`);
     check(errors.length === 0, `visualiser (map readings): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }

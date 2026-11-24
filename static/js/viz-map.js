@@ -119,9 +119,12 @@
       // Brightness rides the slow loudness only (impulses never flash the whole screen), read
       // against the song's own recent peak: at the peak 1, 18 dB under it 0.4 (a brickwalled
       // master's 8 dB break moved an absolute exposure from 1.00 to 0.90 only). The peak falls
-      // 0.4 dB a second, so a quieter song comes up to its own full light within a minute.
+      // 0.4 dB a second, so a quieter song comes up to its own full light within a minute or so.
       var loud = clamp((a.loudness === undefined ? a.level : a.loudness) || 0, 0, 1);
       st.peak = Math.max(loud, st.peak - dt * 0.4 / 54);
+      // For its first 30 s a song is held against a loud master's level (-10 LUFS), not against its
+      // own first sound: seeded from it, a quiet intro read as its own peak and lit at 0.84.
+      if (st.heard < 30) st.peak = Math.max(st.peak, 44 / 54);
       var expo = clamp(1 - (st.peak - loud) / (18 / 54), 0.4, 1) * clamp(loud / 0.08, 0, 1);
       st.exposure = follow(st.exposure, expo, dt, 0.05, 0.4);
       st.flat = follow(st.flat, Math.sqrt(clamp(a.flatness || 0, 0, 1)), dt, 0.15, 0.6);

@@ -127,7 +127,7 @@
     kick: Object.assign(detector(40, 150, 0.22, 0.16), { bins: true, k: 2.5, lift: 6 }),
     snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2 }),
     hat: detector(6500, 16000, 0.08, 0.06),
-    period: 0.5, lastKick: -10, lastAny: -10, beatPhase: 0, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
+    period: 0.5, lastKick: -10, lastAny: -10, beatPhase: 0, offKicks: 0, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
     nov: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novX: new Float32Array(400),
     acf: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novBin: -1, novFill: 0,
     novLast: [0, 0, 0], novCount: 0, heardAt: -1, rises: [0, 0, 0],
@@ -146,7 +146,10 @@
     cost: 0,
     // The structure: the rows, the row being summed, the novelty's usual level, the last section.
     st: { ring: new Float32Array(ROW * ROWS), sum: new Float32Array(ROW), n: 0, at: -10, i: 0,
-      filled: 0, base: 0.02, armed: true, sectionAt: -10 },
+      filled: 0, sectionAt: -10 },
+    phRow: new Float64Array(6),
+    ph: { n: 0, since: -10, mean: new Float64Array(6), m2: new Float64Array(6), up: new Float64Array(6),
+      upMin: new Float64Array(6), down: new Float64Array(6), downMax: new Float64Array(6) },
   };
 
   function playing() { return html.getAttribute('data-player-state') === 'playing'; }
@@ -284,6 +287,8 @@
       audio.l = new Float32Array(audio.left.fftSize);
       audio.r = new Float32Array(audio.right.fftSize);
       dsp.st.filled = dsp.st.n = 0;
+      dsp.ph.n = 0;
+      dsp.ph.since = performance.now() / 1000;
       dsp.st.sum.fill(0);
       [dsp.kick, dsp.snare, dsp.hat].forEach(function (d) {
         var bins = an.frequencyBinCount;
@@ -696,10 +701,17 @@
     if (dsp.beatN === dsp.down && A.bpm) { A.downbeat = reduced ? 0.35 : 1; dsp.downLast = t; }
   }
 
-  // The structure: a row of features every 0.25 s; once 9 s are heard, the novelty is the mean
-  // difference of the last 3 s from the 6 s before them (0.25 being 1). A section begins where
-  // it stands above both 0.06 and three times its usual level, at least 6 s after the last, and
-  // the next waits until it has fallen back below half of that.
+  // The structure: a row of features every 0.25 s. The novelty (for the pictures) is the mean
+  // difference of the last 3 s from the 6 s before them, once 9 s are heard (0.25 being 1). A new
+  // section is a change of the music's level found by a two-sided Page-Hinkley test, the test of
+  // algoglyph's page-hinkley plate (kernels/stochastic/page-hinkley.ts,
+  // https://korczis.github.io/algoglyph/), on six features (the loudness, the brightness and the
+  // band groups in pairs), each as a z-score against its own mean and spread (at least 0.03)
+  // since the last section: up += z - 1, down += z + 1, a section where either has moved 10 from
+  // its extreme; then everything starts again, with 3 s to learn and at least 6 s between
+  // sections. Against librosa's boundaries on freely licensed recordings (pass 3, 2026-11-24)
+  // the test scored F1 0.49-0.53 offline where the 3 s / 6 s contrast scored 0.34; live, a
+  // tighter spread floor and threshold keep music without sections near two a minute.
   /** @param {number} t */
   function structure(t) {
     var st = dsp.st, sum = st.sum;
@@ -715,6 +727,11 @@
     st.n = 0;
     st.i = (st.i + 1) % ROWS;
     st.filled = Math.min(ROWS, st.filled + 1);
+    var row0 = ((st.i - 1 + ROWS) % ROWS) * ROW, f = dsp.phRow;
+    f[0] = st.ring[row0 + GROUPS];
+    f[1] = st.ring[row0 + GROUPS + 2];
+    for (var gp = 0; gp < 4; gp++) f[2 + gp] = (st.ring[row0 + gp * 2] + st.ring[row0 + gp * 2 + 1]) / 2;
+    pageHinkley(t, f);
     if (st.filled < ROWS) return;
     var nov = 0;
     for (var c = 0; c < ROW; c++) {
@@ -727,16 +744,37 @@
     }
     nov /= ROW;
     A.novelty = unit(nov / 0.25);
-    var bar = Math.max(0.06, st.base * 3);
-    if (st.armed && nov > bar && t - st.sectionAt >= 6) {
+  }
+  /** @param {number} t @param {Float64Array} f the row's six features */
+  function pageHinkley(t, f) {
+    var ph = dsp.ph, alarm = false, k;
+    var learning = t - ph.since < 3;
+    for (k = 0; k < 6; k++) {
+      if (!learning && ph.n > 1) {
+        var z = (f[k] - ph.mean[k]) / Math.max(0.03, Math.sqrt(ph.m2[k] / (ph.n - 1)));
+        ph.up[k] += z - 1;
+        ph.upMin[k] = Math.min(ph.upMin[k], ph.up[k]);
+        ph.down[k] += z + 1;
+        ph.downMax[k] = Math.max(ph.downMax[k], ph.down[k]);
+        if (ph.up[k] - ph.upMin[k] > 10 || ph.downMax[k] - ph.down[k] > 10) alarm = true;
+      }
+    }
+    // Welford's running mean and spread, each feature's own since the last section.
+    ph.n += 1;
+    for (k = 0; k < 6; k++) {
+      var d = f[k] - ph.mean[k];
+      ph.mean[k] += d / ph.n;
+      ph.m2[k] += d * (f[k] - ph.mean[k]);
+    }
+    if (!alarm) return;
+    if (t - dsp.st.sectionAt >= 6) {
       A.section += 1;
       A.change = reduced ? 0.35 : 1;
-      st.sectionAt = t;
-      st.armed = false;
-    } else if (nov < bar / 2) {
-      st.armed = true;
-      st.base += (Math.min(nov, 0.04) - st.base) * 0.02;
+      dsp.st.sectionAt = t;
     }
+    ph.n = 0;
+    ph.since = t;
+    for (k = 0; k < 6; k++) { ph.mean[k] = ph.m2[k] = ph.up[k] = ph.upMin[k] = ph.down[k] = ph.downMax[k] = 0; }
   }
 
   // No sound to read: a calm, honest motion driven by the player's time at 120 bpm while it
@@ -792,12 +830,22 @@
     A[name] = reduced ? 0.35 : 1;
     dsp.onsets.push({ name: name, t: t });
     dsp.lastAny = t;
-    // An onset pulls the beat's phase towards a beat (phase 0) by K·sin(2π·error): a kick most,
-    // a snare less, a hat least; one half a beat off (an off-beat hat) pulls not at all.
-    if (A.bpm && audio.analyser) {
+    // A kick or a snare pulls the beat's phase towards a beat (phase 0) by a share of the error,
+    // a kick most; a hat not at all. The pull is proportional (a sawtooth), not the sine of the
+    // Kuramoto coupling: the sine does not pull at half a beat, so off-beat hats held the phase
+    // on the off-beat (pass 3: techno's phase sat 0.43 of a beat off, 2026-11-24).
+    // Only an onset near a beat pulls (a syncopated kick half a beat off is the groove, not an
+    // error); were the phase ever to sit half a beat off, four kicks in a row away from the beat
+    // set it back on the last of them.
+    if (A.bpm && audio.analyser && name !== 'hat') {
       var err = dsp.beatPhase > 0.5 ? dsp.beatPhase - 1 : dsp.beatPhase;
-      var k = name === 'kick' ? 0.35 : name === 'snare' ? 0.15 : 0.05;
-      dsp.beatPhase = ((dsp.beatPhase - k * Math.sin(2 * Math.PI * err) / (2 * Math.PI)) % 1 + 1) % 1;
+      if (Math.abs(err) < 0.3) {
+        dsp.beatPhase = ((dsp.beatPhase - (name === 'kick' ? 0.3 : 0.1) * err) % 1 + 1) % 1;
+        if (name === 'kick') dsp.offKicks = 0;
+      } else if (name === 'kick' && ++dsp.offKicks >= 4) {
+        dsp.beatPhase = 0;
+        dsp.offKicks = 0;
+      }
     }
     if (dsp.onsets.length > 64) dsp.onsets.shift();
     if (name === 'kick') {
@@ -913,6 +961,17 @@
         if (score > bestScore) { bestScore = score; best = L; bestQ = q; }
       }
     }
+    // The best range may hear a riff, not the beat: among its lag's metrical relatives (3/4, 4/3,
+    // 2/3, 3/2) the one the highs hear best wins, where hats and snares mark the beat's grid. A
+    // dotted-eighth bass riff held techno at 4/3 of its tempo (pass 3, 2026-11-24).
+    var pick = best, pickScore = -Infinity;
+    [1, 0.75, 4 / 3, 2 / 3, 1.5].forEach(function (f) {
+      var Lc = Math.round(best * f);
+      if (Lc < lo || Lc > hi) return;
+      var sc = comb(dsp.acf[2], Lc) * Math.exp(-0.5 * Math.pow(Math.log2(60 / (Lc * NOV_STEP) / 120) / 0.9, 2));
+      if (sc > pickScore) { pickScore = sc; pick = Lc; }
+    });
+    best = pick;
     var r = dsp.acf[bestQ];
     // The peak between steps (a parabola through the best lag and its neighbours).
     var a = comb(r, best - 1), b0 = comb(r, best), c = comb(r, best + 1);
@@ -934,7 +993,10 @@
     dsp.steady = dsp.median && Math.abs(period - dsp.median) < dsp.median * 0.04 ? dsp.steady + 1 : 0;
     dsp.median = period;
     dsp.period = dsp.steady ? dsp.period * 0.7 + period * 0.3 : period;
+    var was = A.bpm;
     A.bpm = dsp.steady >= 1 ? Math.round(60 / dsp.period) : 0;
+    // A new lock starts its phase from the last kick (a beat), not from wherever it drifted.
+    if (!was && A.bpm && A.t - dsp.lastKick < dsp.period * 2) dsp.beatPhase = ((A.t - dsp.lastKick) / dsp.period) % 1;
   }
   // A tempo needs something to hear: at least one onset for every three beats over the last
   // seconds. A room's noise has a faint periodicity of its own (about 260 ms, from the audio path)
@@ -979,12 +1041,14 @@
     A.change *= Math.exp(-dt / 1.5);
     dsp.prev.set(b);
     if (!clock) {
-      // The phase is an oscillator running at the tempo that the onsets pull into step, the
+      // The phase is an oscillator running at the tempo that the onsets pull into step, after the
       // phase locking of algoglyph's Kuramoto plate (dθ/dt = ω + K·sin(ψ − θ),
       // https://korczis.github.io/algoglyph/ , kernels/signal/kuramoto.ts): it never jumps, so a
       // syncopated kick (a hip-hop kick on the and of two) nudges it instead of restarting the
       // beat half-way, as resetting it on every kick did.
-      if (A.bpm) {
+      // It keeps running through a short dropout of the tempo (a break, a fill) rather than
+      // restarting, which threw the beat to a random phase 4-7 times a song.
+      if (A.bpm || (dsp.period > 0 && t - dsp.lastAny < 4)) {
         dsp.beatPhase = (dsp.beatPhase + dt / dsp.period) % 1;
         A.phase = dsp.beatPhase;
       } else {
