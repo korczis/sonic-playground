@@ -262,8 +262,9 @@
       '}',
     ],
     // MilkDrop 2: a swirling history; twelve orbs, one for each note on the circle of fifths, on
-    // Lissajous paths, large and lit while their note sounds; a horizon of the waveform. The
-    // composite adds prism fringes and a kaleidoscope that folds in on a big event.
+    // Lissajous paths, large and lit while their note sounds, and larger as the passage is exposed;
+    // a horizon of the waveform. The composite adds prism fringes and a kaleidoscope that folds in
+    // on a big event.
     prism: [
       'void main() {',
       '  vec2 p = centred(vUv); float r = length(p);',
@@ -277,11 +278,11 @@
       '  for (int i = 0; i < 12; i++) {',
       '    float fi = float(i); float k = uChroma[i];',
       '    vec2 c = C + vec2(0.36, 0.28) * vec2(sin(uTime * 0.35 * (0.5 + fi * 0.071) + fi * 2.0 + ph), cos(uTime * 0.35 * (0.4 + fi * 0.093) + fi + ph));',
-      '    float s = 0.006 + 0.022 * k * (0.75 + 0.25 * uPulse);',
+      '    float s = (0.008 + 0.026 * k * (0.7 + 0.5 * uPulse)) * (0.75 + 0.85 * uExpo);',
       '    float d = length(p - c);',
-      '    col += mix(note(i), vec3(1.0), 0.5 * exp(-d * d / (s * s * 0.15))) * (k + 0.08) * exp(-d * d / (s * s)) * 0.3 * uFr;',
+      '    col += mix(note(i), vec3(1.0), 0.5 * exp(-d * d / (s * s * 0.15))) * (k + 0.1) * exp(-d * d / (s * s)) * (0.2 + 0.4 * uExpo) * uFr;',
       '  }',
-      '  col += tone(0.5) * line(p.y - wave(vUv.x) * 0.12, 0.004) * (0.06 + 0.1 * max(uLevel, 0.0)) * uFr;',
+      '  col += tone(0.5) * line(p.y - wave(vUv.x) * 0.12, 0.003 + 0.004 * uExpo) * (0.06 + 0.1 * max(uLevel, 0.0)) * uFr;',
       '  gl_FragColor = vec4(min(col, vec3(4.0)), 1.0);',
       '}',
     ],
@@ -339,21 +340,22 @@
       '}',
     ],
     // Krash: colour carried along a curl-noise flow that stirs harder with the flux; two to four
-    // silk strands of the waveform per section, spread by the stereo width, thicker on the kick.
+    // silk strands of the waveform per section, spread by the stereo width, thicker on the kick,
+    // swaying and swelling on the beat, as bold as the passage is exposed.
     silk: [
       'void main() {',
       '  vec2 p = centred(vUv);',
-      '  vec2 v = curl(p * (1.2 + 1.2 * varyNow(1.0)) + uTime * 0.05) * (0.0012 + 0.002 * uWarp * (0.5 + 0.5 * flx())) * uFr;',
+      '  vec2 v = curl(p * (1.2 + 1.2 * varyNow(1.0)) + uTime * 0.05) * (0.0012 + 0.002 * uWarp * (0.5 + 0.5 * flx()) + 0.004 * uPulse * uMotion) * uFr;',
       '  vec3 col = prev(p - v) * fade(0.84, 0.972);',
       '  float n = 2.0 + floor(varyNow(2.0) * 3.0);',
       '  for (int i = 0; i < 4; i++) {',
       '    float fi = float(i);',
       '    if (fi >= n) break;',
-      '    vec2 t = rot(p - panC() * 0.5, uTime * 0.06 + uTurn * 0.4 * uMotion + fi * PI / n * (0.6 + 0.8 * uSpread));',
-      '    float y = wave(t.x * 0.7 + 0.5) * (0.03 + 0.045 * lvl()) + 0.03 * sin(t.x * 3.0 + uTime + fi);',
-      '    float ln = (line(t.y - y, 0.004 + 0.006 * uKick * uMotion) + 0.25 * glowl(t.y - y, 0.006)) * (1.0 - smoothstep(0.3, 0.75, abs(t.x)));',
+      '    vec2 t = rot(p - panC() * 0.5, uTime * 0.06 + (uTurn * 0.4 + 0.12 * uPulse * (fi - 1.5)) * uMotion + fi * PI / n * (0.6 + 0.8 * uSpread));',
+      '    float y = (wave(t.x * 0.7 + 0.5) * (0.03 + 0.045 * lvl()) + 0.03 * sin(t.x * 3.0 + uTime + fi)) * (1.0 + (0.9 * uPulse + 0.7 * min(uKick, 1.0)) * uMotion);',
+      '    float ln = (line(t.y - y, (0.0032 + 0.0016 * uExpo) * (1.0 + 0.6 * uPulse) + 0.006 * uKick * uMotion) + 0.25 * glowl(t.y - y, 0.006)) * (1.0 - smoothstep(0.3, 0.75, abs(t.x)));',
       '    vec3 ink = mix(tone(fi / max(n - 1.0, 1.0) * 2.0 - 1.0), accentC(), 0.4 * uPunch);',
-      '    col += mix(ink, vec3(1.0), 0.15 + 0.2 * uLight) * ln * (0.025 + 0.04 * uPunch * uFlash) * uFr;',
+      '    col += mix(ink, vec3(1.0), 0.15 + 0.2 * uLight) * ln * (0.02 + 0.014 * uExpo + 0.04 * uPunch * uFlash) * uFr;',
       '  }',
       '  col += deep(0.0006) * uFr;',
       '  gl_FragColor = vec4(min(col, vec3(3.0)), 1.0);',
@@ -637,14 +639,14 @@
   // the other), peaks in the accent; as wide as the stereo, placed by the balance.
   var TIDAL_VS = [
     'attribute vec2 grid;',
-    'uniform sampler2D uHist; uniform float uHead, uTime, uKick, uMotion, uPan, uSpread;',
+    'uniform sampler2D uHist; uniform float uHead, uTime, uKick, uPulse, uMotion, uPan, uSpread;',
     'varying float vH; varying float vDepth; varying float vBand; varying float vRow; varying vec2 vUv;',
     'void main() {',
     '  float band = grid.x / 47.0; float row = grid.y / 63.0;',
     '  float tv = fract(uHead - grid.y / 64.0 + 0.5 / 64.0);',
     '  float h = texture2D(uHist, vec2(band * (47.0 / 48.0) + 0.5 / 48.0, tv)).r;',
     '  float x = (band - 0.5) * 2.4 * (0.85 + 0.3 * uSpread) + uPan * 0.8;',
-    '  float y = h * (0.42 + uKick * 0.1 * uMotion) + 0.025 * sin(x * 3.0 + uTime + row * 6.0);',
+    '  float y = h * (0.42 + (uKick * 0.3 + uPulse * 0.35) * uMotion) + 0.025 * sin(x * 3.0 + uTime + row * 6.0);',
     '  vH = h; vDepth = row; vBand = band; vRow = grid.y; vUv = vec2(0.0);',
     '  gl_Position = projectionMatrix * modelViewMatrix * vec4(x, y, -row * 3.2, 1.0);',
     '}',
@@ -668,7 +670,7 @@
   // from low at the bottom to high at the top), in iridescent chrome: a thin film shifting
   // around the key's hue, soft boxes in the key and the accent, rougher as the sound is noisier.
   var CHROME_VS = [
-    'uniform float uTime, uBass, uMid, uHigh, uPulse, uPunch, uWarp, uMotion, uReact, uVariant, uPrevVariant, uMorph;',
+    'uniform float uTime, uBass, uMid, uHigh, uLevel, uPulse, uPunch, uWarp, uMotion, uReact, uVariant, uPrevVariant, uMorph, uSpecMean;',
     'uniform sampler2D uSpec;',
     'varying vec3 vPos; varying float vDisp; varying vec2 vUv;',
     'float h1(float n) { return fract(sin(n * 127.1 + 311.7) * 43758.5453); }',
@@ -676,11 +678,16 @@
     'vec3 dir(float k) { return normalize(mix(dirOf(uPrevVariant, k), dirOf(uVariant, k), smoothstep(0.0, 1.0, uMorph))); }',
     'void main() {',
     '  vec3 n = normalize(position);',
-    '  float d = sin(dot(n, dir(1.0)) * 3.2 + uTime * 1.1) * (0.06 + max(uBass, 0.0) * 0.14);',
-    '  d += sin(dot(n, dir(4.0)) * 5.5 - uTime * 1.6) * (0.03 + max(uMid, 0.0) * 0.08);',
-    '  d += sin(dot(n, dir(7.0)) * 9.0 + uTime * 2.3) * (0.01 + max(uHigh, 0.0) * 0.04);',
-    '  d += texture2D(uSpec, vec2(n.y * 0.5 + 0.5, 0.25)).r * 0.12 * uWarp * min(uReact, 1.5);',
-    '  vec4 w = modelMatrix * vec4(n * (1.0 + d + (0.05 * uPulse + 0.05 * uPunch) * uMotion), 1.0);',
+    // As loud as the passage is: the level against its last seconds (1 at its usual level).
+    '  float lv = clamp(1.0 + uLevel, 0.25, 1.75);',
+    '  float d = sin(dot(n, dir(1.0)) * 3.2 + uTime * 1.1) * (0.03 + 0.03 * lv + max(uBass, 0.0) * 0.14);',
+    '  d += sin(dot(n, dir(4.0)) * 5.5 - uTime * 1.6) * (0.015 + 0.015 * lv + max(uMid, 0.0) * 0.08);',
+    '  d += sin(dot(n, dir(7.0)) * 9.0 + uTime * 2.3) * (0.005 + 0.005 * lv + max(uHigh, 0.0) * 0.04);',
+    // The spectrum's relief against its mean: a dense passage lifts every band to the top, and
+    // drawn as it was it only swelled the sphere evenly, which does not move.
+    '  float sp = texture2D(uSpec, vec2(n.y * 0.5 + 0.5, 0.25)).r;',
+    '  d += (0.4 * sp + 0.6 * (sp - uSpecMean) * 2.5 * lv) * 0.12 * uWarp * min(uReact, 1.5);',
+    '  vec4 w = modelMatrix * vec4(n * (1.0 + d + (0.09 * uPulse + 0.05 * uPunch) * uMotion), 1.0);',
     '  vPos = w.xyz; vDisp = d; vUv = vec2(0.0);',
     '  gl_Position = projectionMatrix * viewMatrix * w;',
     '}',
@@ -999,7 +1006,10 @@
           // the downbeat and a push on a big event (both held back under reduced motion).
           var v = varied(m), t = U.uTime.value;
           var back = st.fit() / s.params.zoom;
-          var swing = (m.barPulse * 0.06 * Math.min(1, react) + m.punch * 0.1 * Math.min(1, react)) * m.motion;
+          // The beat and the kick dip the camera towards the ridges (the beat barely showed with
+          // the downbeat and the big events alone).
+          var swing = ((m.barPulse * 0.06 + m.punch * 0.1) * Math.min(1, react) + U.uPulse.value * 0.16
+            + Math.min(1, U.uKick.value) * 0.1) * m.motion;
           st.cam.position.set(Math.sin(t * 0.07) * 0.3 + (v - 0.5) * 0.6, 0.65 + 0.35 * v + 0.1 * Math.sin(t * 0.05), 0.35 + 0.5 * back - swing);
           st.cam.lookAt(0, -0.05 - swing * 0.3, -1.1);
           st.render();
@@ -1012,15 +1022,23 @@
     chrome: function (ctx) {
       var geo = new THREE.IcosahedronGeometry(1, ctx.small ? 20 : 32);
       var mat = new THREE.ShaderMaterial({ vertexShader: CHROME_VS, fragmentShader: PRELUDE + CHROME.join('\n'),
-        uniforms: Object.assign({}, ctx.U, { uLamp: { value: new THREE.Vector3(2, 2, 3) }, uLamp2: { value: new THREE.Vector3(-2, 1, 3) } }) });
+        uniforms: Object.assign({}, ctx.U, { uLamp: { value: new THREE.Vector3(2, 2, 3) }, uLamp2: { value: new THREE.Vector3(-2, 1, 3) },
+          uSpecMean: { value: 0 } }) });
       var mesh = new THREE.Mesh(geo, mat);
       var st = stage(ctx, 45);
       st.scene.add(mesh);
+      var spin = 0;
       return {
         frame: function (an, s) {
-          var m = s.m, t = ctx.U.uTime.value, v = varied(m);
-          // This section's axis of turn; the lights placed by the balance.
-          mesh.rotation.set(Math.sin(t * 0.1) * 0.4 + v, t * 0.25 * (0.6 + 0.8 * v), 0);
+          var m = s.m, t = ctx.U.uTime.value, v = varied(m), rr = Math.min(1, s.params.react);
+          var sum = 0;
+          for (var i = 0; i < an.bands.length; i++) sum += an.bands[i];
+          mat.uniforms.uSpecMean.value = sum / an.bands.length;
+          // This section's axis of turn, turning as fast as the passage is loud (the tempo's clock
+          // alone ran as fast in a quiet break as in the drop); the lights placed by the balance.
+          spin += Math.max(0, Math.min(0.1, an.dt)) * ctx.pace * m.rate * s.params.speed * 0.25 * (0.6 + 0.8 * v)
+            * ((1 - rr) + rr * (0.4 + 0.6 * Math.min(1.75, m.level)));
+          mesh.rotation.set(Math.sin(t * 0.1) * 0.4 + v, spin, 0);
           mat.uniforms.uLamp.value.set(Math.cos(t * 0.6) * 3 + m.pan * 6, 1.5 + Math.sin(t * 0.4), Math.sin(t * 0.6) * 3);
           mat.uniforms.uLamp2.value.set(-Math.cos(t * 0.45) * 3, -1 + Math.cos(t * 0.3), 3);
           st.cam.position.set(0, 0, 3.4 * st.fit());

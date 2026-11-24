@@ -2181,6 +2181,88 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (background with music): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // The pictures keep moving when the music is loud, and the sparse ones are not nearly black
+  // (analysis pass 2 on real recordings: tower, pocket and moire moved less the louder it got,
+  // starlane, swarm and prism stayed near black). With loud music (gain 1.6) the picture moves no
+  // less than at gain 1 (within 15 %: the analysis gains the level away, so the two differ by
+  // the sampling's noise), and keeps moving with the music: tower's and pocket's bars jump on the
+  // kick (the cell change 0-150 ms after a kick against 200-400 ms after it, per frame, above 1.18
+  // and 1.05; they read 1.05-1.13 and 0.83-0.90 before, the bars only drew the spectrum against
+  // its own loudest band, and pocket's scope moves on every frame), and moire
+  // turns as fast as the passage is loud (it read 0.064-0.074 a cell before). With the music,
+  // starlane, swarm and prism keep a median luminance above 0.045, 0.06 and 0.075 (they read
+  // 0.022-0.030, 0.027-0.035 and 0.031-0.070 before).
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await context.grantPermissions(['microphone']);
+    await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
+    const stage = '[data-visualizer-stage] canvas';
+    // The mean change of a cell between samples 180 ms apart, and the median luminance.
+    const watch = async () => {
+      let prev = null, moved = 0;
+      const lumas = [];
+      for (let k = 0; k < 15; k++) {
+        const s = await page.evaluate(pictureStats, stage);
+        if (prev) moved += s.cells.reduce((acc, y, c) => acc + Math.abs(y - prev.cells[c]), 0) / s.cells.length / 14;
+        lumas.push(s.luma);
+        prev = s;
+        await page.waitForTimeout(180);
+      }
+      return { moved, luma: lumas.sort((x, y) => x - y)[7] };
+    };
+    // How much more a cell changes from frame to frame just after a kick than between kicks.
+    const onKick = () => page.evaluate(({ src, sel }) => new Promise((done) => {
+      const stats = (0, eval)('(' + src + ')');
+      const rows = [];
+      let prev = null;
+      const t0 = performance.now();
+      const tick = () => {
+        const s = stats(sel);
+        if (prev) rows.push([performance.now() / 1000, s.cells.reduce((acc, y, c) => acc + Math.abs(y - prev.cells[c]), 0) / s.cells.length]);
+        prev = s;
+        if (performance.now() - t0 < 4000) { requestAnimationFrame(tick); return; }
+        const kicks = window.__music.kicks;
+        let on = 0, no = 0, off = 0, nf = 0;
+        for (const [t, d] of rows) {
+          const k = kicks.filter((x) => x <= t).pop();
+          if (k === undefined) continue;
+          if (t - k < 0.15) { on += d; no++; } else if (t - k > 0.2 && t - k < 0.4) { off += d; nf++; }
+        }
+        done(no && nf && off > 0 ? (on / no) / (off / nf) : 0);
+      };
+      requestAnimationFrame(tick);
+    }), { src: pictureStats.toString(), sel: stage });
+    for (const [mode, jump] of [['tower', 1.18], ['pocket', 1.05], ['moire', 0]]) {
+      await page.evaluate((m) => { window.__music.gain(1); window.SonicVisualizer.set(m); }, mode);
+      await page.waitForTimeout(2500);
+      const usual = await watch();
+      await page.evaluate(() => window.__music.gain(1.6));
+      await page.waitForTimeout(800);
+      const loud = await watch();
+      if (mode === 'moire') {
+        check(loud.moved >= usual.moved * 0.85 && loud.moved > 0.085,
+          `visualiser (moire): with loud music it turns no less, and fast (cell change ${loud.moved.toFixed(4)} at gain 1.6, ${usual.moved.toFixed(4)} at gain 1)`);
+      } else {
+        const kick = await onKick();
+        check(loud.moved >= usual.moved * 0.85 && kick > jump,
+          `visualiser (${mode}): with loud music the bars move no less and jump on the kick (cell change ${loud.moved.toFixed(4)} at gain 1.6, ${usual.moved.toFixed(4)} at gain 1; ${kick.toFixed(2)}x just after a kick)`);
+      }
+    }
+    await page.evaluate(() => window.__music.gain(1));
+    for (const [mode, least] of [['starlane', 0.045], ['swarm', 0.06], ['prism', 0.075]]) {
+      await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
+      await page.waitForTimeout(2500);
+      const seen = await watch();
+      check(seen.luma > least, `visualiser (${mode}): with music it is not nearly black (median luminance ${seen.luma.toFixed(3)}, above ${least})`);
+    }
+    check(errors.length === 0, `visualiser (loud and sparse modes): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // A negative control for litShare: a blank canvas is not a picture.
   {
     const { context, page } = await open(browser, at(''), desktop);
