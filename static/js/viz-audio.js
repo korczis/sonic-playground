@@ -132,7 +132,7 @@
     kick: Object.assign(detector(40, 150, 0.22, 0.16), { bins: true, k: 2.5, lift: 6 }),
     snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2 }),
     hat: detector(6500, 16000, 0.08, 0.06),
-    period: 0.5, lastKick: -10, lastAny: -10, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
+    period: 0.5, lastKick: -10, lastAny: -10, beatPhase: 0, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
     nov: new Float32Array(400), novX: new Float32Array(400), acf: new Float32Array(400), novBin: -1, novFill: 0, novLast: 0, novCount: 0, heardAt: -1,
     onsets: /** @type {{name: string, t: number}[]} */ ([]),
     clock: { playing: false, base: 0, at: 0, beat: -1, half: -1 },
@@ -451,9 +451,14 @@
       A.flux = A.flux * 0.6 + Math.min(1, rise / BANDS / 4 / (dt * 60)) * 0.4;
       // The beat's novelty leans on the bass, where the kick carries it: a riff on dotted eighths
       // in the mids made a 124 bpm techno track read as 166 (2026-11-24).
+      // Each band's rise is taken over the loudest of its neighbours a frame ago (SuperFlux, Böck and
+      // Widmer 2013): a sustained bass line's partials, beating with each other, wobble a band by a
+      // few dB from frame to frame and read as a pulse of their own; a played note rises over
+      // its neighbours too.
       var beatRise = 0;
       for (var y2 = 0; y2 < BANDS; y2++) {
-        var up = Math.max(0, Math.max(dsp.db[y2], floor) - Math.max(dsp.prevDb[y2], floor));
+        var before = Math.max(dsp.prevDb[y2], y2 > 0 ? dsp.prevDb[y2 - 1] : -200, y2 < BANDS - 1 ? dsp.prevDb[y2 + 1] : -200, floor);
+        var up = Math.max(0, Math.max(dsp.db[y2], floor) - before);
         beatRise += up * (y2 < BASS_END ? 4 : y2 < MID_END ? 1 : 0.5);
       }
       // Only a frame that brought new sound counts, timed by the audio's own clock: the audio thread
@@ -769,6 +774,13 @@
     A[name] = reduced ? 0.35 : 1;
     dsp.onsets.push({ name: name, t: t });
     dsp.lastAny = t;
+    // An onset pulls the beat's phase towards a beat (phase 0) by K·sin(2π·error): a kick most,
+    // a snare less, a hat least; one half a beat off (an off-beat hat) pulls not at all.
+    if (A.bpm && audio.analyser) {
+      var err = dsp.beatPhase > 0.5 ? dsp.beatPhase - 1 : dsp.beatPhase;
+      var k = name === 'kick' ? 0.35 : name === 'snare' ? 0.15 : 0.05;
+      dsp.beatPhase = ((dsp.beatPhase - k * Math.sin(2 * Math.PI * err) / (2 * Math.PI)) % 1 + 1) % 1;
+    }
     if (dsp.onsets.length > 64) dsp.onsets.shift();
     if (name === 'kick') {
       A.beat = !reduced;
@@ -788,8 +800,8 @@
   var NOV_N = 400;
   // Measured on freely licensed recordings (2026-11-24): a beat's clarity is 0.3-0.55 (techno,
   // hip-hop, rock), 0.15-0.3 (swing jazz); music without one, 0.05-0.15, noise up to about 0.14.
-  var TEMPO_CONF = 0.25;
-  var TEMPO_KEEP = 0.17;
+  var TEMPO_CONF = 0.21;
+  var TEMPO_KEEP = 0.15;
   /** @param {number} t @param {number} v */
   function novelty(t, v) {
     var bin = Math.floor(t / NOV_STEP);
@@ -911,10 +923,18 @@
     A.change *= Math.exp(-dt / 1.5);
     dsp.prev.set(b);
     if (!clock) {
-      // The phase counts from the last kick, or from the last onset where no kick came for two beats
-      // (a jazz ride, a hip-hop snare carry the beat as well).
-      var anchor = t - dsp.lastKick < dsp.period * 2 ? dsp.lastKick : Math.max(dsp.lastKick, dsp.lastAny);
-      A.phase = A.bpm ? ((t - anchor) / dsp.period) % 1 : (t * 2) % 1;
+      // The phase is an oscillator running at the tempo that the onsets pull into step, the
+      // phase locking of algoglyph's Kuramoto plate (dθ/dt = ω + K·sin(ψ − θ),
+      // https://korczis.github.io/algoglyph/ , kernels/signal/kuramoto.ts): it never jumps, so a
+      // syncopated kick (a hip-hop kick on the and of two) nudges it instead of restarting the
+      // beat half-way, as resetting it on every kick did.
+      if (A.bpm) {
+        dsp.beatPhase = (dsp.beatPhase + dt / dsp.period) % 1;
+        A.phase = dsp.beatPhase;
+      } else {
+        dsp.beatPhase = (t * 2) % 1;
+        A.phase = dsp.beatPhase;
+      }
       // The bar: the beats since the downbeat, counted from the last kick on the grid; without a
       // tempo it runs at 120 bpm, as the beat does.
       var beats = dsp.beatN - dsp.down + 4 + (t - dsp.beatAt) / dsp.period;

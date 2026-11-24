@@ -1353,6 +1353,50 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (hip-hop tempo): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // The beat's phase is an oscillator the onsets pull into step (algoglyph's Kuramoto coupling),
+  // never restarted by a kick: on a syncopated groove it never jumps back (restarting it on every
+  // kick threw it half a beat back on the kick on the and of two), and on a four-on-the-floor
+  // groove it reads close to 0 when a kick arrives.
+  for (const [label, groove] of [['syncopated', { bpm: 86, kicks: [0, 1.5, 2.5], snares: [1, 3] }], ['four on the floor', { bpm: 124 }]]) {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript(musicMic, groove);
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.analysis().bpm > 0, null, { timeout: 25000 }).catch(() => {});
+    await page.waitForTimeout(3000);
+    const run = await page.evaluate(() => new Promise((done) => {
+      const rows = [];
+      const t0 = performance.now();
+      const tick = () => {
+        const a = window.SonicVisualizer.analysis();
+        rows.push([performance.now() / 1000, a.phase, a.bpm]);
+        if (performance.now() - t0 < 6000) requestAnimationFrame(tick); else done({ rows, kicks: window.__music.kicks.slice() });
+      };
+      requestAnimationFrame(tick);
+    }));
+    const locked = run.rows.filter((r) => r[2] > 0);
+    let back = 0;
+    for (let i = 1; i < locked.length; i++) {
+      const d = locked[i][1] - locked[i - 1][1];
+      if (d < -0.05 && d > -0.8) back++;
+    }
+    if (label === 'syncopated') {
+      check(locked.length > 200 && back === 0, `visualiser: on a syncopated groove the beat's phase never jumps back (${back} jumps in ${locked.length} frames)`);
+    } else {
+      // The kick reaches the analysis about 60-100 ms after it is played.
+      const at = (t) => { let best = null; for (const r of locked) if (!best || Math.abs(r[0] - t) < Math.abs(best[0] - t)) best = r; return best; };
+      const near = run.kicks.filter((k) => k > locked[0][0] + 0.2 && k < locked[locked.length - 1][0] - 0.2).map((k) => {
+        const r = at(k + 0.08); const ph = r[1]; return Math.min(ph, 1 - ph);
+      });
+      const aligned = near.filter((x) => x < 0.15).length;
+      check(near.length >= 8 && aligned >= near.length * 0.7 && back === 0,
+        `visualiser: on four on the floor the beat's phase reads near 0 when a kick arrives (${aligned} of ${near.length}; ${back} jumps back)`);
+    }
+    check(errors.length === 0, `visualiser (beat phase, ${label}): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // A microphone in a room with no music: its noise (pink, as a room's is) is no beat. A quiet
   // room gives next to no onsets and a loud one (a fan, traffic) no tempo: a first version of the
   // dB analysis found a kick about every second in both, and a tempo of 110-126 (2026-11-22).
