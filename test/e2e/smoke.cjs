@@ -2078,7 +2078,9 @@ async function shot(page, name) {
       const from = await page.evaluate(pictureStats, sel);
       const loud = await moves();
       await page.evaluate((c) => window.__music.chord(c), i % 2 ? C : FIS);
-      await page.waitForTimeout(3200);
+      // The key is read over about 8 s and held against a newcomer for 2 s, and the palette turns
+      // to it over 3 s: a change of key shows within about 8 s, never from chord to chord.
+      await page.waitForTimeout(8000);
       const to = await page.evaluate(pictureStats, sel);
       // The loudness falls over seconds, and with it the exposure: silence is judged once it settled.
       await page.evaluate(() => window.__music.gain(0));
@@ -2159,7 +2161,8 @@ async function shot(page, name) {
       await page.evaluate(() => window.__music.gain(1));
       chord = 1 - chord;
       await page.evaluate((c) => window.__music.chord(c), chords[chord]);
-      await page.waitForTimeout(3300);
+      // The key shows within about 8 s (read over 8 s, held 2 s, the palette turning over 3 s).
+      await page.waitForTimeout(8000);
       const turned = await watchPicture();
       check(music.moved > quiet.moved * 1.6 && music.moved > 0.004,
         `visualiser (${mode}): the picture moves with the music (cell change ${music.moved.toFixed(4)} with music, ${quiet.moved.toFixed(4)} in silence)`);
