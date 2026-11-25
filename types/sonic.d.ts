@@ -164,7 +164,7 @@ interface SonicVizScratch {
 interface SonicVizGLHandle {
   canvas: HTMLCanvasElement;
   /** What the renderer holds on the GPU (three.js renderer.info.memory). */
-  memory(): { textures: number; geometries: number };
+  memory(): { textures: number; geometries: number; scale: number };
   set(id: string): void;
   frame(a: SonicVizAnalysis, s: SonicVizScratch): void;
   resize(): void;
@@ -226,7 +226,7 @@ interface Window {
     /** A copy of the full screen's shared signals, or null while it is closed. */
     map(): SonicVizMap | null;
     /** The full screen's WebGL renderer holdings; null for a p5 picture or while closed. */
-    memory(): { textures: number; geometries: number } | null;
+    memory(): { textures: number; geometries: number; scale: number } | null;
     modes(): string[];
     open(mode?: string): void;
     close(): void;
