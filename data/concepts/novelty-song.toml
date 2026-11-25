@@ -1,0 +1,11 @@
+term = "novelty song"
+category = "culture"
+wikipedia = "https://en.wikipedia.org/wiki/Novelty_song"
+see_also = ["parody", "hook", "music video"]
+
+[en]
+definition = "A song built on a novel idea rather than on a feeling: a gimmick, a joke, an absurd story or an unusual sound, such as a stutter, a sped-up voice or a sound effect. Novelty songs overlap with comedy songs and parodies, and a good one is often catchy enough to outlive the joke."
+
+[cs]
+term = "recesní píseň"
+definition = "Píseň postavená na nápadu, nikoli na citu: na triku, vtipu, absurdním příběhu nebo neobvyklém zvuku, třeba koktání, zrychleném hlasu či zvukovém efektu. Recesní písně se prolínají s humornými písněmi a parodiemi a ty nejlepší bývají tak chytlavé, že přežijí i samotný vtip."
