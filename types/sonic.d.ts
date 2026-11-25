@@ -143,6 +143,9 @@ interface SonicVizMap {
   /** Pace (tempo over 120 bpm, 0.6..1.6); after the beat, before it, after the downbeat (0..1);
    *  the latched big event (0..1, decaying). */
   rate: number; pulse: number; pre: number; barPulse: number; punch: number;
+  /** The latched snare, a smaller impulse than punch (0..0.65, decaying), and the hats' shimmer,
+   *  a short glint on every hat (0..1, decaying), drawn as scattered light, never a flash. */
+  snap: number; shimmer: number;
   /** The scene variant of this section and the last (0..1), and the crossfade into it (0..1). */
   variant: number; prevVariant: number; morph: number;
   /** An impulse's share of brightness (0.3 after two flashes within a second), the motion cap,

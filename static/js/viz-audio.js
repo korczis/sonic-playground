@@ -113,7 +113,8 @@
   // rose: on a mastered mix it found none of 25 kicks and no tempo (measured 2026-11-22).
   function detector(fromHz, toHz, gap, tau) {
     return { from: fromHz, to: toHz, lo: bandOf(fromHz), hi: bandOf(toHz), a: 1, z: 2, gap: gap, tau: tau,
-      bins: false, k: 1.5, min: 1.2, lift: 0, level: -200, prev: -200, lag: -200, slow: -200, mean: 0, vari: 1, last: -10 };
+      bins: false, k: 1.5, min: 1.2, lift: 0, level: -200, prev: -200, lag: -200, slow: -200,
+      mean: 0, vari: 1, last: -10, split: 0, topPrev: -200, topLag: -200 };
   }
   var dsp = {
     db: new Float32Array(BANDS), prevDb: new Float32Array(BANDS), primed: false, ceil: -30,
@@ -125,7 +126,14 @@
     // snare and the hats read their bands equally, so a loud bin (a kick's tail, the bass line)
     // does not decide their level.
     kick: Object.assign(detector(40, 150, 0.22, 0.16), { bins: true, k: 2.5, lift: 6 }),
-    snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2 }),
+    // A kick's own sound reaches the snare's lower bands: its fundamental's leakage and its
+    // attack lit 200-1100 Hz 10-34 dB above the floor, and the range's mean rose 5-7 dB on every
+    // isolated kick, where a snare rose 14-16 (r2, 2026-11-25). A snare must also rise over its
+    // bands above 1 kHz (`split`), which isolated kicks raised by 0.8 dB at most and isolated
+    // snares by 11-19 (a quiet snare on a kick in a mix by 4-6). Asked only within 30 ms after a
+    // kick, it let a kick through whose own onset came a frame after its spill; ignoring the
+    // snare near a kick would drop every snare on two and four.
+    snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2, split: bandOf(1000) }),
     hat: detector(6500, 16000, 0.08, 0.06),
     period: 0.5, lastKick: -10, lastAny: -10, beatPhase: 0, offKicks: 0, weak: 0, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
     nov: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novX: new Float32Array(400),
@@ -500,27 +508,61 @@
   function detect(name, t, dt) {
     var d = dsp[name];
     var level = 0, lvl = 0;
+    // Nothing below the picture's floor rises. Digital silence reads -160 to -200 dB: a kick's
+    // faint spill into a few of the snare's bands, out of -160 while the rest stayed silent, rose
+    // the range's mean by the full 24 dB, so every isolated kick also counted as a snare (r2,
+    // 2026-11-25). The snare's and the hats' bands are each floored before their mean, as the
+    // novelty's are, so a range rises only as far as its bands rise into the picture.
+    // The lift over the last second reads the range's level unfloored, as before: a quiet snare
+    // just after the music fell 18 dB, while the ceiling still fell after it, rose too little
+    // over its floored second to count.
+    var floor = dsp.ceil - RANGE, raw = 0;
     if (d.bins) {
       for (var k = d.a; k < d.z; k++) level += audio.power[k];
-      level = 10 * Math.log10(level / (d.z - d.a) + 1e-20);
+      level = raw = 10 * Math.log10(level / (d.z - d.a) + 1e-20);
     } else {
-      for (var c = d.lo; c < d.hi; c++) level += Math.max(dsp.db[c], -160);
+      for (var c = d.lo; c < d.hi; c++) {
+        level += Math.max(dsp.db[c], floor);
+        raw += Math.max(dsp.db[c], -160);
+      }
       level /= d.hi - d.lo;
+      raw /= d.hi - d.lo;
     }
     for (var b = d.lo; b < d.hi; b++) lvl += A.bands[b];
     lvl /= d.hi - d.lo;
-    if (!dsp.primed) { d.prev = d.lag = d.slow = level; }
-    d.level = level;
+    if (!dsp.primed) { d.prev = d.lag = level; d.slow = raw; }
+    d.level = raw;
     var ref = dt >= 0.025 ? d.prev : d.lag;
     d.lag = d.prev;
     d.prev = level;
+    // The snare's bands above 1 kHz on their own, read the same way (the snare's `split`).
+    var topRise = 24;
+    if (d.split) {
+      var top = 0;
+      for (var u = d.split; u < d.hi; u++) top += Math.max(dsp.db[u], floor);
+      top /= d.hi - d.split;
+      if (!dsp.primed) d.topPrev = d.topLag = top;
+      topRise = top - Math.max(dt >= 0.025 ? d.topPrev : d.topLag, floor);
+      d.topLag = d.topPrev;
+      d.topPrev = top;
+    }
+    // Both ends of the rise are floored at this frame's floor: a level floored when it was read
+    // rose with the ceiling, and a click's jump of the ceiling put a kick into a silent bass. The
+    // kick's own level, a mean power its silent bins add nothing to, is not floored: floored, its
+    // quiet kicks after a loud passage came late while the ceiling fell after them.
+    var fl = d.bins ? -Infinity : floor;
+    var at = Math.max(level, fl);
     // A rise counts up to 24 dB: sound after silence is one onset, not a burst that would raise
     // the threshold for seconds.
-    var f = Math.min(24, Math.max(0, level - ref));
+    var f = Math.min(24, Math.max(0, at - Math.max(ref, fl)));
     var sd = Math.sqrt(d.vari);
     var a = 1 - Math.exp(-dt / 0.8);
-    if (f > d.mean + d.k * sd + d.min && level > d.slow + d.lift && lvl > 0.05 && t - d.last > d.gap) onset(name, t);
-    d.slow += (Math.max(level, d.slow - 24) - d.slow) * a;
+    var lifted = raw > d.slow + d.lift;
+    var ownSound = !d.split || topRise > d.min + 2;
+    if (f > d.mean + d.k * sd + d.min && lifted && ownSound && lvl > 0.05 && t - d.last > d.gap) {
+      onset(name, t);
+    }
+    d.slow += (Math.max(raw, d.slow - 24) - d.slow) * a;
     // The running mean and variance forget over about a second, whatever the frame rate; an
     // outlier counts as three standard deviations, so one burst does not raise the threshold for
     // the onsets after it.
@@ -855,10 +897,11 @@
   }
 
   // The tempo: the autocorrelation of the novelty (the bands' rise, frame by frame) over the last
-  // 8 s, at 20 ms a step, for 75-180 bpm. Each lag scores its own correlation and half its double's
-  // (a beat repeats at two beats), weighed by a log-normal preference around 120 bpm (a tempo and
-  // its double both correlate; the nearer one to 120 wins). It is said only while the correlation
-  // is clear (TEMPO_CONF) and once three estimates in a row, half a second apart, agree within 4%.
+  // 8 s, at 20 ms a step, for 75-180 bpm. Each lag scores its correlations at its multiples and
+  // half those of its double and its half (metrical), weighed by a log-normal preference around
+  // 120 bpm (a tempo and its double both correlate; the nearer one to 120 wins). It is said only
+  // while the correlation is clear (TEMPO_CONF) and once two estimates in a row, half a second
+  // apart, agree within 4%.
   // The kicks alone found it on four-on-the-floor only: real hip-hop, rock and jazz have
   // syncopated or missing kicks, and a piano without a beat read 110 bpm (measured on freely
   // licensed recordings, 2026-11-24).
@@ -872,6 +915,10 @@
   var TEMPO_CONF = 0.3;
   var TEMPO_KEEP = 0.18;
   var TEMPO_SHARED = 0.16;
+  // A first lock asks the ranges for a little more than a lock held does: replayed over pass 1's
+  // novelty, Vivaldi's false lock fell from .14 to .08 of its frames and a piano's from .15 to .10,
+  // while jazz locked .46 of its frames instead of .54, 3 s later (r2, 2026-11-25).
+  var TEMPO_SHARED_FIRST = 0.2;
   var RANGES = 3;
   /** @param {number} t @param {number[]} v each range's novelty */
   function novelty(t, v) {
@@ -949,29 +996,36 @@
       r[L] = r0 > 1e-9 ? acc / r0 * n / (n - L) : 0;
     }
   }
+  // A beat sits in a metrical hierarchy: its bar (two beats and more) and its eighths repeat with
+  // it, while a riff's period (a dotted eighth's 3/4 of the beat) has fewer such neighbours. A
+  // riff sharing the kicks' range still builds its own (3/4, 3/2, 3 beats) and reads 2/3 of the
+  // tempo (a 110 Hz saw riff at 124 bpm read 83, 2026-11-25).
+  // A lag scores its own comb plus half its double's and half its half's; an odd lag's half lies
+  // between two steps, so the better of them counts (dnb's 174 bpm is 17.2 steps: the half read
+  // one step short lost it, 2026-11-25).
+  /** @param {Float32Array} r @param {number} L */
+  function metrical(r, L) {
+    var half = Math.max(comb(r, L >> 1), comb(r, (L + 1) >> 1));
+    return comb(r, L) + 0.5 * comb(r, 2 * L) + 0.5 * half;
+  }
   function estimate() {
     var lo = Math.round(60 / 180 / NOV_STEP), hi = Math.round(60 / 75 / NOV_STEP), q, L;
     for (q = 0; q < RANGES; q++) correlate(q, lo, hi);
+    // Every lag of every range, scored by its metrical support and a log-normal preference around
+    // 120 bpm, 0.9 octave wide; the best range's best lag wins. Choosing the plain comb's best lag
+    // first and then among its relatives (3/4, 4/3, 2/3, 3/2) by the highs held techno at 166 for
+    // 124 in 59% of its locked frames and dnb at 116 for 174; replayed over the novelty logged on
+    // eight recordings, this rule read techno right .69 of the time (.44), dnb .92 (.18), rock .96
+    // and hip-hop 1.00 as before, and locked jazz in 12 s instead of 26 (r2 pass 1, 2026-11-25).
     var best = -1, bestQ = 0, bestScore = -Infinity;
     for (q = 0; q < RANGES; q++) {
       for (L = lo; L <= hi; L++) {
         var bpm = 60 / (L * NOV_STEP);
         var prior = Math.exp(-0.5 * Math.pow(Math.log2(bpm / 120) / 0.9, 2));
-        var score = comb(dsp.acf[q], L) * prior;
+        var score = metrical(dsp.acf[q], L) * prior;
         if (score > bestScore) { bestScore = score; best = L; bestQ = q; }
       }
     }
-    // The best range may hear a riff, not the beat: among its lag's metrical relatives (3/4, 4/3,
-    // 2/3, 3/2) the one the highs hear best wins, where hats and snares mark the beat's grid. A
-    // dotted-eighth bass riff held techno at 4/3 of its tempo (pass 3, 2026-11-24).
-    var pick = best, pickScore = -Infinity;
-    [1, 0.75, 4 / 3, 2 / 3, 1.5].forEach(function (f) {
-      var Lc = Math.round(best * f);
-      if (Lc < lo || Lc > hi) return;
-      var sc = comb(dsp.acf[2], Lc) * Math.exp(-0.5 * Math.pow(Math.log2(60 / (Lc * NOV_STEP) / 120) / 0.9, 2));
-      if (sc > pickScore) { pickScore = sc; pick = Lc; }
-    });
-    best = pick;
     var r = dsp.acf[bestQ];
     // The peak between steps (a parabola through the best lag and its neighbours).
     var a = comb(r, best - 1), b0 = comb(r, best), c = comb(r, best + 1);
@@ -988,7 +1042,8 @@
       var keep = combAll(Math.round(dsp.period / NOV_STEP));
       if (keep >= TEMPO_KEEP && keep >= 0.8 * b0 && supported(dsp.period)) { dsp.tempoConf = keep; return; }
     }
-    if (dsp.tempoConf < (A.bpm ? TEMPO_KEEP : TEMPO_CONF) || shared < TEMPO_SHARED || !supported(period)) {
+    var heard = A.bpm ? shared >= TEMPO_SHARED : shared >= TEMPO_SHARED_FIRST;
+    if (dsp.tempoConf < (A.bpm ? TEMPO_KEEP : TEMPO_CONF) || !heard || !supported(period)) {
       // A tempo held gives way after three weak estimates in a row (1.5 s), not one: a slow device
       // (a CI runner at 30 fps) lost a syncopated groove's tempo on a single dip.
       if (A.bpm && ++dsp.weak < 3) return;

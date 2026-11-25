@@ -1424,6 +1424,151 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (beat phase, ${label}): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // Each hit is found as what it is, and a riff over the beat does not take the tempo (r2,
+  // 2026-11-25). Isolated hits: a click, a kick and a snare in turn, 600 ms apart, in digital
+  // silence and then over a room's noise floor (from 10 s). A kick's faint spill into the snare's
+  // range rose out of the silence's -160 dB and counted as a snare on every kick, silent or not.
+  // Techno: a kick on every beat at 124 bpm, a clap on two and four, quiet hats on the off-beats
+  // and a bright synth stab on every dotted eighth, the riff that held a techno recording at 166
+  // (4/3 of 124) and this pattern at no tempo at all, its 4/3 failing the gates.
+  for (const label of ['isolated hits', 'techno']) {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript((techno) => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getDisplayMedia = undefined;
+      md.getUserMedia = async () => {
+        const ac = new AudioContext();
+        await ac.resume();
+        const out = ac.createMediaStreamDestination();
+        const master = ac.createGain();
+        master.gain.value = 0.9;
+        master.connect(out);
+        const noise = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+        const d = noise.getChannelData(0);
+        let seed = 7;
+        for (let i = 0; i < d.length; i++) { seed = (seed * 16807) % 2147483647; d[i] = seed / 1073741823.5 - 1; }
+        const click = ac.createBuffer(1, 96, ac.sampleRate);
+        const cd = click.getChannelData(0);
+        for (let i = 0; i < cd.length; i++) cd[i] = (i < 4 ? 1 : Math.exp(-i / 12)) * (i % 2 ? -1 : 1);
+        const kick = (at) => {
+          const k = ac.createOscillator();
+          k.frequency.setValueAtTime(150, at); k.frequency.exponentialRampToValueAtTime(45, at + 0.12);
+          const kg = ac.createGain();
+          kg.gain.setValueAtTime(0, at); kg.gain.linearRampToValueAtTime(1, at + 0.003);
+          kg.gain.exponentialRampToValueAtTime(0.001, at + 0.35);
+          k.connect(kg).connect(master); k.start(at); k.stop(at + 0.4);
+        };
+        const hiss = (type, hz, at, peak, len) => {
+          const s = ac.createBufferSource(); s.buffer = noise;
+          const f = ac.createBiquadFilter(); f.type = type; f.frequency.value = hz; f.Q.value = 0.7;
+          const g = ac.createGain();
+          g.gain.setValueAtTime(0, at); g.gain.linearRampToValueAtTime(peak, at + 0.002);
+          g.gain.exponentialRampToValueAtTime(0.001, at + len);
+          s.connect(f).connect(g).connect(master); s.start(at, (at * 7.3) % 0.5, len + 0.02);
+        };
+        const offset = performance.now() / 1000 - ac.currentTime;
+        const start = ac.currentTime + 0.5;
+        const played = [];
+        let n = 0;
+        let next = start;
+        if (!techno) {
+          // The room's floor from 10 s on: the noise looped, low-passed, about -50 dBFS.
+          const bed = ac.createBufferSource(); bed.buffer = noise; bed.loop = true;
+          const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 4000;
+          const bed0 = ac.createGain();
+          bed0.gain.setValueAtTime(0, 0); bed0.gain.setValueAtTime(0.003, start + 10);
+          bed.connect(lp).connect(bed0).connect(master); bed.start();
+        }
+        const stab = ac.createGain();
+        if (techno) {
+          const o = ac.createOscillator(); o.type = 'sawtooth'; o.frequency.value = 220;
+          const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 5000;
+          stab.gain.value = 0;
+          o.connect(lp).connect(stab).connect(master); o.start();
+        }
+        const S = 60 / 124 / 4;
+        const plan = () => {
+          while (next < ac.currentTime + 0.4) {
+            const at = next;
+            if (techno) {
+              // Sixteenths: the kick on every fourth, the hats between, claps on two and four, the
+              // stab on every third.
+              if (n % 4 === 0) kick(at);
+              if (n % 4 === 2) hiss('highpass', 8000, at, 0.1, 0.05);
+              if (n % 16 === 4 || n % 16 === 12) hiss('bandpass', 1800, at, 0.5, 0.15);
+              if (n % 3 === 0) {
+                stab.gain.setValueAtTime(0, at); stab.gain.linearRampToValueAtTime(0.4, at + 0.005);
+                stab.gain.setTargetAtTime(0, at + 0.08, 0.04);
+              }
+              next += S;
+            } else {
+              const kind = ['click', 'kick', 'snare'][n % 3];
+              if (kind === 'click') {
+                const s = ac.createBufferSource(); s.buffer = click; s.connect(master); s.start(at);
+              } else if (kind === 'kick') kick(at);
+              else hiss('bandpass', 1800, at, 0.9, 0.18);
+              played.push({ kind, t: at + offset, floor: at > start + 10 });
+              next += 0.6;
+            }
+            n += 1;
+          }
+        };
+        plan();
+        setInterval(plan, 50);
+        window.__hits = { played, start: start + offset };
+        return out.stream;
+      };
+    }, label === 'techno');
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.__hits, null, { timeout: 15000 }).catch(() => {});
+    if (label === 'techno') {
+      await page.waitForTimeout(13000);
+      const seen = [];
+      for (let i = 0; i < 12; i++) { seen.push(await page.evaluate(() => window.SonicVisualizer.analysis().bpm)); await page.waitForTimeout(250); }
+      const right = seen.filter((b) => b >= 121 && b <= 127).length;
+      check(right >= 9, `visualiser: techno with a dotted-eighth riff reads 124 bpm, not its riff's 4/3 or 2/3 nor none (${seen.join(' ')})`);
+    } else {
+      await page.evaluate(() => {
+        const w = /** @type {any} */ (window);
+        w.__found = new Map();
+        const tick = () => {
+          w.SonicVisualizer.analysis().onsets.forEach((o) => w.__found.set(o.name + o.t, o));
+          if (performance.now() / 1000 < w.__hits.start + 20.5) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+      await page.waitForFunction(() => performance.now() / 1000 > window.__hits.start + 20.6, null,
+        { timeout: 30000 }).catch(() => {});
+      const run = await page.evaluate(() => ({ played: window.__hits ? window.__hits.played : [],
+        found: Array.from((window.__found || new Map()).values()), start: window.__hits ? window.__hits.start : 0 }));
+      // The two contexts' path delays a sound by 40-100 ms; a hit is found within 250 ms of it.
+      const near = (o, p) => o.t - p.t > -0.01 && o.t - p.t < 0.25;
+      const as = { kick: 'kick', snare: 'snare', click: 'hat' };
+      for (const floor of [false, true]) {
+        // Two seconds after each start let the automatic gain and the thresholds settle.
+        const from = run.start + (floor ? 12 : 2);
+        const ps = run.played.filter((p) => p.floor === floor && p.t > from && p.t < run.start + 20);
+        const s = {};
+        for (const kind of ['kick', 'snare', 'click']) {
+          const mine = ps.filter((p) => p.kind === kind);
+          const found = mine.filter((p) => run.found.some((o) => o.name === as[kind] && near(o, p)));
+          s[kind] = { played: mine.length, found: found.length };
+        }
+        const kicks = ps.filter((p) => p.kind === 'kick');
+        const asSnare = kicks.filter((p) => run.found.some((o) => o.name === 'snare' && near(o, p))).length;
+        const found = Object.values(s).every((x) => x.played >= 4 && x.found >= Math.ceil(x.played * 0.95));
+        check(found && asSnare <= Math.floor(kicks.length * 0.1),
+          `visualiser: isolated hits${floor ? ' over a noise floor' : ''} are each found as what they `
+          + `are, a kick never as a snare (${JSON.stringify(s)}; ${asSnare} of ${kicks.length} kicks also a snare)`);
+      }
+    }
+    check(errors.length === 0, `visualiser (${label}): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // A microphone in a room with no music: its noise (pink, as a room's is) is no beat. A quiet
   // room gives next to no onsets and a loud one (a fan, traffic) no tempo: a first version of the
   // dB analysis found a kick about every second in both, and a tempo of 110-126 (2026-11-22).
@@ -2420,6 +2565,152 @@ async function shot(page, name) {
       check(R < 0.97, `visualiser (${mode}): more than one hue (the hues' resultant ${R.toFixed(2)}, below 0.97)`);
     }
     check(errors.length === 0, `visualiser (pass 3's modes): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // The snare and the hats are drawn, and the impulses' light is governed (round 2 of the
+  // fixes, after its pass 1). Only the kick fired an impulse, so no mode drew a snare: with a kick
+  // on the bar's first beat and snares on the second and fourth (100 bpm), ember, ripple and
+  // liquid changed 1.02x, 1.36x and 0.91x as much 100-250 ms after a snare as 50-200 ms before it
+  // (a mean of 1.10x), and 1.45x, 1.41x and 1.43x with the snare's own impulse (above 1.25 on
+  // the mean). starlane's streaks on a big event lit the field ungoverned: 4 flashes in a second
+  // at 175 bpm, density 2 and react 2 (pairs of opposing swings of the mean relative luminance by
+  // 0.1 or more within three frames), none with their length under the flash gain (fewer than 3).
+  // prism showed its orbs only while they wandered through the one wedge its kaleidoscope
+  // mirrors, so its light did not follow the loudness: at gain 1 it read 0.84x as bright as at
+  // gain 0.3 (the least loud median luminance against the most quiet), and 2.04x with every orb
+  // folded into the wedge (above 1.1).
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await context.grantPermissions(['microphone']);
+    await page.addInitScript(musicMic, { bpm: 100, chord: [0, 4, 7], kicks: [0], snares: [1, 3] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('ember'));
+    await showViz(page);
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
+    const stage = '[data-visualizer-stage] canvas';
+    // Every frame for `ms`: its time and the mean change of a cell from the frame before.
+    const record = (ms) => page.evaluate(({ src, sel, ms }) => new Promise((done) => {
+      const stats = (0, eval)('(' + src + ')');
+      const rows = [];
+      let prev = null;
+      const t0 = performance.now();
+      const tick = () => {
+        const s = stats(sel);
+        rows.push([performance.now() / 1000, prev ? s.cells.reduce((acc, y, c) => acc + Math.abs(y - prev.cells[c]), 0) / s.cells.length : 0]);
+        prev = s;
+        if (performance.now() - t0 < ms) requestAnimationFrame(tick); else done({ rows, kicks: window.__music.kicks.slice() });
+      };
+      requestAnimationFrame(tick);
+    }), { src: pictureStats.toString(), sel: stage, ms });
+    // The cell change 100-250 ms after each snare is played (one and three beats after each kick;
+    // the sound takes about 100 ms to reach the picture here) against 50-200 ms before it.
+    const onSnare = async () => {
+      const { rows, kicks } = await record(12000);
+      const beat = 60 / 100;
+      let on = 0, no = 0, off = 0, nf = 0, n = 0;
+      for (const k of kicks) {
+        for (const sn of [k + beat, k + 3 * beat]) {
+          if (sn < rows[0][0] + 0.3 || sn > rows[rows.length - 1][0] - 0.15) continue;
+          n++;
+          for (const [t, d] of rows.slice(1)) {
+            if (t >= sn + 0.1 && t < sn + 0.25) { on += d; no++; } else if (t >= sn - 0.2 && t < sn - 0.05) { off += d; nf++; }
+          }
+        }
+      }
+      return { jump: no && nf && off > 0 ? (on / no) / (off / nf) : 0, n };
+    };
+    const jumps = [];
+    let fluent = true, mean = 0;
+    for (const mode of ['ember', 'ripple', 'liquid']) {
+      await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
+      await page.waitForTimeout(2500);
+      const { jump, n } = await onSnare();
+      jumps.push(`${mode} ${jump.toFixed(2)}x (${n} snares)`);
+      fluent = fluent && n >= 3 && await vizFps(page) >= 30;
+      mean += jump / 3;
+    }
+    const said = `visualiser (snare): a snare moves the picture (cell change 100-250 ms after a snare against 50-200 ms before it, a mean of ${mean.toFixed(2)}x over ${jumps.join(', ')}; above 1.25)`;
+    if (fluent) check(mean > 1.25, said); else console.log(`note ${said}: not judged below 30 fps`);
+    check(errors.length === 0, `visualiser (snare): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await context.grantPermissions(['microphone']);
+    await page.addInitScript(musicMic, { bpm: 175, chord: [2, 6, 9] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('starlane'));
+    await showViz(page);
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
+    const stage = '[data-visualizer-stage] canvas';
+    // Dense, and reacting twice as hard as by default, where the streaks flashed most.
+    await page.evaluate(() => { window.SonicVisualizer.param('density', 2); window.SonicVisualizer.param('react', 2); });
+    await page.waitForTimeout(3000);
+    // The mean relative luminance of a 32x18 sample every frame for 8 s (each channel made linear
+    // first, as WCAG's relative luminance is).
+    const flashes = await page.evaluate((sel) => new Promise((done) => {
+      const g = document.createElement('canvas');
+      g.width = 32; g.height = 18;
+      const x = g.getContext('2d', { willReadFrequently: true });
+      const lin = (v) => (v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+      const LUT = Array.from({ length: 256 }, (_, i) => lin(i / 255));
+      const rows = [];
+      const t0 = performance.now();
+      const tick = () => {
+        x.drawImage(document.querySelector(sel), 0, 0, 32, 18);
+        const d = x.getImageData(0, 0, 32, 18).data;
+        let sum = 0;
+        for (let i = 0; i < d.length; i += 4) sum += 0.2126 * LUT[d[i]] + 0.7152 * LUT[d[i + 1]] + 0.0722 * LUT[d[i + 2]];
+        rows.push([performance.now() / 1000, sum / 576]);
+        if (performance.now() - t0 < 8000) { requestAnimationFrame(tick); return; }
+        // A transition: the mean luminance swings by 0.1 or more within three frames; a flash: a
+        // pair of opposing transitions (WCAG 2.3.1). The most within any one second.
+        const ev = [];
+        let swing = 0;
+        for (let i = 0; i < rows.length - 1;) {
+          let k = 0, best = 0;
+          for (let j = 1; j <= 3 && i + j < rows.length; j++) {
+            const dv = rows[i + j][1] - rows[i][1];
+            if (Math.abs(dv) > Math.abs(best)) { best = dv; k = j; }
+          }
+          swing = Math.max(swing, Math.abs(best));
+          if (k && Math.abs(best) >= 0.1) { ev.push([rows[i + k][0], Math.sign(best)]); i += k; } else i += 1;
+        }
+        // A flash is a pair of opposing transitions, each transition in one pair only.
+        const pairs = [];
+        for (let n = 1; n < ev.length; n++) if (ev[n][1] !== ev[n - 1][1]) { pairs.push(ev[n][0]); n++; }
+        let worst = 0;
+        for (const p of pairs) worst = Math.max(worst, pairs.filter((q) => q >= p && q < p + 1).length);
+        done({ worst, swing, frames: rows.length });
+      };
+      requestAnimationFrame(tick);
+    }), stage);
+    const said = `visualiser (starlane): fewer than three flashes a second (at most ${flashes.worst} in any second over ${flashes.frames} frames; the largest swing of the mean luminance ${flashes.swing.toFixed(3)})`;
+    if (await vizFps(page) >= 30) check(flashes.worst < 3, said); else console.log(`note ${said}: not judged below 30 fps`);
+    // prism at gain 1 and 0.3, twice each: its light follows the loudness.
+    await page.evaluate(() => { window.SonicVisualizer.param('density', 1); window.SonicVisualizer.param('react', 1); window.SonicVisualizer.set('prism'); });
+    await page.waitForTimeout(2500);
+    const lumaOf = async () => {
+      const l = [];
+      for (let k = 0; k < 11; k++) { l.push((await page.evaluate(pictureStats, stage)).luma); await page.waitForTimeout(200); }
+      return l.sort((p, q) => p - q)[5];
+    };
+    const loud = [], quiet = [];
+    for (let r = 0; r < 2; r++) {
+      await page.evaluate(() => window.__music.gain(1));
+      await page.waitForTimeout(2500);
+      loud.push(await lumaOf());
+      await page.evaluate(() => window.__music.gain(0.3));
+      await page.waitForTimeout(3500);
+      quiet.push(await lumaOf());
+    }
+    const ratio = Math.min(...loud) / Math.max(1e-6, Math.max(...quiet));
+    const said2 = `visualiser (prism): not darker when loud (median luminance ${loud.map((v) => v.toFixed(3)).join(', ')} at gain 1, ${quiet.map((v) => v.toFixed(3)).join(', ')} at gain 0.3; the least loud ${ratio.toFixed(2)}x the most quiet, above 1.1)`;
+    if (await vizFps(page) < 30) console.log(`note ${said2}: not judged below 30 fps`);
+    else check(ratio > 1.1, said2);
+    check(errors.length === 0, `visualiser (flashes, prism): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
   // A negative control for litShare: a blank canvas is not a picture.

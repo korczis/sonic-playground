@@ -107,3 +107,83 @@ These lessons were offered back to algoglyph as its curated note
 `music-analysis-from-sonic-playground` (branch `chore/knowledge-music-analysis` in
 ~/dev/algoglyph), with three plates they suggest: tempo-autocorrelation, key-profiles and
 superflux-onsets.
+
+## Round 2: tempo at metrical multiples, onsets by kind (2026-11-25)
+
+Measured on the same eight recordings (the page, 75 s, 1-3 runs a recording, against one run of
+95d6f38c on a machine at load 74), on pass 1's replayed novelty (r2 pass 1), and on synthetic hits
+in the page.
+
+- **Tempo.**
+  - The candidate search and the relatives pick were replaced by one metrical rule: every lag of
+    every range scores comb(L) + 0.5 comb(2L) + 0.5 comb(L/2), times the 120 bpm / 0.9 octave
+    prior, and the best wins. An odd lag's half lies between two steps: the better of the two
+    counts. Read one step short, drum and bass's 174 bpm (17.2 steps) fell from .92 to .55.
+  - Octave-correct share of the locked frames, before → after: techno .32 → .83 (166 still in
+    3-23% of its locked frames), dnb .14 → 1.00, rock 1.00 → 1.00, hip-hop .99 → 1.00, jazz
+    .77 → .82. Jazz locked in 12.6 and 27 s (26.6 before). Drum and bass locks only .13 of its
+    frames: its true lag's comb, .07-.11, rarely passes the gates.
+  - A first lock needs the ranges' shared support at 0.2, not 0.16. Replayed, Vivaldi's false
+    lock fell from .14 to .08 of its frames and jazz's lock from .54 to .46. On the page Vivaldi
+    read .09-.15 against .17-.18, within the runs' spread (.05).
+  - Reading the double's multiples beyond 4 x 40 steps, which the comb leaves at 0, changed
+    nothing beyond the runs' spread.
+  - Known limit: a dotted-eighth riff low enough to share the kicks' range (a 110 Hz saw) builds
+    its own hierarchy (3/4, 3/2 and 3 beats), and the rule reads 2/3 of the tempo there (83 for
+    124). Adding half the bass range's score fixes it, and loses dnb (.93 → .60 replayed); the
+    ranges' mean loses techno and dnb. A riff in the mids, as on the techno recording, reads right.
+- **Onsets.**
+  - Pass 1's misses (kicks 42%, snares 57%) were the sampler's, not the detector's. It read the
+    envelope at 1 only, and ran before the analysis in 37% of frames, so it saw one decayed frame
+    (0.92). Over 0.5, kicks were 100% found, snares 98%, clicks 97%.
+  - The real defect was the kind. Every isolated kick also counted as a snare. Its spill into a
+    few of the snare's bands, out of digital silence at -160 dB, rose the range's mean by the
+    capped 24 dB.
+  - Each band is now floored at the picture's floor before the range's mean. The lift over the
+    last second still reads the unfloored level: floored, a quiet snare just after the mix fell
+    18 dB was lost while the ceiling caught up.
+  - Floored, a kick's fundamental and attack still lit the snare's 200-1100 Hz bands by 10-34 dB,
+    a 5-7 dB rise of the mean. A snare must therefore also rise over its bands above 1 kHz.
+    Isolated kicks rose there by 0.8 dB at most, isolated snares by 11-19, and a quiet snare on a
+    kick in the mastered mix by 4-6. Asked only within 30 ms of a kick, it let through a kick
+    whose own onset came a frame after its spill. A plain 30 ms veto would drop every snare on two
+    and four.
+  - A floor 20 dB lower brought the kick-as-snare back (3 of 5 kicks).
+  - The kick's level, a mean power that silent bins add nothing to, stays unfloored: floored, the
+    quiet half's kicks came late while the ceiling fell, and half of them missed their window.
+  - Isolated kicks counted as snares: 5 of 5 in silence and 4 of 4 over a noise floor before,
+    0 after. Every hit is still found, and the mastered mix keeps all its hits with 0 stray.
+- **Latency.** The two-frame rise costs nothing. A kick fires on the first frame its attack
+  reaches; a snare or a click fires one frame later, because its first frame lies under the
+  picture's floor. About 45-60 ms is the stream and the 43 ms window.
+- **Key.** A minor bias on near ties (.01-.03) changed no excerpt's key accuracy by more than .02.
+  Techno's Bb for Bbm is no tie: replayed, Bbm leads by a median .12, so the hold (0.05 for 2 s),
+  not the profiles, keeps the Bb that won first (inferred, not yet measured).
+- **Snares and hats drawn.**
+  - The map had one impulse, on a beat or a kick. It now has two more:
+    - `m.snap`, a latched snare impulse: about half a kick, decaying over 0.1 s, skipped within
+      60 ms of a punch, and counted as a flash;
+    - `m.shimmer`, a hat glint decaying over 0.07 s. It is not counted as a flash, so modes draw
+      it as scattered light scaled by the flash gain.
+  - A snare now moves all 25 modes on its own (20 before). The kick stays strongest: 25-58 ms
+    from sound to frame. ripple's snare ring still takes 125 ms.
+- **The flash governor counts events, and beat-locked brightness got past it.** starlane's
+  streaks grew with the beat's pulse and the speed, unmetered: 3-4 flashes a second at 175 bpm,
+  react 2. Everything that brightens on a beat is now multiplied by the flash gain: 0-2 a second.
+- **A picture can't fix what the analysis gets wrong.** Bisected with hybrid file sets (one old
+  file into a newer build), fold's and moire's drift against steady techno came from the analysis
+  of 6487bee3:
+  - the tempo flicked between metrical relatives (125, 166, 66, 79);
+  - a new section was announced in a steady drop.
+  Every mode's pace follows both. Easing the map's rate over 2 s recovered fold (+.33 to
+  +.52-.66); moire waits on the tempo.
+- **One 40 s run is not a measurement.** Its r(motion, loudness) varies by about +-.3 from run to
+  run (veil .36-.73, choir .31-.72 across the same revisions). Repeat runs before calling a
+  regression.
+- **A kaleidoscope shows one wedge.** What is drawn outside the wedge it mirrors is never seen.
+  prism's orbs landed there by chance, so its brightness fell when it was loud (0.84x). Folded
+  into the wedge and lit by the loudness, it is now 1.85-2.04x.
+- **Smoke windows.**
+  - A window set against musicMic's scheduled times needs about 100 ms for the pipeline.
+  - An event test must keep hats out of both of its windows.
+  - A window locked to the detection lets any mode driven by the spectrum pass.

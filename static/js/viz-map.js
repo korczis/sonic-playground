@@ -14,7 +14,9 @@
 //                    control; its saturation is how clearly one key sounds, less for noise; the
 //                    lightness follows the timbre's brightness; the leading note is the accent.
 //   time             beat and bar give phase-locked shapes (a pulse after the beat, an
-//                    anticipation before it); big events are latched for a quarter beat.
+//                    anticipation before it); big events are latched for a quarter beat: the
+//                    kick's (punch) strongest, the snare's (snap) about half of it, the hats a
+//                    shimmer of scattered light.
 //   form             a new section of the song draws a new variant of the scene, crossfaded.
 //   safety           brightness rides the slow loudness; impulses move, scale and colour, and
 //                    their brightness share is cut to 0.3 once two flashes fell within a second
@@ -54,8 +56,9 @@
     var st = {
       fast: /** @type {Record<string, number>} */ ({}), long: /** @type {Record<string, number>} */ ({}),
       hue: -1, accent: 0, sat: 0.5, light: 0.5, exposure: 0.4, flat: 0, roll: 0.5, width: 0, pan: 0,
-      dyn: 0, punch: 0, latched: -10, section: -1, variant: 0, prevVariant: 0, flashes: /** @type {number[]} */ ([]),
-      flashGain: 1, lastPunch: 0, heard: 0, silent: 0, peak: 0,
+      dyn: 0, punch: 0, latched: -10, snap: 0, snapAt: -10, shimmer: 0, shimAt: -10,
+      section: -1, variant: 0, prevVariant: 0, flashes: /** @type {number[]} */ ([]),
+      flashGain: 1, rate: 1, lastPunch: 0, heard: 0, silent: 0, peak: 0,
     };
     REL.forEach(function (r) { st.fast[r[0]] = 0; st.long[r[0]] = 0; });
     /** @type {SonicVizMap} */
@@ -64,7 +67,7 @@
       drive: { bass: 0, mid: 0, high: 0, level: 0, flux: 0, energy: 0 },
       hue: 0, sat: 0.5, light: 0.5, accent: 0, exposure: 0.4,
       rough: 0, halo: 0.5, pan: 0, spread: 0, contrast: 0,
-      rate: 1, pulse: 0, pre: 0, barPulse: 0, punch: 0,
+      rate: 1, pulse: 0, pre: 0, barPulse: 0, punch: 0, snap: 0, shimmer: 0,
       variant: 0, prevVariant: 0, morph: 1, flashGain: 1, motion: 1, reduced: false,
     };
 
@@ -146,8 +149,14 @@
       M.pan = calm ? 0 : st.pan;
       M.contrast = st.dyn;
 
-      // Time: the tempo sets the pace (120 bpm is 1); beat and bar give phase-locked shapes.
-      M.rate = clamp((a.bpm || 120) / 120, 0.6, 1.6);
+      // Time: the tempo sets the pace (120 bpm is 1), eased over 2 s; beat and bar give
+      // phase-locked shapes. The estimate can jump between metrical relatives (techno read 125,
+      // 166, 66 and 79 bpm within six seconds), and a pace that followed it at once sped and
+      // slowed the travel of every mode in a steady drop: fold's and moire's motion stopped
+      // following the loudness (r +0.71 and +0.50 before the analysis changes of 6487bee3, +0.38
+      // and +0.19 after, techno from 12 s; round 2's bisect).
+      st.rate = follow(st.rate, clamp((a.bpm || 120) / 120, 0.6, 1.6), dt, 2, 2);
+      M.rate = st.rate;
       var phase = a.phase || 0;
       M.pulse = Math.exp(-6 * phase);
       M.pre = smoothstep(0.85, 1, phase);
@@ -162,6 +171,29 @@
       }
       st.punch *= Math.exp(-dt / 0.15);
       M.punch = st.punch * (calm ? 0.35 : 1);
+      // The snare (or a clap) is the beat's second voice: an impulse of its own, about half a
+      // kick's and shorter, latched for a quarter beat too. Within 60 ms of a big event it is the
+      // kick's own attack heard in the snare's range (a kick tripped it 72 times in 100), and the
+      // kick has spoken already. It counts as a flash. While only the kick fired an impulse, no
+      // mode drew a snare: the motion 0-150 ms after one was 0.67-1.14 of the motion after it
+      // (round 2, pass 1).
+      if (a.snare > 0.95 && a.t - st.snapAt > beatLen / 4 && a.t - st.latched > 0.06) {
+        st.snapAt = a.t;
+        st.snap = 0.45 + 0.2 * st.dyn;
+        st.flashes.push(a.t);
+      }
+      st.snap *= Math.exp(-dt / 0.1);
+      M.snap = st.snap * (calm ? 0.35 : 1);
+      // The hats shimmer: a short glint on every hat onset, as strong as the treble is against its
+      // last seconds. Hats come four to eight a second, too often for flashes: a mode draws the
+      // shimmer as small scattered light (twinkles, glints, grain), never the whole screen, and
+      // scales whatever brightness it adds by the flash gain all the same.
+      if (a.hat > 0.95 && a.t - st.shimAt > 0.05) {
+        st.shimAt = a.t;
+        st.shimmer = 0.7 + 0.3 * clamp(M.drive.high, 0, 1);
+      }
+      st.shimmer *= Math.exp(-dt / 0.07);
+      M.shimmer = st.shimmer * (calm ? 0.35 : 1);
       // The flashes of the last second, the window just under it: beats exactly half a second apart
       // (two a second) put three onsets at 0, 0.5 and 1.0 s, which is not three within a second.
       while (st.flashes.length && a.t - st.flashes[0] > 0.98) st.flashes.shift();
