@@ -3325,8 +3325,45 @@ async function shot(page, name) {
     check(!(await page.isVisible('#player-queue')), 'visualiser: opening it closes the queue');
     await vizControlsOnTop(page, 'visualiser (desktop)');
     check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser: nothing listens until the reader asks');
-    await page.waitForFunction(() => document.getElementById('visualizer-full').getAttribute('data-controls') === 'hidden', null, { timeout: 8000 }).catch(() => {});
-    check(await page.getAttribute('#visualizer-full', 'data-controls') === 'hidden', 'visualiser: the toolbar fades while the pointer rests');
+    // The toolbar fades while the pointer rests on the picture, not on a control (vizControlsOnTop
+    // leaves it on Settings, where it rightly stays: run 45538389634 waited there for a fade), and
+    // a control clicked with the mouse keeps focus without holding it; keyboard focus holds it.
+    const controls = () => page.getAttribute('#visualizer-full', 'data-controls');
+    const faded = () => page.waitForFunction(() => document.getElementById('visualizer-full')
+      .getAttribute('data-controls') === 'hidden', null, { timeout: 8000 }).catch(() => {});
+    await page.waitForTimeout(3500);
+    check(await controls() === 'shown',
+      'visualiser: the toolbar stays while the pointer rests on a control');
+    const onPicture = async () => {
+      const spot = await page.evaluate(() => {
+        const stage = document.querySelector('[data-visualizer-stage]');
+        for (const [fx, fy] of [[0.6, 0.45], [0.4, 0.6], [0.75, 0.3], [0.5, 0.5]]) {
+          const x = innerWidth * fx, y = innerHeight * fy;
+          if (stage.contains(document.elementFromPoint(x, y))) return { x, y };
+        }
+        return null;
+      });
+      check(!!spot, 'visualiser: the picture is open to the pointer away from every control');
+      if (!spot) return;
+      await page.mouse.move(spot.x - 3, spot.y - 3);
+      await page.mouse.move(spot.x, spot.y);
+    };
+    await onPicture();
+    await faded();
+    check(await controls() === 'hidden',
+      'visualiser: the toolbar fades while the pointer rests on the picture');
+    await vizClick(page, '#visualizer-full [data-viz-share]');
+    await onPicture();
+    await faded();
+    check(await controls() === 'hidden'
+      && await page.evaluate(() => document.activeElement.matches('[data-viz-share]')),
+    'visualiser: the toolbar fades after a mouse click on a control, which keeps focus');
+    await page.keyboard.press('Tab');
+    await page.waitForTimeout(3500);
+    check(await controls() === 'shown'
+      && await page.evaluate(() => document.activeElement
+        .matches('#visualizer-full [data-viz-cluster] :focus-visible')),
+    'visualiser: the toolbar stays while keyboard focus is on a control');
     await page.keyboard.press('Escape');
     check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer') && document.getElementById('visualizer-full').hidden), 'visualiser: Escape closes it');
     check(!new URL(page.url()).searchParams.has('viz'), 'visualiser: closing it takes ?viz out of the URL');

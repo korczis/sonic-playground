@@ -701,7 +701,13 @@
       var dt = G.dt;
       var dir = k > 0 && Math.floor(G.bars / 2) % 2 ? -1 : 1;
       s.dir = lerp(dir, s.dir === undefined ? 1 : s.dir, Math.exp(-dt / 0.35));
-      s.ang = (s.ang || 0) + dt * (0.15 * m.rate * G.amb + 0.8 * Math.max(0, m.drive.mid) + 1.1 * G.pulse) * s.dir * G.mo;
+      // The rings' own turn comes almost to rest in silence (a tenth of its pace, not the 0.3 that
+      // G.amb keeps): seven glowing rings turning at 0.3 moved the picture in silence nearly as
+      // much as the music did (CI, 27 fps: a cell change of 0.031 in silence, 0.038 with music).
+      // With sound, and at react 0 (G.amb 1), the pace is as it was.
+      var pace = 0.1 + 0.9 * (G.amb - 0.3) / 0.7;
+      s.ang = (s.ang || 0) + dt * (0.15 * m.rate * pace + 0.8 * Math.max(0, m.drive.mid) + 1.1 * G.pulse)
+        * s.dir * G.mo;
       // As flux: the light laid down follows the trail's clock-based fade, whatever the frame rate.
       var base = 0.55 + 0.38 * q.trails, keep = Math.pow(base, dt * 60), lay = Math.min(12, (1 - keep) / (1 - base));
       feedback(p, g, s, 1 + (0.008 * G.amb + (0.035 * Math.max(0, m.drive.bass) * G.pulse + 0.02 * G.punch) * G.mo) * G.cap,
