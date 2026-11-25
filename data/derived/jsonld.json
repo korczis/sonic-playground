@@ -95751,6 +95751,119 @@
     }
    ]
   },
+  "ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ladytron",
+      "sameAs": "https://musicbrainz.org/artist/b45335d1-5219-4262-a44d-936aa36eeaed"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "synth-pop",
+      "remix",
+      "new wave"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "604 (Remixed & Rare)"
+     },
+     "isrcCode": "CAN111100003",
+     "name": "He Took Her to a Movie - Bertrand Burgalat Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c3387d4e-8383-4fac-a843-fd2743692778",
+      "https://www.youtube.com/watch?v=poKCchZZ-ZM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "604 (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/604_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Commodore Rock",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Commodore_Rock"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ladytron",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ladytron"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bertrand Burgalat",
+       "publisher": "Tricatel",
+       "url": "https://tricatel.com/bertrand-burgalat/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "He Took Her to a Movie (Bertrand Burgalat mix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/c3387d4e-8383-4fac-a843-fd2743692778"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ladytron - He Took Her to a Movie (Burgalat Version)",
+       "publisher": "YouTube (TricatelVision)",
+       "url": "https://www.youtube.com/watch?v=poKCchZZ-ZM"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Remix debutového singlu Ladytron z roku 1999, který Bertrand Burgalat připravil pro vydání EP Commodore Rock u labelu Tricatel a který v roce 2009 vyšel na kompilaci 604 (Remixed & Rare): první píseň liverpoolské kapely v rukou majitele pařížského labelu.",
+     "headline": "Ladytron - He Took Her to a Movie - Bertrand Burgalat Remix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/",
+     "wordCount": 503
+    }
+   ]
+  },
   "ladytron_seventeen.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -95859,6 +95972,126 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/ladytron-seventeen/",
      "wordCount": 639
+    }
+   ]
+  },
+  "laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Laid Back, Kasper Bjørke",
+      "sameAs": "https://musicbrainz.org/artist/a8fee308-c305-4ca1-8d30-28d150a8d5f7"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "house",
+      "electronic",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gethigh (Remixes)"
+     },
+     "isrcCode": "DKFN71100403",
+     "name": "Gethigh - Kasper Bjørke Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/56b22244-2df7-481c-bfc3-68d82a9b1861",
+      "https://www.youtube.com/watch?v=oVHAtk8tf-I"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Gethigh (Kasper Bjørke Remix)",
+       "publisher": "YouTube (Laid Back - Topic)",
+       "url": "https://www.youtube.com/watch?v=oVHAtk8tf-I"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Laid Back - GETHIGH",
+       "publisher": "YouTube (laidbackofficial)",
+       "url": "https://www.youtube.com/watch?v=TosHBZQtkcs"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gethigh (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/3cd1b33d-4304-4230-835e-d721d090e202"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Laid Back: Gethigh",
+       "publisher": "Sound Shelter",
+       "url": "https://www.soundshelter.net/vinyl/laid-back-gethigh"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Laid Back",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Laid_Back"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kasper Bjørke",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kasper_Bj%C3%B8rke"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kasper Bjørke: Bohemian Soul",
+       "publisher": "hfn music",
+       "url": "https://hfn-music.com/music/bohemian-soul"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Remix skladby Gethigh od Kaspera Bjørkeho o délce 6:20: singl, který dánské duo Laid Back vydalo v roce 2011 na vlastním labelu Brother Music, píseň podle kapely o touze dostat se „nahoru“ ve všech oblastech života, přepracovaná kodaňským producentem a DJem.",
+     "educationalLevel": "introductory",
+     "headline": "Laid Back, Kasper Bjørke - Gethigh - Kasper Bjørke Remix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/",
+     "wordCount": 465
     }
    ]
   },
@@ -96667,6 +96900,129 @@
     }
    ]
   },
+  "laurent-garnier-the-man-with-the-red-face.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/laurent-garnier-the-man-with-the-red-face/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Laurent Garnier",
+      "sameAs": "https://musicbrainz.org/artist/ec477866-bfaa-48e0-affd-1c151ef61b7b"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "techno",
+      "house",
+      "jazz"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Unreasonable Behaviour"
+     },
+     "isrcCode": "FRV229900078",
+     "name": "The Man With The Red Face",
+     "sameAs": [
+      "https://musicbrainz.org/recording/646eaee1-c313-45b8-ac69-d8e722248561",
+      "https://www.youtube.com/watch?v=Qlg5ljVt6K4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/laurent-garnier-the-man-with-the-red-face/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/laurent-garnier-the-man-with-the-red-face/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Laurent Garnier: How I Made... The Man With The Red Face",
+       "publisher": "Disco Pogo",
+       "url": "https://www.discopogo.co/posts/laurent-garnier-how-i-made-the-man-with-the-red-face"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Unreasonable Behaviour",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Unreasonable_Behaviour"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Laurent Garnier",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Laurent_Garnier"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Public outburst from Laurent Garnier",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/news/8767"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Timeless Albums: Laurent Garnier - Unreasonable Behaviour",
+       "publisher": "Mixmag MENA",
+       "url": "https://mixmagmena.com/feature/timeless-albums-laurent-garnier-unreasonable-behaviour"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Man With The Red Face (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/646eaee1-c313-45b8-ac69-d8e722248561"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Laurent Garnier - The Man With The Red Face",
+       "publisher": "YouTube (Laurent Garnier - Topic)",
+       "url": "https://www.youtube.com/watch?v=Qlg5ljVt6K4"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Devítiminutový střed alba Unreasonable Behaviour, které Laurent Garnier vydal v roce 2000: prostá smyčka z basu typu Reese a figury z klávesů Yamaha pod saxofonem Philippa Nadauda, sestříhaná z dvaceti minut improvizace do frází, které si navzájem odpovídají.",
+     "educationalLevel": "intermediate",
+     "headline": "Laurent Garnier - The Man With The Red Face",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "improvisation",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/improvisation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/loop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bassline/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/laurent-garnier-the-man-with-the-red-face/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/laurent-garnier-the-man-with-the-red-face/",
+     "wordCount": 527
+    }
+   ]
+  },
   "lcd-soundsystem-dance-yrself-clean.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -96928,6 +97284,142 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/lcd-soundsystem-tribulations/",
      "wordCount": 493
+    }
+   ]
+  },
+  "le-tigre-deceptacon-dfa-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/le-tigre-deceptacon-dfa-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Le Tigre",
+      "sameAs": "https://musicbrainz.org/artist/2d67239c-aa40-4ad5-a807-9052b66857a6"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "dance-punk",
+      "electro-funk",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Remix"
+     },
+     "name": "Deceptacon (DFA Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4863ecfb-7d0e-4218-8b76-e7fe2764adbf",
+      "https://www.youtube.com/watch?v=PM8tR-P2U20"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/le-tigre-deceptacon-dfa-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/le-tigre-deceptacon-dfa-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Remix (Le Tigre album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Remix_(Le_Tigre_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The DFA Remixes – Chapter One",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_DFA_Remixes_%E2%80%93_Chapter_One"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Various Artists: The DFA Remixes: Chapter One",
+       "publisher": "The A.V. Club",
+       "url": "https://www.avclub.com/various-artists-the-dfa-remixes-chapter-one-1798201588"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Various Artists: The DFA Remixes: Chapter One",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/review/various_artists_the_dfa_remixes_chapter_one"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "DFA - The DFA Remixes: Chapter One",
+       "publisher": "The Skinny",
+       "url": "https://www.theskinny.co.uk/clubs/reviews/dfa-the-dfa-remixes-chapter-one"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Key 1999 Tracks: Le Tigre's \"Deceptacon\"",
+       "publisher": "Red Bull Music Academy Daily",
+       "url": "https://daily.redbullmusicacademy.com/2019/03/le-tigre-deceptacon-key-tracks"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Le Tigre - Deceptacon (original recording credits)",
+       "publisher": "YouTube (Le Tigre - Topic)",
+       "url": "https://www.youtube.com/watch?v=Fxks_wUe8ac"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Deceptacon (DFA Rmx) By Tim Goldsworthy & James Murphy for the Dfa",
+       "publisher": "YouTube (Le Tigre - Topic)",
+       "url": "https://www.youtube.com/watch?v=PM8tR-P2U20"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Deceptacon (DFA remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4863ecfb-7d0e-4218-8b76-e7fe2764adbf"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Dvojice DFA, Tim Goldsworthy a James Murphy, přestavěla bojový dance-punkový pokřik Le Tigre z roku 1999 na šest a půl minuty vykračujícího electro-funku kolem klávesové smyčky a líné basové linky, nejprve pro album skupiny Remix, potom pro vlastní výběr DFA Remixes.",
+     "educationalLevel": "introductory",
+     "headline": "Le Tigre - Deceptacon (DFA Remix)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/electroclash/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/le-tigre-deceptacon-dfa-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/le-tigre-deceptacon-dfa-remix/",
+     "wordCount": 529
     }
    ]
   },
@@ -97437,6 +97929,110 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/lenka-everything-at-once/",
      "wordCount": 453
+    }
+   ]
+  },
+  "les-trouble-shanghai.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/les-trouble-shanghai/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Les Trouble",
+      "sameAs": "https://musicbrainz.org/artist/fc000062-e2fc-4372-8a65-eccf7d4e9aee"
+     },
+     "datePublished": "2025",
+     "genre": [
+      "dance",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Shanghai"
+     },
+     "isrcCode": "SE5W32505827",
+     "name": "Shanghai",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8ca9cc9d-e3b5-483a-a1d1-b14b5557b5e8",
+      "https://www.youtube.com/watch?v=wOWDeAFDLzg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/les-trouble-shanghai/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/les-trouble-shanghai/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Shanghai (Provided to YouTube by IIP-DDS)",
+       "publisher": "YouTube (Les Trouble - Topic)",
+       "url": "https://www.youtube.com/watch?v=wOWDeAFDLzg"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Shanghai - Single",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/us/album/shanghai-single/1805616422"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Les Trouble (artist)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/us/artist/les-trouble/1661149346"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Shanghai - Single by Les Trouble",
+       "publisher": "Spotify",
+       "url": "https://open.spotify.com/album/2nGyRkDgnxVqHk3LIzW3tS"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Shanghai (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/8ca9cc9d-e3b5-483a-a1d1-b14b5557b5e8"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Taneční singl o délce dvou minut a čtyřiceti sekund, který Les Trouble v dubnu 2025 napsal, produkoval a vydal pod vlastním jménem, jeden z řady krátkých singlů, z nichž několik nese jména míst, od Paříže po Naritu.",
+     "headline": "Les Trouble - Shanghai",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "self-release",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/self-release/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/les-trouble-shanghai/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/les-trouble-shanghai/",
+     "wordCount": 470
     }
    ]
   },
@@ -97982,6 +98578,120 @@
     }
    ]
   },
+  "little-boots-fake-blood-stuck-on-repeat-fake-blood-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Little Boots, Fake Blood",
+      "sameAs": "https://musicbrainz.org/artist/edbc42ea-6040-4414-8c4c-9eb7d503f64c"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "electro-house",
+      "electro-pop",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hands: Bonus Disc"
+     },
+     "isrcCode": "UKNFN1900012",
+     "name": "Stuck On Repeat - Fake Blood Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2823d35d-8c2d-4bb8-bb05-af724a3dc0f4",
+      "https://www.youtube.com/watch?v=Uh1oIGDWqOg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Stuck on Repeat (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Stuck_on_Repeat_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hands (Little Boots album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hands_(Little_Boots_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Theo Keating",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Theo_Keating"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Little Boots - Broken Record (Cosmic Kids remix) [Exclusive Download]",
+       "publisher": "VICE / THUMP",
+       "url": "https://www.vice.com/en/article/4x8y7g/little-boots-broken-record-cosmic-kids-remix"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Stuck on Repeat (Fake Blood remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2823d35d-8c2d-4bb8-bb05-af724a3dc0f4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Stuck On Repeat [Fake Blood Mix]",
+       "publisher": "YouTube (Little Boots - Topic)",
+       "url": "https://www.youtube.com/watch?v=Uh1oIGDWqOg"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Klubový remix, který Fake Blood v roce 2008 udělal z písně Little Boots o lásce, jež hraje pořád dokola jako deska: šest a půl minuty pro DJe, které se v roce 2019 vrátily na bonusovém disku jubilejní edice alba Hands k desátému výročí.",
+     "headline": "Little Boots, Fake Blood - Stuck On Repeat - Fake Blood Mix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bonus track",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bonus-track/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/club-culture/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/",
+     "wordCount": 533
+    }
+   ]
+  },
   "lonely-boy-love-wanted.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -98099,6 +98809,158 @@
     }
    ]
   },
+  "louie-austen-hoping-herbert-s-high-dub.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/louie-austen-hoping-herbert-s-high-dub/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Louie Austen",
+      "sameAs": "https://musicbrainz.org/artist/5b3d1c89-c602-417e-a3f3-c3c9397d8ac8"
+     },
+     "datePublished": "2002",
+     "genre": [
+      "deep house",
+      "house",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hoping"
+     },
+     "name": "Hoping (Herbert's High Dub)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/343490cb-504f-400f-9276-8d72ab753b7a",
+      "https://www.youtube.com/watch?v=tJOKRTd43iA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/louie-austen-hoping-herbert-s-high-dub/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/louie-austen-hoping-herbert-s-high-dub/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Louie Austen - Hoping",
+       "publisher": "gullbuy music review",
+       "url": "https://web.archive.org/web/2005/http://www.gullbuy.com/buy/2002/9_10/austenHop.php"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Secondhand Sounds",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Secondhand_Sounds"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Herbert: Secondhand Sounds",
+       "publisher": "The A.V. Club",
+       "url": "https://avclub.com/herbert-secondhand-sounds-1798196440"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Herbert Remixes - Secondhand Sounds",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/309"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Matthew Herbert",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Matthew_Herbert"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Louie Austen",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Louie_Austen"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Louie Austen: Ein 80er auf den Spuren des Rat Pack",
+       "publisher": "News.at",
+       "url": "https://www.news.at/news/louie-austen-ein-80er-auf-den-spuren-des-rat-pack"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Herbert - A Pair Of Remixes",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/herbert-a-pair-of-remixes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hoping (Herbert's High dub), recording and releases",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/343490cb-504f-400f-9276-8d72ab753b7a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hoping (Herbert High dub), part of Definition of House",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/075ac185-f3d0-471a-860a-ae3d21fd8ea4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hoping (Herbert's High dub), part of Boiler Room: Solomun in Tulum",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/420cd5ec-e00b-4a7e-a961-9f988e93c623"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hoping (Herbert's High Dub)",
+       "publisher": "YouTube (Louie Austin - Topic)",
+       "url": "https://www.youtube.com/watch?v=tJOKRTd43iA"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Dub Matthewa Herberta na píseň Hoping vídeňského croonera Louieho Austena: jedna ze sedmi verzí na CD singlu Kitty-Yo z roku 2002, téhož roku také na Herbertově remixové kolekci Secondhand Sounds a v roce 2021 na vinylové reedici spolu s jeho remixem Moloko.",
+     "headline": "Louie Austen - Hoping (Herbert's High Dub)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dub",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dub/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/louie-austen-hoping-herbert-s-high-dub/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/louie-austen-hoping-herbert-s-high-dub/",
+     "wordCount": 517
+    }
+   ]
+  },
   "louie-austen-one-night-in-rio.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -98193,6 +99055,132 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/louie-austen-one-night-in-rio/",
      "wordCount": 470
+    }
+   ]
+  },
+  "louisahhh-helsmoortel-roar.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/louisahhh-helsmoortel-roar/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Louisahhh, Helsmoortel",
+      "sameAs": "https://musicbrainz.org/artist/70900801-c182-4906-b870-4bf8e2b8129b"
+     },
+     "datePublished": "2025",
+     "genre": [
+      "techno",
+      "ebm",
+      "industrial"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "ROAR"
+     },
+     "name": "ROAR",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ea4cddc8-478c-4596-914d-2e2783660684",
+      "https://www.youtube.com/watch?v=UkCjkLf9lf0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/louisahhh-helsmoortel-roar/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/louisahhh-helsmoortel-roar/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "LOUISAHHH x HELSMOORTEL: \"ROAR\" from Sugar & Violence",
+       "publisher": "YouTube (Artoffact Records)",
+       "url": "https://www.youtube.com/watch?v=UkCjkLf9lf0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "ROAR (art track, Sugar & Violence)",
+       "publisher": "YouTube (Louisahhh - Topic)",
+       "url": "https://www.youtube.com/watch?v=Tzoxhvc5UDA"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Sugar & Violence, by Louisahhh x Helsmoortel",
+       "publisher": "Bandcamp",
+       "url": "https://louisahhh.bandcamp.com/album/sugar-violence"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Louisahhh x Helsmoortel “What I Want” single out now",
+       "publisher": "Chain D.L.K.",
+       "url": "https://chaindlk.com/news/louisahhh-x-helsmoortel-what-i-want-single-out-now/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Sugar and Violence: Louisahhh on Trust, Shadow Work, and the Dancefloor",
+       "publisher": "Reverie",
+       "url": "https://www.reverie-online.com/interviews/louisahhh"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Helsmoortel",
+       "publisher": "Bandcamp",
+       "url": "https://helsmoortel.bandcamp.com"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Louisa Pillot",
+       "publisher": "CTM Festival",
+       "url": "https://www.ctm-festival.de/festival-2026/programme/artists/l/louisa-pillot"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Sugar & Violence (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/9facfc03-afb9-4280-b6e0-d649b53cd87f"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "ROAR je třetí skladba Sugar & Violence, EP, které Louisahhh, zpěvačka a producentka narozená v New Yorku a usazená ve Francii, natočila v roce 2025 pro label Artoffact s belgickým producentem Helsmoortelem; label ji zveřejnil měsíc před EP a zařadil pod techno, new beat a EBM.",
+     "headline": "Louisahhh, Helsmoortel - ROAR",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dub",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dub/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/louisahhh-helsmoortel-roar/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/louisahhh-helsmoortel-roar/",
+     "wordCount": 468
     }
    ]
   },
@@ -98398,6 +99386,128 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/lousianahh-love-is-a-punk-vitalic-remix/",
      "wordCount": 871
+    }
+   ]
+  },
+  "lubomir-stankovsky-modus-ty-ja-a-moj-brat.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lubomir-stankovsky-modus-ty-ja-a-moj-brat/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ľubomír Stankovský, Modus",
+      "sameAs": "https://musicbrainz.org/artist/d7bfb5f8-de7d-4ead-87ad-7b3492623a03"
+     },
+     "datePublished": "1984",
+     "genre": [
+      "pop rock",
+      "pop",
+      "80s"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Najlepšie dievčatá"
+     },
+     "name": "Ty, ja a môj brat",
+     "sameAs": [
+      "https://musicbrainz.org/recording/69fe823d-f9d2-4d22-b6cc-90c4bb26ea42",
+      "https://www.youtube.com/watch?v=FCJQmj78s-4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lubomir-stankovsky-modus-ty-ja-a-moj-brat/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lubomir-stankovsky-modus-ty-ja-a-moj-brat/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Ľubomír Stankovský",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/%C4%BDubom%C3%ADr_Stankovsk%C3%BD"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Najlepšie dievčatá",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Najlep%C5%A1ie_diev%C4%8Dat%C3%A1"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Modus (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Modus_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Album Najlepšie dievčatá legendárnej skupiny Modus vychádza v reedícii",
+       "publisher": "TASR (teraz.sk)",
+       "url": "https://www.teraz.sk/kultura/album-najlepsie-dievcata-legendarnej/828959-clanok.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Železný rytmus a muzikantská osobnosť: Na bubeníka zaspomínal Kamil Peteraj",
+       "publisher": "noviny.sk",
+       "url": "https://www.noviny.sk/slovensko/899864-zelezny-rytmus-a-muzikantska-osobnost-na-bubenika-zaspominal-kamil-peteraj"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ty, ja a môj brat (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/69fe823d-f9d2-4d22-b6cc-90c4bb26ea42"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ty ja a môj brat (Sklíčka)",
+       "publisher": "YouTube (Modus - Topic)",
+       "url": "https://www.youtube.com/watch?v=FCJQmj78s-4"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Píseň skupiny Modus z roku 1984 od Jána Lehotského a Kamila Peteraje, kterou nazpíval bubeník kapely Ľubomír Stankovský; hitem být neměla, a Slovensko ji přesto zná pod slovy z refrénu, Sklíčka dotykov.",
+     "educationalLevel": "introductory",
+     "headline": "Ľubomír Stankovský, Modus - Ty, ja a môj brat",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lubomir-stankovsky-modus-ty-ja-a-moj-brat/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lubomir-stankovsky-modus-ty-ja-a-moj-brat/",
+     "wordCount": 523
     }
    ]
   },
@@ -98816,6 +99926,115 @@
     }
    ]
   },
+  "lucky-luke-f-e-e-l.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lucky-luke-f-e-e-l/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lucky Luke",
+      "sameAs": "https://musicbrainz.org/artist/ac3b8052-6dc1-448e-a678-a20bc9975e90"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "electronic",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "F.E.E.L."
+     },
+     "isrcCode": "QZ22B1836428",
+     "name": "F.E.E.L.",
+     "sameAs": [
+      "https://musicbrainz.org/recording/195e0dcd-db6e-4d25-88f0-7e2a0e521284",
+      "https://www.youtube.com/watch?v=e4AOrI9gjFA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lucky-luke-f-e-e-l/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lucky-luke-f-e-e-l/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "F.E.E.L. (release credits)",
+       "publisher": "YouTube (Lucky Luke - Topic)",
+       "url": "https://www.youtube.com/watch?v=e4AOrI9gjFA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lucky Luke - F.E.E.L.",
+       "publisher": "YouTube (Lithuania HQ)",
+       "url": "https://www.youtube.com/watch?v=v9bRktNdMIw"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "F.E.E.L. - Lucky Luke",
+       "publisher": "Shazam",
+       "url": "https://www.shazam.com/song/1286924846/feel"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Dar vienas lietuvis pasaulio muzikos elite: Lucky Luke drebins Tomorrowland festivalį",
+       "publisher": "LRT",
+       "url": "https://www.lrt.lt/naujienos/muzika/680/2976161/dar-vienas-lietuvis-pasaulio-muzikos-elite-lucky-luke-drebins-tomorrowland-festivali"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Somebody's Watching Me",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Somebody%27s_Watching_Me"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "F.E.E.L. (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/195e0dcd-db6e-4d25-88f0-7e2a0e521284"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Raný singl litevského producenta Lucky Luka, který vydal Lithuania HQ v září 2017, dva roky před Cooler Than Me: taneční skladba, jež mezi skladateli uvádí Rockwella, autora hitu Somebody's Watching Me z roku 1983.",
+     "headline": "Lucky Luke - F.E.E.L.",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lucky-luke-f-e-e-l/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lucky-luke-f-e-e-l/",
+     "wordCount": 507
+    }
+   ]
+  },
   "luiz-henrique-mas-que-nada.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -99041,6 +100260,142 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/lukas-graham-7-years/",
      "wordCount": 480
+    }
+   ]
+  },
+  "lukas-graham-drunk-in-the-morning.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lukas-graham-drunk-in-the-morning/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lukas Graham",
+      "sameAs": "https://musicbrainz.org/artist/124cec07-44f1-4a99-9aaa-96a5bb9ec0bd"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "pop",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lukas Graham"
+     },
+     "isrcCode": "USWB11514268",
+     "name": "Drunk in the Morning",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7b8fd259-bf4f-4018-8978-733739517c9b",
+      "https://www.youtube.com/watch?v=MZo-I98H3RM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lukas-graham-drunk-in-the-morning/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lukas-graham-drunk-in-the-morning/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Drunk in the Morning",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Drunk_in_the_Morning"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lukas Graham (2015 album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lukas_Graham_(2015_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lukas Graham (2012 album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lukas_Graham_(2012_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lukas Graham",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lukas_Graham"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Let's Get Drunk in the Morning and Take the World by Storm: An Interview with Lukas Graham",
+       "publisher": "Vice (Noisey)",
+       "url": "https://www.vice.com/en/article/lukas-graham-2015-interview/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "CD: Lukas Graham - Lukas Graham",
+       "publisher": "The Arts Desk",
+       "url": "https://www.theartsdesk.com/new-music/cd-lukas-graham-lukas-graham"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Drunk in the Morning (Provided to YouTube by Warner Records)",
+       "publisher": "YouTube (Lukas Graham - Topic)",
+       "url": "https://www.youtube.com/watch?v=MZo-I98H3RM"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Lukas Graham - Drunk In The Morning [Official Music Video]",
+       "publisher": "YouTube (Lukas Graham)",
+       "url": "https://www.youtube.com/watch?v=-yvHqenLpUU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Drunk in the Morning (new version, recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7b8fd259-bf4f-4018-8978-733739517c9b"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Dánská jednička, která se nejprve šířila jako domácí video z Kodaně: hravý telefonát v pět ráno na pozadí rozjařených klavírních akordů a dechů, zde v novější verzi z mezinárodního alba kapely z roku 2016.",
+     "educationalLevel": "introductory",
+     "headline": "Lukas Graham - Drunk in the Morning",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lukas-graham-drunk-in-the-morning/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lukas-graham-drunk-in-the-morning/",
+     "wordCount": 493
     }
    ]
   },
@@ -99870,6 +101225,245 @@
     }
    ]
   },
+  "mad-doctor-x-intergalacticthrowdown.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mad-doctor-x-intergalacticthrowdown/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mad Doctor X",
+      "sameAs": "https://musicbrainz.org/artist/32551902-990a-449f-b121-31b8407f2141"
+     },
+     "datePublished": "1997",
+     "genre": [
+      "trip-hop",
+      "downtempo",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Picnic With The Greys"
+     },
+     "name": "Intergalacticthrowdown",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f6c75d15-f3fc-4d72-a691-51e72d52ad66",
+      "https://www.youtube.com/watch?v=zjfezI6hnF4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mad-doctor-x-intergalacticthrowdown/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mad-doctor-x-intergalacticthrowdown/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Mad Doctor X",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mad_Doctor_X"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mad Doctor X",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/45805-Mad-Doctor-X"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1997",
+       "name": "Mad Doctor X - Picnic With The Greys",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/master/189076-Mad-Doctor-X-Picnic-With-The-Greys"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Picnic With The Greys (Freskanova, FNTCD2)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/771f6535-e0b0-4951-9160-a68d39f4cc44"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "LateNightTales: Nightmares on Wax",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/10a9b8ec-0b49-4b44-88a4-905df7f23dd0"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Late Night Tales",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Late_Night_Tales"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mad Doctor X - Intergalactic Throwdown (Late Night Tales: Nightmares on Wax)",
+       "publisher": "YouTube (Late Night Tales)",
+       "url": "https://www.youtube.com/watch?v=zjfezI6hnF4"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Šestiminutová úvodní skladba alba Picnic With The Greys, které londýnský DJ Mad Doctor X vydal v roce 1997 u Freskanova, řazená k trip-hopu a downtempu, kterou později Nightmares On Wax vybral do svého mixu LateNightTales z roku 2003.",
+     "headline": "Mad Doctor X - Intergalacticthrowdown",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "turntablism",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/turntablism/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mad-doctor-x-intergalacticthrowdown/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mad-doctor-x-intergalacticthrowdown/",
+     "wordCount": 496
+    }
+   ]
+  },
+  "maelstrom-louisahhh-rough-tender.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maelstrom-louisahhh-rough-tender/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Maelstrom, Louisahhh",
+      "sameAs": "https://musicbrainz.org/artist/210687d0-427a-4d05-ac95-15a738f112b5"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "techno",
+      "house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Bromance #15: Traces - Single"
+     },
+     "name": "Rough & Tender",
+     "sameAs": [
+      "https://musicbrainz.org/recording/037eca48-d570-4b4d-b51d-ce2d707a75cf",
+      "https://www.youtube.com/watch?v=M_k93zzjgj8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/maelstrom-louisahhh-rough-tender/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/maelstrom-louisahhh-rough-tender/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "BROMANCE #15 - LOUISAHHH!!! & MAELSTROM - ROUGH & TENDER",
+       "publisher": "YouTube (Bromance Records)",
+       "url": "https://www.youtube.com/watch?v=M_k93zzjgj8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "BROMANCE #15 - Traces EP Deluxe Edition (Dave Clarke Gothic Stripped Down Mix)",
+       "publisher": "YouTube (Bromance Records)",
+       "url": "https://www.youtube.com/watch?v=X1Qp_6tqNVk"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Louisahhh!!! is the Queen of French Techno (and French Men)",
+       "publisher": "Vice (Thump)",
+       "url": "https://www.vice.com/en/article/louisahhh-is-the-ice-queen-of-french-techno-and-french-men/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Hear Louisahhh!!! and Maelstrom Go 'Night Clubbing' for Bromance",
+       "publisher": "Spin",
+       "url": "https://spinmagazine.com/articles/louisahhh-night-clubbing-maelstrom-stream-bromance-traces/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Maelstrom & Louisahhh: Failing with Grace",
+       "publisher": "15 Questions",
+       "url": "https://www.15questions.net/interview/maelstrom-louisahhh-about-collaboration/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Audio: Maelstrom Guides Us Through the Depths of Techno and Electro",
+       "publisher": "fabric",
+       "url": "https://www.fabriclondon.com/posts/audio-maelstrom-guides-us-through-the-depths-of-techno-and-electro"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Rough & Tender (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/037eca48-d570-4b4d-b51d-ce2d707a75cf"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Rough & Tender je druhá strana Bromance #15, vydání Brodinského labelu z března 2014 připsaného Louisahhh a producentovi Maelstromovi z Nantes: temná klubová skladba, která začíná mluvenými slovy o ochraně křehkého srdce.",
+     "educationalLevel": "introductory",
+     "headline": "Maelstrom, Louisahhh - Rough & Tender",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "spoken word",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/spoken-word/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/maelstrom-louisahhh-rough-tender/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/maelstrom-louisahhh-rough-tender/",
+     "wordCount": 484
+    }
+   ]
+  },
   "mafia-klvb-credit-card.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -100077,6 +101671,129 @@
     }
    ]
   },
+  "make-the-girl-dance-baby-baby-baby.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/make-the-girl-dance-baby-baby-baby/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Make The Girl Dance",
+      "sameAs": "https://musicbrainz.org/artist/776268db-54a1-45b4-ba66-0315d0c7aff6"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "electro",
+      "electro-house",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Baby Baby Baby (Original and Remix)"
+     },
+     "name": "Baby Baby Baby",
+     "sameAs": [
+      "https://musicbrainz.org/recording/1d6175ac-bdeb-42c9-a259-77a361337876",
+      "https://www.youtube.com/watch?v=3bdZeR8lh3M"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/make-the-girl-dance-baby-baby-baby/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/make-the-girl-dance-baby-baby-baby/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Make the Girl Dance",
+       "publisher": "Wikipedia (French)",
+       "url": "https://fr.wikipedia.org/wiki/Make_the_Girl_Dance"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "NSFW And Inappropriate: Baby Baby Baby!!",
+       "publisher": "Synthtopia",
+       "url": "https://www.synthtopia.com/?p=14183"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Baby Baby Baby se publica en España",
+       "publisher": "Neo2",
+       "url": "https://www.neo2.com/?p=13728"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Les filles nues de la rue Montorgueil",
+       "publisher": "evous (after Le Parisien)",
+       "url": "https://www.evous.fr/paris/2eme-Arrondissement/Actualites-Paris-2e/Sorties-Paris-2e/Archives-sorties-Paris-2e/Les-filles-nues-de-la-rue,1120460.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Make The Girl Dance - Baby Baby Baby (chart history)",
+       "publisher": "lescharts.com",
+       "url": "https://lescharts.com/showitem.asp?interpret=Make+The+Girl+Dance&titel=Baby+Baby+Baby&cat=s"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Make The Girl Dance 'Baby Baby Baby'",
+       "publisher": "YouTube (Ultra Records)",
+       "url": "https://www.youtube.com/watch?v=uHF3X8tQYPU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Baby Baby Baby (original mix)",
+       "publisher": "YouTube (Make The Girl Dance - Topic)",
+       "url": "https://www.youtube.com/watch?v=3bdZeR8lh3M"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "První singl pařížského dua Make The Girl Dance, vydaný v květnu 2009 u Roy Music: electro s tím, čemu jeden autor říkal syntezátorové hooky, které se zavrtají do hlavy, proslavené videem natočeným na jeden záběr, v němž tři ženy jdou nahé ulicí Montorgueil.",
+     "educationalLevel": "introductory",
+     "headline": "Make The Girl Dance - Baby Baby Baby",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/make-the-girl-dance-baby-baby-baby/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/make-the-girl-dance-baby-baby-baby/",
+     "wordCount": 511
+    }
+   ]
+  },
   "mama-tiefschwarz-solomun-corporate-butcher-solomun-remix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -100196,6 +101913,101 @@
     }
    ]
   },
+  "mandalay-like-her.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mandalay-like-her/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mandalay",
+      "sameAs": "https://musicbrainz.org/artist/d66acd16-1a3e-449d-88e6-02ffbc55a264"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "trip-hop",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Instinct"
+     },
+     "isrcCode": "GBBLK0000084",
+     "name": "Like Her",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9e18659c-fdb6-4ed4-af48-d4cef63f99f2",
+      "https://www.youtube.com/watch?v=mFq1Xj5R_mI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mandalay-like-her/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mandalay-like-her/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Mandalay (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mandalay_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Instinct (Mandalay album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Instinct_(Mandalay_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Like Her (release credits)",
+       "publisher": "YouTube (Mandalay - Topic)",
+       "url": "https://www.youtube.com/watch?v=mFq1Xj5R_mI"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Like Her (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9e18659c-fdb6-4ed4-af48-d4cef63f99f2"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Pětiminutová píseň z Instinct, druhého a posledního alba londýnského trip-hopového dua Mandalay, kterou napsali Nicola Hitchcock a Saul Freeman a kterou v říjnu 2000 vydalo V2; později zazněla v jednom díle seriálu Kriminálka Las Vegas.",
+     "headline": "Mandalay - Like Her",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mandalay-like-her/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mandalay-like-her/",
+     "wordCount": 493
+    }
+   ]
+  },
   "mando-diao-dance-with-somebody-radio-version.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -100287,6 +102099,136 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/mando-diao-dance-with-somebody-radio-version/",
      "wordCount": 559
+    }
+   ]
+  },
+  "mando-diao-dance-with-somebody-the-salazar-brothers-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-the-salazar-brothers-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mando Diao",
+      "sameAs": "https://musicbrainz.org/artist/ea854cc1-13fc-4fd0-86a5-d2c7dba06764"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "remix",
+      "dance",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Dance with Somebody"
+     },
+     "isrcCode": "SEYBD0800204",
+     "name": "Dance With Somebody (The Salazar Brothers Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f8c9e8dc-fa12-44dc-aa44-8108b6df1537",
+      "https://www.youtube.com/watch?v=N-640rbMM1w"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mando-diao-dance-with-somebody-the-salazar-brothers-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-the-salazar-brothers-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Dance with Somebody (The Salazar Brothers Remix) (Provided to YouTube by Playground Music Scandinavia)",
+       "publisher": "YouTube (Mando Diao - Topic)",
+       "url": "https://www.youtube.com/watch?v=N-640rbMM1w"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dance with Somebody (The Salazar Brothers remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/f8c9e8dc-fa12-44dc-aa44-8108b6df1537"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Mando Diao - Dance With Somebody (Universal Music AB promo CDr)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/12518011-Mando-Diao-Dance-With-Somebody"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Mando Diao - Dance With Somebody (MP3 promo with remixes)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/13243332-Mando-Diao-Dance-With-Somebody"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Various - Taneční Liga 114",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5261760-Various-Taneční-Liga-114"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "The Disco Boys - The Disco Boys Volume 10",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2147616-The-Disco-Boys-The-Disco-Boys-Volume-10"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dance with Somebody",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dance_with_Somebody"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Give Me Fire!",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Give_Me_Fire!"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The Salazar Brothers, kteří produkovali hit Mando Diao z roku 2009, ho sami přepracovali do pětiminutového remixu, který se ze švédského promo disku dostal na taneční kompilace od Německa po Česko.",
+     "headline": "Mando Diao - Dance With Somebody (The Salazar Brothers Remix)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-the-salazar-brothers-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mando-diao-dance-with-somebody-the-salazar-brothers-remix/",
+     "wordCount": 488
     }
    ]
   },
@@ -100960,6 +102902,111 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/marbert-rocel-ba-ba-bounce/",
      "wordCount": 497
+    }
+   ]
+  },
+  "marbert-rocel-bird-of-passage.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marbert-rocel-bird-of-passage/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Marbert Rocel",
+      "sameAs": "https://musicbrainz.org/artist/33092a25-bab6-401a-ac69-fa415a4958b0"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electro-pop",
+      "electronic",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "In the Beginning"
+     },
+     "name": "Bird of Passage",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b90262c3-fe69-4715-ab0c-5cc703068d22",
+      "https://www.youtube.com/watch?v=M-wPymxu4C0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/marbert-rocel-bird-of-passage/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/marbert-rocel-bird-of-passage/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "In The Beginning",
+       "publisher": "Bandcamp (Marbert Rocel)",
+       "url": "https://marbert-rocel.bandcamp.com/album/in-the-beginning"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marbert Rocel - Bird Of Passage",
+       "publisher": "YouTube (Compost Records)",
+       "url": "https://www.youtube.com/watch?v=M-wPymxu4C0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Crate Expectations: Marbert Rocel",
+       "publisher": "VICE / THUMP",
+       "url": "https://www.vice.com/nl/article/crate-expectations-marbert-rocel/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marbert Rocel",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Marbert_Rocel"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bird of Passage (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/b90262c3-fe69-4715-ab0c-5cc703068d22"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Devátá skladba alba In the Beginning, které lipské trio Marbert Rocel vydalo v roce 2015 u Compost Records: čtyřminutová albová píseň, kterou žádná recenze nevyzdvihuje, slyšená tady na pozadí toho, co o desce říká sama kapela.",
+     "educationalLevel": "introductory",
+     "headline": "Marbert Rocel - Bird of Passage",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/deep-cut/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/marbert-rocel-bird-of-passage/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/marbert-rocel-bird-of-passage/",
+     "wordCount": 469
     }
    ]
   },
@@ -101943,6 +103990,115 @@
     }
    ]
   },
+  "marcus-layton-indiana-smalltown-boy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marcus-layton-indiana-smalltown-boy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Marcus Layton, Indiana",
+      "sameAs": "https://musicbrainz.org/artist/368ba5c4-0ac9-44af-9f2f-006a7ae53d8c"
+     },
+     "datePublished": "2022",
+     "genre": [
+      "cover",
+      "house",
+      "electro-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Smalltown Boy"
+     },
+     "isrcCode": "DES232200140",
+     "name": "Smalltown Boy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9ce59910-f1a7-42f0-a5ef-efdf352ca18f",
+      "https://www.youtube.com/watch?v=ZcgiGWnk2sg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/marcus-layton-indiana-smalltown-boy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/marcus-layton-indiana-smalltown-boy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Smalltown Boy - Marcus Layton feat. Indiana",
+       "publisher": "Qobuz",
+       "url": "https://www.qobuz.com/dk-en/album/smalltown-boy-marcus-layton-feat-indiana/qnmptzj4q4z4a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Smalltown Boy (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9ce59910-f1a7-42f0-a5ef-efdf352ca18f"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Smalltown Boy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Smalltown_Boy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Indiana (singer)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Indiana_(singer)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marcus Layton",
+       "publisher": "gigmit",
+       "url": "https://www.gigmit.com/marcus-layton"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marcus Layton ft. Indiana - Smalltown Boy",
+       "publisher": "YouTube (Marcus Layton)",
+       "url": "https://www.youtube.com/watch?v=ZcgiGWnk2sg"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Verze písně Smalltown Boy od Bronski Beat, kterou berlínský producent Marcus Layton vydal v roce 2022 s anglickou zpěvačkou Indianou jako hostující umělkyní: taneční coververze písně z roku 1984, dlouhá dvě minuty a dvacet čtyři sekund, vydaná jako singl u labelu Selected.",
+     "headline": "Marcus Layton, Indiana - Smalltown Boy",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/marcus-layton-indiana-smalltown-boy/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/marcus-layton-indiana-smalltown-boy/",
+     "wordCount": 458
+    }
+   ]
+  },
   "marcus-marr-nick-murphy-birthday-card.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -102128,6 +104284,142 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/marcus-marr-nick-murphy-the-trouble-with-us/",
      "wordCount": 597
+    }
+   ]
+  },
+  "marcus-meinhardt-endjoy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marcus-meinhardt-endjoy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Marcus Meinhardt",
+      "sameAs": "https://musicbrainz.org/artist/31d08514-0461-4c94-a22d-52d7a981939c"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "tech house",
+      "minimal"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "20 Years Best Of Marcus Meinhardt"
+     },
+     "name": "Endjoy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/e2682711-9ba0-469d-b4ec-e6589e7f9b5e",
+      "https://www.youtube.com/watch?v=uxfZf7jPcQ0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/marcus-meinhardt-endjoy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/marcus-meinhardt-endjoy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Marcus Meinhardt - Endjoy (Original Mix) [BAR25-023CD]",
+       "publisher": "YouTube (Bar 25 Music)",
+       "url": "https://www.youtube.com/watch?v=uxfZf7jPcQ0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Marcus Meinhardt - Endjoy (Original Mix) [BAR25-22]",
+       "publisher": "YouTube (Bar 25 Music)",
+       "url": "https://www.youtube.com/watch?v=2BSPL78Lfc8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Bar 25: Tage Ausserhalb Der Zeit (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/a5a669e7-07da-4042-a686-f8f53335e883"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "20 Years Best of Marcus Meinhardt (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/e0f4c36a-ab18-42ae-bde1-da61d4dc878e"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Various - Soundtrack Bar 25: Tage außerhalb der Zeit",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/various-soundtrack-bar-25-tage-auerhalb-der-zeit"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Endjoy, on This is Bar 25 Music (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a24ad619-9915-4a7a-8429-36212de01696"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Bar25 - Tage außerhalb der Zeit",
+       "publisher": "filmportal.de",
+       "url": "https://www.filmportal.de/en/movie/bar25-tage-ausserhalb-der-zeit_"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marcus Meinhardt",
+       "publisher": "Dachstock",
+       "url": "https://dachstock.ch/artist/marcus-meinhardt"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marcus Meinhardt",
+       "publisher": "Partyflock",
+       "url": "https://partyflock.nl/artist/23742"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Endjoy je skladba berlínského DJe Marcuse Meinhardta, která v roce 2012 vyšla na soundtracku k dokumentárnímu filmu o klubu na břehu řeky Sprévy, Bar25 - Tage außerhalb der Zeit. V roce 2018 jí začínala jeho retrospektiva 20 Years Best Of Marcus Meinhardt, kterou vydal jeho vlastní label Heinz Music.",
+     "headline": "Marcus Meinhardt - Endjoy",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/soundtrack/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/club-culture/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/marcus-meinhardt-endjoy/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/marcus-meinhardt-endjoy/",
+     "wordCount": 448
     }
    ]
   },
@@ -102958,6 +105250,117 @@
     }
    ]
   },
+  "mark-fry-song-for-wilde.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mark-fry-song-for-wilde/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mark Fry",
+      "sameAs": "https://musicbrainz.org/artist/54afff28-5d10-4c91-b5cb-959c43451f56"
+     },
+     "datePublished": "1972",
+     "genre": [
+      "folk",
+      "psychedelic",
+      "singer-songwriter"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Dreaming with Alice"
+     },
+     "name": "Song for Wilde",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8fa37878-5feb-43d2-aa95-e68966489136",
+      "https://www.youtube.com/watch?v=cbNoEg1hr0w"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mark-fry-song-for-wilde/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mark-fry-song-for-wilde/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Mark Fry",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mark_Fry"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dreaming with Alice",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dreaming_with_Alice"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Mark Fry @ Stone Nest, London, 16.05.25",
+       "publisher": "Bearded Magazine",
+       "url": "https://www.beardedmagazine.com/live/article/mark-fry-stone-nest-london-16.05.25"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Mark Fry - Dreaming With Alice",
+       "publisher": "Now-Again Records",
+       "url": "https://www.nowagainrecords.com/mark-fry-dreaming-with-alice/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dreaming With Alice (1972 release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/b71dc374-63e2-4f56-a793-62326b737181"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Song for Wilde",
+       "publisher": "YouTube (Mark Fry - Topic)",
+       "url": "https://www.youtube.com/watch?v=cbNoEg1hr0w"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Dvě a půl minuty z alba Dreaming with Alice, které anglický malíř Mark Fry nahrál v Římě v roce 1971 ještě jako teenager: píseň pro malého bratra, který se učil chodit, z desky, jež v Itálii sotva vyšla a později byla oslavována jako klasika psychedelického folku.",
+     "educationalLevel": "introductory",
+     "headline": "Mark Fry - Song for Wilde",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remastering",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remastering/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mark-fry-song-for-wilde/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mark-fry-song-for-wilde/",
+     "wordCount": 500
+    }
+   ]
+  },
   "maroon-5-cardi-b-girls-like-you-feat-cardi-b-cardi-b-version.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -103172,6 +105575,128 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/maroon-5-get-back-in-my-life/",
      "wordCount": 548
+    }
+   ]
+  },
+  "martin-rev-sparks.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/martin-rev-sparks/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Martin Rev",
+      "sameAs": "https://musicbrainz.org/artist/15dba3af-bb9a-4a19-808d-fbffc085c4ff"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "electronic",
+      "experimental"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Strangeworld"
+     },
+     "name": "Sparks",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4fe9bde4-1c87-4494-9447-cd2518dedb15",
+      "https://www.youtube.com/watch?v=FY15F_8txxg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/martin-rev-sparks/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/martin-rev-sparks/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Martin Rev",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Martin_Rev"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Martin Rev - Strangeworld (Bureau B reissue, press text by Daniel Jahn)",
+       "publisher": "Waiting Room Records",
+       "url": "https://waitingroomrecords.com/products/martin-rev-strangeworld"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Martin Rev - Strangeworld",
+       "publisher": "Piccadilly Records",
+       "url": "https://www.piccadillyrecords.com/136190/Martin-Rev-Strangeworld-Bureau-B"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Martin Rev - To Live / Les Nymphes",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/?p=32468"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Late Night Tales: MGMT",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Late_Night_Tales:_MGMT"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album Review: Various, Late Night Tales - MGMT",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-various-late-night-tales-mgmt/UQVJFXGAWU3HWAYJCRTV5DC2AU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sparks (release credits)",
+       "publisher": "YouTube (Martin Rev - Topic)",
+       "url": "https://www.youtube.com/watch?v=FY15F_8txxg"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sparks (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4fe9bde4-1c87-4494-9447-cd2518dedb15"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Druhá skladba Strangeworld, sólového alba z roku 2000, které si Martin Rev ze Suicide sám produkoval v New Yorku pro finský label Puu a které jeho vydavatel slyší jako snové a poznamenané vzpomínkami na doo-wop; MGMT později Sparks zařadili na svou kompilaci Late Night Tales.",
+     "headline": "Martin Rev - Sparks",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/martin-rev-sparks/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/martin-rev-sparks/",
+     "wordCount": 500
     }
    ]
   },
@@ -104511,6 +107036,114 @@
     }
    ]
   },
+  "matthew-styles-don-t-call-me-again.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/matthew-styles-don-t-call-me-again/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Matthew Styles"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sample & Hold EP"
+     },
+     "name": "Don't Call Me Again",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=qBFGUrjsUWk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/matthew-styles-don-t-call-me-again/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/matthew-styles-don-t-call-me-again/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Matthew Styles - Don't Call Me Again - Running Back RB028",
+       "publisher": "YouTube (Running Back)",
+       "url": "https://www.youtube.com/watch?v=qBFGUrjsUWk"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Matthew Styles - Sample & Hold EP",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3111389-Matthew-Styles-Sample-Hold-EP"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Sample & Hold EP",
+       "publisher": "Bandcamp (Matthew Styles)",
+       "url": "https://matthewstyles.bandcamp.com/album/sample-hold-ep"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Matthew Styles (artist profile)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/379636-Matthew-Styles"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Running Back (label)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/9291-Running-Back"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Don't Call Me Again (Original) (Provided to YouTube by WAS Word and Sound Medien)",
+       "publisher": "YouTube (Matthew Styles - Topic)",
+       "url": "https://www.youtube.com/watch?v=Tz_ENArLfrk"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Úvodní skladba EP Sample & Hold, které Matthew Styles vydal v roce 2011 u labelu Running Back Gerda Jansona: sedm a půl minuty toho, co label nazval přímočarým housem, jenž se vybičuje až k šílenství.",
+     "headline": "Matthew Styles - Don't Call Me Again",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "mastering",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/mastering/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/matthew-styles-don-t-call-me-again/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/matthew-styles-don-t-call-me-again/",
+     "wordCount": 456
+    }
+   ]
+  },
   "matzak-forensic-not-safe-for-work-feat-forensic.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -104608,6 +107241,130 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/matzak-forensic-not-safe-for-work-feat-forensic/",
      "wordCount": 460
+    }
+   ]
+  },
+  "maud-geffray-flavien-berger-in-your-eyes.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maud-geffray-flavien-berger-in-your-eyes/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Maud Geffray, Flavien Berger",
+      "sameAs": "https://musicbrainz.org/artist/badd6d9a-0ff2-46b2-a0a0-8e88eb699122"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "electro-pop",
+      "electronic",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Polaar"
+     },
+     "isrcCode": "FR2FD1700006",
+     "name": "In Your Eyes",
+     "sameAs": [
+      "https://musicbrainz.org/recording/102a4856-c947-4359-aa45-e772416c3752",
+      "https://www.youtube.com/watch?v=GfCv8Sgulvg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/maud-geffray-flavien-berger-in-your-eyes/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/maud-geffray-flavien-berger-in-your-eyes/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Polaar Grooves For Icy Teens: An Interview With Maud Geffray",
+       "publisher": "TITEL kulturmagazin",
+       "url": "https://titel-kulturmagazin.net/2017/05/12/polaar-grooves-for-icy-teens-an-interview-with-maud-geffray/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Maud Geffray - Polaar (PAN054)",
+       "publisher": "Pan European Recording",
+       "url": "https://paneuropeanrecording.com/en/?p=490"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "POLAAR",
+       "publisher": "Bandcamp (Maud Geffray)",
+       "url": "https://maudgeffray.bandcamp.com/album/polaar"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Flavien Berger",
+       "publisher": "Wikipedia",
+       "url": "https://fr.wikipedia.org/wiki/Flavien_Berger"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Scratch Massive",
+       "publisher": "Wikipedia",
+       "url": "https://fr.wikipedia.org/wiki/Scratch_Massive"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "In Your Eyes (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/102a4856-c947-4359-aa45-e772416c3752"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Maud Geffray - In Your Eyes (feat. Flavien Berger) - 360 video",
+       "publisher": "YouTube (Maud Geffray)",
+       "url": "https://www.youtube.com/watch?v=GfCv8Sgulvg"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Jediný duet na Polaar, sólovém albu Maud Geffray z roku 2017, které vzešlo z filmu natočeného v Laponsku: Flavien Berger, mužský hlas, který si vybrala, když ho slyšela zpívat v Paříži, se k ní přidává v písni, již vydavatelství nazývá dokonalým popovým duetem.",
+     "educationalLevel": "introductory",
+     "headline": "Maud Geffray, Flavien Berger - In Your Eyes",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/maud-geffray-flavien-berger-in-your-eyes/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/maud-geffray-flavien-berger-in-your-eyes/",
+     "wordCount": 487
     }
    ]
   },
@@ -243267,6 +246024,116 @@
     }
    ]
   },
+  "ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ladytron",
+      "sameAs": "https://musicbrainz.org/artist/b45335d1-5219-4262-a44d-936aa36eeaed"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "synth-pop",
+      "remix",
+      "new wave"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "604 (Remixed & Rare)"
+     },
+     "isrcCode": "CAN111100003",
+     "name": "He Took Her to a Movie - Bertrand Burgalat Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/c3387d4e-8383-4fac-a843-fd2743692778",
+      "https://www.youtube.com/watch?v=poKCchZZ-ZM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "604 (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/604_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Commodore Rock",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Commodore_Rock"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ladytron",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ladytron"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bertrand Burgalat",
+       "publisher": "Tricatel",
+       "url": "https://tricatel.com/bertrand-burgalat/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "He Took Her to a Movie (Bertrand Burgalat mix)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/c3387d4e-8383-4fac-a843-fd2743692778"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ladytron - He Took Her to a Movie (Burgalat Version)",
+       "publisher": "YouTube (TricatelVision)",
+       "url": "https://www.youtube.com/watch?v=poKCchZZ-ZM"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Bertrand Burgalat's remix of Ladytron's 1999 debut single, made for the Tricatel edition of the Commodore Rock EP and gathered in 2009 on 604 (Remixed & Rare): the Liverpool band's first song in the hands of the Paris label owner.",
+     "headline": "Ladytron - He Took Her to a Movie - Bertrand Burgalat Remix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/ladytron-he-took-her-to-a-movie-bertrand-burgalat-remix/",
+     "wordCount": 545
+    }
+   ]
+  },
   "ladytron_seventeen.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -243372,6 +246239,123 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/ladytron-seventeen/",
      "wordCount": 698
+    }
+   ]
+  },
+  "laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Laid Back, Kasper Bjørke",
+      "sameAs": "https://musicbrainz.org/artist/a8fee308-c305-4ca1-8d30-28d150a8d5f7"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "house",
+      "electronic",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Gethigh (Remixes)"
+     },
+     "isrcCode": "DKFN71100403",
+     "name": "Gethigh - Kasper Bjørke Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/56b22244-2df7-481c-bfc3-68d82a9b1861",
+      "https://www.youtube.com/watch?v=oVHAtk8tf-I"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Gethigh (Kasper Bjørke Remix)",
+       "publisher": "YouTube (Laid Back - Topic)",
+       "url": "https://www.youtube.com/watch?v=oVHAtk8tf-I"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Laid Back - GETHIGH",
+       "publisher": "YouTube (laidbackofficial)",
+       "url": "https://www.youtube.com/watch?v=TosHBZQtkcs"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Gethigh (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/3cd1b33d-4304-4230-835e-d721d090e202"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Laid Back: Gethigh",
+       "publisher": "Sound Shelter",
+       "url": "https://www.soundshelter.net/vinyl/laid-back-gethigh"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Laid Back",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Laid_Back"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kasper Bjørke",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Kasper_Bj%C3%B8rke"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Kasper Bjørke: Bohemian Soul",
+       "publisher": "hfn music",
+       "url": "https://hfn-music.com/music/bohemian-soul"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Kasper Bjørke's 6:20 remix of Gethigh, the 2011 single that the Danish duo Laid Back released on their own label, Brother Music: a song the band said was about wanting to get high in every walk of life, reworked by a Copenhagen producer and DJ.",
+     "educationalLevel": "introductory",
+     "headline": "Laid Back, Kasper Bjørke - Gethigh - Kasper Bjørke Remix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/laid-back-kasper-bjorke-gethigh-kasper-bjorke-remix/",
+     "wordCount": 509
     }
    ]
   },
@@ -244159,6 +247143,126 @@
     }
    ]
   },
+  "laurent-garnier-the-man-with-the-red-face.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/laurent-garnier-the-man-with-the-red-face/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Laurent Garnier",
+      "sameAs": "https://musicbrainz.org/artist/ec477866-bfaa-48e0-affd-1c151ef61b7b"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "techno",
+      "house",
+      "jazz"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Unreasonable Behaviour"
+     },
+     "isrcCode": "FRV229900078",
+     "name": "The Man With The Red Face",
+     "sameAs": [
+      "https://musicbrainz.org/recording/646eaee1-c313-45b8-ac69-d8e722248561",
+      "https://www.youtube.com/watch?v=Qlg5ljVt6K4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/laurent-garnier-the-man-with-the-red-face/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/laurent-garnier-the-man-with-the-red-face/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Laurent Garnier: How I Made... The Man With The Red Face",
+       "publisher": "Disco Pogo",
+       "url": "https://www.discopogo.co/posts/laurent-garnier-how-i-made-the-man-with-the-red-face"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Unreasonable Behaviour",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Unreasonable_Behaviour"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Laurent Garnier",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Laurent_Garnier"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2007",
+       "name": "Public outburst from Laurent Garnier",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/news/8767"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Timeless Albums: Laurent Garnier - Unreasonable Behaviour",
+       "publisher": "Mixmag MENA",
+       "url": "https://mixmagmena.com/feature/timeless-albums-laurent-garnier-unreasonable-behaviour"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Man With The Red Face (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/646eaee1-c313-45b8-ac69-d8e722248561"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Laurent Garnier - The Man With The Red Face",
+       "publisher": "YouTube (Laurent Garnier - Topic)",
+       "url": "https://www.youtube.com/watch?v=Qlg5ljVt6K4"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The nine-minute centrepiece of Laurent Garnier's 2000 album Unreasonable Behaviour: a simple loop of Reese bass and a Yamaha keyboard figure under Philippe Nadaud's saxophone, cut from twenty minutes of improvisation into phrases that answer each other.",
+     "educationalLevel": "intermediate",
+     "headline": "Laurent Garnier - The Man With The Red Face",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "improvisation",
+       "url": "https://korczis.github.io/sonic-playground/concept/improvisation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/concept/loop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/concept/bassline/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/laurent-garnier-the-man-with-the-red-face/",
+     "wordCount": 533
+    }
+   ]
+  },
   "lcd-soundsystem-dance-yrself-clean.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -244414,6 +247518,139 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/lcd-soundsystem-tribulations/",
      "wordCount": 533
+    }
+   ]
+  },
+  "le-tigre-deceptacon-dfa-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/le-tigre-deceptacon-dfa-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Le Tigre",
+      "sameAs": "https://musicbrainz.org/artist/2d67239c-aa40-4ad5-a807-9052b66857a6"
+     },
+     "datePublished": "2001",
+     "genre": [
+      "dance-punk",
+      "electro-funk",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Remix"
+     },
+     "name": "Deceptacon (DFA Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4863ecfb-7d0e-4218-8b76-e7fe2764adbf",
+      "https://www.youtube.com/watch?v=PM8tR-P2U20"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/le-tigre-deceptacon-dfa-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/le-tigre-deceptacon-dfa-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Remix (Le Tigre album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Remix_(Le_Tigre_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The DFA Remixes – Chapter One",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_DFA_Remixes_%E2%80%93_Chapter_One"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Various Artists: The DFA Remixes: Chapter One",
+       "publisher": "The A.V. Club",
+       "url": "https://www.avclub.com/various-artists-the-dfa-remixes-chapter-one-1798201588"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Various Artists: The DFA Remixes: Chapter One",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/review/various_artists_the_dfa_remixes_chapter_one"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "DFA - The DFA Remixes: Chapter One",
+       "publisher": "The Skinny",
+       "url": "https://www.theskinny.co.uk/clubs/reviews/dfa-the-dfa-remixes-chapter-one"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Key 1999 Tracks: Le Tigre's \"Deceptacon\"",
+       "publisher": "Red Bull Music Academy Daily",
+       "url": "https://daily.redbullmusicacademy.com/2019/03/le-tigre-deceptacon-key-tracks"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Le Tigre - Deceptacon (original recording credits)",
+       "publisher": "YouTube (Le Tigre - Topic)",
+       "url": "https://www.youtube.com/watch?v=Fxks_wUe8ac"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Deceptacon (DFA Rmx) By Tim Goldsworthy & James Murphy for the Dfa",
+       "publisher": "YouTube (Le Tigre - Topic)",
+       "url": "https://www.youtube.com/watch?v=PM8tR-P2U20"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Deceptacon (DFA remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4863ecfb-7d0e-4218-8b76-e7fe2764adbf"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The DFA, Tim Goldsworthy and James Murphy, rebuild Le Tigre's 1999 dance-punk rallying cry as six and a half minutes of strutting electro-funk around a keyboard vamp and a lazy bassline, first on the band's Remix album, then on the duo's own DFA Remixes.",
+     "educationalLevel": "introductory",
+     "headline": "Le Tigre - Deceptacon (DFA Remix)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/concept/groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "electroclash",
+       "url": "https://korczis.github.io/sonic-playground/concept/electroclash/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/le-tigre-deceptacon-dfa-remix/",
+     "wordCount": 550
     }
    ]
   },
@@ -244908,6 +248145,107 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/lenka-everything-at-once/",
      "wordCount": 492
+    }
+   ]
+  },
+  "les-trouble-shanghai.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/les-trouble-shanghai/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Les Trouble",
+      "sameAs": "https://musicbrainz.org/artist/fc000062-e2fc-4372-8a65-eccf7d4e9aee"
+     },
+     "datePublished": "2025",
+     "genre": [
+      "dance",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Shanghai"
+     },
+     "isrcCode": "SE5W32505827",
+     "name": "Shanghai",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8ca9cc9d-e3b5-483a-a1d1-b14b5557b5e8",
+      "https://www.youtube.com/watch?v=wOWDeAFDLzg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/les-trouble-shanghai/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/les-trouble-shanghai/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Shanghai (Provided to YouTube by IIP-DDS)",
+       "publisher": "YouTube (Les Trouble - Topic)",
+       "url": "https://www.youtube.com/watch?v=wOWDeAFDLzg"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Shanghai - Single",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/us/album/shanghai-single/1805616422"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Les Trouble (artist)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/us/artist/les-trouble/1661149346"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Shanghai - Single by Les Trouble",
+       "publisher": "Spotify",
+       "url": "https://open.spotify.com/album/2nGyRkDgnxVqHk3LIzW3tS"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Shanghai (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/8ca9cc9d-e3b5-483a-a1d1-b14b5557b5e8"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "A two-minute-forty dance single that Les Trouble wrote, produced and issued under its own name in April 2025, one of a run of short singles, several of them named after places, from Paris to Narita.",
+     "headline": "Les Trouble - Shanghai",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "self-release",
+       "url": "https://korczis.github.io/sonic-playground/concept/self-release/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/les-trouble-shanghai/",
+     "wordCount": 521
     }
    ]
   },
@@ -245438,6 +248776,117 @@
     }
    ]
   },
+  "little-boots-fake-blood-stuck-on-repeat-fake-blood-mix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Little Boots, Fake Blood",
+      "sameAs": "https://musicbrainz.org/artist/edbc42ea-6040-4414-8c4c-9eb7d503f64c"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "electro-house",
+      "electro-pop",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hands: Bonus Disc"
+     },
+     "isrcCode": "UKNFN1900012",
+     "name": "Stuck On Repeat - Fake Blood Mix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2823d35d-8c2d-4bb8-bb05-af724a3dc0f4",
+      "https://www.youtube.com/watch?v=Uh1oIGDWqOg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Stuck on Repeat (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Stuck_on_Repeat_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hands (Little Boots album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Hands_(Little_Boots_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Theo Keating",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Theo_Keating"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Little Boots - Broken Record (Cosmic Kids remix) [Exclusive Download]",
+       "publisher": "VICE / THUMP",
+       "url": "https://www.vice.com/en/article/4x8y7g/little-boots-broken-record-cosmic-kids-remix"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Stuck on Repeat (Fake Blood remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/2823d35d-8c2d-4bb8-bb05-af724a3dc0f4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Stuck On Repeat [Fake Blood Mix]",
+       "publisher": "YouTube (Little Boots - Topic)",
+       "url": "https://www.youtube.com/watch?v=Uh1oIGDWqOg"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Fake Blood's 2008 club remix of Little Boots' song about a love that keeps playing like a record: six and a half minutes for DJs that returned in 2019 on the bonus disc of the tenth-anniversary edition of Hands.",
+     "headline": "Little Boots, Fake Blood - Stuck On Repeat - Fake Blood Mix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bonus track",
+       "url": "https://korczis.github.io/sonic-playground/concept/bonus-track/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/little-boots-fake-blood-stuck-on-repeat-fake-blood-mix/",
+     "wordCount": 550
+    }
+   ]
+  },
   "lonely-boy-love-wanted.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -245552,6 +249001,155 @@
     }
    ]
   },
+  "louie-austen-hoping-herbert-s-high-dub.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/louie-austen-hoping-herbert-s-high-dub/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Louie Austen",
+      "sameAs": "https://musicbrainz.org/artist/5b3d1c89-c602-417e-a3f3-c3c9397d8ac8"
+     },
+     "datePublished": "2002",
+     "genre": [
+      "deep house",
+      "house",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Hoping"
+     },
+     "name": "Hoping (Herbert's High Dub)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/343490cb-504f-400f-9276-8d72ab753b7a",
+      "https://www.youtube.com/watch?v=tJOKRTd43iA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/louie-austen-hoping-herbert-s-high-dub/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/louie-austen-hoping-herbert-s-high-dub/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Louie Austen - Hoping",
+       "publisher": "gullbuy music review",
+       "url": "https://web.archive.org/web/2005/http://www.gullbuy.com/buy/2002/9_10/austenHop.php"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Secondhand Sounds",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Secondhand_Sounds"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Herbert: Secondhand Sounds",
+       "publisher": "The A.V. Club",
+       "url": "https://avclub.com/herbert-secondhand-sounds-1798196440"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2002",
+       "name": "Herbert Remixes - Secondhand Sounds",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/309"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Matthew Herbert",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Matthew_Herbert"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Louie Austen",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Louie_Austen"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Louie Austen: Ein 80er auf den Spuren des Rat Pack",
+       "publisher": "News.at",
+       "url": "https://www.news.at/news/louie-austen-ein-80er-auf-den-spuren-des-rat-pack"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Herbert - A Pair Of Remixes",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/herbert-a-pair-of-remixes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hoping (Herbert's High dub), recording and releases",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/343490cb-504f-400f-9276-8d72ab753b7a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hoping (Herbert High dub), part of Definition of House",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/075ac185-f3d0-471a-860a-ae3d21fd8ea4"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hoping (Herbert's High dub), part of Boiler Room: Solomun in Tulum",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/420cd5ec-e00b-4a7e-a961-9f988e93c623"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Hoping (Herbert's High Dub)",
+       "publisher": "YouTube (Louie Austin - Topic)",
+       "url": "https://www.youtube.com/watch?v=tJOKRTd43iA"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Matthew Herbert's dub of Hoping, a single by the Viennese crooner Louie Austen: one of seven versions on the 2002 Kitty-Yo CD single, also on Herbert's remix collection Secondhand Sounds that year, and paired with his Moloko remix on a 2021 vinyl reissue.",
+     "headline": "Louie Austen - Hoping (Herbert's High Dub)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dub",
+       "url": "https://korczis.github.io/sonic-playground/concept/dub/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/louie-austen-hoping-herbert-s-high-dub/",
+     "wordCount": 546
+    }
+   ]
+  },
   "louie-austen-one-night-in-rio.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -245643,6 +249241,129 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/louie-austen-one-night-in-rio/",
      "wordCount": 545
+    }
+   ]
+  },
+  "louisahhh-helsmoortel-roar.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/louisahhh-helsmoortel-roar/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Louisahhh, Helsmoortel",
+      "sameAs": "https://musicbrainz.org/artist/70900801-c182-4906-b870-4bf8e2b8129b"
+     },
+     "datePublished": "2025",
+     "genre": [
+      "techno",
+      "ebm",
+      "industrial"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "ROAR"
+     },
+     "name": "ROAR",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ea4cddc8-478c-4596-914d-2e2783660684",
+      "https://www.youtube.com/watch?v=UkCjkLf9lf0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/louisahhh-helsmoortel-roar/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/louisahhh-helsmoortel-roar/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "LOUISAHHH x HELSMOORTEL: \"ROAR\" from Sugar & Violence",
+       "publisher": "YouTube (Artoffact Records)",
+       "url": "https://www.youtube.com/watch?v=UkCjkLf9lf0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "ROAR (art track, Sugar & Violence)",
+       "publisher": "YouTube (Louisahhh - Topic)",
+       "url": "https://www.youtube.com/watch?v=Tzoxhvc5UDA"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Sugar & Violence, by Louisahhh x Helsmoortel",
+       "publisher": "Bandcamp",
+       "url": "https://louisahhh.bandcamp.com/album/sugar-violence"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Louisahhh x Helsmoortel “What I Want” single out now",
+       "publisher": "Chain D.L.K.",
+       "url": "https://chaindlk.com/news/louisahhh-x-helsmoortel-what-i-want-single-out-now/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Sugar and Violence: Louisahhh on Trust, Shadow Work, and the Dancefloor",
+       "publisher": "Reverie",
+       "url": "https://www.reverie-online.com/interviews/louisahhh"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Helsmoortel",
+       "publisher": "Bandcamp",
+       "url": "https://helsmoortel.bandcamp.com"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Louisa Pillot",
+       "publisher": "CTM Festival",
+       "url": "https://www.ctm-festival.de/festival-2026/programme/artists/l/louisa-pillot"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Sugar & Violence (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/9facfc03-afb9-4280-b6e0-d649b53cd87f"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "ROAR is the third track of Sugar & Violence, the 2025 Artoffact EP that the New York-born, France-based vocalist and producer Louisahhh made with the Belgian producer Helsmoortel, posted by the label a month ahead of it and filed under techno, new beat and EBM.",
+     "headline": "Louisahhh, Helsmoortel - ROAR",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dub",
+       "url": "https://korczis.github.io/sonic-playground/concept/dub/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/louisahhh-helsmoortel-roar/",
+     "wordCount": 505
     }
    ]
   },
@@ -245842,6 +249563,125 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/lousianahh-love-is-a-punk-vitalic-remix/",
      "wordCount": 962
+    }
+   ]
+  },
+  "lubomir-stankovsky-modus-ty-ja-a-moj-brat.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lubomir-stankovsky-modus-ty-ja-a-moj-brat/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Ľubomír Stankovský, Modus",
+      "sameAs": "https://musicbrainz.org/artist/d7bfb5f8-de7d-4ead-87ad-7b3492623a03"
+     },
+     "datePublished": "1984",
+     "genre": [
+      "pop rock",
+      "pop",
+      "80s"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Najlepšie dievčatá"
+     },
+     "name": "Ty, ja a môj brat",
+     "sameAs": [
+      "https://musicbrainz.org/recording/69fe823d-f9d2-4d22-b6cc-90c4bb26ea42",
+      "https://www.youtube.com/watch?v=FCJQmj78s-4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lubomir-stankovsky-modus-ty-ja-a-moj-brat/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lubomir-stankovsky-modus-ty-ja-a-moj-brat/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Ľubomír Stankovský",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/%C4%BDubom%C3%ADr_Stankovsk%C3%BD"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Najlepšie dievčatá",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Najlep%C5%A1ie_diev%C4%8Dat%C3%A1"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Modus (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Modus_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Album Najlepšie dievčatá legendárnej skupiny Modus vychádza v reedícii",
+       "publisher": "TASR (teraz.sk)",
+       "url": "https://www.teraz.sk/kultura/album-najlepsie-dievcata-legendarnej/828959-clanok.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Železný rytmus a muzikantská osobnosť: Na bubeníka zaspomínal Kamil Peteraj",
+       "publisher": "noviny.sk",
+       "url": "https://www.noviny.sk/slovensko/899864-zelezny-rytmus-a-muzikantska-osobnost-na-bubenika-zaspominal-kamil-peteraj"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ty, ja a môj brat (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/69fe823d-f9d2-4d22-b6cc-90c4bb26ea42"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ty ja a môj brat (Sklíčka)",
+       "publisher": "YouTube (Modus - Topic)",
+       "url": "https://www.youtube.com/watch?v=FCJQmj78s-4"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The 1984 Modus song by Ján Lehotský and Kamil Peteraj that the band's drummer Ľubomír Stankovský sang, never meant as a hit, and that Slovakia came to know by a phrase of its refrain, Sklíčka dotykov.",
+     "educationalLevel": "introductory",
+     "headline": "Ľubomír Stankovský, Modus - Ty, ja a môj brat",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lubomir-stankovsky-modus-ty-ja-a-moj-brat/",
+     "wordCount": 542
     }
    ]
   },
@@ -246248,6 +250088,112 @@
     }
    ]
   },
+  "lucky-luke-f-e-e-l.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lucky-luke-f-e-e-l/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lucky Luke",
+      "sameAs": "https://musicbrainz.org/artist/ac3b8052-6dc1-448e-a678-a20bc9975e90"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "electronic",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "F.E.E.L."
+     },
+     "isrcCode": "QZ22B1836428",
+     "name": "F.E.E.L.",
+     "sameAs": [
+      "https://musicbrainz.org/recording/195e0dcd-db6e-4d25-88f0-7e2a0e521284",
+      "https://www.youtube.com/watch?v=e4AOrI9gjFA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lucky-luke-f-e-e-l/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lucky-luke-f-e-e-l/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "F.E.E.L. (release credits)",
+       "publisher": "YouTube (Lucky Luke - Topic)",
+       "url": "https://www.youtube.com/watch?v=e4AOrI9gjFA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lucky Luke - F.E.E.L.",
+       "publisher": "YouTube (Lithuania HQ)",
+       "url": "https://www.youtube.com/watch?v=v9bRktNdMIw"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "F.E.E.L. - Lucky Luke",
+       "publisher": "Shazam",
+       "url": "https://www.shazam.com/song/1286924846/feel"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Dar vienas lietuvis pasaulio muzikos elite: Lucky Luke drebins Tomorrowland festivalį",
+       "publisher": "LRT",
+       "url": "https://www.lrt.lt/naujienos/muzika/680/2976161/dar-vienas-lietuvis-pasaulio-muzikos-elite-lucky-luke-drebins-tomorrowland-festivali"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Somebody's Watching Me",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Somebody%27s_Watching_Me"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "F.E.E.L. (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/195e0dcd-db6e-4d25-88f0-7e2a0e521284"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "An early single by the Lithuanian producer Lucky Luke, released by Lithuania HQ in September 2017, two years before Cooler Than Me: a dance track that credits Rockwell, writer of the 1983 hit Somebody's Watching Me, as co-composer.",
+     "headline": "Lucky Luke - F.E.E.L.",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lucky-luke-f-e-e-l/",
+     "wordCount": 547
+    }
+   ]
+  },
   "luiz-henrique-mas-que-nada.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -246467,6 +250413,139 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/lukas-graham-7-years/",
      "wordCount": 536
+    }
+   ]
+  },
+  "lukas-graham-drunk-in-the-morning.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lukas-graham-drunk-in-the-morning/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lukas Graham",
+      "sameAs": "https://musicbrainz.org/artist/124cec07-44f1-4a99-9aaa-96a5bb9ec0bd"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "pop",
+      "soul"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lukas Graham"
+     },
+     "isrcCode": "USWB11514268",
+     "name": "Drunk in the Morning",
+     "sameAs": [
+      "https://musicbrainz.org/recording/7b8fd259-bf4f-4018-8978-733739517c9b",
+      "https://www.youtube.com/watch?v=MZo-I98H3RM"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lukas-graham-drunk-in-the-morning/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lukas-graham-drunk-in-the-morning/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Drunk in the Morning",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Drunk_in_the_Morning"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lukas Graham (2015 album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lukas_Graham_(2015_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lukas Graham (2012 album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lukas_Graham_(2012_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Lukas Graham",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lukas_Graham"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Let's Get Drunk in the Morning and Take the World by Storm: An Interview with Lukas Graham",
+       "publisher": "Vice (Noisey)",
+       "url": "https://www.vice.com/en/article/lukas-graham-2015-interview/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "CD: Lukas Graham - Lukas Graham",
+       "publisher": "The Arts Desk",
+       "url": "https://www.theartsdesk.com/new-music/cd-lukas-graham-lukas-graham"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Drunk in the Morning (Provided to YouTube by Warner Records)",
+       "publisher": "YouTube (Lukas Graham - Topic)",
+       "url": "https://www.youtube.com/watch?v=MZo-I98H3RM"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Lukas Graham - Drunk In The Morning [Official Music Video]",
+       "publisher": "YouTube (Lukas Graham)",
+       "url": "https://www.youtube.com/watch?v=-yvHqenLpUU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Drunk in the Morning (new version, recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/7b8fd259-bf4f-4018-8978-733739517c9b"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The Danish number one that first spread as a homemade video from Copenhagen, a playful 5 a.m. phone call set to perky piano chords and horns, heard here in the newer version on the band's 2016 international album.",
+     "educationalLevel": "introductory",
+     "headline": "Lukas Graham - Drunk in the Morning",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lukas-graham-drunk-in-the-morning/",
+     "wordCount": 516
     }
    ]
   },
@@ -247275,6 +251354,239 @@
     }
    ]
   },
+  "mad-doctor-x-intergalacticthrowdown.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mad-doctor-x-intergalacticthrowdown/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mad Doctor X",
+      "sameAs": "https://musicbrainz.org/artist/32551902-990a-449f-b121-31b8407f2141"
+     },
+     "datePublished": "1997",
+     "genre": [
+      "trip-hop",
+      "downtempo",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Picnic With The Greys"
+     },
+     "name": "Intergalacticthrowdown",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f6c75d15-f3fc-4d72-a691-51e72d52ad66",
+      "https://www.youtube.com/watch?v=zjfezI6hnF4"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mad-doctor-x-intergalacticthrowdown/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mad-doctor-x-intergalacticthrowdown/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Mad Doctor X",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mad_Doctor_X"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mad Doctor X",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/45805-Mad-Doctor-X"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "1997",
+       "name": "Mad Doctor X - Picnic With The Greys",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/master/189076-Mad-Doctor-X-Picnic-With-The-Greys"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Picnic With The Greys (Freskanova, FNTCD2)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/771f6535-e0b0-4951-9160-a68d39f4cc44"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "LateNightTales: Nightmares on Wax",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/10a9b8ec-0b49-4b44-88a4-905df7f23dd0"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Late Night Tales",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Late_Night_Tales"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mad Doctor X - Intergalactic Throwdown (Late Night Tales: Nightmares on Wax)",
+       "publisher": "YouTube (Late Night Tales)",
+       "url": "https://www.youtube.com/watch?v=zjfezI6hnF4"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The six-minute opener of Picnic With The Greys, the 1997 Freskanova album by the London DJ Mad Doctor X, filed under trip hop and downtempo, later chosen by Nightmares On Wax for his 2003 LateNightTales mix.",
+     "headline": "Mad Doctor X - Intergalacticthrowdown",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "turntablism",
+       "url": "https://korczis.github.io/sonic-playground/concept/turntablism/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mad-doctor-x-intergalacticthrowdown/",
+     "wordCount": 513
+    }
+   ]
+  },
+  "maelstrom-louisahhh-rough-tender.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maelstrom-louisahhh-rough-tender/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Maelstrom, Louisahhh",
+      "sameAs": "https://musicbrainz.org/artist/210687d0-427a-4d05-ac95-15a738f112b5"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "techno",
+      "house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Bromance #15: Traces - Single"
+     },
+     "name": "Rough & Tender",
+     "sameAs": [
+      "https://musicbrainz.org/recording/037eca48-d570-4b4d-b51d-ce2d707a75cf",
+      "https://www.youtube.com/watch?v=M_k93zzjgj8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maelstrom-louisahhh-rough-tender/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/maelstrom-louisahhh-rough-tender/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "BROMANCE #15 - LOUISAHHH!!! & MAELSTROM - ROUGH & TENDER",
+       "publisher": "YouTube (Bromance Records)",
+       "url": "https://www.youtube.com/watch?v=M_k93zzjgj8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "BROMANCE #15 - Traces EP Deluxe Edition (Dave Clarke Gothic Stripped Down Mix)",
+       "publisher": "YouTube (Bromance Records)",
+       "url": "https://www.youtube.com/watch?v=X1Qp_6tqNVk"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Louisahhh!!! is the Queen of French Techno (and French Men)",
+       "publisher": "Vice (Thump)",
+       "url": "https://www.vice.com/en/article/louisahhh-is-the-ice-queen-of-french-techno-and-french-men/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Hear Louisahhh!!! and Maelstrom Go 'Night Clubbing' for Bromance",
+       "publisher": "Spin",
+       "url": "https://spinmagazine.com/articles/louisahhh-night-clubbing-maelstrom-stream-bromance-traces/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Maelstrom & Louisahhh: Failing with Grace",
+       "publisher": "15 Questions",
+       "url": "https://www.15questions.net/interview/maelstrom-louisahhh-about-collaboration/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Audio: Maelstrom Guides Us Through the Depths of Techno and Electro",
+       "publisher": "fabric",
+       "url": "https://www.fabriclondon.com/posts/audio-maelstrom-guides-us-through-the-depths-of-techno-and-electro"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Rough & Tender (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/037eca48-d570-4b4d-b51d-ce2d707a75cf"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Rough & Tender is the second side of Bromance #15, the March 2014 release of Brodinski's label credited to Louisahhh and the Nantes producer Maelstrom: a dark club track that opens on spoken words about guarding a fragile heart.",
+     "educationalLevel": "introductory",
+     "headline": "Maelstrom, Louisahhh - Rough & Tender",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "spoken word",
+       "url": "https://korczis.github.io/sonic-playground/concept/spoken-word/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/maelstrom-louisahhh-rough-tender/",
+     "wordCount": 509
+    }
+   ]
+  },
   "mafia-klvb-credit-card.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -247476,6 +251788,126 @@
     }
    ]
   },
+  "make-the-girl-dance-baby-baby-baby.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/make-the-girl-dance-baby-baby-baby/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Make The Girl Dance",
+      "sameAs": "https://musicbrainz.org/artist/776268db-54a1-45b4-ba66-0315d0c7aff6"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "electro",
+      "electro-house",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Baby Baby Baby (Original and Remix)"
+     },
+     "name": "Baby Baby Baby",
+     "sameAs": [
+      "https://musicbrainz.org/recording/1d6175ac-bdeb-42c9-a259-77a361337876",
+      "https://www.youtube.com/watch?v=3bdZeR8lh3M"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/make-the-girl-dance-baby-baby-baby/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/make-the-girl-dance-baby-baby-baby/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Make the Girl Dance",
+       "publisher": "Wikipedia (French)",
+       "url": "https://fr.wikipedia.org/wiki/Make_the_Girl_Dance"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "NSFW And Inappropriate: Baby Baby Baby!!",
+       "publisher": "Synthtopia",
+       "url": "https://www.synthtopia.com/?p=14183"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Baby Baby Baby se publica en España",
+       "publisher": "Neo2",
+       "url": "https://www.neo2.com/?p=13728"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Les filles nues de la rue Montorgueil",
+       "publisher": "evous (after Le Parisien)",
+       "url": "https://www.evous.fr/paris/2eme-Arrondissement/Actualites-Paris-2e/Sorties-Paris-2e/Archives-sorties-Paris-2e/Les-filles-nues-de-la-rue,1120460.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Make The Girl Dance - Baby Baby Baby (chart history)",
+       "publisher": "lescharts.com",
+       "url": "https://lescharts.com/showitem.asp?interpret=Make+The+Girl+Dance&titel=Baby+Baby+Baby&cat=s"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Make The Girl Dance 'Baby Baby Baby'",
+       "publisher": "YouTube (Ultra Records)",
+       "url": "https://www.youtube.com/watch?v=uHF3X8tQYPU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Baby Baby Baby (original mix)",
+       "publisher": "YouTube (Make The Girl Dance - Topic)",
+       "url": "https://www.youtube.com/watch?v=3bdZeR8lh3M"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The first single of the Paris duo Make The Girl Dance, released in May 2009 on Roy Music: an electro track with what one writer called earworm synth hooks, made famous by a one-take video of three women walking naked down the rue Montorgueil.",
+     "educationalLevel": "introductory",
+     "headline": "Make The Girl Dance - Baby Baby Baby",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/make-the-girl-dance-baby-baby-baby/",
+     "wordCount": 528
+    }
+   ]
+  },
   "mama-tiefschwarz-solomun-corporate-butcher-solomun-remix.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -247592,6 +252024,98 @@
     }
    ]
   },
+  "mandalay-like-her.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mandalay-like-her/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mandalay",
+      "sameAs": "https://musicbrainz.org/artist/d66acd16-1a3e-449d-88e6-02ffbc55a264"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "trip-hop",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Instinct"
+     },
+     "isrcCode": "GBBLK0000084",
+     "name": "Like Her",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9e18659c-fdb6-4ed4-af48-d4cef63f99f2",
+      "https://www.youtube.com/watch?v=mFq1Xj5R_mI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mandalay-like-her/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mandalay-like-her/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Mandalay (band)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mandalay_(band)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Instinct (Mandalay album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Instinct_(Mandalay_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Like Her (release credits)",
+       "publisher": "YouTube (Mandalay - Topic)",
+       "url": "https://www.youtube.com/watch?v=mFq1Xj5R_mI"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Like Her (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9e18659c-fdb6-4ed4-af48-d4cef63f99f2"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "A five-minute song from Instinct, the second and last album of the London trip-hop duo Mandalay, written by Nicola Hitchcock and Saul Freeman and released by V2 in October 2000, later heard in an episode of CSI: Crime Scene Investigation.",
+     "headline": "Mandalay - Like Her",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mandalay-like-her/",
+     "wordCount": 532
+    }
+   ]
+  },
   "mando-diao-dance-with-somebody-radio-version.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -247680,6 +252204,133 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-radio-version/",
      "wordCount": 622
+    }
+   ]
+  },
+  "mando-diao-dance-with-somebody-the-salazar-brothers-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-the-salazar-brothers-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mando Diao",
+      "sameAs": "https://musicbrainz.org/artist/ea854cc1-13fc-4fd0-86a5-d2c7dba06764"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "remix",
+      "dance",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Dance with Somebody"
+     },
+     "isrcCode": "SEYBD0800204",
+     "name": "Dance With Somebody (The Salazar Brothers Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f8c9e8dc-fa12-44dc-aa44-8108b6df1537",
+      "https://www.youtube.com/watch?v=N-640rbMM1w"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-the-salazar-brothers-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-the-salazar-brothers-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Dance with Somebody (The Salazar Brothers Remix) (Provided to YouTube by Playground Music Scandinavia)",
+       "publisher": "YouTube (Mando Diao - Topic)",
+       "url": "https://www.youtube.com/watch?v=N-640rbMM1w"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dance with Somebody (The Salazar Brothers remix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/f8c9e8dc-fa12-44dc-aa44-8108b6df1537"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Mando Diao - Dance With Somebody (Universal Music AB promo CDr)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/12518011-Mando-Diao-Dance-With-Somebody"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Mando Diao - Dance With Somebody (MP3 promo with remixes)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/13243332-Mando-Diao-Dance-With-Somebody"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Various - Taneční Liga 114",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/5261760-Various-Taneční-Liga-114"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "The Disco Boys - The Disco Boys Volume 10",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/2147616-The-Disco-Boys-The-Disco-Boys-Volume-10"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dance with Somebody",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dance_with_Somebody"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Give Me Fire!",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Give_Me_Fire!"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The Salazar Brothers, who produced Mando Diao's 2009 hit, rework it themselves into a five-minute remix that travelled from a Swedish promo onto dance compilations from Germany to the Czech Republic.",
+     "headline": "Mando Diao - Dance With Somebody (The Salazar Brothers Remix)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mando-diao-dance-with-somebody-the-salazar-brothers-remix/",
+     "wordCount": 511
     }
    ]
   },
@@ -248338,6 +252989,108 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/marbert-rocel-ba-ba-bounce/",
      "wordCount": 543
+    }
+   ]
+  },
+  "marbert-rocel-bird-of-passage.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marbert-rocel-bird-of-passage/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Marbert Rocel",
+      "sameAs": "https://musicbrainz.org/artist/33092a25-bab6-401a-ac69-fa415a4958b0"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "electro-pop",
+      "electronic",
+      "indie pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "In the Beginning"
+     },
+     "name": "Bird of Passage",
+     "sameAs": [
+      "https://musicbrainz.org/recording/b90262c3-fe69-4715-ab0c-5cc703068d22",
+      "https://www.youtube.com/watch?v=M-wPymxu4C0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marbert-rocel-bird-of-passage/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/marbert-rocel-bird-of-passage/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "In The Beginning",
+       "publisher": "Bandcamp (Marbert Rocel)",
+       "url": "https://marbert-rocel.bandcamp.com/album/in-the-beginning"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marbert Rocel - Bird Of Passage",
+       "publisher": "YouTube (Compost Records)",
+       "url": "https://www.youtube.com/watch?v=M-wPymxu4C0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Crate Expectations: Marbert Rocel",
+       "publisher": "VICE / THUMP",
+       "url": "https://www.vice.com/nl/article/crate-expectations-marbert-rocel/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marbert Rocel",
+       "publisher": "Wikipedia",
+       "url": "https://de.wikipedia.org/wiki/Marbert_Rocel"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Bird of Passage (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/b90262c3-fe69-4715-ab0c-5cc703068d22"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The ninth track of In the Beginning, the 2015 Compost Records album by the Leipzig trio Marbert Rocel: a four-minute album song that no review singles out, heard here against what the band says about the record.",
+     "educationalLevel": "introductory",
+     "headline": "Marbert Rocel - Bird of Passage",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "synthesizer",
+       "url": "https://korczis.github.io/sonic-playground/concept/synthesizer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/concept/deep-cut/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/marbert-rocel-bird-of-passage/",
+     "wordCount": 530
     }
    ]
   },
@@ -249294,6 +254047,112 @@
     }
    ]
   },
+  "marcus-layton-indiana-smalltown-boy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marcus-layton-indiana-smalltown-boy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Marcus Layton, Indiana",
+      "sameAs": "https://musicbrainz.org/artist/368ba5c4-0ac9-44af-9f2f-006a7ae53d8c"
+     },
+     "datePublished": "2022",
+     "genre": [
+      "cover",
+      "house",
+      "electro-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Smalltown Boy"
+     },
+     "isrcCode": "DES232200140",
+     "name": "Smalltown Boy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9ce59910-f1a7-42f0-a5ef-efdf352ca18f",
+      "https://www.youtube.com/watch?v=ZcgiGWnk2sg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marcus-layton-indiana-smalltown-boy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/marcus-layton-indiana-smalltown-boy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Smalltown Boy - Marcus Layton feat. Indiana",
+       "publisher": "Qobuz",
+       "url": "https://www.qobuz.com/dk-en/album/smalltown-boy-marcus-layton-feat-indiana/qnmptzj4q4z4a"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Smalltown Boy (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9ce59910-f1a7-42f0-a5ef-efdf352ca18f"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Smalltown Boy",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Smalltown_Boy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Indiana (singer)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Indiana_(singer)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marcus Layton",
+       "publisher": "gigmit",
+       "url": "https://www.gigmit.com/marcus-layton"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marcus Layton ft. Indiana - Smalltown Boy",
+       "publisher": "YouTube (Marcus Layton)",
+       "url": "https://www.youtube.com/watch?v=ZcgiGWnk2sg"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The Berlin producer Marcus Layton's 2022 version of Bronski Beat's Smalltown Boy, with the English singer Indiana as featured artist: a dance cover of the 1984 song, two minutes and twenty-four seconds long, released as a single on the label Selected.",
+     "headline": "Marcus Layton, Indiana - Smalltown Boy",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/marcus-layton-indiana-smalltown-boy/",
+     "wordCount": 494
+    }
+   ]
+  },
   "marcus-marr-nick-murphy-birthday-card.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -249473,6 +254332,139 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/marcus-marr-nick-murphy-the-trouble-with-us/",
      "wordCount": 662
+    }
+   ]
+  },
+  "marcus-meinhardt-endjoy.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marcus-meinhardt-endjoy/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Marcus Meinhardt",
+      "sameAs": "https://musicbrainz.org/artist/31d08514-0461-4c94-a22d-52d7a981939c"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "tech house",
+      "minimal"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "20 Years Best Of Marcus Meinhardt"
+     },
+     "name": "Endjoy",
+     "sameAs": [
+      "https://musicbrainz.org/recording/e2682711-9ba0-469d-b4ec-e6589e7f9b5e",
+      "https://www.youtube.com/watch?v=uxfZf7jPcQ0"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/marcus-meinhardt-endjoy/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/marcus-meinhardt-endjoy/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Marcus Meinhardt - Endjoy (Original Mix) [BAR25-023CD]",
+       "publisher": "YouTube (Bar 25 Music)",
+       "url": "https://www.youtube.com/watch?v=uxfZf7jPcQ0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Marcus Meinhardt - Endjoy (Original Mix) [BAR25-22]",
+       "publisher": "YouTube (Bar 25 Music)",
+       "url": "https://www.youtube.com/watch?v=2BSPL78Lfc8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Bar 25: Tage Ausserhalb Der Zeit (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/a5a669e7-07da-4042-a686-f8f53335e883"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "20 Years Best of Marcus Meinhardt (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/e0f4c36a-ab18-42ae-bde1-da61d4dc878e"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Various - Soundtrack Bar 25: Tage außerhalb der Zeit",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/various-soundtrack-bar-25-tage-auerhalb-der-zeit"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Endjoy, on This is Bar 25 Music (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a24ad619-9915-4a7a-8429-36212de01696"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Bar25 - Tage außerhalb der Zeit",
+       "publisher": "filmportal.de",
+       "url": "https://www.filmportal.de/en/movie/bar25-tage-ausserhalb-der-zeit_"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marcus Meinhardt",
+       "publisher": "Dachstock",
+       "url": "https://dachstock.ch/artist/marcus-meinhardt"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Marcus Meinhardt",
+       "publisher": "Partyflock",
+       "url": "https://partyflock.nl/artist/23742"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Endjoy is the Berlin DJ Marcus Meinhardt's track on the 2012 soundtrack to Bar25 - Tage außerhalb der Zeit, the documentary about the riverside club, and the opening track of his 2018 retrospective 20 Years Best Of Marcus Meinhardt on his own label, Heinz Music.",
+     "headline": "Marcus Meinhardt - Endjoy",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "soundtrack",
+       "url": "https://korczis.github.io/sonic-playground/concept/soundtrack/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/marcus-meinhardt-endjoy/",
+     "wordCount": 501
     }
    ]
   },
@@ -250282,6 +255274,114 @@
     }
    ]
   },
+  "mark-fry-song-for-wilde.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mark-fry-song-for-wilde/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mark Fry",
+      "sameAs": "https://musicbrainz.org/artist/54afff28-5d10-4c91-b5cb-959c43451f56"
+     },
+     "datePublished": "1972",
+     "genre": [
+      "folk",
+      "psychedelic",
+      "singer-songwriter"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Dreaming with Alice"
+     },
+     "name": "Song for Wilde",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8fa37878-5feb-43d2-aa95-e68966489136",
+      "https://www.youtube.com/watch?v=cbNoEg1hr0w"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mark-fry-song-for-wilde/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mark-fry-song-for-wilde/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Mark Fry",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mark_Fry"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dreaming with Alice",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Dreaming_with_Alice"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Mark Fry @ Stone Nest, London, 16.05.25",
+       "publisher": "Bearded Magazine",
+       "url": "https://www.beardedmagazine.com/live/article/mark-fry-stone-nest-london-16.05.25"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Mark Fry - Dreaming With Alice",
+       "publisher": "Now-Again Records",
+       "url": "https://www.nowagainrecords.com/mark-fry-dreaming-with-alice/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Dreaming With Alice (1972 release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/b71dc374-63e2-4f56-a793-62326b737181"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Song for Wilde",
+       "publisher": "YouTube (Mark Fry - Topic)",
+       "url": "https://www.youtube.com/watch?v=cbNoEg1hr0w"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Two and a half minutes from Dreaming with Alice, the album the English painter Mark Fry recorded in Rome in 1971 as a teenager: a song for his baby brother learning to walk, from a record barely released in Italy and later hailed as a psychedelic folk classic.",
+     "educationalLevel": "introductory",
+     "headline": "Mark Fry - Song for Wilde",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remastering",
+       "url": "https://korczis.github.io/sonic-playground/concept/remastering/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mark-fry-song-for-wilde/",
+     "wordCount": 521
+    }
+   ]
+  },
   "maroon-5-cardi-b-girls-like-you-feat-cardi-b-cardi-b-version.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -250490,6 +255590,125 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/maroon-5-get-back-in-my-life/",
      "wordCount": 515
+    }
+   ]
+  },
+  "martin-rev-sparks.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/martin-rev-sparks/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Martin Rev",
+      "sameAs": "https://musicbrainz.org/artist/15dba3af-bb9a-4a19-808d-fbffc085c4ff"
+     },
+     "datePublished": "2000",
+     "genre": [
+      "electronic",
+      "experimental"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Strangeworld"
+     },
+     "name": "Sparks",
+     "sameAs": [
+      "https://musicbrainz.org/recording/4fe9bde4-1c87-4494-9447-cd2518dedb15",
+      "https://www.youtube.com/watch?v=FY15F_8txxg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/martin-rev-sparks/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/martin-rev-sparks/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Martin Rev",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Martin_Rev"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Martin Rev - Strangeworld (Bureau B reissue, press text by Daniel Jahn)",
+       "publisher": "Waiting Room Records",
+       "url": "https://waitingroomrecords.com/products/martin-rev-strangeworld"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Martin Rev - Strangeworld",
+       "publisher": "Piccadilly Records",
+       "url": "https://www.piccadillyrecords.com/136190/Martin-Rev-Strangeworld-Bureau-B"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Martin Rev - To Live / Les Nymphes",
+       "publisher": "The Quietus",
+       "url": "https://thequietus.com/?p=32468"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Late Night Tales: MGMT",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Late_Night_Tales:_MGMT"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album Review: Various, Late Night Tales - MGMT",
+       "publisher": "The New Zealand Herald",
+       "url": "https://nzherald.co.nz/entertainment/album-review-various-late-night-tales-mgmt/UQVJFXGAWU3HWAYJCRTV5DC2AU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sparks (release credits)",
+       "publisher": "YouTube (Martin Rev - Topic)",
+       "url": "https://www.youtube.com/watch?v=FY15F_8txxg"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Sparks (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/4fe9bde4-1c87-4494-9447-cd2518dedb15"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The second track of Strangeworld, the 2000 solo album that Suicide's Martin Rev produced himself in New York for the Finnish label Puu, a record its label hears as dreamy and shaped by memories of doo-wop; MGMT later chose Sparks for their Late Night Tales compilation.",
+     "headline": "Martin Rev - Sparks",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/martin-rev-sparks/",
+     "wordCount": 537
     }
    ]
   },
@@ -251796,6 +257015,111 @@
     }
    ]
   },
+  "matthew-styles-don-t-call-me-again.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/matthew-styles-don-t-call-me-again/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Matthew Styles"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Sample & Hold EP"
+     },
+     "name": "Don't Call Me Again",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=qBFGUrjsUWk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/matthew-styles-don-t-call-me-again/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/matthew-styles-don-t-call-me-again/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Matthew Styles - Don't Call Me Again - Running Back RB028",
+       "publisher": "YouTube (Running Back)",
+       "url": "https://www.youtube.com/watch?v=qBFGUrjsUWk"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Matthew Styles - Sample & Hold EP",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3111389-Matthew-Styles-Sample-Hold-EP"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Sample & Hold EP",
+       "publisher": "Bandcamp (Matthew Styles)",
+       "url": "https://matthewstyles.bandcamp.com/album/sample-hold-ep"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Matthew Styles (artist profile)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/artist/379636-Matthew-Styles"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Running Back (label)",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/label/9291-Running-Back"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Don't Call Me Again (Original) (Provided to YouTube by WAS Word and Sound Medien)",
+       "publisher": "YouTube (Matthew Styles - Topic)",
+       "url": "https://www.youtube.com/watch?v=Tz_ENArLfrk"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The opening track of Matthew Styles' 2011 Sample & Hold EP on Gerd Janson's Running Back label: seven and a half minutes of what the label called straight-up house that works itself up in a frenzy.",
+     "headline": "Matthew Styles - Don't Call Me Again",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "build-up",
+       "url": "https://korczis.github.io/sonic-playground/concept/build-up/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "mastering",
+       "url": "https://korczis.github.io/sonic-playground/concept/mastering/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/matthew-styles-don-t-call-me-again/",
+     "wordCount": 511
+    }
+   ]
+  },
   "matzak-forensic-not-safe-for-work-feat-forensic.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -251890,6 +257214,127 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/matzak-forensic-not-safe-for-work-feat-forensic/",
      "wordCount": 513
+    }
+   ]
+  },
+  "maud-geffray-flavien-berger-in-your-eyes.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maud-geffray-flavien-berger-in-your-eyes/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Maud Geffray, Flavien Berger",
+      "sameAs": "https://musicbrainz.org/artist/badd6d9a-0ff2-46b2-a0a0-8e88eb699122"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "electro-pop",
+      "electronic",
+      "synth-pop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Polaar"
+     },
+     "isrcCode": "FR2FD1700006",
+     "name": "In Your Eyes",
+     "sameAs": [
+      "https://musicbrainz.org/recording/102a4856-c947-4359-aa45-e772416c3752",
+      "https://www.youtube.com/watch?v=GfCv8Sgulvg"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maud-geffray-flavien-berger-in-your-eyes/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/maud-geffray-flavien-berger-in-your-eyes/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Polaar Grooves For Icy Teens: An Interview With Maud Geffray",
+       "publisher": "TITEL kulturmagazin",
+       "url": "https://titel-kulturmagazin.net/2017/05/12/polaar-grooves-for-icy-teens-an-interview-with-maud-geffray/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Maud Geffray - Polaar (PAN054)",
+       "publisher": "Pan European Recording",
+       "url": "https://paneuropeanrecording.com/en/?p=490"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "POLAAR",
+       "publisher": "Bandcamp (Maud Geffray)",
+       "url": "https://maudgeffray.bandcamp.com/album/polaar"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Flavien Berger",
+       "publisher": "Wikipedia",
+       "url": "https://fr.wikipedia.org/wiki/Flavien_Berger"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Scratch Massive",
+       "publisher": "Wikipedia",
+       "url": "https://fr.wikipedia.org/wiki/Scratch_Massive"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "In Your Eyes (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/102a4856-c947-4359-aa45-e772416c3752"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Maud Geffray - In Your Eyes (feat. Flavien Berger) - 360 video",
+       "publisher": "YouTube (Maud Geffray)",
+       "url": "https://www.youtube.com/watch?v=GfCv8Sgulvg"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The one duet on Polaar, Maud Geffray's 2017 solo album born from a film shot in Lapland: Flavien Berger, the male voice she chose after seeing him sing in Paris, joins her on the song the label calls a perfect pop duo.",
+     "educationalLevel": "introductory",
+     "headline": "Maud Geffray, Flavien Berger - In Your Eyes",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/maud-geffray-flavien-berger-in-your-eyes/",
+     "wordCount": 518
     }
    ]
   },
