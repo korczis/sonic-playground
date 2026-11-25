@@ -912,7 +912,13 @@ async function shot(page, name) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'light', {}, true);
     await page.evaluate((q) => localStorage.setItem('sonic-player', JSON.stringify({ queue: [q], index: 0, time: 0 })),
       { source: S0.source, path: S0.path, i18n: {}, artist: S0.artist, track: S0.track, youtube: S0.youtube, thumbnail: '' });
-    await context.route('**/data/play.json*', async (route) => { await new Promise((r) => setTimeout(r, 2500)); await route.continue(); });
+    // fallback(), not continue(): continue() sends the request to the network, past the route that
+    // serves the tested build, so the check read production's play.json and failed whenever the
+    // catalogue's newest songs were not yet deployed (waves 33-35, 2026-11-25).
+    await context.route('**/data/play.json*', async (route) => {
+      await new Promise((r) => setTimeout(r, 2500));
+      await route.fallback();
+    });
     await page.goto(at(`?play=${S1.source.replace(/\.md$/, '')}&t=30`), { waitUntil: 'load' });
     await page.click('#player [data-player-toggle]');
     await page.waitForFunction(() => window.SonicPlayer.state().queue.length === 2, null, { timeout: 15000 }).catch(() => {});
