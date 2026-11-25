@@ -619,6 +619,21 @@ function musicMic({ bpm = 124, chord = [0, 4, 7], kicks = [0, 1, 2, 3], snares =
 // centre; the open queue used to lie over Close on phones and at 1280x720 (a review, 2026-11-15).
 // The visualiser's controls fade while the pointer rests and let clicks through; a pointer move
 // shows them, as it does for a reader, before a test clicks one.
+// A click on one of the visualiser's controls as a reader makes it: the pointer moves onto the
+// control first, which shows the controls again (they fade 2.6 s after the last move and then let
+// clicks through to the picture), then clicks there. A plain page.click on a slow runner met them
+// faded and retried until its timeout, ending the gate (2026-11-25).
+async function vizClick(page, selector) {
+  // Into view first, as page.click would: a device chip can sit below the fold of the settings sheet.
+  await page.locator(selector).first().scrollIntoViewIfNeeded({ timeout: 5000 }).catch(() => {});
+  const box = await page.locator(selector).first().boundingBox().catch(() => null);
+  if (!box) return page.click(selector);
+  const x = box.x + box.width / 2, y = box.y + box.height / 2;
+  await page.mouse.move(x - 2, y - 2);
+  await page.mouse.move(x, y);
+  await page.mouse.click(x, y);
+}
+
 async function showViz(page) {
   await page.mouse.move(31, 31);
   await page.mouse.move(40, 40);
@@ -817,7 +832,7 @@ async function shot(page, name) {
     await page.waitForFunction(() => !!document.querySelector('iframe#player-video') && !document.getElementById('player-panel').hidden, null, { timeout: 10000 }).catch(() => {});
     await page.evaluate(() => window.SonicVisualizer.cinema(true));
     await page.mouse.move(30, 30);
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(300);
     check(await page.evaluate(() => {
       const v = document.querySelector('#player-panel > div').getBoundingClientRect();
@@ -938,7 +953,7 @@ async function shot(page, name) {
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await page.mouse.move(30, 30);
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     // Two devices start in turn (the fake camera behind the silent tab, then the microphone):
     // on a loaded machine that took over 10 s, so the wait is long and bounded.
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 30000 }).catch(() => {});
@@ -950,8 +965,8 @@ async function shot(page, name) {
     // The controls fade while the pointer rests; a move shows them, as it does for a reader.
     await page.mouse.move(31, 31);
     await page.mouse.move(40, 40);
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
-    await page.click('#visualizer-full [data-viz-source="clock"]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
+    await vizClick(page, '#visualizer-full [data-viz-source="clock"]');
     check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser: "Don\'t listen" returns to the clock');
     check(errors.length === 0, `visualiser (microphone): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
@@ -967,7 +982,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await page.mouse.move(30, 30);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied', null, { timeout: 5000 }).catch(() => {});
     check(await page.evaluate(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied'
       && window.SonicVisualizer.source() === 'clock'), 'visualiser: a refused microphone is said, and the picture stays on the clock');
@@ -1030,7 +1045,7 @@ async function shot(page, name) {
     });
     const sheet = async (page) => {
       await showViz(page);
-      if (await page.isHidden('#visualizer-settings')) await page.click('#visualizer-full [data-viz-settings]');
+      if (await page.isHidden('#visualizer-settings')) await vizClick(page, '#visualizer-full [data-viz-settings]');
     };
     const heard = (page, source) => page.waitForFunction((s) => window.SonicVisualizer.source() === s
       && window.SonicVisualizer.analysis().level > 0, source, { timeout: 15000 }).catch(() => {});
@@ -1053,7 +1068,7 @@ async function shot(page, name) {
       && listed.chips[1].id === 'mic-1' && !listed.chips[1].badge && listed.chips[2].id === 'usb-9'
       && listed.hint && !listed.system,
       `visualiser sources: the inputs are listed, the loopback first with its badge, no alias; the whole computer is offered (${JSON.stringify(listed)})`);
-    await page.click('#visualizer-full [data-viz-device="bh-2ch"]');
+    await vizClick(page, '#visualizer-full [data-viz-device="bh-2ch"]');
     await heard(page, 'device');
     let ask = (await asked(page)).pop();
     let said = await status(page);
@@ -1071,14 +1086,14 @@ async function shot(page, name) {
     check((await asked(page)).length === 0 && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock',
       'visualiser sources: after a reload nothing is asked before the reader acts');
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
-    await page.click('#visualizer-full [data-visualizer-stage]');
+    await vizClick(page, '#visualizer-full [data-visualizer-stage]');
     await heard(page, 'device');
     ask = (await asked(page))[0];
     check(ask && ask.c.audio.deviceId.exact === 'bh-2ch' && await page.evaluate(() => window.SonicVisualizer.source()) === 'device',
       `visualiser sources: the remembered loopback starts again by itself, without a prompt (${JSON.stringify(ask)})`);
 
     await sheet(page);
-    await page.click('#visualizer-full [data-viz-source="system"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="system"]');
     await heard(page, 'system');
     ask = (await asked(page)).pop();
     said = await status(page);
@@ -1087,13 +1102,13 @@ async function shot(page, name) {
       && await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer')).device) === '',
       `visualiser sources: the whole computer is asked with its sound, said, and replaces the remembered device (${JSON.stringify(ask)})`);
     await sheet(page);
-    await page.click('#visualizer-full [data-viz-source="tab"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="tab"]');
     await heard(page, 'tab');
     ask = (await asked(page)).pop();
     check(ask && ask.how === 'display' && ask.c.preferCurrentTab === true && (await status(page)).key === 'viz.status_tab',
       `visualiser sources: this tab is asked and said (${JSON.stringify(ask)})`);
     await sheet(page);
-    await page.click('#visualizer-full [data-viz-source="mic"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="mic"]');
     await heard(page, 'mic');
     ask = (await asked(page)).pop();
     said = await status(page);
@@ -1102,11 +1117,11 @@ async function shot(page, name) {
       `visualiser sources: the microphone is asked only when picked, raw, and named ("${said.text}")`);
     // A plain microphone chosen as a device is remembered but never starts by itself.
     await sheet(page);
-    await page.click('#visualizer-full [data-viz-device="mic-1"]');
+    await vizClick(page, '#visualizer-full [data-viz-device="mic-1"]');
     await page.waitForFunction(() => /** @type {any} */ (window).__asked.length === 5, null, { timeout: 5000 }).catch(() => {});
     await page.reload({ waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
-    await page.click('#visualizer-full [data-visualizer-stage]');
+    await vizClick(page, '#visualizer-full [data-visualizer-stage]');
     await sheet(page);
     // The arrows move between the devices without starting one.
     await page.waitForSelector('#visualizer-full [data-viz-device="bh-2ch"]', { timeout: 5000 }).catch(() => {});
@@ -1117,7 +1132,7 @@ async function shot(page, name) {
       && (await asked(page)).length === 0 && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock'
       && await page.evaluate(() => document.activeElement.getAttribute('data-viz-device')) === 'mic-1',
       'visualiser sources: a remembered plain microphone never starts by itself, nor does an arrow key');
-    await page.click('#visualizer-full [data-viz-device="usb-9"]');
+    await vizClick(page, '#visualizer-full [data-viz-device="usb-9"]');
     await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied', null, { timeout: 5000 }).catch(() => {});
     check((await status(page)).key === 'viz.denied' && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock'
       && await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer')).device) === 'mic-1',
@@ -1132,7 +1147,7 @@ async function shot(page, name) {
     await second.page.evaluate(() => localStorage.setItem('sonic.visualizer', JSON.stringify({ device: 'bh-2ch' })));
     await second.page.reload({ waitUntil: 'load' });
     await second.page.evaluate(() => window.SonicVisualizer.open('tower'));
-    await second.page.click('#visualizer-full [data-visualizer-stage]');
+    await vizClick(second.page, '#visualizer-full [data-visualizer-stage]');
     await sheet(second.page);
     await second.page.waitForTimeout(1500);
     const before = await second.page.evaluate(() => ({
@@ -1196,7 +1211,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('ripple'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.analysis().bpm > 0, null, { timeout: 15000 }).catch(() => {});
     // The label beside the mode's name refreshes once a second.
     await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-tempo]').textContent.length > 0, null, { timeout: 5000 }).catch(() => {});
@@ -1279,7 +1294,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     // Every frame's bass and every onset the analysis reports, in the page's clock.
     await page.evaluate(() => {
@@ -1353,7 +1368,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await page.waitForTimeout(13000);
     const seen = [];
@@ -1373,7 +1388,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     // Once the tempo has settled on the groove's own (an early estimate may land on a related one).
     await page.waitForFunction((g) => { const b = window.SonicVisualizer.analysis().bpm; return Math.abs(b - g) <= 3 || Math.abs(b - 2 * g) <= 6; }, groove.bpm, { timeout: 30000 }).catch(() => {});
     await page.waitForTimeout(2000);
@@ -1394,7 +1409,8 @@ async function shot(page, name) {
       if (d < -0.05 && d > -0.8) back++;
     }
     if (label === 'syncopated') {
-      check(locked.length > 200 && back === 0, `visualiser: on a syncopated groove the beat's phase never jumps back (${back} jumps in ${locked.length} frames)`);
+      const held = locked.length ? locked[locked.length - 1][0] - locked[0][0] : 0;
+      check(held >= 4 && back === 0, `visualiser: on a syncopated groove the beat's phase never jumps back (${back} jumps in ${held.toFixed(1)} s locked, ${locked.length} frames)`);
     } else {
       // The kick reaches the analysis about 60-100 ms after it is played.
       const at = (t) => { let best = null; for (const r of locked) if (!best || Math.abs(r[0] - t) < Math.abs(best[0] - t)) best = r; return best; };
@@ -1441,7 +1457,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await page.waitForTimeout(2500);
     await page.evaluate(() => {
@@ -1550,7 +1566,7 @@ async function shot(page, name) {
     `visualiser: the clock has no pitch and no stereo, its bar runs over four beats from the downbeat (${clock.length} frames, bar ${Math.min(...bars).toFixed(2)}-${Math.max(...bars).toFixed(2)}, downbeats at ${downs.map((b) => b.toFixed(2)).join(' ')})`);
     // The controls faded while the pointer rested; a move shows them.
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await page.waitForFunction(() => window.__ends && performance.now() / 1000 > window.__ends[2] + 0.2, null, { timeout: 30000 }).catch(() => {});
     const run = await page.evaluate(() => ({ frames: window.__frames, ends: window.__ends }));
@@ -1631,7 +1647,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await page.evaluate(() => {
       const w = /** @type {any} */ (window);
@@ -1737,7 +1753,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     // Every frame, and the bar on the frame each kick was found.
     await page.evaluate(() => {
@@ -1986,10 +2002,10 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-settings]');
+    await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(400);
     const shown = await page.evaluate(() => ({
       system: document.querySelector('#visualizer-full [data-viz-source="system"]').hidden,
@@ -2015,6 +2031,25 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (phone sources): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // The controls fade 2.6 s after the pointer last moved, but not while it rests on one of them:
+  // a reader holding the pointer on "Follow the music" saw it fade and stop taking clicks.
+  {
+    const { context, page, errors } = await open(browser, at(''), desktop, 'dark');
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    const box = await page.locator('#visualizer-full [data-viz-settings]').boundingBox();
+    await page.mouse.move(box.x + box.width / 2 - 2, box.y + box.height / 2);
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.waitForTimeout(3500);
+    const resting = await page.evaluate(() => document.getElementById('visualizer-full').getAttribute('data-controls'));
+    await page.mouse.move(700, 600);
+    await page.mouse.move(705, 605);
+    await page.waitForTimeout(3500);
+    const away = await page.evaluate(() => document.getElementById('visualizer-full').getAttribute('data-controls'));
+    check(resting === 'shown' && away === 'hidden', `visualiser: the controls stay while the pointer rests on one, and fade once it is away (${resting}, then ${away})`);
+    check(errors.length === 0, `visualiser (controls under the pointer): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // The toast keeps off the open settings sheet as it keeps off the video (a browser review,
   // 2026-11-23: on a phone it hid the cinema switch and the first device for its few seconds), at
   // 390 and 320 px; and a shared link under reduced motion opens the calm mode, not its own.
@@ -2025,7 +2060,7 @@ async function shot(page, name) {
     await page.waitForFunction(() => window.SonicPlayer && window.SonicPlayer.state().index >= 0, null, { timeout: 10000 }).catch(() => {});
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-settings]');
+    await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(300);
     await page.evaluate(() => window.SonicPlayer.notify('Playing now: a toast over the settings'));
     await page.waitForTimeout(400);
@@ -2039,7 +2074,7 @@ async function shot(page, name) {
     const cross = (a, b) => !!a && !!b && a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
     check(boxes.shown === 'true' && !!boxes.toast && !!boxes.sheet && !cross(boxes.toast, boxes.sheet) && !cross(boxes.toast, boxes.video),
       `visualiser (${vp.width} px): the toast keeps off the open settings sheet and the video (${JSON.stringify({ toast: boxes.toast && [Math.round(boxes.toast.top), Math.round(boxes.toast.bottom)], sheet: boxes.sheet && [Math.round(boxes.sheet.top), Math.round(boxes.sheet.bottom)] })})`);
-    await page.click('#visualizer-full [data-viz-settings]');
+    await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(300);
     check(await page.evaluate(() => !document.documentElement.hasAttribute('data-viz-settings')), `visualiser (${vp.width} px): the sheet closes again with the toast up`);
     check(errors.length === 0, `visualiser (toast, ${vp.width} px): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
@@ -2066,7 +2101,7 @@ async function shot(page, name) {
     await page.evaluate(() => window.SonicVisualizer.open('liquid'));
     await page.waitForFunction(() => !!window.SonicVizGL, null, { timeout: 15000 }).catch(() => {});
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 5000 }).catch(() => {});
     await page.waitForTimeout(2500);
     const { modes, gl } = await page.evaluate(() => ({ modes: window.SonicVizGL.modes(), gl: window.SonicVizGL.supported() }));
@@ -2128,7 +2163,7 @@ async function shot(page, name) {
     await page.waitForTimeout(22500);
     check(await page.evaluate(litShare, '[data-visualizer-stage] canvas') > 0, 'visualiser: flux still draws after morphing through every shape');
     await page.mouse.move(30, 30);
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
     check(await page.isVisible('#visualizer-full [data-viz-fallback]'), 'visualiser (no WebGL 2): the settings say a lighter picture stands in');
     check(three === 0, `visualiser (no WebGL 2): three.js is never requested (${three})`);
     check(errors.length === 0, `visualiser (no WebGL 2): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
@@ -2146,7 +2181,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
     check(await page.evaluate(() => window.SonicVisualizer.source()) === 'mic', 'visualiser (p5 modes): the music is heard through the microphone');
     const stage = '[data-visualizer-stage] canvas';
@@ -2217,7 +2252,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
     const stage = '[data-visualizer-stage] canvas';
     // The mean change of a cell between samples 180 ms apart, and the median luminance.
@@ -2305,7 +2340,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('chrome'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
     const stage = '[data-visualizer-stage] canvas';
     await page.waitForTimeout(2500);
@@ -3186,7 +3221,7 @@ async function shot(page, name) {
     await videoSeen(page, 'visualiser (cinema, landscape 844x390, toast shown)');
     await page.setViewportSize(wide);
     await page.waitForTimeout(300);
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(300);
     check(await page.evaluate(() => {
       const v = document.querySelector('#player-panel > div').getBoundingClientRect();
@@ -3230,15 +3265,15 @@ async function shot(page, name) {
       && document.getElementById('player-panel').style.getPropertyValue('--viz-kick') !== ''),
     'visualiser (cinema): the glow lives on the video panel, not on the root');
     // The 40 s change switch is remembered both ways.
-    await page.click('#visualizer-full label:has([data-viz-cycle])');
+    await vizClick(page, '#visualizer-full label:has([data-viz-cycle])');
     check(await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer') || '{}').cycle === false), 'visualiser: the change switch turns the 40 s change off');
-    await page.click('#visualizer-full label:has([data-viz-cycle])');
+    await vizClick(page, '#visualizer-full label:has([data-viz-cycle])');
     check(await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer') || '{}').cycle === true), 'visualiser: and on again');
     // Reset returns the live controls to the mode's defaults and takes them out of the URL.
     await page.evaluate(() => window.SonicVisualizer.set('prism'));
     await page.evaluate(() => window.SonicVisualizer.param('hue', 120));
     check(new URL(page.url()).searchParams.get('viz.hue') === '120', 'visualiser: a moved control is in the URL');
-    await page.click('#visualizer-full [data-viz-reset]');
+    await vizClick(page, '#visualizer-full [data-viz-reset]');
     check(!new URL(page.url()).searchParams.has('viz.hue') && (await page.evaluate(() => window.SonicVisualizer.params().hue)) === 0,
       'visualiser: Reset returns the controls to the mode\'s defaults');
     // A slider moved by the keyboard writes its value, live, and the URL follows.
@@ -3248,10 +3283,10 @@ async function shot(page, name) {
     check(new URL(page.url()).searchParams.has('viz.warp') && Number(new URL(page.url()).searchParams.get('viz.warp')) === (await page.evaluate(() => window.SonicVisualizer.params().warp)),
       'visualiser: a slider moved by the keyboard sets the control and the URL');
     // The cinema switch in the sheet and the cinema button agree.
-    await page.click('#visualizer-full label:has([data-viz-cinema-switch])');
+    await vizClick(page, '#visualizer-full label:has([data-viz-cinema-switch])');
     check(!(await page.evaluate(() => window.SonicVisualizer.cinema())) && !new URL(page.url()).searchParams.has('viz.video'),
       'visualiser: the cinema switch turns cinema off');
-    await page.click('#visualizer-full label:has([data-viz-cinema-switch])');
+    await vizClick(page, '#visualizer-full label:has([data-viz-cinema-switch])');
     check(await page.evaluate(() => window.SonicVisualizer.cinema()), 'visualiser: the cinema switch turns it on again');
     await page.keyboard.press('Escape');
     // C toggles cinema from the keyboard; F asks for real fullscreen.
@@ -3267,7 +3302,7 @@ async function shot(page, name) {
     // "Copy a link" copies the URL of this picture and this song, and says so.
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-share]');
+    await vizClick(page, '#visualizer-full [data-viz-share]');
     await page.waitForTimeout(300);
     const copied = await page.evaluate(() => navigator.clipboard.readText());
     check(new URL(copied).searchParams.get('viz') && new URL(copied).searchParams.get('play') && new URL(copied).searchParams.get('viz.video') === 'cinema',
@@ -3601,7 +3636,7 @@ async function shot(page, name) {
     await page.mouse.move(20, 20);
     await vizControlsOnTop(page, 'visualiser (phone, opened from the queue)');
     await videoSeen(page, 'visualiser (phone, opened from the queue)');
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
     check(await page.isVisible('#visualizer-settings') && await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
       'visualiser (phone): the settings open within the screen');
     await page.waitForTimeout(100);

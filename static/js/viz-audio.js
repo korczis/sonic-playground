@@ -127,7 +127,7 @@
     kick: Object.assign(detector(40, 150, 0.22, 0.16), { bins: true, k: 2.5, lift: 6 }),
     snare: Object.assign(detector(200, 5000, 0.14, 0.12), { lift: 2 }),
     hat: detector(6500, 16000, 0.08, 0.06),
-    period: 0.5, lastKick: -10, lastAny: -10, beatPhase: 0, offKicks: 0, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
+    period: 0.5, lastKick: -10, lastAny: -10, beatPhase: 0, offKicks: 0, weak: 0, steady: 0, median: 0, tempoConf: 0, tempoAt: -10,
     nov: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novX: new Float32Array(400),
     acf: [new Float32Array(400), new Float32Array(400), new Float32Array(400)], novBin: -1, novFill: 0,
     novLast: [0, 0, 0], novCount: 0, heardAt: -1, rises: [0, 0, 0],
@@ -988,7 +988,14 @@
       var keep = combAll(Math.round(dsp.period / NOV_STEP));
       if (keep >= TEMPO_KEEP && keep >= 0.8 * b0 && supported(dsp.period)) { dsp.tempoConf = keep; return; }
     }
-    if (dsp.tempoConf < (A.bpm ? TEMPO_KEEP : TEMPO_CONF) || shared < TEMPO_SHARED || !supported(period)) { A.bpm = 0; dsp.steady = 0; return; }
+    if (dsp.tempoConf < (A.bpm ? TEMPO_KEEP : TEMPO_CONF) || shared < TEMPO_SHARED || !supported(period)) {
+      // A tempo held gives way after three weak estimates in a row (1.5 s), not one: a slow device
+      // (a CI runner at 30 fps) lost a syncopated groove's tempo on a single dip.
+      if (A.bpm && ++dsp.weak < 3) return;
+      A.bpm = 0; dsp.steady = 0; dsp.weak = 0;
+      return;
+    }
+    dsp.weak = 0;
     // Two estimates in a row that agree within 4% say it.
     dsp.steady = dsp.median && Math.abs(period - dsp.median) < dsp.median * 0.04 ? dsp.steady + 1 : 0;
     dsp.median = period;

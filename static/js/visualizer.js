@@ -359,11 +359,17 @@
     if (!s) return;
     s.setAttribute('data-controls', 'shown');
     clearTimeout(hideTimer);
-    hideTimer = window.setTimeout(function () {
+    // They stay while the settings are open, while focus is on one of them, and while the pointer
+    // rests on one: a reader holding the pointer on a button for a few seconds saw it fade and stop
+    // taking clicks (a slow CI runner's click met the same, 2026-11-25).
+    var fade = function () {
       var panel = settings();
-      var busy = (panel && !panel.hidden) || (s.contains(document.activeElement) && document.activeElement !== s);
-      if (!busy) s.setAttribute('data-controls', 'hidden');
-    }, 2600);
+      var busy = (panel && !panel.hidden) || (s.contains(document.activeElement) && document.activeElement !== s)
+        || !!s.querySelector('[data-viz-cluster]:hover');
+      if (busy) hideTimer = window.setTimeout(fade, 2600);
+      else s.setAttribute('data-controls', 'hidden');
+    };
+    hideTimer = window.setTimeout(fade, 2600);
   }
 
   // The visualiser's keys in the URL; every other component's keys (the player's play and t, the

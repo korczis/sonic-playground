@@ -49,3 +49,13 @@ through a question dialog. Quoted as given (Czech, unaccented).
   measured here (tempo by novelty autocorrelation on real recordings, frame/audio-block aliasing,
   a room's noise periodicity, key profiles) is offered back to algoglyph as knowledge in its own
   `.ai` layer and as proposed plates, through its own workflow and branches.
+
+## 2026-11-25: push algoglyph, then three more passes
+
+- The open question: should the algoglyph branch `chore/knowledge-music-analysis`, which offers
+  sonic-playground's measured lessons back as a curated note, be pushed?
+- Answer (through `/orchestrate`): "ano pushni, mergni a pak ... prvne napis prompt na analyzu,
+  pak ten prompt spust, pak reaguj na vysledky; ano udelej to na tri pruchody" (yes, push it,
+  merge it, and then: write an analysis prompt, run it, react to the results; three passes).
+- What follows: the note goes through algoglyph's own gate and a pull request, and a second round
+  of three analysis passes runs on the deployed visualiser.
