@@ -97023,6 +97023,132 @@
     }
    ]
   },
+  "lauryn-hill-i-used-to-love-him.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lauryn-hill-i-used-to-love-him/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lauryn Hill",
+      "sameAs": "https://musicbrainz.org/artist/e8414012-4a1c-4ad4-be5e-fc55294e28cc"
+     },
+     "datePublished": "1998",
+     "genre": [
+      "r&b",
+      "soul",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Miseducation of Lauryn Hill"
+     },
+     "isrcCode": "USSM19803109",
+     "name": "I Used to Love Him",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2accd8ab-02b8-4425-aaac-658363cfbcbf",
+      "https://www.youtube.com/watch?v=MpcsBbrZwa8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/lauryn-hill-i-used-to-love-him/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lauryn-hill-i-used-to-love-him/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Miseducation of Lauryn Hill",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Miseducation_of_Lauryn_Hill"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "A Track By Track Breakdown Of 'The Miseducation Of Lauryn Hill'",
+       "publisher": "XXL",
+       "url": "https://www.xxlmag.com/a-track-by-track-breakdown-of-the-miseducation-of-lauryn-hill/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "The Miseducation of Lauryn Hill taught us about love 20 years on",
+       "publisher": "Dazed",
+       "url": "https://www.dazeddigital.com/music/article/41106/1/the-miseducation-of-lauryn-hill-taught-us-about-love-20-years"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Dissecting I Used To Love Him & Forgive Them Father by Lauryn Hill",
+       "publisher": "The Ringer (Dissect)",
+       "url": "https://www.theringer.com/podcasts/dissect/2018/12/04/ms1e6-dissecting-i-used-to-love-him-forgive-them-father-by-lauryn-hill"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Mary J. Blige's collaborations with other women",
+       "publisher": "MadameNoire",
+       "url": "https://madamenoire.com/1162879/keyshia-cole-mary-j-blige/5/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Song by Song: A Full Album Review of the Miseducation of Lauryn Hill",
+       "publisher": "The La Salle Falconer",
+       "url": "https://lasallefalconer.com/2022/02/song-by-song-a-full-album-review-of-the-miseducation-of-lauryn-hill"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "I Used to Love Him (release credits)",
+       "publisher": "YouTube (Lauryn Hill - Topic)",
+       "url": "https://www.youtube.com/watch?v=MpcsBbrZwa8"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Devátá skladba alba The Miseducation of Lauryn Hill: rozchodová píseň zpívaná s Mary J. Blige nad střídmým, jazzovým groovem, která se ohlíží za láskou, jež vypravěčku svazovala, a nakonec se obrací k víře.",
+     "educationalLevel": "introductory",
+     "headline": "Lauryn Hill - I Used to Love Him",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/deep-cut/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "concept album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/concept-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/lauryn-hill-i-used-to-love-him/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/lauryn-hill-i-used-to-love-him/",
+     "wordCount": 539
+    }
+   ]
+  },
   "lcd-soundsystem-dance-yrself-clean.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -107368,6 +107494,130 @@
     }
    ]
   },
+  "max-berlin-joakim-elle-et-moi-joakim-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/max-berlin-joakim-elle-et-moi-joakim-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Max Berlin, Joakim",
+      "sameAs": "https://musicbrainz.org/artist/bf14a58a-c9c0-46d3-8ae6-4b9ec2b51442"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "disco",
+      "electronic",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Late Night Tales: Groove Armada"
+     },
+     "isrcCode": "BEG050300010",
+     "name": "Elle et moi - Joakim Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/62ed5285-e241-4582-a8d0-d12ef8107bb0",
+      "https://www.youtube.com/watch?v=37SSWvJEU4c"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/max-berlin-joakim-elle-et-moi-joakim-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/max-berlin-joakim-elle-et-moi-joakim-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Tiga On The Dance Track That Gets Him All Misty-Eyed",
+       "publisher": "Vice",
+       "url": "https://www.vice.com/en/article/tiga-heartbreakers-series-elle-et-moi"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Late Night Tales: Groove Armada",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Late_Night_Tales:_Groove_Armada"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Max Berlin - Elle & Moi (Joakim Remix) (Groove Armada LateNightTales)",
+       "publisher": "YouTube (Late Night Tales)",
+       "url": "https://www.youtube.com/watch?v=4Jhm1rfX4UU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Elle et moi (Joakim Remix)",
+       "publisher": "YouTube (Max Berlin - Topic)",
+       "url": "https://www.youtube.com/watch?v=37SSWvJEU4c"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Max Berlin - Elle et moi",
+       "publisher": "Originals.be",
+       "url": "https://www.originals.be/en/originals/16920"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Joakim Bouaziz",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/Joakim_Bouaziz"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Chansons d'Ennui Tip-Top",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Chansons_d%27Ennui_Tip-Top"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Joakimův osm a půl minuty dlouhý remix Elle et moi, kultovní nahrávky Maxe Berlina z roku 1978, tak jak ho Groove Armada zařadili do svého mixu Late Night Tales z roku 2008: pomalá, křehká skladba, kterou Tiga nazývá filmovou a pohodovou, deskou na ráno.",
+     "educationalLevel": "introductory",
+     "headline": "Max Berlin, Joakim - Elle et moi - Joakim Remix",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dj-mix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/max-berlin-joakim-elle-et-moi-joakim-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/max-berlin-joakim-elle-et-moi-joakim-remix/",
+     "wordCount": 502
+    }
+   ]
+  },
   "max-manie-dance-radio-edit.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -107471,6 +107721,238 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/max-manie-dance-radio-edit/",
      "wordCount": 454
+    }
+   ]
+  },
+  "maxxi-soundsystem-regrets-we-have-no-use-for.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maxxi-soundsystem-regrets-we-have-no-use-for/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Maxxi Soundsystem",
+      "sameAs": "https://musicbrainz.org/artist/da3a1f35-2bdf-45eb-97a7-7989fa54b313"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "deep house",
+      "house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Regrets We Have No Use For"
+     },
+     "name": "Regrets We Have No Use For",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bb3c39ef-0764-444a-b7ef-19c893e00656",
+      "https://www.youtube.com/watch?v=5NHXPwq3pko"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/maxxi-soundsystem-regrets-we-have-no-use-for/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/maxxi-soundsystem-regrets-we-have-no-use-for/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Maxxi Soundsystem feat. Name One - Regrets We Have No Use For EP",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/11700"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Single Review: Regrets We Have No Use For - Maxxi Soundsystem feat. Name One",
+       "publisher": "Black Plastic",
+       "url": "https://www.blackplastic.co.uk/alternative-electronic-music-b/2012/10/1/single-review-regrets-we-have-no-use-for-maxxi-soundsystem-feat-name-one"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Video Premiere: Maxxi Soundsystem \"Regrets We Have No Use For (feat. Name One)\"",
+       "publisher": "XLR8R",
+       "url": "https://xlr8r.com/?p=80746"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Maxxi Soundsystem ft. Name One - Regrets We Have No Use For (Official Video)",
+       "publisher": "Hypercolour Records (YouTube)",
+       "url": "https://www.youtube.com/watch?v=5NHXPwq3pko"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Regrets We Have No Use For (feat. Name One) [Matthew Herbert Remix]",
+       "publisher": "Maxxi Soundsystem - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=aiVMHmyJnes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Regrets We Have No Use For (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/1b1f8c2d-f69e-4a78-a8b3-b0bc6b4332dd"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Singl brightonského producenta Maxxi Soundsystem s Name One, vydaný v roce 2012 u Hypercolour: zasmušilý deep house, v němž bručivá basa jako z podzemí nese mrzutý zpěv o lítosti, se kterou podle názvu nemáme co dělat.",
+     "educationalLevel": "introductory",
+     "headline": "Maxxi Soundsystem - Regrets We Have No Use For",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "roland tr-808",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/roland-tr-808/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/maxxi-soundsystem-regrets-we-have-no-use-for/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/maxxi-soundsystem-regrets-we-have-no-use-for/",
+     "wordCount": 498
+    }
+   ]
+  },
+  "mbnn-rowald-steyn-ilomilo.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mbnn-rowald-steyn-ilomilo/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "MBNN, Rowald Steyn",
+      "sameAs": "https://musicbrainz.org/artist/7977c76c-74b2-4e3a-b0f4-e6d7644ccc3f"
+     },
+     "datePublished": "2022",
+     "genre": [
+      "deep house",
+      "cover",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "ilomilo"
+     },
+     "isrcCode": "NLZ542101948",
+     "name": "ilomilo",
+     "sameAs": [
+      "https://musicbrainz.org/recording/582e3784-43d6-4923-8e20-edceb78e528d",
+      "https://www.youtube.com/watch?v=9AWjMuvojnA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mbnn-rowald-steyn-ilomilo/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mbnn-rowald-steyn-ilomilo/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "MBNN & Rowald Steyn - ilomilo",
+       "publisher": "Spinnin' Records",
+       "url": "https://spinninrecords.com/releases/ilomilo/details"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ilomilo (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ilomilo_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "MBNN & Rowald Steyn - ilomilo",
+       "publisher": "Inflyte",
+       "url": "https://inflyteapp.com/r/3j3fyy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "ilomilo (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/582e3784-43d6-4923-8e20-edceb78e528d"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "MBNN & Rowald Steyn - ilomilo (Official Music Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=9AWjMuvojnA"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Deephousová coververze písně ilomilo od Billie Eilish v podání MBNN a Rowalda Steyna: bootleg z YouTube z roku 2019 s kytarovými akordy a plnějším beatem, který Spinnin' Records oficiálně vydali v lednu 2022.",
+     "educationalLevel": "introductory",
+     "headline": "MBNN, Rowald Steyn - ilomilo",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mbnn-rowald-steyn-ilomilo/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mbnn-rowald-steyn-ilomilo/",
+     "wordCount": 509
     }
    ]
   },
@@ -107714,6 +108196,123 @@
     }
    ]
   },
+  "mc-lars-k-flay-the-game.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mc-lars-k-flay-the-game/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "MC Lars, K.Flay",
+      "sameAs": "https://musicbrainz.org/artist/fdf0d5e1-e773-4740-a50f-a032c96c63d3"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Single and Famous"
+     },
+     "isrcCode": "USTC00997507",
+     "name": "The Game",
+     "sameAs": [
+      "https://musicbrainz.org/recording/137b004c-e34e-4e9c-aee9-5ba49f5b03a1",
+      "https://www.youtube.com/watch?v=LjhI2n59bK8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mc-lars-k-flay-the-game/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mc-lars-k-flay-the-game/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Just Thought I'd Let You Know",
+       "publisher": "Hipster, please!",
+       "url": "https://hipsterplease.blogspot.com/2009/09/just-thought-id-let-you-know.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Game - Single And Famous - MC Lars & K. Flay",
+       "publisher": "YouTube (MC Lars)",
+       "url": "https://www.youtube.com/watch?v=LjhI2n59bK8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Single and Famous",
+       "publisher": "Bandcamp",
+       "url": "https://mclars.bandcamp.com/album/single-and-famous"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Game (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/137b004c-e34e-4e9c-aee9-5ba49f5b03a1"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "MC Lars",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/MC_Lars"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "K.Flay",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/K.Flay"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Čtvrtá ze sedmi skladeb EP Single and Famous, které MC Lars a K.Flay natočili společně v roce 2009: pomalá, rozvážná věc na pokyvování hlavou na beatu od K.Flay, kterou jediný kritik, jenž desku recenzoval, slyšel jako pouliční pecku a ne úplně explicitní píseň o sexu.",
+     "educationalLevel": "introductory",
+     "headline": "MC Lars, K.Flay - The Game",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/groove/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mc-lars-k-flay-the-game/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mc-lars-k-flay-the-game/",
+     "wordCount": 496
+    }
+   ]
+  },
   "me-her-david-keno-walking-boots.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -107843,6 +108442,110 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/me-her-david-keno-walking-boots/",
      "wordCount": 567
+    }
+   ]
+  },
+  "me-succeeds-rongorongo-arp-aubert-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/me-succeeds-rongorongo-arp-aubert-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Me Succeeds",
+      "sameAs": "https://musicbrainz.org/artist/234c0214-a33d-4fbf-a35e-bbf029785bf4"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "techno",
+      "electronic",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Rongorongo Remixed"
+     },
+     "name": "Rongorongo (Arp Aubert Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/441a9a5d-a60d-4bb5-a622-e5b149d4c147"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/me-succeeds-rongorongo-arp-aubert-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/me-succeeds-rongorongo-arp-aubert-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Me Succeeds - Rongorongo Remixed",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/me-succeeds-rongorongo-remixed"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Rongorongo Remixed (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/e96aae93-efd6-4784-bdaa-418039d2af00"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Rongorongo (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9a7f20a1-95eb-4d7b-b247-b2f93d3c7c07"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Me Succeeds: releases",
+       "publisher": "Bandcamp",
+       "url": "https://mesucceeds.bandcamp.com/releases"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Rongorongo Remixed",
+       "publisher": "Bandcamp",
+       "url": "https://mesucceeds.bandcamp.com/album/rongorongo-remixed"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Rongorongo hamburského dua Me Succeeds tak, jak ji přetvořil Arp Aubert, tedy producent Stephan Lorenz: úvodní skladba remixového alba Rongorongo Remixed, které v roce 2013 vydalo Ki Records a kterou obchod Oye Records popsal jako hnací techno.",
+     "headline": "Me Succeeds - Rongorongo (Arp Aubert Remix)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/compilation-album/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/me-succeeds-rongorongo-arp-aubert-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/me-succeeds-rongorongo-arp-aubert-remix/",
+     "wordCount": 479
     }
    ]
   },
@@ -108966,6 +109669,137 @@
     }
    ]
   },
+  "mgmt-all-we-ever-wanted-was-everything.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mgmt-all-we-ever-wanted-was-everything/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "MGMT",
+      "sameAs": "https://musicbrainz.org/artist/c485632c-b784-4ee9-8ea1-c5fb365681fc"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "cover",
+      "psychedelic",
+      "post-punk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Late Night Tales: MGMT"
+     },
+     "isrcCode": "GB5EM1001001",
+     "name": "All We Ever Wanted Was Everything",
+     "sameAs": [
+      "https://musicbrainz.org/recording/17dd4151-cb70-4f77-b8de-c76fe9e7a9e5",
+      "https://www.youtube.com/watch?v=ENrs91FkuFk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mgmt-all-we-ever-wanted-was-everything/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mgmt-all-we-ever-wanted-was-everything/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Late Night Tales: MGMT",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Late_Night_Tales:_MGMT"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Sky's Gone Out",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Sky%27s_Gone_Out"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Hear MGMT's Trippy Bauhaus Cover",
+       "publisher": "SPIN",
+       "url": "https://www.spinmagazine.com/2011/09/hear-mgmts-trippy-bauhaus-cover/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "MGMT - All We Ever Wanted Was Everything (Bauhaus Cover)",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/812721/mgmt-all-we-ever-wanted-was-everything-bauhaus-cover/music"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album Review: Various Artists - Late Night Tales: MGMT",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-various-artists-late-night-tales-mgmt-4143915/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "MGMT - Late Night Tales",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/mgmt-late-night-tales"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "All We Ever Wanted Was Everything (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/17dd4151-cb70-4f77-b8de-c76fe9e7a9e5"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "MGMT - All We Ever Wanted Was Everything - Animated (Late Night Tales)",
+       "publisher": "YouTube (Late Night Tales)",
+       "url": "https://www.youtube.com/watch?v=ENrs91FkuFk"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Exkluzivní příspěvek MGMT do jejich mixu Late Night Tales z roku 2011: věrná, o něco slunečnější coververze písně Bauhaus z roku 1982 o ztracené nevinnosti, zahalená do oparu efektů a doplněná animovaným klipem Neda Wenlocka.",
+     "educationalLevel": "introductory",
+     "headline": "MGMT - All We Ever Wanted Was Everything",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mgmt-all-we-ever-wanted-was-everything/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mgmt-all-we-ever-wanted-was-everything/",
+     "wordCount": 506
+    }
+   ]
+  },
   "micatone-plastic-bags-magazines.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -109187,6 +110021,236 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/michael-jackson-billie-jean/",
      "wordCount": 667
+    }
+   ]
+  },
+  "michal-horak-hej-teto.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michal-horak-hej-teto/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Michal Horák",
+      "sameAs": "https://musicbrainz.org/artist/d1ef5319-3697-461e-a40b-3d383c2caebd"
+     },
+     "datePublished": "2018",
+     "genre": [
+      "folk",
+      "singer-songwriter",
+      "comedy"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Michalovo cédéčko"
+     },
+     "name": "Hej teto!",
+     "sameAs": [
+      "https://musicbrainz.org/recording/5a259212-a3c8-4ec2-bedf-34dc53241150",
+      "https://www.youtube.com/watch?v=cAQgH_gjY7E"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/michal-horak-hej-teto/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/michal-horak-hej-teto/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Michal Horák (písničkář)",
+       "publisher": "Wikipedie",
+       "url": "https://cs.wikipedia.org/wiki/Michal_Hor%C3%A1k_(p%C3%ADsni%C4%8Dk%C3%A1%C5%99)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Příběh českého hitu: Michal Horák - Hej teto!",
+       "publisher": "iReport",
+       "url": "https://www.ireport.cz/clanky/pribeh-cz-hitu/pribeh-ceskeho-hitu-michal-horak-hej-teto"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Písničkář Michal Horák se proslavil písní o mrtvém křečkovi: Kamarádovu historku přišili mně",
+       "publisher": "Lifee.cz",
+       "url": "https://www.lifee.cz/pisnickar-michal-horak-pisen-o-mrtvem-kreckovi-b7bb0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Michal Horák - Hej teto! (Official Video)",
+       "publisher": "YouTube (Michal Horák and Supraphon)",
+       "url": "https://www.youtube.com/watch?v=cAQgH_gjY7E"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Michalovo cédéčko",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/57a0ff9c-310e-4da1-9a1e-120756c98a61"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Hej teto!, píseň z roku 2018, díky níž se o českém písničkáři Michalu Horákovi začalo mluvit: morbidně pitomý příběh křečka, který spolkl magnet a přitavil se k topení, vyprávěný v mollu s houslemi, banjem a kontrabasem, později úvodní skladba jeho debutového alba Michalovo cédéčko.",
+     "educationalLevel": "introductory",
+     "headline": "Michal Horák - Hej teto!",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "novelty song",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/novelty-song/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "minor key",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/minor-key/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/michal-horak-hej-teto/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/michal-horak-hej-teto/",
+     "wordCount": 455
+    }
+   ]
+  },
+  "michal-prokop-ostraka-live.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michal-prokop-ostraka-live/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Michal Prokop"
+     },
+     "datePublished": "2026",
+     "genre": [
+      "rock",
+      "blues"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Live 80"
+     },
+     "name": "Ostraka (Live)",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=IXMvu2mCzDs"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/michal-prokop-ostraka-live/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/michal-prokop-ostraka-live/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Ostraka (Live 80 track)",
+       "publisher": "Supraphon via YouTube (Michal Prokop - Topic)",
+       "url": "https://www.youtube.com/watch?v=IXMvu2mCzDs"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Michal Prokop & Framus Five - Ostraka (oficiální videoklip)",
+       "publisher": "Supraphon (YouTube)",
+       "url": "https://www.youtube.com/watch?v=XmW9CxV3ddU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Michal Prokop oslávi životné jubileum",
+       "publisher": "TASR (teraz.sk)",
+       "url": "https://www.teraz.sk/magazin/michal-prokop-oslavi-zivotne-jubileum/970828-clanok.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Michal Prokop slaví kulatiny. Fanouškům naděluje dárek v podobě živáku Live 80",
+       "publisher": "CNN Prima News",
+       "url": "https://cnn.iprima.cz/michal-prokop-slavi-kulatiny-fanouskum-nadeluje-darek-v-podobe-zivaku-live-80-514862"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Live 80 (ČTK)",
+       "publisher": "České noviny (ČTK)",
+       "url": "https://www.ceskenoviny.cz/zpravy/2860057"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Nejsem čtenář poezie, jenom s ní pracuju, říká zpěvák a skladatel Michal Prokop",
+       "publisher": "České noviny (ČTK)",
+       "url": "https://www.ceskenoviny.cz/zpravy/nejsem-ctenar-poezie-jenom-s-ni-pracuju-rika-zpevak-a-skladatel-michal-prokop/2661015"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Framus Five",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Framus_Five"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Michal Prokop a Framus Five hrají na vánočním koncertě v pražském Foru Karlín Ostraku, titulní píseň svého oceňovaného alba z roku 2025: výčet obav z pera Michala Bulíře, zachycený na živém albu Live 80.",
+     "educationalLevel": "introductory",
+     "headline": "Michal Prokop - Ostraka (Live)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "live recording",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/live-recording/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "list song",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/list-song/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/michal-prokop-ostraka-live/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/michal-prokop-ostraka-live/",
+     "wordCount": 461
     }
    ]
   },
@@ -110116,6 +111180,135 @@
     }
    ]
   },
+  "miles-davis-round-midnight.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miles-davis-round-midnight/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Miles Davis",
+      "sameAs": "https://musicbrainz.org/artist/fe7245e7-d734-4ca1-8e26-691883f58201"
+     },
+     "datePublished": "1957",
+     "genre": [
+      "jazz",
+      "hard bop",
+      "ballad"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "'Round About Midnight"
+     },
+     "name": "'Round Midnight",
+     "sameAs": [
+      "https://musicbrainz.org/recording/0ba4f516-252b-45cd-a6b5-1de7bf843769",
+      "https://www.youtube.com/watch?v=Ys9wiGNDCvA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/miles-davis-round-midnight/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/miles-davis-round-midnight/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "'Round About Midnight",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/%27Round_About_Midnight"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Round Midnight (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/%27Round_Midnight_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Round Midnight",
+       "publisher": "The Ethan Hein Blog",
+       "url": "https://www.ethanhein.com/wp/2012/round-midnight/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Classic Tracks: Miles Davis 'Round Midnight'",
+       "publisher": "Sound On Sound",
+       "url": "https://www.soundonsound.com/techniques/classic-tracks-miles-davis-round-midnight"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Miles Davis Quintet - 'Round About Midnight",
+       "publisher": "The Audio Beat",
+       "url": "https://www.theaudiobeat.com/music/miles_davis_midnight_milestones_lp.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Round About Midnight",
+       "publisher": "Miles Davis Official Site",
+       "url": "https://www.milesdavis.com/albums/round-about-midnight/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Round Midnight",
+       "publisher": "JazzStandards.com",
+       "url": "https://www.jazzstandards.com/compositions-0/roundmidnight.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Round Midnight (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/0ba4f516-252b-45cd-a6b5-1de7bf843769"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Nahrávka balady Thelonia Monka, kterou kvintet Milese Davise pořídil pro Columbii v roce 1956: trubka s dusítkem Harmon, chorus v duru hraný otevřenou trubkou a tenorsaxofonové sólo Johna Coltranea, skladba, jež otevírá album 'Round About Midnight.",
+     "educationalLevel": "intermediate",
+     "headline": "Miles Davis - 'Round Midnight",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "improvisation",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/improvisation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "minor key",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/minor-key/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/miles-davis-round-midnight/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/miles-davis-round-midnight/",
+     "wordCount": 474
+    }
+   ]
+  },
   "mindchatter-trippy.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -110243,6 +111436,245 @@
     }
    ]
   },
+  "minuit-flash.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/minuit-flash/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Minuit",
+      "sameAs": "https://musicbrainz.org/artist/fc7b5984-9f6e-4693-9bdc-5cf3a96441f8"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "rock",
+      "funk",
+      "disco"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Flash"
+     },
+     "isrcCode": "FR6P11500470",
+     "name": "Flash",
+     "sameAs": [
+      "https://musicbrainz.org/recording/13d315cd-1369-46fe-b0b5-640bc08ab2e0",
+      "https://www.youtube.com/watch?v=atIN9cd1144"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/minuit-flash/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/minuit-flash/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Minuit - Flash (Clip Officiel)",
+       "publisher": "YouTube (Minuit)",
+       "url": "https://www.youtube.com/watch?v=atIN9cd1144"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Minuit - Flash",
+       "publisher": "YouTube (Minuit)",
+       "url": "https://www.youtube.com/watch?v=GOrWPdj4PvQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Clip de \"Flash\" : le groupe Minuit digne héritier des Rita Mitsouko",
+       "publisher": "Charts in France",
+       "url": "https://www.chartsinfrance.net/Minuit/news-97329.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Minuit à Paris : rencontre avec le groupe de Simone Ringer et Raoul Chichin",
+       "publisher": "Time Out Paris",
+       "url": "https://www.timeout.fr/paris/le-blog/minuit-a-paris-rencontre-avec-le-groupe-de-simone-ringer-et-raoul-chichin-092515"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Simone Ringer et Raoul Chichin, les héritiers de Minuit",
+       "publisher": "Fnac L'Éclaireur",
+       "url": "https://leclaireur.fnac.com/article/cp27040-simone-ringer-et-raoul-chichin-les-heritiers-de-minuit/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Minuit (communiqué de presse)",
+       "publisher": "France Télévisions",
+       "url": "https://www.francetvpro.fr/contenu-de-presse/16491"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Minuit (EP)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/d97a1738-5742-43c2-bcd7-b763fa18712a"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Debutový singl pařížské kapely Minuit, kterou vedou Simone Ringer a Raoul Chichin, z roku 2015: kytara nastoupí jako poplašné znamení, po ní baskytara, klávesy a bicí, a to celé ve funk rocku, který francouzští kritici přirovnávali k Rita Mitsouko, kapele jejich rodičů.",
+     "educationalLevel": "introductory",
+     "headline": "Minuit - Flash",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/minuit-flash/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/minuit-flash/",
+     "wordCount": 477
+    }
+   ]
+  },
+  "mirwais-miss-you-thin-white-duke-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mirwais-miss-you-thin-white-duke-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mirwais",
+      "sameAs": "https://musicbrainz.org/artist/688178e7-2308-4e8c-8e6d-66a025f895fb"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "electronic",
+      "house",
+      "remix",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Production"
+     },
+     "name": "Miss You (Thin White Duke Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6956a218-a717-492f-9844-c7e100295340",
+      "https://www.youtube.com/watch?v=Xlg2C7bpXSk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mirwais-miss-you-thin-white-duke-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mirwais-miss-you-thin-white-duke-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "The Rolling Stones' Miss You Turns 40 Today: 8 Unlikely Covers",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/1995598/rolling-stones-miss-you-covers/lists"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Stuart Price",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Stuart_Price"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Miss You (Rolling Stones song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Miss_You_(Rolling_Stones_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mirwais Ahmadzaï",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mirwais_Ahmadza%C3%AF"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Production (2005 two-disc edition)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/7374c355-0b28-4260-ab2b-c36a91a56b67"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Miss You (Thin White Duke Remix) (Provided to YouTube by IDOL)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=Xlg2C7bpXSk"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Stuart Price jako Thin White Duke remixuje Mirwaisovu coververzi písně Miss You od Rolling Stones, kterou zpívá Craig Wedren: čtyřminutová klubová verze z remixů Miss You z roku 2003, zařazená na dvoudiskovou edici alba Production z roku 2005.",
+     "educationalLevel": "intermediate",
+     "headline": "Mirwais - Miss You (Thin White Duke Remix)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "stage persona",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/stage-persona/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mirwais-miss-you-thin-white-duke-remix/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mirwais-miss-you-thin-white-duke-remix/",
+     "wordCount": 524
+    }
+   ]
+  },
   "mirwais-naiive-song.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -110354,6 +111786,116 @@
     }
    ]
   },
+  "miss-kittin-ballad-of-the-23rd-century.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miss-kittin-ballad-of-the-23rd-century/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Miss Kittin",
+      "sameAs": "https://musicbrainz.org/artist/af6bd973-3e30-4339-94b5-85b139362e6d"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Calling from the Stars"
+     },
+     "isrcCode": "DEGQ21300084",
+     "name": "Ballad of the 23rd Century",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8cc17ef1-5ed6-40cf-a9f0-1705e11f58cc",
+      "https://www.youtube.com/watch?v=p058YmYWsPA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/miss-kittin-ballad-of-the-23rd-century/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/miss-kittin-ballad-of-the-23rd-century/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Calling from the Stars",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Calling_from_the_Stars"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Miss Kittin",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Miss_Kittin"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Album Review: Miss Kittin - Calling from the Stars",
+       "publisher": "Drowned in Sound",
+       "url": "https://drownedinsound.org/archive-album-review-miss-kittin-calling-from-the-stars-4146336/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Miss Kittin - Calling From The Stars",
+       "publisher": "The Electricity Club",
+       "url": "https://electricityclub.co.uk/?p=17104"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Miss Kittin - Calling From The Stars",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/12830"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ballad of the 23rd Century (release credits)",
+       "publisher": "YouTube (Miss Kittin - Topic)",
+       "url": "https://www.youtube.com/watch?v=p058YmYWsPA"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Pětiminutová skladba z instrumentálnějšího a abstraktnějšího druhého disku dvojalba Miss Kittin Calling from the Stars z roku 2013, kterou jeden kritik slyšel jako možnou znělku sci-fi seriálu.",
+     "headline": "Miss Kittin - Ballad of the 23rd Century",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/deep-cut/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/record-producer/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/miss-kittin-ballad-of-the-23rd-century/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/miss-kittin-ballad-of-the-23rd-century/",
+     "wordCount": 518
+    }
+   ]
+  },
   "miss-kittin-frank-sinatra.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -110442,6 +111984,124 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/miss-kittin-frank-sinatra/",
      "wordCount": 524
+    }
+   ]
+  },
+  "mista-trick-spencer-ramsay-taking-a-bath-splish-splash.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mista Trick, Spencer Ramsay",
+      "sameAs": "https://musicbrainz.org/artist/731adf10-8856-4dd8-a7b2-467fe5574f07"
+     },
+     "datePublished": "2024",
+     "genre": [
+      "drum and bass",
+      "cover",
+      "novelty"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Taking A Bath (Splish Splash)"
+     },
+     "isrcCode": "DEUM72400496",
+     "name": "Taking A Bath (Splish Splash)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/edf4b35f-7842-4d87-a584-d8af61be4530",
+      "https://www.youtube.com/watch?v=SNiRMWRnfZc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Taking a Bath (Splish Splash) - Mista Trick & Spencer Ramsay (Official Lyric Video)",
+       "publisher": "YouTube (Mista Trick)",
+       "url": "https://www.youtube.com/watch?v=SNiRMWRnfZc"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Splish Splash - Mista Trick & Spencer Ramsay (OUT ON SPOTIFY)",
+       "publisher": "YouTube (Mista Trick)",
+       "url": "https://www.youtube.com/watch?v=LwYhniOMEcU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Splish Splash (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Splish_Splash_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mista Trick",
+       "publisher": "Mista Trick",
+       "url": "https://mistatrick.com/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mista Trick",
+       "publisher": "This Is Freshly Squeezed",
+       "url": "https://www.freshlysqueezedmusic.com/?p=1345"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Taking a Bath (Splish Splash)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/afda6d74-2ae4-42a0-8588-85d845a3be8a"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Bristolský producent Mista Trick a Spencer Ramsay předělávají recesní hit Bobbyho Darina Splish Splash z roku 1958 na drum and bass, s novým zpěvem Andrewa Bourna a saxofonem a klavírem Joea Rodwella; singl vydal Virgin v únoru 2024.",
+     "educationalLevel": "introductory",
+     "headline": "Mista Trick, Spencer Ramsay - Taking A Bath (Splish Splash)",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "novelty song",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/novelty-song/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/",
+     "wordCount": 478
     }
    ]
   },
@@ -110692,6 +112352,133 @@
     }
    ]
   },
+  "moderat-reminder.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moderat-reminder/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moderat",
+      "sameAs": "https://musicbrainz.org/artist/7754905b-8bf7-48e2-935a-03d566fec464"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "electronic",
+      "electro-pop",
+      "techno"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "III (Deluxe Edition)"
+     },
+     "isrcCode": "DEOE81610319",
+     "name": "Reminder",
+     "sameAs": [
+      "https://musicbrainz.org/recording/0cb803ab-f761-450f-8c3e-ff5a3294bc58",
+      "https://www.youtube.com/watch?v=Gk21PS7gedI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/moderat-reminder/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moderat-reminder/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "III (Moderat album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/III_(Moderat_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Moderat - Reminder",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/1857612/moderat-reminder/news"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Modeselektor and Apparat Reunite as Moderat, Share Stirring New Single",
+       "publisher": "Thump (Vice)",
+       "url": "https://www.vice.com/en/article/modeselektor-and-apparat-reunite-as-moderat-share-stirring-new-single/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Listen: Moderat, Reminder",
+       "publisher": "Cool Hunting",
+       "url": "https://coolhunting.com/culture/moderat-reminder"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Moderat: Reminder (Singles Going Steady)",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/moderat-reminder-singles-going-steady-2495452439.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Moderat - III",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/18817"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Moderat - Reminder (Official Video)",
+       "publisher": "Moderat (YouTube)",
+       "url": "https://www.youtube.com/watch?v=cJwsNUoazUg"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Hlavní singl třetího alba Moderat III: obnažený, bolavý hlas Saschy Ringa nad lehkými, trhanými breakbeatovými perkusemi, nad nimiž se klenou rozmáchlé atmosféry Apparata, pod nimi rychlé údery bicích Modeselektor a uprostřed zlom, který jeden kritik slyšel jako darkwave.",
+     "educationalLevel": "intermediate",
+     "headline": "Moderat - Reminder",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/b-side/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/moderat-reminder/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/moderat-reminder/",
+     "wordCount": 473
+    }
+   ]
+  },
   "moisture-lucca-santucci-headman-club-version.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -110794,6 +112581,123 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/moisture-lucca-santucci-headman-club-version/",
      "wordCount": 547
+    }
+   ]
+  },
+  "moloko-100.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-100/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moloko",
+      "sameAs": "https://musicbrainz.org/artist/2f94016a-3880-4d8c-9af9-0e197ee77189"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "electronic",
+      "pop",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Statues"
+     },
+     "isrcCode": "GBBND0200968",
+     "name": "100%",
+     "sameAs": [
+      "https://musicbrainz.org/recording/13f48782-ca5a-4a7f-9623-f1054697c173",
+      "https://www.youtube.com/watch?v=D4SbvsN28Ss"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/moloko-100/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-100/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Statues (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Statues_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Statues",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/statues-2638568"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko: Statues (Review)",
+       "publisher": "Visions",
+       "url": "https://www.visions.de/review/moloko-statues/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Del perduto amor e non solo: Moloko - Statues (2003)",
+       "publisher": "2047ways",
+       "url": "https://2047ways.blogspot.com/2009/09/del-perduto-amor-e-non-solo-moloko.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Moloko"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "100% (live, Brixton Academy, 2003)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/ac7149aa-3446-44e3-8315-aa9932bd6f63"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Sedmá skladba Statues, posledního alba Moloko z roku 2003: albová píseň, která nikdy nevyšla jako singl a jejíž refrén jeden kritik označil za hypnoticky chytlavý a jiný v něm slyšel brazilský nádech.",
+     "educationalLevel": "introductory",
+     "headline": "Moloko - 100%",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/deep-cut/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-100/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/moloko-100/",
+     "wordCount": 485
     }
    ]
   },
@@ -111281,6 +113185,131 @@
     }
    ]
   },
+  "monsterheart-salam.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/monsterheart-salam/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Monsterheart",
+      "sameAs": "https://musicbrainz.org/artist/03c1f9a2-5395-40d5-8655-1ef6f357f31d"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "dream pop",
+      "synth-pop",
+      "ballad"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Salam"
+     },
+     "name": "Salam",
+     "sameAs": [
+      "https://musicbrainz.org/recording/054c64d0-fb5e-409c-a71b-2023a9691140",
+      "https://www.youtube.com/watch?v=MkAAN0pLG3w"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/monsterheart-salam/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/monsterheart-salam/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Videopremiere: Monsterheart »Salam« – Ein bisschen Frieden",
+       "publisher": "The Gap",
+       "url": "https://thegap.at/videopremiere-monsterheart-salam-ein-bisschen-frieden/2/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Lullaby of Monsterheart",
+       "publisher": "The Gap",
+       "url": "https://thegap.at/lullaby-of-monsterheart/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Die Neuvorstellungen der Woche",
+       "publisher": "FM4 (ORF)",
+       "url": "https://fm4.orf.at/stories/2883008"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Monsterheart",
+       "publisher": "mica - music austria",
+       "url": "https://db.musicaustria.at/node/182894"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Monsterheart: I used to spend a lot of time at cemeteries and in my head, and now I'm more among people",
+       "publisher": "Austrian Music Export",
+       "url": "https://www.musicexport.at/monsterheart-i-used-to-spend-a-lot-of-time-at-cemeteries-and-in-my-head-and-now-im-more-among-people/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "MONSTERHEART - SALAM (official video)",
+       "publisher": "YouTube (Seayou Records)",
+       "url": "https://www.youtube.com/watch?v=MkAAN0pLG3w"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Salam",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/537d5368-3442-4666-987f-98ce1afb9c62"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Titulní skladba alba Salam, které vídeňská výtvarnice a hudebnice Anna Attar jako Monsterheart nahrála v roce 2017 sama ve svém bytě: minimalistická, pulzující balada pojmenovaná podle arabského slova pro mír, kterou FM4 přirovnalo k něžným chvílím dua Suicide.",
+     "educationalLevel": "introductory",
+     "headline": "Monsterheart - Salam",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "lo-fi",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/lo-fi/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "reverb",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/reverb/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "tremolo",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/tremolo/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/monsterheart-salam/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/monsterheart-salam/",
+     "wordCount": 500
+    }
+   ]
+  },
   "monterosso-huacachina.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -111395,6 +113424,110 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/monterosso-huacachina/",
      "wordCount": 454
+    }
+   ]
+  },
+  "moomin-the-story-about-you.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moomin-the-story-about-you/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moomin",
+      "sameAs": "https://musicbrainz.org/artist/d3c61d04-5366-4f96-99a2-7d16fb7928f4"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "deep house",
+      "house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Story About You"
+     },
+     "name": "The Story About You",
+     "sameAs": [
+      "https://musicbrainz.org/recording/454a84c2-642f-4cb0-a603-7f5a1c1643fe",
+      "https://www.youtube.com/watch?v=gP0RlNLqImk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/moomin-the-story-about-you/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moomin-the-story-about-you/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Moomin - The Story About You",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/9997"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moomin - The Story About You (2022 Repress)",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/moomin-the-story-about-you"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Story About You (Original Mix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/454a84c2-642f-4cb0-a603-7f5a1c1643fe"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "The Story About You (Original Mix) (Provided to YouTube by WAS Word and Sound Medien GmbH)",
+       "publisher": "YouTube (Moomin - Topic)",
+       "url": "https://www.youtube.com/watch?v=gP0RlNLqImk"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Sedmiminutová titulní skladba debutového alba, které Moomin vydal v roce 2011 u Smallville: deep house Sebastiana Genze, v němž Resident Advisor slyšel pohřební vážnost, postavený na důstojném klavíru a kytaře a provázený truchlivým broukáním.",
+     "educationalLevel": "introductory",
+     "headline": "Moomin - The Story About You",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "house groove",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/house-groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/loop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/arrangement/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/moomin-the-story-about-you/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/moomin-the-story-about-you/",
+     "wordCount": 479
     }
    ]
   },
@@ -112888,6 +115021,346 @@
     }
    ]
   },
+  "muff-deep-enter-the-muff.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/muff-deep-enter-the-muff/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Muff Deep",
+      "sameAs": "https://musicbrainz.org/artist/22ce77fd-17f2-494a-a481-a12c67436636"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "house",
+      "deep house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Enter the Muff"
+     },
+     "name": "Enter the Muff",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ecdc1e7c-eee7-4b2c-a562-8001d734482c",
+      "https://www.youtube.com/watch?v=d71YR3f5WOc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/muff-deep-enter-the-muff/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/muff-deep-enter-the-muff/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Muff Deep - Enter The Muff (TART 018EP)",
+       "publisher": "Forced Exposure",
+       "url": "https://www.forcedexposure.com/Catalog/TART.018EP.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Muff Deep - Enter The Muff",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3307702-Muff-Deep-Enter-The-Muff"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Enter the Muff (TART018)",
+       "publisher": "Bandcamp (Muff Deep)",
+       "url": "https://muffdeep.bandcamp.com/album/enter-the-muff-tart018"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Muff Deep",
+       "publisher": "NTS",
+       "url": "https://www.nts.live/artists/2597-muff-deep"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Label Spotlight: Tartelet",
+       "publisher": "The Vinyl Factory",
+       "url": "https://thevinylfactory.com/features/label-spotlight-tartelet"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Muff Deep - Enter the Muff",
+       "publisher": "YouTube (Tartelet Records)",
+       "url": "https://www.youtube.com/watch?v=d71YR3f5WOc"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Devítiminutová strana A první dvanáctipalcové desky Muff Deep, TART018, kterou v roce 2011 vydal kodaňský label Tartelet, od jeho labelového manažera Emila Margetliho a DJe Mathiase Mesteña: klasický house s těžkým sub-basem, varhanními vyhrávkami a vrkajícími soulovými hlasy.",
+     "educationalLevel": "introductory",
+     "headline": "Muff Deep - Enter the Muff",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "house groove",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/house-groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/club-culture/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/muff-deep-enter-the-muff/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/muff-deep-enter-the-muff/",
+     "wordCount": 493
+    }
+   ]
+  },
+  "mumbai-science-deja-vu.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mumbai-science-deja-vu/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mumbai Science",
+      "sameAs": "https://musicbrainz.org/artist/97eb2d6d-3fed-4816-bc7a-3e20d2894e05"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "electro",
+      "techno"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Déjà Vu"
+     },
+     "name": "Déjà Vu",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9db6e0a0-64cf-4d37-8bef-d923d32fa2b6",
+      "https://www.youtube.com/watch?v=Rbq9UKD1DWw"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mumbai-science-deja-vu/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mumbai-science-deja-vu/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Mumbai Science - Déjà Vu (official video)",
+       "publisher": "Lektroluv Records (YouTube)",
+       "url": "https://www.youtube.com/watch?v=nqZ8pgqP7ko"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Mumbai Science - \"Déjà Vu\" (Official Video)",
+       "publisher": "THUMP (YouTube)",
+       "url": "https://www.youtube.com/watch?v=2b_lBxRD5As"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mumbai Science",
+       "publisher": "Varrasso PR",
+       "url": "https://www.varrassopr.com/clients/dance-electronic/mumbai-science"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Mumbai Science in the Lab",
+       "publisher": "Mixmag",
+       "url": "https://mixmag.net/read/mumbai-science-in-the-lab-video"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Mumbai Science - Déjà Vu",
+       "publisher": "Festivalinfo",
+       "url": "https://www.festivalinfo.nl/recensie/7561/Deja-Vu/Mumbai-Science/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Brussels Summer Festival: Mumbai Science",
+       "publisher": "BRUZZ",
+       "url": "https://www.bruzz.be/en/culture/music-nightlife/brussels-summer-festival-mumbai-science-2014-08-05"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Déjà vu (single)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/c0b24fdb-06d3-49dc-8116-ab00b20d408c"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Singl z roku 2014 u Lektroluv, podle něhož belgické duo Mumbai Science pojmenovalo své debutové album: výlet do ponuré budoucnosti večírků s vizitkami a osobních trenérů jako celebrit, nazpívaný April Rose s ležérním, znuděným chladem.",
+     "educationalLevel": "introductory",
+     "headline": "Mumbai Science - Déjà Vu",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mumbai-science-deja-vu/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mumbai-science-deja-vu/",
+     "wordCount": 452
+    }
+   ]
+  },
+  "munk-surf-smurf-munk-version.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/munk-surf-smurf-munk-version/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Munk"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "house",
+      "electronic",
+      "rockabilly",
+      "surf rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Surf Smurf"
+     },
+     "name": "Surf Smurf - Munk Version",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=8n0U8ewW0AQ"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/munk-surf-smurf-munk-version/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/munk-surf-smurf-munk-version/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Surf Smurf",
+       "publisher": "Gomma",
+       "url": "https://gommarecords.bandcamp.com/album/surf-smurf"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Label of the Month: Toy Tonics",
+       "publisher": "Beatportal",
+       "url": "https://www.beatportal.com/articles/54889-label-of-the-month-toy-tonics"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Counting with Mathias Modica",
+       "publisher": "Electronic Beats",
+       "url": "https://www.electronicbeats.net/counting-with-mathias-modica"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Vlastní verze Surf Smurf od Mathiase Modiky, singlu, který v roce 2014 vydal u Gommy spolu s Rebolledem: surfrocková píseň ze 60. let převedená do elektroniky, kterou Munk proměnil ve špinavou rockabilly house skladbu.",
+     "educationalLevel": "introductory",
+     "headline": "Munk - Surf Smurf - Munk Version",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "riff",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/riff/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "drum machine",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/drum-machine/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/munk-surf-smurf-munk-version/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/munk-surf-smurf-munk-version/",
+     "wordCount": 463
+    }
+   ]
+  },
   "muse-uprising.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -112990,6 +115463,124 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/muse-uprising/",
      "wordCount": 476
+    }
+   ]
+  },
+  "my-morning-jacket-highly-suspicious.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/my-morning-jacket-highly-suspicious/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "My Morning Jacket",
+      "sameAs": "https://musicbrainz.org/artist/ea5883b7-68ce-48b3-b115-61746ea53b8c"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "alternative rock",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Evil Urges"
+     },
+     "name": "Highly Suspicious",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f59f27cd-8d64-4d69-a625-d553c496135b",
+      "https://www.youtube.com/watch?v=G1WzTgYi--k"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/my-morning-jacket-highly-suspicious/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/my-morning-jacket-highly-suspicious/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Evil Urges",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Evil_Urges"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "My Morning Jacket - Evil Urges",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/my-morning-jacket-evil-urges-4868"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "My Morning Jacket: Evil Urges",
+       "publisher": "The A.V. Club",
+       "url": "https://www.avclub.com/my-morning-jacket-evil-urges-1798204409"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Premature Evaluation: My Morning Jacket, Evil Urges",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/9303/premature_evaluation_my_morning_jacket_evil_urges/reviews/premature-evaluation"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album review: My Morning Jacket, Circuital (ATO)",
+       "publisher": "WBEZ Chicago",
+       "url": "https://www.wbez.org/stories/album-review-my-morning-jacket-circuital-ato/64db5807-77e6-4dd6-bea3-daeae217016f"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Highly Suspicious",
+       "publisher": "YouTube (My Morning Jacket - Topic)",
+       "url": "https://www.youtube.com/watch?v=G1WzTgYi--k"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Třetí skladba alba Evil Urges, které My Morning Jacket vydali v roce 2008: velmi vysoký zpěv, kterému odpovídá hluboký, burácivý hlas nad těžkými kytarami, píseň, kterou jeden kritik považoval za nejnápaditější na desce a jiný za kandidáta na jednu z nejhorších, jaké kdy byly nahrány.",
+     "educationalLevel": "introductory",
+     "headline": "My Morning Jacket - Highly Suspicious",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/falsetto/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "call and response",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/call-and-response/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sync-licensing/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/my-morning-jacket-highly-suspicious/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/my-morning-jacket-highly-suspicious/",
+     "wordCount": 512
     }
    ]
   },
@@ -113222,6 +115813,115 @@
     }
    ]
   },
+  "n-o-h-a-dive-in-your-life.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/n-o-h-a-dive-in-your-life/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "N.o.h.a.",
+      "sameAs": "https://musicbrainz.org/artist/298a8237-0975-438d-9f9b-008aaa2bcc63"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "drum and bass",
+      "world",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Dive In Your Life"
+     },
+     "name": "Dive In Your Life",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=Qi6Gx2A_Fuw"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/n-o-h-a-dive-in-your-life/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/n-o-h-a-dive-in-your-life/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "N.O.H.A.",
+       "publisher": "Wikipedie",
+       "url": "https://cs.wikipedia.org/wiki/N.O.H.A."
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "N.O.H.A. - Noise of Human Art: bio",
+       "publisher": "N.O.H.A.",
+       "url": "https://www.n-o-h-a.com/bio/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "N.O.H.A.",
+       "publisher": "GoOut",
+       "url": "https://goout.net/en/n-o-h-a/pzfbc/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Dive in Your Life (album)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/gb/album/dive-in-your-life/1551628500"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Dive In Your Life (Radio Edit, Album Cut) (Provided to YouTube by Unique Records)",
+       "publisher": "YouTube (Noha - Topic)",
+       "url": "https://www.youtube.com/watch?v=Qi6Gx2A_Fuw"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Dive in your life (Provided to YouTube by Bandlab/ReverbNation)",
+       "publisher": "YouTube (Noha - Topic)",
+       "url": "https://www.youtube.com/watch?v=4t97qEK5ub0"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Rádiová verze skladby Dive In Your Life, jednoho z hitů pražsko-newyorské kapely N.O.H.A., v jejíž hudbě se drum and bass potkává s world music: titulní píseň alba z roku 2006, zkrácená na 3:40 pro singl, který v roce 2008 vydalo Unique Records.",
+     "headline": "N.o.h.a. - Dive In Your Life",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/breakbeat/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/n-o-h-a-dive-in-your-life/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/n-o-h-a-dive-in-your-life/",
+     "wordCount": 489
+    }
+   ]
+  },
   "nancy-sinatra-bang-bang.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -113409,6 +116109,131 @@
      },
      "url": "https://korczis.github.io/sonic-playground/cs/nappy-roots-good-day/",
      "wordCount": 526
+    }
+   ]
+  },
+  "nasty-habits-shadow-boxing.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nasty-habits-shadow-boxing/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Nasty Habits",
+      "sameAs": "https://musicbrainz.org/artist/fb5c84f8-0500-4b33-bc82-4f5633b13c20"
+     },
+     "datePublished": "1996",
+     "genre": [
+      "drum and bass",
+      "jungle",
+      "techstep"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Shadow Boxing (Om Unit Remix)"
+     },
+     "isrcCode": "GBA2A1410002",
+     "name": "Shadow Boxing",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a91f2dbb-c79a-4085-84af-38b514f69662",
+      "https://www.youtube.com/watch?v=FAJ57odwiLA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/nasty-habits-shadow-boxing/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/nasty-habits-shadow-boxing/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Doc Scott",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Doc_Scott"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Nasty Habits - Shadow Boxing 'The Remix' (31 Records, 1997)",
+       "publisher": "DnB 365",
+       "url": "https://dnb365.blogspot.com/2013/05/nasty-habits-shadow-boxing-remix.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Five Tracks: Shadow Boxing Edition",
+       "publisher": "Complex",
+       "url": "https://www.complex.com/music/a/khrisd/five-tracks-shadow-boxing-edition"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Nasty Habits - Shadow Boxing (Om Unit Remix)",
+       "publisher": "Complex",
+       "url": "https://www.complex.com/music/2014/02/nasty-habits-shadow-boxing-om-unit-remix"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Nasty Habits - Shadow Boxing (Om Unit Remix and remastered original mix)",
+       "publisher": "Sound Shelter",
+       "url": "https://soundshelter.net/vinyl/nasty-habits-shadow-boxing-om-unit-remix-and-remastered-original-mix"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Shadow Boxing (Original Mix) (release credits)",
+       "publisher": "YouTube (Nasty Habits - Topic)",
+       "url": "https://www.youtube.com/watch?v=FAJ57odwiLA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Shadow Boxing (Original Mix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a91f2dbb-c79a-4085-84af-38b514f69662"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Techstepová skladba, kterou Doc Scott vydal v roce 1996 jako Nasty Habits, v remasterovaném původním mixu ze singlu 31 Records z roku 2014: two-step bicí, postupně nastupující basová linka a zvuky soubojů z kung-fu filmu, hrozba postavená z velmi mála.",
+     "educationalLevel": "introductory",
+     "headline": "Nasty Habits - Shadow Boxing",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remastering",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remastering/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/nasty-habits-shadow-boxing/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/nasty-habits-shadow-boxing/",
+     "wordCount": 512
     }
    ]
   },
@@ -247263,6 +250088,129 @@
     }
    ]
   },
+  "lauryn-hill-i-used-to-love-him.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lauryn-hill-i-used-to-love-him/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Lauryn Hill",
+      "sameAs": "https://musicbrainz.org/artist/e8414012-4a1c-4ad4-be5e-fc55294e28cc"
+     },
+     "datePublished": "1998",
+     "genre": [
+      "r&b",
+      "soul",
+      "hip-hop"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Miseducation of Lauryn Hill"
+     },
+     "isrcCode": "USSM19803109",
+     "name": "I Used to Love Him",
+     "sameAs": [
+      "https://musicbrainz.org/recording/2accd8ab-02b8-4425-aaac-658363cfbcbf",
+      "https://www.youtube.com/watch?v=MpcsBbrZwa8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/lauryn-hill-i-used-to-love-him/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/lauryn-hill-i-used-to-love-him/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "The Miseducation of Lauryn Hill",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Miseducation_of_Lauryn_Hill"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "A Track By Track Breakdown Of 'The Miseducation Of Lauryn Hill'",
+       "publisher": "XXL",
+       "url": "https://www.xxlmag.com/a-track-by-track-breakdown-of-the-miseducation-of-lauryn-hill/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "The Miseducation of Lauryn Hill taught us about love 20 years on",
+       "publisher": "Dazed",
+       "url": "https://www.dazeddigital.com/music/article/41106/1/the-miseducation-of-lauryn-hill-taught-us-about-love-20-years"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Dissecting I Used To Love Him & Forgive Them Father by Lauryn Hill",
+       "publisher": "The Ringer (Dissect)",
+       "url": "https://www.theringer.com/podcasts/dissect/2018/12/04/ms1e6-dissecting-i-used-to-love-him-forgive-them-father-by-lauryn-hill"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2020",
+       "name": "Mary J. Blige's collaborations with other women",
+       "publisher": "MadameNoire",
+       "url": "https://madamenoire.com/1162879/keyshia-cole-mary-j-blige/5/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "Song by Song: A Full Album Review of the Miseducation of Lauryn Hill",
+       "publisher": "The La Salle Falconer",
+       "url": "https://lasallefalconer.com/2022/02/song-by-song-a-full-album-review-of-the-miseducation-of-lauryn-hill"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "I Used to Love Him (release credits)",
+       "publisher": "YouTube (Lauryn Hill - Topic)",
+       "url": "https://www.youtube.com/watch?v=MpcsBbrZwa8"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Track nine of The Miseducation of Lauryn Hill: a break-up song sung with Mary J. Blige over a sparse, jazzy groove, looking back on a love that held the narrator down and turning, in the end, towards faith.",
+     "educationalLevel": "introductory",
+     "headline": "Lauryn Hill - I Used to Love Him",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/concept/deep-cut/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "concept album",
+       "url": "https://korczis.github.io/sonic-playground/concept/concept-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/lauryn-hill-i-used-to-love-him/",
+     "wordCount": 547
+    }
+   ]
+  },
   "lcd-soundsystem-dance-yrself-clean.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -257338,6 +260286,127 @@
     }
    ]
   },
+  "max-berlin-joakim-elle-et-moi-joakim-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/max-berlin-joakim-elle-et-moi-joakim-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Max Berlin, Joakim",
+      "sameAs": "https://musicbrainz.org/artist/bf14a58a-c9c0-46d3-8ae6-4b9ec2b51442"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "disco",
+      "electronic",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Late Night Tales: Groove Armada"
+     },
+     "isrcCode": "BEG050300010",
+     "name": "Elle et moi - Joakim Remix",
+     "sameAs": [
+      "https://musicbrainz.org/recording/62ed5285-e241-4582-a8d0-d12ef8107bb0",
+      "https://www.youtube.com/watch?v=37SSWvJEU4c"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/max-berlin-joakim-elle-et-moi-joakim-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/max-berlin-joakim-elle-et-moi-joakim-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Tiga On The Dance Track That Gets Him All Misty-Eyed",
+       "publisher": "Vice",
+       "url": "https://www.vice.com/en/article/tiga-heartbreakers-series-elle-et-moi"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Late Night Tales: Groove Armada",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Late_Night_Tales:_Groove_Armada"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Max Berlin - Elle & Moi (Joakim Remix) (Groove Armada LateNightTales)",
+       "publisher": "YouTube (Late Night Tales)",
+       "url": "https://www.youtube.com/watch?v=4Jhm1rfX4UU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Elle et moi (Joakim Remix)",
+       "publisher": "YouTube (Max Berlin - Topic)",
+       "url": "https://www.youtube.com/watch?v=37SSWvJEU4c"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Max Berlin - Elle et moi",
+       "publisher": "Originals.be",
+       "url": "https://www.originals.be/en/originals/16920"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Joakim Bouaziz",
+       "publisher": "Wikipédia",
+       "url": "https://fr.wikipedia.org/wiki/Joakim_Bouaziz"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Chansons d'Ennui Tip-Top",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Chansons_d%27Ennui_Tip-Top"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Joakim's eight-and-a-half-minute remix of Elle et moi, Max Berlin's 1978 cult record, as Groove Armada placed it on their 2008 Late Night Tales mix: a slow, delicate track that Tiga calls cinematic and laid-back, a morning record.",
+     "educationalLevel": "introductory",
+     "headline": "Max Berlin, Joakim - Elle et moi - Joakim Remix",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/dj-mix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/max-berlin-joakim-elle-et-moi-joakim-remix/",
+     "wordCount": 550
+    }
+   ]
+  },
   "max-manie-dance-radio-edit.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -257438,6 +260507,232 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/max-manie-dance-radio-edit/",
      "wordCount": 495
+    }
+   ]
+  },
+  "maxxi-soundsystem-regrets-we-have-no-use-for.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maxxi-soundsystem-regrets-we-have-no-use-for/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Maxxi Soundsystem",
+      "sameAs": "https://musicbrainz.org/artist/da3a1f35-2bdf-45eb-97a7-7989fa54b313"
+     },
+     "datePublished": "2012",
+     "genre": [
+      "deep house",
+      "house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Regrets We Have No Use For"
+     },
+     "name": "Regrets We Have No Use For",
+     "sameAs": [
+      "https://musicbrainz.org/recording/bb3c39ef-0764-444a-b7ef-19c893e00656",
+      "https://www.youtube.com/watch?v=5NHXPwq3pko"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/maxxi-soundsystem-regrets-we-have-no-use-for/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/maxxi-soundsystem-regrets-we-have-no-use-for/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Maxxi Soundsystem feat. Name One - Regrets We Have No Use For EP",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/11700"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Single Review: Regrets We Have No Use For - Maxxi Soundsystem feat. Name One",
+       "publisher": "Black Plastic",
+       "url": "https://www.blackplastic.co.uk/alternative-electronic-music-b/2012/10/1/single-review-regrets-we-have-no-use-for-maxxi-soundsystem-feat-name-one"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Video Premiere: Maxxi Soundsystem \"Regrets We Have No Use For (feat. Name One)\"",
+       "publisher": "XLR8R",
+       "url": "https://xlr8r.com/?p=80746"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Maxxi Soundsystem ft. Name One - Regrets We Have No Use For (Official Video)",
+       "publisher": "Hypercolour Records (YouTube)",
+       "url": "https://www.youtube.com/watch?v=5NHXPwq3pko"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Regrets We Have No Use For (feat. Name One) [Matthew Herbert Remix]",
+       "publisher": "Maxxi Soundsystem - Topic (YouTube)",
+       "url": "https://www.youtube.com/watch?v=aiVMHmyJnes"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Regrets We Have No Use For (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/1b1f8c2d-f69e-4a78-a8b3-b0bc6b4332dd"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Brighton producer Maxxi Soundsystem's 2012 Hypercolour single with Name One: a moody deep house track whose grumbling, subterranean bass carries a sullen vocal about the regrets the title says we have no use for.",
+     "educationalLevel": "introductory",
+     "headline": "Maxxi Soundsystem - Regrets We Have No Use For",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "roland tr-808",
+       "url": "https://korczis.github.io/sonic-playground/concept/roland-tr-808/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/maxxi-soundsystem-regrets-we-have-no-use-for/",
+     "wordCount": 543
+    }
+   ]
+  },
+  "mbnn-rowald-steyn-ilomilo.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mbnn-rowald-steyn-ilomilo/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "MBNN, Rowald Steyn",
+      "sameAs": "https://musicbrainz.org/artist/7977c76c-74b2-4e3a-b0f4-e6d7644ccc3f"
+     },
+     "datePublished": "2022",
+     "genre": [
+      "deep house",
+      "cover",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "ilomilo"
+     },
+     "isrcCode": "NLZ542101948",
+     "name": "ilomilo",
+     "sameAs": [
+      "https://musicbrainz.org/recording/582e3784-43d6-4923-8e20-edceb78e528d",
+      "https://www.youtube.com/watch?v=9AWjMuvojnA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mbnn-rowald-steyn-ilomilo/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mbnn-rowald-steyn-ilomilo/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2022",
+       "name": "MBNN & Rowald Steyn - ilomilo",
+       "publisher": "Spinnin' Records",
+       "url": "https://spinninrecords.com/releases/ilomilo/details"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ilomilo (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ilomilo_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "MBNN & Rowald Steyn - ilomilo",
+       "publisher": "Inflyte",
+       "url": "https://inflyteapp.com/r/3j3fyy"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "ilomilo (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/582e3784-43d6-4923-8e20-edceb78e528d"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "MBNN & Rowald Steyn - ilomilo (Official Music Video)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=9AWjMuvojnA"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "MBNN and Rowald Steyn's deep house cover of Billie Eilish's ilomilo: a 2019 YouTube bootleg with guitar chords and a fuller beat that Spinnin' Records released officially in January 2022.",
+     "educationalLevel": "introductory",
+     "headline": "MBNN, Rowald Steyn - ilomilo",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mbnn-rowald-steyn-ilomilo/",
+     "wordCount": 548
     }
    ]
   },
@@ -257675,6 +260970,120 @@
     }
    ]
   },
+  "mc-lars-k-flay-the-game.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mc-lars-k-flay-the-game/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "MC Lars, K.Flay",
+      "sameAs": "https://musicbrainz.org/artist/fdf0d5e1-e773-4740-a50f-a032c96c63d3"
+     },
+     "datePublished": "2009",
+     "genre": [
+      "hip-hop",
+      "rap"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Single and Famous"
+     },
+     "isrcCode": "USTC00997507",
+     "name": "The Game",
+     "sameAs": [
+      "https://musicbrainz.org/recording/137b004c-e34e-4e9c-aee9-5ba49f5b03a1",
+      "https://www.youtube.com/watch?v=LjhI2n59bK8"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mc-lars-k-flay-the-game/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mc-lars-k-flay-the-game/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Just Thought I'd Let You Know",
+       "publisher": "Hipster, please!",
+       "url": "https://hipsterplease.blogspot.com/2009/09/just-thought-id-let-you-know.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "The Game - Single And Famous - MC Lars & K. Flay",
+       "publisher": "YouTube (MC Lars)",
+       "url": "https://www.youtube.com/watch?v=LjhI2n59bK8"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Single and Famous",
+       "publisher": "Bandcamp",
+       "url": "https://mclars.bandcamp.com/album/single-and-famous"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Game (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/137b004c-e34e-4e9c-aee9-5ba49f5b03a1"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "MC Lars",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/MC_Lars"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "K.Flay",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/K.Flay"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The fourth of seven tracks on Single and Famous, the 2009 EP MC Lars and K.Flay made together: a slow, steady head-nodder on a K.Flay beat that the one critic who reviewed it heard as a street-level banger and a less-than-explicit sex jam.",
+     "educationalLevel": "introductory",
+     "headline": "MC Lars, K.Flay - The Game",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "rapping",
+       "url": "https://korczis.github.io/sonic-playground/concept/rapping/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "groove",
+       "url": "https://korczis.github.io/sonic-playground/concept/groove/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mc-lars-k-flay-the-game/",
+     "wordCount": 542
+    }
+   ]
+  },
   "me-her-david-keno-walking-boots.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -257801,6 +261210,107 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/me-her-david-keno-walking-boots/",
      "wordCount": 593
+    }
+   ]
+  },
+  "me-succeeds-rongorongo-arp-aubert-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/me-succeeds-rongorongo-arp-aubert-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Me Succeeds",
+      "sameAs": "https://musicbrainz.org/artist/234c0214-a33d-4fbf-a35e-bbf029785bf4"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "techno",
+      "electronic",
+      "remix"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Rongorongo Remixed"
+     },
+     "name": "Rongorongo (Arp Aubert Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/441a9a5d-a60d-4bb5-a622-e5b149d4c147"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/me-succeeds-rongorongo-arp-aubert-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/me-succeeds-rongorongo-arp-aubert-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Me Succeeds - Rongorongo Remixed",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/me-succeeds-rongorongo-remixed"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Rongorongo Remixed (release)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/e96aae93-efd6-4784-bdaa-418039d2af00"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Rongorongo (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/9a7f20a1-95eb-4d7b-b247-b2f93d3c7c07"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Me Succeeds: releases",
+       "publisher": "Bandcamp",
+       "url": "https://mesucceeds.bandcamp.com/releases"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Rongorongo Remixed",
+       "publisher": "Bandcamp",
+       "url": "https://mesucceeds.bandcamp.com/album/rongorongo-remixed"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The Hamburg duo Me Succeeds' Rongorongo as Arp Aubert, the producer Stephan Lorenz, remade it: the opening track of the 2013 remix album Rongorongo Remixed on Ki Records, which the record store Oye Records described as a driving techno track.",
+     "headline": "Me Succeeds - Rongorongo (Arp Aubert Remix)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "compilation album",
+       "url": "https://korczis.github.io/sonic-playground/concept/compilation-album/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/me-succeeds-rongorongo-arp-aubert-remix/",
+     "wordCount": 550
     }
    ]
   },
@@ -258894,6 +262404,134 @@
     }
    ]
   },
+  "mgmt-all-we-ever-wanted-was-everything.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mgmt-all-we-ever-wanted-was-everything/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "MGMT",
+      "sameAs": "https://musicbrainz.org/artist/c485632c-b784-4ee9-8ea1-c5fb365681fc"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "cover",
+      "psychedelic",
+      "post-punk"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Late Night Tales: MGMT"
+     },
+     "isrcCode": "GB5EM1001001",
+     "name": "All We Ever Wanted Was Everything",
+     "sameAs": [
+      "https://musicbrainz.org/recording/17dd4151-cb70-4f77-b8de-c76fe9e7a9e5",
+      "https://www.youtube.com/watch?v=ENrs91FkuFk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mgmt-all-we-ever-wanted-was-everything/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mgmt-all-we-ever-wanted-was-everything/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Late Night Tales: MGMT",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Late_Night_Tales:_MGMT"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Sky's Gone Out",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/The_Sky%27s_Gone_Out"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Hear MGMT's Trippy Bauhaus Cover",
+       "publisher": "SPIN",
+       "url": "https://www.spinmagazine.com/2011/09/hear-mgmts-trippy-bauhaus-cover/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "MGMT - All We Ever Wanted Was Everything (Bauhaus Cover)",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/812721/mgmt-all-we-ever-wanted-was-everything-bauhaus-cover/music"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album Review: Various Artists - Late Night Tales: MGMT",
+       "publisher": "Drowned in Sound",
+       "url": "https://www.drownedinsound.org/archive-album-review-various-artists-late-night-tales-mgmt-4143915/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "MGMT - Late Night Tales",
+       "publisher": "DIY",
+       "url": "https://diymag.com/review/album/mgmt-late-night-tales"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "All We Ever Wanted Was Everything (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/17dd4151-cb70-4f77-b8de-c76fe9e7a9e5"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "MGMT - All We Ever Wanted Was Everything - Animated (Late Night Tales)",
+       "publisher": "YouTube (Late Night Tales)",
+       "url": "https://www.youtube.com/watch?v=ENrs91FkuFk"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "MGMT's exclusive contribution to their 2011 Late Night Tales mix: a close, slightly sunnier cover of a 1982 Bauhaus song about lost innocence, made hazier with effects and given an animated video by Ned Wenlock.",
+     "educationalLevel": "introductory",
+     "headline": "MGMT - All We Ever Wanted Was Everything",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "dj mix",
+       "url": "https://korczis.github.io/sonic-playground/concept/dj-mix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mgmt-all-we-ever-wanted-was-everything/",
+     "wordCount": 536
+    }
+   ]
+  },
   "micatone-plastic-bags-magazines.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -259109,6 +262747,230 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/michael-jackson-billie-jean/",
      "wordCount": 707
+    }
+   ]
+  },
+  "michal-horak-hej-teto.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michal-horak-hej-teto/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Michal Horák",
+      "sameAs": "https://musicbrainz.org/artist/d1ef5319-3697-461e-a40b-3d383c2caebd"
+     },
+     "datePublished": "2018",
+     "genre": [
+      "folk",
+      "singer-songwriter",
+      "comedy"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Michalovo cédéčko"
+     },
+     "name": "Hej teto!",
+     "sameAs": [
+      "https://musicbrainz.org/recording/5a259212-a3c8-4ec2-bedf-34dc53241150",
+      "https://www.youtube.com/watch?v=cAQgH_gjY7E"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michal-horak-hej-teto/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/michal-horak-hej-teto/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Michal Horák (písničkář)",
+       "publisher": "Wikipedie",
+       "url": "https://cs.wikipedia.org/wiki/Michal_Hor%C3%A1k_(p%C3%ADsni%C4%8Dk%C3%A1%C5%99)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Příběh českého hitu: Michal Horák - Hej teto!",
+       "publisher": "iReport",
+       "url": "https://www.ireport.cz/clanky/pribeh-cz-hitu/pribeh-ceskeho-hitu-michal-horak-hej-teto"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Písničkář Michal Horák se proslavil písní o mrtvém křečkovi: Kamarádovu historku přišili mně",
+       "publisher": "Lifee.cz",
+       "url": "https://www.lifee.cz/pisnickar-michal-horak-pisen-o-mrtvem-kreckovi-b7bb0"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "Michal Horák - Hej teto! (Official Video)",
+       "publisher": "YouTube (Michal Horák and Supraphon)",
+       "url": "https://www.youtube.com/watch?v=cAQgH_gjY7E"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2019",
+       "name": "Michalovo cédéčko",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/57a0ff9c-310e-4da1-9a1e-120756c98a61"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Hej teto!, the 2018 song that made the Czech songwriter Michal Horák known: the morbidly silly story of a hamster that swallowed a magnet and stuck to a radiator, told in a minor key with violin, banjo and double bass, and later the opening track of his debut album Michalovo cédéčko.",
+     "educationalLevel": "introductory",
+     "headline": "Michal Horák - Hej teto!",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "novelty song",
+       "url": "https://korczis.github.io/sonic-playground/concept/novelty-song/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "minor key",
+       "url": "https://korczis.github.io/sonic-playground/concept/minor-key/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/michal-horak-hej-teto/",
+     "wordCount": 544
+    }
+   ]
+  },
+  "michal-prokop-ostraka-live.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michal-prokop-ostraka-live/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Michal Prokop"
+     },
+     "datePublished": "2026",
+     "genre": [
+      "rock",
+      "blues"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Live 80"
+     },
+     "name": "Ostraka (Live)",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=IXMvu2mCzDs"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/michal-prokop-ostraka-live/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/michal-prokop-ostraka-live/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Ostraka (Live 80 track)",
+       "publisher": "Supraphon via YouTube (Michal Prokop - Topic)",
+       "url": "https://www.youtube.com/watch?v=IXMvu2mCzDs"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Michal Prokop & Framus Five - Ostraka (oficiální videoklip)",
+       "publisher": "Supraphon (YouTube)",
+       "url": "https://www.youtube.com/watch?v=XmW9CxV3ddU"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Michal Prokop oslávi životné jubileum",
+       "publisher": "TASR (teraz.sk)",
+       "url": "https://www.teraz.sk/magazin/michal-prokop-oslavi-zivotne-jubileum/970828-clanok.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Michal Prokop slaví kulatiny. Fanouškům naděluje dárek v podobě živáku Live 80",
+       "publisher": "CNN Prima News",
+       "url": "https://cnn.iprima.cz/michal-prokop-slavi-kulatiny-fanouskum-nadeluje-darek-v-podobe-zivaku-live-80-514862"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Live 80 (ČTK)",
+       "publisher": "České noviny (ČTK)",
+       "url": "https://www.ceskenoviny.cz/zpravy/2860057"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2025",
+       "name": "Nejsem čtenář poezie, jenom s ní pracuju, říká zpěvák a skladatel Michal Prokop",
+       "publisher": "České noviny (ČTK)",
+       "url": "https://www.ceskenoviny.cz/zpravy/nejsem-ctenar-poezie-jenom-s-ni-pracuju-rika-zpevak-a-skladatel-michal-prokop/2661015"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Framus Five",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Framus_Five"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Michal Prokop and Framus Five play Ostraka, the title song of their 2025 award-winning album, at their Christmas concert in Prague's Forum Karlín: Michal Bulíř's litany of fears, recorded for the live album Live 80.",
+     "educationalLevel": "introductory",
+     "headline": "Michal Prokop - Ostraka (Live)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "live recording",
+       "url": "https://korczis.github.io/sonic-playground/concept/live-recording/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "list song",
+       "url": "https://korczis.github.io/sonic-playground/concept/list-song/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/michal-prokop-ostraka-live/",
+     "wordCount": 545
     }
    ]
   },
@@ -260011,6 +263873,132 @@
     }
    ]
   },
+  "miles-davis-round-midnight.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miles-davis-round-midnight/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Miles Davis",
+      "sameAs": "https://musicbrainz.org/artist/fe7245e7-d734-4ca1-8e26-691883f58201"
+     },
+     "datePublished": "1957",
+     "genre": [
+      "jazz",
+      "hard bop",
+      "ballad"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "'Round About Midnight"
+     },
+     "name": "'Round Midnight",
+     "sameAs": [
+      "https://musicbrainz.org/recording/0ba4f516-252b-45cd-a6b5-1de7bf843769",
+      "https://www.youtube.com/watch?v=Ys9wiGNDCvA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miles-davis-round-midnight/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/miles-davis-round-midnight/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "'Round About Midnight",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/%27Round_About_Midnight"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Round Midnight (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/%27Round_Midnight_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Round Midnight",
+       "publisher": "The Ethan Hein Blog",
+       "url": "https://www.ethanhein.com/wp/2012/round-midnight/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2010",
+       "name": "Classic Tracks: Miles Davis 'Round Midnight'",
+       "publisher": "Sound On Sound",
+       "url": "https://www.soundonsound.com/techniques/classic-tracks-miles-davis-round-midnight"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Miles Davis Quintet - 'Round About Midnight",
+       "publisher": "The Audio Beat",
+       "url": "https://www.theaudiobeat.com/music/miles_davis_midnight_milestones_lp.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Round About Midnight",
+       "publisher": "Miles Davis Official Site",
+       "url": "https://www.milesdavis.com/albums/round-about-midnight/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Round Midnight",
+       "publisher": "JazzStandards.com",
+       "url": "https://www.jazzstandards.com/compositions-0/roundmidnight.htm"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "'Round Midnight (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/0ba4f516-252b-45cd-a6b5-1de7bf843769"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The Miles Davis Quintet's 1956 Columbia recording of Thelonious Monk's ballad: a Harmon-muted trumpet, an open-horn shout chorus in major and John Coltrane's tenor solo, the track that opens 'Round About Midnight.",
+     "educationalLevel": "intermediate",
+     "headline": "Miles Davis - 'Round Midnight",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "improvisation",
+       "url": "https://korczis.github.io/sonic-playground/concept/improvisation/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "minor key",
+       "url": "https://korczis.github.io/sonic-playground/concept/minor-key/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/miles-davis-round-midnight/",
+     "wordCount": 521
+    }
+   ]
+  },
   "mindchatter-trippy.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -260135,6 +264123,239 @@
     }
    ]
   },
+  "minuit-flash.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/minuit-flash/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Minuit",
+      "sameAs": "https://musicbrainz.org/artist/fc7b5984-9f6e-4693-9bdc-5cf3a96441f8"
+     },
+     "datePublished": "2015",
+     "genre": [
+      "rock",
+      "funk",
+      "disco"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Flash"
+     },
+     "isrcCode": "FR6P11500470",
+     "name": "Flash",
+     "sameAs": [
+      "https://musicbrainz.org/recording/13d315cd-1369-46fe-b0b5-640bc08ab2e0",
+      "https://www.youtube.com/watch?v=atIN9cd1144"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/minuit-flash/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/minuit-flash/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Minuit - Flash (Clip Officiel)",
+       "publisher": "YouTube (Minuit)",
+       "url": "https://www.youtube.com/watch?v=atIN9cd1144"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Minuit - Flash",
+       "publisher": "YouTube (Minuit)",
+       "url": "https://www.youtube.com/watch?v=GOrWPdj4PvQ"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Clip de \"Flash\" : le groupe Minuit digne héritier des Rita Mitsouko",
+       "publisher": "Charts in France",
+       "url": "https://www.chartsinfrance.net/Minuit/news-97329.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Minuit à Paris : rencontre avec le groupe de Simone Ringer et Raoul Chichin",
+       "publisher": "Time Out Paris",
+       "url": "https://www.timeout.fr/paris/le-blog/minuit-a-paris-rencontre-avec-le-groupe-de-simone-ringer-et-raoul-chichin-092515"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Simone Ringer et Raoul Chichin, les héritiers de Minuit",
+       "publisher": "Fnac L'Éclaireur",
+       "url": "https://leclaireur.fnac.com/article/cp27040-simone-ringer-et-raoul-chichin-les-heritiers-de-minuit/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Minuit (communiqué de presse)",
+       "publisher": "France Télévisions",
+       "url": "https://www.francetvpro.fr/contenu-de-presse/16491"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Minuit (EP)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/d97a1738-5742-43c2-bcd7-b763fa18712a"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The 2015 debut single of Minuit, the Paris band of Simone Ringer and Raoul Chichin: a guitar that enters like an alarm, then bass, keyboards and drums, in a funk rock that French critics compared with the Rita Mitsouko, the band of their parents.",
+     "educationalLevel": "introductory",
+     "headline": "Minuit - Flash",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/minuit-flash/",
+     "wordCount": 531
+    }
+   ]
+  },
+  "mirwais-miss-you-thin-white-duke-remix.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mirwais-miss-you-thin-white-duke-remix/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mirwais",
+      "sameAs": "https://musicbrainz.org/artist/688178e7-2308-4e8c-8e6d-66a025f895fb"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "electronic",
+      "house",
+      "remix",
+      "cover"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Production"
+     },
+     "name": "Miss You (Thin White Duke Remix)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/6956a218-a717-492f-9844-c7e100295340",
+      "https://www.youtube.com/watch?v=Xlg2C7bpXSk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mirwais-miss-you-thin-white-duke-remix/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mirwais-miss-you-thin-white-duke-remix/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2018",
+       "name": "The Rolling Stones' Miss You Turns 40 Today: 8 Unlikely Covers",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/1995598/rolling-stones-miss-you-covers/lists"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Stuart Price",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Stuart_Price"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Miss You (Rolling Stones song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Miss_You_(Rolling_Stones_song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mirwais Ahmadzaï",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Mirwais_Ahmadza%C3%AF"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2005",
+       "name": "Production (2005 two-disc edition)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/7374c355-0b28-4260-ab2b-c36a91a56b67"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Miss You (Thin White Duke Remix) (Provided to YouTube by IDOL)",
+       "publisher": "YouTube",
+       "url": "https://www.youtube.com/watch?v=Xlg2C7bpXSk"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Stuart Price, as Thin White Duke, remixes Mirwais's cover of the Rolling Stones' Miss You, sung by Craig Wedren: a four-minute club version from the Miss You remixes of 2003, collected on the 2005 two-disc edition of Production.",
+     "educationalLevel": "intermediate",
+     "headline": "Mirwais - Miss You (Thin White Duke Remix)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "stage persona",
+       "url": "https://korczis.github.io/sonic-playground/concept/stage-persona/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mirwais-miss-you-thin-white-duke-remix/",
+     "wordCount": 550
+    }
+   ]
+  },
   "mirwais-naiive-song.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -260243,6 +264464,113 @@
     }
    ]
   },
+  "miss-kittin-ballad-of-the-23rd-century.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miss-kittin-ballad-of-the-23rd-century/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Miss Kittin",
+      "sameAs": "https://musicbrainz.org/artist/af6bd973-3e30-4339-94b5-85b139362e6d"
+     },
+     "datePublished": "2013",
+     "genre": [
+      "electronic",
+      "downtempo"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Calling from the Stars"
+     },
+     "isrcCode": "DEGQ21300084",
+     "name": "Ballad of the 23rd Century",
+     "sameAs": [
+      "https://musicbrainz.org/recording/8cc17ef1-5ed6-40cf-a9f0-1705e11f58cc",
+      "https://www.youtube.com/watch?v=p058YmYWsPA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/miss-kittin-ballad-of-the-23rd-century/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/miss-kittin-ballad-of-the-23rd-century/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Calling from the Stars",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Calling_from_the_Stars"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Miss Kittin",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Miss_Kittin"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Album Review: Miss Kittin - Calling from the Stars",
+       "publisher": "Drowned in Sound",
+       "url": "https://drownedinsound.org/archive-album-review-miss-kittin-calling-from-the-stars-4146336/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Miss Kittin - Calling From The Stars",
+       "publisher": "The Electricity Club",
+       "url": "https://electricityclub.co.uk/?p=17104"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Miss Kittin - Calling From The Stars",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/12830"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Ballad of the 23rd Century (release credits)",
+       "publisher": "YouTube (Miss Kittin - Topic)",
+       "url": "https://www.youtube.com/watch?v=p058YmYWsPA"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "A five-minute track from the instrumental, more abstract second disc of Miss Kittin's 2013 double album Calling from the Stars, which one critic heard as a possible theme for a science-fiction series.",
+     "headline": "Miss Kittin - Ballad of the 23rd Century",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/concept/deep-cut/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "record producer",
+       "url": "https://korczis.github.io/sonic-playground/concept/record-producer/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/miss-kittin-ballad-of-the-23rd-century/",
+     "wordCount": 548
+    }
+   ]
+  },
   "miss-kittin-frank-sinatra.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -260328,6 +264656,121 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/miss-kittin-frank-sinatra/",
      "wordCount": 582
+    }
+   ]
+  },
+  "mista-trick-spencer-ramsay-taking-a-bath-splish-splash.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mista Trick, Spencer Ramsay",
+      "sameAs": "https://musicbrainz.org/artist/731adf10-8856-4dd8-a7b2-467fe5574f07"
+     },
+     "datePublished": "2024",
+     "genre": [
+      "drum and bass",
+      "cover",
+      "novelty"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Taking A Bath (Splish Splash)"
+     },
+     "isrcCode": "DEUM72400496",
+     "name": "Taking A Bath (Splish Splash)",
+     "sameAs": [
+      "https://musicbrainz.org/recording/edf4b35f-7842-4d87-a584-d8af61be4530",
+      "https://www.youtube.com/watch?v=SNiRMWRnfZc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Taking a Bath (Splish Splash) - Mista Trick & Spencer Ramsay (Official Lyric Video)",
+       "publisher": "YouTube (Mista Trick)",
+       "url": "https://www.youtube.com/watch?v=SNiRMWRnfZc"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2023",
+       "name": "Splish Splash - Mista Trick & Spencer Ramsay (OUT ON SPOTIFY)",
+       "publisher": "YouTube (Mista Trick)",
+       "url": "https://www.youtube.com/watch?v=LwYhniOMEcU"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Splish Splash (song)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Splish_Splash_(song)"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mista Trick",
+       "publisher": "Mista Trick",
+       "url": "https://mistatrick.com/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mista Trick",
+       "publisher": "This Is Freshly Squeezed",
+       "url": "https://www.freshlysqueezedmusic.com/?p=1345"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2024",
+       "name": "Taking a Bath (Splish Splash)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/afda6d74-2ae4-42a0-8588-85d845a3be8a"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The Bristol producer Mista Trick and Spencer Ramsay turn Bobby Darin's 1958 novelty hit Splish Splash into drum and bass, with a new vocal by Andrew Bourn and saxophone and piano by Joe Rodwell, released as a Virgin single in February 2024.",
+     "educationalLevel": "introductory",
+     "headline": "Mista Trick, Spencer Ramsay - Taking A Bath (Splish Splash)",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "cover version",
+       "url": "https://korczis.github.io/sonic-playground/concept/cover-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "novelty song",
+       "url": "https://korczis.github.io/sonic-playground/concept/novelty-song/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mista-trick-spencer-ramsay-taking-a-bath-splish-splash/",
+     "wordCount": 537
     }
    ]
   },
@@ -260572,6 +265015,130 @@
     }
    ]
   },
+  "moderat-reminder.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moderat-reminder/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moderat",
+      "sameAs": "https://musicbrainz.org/artist/7754905b-8bf7-48e2-935a-03d566fec464"
+     },
+     "datePublished": "2016",
+     "genre": [
+      "electronic",
+      "electro-pop",
+      "techno"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "III (Deluxe Edition)"
+     },
+     "isrcCode": "DEOE81610319",
+     "name": "Reminder",
+     "sameAs": [
+      "https://musicbrainz.org/recording/0cb803ab-f761-450f-8c3e-ff5a3294bc58",
+      "https://www.youtube.com/watch?v=Gk21PS7gedI"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moderat-reminder/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moderat-reminder/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "III (Moderat album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/III_(Moderat_album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Moderat - Reminder",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/1857612/moderat-reminder/news"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Modeselektor and Apparat Reunite as Moderat, Share Stirring New Single",
+       "publisher": "Thump (Vice)",
+       "url": "https://www.vice.com/en/article/modeselektor-and-apparat-reunite-as-moderat-share-stirring-new-single/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Listen: Moderat, Reminder",
+       "publisher": "Cool Hunting",
+       "url": "https://coolhunting.com/culture/moderat-reminder"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Moderat: Reminder (Singles Going Steady)",
+       "publisher": "PopMatters",
+       "url": "https://popmatters.com/moderat-reminder-singles-going-steady-2495452439.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Moderat - III",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/18817"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Moderat - Reminder (Official Video)",
+       "publisher": "Moderat (YouTube)",
+       "url": "https://www.youtube.com/watch?v=cJwsNUoazUg"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The lead single of Moderat's third album III: Sascha Ring's bare, aching voice over light, choppy breakbeat percussion, with Apparat's sweeping atmospherics above Modeselektor's quick-hit drums and a break that one critic heard as darkwave.",
+     "educationalLevel": "intermediate",
+     "headline": "Moderat - Reminder",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/concept/breakbeat/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "b-side",
+       "url": "https://korczis.github.io/sonic-playground/concept/b-side/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/moderat-reminder/",
+     "wordCount": 523
+    }
+   ]
+  },
   "moisture-lucca-santucci-headman-club-version.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -260671,6 +265238,120 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/moisture-lucca-santucci-headman-club-version/",
      "wordCount": 608
+    }
+   ]
+  },
+  "moloko-100.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-100/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moloko",
+      "sameAs": "https://musicbrainz.org/artist/2f94016a-3880-4d8c-9af9-0e197ee77189"
+     },
+     "datePublished": "2003",
+     "genre": [
+      "electronic",
+      "pop",
+      "dance"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Statues"
+     },
+     "isrcCode": "GBBND0200968",
+     "name": "100%",
+     "sameAs": [
+      "https://musicbrainz.org/recording/13f48782-ca5a-4a7f-9623-f1054697c173",
+      "https://www.youtube.com/watch?v=D4SbvsN28Ss"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moloko-100/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moloko-100/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Statues (album)",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Statues_(album)"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2003",
+       "name": "Statues",
+       "publisher": "Hot Press",
+       "url": "https://www.hotpress.com/music/statues-2638568"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko: Statues (Review)",
+       "publisher": "Visions",
+       "url": "https://www.visions.de/review/moloko-statues/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2009",
+       "name": "Del perduto amor e non solo: Moloko - Statues (2003)",
+       "publisher": "2047ways",
+       "url": "https://2047ways.blogspot.com/2009/09/del-perduto-amor-e-non-solo-moloko.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moloko",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Moloko"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "100% (live, Brixton Academy, 2003)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/ac7149aa-3446-44e3-8315-aa9932bd6f63"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The seventh track of Statues, Moloko's last album of 2003: an album track never released as a single, whose chorus one critic found hypnotically catchy and another heard as Brazil-tinged.",
+     "educationalLevel": "introductory",
+     "headline": "Moloko - 100%",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "hook",
+       "url": "https://korczis.github.io/sonic-playground/concept/hook/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "deep cut",
+       "url": "https://korczis.github.io/sonic-playground/concept/deep-cut/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/moloko-100/",
+     "wordCount": 519
     }
    ]
   },
@@ -261146,6 +265827,128 @@
     }
    ]
   },
+  "monsterheart-salam.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/monsterheart-salam/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Monsterheart",
+      "sameAs": "https://musicbrainz.org/artist/03c1f9a2-5395-40d5-8655-1ef6f357f31d"
+     },
+     "datePublished": "2017",
+     "genre": [
+      "dream pop",
+      "synth-pop",
+      "ballad"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Salam"
+     },
+     "name": "Salam",
+     "sameAs": [
+      "https://musicbrainz.org/recording/054c64d0-fb5e-409c-a71b-2023a9691140",
+      "https://www.youtube.com/watch?v=MkAAN0pLG3w"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/monsterheart-salam/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/monsterheart-salam/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Videopremiere: Monsterheart »Salam« – Ein bisschen Frieden",
+       "publisher": "The Gap",
+       "url": "https://thegap.at/videopremiere-monsterheart-salam-ein-bisschen-frieden/2/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Lullaby of Monsterheart",
+       "publisher": "The Gap",
+       "url": "https://thegap.at/lullaby-of-monsterheart/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "Die Neuvorstellungen der Woche",
+       "publisher": "FM4 (ORF)",
+       "url": "https://fm4.orf.at/stories/2883008"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Monsterheart",
+       "publisher": "mica - music austria",
+       "url": "https://db.musicaustria.at/node/182894"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Monsterheart: I used to spend a lot of time at cemeteries and in my head, and now I'm more among people",
+       "publisher": "Austrian Music Export",
+       "url": "https://www.musicexport.at/monsterheart-i-used-to-spend-a-lot-of-time-at-cemeteries-and-in-my-head-and-now-im-more-among-people/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2017",
+       "name": "MONSTERHEART - SALAM (official video)",
+       "publisher": "YouTube (Seayou Records)",
+       "url": "https://www.youtube.com/watch?v=MkAAN0pLG3w"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Salam",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/537d5368-3442-4666-987f-98ce1afb9c62"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The title track of Salam, the 2017 album the Viennese artist Anna Attar recorded alone in her flat as Monsterheart: a minimal, pulsing ballad named after an Arabic word for peace, which FM4 likened to the tender moments of Suicide.",
+     "educationalLevel": "introductory",
+     "headline": "Monsterheart - Salam",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "lo-fi",
+       "url": "https://korczis.github.io/sonic-playground/concept/lo-fi/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "reverb",
+       "url": "https://korczis.github.io/sonic-playground/concept/reverb/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "tremolo",
+       "url": "https://korczis.github.io/sonic-playground/concept/tremolo/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/monsterheart-salam/",
+     "wordCount": 539
+    }
+   ]
+  },
   "monterosso-huacachina.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -261257,6 +266060,107 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/monterosso-huacachina/",
      "wordCount": 528
+    }
+   ]
+  },
+  "moomin-the-story-about-you.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moomin-the-story-about-you/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Moomin",
+      "sameAs": "https://musicbrainz.org/artist/d3c61d04-5366-4f96-99a2-7d16fb7928f4"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "deep house",
+      "house",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "The Story About You"
+     },
+     "name": "The Story About You",
+     "sameAs": [
+      "https://musicbrainz.org/recording/454a84c2-642f-4cb0-a603-7f5a1c1643fe",
+      "https://www.youtube.com/watch?v=gP0RlNLqImk"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/moomin-the-story-about-you/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/moomin-the-story-about-you/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Moomin - The Story About You",
+       "publisher": "Resident Advisor",
+       "url": "https://ra.co/reviews/9997"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Moomin - The Story About You (2022 Repress)",
+       "publisher": "Oye Records",
+       "url": "https://oye-records.com/releases/moomin-the-story-about-you"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "The Story About You (Original Mix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/454a84c2-642f-4cb0-a603-7f5a1c1643fe"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "The Story About You (Original Mix) (Provided to YouTube by WAS Word and Sound Medien GmbH)",
+       "publisher": "YouTube (Moomin - Topic)",
+       "url": "https://www.youtube.com/watch?v=gP0RlNLqImk"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The seven-minute title track of Moomin's 2011 debut album on Smallville: Sebastian Genz's deep house, which Resident Advisor heard as funereal, built on dignified piano and guitar with a mournful humming.",
+     "educationalLevel": "introductory",
+     "headline": "Moomin - The Story About You",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "house groove",
+       "url": "https://korczis.github.io/sonic-playground/concept/house-groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "loop",
+       "url": "https://korczis.github.io/sonic-playground/concept/loop/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "arrangement",
+       "url": "https://korczis.github.io/sonic-playground/concept/arrangement/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/moomin-the-story-about-you/",
+     "wordCount": 538
     }
    ]
   },
@@ -262705,6 +267609,337 @@
     }
    ]
   },
+  "muff-deep-enter-the-muff.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/muff-deep-enter-the-muff/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Muff Deep",
+      "sameAs": "https://musicbrainz.org/artist/22ce77fd-17f2-494a-a481-a12c67436636"
+     },
+     "datePublished": "2011",
+     "genre": [
+      "house",
+      "deep house"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Enter the Muff"
+     },
+     "name": "Enter the Muff",
+     "sameAs": [
+      "https://musicbrainz.org/recording/ecdc1e7c-eee7-4b2c-a562-8001d734482c",
+      "https://www.youtube.com/watch?v=d71YR3f5WOc"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/muff-deep-enter-the-muff/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/muff-deep-enter-the-muff/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Muff Deep - Enter The Muff (TART 018EP)",
+       "publisher": "Forced Exposure",
+       "url": "https://www.forcedexposure.com/Catalog/TART.018EP.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Muff Deep - Enter The Muff",
+       "publisher": "Discogs",
+       "url": "https://www.discogs.com/release/3307702-Muff-Deep-Enter-The-Muff"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Enter the Muff (TART018)",
+       "publisher": "Bandcamp (Muff Deep)",
+       "url": "https://muffdeep.bandcamp.com/album/enter-the-muff-tart018"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Muff Deep",
+       "publisher": "NTS",
+       "url": "https://www.nts.live/artists/2597-muff-deep"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2015",
+       "name": "Label Spotlight: Tartelet",
+       "publisher": "The Vinyl Factory",
+       "url": "https://thevinylfactory.com/features/label-spotlight-tartelet"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2016",
+       "name": "Muff Deep - Enter the Muff",
+       "publisher": "YouTube (Tartelet Records)",
+       "url": "https://www.youtube.com/watch?v=d71YR3f5WOc"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The nine-minute A-side of Muff Deep's first twelve-inch, TART018 on the Copenhagen label Tartelet in 2011, by its label manager Emil Margetli and the DJ Mathias Mesteño: classic house of heavy sub-bass, organ licks and cooing soul vocals.",
+     "educationalLevel": "introductory",
+     "headline": "Muff Deep - Enter the Muff",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "house groove",
+       "url": "https://korczis.github.io/sonic-playground/concept/house-groove/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "club culture",
+       "url": "https://korczis.github.io/sonic-playground/concept/club-culture/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/muff-deep-enter-the-muff/",
+     "wordCount": 538
+    }
+   ]
+  },
+  "mumbai-science-deja-vu.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mumbai-science-deja-vu/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Mumbai Science",
+      "sameAs": "https://musicbrainz.org/artist/97eb2d6d-3fed-4816-bc7a-3e20d2894e05"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "electro",
+      "techno"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Déjà Vu"
+     },
+     "name": "Déjà Vu",
+     "sameAs": [
+      "https://musicbrainz.org/recording/9db6e0a0-64cf-4d37-8bef-d923d32fa2b6",
+      "https://www.youtube.com/watch?v=Rbq9UKD1DWw"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mumbai-science-deja-vu/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mumbai-science-deja-vu/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Mumbai Science - Déjà Vu (official video)",
+       "publisher": "Lektroluv Records (YouTube)",
+       "url": "https://www.youtube.com/watch?v=nqZ8pgqP7ko"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Mumbai Science - \"Déjà Vu\" (Official Video)",
+       "publisher": "THUMP (YouTube)",
+       "url": "https://www.youtube.com/watch?v=2b_lBxRD5As"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Mumbai Science",
+       "publisher": "Varrasso PR",
+       "url": "https://www.varrassopr.com/clients/dance-electronic/mumbai-science"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Mumbai Science in the Lab",
+       "publisher": "Mixmag",
+       "url": "https://mixmag.net/read/mumbai-science-in-the-lab-video"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Mumbai Science - Déjà Vu",
+       "publisher": "Festivalinfo",
+       "url": "https://www.festivalinfo.nl/recensie/7561/Deja-Vu/Mumbai-Science/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Brussels Summer Festival: Mumbai Science",
+       "publisher": "BRUZZ",
+       "url": "https://www.bruzz.be/en/culture/music-nightlife/brussels-summer-festival-mumbai-science-2014-08-05"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Déjà vu (single)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/release/c0b24fdb-06d3-49dc-8116-ab00b20d408c"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The 2014 Lektroluv single that named the Belgian duo Mumbai Science's debut album: a trip into a grim future of business-card parties and celebrity personal trainers, voiced by April Rose with a casual, blasé chill.",
+     "educationalLevel": "introductory",
+     "headline": "Mumbai Science - Déjà Vu",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "featured artist",
+       "url": "https://korczis.github.io/sonic-playground/concept/featured-artist/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "music video",
+       "url": "https://korczis.github.io/sonic-playground/concept/music-video/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mumbai-science-deja-vu/",
+     "wordCount": 501
+    }
+   ]
+  },
+  "munk-surf-smurf-munk-version.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/munk-surf-smurf-munk-version/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Munk"
+     },
+     "datePublished": "2014",
+     "genre": [
+      "house",
+      "electronic",
+      "rockabilly",
+      "surf rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Surf Smurf"
+     },
+     "name": "Surf Smurf - Munk Version",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=8n0U8ewW0AQ"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/munk-surf-smurf-munk-version/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/munk-surf-smurf-munk-version/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Surf Smurf",
+       "publisher": "Gomma",
+       "url": "https://gommarecords.bandcamp.com/album/surf-smurf"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2021",
+       "name": "Label of the Month: Toy Tonics",
+       "publisher": "Beatportal",
+       "url": "https://www.beatportal.com/articles/54889-label-of-the-month-toy-tonics"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2012",
+       "name": "Counting with Mathias Modica",
+       "publisher": "Electronic Beats",
+       "url": "https://www.electronicbeats.net/counting-with-mathias-modica"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Mathias Modica's own version of Surf Smurf, the 2014 Gomma single he shared with Rebolledo: a 1960s surf rock song gone electronic, turned by Munk into a dirty rockabilly house track.",
+     "educationalLevel": "introductory",
+     "headline": "Munk - Surf Smurf - Munk Version",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "alternate version",
+       "url": "https://korczis.github.io/sonic-playground/concept/alternate-version/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "riff",
+       "url": "https://korczis.github.io/sonic-playground/concept/riff/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "drum machine",
+       "url": "https://korczis.github.io/sonic-playground/concept/drum-machine/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/munk-surf-smurf-munk-version/",
+     "wordCount": 511
+    }
+   ]
+  },
   "muse-uprising.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -262804,6 +268039,121 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/muse-uprising/",
      "wordCount": 539
+    }
+   ]
+  },
+  "my-morning-jacket-highly-suspicious.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/my-morning-jacket-highly-suspicious/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "My Morning Jacket",
+      "sameAs": "https://musicbrainz.org/artist/ea5883b7-68ce-48b3-b115-61746ea53b8c"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "alternative rock",
+      "rock"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Evil Urges"
+     },
+     "name": "Highly Suspicious",
+     "sameAs": [
+      "https://musicbrainz.org/recording/f59f27cd-8d64-4d69-a625-d553c496135b",
+      "https://www.youtube.com/watch?v=G1WzTgYi--k"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/my-morning-jacket-highly-suspicious/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/my-morning-jacket-highly-suspicious/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Evil Urges",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Evil_Urges"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "My Morning Jacket - Evil Urges",
+       "publisher": "The Line of Best Fit",
+       "url": "https://www.thelineofbestfit.com/reviews/albums/my-morning-jacket-evil-urges-4868"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "My Morning Jacket: Evil Urges",
+       "publisher": "The A.V. Club",
+       "url": "https://www.avclub.com/my-morning-jacket-evil-urges-1798204409"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Premature Evaluation: My Morning Jacket, Evil Urges",
+       "publisher": "Stereogum",
+       "url": "https://stereogum.com/9303/premature_evaluation_my_morning_jacket_evil_urges/reviews/premature-evaluation"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2011",
+       "name": "Album review: My Morning Jacket, Circuital (ATO)",
+       "publisher": "WBEZ Chicago",
+       "url": "https://www.wbez.org/stories/album-review-my-morning-jacket-circuital-ato/64db5807-77e6-4dd6-bea3-daeae217016f"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Highly Suspicious",
+       "publisher": "YouTube (My Morning Jacket - Topic)",
+       "url": "https://www.youtube.com/watch?v=G1WzTgYi--k"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The third track of My Morning Jacket's 2008 album Evil Urges: very high vocals answered by a low, rumbling voice over heavy guitars, a song one critic found the most inventive on the record and another called a contender for one of the worst ever recorded.",
+     "educationalLevel": "introductory",
+     "headline": "My Morning Jacket - Highly Suspicious",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "falsetto",
+       "url": "https://korczis.github.io/sonic-playground/concept/falsetto/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "call and response",
+       "url": "https://korczis.github.io/sonic-playground/concept/call-and-response/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "sync licensing",
+       "url": "https://korczis.github.io/sonic-playground/concept/sync-licensing/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/my-morning-jacket-highly-suspicious/",
+     "wordCount": 544
     }
    ]
   },
@@ -263030,6 +268380,112 @@
     }
    ]
   },
+  "n-o-h-a-dive-in-your-life.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/n-o-h-a-dive-in-your-life/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "N.o.h.a.",
+      "sameAs": "https://musicbrainz.org/artist/298a8237-0975-438d-9f9b-008aaa2bcc63"
+     },
+     "datePublished": "2008",
+     "genre": [
+      "drum and bass",
+      "world",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Dive In Your Life"
+     },
+     "name": "Dive In Your Life",
+     "sameAs": [
+      "https://www.youtube.com/watch?v=Qi6Gx2A_Fuw"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/n-o-h-a-dive-in-your-life/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/n-o-h-a-dive-in-your-life/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "N.O.H.A.",
+       "publisher": "Wikipedie",
+       "url": "https://cs.wikipedia.org/wiki/N.O.H.A."
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "N.O.H.A. - Noise of Human Art: bio",
+       "publisher": "N.O.H.A.",
+       "url": "https://www.n-o-h-a.com/bio/"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "N.O.H.A.",
+       "publisher": "GoOut",
+       "url": "https://goout.net/en/n-o-h-a/pzfbc/"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Dive in Your Life (album)",
+       "publisher": "Apple Music",
+       "url": "https://music.apple.com/gb/album/dive-in-your-life/1551628500"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2008",
+       "name": "Dive In Your Life (Radio Edit, Album Cut) (Provided to YouTube by Unique Records)",
+       "publisher": "YouTube (Noha - Topic)",
+       "url": "https://www.youtube.com/watch?v=Qi6Gx2A_Fuw"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2006",
+       "name": "Dive in your life (Provided to YouTube by Bandlab/ReverbNation)",
+       "publisher": "YouTube (Noha - Topic)",
+       "url": "https://www.youtube.com/watch?v=4t97qEK5ub0"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "The radio edit of Dive In Your Life, one of the hits of the Prague and New York band N.O.H.A., whose drum and bass meets world music: the title track of their 2006 album, cut to 3:40 for a 2008 single on Unique Records.",
+     "headline": "N.o.h.a. - Dive In Your Life",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "radio edit",
+       "url": "https://korczis.github.io/sonic-playground/concept/radio-edit/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "breakbeat",
+       "url": "https://korczis.github.io/sonic-playground/concept/breakbeat/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/n-o-h-a-dive-in-your-life/",
+     "wordCount": 536
+    }
+   ]
+  },
   "nancy-sinatra-bang-bang.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -263211,6 +268667,128 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/nappy-roots-good-day/",
      "wordCount": 583
+    }
+   ]
+  },
+  "nasty-habits-shadow-boxing.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nasty-habits-shadow-boxing/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Nasty Habits",
+      "sameAs": "https://musicbrainz.org/artist/fb5c84f8-0500-4b33-bc82-4f5633b13c20"
+     },
+     "datePublished": "1996",
+     "genre": [
+      "drum and bass",
+      "jungle",
+      "techstep"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Shadow Boxing (Om Unit Remix)"
+     },
+     "isrcCode": "GBA2A1410002",
+     "name": "Shadow Boxing",
+     "sameAs": [
+      "https://musicbrainz.org/recording/a91f2dbb-c79a-4085-84af-38b514f69662",
+      "https://www.youtube.com/watch?v=FAJ57odwiLA"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/nasty-habits-shadow-boxing/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/nasty-habits-shadow-boxing/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "name": "Doc Scott",
+       "publisher": "Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Doc_Scott"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2013",
+       "name": "Nasty Habits - Shadow Boxing 'The Remix' (31 Records, 1997)",
+       "publisher": "DnB 365",
+       "url": "https://dnb365.blogspot.com/2013/05/nasty-habits-shadow-boxing-remix.html"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Five Tracks: Shadow Boxing Edition",
+       "publisher": "Complex",
+       "url": "https://www.complex.com/music/a/khrisd/five-tracks-shadow-boxing-edition"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Nasty Habits - Shadow Boxing (Om Unit Remix)",
+       "publisher": "Complex",
+       "url": "https://www.complex.com/music/2014/02/nasty-habits-shadow-boxing-om-unit-remix"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2014",
+       "name": "Nasty Habits - Shadow Boxing (Om Unit Remix and remastered original mix)",
+       "publisher": "Sound Shelter",
+       "url": "https://soundshelter.net/vinyl/nasty-habits-shadow-boxing-om-unit-remix-and-remastered-original-mix"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Shadow Boxing (Original Mix) (release credits)",
+       "publisher": "YouTube (Nasty Habits - Topic)",
+       "url": "https://www.youtube.com/watch?v=FAJ57odwiLA"
+      },
+      {
+       "@type": "CreativeWork",
+       "name": "Shadow Boxing (Original Mix) (recording)",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/a91f2dbb-c79a-4085-84af-38b514f69662"
+      }
+     ],
+     "datePublished": "2026-11-25",
+     "description": "Doc Scott's 1996 techstep tune as Nasty Habits, in the remastered original mix of the 2014 31 Records single: two-step drums, a bassline that fades in and kung fu fight sounds, menace built from very little.",
+     "educationalLevel": "introductory",
+     "headline": "Nasty Habits - Shadow Boxing",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "sampling",
+       "url": "https://korczis.github.io/sonic-playground/concept/sampling/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "bassline",
+       "url": "https://korczis.github.io/sonic-playground/concept/bassline/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remastering",
+       "url": "https://korczis.github.io/sonic-playground/concept/remastering/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/nasty-habits-shadow-boxing/",
+     "wordCount": 536
     }
    ]
   },

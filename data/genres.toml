@@ -31,7 +31,7 @@ en = "Drum & bass, jungle & breaks"
 cs = "Drum and bass, jungle a breakbeat"
 terms = ["drum and bass", "jungle", "neurofunk", "liquid funk", "breakbeat", "big beat",
          "broken beat", "uk garage", "bassline", "grime", "dubstep", "future bass", "uk funky",
-         "brazilian bass"]
+         "brazilian bass", "techstep"]
 
 [[family]]
 id = "dub"
