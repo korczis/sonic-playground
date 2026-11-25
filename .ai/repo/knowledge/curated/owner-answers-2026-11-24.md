@@ -59,3 +59,15 @@ through a question dialog. Quoted as given (Czech, unaccented).
   merge it, and then: write an analysis prompt, run it, react to the results; three passes).
 - What follows: the note goes through algoglyph's own gate and a pull request, and a second round
   of three analysis passes runs on the deployed visualiser.
+
+## 2026-11-25: verifies stopped for memory, restart them one at a time
+
+- The question (AskUserQuestion, session 2d41c4c7-6e87-4e09-a97e-213553f83e61, 2026-11-25 about
+  09:15 CET): "Claude Code stopped two background jobs because the Mac ran critically low on
+  memory: the full verify of waves 33-35 (71 songs, needed before merging) and the algoglyph fast
+  gate. Both are committed work waiting only on these gates, and visualizer-r2 (3075ac28) needs
+  its own full verify after them. How should I proceed?"
+- Answer: "Restart, one at a time (Recommended)". The option described re-running the waves'
+  verify with 2 smoke workers instead of 4, then r2's verify, then the algoglyph gate.
+- What follows: the full local verify stays the gate before a merge. Under memory pressure, the
+  heavy gates run one after another with fewer smoke workers, rather than being skipped for CI.
