@@ -209,7 +209,8 @@
       'void main() {',
       '  vec2 C = panC() * 0.5;',
       '  vec2 p = centred(vUv) - C; float r = length(p); float ang = atan(p.y, p.x);',
-      '  float zoomF = 1.0 + ((0.004 + 0.005 * uWarp) * uPace + 0.025 * max(uBass, 0.0) * uPulse + 0.02 * uPunch + 0.025 * uSnap) * uMotion * uDrift * uFr;',
+      '  float zoomF = 1.0 + ((0.004 + 0.005 * uWarp) * uPace + 0.025 * max(uBass, 0.0) * uPulse',
+      '    + 0.02 * uPunch + 0.025 * uSnap) * uMotion * uDrift * uFr;',
       '  float rotF = (0.006 * sin(uBar * TAU + varyNow(1.0) * TAU) * uPace + 0.03 * uSnare * (uPan < 0.0 ? -1.0 : 1.0)) * uMotion * uFr;',
       '  vec2 q = rot(p, rotF) / zoomF;',
       '  q += uWarp * 0.004 * uFr * curl(q * (1.5 + 3.0 * varyNow(2.0)) + vec2(uTime * 0.11, -uTime * 0.07)) * (0.3 + 0.7 * flx());',
@@ -218,11 +219,15 @@
       '  float u = abs(fract(ang / TAU * lobes) * 2.0 - 1.0);',
       // A snare throws the ring out (it drew no snare at all, round 2 pass 1); the hats glint
       // along it.
-      '  float R = 0.19 + 0.012 * sin(ang * 3.0 + uTime) + (0.05 * max(uBass, 0.0) + 0.03 * uPulse + 0.05 * uSnap) * uMotion + wave(u) * (0.025 + 0.03 * lvl());',
+      '  float R = 0.19 + 0.012 * sin(ang * 3.0 + uTime)',
+      '    + (0.05 * max(uBass, 0.0) + 0.03 * uPulse + 0.05 * uSnap) * uMotion',
+      '    + wave(u) * (0.025 + 0.03 * lvl());',
       '  float w = 0.004 + 0.003 * max(uLevel, 0.0);',
       '  float edge = line(r - R, w) + 0.3 * glowl(r - R, 0.008);',
-      '  float glint = step(0.7, hash(vec2(floor(ang * 9.0), floor(uTime * 23.0))));',
-      '  col += tone(sin(ang * lobes + uTime * 0.3)) * edge * (0.06 + (0.12 * uPunch + 0.08 * uSnap + 0.5 * uShimmer * glint) * uFlash) * uFr;',
+      // (The clock wrapped: hash() of a large frame count loses its precision; the glints froze.)
+      '  float glint = step(0.7, hash(vec2(floor(ang * 9.0), mod(floor(uTime * 23.0), 1021.0))));',
+      '  col += tone(sin(ang * lobes + uTime * 0.3)) * edge',
+      '    * (0.06 + (0.12 * uPunch + 0.08 * uSnap + 0.5 * uShimmer * glint) * uFlash) * uFr;',
       '  for (int i = 0; i < 12; i++) {',
       '    float a = pcHue(i) * TAU; vec2 c = p - vec2(cos(a), sin(a)) * R;',
       '    col += note(i) * uChroma[i] * 0.08 * exp(-dot(c, c) / 0.0002) * uFr;',
@@ -242,7 +247,8 @@
       '  vec2 C = panC() * 0.5;',
       '  vec2 p = centred(vUv) - C; float r = length(p); float a = atan(p.y, p.x);',
       '  float v = varyNow(1.0);',
-      '  float pull = (0.008 * uPace + 0.02 * max(uBass, 0.0) * uPulse + 0.012 * uPunch + 0.008 * uSnap) * uMotion * uDrift;',
+      '  float pull = (0.008 * uPace + 0.02 * max(uBass, 0.0) * uPulse + 0.012 * uPunch',
+      '    + 0.008 * uSnap) * uMotion * uDrift;',
       '  float twist = (0.01 * sin(uBar * TAU) * uPace + 0.02 * max(uMid, 0.0) * sin(r * 6.0 + uTime)) * uMotion;',
       '  float r2 = r * pow(1.0 - pull, uFr) + 0.004 * v * sin(r * 22.0 - uTime * 2.0) * uMotion * uPace;',
       '  float a2 = a + (twist + 0.012 * (1.0 - v) / (r + 0.3) * uMotion * uPace) * uFr;',
@@ -256,14 +262,17 @@
       '  vec2 f = vec2(cos(fa), sin(fa)) * r;',
       '  float x = clamp(f.x / 0.62, 0.0, 1.0);',
       // The scope springs up on a snare and thickens on the hats (neither drew: round 2 pass 1).
-      '  float y = abs(wave(x)) * (0.05 + 0.08 * lvl()) + 0.012 + (0.03 * uKick + 0.025 * uSnap) * uMotion;',
+      '  float y = abs(wave(x)) * (0.05 + 0.08 * lvl()) + 0.012',
+      '    + (0.03 * uKick + 0.025 * uSnap) * uMotion;',
       '  float on = step(0.03, f.x) * (1.0 - smoothstep(0.58, 0.64, f.x));',
-      '  float ln = (line(f.y - y, 0.0025 + 0.004 * lvl() + 0.004 * uShimmer * uMotion) + 0.15 * glowl(f.y - y, 0.004)) * on;',
+      '  float ln = (line(f.y - y, 0.0025 + 0.004 * lvl() + 0.004 * uShimmer * uMotion * uFlash)',
+      '    + 0.15 * glowl(f.y - y, 0.004)) * on;',
       '  int pc = int(floor(x * 11.99));',
       // The scope runs through the harmony's three hues along its length, each as bright.
       '  float tt = x * 2.0 - 1.0;',
       '  vec3 ink = even(mix(tone(sign(tt) * sqrt(abs(tt))), note(pc), 0.6 * uChroma[pc]));',
-      '  col += ink * ln * (0.11 + (0.08 * uPunch + 0.05 * uSnap + 0.06 * uShimmer) * uFlash) * uFr;',
+      '  col += ink * ln',
+      '    * (0.11 + (0.08 * uPunch + 0.05 * uSnap + 0.06 * uShimmer) * uFlash) * uFr;',
       '  float liss = smoothstep(0.2, 0.5, uSpread);',
       '  if (liss > 0.0) {',
       '    float dm = 1.0;',
@@ -304,11 +313,13 @@
       '    vec2 c = C + vec2(0.36, 0.28) * vec2(sin(uTime * 0.35 * (0.5 + fi * 0.071) + fi * 2.0 + ph), cos(uTime * 0.35 * (0.4 + fi * 0.093) + fi + ph));',
       '    float ca = abs(mod(atan(c.y, c.x), sec) - sec * 0.5);',
       '    c = vec2(cos(ca), sin(ca)) * max(length(c), 0.06);',
-      '    float s = (0.008 + 0.026 * k * (0.7 + 0.5 * uPulse + 0.3 * uSnap)) * (0.6 + 0.9 * ld);',
+      '    float s = (0.008 + 0.026 * k * (0.7 + 0.5 * uPulse + 0.3 * uSnap * uFlash))',
+      '      * (0.6 + 0.9 * ld);',
       '    float d = length(p - c);',
       // Dimmer each than when most were hidden: folded together they overlap, and at the old
       // strength they piled up into a white bloom.
-      '    col += mix(note(i), vec3(1.0), 0.3 * exp(-d * d / (s * s * 0.15))) * (k + 0.1) * exp(-d * d / (s * s)) * (0.07 + 0.28 * ld) * uFr;',
+      '    col += mix(note(i), vec3(1.0), 0.3 * exp(-d * d / (s * s * 0.15))) * (k + 0.1)',
+      '      * exp(-d * d / (s * s)) * (0.07 + 0.28 * ld) * uFr;',
       '  }',
       '  col += tone(0.5) * line(p.y - wave(vUv.x) * 0.12, 0.003 + 0.004 * uExpo) * (0.06 + 0.1 * max(uLevel, 0.0)) * uFr;',
       '  gl_FragColor = vec4(min(col, vec3(4.0)), 1.0);',
@@ -329,14 +340,24 @@
       '  vec2 cf = curl(p * (2.0 + 2.0 * v) + vec2(0.0, -uTime * 0.25));',
       // A snare is a gust: the smoke leaps up and sways; the hats throw sparks (neither drew:
       // round 2 pass 1).
-      '  vec2 q = p - vec2((v - 0.5) * 0.002 + 0.02 * uSnap * sin(p.y * 7.0 + uTime * 2.0) * uMotion, 0.0026 + 0.002 * lvl() + 0.016 * uSnap * uMotion) * uFr * uDrift;',
+      '  vec2 q = p - vec2((v - 0.5) * 0.002',
+      '    + 0.02 * uSnap * sin(p.y * 7.0 + uTime * 2.0) * uMotion,',
+      '    0.0026 + 0.002 * lvl() + 0.016 * uSnap * uMotion) * uFr * uDrift;',
       '  q -= cf * 0.0016 * uFr * (0.6 + 0.8 * flx());',
       '  vec3 col = mix(prev(q), prevLod(q, 1.0), 0.25) * fade(0.84, 0.975);',
       '  float xs = (p.x - panC().x * 0.5) / (hw * (0.7 + 0.3 * uSpread)) * 0.5 + 0.5;',
       '  float b = spec(xs) * step(0.0, xs) * step(xs, 1.0);',
-      '  col += fire(0.5 + 0.8 * b + 0.3 * uSnap) * exp(-(p.y - bot) * (12.0 - 6.0 * b - 3.0 * uSnap * uMotion)) * smoothstep(0.42, 0.75, fbm(vec2(p.x * 7.0, p.y * 2.5 - uTime * 1.8)) + 0.25 * b) * 0.022 * (1.0 + 0.8 * uSnap * uFlash) * uFr;',
+      // The snare's flare of the coals is light: all of it under the flash gain, and the flames'
+      // reach held to at least a third of the bed's (a loud band and react 1.7 or more drove the
+      // falloff negative, and the flames grew towards the top instead).
+      '  float sf = uSnap * uFlash;',
+      '  float fall = max(3.0, 12.0 - 6.0 * b - 3.0 * sf * uMotion);',
+      '  col += fire(0.5 + 0.8 * b + 0.3 * sf) * exp(-(p.y - bot) * fall)',
+      '    * smoothstep(0.42, 0.75, fbm(vec2(p.x * 7.0, p.y * 2.5 - uTime * 1.8)) + 0.25 * b)',
+      '    * 0.022 * (1.0 + 0.8 * sf) * uFr;',
       '  float h = hash(floor(vUv * uRes / 3.0) + floor(uTime * 40.0));',
-      '  float rate = 0.0002 + (uKick * 0.004 + uSnap * 0.003 + uShimmer * 0.008) * (0.4 + b);',
+      '  float rate = 0.0002',
+      '    + (uKick * 0.004 + (uSnap * 0.003 + uShimmer * 0.008) * uFlash) * (0.4 + b);',
       '  col += mix(fire(1.2), accentC(), 0.6) * step(1.0 - rate, h) * (1.0 - smoothstep(bot, bot + 0.3, p.y)) * 0.5 * uFr;',
       '  float wv = bot + 0.18 + wave(vUv.x) * (0.04 + 0.05 * lvl());',
       '  col += fire(0.8 + 0.4 * uLight) * (line(p.y - wv, 0.003) + 0.25 * glowl(p.y - wv, 0.01)) * (0.05 + 0.1 * uPunch * uFlash) * uFr;',
@@ -353,8 +374,10 @@
       // A snare also pumps the zoom: its jolt of the swirl alone showed 175 ms late, as the
       // feedback carried it out from the eye (round 2 pass 1).
       '  float swirl = (0.01 + 0.03 * max(uMid, 0.0) + 0.04 * uSnare) * uMotion / (r + 0.22);',
-      '  float zoomF = 1.0 + (0.01 * uPace + 0.04 * max(uBass, 0.0) * uPulse + 0.03 * uPunch + 0.025 * uSnap) * uMotion * uDrift;',
-      '  vec2 q = rot(p, swirl * uFr) / pow(zoomF, uFr);',
+      '  float zoomF = 1.0 + (0.01 * uPace + 0.04 * max(uBass, 0.0) * uPulse + 0.03 * uPunch',
+      '    + 0.025 * uSnap) * uMotion * uDrift;',
+      // A snare also turns the whole vortex a little (motion only; a kick only zooms it).
+      '  vec2 q = rot(p, (swirl + 0.03 * uSnap * uMotion) * uFr) / pow(zoomF, uFr);',
       '  q += uWarp * 0.003 * uFr * vec2(sin(p.y * 10.0 + uTime), sin(p.x * 10.0 - uTime)) * (0.5 + 0.5 * flx());',
       '  vec3 col = prev(q + C) * fade(0.84, 0.975);',
       '  float n = 3.0 + floor(varyNow(1.0) * 3.0);',
@@ -364,8 +387,10 @@
       '    vec2 t = rot(p, uTime * (0.18 + fi * 0.05) + fi * TAU / n);',
       '    float amp = 0.035 + spec(0.08 + fi * 0.18) * 0.12 + 0.04 * uSnap * uMotion;',
       '    float y = sin(t.x * (5.0 + fi * 1.7) + uTime * (1.3 + fi * 0.4)) * amp * smoothstep(0.0, 0.25, abs(t.x));',
-      '    float ln = (line(t.y - y, 0.003 + 0.002 * lvl() + 0.003 * uShimmer * uMotion) + 0.2 * glowl(t.y - y, 0.008)) * (1.0 - smoothstep(0.15, 0.75, abs(t.x)));',
-      '    col += tone(fi / max(n - 1.0, 1.0) * 2.0 - 1.0) * ln * (0.05 + (0.1 * uPunch + 0.06 * uSnap + 0.06 * uShimmer) * uFlash) * uFr;',
+      '    float ln = (line(t.y - y, 0.003 + 0.002 * lvl() + 0.003 * uShimmer * uMotion * uFlash)',
+      '      + 0.2 * glowl(t.y - y, 0.008)) * (1.0 - smoothstep(0.15, 0.75, abs(t.x)));',
+      '    col += tone(fi / max(n - 1.0, 1.0) * 2.0 - 1.0) * ln',
+      '      * (0.05 + (0.1 * uPunch + 0.06 * uSnap + 0.06 * uShimmer) * uFlash) * uFr;',
       '  }',
       '  col += accentC() * 0.012 * exp(-r * r * 150.0) * (0.5 + max(uBass, 0.0)) * uFr;',
       '  gl_FragColor = vec4(min(col, vec3(4.0)), 1.0);',
@@ -389,8 +414,13 @@
       '    float fi = float(i);',
       '    if (fi >= n) break;',
       '    vec2 t = rot(p - panC() * 0.5, uTime * 0.06 + (uTurn * 0.4 + 0.12 * uPulse * (fi - 1.5)) * uMotion + fi * PI / n * (0.6 + 0.8 * uSpread));',
-      '    float y = (wave(t.x * 0.7 + 0.5) * (0.03 + 0.045 * lvl()) + 0.03 * sin(t.x * 3.0 + uTime + fi)) * (0.5 + 0.5 * ld + (0.9 * uPulse + 0.7 * min(uKick, 1.0) + 0.5 * uSnap) * uMotion * ld);',
-      '    float ln = (line(t.y - y, (0.0032 + 0.0016 * uExpo) * (1.0 + 0.6 * uPulse) + (0.006 * uKick + 0.003 * uShimmer) * uMotion) + 0.25 * glowl(t.y - y, 0.006)) * (1.0 - smoothstep(0.3, 0.75, abs(t.x)));',
+      '    float y = (wave(t.x * 0.7 + 0.5) * (0.03 + 0.045 * lvl())',
+      '      + 0.03 * sin(t.x * 3.0 + uTime + fi)) * (0.5 + 0.5 * ld',
+      '      + (0.9 * uPulse + 0.7 * min(uKick, 1.0) + 0.5 * uSnap) * uMotion * ld);',
+      '    float ln = (line(t.y - y, (0.0032 + 0.0016 * uExpo) * (1.0 + 0.6 * uPulse)',
+      '      + (0.006 * uKick + 0.003 * uShimmer * uFlash) * uMotion)',
+      '      + 0.25 * glowl(t.y - y, 0.006))',
+      '      * (1.0 - smoothstep(0.3, 0.75, abs(t.x)));',
       '    vec3 ink = even(mix(tone(fi / max(n - 1.0, 1.0) * 2.0 - 1.0), accentC(), 0.4 * uPunch));',
       '    col += mix(ink, vec3(1.0), 0.06 + 0.1 * uLight) * ln * (0.045 + 0.03 * uExpo + 0.04 * uPunch * uFlash) * uFr;',
       '  }',
@@ -410,7 +440,8 @@
     '}',
     'void main() {',
     '  vec2 uv = kal(vUv, 3.0 + floor(varyNow(2.0) * 5.0));',
-    '  vec2 off = (uv - 0.5) * (0.003 + 0.01 * uGlow * (0.4 + (uKick + 0.8 * uShimmer) * uMotion) + 0.006 * uSpread);',
+    '  vec2 off = (uv - 0.5)',
+    '    * (0.003 + 0.01 * uGlow * (0.4 + (uKick + 0.8 * uShimmer) * uMotion) + 0.006 * uSpread);',
     '  vec3 c = vec3(texture2D(uTex, uv + off).r, texture2D(uTex, uv).g, texture2D(uTex, uv - off).b);',
     '  c += bloom(uv) * 0.5 * uGlow;',
     '  gl_FragColor = vec4(finish(c, vUv), 1.0);',
@@ -426,7 +457,8 @@
     // end in the accent; sparks on the hats.
     hyperloop: [
       'void main() {',
-      '  vec2 p = (centred(vUv) - panC() * 0.4) * (1.0 - (0.1 * uPunch + 0.06 * uSnap) * uMotion);',
+      '  vec2 p = (centred(vUv) - panC() * 0.4)',
+      '    * (1.0 - (0.1 * uPunch + 0.06 * uSnap) * uMotion);',
       '  float k = mix(2.0, 6.0, vary(1.0));',
       '  float r = pow(pow(abs(p.x), k) + pow(abs(p.y), k) + 1e-9, 1.0 / k) + 1e-4;',
       '  float a = atan(p.y, p.x);',
@@ -435,7 +467,8 @@
       '  depth = 0.3 / r;',
       '  float z = depth + uTravel * 1.4;',
       // A snare twists the tunnel for a moment.
-      '  a += 0.25 * sin(uBar * TAU) * uMotion * uPace * depth * 0.3 + (uTurn * TAU / 16.0 + 0.3 * uSnap) * uMotion;',
+      '  a += 0.25 * sin(uBar * TAU) * uMotion * uPace * depth * 0.3',
+      '    + (uTurn * TAU / 16.0 + 0.3 * uSnap) * uMotion;',
       '  float ringId = floor(z * 2.0); float ring = fract(z * 2.0);',
       '  float edge = smoothstep(0.43, 0.5, abs(ring - 0.5)) + 0.25 * smoothstep(0.25, 0.5, abs(ring - 0.5));',
       '  float segs = 8.0 + floor(vary(2.0) * 3.0) * 4.0;',
@@ -443,13 +476,16 @@
       '  float seg = smoothstep(0.43, 0.5, abs(fract(tw) - 0.5));',
       // A snare lights the rings, the hats the segments between them (neither drew: round 2
       // pass 1).
-      '  float lit = 0.25 + 0.5 * uExpo + (0.9 * spec(fract(ringId * 0.137)) + 0.5 * uSnap) * uFlash;',
-      '  vec3 col = tone(sin(ringId * 0.7)) * (edge * lit + seg * 0.3 * (0.45 + (0.15 * uHat + 0.6 * uShimmer) * uFlash));',
+      '  float lit = 0.25 + 0.5 * uExpo',
+      '    + (0.9 * spec(fract(ringId * 0.137)) + 0.5 * uSnap) * uFlash;',
+      '  vec3 col = tone(sin(ringId * 0.7))',
+      '    * (edge * lit + seg * 0.3 * (0.45 + (0.15 * uHat + 0.6 * uShimmer) * uFlash));',
       '  col += accentC() * exp(-abs(depth - 0.4 - uShock * 3.0) * 14.0) * exp(-uShock * 2.5) * (0.3 + 0.4 * uFlash);',
       '  col = mix(col, deep(0.025), 1.0 - exp(-depth * 0.16));',
       '  col += accentC() * exp(-r * r * 90.0) * (0.35 + 0.4 * max(uBass, 0.0));',
       '  vec2 g = vec2(a / TAU * 48.0, z * 5.0);',
-      '  float star = step(0.986 - 0.012 * uHat - 0.03 * uShimmer, hash(floor(g))) * (1.0 - smoothstep(0.0, 0.45, length(fract(g) - 0.5)));',
+      '  float star = step(0.986 - 0.012 * uHat - 0.03 * uShimmer * uFlash, hash(floor(g)))',
+      '    * (1.0 - smoothstep(0.0, 0.45, length(fract(g) - 0.5)));',
       '  col += mix(vec3(1.0), tone(1.0), 0.4) * star * 0.8 * smoothstep(0.08, 0.4, r);',
       '  gl_FragColor = vec4(finish(col, vUv), 1.0);',
       '}',
@@ -617,7 +653,8 @@
       // The recesses glow in the key's own harmony, the accent only on the rims: the accent follows
       // the leading note (a new hue every note or two) and, glowing in every recess, it outweighed
       // the panes, so the whole tunnel changed colour about once a second (round 2 pass 1).
-      '  vec3 col = base * (0.03 + pow(dif, 1.6) * 0.9) * ao * ao * ao + accentC() * rim * 0.12 * ao;',
+      '  vec3 col = base * (0.03 + pow(dif, 1.6) * 0.9) * ao * ao * ao',
+      '    + accentC() * rim * 0.12 * ao;',
       '  col += even(tone(-0.7)) * (1.0 - ao) * 0.3 * (0.4 + 0.4 * max(uHigh, 0.0) * uFlash);',
       '  col = mix(deep(0.02), col, exp(-t * 0.38));',
       '  col += accentC() * exp(-abs(t - uShock * 4.0) * 2.5) * exp(-uShock * 1.5) * 0.35 * (0.4 + 0.6 * uFlash);',
@@ -670,7 +707,8 @@
     // band (an analogous palette over half its range) the reef read monotone pink (round 2 pass 1).
     // Not evened: the thick growth of a loud passage is the brighter hue, and evened the reef no
     // longer brightened with the chorus (2.4x before, 1.2x evened).
-    '  vec3 ink = mix(tone(b * 4.0 - 1.0), accentC(), 0.6 * uPunch * smoothstep(0.02, 0.2, length(vec2(bx, by))));',
+    '  vec3 ink = mix(tone(b * 4.0 - 1.0), accentC(),',
+    '    0.6 * uPunch * smoothstep(0.02, 0.2, length(vec2(bx, by))));',
     '  vec3 col = mix(deep(0.008), ink, v) * (0.35 + 0.9 * light);',
     '  col += pow(light, 24.0) * v * (0.4 + 0.3 * uLight);',
     '  gl_FragColor = vec4(finish(col, vUv), 1.0);',
@@ -699,7 +737,8 @@
   // the other), peaks in the accent; as wide as the stereo, placed by the balance.
   var TIDAL_VS = [
     'attribute vec2 grid;',
-    'uniform sampler2D uHist; uniform float uHead, uTime, uKick, uSnap, uPulse, uMotion, uPan, uSpread;',
+    'uniform sampler2D uHist;',
+    'uniform float uHead, uTime, uKick, uSnap, uPulse, uMotion, uPan, uSpread;',
     'varying float vH; varying float vDepth; varying float vBand; varying float vRow; varying vec2 vUv;',
     'void main() {',
     '  float band = grid.x / 47.0; float row = grid.y / 63.0;',
@@ -707,7 +746,8 @@
     '  float h = texture2D(uHist, vec2(band * (47.0 / 48.0) + 0.5 / 48.0, tv)).r;',
     '  float x = (band - 0.5) * 2.4 * (0.85 + 0.3 * uSpread) + uPan * 0.8;',
     // A snare heaves the land (it drew no snare: round 2 pass 1).
-    '  float y = h * (0.42 + (uKick * 0.3 + uPulse * 0.35 + uSnap * 0.3) * uMotion) + (0.025 + 0.03 * uSnap * uMotion) * sin(x * 3.0 + uTime + row * 6.0);',
+    '  float y = h * (0.42 + (uKick * 0.3 + uPulse * 0.35 + uSnap * 0.3) * uMotion)',
+    '    + (0.025 + 0.03 * uSnap * uMotion) * sin(x * 3.0 + uTime + row * 6.0);',
     '  vH = h; vDepth = row; vBand = band; vRow = grid.y; vUv = vec2(0.0);',
     '  gl_Position = projectionMatrix * modelViewMatrix * vec4(x, y, -row * 3.2, 1.0);',
     '}',
@@ -723,7 +763,8 @@
     '  vec3 c = deep(0.006 + vH * 0.08) + ink * (ridge * (0.25 + vH * 1.6) + rib * 0.08 * (0.2 + vH));',
     '  c += accentC() * smoothstep(0.5, 1.0, vH) * ridge * (0.5 + 0.4 * uFlash);',
     // The hats glint on a scattered fifth of the ridge cells.
-    '  float glint = step(0.8, hash(vec2(floor(vBand * 47.0), floor(vRow) + floor(uTime * 17.0))));',
+    '  float glint = step(0.8,',
+    '    hash(vec2(floor(vBand * 47.0), floor(vRow) + mod(floor(uTime * 17.0), 1021.0))));',
     '  c += ink * ridge * glint * 0.9 * uShimmer * uFlash;',
     '  c = mix(deep(0.006), c, fade);',
     '  gl_FragColor = vec4(finish(c, gl_FragCoord.xy / uRes), 1.0);',
@@ -749,12 +790,15 @@
     '  d += sin(dot(n, dir(7.0)) * 9.0 + uTime * 2.3) * (0.005 + 0.005 * lv + max(uHigh, 0.0) * 0.04);',
     // The spectrum's relief against its mean: a dense passage lifts every band to the top, and
     // drawn as it was it only swelled the sphere evenly, which does not move.
-    // Smoothed over about ten bands: band by band, its ridges were as fine as the mesh and drew
-    // zigzags along them; over four, a ridge still rose within a few triangles and its silhouette
-    // and reflections were serrated (round 2 pass 1).
+    // Smoothed over about ten bands (five taps 0.05 apart, triangular): band by band, its ridges
+    // were as fine as the mesh and drew zigzags along them; over four, a ridge still rose within a
+    // few triangles and its silhouette and reflections were serrated (round 2 pass 1). Five taps,
+    // not nine: the vertex runs this three times (itself and two neighbours for the normal).
     '  float u = n.y * 0.5 + 0.5, sp = 0.0;',
-    '  for (int i = -4; i <= 4; i++) sp += texture2D(uSpec, vec2(u + float(i) * 0.025, 0.25)).r * (5.0 - abs(float(i)));',
-    '  sp /= 25.0;',
+    '  for (int i = -2; i <= 2; i++) {',
+    '    sp += texture2D(uSpec, vec2(u + float(i) * 0.05, 0.25)).r * (3.0 - abs(float(i)));',
+    '  }',
+    '  sp /= 9.0;',
     '  return d + (0.4 * sp + 0.6 * (sp - uSpecMean) * 3.0 * lv) * 0.12 * uWarp * min(uReact, 1.5);',
     '}',
     'vec3 surf(vec3 n, out float d) { d = disp(n); return n * (1.0 + d + (0.09 * uPulse + 0.05 * uPunch) * uMotion); }',
@@ -802,7 +846,8 @@
   // band; the cloud breathes on the beat and spreads with the stereo.
   var CHOIR_VS = [
     'attribute vec2 seed;',
-    'uniform float uPixel, uCount, uBeats, uKick, uPulse, uPunch, uSnap, uShimmer, uMotion, uVariant, uPrevVariant, uMorph, uReact, uSpread, uFlash;',
+    'uniform float uPixel, uCount, uBeats, uKick, uPulse, uPunch, uSnap, uShimmer, uMotion;',
+    'uniform float uVariant, uPrevVariant, uMorph, uReact, uSpread, uFlash;',
     'uniform float uChroma[12];',
     'uniform sampler2D uSpec;',
     'varying float vU; varying float vS; varying float vK; varying float vPc; varying vec2 vUv;',
@@ -836,12 +881,14 @@
     '  int pc = int(mod(floor(u * 60.0), 12.0));',
     '  float k = uChroma[pc];',
     '  vec3 pos = mix(drift(uPrevVariant, u, seed.y), drift(uVariant, u, seed.y), smoothstep(0.0, 1.0, uMorph));',
-    '  pos *= 1.0 + sp * 0.25 + k * 0.06 + (0.1 * uPulse + 0.08 * uPunch + 0.06 * uSnap) * uMotion;',
+    '  pos *= 1.0 + sp * 0.25 + k * 0.06',
+    '    + (0.1 * uPulse + 0.08 * uPunch + 0.06 * uSnap) * uMotion;',
     '  pos.x *= 1.0 + 0.3 * uSpread;',
     '  vec4 mv = modelViewMatrix * vec4(pos, 1.0);',
     // The hats twinkle a scattered quarter of the voices, another quarter each eighth of a beat.
     '  float tw = step(0.75, fract(sin(u * 9187.3 + floor(uBeats * 8.0) * 17.1) * 43758.5));',
-    '  gl_PointSize = (2.2 + sp * 5.0 + k * 3.0 + (uKick * 2.0 + uSnap * 1.2) * uMotion * uFlash + tw * 3.0 * uShimmer * uFlash) * uPixel * (3.0 / -mv.z);',
+    '  gl_PointSize = (2.2 + sp * 5.0 + k * 3.0 + (uKick * 2.0 + uSnap * 1.2) * uMotion * uFlash',
+    '    + tw * 3.0 * uShimmer * uFlash) * uPixel * (3.0 / -mv.z);',
     '  vU = u; vS = sp; vK = k; vPc = float(pc); vUv = vec2(0.0);',
     '  gl_Position = projectionMatrix * mv;',
     '}',
@@ -1106,7 +1153,7 @@
     },
 
     chrome: function (ctx) {
-      var geo = new THREE.IcosahedronGeometry(1, ctx.small ? 24 : 48);
+      var geo = new THREE.IcosahedronGeometry(1, ctx.small ? 20 : 32);
       var mat = new THREE.ShaderMaterial({ vertexShader: CHROME_VS, fragmentShader: PRELUDE + CHROME.join('\n'),
         uniforms: Object.assign({}, ctx.U, { uLamp: { value: new THREE.Vector3(2, 2, 3) }, uLamp2: { value: new THREE.Vector3(-2, 1, 3) },
           uSpecMean: { value: 0 } }) });

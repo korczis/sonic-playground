@@ -119,15 +119,18 @@ in the page.
     every range scores comb(L) + 0.5 comb(2L) + 0.5 comb(L/2), times the 120 bpm / 0.9 octave
     prior, and the best wins. An odd lag's half lies between two steps: the better of the two
     counts. Read one step short, drum and bass's 174 bpm (17.2 steps) fell from .92 to .55.
-  - Octave-correct share of the locked frames, before → after: techno .32 → .83 (166 still in
-    3-23% of its locked frames), dnb .14 → 1.00, rock 1.00 → 1.00, hip-hop .99 → 1.00, jazz
-    .77 → .82. Jazz locked in 12.6 and 27 s (26.6 before). Drum and bass locks only .13 of its
-    frames: its true lag's comb, .07-.11, rarely passes the gates.
+  - Octave-correct share of the locked frames on the page, before → after (two runs): techno
+    .32 → .82 (166 still in 14-22% of its locked frames), dnb .14 → .84 (87 or 115 in 14%), rock
+    1.00 → .98, hip-hop .99 → 1.00, jazz .77 → .79. Jazz locked in 12-27 s (26.6 before). Drum
+    and bass locks only .18 of its frames: its true lag's comb, .07-.11, rarely passes the gates.
   - A first lock needs the ranges' shared support at 0.2, not 0.16. Replayed, Vivaldi's false
     lock fell from .14 to .08 of its frames and jazz's lock from .54 to .46. On the page Vivaldi
-    read .09-.15 against .17-.18, within the runs' spread (.05).
-  - Reading the double's multiples beyond 4 x 40 steps, which the comb leaves at 0, changed
-    nothing beyond the runs' spread.
+    locked .03 of its frames against .17, a piano .13 against .21, Beethoven .01 against 0.
+  - The autocorrelation is computed to 8 x 40 steps, every lag the double's comb reads. Left at
+    4 x 40, the comb averaged zeros in for every tempo under 150 bpm, 0.72 of itself at 75 bpm,
+    and leaned the rule to the faster relative (a review). Replayed with the first-lock gate:
+    techno .68 → .71, dnb .93 → .89, jazz .88 → .87, rock .97 and hip-hop 1.00 unchanged. A comb
+    that stops at the last computed lag instead read dnb .75.
   - Known limit: a dotted-eighth riff low enough to share the kicks' range (a 110 Hz saw) builds
     its own hierarchy (3/4, 3/2 and 3 beats), and the rule reads 2/3 of the tempo there (83 for
     124). Adding half the bass range's score fixes it, and loses dnb (.93 → .60 replayed); the

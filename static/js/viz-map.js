@@ -58,7 +58,8 @@
       hue: -1, accent: 0, sat: 0.5, light: 0.5, exposure: 0.4, flat: 0, roll: 0.5, width: 0, pan: 0,
       dyn: 0, punch: 0, latched: -10, snap: 0, snapAt: -10, shimmer: 0, shimAt: -10,
       section: -1, variant: 0, prevVariant: 0, flashes: /** @type {number[]} */ ([]),
-      flashGain: 1, rate: 1, lastPunch: 0, heard: 0, silent: 0, peak: 0,
+      flashGain: 1, glints: /** @type {number[]} */ ([]), shimGain: 1, rate: 1, lastPunch: 0,
+      heard: 0, silent: 0, peak: 0,
     };
     REL.forEach(function (r) { st.fast[r[0]] = 0; st.long[r[0]] = 0; });
     /** @type {SonicVizMap} */
@@ -167,6 +168,13 @@
       if ((a.beat || a.kick > 0.95) && a.t - st.latched > beatLen / 4) {
         st.latched = a.t;
         st.punch = 0.6 + 0.4 * st.dyn;
+        // A snare heard up to 60 ms before this kick was the kick's own attack in the snare's
+        // range: one event, so its flash is not counted twice (two entries for one kick held
+        // techno's flash gain at 0.3).
+        if (a.t - st.snapAt < 0.06) {
+          var was = st.flashes.lastIndexOf(st.snapAt);
+          if (was >= 0) st.flashes.splice(was, 1);
+        }
         st.flashes.push(a.t);
       }
       st.punch *= Math.exp(-dt / 0.15);
@@ -186,14 +194,19 @@
       M.snap = st.snap * (calm ? 0.35 : 1);
       // The hats shimmer: a short glint on every hat onset, as strong as the treble is against its
       // last seconds. Hats come four to eight a second, too often for flashes: a mode draws the
-      // shimmer as small scattered light (twinkles, glints, grain), never the whole screen, and
-      // scales whatever brightness it adds by the flash gain all the same.
+      // shimmer on a sparse subset only (twinkles, glints, grain), never the whole screen, scales
+      // whatever brightness it adds by the flash gain, and the hats have a rate governor of their
+      // own: past three glints within a second, the shimmer falls to 0.3 at once and comes back
+      // over 0.6 s, as the flash gain does.
       if (a.hat > 0.95 && a.t - st.shimAt > 0.05) {
         st.shimAt = a.t;
         st.shimmer = 0.7 + 0.3 * clamp(M.drive.high, 0, 1);
+        st.glints.push(a.t);
       }
+      while (st.glints.length && a.t - st.glints[0] > 0.98) st.glints.shift();
+      st.shimGain = follow(st.shimGain, st.glints.length > 3 ? 0.3 : 1, dt, 0.6, 0.05);
       st.shimmer *= Math.exp(-dt / 0.07);
-      M.shimmer = st.shimmer * (calm ? 0.35 : 1);
+      M.shimmer = st.shimmer * st.shimGain * (calm ? 0.35 : 1);
       // The flashes of the last second, the window just under it: beats exactly half a second apart
       // (two a second) put three onsets at 0, 0.5 and 1.0 s, which is not three within a second.
       while (st.flashes.length && a.t - st.flashes[0] > 0.98) st.flashes.shift();

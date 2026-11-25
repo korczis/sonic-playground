@@ -198,11 +198,11 @@
   }
 
   // How hard the kick, the snare and the beat pump a bank of bars this frame: 1 at rest, more on
-  // a kick (a snare about a third as hard) as the passage is loud (the level against its last
-  // seconds), never under reduced motion.
+  // a kick (a snare about a third as hard, and as its taller bars are light, by the flash gain)
+  // as the passage is loud (the level against its last seconds), never under reduced motion.
   function pumpOf(G, a) {
     var lv = Math.min(1.5, G.m.level);
-    return 1 + (0.5 * a.kick * G.k + 0.25 * G.snap + 0.3 * G.pulse) * lv * G.mo;
+    return 1 + (0.5 * a.kick * G.k + 0.25 * G.snap * G.flash + 0.3 * G.pulse) * lv * G.mo;
   }
 
   // The pitch class nearest each band's centre (48 bands, 40 Hz to 16 kHz), for tonal tints;
@@ -312,7 +312,8 @@
         g.strokeStyle = col;
         g.shadowColor = col;
         g.shadowBlur = (5 + 9 * m.halo) * unit * (0.7 + 0.5 * G.ek);
-        g.lineWidth = (1.1 + 1.6 * Math.max(0, m.drive.level) + 1.4 * G.pulse + 1.4 * G.snap * G.mo)
+        g.lineWidth = (1.1 + 1.6 * Math.max(0, m.drive.level) + 1.4 * G.pulse
+          + 1.4 * G.snap * G.mo * G.flash)
           * unit * (0.8 + 0.8 * G.ek);
         g.stroke();
       }
@@ -480,20 +481,20 @@
       }
       g.fillStyle = hsla(G.H, 20, 70, 0.05);
       g.fill();
-      // A hat twinkles a scattered quarter of the unlit dots, another quarter each hat (the hats
-      // and clicks drew nothing: round 2 pass 1).
-      if (G.shim > (s.shimWas || 0) + 0.2) s.shimSeed = ((s.shimSeed || 0) + 1) % 4;
+      // A hat twinkles a scattered eighth of the unlit dots, another eighth each hat (the hats and
+      // clicks drew nothing: round 2 pass 1); a sparse glint, never the matrix.
+      if (G.shim > (s.shimWas || 0) + 0.2) s.shimSeed = ((s.shimSeed || 0) + 1) % 8;
       s.shimWas = G.shim;
       if (G.shim > 0.03) {
         g.beginPath();
         for (var tc = 0; tc < cols; tc++) {
           for (var tr0 = Math.round(s.vals[tc] * rows); tr0 < rows; tr0++) {
-            if ((tc * 5 + tr0 * 3 + (s.shimSeed || 0)) % 4) continue;
+            if ((tc * 5 + tr0 * 3 + (s.shimSeed || 0)) % 8) continue;
             var tx = x0 + tc * pitch, ty = y0 - tr0 * pitch;
             g.moveTo(tx + r, ty); g.arc(tx, ty, r, 0, TAU);
           }
         }
-        g.fillStyle = hsla(G.A, 35, 80, 0.4 * Math.min(1, G.shim) * G.flash * G.ex);
+        g.fillStyle = hsla(G.A, 35, 80, 0.25 * Math.min(1, G.shim) * G.flash * G.ex);
         g.fill();
       }
       // Lit dots, one path per row (one colour each), climbing from the key's deep colour to
@@ -584,7 +585,8 @@
       g.rotate(s.theta + G.beats * 0.035 + 0.05 * Math.sin(((a.bar || 0) + G.bars) * TAU / 4) * k);
       g.globalCompositeOperation = 'lighter';
       var base = M * 0.07
-        * (1 + (0.4 * Math.max(0, m.drive.bass) * G.pulse + 0.2 * G.punch + 0.15 * G.snap) * G.mo);
+        * (1 + (0.4 * Math.max(0, m.drive.bass) * G.pulse + 0.2 * G.punch + 0.15 * G.snap * G.flash)
+          * G.mo);
       // The flower opens as wide as the passage is loud (its auto-gained rays reached as far in a
       // quiet break as in the drop).
       var reach = M * 0.42 * (1 + 0.15 * G.spread) * (0.85 + 0.15 * pumpOf(G, a)) * (0.6 + 0.4 * G.lk);
@@ -635,9 +637,9 @@
       }
       g.closePath();
       // The outline glints on the hats (they drew nothing: round 2 pass 1).
-      g.strokeStyle = hsla(G.H + 35, G.S, G.L + 12 + 10 * G.shim,
+      g.strokeStyle = hsla(G.H + 35, G.S, G.L + 12 + 10 * G.shim * G.flash,
         (0.45 + 0.4 * G.shim * G.flash) * G.ex * dip);
-      g.lineWidth = unit * (1 + 1.5 * G.shim * G.mo);
+      g.lineWidth = unit * (1 + 1.5 * G.shim * G.mo * G.flash);
       g.stroke();
       // The ring of notes: twelve blooms (in fifths) in every sector, as large as each sounds.
       if (!s.notes) s.notes = new Float32Array(12);
@@ -728,8 +730,8 @@
           g.lineTo(x1, y1);
         }
         var band = bandAt(a, ff * 0.9 + 0.05);
-        // The palest stars twinkle on the hats, a little all of them.
-        var twinkle = (tint === 3 ? 0.5 : 0.15) * G.shim * G.flash;
+        // The palest far stars twinkle on the hats: one stroke in twelve, never the whole field.
+        var twinkle = tint === 3 && depth === 0 ? 0.5 * G.shim * G.flash : 0;
         // Thin strokes on black were nearly black (a median luminance of 0.003 on real music):
         // the stars widen and brighten with the exposure, the ground stays black.
         g.strokeStyle = hsle(G.H - 25 + tint * 20, G.S * (1 - ff * 0.45), G.L + 8 + ff * 16,
@@ -809,14 +811,24 @@
       }
       if (k > 0 && a.beat) emit(2.6 + 2 * G.punch, 0.9, 0, 0);
       // A snare's ring is born wide (a crack, not a drop) and every ring surges with it: born at
-      // the centre, its thin ring hardly changed the picture (round 2 pass 1).
-      if (k > 0 && onset(s, 'sn', a.snare, 0.85, a)) {
-        emit(1.8, 0.85, 1, (s.side = -s.side) * G.spread * M * 0.35, 0.1);
+      // the centre, its thin ring hardly changed the picture (round 2 pass 1). It is the map's
+      // snare (m.snap, which a kick's own attack does not fire), and as it is light, its alpha
+      // obeys the flash gain.
+      if (k > 0 && G.snap > (s.snapWas || 0) + 0.2 && G.flash > 0.05) {
+        emit(1.4, 0.75 * G.flash, 1, (s.side = -s.side) * G.spread * M * 0.35, 0.08);
       }
+      // The snare also jolts the whole field sideways, alternately left and right, and lets it
+      // settle over 0.15 s: motion only (no light), which the latency test could see where the
+      // governed ring alone did not.
+      if (G.snap > (s.snapWas || 0) + 0.2) {
+        s.jolt = (s.jolt > 0 ? -1 : 1) * G.snap * M * 0.06 * G.mo;
+      }
+      s.jolt = (s.jolt || 0) * Math.exp(-dt / 0.15);
+      s.snapWas = G.snap;
       s.quiet += dt;
       if (s.quiet > 1 / q.speed) emit(2.8, 0.8, 2, 0);
       fade(g, w, h, 0.22);
-      g.translate(w / 2 + G.pan * w, h / 2);
+      g.translate(w / 2 + G.pan * w + s.jolt, h / 2);
       g.globalCompositeOperation = 'lighter';
       var maxR = Math.hypot(w, h) * 0.55;
       var seg = Math.round(40 + q.detail * 48);
@@ -861,7 +873,8 @@
         g.stroke();
       }
       var core = M
-        * (0.015 + (0.05 * G.pulse + 0.025 * G.snap + 0.012 * Math.max(0, m.drive.bass)) * G.mo);
+        * (0.015 + (0.05 * G.pulse + 0.025 * G.snap * G.flash + 0.012 * Math.max(0, m.drive.bass))
+          * G.mo);
       // The pool of light the rings rise from (added each frame over trails, so a small share).
       var pr = M * (0.14 + 0.14 * G.ek);
       var pool = g.createRadialGradient(0, 0, 0, 0, 0, pr);
@@ -949,7 +962,7 @@
         g.stroke();
         g.strokeStyle = hsla(r === 4 ? G.A : hue, G.S, G.L + 12,
           (0.5 + 0.2 * Math.max(0, m.drive.level) + 0.3 * G.shim * G.flash) * G.ex);
-        g.lineWidth = (1.4 + 1.6 * G.shim * G.mo) * unit;
+        g.lineWidth = (1.4 + 1.6 * G.shim * G.mo * G.flash) * unit;
         g.stroke();
       }
     }),
@@ -1021,7 +1034,7 @@
       var D = Math.hypot(w, h) * 0.55;
       var sp = M / (10 + q.detail * 18);
       s.nudge = (s.nudge || 0) * Math.exp(-G.dt / 0.4)
-        + (G.punch * 0.02 + G.snap * 0.012) * G.dt * 60 * G.mo;
+        + (G.punch * 0.02 + G.snap * 0.016) * G.dt * 60 * G.mo;
       s.swing = (s.swing || 0) + G.dt * 0.25 * Math.max(0, m.drive.mid) * G.mo;
       // The grids turn as fast as the passage is loud, with a lurch on every beat: driven only by
       // the deviations (zero in a steady drop), they moved less the louder the music got. The
@@ -1046,11 +1059,13 @@
       // pass 3), and a dark hue (the violets) as bright as the rest.
       var ink = (0.42 + 0.2 * G.ek) * G.ex, lw = sp * (0.16 + 0.12 * G.ek);
       lines(th, sp, hsle(G.H - 25, G.S, G.L + 4, ink), lw);
-      lines(th + 0.05 + bar + s.nudge, sp * (1 + 0.06 * Math.max(0, m.drive.bass) * G.mo),
+      lines(th + 0.05 + bar + s.nudge,
+        sp * (1 + (0.06 * Math.max(0, m.drive.bass) + 0.05 * G.snap) * G.mo),
         hsle(G.H + 25, G.S, G.L + 4, ink), lw);
       // The figure turning the other way, breathing with the mids.
       g.rotate(-th * 1.6 - s.nudge);
-      var q2 = sp * (1.15 + 0.12 * Math.max(0, m.drive.mid) * G.mo);
+      // A snare makes the figure's spacing breathe out a little (motion, not light).
+      var q2 = sp * (1.15 + (0.12 * Math.max(0, m.drive.mid) + 0.2 * G.snap) * G.mo);
       // Squares, circles (as 48-gons) or hexagons, one path.
       var fig = G.mix > 0.5 ? vary(m, 3) : varied(m, 3);
       var n = [4, 48, 6][fig], rot = n === 4 ? TAU / 8 : 0, rs = n === 4 ? Math.SQRT2 : 1;

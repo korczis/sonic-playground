@@ -990,7 +990,10 @@
     var r0 = 0;
     for (i = 0; i < n; i++) { x[i] -= mean; r0 += x[i] * x[i]; }
     var r = dsp.acf[q];
-    for (var L = Math.floor(lo / 2); L <= hi * 4 && L < n; L++) {
+    // Every lag a comb reads: four multiples of the double of the slowest lag (8 hi). Computed
+    // only to 4 hi, the double's comb averaged zeros in for every tempo under 150 bpm (0.72 of
+    // itself at 75 bpm), which leaned the metrical rule to the faster relative (a review, r2).
+    for (var L = Math.floor(lo / 2); L <= hi * 8 && L < n; L++) {
       var acc = 0;
       for (i = 0; i + L < n; i++) acc += x[i] * x[i + L];
       r[L] = r0 > 1e-9 ? acc / r0 * n / (n - L) : 0;
@@ -1015,8 +1018,9 @@
     // 120 bpm, 0.9 octave wide; the best range's best lag wins. Choosing the plain comb's best lag
     // first and then among its relatives (3/4, 4/3, 2/3, 3/2) by the highs held techno at 166 for
     // 124 in 59% of its locked frames and dnb at 116 for 174; replayed over the novelty logged on
-    // eight recordings, this rule read techno right .69 of the time (.44), dnb .92 (.18), rock .96
-    // and hip-hop 1.00 as before, and locked jazz in 12 s instead of 26 (r2 pass 1, 2026-11-25).
+    // eight recordings, this rule (with the first-lock gate below) read techno right .71 of the
+    // time (.44), dnb .89 (.18), jazz .87 (.76), rock .97 and hip-hop 1.00 as before, and locked
+    // jazz in 15 s instead of 26 (r2, 2026-11-25).
     var best = -1, bestQ = 0, bestScore = -Infinity;
     for (q = 0; q < RANGES; q++) {
       for (L = lo; L <= hi; L++) {
