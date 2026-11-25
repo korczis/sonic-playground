@@ -261,7 +261,10 @@
         + 0.025 * G.punch * G.mo) * G.cap;
       var turn = (q.warp * (0.003 + 0.006 * Math.sin((G.bars + (a.bar || 0)) * TAU / 2) * G.k)
         + 0.03 * s.jolt * G.mo) * G.cap;
-      var keep = Math.pow(0.62 + 0.33 * q.trails, G.dt * 60);
+      var base = 0.62 + 0.33 * q.trails, keep = Math.pow(base, G.dt * 60);
+      // The trail fades by the clock, so a slow frame fades more: it lays down as much more light,
+      // and the picture is as bright at 6 fps as at 60 (a slow device read it at a third, CI).
+      var lay = Math.min(12, (1 - keep) / (1 - base));
       feedback(p, g, s, zoom, turn, keep, G.pan * w * 0.3);
       var unit = Math.max(1, M / 520);
       g.globalCompositeOperation = 'lighter';
@@ -292,7 +295,7 @@
         // As wide, bright and haloed as the passage is exposed: thin ribbons on black were near
         // black on techno (79 % of the frames, analysis pass 3), whose steady drop has no deviation
         // of the level to widen them.
-        var col = hsle(hue + G.punch * 18, G.S, G.L + 4, (0.42 + 0.3 * G.ek + 0.12 * G.punch * G.flash) * G.ex);
+        var col = hsle(hue + G.punch * 18, G.S, G.L + 4, Math.min(1, (0.42 + 0.3 * G.ek + 0.12 * G.punch * G.flash) * G.ex * lay));
         g.strokeStyle = col;
         g.shadowColor = col;
         g.shadowBlur = (5 + 9 * m.halo) * unit * (0.7 + 0.5 * G.ek);
@@ -699,8 +702,10 @@
       var dir = k > 0 && Math.floor(G.bars / 2) % 2 ? -1 : 1;
       s.dir = lerp(dir, s.dir === undefined ? 1 : s.dir, Math.exp(-dt / 0.35));
       s.ang = (s.ang || 0) + dt * (0.15 * m.rate * G.amb + 0.8 * Math.max(0, m.drive.mid) + 1.1 * G.pulse) * s.dir * G.mo;
+      // As flux: the light laid down follows the trail's clock-based fade, whatever the frame rate.
+      var base = 0.55 + 0.38 * q.trails, keep = Math.pow(base, dt * 60), lay = Math.min(12, (1 - keep) / (1 - base));
       feedback(p, g, s, 1 + (0.008 * G.amb + (0.035 * Math.max(0, m.drive.bass) * G.pulse + 0.02 * G.punch) * G.mo) * G.cap,
-        s.dir * 0.005 * G.cap, Math.pow(0.55 + 0.38 * q.trails, dt * 60), 0);
+        s.dir * 0.005 * G.cap, keep, 0);
       g.translate(w / 2 + G.pan * w * 0.6, h / 2);
       g.globalCompositeOperation = 'lighter';
       g.lineJoin = 'round';
@@ -717,7 +722,7 @@
           var x = Math.cos(an) * rad, y = Math.sin(an) * rad * (1 - 0.15 * G.spread * (kk % 2));
           if (i === 0) g.moveTo(x, y); else g.lineTo(x, y);
         }
-        var col = hsla(kk % 3 === 2 ? G.A : G.H - 27 + kk * 9, G.S, G.L, 0.82 * G.ex * dip);
+        var col = hsla(kk % 3 === 2 ? G.A : G.H - 27 + kk * 9, G.S, G.L, Math.min(1, 0.82 * G.ex * dip * lay));
         g.strokeStyle = col;
         g.shadowColor = col;
         g.shadowBlur = (5 + 7 * m.halo) * unit;

@@ -1305,8 +1305,9 @@
 
     var handle = {
       canvas: canvas,
-      /** What the renderer holds on the GPU, for the check that a mode change frees its own. */
-      memory: function () { return { textures: renderer.info.memory.textures, geometries: renderer.info.memory.geometries }; },
+      /** What the renderer holds on the GPU, and the share of the full resolution it draws at now
+       *  (below 1 where frames ran long: a slow device, a software GPU). */
+      memory: function () { return { textures: renderer.info.memory.textures, geometries: renderer.info.memory.geometries, scale: SCALES[level] }; },
       set: function (next) {
         if (next === id || !MODES[next]) return;
         if (mode) { try { mode.dispose(); } catch (e) { console.error('viz-gl: dispose ' + id, e); } }

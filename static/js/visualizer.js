@@ -165,7 +165,7 @@
     var mapper = window.SonicVizMap.create();
     /** @type {SonicVizScratch} */
     var scratch = { t: 0, params: st.params, m: mapper.map };
-    /** @type {{engine: string, set: (id: string) => void, remove: () => void, resize: () => void, memory?: () => {textures: number, geometries: number}} | null} */
+    /** @type {{engine: string, set: (id: string) => void, remove: () => void, resize: () => void, memory?: () => {textures: number, geometries: number, scale: number}} | null} */
     var runner = null;
     var pending = /** @type {object | null} */ (null);
     var gone = false;
