@@ -6,8 +6,9 @@ artists: ["MGMT"]
 album: "Late Night Tales: Mgmt"
 duration: "4:25"
 spotify: {"track": "1erKNSYwEmh1TptQnh6vLd", "album": "3hL5hv0P0B0jK8T9XPadVR", "artists": ["0SwO7SWeDHJijQ3XNS7xEE"]}
-keys: {"fold": "mgmt|allweeverwantedwaseverything"}
-status: "missing"
+keys: {"fold": "mgmt|allweeverwantedwaseverything", "isrc": "GB5EM1001001", "musicbrainz": "17dd4151-cb70-4f77-b8de-c76fe9e7a9e5"}
+review: "mgmt-all-we-ever-wanted-was-everything.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Late Night Tales: Mgmt*, 4:25.
 A liked song.
-No review yet.
+Reviewed: content/mgmt-all-we-ever-wanted-was-everything.md.

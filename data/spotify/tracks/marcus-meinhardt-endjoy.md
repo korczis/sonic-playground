@@ -6,8 +6,9 @@ artists: ["Marcus Meinhardt"]
 album: "20 Years Best Of Marcus Meinhardt"
 duration: "6:55"
 spotify: {"track": "0Q9bHx8QUO8yIBcAr7Qe8c", "album": "3ORl5SP2WA7MpdD2vW52As", "artists": ["4yVEkQ8vCUQtJFRioN4Zhj"]}
-keys: {"fold": "marcusmeinhardt|endjoy"}
-status: "missing"
+keys: {"fold": "marcusmeinhardt|endjoy", "musicbrainz": "e2682711-9ba0-469d-b4ec-e6589e7f9b5e"}
+review: "marcus-meinhardt-endjoy.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *20 Years Best Of Marcus Meinhardt*, 6:55.
 A liked song.
-No review yet.
+Reviewed: content/marcus-meinhardt-endjoy.md.

@@ -619,6 +619,21 @@ function musicMic({ bpm = 124, chord = [0, 4, 7], kicks = [0, 1, 2, 3], snares =
 // centre; the open queue used to lie over Close on phones and at 1280x720 (a review, 2026-11-15).
 // The visualiser's controls fade while the pointer rests and let clicks through; a pointer move
 // shows them, as it does for a reader, before a test clicks one.
+// A click on one of the visualiser's controls as a reader makes it: the pointer moves onto the
+// control first, which shows the controls again (they fade 2.6 s after the last move and then let
+// clicks through to the picture), then clicks there. A plain page.click on a slow runner met them
+// faded and retried until its timeout, ending the gate (2026-11-25).
+async function vizClick(page, selector) {
+  // Into view first, as page.click would: a device chip can sit below the fold of the settings sheet.
+  await page.locator(selector).first().scrollIntoViewIfNeeded({ timeout: 5000 }).catch(() => {});
+  const box = await page.locator(selector).first().boundingBox().catch(() => null);
+  if (!box) return page.click(selector);
+  const x = box.x + box.width / 2, y = box.y + box.height / 2;
+  await page.mouse.move(x - 2, y - 2);
+  await page.mouse.move(x, y);
+  await page.mouse.click(x, y);
+}
+
 async function showViz(page) {
   await page.mouse.move(31, 31);
   await page.mouse.move(40, 40);
@@ -817,7 +832,7 @@ async function shot(page, name) {
     await page.waitForFunction(() => !!document.querySelector('iframe#player-video') && !document.getElementById('player-panel').hidden, null, { timeout: 10000 }).catch(() => {});
     await page.evaluate(() => window.SonicVisualizer.cinema(true));
     await page.mouse.move(30, 30);
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(300);
     check(await page.evaluate(() => {
       const v = document.querySelector('#player-panel > div').getBoundingClientRect();
@@ -912,7 +927,13 @@ async function shot(page, name) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'light', {}, true);
     await page.evaluate((q) => localStorage.setItem('sonic-player', JSON.stringify({ queue: [q], index: 0, time: 0 })),
       { source: S0.source, path: S0.path, i18n: {}, artist: S0.artist, track: S0.track, youtube: S0.youtube, thumbnail: '' });
-    await context.route('**/data/play.json*', async (route) => { await new Promise((r) => setTimeout(r, 2500)); await route.continue(); });
+    // fallback(), not continue(): continue() sends the request to the network, past the route that
+    // serves the tested build, so the check read production's play.json and failed whenever the
+    // catalogue's newest songs were not yet deployed (waves 33-35, 2026-11-25).
+    await context.route('**/data/play.json*', async (route) => {
+      await new Promise((r) => setTimeout(r, 2500));
+      await route.fallback();
+    });
     await page.goto(at(`?play=${S1.source.replace(/\.md$/, '')}&t=30`), { waitUntil: 'load' });
     await page.click('#player [data-player-toggle]');
     await page.waitForFunction(() => window.SonicPlayer.state().queue.length === 2, null, { timeout: 15000 }).catch(() => {});
@@ -938,7 +959,7 @@ async function shot(page, name) {
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await page.mouse.move(30, 30);
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     // Two devices start in turn (the fake camera behind the silent tab, then the microphone):
     // on a loaded machine that took over 10 s, so the wait is long and bounded.
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 30000 }).catch(() => {});
@@ -950,8 +971,8 @@ async function shot(page, name) {
     // The controls fade while the pointer rests; a move shows them, as it does for a reader.
     await page.mouse.move(31, 31);
     await page.mouse.move(40, 40);
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
-    await page.click('#visualizer-full [data-viz-source="clock"]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
+    await vizClick(page, '#visualizer-full [data-viz-source="clock"]');
     check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser: "Don\'t listen" returns to the clock');
     check(errors.length === 0, `visualiser (microphone): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
@@ -967,7 +988,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await page.mouse.move(30, 30);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied', null, { timeout: 5000 }).catch(() => {});
     check(await page.evaluate(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied'
       && window.SonicVisualizer.source() === 'clock'), 'visualiser: a refused microphone is said, and the picture stays on the clock');
@@ -1030,7 +1051,7 @@ async function shot(page, name) {
     });
     const sheet = async (page) => {
       await showViz(page);
-      if (await page.isHidden('#visualizer-settings')) await page.click('#visualizer-full [data-viz-settings]');
+      if (await page.isHidden('#visualizer-settings')) await vizClick(page, '#visualizer-full [data-viz-settings]');
     };
     const heard = (page, source) => page.waitForFunction((s) => window.SonicVisualizer.source() === s
       && window.SonicVisualizer.analysis().level > 0, source, { timeout: 15000 }).catch(() => {});
@@ -1053,7 +1074,7 @@ async function shot(page, name) {
       && listed.chips[1].id === 'mic-1' && !listed.chips[1].badge && listed.chips[2].id === 'usb-9'
       && listed.hint && !listed.system,
       `visualiser sources: the inputs are listed, the loopback first with its badge, no alias; the whole computer is offered (${JSON.stringify(listed)})`);
-    await page.click('#visualizer-full [data-viz-device="bh-2ch"]');
+    await vizClick(page, '#visualizer-full [data-viz-device="bh-2ch"]');
     await heard(page, 'device');
     let ask = (await asked(page)).pop();
     let said = await status(page);
@@ -1071,14 +1092,14 @@ async function shot(page, name) {
     check((await asked(page)).length === 0 && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock',
       'visualiser sources: after a reload nothing is asked before the reader acts');
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
-    await page.click('#visualizer-full [data-visualizer-stage]');
+    await vizClick(page, '#visualizer-full [data-visualizer-stage]');
     await heard(page, 'device');
     ask = (await asked(page))[0];
     check(ask && ask.c.audio.deviceId.exact === 'bh-2ch' && await page.evaluate(() => window.SonicVisualizer.source()) === 'device',
       `visualiser sources: the remembered loopback starts again by itself, without a prompt (${JSON.stringify(ask)})`);
 
     await sheet(page);
-    await page.click('#visualizer-full [data-viz-source="system"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="system"]');
     await heard(page, 'system');
     ask = (await asked(page)).pop();
     said = await status(page);
@@ -1087,13 +1108,13 @@ async function shot(page, name) {
       && await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer')).device) === '',
       `visualiser sources: the whole computer is asked with its sound, said, and replaces the remembered device (${JSON.stringify(ask)})`);
     await sheet(page);
-    await page.click('#visualizer-full [data-viz-source="tab"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="tab"]');
     await heard(page, 'tab');
     ask = (await asked(page)).pop();
     check(ask && ask.how === 'display' && ask.c.preferCurrentTab === true && (await status(page)).key === 'viz.status_tab',
       `visualiser sources: this tab is asked and said (${JSON.stringify(ask)})`);
     await sheet(page);
-    await page.click('#visualizer-full [data-viz-source="mic"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="mic"]');
     await heard(page, 'mic');
     ask = (await asked(page)).pop();
     said = await status(page);
@@ -1102,11 +1123,11 @@ async function shot(page, name) {
       `visualiser sources: the microphone is asked only when picked, raw, and named ("${said.text}")`);
     // A plain microphone chosen as a device is remembered but never starts by itself.
     await sheet(page);
-    await page.click('#visualizer-full [data-viz-device="mic-1"]');
+    await vizClick(page, '#visualizer-full [data-viz-device="mic-1"]');
     await page.waitForFunction(() => /** @type {any} */ (window).__asked.length === 5, null, { timeout: 5000 }).catch(() => {});
     await page.reload({ waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
-    await page.click('#visualizer-full [data-visualizer-stage]');
+    await vizClick(page, '#visualizer-full [data-visualizer-stage]');
     await sheet(page);
     // The arrows move between the devices without starting one.
     await page.waitForSelector('#visualizer-full [data-viz-device="bh-2ch"]', { timeout: 5000 }).catch(() => {});
@@ -1117,7 +1138,7 @@ async function shot(page, name) {
       && (await asked(page)).length === 0 && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock'
       && await page.evaluate(() => document.activeElement.getAttribute('data-viz-device')) === 'mic-1',
       'visualiser sources: a remembered plain microphone never starts by itself, nor does an arrow key');
-    await page.click('#visualizer-full [data-viz-device="usb-9"]');
+    await vizClick(page, '#visualizer-full [data-viz-device="usb-9"]');
     await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-status]').getAttribute('data-i18n') === 'viz.denied', null, { timeout: 5000 }).catch(() => {});
     check((await status(page)).key === 'viz.denied' && await page.evaluate(() => window.SonicVisualizer.source()) === 'clock'
       && await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer')).device) === 'mic-1',
@@ -1132,7 +1153,7 @@ async function shot(page, name) {
     await second.page.evaluate(() => localStorage.setItem('sonic.visualizer', JSON.stringify({ device: 'bh-2ch' })));
     await second.page.reload({ waitUntil: 'load' });
     await second.page.evaluate(() => window.SonicVisualizer.open('tower'));
-    await second.page.click('#visualizer-full [data-visualizer-stage]');
+    await vizClick(second.page, '#visualizer-full [data-visualizer-stage]');
     await sheet(second.page);
     await second.page.waitForTimeout(1500);
     const before = await second.page.evaluate(() => ({
@@ -1196,7 +1217,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('ripple'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.analysis().bpm > 0, null, { timeout: 15000 }).catch(() => {});
     // The label beside the mode's name refreshes once a second.
     await page.waitForFunction(() => document.querySelector('#visualizer-full [data-viz-tempo]').textContent.length > 0, null, { timeout: 5000 }).catch(() => {});
@@ -1279,7 +1300,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     // Every frame's bass and every onset the analysis reports, in the page's clock.
     await page.evaluate(() => {
@@ -1353,7 +1374,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await page.waitForTimeout(13000);
     const seen = [];
@@ -1373,7 +1394,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     // Once the tempo has settled on the groove's own (an early estimate may land on a related one).
     await page.waitForFunction((g) => { const b = window.SonicVisualizer.analysis().bpm; return Math.abs(b - g) <= 3 || Math.abs(b - 2 * g) <= 6; }, groove.bpm, { timeout: 30000 }).catch(() => {});
     await page.waitForTimeout(2000);
@@ -1394,7 +1415,8 @@ async function shot(page, name) {
       if (d < -0.05 && d > -0.8) back++;
     }
     if (label === 'syncopated') {
-      check(locked.length > 200 && back === 0, `visualiser: on a syncopated groove the beat's phase never jumps back (${back} jumps in ${locked.length} frames)`);
+      const held = locked.length ? locked[locked.length - 1][0] - locked[0][0] : 0;
+      check(held >= 4 && back === 0, `visualiser: on a syncopated groove the beat's phase never jumps back (${back} jumps in ${held.toFixed(1)} s locked, ${locked.length} frames)`);
     } else {
       // The kick reaches the analysis about 60-100 ms after it is played.
       const at = (t) => { let best = null; for (const r of locked) if (!best || Math.abs(r[0] - t) < Math.abs(best[0] - t)) best = r; return best; };
@@ -1406,6 +1428,154 @@ async function shot(page, name) {
         `visualiser: on four on the floor the beat's phase reads near 0 when a kick arrives (${aligned} of ${near.length}; ${back} jumps back)`);
     }
     check(errors.length === 0, `visualiser (beat phase, ${label}): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // Each hit is found as what it is, and a riff over the beat does not take the tempo (r2,
+  // 2026-11-25). Isolated hits: a click, a kick and a snare in turn, 600 ms apart, in digital
+  // silence and then over a room's noise floor (from 13 s). A kick's faint spill into the snare's
+  // range rose out of the silence's -160 dB and counted as a snare on every kick, silent or not.
+  // Techno: a kick on every beat at 124 bpm, a clap on two and four, quiet hats on the off-beats
+  // and a bright synth stab on every dotted eighth, the riff that held a techno recording at 166
+  // (4/3 of 124) and this pattern at no tempo at all, its 4/3 failing the gates.
+  for (const label of ['isolated hits', 'techno']) {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await page.addInitScript((techno) => {
+      const md = navigator.mediaDevices;
+      if (!md) return;
+      md.getDisplayMedia = undefined;
+      md.getUserMedia = async () => {
+        const ac = new AudioContext();
+        await ac.resume();
+        const out = ac.createMediaStreamDestination();
+        const master = ac.createGain();
+        master.gain.value = 0.9;
+        master.connect(out);
+        const noise = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+        const d = noise.getChannelData(0);
+        let seed = 7;
+        for (let i = 0; i < d.length; i++) { seed = (seed * 16807) % 2147483647; d[i] = seed / 1073741823.5 - 1; }
+        const click = ac.createBuffer(1, 96, ac.sampleRate);
+        const cd = click.getChannelData(0);
+        for (let i = 0; i < cd.length; i++) cd[i] = (i < 4 ? 1 : Math.exp(-i / 12)) * (i % 2 ? -1 : 1);
+        const kick = (at) => {
+          const k = ac.createOscillator();
+          k.frequency.setValueAtTime(150, at); k.frequency.exponentialRampToValueAtTime(45, at + 0.12);
+          const kg = ac.createGain();
+          kg.gain.setValueAtTime(0, at); kg.gain.linearRampToValueAtTime(1, at + 0.003);
+          kg.gain.exponentialRampToValueAtTime(0.001, at + 0.35);
+          k.connect(kg).connect(master); k.start(at); k.stop(at + 0.4);
+        };
+        const hiss = (type, hz, at, peak, len) => {
+          const s = ac.createBufferSource(); s.buffer = noise;
+          const f = ac.createBiquadFilter(); f.type = type; f.frequency.value = hz; f.Q.value = 0.7;
+          const g = ac.createGain();
+          g.gain.setValueAtTime(0, at); g.gain.linearRampToValueAtTime(peak, at + 0.002);
+          g.gain.exponentialRampToValueAtTime(0.001, at + len);
+          s.connect(f).connect(g).connect(master); s.start(at, (at * 7.3) % 0.5, len + 0.02);
+        };
+        const offset = performance.now() / 1000 - ac.currentTime;
+        const start = ac.currentTime + 0.5;
+        const played = [];
+        let n = 0;
+        let next = start;
+        if (!techno) {
+          // The room's floor from 13 s on: the noise looped, low-passed, about -50 dBFS.
+          const bed = ac.createBufferSource(); bed.buffer = noise; bed.loop = true;
+          const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 4000;
+          const bed0 = ac.createGain();
+          bed0.gain.setValueAtTime(0, 0); bed0.gain.setValueAtTime(0.003, start + 13);
+          bed.connect(lp).connect(bed0).connect(master); bed.start();
+        }
+        const stab = ac.createGain();
+        if (techno) {
+          const o = ac.createOscillator(); o.type = 'sawtooth'; o.frequency.value = 220;
+          const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 5000;
+          stab.gain.value = 0;
+          o.connect(lp).connect(stab).connect(master); o.start();
+        }
+        const S = 60 / 124 / 4;
+        const plan = () => {
+          while (next < ac.currentTime + 0.4) {
+            const at = next;
+            if (techno) {
+              // Sixteenths: the kick on every fourth, the hats between, claps on two and four, the
+              // stab on every third.
+              if (n % 4 === 0) kick(at);
+              if (n % 4 === 2) hiss('highpass', 8000, at, 0.1, 0.05);
+              if (n % 16 === 4 || n % 16 === 12) hiss('bandpass', 1800, at, 0.5, 0.15);
+              if (n % 3 === 0) {
+                stab.gain.setValueAtTime(0, at); stab.gain.linearRampToValueAtTime(0.4, at + 0.005);
+                stab.gain.setTargetAtTime(0, at + 0.08, 0.04);
+              }
+              next += S;
+            } else {
+              const kind = ['click', 'kick', 'snare'][n % 3];
+              if (kind === 'click') {
+                const s = ac.createBufferSource(); s.buffer = click; s.connect(master); s.start(at);
+              } else if (kind === 'kick') kick(at);
+              else hiss('bandpass', 1800, at, 0.9, 0.18);
+              played.push({ kind, t: at + offset, floor: at > start + 13 });
+              next += 0.6;
+            }
+            n += 1;
+          }
+        };
+        plan();
+        setInterval(plan, 50);
+        window.__hits = { played, start: start + offset };
+        return out.stream;
+      };
+    }, label === 'techno');
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.__hits, null, { timeout: 15000 }).catch(() => {});
+    if (label === 'techno') {
+      await page.waitForTimeout(13000);
+      const seen = [];
+      for (let i = 0; i < 12; i++) { seen.push(await page.evaluate(() => window.SonicVisualizer.analysis().bpm)); await page.waitForTimeout(250); }
+      const right = seen.filter((b) => b >= 121 && b <= 127).length;
+      check(right >= 9, `visualiser: techno with a dotted-eighth riff reads 124 bpm, not its riff's 4/3 or 2/3 nor none (${seen.join(' ')})`);
+    } else {
+      await page.evaluate(() => {
+        const w = /** @type {any} */ (window);
+        w.__found = new Map();
+        const tick = () => {
+          w.SonicVisualizer.analysis().onsets.forEach((o) => w.__found.set(o.name + o.t, o));
+          if (performance.now() / 1000 < w.__hits.start + 26.5) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+      await page.waitForFunction(() => performance.now() / 1000 > window.__hits.start + 26.6, null,
+        { timeout: 30000 }).catch(() => {});
+      const run = await page.evaluate(() => ({ played: window.__hits ? window.__hits.played : [],
+        found: Array.from((window.__found || new Map()).values()), start: window.__hits ? window.__hits.start : 0 }));
+      // The two contexts' path delays a sound by 40-100 ms; a hit is found within 250 ms of it.
+      const near = (o, p) => o.t - p.t > -0.01 && o.t - p.t < 0.25;
+      const as = { kick: 'kick', snare: 'snare', click: 'hat' };
+      for (const floor of [false, true]) {
+        // Two seconds after each start let the automatic gain and the thresholds settle; 11 s
+        // then hold about six hits of each kind.
+        const from = run.start + (floor ? 15 : 2);
+        const ps = run.played.filter((p) => p.floor === floor && p.t > from && p.t < run.start + 26);
+        const s = {};
+        for (const kind of ['kick', 'snare', 'click']) {
+          const mine = ps.filter((p) => p.kind === kind);
+          const found = mine.filter((p) => run.found.some((o) => o.name === as[kind] && near(o, p)));
+          s[kind] = { played: mine.length, found: found.length };
+        }
+        const kicks = ps.filter((p) => p.kind === 'kick');
+        const asSnare = kicks.filter((p) => run.found.some((o) => o.name === 'snare' && near(o, p))).length;
+        // One hit of a kind may be lost to a dropped frame, and one kick may count as a snare too;
+        // 95d6f38c counted every kick as a snare.
+        const found = Object.values(s).every((x) => x.played >= 5 && x.found >= x.played - 1);
+        check(found && asSnare <= 1,
+          `visualiser: isolated hits${floor ? ' over a noise floor' : ''} are each found as what they `
+          + `are, a kick never as a snare (${JSON.stringify(s)}; ${asSnare} of ${kicks.length} kicks also a snare)`);
+      }
+    }
+    check(errors.length === 0, `visualiser (${label}): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
   // A microphone in a room with no music: its noise (pink, as a room's is) is no beat. A quiet
@@ -1441,7 +1611,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await page.waitForTimeout(2500);
     await page.evaluate(() => {
@@ -1550,7 +1720,7 @@ async function shot(page, name) {
     `visualiser: the clock has no pitch and no stereo, its bar runs over four beats from the downbeat (${clock.length} frames, bar ${Math.min(...bars).toFixed(2)}-${Math.max(...bars).toFixed(2)}, downbeats at ${downs.map((b) => b.toFixed(2)).join(' ')})`);
     // The controls faded while the pointer rested; a move shows them.
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await page.waitForFunction(() => window.__ends && performance.now() / 1000 > window.__ends[2] + 0.2, null, { timeout: 30000 }).catch(() => {});
     const run = await page.evaluate(() => ({ frames: window.__frames, ends: window.__ends }));
@@ -1631,7 +1801,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await page.evaluate(() => {
       const w = /** @type {any} */ (window);
@@ -1737,7 +1907,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     // Every frame, and the bar on the frame each kick was found.
     await page.evaluate(() => {
@@ -1986,10 +2156,10 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 15000 }).catch(() => {});
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-settings]');
+    await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(400);
     const shown = await page.evaluate(() => ({
       system: document.querySelector('#visualizer-full [data-viz-source="system"]').hidden,
@@ -2015,6 +2185,25 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (phone sources): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
+  // The controls fade 2.6 s after the pointer last moved, but not while it rests on one of them:
+  // a reader holding the pointer on "Follow the music" saw it fade and stop taking clicks.
+  {
+    const { context, page, errors } = await open(browser, at(''), desktop, 'dark');
+    await page.evaluate(() => window.SonicVisualizer.open('tower'));
+    await showViz(page);
+    const box = await page.locator('#visualizer-full [data-viz-settings]').boundingBox();
+    await page.mouse.move(box.x + box.width / 2 - 2, box.y + box.height / 2);
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.waitForTimeout(3500);
+    const resting = await page.evaluate(() => document.getElementById('visualizer-full').getAttribute('data-controls'));
+    await page.mouse.move(700, 600);
+    await page.mouse.move(705, 605);
+    await page.waitForTimeout(3500);
+    const away = await page.evaluate(() => document.getElementById('visualizer-full').getAttribute('data-controls'));
+    check(resting === 'shown' && away === 'hidden', `visualiser: the controls stay while the pointer rests on one, and fade once it is away (${resting}, then ${away})`);
+    check(errors.length === 0, `visualiser (controls under the pointer): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
   // The toast keeps off the open settings sheet as it keeps off the video (a browser review,
   // 2026-11-23: on a phone it hid the cinema switch and the first device for its few seconds), at
   // 390 and 320 px; and a shared link under reduced motion opens the calm mode, not its own.
@@ -2025,7 +2214,7 @@ async function shot(page, name) {
     await page.waitForFunction(() => window.SonicPlayer && window.SonicPlayer.state().index >= 0, null, { timeout: 10000 }).catch(() => {});
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-settings]');
+    await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(300);
     await page.evaluate(() => window.SonicPlayer.notify('Playing now: a toast over the settings'));
     await page.waitForTimeout(400);
@@ -2039,7 +2228,7 @@ async function shot(page, name) {
     const cross = (a, b) => !!a && !!b && a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
     check(boxes.shown === 'true' && !!boxes.toast && !!boxes.sheet && !cross(boxes.toast, boxes.sheet) && !cross(boxes.toast, boxes.video),
       `visualiser (${vp.width} px): the toast keeps off the open settings sheet and the video (${JSON.stringify({ toast: boxes.toast && [Math.round(boxes.toast.top), Math.round(boxes.toast.bottom)], sheet: boxes.sheet && [Math.round(boxes.sheet.top), Math.round(boxes.sheet.bottom)] })})`);
-    await page.click('#visualizer-full [data-viz-settings]');
+    await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(300);
     check(await page.evaluate(() => !document.documentElement.hasAttribute('data-viz-settings')), `visualiser (${vp.width} px): the sheet closes again with the toast up`);
     check(errors.length === 0, `visualiser (toast, ${vp.width} px): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
@@ -2066,7 +2255,7 @@ async function shot(page, name) {
     await page.evaluate(() => window.SonicVisualizer.open('liquid'));
     await page.waitForFunction(() => !!window.SonicVizGL, null, { timeout: 15000 }).catch(() => {});
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic', null, { timeout: 5000 }).catch(() => {});
     await page.waitForTimeout(2500);
     const { modes, gl } = await page.evaluate(() => ({ modes: window.SonicVizGL.modes(), gl: window.SonicVizGL.supported() }));
@@ -2128,7 +2317,7 @@ async function shot(page, name) {
     await page.waitForTimeout(22500);
     check(await page.evaluate(litShare, '[data-visualizer-stage] canvas') > 0, 'visualiser: flux still draws after morphing through every shape');
     await page.mouse.move(30, 30);
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
     check(await page.isVisible('#visualizer-full [data-viz-fallback]'), 'visualiser (no WebGL 2): the settings say a lighter picture stands in');
     check(three === 0, `visualiser (no WebGL 2): three.js is never requested (${three})`);
     check(errors.length === 0, `visualiser (no WebGL 2): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
@@ -2146,7 +2335,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
     check(await page.evaluate(() => window.SonicVisualizer.source()) === 'mic', 'visualiser (p5 modes): the music is heard through the microphone');
     const stage = '[data-visualizer-stage] canvas';
@@ -2217,7 +2406,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
     const stage = '[data-visualizer-stage] canvas';
     // The mean change of a cell between samples 180 ms apart, and the median luminance.
@@ -2305,7 +2494,7 @@ async function shot(page, name) {
     await page.goto(at(''), { waitUntil: 'load' });
     await page.evaluate(() => window.SonicVisualizer.open('chrome'));
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-source="connect"]');
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
     await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic' && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
     const stage = '[data-visualizer-stage] canvas';
     await page.waitForTimeout(2500);
@@ -2385,6 +2574,207 @@ async function shot(page, name) {
       check(R < 0.97, `visualiser (${mode}): more than one hue (the hues' resultant ${R.toFixed(2)}, below 0.97)`);
     }
     check(errors.length === 0, `visualiser (pass 3's modes): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  // The snare and the hats are drawn, and the impulses' light is governed (round 2 of the
+  // fixes, after its pass 1). Only the kick fired an impulse, so no mode drew a snare: with a kick
+  // on the bar's first beat and snares on the second and fourth (100 bpm), ember, ripple and
+  // liquid changed 1.02x, 1.36x and 0.91x as much 100-250 ms after a snare as 50-200 ms before it
+  // (a mean of 1.10x), and about 1.4-1.6x with the snare's own impulse (above 1.25 on the mean,
+  // each over at least three snares, the music heard first). starlane's streaks on a big event
+  // lit the field ungoverned: 4 flashes in a second at 175 bpm, density 2 and react 2 (pairs of
+  // opposing swings of the mean relative luminance by 0.1 or more within three frames), and 0-2
+  // with their length under the flash gain (fewer than 3); a picture that does not move passes a
+  // ceiling, so it must also move with the music. prism showed its orbs only while they wandered
+  // through the one wedge its kaleidoscope mirrors, so its light did not follow the loudness: at
+  // gain 1 it read 0.84x as bright as at gain 0.3 (the least loud median luminance against the
+  // most quiet), and about 2x with every orb folded into the wedge (above 1.1).
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await context.grantPermissions(['microphone']);
+    await page.addInitScript(musicMic, { bpm: 100, chord: [0, 4, 7], kicks: [0], snares: [1, 3] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('ember'));
+    await showViz(page);
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic'
+      && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
+    check(await page.evaluate(() => window.SonicVisualizer.source() === 'mic'
+      && window.SonicVisualizer.analysis().level > 0.01),
+    'visualiser (snare): the music is heard from the microphone before the snares are measured');
+    const stage = '[data-visualizer-stage] canvas';
+    // Every frame for `ms`: its time and the mean change of a cell from the frame before.
+    const record = (ms) => page.evaluate(({ src, sel, ms }) => new Promise((done) => {
+      const stats = (0, eval)('(' + src + ')');
+      const rows = [];
+      let prev = null;
+      const t0 = performance.now();
+      const tick = () => {
+        const s = stats(sel);
+        const d = prev ? s.cells.reduce((acc, y, c) => acc + Math.abs(y - prev.cells[c]), 0) : 0;
+        rows.push([performance.now() / 1000, d / s.cells.length]);
+        prev = s;
+        if (performance.now() - t0 < ms) requestAnimationFrame(tick);
+        else done({ rows, kicks: window.__music ? window.__music.kicks.slice() : [] });
+      };
+      requestAnimationFrame(tick);
+    }), { src: pictureStats.toString(), sel: stage, ms });
+    // The cell change 100-250 ms after each snare is played (one and three beats after each kick;
+    // the sound takes about 100 ms to reach the picture here) against 50-200 ms before it.
+    const onSnare = async () => {
+      const { rows, kicks } = await record(12000);
+      const beat = 60 / 100;
+      let on = 0, no = 0, off = 0, nf = 0, n = 0;
+      for (const k of kicks) {
+        for (const sn of [k + beat, k + 3 * beat]) {
+          if (sn < rows[0][0] + 0.3 || sn > rows[rows.length - 1][0] - 0.15) continue;
+          n++;
+          for (const [t, d] of rows.slice(1)) {
+            if (t >= sn + 0.1 && t < sn + 0.25) { on += d; no++; }
+            else if (t >= sn - 0.2 && t < sn - 0.05) { off += d; nf++; }
+          }
+        }
+      }
+      return { jump: no && nf && off > 0 ? (on / no) / (off / nf) : 0, n };
+    };
+    const jumps = [];
+    let fluent = true, mean = 0, fewest = Infinity;
+    for (const mode of ['ember', 'ripple', 'liquid']) {
+      await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
+      await page.waitForTimeout(2500);
+      const { jump, n } = await onSnare();
+      jumps.push(`${mode} ${jump.toFixed(2)}x (${n} snares)`);
+      fewest = Math.min(fewest, n);
+      fluent = fluent && await vizFps(page) >= 30;
+      mean += jump / 3;
+    }
+    check(fewest >= 3,
+      `visualiser (snare): each mode is measured over at least three snares (${jumps.join(', ')})`);
+    const said = `visualiser (snare): a snare moves the picture (cell change 100-250 ms after a `
+      + `snare against 50-200 ms before it, a mean of ${mean.toFixed(2)}x over `
+      + `${jumps.join(', ')}; above 1.25)`;
+    if (fluent) check(mean > 1.25, said);
+    else console.log(`note ${said}: not judged below 30 fps`);
+    check(errors.length === 0,
+      `visualiser (snare): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
+    await context.close();
+  }
+  {
+    const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
+    await context.grantPermissions(['microphone']);
+    await page.addInitScript(musicMic, { bpm: 175, chord: [2, 6, 9] });
+    await page.goto(at(''), { waitUntil: 'load' });
+    await page.evaluate(() => window.SonicVisualizer.open('starlane'));
+    await showViz(page);
+    await vizClick(page, '#visualizer-full [data-viz-source="connect"]');
+    await page.waitForFunction(() => window.SonicVisualizer.source() === 'mic'
+      && window.SonicVisualizer.analysis().level > 0.01, null, { timeout: 30000 }).catch(() => {});
+    check(await page.evaluate(() => window.SonicVisualizer.source() === 'mic'
+      && window.SonicVisualizer.analysis().level > 0.01),
+    'visualiser (flashes): the music is heard from the microphone before the flashes are counted');
+    const stage = '[data-visualizer-stage] canvas';
+    // Dense, and reacting twice as hard as by default, where the streaks flashed most.
+    await page.evaluate(() => {
+      window.SonicVisualizer.param('density', 2);
+      window.SonicVisualizer.param('react', 2);
+    });
+    await page.waitForTimeout(3000);
+    // The mean relative luminance of a 32x18 sample every frame for 8 s (each channel made linear
+    // first, as WCAG's relative luminance is), and the mean change of a cell from frame to frame.
+    const flashes = await page.evaluate((sel) => new Promise((done) => {
+      const g = document.createElement('canvas');
+      g.width = 32; g.height = 18;
+      const x = g.getContext('2d', { willReadFrequently: true });
+      const lin = (v) => (v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+      const LUT = Array.from({ length: 256 }, (_, i) => lin(i / 255));
+      const rows = [];
+      let prev = null, moved = 0;
+      const t0 = performance.now();
+      const tick = () => {
+        x.drawImage(document.querySelector(sel), 0, 0, 32, 18);
+        const d = x.getImageData(0, 0, 32, 18).data;
+        const cells = new Float32Array(576);
+        let sum = 0;
+        for (let i = 0, k = 0; i < d.length; i += 4, k++) {
+          cells[k] = 0.2126 * LUT[d[i]] + 0.7152 * LUT[d[i + 1]] + 0.0722 * LUT[d[i + 2]];
+          sum += cells[k];
+        }
+        if (prev) moved += cells.reduce((acc, y, k) => acc + Math.abs(y - prev[k]), 0) / 576;
+        prev = cells;
+        rows.push([performance.now() / 1000, sum / 576]);
+        if (performance.now() - t0 < 8000) { requestAnimationFrame(tick); return; }
+        // A transition: the mean luminance swings by 0.1 or more within three frames; a flash: a
+        // pair of opposing transitions (WCAG 2.3.1), each transition in one pair only. The most
+        // within any one second.
+        const ev = [];
+        let swing = 0;
+        for (let i = 0; i < rows.length - 1;) {
+          let k = 0, best = 0;
+          for (let j = 1; j <= 3 && i + j < rows.length; j++) {
+            const dv = rows[i + j][1] - rows[i][1];
+            if (Math.abs(dv) > Math.abs(best)) { best = dv; k = j; }
+          }
+          swing = Math.max(swing, Math.abs(best));
+          if (k && Math.abs(best) >= 0.1) { ev.push([rows[i + k][0], Math.sign(best)]); i += k; }
+          else i += 1;
+        }
+        const pairs = [];
+        for (let n = 1; n < ev.length; n++) {
+          if (ev[n][1] !== ev[n - 1][1]) { pairs.push(ev[n][0]); n++; }
+        }
+        let worst = 0;
+        for (const p of pairs) {
+          worst = Math.max(worst, pairs.filter((q) => q >= p && q < p + 1).length);
+        }
+        done({ worst, swing, frames: rows.length, moved: moved / Math.max(1, rows.length - 1) });
+      };
+      requestAnimationFrame(tick);
+    }), stage);
+    const fluent = await vizFps(page) >= 30;
+    const said = `visualiser (starlane): fewer than three flashes a second (at most `
+      + `${flashes.worst} in any second over ${flashes.frames} frames; the largest swing of the `
+      + `mean luminance ${flashes.swing.toFixed(3)})`;
+    if (fluent) check(flashes.worst < 3, said);
+    else console.log(`note ${said}: not judged below 30 fps`);
+    // The floor under that ceiling: the field still rushes with the music (the mean change of a
+    // cell's linear luminance from frame to frame).
+    const said3 = `visualiser (starlane): under the flash limit it still moves with the music (a `
+      + `cell changes ${flashes.moved.toFixed(4)} a frame, above 0.002)`;
+    if (fluent) check(flashes.moved > 0.002, said3);
+    else console.log(`note ${said3}: not judged below 30 fps`);
+    // prism at gain 1 and 0.3, twice each: its light follows the loudness.
+    await page.evaluate(() => {
+      window.SonicVisualizer.param('density', 1);
+      window.SonicVisualizer.param('react', 1);
+      window.SonicVisualizer.set('prism');
+    });
+    await page.waitForTimeout(2500);
+    const lumaOf = async () => {
+      const l = [];
+      for (let k = 0; k < 11; k++) {
+        l.push((await page.evaluate(pictureStats, stage)).luma);
+        await page.waitForTimeout(200);
+      }
+      return l.sort((p, q) => p - q)[5];
+    };
+    const loud = [], quiet = [];
+    for (let r = 0; r < 2; r++) {
+      await page.evaluate(() => window.__music.gain(1));
+      await page.waitForTimeout(2500);
+      loud.push(await lumaOf());
+      await page.evaluate(() => window.__music.gain(0.3));
+      await page.waitForTimeout(3500);
+      quiet.push(await lumaOf());
+    }
+    const ratio = Math.min(...loud) / Math.max(1e-6, Math.max(...quiet));
+    const said2 = `visualiser (prism): not darker when loud (median luminance `
+      + `${loud.map((v) => v.toFixed(3)).join(', ')} at gain 1, `
+      + `${quiet.map((v) => v.toFixed(3)).join(', ')} at gain 0.3; the least loud `
+      + `${ratio.toFixed(2)}x the most quiet, above 1.1)`;
+    if (await vizFps(page) < 30) console.log(`note ${said2}: not judged below 30 fps`);
+    else check(ratio > 1.1, said2);
+    const errs = errors.length ? ': ' + errors.join(' | ') : '';
+    check(errors.length === 0, `visualiser (flashes, prism): no console error${errs}`);
     await context.close();
   }
   // A negative control for litShare: a blank canvas is not a picture.
@@ -3186,7 +3576,7 @@ async function shot(page, name) {
     await videoSeen(page, 'visualiser (cinema, landscape 844x390, toast shown)');
     await page.setViewportSize(wide);
     await page.waitForTimeout(300);
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
     await page.waitForTimeout(300);
     check(await page.evaluate(() => {
       const v = document.querySelector('#player-panel > div').getBoundingClientRect();
@@ -3230,15 +3620,15 @@ async function shot(page, name) {
       && document.getElementById('player-panel').style.getPropertyValue('--viz-kick') !== ''),
     'visualiser (cinema): the glow lives on the video panel, not on the root');
     // The 40 s change switch is remembered both ways.
-    await page.click('#visualizer-full label:has([data-viz-cycle])');
+    await vizClick(page, '#visualizer-full label:has([data-viz-cycle])');
     check(await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer') || '{}').cycle === false), 'visualiser: the change switch turns the 40 s change off');
-    await page.click('#visualizer-full label:has([data-viz-cycle])');
+    await vizClick(page, '#visualizer-full label:has([data-viz-cycle])');
     check(await page.evaluate(() => JSON.parse(localStorage.getItem('sonic.visualizer') || '{}').cycle === true), 'visualiser: and on again');
     // Reset returns the live controls to the mode's defaults and takes them out of the URL.
     await page.evaluate(() => window.SonicVisualizer.set('prism'));
     await page.evaluate(() => window.SonicVisualizer.param('hue', 120));
     check(new URL(page.url()).searchParams.get('viz.hue') === '120', 'visualiser: a moved control is in the URL');
-    await page.click('#visualizer-full [data-viz-reset]');
+    await vizClick(page, '#visualizer-full [data-viz-reset]');
     check(!new URL(page.url()).searchParams.has('viz.hue') && (await page.evaluate(() => window.SonicVisualizer.params().hue)) === 0,
       'visualiser: Reset returns the controls to the mode\'s defaults');
     // A slider moved by the keyboard writes its value, live, and the URL follows.
@@ -3248,10 +3638,10 @@ async function shot(page, name) {
     check(new URL(page.url()).searchParams.has('viz.warp') && Number(new URL(page.url()).searchParams.get('viz.warp')) === (await page.evaluate(() => window.SonicVisualizer.params().warp)),
       'visualiser: a slider moved by the keyboard sets the control and the URL');
     // The cinema switch in the sheet and the cinema button agree.
-    await page.click('#visualizer-full label:has([data-viz-cinema-switch])');
+    await vizClick(page, '#visualizer-full label:has([data-viz-cinema-switch])');
     check(!(await page.evaluate(() => window.SonicVisualizer.cinema())) && !new URL(page.url()).searchParams.has('viz.video'),
       'visualiser: the cinema switch turns cinema off');
-    await page.click('#visualizer-full label:has([data-viz-cinema-switch])');
+    await vizClick(page, '#visualizer-full label:has([data-viz-cinema-switch])');
     check(await page.evaluate(() => window.SonicVisualizer.cinema()), 'visualiser: the cinema switch turns it on again');
     await page.keyboard.press('Escape');
     // C toggles cinema from the keyboard; F asks for real fullscreen.
@@ -3267,7 +3657,7 @@ async function shot(page, name) {
     // "Copy a link" copies the URL of this picture and this song, and says so.
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     await showViz(page);
-    await page.click('#visualizer-full [data-viz-share]');
+    await vizClick(page, '#visualizer-full [data-viz-share]');
     await page.waitForTimeout(300);
     const copied = await page.evaluate(() => navigator.clipboard.readText());
     check(new URL(copied).searchParams.get('viz') && new URL(copied).searchParams.get('play') && new URL(copied).searchParams.get('viz.video') === 'cinema',
@@ -3290,8 +3680,45 @@ async function shot(page, name) {
     check(!(await page.isVisible('#player-queue')), 'visualiser: opening it closes the queue');
     await vizControlsOnTop(page, 'visualiser (desktop)');
     check(await page.evaluate(() => window.SonicVisualizer.source()) === 'clock', 'visualiser: nothing listens until the reader asks');
-    await page.waitForFunction(() => document.getElementById('visualizer-full').getAttribute('data-controls') === 'hidden', null, { timeout: 8000 }).catch(() => {});
-    check(await page.getAttribute('#visualizer-full', 'data-controls') === 'hidden', 'visualiser: the toolbar fades while the pointer rests');
+    // The toolbar fades while the pointer rests on the picture, not on a control (vizControlsOnTop
+    // leaves it on Settings, where it rightly stays: run 45538389634 waited there for a fade), and
+    // a control clicked with the mouse keeps focus without holding it; keyboard focus holds it.
+    const controls = () => page.getAttribute('#visualizer-full', 'data-controls');
+    const faded = () => page.waitForFunction(() => document.getElementById('visualizer-full')
+      .getAttribute('data-controls') === 'hidden', null, { timeout: 8000 }).catch(() => {});
+    await page.waitForTimeout(3500);
+    check(await controls() === 'shown',
+      'visualiser: the toolbar stays while the pointer rests on a control');
+    const onPicture = async () => {
+      const spot = await page.evaluate(() => {
+        const stage = document.querySelector('[data-visualizer-stage]');
+        for (const [fx, fy] of [[0.6, 0.45], [0.4, 0.6], [0.75, 0.3], [0.5, 0.5]]) {
+          const x = innerWidth * fx, y = innerHeight * fy;
+          if (stage.contains(document.elementFromPoint(x, y))) return { x, y };
+        }
+        return null;
+      });
+      check(!!spot, 'visualiser: the picture is open to the pointer away from every control');
+      if (!spot) return;
+      await page.mouse.move(spot.x - 3, spot.y - 3);
+      await page.mouse.move(spot.x, spot.y);
+    };
+    await onPicture();
+    await faded();
+    check(await controls() === 'hidden',
+      'visualiser: the toolbar fades while the pointer rests on the picture');
+    await vizClick(page, '#visualizer-full [data-viz-share]');
+    await onPicture();
+    await faded();
+    check(await controls() === 'hidden'
+      && await page.evaluate(() => document.activeElement.matches('[data-viz-share]')),
+    'visualiser: the toolbar fades after a mouse click on a control, which keeps focus');
+    await page.keyboard.press('Tab');
+    await page.waitForTimeout(3500);
+    check(await controls() === 'shown'
+      && await page.evaluate(() => document.activeElement
+        .matches('#visualizer-full [data-viz-cluster] :focus-visible')),
+    'visualiser: the toolbar stays while keyboard focus is on a control');
     await page.keyboard.press('Escape');
     check(await page.evaluate(() => !document.documentElement.hasAttribute('data-visualizer') && document.getElementById('visualizer-full').hidden), 'visualiser: Escape closes it');
     check(!new URL(page.url()).searchParams.has('viz'), 'visualiser: closing it takes ?viz out of the URL');
@@ -3601,7 +4028,7 @@ async function shot(page, name) {
     await page.mouse.move(20, 20);
     await vizControlsOnTop(page, 'visualiser (phone, opened from the queue)');
     await videoSeen(page, 'visualiser (phone, opened from the queue)');
-    await showViz(page); await page.click('#visualizer-full [data-viz-settings]');
+    await showViz(page); await vizClick(page, '#visualizer-full [data-viz-settings]');
     check(await page.isVisible('#visualizer-settings') && await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
       'visualiser (phone): the settings open within the screen');
     await page.waitForTimeout(100);

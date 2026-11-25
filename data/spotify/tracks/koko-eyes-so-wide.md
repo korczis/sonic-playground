@@ -7,7 +7,8 @@ album: "Eyes So Wide"
 duration: "2:38"
 spotify: {"track": "4IAqZMbz0V04VxrMqn2qZW", "album": "7rHuT5IUwAhzrhiJBuu6oL", "artists": ["7spLPNSfl7XOyBemar1Cqn"]}
 keys: {"fold": "koko|eyessowide"}
-status: "missing"
+review: "koko-eyes-so-wide.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Eyes So Wide*, 2:38.
 A liked song.
-No review yet.
+Reviewed: content/koko-eyes-so-wide.md.

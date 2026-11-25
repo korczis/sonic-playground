@@ -14,7 +14,8 @@
 //   brightness  rides m.exposure, the slow loudness; an impulse brightens only by its share
 //               times m.flashGain (at most three flashes a second);
 //   time        travel is paced by the tempo, shapes lock to the beat (m.pulse, m.pre) and the
-//               bar (m.barPulse), big events are m.punch;
+//               bar (m.barPulse), big events are m.punch, a snare m.snap (smaller), the hats
+//               m.shimmer (scattered glints only);
 //   form        a new section of the song draws a new variant of the scene (m.variant), morphed;
 //   calm        react 0 is a calm, music-free picture; reduced motion (m.motion, m.reduced) caps
 //               motion and turns impulses into colour.
@@ -128,6 +129,9 @@
     // peak (the bands are auto-gained, so without it a quiet break moved as much as the drop).
     G.lk = k * smooth(clamp((m.exposure - 0.5) / 0.5, 0, 1)) + (1 - k) * 0.5;
     G.punch = Math.min(1.5, m.punch * R);
+    // The snare's smaller impulse and the hats' shimmer, scaled by react as the kick's is.
+    G.snap = Math.min(1, m.snap * R);
+    G.shim = Math.min(1.5, m.shimmer * R);
     // The beat's shapes only while the beat moves (a paused clock holds its phase at 0) and
     // something is heard (the tempo's flywheel runs on through a silence).
     if (a.phase !== s.phase) { s.phase = a.phase; s.phaseT = a.t; }
@@ -193,11 +197,12 @@
     return s.head;
   }
 
-  // How hard the kick and the beat pump a bank of bars this frame: 1 at rest, more on a kick as
-  // the passage is loud (the level against its last seconds), never under reduced motion.
+  // How hard the kick, the snare and the beat pump a bank of bars this frame: 1 at rest, more on
+  // a kick (a snare about a third as hard, and as its taller bars are light, by the flash gain)
+  // as the passage is loud (the level against its last seconds), never under reduced motion.
   function pumpOf(G, a) {
     var lv = Math.min(1.5, G.m.level);
-    return 1 + (0.5 * a.kick * G.k + 0.3 * G.pulse) * lv * G.mo;
+    return 1 + (0.5 * a.kick * G.k + 0.25 * G.snap * G.flash + 0.3 * G.pulse) * lv * G.mo;
   }
 
   // The pitch class nearest each band's centre (48 bands, 40 Hz to 16 kHz), for tonal tints;
@@ -273,7 +278,10 @@
       var N = 160, wl = a.wave.length;
       var wg = G.wg * 0.3 * G.k * (0.5 + 0.5 * Math.min(1.5, m.level));
       for (var r = 0; r < 3; r++) {
-        var size = M * (0.19 + r * 0.065) * (1 + (0.22 * m.drive.level + 0.12 * G.punch) * G.mo);
+        // A snare kicks the ribbons out a little and thickens them at once (its jolt of the turn
+        // shows only as the feedback carries it: 92 ms, round 2 pass 1); the hats fray them.
+        var size = M * (0.19 + r * 0.065)
+          * (1 + (0.22 * m.drive.level + 0.12 * G.punch + 0.07 * G.snap) * G.mo);
         var spin = G.beats * 0.11 * (r % 2 ? -1 : 1) + r;
         var ct = Math.cos(spin), st = Math.sin(spin);
         var off = (r - 1) * G.spread * M * 0.09;
@@ -286,7 +294,10 @@
           var x = lerp(xa, SX, G.mix), y = lerp(ya, SY, G.mix);
           // A symmetric index into the waveform closes the loop without a seam.
           var wi = Math.floor((0.5 - 0.5 * Math.cos(u * TAU * 2 + r)) * (wl - 5)) + 2;
-          var d = 1 + (a.wave[wi - 2] + a.wave[wi - 1] + a.wave[wi] + a.wave[wi + 1] + a.wave[wi + 2]) * 0.2 * wg + (Math.random() - 0.5) * m.rough * 0.05 * G.k;
+          var d = 1
+            + (a.wave[wi - 2] + a.wave[wi - 1] + a.wave[wi] + a.wave[wi + 1] + a.wave[wi + 2])
+            * 0.2 * wg
+            + (Math.random() - 0.5) * (m.rough * 0.05 * G.k + 0.035 * G.shim * G.mo);
           var px = x * size * d, py = y * size * d;
           var rx = px * ct - py * st + off, ry = px * st + py * ct;
           if (j === 0) g.moveTo(rx, ry); else g.lineTo(rx, ry);
@@ -295,11 +306,15 @@
         // As wide, bright and haloed as the passage is exposed: thin ribbons on black were near
         // black on techno (79 % of the frames, analysis pass 3), whose steady drop has no deviation
         // of the level to widen them.
-        var col = hsle(hue + G.punch * 18, G.S, G.L + 4, Math.min(1, (0.42 + 0.3 * G.ek + 0.12 * G.punch * G.flash) * G.ex * lay));
+        var col = hsle(hue + G.punch * 18 + G.snap * 10, G.S, G.L + 4,
+          Math.min(1, (0.42 + 0.3 * G.ek + (0.12 * G.punch + 0.08 * G.snap) * G.flash)
+            * G.ex * lay));
         g.strokeStyle = col;
         g.shadowColor = col;
         g.shadowBlur = (5 + 9 * m.halo) * unit * (0.7 + 0.5 * G.ek);
-        g.lineWidth = (1.1 + 1.6 * Math.max(0, m.drive.level) + 1.4 * G.pulse) * unit * (0.8 + 0.8 * G.ek);
+        g.lineWidth = (1.1 + 1.6 * Math.max(0, m.drive.level) + 1.4 * G.pulse
+          + 1.4 * G.snap * G.mo * G.flash)
+          * unit * (0.8 + 0.8 * G.ek);
         g.stroke();
       }
     }),
@@ -383,13 +398,17 @@
       mirror.addColorStop(1, hsla(G.H, G.S, 50, 0));
       g.fillStyle = mirror;
       g.fill();
-      // The peak caps, a little lifted by a big event, glinting before the beat.
+      // The peak caps, a little lifted by a big event (and half as far by a snare), glinting
+      // before the beat and on the hats (a hat drew nothing at all: round 2 pass 1). Only the
+      // glint: a thicker scope on every hat moved the bank between kicks as much as on them.
       g.beginPath();
-      var lift = 4 + G.punch * G.mo * top * 0.03;
-      for (var c2 = 0; c2 < n; c2++) g.rect(pad + c2 * (bw + gap), floor - s.peaks[c2] * top - lift, bw, 2 * unit);
+      var lift = 4 + (G.punch + 0.5 * G.snap) * G.mo * top * 0.03;
+      for (var c2 = 0; c2 < n; c2++) {
+        g.rect(pad + c2 * (bw + gap), floor - s.peaks[c2] * top - lift, bw, 2 * unit);
+      }
       g.fillStyle = hsla(G.A, 30, 92, 0.95);
       g.shadowColor = hsla(G.A, 60, 85, 0.8);
-      g.shadowBlur = (6 + 10 * G.pre) * glow * unit;
+      g.shadowBlur = (6 + 10 * G.pre + 12 * G.shim * G.flash) * glow * unit;
       g.fill();
       // The floor, glowing on the downbeat.
       g.shadowBlur = 0;
@@ -462,6 +481,22 @@
       }
       g.fillStyle = hsla(G.H, 20, 70, 0.05);
       g.fill();
+      // A hat twinkles a scattered eighth of the unlit dots, another eighth each hat (the hats and
+      // clicks drew nothing: round 2 pass 1); a sparse glint, never the matrix.
+      if (G.shim > (s.shimWas || 0) + 0.2) s.shimSeed = ((s.shimSeed || 0) + 1) % 8;
+      s.shimWas = G.shim;
+      if (G.shim > 0.03) {
+        g.beginPath();
+        for (var tc = 0; tc < cols; tc++) {
+          for (var tr0 = Math.round(s.vals[tc] * rows); tr0 < rows; tr0++) {
+            if ((tc * 5 + tr0 * 3 + (s.shimSeed || 0)) % 8) continue;
+            var tx = x0 + tc * pitch, ty = y0 - tr0 * pitch;
+            g.moveTo(tx + r, ty); g.arc(tx, ty, r, 0, TAU);
+          }
+        }
+        g.fillStyle = hsla(G.A, 35, 80, 0.25 * Math.min(1, G.shim) * G.flash * G.ex);
+        g.fill();
+      }
       // Lit dots, one path per row (one colour each), climbing from the key's deep colour to
       // the leading note's; a big event lights them up by its (governed) share.
       g.shadowBlur = pitch * (0.3 + 0.6 * m.halo) * (0.6 + 0.8 * G.ek);
@@ -477,7 +512,8 @@
         if (!any) continue;
         var f = row / (rows - 1);
         var hue = f > 0.8 ? lerp(G.H + 30, G.A, (f - 0.8) * 5) : G.H - 35 + f * 65;
-        var col = hsle(hue, G.S, G.L - 10 + f * 12 + 6 * G.ek + 10 * G.punch * G.flash, G.ex);
+        var col = hsle(hue, G.S,
+          G.L - 10 + f * 12 + 6 * G.ek + (10 * G.punch + 6 * G.snap) * G.flash, G.ex);
         g.fillStyle = col;
         g.shadowColor = col;
         g.fill();
@@ -548,7 +584,9 @@
       g.translate(w / 2 + G.pan * w * 0.5, h / 2);
       g.rotate(s.theta + G.beats * 0.035 + 0.05 * Math.sin(((a.bar || 0) + G.bars) * TAU / 4) * k);
       g.globalCompositeOperation = 'lighter';
-      var base = M * 0.07 * (1 + (0.4 * Math.max(0, m.drive.bass) * G.pulse + 0.2 * G.punch) * G.mo);
+      var base = M * 0.07
+        * (1 + (0.4 * Math.max(0, m.drive.bass) * G.pulse + 0.2 * G.punch + 0.15 * G.snap * G.flash)
+          * G.mo);
       // The flower opens as wide as the passage is loud (its auto-gained rays reached as far in a
       // quiet break as in the drop).
       var reach = M * 0.42 * (1 + 0.15 * G.spread) * (0.85 + 0.15 * pumpOf(G, a)) * (0.6 + 0.4 * G.lk);
@@ -598,8 +636,10 @@
         }
       }
       g.closePath();
-      g.strokeStyle = hsla(G.H + 35, G.S, G.L + 12, 0.45 * G.ex * dip);
-      g.lineWidth = unit;
+      // The outline glints on the hats (they drew nothing: round 2 pass 1).
+      g.strokeStyle = hsla(G.H + 35, G.S, G.L + 12 + 10 * G.shim * G.flash,
+        (0.45 + 0.4 * G.shim * G.flash) * G.ex * dip);
+      g.lineWidth = unit * (1 + 1.5 * G.shim * G.mo * G.flash);
       g.stroke();
       // The ring of notes: twelve blooms (in fifths) in every sector, as large as each sounds.
       if (!s.notes) s.notes = new Float32Array(12);
@@ -643,10 +683,20 @@
       var cy = h / 2 + Math.sin(path * 1.3 + dv * 2) * M * 0.04 * G.mo;
       var f = Math.max(w, h) * 0.5, fx = f * (1 + 0.5 * G.spread);
       var dt = G.dt;
-      var surge = 1 + (0.3 * Math.max(0, m.drive.energy) + 0.45 * Math.max(0, m.drive.level)
-        + 0.9 * G.pulse - 0.25 * G.pre) * G.mo;
-      var spd = (0.16 * q.speed * m.rate * surge + 1.1 * G.punch * G.mo) * dt * G.cap;
-      var streak = spd * (1.5 + 3 * G.ek + 5 * G.punch * G.mo);
+      var steady = 1
+        + (0.3 * Math.max(0, m.drive.energy) + 0.45 * Math.max(0, m.drive.level)) * G.mo;
+      var surge = steady + (0.9 * G.pulse - 0.25 * G.pre) * G.mo;
+      // The cruise at the tempo's pace (surging on the beat), and the rush of a big event and
+      // (about half) of a snare. A streak is light: whatever length the beat and the impulses add
+      // obeys the flash gain, and only the steady cruise's length does not. Ungoverned, the big
+      // events' streaks flashed the field 3 times a second on real music, and 5-6 at react 2 and
+      // density 2 (round 2 pass 1 and its fixes).
+      var calm = 0.16 * q.speed * m.rate * steady * dt * G.cap;
+      var cruise = 0.16 * q.speed * m.rate * surge * dt * G.cap;
+      var rush = (1.1 * G.punch + 0.6 * G.snap) * G.mo * dt * G.cap;
+      var spd = cruise + rush;
+      var streak = calm * (1.5 + 3 * G.ek) + ((cruise - calm + rush) * (1.5 + 3 * G.ek)
+        + spd * (5 * G.punch + 3 * G.snap) * G.mo) * G.flash;
       // A glow at the vanishing point, the leading note's colour, as wide and bright as the passage
       // is exposed (the field stayed near black in 63-68 % of the frames, analysis pass 3).
       var glow = g.createRadialGradient(cx, cy, 0, cx, cy, f * (0.4 + 0.35 * G.ek));
@@ -680,13 +730,14 @@
           g.lineTo(x1, y1);
         }
         var band = bandAt(a, ff * 0.9 + 0.05);
-        var twinkle = tint === 3 ? 0.35 * a.hat * k : 0;
+        // The palest far stars twinkle on the hats: one stroke in twelve, never the whole field.
+        var twinkle = tint === 3 && depth === 0 ? 0.5 * G.shim * G.flash : 0;
         // Thin strokes on black were nearly black (a median luminance of 0.003 on real music):
         // the stars widen and brighten with the exposure, the ground stays black.
         g.strokeStyle = hsle(G.H - 25 + tint * 20, G.S * (1 - ff * 0.45), G.L + 8 + ff * 16,
           (0.55 + depth * 0.25 + twinkle) * G.ex);
         g.lineWidth = (0.7 + depth * 0.9) * (1.6 - ff * 0.8) * (1 + 1.2 * Math.pow(band, 1.5) * k)
-          * (1 + 2 * G.ek) * (1 + 0.5 * G.pulse * G.mo);
+          * (1 + 2 * G.ek) * (1 + (0.5 * G.pulse * G.mo + 0.4 * G.snap) * G.flash);
         g.stroke();
       }
     }),
@@ -701,7 +752,13 @@
       var dt = G.dt;
       var dir = k > 0 && Math.floor(G.bars / 2) % 2 ? -1 : 1;
       s.dir = lerp(dir, s.dir === undefined ? 1 : s.dir, Math.exp(-dt / 0.35));
-      s.ang = (s.ang || 0) + dt * (0.15 * m.rate * G.amb + 0.8 * Math.max(0, m.drive.mid) + 1.1 * G.pulse) * s.dir * G.mo;
+      // The rings' own turn comes almost to rest in silence (a tenth of its pace, not the 0.3 that
+      // G.amb keeps): seven glowing rings turning at 0.3 moved the picture in silence nearly as
+      // much as the music did (CI, 27 fps: a cell change of 0.031 in silence, 0.038 with music).
+      // With sound, and at react 0 (G.amb 1), the pace is as it was.
+      var pace = 0.1 + 0.9 * (G.amb - 0.3) / 0.7;
+      s.ang = (s.ang || 0) + dt * (0.15 * m.rate * pace + 0.8 * Math.max(0, m.drive.mid) + 1.1 * G.pulse)
+        * s.dir * G.mo;
       // As flux: the light laid down follows the trail's clock-based fade, whatever the frame rate.
       var base = 0.55 + 0.38 * q.trails, keep = Math.pow(base, dt * 60), lay = Math.min(12, (1 - keep) / (1 - base));
       feedback(p, g, s, 1 + (0.008 * G.amb + (0.035 * Math.max(0, m.drive.bass) * G.pulse + 0.02 * G.punch) * G.mo) * G.cap,
@@ -747,17 +804,31 @@
         s.r = new Float32Array(P); s.al = new Float32Array(P); s.hu = new Float32Array(P);
         s.wd = new Float32Array(P); s.ox = new Float32Array(P); s.slot = 0; s.quiet = 1e9; s.side = 1;
       }
-      function emit(width, alpha, hue, ox) {
+      function emit(width, alpha, hue, ox, r0) {
         var i = s.slot = (s.slot + 1) % P;
-        s.r[i] = M * 0.02; s.al[i] = alpha; s.wd[i] = width; s.hu[i] = hue; s.ox[i] = ox;
+        s.r[i] = M * (r0 || 0.02); s.al[i] = alpha; s.wd[i] = width; s.hu[i] = hue; s.ox[i] = ox;
         s.quiet = 0;
       }
       if (k > 0 && a.beat) emit(2.6 + 2 * G.punch, 0.9, 0, 0);
-      if (k > 0 && onset(s, 'sn', a.snare, 0.85, a)) emit(1.2, 0.75, 1, (s.side = -s.side) * G.spread * M * 0.35);
+      // A snare's ring is born wide (a crack, not a drop) and every ring surges with it: born at
+      // the centre, its thin ring hardly changed the picture (round 2 pass 1). It is the map's
+      // snare (m.snap, which a kick's own attack does not fire), and as it is light, its alpha
+      // obeys the flash gain.
+      if (k > 0 && G.snap > (s.snapWas || 0) + 0.2 && G.flash > 0.05) {
+        emit(1.4, 0.75 * G.flash, 1, (s.side = -s.side) * G.spread * M * 0.35, 0.08);
+      }
+      // The snare also jolts the whole field sideways, alternately left and right, and lets it
+      // settle over 0.15 s: motion only (no light), which the latency test could see where the
+      // governed ring alone did not.
+      if (G.snap > (s.snapWas || 0) + 0.2) {
+        s.jolt = (s.jolt > 0 ? -1 : 1) * G.snap * M * 0.06 * G.mo;
+      }
+      s.jolt = (s.jolt || 0) * Math.exp(-dt / 0.15);
+      s.snapWas = G.snap;
       s.quiet += dt;
       if (s.quiet > 1 / q.speed) emit(2.8, 0.8, 2, 0);
       fade(g, w, h, 0.22);
-      g.translate(w / 2 + G.pan * w, h / 2);
+      g.translate(w / 2 + G.pan * w + s.jolt, h / 2);
       g.globalCompositeOperation = 'lighter';
       var maxR = Math.hypot(w, h) * 0.55;
       var seg = Math.round(40 + q.detail * 48);
@@ -765,7 +836,7 @@
       // The rings surge outwards on the beat, the kick and a big event, then coast (the beat barely
       // showed: they spread at one speed whatever the beat did).
       var grow = M * (0.2 + 0.3 * Math.max(0, m.drive.level) - 0.1 * quiet * k) * q.speed * m.rate * dt * (G.cap < 1 ? 0.35 : 1)
-        * (0.7 + (1.6 * G.pulse + 1.2 * a.kick * k + 0.6 * G.punch) * G.mo);
+        * (0.7 + (1.6 * G.pulse + 1.2 * a.kick * k + 0.6 * G.punch + 1.8 * G.snap) * G.mo);
       // The rings are as wide as the passage is exposed; the beat thickens them.
       var unit = Math.max(1, M / 600) * (0.8 + 1.3 * G.ek) * (1 + 0.6 * G.pulse * G.mo);
       var SH = [0, 6, 5], amp0 = [0, 0.05, 0.1];
@@ -785,7 +856,7 @@
           // A symmetric index into the waveform: the ring closes without a seam.
           var wi = Math.floor((0.5 - 0.5 * Math.cos(an * 2 + i)) * wl);
           var rad = s.r[i] * (1 + lobeAmp * Math.cos(an * lobes + i)) + a.wave[wi] * bend
-            + (j % 2 ? 1 : -1) * m.rough * k * unit * 2.5;
+            + (j % 2 ? 1 : -1) * (m.rough * k + 0.5 * G.shim * G.mo) * unit * 2.5;
           var x = s.ox[i] + Math.cos(an) * rad, y = Math.sin(an) * rad;
           if (j === 0) g.moveTo(x, y); else g.lineTo(x, y);
         }
@@ -801,11 +872,14 @@
         g.lineWidth = s.wd[i] * unit;
         g.stroke();
       }
-      var core = M * (0.015 + (0.05 * G.pulse + 0.012 * Math.max(0, m.drive.bass)) * G.mo);
+      var core = M
+        * (0.015 + (0.05 * G.pulse + 0.025 * G.snap * G.flash + 0.012 * Math.max(0, m.drive.bass))
+          * G.mo);
       // The pool of light the rings rise from (added each frame over trails, so a small share).
       var pr = M * (0.14 + 0.14 * G.ek);
       var pool = g.createRadialGradient(0, 0, 0, 0, 0, pr);
-      pool.addColorStop(0, hsle(G.H, G.S, G.L, (0.07 + 0.07 * G.ek + 0.05 * G.punch * G.flash) * G.ex));
+      pool.addColorStop(0, hsle(G.H, G.S, G.L,
+        (0.07 + 0.07 * G.ek + (0.05 * G.punch + 0.05 * G.snap) * G.flash) * G.ex));
       pool.addColorStop(1, 'rgba(0,0,0,0)');
       g.fillStyle = pool;
       g.fillRect(-pr, -pr, pr * 2, pr * 2);
@@ -837,16 +911,21 @@
         s.lift[i0] = lerp(target, s.lift[i0], Math.exp(-G.dt / (target > s.lift[i0] ? 0.06 : 0.35)));
       }
       var freq = lerp(5 + m.prevVariant * 4, 5 + m.variant * 4, G.mix);
-      var rise = h * (0.03 * G.pulse + 0.012 * G.punch) * G.mo;
+      // The beat lifts the curtains, a big event more, a snare a little; the hats make them
+      // shiver along their length (a hat drew nothing: round 2 pass 1).
+      var rise = h * (0.03 * G.pulse + 0.012 * G.punch + 0.012 * G.snap) * G.mo;
+      var shiver = h * 0.006 * G.shim * G.mo;
+      // The five curtains fan over a third of the wheel round the key (14 degrees apart they read
+      // as one magenta, round 2 pass 1).
       for (var r = 0; r < 5; r++) {
-        var hue = G.H + r * 14;
+        var hue = G.H - 50 + r * 25;
         for (var i = 0; i <= N; i++) {
           var f = i / N;
           s.ys[i] = h * (0.34 + r * 0.065)
             + Math.sin(f * freq + t * (0.35 + r * 0.11) + r) * h * 0.05
             + Math.sin(f * 2.3 - t * 0.21 + r * 2) * h * 0.035
             + (f - 0.5) * G.pan * h * 0.4
-            - s.lift[i] * h * 0.18 - rise;
+            - s.lift[i] * h * 0.18 - rise + Math.sin(f * 47 + r * 1.7 + G.beats * 9) * shiver;
         }
         // The ribbon as a smooth curve through the midpoints.
         g.beginPath();
@@ -881,8 +960,9 @@
         g.strokeStyle = hsla(hue, G.S, 62, (0.14 * q.glow + 0.04) * G.ex);
         g.lineWidth = 9 * unit;
         g.stroke();
-        g.strokeStyle = hsla(r === 4 ? G.A : hue, G.S, G.L + 12, (0.5 + 0.2 * Math.max(0, m.drive.level)) * G.ex);
-        g.lineWidth = 1.4 * unit;
+        g.strokeStyle = hsla(r === 4 ? G.A : hue, G.S, G.L + 12,
+          (0.5 + 0.2 * Math.max(0, m.drive.level) + 0.3 * G.shim * G.flash) * G.ex);
+        g.lineWidth = (1.4 + 1.6 * G.shim * G.mo * G.flash) * unit;
         g.stroke();
       }
     }),
@@ -909,7 +989,8 @@
       // sped the drift).
       var speed = (0.5 * m.rate + 1.3 * Math.max(0, m.drive.level) + 2.2 * G.pulse) * G.mo
         * (q.speed || 1) * G.dt * 60;
-      var push = (2.2 * G.punch + 5 * G.pulse + 4 * a.kick * k - 2.5 * G.pre) * G.mo * G.dt * 60;
+      var push = (2.2 * G.punch + 1.4 * G.snap + 5 * G.pulse + 4 * a.kick * k - 2.5 * G.pre)
+        * G.mo * G.dt * 60;
       var ts = G.beats * 0.5;
       var fq = lerp(1 + m.prevVariant, 1 + m.variant, G.mix);
       var turb = 0.6 * Math.max(0, m.drive.flux);
@@ -932,7 +1013,7 @@
           s.xy[o] = x; s.xy[o + 1] = y;
           g.rect(x, y, size, size);
         }
-        var twinkle = grp > 5 ? 0.3 * a.hat * k : 0;
+        var twinkle = grp > 5 ? 0.3 * Math.min(1, G.shim) * G.flash : 0;
         g.fillStyle = hsla(G.H - 30 + grp * 8.5, G.S * (1 - ff * 0.4), G.L + ff * 14,
           (0.48 + 0.4 * b * k + twinkle) * G.ex);
         g.fill();
@@ -952,7 +1033,8 @@
       g.globalCompositeOperation = 'lighter';
       var D = Math.hypot(w, h) * 0.55;
       var sp = M / (10 + q.detail * 18);
-      s.nudge = (s.nudge || 0) * Math.exp(-G.dt / 0.4) + G.punch * 0.02 * G.dt * 60 * G.mo;
+      s.nudge = (s.nudge || 0) * Math.exp(-G.dt / 0.4)
+        + (G.punch * 0.02 + G.snap * 0.016) * G.dt * 60 * G.mo;
       s.swing = (s.swing || 0) + G.dt * 0.25 * Math.max(0, m.drive.mid) * G.mo;
       // The grids turn as fast as the passage is loud, with a lurch on every beat: driven only by
       // the deviations (zero in a steady drop), they moved less the louder the music got. The
@@ -977,11 +1059,13 @@
       // pass 3), and a dark hue (the violets) as bright as the rest.
       var ink = (0.42 + 0.2 * G.ek) * G.ex, lw = sp * (0.16 + 0.12 * G.ek);
       lines(th, sp, hsle(G.H - 25, G.S, G.L + 4, ink), lw);
-      lines(th + 0.05 + bar + s.nudge, sp * (1 + 0.06 * Math.max(0, m.drive.bass) * G.mo),
+      lines(th + 0.05 + bar + s.nudge,
+        sp * (1 + (0.06 * Math.max(0, m.drive.bass) + 0.05 * G.snap) * G.mo),
         hsle(G.H + 25, G.S, G.L + 4, ink), lw);
       // The figure turning the other way, breathing with the mids.
       g.rotate(-th * 1.6 - s.nudge);
-      var q2 = sp * (1.15 + 0.12 * Math.max(0, m.drive.mid) * G.mo);
+      // A snare makes the figure's spacing breathe out a little (motion, not light).
+      var q2 = sp * (1.15 + (0.12 * Math.max(0, m.drive.mid) + 0.2 * G.snap) * G.mo);
       // Squares, circles (as 48-gons) or hexagons, one path.
       var fig = G.mix > 0.5 ? vary(m, 3) : varied(m, 3);
       var n = [4, 48, 6][fig], rot = n === 4 ? TAU / 8 : 0, rs = n === 4 ? Math.SQRT2 : 1;
@@ -990,7 +1074,9 @@
         g.moveTo(Math.cos(rot) * r * rs, Math.sin(rot) * r * rs);
         for (var e = 1; e <= n; e++) g.lineTo(Math.cos(rot + e * TAU / n) * r * rs, Math.sin(rot + e * TAU / n) * r * rs);
       }
-      g.strokeStyle = hsla(G.A, G.S * 0.5, 85, (0.24 + 0.2 * a.hat * k) * G.ex * (0.5 + 0.5 * Math.abs(G.mix * 2 - 1)));
+      g.strokeStyle = hsla(G.A, G.S * 0.5, 85,
+        (0.24 + 0.2 * Math.min(1, G.shim) * G.flash) * G.ex
+        * (0.5 + 0.5 * Math.abs(G.mix * 2 - 1)));
       g.lineWidth = q2 * 0.14;
       g.stroke();
       // A vignette: the interference glows in the middle and sinks into the dark at the edges.

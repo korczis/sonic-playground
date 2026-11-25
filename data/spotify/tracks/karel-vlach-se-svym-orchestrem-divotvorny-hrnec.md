@@ -6,8 +6,9 @@ artists: ["Karel Vlach se svým orchestrem"]
 album: "Ze Světa Muzikálů"
 duration: "2:33"
 spotify: {"track": "64Ea1IonwjR1NnpZVMs24a", "album": "53svWLok8HYdgVEjbYVuHQ", "artists": ["7LhVzOpBT3AWjxSIhGS3oJ"]}
-keys: {"fold": "karelvlachsesvymorchestrem|divotvornyhrnec"}
-status: "missing"
+keys: {"fold": "karelvlachsesvymorchestrem|divotvornyhrnec", "isrc": "CZA168000621"}
+review: "karel-vlach-se-svym-orchestrem-divotvorny-hrnec.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Ze Světa Muzikálů*, 2:33.
 A liked song.
-No review yet.
+Reviewed: content/karel-vlach-se-svym-orchestrem-divotvorny-hrnec.md.

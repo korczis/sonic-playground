@@ -6,8 +6,9 @@ artists: ["Moderat"]
 album: "III (Deluxe Edition)"
 duration: "3:54"
 spotify: {"track": "4NSNSGjEMy4DPPrRoTB9XP", "album": "64sE3WgwkDH8VMgIr7PhdF", "artists": ["2exkZbmNqMKnT8LRWuxWgy"]}
-keys: {"fold": "moderat|reminder"}
-status: "missing"
+keys: {"fold": "moderat|reminder", "isrc": "DEOE81610319", "musicbrainz": "0cb803ab-f761-450f-8c3e-ff5a3294bc58"}
+review: "moderat-reminder.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *III (Deluxe Edition)*, 3:54.
 A liked song.
-No review yet.
+Reviewed: content/moderat-reminder.md.

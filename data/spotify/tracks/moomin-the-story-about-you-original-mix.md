@@ -6,8 +6,9 @@ artists: ["Moomin"]
 album: "The Story About You"
 duration: "7:02"
 spotify: {"track": "05uE5vJF0tNUE1k91DAD1x", "album": "120ozXpjN4VsLf74eVQ8TO", "artists": ["5GyUtaUuEnR7uhRF3jDj4s"]}
-keys: {"fold": "moomin|thestoryaboutyou"}
-status: "missing"
+keys: {"fold": "moomin|thestoryaboutyou", "musicbrainz": "454a84c2-642f-4cb0-a603-7f5a1c1643fe"}
+review: "moomin-the-story-about-you.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *The Story About You*, 7:02.
 A liked song.
-No review yet.
+Reviewed: content/moomin-the-story-about-you.md.

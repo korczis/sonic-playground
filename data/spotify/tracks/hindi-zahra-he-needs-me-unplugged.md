@@ -6,8 +6,9 @@ artists: ["Hindi Zahra"]
 album: "Handmade (Bonus Track Version)"
 duration: "2:12"
 spotify: {"track": "3GSv19RFFcMMh89nNWBcEr", "album": "6D8piOqptylpneNaEcBiaM", "artists": ["6QncudMSOiKxYRIKRDks6S"]}
-keys: {"fold": "hindizahra|heneedsmeunplugged"}
-status: "missing"
+keys: {"fold": "hindizahra|heneedsmeunplugged", "musicbrainz": "e75cf1b2-48b2-43a1-95e6-14e5139f329a"}
+review: "hindi-zahra-he-needs-me-unplugged.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Handmade (Bonus Track Version)*, 2:12.
 A liked song.
-No review yet.
+Reviewed: content/hindi-zahra-he-needs-me-unplugged.md.

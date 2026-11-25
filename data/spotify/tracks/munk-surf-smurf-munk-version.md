@@ -7,7 +7,8 @@ album: "Surf Smurf"
 duration: "5:59"
 spotify: {"track": "2ngD7TmFBGDOYUagHOeMq0", "album": "79XH6ehMfUtAQW3vyqdxyZ", "artists": ["24iyMncLWykfuMpJZcIjgn"]}
 keys: {"fold": "munk|surfsmurfmunkversion"}
-status: "missing"
+review: "munk-surf-smurf-munk-version.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Surf Smurf*, 5:59.
 A liked song.
-No review yet.
+Reviewed: content/munk-surf-smurf-munk-version.md.

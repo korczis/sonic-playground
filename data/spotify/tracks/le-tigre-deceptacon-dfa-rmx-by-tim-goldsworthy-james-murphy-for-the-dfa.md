@@ -7,8 +7,9 @@ album: "Remix"
 duration: "6:24"
 explicit: true
 spotify: {"track": "305CEVdhAViS0CW2NCLvdR", "album": "1yCWdLfE2KQAmcdS1YJQl6", "artists": ["2n6FviARgtjjimZXu18uRM"]}
-keys: {"fold": "letigre|deceptacondfarmxbytimgoldsworthyjamesmurphyforthedfa"}
-status: "missing"
+keys: {"fold": "letigre|deceptacondfarmxbytimgoldsworthyjamesmurphyforthedfa", "musicbrainz": "4863ecfb-7d0e-4218-8b76-e7fe2764adbf"}
+review: "le-tigre-deceptacon-dfa-remix.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -17,4 +18,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Remix*, 6:24.
 A liked song.
-No review yet.
+Reviewed: content/le-tigre-deceptacon-dfa-remix.md.

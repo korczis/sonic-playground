@@ -6,8 +6,9 @@ artists: ["Maxxi Soundsystem", "Name One"]
 album: "Regrets We Have No Use For"
 duration: "7:39"
 spotify: {"track": "6uoeLqhI2ctPBLOo8kQUuv", "album": "2azvt7FKLwAJiIdkl319RU", "artists": ["4aS7S2ESEryZfhTWcSgLXk", "3v5qNc7Yg1HwuHw4SZYa0u"]}
-keys: {"fold": "maxxisoundsystem|regretswehavenousefor"}
-status: "missing"
+keys: {"fold": "maxxisoundsystem|regretswehavenousefor", "musicbrainz": "bb3c39ef-0764-444a-b7ef-19c893e00656"}
+review: "maxxi-soundsystem-regrets-we-have-no-use-for.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *Regrets We Have No Use For*, 7:39.
 A liked song.
-No review yet.
+Reviewed: content/maxxi-soundsystem-regrets-we-have-no-use-for.md.

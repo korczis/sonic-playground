@@ -6,8 +6,9 @@ artists: ["Fischerspooner"]
 album: "#1"
 duration: "5:33"
 spotify: {"track": "6SPDrjMlfCfngGdlr6OPM9", "album": "72MUV9NdRSGxBQrkZfUKvG", "artists": ["5R7K1GezC0jy24v1R2n4x3"]}
-keys: {"fold": "fischerspooner|horizon"}
-status: "missing"
+keys: {"fold": "fischerspooner|horizon", "isrc": "USFS20200013", "musicbrainz": "041799c5-69cc-42ae-b9f4-67184a953426"}
+review: "fischerspooner-horizon.md"
+status: "present"
 liked: true
 sources: ["web-player:2026-11-14"]
 ---
@@ -16,4 +17,4 @@ sources: ["web-player:2026-11-14"]
 
 From the album *#1*, 5:33.
 A liked song.
-No review yet.
+Reviewed: content/fischerspooner-horizon.md.
