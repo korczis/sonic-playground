@@ -1394,16 +1394,21 @@ async function shot(page, name) {
       return { hit, played: played.length, stray };
     };
     // The frame rate of each half, and its longest frame: a starved browser misses onsets.
+    const fpsOf = ([from, to]) => run.frames.filter((f) => f.t > from && f.t < to).length / (to - from);
     const pace = ([from, to]) => {
       const ts = run.frames.map((f) => f.t).filter((t) => t > from && t < to);
       const gap = ts.slice(1).reduce((m, t, i) => Math.max(m, t - ts[i]), 0);
-      return `${Math.round(ts.length / (to - from))} fps, longest frame ${Math.round(gap * 1000)} ms`;
+      return `${Math.round(fpsOf([from, to]))} fps, longest frame ${Math.round(gap * 1000)} ms`;
     };
+    // Below 30 fps the frame-sampled analysis loses onsets (a snare's rise falls between frames):
+    // production's verify read 3 of 6 snares at 23 fps (run 46176620990) where CI read 6 of 6 at
+    // 32. As the other frame-rate bound checks, such a half is reported and not judged.
     ['loud', 'quiet'].forEach((label, h) => {
       const s = { kick: score('kick', halves[h]), snare: score('snare', halves[h]), hat: score('hat', halves[h]) };
       const good = (x) => x.played > 0 && x.hit >= x.played * 0.6 && x.stray <= Math.max(1, x.hit * 0.2);
-      check(good(s.kick) && good(s.snare) && good(s.hat),
-        `visualiser: a mastered mix (${label}): its kicks, snares and hats are found where they were played (${JSON.stringify(s)}; ${pace(halves[h])})`);
+      const said = `visualiser: a mastered mix (${label}): its kicks, snares and hats are found where they were played (${JSON.stringify(s)}; ${pace(halves[h])})`;
+      if (fpsOf(halves[h]) >= 30) check(good(s.kick) && good(s.snare) && good(s.hat), said);
+      else console.log(`note ${said}: not judged below 30 fps`);
     });
     const bpm = run.frames[run.frames.length - 1].bpm;
     check(bpm >= 121 && bpm <= 127, `visualiser: a mastered mix at 124 bpm reads as ${bpm} bpm`);
