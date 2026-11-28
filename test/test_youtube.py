@@ -8,6 +8,7 @@ test/fixtures/youtube/ holds small saved pages (the embedded JSON trimmed to wha
 read, stream addresses dropped), indexed by the module's own URL builders in index.json. No test
 here reaches the network: the transport is exercised against a fake urlopen.
 """
+import http.client
 import importlib.util
 import io
 import json
@@ -28,6 +29,19 @@ assert spec is not None and spec.loader is not None
 yt: Any = importlib.util.module_from_spec(spec)
 sys.modules["youtube"] = yt
 spec.loader.exec_module(yt)
+
+
+def section(items: list) -> dict:
+    """A search page's ytInitialData with one result section holding items."""
+    return {"contents": {"sectionListRenderer": {"contents": [
+        {"itemSectionRenderer": {"contents": items}}]}}}
+
+
+def search_page(data: dict) -> str:
+    return "<script>var ytInitialData = " + json.dumps(data) + ";</script>"
+
+
+NO_RESULTS = section([{"backgroundPromoRenderer": {"title": {"runs": [{"text": "No results found"}]}}}])
 
 
 def player_page(player: dict) -> str:
@@ -116,15 +130,26 @@ class Parsers(unittest.TestCase):
                          {"a": 1})
 
     def test_search_skips_repeats_and_malformed_shorts(self):
-        data = {"a": [{"videoRenderer": {"videoId": "abcdefghijk", "title": {"runs": [{"text": "x"}]}}},
-                      {"videoRenderer": {"videoId": "abcdefghijk"}},
-                      {"videoRenderer": {}},
-                      {"shortsLockupViewModel": {"entityId": "shorts-shelf-item-abcdefghijk"}},
-                      {"shortsLockupViewModel": {"entityId": "shorts-shelf-item-bad"}},
-                      {"shortsLockupViewModel": {"entityId": "shorts-shelf-item-bcdefghijkl"}}]}
-        found = yt.parse_search("var ytInitialData = " + json.dumps(data) + ";")
+        data = section([{"videoRenderer": {"videoId": "abcdefghijk", "title": {"runs": [{"text": "x"}]}}},
+                        {"videoRenderer": {"videoId": "abcdefghijk"}},
+                        {"videoRenderer": {}},
+                        {"shortsLockupViewModel": {"entityId": "shorts-shelf-item-abcdefghijk"}},
+                        {"shortsLockupViewModel": {"entityId": "shorts-shelf-item-bad"}},
+                        {"shortsLockupViewModel": {"entityId": "shorts-shelf-item-bcdefghijkl"}}])
+        found = yt.parse_search(search_page(data))
         self.assertEqual([r["id"] for r in found], ["abcdefghijk", "bcdefghijkl"])
         self.assertEqual(found[0]["channel"], "")
+
+    def test_a_layout_the_parser_does_not_know_is_an_error_not_no_results(self):
+        # 2026-11-28 review: a page of lockupViewModel items read as "no versions", cached forever.
+        self.assertEqual(yt.parse_search(search_page(NO_RESULTS)), [])
+        self.assertEqual(self.client.search("MAINVIBE Lauter remix"), [])  # the saved empty page
+        with self.assertRaisesRegex(yt.YouTubeError, "no result sections"):
+            yt.parse_search(search_page({"contents": {}}))
+        with self.assertRaisesRegex(yt.YouTubeError, r"known renderer \(lockupViewModel\)"):
+            yt.parse_search(search_page(section([{"lockupViewModel": {"contentId": "x"}}])))
+        with self.assertRaisesRegex(yt.YouTubeError, r"\(no items\)"):
+            yt.parse_search(search_page(section(["not an item"])))
 
     def test_small_parsers(self):
         self.assertEqual(yt.views("No views"), 0)
@@ -176,6 +201,19 @@ class Transport(unittest.TestCase):
         self.assertEqual(calls[0].get_header("Accept-language"), "en")
         self.assertTrue(self.sleep.called)
 
+    def test_dropped_connections_and_truncated_bodies_are_retried(self):
+        failures = [http.client.RemoteDisconnected("closed"), ConnectionResetError("reset"),
+                    http.client.IncompleteRead(b"<html")]
+
+        def urlopen(request, timeout):
+            if failures:
+                raise failures.pop(0)
+            return Response(b"<html>ok</html>")
+
+        with mock.patch.object(yt.urllib.request, "urlopen", urlopen):
+            self.assertEqual(yt.get(yt.search_url("x")), "<html>ok</html>")
+        self.assertEqual(failures, [])
+
     def test_a_client_error_is_not_retried_and_a_dead_service_gives_up(self):
         with mock.patch.object(yt.urllib.request, "urlopen", side_effect=http_error(404)) as op:
             with self.assertRaisesRegex(yt.YouTubeError, "HTTP 404"):
@@ -208,6 +246,19 @@ class Cache(unittest.TestCase):
                 self.assertIsNone(second.fetched_at(yt.watch_url("zzzzzzzzzzz")))
                 yt.YouTube(cache=file, refresh=True).watch("DgC7FGgsm4A")
                 self.assertEqual(get.call_count, 2)
+
+    def test_an_empty_search_is_never_cached(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            file = Path(tmp) / "youtube.json"
+            url = yt.search_url("nothing")
+            file.write_text(json.dumps({url: {"at": 1, "data": []}}), encoding="utf-8")
+            with mock.patch.object(yt, "get", return_value=search_page(NO_RESULTS)) as get:
+                client = yt.YouTube(cache=file)
+                self.assertEqual(client.search("nothing"), [])  # the cached [] is read again
+                self.assertEqual(client.search("nothing"), [])  # and not remembered either
+                self.assertEqual(get.call_count, 2)
+            self.assertEqual(json.loads(file.read_text(encoding="utf-8"))[url]["data"], [])
+            self.assertNotIn(url, client.seen)
 
     def test_an_unreadable_cache_is_empty(self):
         with tempfile.TemporaryDirectory() as tmp:

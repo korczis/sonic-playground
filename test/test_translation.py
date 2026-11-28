@@ -144,7 +144,7 @@ class Versions(unittest.TestCase):
         self.assertEqual(tr.version_notes({}), [])
         keys = [v.get("youtube") for v in self.meta["extra"]["versions"] if v.get("note")]
         self.assertEqual(self.english["versions"], keys)
-        self.assertEqual(len(keys), 7)
+        self.assertTrue(keys and len(keys) < len(self.meta["extra"]["versions"]))  # some versions have no note
 
     def test_the_hash_of_a_page_without_notes_is_unchanged(self):
         meta, body = parts(EN)

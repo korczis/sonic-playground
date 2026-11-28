@@ -378,10 +378,10 @@ class VersionsDiscovery(VersionsPage):
 
     def test_a_result_only_its_description_ties_to_the_song_is_left_out(self):
         # A search snippet may name the song (so the result is read), the video itself not.
-        search = {"a": [{"videoRenderer": {
+        search = {"contents": {"itemSectionRenderer": {"contents": [{"videoRenderer": {
             "videoId": "abcdefghijk", "title": {"runs": [{"text": "MAINVIBE - Blumenkorb"}]},
             "ownerText": {"runs": [{"text": "MAINVIBE"}]},
-            "detailedMetadataSnippets": [{"snippetText": {"runs": [{"text": "after Lauter"}]}}]}}]}
+            "detailedMetadataSnippets": [{"snippetText": {"runs": [{"text": "after Lauter"}]}}]}}]}}}
         watch = {"videoDetails": {"videoId": "abcdefghijk", "title": "MAINVIBE - Blumenkorb",
                                   "author": "MAINVIBE", "lengthSeconds": "155"}}
         with tempfile.TemporaryDirectory() as tmp:
@@ -398,6 +398,25 @@ class VersionsDiscovery(VersionsPage):
         self.assertEqual(report["candidates"], [])
         self.assertEqual(report["rejected"], {"only the description names the song": 1})
         self.assertEqual(sorted(report["listed_not_found"]), ["DgC7FGgsm4A", "WaxPYwst85k"])
+
+    def test_searches_that_give_nothing_exit_4(self):
+        # Every query failed or found nothing: no evidence about the song's versions, not "none".
+        with tempfile.TemporaryDirectory() as tmp:
+            empty = (Path(YT_FIXTURE) / "search-empty.html").read_text(encoding="utf-8")
+            (Path(tmp) / "empty.html").write_text(empty, encoding="utf-8")
+            index = {track.yt.search_url("MAINVIBE Lauter"): "empty.html"}
+            (Path(tmp) / "index.json").write_text(json.dumps(index), encoding="utf-8")
+            code, report, err = self.versions(youtube_fixture=tmp)
+            self.assertEqual(code, 4)
+            self.assertEqual(report["candidates"], [])
+            self.assertIn("6 of 7 queries failed", err)
+            self.assertIn("first error: not in the fixture", err)
+            index = {track.yt.search_url(q): "empty.html"
+                     for q in track.version_queries("MAINVIBE", "Lauter", [])}
+            (Path(tmp) / "index.json").write_text(json.dumps(index), encoding="utf-8")
+            code, _, err = self.versions(youtube_fixture=tmp)
+            self.assertEqual(code, 4)
+            self.assertIn("0 of 7 queries failed, the rest returned no results", err)
 
     def test_the_human_report(self):
         text = VERSIONS_PAGE.replace('title = "Lauter"\nby', 'title = "Lauter (old)"\nby')
@@ -453,6 +472,16 @@ class VersionsWrite(VersionsPage):
         self.assertEqual(code, 0, result)
         added = result["added"][0]
         self.assertEqual((added["kind"], added["by"], added["duration"]), ("remix", "Andy Sossna", "3:22"))
+
+    def test_a_video_youtube_does_not_play_is_not_written(self):
+        gone = {"id": "LFZDZ8d-NFo", "title": "Lauter - (MAINVIBE) Andy Sossna Remix", "author": "Andy Sossna",
+                "channel_id": "", "seconds": 202, "duration": "3:22", "facts": {}, "publish_date": "",
+                "playable": False, "reason": "Video unavailable", "views": None, "short": False}
+        with unittest.mock.patch.object(track, "discover", return_value={"candidates": []}), \
+                unittest.mock.patch.object(track.yt.YouTube, "watch", return_value=gone):
+            code, result, _ = self.versions(write=True, pick=["LFZDZ8d-NFo"])
+        self.assertEqual(code, 1, result)
+        self.assertIn("does not play it (Video unavailable)", " ".join(result["errors"]))
 
     def test_refusals_write_nothing(self):
         before = self.page.read_text(encoding="utf-8")
@@ -513,6 +542,31 @@ class VersionsVerify(VersionsPage):
         self.assertEqual(fields, [("DgC7FGgsm4A", "date"), ("DgC7FGgsm4A", "duration"),
                                   ("WaxPYwst85k", "by"), ("zzzzzzzzzzz", "available")])
         self.assertIn("YouTube says", err)
+
+    def test_a_listed_id_that_is_no_video_id_is_a_difference(self):
+        self.page.write_text(VERSIONS_PAGE.replace('youtube = "WaxPYwst85k"', 'youtube = "not an id"'),
+                             encoding="utf-8")
+        code, report, _ = self.versions(verify=True)
+        self.assertEqual(code, 1)
+        diff = report["verified"][0]["diffs"][0]
+        self.assertEqual((diff["youtube"], diff["field"]), ("not an id", "available"))
+        self.assertIn("not a YouTube video id", diff["youtube_says"])
+
+    def test_a_review_that_does_not_load_fails_the_verification(self):
+        # 2026-11-28 review: a broken front matter was skipped and the run reported 0 diffs.
+        broken = self.page.with_name("broken-page.md")
+        broken.write_text("+++\ntitle = \n+++\n", encoding="utf-8")
+        code, report, err = run_quiet(track.versions, versions_args(verify=True, all=True))
+        self.assertEqual(code, 1)
+        self.assertEqual((report["diffs"], report["failures"]), (0, 1))
+        self.assertEqual(report["unloadable"][0]["file"], "content/broken-page.md")
+        self.assertIn("does not load, not verified", err)
+        code, report, _ = run_quiet(track.versions, versions_args(verify=True, file=str(broken)))
+        self.assertEqual(code, 1)
+        self.assertTrue(report["unloadable"][0]["errors"])
+        with unittest.mock.patch.object(track.cat, "load_track", return_value=None):
+            code, report, _ = run_quiet(track.versions, versions_args(verify=True, file=str(broken)))
+        self.assertEqual(report["unloadable"][0]["errors"], ["the review does not load"])
 
     def test_an_unplayable_video_is_a_difference(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -42,7 +42,7 @@ the track and replaces every TODO(write); `check` then proves the article meets 
   --oembed-fixture <file.json> answers oEmbed from a file ({"<video id>": {"title", "author_name"}})
 
 Every command prints JSON. Exit codes: 0 ok, 1 contract violation or unfinished article,
-2 usage, 3 the track exists.
+2 usage, 3 the track exists, 4 YouTube's search gave nothing (versions).
 """
 from __future__ import annotations
 
@@ -1314,6 +1314,8 @@ def version_candidate(found: dict, watch: dict | None, t, own_channel: str,
         "date_source": ("the description's Released on" if facts.get("released") else
                         f"the upload time in {country or 'UTC'}" if published else ""),
         "credits": facts.get("credits", []),
+        "playable": w.get("playable") if watch is not None else None,
+        "unplayable_reason": w.get("reason") or "",
         "views": {"count": count, "as_of": date.fromtimestamp(fetched).isoformat()
                   if fetched else date.today().isoformat(),
                   "note": "a snapshot of YouTube's counter, not a fact for the page"},
@@ -1462,6 +1464,10 @@ def pick_versions(t, file: Path, picks: list[str], report: dict, client) -> tupl
             c = version_candidate({"id": video, "title": "", "channel": "", "channel_id": "",
                                    "duration": "", "format": "video"}, watch, t,
                                   own_channel_of(t, client), None)
+        if c.get("playable") is False:
+            problems.append(f"{video}: YouTube does not play it ({c.get('unplayable_reason') or 'not playable'}); "
+                            "a version is listed only while it can be played")
+            continue
         kind = kind or c["suggested_kind"]
         if kind not in VERSION_KINDS:
             problems.append(f"{video}: kind {kind or '(none suggested)'} is not one of "
@@ -1491,7 +1497,7 @@ def verify_versions(t, client) -> dict:
         checked += 1
         try:
             w = client.watch(video)
-        except yt.YouTubeError as exc:
+        except (yt.YouTubeError, ValueError) as exc:  # ValueError: not a video id at all
             diffs.append({"youtube": video, "field": "available", "listed": True,
                           "youtube_says": str(exc)})
             continue
@@ -1545,19 +1551,26 @@ def versions(args) -> int:
     if args.write and not args.pick:
         fail("--write needs --pick ID[:kind] for each version to append")
     if args.verify:
-        reports = []
+        reports, unloadable = [], []
         for file in files:
             errors: list[str] = []
             t = cat.load_track(file, errors, include_drafts=True)
-            if t and listed_versions(t):
+            if t is None:
+                # A review that does not load cannot be verified: a failure, never a pass.
+                unloadable.append({"file": f"content/{file.name}",
+                                   "errors": errors or ["the review does not load"]})
+            elif listed_versions(t):
                 reports.append(verify_versions(t, client))
         total = sum(len(r["diffs"]) for r in reports)
-        out({"verified": reports, "diffs": total})
+        out({"verified": reports, "unloadable": unloadable, "diffs": total,
+             "failures": total + len(unloadable)})
+        for u in unloadable:
+            say("versions", u["file"], "does not load, not verified: " + "; ".join(u["errors"]))
         for r in reports:
             for d in r["diffs"]:
                 say("versions", r["file"], f"{d['youtube']} {d['field']}: listed "
                     f"{d['listed']!r}, YouTube says {d['youtube_says']!r}")
-        return 1 if total else 0
+        return 1 if total or unloadable else 0
     file = files[0]
     errors = []
     t = cat.load_track(file, errors, include_drafts=True)
@@ -1572,6 +1585,13 @@ def versions(args) -> int:
         out(report)
     else:
         print_versions(report)
+    if not any(q.get("results") for q in report["queries"]):
+        # Every search failed or came back empty: that says nothing about the song's versions.
+        failed = [q for q in report["queries"] if "error" in q]
+        say("versions", report["file"], f"YouTube's search gave nothing: {len(failed)} of "
+            f"{len(report['queries'])} queries failed, the rest returned no results"
+            + (f" (first error: {failed[0]['error']})" if failed else ""))
+        return 4
     return 0
 
 

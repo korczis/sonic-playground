@@ -27,6 +27,7 @@ repository) holds each page's parsed data with the time it was fetched.
 """
 from __future__ import annotations
 
+import http.client
 import json
 import os
 import re
@@ -125,12 +126,35 @@ def mmss(seconds: int) -> str:
             else f"{rest // 60}:{rest % 60:02d}")
 
 
+def result_items(data: dict) -> list[dict]:
+    """The items of a search page's result sections. A page without the sections is not a
+    search result YouTube still lays out as this parser knows: an error, never "no results"."""
+    sections = list(walk(data, "itemSectionRenderer"))
+    if not sections:
+        raise YouTubeError("the search page has no result sections (itemSectionRenderer): "
+                           "YouTube changed its layout?")
+    return [i for sec in sections if isinstance(sec, dict)
+            for i in sec.get("contents") or [] if isinstance(i, dict)]
+
+
 def parse_search(html: str) -> list[dict]:
-    """The videos and shorts of a search page, in the page's order, each id once."""
+    """The videos and shorts of a search page, in the page's order, each id once. An honest
+    "No results" page is []; a page whose items are none of the renderers read here
+    (videoRenderer, a shelf of shortsLockupViewModel) is an error, so a change of YouTube's
+    layout never reads as a song without versions."""
     data = embedded(html, "ytInitialData")
     if data is None:
         raise YouTubeError("no ytInitialData in the search page" + (
             " (a consent wall)" if "consent.youtube.com" in html else ""))
+    items = result_items(data)
+    if any("backgroundPromoRenderer" in i for i in items):
+        return []  # YouTube's own "No results found"
+    known = [i for i in items
+             if "videoRenderer" in i or next(walk(i, "shortsLockupViewModel"), None) is not None]
+    if not known:
+        kinds = sorted({k for i in items for k in i})
+        raise YouTubeError("none of the search page's items is a known renderer ("
+                           + (", ".join(kinds) or "no items") + "): YouTube changed its layout?")
     found: dict[str, dict] = {}
     for vr in walk(data, "videoRenderer"):
         video = vr.get("videoId")
@@ -277,7 +301,9 @@ def get(url: str) -> str:
             if exc.code != 429 and exc.code < 500:
                 raise YouTubeError(f"HTTP {exc.code} for {url}") from exc
             last = exc
-        except (urllib.error.URLError, TimeoutError) as exc:
+        except (urllib.error.URLError, TimeoutError, OSError, http.client.HTTPException) as exc:
+            # A dropped connection (RemoteDisconnected, ConnectionResetError) or a truncated
+            # body (IncompleteRead) is as passing as a timeout: retried like one.
             _last[0] = time.monotonic()
             last = exc
         if attempt < ATTEMPTS - 1:
@@ -338,21 +364,25 @@ class YouTube:
         hit = self.cache().get(url)
         return hit.get("at") if isinstance(hit, dict) else None
 
-    def cached(self, url: str, parse):
-        """A page's data: read once per instance; from the cache unless refresh or a fixture."""
+    def cached(self, url: str, parse, keep=lambda data: True):
+        """A page's data: read once per instance; from the cache unless refresh or a fixture.
+        Data keep() refuses (an empty search) is neither remembered nor cached, and a cached
+        copy of it is read again: an empty answer may be YouTube's passing failure."""
         if url in self.seen:
             return self.seen[url]
         hit = None if self.refresh or self.fixture else self.cache().get(url)
-        if isinstance(hit, dict) and "data" in hit:
+        if isinstance(hit, dict) and "data" in hit and keep(hit["data"]):
             data = hit["data"]
         else:
             data = parse(self.page(url))
+            if not keep(data):
+                return data
             self.store(url, data)
         self.seen[url] = data
         return data
 
     def search(self, query: str) -> list[dict]:
-        return self.cached(search_url(query), parse_search)
+        return self.cached(search_url(query), parse_search, keep=bool)
 
     def watch(self, video: str) -> dict:
         if not re.fullmatch(r"[A-Za-z0-9_-]{11}", video):
