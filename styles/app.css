@@ -132,12 +132,15 @@ html[data-player-panel-state="shown"] body.has-player #main-content {
   pointer-events: none;
 }
 
-/* A card's play button is a pause button while its track plays. */
+/* A card's play button is a pause button while its track plays (a version's too). */
 [data-play] [data-icon-pause],
-html[data-player-state="playing"] [data-now-playing] [data-play] [data-icon-play] {
+[data-play-video] [data-icon-pause],
+html[data-player-state="playing"] [data-now-playing] [data-play] [data-icon-play],
+html[data-player-state="playing"] [data-now-playing] [data-play-video] [data-icon-play] {
   display: none;
 }
-html[data-player-state="playing"] [data-now-playing] [data-play] [data-icon-pause] {
+html[data-player-state="playing"] [data-now-playing] [data-play] [data-icon-pause],
+html[data-player-state="playing"] [data-now-playing] [data-play-video] [data-icon-pause] {
   display: inline-flex;
 }
 

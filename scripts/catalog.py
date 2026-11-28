@@ -133,6 +133,7 @@ WATCH_LINK = re.compile(r"\]\(https://(?:www\.)?(?:youtube\.com/(?:watch\?v=|sho
 # The kinds of extra.versions that come from the artist (and their label); the rest are what
 # others made of the song. The page shows the two groups apart.
 ARTIST_KINDS = ("official-video", "original", "self-release", "licensed-release", "official-remix")
+DURATION = re.compile(r"^(\d+:[0-5]\d|\d{1,2}):[0-5]\d$")  # data/track.schema.json versions[].duration
 VERSION_FIELDS = ("kind", "title", "by", "youtube", "url", "format", "duration", "date", "rights",
                   "note", "review", "source")
 # A single letter other than "a"/"I" at the end of a line, the word going on on the next line:
@@ -951,6 +952,11 @@ def version_problems(versions: list, own: str | None, body: str) -> list[str]:
         elif key in keys:
             problems.append(f"extra.versions[{i}] lists {key} a second time")
         keys.append(key)
+        if v.get("date"):
+            try:
+                date.fromisoformat(str(v["date"]))
+            except ValueError:
+                problems.append(f"extra.versions[{i}] date {v['date']} is not a calendar date")
         if v.get("review") and not review_exists(str(v["review"])):
             problems.append(f"extra.versions[{i}] names the review {v['review']}, which does not exist")
     if keys and own and own not in keys:
@@ -991,15 +997,19 @@ def seconds(duration: str) -> int:
 
 def versions_of(t: Track) -> list[dict]:
     """The catalogue's view of a review's versions, in the author's order: the authored fields,
-    the group (the artist's own or others'), where to watch, the length in seconds, and whether
+    the group (the artist's own, by kind or by credit, or others'), where to watch, the length in seconds, and whether
     it is this page's own video or one YouTube no longer serves."""
     out = []
     for v in t.full_extra.get("versions") or []:
+        if not isinstance(v, dict):
+            continue  # the schema has refused it; the catalogue does not crash on it
         entry = {k: v[k] for k in VERSION_FIELDS if k in v}
         video = v.get("youtube")
-        entry["group"] = "artist" if v["kind"] in ARTIST_KINDS else "others"
+        # The artist's own: an official kind, or anything the artist made (a short, a live take).
+        mine = v.get("kind") in ARTIST_KINDS or (bool(t.artist) and fold(str(v.get("by", ""))) == fold(t.artist))
+        entry["group"] = "artist" if mine else "others"
         entry["watch"] = v.get("url") or f"https://www.youtube.com/watch?v={video}"
-        if v.get("duration"):
+        if DURATION.match(str(v.get("duration", ""))):
             entry["seconds"] = seconds(v["duration"])
         if video and video in GONE_VIDEOS:
             entry["gone"] = True
@@ -1380,7 +1390,7 @@ def play_track(t: dict) -> dict:
     out["related"] = [{"source": r["source"]} for r in t.get("related", [])]
     out["i18n"] = {lang: {"path": v.get("path")} for lang, v in (t.get("i18n") or {}).items()}
     # The versions the player can queue after the page's own video: playable, not gone.
-    playable = [{"youtube": v["youtube"], "track": v["title"], "artist": v["by"]}
+    playable = [{"youtube": v["youtube"], "track": v.get("title", ""), "artist": v.get("by", "")}
                 for v in t.get("versions") or [] if v.get("youtube") and not v.get("gone") and not v.get("this_page")]
     if playable:
         out["versions"] = playable

@@ -66,6 +66,10 @@ DYNAMIC = {
     "track.credits.": list(EXTRA["credits"]["properties"]),
     "learn.level.": EXTRA["learning"]["properties"]["level"]["enum"],
     "learn.kind.": EXTRA["sources"]["items"]["properties"]["kind"]["enum"],
+    # A song's versions (templates/components.html versions): kind and format from the contract.
+    "versions.kind.": EXTRA["versions"]["items"]["properties"]["kind"]["enum"],
+    "versions.format.": EXTRA["versions"]["items"]["properties"]["format"]["enum"],
+    "versions.group.": ["artist", "others"], "versions.": ["open", "open_youtube"],
     "menu.": [m["key"].split(".", 1)[1] for m in tomllib.loads(
         (ROOT / "config.toml").read_text(encoding="utf-8"))["extra"]["menu"]],
     "player.": ["play", "pause"],

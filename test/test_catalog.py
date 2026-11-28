@@ -518,6 +518,7 @@ class Versions(unittest.TestCase):
         for broken, where in ((OWN.replace('"official-video"', '"bootleg"'), "extra.versions[0].kind"),
                               (OWN.replace('"rVeMiVU77wo"', '"rVeMiVU77"'), "extra.versions[0].youtube"),
                               (OWN.replace('"3:10"', '"3m10"'), "extra.versions[0].duration"),
+                              (OWN.replace('"3:10"', '"2:99"'), "extra.versions[0].duration"),
                               (OWN.replace('"2016-01-29"', '"29.1.2016"'), "extra.versions[0].date"),
                               (OWN.replace('format = "video"', 'format = "vinyl"'), "extra.versions[0].format"),
                               (OWN.replace(', by = "Bakermat"', ""), "extra.versions[0]"),
@@ -534,6 +535,28 @@ class Versions(unittest.TestCase):
         self.assertEqual([p for p in problems if "a second time" in p],
                          ["extra.versions[2] lists AAAAAAAAAAA a second time"])
         self.assertEqual(catalog.version_problems(["not a table"], None, ""), [])
+
+    def test_a_broken_version_is_reported_not_crashed_on(self):
+        _, errors = self.load(OWN.replace('kind = "official-video", ', "").replace('"3:10"', '"3:4x"'))
+        self.assertTrue(any("kind" in e for e in errors), errors)
+        t = catalog.Track.__new__(catalog.Track)
+        t.full_extra = {"versions": [{"title": "T", "by": "B", "youtube": "AAAAAAAAAAA", "duration": "3:4x"},
+                                     "not a table"]}
+        t.youtube_id = None
+        t.artist = "B"
+        self.assertEqual(catalog.versions_of(t)[0]["group"], "artist")
+        t.artist = ""
+        view = catalog.versions_of(t)
+        self.assertEqual(len(view), 1)
+        self.assertEqual(view[0]["group"], "others")
+        self.assertNotIn("seconds", view[0])
+        played = catalog.play_track({"versions": [{"youtube": "AAAAAAAAAAA"}]})
+        self.assertEqual(played["versions"], [{"youtube": "AAAAAAAAAAA", "track": "", "artist": ""}])
+
+    def test_a_version_date_is_a_calendar_date(self):
+        problems = catalog.version_problems([{"youtube": "AAAAAAAAAAA", "date": "2026-02-31"}], None, "")
+        self.assertEqual(problems, ["extra.versions[0] date 2026-02-31 is not a calendar date"])
+        self.assertEqual(catalog.version_problems([{"youtube": "AAAAAAAAAAA", "date": "2026-02-28"}], None, ""), [])
 
     def test_the_pages_own_video_is_among_its_versions(self):
         problems = catalog.version_problems([{"youtube": "AAAAAAAAAAA"}], "rVeMiVU77wo", "")
@@ -590,7 +613,7 @@ class Versions(unittest.TestCase):
         old = catalog.GONE_VIDEOS
         catalog.GONE_VIDEOS = {"CCCCCCCCCCC": "2026-11-01"}
         self.addCleanup(setattr, catalog, "GONE_VIDEOS", old)
-        t = SimpleNamespace(youtube_id="AAAAAAAAAAA", full_extra={"versions": [
+        t = SimpleNamespace(youtube_id="AAAAAAAAAAA", artist="Artist", full_extra={"versions": [
             {"kind": "official-video", "title": "Own", "by": "Artist", "youtube": "AAAAAAAAAAA",
              "duration": "2:45", "note": "The official video, as posted."},
             {"kind": "remix", "title": "Gone Remix", "by": "Other", "youtube": "CCCCCCCCCCC"},
@@ -608,7 +631,7 @@ class Versions(unittest.TestCase):
         self.assertEqual((cover["group"], cover["watch"], "unknown" in cover, "gone" in cover),
                          ("others", "https://example.org/cover", False, False))
         self.assertEqual((topic["group"], "gone" in topic, "this_page" in topic), ("artist", False, False))
-        self.assertEqual(catalog.versions_of(SimpleNamespace(youtube_id=None, full_extra={})), [])
+        self.assertEqual(catalog.versions_of(SimpleNamespace(youtube_id=None, artist="", full_extra={})), [])
 
     def test_the_player_queues_only_playable_other_versions(self):
         base = {"source": "a.md", "path": "a/", "artist": "Artist", "track": "Song",

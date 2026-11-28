@@ -304,7 +304,8 @@
        },
        "duration": {
         "type": "string",
-        "pattern": "^(\\d+:)?\\d{1,2}:\\d{2}$"
+        "pattern": "^(\\d+:[0-5]\\d|\\d{1,2}):[0-5]\\d$",
+        "description": "m:ss, or h:mm:ss for a long mix."
        },
        "date": {
         "type": "string",

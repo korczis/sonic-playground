@@ -9,7 +9,10 @@
 //   [data-queue="<source>"]             toggle: add to the end of the queue / take it out again
 //   [data-play-radio="<source>"]        replace the queue: this track, its related tracks, theirs
 //   [data-play-all="<container id>"]    replace the queue: every visible track of that container
-//   [data-play-video="<id>"]            play a video that is not a catalogue track (in a review)
+//   [data-play-video="<id>"]            play a video that is not a catalogue track (in a review);
+//     data-play-title and data-play-by name it in the bar, and with data-play-of="<source>" (a
+//     version of that review) the bar's title opens that review instead of YouTube
+//   [data-play-versions="<source>"]     replace the queue: that review's video, then its versions
 //   [data-seek="<source>" data-seek-at="m:ss"]  the listening guide: play that track from that time
 //
 // The bar: previous (restarts a track past 3 s), play/pause, next (skip), repeat (off, all, one),
@@ -141,6 +144,18 @@
       youtube: t.youtube, thumbnail: t.youtube ? 'https://i.ytimg.com/vi/' + t.youtube + '/mqdefault.jpg' : '' };
   }
   function upcoming() { return Math.max(0, state.queue.length - state.index - 1); }
+  /** A version of a review (extra.versions): a loose video, so its key is yt:<id> and its row is
+   *  ringed while it plays, whose title in the bar opens the review it belongs to. */
+  function version(id, title, by, of) {
+    return { youtube: id, track: title || Sonic.t('player.video'), artist: by || '',
+      path: of ? of.path : '', i18n: of ? of.i18n : {} };
+  }
+  /** A review's playable versions, in the author's order: never its own video or a gone one. The
+   *  play index lists only those; the catalogue (when it is already here) lists every one. */
+  function versionsOf(t) {
+    return ((t && t.versions) || []).filter(function (v) { return v.youtube && !v.gone && !v.this_page; })
+      .map(function (v) { return version(v.youtube, v.track || v.title, v.artist || v.by, t); });
+  }
   // Every interface string is written as Sonic.t('<key>') with a literal key, so scripts/i18n.py
   // proves each one exists in every locale.
   function repeatLabel() {
@@ -771,7 +786,8 @@
   document.addEventListener('click', function (event) {
     var origin = /** @type {Element} */ (event.target);
     var target = /** @type {HTMLElement | null} */ (origin.closest && origin.closest(
-      '[data-play],[data-play-next],[data-queue],[data-play-radio],[data-play-all],[data-play-video],[data-seek],'
+      '[data-play],[data-play-next],[data-queue],[data-play-radio],[data-play-all],[data-play-video],'
+      + '[data-play-versions],[data-seek],'
       + '[data-player-jump],[data-player-remove],[data-player-up],[data-player-down],[data-player-undo]'));
     if (!target) return;
     event.preventDefault();
@@ -785,16 +801,19 @@
     if (d.playerRemove) { remove(Number(d.playerRemove)); return; }
     if (d.playerUp) { move(Number(d.playerUp), -1); return; }
     if (d.playerDown) { move(Number(d.playerDown), 1); return; }
-    if (d.playVideo) {
-      playNow({ youtube: d.playVideo, track: d.playTitle || Sonic.t('player.video'), artist: '' });
-      return;
-    }
+    if (d.playVideo && !d.playOf) { playNow(version(d.playVideo, d.playTitle, d.playBy, null)); return; }
     var epoch = closeEpoch;
     Sonic.playIndex().then(function (c) {
       if (epoch !== closeEpoch) return; // closed while the index was on its way
       var bySource = {};
       c.tracks.forEach(function (t) { bySource[t.source] = t; });
       if (d.seek) { seekTrack(bySource[d.seek], d.seekAt || '0:00'); return; }
+      if (d.playVideo) { playNow(version(d.playVideo, d.playTitle, d.playBy, bySource[d.playOf])); return; }
+      if (d.playVersions) {
+        var own = bySource[d.playVersions];
+        if (own) playList([own].concat(versionsOf(own)), 0);
+        return;
+      }
       if (d.play) { playNow(bySource[d.play]); return; }
       if (d.playNext) { playNext(bySource[d.playNext]); return; }
       if (d.queue) { toggleQueued(bySource[d.queue]); return; }

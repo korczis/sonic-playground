@@ -38,15 +38,15 @@
           parts of the educational article the page has; derived, never written. -#}
       {%- set has_learn = track and page.extra.learning %}
       {%- set has_questions = has_learn and page.extra.learning.questions %}
-      {%- set extras = [has_learn, track and page.taxonomies.concept, track and page.extra.connections, has_questions, track and facts.extra.sources, track and track.related | length > 0] %}
+      {%- set extras = [track and track.versions, has_learn, track and page.taxonomies.concept, track and page.extra.connections, has_questions, track and facts.extra.sources, track and track.related | length > 0] %}
       {%- set_global nparts = page.toc | length %}
       {%- for x in extras %}{% if x %}{% set_global nparts = nparts + 1 %}{% endif %}{% endfor %}
       {%- if nparts > 2 %}
       {%- set chip = "shrink-0 rounded-full border border-gray-200 bg-gray-50 px-3 py-1 font-medium text-gray-700 hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" %}
       <nav aria-label="{{ <tr key="track.contents" l={l} /> }}" data-i18n-aria-label="track.contents" data-contents class="-mx-1 mb-6 flex gap-2 overflow-x-auto px-1 pb-1 text-sm">
         {%- for h in page.toc %}<a href="{{ h.permalink }}" class="{{ chip }}">{{ h.title }}</a>{% endfor %}
-        {%- set anchors = ["learn-title", "concepts-title", "connections-title", "discuss-title", "refs-title", "related-title"] %}
-        {%- set keys = ["learn.title", "learn.concepts", "learn.connections", "learn.questions", "learn.references", "track.more_like"] %}
+        {%- set anchors = ["versions-title", "learn-title", "concepts-title", "connections-title", "discuss-title", "refs-title", "related-title"] %}
+        {%- set keys = ["versions.title", "learn.title", "learn.concepts", "learn.connections", "learn.questions", "learn.references", "track.more_like"] %}
         {%- for x in extras %}{% if x %}<a href="#{{ anchors[loop.index0] }}" class="{{ chip }}" data-i18n="{{ keys[loop.index0] }}">{{ l[keys[loop.index0]] }}</a>{% endif %}{% endfor %}
       </nav>
       {%- endif %}
@@ -66,6 +66,13 @@
       {%- endif %}
       {{ <prose html={page.content} /> }}
     </article>
+
+    {#- The song's versions (extra.versions): derived by scripts/catalog.py; a translation holds
+        only their notes, matched by video id. -#}
+    {%- if track and track.versions %}
+    {%- if page.extra.versions %}{% set vnotes = page.extra.versions %}{% else %}{% set vnotes = [] %}{% endif %}
+    {{ <versions t={track} l={l} notes={vnotes} /> }}
+    {%- endif %}
 
     {#- The educational article (ADR 0004): everything below comes from the front matter; its words
         from this page (a translation holds its own), its facts from the English page (facts, ADR 0006). -#}
