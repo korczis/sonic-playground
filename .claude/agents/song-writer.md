@@ -37,9 +37,20 @@ proposes one, else by hand, or report it; concepts from `data/concepts/`, creati
 listening guide keyed by part, with a time only where a source gives one; at least two sources);
 finish with
 `python3 scripts/track.py check content/<file>.md` at `"errors": []` and `"unfinished": 0`.
-Then `python3 scripts/translate.py scaffold content/<file>.md`, translate in place and finish
-with `python3 scripts/translate.py check content/<file>.cs.md` at 0 problems; after any later
-edit of the English, update the Czech before `translate.py bless`.
+Before translating, list the song's versions as data (add-song step "Versions"):
+`python3 scripts/track.py versions content/<file>.md --json`, keep what is the same song by its
+maker or credited, `--write --pick <id>[:<kind>] ...`, add a sourced one-sentence `note` only
+where a source says what the version is, and end on `--verify` with 0 diffs; never a list of
+version links in the prose.
+Then `python3 scripts/translate.py scaffold content/<file>.md`, translate in place (the version
+notes too) and finish with `python3 scripts/translate.py check content/<file>.cs.md` at 0
+problems; after any later edit of the English, update the Czech before `translate.py bless`.
+Last, the fact-check (add-song step "Fact-check before the commit"): read your page against
+`.ai/repo/prompts/fact-check.md` claim by claim, and when `command -v codex` answers run
+`codex exec --skip-git-repo-check -s read-only "<that prompt, naming your two files>" < /dev/null`;
+resolve each finding from its source (fix what the source contradicts, keep what it supports).
+The integrator runs the independent `fact-checker` agent on the batch afterwards.
 
-Report: a table (n, artist, track, file, youtube id or "none"), the skipped songs with the
-reason, new facet terms, and every video that is not the batch's exact recording.
+Report: a table (n, artist, track, file, youtube id or "none", versions listed), the skipped
+songs with the reason, new facet terms, every video that is not the batch's exact recording, the
+`versions --verify` result per song, and each fact-check finding with how its source resolved it.

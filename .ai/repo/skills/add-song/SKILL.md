@@ -1,7 +1,7 @@
 ---
 schema: skill/v1
 id: add-song
-version: 1
+version: 2
 title: Add a song to the playground
 description: From a YouTube link or "Artist - Track", write a new review that the engine infers, the catalogue integrates and the site derives everything else from, then prove it builds.
 status: active
@@ -11,8 +11,11 @@ inputs:
   - optionally the owner's own angle on the track (why it belongs here)
 outputs:
   - content/<slug(artist track)>.md, every TODO(write) replaced, validated by the contract
-  - static/data/catalog.json regenerated (facets, related tracks, outline, stats)
+  - the song's versions as data ([[extra.versions]]), verified against YouTube with 0 diffs
+  - a fact-check report whose every finding is resolved from its source
+  - static/data/catalog.json regenerated (facets, related tracks, outline, versions, stats)
   - one commit feat(content) on a feature branch, the gate green
+  - the page passing test/e2e/live.cjs on production, en and cs, desktop and phone
 ---
 # Purpose
 
@@ -79,17 +82,59 @@ link. Not for bulk imports (run the engine in a loop and review each article).
    section order; drop a breakdown part the track does not have, add one it does. Aim for the
    catalogue's median length (`stats.median_words`). Add `extra.album`, `release_year`,
    `publisher` when sourced.
-8. **Translate (ADR 0006).** Every page is bilingual: write the Czech counterpart through the
+8. **Versions.** A song's family of versions (the official video, the artist's own and licensed
+   releases, official remixes, other producers' remixes and edits, live takes, covers, dances,
+   excerpts) is data: `[[extra.versions]]` per `data/track.schema.json`, which the page renders
+   as its versions list and the player can queue. Never a list of links in the prose: the
+   contract refuses a prose link to a listed version.
+   - `python3 scripts/track.py versions content/<file>.md --json` searches YouTube for the
+     song (with remix, edit, extended, live, cover, line dance) and lists the candidates with a
+     suggested kind, its confidence and reasons, and the evidence URL; `--query` adds a search.
+   - Pick what is the same song, by its maker or credited: `--write --pick <id>[:<kind>] ...`
+     appends the tables (kind, title, by, youtube, format, duration, date, rights) and refuses a
+     duplicate. Correct a kind the heuristic got wrong in the `:<kind>` suffix, not afterwards.
+   - The page's own video is among them (`official-video`, or `original` for an audio upload);
+     a version that has its own review names it (`review = "<file>.md"`).
+   - Add a `note` only where a source says what the version is or changes (the uploader's own
+     description, a label page, an interview), one sentence, and its `source` when that is not
+     the version's own page. The tool never writes a note; a note is translated (step 9).
+   - `python3 scripts/track.py versions content/<file>.md --verify` re-reads every listed
+     version from YouTube; it must report 0 diffs (title, by, duration, date) before the commit.
+9. **Translate (ADR 0006).** Every page is bilingual: write the Czech counterpart through the
    skill `translate` (`python3 scripts/translate.py scaffold content/<file>.md`, translate in
    place, `python3 scripts/translate.py check content/<file>.cs.md`). The contract refuses a
-   review without its translation, and a translation older than its English text.
-9. **Prove it.** `python3 scripts/track.py check content/<file>.md` (no errors, `unfinished: 0`),
+   review without its translation, and a translation older than its English text. The
+   scaffold carries each version's note keyed by its `youtube` (or `url`), in the English order.
+10. **Fact-check before the commit.** An independent pass, by a worker that did not write the
+   page, with the prompt `.ai/repo/prompts/fact-check.md` over the English page, its
+   translation and its sources: every date, credit, number, quotation and version claim is
+   checked against the source it cites (read-only; it changes nothing). When `codex` is
+   installed, take a second opinion as well:
+   `codex exec --skip-git-repo-check -s read-only "<the rendered prompt>" < /dev/null`.
+   Findings are inputs, never an authority: resolve each one from the source itself, fix what
+   the source contradicts, and leave what the source supports.
+11. **Prove it.** `python3 scripts/track.py check content/<file>.md` (no errors, `unfinished: 0`),
    then `npm run derive` and `bash scripts/verify.sh` (catalogue, tests, build, browser smoke).
    `majordomus check` before claiming progress.
-10. **Commit and finish.** `git add content static/data && git commit -m "feat(content): add
+12. **Commit and finish.** `git add content static/data && git commit -m "feat(content): add
    <Artist> – <Track>"`; `majordomus finish --outcome completed --verify-command "bash
    scripts/verify.sh"`; merge to `main` with `--no-ff` and push — pushing `main` deploys
    (`.github/workflows/pages.yml`), and the run verifies production serves the commit.
+13. **Done = live.** A song is done only when production proves it in a real browser:
+   `npm run live -- <slug> --expect <sha>` (`test/e2e/live.cjs`) passes, in English and Czech,
+   on a desktop and a phone. It derives what to expect from the checkout's catalogue (path,
+   video, concepts, connections and backlinks, versions with their stills, the social image,
+   the search indexes) and writes screenshots to `--out`; read them. Until it passes, report
+   the song as delivered but not done, with the failing lines.
+
+# Consult
+
+The owner wants structure discussed with other models, not decided alone: the outline, the
+facet choice, which versions belong and what a disputed fact is. Ask Codex
+(`codex exec --skip-git-repo-check -s read-only "..." < /dev/null`) and the peer sessions
+working on this repository (the Majordomus MCP tool `majordomus_peers`; in Claude Code,
+ListAgents and SendMessage), say in the report whom you asked and what
+changed because of it, and keep the decision, with its reason, your own.
 
 # Many songs (the backlog)
 
@@ -138,8 +183,33 @@ once, commits `feat(content)` and deploys. Learned on 2026-11-12 (168 songs, 8 a
   `skip = "<reason>"` row in `data/backlog/decisions.toml` (a song reviewed under another
   spelling gets `review = "<file>.md"` there), so the next wave does not draw it again.
 
+# Lessons from MAINVIBE – Lauter (2026-11-28)
+
+- A quotation belongs to the version it describes. Kenzler's description of the "Swing Deep
+  House" version was first attached to another version; read the upload the quotation comes
+  from and put it on that version's note.
+- A licensed upload is not the release. The "- Topic" upload by Universal Music Group was
+  posted two weeks after the "Released on" date it states; the version's `date` is the date its
+  source shows, and the prose never dates the song by a later upload.
+- Midnight in Germany is the previous day in UTC and in YouTube's US dates. The official video
+  went up at 00:00 CET on release day; check the upload's timestamp with its offset, or the
+  artist's announcement, before writing a day.
+- Tags a channel puts on every upload are not genre evidence. Genres come from what sources
+  say about this song, not from a channel's keywords.
+- YouTube's pages need its consent cookie for a script: `curl -H 'Cookie: CONSENT=YES+1;
+  SOCS=CAI' -H 'Accept-Language: en'`; without it the consent page comes back and holds no
+  `ytInitialData` (scripts/youtube.py sends it).
+- Search titles can be machine-translated ("LOUDER" for "LAUTER" under `Accept-Language: en`):
+  the watch page's title is the title; the tool takes it from there and drops emoji.
+- Discovery finds more than a hand search: the Force Techno Remix of Lauter appeared only in
+  the tool's remix query. A second upload of the same video by the same person (a line dance
+  posted twice) is not another version; list one.
+
 # Output
 
 - The article path, the inferred artist/track and the rule that inferred them, the chosen facets
   (new terms named), the related tracks, the word count.
-- The gate result (`scripts/verify.sh`) and, after the push, the Pages run URL and the live page.
+- The versions listed (kind, by, id), the `--verify` result, and the candidates left out with why.
+- The fact-check findings, each with how its source resolved it, and whom you consulted.
+- The gate result (`scripts/verify.sh`) and, after the push, the Pages run URL, the live page and
+  the `test/e2e/live.cjs` result (every FAIL line verbatim).
