@@ -150,11 +150,28 @@
     return { youtube: id, track: title || Sonic.t('player.video'), artist: by || '',
       path: of ? of.path : '', i18n: of ? of.i18n : {} };
   }
+  /** Every video the index knows, by id: a review's own video is that review (a catalogue track,
+   *  keyed by its source), and each version is that version, leading to the review that lists it.
+   *  A version that is another review's own video is that review, never a second loose copy. */
+  function videosOf(tracks) {
+    var byVideo = {};
+    tracks.forEach(function (t) { if (t.youtube) byVideo[t.youtube] = t; });
+    tracks.forEach(function (t) {
+      (t.versions || []).forEach(function (v) {
+        if (v.youtube && !v.gone && !byVideo[v.youtube]) byVideo[v.youtube] = version(v.youtube, v.track || v.title, v.artist || v.by, t);
+      });
+    });
+    return byVideo;
+  }
   /** A review's playable versions, in the author's order: never its own video or a gone one. The
-   *  play index lists only those; the catalogue (when it is already here) lists every one. */
-  function versionsOf(t) {
+   *  play index lists only those; the catalogue (when it is already here) lists every one. A
+   *  version with a review of its own plays as that review; any other leads back to this one. */
+  function versionsOf(t, byVideo) {
     return ((t && t.versions) || []).filter(function (v) { return v.youtube && !v.gone && !v.this_page; })
-      .map(function (v) { return version(v.youtube, v.track || v.title, v.artist || v.by, t); });
+      .map(function (v) {
+        var known = byVideo[v.youtube];
+        return known && known.source ? known : version(v.youtube, v.track || v.title, v.artist || v.by, t);
+      });
   }
   // Every interface string is written as Sonic.t('<key>') with a literal key, so scripts/i18n.py
   // proves each one exists in every locale.
@@ -808,10 +825,14 @@
       var bySource = {};
       c.tracks.forEach(function (t) { bySource[t.source] = t; });
       if (d.seek) { seekTrack(bySource[d.seek], d.seekAt || '0:00'); return; }
-      if (d.playVideo) { playNow(version(d.playVideo, d.playTitle, d.playBy, bySource[d.playOf])); return; }
+      if (d.playVideo) {
+        var known = videosOf(c.tracks)[d.playVideo];
+        playNow(known && known.source ? known : version(d.playVideo, d.playTitle, d.playBy, bySource[d.playOf]));
+        return;
+      }
       if (d.playVersions) {
         var own = bySource[d.playVersions];
-        if (own) playList([own].concat(versionsOf(own)), 0);
+        if (own) playList([own].concat(versionsOf(own, videosOf(c.tracks))), 0);
         return;
       }
       if (d.play) { playNow(bySource[d.play]); return; }
@@ -905,10 +926,13 @@
   if (askedKey) {
     var askedAt = seconds(asked.get('t'));
     var video = /^yt:([\w-]{11})$/.exec(askedKey);
-    var found = video ? Promise.resolve({ youtube: video[1], track: '', artist: '' })
-      : Sonic.playIndex().then(function (c) {
-        return c.tracks.filter(function (t) { return t.source === askedKey + '.md'; })[0] || null;
-      });
+    // A shared video is the review it belongs to, or the version of one (named, leading to its
+    // review); a bare video only where the index knows nothing of it, or did not arrive.
+    var bare = video ? { youtube: video[1], track: '', artist: '' } : null;
+    var found = Sonic.playIndex().then(function (c) {
+      if (video) return videosOf(c.tracks)[video[1]] || bare;
+      return c.tracks.filter(function (t) { return t.source === askedKey + '.md'; })[0] || null;
+    });
     // The interface strings arrive on their own: the toast waits for them (sonic:locale), or it
     // would show its key (an independent review, 2026-11-22).
     var strings = new Promise(function (done) {
@@ -921,7 +945,7 @@
       Sonic.on('sonic:locale', function () { observer.disconnect(); done('ready'); });
       settled();
     });
-    Promise.all([found.catch(function () { return null; }), strings]).then(function (r) {
+    Promise.all([found.catch(function () { return bare; }), strings]).then(function (r) {
       var t = r[0];
       urlHold = false;
       // Without the strings (the bundle failed) the song is still cued, without a toast of keys.
