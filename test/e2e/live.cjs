@@ -9,11 +9,14 @@
 // Every expectation is derived from this checkout's static/data/catalog.json and the review's
 // front matter, never typed in: the page's path in each language, its video, its concepts, its
 // curated connections and the reviews that link back to it (connections and related tracks),
-// its versions (each row with its still, each id present; a live page without the versions
-// section yet falls back to finding each id anywhere on the page), each language's social card
+// its versions (each row with its still, each id present), each language's social card
 // (og/<page path slugified>.jpg), the search indexes. revision.txt must start with --expect when
-// given; while production serves another commit than this checkout's, a backlink from a review
-// production does not have yet is skipped, not failed. Each language is opened on a
+// given. The run is "deployed" when production serves the commit under test: revision.txt starts
+// with --expect, or (without --expect) equals this checkout's HEAD. Only a run that is not
+// deployed (production behind the checkout) may skip: a backlink from a review production does
+// not have yet, and a versions section the live templates do not render yet (then each version
+// other than the page's own video must still appear somewhere on the page). Deployed, both
+// fail. Each language is opened on a
 // desktop (1440 px) and a phone (390 px); screenshots go to --out (default: a temporary
 // directory). Exit 0 pass, 1 a failure, 2 usage, 3 skipped (playwright-core not installed).
 // CHROME_PATH=<binary> uses that browser instead of Playwright's chromium.
@@ -147,13 +150,21 @@ async function main() {
   } else {
     skip(`revision.txt not compared (no --expect); production serves ${revision.trim().slice(0, 12) || 'nothing'}`);
   }
-  // A checkout ahead of production names reviews production does not serve yet: a backlink from
-  // one of them is skipped, not failed, until production serves this checkout's commit.
+  // Deployed: production serves the commit under test, the one --expect names (whichever
+  // checkout runs this), or without --expect this checkout's HEAD. Only a run that is not deployed
+  // (production behind the checkout) may skip what production cannot have yet.
+  const served = revision.trim();
   const checkout = head();
-  const deployed = !!checkout && revision.trim() === checkout;
+  const deployed = opts.expect ? served.startsWith(opts.expect) : !!checkout && served === checkout;
+  if (opts.expect && checkout && !checkout.startsWith(opts.expect)) {
+    // Not a failure by itself (a feature checkout merged into main expects the same pages), but
+    // a checkout ahead of --expect expects pages that commit does not have: name it.
+    console.log(`NOTE the expectations come from this checkout (${checkout.slice(0, 12)}), not from ${opts.expect}`);
+  }
   if (!deployed) {
-    skip(`this checkout (${checkout.slice(0, 12) || 'no git'}) is not the commit production serves: ` +
-      'a backlink from a review production lacks is skipped');
+    skip(`production serves ${served.slice(0, 12) || 'nothing'}, not the commit under test ` +
+      `(${(opts.expect || checkout).slice(0, 12) || 'unknown'}): a backlink from a review production lacks, ` +
+      'and a versions section its templates lack, are skipped');
   }
 
   const launch = { headless: true };
@@ -245,9 +256,17 @@ async function main() {
     const section = p.locator('section[aria-labelledby="versions-title"]');
     const keys = want.versions.map((v) => v.youtube || v.url);
     if (await section.count() === 0) {
-      skip(`${tag}: no versions section on the live page yet; looking for the ids anywhere`);
-      const missing = keys.filter((k) => !html.includes(k));
-      check(missing.length === 0, `${tag}: every version (${keys.length}) appears on the page${missing.length ? ' (missing ' + missing.join(',') + ')' : ''}`);
+      if (deployed) {
+        check(false, `${tag}: the versions section (section[aria-labelledby="versions-title"]) is missing, ` +
+          `though the catalogue lists ${keys.length} version(s)`);
+        return;
+      }
+      skip(`${tag}: no versions section on production yet; looking for the other versions' ids anywhere`);
+      // The page's own video is always in its HTML: only the other versions prove anything.
+      const others = want.versions.filter((v) => !v.this_page).map((v) => v.youtube || v.url);
+      if (!others.length) return;
+      const missing = others.filter((k) => !html.includes(k));
+      check(missing.length === 0, `${tag}: every other version (${others.length}) appears on the page${missing.length ? ' (missing ' + missing.join(',') + ')' : ''}`);
       return;
     }
     await section.scrollIntoViewIfNeeded();
