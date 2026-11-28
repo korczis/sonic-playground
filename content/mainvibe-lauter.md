@@ -1,7 +1,7 @@
 +++
 title = "MAINVIBE - Lauter"
 date = "2026-11-28"
-description = "MAINVIBE's German-language single, billed as electro swing meets techno and launched with the line \"Ich will doch nur ein bisschen tanzen\"; within two weeks it had an official hard-tech remix, three remixes by other producers and a line dance."
+description = "MAINVIBE's German-language single, billed as electro swing meets techno and launched with the line \"Ich will doch nur ein bisschen tanzen\"; within two weeks it had an official hard-tech remix, four remixes by other producers and a line dance."
 
 [taxonomies]
 genre = ["electro-swing", "techno", "electronic"]
@@ -147,6 +147,116 @@ url = "https://musicbrainz.org/recording/d85372dd-0aac-4fc4-9fef-ef540bea91d0"
 publisher = "MusicBrainz"
 kind = "database"
 year = "2026"
+[[extra.versions]]
+kind = "official-video"
+title = "MAINVIBE – Lauter | Electro Swing meets Techno"
+by = "MAINVIBE"
+youtube = "DgC7FGgsm4A"
+format = "video"
+duration = "2:45"
+date = "2026-11-12"
+note = "The official video, posted at midnight German time on release day; its description opens with the line the song is built on."
+
+[[extra.versions]]
+kind = "self-release"
+title = "Lauter"
+by = "MAINVIBE"
+youtube = "WaxPYwst85k"
+format = "audio"
+duration = "2:45"
+date = "2026-11-12"
+rights = "℗ MAINVIBE"
+note = "The single as the artist released it himself, through the distributor DistroKid."
+
+[[extra.versions]]
+kind = "licensed-release"
+title = "Lauter"
+by = "MAINVIBE"
+youtube = "O23UZaT7GnY"
+format = "audio"
+duration = "2:44"
+date = "2026-11-12"
+rights = "℗ 2026 Global Basss One Management GmbH & Co. KG, under exclusive license to Universal Music GmbH"
+note = "Provided to YouTube by Universal Music Group and posted on 27 November with the same release date, under licence; the upload credits the producers and the singer."
+
+[[extra.versions]]
+kind = "official-remix"
+title = "MAINVIBE – Lauter (Hard Tech / Rave Remix) | 1000 Abonnenten Special"
+by = "MAINVIBE"
+youtube = "uDpzHhUbegA"
+format = "video"
+duration = "2:56"
+date = "2026-11-15"
+note = "The artist's own hard-tech version, posted as a thank-you for 1,000 subscribers because, he writes, many fans had asked for one."
+
+[[extra.versions]]
+kind = "official-remix"
+title = "Lauter (MV Remix)"
+by = "MAINVIBE"
+youtube = "GFPTuG0ldDE"
+format = "audio"
+duration = "2:56"
+date = "2026-11-18"
+rights = "℗ MAINVIBE"
+note = "The hard-tech remix released as a single of its own, through DistroKid."
+
+[[extra.versions]]
+kind = "excerpt"
+title = "„Lauter“ von MAINVIBE – Electro Swing trifft Techno."
+by = "MAINVIBE"
+youtube = "iJxrEHv_RcM"
+url = "https://www.youtube.com/shorts/iJxrEHv_RcM"
+format = "short"
+duration = "0:45"
+date = "2026-11-16"
+
+[[extra.versions]]
+kind = "remix"
+title = "Lauter - (MAINVIBE) Andy Sossna Remix"
+by = "Andy Sossna"
+youtube = "LFZDZ8d-NFo"
+format = "video"
+duration = "3:22"
+date = "2026-11-21"
+
+[[extra.versions]]
+kind = "remix"
+title = "MAINVIBE – LAUTER (TOM KENZLER REMIX)"
+by = "Tom Kenzler"
+youtube = "eTrOJfm4ncY"
+format = "video"
+duration = "6:14"
+date = "2026-11-23"
+note = "A \"Swing Deep House\" version that Kenzler calls groovier, deeper, club-ready and more DJ-friendly, with playful swing elements over driving deep-house beats."
+
+[[extra.versions]]
+kind = "remix"
+title = "Mainvibe - Lauter (NVKLΛS Remix)"
+by = "NVKLɅS"
+youtube = "zjGvlMUKGYc"
+format = "video"
+duration = "3:41"
+date = "2026-11-23"
+
+[[extra.versions]]
+kind = "dance"
+title = "Linedance Lauter MAINVIBE"
+by = "Joyce Brasche"
+youtube = "HhW9lPMJdjs"
+format = "video"
+duration = "2:44"
+date = "2026-11-25"
+note = "A line dance choreographed by Joyce Brasche: a 32-count intro, then one routine with no tags and no restarts."
+
+[[extra.versions]]
+kind = "remix"
+title = "MAINVIBE – Lauter (Force Techno Remix 2026) FREE DL"
+by = "force.story-music.offical"
+youtube = "IRiX0_clIag"
+format = "video"
+duration = "2:35"
+date = "2026-11-26"
+note = "A techno remix offered as a free download, which its maker sums up as \"Lauter. Härter. Mehr Vibe.\" (louder, harder, more vibe)."
 +++
 
 ## Genre and Mood
@@ -173,21 +283,11 @@ Tom Kenzler, who remixed the track, calls the original's sound "swing house"; th
 
 The clearest outside description of the song's structure comes from a dancer. Joyce Brasche's line dance to Lauter, posted on 25 November, starts after a 32-count intro and runs with "no tags, no restarts". In line-dance terms, the same 32-count routine repeats unchanged until the music stops, with no extra steps or restarts to bridge an irregular phrase.
 
-## Versions and Remixes
-
-Lauter grew a family of versions within two weeks of its release. Each one is linked here, so you can hear what it changes:
-
-- **The original**: the [official video](https://www.youtube.com/watch?v=DgC7FGgsm4A) (2:45), posted at midnight German time on release day, 12 November 2026. The single came out as a [self-release through DistroKid](https://www.youtube.com/watch?v=WaxPYwst85k). A [second upload provided by Universal Music Group](https://www.youtube.com/watch?v=O23UZaT7GnY), posted on 27 November with the same 12 November release date, carries a licence line.
-- **Lauter (MV Remix)**: MAINVIBE's own [hard-tech / rave remix](https://www.youtube.com/watch?v=uDpzHhUbegA) (2:56), posted on 15 November as a thank-you for 1,000 subscribers. He writes that many fans had asked for a hard-tech version. It came out as a single on 18 November ([audio](https://www.youtube.com/watch?v=GFPTuG0ldDE)).
-- **Andy Sossna Remix**: a [3:22 version](https://www.youtube.com/watch?v=LFZDZ8d-NFo), posted on 21 November.
-- **Tom Kenzler Remix**: a [6:14 "Swing Deep House" version](https://www.youtube.com/watch?v=eTrOJfm4ncY), posted on 23 November. Kenzler calls it groovier, deeper, club-ready and more DJ-friendly than the original, with playful swing elements meeting driving deep-house beats.
-- **NVKLΛS Remix**: a [3:41 version](https://www.youtube.com/watch?v=zjGvlMUKGYc), also posted on 23 November.
-
 ## Concepts in Focus
 
 {{ <concept_link name="swing" /> }} is, strictly, a rhythmic feel: the long-short division of the beat that made 1920s and 1930s jazz bounce. Electro swing uses the word more loosely, for the whole sound world of that era, and MAINVIBE's own framing works in that looser sense. His compilation of October 2026 promises "Vintage Vibes" brought "to Modern Beats", and Lauter's tags are "1920s", "Electro Swing", "Techno" and "House". Hear the difference against {{ <track_link source="caravan-palace-lone-digger.md" /> }}, where a band of jazz players carries the swing on violin, trombone and guitar.
 
-A {{ <concept_link name="remix" /> }} rebuilds a recording for another floor. Within two weeks Lauter was rebuilt twice for very different ones. The MV Remix answers fans who wanted it harder, hard tech and rave, much as {{ <track_link source="alice-francis-parov-stelar-shoot-him-down-parov-stelar-club-mix.md" /> }} takes an electro-swing vocal into a club mix. At 6:14 Kenzler's remix runs well over twice as long as the 2:44 single, and he calls it more DJ-friendly: a version made to be mixed. Two more producers, Andy Sossna and NVKLΛS, published their own within eleven days of the release.
+A {{ <concept_link name="remix" /> }} rebuilds a recording for another floor. Within two weeks Lauter was rebuilt twice for very different ones. The MV Remix answers fans who wanted it harder, hard tech and rave, much as {{ <track_link source="alice-francis-parov-stelar-shoot-him-down-parov-stelar-club-mix.md" /> }} takes an electro-swing vocal into a club mix. At 6:14 Kenzler's remix runs well over twice as long as the 2:44 single, and he calls it more DJ-friendly: a version made to be mixed. Three more producers, Andy Sossna, NVKLΛS and the techno channel behind the Force Techno Remix, published their own within two weeks of the release.
 
 The ℗ lines teach a third lesson. A {{ <concept_link name="self-release" /> }} names the artist as the owner of the recording, and Lauter's DistroKid upload reads "℗ MAINVIBE". The upload Universal Music Group provided two weeks later reads "℗ 2026 Global Basss One Management GmbH & Co. KG, under exclusive license to Universal Music GmbH". A management company now holds the rights, and a major label distributes the song under an exclusive licence. Reading the two lines side by side shows a song made at home moving into the industry within a fortnight.
 
@@ -197,4 +297,4 @@ Markus Stabel, credited as producer, composer and lyricist on Lauter, releases a
 
 ## Impact and Reception
 
-Lauter has no press reviews and no chart entries that a source records. Its reception shows only on the platforms. On 28 November 2026 the official video had about 248,000 views, roughly 40% of the 621,000 views on MAINVIBE's whole channel, and the hard-tech remix had about 104,000. By 23 November three other producers had posted remixes, and on 25 November the choreographer Joyce Brasche posted a line dance to it. A song gets that kind of response when people use it as well as hear it. The numbers are a snapshot two weeks after release. Start with the original, then go straight to the MV Remix, and turn it up, as the title asks.
+Lauter has no press reviews and no chart entries that a source records. Its reception shows only on the platforms. On 28 November 2026 the official video had about 248,000 views, roughly 40% of the 621,000 views on MAINVIBE's whole channel, and the hard-tech remix had about 104,000. By 23 November three other producers had posted remixes, on 25 November the choreographer Joyce Brasche posted a line dance to it, and on 26 November a fourth remix followed, a techno version offered as a free download. A song gets that kind of response when people use it as well as hear it. The numbers are a snapshot two weeks after release. Start with the original, then go straight to the MV Remix, and turn it up, as the title asks.

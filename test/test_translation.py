@@ -107,6 +107,121 @@ class Contract(unittest.TestCase):
                            .replace("[extra]\nconnections", '[extra]\nisrc = "GBZUZ1100058"\nconnections'), "isrc")
 
 
+LAUTER_EN = ROOT / "content" / "mainvibe-lauter.md"
+LAUTER_CS = ROOT / "content" / "mainvibe-lauter.cs.md"
+
+
+class Versions(unittest.TestCase):
+    """The notes of extra.versions are the only text of a version a translation carries: keyed by
+    the version's youtube (or url), in the English order, each one translated."""
+    def setUp(self):
+        self.meta, self.body = parts(LAUTER_EN)
+        self.english = tr.fingerprint(self.meta, self.body)
+        self.text = LAUTER_CS.read_text(encoding="utf-8")
+
+    def problems(self, text: str) -> list[str]:
+        raw, body = cat.split_front_matter(text, LAUTER_CS.name)
+        meta = tomllib.loads(raw)
+        return (cat.validate(meta, cat.TRANSLATION_SCHEMA)
+                + tr.check(LAUTER_CS.name, meta, body, self.english, cat.TRANSLATION))
+
+    def assertRefused(self, text: str, reason: str):
+        found = self.problems(text)
+        self.assertTrue(any(reason in p for p in found), f"expected '{reason}' in {found}")
+
+    def note_line(self, video: str) -> str:
+        line = next(x for x in self.text.splitlines() if f'youtube = "{video}"' in x)
+        return line + "\n"
+
+    def test_notes_are_keyed_and_ordered_as_the_english(self):
+        extra = {"versions": [{"youtube": "AAAAAAAAAAA", "note": "First note, long enough."},
+                              {"youtube": "BBBBBBBBBBB"},
+                              {"url": "https://example.org/x", "note": "A note on a link."},
+                              "not a table"]}
+        self.assertEqual(tr.version_notes(extra), [
+            {"key": "AAAAAAAAAAA", "note": "First note, long enough."},
+            {"key": "https://example.org/x", "note": "A note on a link."}])
+        self.assertEqual(tr.version_notes({}), [])
+        keys = [v.get("youtube") for v in self.meta["extra"]["versions"] if v.get("note")]
+        self.assertEqual(self.english["versions"], keys)
+        self.assertEqual(len(keys), 7)
+
+    def test_the_hash_of_a_page_without_notes_is_unchanged(self):
+        meta, body = parts(EN)
+        found = re.search(r'of = "([0-9a-f]{12})"', CS.read_text(encoding="utf-8"))
+        assert found is not None
+        blessed = found.group(1)
+        self.assertEqual(tr.prose_hash(meta, body), blessed)
+        no_notes = {**meta, "extra": {**meta["extra"], "versions": [{"youtube": "AAAAAAAAAAA"}]}}
+        self.assertEqual(tr.prose_hash(no_notes, body), blessed)
+        noted = {**meta, "extra": {**meta["extra"], "versions": [
+            {"youtube": "AAAAAAAAAAA", "note": "A remix that changes everything."}]}}
+        self.assertNotEqual(tr.prose_hash(noted, body), blessed)
+        self.assertEqual(tr.fingerprint(meta, body)["versions"], [])
+
+    def test_a_changed_note_makes_the_translation_stale(self):
+        changed = {**self.meta, "extra": {**self.meta["extra"], "versions": [
+            {**v, "note": v["note"] + " Changed."} if v.get("note") else v
+            for v in self.meta["extra"]["versions"]]}}
+        self.assertNotEqual(tr.prose_hash(changed, self.body), tr.prose_hash(self.meta, self.body))
+
+    def test_the_corpus_translation_with_versions_is_accepted(self):
+        self.assertEqual(self.problems(self.text), [])
+
+    def test_a_missing_note_is_refused(self):
+        line = self.note_line("WaxPYwst85k")
+        self.assertRefused(self.text.replace(line, ""), "extra.versions must carry a note")
+
+    def test_reordered_notes_are_refused(self):
+        first, second = self.note_line("DgC7FGgsm4A"), self.note_line("WaxPYwst85k")
+        self.assertRefused(self.text.replace(first + second, second + first), "in its order")
+
+    def test_a_note_for_a_version_without_one_is_refused(self):
+        line = self.note_line("WaxPYwst85k")
+        extra = '  { youtube = "LFZDZ8d-NFo", note = "Remix jiného producenta, který je delší." },\n'
+        self.assertRefused(self.text.replace(line, line + extra), "extra.versions must carry a note")
+
+    def test_an_untranslated_note_is_refused(self):
+        line = self.note_line("WaxPYwst85k")
+        marker = cat.TRANSLATION["untranslated_marker"]
+        todo = f'  {{ youtube = "WaxPYwst85k", note = "{marker} The single as the artist released it." }},\n'
+        self.assertRefused(self.text.replace(line, todo), "extra.versions[1].note is not translated yet")
+
+    def test_an_english_note_is_refused(self):
+        line = self.note_line("WaxPYwst85k")
+        english = ('  { youtube = "WaxPYwst85k", note = "The single as the artist released it himself, '
+                   'through the distributor DistroKid." },\n')
+        self.assertRefused(self.text.replace(line, english), "extra.versions[1].note does not read as Czech")
+
+    def test_the_scaffold_carries_marked_notes(self):
+        translate = load("translate")
+        marker = cat.TRANSLATION["untranslated_marker"]
+        text = translate.scaffold_text(LAUTER_EN, "cs")
+        raw, _ = cat.split_front_matter(text, LAUTER_CS.name)
+        versions = tomllib.loads(raw)["extra"]["versions"]
+        self.assertEqual([v["youtube"] for v in versions], self.english["versions"])
+        self.assertTrue(all(v["note"].startswith(marker) for v in versions), versions)
+        self.assertIn('[extra]\nconnections = ', text)
+
+    def test_the_scaffold_keys_a_link_by_its_url(self):
+        translate = load("translate")
+        tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, tmp)
+        old = cat.CONTENT
+        cat.CONTENT = tmp
+        self.addCleanup(setattr, cat, "CONTENT", old)
+        src = tmp / "x-y.md"
+        src.write_text('+++\ntitle = "X - Y"\ndate = "2026-11-28"\ndescription = "A song."\n\n'
+                       '[extra]\nversions = [\n  { kind = "cover", title = "Y", by = "Z", '
+                       'url = "https://example.org/y", note = "A cover on a label page." },\n'
+                       ']\n+++\n\nX made Y.\n', encoding="utf-8")
+        raw, _ = cat.split_front_matter(translate.scaffold_text(src, "cs"), "x-y.cs.md")
+        extra = tomllib.loads(raw)["extra"]
+        self.assertNotIn("connections", extra)
+        self.assertEqual(extra["versions"], [{"url": "https://example.org/y",
+                                              "note": f"{translate.MARK} A cover on a label page."}])
+
+
 class Catalogue(unittest.TestCase):
     def test_the_catalogue_carries_the_translation_layer(self):
         errors = []

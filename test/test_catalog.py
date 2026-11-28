@@ -487,6 +487,156 @@ class Search(unittest.TestCase):
             self.assertEqual((data["schema"], data["tracks"]), ("sonic-search/v2", {"a.md": words}))
 
 
+OWN = ('{ kind = "official-video", title = "Bakermat - The River", by = "Bakermat", '
+       'youtube = "rVeMiVU77wo", format = "video", duration = "3:10", date = "2016-01-29" }')
+REMIX = ('{ kind = "remix", title = "The River (Someone Remix)", by = "Someone", '
+         'youtube = "AAAAAAAAAAA", format = "audio", duration = "1:02:45" }')
+
+
+class Versions(unittest.TestCase):
+    """extra.versions: the schema, the contract (version_problems, version_reviews) and the
+    catalogue's and the player's views of them (versions_of, play_track, stats.versions)."""
+    def load(self, versions: str, body: str = "", name: str = "bakermat-the-river.md"):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        old = catalog.CONTENT
+        catalog.CONTENT = Path(tmp.name)
+        self.addCleanup(setattr, catalog, "CONTENT", old)
+        path = catalog.CONTENT / name
+        extra = f"versions = [\n  {versions},\n]\n" if versions else ""
+        path.write_text(GOOD.format(title="Bakermat - The River", extra=extra) + body, encoding="utf-8")
+        errors: list[str] = []
+        return catalog.load_track(path, errors), errors
+
+    def test_a_review_with_its_versions_is_accepted(self):
+        track, errors = self.load(f"{OWN},\n  {REMIX}")
+        self.assertEqual(errors, [])
+        self.assertEqual([v["youtube"] for v in track.full_extra["versions"]],
+                         ["rVeMiVU77wo", "AAAAAAAAAAA"])
+
+    def test_the_schema_refuses_a_kind_an_id_or_a_length_it_does_not_know(self):
+        for broken, where in ((OWN.replace('"official-video"', '"bootleg"'), "extra.versions[0].kind"),
+                              (OWN.replace('"rVeMiVU77wo"', '"rVeMiVU77"'), "extra.versions[0].youtube"),
+                              (OWN.replace('"3:10"', '"3m10"'), "extra.versions[0].duration"),
+                              (OWN.replace('"2016-01-29"', '"29.1.2016"'), "extra.versions[0].date"),
+                              (OWN.replace('format = "video"', 'format = "vinyl"'), "extra.versions[0].format"),
+                              (OWN.replace(', by = "Bakermat"', ""), "extra.versions[0]"),
+                              (OWN.replace(" }", ', label = "x" }'), "label")):
+            _, errors = self.load(broken)
+            self.assertTrue(any(where in e for e in errors), (broken, errors))
+
+    def test_each_version_has_a_key_and_is_listed_once(self):
+        problems = catalog.version_problems([{"kind": "remix", "title": "No Link", "by": "X"}], None, "")
+        self.assertTrue(any("needs a youtube id or a url" in p for p in problems), problems)
+        twice = [{"youtube": "AAAAAAAAAAA"}, {"url": "https://example.org/a"},
+                 {"youtube": "AAAAAAAAAAA"}]
+        problems = catalog.version_problems(twice, None, "")
+        self.assertEqual([p for p in problems if "a second time" in p],
+                         ["extra.versions[2] lists AAAAAAAAAAA a second time"])
+        self.assertEqual(catalog.version_problems(["not a table"], None, ""), [])
+
+    def test_the_pages_own_video_is_among_its_versions(self):
+        problems = catalog.version_problems([{"youtube": "AAAAAAAAAAA"}], "rVeMiVU77wo", "")
+        self.assertTrue(any("not the page's own video rVeMiVU77wo" in p for p in problems), problems)
+        self.assertEqual(catalog.version_problems([], "rVeMiVU77wo", ""), [])
+        _, errors = self.load(REMIX)
+        self.assertTrue(any("not the page's own video rVeMiVU77wo" in e for e in errors), errors)
+
+    def test_a_versions_review_must_exist(self):
+        problems = catalog.version_problems([{"youtube": "AAAAAAAAAAA", "review": "no-such-review.md"}], None, "")
+        self.assertTrue(any("no-such-review.md, which does not exist" in p for p in problems), problems)
+        self.assertEqual(catalog.version_problems(
+            [{"youtube": "AAAAAAAAAAA", "review": "mainvibe-lauter.md"}], None, ""), [])
+
+    def test_the_prose_never_links_a_listed_version(self):
+        for link in ("https://www.youtube.com/watch?v=AAAAAAAAAAA", "https://youtube.com/shorts/AAAAAAAAAAA",
+                     "https://youtu.be/AAAAAAAAAAA"):
+            problems = catalog.version_problems([{"youtube": "AAAAAAAAAAA"}], None, f"A [remix]({link}).")
+            self.assertTrue(any("the prose links versions" in p and "AAAAAAAAAAA" in p for p in problems), link)
+        # a video the list does not hold may still be linked
+        self.assertEqual(catalog.version_problems([{"youtube": "AAAAAAAAAAA"}], None,
+                                                  "[other](https://www.youtube.com/watch?v=BBBBBBBBBBB)"), [])
+        _, errors = self.load(f"{OWN},\n  {REMIX}", body="\nHear [the remix](https://youtu.be/AAAAAAAAAAA).\n")
+        self.assertTrue(any("the prose links versions" in e for e in errors), errors)
+
+    def test_the_own_video_is_the_one_the_front_matter_embeds(self):
+        # The body's other checks (a split word, a figure) match after extra.youtube is read;
+        # neither may stand in for the page's own video.
+        _, errors = self.load(f"{OWN},\n  {REMIX}", body="\nThe track draws t\nhe listener in.\n")
+        self.assertTrue(any("split across lines" in e for e in errors), errors)
+        self.assertFalse(any("own video" in e for e in errors), errors)
+        _, errors = self.load(f"{OWN},\n  {REMIX}", body='\n{{ <figure src="images/car_1.png" /> }}\n')
+        self.assertFalse(any("own video" in e for e in errors), errors)
+
+    def test_another_reviews_video_names_that_review(self):
+        def t(source, video, versions):
+            return SimpleNamespace(source=source, full_extra={
+                "youtube": f"https://www.youtube.com/embed/{video}", "versions": versions})
+        mine = t("a.md", "AAAAAAAAAAA", [{"youtube": "AAAAAAAAAAA"}, {"youtube": "BBBBBBBBBBB"}])
+        theirs = t("b.md", "BBBBBBBBBBB", [])
+        self.assertEqual(catalog.version_reviews([mine, theirs]),
+                         ['a.md: extra.versions lists BBBBBBBBBBB, the video of b.md; '
+                          'add review = "b.md" to that version'])
+        mine.full_extra["versions"][1]["review"] = "b.md"
+        self.assertEqual(catalog.version_reviews([mine, theirs]), [])
+        self.assertEqual(catalog.version_reviews([t("c.md", "", ["not a table"])]), [])
+
+    def test_a_duration_in_seconds(self):
+        self.assertEqual(catalog.seconds("2:45"), 165)
+        self.assertEqual(catalog.seconds("1:02:45"), 3765)
+        self.assertEqual(catalog.seconds("0:07"), 7)
+
+    def test_the_catalogue_view_of_the_versions(self):
+        old = catalog.GONE_VIDEOS
+        catalog.GONE_VIDEOS = {"CCCCCCCCCCC": "2026-11-01"}
+        self.addCleanup(setattr, catalog, "GONE_VIDEOS", old)
+        t = SimpleNamespace(youtube_id="AAAAAAAAAAA", full_extra={"versions": [
+            {"kind": "official-video", "title": "Own", "by": "Artist", "youtube": "AAAAAAAAAAA",
+             "duration": "2:45", "note": "The official video, as posted."},
+            {"kind": "remix", "title": "Gone Remix", "by": "Other", "youtube": "CCCCCCCCCCC"},
+            {"kind": "cover", "title": "A Cover", "by": "Band", "url": "https://example.org/cover",
+             "unknown": "dropped"},
+            {"kind": "licensed-release", "title": "Topic", "by": "Label", "youtube": "DDDDDDDDDDD"}]})
+        own, gone, cover, topic = catalog.versions_of(t)
+        self.assertEqual(own, {"kind": "official-video", "title": "Own", "by": "Artist",
+                               "youtube": "AAAAAAAAAAA", "duration": "2:45",
+                               "note": "The official video, as posted.", "group": "artist",
+                               "watch": "https://www.youtube.com/watch?v=AAAAAAAAAAA",
+                               "seconds": 165, "this_page": True})
+        self.assertEqual((gone["group"], gone.get("gone"), "seconds" in gone, "this_page" in gone),
+                         ("others", True, False, False))
+        self.assertEqual((cover["group"], cover["watch"], "unknown" in cover, "gone" in cover),
+                         ("others", "https://example.org/cover", False, False))
+        self.assertEqual((topic["group"], "gone" in topic, "this_page" in topic), ("artist", False, False))
+        self.assertEqual(catalog.versions_of(SimpleNamespace(youtube_id=None, full_extra={})), [])
+
+    def test_the_player_queues_only_playable_other_versions(self):
+        base = {"source": "a.md", "path": "a/", "artist": "Artist", "track": "Song",
+                "youtube": "AAAAAAAAAAA", "related": [], "i18n": {}}
+        self.assertNotIn("versions", catalog.play_track(base))
+        versions = [{"youtube": "AAAAAAAAAAA", "title": "Own", "by": "Artist", "this_page": True},
+                    {"youtube": "CCCCCCCCCCC", "title": "Gone", "by": "Other", "gone": True},
+                    {"url": "https://example.org/x", "title": "Elsewhere", "by": "Other"},
+                    {"youtube": "DDDDDDDDDDD", "title": "Remix", "by": "Remixer"}]
+        self.assertNotIn("versions", catalog.play_track({**base, "versions": versions[:3]}))
+        self.assertEqual(catalog.play_track({**base, "versions": versions})["versions"],
+                         [{"youtube": "DDDDDDDDDDD", "track": "Remix", "artist": "Remixer"}])
+
+    def test_the_derived_catalogue_carries_the_versions(self):
+        # static/data/catalog.json is current: Repository.test_catalogue_is_current proves it
+        data = json.loads(catalog.OUTPUT.read_text(encoding="utf-8"))
+        with_versions = [t for t in data["tracks"] if "versions" in t]
+        self.assertTrue(with_versions, "no review lists versions; mainvibe-lauter.md does")
+        self.assertEqual(data["stats"]["versions"], sum(len(t["versions"]) for t in with_versions))
+        self.assertTrue(all(t["versions"] for t in with_versions), "an empty versions list is omitted")
+        play = {t["source"]: t for t in json.loads(catalog.render_play(data))["tracks"]}
+        for t in with_versions:
+            playable = [v["youtube"] for v in t["versions"]
+                        if v.get("youtube") and not v.get("gone") and not v.get("this_page")]
+            self.assertEqual([v["youtube"] for v in play[t["source"]].get("versions", [])], playable)
+            self.assertNotIn(t["youtube"], playable)
+
+
 class Repository(unittest.TestCase):
     def test_catalogue_is_current(self):
         errors = []

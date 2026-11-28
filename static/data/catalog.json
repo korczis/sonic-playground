@@ -7,7 +7,8 @@
   "artists": 916,
   "videos": 1308,
   "videos_gone": 0,
-  "words": 735476,
+  "versions": 11,
+  "words": 735259,
   "median_words": 539,
   "first": "2024-10-01",
   "last": "2026-11-28",
@@ -24916,7 +24917,7 @@
    "track": "Lauter",
    "inferred": "front matter: extra.artist",
    "date": "2026-11-28",
-   "description": "MAINVIBE's German-language single, billed as electro swing meets techno and launched with the line \"Ich will doch nur ein bisschen tanzen\"; within two weeks it had an official hard-tech remix, three remixes by other producers and a line dance.",
+   "description": "MAINVIBE's German-language single, billed as electro swing meets techno and launched with the line \"Ich will doch nur ein bisschen tanzen\"; within two weeks it had an official hard-tech remix, four remixes by other producers and a line dance.",
    "facets": {
     "genre": [
      "electro-swing",
@@ -24941,7 +24942,7 @@
    "youtube": "DgC7FGgsm4A",
    "thumbnail": "https://i.ytimg.com/vi/DgC7FGgsm4A/hqdefault.jpg",
    "thumbnail_local": false,
-   "words": 1164,
+   "words": 947,
    "extra": {
     "album": "Lauter (single)",
     "publisher": "MAINVIBE (self-released); later under licence to Universal Music",
@@ -25013,10 +25014,157 @@
    "i18n": {
     "cs": {
      "title": "MAINVIBE - Lauter",
-     "description": "Německy zpívaný singl projektu MAINVIBE, ohlášený jako electro swing potkává techno a uvedený veršem „Ich will doch nur ein bisschen tanzen“; do dvou týdnů měl oficiální hard-tech remix, tři remixy od jiných producentů a vlastní line dance.",
+     "description": "Německy zpívaný singl projektu MAINVIBE, ohlášený jako electro swing potkává techno a uvedený veršem „Ich will doch nur ein bisschen tanzen“; do dvou týdnů měl oficiální hard-tech remix, čtyři remixy od jiných producentů a vlastní line dance.",
      "path": "cs/mainvibe-lauter/"
     }
-   }
+   },
+   "versions": [
+    {
+     "kind": "official-video",
+     "title": "MAINVIBE – Lauter | Electro Swing meets Techno",
+     "by": "MAINVIBE",
+     "youtube": "DgC7FGgsm4A",
+     "format": "video",
+     "duration": "2:45",
+     "date": "2026-11-12",
+     "note": "The official video, posted at midnight German time on release day; its description opens with the line the song is built on.",
+     "group": "artist",
+     "watch": "https://www.youtube.com/watch?v=DgC7FGgsm4A",
+     "seconds": 165,
+     "this_page": true
+    },
+    {
+     "kind": "self-release",
+     "title": "Lauter",
+     "by": "MAINVIBE",
+     "youtube": "WaxPYwst85k",
+     "format": "audio",
+     "duration": "2:45",
+     "date": "2026-11-12",
+     "rights": "℗ MAINVIBE",
+     "note": "The single as the artist released it himself, through the distributor DistroKid.",
+     "group": "artist",
+     "watch": "https://www.youtube.com/watch?v=WaxPYwst85k",
+     "seconds": 165
+    },
+    {
+     "kind": "licensed-release",
+     "title": "Lauter",
+     "by": "MAINVIBE",
+     "youtube": "O23UZaT7GnY",
+     "format": "audio",
+     "duration": "2:44",
+     "date": "2026-11-12",
+     "rights": "℗ 2026 Global Basss One Management GmbH & Co. KG, under exclusive license to Universal Music GmbH",
+     "note": "Provided to YouTube by Universal Music Group and posted on 27 November with the same release date, under licence; the upload credits the producers and the singer.",
+     "group": "artist",
+     "watch": "https://www.youtube.com/watch?v=O23UZaT7GnY",
+     "seconds": 164
+    },
+    {
+     "kind": "official-remix",
+     "title": "MAINVIBE – Lauter (Hard Tech / Rave Remix) | 1000 Abonnenten Special",
+     "by": "MAINVIBE",
+     "youtube": "uDpzHhUbegA",
+     "format": "video",
+     "duration": "2:56",
+     "date": "2026-11-15",
+     "note": "The artist's own hard-tech version, posted as a thank-you for 1,000 subscribers because, he writes, many fans had asked for one.",
+     "group": "artist",
+     "watch": "https://www.youtube.com/watch?v=uDpzHhUbegA",
+     "seconds": 176
+    },
+    {
+     "kind": "official-remix",
+     "title": "Lauter (MV Remix)",
+     "by": "MAINVIBE",
+     "youtube": "GFPTuG0ldDE",
+     "format": "audio",
+     "duration": "2:56",
+     "date": "2026-11-18",
+     "rights": "℗ MAINVIBE",
+     "note": "The hard-tech remix released as a single of its own, through DistroKid.",
+     "group": "artist",
+     "watch": "https://www.youtube.com/watch?v=GFPTuG0ldDE",
+     "seconds": 176
+    },
+    {
+     "kind": "excerpt",
+     "title": "„Lauter“ von MAINVIBE – Electro Swing trifft Techno.",
+     "by": "MAINVIBE",
+     "youtube": "iJxrEHv_RcM",
+     "url": "https://www.youtube.com/shorts/iJxrEHv_RcM",
+     "format": "short",
+     "duration": "0:45",
+     "date": "2026-11-16",
+     "group": "others",
+     "watch": "https://www.youtube.com/shorts/iJxrEHv_RcM",
+     "seconds": 45
+    },
+    {
+     "kind": "remix",
+     "title": "Lauter - (MAINVIBE) Andy Sossna Remix",
+     "by": "Andy Sossna",
+     "youtube": "LFZDZ8d-NFo",
+     "format": "video",
+     "duration": "3:22",
+     "date": "2026-11-21",
+     "group": "others",
+     "watch": "https://www.youtube.com/watch?v=LFZDZ8d-NFo",
+     "seconds": 202
+    },
+    {
+     "kind": "remix",
+     "title": "MAINVIBE – LAUTER (TOM KENZLER REMIX)",
+     "by": "Tom Kenzler",
+     "youtube": "eTrOJfm4ncY",
+     "format": "video",
+     "duration": "6:14",
+     "date": "2026-11-23",
+     "note": "A \"Swing Deep House\" version that Kenzler calls groovier, deeper, club-ready and more DJ-friendly, with playful swing elements over driving deep-house beats.",
+     "group": "others",
+     "watch": "https://www.youtube.com/watch?v=eTrOJfm4ncY",
+     "seconds": 374
+    },
+    {
+     "kind": "remix",
+     "title": "Mainvibe - Lauter (NVKLΛS Remix)",
+     "by": "NVKLɅS",
+     "youtube": "zjGvlMUKGYc",
+     "format": "video",
+     "duration": "3:41",
+     "date": "2026-11-23",
+     "group": "others",
+     "watch": "https://www.youtube.com/watch?v=zjGvlMUKGYc",
+     "seconds": 221
+    },
+    {
+     "kind": "dance",
+     "title": "Linedance Lauter MAINVIBE",
+     "by": "Joyce Brasche",
+     "youtube": "HhW9lPMJdjs",
+     "format": "video",
+     "duration": "2:44",
+     "date": "2026-11-25",
+     "note": "A line dance choreographed by Joyce Brasche: a 32-count intro, then one routine with no tags and no restarts.",
+     "group": "others",
+     "watch": "https://www.youtube.com/watch?v=HhW9lPMJdjs",
+     "seconds": 164
+    },
+    {
+     "kind": "remix",
+     "title": "MAINVIBE – Lauter (Force Techno Remix 2026) FREE DL",
+     "by": "force.story-music.offical",
+     "youtube": "IRiX0_clIag",
+     "format": "video",
+     "duration": "2:35",
+     "date": "2026-11-26",
+     "note": "A techno remix offered as a free download, which its maker sums up as \"Lauter. Härter. Mehr Vibe.\" (louder, harder, more vibe).",
+     "group": "others",
+     "watch": "https://www.youtube.com/watch?v=IRiX0_clIag",
+     "seconds": 155
+    }
+   ]
   },
   {
    "source": "nasty-habits-shadow-boxing.md",

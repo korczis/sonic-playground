@@ -127,6 +127,14 @@ OUTLINE_THRESHOLD = RULES["outline_threshold"]
 TOP_PAIRS = 24
 NOTES: list[str] = []  # findings that are reported but violate no contract (an inferred family)
 YOUTUBE_ID = re.compile(r"/embed/([A-Za-z0-9_-]{11})$")
+# A link in a review's prose to a YouTube video (watch, shorts, youtu.be): extra.versions renders
+# the song's versions, so the prose never repeats one as a link.
+WATCH_LINK = re.compile(r"\]\(https://(?:www\.)?(?:youtube\.com/(?:watch\?v=|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})")
+# The kinds of extra.versions that come from the artist (and their label); the rest are what
+# others made of the song. The page shows the two groups apart.
+ARTIST_KINDS = ("official-video", "original", "self-release", "licensed-release", "official-remix")
+VERSION_FIELDS = ("kind", "title", "by", "youtube", "url", "format", "duration", "date", "rights",
+                  "note", "review", "source")
 # A single letter other than "a"/"I" at the end of a line, the word going on on the next line:
 # Markdown renders it "T he". Found 33 times in the restored reviews (2026-11-12).
 SPLIT_WORD = re.compile(r"(?<![\w’'])[b-hj-zB-HJ-Z] ?\n[a-z]+")
@@ -816,6 +824,7 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
 
     match = YOUTUBE_ID.search(str(extra.get("youtube", "")))
     youtube_id = match.group(1) if match else None
+    own_video = youtube_id  # before a gone video is cleared: extra.versions must still list it
     # A video YouTube no longer serves (data/videos.json) is neither shown nor its still
     # requested: each would be a console error on every page that lists the track.
     video_gone = bool(youtube_id) and youtube_id in GONE_VIDEOS
@@ -889,6 +898,8 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
     for i, m in enumerate(((extra.get("learning") or {}).get("listen_for")) or []):
         if isinstance(m, dict) and not (m.get("at") or m.get("part")):
             err(f"extra.learning.listen_for[{i}] needs a part of the song or a sourced time (at)")
+    for problem in version_problems(extra.get("versions") or [], own_video, body):
+        err(problem)
     for c in extra.get("connections", []) or []:
         if isinstance(c, dict) and not review_exists(str(c.get("source", ""))):
             err(f"extra.connections names {c.get('source')}, which is no review")
@@ -920,6 +931,82 @@ def load_track(path: Path, errors: list[str], include_drafts: bool = False) -> T
         fingerprint=tr.fingerprint(meta, body),
         index=search_text(body),
     )
+
+
+def version_key(v: dict) -> str:
+    """What identifies a version: its video id, or its url when it has none."""
+    return str(v.get("youtube") or v.get("url") or "")
+
+
+def version_problems(versions: list, own: str | None, body: str) -> list[str]:
+    """A review's extra.versions: each version reachable and listed once, an own review that
+    exists, the page's own video among them, and none repeated as a link in the prose."""
+    problems, keys = [], []
+    for i, v in enumerate(versions):
+        if not isinstance(v, dict):
+            continue
+        key = version_key(v)
+        if not key:
+            problems.append(f"extra.versions[{i}] ({v.get('title')}) needs a youtube id or a url")
+        elif key in keys:
+            problems.append(f"extra.versions[{i}] lists {key} a second time")
+        keys.append(key)
+        if v.get("review") and not review_exists(str(v["review"])):
+            problems.append(f"extra.versions[{i}] names the review {v['review']}, which does not exist")
+    if keys and own and own not in keys:
+        problems.append(f"extra.versions lists the song's versions but not the page's own video {own}: "
+                        "add it (kind official-video, or original for an audio upload)")
+    linked = sorted(set(WATCH_LINK.findall(body)) & set(keys))
+    if linked:
+        problems.append(f"the prose links versions that extra.versions already shows ({', '.join(linked)}): "
+                        "drop the links, the page renders the list")
+    return problems
+
+
+def version_reviews(tracks: list[Track]) -> list[str]:
+    """A version that is another review's video names that review (extra.versions[].review), so
+    the list leads to its page instead of playing it as a stranger."""
+    owner = {}
+    for t in tracks:
+        match = YOUTUBE_ID.search(str(t.full_extra.get("youtube", "")))
+        if match:
+            owner[match.group(1)] = t.source
+    problems = []
+    for t in tracks:
+        for v in t.full_extra.get("versions") or []:
+            other = owner.get(str(v.get("youtube", ""))) if isinstance(v, dict) else None
+            if other and other != t.source and v.get("review") != other:
+                problems.append(f"{t.source}: extra.versions lists {v['youtube']}, the video of {other}; "
+                                f'add review = "{other}" to that version')
+    return problems
+
+
+def seconds(duration: str) -> int:
+    """'2:45' or '1:02:45' as seconds."""
+    total = 0
+    for part in duration.split(":"):
+        total = total * 60 + int(part)
+    return total
+
+
+def versions_of(t: Track) -> list[dict]:
+    """The catalogue's view of a review's versions, in the author's order: the authored fields,
+    the group (the artist's own or others'), where to watch, the length in seconds, and whether
+    it is this page's own video or one YouTube no longer serves."""
+    out = []
+    for v in t.full_extra.get("versions") or []:
+        entry = {k: v[k] for k in VERSION_FIELDS if k in v}
+        video = v.get("youtube")
+        entry["group"] = "artist" if v["kind"] in ARTIST_KINDS else "others"
+        entry["watch"] = v.get("url") or f"https://www.youtube.com/watch?v={video}"
+        if v.get("duration"):
+            entry["seconds"] = seconds(v["duration"])
+        if video and video in GONE_VIDEOS:
+            entry["gone"] = True
+        if video and video == t.youtube_id:
+            entry["this_page"] = True
+        out.append(entry)
+    return out
 
 
 # --- What the corpus says. -------------------------------------------------------------------
@@ -1036,6 +1123,7 @@ def build(errors: list[str]) -> dict:
     published, unrecorded = published_times(sources, recorded, added, int(time.time()))
     publication_order(tracks, published)
     errors += uniqueness(tracks)
+    errors += version_reviews(tracks)
     families = genre_families(tracks, load_genre_families(errors), NOTES)
     translated = load_translations(tracks, errors)
     pages_translated = page_translations(errors)
@@ -1077,6 +1165,7 @@ def build(errors: list[str]) -> dict:
             "artists": len(artists),
             "videos": sum(1 for t in tracks if t.youtube_id),
             "videos_gone": sum(1 for t in tracks if t.video_gone),
+            "versions": sum(len(t.full_extra.get("versions") or []) for t in tracks),
             "words": sum(t.words for t in tracks),
             "median_words": word_counts[len(word_counts) // 2],
             "first": min((t.date for t in tracks), default=""),
@@ -1124,6 +1213,7 @@ def build(errors: list[str]) -> dict:
                 "langs": [DEFAULT_LANG] + [lang for lang in LANGUAGES if t.source in translated[lang]],
                 "i18n": {lang: {k: translated[lang][t.source][k] for k in ("title", "description", "path")}
                          for lang in LANGUAGES if t.source in translated[lang]},
+                **({"versions": versions_of(t)} if t.full_extra.get("versions") else {}),
             }
             for t in tracks
         ],
@@ -1289,6 +1379,11 @@ def play_track(t: dict) -> dict:
     out = {k: t.get(k) for k in PLAY_FIELDS}
     out["related"] = [{"source": r["source"]} for r in t.get("related", [])]
     out["i18n"] = {lang: {"path": v.get("path")} for lang, v in (t.get("i18n") or {}).items()}
+    # The versions the player can queue after the page's own video: playable, not gone.
+    playable = [{"youtube": v["youtube"], "track": v["title"], "artist": v["by"]}
+                for v in t.get("versions") or [] if v.get("youtube") and not v.get("gone") and not v.get("this_page")]
+    if playable:
+        out["versions"] = playable
     return out
 
 
