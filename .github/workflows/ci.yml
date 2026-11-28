@@ -77,8 +77,10 @@ jobs:
     # The smoke test sweeps every sitemap page (3,700+ and growing with each content wave): one
     # job outgrew 20 minutes at 717 reviews (run 44569679140), so the sweep is split in SHARDS
     # (test/e2e/smoke.cjs SMOKE_SHARD): this job runs the feature checks and the first shard, the
-    # job sweep the others on the very artefact this job uploads.
-    timeout-minutes: 40
+    # job sweep the others on the very artefact this job uploads. Its feature checks alone took
+    # 29 minutes in run 46169709672 (the versions section, the visualiser's 10 s harmony window),
+    # 22 before: 40 minutes cancelled the job before its shard of the sweep.
+    timeout-minutes: 55
     env:
       SMOKE_SHARD: 1/4
       # New code is tested (scripts/coverage.mjs): the change is judged from the pull request's

@@ -91,8 +91,9 @@ jobs:
   verify:
     name: Verify production (shard ${{ matrix.shard }} of 4)
     # The same checks against the live host, the sweep split in four like the CI gate: shard 1
-    # also runs the feature checks, the others sweep only (test/e2e/smoke.cjs SMOKE_SHARD).
-    timeout-minutes: 40
+    # also runs the feature checks, the others sweep only (test/e2e/smoke.cjs SMOKE_SHARD). The
+    # feature checks take about 30 minutes (run 46169709672), so the deadline is the CI job's.
+    timeout-minutes: 55
     needs: deploy
     runs-on: ubuntu-latest
     strategy:

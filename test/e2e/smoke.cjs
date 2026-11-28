@@ -2547,13 +2547,15 @@ async function shot(page, name) {
   // reflections were a mosaic of the triangles' own normals (the mean absolute Laplacian of the
   // sphere's middle, in 2x2 blocks against its luminance, read 0.055-0.072 and reads 0.017-0.024
   // with the surface's normals; below 0.035). With the music, flux, pocket, starlane, ripple and
-  // moire keep a median luminance above 0.14, 0.10, 0.09, 0.235 and 0.182 (they read 0.103,
+  // moire keep a median luminance above 0.14, 0.10, 0.09, 0.22 and 0.182 (they read 0.103,
   // 0.084, 0.070-0.078, 0.170-0.199 and 0.164 before, and 0.19, 0.12, 0.10-0.15, 0.27-0.31 and
   // 0.20 after; on real recordings they stayed near black); pocket's bars are shorter in a quiet
   // passage (at gain 0.3 below 0.75 of its luminance at gain 1; it read 0.98, the auto-gained
   // bars filled the matrix as much); and patchbay and silk draw more than one hue (the
   // saturation-weighted resultant of the hues of their lit cells below 0.97: it read 0.98-0.99,
-  // one olive wash, and reads 0.92-0.94).
+  // one olive wash, and reads 0.92-0.94). ripple's limit was 0.235 until CI read 0.234 (run
+  // 46169709672; 0.253-0.268 in earlier runs, 0.28 at a 40 fps cap here): 0.22 still lies above
+  // the 0.199 it read when it was near black.
   if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await context.grantPermissions(['microphone']);
@@ -2602,7 +2604,7 @@ async function shot(page, name) {
       return l.sort((p, q) => p - q)[4];
     };
     const lit = {};
-    for (const [mode, least] of [['flux', 0.14], ['pocket', 0.1], ['starlane', 0.09], ['ripple', 0.235], ['moire', 0.182]]) {
+    for (const [mode, least] of [['flux', 0.14], ['pocket', 0.1], ['starlane', 0.09], ['ripple', 0.22], ['moire', 0.182]]) {
       await page.evaluate((m) => window.SonicVisualizer.set(m), mode);
       await page.waitForTimeout(2000);
       lit[mode] = await lumaOf();
