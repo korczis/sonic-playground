@@ -36,6 +36,9 @@ the track and replaces every TODO(write); `check` then proves the article meets 
     python3 scripts/track.py vocab [--facet genre] [--limit N]
     python3 scripts/track.py suggest --genre g ... --sentiment s ...
     python3 scripts/track.py outline
+    python3 scripts/track.py versions content/<file>.md [--query Q ...] [--json] [--refresh]
+                             [--write --pick ID[:kind] ...]   (extra.versions from YouTube)
+    python3 scripts/track.py versions content/<file>.md --verify | --verify --all
   --oembed-fixture <file.json> answers oEmbed from a file ({"<video id>": {"title", "author_name"}})
 
 Every command prints JSON. Exit codes: 0 ok, 1 contract violation or unfinished article,
@@ -53,15 +56,18 @@ import sys
 import tempfile
 import time
 import tomllib
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import date
 from pathlib import Path
 from string import Template
+from typing import NoReturn
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog as cat  # noqa: E402  (the same inference and contract the build uses)
+import youtube as yt  # noqa: E402  (YouTube's search and watch pages as data, never streams)
 
 ROOT = cat.ROOT
 ARCHETYPE = ROOT / "archetypes" / "track.md"
@@ -80,7 +86,7 @@ def out(data: dict) -> None:
     print(json.dumps(data, ensure_ascii=False, indent=1))
 
 
-def fail(message: str, code: int = 2) -> None:
+def fail(message: str, code: int = 2) -> NoReturn:
     print(json.dumps({"error": message}, ensure_ascii=False), file=sys.stderr)
     sys.exit(code)
 
@@ -1181,6 +1187,394 @@ def audit_mb(paths: list[str], args) -> int:
     return 0
 
 
+# --- Versions: the song's family on YouTube, as extra.versions data. --------------------------
+#
+# A song lives on YouTube in many uploads: the artist's video, the Topic channel's release (once
+# self-released through a distributor, later perhaps under licence to a label), the artist's own
+# remix, other producers' remixes, a line dance, a short. `versions` searches for them, keeps the
+# results whose title names the song, reads each one's watch page (never its stream) and
+# suggests a kind with the reasons; the writer picks, `--write --pick` appends the tables, and
+# `--verify` re-reads every listed version against YouTube.
+
+VERSION_QUERIES = ("", "remix", "edit", "extended", "live", "cover", "line dance")
+VERSION_KINDS = tuple(cat.TRACK_SCHEMA["properties"]["extra"]["properties"]["versions"]
+                      ["items"]["properties"]["kind"]["enum"])
+ARTIST_SIDE = re.compile(r"\s*-\s*topic\s*$", re.I)
+KIND_RULES = (  # (kind, title pattern, reason): the first that matches decides, in this order
+    ("dance", re.compile(r"line ?dance|choreo", re.I), "the title names a (line) dance"),
+    ("live", re.compile(r"\blive\b", re.I), "the title says live"),
+    ("cover", re.compile(r"\bcover\b", re.I), "the title says cover"),
+)
+REMIX = re.compile(r"\b(remix|rmx|rework|bootleg|flip)\b", re.I)
+EDITS = (("edit", re.compile(r"\bedit\b", re.I)), ("extended", re.compile(r"\bextended\b", re.I)))
+REMIXER = re.compile(r"[\(\[]\s*([^()\[\]]+?)\s+(?:remix|rmx|edit|rework|bootleg)\s*[\)\]]", re.I)
+DURATION_SLACK = 1  # seconds: YouTube's search rounds a length up, the watch page floors it
+MAX_WATCHED = 40  # watch pages read per discovery, at most
+
+
+def names_song(text: str, song: str) -> bool:
+    """Whether text names the song: its folded words appear in a row ("Linedance Lauter
+    MAINVIBE" names "Lauter"; "Lautersound" does not)."""
+    want, have = cat.words(song), cat.words(text)
+    return bool(want) and any(have[i:i + len(want)] == want
+                              for i in range(len(have) - len(want) + 1))
+
+
+def channel_name(channel: str) -> str:
+    return CHANNEL_NOISE.sub("", channel).strip()
+
+
+def version_queries(artist: str, song: str, extra: list[str]) -> list[str]:
+    base = f"{main_artist(artist)} {song}"
+    queries = [f"{base} {q}".strip() for q in VERSION_QUERIES] + list(extra)
+    return list(dict.fromkeys(queries))
+
+
+def credited_by(title: str, channel: str) -> str:
+    """Who made a version by someone else: the remixer the title names, in the channel's
+    spelling when the channel is that person ("ROCKMAX | Tom Kenzler" for "(TOM KENZLER REMIX)"),
+    else the channel."""
+    name = channel_name(channel)
+    parts = [p.strip() for p in re.split(r"\s+[|·]\s+", name) if p.strip()]
+    m = REMIXER.search(title)
+    if m:
+        remixer = fold(m.group(1))
+        same = next((p for p in parts if fold(p) == remixer), "")
+        return same or (name if fold(name) == remixer else m.group(1).strip())
+    named = [p for p in parts if len(parts) > 1 and names_song(title, p)]
+    return named[0] if named else name
+
+
+def suggest_kind(title: str, channel: str, artist_side: bool, seconds: int | None, short: bool,
+                 facts: dict) -> tuple[str | None, list[str]]:
+    """The kind a version most likely is, and why; None when no rule decides."""
+    for kind, pattern, reason in KIND_RULES:
+        if pattern.search(title):
+            return kind, [reason]
+    if short or (seconds is not None and seconds < 60):
+        return "excerpt", ["a YouTube short" if short else f"only {seconds} s long"]
+    side = "the artist's channel" if artist_side else f"another channel ({channel or 'unknown'})"
+    if REMIX.search(title):
+        return ("official-remix" if artist_side else "remix"), [f"the title says remix, on {side}"]
+    for kind, pattern in EDITS:
+        if pattern.search(title):
+            return kind, [f"the title says {kind}"]
+    provider = facts.get("provider")
+    if provider:
+        if facts.get("diy"):
+            return "self-release", [f"a Topic upload provided by {provider}, a DIY distributor"]
+        return "licensed-release", [f"a Topic upload provided by {provider}, not a DIY distributor"]
+    if ARTIST_SIDE.search(channel):
+        return "original", ["a Topic upload whose description names no provider"]
+    if artist_side:
+        return "official-video", [f"uploaded by {side}"]
+    return None, [f"no rule decides for an upload by {side}: pick a kind by hand"]
+
+
+def version_candidate(found: dict, watch: dict | None, t, own_channel: str,
+                      fetched: int | None) -> dict:
+    """A search result (with its watch page when it could be read) as a version candidate:
+    the entry --write would append, the suggested kind with its reasons and confidence."""
+    w = watch or {}
+    facts = w.get("facts") or {}
+    channel = w.get("author") or found.get("channel", "")
+    channel_id = w.get("channel_id") or found.get("channel_id", "")
+    artist = main_artist(t.artist)
+    artist_side = (fold(channel_name(channel)) == fold(artist)
+                   or bool(own_channel and channel_id == own_channel)
+                   or any(fold(a) == fold(artist) for a in facts.get("artists", [])))
+    title = w.get("title") or found.get("title", "")
+    short = found.get("format") == "short" or bool(w.get("short"))
+    kind, reasons = suggest_kind(title, channel, artist_side, w.get("seconds"), short, facts)
+    if watch is None:
+        reasons.append("the watch page could not be read: from the search result only")
+    confidence = ("low" if watch is None or kind is None
+                  else "high" if facts.get("provider") or (artist_side and kind != "excerpt")
+                  else "medium")
+    country = t.full_extra.get("country") if isinstance(t.full_extra.get("country"), str) else ""
+    published = w.get("publish_date", "")
+    day = facts.get("released") or (yt.local_date(published, country) if published else "")
+    entry: dict = {"kind": kind, "title": display_title(title),
+                   "by": t.artist if artist_side else credited_by(title, channel),
+                   "youtube": found["id"]}
+    if short:
+        entry["url"] = f"https://www.youtube.com/shorts/{found['id']}"
+    entry["format"] = "short" if short else ("audio" if facts.get("provider") else "video")
+    duration = w.get("duration") or found.get("duration", "")
+    if duration:
+        entry["duration"] = duration
+    if day:
+        entry["date"] = day
+    if facts.get("rights"):
+        entry["rights"] = facts["rights"]
+    count = w.get("views") if w.get("views") is not None else found.get("views")
+    return {
+        "entry": entry, "suggested_kind": kind, "confidence": confidence, "reasons": reasons,
+        "evidence": entry.get("url") or yt.watch_url(found["id"]), "channel": channel,
+        "date_source": ("the description's Released on" if facts.get("released") else
+                        f"the upload time in {country or 'UTC'}" if published else ""),
+        "credits": facts.get("credits", []),
+        "views": {"count": count, "as_of": date.fromtimestamp(fetched).isoformat()
+                  if fetched else date.today().isoformat(),
+                  "note": "a snapshot of YouTube's counter, not a fact for the page"},
+    }
+
+
+def listed_versions(t) -> list[dict]:
+    return [v for v in t.full_extra.get("versions") or [] if isinstance(v, dict)]
+
+
+def display_title(title: str) -> str:
+    """A version's title as a page shows it: the upload's title without its emoji and other
+    pictographs (Unicode category So, variation selectors), spaces collapsed."""
+    kept = "".join(ch for ch in title
+                   if unicodedata.category(ch) != "So" and not 0xFE00 <= ord(ch) <= 0xFE0F)
+    return re.sub(r"\s+", " ", kept).strip()
+
+
+def version_diffs(listed: dict, derived: dict) -> list[dict]:
+    """Where a listed version and what YouTube says now disagree: title, by, duration (within
+    DURATION_SLACK), date; also kind, format and rights, which a writer may have chosen."""
+    diffs = []
+    for key in ("title", "by", "duration", "date", "kind", "format", "rights"):
+        mine, theirs = listed.get(key), derived.get(key)
+        if mine is None or theirs is None or mine == theirs:
+            continue
+        if key == "by" and fold(str(mine)) == fold(str(theirs)):
+            continue
+        if key == "duration":
+            a, b = seconds(str(mine)), seconds(str(theirs))
+            if a is not None and b is not None and abs(a - b) <= DURATION_SLACK:
+                continue
+        diffs.append({"field": key, "listed": mine, "youtube": theirs,
+                      "chosen": key in ("kind", "format", "rights")})
+    return diffs
+
+
+def own_channel_of(t, client) -> str:
+    if not t.youtube_id:
+        return ""
+    try:
+        return client.watch(t.youtube_id).get("channel_id", "")
+    except (yt.YouTubeError, ValueError):
+        return ""
+
+
+def discover(t, client, extra_queries: list[str]) -> dict:
+    """Search the song's versions, keep the results that name the song and the artist, read
+    their watch pages, and report candidates (best known first), rejections and the listed
+    versions the searches did not find."""
+    song = cat.song(t.track)
+    artist = main_artist(t.artist)
+    queries, results = [], {}
+    for q in version_queries(t.artist, song, extra_queries):
+        row: dict = {"query": q}
+        try:
+            found = client.search(q)
+            row["results"] = len(found)
+            for r in found:
+                results.setdefault(r["id"], r)
+        except yt.YouTubeError as exc:
+            row["error"] = str(exc)
+        queries.append(row)
+    listed = {cat.version_key(v): v for v in listed_versions(t)}
+    own_channel = own_channel_of(t, client)
+    rejected: dict[str, list[str]] = {}
+    candidates = []
+    for r in results.values():
+        about = f"{r['title']} {r['channel']} {r['snippet']}"
+        if not (names_song(r["title"], song) or names_song(r["snippet"], song)):
+            rejected.setdefault("the title does not name the song", []).append(r["id"])
+            continue
+        if fold(artist) not in fold(about):
+            rejected.setdefault("neither title nor channel names the artist", []).append(r["id"])
+            continue
+        watch = None
+        if len(candidates) < MAX_WATCHED:
+            try:
+                watch = client.watch(r["id"])
+            except yt.YouTubeError:
+                watch = None
+        if watch and not names_song(watch["title"], song):
+            rejected.setdefault("only the description names the song", []).append(r["id"])
+            continue
+        c = version_candidate(r, watch, t, own_channel,
+                              client.fetched_at(yt.watch_url(r["id"])))
+        c["in_page"] = r["id"] in listed
+        if c["in_page"]:
+            c["differs"] = version_diffs(listed[r["id"]], c["entry"])
+        candidates.append(c)
+    candidates.sort(key=lambda c: (not c["in_page"], c["entry"]["kind"] is None))
+    found_ids = {c["entry"]["youtube"] for c in candidates}
+    return {"file": f"content/{t.source}", "artist": t.artist, "song": song, "queries": queries,
+            "candidates": candidates,
+            "listed_not_found": [k for k in listed if k not in found_ids],
+            "rejected": {k: len(v) for k, v in rejected.items()}}
+
+
+def toml_tables(name: str, rows: list[dict]) -> str:
+    """Rows as TOML array-of-tables entries ([[name]] then key = value lines)."""
+    chunks = []
+    for row in rows:
+        lines = [f"[[{name}]]"] + [f"{k} = {toml_value(v)}" for k, v in row.items()
+                                    if v is not None]
+        chunks.append("\n".join(lines) + "\n")
+    return "\n".join(chunks)
+
+
+def write_versions(file: Path, rel: str, rows: list[dict]) -> list[str]:
+    """Append rows as [[extra.versions]] at the end of the front matter, prove the article
+    still meets the contract and now lists them, then write it. The prose is never touched."""
+    raw, body = cat.split_front_matter(file.read_text(encoding="utf-8"), file.name)
+    rewritten = ("+++\n" + raw.rstrip("\n") + "\n\n" + toml_tables("extra.versions", rows)
+                 + "+++\n" + body)
+    errors, _ = prove(rewritten, file.name, {})
+    if not errors:
+        extra = tomllib.loads(cat.split_front_matter(rewritten, file.name)[0]).get("extra", {})
+        if (extra.get("versions") or [])[-len(rows):] != rows:
+            errors = ["extra.versions does not end with the picked versions after the rewrite"]
+    if not errors:
+        file.write_text(rewritten, encoding="utf-8")
+    return errors
+
+
+def pick_versions(t, file: Path, picks: list[str], report: dict, client) -> tuple[dict, int]:
+    """--write --pick ID[:kind]: the picked candidates (or videos read on their own) appended
+    as extra.versions, with the suggested kind unless one is given; duplicates refused."""
+    by_id = {c["entry"]["youtube"]: c for c in report["candidates"]}
+    listed = {cat.version_key(v) for v in listed_versions(t)}
+    rows, problems = [], []
+    for pick in picks:
+        video, _, kind = pick.partition(":")
+        if not VIDEO_ID.match(video):
+            problems.append(f"{pick}: not a YouTube video id")
+            continue
+        if video in listed or any(r["youtube"] == video for r in rows):
+            problems.append(f"{video}: already in extra.versions")
+            continue
+        c = by_id.get(video)
+        if c is None:
+            try:
+                watch = client.watch(video)
+            except yt.YouTubeError as exc:
+                problems.append(f"{video}: {exc}")
+                continue
+            c = version_candidate({"id": video, "title": "", "channel": "", "channel_id": "",
+                                   "duration": "", "format": "video"}, watch, t,
+                                  own_channel_of(t, client), None)
+        kind = kind or c["suggested_kind"]
+        if kind not in VERSION_KINDS:
+            problems.append(f"{video}: kind {kind or '(none suggested)'} is not one of "
+                            + ", ".join(VERSION_KINDS) + "; give it as ID:kind")
+            continue
+        rows.append({**c["entry"], "kind": kind})
+    rel = f"content/{file.name}"
+    if problems or not rows:
+        return {"file": rel, "written": False, "errors": problems or ["nothing picked"]}, 1
+    errors = write_versions(file, rel, rows)
+    if errors:
+        return {"file": rel, "written": False, "errors": errors}, 1
+    say("versions", rel, f"{len(rows)} version(s) appended without notes; a note added later "
+        "must be translated in each translation (versions = [{ youtube, note }]), which is "
+        "stale until then: python3 scripts/translate.py status")
+    return {"file": rel, "written": True, "added": rows}, 0
+
+
+def verify_versions(t, client) -> dict:
+    """Re-read every listed version's watch page and compare it with the entry."""
+    country = t.full_extra.get("country") if isinstance(t.full_extra.get("country"), str) else ""
+    checked, diffs = 0, []
+    for v in listed_versions(t):
+        video = v.get("youtube")
+        if not video:
+            continue
+        checked += 1
+        try:
+            w = client.watch(video)
+        except yt.YouTubeError as exc:
+            diffs.append({"youtube": video, "field": "available", "listed": True,
+                          "youtube_says": str(exc)})
+            continue
+        if not w["playable"]:
+            diffs.append({"youtube": video, "field": "available", "listed": True,
+                          "youtube_says": w["reason"] or "not playable"})
+            continue
+        facts = w["facts"]
+        artist_side = v.get("kind") in cat.ARTIST_KINDS
+        day = facts.get("released") or yt.local_date(w["publish_date"], country)
+        derived = {"title": display_title(w["title"]),
+                   "by": t.artist if artist_side else credited_by(w["title"], w["author"]),
+                   "duration": w["duration"] or None, "date": day or None}
+        for d in version_diffs(v, derived):
+            diffs.append({"youtube": video, "field": d["field"], "listed": d["listed"],
+                          "youtube_says": d["youtube"]})
+    return {"file": f"content/{t.source}", "checked": checked, "diffs": diffs}
+
+
+def print_versions(report: dict) -> None:
+    """The discovery report for a person: one line per candidate, then what was left out."""
+    print(f"{report['file']}: {report['artist']} - {report['song']}")
+    for c in report["candidates"]:
+        e = c["entry"]
+        mark = "listed " if c["in_page"] else "new    "
+        print(f"  {mark}{e['kind'] or '?':16} {c['confidence']:6} {e['youtube']} "
+              f"{e.get('duration', '?'):>7} {e.get('date', '?'):10} {e['by']}: {e['title']}")
+        print(f"         {'; '.join(c['reasons'])}")
+        for d in c.get("differs", []):
+            print(f"         differs: {d['field']} listed {d['listed']!r}, YouTube {d['youtube']!r}")
+    for k in report["listed_not_found"]:
+        print(f"  listed but not found by the searches: {k}")
+    for reason, n in report["rejected"].items():
+        print(f"  left out: {n} result(s): {reason}")
+    for q in report["queries"]:
+        if "error" in q:
+            print(f"  query {q['query']!r} failed: {q['error']}")
+
+
+def versions(args) -> int:
+    client = yt.YouTube(fixture=args.youtube_fixture, refresh=args.refresh or args.verify)
+    if args.all:
+        if not args.verify:
+            fail("--all goes with --verify (discovery is one review at a time)")
+        files = [f for f in cat.review_files()
+                 if f.name != "_index.md" and not cat.tr.translation_name(f.name)]
+    elif args.file:
+        files = [content_path(args.file)]
+    else:
+        fail("name a review (content/<file>.md), or --verify --all")
+    if args.write and not args.pick:
+        fail("--write needs --pick ID[:kind] for each version to append")
+    if args.verify:
+        reports = []
+        for file in files:
+            errors: list[str] = []
+            t = cat.load_track(file, errors, include_drafts=True)
+            if t and listed_versions(t):
+                reports.append(verify_versions(t, client))
+        total = sum(len(r["diffs"]) for r in reports)
+        out({"verified": reports, "diffs": total})
+        for r in reports:
+            for d in r["diffs"]:
+                say("versions", r["file"], f"{d['youtube']} {d['field']}: listed "
+                    f"{d['listed']!r}, YouTube says {d['youtube_says']!r}")
+        return 1 if total else 0
+    file = files[0]
+    errors = []
+    t = cat.load_track(file, errors, include_drafts=True)
+    if not t:
+        fail(f"{args.file} does not load: " + "; ".join(errors), 1)
+    report = discover(t, client, args.query or [])
+    if args.write:
+        result, code = pick_versions(t, file, args.pick, report, client)
+        out(result)
+        return code
+    if args.json:
+        out(report)
+    else:
+        print_versions(report)
+    return 0
+
+
 def check(path: str) -> int:
     file = content_path(path)
     if cat.tr.translation_name(file.name):
@@ -1250,6 +1644,23 @@ def main() -> int:
     for f in cat.FACETS:
         p_sug.add_argument(f"--{f}", nargs="+", action="extend")
     sub.add_parser("outline", help="the review outline the corpus shares")
+    p_ve = sub.add_parser(
+        "versions", help="the song's versions on YouTube: candidates for extra.versions",
+        description="Search YouTube for the versions of a review's song (the artist's video, "
+        "Topic releases, remixes, edits, live, covers, dances, shorts), read each candidate's "
+        "watch page (never a stream) and suggest a kind with its reasons; --write --pick "
+        "appends [[extra.versions]] tables; --verify re-reads every listed version.")
+    p_ve.add_argument("file", nargs="?", help="the review (content/<file>.md)")
+    p_ve.add_argument("--query", action="append", help="another search, besides the derived ones")
+    p_ve.add_argument("--json", action="store_true", help="the report as JSON")
+    p_ve.add_argument("--write", action="store_true", help="append the picked versions")
+    p_ve.add_argument("--pick", action="append", metavar="ID[:kind]",
+                      help="a version to append (its suggested kind unless one is given)")
+    p_ve.add_argument("--verify", action="store_true",
+                      help="re-read every listed version; exit 1 when one differs")
+    p_ve.add_argument("--all", action="store_true", help="with --verify: every review")
+    p_ve.add_argument("--refresh", action="store_true", help="bypass the YouTube cache")
+    p_ve.add_argument("--youtube-fixture", help="answer from saved pages in a directory (tests)")
     args = parser.parse_args()
 
     if args.command == "resolve":
@@ -1266,6 +1677,8 @@ def main() -> int:
         return audit_mb(args.files, args)
     if args.command == "check":
         return check(args.file)
+    if args.command == "versions":
+        return versions(args)
     if args.command == "vocab":
         vocab = vocabulary()
         facets = [args.facet] if args.facet else list(cat.FACETS)
