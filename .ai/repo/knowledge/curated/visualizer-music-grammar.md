@@ -190,3 +190,45 @@ in the page.
   - A window set against musicMic's scheduled times needs about 100 ms for the pipeline.
   - An event test must keep hats out of both of its windows.
   - A window locked to the detection lets any mode driven by the spectrum pass.
+
+## CI frame rates: everything by the clock (2026-11-28)
+
+Three Pages runs on main (45510132696, 45530126652, 45641413542) failed on visualiser checks
+only, each on another one, while the local verify passed: CI draws with SwiftShader at 4-44 fps,
+a Mac's Chrome at 60. Every failure was a time constant counted in frames or a check that judged
+in frames. Reproduced with `SMOKE_FPS=<n>` (test/e2e/smoke.cjs holds requestAnimationFrame to n
+a second), `SMOKE_ONLY=<regex>` (one labelled part of the smoke: `viz gl-music`, `viz flashes`,
+`player viz-reset`, `viz`, `site`) and `SMOKE_ANGLE`; c185ee71 failed both CI checks locally.
+
+- **The analysis stepped at most 0.1 s and restarted its detectors after 250 ms.** At 4 fps its
+  averages ran at 40% of real time: after a C to F# change the key had not turned at 8.5 s, and
+  fold, the heaviest mode, failed its harmony check on CI. The step is now the real time passed
+  (a gap of over 1 s restarts the detectors), the pictures' step capped at 0.3 s. Probed: the key
+  turns 6 s after the change at 4 fps as at 60, in every WebGL mode 5.5-6.5 s.
+- **The WebGL clocks stopped at 0.1 s a frame, and the feedback modes' frame factor `uFr` at 3
+  sixtieths.** At 4 fps (15 sixtieths) a trail held the last key's colour five times as long:
+  ember and silk then missed the key change. Both follow the clock now (0.3 s). At a capped 4
+  fps the harmony check passes in 15 of 15 modes (13 of 15 on c185ee71, the key turning late,
+  and 11-13 with the analysis's step fixed alone).
+- **starlane faded its trails by 0.38 a frame.** A streak's length follows the frame's time, so
+  at 44 fps the field held more light and each surge swung harder. It fades by 0.38 a sixtieth.
+- **The harmony check judged 8 s after the chord.** The key turns after 5.5-6.5 s at any rate
+  and the palette eases over 3 s, while the section that starts with the new key turns the
+  palette by up to 30 degrees either way: hyperloop, ember and silk read 0.04-0.09 round the
+  wheel in some runs, 0.2-0.45 in others. It now judges after 10 s.
+- **The flash check counted a transition over three frames,** 50 ms at 60 fps and 68 ms at 44,
+  where it took in more of each punch's decay: 14 flash pairs in 30 s against 4 over 50 ms. A
+  transition is now a swing within 50 ms (at least one frame).
+- **The analysis lost kicks below 60 fps, and with them the flash limit.** A kick's attack fell
+  across two frames and rose in two halves, each under the threshold: of 58 kicks at 175 bpm it
+  found 59, 48 and 44 at 60, 44 and 30 fps (an echo at 60). The flash governor counts the kicks
+  it hears; between missed ones its gain came back to 0.9 and the next punches flashed at full
+  light, 3-4 times a second at 44 fps. Below 50 fps (the analysis's mean step over 20 ms) an onset
+  is now also judged on the rise from the lowest level of the last 80 ms: 58, 53 and 54 found at
+  60, 44 and 30 fps, the gain held at 0.31-0.36 as at 60 fps. At 60 fps the rule found a loud
+  room's noise a kick 7 times in 8 s instead of 2, so it stays off there. Cutting the third flash
+  on its own frame instead (no 50 ms ease) did not help: 2-4 at worst either way.
+- **Known limits.** At 15 fps the frame-sampled analysis finds 12 of 58 kicks: onsets below 30
+  fps need an AudioWorklet. At a capped 4 fps tidal and reef fail "moves with the music" before
+  and after these changes (the picture drawn at a quarter of its resolution there); CI's runner
+  draws them faster and passes.

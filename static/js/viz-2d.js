@@ -676,7 +676,11 @@
           s.stars[i * 3 + 2] = Math.random();
         }
       }
-      fade(g, w, h, 0.38);
+      // The trails fade by the clock (0.38 of their light a sixtieth of a second): a streak's length
+      // follows the time a frame takes, so faded by the frame, the field held more light at 44 fps
+      // than at 60 (a median luminance of 0.096 against 0.083; 0.084 now) and each surge swung it
+      // harder (CI counted 4 flashes in a second at 44 fps).
+      fade(g, w, h, 1 - Math.pow(0.62, G.dt * 60));
       var path = G.beats / 16;
       var dv = lerp(m.prevVariant, m.variant, G.mix) * TAU;
       var cx = w / 2 + G.pan * w + Math.sin(path + dv) * M * 0.06 * G.mo;

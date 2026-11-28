@@ -1169,7 +1169,7 @@
           mat.uniforms.uSpecMean.value = sum / an.bands.length;
           // This section's axis of turn, turning as fast as the passage is loud (the tempo's clock
           // alone ran as fast in a quiet break as in the drop); the lights placed by the balance.
-          spin += Math.max(0, Math.min(0.1, an.dt)) * ctx.pace * m.rate * s.params.speed * 0.25 * (0.6 + 0.8 * v)
+          spin += Math.max(0, Math.min(0.3, an.dt)) * ctx.pace * m.rate * s.params.speed * 0.25 * (0.6 + 0.8 * v)
             * ((1 - rr) + rr * (0.4 + 0.6 * Math.min(1.75, m.level)));
           mesh.rotation.set(Math.sin(t * 0.1) * 0.4 + v, spin, 0);
           mat.uniforms.uLamp.value.set(Math.cos(t * 0.6) * 3 + m.pan * 6, 1.5 + Math.sin(t * 0.4), Math.sin(t * 0.6) * 3);
@@ -1214,7 +1214,7 @@
           // alone the choir moved half as much in the loud chorus as in the verse before it
           // (round 2 pass 1). A snare gives the turn a push.
           var lk = rr * Math.max(0, Math.min(1, (m.exposure - 0.5) / 0.5)) + (1 - rr) * 0.5;
-          var paced = Math.max(0, Math.min(0.1, an.dt)) * ctx.pace * m.rate * s.params.speed;
+          var paced = Math.max(0, Math.min(0.3, an.dt)) * ctx.pace * m.rate * s.params.speed;
           spin += paced * (0.3 * (0.35 + 1.3 * lk) + 1.5 * m.snap * rr);
           tilt += paced * 0.13 * (0.5 + lk);
           points.rotation.set(Math.sin(tilt) * 0.5, spin, 0);
@@ -1325,7 +1325,9 @@
       var r = p.react, rr = Math.min(1, r);
       // Reduced motion: feedback zoom and travel at most a few percent a second.
       var drift = m.reduced ? 0.05 : 1;
-      var dt = Math.max(0, Math.min(0.1, s.t - clock.last));
+      // The clocks keep real time down to about 3 fps (capped at 0.1 s, they ran at 40% of it on
+      // CI's software GPU at 4 fps); only a stalled frame is held to 0.3 s.
+      var dt = Math.max(0, Math.min(0.3, s.t - clock.last));
       clock.last = s.t;
       // The pace: the tempo's, calmer as the music falls quiet (the level against its last
       // seconds); at react 0 the resting pace.
@@ -1351,7 +1353,11 @@
       U.uTravel.value = clock.travel;
       U.uShock.value = clock.shock;
       U.uTurn.value = clock.turn;
-      U.uFr.value = Math.max(0.25, Math.min(3, a.dt * 60));
+      // The frame's length in 60ths of a second, which every feedback mode's fade, deposit and warp
+      // is raised to or scaled by. Capped at 3, a 4 fps frame (15) faded as 3: the trails held the
+      // last key's colour 5x as long and ember and silk missed a key change (SMOKE_FPS=4). The
+      // analysis caps the step at 0.3 s (18).
+      U.uFr.value = Math.max(0.25, a.dt * 60);
       U.uBass.value = m.drive.bass;
       U.uMid.value = m.drive.mid;
       U.uHigh.value = m.drive.high;

@@ -114,7 +114,8 @@
   function detector(fromHz, toHz, gap, tau) {
     return { from: fromHz, to: toHz, lo: bandOf(fromHz), hi: bandOf(toHz), a: 1, z: 2, gap: gap, tau: tau,
       bins: false, k: 1.5, min: 1.2, lift: 0, level: -200, prev: -200, lag: -200, slow: -200,
-      mean: 0, vari: 1, last: -10, split: 0, topPrev: -200, topLag: -200 };
+      mean: 0, vari: 1, last: -10, split: 0, topPrev: -200, topLag: -200,
+      hist: /** @type {number[][]} */ ([]) };
   }
   var dsp = {
     db: new Float32Array(BANDS), prevDb: new Float32Array(BANDS), primed: false, ceil: -30,
@@ -152,6 +153,8 @@
     beatN: 0, beatAt: -10, down: 0, acc: [0, 0, 0, 0], accMean: -200, downLast: -10,
     accent: { slot: 0, peak: -200, until: 0 },
     cost: 0,
+    // The analysis's mean step over about half a second (s).
+    step: 1 / 60,
     // The structure: the rows, the row being summed, the novelty's usual level, the last section.
     st: { ring: new Float32Array(ROW * ROWS), sum: new Float32Array(ROW), n: 0, at: -10, i: 0,
       filled: 0, sectionAt: -10 },
@@ -396,14 +399,23 @@
     // the background) would otherwise read the spectrum twice within a few milliseconds, and the
     // rise of an onset would be split between two near-identical frames.
     if (analysedAt >= 0 && now - analysedAt < 12) return A;
-    // After a pause (a hidden tab, a picture off screen) the last spectrum is stale: the detectors
-    // start again from the next one rather than compare against it.
-    if (analysedAt >= 0 && now - analysedAt > 250) dsp.primed = false;
-    var dt = analysedAt < 0 ? 1 / 60 : Math.min(0.1, (now - analysedAt) / 1000);
+    // The analysis steps by the time that really passed, so its averages (the key's 8 s and its
+    // 2 s hold, the decays) keep real time at any frame rate. Capped at 0.1 s, they ran at 40% of
+    // real time at 4 fps (CI's software GPU drawing fold), and a C to F# change no longer turned
+    // the key within 8 s. Only after a pause of over a second (a hidden tab, a picture off screen)
+    // is the last spectrum stale: the detectors start again from the next one rather than compare
+    // against it, and the step counts as one ordinary frame. Restarted after every 250 ms, a
+    // picture at 4 fps never compared two spectra and heard no onset at all.
+    var gap = analysedAt < 0 ? Infinity : (now - analysedAt) / 1000;
+    if (gap > 1 && analysedAt >= 0) dsp.primed = false;
+    var dt = gap > 1 ? 1 / 60 : gap;
+    dsp.step += (dt - dsp.step) * (1 - Math.exp(-dt / 0.5));
     analysedAt = now;
     var t = now / 1000;
     A.t = t;
-    A.dt = dt;
+    // The pictures' step is capped at 0.3 s: their easing keeps real time down to 4 fps, and a
+    // stalled frame does not throw the motion a second ahead.
+    A.dt = Math.min(0.3, dt);
     A.source = audio.analyser ? audio.kind : 'clock';
     A.beat = false;
     if (audio.analyser) fromAudio(dt, t); else fromClock();
@@ -533,6 +545,20 @@
     if (!dsp.primed) { d.prev = d.lag = level; d.slow = raw; }
     d.level = raw;
     var ref = dt >= 0.025 ? d.prev : d.lag;
+    // Below 50 fps the onset is also judged on the rise from the lowest level of the last 80 ms
+    // (its running statistics stay on the rise above): there a kick's attack fell across two
+    // frames, its rise came in two halves each under the threshold, and a sixth of the kicks were
+    // lost at 44 fps, a quarter at 30 (58 played at 175 bpm: 59, 48 and 44 found at 60, 44 and 30
+    // fps; 55 and 53 now at 44 and 30). The flash limit counts the kicks it hears, so where it
+    // missed them it let the picture flash 3-4 times a second (starlane, CI at 44 fps). At 60 fps
+    // the rule is not needed, and it found a loud room's noise a kick 7 times in 8 s, not 2.
+    var low = ref, hist = d.hist;
+    if (!dsp.primed) hist.length = 0;
+    if (dsp.step > 0.02) {
+      for (var q = 0; q < hist.length; q++) if (t - hist[q][0] <= 0.08) low = Math.min(low, hist[q][1]);
+    }
+    hist.push([t, level]);
+    if (hist.length > 5) hist.shift();
     d.lag = d.prev;
     d.prev = level;
     // The snare's bands above 1 kHz on their own, read the same way (the snare's `split`).
@@ -559,7 +585,8 @@
     var a = 1 - Math.exp(-dt / 0.8);
     var lifted = raw > d.slow + d.lift;
     var ownSound = !d.split || topRise > d.min + 2;
-    if (f > d.mean + d.k * sd + d.min && lifted && ownSound && lvl > 0.05 && t - d.last > d.gap) {
+    var rose = Math.max(f, Math.min(24, Math.max(0, at - Math.max(low, fl))));
+    if (rose > d.mean + d.k * sd + d.min && lifted && ownSound && lvl > 0.05 && t - d.last > d.gap) {
       onset(name, t);
     }
     d.slow += (Math.max(raw, d.slow - 24) - d.slow) * a;

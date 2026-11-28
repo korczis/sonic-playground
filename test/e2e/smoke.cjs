@@ -257,6 +257,47 @@ const SHARD = (() => {
 })();
 const SWEEP_ONLY = process.env.SMOKE_SWEEP === 'only';
 
+// SMOKE_ONLY=<regex>: only the feature checks whose part's label it matches run (each top-level
+// block is labelled: 'site', 'viz', 'viz gl-music', 'viz flashes', 'player viz-reset', 'wcag',
+// 'sweep'), to iterate on one block in minutes instead of the whole run's half hour. A run that
+// skipped parts says how many and never reads as a full pass.
+const ONLY = process.env.SMOKE_ONLY ? new RegExp(process.env.SMOKE_ONLY) : null;
+const skipped = [];
+/** Whether the part with this label runs. */
+function part(label) {
+  if (!ONLY || ONLY.test(label)) return true;
+  skipped.push(label);
+  return false;
+}
+
+// SMOKE_FPS=<n>: every page draws at most n frames a second (requestAnimationFrame is held back to
+// that rate), as CI's software GPU does at 4-44 fps where a Mac's draws 60. A visualiser check
+// passing at 60 fps and failing at 44, 15 or 4 is a time constant counted in frames. SMOKE_ANGLE
+// =<backend> (swiftshader, metal, gl) chooses the WebGL engine instead of the platform's default.
+const FPS = Number(process.env.SMOKE_FPS) || 0;
+/** In the page: requestAnimationFrame held to fps frames a second, every callback still called. */
+function capFrames(fps) {
+  const raf = window.requestAnimationFrame.bind(window);
+  const gap = 1000 / fps;
+  let queue = new Map(), id = 0, next = 0, ticking = false;
+  const tick = (now) => {
+    // The frames are spaced by the cap on average (a frame of the display's 60 Hz may come
+    // early), never bunched up after a stall.
+    if (now + 2 < next) { raf(tick); return; }
+    next = Math.max(next + gap, now - gap / 2);
+    const due = queue;
+    queue = new Map();
+    ticking = false;
+    for (const cb of due.values()) cb(now);
+  };
+  window.requestAnimationFrame = (cb) => {
+    queue.set(++id, cb);
+    if (!ticking) { ticking = true; raf(tick); }
+    return id;
+  };
+  window.cancelAnimationFrame = (n) => { queue.delete(n); };
+}
+
 // SMOKE_PATHS_FILE=<file>: the sweep visits only these site paths (one per line, relative to the
 // base URL, '/' the home page; scripts/verify.sh writes the pages a local change can affect). A
 // listed path the sitemap lacks fails. The feature checks, one page of each kind, are unchanged.
@@ -417,7 +458,9 @@ async function done(browser) {
   await writeCoverage();
   await browser.close();
   for (const n of notices) console.log(`note ${n}`);
-  console.log(failures.length ? `smoke: ${failures.length} failure(s)` : 'smoke: all checks passed');
+  if (skipped.length) console.log(`smoke: SMOKE_ONLY=${process.env.SMOKE_ONLY} skipped ${skipped.length} part(s): a partial run`);
+  if (FPS) console.log(`smoke: every page drew at most ${FPS} frames a second (SMOKE_FPS)`);
+  console.log(failures.length ? `smoke: ${failures.length} failure(s)` : `smoke: all checks ${skipped.length ? 'run ' : ''}passed`);
   process.exit(failures.length ? 1 : 0);
 }
 
@@ -699,10 +742,19 @@ async function shot(page, name) {
   // "Follow the music" run its real listening path and analysis.
   const launch = { headless: true, args: ['--enable-unsafe-swiftshader', '--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream'] };
   // On a Mac, WebGL on Metal, as Chrome itself runs it (headless defaults to ANGLE on OpenGL).
-  if (process.platform === 'darwin') launch.args.push('--use-angle=metal');
+  if (process.env.SMOKE_ANGLE) launch.args.push(`--use-angle=${process.env.SMOKE_ANGLE}`);
+  else if (process.platform === 'darwin') launch.args.push('--use-angle=metal');
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   const browser = await chromium.launch(launch);
   instrument(browser);
+  if (FPS) {
+    const newContext = browser.newContext.bind(browser);
+    browser.newContext = async (...a) => {
+      const context = await newContext(...a);
+      await context.addInitScript(capFrames, FPS);
+      return context;
+    };
+  }
   const desktop = { width: 1440, height: 900 };
   const phone = { width: 390, height: 844 };
   if (SWEEP_ONLY) {
@@ -718,14 +770,14 @@ async function shot(page, name) {
     ['welcome', 'welcome/'], ['author', 'author/'], ['genres', 'genre/'],
     ['genre term', `genre/${genre.slug}/`], ['feelings', 'sentiment/'],
   ];
-  for (const [name, rel] of pages) {
+  if (part('site')) for (const [name, rel] of pages) {
     const { context, page, errors, response } = await open(browser, at(rel), desktop);
     const h1 = await page.locator('h1').first().textContent().catch(() => '');
     check(response && response.status() === 200 && h1.trim().length > 0, `${name}: 200 with an H1 ("${h1.trim().slice(0, 40)}")`);
     check(errors.length === 0, `${name}: no console or request errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
   }
-  {
+  if (part('site')) {
     const { context, response, page } = await open(browser, at(`nope-${Date.now()}/`), desktop);
     check(response.status() === 404 && (await page.locator('h1').textContent()).includes('skipped'), '404 page served for an unknown path');
     await context.close();
@@ -733,7 +785,7 @@ async function shot(page, name) {
 
   // The landing hero: the visualiser draws behind it, the mosaic turns a tile within a few
   // seconds while nobody points at it, and "Play the newest" still names the nine newest.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at(''), desktop);
     const tiles = () => page.evaluate(() => [...document.querySelectorAll('#hero-mosaic > [data-track]')].map((t) => t.dataset.source).join(','));
     const before = await tiles();
@@ -749,7 +801,7 @@ async function shot(page, name) {
   }
   // Reduced motion: the hero draws nothing, and the full-screen picture is a calm mode that does
   // not change by itself (it used to run Warp at full pace with the 40 s cycle on).
-  {
+  if (part('viz')) {
     const { context, page } = await open(browser, at(''), desktop, 'light', { reducedMotion: 'reduce' });
     await page.waitForTimeout(2000);
     check(await page.evaluate(() => !document.querySelector('#main [data-visualizer] canvas')), 'visualiser (reduced motion): the hero draws nothing');
@@ -761,7 +813,7 @@ async function shot(page, name) {
   // A shared link (everything in the URL): the song cued at its time, paused, with no request to
   // YouTube until play is pressed; the picture, its live control and cinema as the sender had
   // them; the old mode names still open their successors.
-  {
+  if (part('viz')) {
     const t = catalog.tracks.find((x) => x.youtube && !x.video_gone);
     const key = t.source.replace(/\.md$/, '');
     const { context, page, errors } = await open(browser, at(`?play=${key}&t=42&viz=prism&viz.warp=1.5&viz.video=cinema`), phone, 'light', {}, true);
@@ -804,7 +856,7 @@ async function shot(page, name) {
     await context.close();
   }
   // The rest of an independent review's findings (2026-11-22), each checked end to end on a phone.
-  {
+  if (part('viz')) {
     const t = catalog.tracks.find((x) => x.youtube && !x.video_gone);
     const key = t.source.replace(/\.md$/, '');
     const { context, page, errors } = await open(browser, at(''), phone, 'light', {}, true);
@@ -858,7 +910,7 @@ async function shot(page, name) {
   }
   // The interface strings fail to load: a shared link is still cued (quietly, no raw key in a
   // toast), and the URL follows the next song instead of freezing on the shared one.
-  {
+  if (part('site')) {
     const S0 = catalog.tracks.find((x) => x.youtube && !x.video_gone);
     const S1 = catalog.tracks.find((x) => x.youtube && !x.video_gone && x.source !== S0.source);
     const { context, page } = await open(browser, at('404.html'), desktop, 'light', {}, true);
@@ -875,7 +927,7 @@ async function shot(page, name) {
   }
   // An anchor on the page on screen that is already in the URL scrolls to its target again, as
   // the browser does (the skip link used twice), and the player's keys stay in the URL.
-  {
+  if (part('site')) {
     const { context, page } = await open(browser, at(''), desktop);
     await page.evaluate(() => {
       const main = document.getElementById('main-content');
@@ -905,7 +957,7 @@ async function shot(page, name) {
   }
   // The 40 s change, on Playwright's clock rather than a 40 s wait: the picture moves on to the
   // next mode by itself, and the URL follows.
-  {
+  if (part('viz')) {
     const { context, page } = await open(browser, at('404.html'), desktop);
     await page.clock.install();
     await page.goto(at('?viz=veil'), { waitUntil: 'load' });
@@ -921,7 +973,7 @@ async function shot(page, name) {
   }
   // A shared link that resolves after play was pressed queues its song next and never swaps it
   // under the playing video.
-  {
+  if (part('site')) {
     const S0 = catalog.tracks.find((x) => x.youtube && !x.video_gone);
     const S1 = catalog.tracks.find((x) => x.youtube && !x.video_gone && x.source !== S0.source);
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'light', {}, true);
@@ -948,7 +1000,7 @@ async function shot(page, name) {
   // deterministic where headless Chrome would otherwise pick a source itself) falls back to the
   // microphone. The analysis follows the sound, the button steps aside, "Don't listen" returns to
   // the clock. A refused microphone is said beside the buttons.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), phone, 'dark');
     await context.grantPermissions(['microphone', 'camera']);
     await page.addInitScript(() => {
@@ -977,7 +1029,7 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (microphone): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
-  {
+  if (part('viz')) {
     const { context, page } = await open(browser, at('404.html'), phone);
     await page.addInitScript(() => {
       const md = navigator.mediaDevices;
@@ -1003,7 +1055,7 @@ async function shot(page, name) {
   // microphone chosen as a device never starts by itself; with the permission not yet given
   // nothing starts, the browser names no device, and the hint on a loopback device is shown.
   // Nothing is ever asked on load.
-  {
+  if (part('viz')) {
     const inputs = (context, perm, labels) => context.addInitScript(([perm, labels]) => {
       const md = navigator.mediaDevices;
       if (!md) return;
@@ -1168,7 +1220,7 @@ async function shot(page, name) {
   }
   // A GPU mode whose code cannot be loaded (offline, blocked) is drawn by its p5 fallback; when
   // the p5 code cannot be loaded either, the stage says so instead of drawing nothing silently.
-  {
+  if (part('viz')) {
     const { context, page } = await open(browser, at('404.html'), desktop);
     await context.route('**/js/viz-gl.js*', (route) => route.abort());
     await page.goto(at('?viz=liquid'), { waitUntil: 'load' });
@@ -1176,7 +1228,7 @@ async function shot(page, name) {
     check(await page.evaluate(() => window.SonicVisualizer.shown()) === 'flux', 'visualiser: a GPU mode whose code cannot load is drawn by its fallback');
     await context.close();
   }
-  {
+  if (part('viz')) {
     // A fresh context, so nothing of the p5 code is in any cache.
     const { context, page } = await open(browser, at('404.html'), desktop);
     await context.route('**/js/viz-2d.js*', (route) => route.abort());
@@ -1188,7 +1240,7 @@ async function shot(page, name) {
   }
   // The analysis follows the music, not a clock: a 55 Hz pulse every 0.5 s (120 bpm), made with
   // WebAudio and handed over as the microphone, gives kick onsets and a tempo of about 120.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), phone, 'dark');
     await page.addInitScript(() => {
       const md = navigator.mediaDevices;
@@ -1233,7 +1285,7 @@ async function shot(page, name) {
   // quieter (a quiet room, a low player volume). The kicks, snares and hats are found where they
   // were played, nothing is found where nothing was, the tempo is 124, and the bars jump on the
   // kick. The earlier analysis found 1 of 25 kicks of this mix and no tempo (2026-11-22).
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(() => {
       const md = navigator.mediaDevices;
@@ -1368,7 +1420,7 @@ async function shot(page, name) {
   // off-beats) reads 86 (or its double). Read from the kicks' intervals, freely licensed hip-hop
   // read 118 or nothing, rock and jazz locked a fifth of the time, and a piano read 110
   // (2026-11-24); the tempo now comes from the novelty's autocorrelation.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(musicMic, { bpm: 86, chord: [9, 0, 4], kicks: [0, 1.5, 2.5], snares: [1, 3] });
     await page.goto(at(''), { waitUntil: 'load' });
@@ -1388,7 +1440,7 @@ async function shot(page, name) {
   // never restarted by a kick: on a syncopated groove it never jumps back (restarting it on every
   // kick threw it half a beat back on the kick on the and of two), and on a four-on-the-floor
   // groove it reads close to 0 when a kick arrives.
-  for (const [label, groove] of [['syncopated', { bpm: 86, kicks: [0, 1.5, 2.5], snares: [1, 3] }], ['four on the floor', { bpm: 124 }]]) {
+  if (part('viz')) for (const [label, groove] of [['syncopated', { bpm: 86, kicks: [0, 1.5, 2.5], snares: [1, 3] }], ['four on the floor', { bpm: 124 }]]) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(musicMic, groove);
     await page.goto(at(''), { waitUntil: 'load' });
@@ -1437,7 +1489,7 @@ async function shot(page, name) {
   // Techno: a kick on every beat at 124 bpm, a clap on two and four, quiet hats on the off-beats
   // and a bright synth stab on every dotted eighth, the riff that held a techno recording at 166
   // (4/3 of 124) and this pattern at no tempo at all, its 4/3 failing the gates.
-  for (const label of ['isolated hits', 'techno']) {
+  if (part('viz')) for (const label of ['isolated hits', 'techno']) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript((techno) => {
       const md = navigator.mediaDevices;
@@ -1581,7 +1633,7 @@ async function shot(page, name) {
   // A microphone in a room with no music: its noise (pink, as a room's is) is no beat. A quiet
   // room gives next to no onsets and a loud one (a fan, traffic) no tempo: a first version of the
   // dB analysis found a kick about every second in both, and a tempo of 110-126 (2026-11-22).
-  for (const [label, level] of [['quiet', 0.003], ['loud', 0.03]]) {
+  if (part('viz')) for (const [label, level] of [['quiet', 0.003], ['loud', 0.03]]) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript((level) => {
       const md = navigator.mediaDevices;
@@ -1646,7 +1698,7 @@ async function shot(page, name) {
   // loudness 24 dB up), then a second, mono stream with the tone (0 and 0: a mono microphone is
   // centred, not hard left). Before it, the clock (the player playing, no sound) has no pitch and
   // no stereo, and its bar runs over four beats with the downbeat on the first.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(() => {
       const md = navigator.mediaDevices;
@@ -1766,7 +1818,7 @@ async function shot(page, name) {
   // profiles over about 8 s) reads C major, keeps to C major or its relative A minor through the
   // A minor chord (the vi of C), and reads F# major at the end of the cadence, changing at most
   // three times in all (a lone triad is ambiguous between keys; a cadence is not).
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(() => {
       const md = navigator.mediaDevices;
@@ -1851,7 +1903,7 @@ async function shot(page, name) {
   // the others a quarter, a half, three quarters; one new section is counted, 0.2-4 s after the
   // switch, not one on every beat; a beat's dynamics stand far above a steady noise's; and a
   // frame's analysis costs little.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(() => {
       const md = navigator.mediaDevices;
@@ -1968,7 +2020,7 @@ async function shot(page, name) {
   // opposite), smoothed, and turned by the hue control; impulses are latched for a quarter beat,
   // and past two flashes in a second their brightness share drops; a new section draws a new
   // variant once; a source with no pitch keeps the hue; the full screen hands its map out.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at(''), desktop, 'dark');
     const g = await page.evaluate(() => {
       const chord = (notes) => { const c = new Float32Array(12); notes.forEach((n) => { c[n] = 1; }); return c; };
@@ -2042,7 +2094,7 @@ async function shot(page, name) {
   // first frame); and a loud master's 8 dB break moved the exposure from 1.00 to 0.90 only (it
   // was absolute, saturating). Now the averages warm up with the sound, and the exposure reads the
   // loudness against the song's own recent peak.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at(''), desktop, 'dark');
     const r = await page.evaluate(() => {
       const base = { bass: 0.4, mid: 0.4, high: 0.4, level: 0.4, flux: 0.2, chroma: new Float32Array(12), keyStrength: 0,
@@ -2070,7 +2122,7 @@ async function shot(page, name) {
   // feedback mode for another WebGL mode frees its render targets (it used to allocate a new pair
   // inside the mode it had just disposed); the last request for a source wins, not the last one
   // granted, and "don't listen" cancels a request still on its way.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(() => {
       const md = navigator.mediaDevices;
@@ -2142,7 +2194,7 @@ async function shot(page, name) {
   // shared there and is hidden, so the arrows pass it instead of getting stuck on it; passing over
   // "don't listen" never stops the music (only a click, Space or Enter does); a lone plain
   // microphone is not offered twice; the hint to install a loopback device is for computers.
-  {
+  if (part('viz')) {
     const iphone = { userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1', isMobile: true, hasTouch: true };
     const { context, page, errors } = await open(browser, at('404.html'), phone, 'dark', iphone);
     await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
@@ -2187,7 +2239,7 @@ async function shot(page, name) {
   }
   // The controls fade 2.6 s after the pointer last moved, but not while it rests on one of them:
   // a reader holding the pointer on "Follow the music" saw it fade and stop taking clicks.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at(''), desktop, 'dark');
     await page.evaluate(() => window.SonicVisualizer.open('tower'));
     await showViz(page);
@@ -2207,7 +2259,7 @@ async function shot(page, name) {
   // The toast keeps off the open settings sheet as it keeps off the video (a browser review,
   // 2026-11-23: on a phone it hid the cinema switch and the first device for its few seconds), at
   // 390 and 320 px; and a shared link under reduced motion opens the calm mode, not its own.
-  for (const vp of [phone, { width: 320, height: 568 }]) {
+  if (part('viz')) for (const vp of [phone, { width: 320, height: 568 }]) {
     const t = catalog.tracks.find((x) => x.youtube && !x.video_gone);
     const key = t.source.replace(/\.md$/, '');
     const { context, page, errors } = await open(browser, at(`?play=${key}&t=10`), vp, 'dark', {}, true);
@@ -2234,7 +2286,7 @@ async function shot(page, name) {
     check(errors.length === 0, `visualiser (toast, ${vp.width} px): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('?viz=liquid'), desktop, 'dark', { reducedMotion: 'reduce' });
     await page.waitForFunction(() => window.SonicVisualizer && window.SonicVisualizer.mode(), null, { timeout: 10000 }).catch(() => {});
     const calm = await page.evaluate(() => ({ mode: window.SonicVisualizer.mode(), url: new URL(location.href).searchParams.get('viz') }));
@@ -2247,7 +2299,7 @@ async function shot(page, name) {
   // moves clearly more with the music than in silence, and its colours turn with the harmony (C
   // major to F# major, opposite on the circle of fifths, or back; the key's hue takes seconds to
   // follow); no console error. The mic stays connected while the modes and chords change in place.
-  {
+  if (part('viz gl-music')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
     await page.goto(at(''), { waitUntil: 'load' });
@@ -2283,8 +2335,20 @@ async function shot(page, name) {
       const loud = await moves();
       await page.evaluate((c) => window.__music.chord(c), i % 2 ? C : FIS);
       // The key is read over about 8 s and held against a newcomer for 2 s, and the palette turns
-      // to it over 3 s: a change of key shows within about 8 s, never from chord to chord.
-      await page.waitForTimeout(8000);
+      // to it over 3 s: a change of key shows within about 10 s, never from chord to chord. The key
+      // turns 5.5-6.5 s after the chord at any frame rate; judged at 8 s, 2 s into the palette's
+      // turn, a section's own turn of up to 30 degrees (one starts with the new key) brought a mode
+      // to 0.04-0.09 round the wheel in some runs (hyperloop, ember, silk; 2026-11-28). The frames
+      // drawn meanwhile say at what rate it was judged (CI's software GPU: a few a second).
+      const frameNo = () => page.evaluate(() => Number(document.querySelector('[data-visualizer-stage]').getAttribute('data-visualizer-frame') || 0));
+      const f0 = await frameNo();
+      // When the analysis named the new key (its root, C 0 or F# 6), sampled every half second.
+      let turned = -1;
+      for (let k = 1; k <= 20; k++) {
+        await page.waitForTimeout(500);
+        if (turned < 0 && await page.evaluate((r) => window.SonicVisualizer.analysis().key === r, i % 2 ? 0 : 6)) turned = k / 2;
+      }
+      const fps = ((await frameNo()) - f0) / 10;
       const to = await page.evaluate(pictureStats, sel);
       // The loudness falls over seconds, and with it the exposure: silence is judged once it settled.
       await page.evaluate(() => window.__music.gain(0));
@@ -2293,14 +2357,14 @@ async function shot(page, name) {
       check((!gl || shown === mode) && loud > quiet * 1.5 && loud > 0.012,
         `visualiser (gl, music): ${mode} moves with the music (${loud.toFixed(4)} a cell with it, ${quiet.toFixed(4)} in silence${gl ? '' : ', drawn by ' + shown})`);
       check(from.hue >= 0 && to.hue >= 0 && arc(from.hue, to.hue) > 0.1,
-        `visualiser (gl, music): ${mode} is coloured by the harmony (mean hue ${from.hue.toFixed(2)} -> ${to.hue.toFixed(2)}, ${arc(from.hue, to.hue).toFixed(2)} round the wheel, ${i % 2 ? 'F# to C' : 'C to F#'})`);
+        `visualiser (gl, music): ${mode} is coloured by the harmony (mean hue ${from.hue.toFixed(2)} -> ${to.hue.toFixed(2)}, ${arc(from.hue, to.hue).toFixed(2)} round the wheel, ${i % 2 ? 'F# to C' : 'C to F#'}, the key read after ${turned < 0 ? 'more than 10' : turned} s, ${fps.toFixed(0)} fps)`);
       check(errors.length === before, `visualiser (gl, music): ${mode}: no console error${errors.length > before ? ': ' + errors.slice(before).join(' | ') : ''}`);
     }
     await context.close();
   }
   // Without WebGL 2 a GPU mode is drawn by its p5 fallback, and the settings say so; three.js is
   // never downloaded for nothing.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop);
     await page.addInitScript(() => {
       const get = HTMLCanvasElement.prototype.getContext;
@@ -2328,7 +2392,7 @@ async function shot(page, name) {
   // turns its colour (C major, then F# major, the far side of the circle of fifths), and nothing
   // logs an error. One page, the microphone stays connected; modes and chords change in place.
   // The background layer behind the pages then still draws its calm modes, at 30 frames a second.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await context.grantPermissions(['microphone']);
     await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
@@ -2399,7 +2463,7 @@ async function shot(page, name) {
   // turns as fast as the passage is loud (it read 0.064-0.074 a cell before). With the music,
   // starlane, swarm and prism keep a median luminance above 0.045, 0.06 and 0.075 (they read
   // 0.022-0.030, 0.027-0.035 and 0.031-0.070 before).
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await context.grantPermissions(['microphone']);
     await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
@@ -2487,7 +2551,7 @@ async function shot(page, name) {
   // bars filled the matrix as much); and patchbay and silk draw more than one hue (the
   // saturation-weighted resultant of the hues of their lit cells below 0.97: it read 0.98-0.99,
   // one olive wash, and reads 0.92-0.94).
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await context.grantPermissions(['microphone']);
     await page.addInitScript(musicMic, { bpm: 124, chord: [0, 4, 7] });
@@ -2589,7 +2653,7 @@ async function shot(page, name) {
   // through the one wedge its kaleidoscope mirrors, so its light did not follow the loudness: at
   // gain 1 it read 0.84x as bright as at gain 0.3 (the least loud median luminance against the
   // most quiet), and about 2x with every orb folded into the wedge (above 1.1).
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await context.grantPermissions(['microphone']);
     await page.addInitScript(musicMic, { bpm: 100, chord: [0, 4, 7], kicks: [0], snares: [1, 3] });
@@ -2659,7 +2723,7 @@ async function shot(page, name) {
       `visualiser (snare): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
   }
-  {
+  if (part('viz flashes')) {
     const { context, page, errors } = await open(browser, at('404.html'), desktop, 'dark');
     await context.grantPermissions(['microphone']);
     await page.addInitScript(musicMic, { bpm: 175, chord: [2, 6, 9] });
@@ -2703,14 +2767,17 @@ async function shot(page, name) {
         prev = cells;
         rows.push([performance.now() / 1000, sum / 576]);
         if (performance.now() - t0 < 8000) { requestAnimationFrame(tick); return; }
-        // A transition: the mean luminance swings by 0.1 or more within three frames; a flash: a
-        // pair of opposing transitions (WCAG 2.3.1), each transition in one pair only. The most
-        // within any one second.
+        // A transition: the mean luminance swings by 0.1 or more within 50 ms (three frames at 60
+        // fps, two at 44, always at least one); a flash: a pair of opposing transitions (WCAG
+        // 2.3.1), each transition in one pair only. The most within any one second. Counted over
+        // three frames, the window grew to 68 ms at 44 fps and took in more of each punch's decay:
+        // starlane read 14 pairs in 30 s at 44 fps over three frames and 4 over 50 ms, against 4
+        // and 0 at 60 fps (2026-11-28).
         const ev = [];
         let swing = 0;
         for (let i = 0; i < rows.length - 1;) {
           let k = 0, best = 0;
-          for (let j = 1; j <= 3 && i + j < rows.length; j++) {
+          for (let j = 1; i + j < rows.length && (j === 1 || rows[i + j][0] - rows[i][0] <= 0.055); j++) {
             const dv = rows[i + j][1] - rows[i][1];
             if (Math.abs(dv) > Math.abs(best)) { best = dv; k = j; }
           }
@@ -2732,8 +2799,8 @@ async function shot(page, name) {
     }), stage);
     const fluent = await vizFps(page) >= 30;
     const said = `visualiser (starlane): fewer than three flashes a second (at most `
-      + `${flashes.worst} in any second over ${flashes.frames} frames; the largest swing of the `
-      + `mean luminance ${flashes.swing.toFixed(3)})`;
+      + `${flashes.worst} in any second over ${flashes.frames} frames, ${(flashes.frames / 8).toFixed(0)} fps; `
+      + `the largest swing of the mean luminance ${flashes.swing.toFixed(3)})`;
     if (fluent) check(flashes.worst < 3, said);
     else console.log(`note ${said}: not judged below 30 fps`);
     // The floor under that ceiling: the field still rushes with the music (the mean change of a
@@ -2778,7 +2845,7 @@ async function shot(page, name) {
     await context.close();
   }
   // A negative control for litShare: a blank canvas is not a picture.
-  {
+  if (part('viz')) {
     const { context, page } = await open(browser, at(''), desktop);
     check(await page.evaluate(() => { const c = document.createElement('canvas'); c.id = 'blank-control'; c.width = 64; c.height = 36; document.body.appendChild(c); return true; })
       && await page.evaluate(litShare, '#blank-control') === 0, 'visualiser check: a blank canvas counts as unlit (negative control)');
@@ -2786,7 +2853,7 @@ async function shot(page, name) {
   }
 
   // Explorer.
-  {
+  if (part('site')) {
     const { context, page, errors } = await open(browser, at(''), desktop);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     const visible = () => page.locator('#explorer-grid [data-track]:not([hidden])').count();
@@ -2853,7 +2920,7 @@ async function shot(page, name) {
   // Charts load when they come near the viewport, never before: a track page read from the top
   // does not request ECharts or the catalogue (static/js/charts.js NEAR); scrolled to its graph,
   // it does, and builds the graph.
-  {
+  if (part('site')) {
     // The listener is in place before the page loads: an eager request at load must be seen.
     const { context, page } = await open(browser, 'about:blank', desktop);
     const asked = [];
@@ -2871,7 +2938,7 @@ async function shot(page, name) {
 
   // The first play reads the player's index (static/data/play.json, a projection of the
   // catalogue), never the catalogue: on a page without charts, Play fetches play.json only.
-  {
+  if (part('site')) {
     const { context, page } = await open(browser, 'about:blank', desktop, 'light', {}, true);
     const data = [];
     page.on('request', (r) => { if (/data\/(catalog|play)\.json/.test(r.url())) data.push(new URL(r.url()).pathname.split('/').pop()); });
@@ -2886,7 +2953,7 @@ async function shot(page, name) {
 
   // A failed index is forgotten: the first play.json answers 503 (GitHub Pages does, 2026-11-14),
   // the first Play fails, the second plays. A cached rejection left Play dead until a reload.
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     await fakeYouTube(context);
@@ -2909,7 +2976,7 @@ async function shot(page, name) {
 
   // Close before the YouTube API arrives: nothing plays afterwards (an independent review,
   // 2026-11-14: the API's arrival used to build the player and start the closed track hidden).
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     let release;
@@ -2940,7 +3007,7 @@ async function shot(page, name) {
   // A script that failed to load is asked for again: the first YouTube API request fails (the
   // player opens the video on YouTube instead), the next Play loads the API and plays here. A
   // cached rejection used to leave the player dead until a reload.
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     let asked = 0;
@@ -2962,7 +3029,7 @@ async function shot(page, name) {
 
   // Back keeps the reader's place: on home, "Show more" twice and a scroll down, a review, Back;
   // as many results are open and the page is where it was (it used to reset to 24, at the top).
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     const page = await context.newPage();
@@ -2990,7 +3057,7 @@ async function shot(page, name) {
   // Home is scrolled just before Forward and the review is served 400 ms late, so a save still
   // pending from home fires after Forward has switched entries and before the review mounts: it
   // used to land in the review's entry (CI, run 43669472966: 0 of 900; here 120 of 900).
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     await context.route((u) => u.pathname.endsWith('/' + sample.path), async (r) => {
@@ -3018,7 +3085,7 @@ async function shot(page, name) {
 
   // Close beats a command still waiting for the play index: Play, then Close before play.json
   // arrives; nothing plays and YouTube is never asked (the late index used to reopen the player).
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     let api = 0;
@@ -3039,7 +3106,7 @@ async function shot(page, name) {
 
   // Only the latest navigation lands: the archive is clicked first and answers slowly, a genre page
   // second and fast; the genre page stays (the slower, older page used to be committed over it).
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     await context.route(/\/archive\/(\?.*)?$/, async (route) => {
@@ -3069,7 +3136,7 @@ async function shot(page, name) {
 
   // A left explorer's late answer never touches the next page: the review index of a search on
   // home arrives after the reader went to the archive (it used to write ?q= into the archive URL).
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     let released = false;
@@ -3091,7 +3158,7 @@ async function shot(page, name) {
 
   // Strings rendered before the language bundle arrives render again when it does: no raw key
   // (explorer.more, explorer.status_all) stays on a page whose bundle was slow.
-  {
+  if (part('site')) {
     const strings = (root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
       : await (await get(at('data/i18n.json'))).json()).locales;
     const keys = [...new Set(Object.values(strings).flatMap((loc) => Object.keys(loc.strings)))].filter((k) => k.includes('.'));
@@ -3117,7 +3184,7 @@ async function shot(page, name) {
 
   // A chart is navigation like a link: through the router, so the player keeps playing, and into
   // the page's language (a chart click used to reload the page and open the English archive).
-  {
+  if (part('site')) {
     const context = await browser.newContext({ viewport: desktop });
     if (root) await context.route(`${base}**`, fromArtifact);
     await fakeYouTube(context);
@@ -3155,7 +3222,7 @@ async function shot(page, name) {
   }
 
   // Track page: video and related tracks.
-  {
+  if (part('site')) {
     const { context, page, errors } = await open(browser, at(sample.path), desktop);
     check((await page.locator('[aria-labelledby="related-title"] article').count()) === sample.related.length, `track: ${sample.related.length} related tracks listed`);
     await shot(page, 'track-desktop-light');
@@ -3194,7 +3261,7 @@ async function shot(page, name) {
   // 2.5.8 Target Size, AA); a link inside running text is exempt, as the criterion says.
   const TARGET = 24;
   const term = catalog.facets.genre[0];
-  for (const [name, rel] of [['home', ''], ['track', sample.path], ['insights', 'insights/'], ['genre term', `genre/${term.slug}/`],
+  if (part('site')) for (const [name, rel] of [['home', ''], ['track', sample.path], ['insights', 'insights/'], ['genre term', `genre/${term.slug}/`],
     ['genres', 'genre/'], ['archive', 'archive/'], ['concepts', 'concept/'], ['concept', `concept/${(catalog.concepts.find((c) => (c.tracks || []).length) || {}).slug}/`],
     ['author', 'author/'], ['welcome', 'welcome/'], ['cs track', (sample.i18n && sample.i18n.cs && sample.i18n.cs.path) || 'cs/']]) {
     const { context, page } = await open(browser, at(rel), phone, name === 'track' ? 'dark' : 'light');
@@ -3244,7 +3311,7 @@ async function shot(page, name) {
   // text is mobile first (16 px or less on a phone, no content heading above the page title), a
   // plain page's text fills its card at a readable measure, and the navbar's title and controls
   // never overlap.
-  for (const width of [360, 768, 1280, 1440, 1920]) {
+  if (part('site')) for (const width of [360, 768, 1280, 1440, 1920]) {
     const gutter = width >= 1280 ? 32 : 16;
     for (const [name, rel] of [['welcome', 'welcome/'], ['author', 'author/'], ['cs welcome', 'cs/welcome/'], ['track', sample.path],
       ['archive', 'archive/'], ['insights', 'insights/'], ['concepts', 'concept/'], ['yearbooks', 'yearbook/']]) {
@@ -3305,7 +3372,7 @@ async function shot(page, name) {
   }
 
   // Without JavaScript the phone still reaches the navigation (review round 2).
-  {
+  if (part('site')) {
     const { context, page } = await open(browser, at(''), phone, 'light', { javaScriptEnabled: false });
     const box = await page.locator('#sidebar').boundingBox();
     check(box && box.x >= 0 && box.width > 300, `no-JS @390px: the sidebar is on screen (x=${box && box.x})`);
@@ -3316,7 +3383,7 @@ async function shot(page, name) {
   // relevance first, whole words, every token, word forms, phrases, the URL. Every expectation is
   // derived from the catalogue and the index as served, never typed: a review matches when its
   // index (its tokens in order) holds the words, a card when its text says them.
-  {
+  if (part('site')) {
     const readJson = async (rel) => JSON.parse(root ? fs.readFileSync(path.join(root, rel), 'utf8')
       : await (await get(at(rel))).text());
     const reviewsOf = async (rel) => {
@@ -3452,7 +3519,7 @@ async function shot(page, name) {
   }
 
   // A video YouTube removed (data/videos.json) shows a note, and its still is never requested.
-  {
+  if (part('site')) {
     const gone = catalog.tracks.find((t) => t.video_gone);
     if (gone) {
       const { context, page, errors } = await open(browser, at(gone.path), desktop);
@@ -3465,7 +3532,7 @@ async function shot(page, name) {
 
   // The player: one control, one effect, no duplicates (owner findings 2026-11-12), and it keeps
   // playing across navigation (the router swaps pages, the bar and its frame survive).
-  {
+  if (part('player viz-reset')) {
     const { context, page, errors } = await open(browser, at(''), desktop, 'light', {}, true);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     await page.evaluate(() => { window.__noReload = true; });
@@ -3628,9 +3695,16 @@ async function shot(page, name) {
     await page.evaluate(() => window.SonicVisualizer.set('prism'));
     await page.evaluate(() => window.SonicVisualizer.param('hue', 120));
     check(new URL(page.url()).searchParams.get('viz.hue') === '120', 'visualiser: a moved control is in the URL');
+    await page.evaluate(() => {
+      window.__resetHits = [];
+      document.addEventListener('click', (e) => window.__resetHits.push(e.target.closest('[data-viz-reset]') ? 'reset'
+        : `${e.target.tagName.toLowerCase()}${e.target.id ? '#' + e.target.id : ''}`), { capture: true, once: true });
+    });
     await vizClick(page, '#visualizer-full [data-viz-reset]');
-    check(!new URL(page.url()).searchParams.has('viz.hue') && (await page.evaluate(() => window.SonicVisualizer.params().hue)) === 0,
-      'visualiser: Reset returns the controls to the mode\'s defaults');
+    const reset = await page.evaluate(() => ({ mode: window.SonicVisualizer.mode(), hue: window.SonicVisualizer.params().hue,
+      url: new URL(location.href).searchParams.get('viz.hue'), hit: window.__resetHits.join() }));
+    check(reset.url === null && reset.hue === 0,
+      `visualiser: Reset returns the controls to the mode's defaults (${JSON.stringify(reset)})`);
     // A slider moved by the keyboard writes its value, live, and the URL follows.
     await page.focus('#viz-param-warp');
     await page.keyboard.press('ArrowRight');
@@ -3999,7 +4073,7 @@ async function shot(page, name) {
   }
 
   // The player at phone width: everything reachable, nothing overlapping, nothing overflowing.
-  {
+  if (part('viz')) {
     const { context, page, errors } = await open(browser, at(''), phone, 'light', {}, true);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
@@ -4066,7 +4140,7 @@ async function shot(page, name) {
 
   // Short phones, both languages, repeat off and on (its label is longer and can wrap the queue
   // header): the queue and the track menu still end below the moved video.
-  for (const [vp, lang, repeat] of [[{ width: 375, height: 667 }, '', false], [{ width: 375, height: 667 }, 'cs/', true],
+  if (part('site')) for (const [vp, lang, repeat] of [[{ width: 375, height: 667 }, '', false], [{ width: 375, height: 667 }, 'cs/', true],
     [{ width: 320, height: 568 }, '', true], [{ width: 320, height: 568 }, 'cs/', false]]) {
     const name = `${vp.width}x${vp.height} ${lang ? 'cs' : 'en'}${repeat ? ', repeat on' : ''}`;
     const { context, page, errors } = await open(browser, at(lang), vp, 'light', {}, true);
@@ -4090,7 +4164,7 @@ async function shot(page, name) {
 
   // Between phone and desktop, and on a landscape phone: the video beside the open queue stays
   // whole and on screen, the queue's header stays on screen, and a toast moves off the video.
-  for (const vp of [{ width: 700, height: 800 }, { width: 667, height: 375 }, { width: 844, height: 390 }]) {
+  if (part('site')) for (const vp of [{ width: 700, height: 800 }, { width: 667, height: 375 }, { width: 844, height: 390 }]) {
     const name = `${vp.width}x${vp.height}`;
     const { context, page, errors } = await open(browser, at(''), vp, 'light', {}, true);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
@@ -4111,7 +4185,7 @@ async function shot(page, name) {
   }
 
   // Desktop: the track menu never lands on the docked video, opened from the card nearest to it.
-  {
+  if (part('site')) {
     const { context, page, errors } = await open(browser, at(''), desktop, 'light', {}, true);
     await page.waitForFunction(() => document.documentElement.dataset.explorerState === 'ready');
     const cards = page.locator('#explorer-grid [data-track]:not([hidden])').filter({ has: page.locator('[data-play]') });
@@ -4136,7 +4210,7 @@ async function shot(page, name) {
   }
 
   // A review page's labelled Play button is a Pause button while its own track plays.
-  {
+  if (part('site')) {
     const { context, page, errors } = await open(browser, at(sample.path), desktop, 'light', {}, true);
     const bar = page.locator('main [data-track-actions]').filter({ has: page.locator('[data-play-radio]') }).first();
     const label = () => bar.locator('[data-play]').evaluate((b) => b.innerText.trim());
@@ -4153,7 +4227,7 @@ async function shot(page, name) {
   // The default home page takes a browser that prefers Czech to /cs/ on a first visit; any other
   // URL stays in its language; the switch moves to the counterpart under the persistent player and
   // is remembered; the shell (navbar, player) follows the language of the page shown.
-  {
+  if (part('site')) {
     const bundle = root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
       : await (await get(at('data/i18n.json'))).json();
     const other = Object.keys(bundle.locales).find((c) => c !== bundle.default);
@@ -4275,7 +4349,7 @@ async function shot(page, name) {
     : await (await get(at('data/images.json'))).json()).social;
   // Every page's social card is served as an image (Open Graph / X); checked on the home page and
   // a track, here and against production (rule project.social-preview).
-  {
+  if (part('site')) {
     const { context, page } = await open(browser, at(''), desktop);
     for (const rel of ['', sample.path]) {
       await page.goto(at(rel), { waitUntil: 'domcontentloaded' });
@@ -4306,7 +4380,7 @@ async function shot(page, name) {
   // [youtube] as a srcset and the browser takes the smallest sharp one, never the 4:3 hqdefault
   // with its bars for a 64 px row. A still that fails (a video removed from YouTube) becomes the
   // placeholder with its srcset dropped as well, so no other still of the lost video is tried.
-  {
+  if (part('site')) {
     const still = '[data-track] img[data-thumb][srcset]';
     const { context, page } = await open(browser, at('archive/'), desktop);
     const row = page.locator(still).first();
@@ -4332,7 +4406,7 @@ async function shot(page, name) {
   // and connections from the front matter; its structured data is an Article and a
   // LearningResource; concepts link to their pages; the glossary lists every concept; a
   // concept's definition follows the locale; the listening guide seeks the player.
-  {
+  if (part('site')) {
     const teacher = catalog.tracks.find((t) => (t.edu || []).includes('learning') && (t.edu || []).includes('concept'));
     if (!teacher) {
       check(false, 'education: at least one review teaches (catalog.tracks[].edu)');
@@ -4376,7 +4450,7 @@ async function shot(page, name) {
   // teaching review whose guide has a timed point is opened, its button clicked, the player starts
   // the track there (calling SonicPlayer.seek directly passed with the button's dispatch deleted;
   // a review, 2026-11-14).
-  {
+  if (part('site')) {
     const { context, page } = await open(browser, 'about:blank', desktop, 'light', {}, true);
     // Few guides carry times (3 of 321 on 2026-11-14): the review is found in the content's front
     // matter (an `at = "m:ss"` inside extra.learning.listen_for), not by opening pages.
@@ -4401,7 +4475,7 @@ async function shot(page, name) {
 
   // Yearbooks (ADR 0005): when the corpus has any, the list and each year serve, every reviewed
   // item links to its review, and the counts are the catalogue's.
-  if (catalog.yearbooks && catalog.yearbooks.length) {
+  if (part('site')) if (catalog.yearbooks && catalog.yearbooks.length) {
     const { context, page, errors } = await open(browser, at('yearbook/'), desktop);
     check((await page.locator('[data-yearbook]').count()) === catalog.yearbooks.length, `yearbooks: the list shows all ${catalog.yearbooks.length}`);
     for (const b of catalog.yearbooks) {
@@ -4428,7 +4502,7 @@ async function shot(page, name) {
   // from the sidebar, the home page, the explorer and the family chart, never hidden behind the
   // umbrella terms that outnumber it (techno, jungle and dub were on no page but their own,
   // 2026-11-22). The home page shows every yearbook, not the first four.
-  if (catalog.genre_families && catalog.genre_families.length) {
+  if (part('site')) if (catalog.genre_families && catalog.genre_families.length) {
     const fams = catalog.genre_families;
     const { context, page, errors } = await open(browser, at(''), desktop);
     check((await page.locator('section:has(#home-yearbooks) [data-yearbook]').count()) === (catalog.yearbooks || []).length,
@@ -4502,7 +4576,7 @@ async function shot(page, name) {
   // A review's contents (page.toc and the educational parts it has): every chip leads to a part
   // of this page; a yearbook position on a review leads to that row of the yearbook (only
   // unresolved rows had the anchor, 2026-11-22); the Czech home page links stay in Czech.
-  {
+  if (part('site')) {
     const t = catalog.tracks.find((x) => x.yearbooks && x.yearbooks.length && x.related && x.related.length) || catalog.tracks[0];
     const { context, page, errors } = await open(browser, at(t.path), desktop);
     const chips = await page.locator('[data-contents] a').evaluateAll((as) => as.map((a) => {
@@ -4533,8 +4607,8 @@ async function shot(page, name) {
     await context.close();
   }
 
-  await wcag(browser, desktop, new Set(catalog.tracks.map((t) => t.path)));
-  if (process.env.SMOKE_SWEEP !== '0') await sweep(browser);
+  if (part('wcag')) await wcag(browser, desktop, new Set(catalog.tracks.map((t) => t.path)));
+  if (process.env.SMOKE_SWEEP !== '0' && part('sweep')) await sweep(browser);
   return done(browser);
 })().catch((e) => {
   console.error(e);
