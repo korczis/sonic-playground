@@ -261,6 +261,81 @@
      },
      "description": "Curated links to other reviews, each with its reason (the derived related tracks come on top)."
     },
+    "versions": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "kind",
+       "title",
+       "by"
+      ],
+      "properties": {
+       "kind": {
+        "type": "string",
+        "enum": ["official-video", "original", "self-release", "licensed-release", "official-remix", "remix", "edit", "extended", "live", "cover", "dance", "excerpt"],
+        "description": "What this version is (data/i18n versions.kind.*): the artist's own uploads and releases first, then what others made of the song."
+       },
+       "title": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The version's title as its upload or release names it."
+       },
+       "by": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Who made or published it, as credited (the remixer, the channel, the label)."
+       },
+       "youtube": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{11}$",
+        "description": "The YouTube video id; the page shows its still and plays it in the site's player."
+       },
+       "url": {
+        "type": "string",
+        "pattern": "^https://",
+        "description": "Where the version is, when it is not a YouTube video (or a link to prefer, such as a short)."
+       },
+       "format": {
+        "type": "string",
+        "enum": ["video", "audio", "short"],
+        "description": "A music video or visual, an audio upload (a Topic or label upload), or a short clip."
+       },
+       "duration": {
+        "type": "string",
+        "pattern": "^(\\d+:[0-5]\\d|\\d{1,2}):[0-5]\\d$",
+        "description": "m:ss, or h:mm:ss for a long mix."
+       },
+       "date": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+        "description": "When it was posted or released, as its source shows it (a Topic upload's release date, else the upload date)."
+       },
+       "rights": {
+        "type": "string",
+        "minLength": 3,
+        "description": "The phonographic copyright line the release carries, verbatim."
+       },
+       "note": {
+        "type": "string",
+        "minLength": 10,
+        "description": "One sourced sentence on what this version is or changes; translated in the review's .cs.md."
+       },
+       "review": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]+\\.md$",
+        "description": "Another review of this version, when it has its own page."
+       },
+       "source": {
+        "type": "string",
+        "pattern": "^https://",
+        "description": "The evidence for the entry when it is not the version's own page."
+       }
+      }
+     },
+     "description": "The song's family of versions (scripts/track.py versions finds the candidates): official uploads, releases, remixes, covers, dances. Rendered as the page's versions list and playable in the player; never a link list in the prose."
+    },
     "learning": {
      "type": "object",
      "additionalProperties": false,

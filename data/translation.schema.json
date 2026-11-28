@@ -47,6 +47,14 @@
       "source": {"type": "string", "pattern": "\\.md$"},
       "why": {"type": "string", "minLength": 20}
      }
+    }},
+    "versions": {"type": "array", "items": {
+     "type": "object", "additionalProperties": false, "required": ["note"],
+     "properties": {
+      "youtube": {"type": "string", "pattern": "^[A-Za-z0-9_-]{11}$"},
+      "url": {"type": "string", "pattern": "^https://"},
+      "note": {"type": "string", "minLength": 10}
+     }
     }}
    }
   }

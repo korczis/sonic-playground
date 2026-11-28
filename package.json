@@ -26,6 +26,7 @@
     "preview": "npm run --silent assets && npm run --silent check && node scripts/serve.mjs --build",
     "test": "python3 -m unittest discover -s test -p 'test_*.py'",
     "test:e2e": "node test/e2e/smoke.cjs",
+    "live": "node test/e2e/live.cjs",
     "verify": "bash scripts/verify.sh",
     "track": "python3 scripts/track.py",
     "spotify:build": "npm run --silent derive",

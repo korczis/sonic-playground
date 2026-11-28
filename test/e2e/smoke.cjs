@@ -894,8 +894,11 @@ async function shot(page, name) {
     await page.keyboard.press('Escape');
     await page.keyboard.press('Escape');
     // A loose video in Czech: the toast and the bar are in Czech, never a key, and no key is
-    // saved; 1m5s is 65 s.
-    await page.goto(at(`cs/?play=yt:${t.youtube}&t=1m5s`), { waitUntil: 'load' });
+    // saved; 1m5s is 65 s. A review's own video is that review (and here already the song cued),
+    // so the loose video is a version of a review, where the catalogue has one.
+    const version = catalog.tracks.flatMap((x) => (x.versions || []).filter((v) => v.youtube && !v.gone && !v.this_page))[0];
+    const looseId = version ? version.youtube : t.youtube;
+    await page.goto(at(`cs/?play=yt:${looseId}&t=1m5s`), { waitUntil: 'load' });
     await page.waitForFunction(() => window.SonicPlayer.state().index >= 0 && document.querySelector('[data-player-toast-text]').textContent, null, { timeout: 10000 }).catch(() => {});
     const yt = await page.evaluate(() => ({ toast: document.querySelector('[data-player-toast-text]').textContent,
       title: document.querySelector('[data-player-title]').textContent, s: window.SonicPlayer.state(),
@@ -903,7 +906,7 @@ async function shot(page, name) {
     const loose = yt.s.queue[yt.s.index] || {};
     check(yt.toast && !/^player\./.test(yt.toast) && yt.title && !/^player\./.test(yt.title),
       `shared link (cs, loose video): the toast and the bar are words, not keys ("${yt.toast}", "${yt.title}")`);
-    check(loose.youtube === t.youtube && Math.round(yt.s.time) === 65 && (yt.saved.queue || []).every((q) => !/^player\./.test(q.track || '')),
+    check(loose.youtube === looseId && Math.round(yt.s.time) === 65 && (yt.saved.queue || []).every((q) => !/^player\./.test(q.track || '')),
       'shared link (cs, loose video): cued at 1m5s, and no interface key is saved');
     check(errors.length === 0, `review findings (phone): no console error${errors.length ? ': ' + errors.join(' | ') : ''}`);
     await context.close();
@@ -4221,6 +4224,285 @@ async function shot(page, name) {
     check(idle !== playing && playing.length > 0, `track page: the Play button reads ${JSON.stringify(playing)} while its track plays (was ${JSON.stringify(idle)})`);
     check(errors.length === 0, `track page player: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
     await context.close();
+  }
+
+  // A song's versions (extra.versions): the section and its contents chip, the two groups in the
+  // catalogue's order, every row's still sized by `still`, its kind badge and length; a row plays
+  // its own video in the player and the bar's title opens the review; "Play all" queues the
+  // page's video, then every playable version; the playing row is ringed and shows pause; the
+  // Czech page carries the Czech notes and kind labels; every control is named; nothing overflows
+  // at 390 px; no console errors. Everything expected is read from the catalogue and the strings.
+  {
+    const vt = catalog.tracks.find((t) => t.versions && t.versions.length);
+    const strings = root ? JSON.parse(fs.readFileSync(path.join(root, 'data/i18n.json'), 'utf8'))
+      : await (await get(at('data/i18n.json'))).json();
+    const plural = (s, key, n) => {
+      const v = s[key];
+      if (typeof v === 'string') return v.replace('{n}', String(n));
+      const cat = Object.keys(s['locale.plural']).find((c) => s['locale.plural'][c].includes(n) && v[c]) || 'other';
+      return v[cat].replace('{n}', String(n));
+    };
+    if (!vt) check(false, 'versions: a review with extra.versions exists (catalog.tracks[].versions)');
+    if (vt) {
+      const en = strings.locales[strings.default].strings;
+      const playable = vt.versions.filter((v) => v.youtube && !v.gone && !v.this_page);
+      const queued = (vt.youtube ? [vt.youtube] : []).concat(playable.map((v) => v.youtube));
+      const groups = ['artist', 'others'].filter((g) => vt.versions.some((v) => v.group === g));
+      const rows = (page) => page.locator(`[data-versions="${vt.source}"] [data-version]`).evaluateAll((lis) => lis.map((li) => {
+        const img = li.querySelector('img');
+        const play = li.querySelector('button[data-play], button[data-play-video]');
+        const open = li.querySelector('a[data-version-open]');
+        const note = li.querySelector('[data-version-note]');
+        const described = (el) => (el.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean)
+          .map((id) => (document.getElementById(id) || { textContent: '' }).textContent.trim().replace(/\s+/g, ' ')).join(' ');
+        return {
+          key: li.dataset.version, kind: li.dataset.versionKind,
+          group: li.closest('[data-versions-group]').dataset.versionsGroup,
+          badge: (li.querySelector('[data-version-badge]') || {}).textContent || '',
+          duration: ((li.querySelector('[data-version-duration]') || {}).textContent || '').trim(),
+          still: img ? { src: img.getAttribute('src'), srcset: img.getAttribute('srcset') || '', sizes: img.getAttribute('sizes') || '',
+            width: img.getAttribute('width'), height: img.getAttribute('height') } : null,
+          play: play ? { label: play.getAttribute('aria-label') || '', own: play.dataset.play || '', video: play.dataset.playVideo || '',
+            desc: described(play) } : null,
+          open: open ? { label: open.getAttribute('aria-label') || '', href: open.href, desc: described(open) } : null,
+          note: note ? { text: note.textContent.trim(), lang: note.getAttribute('lang') || '' } : null,
+          thisPage: !!li.querySelector('[data-version-this-page]'), gone: !!li.querySelector('[data-version-gone]'),
+        };
+      }));
+      const { context, page, errors } = await open(browser, at(vt.path), desktop, 'light', {}, true);
+      check(await page.locator(`section[data-versions="${vt.source}"] h2#versions-title`).count() === 1,
+        `versions: ${vt.path} has its versions section`);
+      check(await page.locator('[data-contents] a[href$="#versions-title"]').count() === 1, 'versions: the contents chip leads to the section');
+      const shown = await page.locator('[data-versions-group]').evaluateAll((uls) => uls.map((u) => u.dataset.versionsGroup));
+      check(shown.join() === groups.join(), `versions: the groups ${groups.join(', ')} in that order (${shown.join(', ')})`);
+      const got = await rows(page);
+      check(got.map((r) => r.key).join() === vt.versions.map((v) => v.youtube || v.url).join(),
+        `versions: ${vt.versions.length} rows in the catalogue's order (${got.length})`);
+      const bad = [];
+      vt.versions.forEach((v, i) => {
+        const r = got[i] || {};
+        const why = [];
+        if (r.group !== v.group) why.push(`group ${r.group}`);
+        if (r.badge !== en['versions.kind.' + v.kind]) why.push(`badge "${r.badge}"`);
+        if (v.duration && r.duration !== v.duration) why.push(`duration "${r.duration}"`);
+        if (!!v.this_page !== r.thisPage) why.push('this-page marker');
+        if (!!v.gone !== r.gone) why.push('gone note');
+        if (v.youtube && !v.gone) {
+          const s = r.still;
+          if (!s || !s.src.includes(`/vi/${v.youtube}/`) || !s.srcset.includes(' 480w') || !s.sizes || !s.width || !s.height) why.push('still (src, srcset, sizes, width, height)');
+          if (!r.play || !r.play.label.includes(v.title) || !r.play.label.includes(v.by)) why.push(`play label "${r.play && r.play.label}"`);
+          const ownSource = v.this_page ? vt.source
+            : (catalog.tracks.find((t) => t.source === v.review && t.youtube === v.youtube) || {}).source || '';
+          if (r.play && (ownSource ? r.play.own !== ownSource : r.play.video !== v.youtube)) why.push('play target');
+          if (!r.play || !r.play.desc.includes(r.badge) || !r.open || r.open.desc !== r.play.desc) why.push('described by its badges');
+          if (!r.open || r.open.href !== v.watch || !r.open.label.includes(v.title)) why.push('open link');
+        } else if (r.still || r.play || r.open) why.push('a gone version keeps no still, play or link');
+        if (v.note && (!r.note || r.note.text !== v.note)) why.push('note');
+        if (why.length) bad.push(`${v.youtube || v.url}: ${why.join(', ')}`);
+      });
+      check(bad.length === 0, `versions: every row has its group, kind badge, length, still, named play and open link, note${bad.length ? ' — ' + bad.join(' | ') : ''}`);
+      const nameless = await page.locator(`[data-versions="${vt.source}"]`).evaluate((s) => [...s.querySelectorAll('a[href], button')]
+        .filter((c) => !(c.getAttribute('aria-label') || c.textContent).trim()).length);
+      check(nameless === 0, `versions: every link and button of the section has a name (${nameless} without)`);
+      // Two releases of one title (a self-release and a licensed one) are told apart: every play
+      // button's name with its description (the row's badges) is its own.
+      const spoken = got.filter((r) => r.play).map((r) => `${r.play.label} | ${r.play.desc}`);
+      check(new Set(spoken).size === spoken.length, `versions: every play button is told apart by its name and description (${spoken.length})`);
+      // The keyboard focus ring of the open link is the play button's (primary, 3:1 or more).
+      await page.keyboard.press('Tab');
+      const rings = await page.evaluate(() => {
+        const li = document.querySelector('[data-versions] li[data-version]');
+        const ring = (el) => { el.focus(); return el.matches(':focus-visible') ? getComputedStyle(el).boxShadow : 'not focus-visible'; };
+        return { play: ring(li.querySelector('button')), open: ring(li.querySelector('[data-version-open]')) };
+      });
+      check(rings.open !== 'none' && rings.open === rings.play, `versions: the open link's focus ring is the play button's (${rings.open})`);
+      await page.evaluate(() => document.activeElement && document.activeElement.blur());
+      const all = page.locator(`[data-play-versions="${vt.source}"]`);
+      check(await all.count() === 1 && (await all.innerText()).trim() === plural(en, 'versions.play_all', queued.length),
+        `versions: "${plural(en, 'versions.play_all', queued.length)}"`);
+
+      // One version: its video in the player, its title and maker in the bar, the bar opens the review.
+      const pick = playable[0];
+      if (pick) {
+        const row = page.locator(`[data-version="${pick.youtube}"]`);
+        await row.locator('button[data-play-video]').click();
+        await page.waitForFunction((id) => window.__yt && window.__yt.player && window.__yt.player._video === id
+          && document.documentElement.dataset.playerState === 'playing', pick.youtube, { timeout: 15000 }).catch(() => {});
+        check(await page.evaluate(() => window.__yt && window.__yt.player && window.__yt.player._video) === pick.youtube,
+          `versions: a row's play loads its own video (${pick.youtube})`);
+        const bar = await page.evaluate(() => {
+          const a = document.querySelector('[data-player-title]');
+          return { title: a.textContent, href: a.getAttribute('href'), target: a.getAttribute('target') || '',
+            artist: document.querySelector('[data-player-artist]').textContent, play: new URL(location.href).searchParams.get('play') };
+        });
+        check(bar.title === pick.title && bar.artist === pick.by, `versions: the bar names the version (${bar.title} · ${bar.artist})`);
+        check(new URL(bar.href, page.url()).pathname.endsWith('/' + vt.path) && !bar.target,
+          `versions: the bar's title opens the review, in this tab (${bar.href})`);
+        check(bar.play === `yt:${pick.youtube}`, `versions: the URL names the version (?play=${bar.play})`);
+        check(await row.evaluate((li) => li.hasAttribute('data-now-playing')
+          && getComputedStyle(li.querySelector('[data-icon-pause]')).display !== 'none'
+          && getComputedStyle(li.querySelector('[data-icon-play]')).display === 'none'),
+          'versions: the playing row is ringed and its button shows pause');
+        // The keyboard: the next version's button takes focus and Enter plays it.
+        const second = playable[1];
+        if (second) {
+          await page.locator(`[data-version="${second.youtube}"] button[data-play-video]`).focus();
+          await page.keyboard.press('Enter');
+          await page.waitForFunction((id) => window.__yt.player._video === id, second.youtube, { timeout: 10000 }).catch(() => {});
+          check(await page.evaluate(() => window.SonicPlayer.state().queue.map((q) => q.youtube)).then((q) => q.includes(second.youtube))
+            && await page.evaluate(() => window.__yt.player._video) === second.youtube,
+          `versions: Enter on a focused row plays it (${second.youtube})`);
+        }
+      }
+      // Play all: the page's own video first, then every playable version, announced.
+      await all.click();
+      await page.waitForFunction((n) => window.SonicPlayer.state().queue.length === n, queued.length, { timeout: 10000 }).catch(() => {});
+      const q = await page.evaluate(() => window.SonicPlayer.state());
+      check(q.queue.map((x) => x.youtube).join() === queued.join() && q.index === 0 && q.queue[0].source === vt.source,
+        `versions: "Play all" queues the page's video, then ${playable.length} versions (${q.queue.length})`);
+      check((await page.textContent('[data-player-toast-text]') || '').length > 0, 'versions: the new queue is announced');
+      check(q.queue.slice(1).every((x) => (x.source ? x.source !== vt.source : x.path === vt.path)),
+        'versions: every queued version leads back to the review (or is its own review)');
+      check(await page.locator(`[data-versions] li[data-source="${vt.source}"]`).evaluate((li) => li.hasAttribute('data-now-playing')),
+        'versions: the page\'s own row is ringed while its video plays');
+      check(errors.length === 0, `versions (desktop): no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+      await context.close();
+
+      // The other language: its notes, its kind labels, its plural.
+      const other = Object.keys(strings.locales).find((c) => c !== strings.default);
+      if (other && vt.i18n && vt.i18n[other]) {
+        const s = strings.locales[other].strings;
+        const { context: c2, page: p2, errors: e2 } = await open(browser, at(vt.i18n[other].path), desktop, 'light', {}, true);
+        await p2.waitForFunction(() => document.documentElement.dataset.i18nState === 'ready', null, { timeout: 15000 }).catch(() => {});
+        const rs = await rows(p2);
+        const badges = rs.filter((r) => r.badge !== s['versions.kind.' + r.kind]).map((r) => `${r.key} "${r.badge}"`);
+        check(rs.length === vt.versions.length && badges.length === 0, `versions (${other}): every kind in ${other}${badges.length ? ' — ' + badges.join(', ') : ''}`);
+        // A note is the translation's own (not the English one) or, where it has none, the English
+        // one marked as English.
+        const noted = rs.filter((r) => r.note);
+        const own = noted.filter((r) => !r.note.lang && r.note.text !== (vt.versions.find((v) => (v.youtube || v.url) === r.key) || {}).note);
+        const marked = noted.filter((r) => r.note.lang === strings.default);
+        check(own.length > 0 && own.length + marked.length === noted.length,
+          `versions (${other}): ${own.length} notes in ${other}, ${marked.length} marked ${strings.default}, of ${noted.length}`);
+        const label = (await p2.locator(`[data-play-versions="${vt.source}"]`).innerText()).trim();
+        check(label === plural(s, 'versions.play_all', queued.length), `versions (${other}): "${label}"`);
+        const pl = rs.find((r) => r.play && r.play.video);
+        check(!!pl && pl.play.label.startsWith(s['versions.play'].split('{')[0]) && pl.open.label.startsWith(s['versions.open_youtube'].split('{')[0]),
+          `versions (${other}): the controls are named in ${other} (${pl && pl.play.label})`);
+        check(e2.length === 0, `versions (${other}): no console errors${e2.length ? ' — ' + e2.join(' | ') : ''}`);
+        await c2.close();
+      }
+
+      // A phone (320 and 390 px, both themes): nothing of the section overflows; the badges, note
+      // and ℗ line take the row's whole width under the still (a 94 px column at 320 px, a review of
+      // 2026-11-28); no byline starts with a separator dot.
+      for (const [width, scheme] of [[320, 'light'], [390, 'dark']]) {
+        const { context: c3, page: p3, errors: e3 } = await open(browser, at(vt.path), { width, height: 844 }, scheme);
+        await p3.evaluate(() => document.fonts.ready);
+        const m = await p3.evaluate((src) => {
+          const sec = document.querySelector(`[data-versions="${src}"]`);
+          const main = document.getElementById('main-content');
+          const r = sec.getBoundingClientRect();
+          const lis = [...sec.querySelectorAll('li[data-version]')];
+          const narrow = lis.filter((li) => {
+            const d = li.querySelector('[data-version-details]').getBoundingClientRect();
+            const s = li.firstElementChild.getBoundingClientRect();
+            return Math.abs(d.left - s.left) > 1 || d.width < li.clientWidth - 20;
+          }).map((li) => li.dataset.version);
+          const dots = [...sec.querySelectorAll('[data-version-dot]')].filter((d) => getComputedStyle(d).display !== 'none').length;
+          return { over: Math.max(document.documentElement.scrollWidth - innerWidth, main.scrollWidth - main.clientWidth,
+            Math.ceil(r.right - innerWidth), sec.scrollWidth - sec.clientWidth), narrow, dots, rows: lis.length };
+        }, vt.source);
+        check(m.over <= 0, `versions @${width}px (${scheme}): no horizontal overflow (${m.over}px)`);
+        check(m.rows > 0 && m.narrow.length === 0, `versions @${width}px (${scheme}): badges, note and ℗ line span the row under the still${m.narrow.length ? ' — ' + m.narrow.join(', ') : ''}`);
+        check(m.dots === 0, `versions @${width}px (${scheme}): no separator dot leads a wrapped byline (${m.dots} shown)`);
+        check(e3.length === 0, `versions @${width}px (${scheme}): no console errors${e3.length ? ' — ' + e3.join(' | ') : ''}`);
+        await c3.close();
+      }
+
+      // A version that is another review's own video plays as that review: from a row, in "Play
+      // all" (once, never also as a loose video), and from a shared link. The catalogue and the
+      // play index are served with such a version added to this review.
+      const reviewed = catalog.tracks.find((t) => t.youtube && !t.video_gone && t.source !== vt.source && !queued.includes(t.youtube));
+      const playIndex = root ? JSON.parse(fs.readFileSync(path.join(root, 'data/play.json'), 'utf8'))
+        : await (await get(at('data/play.json'))).json();
+      if (reviewed) {
+        const extra = { kind: 'remix', title: reviewed.track, by: reviewed.artist, youtube: reviewed.youtube, review: reviewed.source,
+          group: 'others', watch: `https://www.youtube.com/watch?v=${reviewed.youtube}` };
+        const withVersion = (data, entry) => ({ ...data, tracks: data.tracks.map((t) => (t.source === vt.source
+          ? { ...t, versions: (t.versions || []).concat([entry]) } : t)) });
+        const { context: c4, page: p4, errors: e4 } = await open(browser, at(vt.path), desktop, 'light', {}, true);
+        await p4.route('**/data/catalog.json*', (r) => r.fulfill({ contentType: 'application/json', body: JSON.stringify(withVersion(catalog, extra)) }));
+        await p4.route('**/data/play.json*', (r) => r.fulfill({ contentType: 'application/json',
+          body: JSON.stringify(withVersion(playIndex, { youtube: reviewed.youtube, track: reviewed.track, artist: reviewed.artist })) }));
+        await p4.reload({ waitUntil: 'load' });
+        await p4.locator(`[data-play-versions="${vt.source}"]`).click();
+        await p4.waitForFunction((n) => window.SonicPlayer.state().queue.length >= n, queued.length, { timeout: 10000 }).catch(() => {});
+        const keys = await p4.evaluate(() => window.SonicPlayer.state().queue.map((x) => x.source || 'yt:' + x.youtube));
+        check(keys.filter((k) => k === reviewed.source).length === 1 && !keys.includes('yt:' + reviewed.youtube) && keys.length === queued.length + 1,
+          `versions: "Play all" queues a version with its own review once, as that review (${keys.length})`);
+        // A row of it (as a page that does not know the review would write it) plays the review too.
+        await p4.evaluate(({ id, src }) => {
+          const b = document.createElement('button');
+          b.type = 'button'; b.dataset.playVideo = id; b.dataset.playTitle = 'x'; b.dataset.playOf = src; b.id = 'smoke-version';
+          b.textContent = 'play'; document.querySelector('main').append(b);
+        }, { id: reviewed.youtube, src: vt.source });
+        await p4.click('#smoke-version');
+        await p4.waitForFunction((s) => { const st = window.SonicPlayer.state(); return (st.queue[st.index] || {}).source === s; }, reviewed.source, { timeout: 10000 }).catch(() => {});
+        const now = await p4.evaluate(() => { const st = window.SonicPlayer.state(); return st.queue[st.index] || {}; });
+        check(now.source === reviewed.source, `versions: a version's play of another review's video plays that review (${now.source || 'yt:' + now.youtube})`);
+        check(e4.length === 0, `versions (own review): no console errors${e4.length ? ' — ' + e4.join(' | ') : ''}`);
+        await c4.close();
+      }
+      // A shared link to a video: a version is named and leads to its review; a review's own video
+      // is that review; a video the index does not know stays a bare video that opens YouTube.
+      {
+        const unknown = 'zzzzzzzzzz0';
+        const { context: c5, page: p5, errors: e5 } = await open(browser, at(''), desktop, 'light', {}, true);
+        // The made-up video has no still on YouTube: its 404 would be the test's, not the site's.
+        await c5.route(`https://i.ytimg.com/vi/${unknown}/**`, (r) => r.fulfill({ status: 200, contentType: 'image/jpeg', body: '' }));
+        for (const [id, want] of [[playable[0] && playable[0].youtube, 'version'], [vt.youtube, 'review'], [unknown, 'bare']]) {
+          if (!id) continue;
+          await p5.goto(at(`?play=yt:${id}`), { waitUntil: 'load' });
+          await p5.waitForFunction(() => window.SonicPlayer.state().index >= 0 && document.querySelector('[data-player-title]').textContent,
+            null, { timeout: 15000 }).catch(() => {});
+          const b = await p5.evaluate(() => {
+            const a = document.querySelector('[data-player-title]');
+            const st = window.SonicPlayer.state();
+            return { title: a.textContent, artist: document.querySelector('[data-player-artist]').textContent,
+              href: a.getAttribute('href') || '', target: a.getAttribute('target') || '', now: st.queue[st.index] || {} };
+          });
+          const ok = want === 'version' ? b.title === playable[0].title && b.artist === playable[0].by
+              && new URL(b.href, base).pathname.endsWith('/' + vt.path) && !b.target
+            : want === 'review' ? b.now.source === vt.source && b.title === vt.track
+              : b.title === en['player.video'] && b.href === `https://www.youtube.com/watch?v=${unknown}` && b.target === '_blank';
+          check(ok, `versions: a shared ?play=yt:${id} (${want}) is cued as ${want === 'bare' ? 'a bare video' : 'that ' + want} (${b.title} · ${b.artist} · ${b.href})`);
+        }
+        check(e5.length === 0, `versions: shared links: no console errors${e5.length ? ' — ' + e5.join(' | ') : ''}`);
+        await c5.close();
+      }
+    }
+    // A loose video in a review (the video component without a source) still plays as before: its
+    // title in the bar, no review to lead to, so the title opens YouTube in a new tab.
+    const loose = root && catalog.tracks.find((t) => {
+      const f = path.join(root, t.path, 'index.html');
+      return fs.existsSync(f) && /data-play-video="[\w-]{11}" data-play-title="[^"]*" aria-label=/.test(fs.readFileSync(f, 'utf8'));
+    });
+    if (loose) {
+      const { context, page, errors } = await open(browser, at(loose.path), desktop, 'light', {}, true);
+      const a = page.locator('main [data-play-video]:not([data-play-of])').first();
+      const want = { id: await a.getAttribute('data-play-video'), title: await a.getAttribute('data-play-title') };
+      await a.click();
+      await page.waitForFunction((id) => window.__yt && window.__yt.player && window.__yt.player._video === id, want.id, { timeout: 15000 }).catch(() => {});
+      const bar = await page.evaluate(() => {
+        const t = document.querySelector('[data-player-title]');
+        return { title: t.textContent, href: t.getAttribute('href'), target: t.getAttribute('target') };
+      });
+      check(bar.title === want.title && bar.href === `https://www.youtube.com/watch?v=${want.id}` && bar.target === '_blank',
+        `video in a review (${loose.path}): plays as a loose video, its title opens YouTube (${bar.title})`);
+      check(errors.length === 0, `video in a review: no console errors${errors.length ? ' — ' + errors.join(' | ') : ''}`);
+      await context.close();
+    }
   }
 
   // Both languages (ADR 0006): every page is built in English at the root and in Czech under /cs/.

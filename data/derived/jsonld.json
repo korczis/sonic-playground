@@ -101797,6 +101797,182 @@
     }
    ]
   },
+  "mainvibe-lauter.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mainvibe-lauter/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "MAINVIBE",
+      "sameAs": "https://musicbrainz.org/artist/b997fe8a-2c57-4c4d-91f8-ae8742bcdcbc"
+     },
+     "datePublished": "2026",
+     "genre": [
+      "electro-swing",
+      "techno",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lauter (single)"
+     },
+     "name": "Lauter",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d85372dd-0aac-4fc4-9fef-ef540bea91d0",
+      "https://www.youtube.com/watch?v=DgC7FGgsm4A"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/cs/mainvibe-lauter/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mainvibe-lauter/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – Lauter | Electro Swing meets Techno",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/watch?v=DgC7FGgsm4A"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "„Lauter“ von MAINVIBE – Electro Swing trifft Techno.",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/shorts/iJxrEHv_RcM"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter (DistroKid upload)",
+       "publisher": "YouTube (MAINVIBE - Topic)",
+       "url": "https://www.youtube.com/watch?v=WaxPYwst85k"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter (Universal Music Group upload, with credits)",
+       "publisher": "YouTube (MAINVIBE - Topic)",
+       "url": "https://www.youtube.com/watch?v=O23UZaT7GnY"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – Lauter (Hard Tech / Rave Remix) | 1000 Abonnenten Special",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/watch?v=uDpzHhUbegA"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter (MV Remix)",
+       "publisher": "YouTube (MAINVIBE - Topic)",
+       "url": "https://www.youtube.com/watch?v=GFPTuG0ldDE"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – LAUTER (TOM KENZLER REMIX)",
+       "publisher": "YouTube (ROCKMAX | Tom Kenzler)",
+       "url": "https://www.youtube.com/watch?v=eTrOJfm4ncY"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter - (MAINVIBE) Andy Sossna Remix",
+       "publisher": "YouTube (Andy Sossna)",
+       "url": "https://www.youtube.com/watch?v=LFZDZ8d-NFo"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Mainvibe - Lauter (NVKLΛS Remix)",
+       "publisher": "YouTube (NVKLɅS)",
+       "url": "https://www.youtube.com/watch?v=zjGvlMUKGYc"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Linedance Lauter MAINVIBE",
+       "publisher": "YouTube (Joyce Brasche)",
+       "url": "https://www.youtube.com/watch?v=HhW9lPMJdjs"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – 1920 | The Great Gatsby Goes TECHNO! 13 Tracks",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/watch?v=gGkJyJvWilY"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – Wein nicht um mich | 1920er Electro House",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/watch?v=wRo2iPwEkS4"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/us/artist/381644231"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/d85372dd-0aac-4fc4-9fef-ef540bea91d0"
+      }
+     ],
+     "datePublished": "2026-11-28",
+     "description": "Německy zpívaný singl projektu MAINVIBE, ohlášený jako electro swing potkává techno a uvedený veršem „Ich will doch nur ein bisschen tanzen“; do dvou týdnů měl oficiální hard-tech remix, čtyři remixy od jiných producentů a vlastní line dance.",
+     "educationalLevel": "introductory",
+     "headline": "MAINVIBE - Lauter",
+     "inLanguage": "cs",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "swing",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/swing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "self-release",
+       "url": "https://korczis.github.io/sonic-playground/cs/concept/self-release/"
+      }
+     ],
+     "translationOfWork": {
+      "@id": "https://korczis.github.io/sonic-playground/mainvibe-lauter/#review"
+     },
+     "url": "https://korczis.github.io/sonic-playground/cs/mainvibe-lauter/",
+     "wordCount": 861
+    }
+   ]
+  },
   "make-the-girl-dance-baby-baby-baby.md": {
    "@context": "https://schema.org",
    "@graph": [
@@ -254733,6 +254909,179 @@
      ],
      "url": "https://korczis.github.io/sonic-playground/magnetic-man-katy-b-perfect-stranger/",
      "wordCount": 546
+    }
+   ]
+  },
+  "mainvibe-lauter.md": {
+   "@context": "https://schema.org",
+   "@graph": [
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mainvibe-lauter/#recording",
+     "@type": "MusicRecording",
+     "byArtist": {
+      "@type": "MusicGroup",
+      "name": "MAINVIBE",
+      "sameAs": "https://musicbrainz.org/artist/b997fe8a-2c57-4c4d-91f8-ae8742bcdcbc"
+     },
+     "datePublished": "2026",
+     "genre": [
+      "electro-swing",
+      "techno",
+      "electronic"
+     ],
+     "inAlbum": {
+      "@type": "MusicAlbum",
+      "name": "Lauter (single)"
+     },
+     "name": "Lauter",
+     "sameAs": [
+      "https://musicbrainz.org/recording/d85372dd-0aac-4fc4-9fef-ef540bea91d0",
+      "https://www.youtube.com/watch?v=DgC7FGgsm4A"
+     ]
+    },
+    {
+     "@id": "https://korczis.github.io/sonic-playground/mainvibe-lauter/#review",
+     "@type": [
+      "Article",
+      "LearningResource"
+     ],
+     "about": {
+      "@id": "https://korczis.github.io/sonic-playground/mainvibe-lauter/#recording"
+     },
+     "author": {
+      "@type": "Person",
+      "name": "korczis"
+     },
+     "citation": [
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – Lauter | Electro Swing meets Techno",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/watch?v=DgC7FGgsm4A"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "„Lauter“ von MAINVIBE – Electro Swing trifft Techno.",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/shorts/iJxrEHv_RcM"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter (DistroKid upload)",
+       "publisher": "YouTube (MAINVIBE - Topic)",
+       "url": "https://www.youtube.com/watch?v=WaxPYwst85k"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter (Universal Music Group upload, with credits)",
+       "publisher": "YouTube (MAINVIBE - Topic)",
+       "url": "https://www.youtube.com/watch?v=O23UZaT7GnY"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – Lauter (Hard Tech / Rave Remix) | 1000 Abonnenten Special",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/watch?v=uDpzHhUbegA"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter (MV Remix)",
+       "publisher": "YouTube (MAINVIBE - Topic)",
+       "url": "https://www.youtube.com/watch?v=GFPTuG0ldDE"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – LAUTER (TOM KENZLER REMIX)",
+       "publisher": "YouTube (ROCKMAX | Tom Kenzler)",
+       "url": "https://www.youtube.com/watch?v=eTrOJfm4ncY"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter - (MAINVIBE) Andy Sossna Remix",
+       "publisher": "YouTube (Andy Sossna)",
+       "url": "https://www.youtube.com/watch?v=LFZDZ8d-NFo"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Mainvibe - Lauter (NVKLΛS Remix)",
+       "publisher": "YouTube (NVKLɅS)",
+       "url": "https://www.youtube.com/watch?v=zjGvlMUKGYc"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Linedance Lauter MAINVIBE",
+       "publisher": "YouTube (Joyce Brasche)",
+       "url": "https://www.youtube.com/watch?v=HhW9lPMJdjs"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – 1920 | The Great Gatsby Goes TECHNO! 13 Tracks",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/watch?v=gGkJyJvWilY"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE – Wein nicht um mich | 1920er Electro House",
+       "publisher": "YouTube (MAINVIBE)",
+       "url": "https://www.youtube.com/watch?v=wRo2iPwEkS4"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "MAINVIBE",
+       "publisher": "Deezer",
+       "url": "https://www.deezer.com/us/artist/381644231"
+      },
+      {
+       "@type": "CreativeWork",
+       "datePublished": "2026",
+       "name": "Lauter",
+       "publisher": "MusicBrainz",
+       "url": "https://musicbrainz.org/recording/d85372dd-0aac-4fc4-9fef-ef540bea91d0"
+      }
+     ],
+     "datePublished": "2026-11-28",
+     "description": "MAINVIBE's German-language single, billed as electro swing meets techno and launched with the line \"Ich will doch nur ein bisschen tanzen\"; within two weeks it had an official hard-tech remix, four remixes by other producers and a line dance.",
+     "educationalLevel": "introductory",
+     "headline": "MAINVIBE - Lauter",
+     "inLanguage": "en",
+     "isPartOf": {
+      "@type": "WebSite",
+      "name": "Sonic Playground",
+      "url": "https://korczis.github.io/sonic-playground/"
+     },
+     "learningResourceType": "listening guide",
+     "teaches": [
+      {
+       "@type": "DefinedTerm",
+       "name": "swing",
+       "url": "https://korczis.github.io/sonic-playground/concept/swing/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "remix",
+       "url": "https://korczis.github.io/sonic-playground/concept/remix/"
+      },
+      {
+       "@type": "DefinedTerm",
+       "name": "self-release",
+       "url": "https://korczis.github.io/sonic-playground/concept/self-release/"
+      }
+     ],
+     "url": "https://korczis.github.io/sonic-playground/mainvibe-lauter/",
+     "wordCount": 947
     }
    ]
   },

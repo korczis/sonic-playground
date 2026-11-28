@@ -23,6 +23,32 @@ interface SonicTrack {
   langs: string[];
   /** Per language besides the default: what its translation says. */
   i18n: Record<string, { title: string; description: string; path: string }>;
+  /** The song's versions (extra.versions), only when it has any: the catalogue lists each with
+   *  its authored and derived fields, the play index only the playable ones (scripts/catalog.py). */
+  versions?: SonicVersion[];
+}
+
+/** A version of a song: catalog.json (kind, title, by, ... group, watch, seconds, gone, this_page)
+ *  or play.json (youtube, track, artist). */
+interface SonicVersion {
+  youtube?: string;
+  kind?: string;
+  title?: string;
+  by?: string;
+  track?: string;
+  artist?: string;
+  url?: string;
+  format?: string;
+  duration?: string;
+  date?: string;
+  rights?: string;
+  note?: string;
+  review?: string;
+  group?: 'artist' | 'others';
+  watch?: string;
+  seconds?: number;
+  gone?: boolean;
+  this_page?: boolean;
 }
 
 /** How the explorer reads a word: catalog.json `search` for one language (scripts/catalog.py). */

@@ -107,9 +107,16 @@ def scaffold_text(src: Path, lang: str) -> str:
              f"description = {toml_value(marked(str(meta.get('description', ''))))}", "",
              table("taxonomies", meta.get("taxonomies") or {}), "",
              table("extra.translation", {"of": of})]
+    notes = tr.version_notes(extra)
+    if extra.get("connections") or notes:
+        lines += ["", "[extra]"]
     if extra.get("connections"):
-        lines += ["", "[extra]", "connections = " + toml_value(
+        lines += ["connections = " + toml_value(
             [{"source": c["source"], "why": marked(c["why"])} for c in extra["connections"]])]
+    if notes:  # keyed as the English entry is: its video id, or its url
+        lines += ["versions = " + toml_value(
+            [{("url" if n["key"].startswith("https://") else "youtube"): n["key"],
+              "note": marked(n["note"])} for n in notes])]
     if learning:
         lt = tr.learning_text(learning)
         listen = [{k: (marked(v) if k != "at" else v) for k, v in m.items() if v} for m in lt["listen_for"]]

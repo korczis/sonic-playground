@@ -43,9 +43,20 @@ python3 scripts/track.py resolve "https://youtu.be/<id>"       # infer artist, t
 python3 scripts/track.py vocab --limit 40                       # existing genres and feelings
 python3 scripts/track.py new "https://youtu.be/<id>" --genre ... --sentiment ... --description "..."
 # replace every TODO(write) in the new file, then:
+python3 scripts/track.py versions content/<file>.md --json      # the song's versions on YouTube
+python3 scripts/track.py versions content/<file>.md --write --pick <id>[:<kind>] ...
+python3 scripts/track.py versions content/<file>.md --verify   # 0 diffs against YouTube
 python3 scripts/track.py check content/<file>.md
 npm run derive && bash scripts/verify.sh
+# after the push, the page is done when production passes in a real browser:
+npm run live -- <slug> --expect <sha>                           # en and cs, desktop and phone
 ```
+
+A song's versions (official uploads, releases, remixes, covers, dances) are data,
+`[[extra.versions]]` in the front matter, rendered as the page's versions list and playable in
+the player; never a list of links in the prose. Before the commit an independent fact-check
+(`.claude/agents/fact-checker.md`, prompt `.ai/repo/prompts/fact-check.md`) checks every claim
+against its source.
 
 Many songs at once: `python3 scripts/backlog.py` lists what the owner's playlists hold and the
 journal does not; `--source spotify` ranks the owner's Spotify picks without a review (top
@@ -224,7 +235,9 @@ plan without running anything. CI always sweeps every page.
 Pushing `main` deploys: `.github/workflows/pages.yml` runs the CI gate (`ci.yml`: conventional
 commits, `majordomus doctor`, the gate above), deploys exactly the tested artefact to GitHub
 Pages, waits until production serves the commit (`revision.txt`) and runs the smoke test against
-production. The sitemap sweep, the longest part, runs in four parallel jobs in both places
+production. After it, the `deploy-verifier` agent runs `npm run live -- <slug> --expect <sha>`
+(`test/e2e/live.cjs`) for each review the push changed, its expectations derived from the
+catalogue. The sitemap sweep, the longest part, runs in four parallel jobs in both places
 (`SMOKE_SHARD=k/4`; `SMOKE_SWEEP=only` skips the feature checks in shards 2-4); locally one run
 checks every feature and sweeps what the change can affect (`VERIFY_FULL=1`: every page). Every job has a deadline (`test/cases/40_workflow_deadlines.sh`). There is no other
 deploy target (rule `project.deploy-gate`). `content-health.yml` probes videos and external links
@@ -241,7 +254,8 @@ static/js/          core (modules), router, player, track-menu, explorer, charts
 static/data/        catalog.json, search.json, i18n.json (derived, committed), vendor.json
 scripts/            catalog, track, backlog, i18n, og, check-built, check-components, probes, verify,
                     dev, serve and port (the local servers)
-test/               unit tests, cases/ (skill and policy cases), e2e/smoke.cjs (Playwright)
+test/               unit tests, cases/ (skill and policy cases), e2e/smoke.cjs (Playwright),
+                    e2e/live.cjs (one review on production)
 types/              sonic.d.ts (the catalogue, i18n and module API, for tsc --checkJs)
 .ai/                Majordomus layer: policy, rules, skills, ADRs, knowledge, workflows
 .claude/            Claude Code: the add-song skill and the agents

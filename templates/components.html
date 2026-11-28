@@ -33,6 +33,7 @@
   "pause": "M9 6v12m6-12v12",
   "book": "M12 6.5C10.5 5 8 4.5 5 5v13c3-.5 5.5 0 7 1.5m0-13c1.5-1.5 4-2 7-1.5v13c-3-.5-5.5 0-7 1.5m0-13v13",
   "dots": "M6.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm7 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm7 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z",
+  "external": "M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.1 1.3L19.6 4.4",
 } -%}
 {%- if name in paths -%}
 <svg class="{{ cls }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ paths[name] }}"/></svg>
@@ -319,9 +320,11 @@ src="{{ get_url(path=t.thumbnail) }}"
 </section>
 {% endcomponent chart_card %}
 
-{#- "Play all" (Pro button): plays every matching track of the container, in the order shown. -#}
-{% component play_all(target, lkey, l, vars={}) %}
-<button type="button" data-play-all="{{ target }}" title="{{ l["action.play_all_hint"] }}" data-i18n-title="action.play_all_hint" class="inline-flex shrink-0 items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}{{ <tx key={lkey} l={l} vars={vars} /> }}</button>
+{#- "Play all" (Pro button): plays every matching track of the container, in the order shown.
+    attr names the player's command: "play-all" (a container's tracks) or "play-versions" (a
+    review's own video and then its versions, static/js/player.js). -#}
+{% component play_all(target, lkey, l, vars={}, attr="play-all") %}
+<button type="button" data-{{ attr }}="{{ target }}" title="{{ l["action.play_all_hint"] }}" data-i18n-title="action.play_all_hint" class="inline-flex shrink-0 items-center rounded-lg bg-primary-700 px-4 py-2 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{ <icon name="play" cls="mr-2 h-4 w-4" /> }}{{ <tx key={lkey} l={l} vars={vars} /> }}</button>
 {% endcomponent play_all %}
 
 {#- Listen elsewhere: search links derived from the artist and the track for the apps that keep
@@ -660,6 +663,98 @@ src="{{ get_url(path=t.thumbnail) }}"
   </ol>
 </section>
 {% endcomponent references %}
+
+{#- A song's family of versions (extra.versions), as two Pro list groups: the artist's own uploads
+    and releases, then what others made of the song. Each row plays in the bottom-bar player: the
+    page's own video as its track (data-play), a version with a review of its own as that review,
+    every other one as a loose video whose title in the bar opens this review (data-play-video,
+    data-play-of; static/js/player.js);
+    "Play all" queues the page's video, then every playable version (data-play-versions). A row
+    shows its still, kind, format, length, date, ℗ line and note; a video YouTube no longer
+    serves keeps its row without still, play or link. t: the catalogue track (its derived
+    versions); notes: this page's extra.versions, whose notes a translation holds (matched by
+    video id, else url); a version without one keeps the default language's note, marked so. -#}
+{% component versions(t, l, notes=[]) %}
+{%- set tc = load_data(path="static/data/catalog.json") -%}
+{%- set fallback = tc.languages | first -%}
+{%- set_global n = 0 -%}
+{%- if t.youtube %}{% set_global n = 1 %}{% endif -%}
+{%- for v in t.versions %}{% if v.youtube and not v.gone and not v.this_page %}{% set_global n = n + 1 %}{% endif %}{% endfor -%}
+{%- set badge = "inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium" -%}
+{%- set dot = "hidden h-1 w-1 shrink-0 rounded-full bg-gray-300 sm:block dark:bg-gray-500" -%}
+<section aria-labelledby="versions-title" class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6 xl:p-8 dark:border-gray-700 dark:bg-gray-800" data-versions="{{ t.source }}">
+  <div class="flex flex-wrap items-end justify-between gap-3">
+    <div class="min-w-0">
+      <h2 id="versions-title" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ <tx key="versions.title" l={l} /> }}</h2>
+      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{{ <tx key="versions.caption" l={l} /> }}</p>
+    </div>
+    {%- if n > 1 %}
+    {{ <play_all target={t.source} attr="play-versions" lkey="versions.play_all" l={l} vars={ {"n": n} } /> }}
+    {%- endif %}
+  </div>
+  {%- for group in ["artist", "others"] %}
+  {%- set_global rows = 0 %}{% for v in t.versions %}{% if v.group == group %}{% set_global rows = rows + 1 %}{% endif %}{% endfor %}
+  {%- if rows > 0 %}
+  <h3 id="versions-{{ group }}" class="mt-6 text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{{ <tx key={"versions.group." ~ group} l={l} /> }}</h3>
+  <ul class="divide-y divide-gray-200 dark:divide-gray-700" aria-labelledby="versions-{{ group }}" data-versions-group="{{ group }}">
+    {%- for v in t.versions %}{% if v.group == group %}
+    {%- if v.youtube %}{% set key = v.youtube %}{% else %}{% set key = v.url %}{% endif %}
+    {%- set_global note = "" %}{% set_global note_lang = "" %}
+    {%- for x in notes %}{% if x.note and ((x.youtube and x.youtube == key) or (not x.youtube and x.url == key)) %}{% set_global note = x.note %}{% endif %}{% endfor %}
+    {%- if not note and v.note %}{% set_global note = v.note %}{% if l.lang != fallback %}{% set_global note_lang = fallback %}{% endif %}{% endif %}
+    {%- set pv = {"title": v.title, "by": v.by} %}
+    {%- set ov = {"title": v.title} %}
+    {%- if "youtube.com/" in v.watch %}{% set okey = "versions.open_youtube" %}{% else %}{% set okey = "versions.open" %}{% endif %}
+    {%- if v.review and v.review in tc.lookup %}{% set rt = tc.tracks[tc.lookup[v.review]] %}{% if l.lang in rt.langs %}{% set rhref = get_url(path="@/" ~ v.review, lang=l.lang) %}{% else %}{% set rhref = get_url(path="@/" ~ v.review, lang=rt.langs | first) %}{% endif %}{% else %}{% set rhref = "" %}{% endif %}
+    {#- A version that is another review's own video plays as that review (its source), so the
+        queue never holds it twice and its cards elsewhere are ringed too. -#}
+    {%- if v.this_page %}{% set own = t.source %}{% elif rhref and rt.youtube == v.youtube %}{% set own = v.review %}{% else %}{% set own = "" %}{% endif %}
+    {%- set rid = "version-" ~ group ~ "-" ~ loop.index %}
+    {#- Pro list group item on a grid: the still, the title and byline beside it and the link at the
+        end; below it on a phone, under the title from sm: up, the badges, note and ℗ line. -#}
+    <li class="-mx-2 grid grid-cols-[auto_1fr_auto] items-start gap-x-3 gap-y-1.5 px-2 py-3 sm:gap-x-4 sm:py-4"{% if v.youtube and not v.gone %} data-track data-source="{% if own %}{{ own }}{% else %}yt:{{ v.youtube }}{% endif %}"{% endif %} data-version="{{ key }}" data-version-kind="{{ v.kind }}">
+      {%- if v.youtube and not v.gone %}
+      <button type="button" {% if own %}data-play="{{ own }}"{% else %}data-play-video="{{ v.youtube }}" data-play-title="{{ v.title }}" data-play-by="{{ v.by }}" data-play-of="{{ t.source }}"{% endif %} class="group relative h-[45px] w-20 shrink-0 overflow-hidden rounded-lg bg-gray-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-300 sm:row-span-2 sm:h-14 sm:w-24 dark:focus-visible:ring-primary-800" aria-label="{{ <tr key="versions.play" l={l} vars={pv} /> }}" aria-describedby="{{ rid }}" data-i18n-aria-label="versions.play" data-i18n-vars="{{ pv | json_encode }}">
+        <img {{ <still id={v.youtube} sizes="(min-width: 640px) 96px, 80px" /> }} alt="" data-thumb loading="lazy" decoding="async" width="96" height="54" class="absolute inset-0 h-full w-full object-cover opacity-90 transition group-hover:opacity-100">
+        <span class="absolute inset-0 flex items-center justify-center"><span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary-700 text-white shadow-lg transition group-hover:scale-110"><span data-icon-play>{{ <icon name="play" cls="ml-0.5 h-4 w-4" /> }}</span><span data-icon-pause>{{ <icon name="pause" cls="h-4 w-4" /> }}</span></span></span>
+      </button>
+      {%- else %}
+      <span class="flex h-[45px] w-20 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-400 sm:row-span-2 sm:h-14 sm:w-24 dark:bg-gray-700 dark:text-gray-500">{{ <icon name="music" /> }}</span>
+      {%- endif %}
+      <div class="min-w-0">
+        <p class="break-words text-sm font-semibold text-gray-900 dark:text-white" data-version-title>{% if rhref %}<a href="{{ rhref }}" class="hover:underline">{{ v.title }}</a>{% else %}{{ v.title }}{% endif %}</p>
+        <p class="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-sm text-gray-500 sm:gap-x-2 dark:text-gray-400">
+          <span class="min-w-0 break-words" data-version-by>{{ v.by }}</span>
+          {%- if v.date %}<span class="inline-flex items-center gap-x-2"><span class="{{ dot }}" aria-hidden="true" data-version-dot></span><time datetime="{{ v.date }}">{{ v.date }}</time></span>{% endif %}
+          {%- if v.duration %}<span class="inline-flex items-center gap-x-2"><span class="{{ dot }}" aria-hidden="true" data-version-dot></span><time datetime="PT{{ v.seconds }}S" class="font-mono text-xs" data-version-duration>{{ v.duration }}</time></span>{% endif %}
+        </p>
+      </div>
+      {%- if not v.gone %}
+      <a href="{{ v.watch }}" target="_blank" rel="noopener noreferrer" data-version-open class="inline-flex h-10 w-10 shrink-0 sm:row-span-2 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus-visible:ring-primary-800" aria-label="{{ <tr key={okey} l={l} vars={ov} /> }}" aria-describedby="{{ rid }}" title="{{ <tr key={okey} l={l} vars={ov} /> }}" data-i18n-aria-label="{{ okey }}" data-i18n-title="{{ okey }}" data-i18n-vars="{{ ov | json_encode }}">{{ <icon name="external" cls="h-4 w-4" /> }}</a>
+      {%- endif %}
+      <div class="col-span-full min-w-0 sm:col-span-1 sm:col-start-2" data-version-details>
+        <div id="{{ rid }}" class="flex flex-wrap gap-1.5">
+          <span class="{{ badge }} bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-300" data-version-badge data-i18n="versions.kind.{{ v.kind }}">{{ l["versions.kind." ~ v.kind] }}</span>
+          {%- if v.format %}<span class="{{ badge }} bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300" data-version-format data-i18n="versions.format.{{ v.format }}">{{ l["versions.format." ~ v.format] }}</span>{% endif %}
+          {%- if v.this_page %}<span class="{{ badge }} gap-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" data-version-this-page>{{ <icon name="check" cls="h-3 w-3" /> }}{{ <tx key="versions.this_page" l={l} /> }}</span>{% endif %}
+        </div>
+        {%- if v.gone %}
+        <p class="mt-1.5 flex items-start gap-1.5 text-xs text-yellow-800 dark:text-yellow-300" role="note" data-version-gone>{{ <icon name="info" cls="mt-px h-3.5 w-3.5 shrink-0" /> }}{{ <tx key="versions.gone" l={l} /> }}</p>
+        {%- endif %}
+        {%- if note %}
+        <p class="mt-1.5 break-words text-sm text-gray-600 dark:text-gray-300" data-version-note{% if note_lang %} lang="{{ note_lang }}"{% endif %}>{{ note }}</p>
+        {%- endif %}
+        {%- if v.rights %}
+        <p class="mt-1 break-words text-xs text-gray-500 dark:text-gray-400" data-version-rights><span class="sr-only">{{ <tx key="versions.rights" l={l} /> }}: </span>{{ v.rights }}</p>
+        {%- endif %}
+      </div>
+    </li>
+    {%- endif %}{% endfor %}
+  </ul>
+  {%- endif %}
+  {%- endfor %}
+</section>
+{% endcomponent versions %}
 
 {#- Curated links to other reviews (extra.connections), each with why; c is the catalogue
     track, why the reason. -#}

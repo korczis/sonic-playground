@@ -53,9 +53,16 @@ def learning_text(learning: dict) -> dict:
             "questions": list(learning.get("questions") or [])}
 
 
+def version_notes(extra: dict) -> list[dict]:
+    """The notes of extra.versions, the only text of a version a translation carries, each keyed
+    by the version's video id (or its url when it has none), in the English order."""
+    return [{"key": str(v.get("youtube") or v.get("url") or ""), "note": str(v["note"])}
+            for v in extra.get("versions") or [] if isinstance(v, dict) and v.get("note")]
+
+
 def prose_hash(meta: dict, body: str) -> str:
-    """The English text a translation translates: its title, description, body, learning guide
-    and the reasons of its connections. Twelve hex digits of sha256."""
+    """The English text a translation translates: its title, description, body, learning guide,
+    the reasons of its connections and the notes of its versions. Twelve hex digits of sha256."""
     extra = meta.get("extra", {}) or {}
     text = {"title": str(meta.get("title", "")).strip(),
             "description": str(meta.get("description", "")).strip(),
@@ -63,6 +70,9 @@ def prose_hash(meta: dict, body: str) -> str:
             "learning": learning_text(extra.get("learning") or {}),
             "connections": [{"source": c.get("source", ""), "why": c.get("why", "")}
                             for c in extra.get("connections") or [] if isinstance(c, dict)]}
+    notes = version_notes(extra)
+    if notes:  # only then: a page without versions keeps the hash its translation blessed
+        text["versions"] = notes
     return hashlib.sha256(json.dumps(text, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]
 
 
@@ -98,6 +108,7 @@ def fingerprint(meta: dict, body: str) -> dict:
             "learning": {k: len(v) for k, v in learning.items()},
             "at": [m["at"] for m in learning["listen_for"]],
             "connections": [c.get("source", "") for c in extra.get("connections") or [] if isinstance(c, dict)],
+            "versions": [n["key"] for n in version_notes(extra)],
             "paragraphs": {re.sub(r"\s+", " ", p.strip().lower()) for p in re.split(r"\n\s*\n", body)
                            if len(p.strip()) >= 120 and not p.strip().startswith(("#", "{{", "[//]:")) and prose_chars(p) >= 60},
             "scripts": sorted(set(FOREIGN_SCRIPT.findall(body + json.dumps(meta, ensure_ascii=False, default=str)))),
@@ -136,6 +147,10 @@ def check(rel: str, meta: dict, body: str, english: dict, rules: dict) -> list[s
     sources = [c.get("source", "") for c in extra.get("connections") or [] if isinstance(c, dict)]
     if sources != english["connections"]:
         problems.append("extra.connections must name the English page's connections, in its order")
+    keys = [str(v.get("youtube") or v.get("url") or "") for v in extra.get("versions") or [] if isinstance(v, dict)]
+    if keys != english.get("versions", []):
+        problems.append("extra.versions must carry a note for each English version with one, keyed by its "
+                        "youtube (or url), in its order (translate.py scaffold writes them)")
     lang = rel.rsplit(".", 2)[-2]
     for m in re.finditer(r'\{\{\s*<(concept_link|track_link)\b([^>]*)/>\s*\}\}', body):
         if f'lang="{lang}"' not in m.group(2):
@@ -155,6 +170,9 @@ def check(rel: str, meta: dict, body: str, english: dict, rules: dict) -> list[s
     for i, c in enumerate(extra.get("connections") or []):
         if isinstance(c, dict):
             texts[f"extra.connections[{i}].why"] = str(c.get("why", ""))
+    for i, v in enumerate(extra.get("versions") or []):
+        if isinstance(v, dict):
+            texts[f"extra.versions[{i}].note"] = str(v.get("note", ""))
     for where, text in texts.items():
         if marker in text:
             problems.append(f"{where} is not translated yet ({marker})")
